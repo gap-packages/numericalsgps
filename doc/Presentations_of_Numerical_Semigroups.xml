@@ -1,0 +1,107 @@
+<Section>
+                <Heading>Presentations of Numerical Semigroups</Heading>
+                <ManSection>
+                    <Func Arg="L" Name="FortenTruncatedNCForNumericalSemigroups"></Func>
+                    <Description>
+                        <A>L</A> contains the list of coefficients of a 
+                        single linear equation. This function
+                        gives a minimal generator 
+                        of the affine semigroup of nonnegative solutions of this equation
+                        with the first coordinate equal to one (see <Cite Key="MR1283022" />).
+                        Returns <C>fail</C> if no solution exists.
+                        
+                        <Example><![CDATA[
+gap> FortenTruncatedNCForNumericalSemigroups([ -57, 3 ]);
+[ 1, 19 ]
+gap> FortenTruncatedNCForNumericalSemigroups([ -57, 33 ]);
+fail
+gap> FortenTruncatedNCForNumericalSemigroups([ -57, 19 ]);
+[ 1, 3 ]
+]]></Example>          
+                        
+                    </Description>
+                </ManSection>
+                
+                
+                <ManSection>
+                    
+                    <Func Arg="S" Name="MinimalPresentationOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.
+                        
+                        The output is a list of lists with two elements. Each list of two elements represents
+                        a relation between the minimal generators of the numerical semigroup. If 
+                        <M> \{ \{x_1,y_1\},\ldots,\{x_k,y_k\}\} </M> is the output
+                        and <M> \{m_1,\ldots,m_n\} </M> is the minimal system of generators 
+                        of the numerical semigroup, then
+                        <M> \{x_i,y_i\}=\{\{a_{i_1},\ldots,a_{i_n}\},\{b_{i_1},\ldots,b_{i_n}\}\}</M>
+                        and <M> a_{i_1}m_1+\cdots+a_{i_n}m_n= b_{i_1}m_1+ \cdots +b_{i_n}m_n.</M>
+                        <P/>
+                        
+                        Any other relation among the minimal generators of the semigroup can be deduced from 
+                        the ones given in the output.
+                        <P/>
+                        
+                        The algorithm implemented is described in <Cite Key="Ros96"></Cite>
+                        (see also  <Cite Key="RGS99"></Cite>).
+                        
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> MinimalPresentationOfNumericalSemigroup(s);
+[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ],
+  [ [ 3, 1, 0 ], [ 0, 0, 2 ] ] ]
+]]>
+                        </Example>          
+                        The first element in the list means that <M> 1\times 3+1\times 7=2\times 5 </M>,
+                        and the others have similar meanings.
+                        
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="n, S" Name="GraphAssociatedToElementInNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>n</A> is an element in <A>S</A>.
+                        <P/>
+                        The output is a pair. If <M> \{m_1,\ldots,m_n\} </M> is the set of minimal 
+                        generators of <A>S</A>, then the first component is the set of vertices of the graph 
+                        associated to <A>n</A> in <A>S</A>, that is, the set 
+                        <M>\{ m_i \ |\  n-m_i\in S\} </M>, 
+                        and the second component is the set of edges of this graph, that is,
+                        <M> \{ \{m_i,m_j\} \ |\  n-(m_i+m_j)\in S\}.</M>
+                        
+                        <P/>
+                        This function is used to compute a minimal presentation of the numerical semigroup
+                        <A>S</A>, as explained in <Cite Key="Ros96"></Cite>. 
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> GraphAssociatedToElementInNumericalSemigroup(10,s);
+[ [ 3, 5, 7 ], [ [ 3, 7 ] ] ]
+]]>
+                        </Example>          
+                        
+                        
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="S" Name="BettiElementsOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+                        The output is the set of elements in <A>S</A> whose associated graph is nonconnected <Cite Key="GS-O"></Cite>.
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> BettiElementsOfNumericalSemigroup(s);
+[ 10, 12, 14 ]
+]]>
+                        </Example>          
+                        
+                        
+                    </Description>
+                </ManSection>
+                
+            </Section>

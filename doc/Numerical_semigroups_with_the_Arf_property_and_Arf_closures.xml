@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Numerical semigroups with the Arf property and Arf closures
+                </Heading>
+                Numerical semigroups with the Arf property are a special kind of numerical semigroups with 
+                maximal embedding dimension. A numerical semigroup <M>S</M> is Arf if for every <M>x,y,z</M> in
+                <M>S</M> with <M>x\geq y\geq z</M>, one has that <M>x+y-z\in S</M>.
+                
+                <P/> 
+                The intersection of two Arf numerical semigroups is again Arf, and thus we can consider the 
+                Arf closure of a set of nonnegative integers with greatest common divisor equal to one. Analogously
+                as with MED numerical semigroups, we define Arf systems of generators and minimal Arf generating
+                system for an Arf numerical semigroup. These are also unique(see <Cite Key="RGGB04"></Cite>).
+                
+                
+                <ManSection>
+                    <Func Arg="S" Name="IsArfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns true if <A>S</A> is an Arf numerical semigroup and false otherwise. 
+                        <Example><![CDATA[
+gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); 
+true 
+gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,7,11)); 
+false 
+gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11)); 
+true
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="ArfNumericalSemigroupClosure"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns the Arf closure of <A>S</A>.
+                        <Example><![CDATA[
+gap> ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); 
+<Numerical semigroup> 
+gap> MinimalGeneratingSystemOfNumericalSemigroup(last); 
+[ 3, 7, 8 ]
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="MinimalArfGeneratingSystemOfArfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is an Arf numerical semigroup.    
+                        <P/>
+                        Returns the minimal MED generating system of <A>S</A>.
+                        <Example><![CDATA[
+gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup( 
+> NumericalSemigroup(3,7,8)); 
+[ 3, 7 ]
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+                
+                
+            </Section>

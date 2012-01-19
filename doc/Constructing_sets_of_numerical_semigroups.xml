@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Constructing the set of all numerical semigroups containing a given numerical semigroup
+                </Heading>
+                In order to construct the set of numerical semigroups containing a fixed numerical
+                semigroup <M>S</M>, one first constructs its unitary extensions, that is to say, the
+                sets <M>S\cup\{g\}</M> that are numerical semigroups with <M>g</M> a positive integer.
+                This is achieved by constructing the special gaps of the semigroup, and then adding each
+                of them to the numerical semigroup. Then we repeat the process for each of this new 
+                numerical semigroups until we reach <M> {\mathbb N} </M>.
+                
+                <P/>
+                These procedures are described in <Cite Key="RGGJ03"></Cite>.
+                
+                
+                
+                <ManSection>
+                    <Func Arg="s" Name="OverSemigroupsNumericalSemigroup"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup. The output is the set of numerical semigroups
+                        containing it.           
+                        <Example><![CDATA[
+gap> OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));
+[ <Numerical semigroup with 1 generators>, <Numerical semigroup>,
+  <Numerical semigroup>, <Numerical semigroup with 3 generators> ]
+gap> List(last,s->MinimalGeneratingSystemOfNumericalSemigroup(s));
+[ [ 1 ], [ 3, 4, 5 ], [ 2, 3 ], [ 3, 5, 7 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an non zero integer greater than or equal to -1. The output is the 
+                        set of numerical semigroups with Frobenius number <A>f</A>.           
+The algorithm implemented is given in <Cite Key="RGGJ04"/>.
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
+900
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+                <Heading>
+                    Constructing the set of numerical semigroups with genus g, that is, numerical 
+                    semigroups with exactly g gaps
+                </Heading>
+                Given a numerical semigroup of genus g, removing minimal generators, one 
+                obtains numerical semigroups of genus g+1. In order to avoid repetitions,
+                we only remove minimal generators greater than the frobenius number of 
+                the numerical semigroup (this is accomplished with the local function sons).
+                
+                <P/>
+                These procedures are described in <Cite Key="RGGB03"></Cite> and <Cite Key="B-A08"></Cite>.
+                
+                
+                
+                <ManSection>
+                    <Func Arg="g" Name="NumericalSemigroupsWithGenus"></Func>
+                    <Description>
+                        <A>g</A> is a nonnegative integer. The output is the set of numerical semigroups
+                        with genus<A>g</A> .           
+                        <Example><![CDATA[
+gap> NumericalSemigroupsWithGenus(5);
+[ <Proportionally modular numerical semigroup satisfying 11x mod 66 <= 5x >, 
+  <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 2 generators> ]
+gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
+[ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
+  [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
+  [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
+
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                
+            </Section>

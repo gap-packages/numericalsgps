@@ -1,0 +1,35 @@
+## Comandos a executar no GAP para produzir o manual
+
+path := Directory("/home/mdelgado/investigacao/GAP/local/pkg/numericalsgps/doc");;
+main := "NumericalSgpsMan.xml";;
+files := [];;
+bookname := "NumericalSgpsMan";;
+doc := ComposedDocument("GAPDoc", path, main, files, true);;
+MakeGAPDocDoc( path, main, files, bookname);
+
+######### Os ficheiros de estilo podem ser copiados executando:
+cp investigacao/GAP/GAP4.5/gap4r5/pkg/GAPDoc-1.4/doc/*.css investigacao/GAP/local/pkg/numericalsgps/doc
+mdelgado@asa:~$ cp investigacao/GAP/GAP4.5/gap4r5/pkg/GAPDoc-1.4/doc/*.js investigacao/GAP/local/pkg/numericalsgps/doc
+
+##
+em vez de MakeGAPDocDoc pode-se executar:
+r := ParseTreeXMLString(doc[1], doc[2]);;
+CheckAndCleanGapDocTree(r);
+t := GAPDoc2Text(r, path);;
+GAPDoc2TextPrintTextFiles(t, path);
+l := GAPDoc2LaTeX(r);;
+FileString(Filename(path, Concatenation(bookname, ".tex")), l);
+h := GAPDoc2HTML(r, path);;
+GAPDoc2HTMLPrintHTMLFiles(h, path);
+
+
+##
+Num terminal executar:
+cd /home/mdelgado/investigacao/GAP/local/pkg/numericalsgps/doc/
+pdflatex NumericalSgpsMan
+bibtex NumericalSgpsMan
+pdflatex NumericalSgpsMan
+makeindex umericalSgpsMan
+pdflatex NumericalSgpsMan
+mv NumericalSgpsMan.pdf manual.pdf
+
