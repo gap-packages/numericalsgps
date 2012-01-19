@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml version="1.0" encoding="ISO-8859-1"?>-->
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd">
+
+<Book Name="NumericalSgps">
+
+<TitlePage>
+  <Title>Numerical Semigroups</Title>
+  <Version>( Version <#Include SYSTEM "../version"> )
+  </Version>
+  <Author> Manuel Delgado
+    <Email>mdelgado@fc.up.pt</Email>
+    <Homepage>http://www.fc.up.pt/cmup/mdelgado</Homepage>
+  </Author>
+  <Author> Pedro A. García-Sánchez
+    <Email>pedro@ugr.es</Email>
+    <Homepage>http://www.ugr.es/~pedro</Homepage>
+  </Author>
+  <Author> José João Morais
+ <!--   <Email>josejoao@fc.up.pt</Email> -->
+  </Author>
+  <Copyright> &copyright; 2005--2011 Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain<P/>
+          <!--    We adopt the copyright regulations of &GAP; as detailed in the
+              copyright notice in the &GAP; manual. -->
+ <E>Numericalsgps</E> is free software; you can redistribute it and/or modify it under the terms of the 
+<URL Text="GNU  General Public License">http://www.fsf.org/licenses/gpl.html</URL> as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+</Copyright>
+
+
+<Acknowledgements>
+
+The first author's work was (partially) supported by the <E>Centro de Matemática da Universidade do
+Porto</E> (CMUP), financed by FCT (Portugal) through the programs POCTI
+(Programa Operacional "Ciência, Tecnologia, Inovação") and POSI (Programa
+Operacional Sociedade da Informação), with national and European Community
+structural funds and a sabbatical grant of FCT.
+<P/>
+The second author was supported by the projects MTM2004-01446, MTM2010-15595, FQM-343, and FQM-5849, 
+and FEDER founds.
+<P/>
+The third author acknowledges financial support of FCT and the POCTI program
+through a scholarship given by <E>Centro de Matemática da Universidade do Porto</E>.
+<P/>
+The authors wish to thank J. I. García-García for many helpful discussions
+and for helping in the programming of preliminary versions of some functions.
+<P/>
+<P/>
+<P/>
+Concerning the mantainment:
+<P/>
+<P/>
+The first author was/is (partially) supported by the FCT project PTDC/MAT/65481/2006 and also by the
+<E>Centro de Matemática da Universidade do
+Porto</E> (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT - Fundação para a Ciência e a Tecnologia under the project PEst-C/MAT/UI0144/2011.
+
+
+<P/>
+<P/>
+The second author was/is supported by the projects MTM2007-62346 and MTM2010-15595.
+
+</Acknowledgements>
+
+<Colophon>
+This work started when (in 2004) the first author visited the University of Granada in part of a sabbatical year.
+
+Since Version 0.96, the package is maintained by the first two authors.
+
+Bug reports, suggestions and comments are, of course, welcome. Please use our
+email addresses to this effect.
+<P/>
+
+If you have benefited from the use of the numerigalsgps GAP package in your research, please cite it in addition to GAP itself, following the scheme proposed in
+<URL>http://www.gap-system.org/Contacts/cite.html</URL>.
+<P/>
+
+If you have predominantly used the functions in the Appendix, contributed by other authors, please cite in addition these authors, referring "software implementations available in the GAP package NumericalSgps".
+</Colophon>
+
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<#Include SYSTEM "introduction.xml">
+
+<Chapter>
+            <Heading>
+                Numerical Semigroups
+            </Heading>
+            This chapter describes how to create numerical semigroups in &GAP;
+            and perform some basic tests.
+
+<#Include SYSTEM "Generating_Numerical_Semigroups.xml">
+<#Include SYSTEM "Some_basic_tests.xml">
+
+</Chapter>
+
+
+        <Chapter>
+            <Heading>
+                Basic operations with numerical semigroups
+            </Heading>
+
+<#Include SYSTEM "The_definitions.xml">
+<#Include SYSTEM "Frobenius_Number.xml">
+<#Include SYSTEM "Gaps.xml">
+
+</Chapter>
+
+
+        <Chapter>
+            <Heading>
+                Presentations of Numerical Semigroups
+            </Heading>
+            In this chapter we explain how to compute a minimal presentation of a numerical
+            semigroup. There are three functions involved in this process.
+
+<#Include SYSTEM "Presentations_of_Numerical_Semigroups.xml">
+
+</Chapter>
+
+
+        <Chapter>
+            <Heading>
+                Constructing numerical semigroups from others
+            </Heading>
+
+<#Include SYSTEM "Adding_and_removing_elements_of_a_numerical_semigroup.xml">
+<#Include SYSTEM "Constructing_sets_of_numerical_semigroups.xml">
+
+</Chapter>
+
+
+        <Chapter>
+            <Heading>
+                Irreducible numerical semigroups
+            </Heading>
+
+<#Include SYSTEM "Irreducible_numerical_semigroups.xml">
+
+</Chapter>
+
+
+        <Chapter>
+            <Heading>
+                Ideals of numerical semigroups
+            </Heading>
+
+<#Include SYSTEM "Ideals_of_numerical_semigroups.xml">
+
+</Chapter>
+
+
+        <Chapter>
+            <Heading>
+                Numerical semigroups with maximal embedding dimension
+            </Heading>
+
+<#Include SYSTEM "Numerical_semigroups_with_maximal_embedding_dimension.xml">
+<#Include SYSTEM "Numerical_semigroups_with_the_Arf_property_and_Arf_closures.xml">
+<#Include SYSTEM "Saturated_Numerical_semigroups.xml">
+
+</Chapter>
+
+
+<Chapter>
+	<Heading>
+		Catenary and Tame degrees of numerical semigroups
+	</Heading>
+
+	<#Include SYSTEM "catenary-tame.xml">
+
+</Chapter>
+
+
+</Body>
+
+<#Include SYSTEM "generalstuff.xml">
+
+<#Include SYSTEM "random.xml">
+
+<#Include SYSTEM "contributions.xml">
+
+<Bibliography Databases="NumericalSgpsMan" />
+
+<TheIndex/>
+
+</Book>
+
+<!-- ==================================================================== -->

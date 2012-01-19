@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appendix><Heading>Contributions</Heading>
+
+
+<Section><Heading>Functions implemented by A. Sammartano</Heading>
+
+<ManSection>
+                    <Func Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupBuchsbaum"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
+                        is Buchsbaum, and false otherwise.
+                        This test is the implementation of the algorithm given in <Cite Key="DA-M-M"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
+<Numerical semigroup with 10 generators>
+gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+<ManSection>
+                    <Func Arg="S" Name="IsMpureNumericalSemigroup"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Test for the M-Purity of the numerical semigroup S <A>S</A>.
+			This test is based on
+                        <Cite Key="Br"></Cite>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
+<Numerical semigroup with 10 generators>
+gap> IsMpureNumericalSemigroup(s);                                       
+false
+gap> s:=NumericalSemigroup(4,6,11);
+<Numerical semigroup with 3 generators>
+gap> IsMpureNumericalSemigroup(s); 
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+
+<ManSection>
+                    <Func Arg="S" Name="IsPureNumericalSemigroup"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Test for the purity of the numerical semigroup S <A>S</A>.
+			This test is based on
+                        <Cite Key="Br"></Cite>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
+<Numerical semigroup with 10 generators>
+gap> IsPureNumericalSemigroup(s);                                       
+false
+gap> s:=NumericalSemigroup(4,6,11);
+<Numerical semigroup with 3 generators>
+gap> IsPureNumericalSemigroup(s); 
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+<ManSection>
+                    <Func Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupGorenstein"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
+                        is Gorenstein, and false otherwise.
+                        This test is the implementation of the algorithm given in
+                        <Cite Key="DA-M-S"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
+<Numerical semigroup with 10 generators>
+gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);
+<Numerical semigroup with 3 generators>
+gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+
+</Section>
+</Appendix>

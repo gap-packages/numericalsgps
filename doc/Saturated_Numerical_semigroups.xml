@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Saturated numerical semigroups
+                </Heading>
+                Saturated numerical semigroups with the Arf property are a special kind of numerical semigroups with 
+                maximal embedding dimension. A numerical semigroup <M>S</M> is saturated if the following condition holds: <M> s, s_1 , . . . , s_r</M> in <M>S</M>  are such that <M>s_i \leq s</M> for all <M>i</M> in <M>\{1, . . . , r\}</M> and <M>z_1 , . . . , z_r</M> in <M>\mathbb Z</M> are such that <M>z_1 s_1 + · · · + z_r s_r\geq 0</M>, then <M>s + z_1 s_1 + · · · + z_r s_r</M> in <M>S</M>.
+                
+                <P/> 
+                The intersection of two saturated numerical semigroups is again saturated, and thus we can consider the 
+                saturated closure of a set of nonnegative integers with greatest common divisor equal to one (see <Cite Key="RGbook"></Cite>).
+                
+                
+                <ManSection>
+                    <Func Arg="S" Name="IsSaturatedNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns true if <A>S</A> is a saturated numerical semigroup and false otherwise. 
+                        <Example><![CDATA[
+gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
+true
+gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(8, 9, 12, 13, 15, 19 ));
+false
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="SaturatedNumericalSemigroupClosure"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns the saturated closure of <A>S</A>.
+                        <Example><![CDATA[
+gap> SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15, 1$
+<Numerical semigroup>
+gap> MinimalGeneratingSystemOfNumericalSemigroup(last);                        
+[ 8 .. 15 ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                
+            </Section>
