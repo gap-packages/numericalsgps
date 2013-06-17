@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: catenary-tame.gd,v 0.971 $
+#H  @(#)$Id: catenary-tame.gd,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -215,4 +215,64 @@ DeclareGlobalFunction("OmegaPrimalityOfElementInNumericalSemigroup");
 DeclareGlobalFunction("OmegaPrimalityOfNumericalSemigroup");
 
 
+#############################################################################
+##
+#F  FactorizationsIntegerWRTList(n,ls)
+##
+##  Computes the set of factorizations
+##  of an integer n as linear combinations
+##  with nonnegative coefficients of the elements in the list ls
+##  Makes use of RestrictedPartitions
+#############################################################################
+DeclareGlobalFunction("FactorizationsIntegerWRTList");
+
+#############################################################################
+##
+#F  LengthsOfFactorizationsIntegerWRTList(n,ls)
+##
+##  Computes the lengths of the set of
+##  factorizations of an  integer <n> as linear combinations
+##  with nonnegative coefficients of the elements in the list <ls>
+##
+#############################################################################
+DeclareGlobalFunction("LengthsOfFactorizationsIntegerWRTList");
+
+#############################################################################
+##
+#F  DeltaSetOfSetOfIntegers(n,s)
+##
+##  Computes the set of differences between
+##  two consecutive lengths of factorizations of
+##  an integer <n> as linear combinations
+##  with nonnegative coefficients of the elements in the list <ls>
+##
+#############################################################################
+DeclareGlobalFunction("DeltaSetOfSetOfIntegers");
+
+#############################################################################
+##
+#F  CatenaryDegreeOfSetOfFactorizations(fact)
+##
+##  Computes the catenary degree of the set of factorizations 
+##
+#############################################################################
+DeclareGlobalFunction("CatenaryDegreeOfSetOfFactorizations");
+
+#############################################################################
+##
+#F  TameDegreeOfSetOfFactorizations(fact)
+##
+##  Computes the tame degree of the set of factorizations 
+##
+#############################################################################
+DeclareGlobalFunction("TameDegreeOfSetOfFactorizations");
+
+#############################################################################
+##
+#F  RClassesOfSetOfFactorizations(l)
+##
+##  Determine the set of R-classes (Chapter 7 [RGBook] of a set of factorizations
+##
+#############################################################################
+DeclareGlobalFunction("RClassesOfSetOfFactorizations");
 

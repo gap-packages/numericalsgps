@@ -4,19 +4,21 @@ The GAP 4 package `NumericalSgps' to compute with Numerical Semigroups
 Introduction
 ------------
 
-This is release 0.971 of  the package `NumericalSgps'.
+This is release 0.98 of  the package `NumericalSgps'.
 
 The features of this package include
 
-         - defining numerical semigroups;
-	 - computing several properties of numerical semigroups,
+	- defining numerical semigroups;
+	- computing several properties of numerical semigroups,
 	   namely: multiplicity, Frobenius number,
            (minimal) system of generators,
            Apéry set, gaps, fundamental gaps, etc.;
-         - perform several operations on numerical semigroups,
+	- perform several operations on numerical semigroups and ideals,
 	   namely: intersection, quotient by an integer,
 	   decompose into irreducible semigroups, add a
-	   special gap;
+	   special gap, ...;
+	-computing and testing membership to relevant families 
+	  of numerical semigroups.
 
 There is a manual in the sub-directory 'doc' written using the GAP package
 gapdoc which describes the available functions in detail. The dvi, pdf, html
@@ -35,21 +37,36 @@ Contents
 With this version you should have obtained the following files and
 directories:
 
-        README          this file
+		README          	this file
 
-	EXAMPLES	some examples
+		EXAMPLES		some examples
 
-        doc             the manual
+		CHANGES 			changelog
 
-        gap             the GAP code
+		doc             		the manual
 
-        init.g          the file that initializes this package
+		gap             		the GAP code
 
-        read.g          the file that reads in the package
+		init.g          			the file that initializes this package
 
-	PackageInfo.g	information file for automatic processing
+		read.g          		the file that reads in the package
 
-	version		the version number
+		PackageInfo.g	information file for automatic processing
+
+		version				the version number
+
+Usage
+-----
+The package is distributed with the main GAP archive. In order to use it you
+just have to start GAP and type
+
+      LoadPackage( "numericalsgps" );
+
+------------------------------
+------------------------------
+For updates between releases of GAP itself check the package Web pages
+
+    http://www.fc.up.pt/cmup/mdelgado/numericalsgps/
 
 Unpacking
 ---------
@@ -69,7 +86,7 @@ or, if tar on your system does not understand the option z, by
 
 which will in each case unpack the code into a directory 'numericalsgps'
 in the current directory. We assume that the current directory is the
-directory /usr/local/lib/gap4r4/pkg/.
+directory /usr/local/lib/gap4r5/pkg/.
 
 Installation
 ------------
@@ -77,7 +94,7 @@ Installation
 
 You may have to start GAP with the -l option, for instance,
 
-gap -l "/usr/local/lib/gap4r4"
+gap -l "/usr/local/lib/gap4r5"
 
 Then try the following
 
@@ -87,14 +104,14 @@ gap>
 
 Good luck!
 
-If you use a LINUX system, you may have to, in order to save typing, write
+If you use a LINUX system, you may want to, in order to save typing, write
 aliases:
 
 in the file `.bashrc' (or something equivalent, maybe with another syntax):
 
-alias gap='gap -l "/usr/local/lib/gap4r4;"'
+alias gap='gap -l "/usr/local/lib/gap4r5;"'
 
-and in the file `.gaprc'
+and in the file `.gap/gaprc'
 
 LoadPackage( "numericalsgps" );
 

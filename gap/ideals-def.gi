@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: ideals-def.gi,v 0.971 $
+#H  @(#)$Id: ideals-def.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -27,8 +27,8 @@
 ##
 #############################################################################
 InstallGlobalFunction(IdealOfNumericalSemigroup, function(l,S)
-    if not (IsNumericalSemigroup(S) and ForAll(l, i -> IsInt(i))) then
-        Error("The arguments of IdealOfNumericalSemigroup must be a numerical semigroup and a list of integers.");
+    if not (IsNumericalSemigroup(S) and IsListOfIntegersNS(l)) then
+        Error("The arguments of IdealOfNumericalSemigroup must be a numerical semigroup and a nonempty list of integers.");
     fi;
     return(Objectify( IdealsOfNumericalSemigroupsType,
                   rec(sgp := S, generators := Set(l))));
@@ -393,6 +393,7 @@ end);
 
 ###########################################################
 ## I - J means SubtractIdealsOfNumericalSemigroup(I,J)
+## I can be the ambient numerical semigroup of J
 ##########
 
 InstallMethod( \-, "for ideals of the same numerical semigroup", true,
@@ -402,6 +403,12 @@ InstallMethod( \-, "for ideals of the same numerical semigroup", true,
     return(SubtractIdealsOfNumericalSemigroup( I, J ));
 end);
 
+InstallMethod( \-, "for a numerical semigroup and one of its ideals", true,
+        [IsNumericalSemigroup,
+         IsIdealOfNumericalSemigroup], 0,
+        function( S, J )
+    return(SubtractIdealsOfNumericalSemigroup( 0+S, J ));
+end);
 
 
 #############################################################################
@@ -722,3 +729,53 @@ InstallGlobalFunction(IntersectionIdealsOfNumericalSemigroup, function(I, J)
 
 end);
 
+
+########################################################################
+##
+#F AperyListOfIdealOfNumericalSemigroupWRTElement(I,n)
+##
+##  Computes the sets of elements x of I such that x-n not in I,
+##  where n is supposed to be in the ambient semigroup of I.
+##  The element in the i-th position of the output list (starting in 0) 
+##  is congruent with i modulo n 
+########################################################################
+InstallGlobalFunction(AperyListOfIdealOfNumericalSemigroupWRTElement,function(ideal,n)
+	local msg, apambient, s, ap, cand, i;
+
+	s:=AmbientNumericalSemigroupOfIdeal(ideal);
+	apambient:=AperyListOfNumericalSemigroupWRTElement(s,n);
+	msg:=MinimalGeneratingSystemOfIdealOfNumericalSemigroup(ideal);
+	ap:=ShallowCopy(apambient);
+
+	cand:=Set(Cartesian(msg,apambient), p->p[1]+p[2]);
+	
+	for i in [0..n-1] do
+		ap[i+1]:=Minimum(Filtered(cand, w-> w mod n=i));
+	od;
+	return ap;
+end);
+
+########################################################################
+##
+#F AperyTableOfNumericalSemigroup(S)
+##
+##  Computes the Apéry table associated to S as 
+## explained in [CJZ],
+##  that is, a list containing the Apéry list of S with respect to 
+## its multiplicity and the Apéry lists of kM (with M the maximal 
+##  ideal of S) with respect to the multiplicity of S, for k=1..r,
+##  where r is the reduction number of M 
+##  (see ReductionNumberIdealNumericalSemigroup).
+########################################################################
+InstallGlobalFunction(AperyTableOfNumericalSemigroup,function(S)
+	local M,m, table, k, r;
+
+	M:=MaximalIdealOfNumericalSemigroup(S);
+	m:=MultiplicityOfNumericalSemigroup(S);
+	table:=[AperyListOfNumericalSemigroupWRTElement(S,m)];
+	r:=ReductionNumberIdealNumericalSemigroup(M);
+	for k in [1..r] do 
+		Append(table,[AperyListOfIdealOfNumericalSemigroupWRTElement(k*M,m)]);
+	od;
+	return table;	
+end);

@@ -90,12 +90,12 @@
 \begin{titlepage}
 \mbox{}\vfill
 
-\begin{center}{\maintitlesize \textbf{Numerical Semigroups\mbox{}}}\\
+\begin{center}{\maintitlesize \textbf{\textsf{numericalsgps}, a package for numerical semigroups\mbox{}}}\\
 \vfill
 
-\hypersetup{pdftitle=Numerical Semigroups}
-\markright{\scriptsize \mbox{}\hfill Numerical Semigroups \hfill\mbox{}}
-{\Huge ( Version 0.971 ) \mbox{}}\\[1cm]
+\hypersetup{pdftitle=\textsf{numericalsgps}, a package for numerical semigroups}
+\markright{\scriptsize \mbox{}\hfill \textsf{numericalsgps}, a package for numerical semigroups \hfill\mbox{}}
+{\Huge ( Version 0.98 ) \mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{ Manuel Delgado   \mbox{}}}\\
 {\Large \textbf{ Pedro A. Garc{\a'\i}a-S{\a'a}nchez   \mbox{}}}\\
@@ -116,7 +116,7 @@
 {\small 
 \section*{Copyright}
 \logpage{[ 0, 0, 1 ]}
- {\copyright} 2005--2011 Centro de Matem{\a'a}tica da Universidade do Porto,
+ {\copyright} 2005--2013 Centro de Matem{\a'a}tica da Universidade do Porto,
 Portugal and Universidad de Granada, Spain
 
   \emph{Numericalsgps} is free software; you can redistribute it and/or modify it under the terms of
@@ -130,21 +130,22 @@ Operacional "Ci{\^e}ncia, Tecnologia, Inova{\c c}{\~a}o") and POSI (Programa
 Operacional Sociedade da Informa{\c c}{\~a}o), with national and European
 Community structural funds and a sabbatical grant of FCT. 
 
- The second author was supported by the projects MTM2004-01446, MTM2010-15595,
-FQM-343, and FQM-5849, and FEDER founds. 
+ The second author was supported by the projects MTM2004-01446, FQM-343, and
+FEDER founds. 
 
  The third author acknowledges financial support of FCT and the POCTI program
 through a scholarship given by \emph{Centro de Matem{\a'a}tica da Universidade do Porto}. 
 
- The authors wish to thank J. I. Garc{\a'\i}a-Garc{\a'\i}a for many helpful
-discussions and for helping in the programming of preliminary versions of some
-functions. 
+ The authors wish to thank J. I. Garc{\a'\i}a-Garc{\a'\i}a and Alfredo
+S{\a'a}nchez-R. Navarro for many helpful discussions and for helping in the
+programming of preliminary versions of some functions, and also to A.
+Sammartano for his contributions (see Contributions Chapter). 
 
  
 
  
 
- Concerning the mantainment: 
+ \textsc{Concerning the mantainment:} 
 
  
 
@@ -155,8 +156,8 @@ para a Ci{\^e}ncia e a Tecnologia under the project PEst-C/MAT/UI0144/2011.
 
  
 
- The second author was/is supported by the projects MTM2007-62346 and
-MTM2010-15595. \mbox{}}\\[1cm]
+ The second author was/is supported by the projects MTM2007-62346,
+MTM2010-15595, and FQM-5849. \mbox{}}\\[1cm]
 {\small 
 \section*{Colophon}
 \logpage{[ 0, 0, 3 ]}
@@ -461,7 +462,7 @@ The function \texttt{NumericalSemigroup} (\ref{NumericalSemigroup}) is a front-e
 a list representing an entity of the type to which the function's name refers. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,11);|
-  <Numerical semigroup with 2 generators>
+  <Modular numerical semigroup satisfying 22x mod 33 <= x >
   !gapprompt@gap>| !gapinput@GapsOfNumericalSemigroup(s);|
   [ 1, 2, 4, 5, 7, 8, 10, 13, 16, 19 ]
   !gapprompt@gap>| !gapinput@t:=NumericalSemigroupByGaps(last);|
@@ -534,7 +535,7 @@ semigroup and if a numerical semigroup is a subsemigroup of another one.
 should be self explanatory). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7);|
-  <Numerical semigroup with 2 generators>
+  <Modular numerical semigroup satisfying 7x mod 21 <= x >
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTElement(s,30);;|
   !gapprompt@gap>| !gapinput@t:=NumericalSemigroupByAperyList(last);|
   <Numerical semigroup>
@@ -586,7 +587,7 @@ semigroup.
  Tests if the list \mbox{\texttt{\mdseries\slshape L}} may represent the gaps (see \ref{xx1}) of a numerical semigroup. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7);|
-  <Numerical semigroup with 2 generators>
+  <Modular numerical semigroup satisfying 7x mod 21 <= x >
   !gapprompt@gap>| !gapinput@L:=GapsOfNumericalSemigroup(s);|
   [ 1, 2, 4, 5, 8, 11 ]
   !gapprompt@gap>| !gapinput@RepresentsGapsOfNumericalSemigroup(L);|
@@ -630,7 +631,7 @@ returns \texttt{true} when the periodic function represented by \mbox{\texttt{\m
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
   <Modular numerical semigroup satisfying 5x mod 53 <= x >
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(2,3);|
+  !gapprompt@gap>| !gapinput@T:=NumericalSemigroup(2,3);|
   <Modular numerical semigroup satisfying 3x mod 6 <= x >
   !gapprompt@gap>| !gapinput@IsSubsemigroupOfNumericalSemigroup(T,S);|
   true
@@ -813,8 +814,36 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupAsGraph}}
+\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupWRTInteger}}
 \logpage{[ 3, 1, 7 ]}\nobreak
+\hyperdef{L}{X877266A18524982E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTInteger({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTInteger@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Integer}}
+\label{AperyListOfNumericalSemigroupWRTInteger}
+}\hfill{\scriptsize (operation)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is a positive integer. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}, that is, the set of elements $x$ in \mbox{\texttt{\mdseries\slshape S}} such that $x-$\mbox{\texttt{\mdseries\slshape m}} is not in \mbox{\texttt{\mdseries\slshape S}}. If \mbox{\texttt{\mdseries\slshape m}} is an element in \mbox{\texttt{\mdseries\slshape S}}, then the output, as sets, is the same as \mbox{\texttt{\mdseries\slshape AperyListOfNumericalSemigroupWRTInteger}}, though without side effects, in the sense that this information is no longer
+used by the package. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(10,13,19,27);|
+  <Numerical semigroup with 4 generators>
+  !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTInteger(s,11);|
+  [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+  !gapprompt@gap>| !gapinput@Length(last);|
+  18
+  !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTInteger(s,10);|
+  [ 0, 13, 19, 26, 27, 32, 38, 45, 51, 54 ]
+  !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTElement(s,10);|
+  [ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
+  !gapprompt@gap>| !gapinput@Length(last);|
+  10
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupAsGraph}}
+\logpage{[ 3, 1, 8 ]}\nobreak
 \hyperdef{L}{X8022CC477E9BF678}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupAsGraph({\mdseries\slshape ap})\index{AperyListOfNumericalSemigroupAsGraph@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{As}\-\texttt{Graph}}
 \label{AperyListOfNumericalSemigroupAsGraph}
@@ -824,8 +853,7 @@ semigroup is given.
  \mbox{\texttt{\mdseries\slshape ap}} is the Ap{\a'e}ry list of a numerical semigroup. This function returns the
 adjacency list of the graph $(ap, E)$ where the edge $u -> v$ is in $E$ iff $v - u$ is in $ap$. The 0 is ignored. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7);|
-  <Numerical semigroup with 2 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTElement(s,10);|
   [ 0, 21, 12, 3, 14, 15, 6, 7, 18, 9 ]
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupAsGraph(last);|
@@ -1008,31 +1036,8 @@ numerical semigroup. There are three functions involved in this process.
 {
   
 
-\subsection{\textcolor{Chapter }{FortenTruncatedNCForNumericalSemigroups}}
-\logpage{[ 4, 1, 1 ]}\nobreak
-\hyperdef{L}{X8028208F84950722}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FortenTruncatedNCForNumericalSemigroups({\mdseries\slshape L})\index{FortenTruncatedNCForNumericalSemigroups@\texttt{Forten}\-\texttt{Truncated}\-\texttt{N}\-\texttt{C}\-\texttt{For}\-\texttt{Numerical}\-\texttt{Semigroups}}
-\label{FortenTruncatedNCForNumericalSemigroups}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape L}} contains the list of coefficients of a single linear equation. This function
-gives a minimal generator of the affine semigroup of nonnegative solutions of
-this equation with the first coordinate equal to one (see \cite{MR1283022}). Returns \texttt{fail} if no solution exists. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@FortenTruncatedNCForNumericalSemigroups([ -57, 3 ]);|
-  [ 1, 19 ]
-  !gapprompt@gap>| !gapinput@FortenTruncatedNCForNumericalSemigroups([ -57, 33 ]);|
-  fail
-  !gapprompt@gap>| !gapinput@FortenTruncatedNCForNumericalSemigroups([ -57, 19 ]);|
-  [ 1, 3 ]
-\end{Verbatim}
- }
-
- 
-
 \subsection{\textcolor{Chapter }{MinimalPresentationOfNumericalSemigroup}}
-\logpage{[ 4, 1, 2 ]}\nobreak
+\logpage{[ 4, 1, 1 ]}\nobreak
 \hyperdef{L}{X7D8199858781EB41}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalPresentationOfNumericalSemigroup({\mdseries\slshape S})\index{MinimalPresentationOfNumericalSemigroup@\texttt{Minimal}\-\texttt{Presentation}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalPresentationOfNumericalSemigroup}
@@ -1051,8 +1056,8 @@ deduced from the ones given in the output.
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);|
   <Numerical semigroup with 3 generators>
   !gapprompt@gap>| !gapinput@MinimalPresentationOfNumericalSemigroup(s);|
-  [ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ],
-    [ [ 3, 1, 0 ], [ 0, 0, 2 ] ] ]
+  [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], 
+    [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
   
                           
 \end{Verbatim}
@@ -1061,7 +1066,7 @@ deduced from the ones given in the output.
  
 
 \subsection{\textcolor{Chapter }{GraphAssociatedToElementInNumericalSemigroup}}
-\logpage{[ 4, 1, 3 ]}\nobreak
+\logpage{[ 4, 1, 2 ]}\nobreak
 \hyperdef{L}{X81CC5A6C870377E1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraphAssociatedToElementInNumericalSemigroup({\mdseries\slshape n, S})\index{GraphAssociatedToElementInNumericalSemigroup@\texttt{Graph}\-\texttt{Associated}\-\texttt{To}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{GraphAssociatedToElementInNumericalSemigroup}
@@ -1075,8 +1080,7 @@ deduced from the ones given in the output.
  This function is used to compute a minimal presentation of the numerical
 semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@GraphAssociatedToElementInNumericalSemigroup(10,s);|
   [ [ 3, 5, 7 ], [ [ 3, 7 ] ] ]
   
@@ -1087,7 +1091,7 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
  
 
 \subsection{\textcolor{Chapter }{BettiElementsOfNumericalSemigroup}}
-\logpage{[ 4, 1, 4 ]}\nobreak
+\logpage{[ 4, 1, 3 ]}\nobreak
 \hyperdef{L}{X836B6BF4853DB8E2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElementsOfNumericalSemigroup({\mdseries\slshape S})\index{BettiElementsOfNumericalSemigroup@\texttt{BettiElementsOfNumericalSemigroup}}
 \label{BettiElementsOfNumericalSemigroup}
@@ -1098,8 +1102,7 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 
  The output is the set of elements in \mbox{\texttt{\mdseries\slshape S}} whose associated graph is nonconnected \cite{GS-O}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@BettiElementsOfNumericalSemigroup(s);|
   [ 10, 12, 14 ]
   
@@ -1161,8 +1164,7 @@ to a semigroup (see \cite{RGGJ03}).
 
  The output is the numerical semigroup $ \mbox{\texttt{\mdseries\slshape S}} \cup\{\mbox{\texttt{\mdseries\slshape g}}\} $ (see \cite{RGGJ03}, where it is explained why this set is a numerical semigroup). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@s2:=RemoveMinimalGeneratorFromNumericalSemigroup(5,s);|
   <Numerical semigroup with 3 generators>
   !gapprompt@gap>| !gapinput@s3:=AddSpecialGapOfNumericalSemigroup(5,s2);|
@@ -1192,7 +1194,7 @@ to a semigroup (see \cite{RGGJ03}).
   !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
   <Modular numerical semigroup satisfying 5x mod 53 <= x >
   !gapprompt@gap>| !gapinput@T := NumericalSemigroup(2,17);|
-  <Numerical semigroup with 2 generators>
+  <Modular numerical semigroup satisfying 17x mod 34 <= x >
   !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(S);|
   [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
   !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(T);|
@@ -1217,7 +1219,7 @@ to a semigroup (see \cite{RGGJ03}).
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape n}} is an integer. Computes the quotient of \mbox{\texttt{\mdseries\slshape S}} by \mbox{\texttt{\mdseries\slshape n}}, that is, the set $\{ x\in {\mathbb N}\ |\ nx \in S\}$, which is again a numerical semigroup. \texttt{S / n} may be used as a short for \texttt{QuotientOfNumericalSemigroup(S, n)}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,29);|
-  <Numerical semigroup with 2 generators>
+  <Modular numerical semigroup satisfying 58x mod 87 <= x >
   !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(s);|
   [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
     39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
@@ -1258,10 +1260,10 @@ repeat the process for each of this new numerical semigroups until we reach $ {\
 containing it. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));|
-  [ <Numerical semigroup with 1 generators>, <Numerical semigroup>,
-    <Numerical semigroup>, <Numerical semigroup with 3 generators> ]
+  [ <The numerical semigroup N>, <Numerical semigroup>, <Numerical semigroup>, 
+    <Numerical semigroup with 3 generators> ]
   !gapprompt@gap>| !gapinput@List(last,s->MinimalGeneratingSystemOfNumericalSemigroup(s));|
-  [ [ 1 ], [ 3, 4, 5 ], [ 2, 3 ], [ 3, 5, 7 ] ]
+  [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
 \end{Verbatim}
  }
 
@@ -1315,12 +1317,11 @@ genus\mbox{\texttt{\mdseries\slshape g}} .
     <Numerical semigroup with 4 generators>, 
     <Numerical semigroup with 3 generators>, 
     <Numerical semigroup with 3 generators>, 
-    <Numerical semigroup with 2 generators> ]
+    <Modular numerical semigroup satisfying 11x mod 22 <= x > ]
   !gapprompt@gap>| !gapinput@List(last,MinimalGeneratingSystemOfNumericalSemigroup);|
   [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
     [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
     [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
-  
 \end{Verbatim}
  }
 
@@ -1345,18 +1346,21 @@ semigroup having its same Frobenius number (see \cite{RB03}). Hence, according t
 irreducible numerical semigroups with odd (respectively even) Frobenius
 number. 
 
- In \cite{RGGJ03} it is shown that a numerical semigroup is irreducible if and only if it has
-only one special gap. We use this characterization. 
+ In \cite{RGGJ03} it is shown that a nontrivial numerical semigroup is irreducible if and only
+if it has only one special gap. We use this characterization. 
 
  In this section we show how to construct the set of all numerical semigroups
-with a given Frobenius number. First we construct an irreducible numerical
-semigroup with the given Frobenius number (as explained in \cite{RGS04}), and then we construct the rest from it. That is why we have separated both
-functions. 
+with a given Frobenius number. In old versions of the package, we first
+constructed an irreducible numerical semigroup with the given Frobenius number
+(as explained in \cite{RGS04}), and then we constructed the rest from it. That is why we separated both
+functions. The present version uses a faster procedure presented in \cite{BR13}. 
 
  Every numerical semigroup can be expressed as an intersection of irreducible
 numerical semigroups. If $S$ can be expressed as $S=S_1\cap \cdots\cap S_n$, with $S_i$ irreducible numerical semigroups, and no factor can be removed, then we say
 that this decomposition is minimal. Minimal decompositions can be computed by
 using Algorithm 26 in \cite{RGGJ03}. 
+
+ 
 
 \subsection{\textcolor{Chapter }{IsIrreducibleNumericalSemigroup}}
 \logpage{[ 6, 1, 1 ]}\nobreak
@@ -1464,14 +1468,30 @@ irreducible numerical semigroups with frobenius number \mbox{\texttt{\mdseries\s
 semigroups containing it. These elements appear in a minimal decomposition of \mbox{\texttt{\mdseries\slshape s}} as intersection into irreducibles. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));|
-  [ <Numerical semigroup>, <Numerical semigroup> ]
+  [ <Numerical semigroup with 3 generators>, 
+    <Numerical semigroup with 4 generators> ]
 \end{Verbatim}
  }
+
+ }
+
+  
+\section{\textcolor{Chapter }{ Complete intersection numerical semigroups }}\logpage{[ 6, 2, 0 ]}
+\hyperdef{L}{X7D3FD9C8786B5D72}{}
+{
+  The cardinality of a minimal presentation of a numerical semigroup is alwas
+greater than or equal to its embedding dimension minus one. Complete
+intersection numerical semigroups are numerical semigroups reching this bound,
+and they are irreducible. It can be shown that every complete intersection
+(other that $\mathbb N$) is a complete intersection if and only if it is the gluing of two complete
+intersections. When in this gluing, one of the copies is isomorphic to $\mathbb N$, then we obtain a free semigroups in the sense of \cite{BC77}. Two special kinds of free semigroups are telescopic semigroups (\cite{KP95}) and those associated to an irreducible planar curve (\cite{Z86}). We use the algorithms presented in \cite{AGS13} to find the set of all complete intersections (also free, telescopic and
+associated to irreducible planar curves) numerical semigroups with given
+Frobenius number. 
 
  
 
 \subsection{\textcolor{Chapter }{AsGluingOfNumericalSemigroups}}
-\logpage{[ 6, 1, 7 ]}\nobreak
+\logpage{[ 6, 2, 1 ]}\nobreak
 \hyperdef{L}{X848FCB49851D19B8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsGluingOfNumericalSemigroups({\mdseries\slshape s})\index{AsGluingOfNumericalSemigroups@\texttt{AsGluingOfNumericalSemigroups}}
 \label{AsGluingOfNumericalSemigroups}
@@ -1480,13 +1500,13 @@ semigroups containing it. These elements appear in a minimal decomposition of \m
 
  \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. Returns all partitions $\{A_1,A_2\}$ of the minimal generating set of \mbox{\texttt{\mdseries\slshape s}} such that \mbox{\texttt{\mdseries\slshape s}} is a gluing of $\leftangle A_1\rightangle$ and $\leftangle A_2\rightangle$ by $gcd(A_1)gcd(A_2)$ 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 10, 15, 16 );                   |
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 10, 15, 16 );                   |
   <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@AsGluingOfNumericalSemigroups(s);     |
+  !gapprompt@gap>| !gapinput@AsGluingOfNumericalSemigroups(s);     |
   [ [ [ 10, 15 ], [ 16 ] ], [ [ 10, 16 ], [ 15 ] ] ]
-  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );|
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );|
   <Numerical semigroup with 8 generators>
-  !gapprompt@gap>| !gapinput@AsGluingOfNumericalSemigroups(s);                        |
+  !gapprompt@gap>| !gapinput@AsGluingOfNumericalSemigroups(s);                        |
   [  ]
 \end{Verbatim}
  }
@@ -1494,7 +1514,7 @@ semigroups containing it. These elements appear in a minimal decomposition of \m
  
 
 \subsection{\textcolor{Chapter }{IsACompleteIntersectionNumericalSemigroup}}
-\logpage{[ 6, 1, 8 ]}\nobreak
+\logpage{[ 6, 2, 2 ]}\nobreak
 \hyperdef{L}{X86BE7CD17E99BE23}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsACompleteIntersectionNumericalSemigroup({\mdseries\slshape s})\index{IsACompleteIntersectionNumericalSemigroup@\texttt{IsA}\-\texttt{Complete}\-\texttt{Intersection}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{IsACompleteIntersectionNumericalSemigroup}
@@ -1505,14 +1525,217 @@ semigroups containing it. These elements appear in a minimal decomposition of \m
 complete intersection, that is, the cardinality of a (any) minimal
 presentation equals its embedding dimension minus one. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 10, 15, 16 );       |
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 10, 15, 16 );       |
   <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@IsACompleteIntersectionNumericalSemigroup(s);|
+  !gapprompt@gap>| !gapinput@IsACompleteIntersectionNumericalSemigroup(s);|
   true
-  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );|
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );|
   <Numerical semigroup with 8 generators>
-  !gapprompt@gap>| !gapinput@IsACompleteIntersectionNumericalSemigroup(s);            |
+  !gapprompt@gap>| !gapinput@IsACompleteIntersectionNumericalSemigroup(s);            |
   false
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber}}
+\logpage{[ 6, 2, 3 ]}\nobreak
+\hyperdef{L}{X86350BCE7D047599}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber@\texttt{Complete}\-\texttt{Intersection}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all
+complete intersection numerical semigroups with frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(57));|
+  34
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsFreeNumericalSemigroup}}
+\logpage{[ 6, 2, 4 ]}\nobreak
+\hyperdef{L}{X78FF54BF79F19AB3}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFreeNumericalSemigroup({\mdseries\slshape s})\index{IsFreeNumericalSemigroup@\texttt{IsFreeNumericalSemigroup}}
+\label{IsFreeNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if the numerical semigroup is
+free in the sense of \cite{BC77}: it is either $\mathbb N$ or the gluing of a copy of $\mathbb N$ with a free numerical semigroup. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsFreeNumericalSemigroup(NumericalSemigroup(10,15,16));|
+  true
+  !gapprompt@gap>| !gapinput@IsFreeNumericalSemigroup(NumericalSemigroup(3,5,7));|
+  false
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{FreeNumericalSemigroupsWithFrobeniusNumber}}
+\logpage{[ 6, 2, 5 ]}\nobreak
+\hyperdef{L}{X86B4BA6A79F734A8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FreeNumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{FreeNumericalSemigroupsWithFrobeniusNumber@\texttt{Free}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{FreeNumericalSemigroupsWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all free
+numerical semigroups with frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(FreeNumericalSemigroupsWithFrobeniusNumber(57));|
+  33
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsTelescopicNumericalSemigroup}}
+\logpage{[ 6, 2, 6 ]}\nobreak
+\hyperdef{L}{X7807E8998663F8C0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsTelescopicNumericalSemigroup({\mdseries\slshape s})\index{IsTelescopicNumericalSemigroup@\texttt{IsTelescopicNumericalSemigroup}}
+\label{IsTelescopicNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if the numerical semigroup is
+telescopic in the sense of \cite{KP95}: it is either $\mathbb N$ or the gluing of $\langle n_e\rangle$ and $s'=\langle n_1/d,\ldots, n_{e-1}/d\rangle$, and $s'$ is again a telescopic numerical semigroup, where $n_1\lt \cdots \lt n_e $ are the minimal generators of \mbox{\texttt{\mdseries\slshape s}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));|
+  false
+  !gapprompt@gap>| !gapinput@IsFreeNumericalSemigroup(NumericalSemigroup(4,11,14));|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{TelescopicNumericalSemigroupsWithFrobeniusNumber}}
+\logpage{[ 6, 2, 7 ]}\nobreak
+\hyperdef{L}{X84475353846384E8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TelescopicNumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{TelescopicNumericalSemigroupsWithFrobeniusNumber@\texttt{Telescopic}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{TelescopicNumericalSemigroupsWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all
+telescopic numerical semigroups with frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));|
+  20
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}}
+\logpage{[ 6, 2, 8 ]}\nobreak
+\hyperdef{L}{X847CD0EF8452F771}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity({\mdseries\slshape s})\index{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity@\texttt{IsNumerical}\-\texttt{Semigroup}\-\texttt{Associated}\-\texttt{Irreducible}\-\texttt{Planar}\-\texttt{Curve}\-\texttt{Singularity}}
+\label{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if the numerical semigroup is
+associated to an irreducible planar curve singularity (\cite{Z86}). These semigroups are telescopic. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,14));|
+  false
+  !gapprompt@gap>| !gapinput@IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,19));|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber}}
+\logpage{[ 6, 2, 9 ]}\nobreak
+\hyperdef{L}{X85BD8C3680F22594}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber({\mdseries\slshape f})\index{NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber@\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{Associated}\-\texttt{Irreducible}\-\texttt{Planar}\-\texttt{Curve}\-\texttt{Singularity}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all
+numerical semigroups associated to irreducible planar curves singularities
+with frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber(57));|
+  7
+\end{Verbatim}
+ }
+
+ }
+
+  
+\section{\textcolor{Chapter }{ Almost-symmetric numerical semigroups }}\logpage{[ 6, 3, 0 ]}
+\hyperdef{L}{X7998FF857F70C9A2}{}
+{
+  A numerical semigroup is almost-symmetric (\cite{BF97}) if its genus is the arithmetic mean of its Frobenius number and type. We use
+a procedure presented in \cite{RGS13} to determine the set of all almost-symmetric numerical semigroups with given
+Frobenius number. In order to do this, we first calculate the set of all
+almost-symmetric numerical semigroups that can be constructed from an
+irreducible numerical semigroup. 
+
+ 
+
+\subsection{\textcolor{Chapter }{AlmostSymmetricNumericalSemigroupsFromIrreducible}}
+\logpage{[ 6, 3, 1 ]}\nobreak
+\hyperdef{L}{X7A81F31479DB5DF2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AlmostSymmetricNumericalSemigroupsFromIrreducible({\mdseries\slshape s})\index{AlmostSymmetricNumericalSemigroupsFromIrreducible@\texttt{Almost}\-\texttt{Symmetric}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{From}\-\texttt{Irreducible}}
+\label{AlmostSymmetricNumericalSemigroupsFromIrreducible}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is an irreducible numerical semigroup. The output is the set of
+almost-symetric numerical semigroups that can be constructed from \mbox{\texttt{\mdseries\slshape s}} by removing some of its generators as explained in \cite{RGS13}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@AlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,11));|
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+  !gapprompt@gap>| !gapinput@List(last,MinimalGeneratingSystemOfNumericalSemigroup);|
+  [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}}
+\logpage{[ 6, 3, 2 ]}\nobreak
+\hyperdef{L}{X847CD0EF8452F771}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity({\mdseries\slshape s})\index{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity@\texttt{IsNumerical}\-\texttt{Semigroup}\-\texttt{Associated}\-\texttt{Irreducible}\-\texttt{Planar}\-\texttt{Curve}\-\texttt{Singularity}}
+\label{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if the numerical semigroup is
+almost symmetric. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsAlmostSymmetricNumericalSemigroup(NumericalSemigroup(5,8,11,14,17));|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber}}
+\logpage{[ 6, 3, 3 ]}\nobreak
+\hyperdef{L}{X7B0DF2FE7D00A9E0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber@\texttt{Almost}\-\texttt{Symmetric}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all almost
+symmetric numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12));|
+  15
+  !gapprompt@gap>| !gapinput@Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(12));|
+  2
 \end{Verbatim}
  }
 
@@ -1571,8 +1794,7 @@ more information see for instance \cite{BDF97}).
 
  Tests if the object \mbox{\texttt{\mdseries\slshape Obj}} is an ideal of a numerical semigroup. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[1..7]+NumericalSemigroup(7,19);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[1..7]+NumericalSemigroup(7,19);;|
   !gapprompt@gap>| !gapinput@IsIdealOfNumericalSemigroup(I);|
   true
   !gapprompt@gap>| !gapinput@IsIdealOfNumericalSemigroup(2);|
@@ -1594,8 +1816,7 @@ more information see for instance \cite{BDF97}).
 
  The output is the minimal system of generators of \mbox{\texttt{\mdseries\slshape I}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);|
   [ 3 ]
 \end{Verbatim}
@@ -1619,8 +1840,7 @@ more information see for instance \cite{BDF97}).
  The output of \texttt{GeneratorsOfIdealOfNumericalSemigroup} is a system of generators of the ideal. If the minimal system of generators is
 known, then it is used as output. \texttt{GeneratorsOfIdealOfNumericalSemigroupNC} always returns the set of generators stored in \mbox{\texttt{\mdseries\slshape I!.generators}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@GeneratorsOfIdealOfNumericalSemigroup(I);|
   [ 3, 5, 9 ]
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);|
@@ -1646,10 +1866,9 @@ known, then it is used as output. \texttt{GeneratorsOfIdealOfNumericalSemigroupN
 
  The output is $S$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@AmbientNumericalSemigroupOfIdeal(I);|
-  <Numerical semigroup with 2 generators>
+  <Modular numerical semigroup satisfying 11x mod 22 <= x >
 \end{Verbatim}
  }
 
@@ -1668,12 +1887,10 @@ known, then it is used as output. \texttt{GeneratorsOfIdealOfNumericalSemigroupN
  The output is a list with the elements in \mbox{\texttt{\mdseries\slshape I}} that are less than or equal to the greatest integer not belonging to the ideal
 plus one. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@SmallElementsOfIdealOfNumericalSemigroup(I);|
   [ 3, 5, 7, 9, 11, 13 ]
-  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@SmallElementsOfIdealOfNumericalSemigroup(J);|
   [ 2, 4, 6, 8, 10 ]
 \end{Verbatim}
@@ -1695,8 +1912,7 @@ plus one.
 
  \mbox{\texttt{\mdseries\slshape  n in I}} can be used for short. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@BelongsToIdealOfNumericalSemigroup(9,J);|
   false
   !gapprompt@gap>| !gapinput@9 in J;|
@@ -1724,10 +1940,8 @@ plus one.
 
  \mbox{\texttt{\mdseries\slshape I + J}} is a synonym of this function. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
+  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@I+J;|
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);|
@@ -1755,8 +1969,7 @@ plus one.
 
  \mbox{\texttt{\mdseries\slshape  n * I}} can be used for short. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@I:=[0,1]+NumericalSemigroup(3,5,7);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=[0,1]+NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(2*I);|
   [ 0, 1, 2 ]
 \end{Verbatim}
@@ -1776,14 +1989,13 @@ plus one.
 
  The output is the ideal $\{ z\in {\mathbb Z}\ |\ z+\mbox{\texttt{\mdseries\slshape J}}\subseteq \mbox{\texttt{\mdseries\slshape I}}\}$. 
 
- \mbox{\texttt{\mdseries\slshape I - J}} is a synonym of this function. The following example appears in \cite{HS04}. 
+ \mbox{\texttt{\mdseries\slshape I - J}} is a synonym of this function. 
+
+ $S-$\mbox{\texttt{\mdseries\slshape J}} is a synonym of $(0+S)-$\mbox{\texttt{\mdseries\slshape J}}, if $S$ is the ambient semigroup of \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}}. The following example appears in \cite{HS04}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@S:=NumericalSemigroup(14, 15, 20, 21, 25);|
-  <Numerical semigroup with 5 generators>
-  !gapprompt@gap>| !gapinput@I:=[0,1]+S;|
-  <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@II:=(0+S)-I;|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@S:=NumericalSemigroup(14, 15, 20, 21, 25);;|
+  !gapprompt@gap>| !gapinput@I:=[0,1]+S;;|
+  !gapprompt@gap>| !gapinput@II:=S-I;;|
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);|
   [ 0, 1 ]
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(II);|
@@ -1807,8 +2019,7 @@ plus one.
 
  The output is the set $\mbox{\texttt{\mdseries\slshape I}}\setminus \mbox{\texttt{\mdseries\slshape J}}$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@S:=NumericalSemigroup(14, 15, 20, 21, 25);|
-  <Numerical semigroup with 5 generators>
+  !gapprompt@gap>| !gapinput@S:=NumericalSemigroup(14, 15, 20, 21, 25);;|
   !gapprompt@gap>| !gapinput@I:=[0,1]+S;|
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@2*I-2*I;|
@@ -1834,12 +2045,10 @@ plus one.
 
  As a synonym to \texttt{TranslationOfIdealOfNumericalSemigroup(k, I)} the expression \texttt{k + I} may be used. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(13,23);|
-  <Numerical semigroup with 2 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(13,23);;|
   !gapprompt@gap>| !gapinput@l:=List([1..6], _ -> Random([8..34]));|
   [ 22, 29, 34, 25, 10, 12 ]
-  !gapprompt@gap>| !gapinput@I:=IdealOfNumericalSemigroup(l, s);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@I:=IdealOfNumericalSemigroup(l, s);;|
   !gapprompt@gap>| !gapinput@It:=TranslationOfIdealOfNumericalSemigroup(7,I);|
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@It2:=7+I;|
@@ -1940,8 +2149,7 @@ plus one.
  If \mbox{\texttt{\mdseries\slshape M}} is the maximal ideal of the numerical semigroup, then the output is the
 numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mbox{\texttt{\mdseries\slshape M}}$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@BlowUpOfNumericalSemigroup(s);|
   <Numerical semigroup with 10 generators>
   !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(last);|
@@ -1969,10 +2177,8 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
 
  Returns the microinvariants of the numerical semigroup \mbox{\texttt{\mdseries\slshape S}} defined in \cite{E01}. For their computation we have used the formula given in \cite{BF06}. The Ap\texttt{\symbol{92}}'ery set of \mbox{\texttt{\mdseries\slshape S}} and its blow up are involved in this computation. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
-  !gapprompt@gap>| !gapinput@bu:=BlowUpOfNumericalSemigroup(s);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
+  !gapprompt@gap>| !gapinput@bu:=BlowUpOfNumericalSemigroup(s);;|
   !gapprompt@gap>| !gapinput@ap:=AperyListOfNumericalSemigroupWRTElement(s,30);;|
   !gapprompt@gap>| !gapinput@apbu:=AperyListOfNumericalSemigroupWRTElement(bu,30);;|
   !gapprompt@gap>| !gapinput@(ap-apbu)/30;|
@@ -1996,8 +2202,7 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
  Returns true if the graded ring associated to $K[[\mbox{\texttt{\mdseries\slshape S}}]]$ is Cohen-Macaulay, and false otherwise. This test is the implementation of the
 algorithm given in \cite{BF06}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupCM(s);|
   false
   !gapprompt@gap>| !gapinput@MicroInvariantsOfNumericalSemigroup(s);|
@@ -2006,11 +2211,10 @@ algorithm given in \cite{BF06}.
   !gapprompt@gap>| !gapinput@List(AperyListOfNumericalSemigroupWRTElement(s,30),|
   !gapprompt@>| !gapinput@w->MaximumDegreeOfElementWRTNumericalSemigroup (w,s));|
   [ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,
-  5, 4, 3, 1, 2 ]
+    5, 4, 3, 1, 2 ]
   !gapprompt@gap>| !gapinput@last=last2;|
   false
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
   !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupCM(s);|
   true
   !gapprompt@gap>| !gapinput@MicroInvariantsOfNumericalSemigroup(s);|
@@ -2033,10 +2237,8 @@ algorithm given in \cite{BF06}.
 
  Computes a canonical ideal of \mbox{\texttt{\mdseries\slshape S}} (\cite{BF06}): $\{ x \in \mathbb{Z} | g-x \not \in S\} $. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);|
-  <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@m:=MaximalIdealOfNumericalSemigroup(s);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@m:=MaximalIdealOfNumericalSemigroup(s);;|
   !gapprompt@gap>| !gapinput@c:=CanonicalIdealOfNumericalSemigroup(s);|
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@(m-c)-c=m;|
@@ -2060,10 +2262,8 @@ algorithm given in \cite{BF06}.
 
  Given two ideals \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} of a numerical semigroup \mbox{\texttt{\mdseries\slshape S}} returns the ideal of the numerical semigroup \mbox{\texttt{\mdseries\slshape S}} which is the intersection of the ideals \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@i:=IdealOfNumericalSemigroup([75,89],s);|
-  <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@j:=IdealOfNumericalSemigroup([115,289],s);|
-  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@i:=IdealOfNumericalSemigroup([75,89],s);;|
+  !gapprompt@gap>| !gapinput@j:=IdealOfNumericalSemigroup([115,289],s);;|
   !gapprompt@gap>| !gapinput@IntersectionIdealsOfNumericalSemigroup(i,j);|
   <Ideal of numerical semigroup>
 \end{Verbatim}
@@ -2091,6 +2291,47 @@ algorithm given in \cite{BF06}.
   true
   !gapprompt@gap>| !gapinput@IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));|
   false
+\end{Verbatim}
+ }
+
+  
+
+\subsection{\textcolor{Chapter }{AperyListOfIdealOfNumericalSemigroupWRTElement}}
+\logpage{[ 7, 1, 23 ]}\nobreak
+\hyperdef{L}{X7D14AA4D7EE12369}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfIdealOfNumericalSemigroupWRTElement({\mdseries\slshape I, n})\index{AperyListOfIdealOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
+\label{AperyListOfIdealOfNumericalSemigroupWRTElement}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Computes the sets of elements $x$ of \mbox{\texttt{\mdseries\slshape I}} such that $x-$\mbox{\texttt{\mdseries\slshape n}} not in the ideal \mbox{\texttt{\mdseries\slshape I}}, where \mbox{\texttt{\mdseries\slshape n}} is supposed to be in the ambient semigroup of \mbox{\texttt{\mdseries\slshape I}}. The element in the $i$th position of the output list (starting in 0) is congruent with $i$ modulo \mbox{\texttt{\mdseries\slshape n}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,11,13);;|
+  !gapprompt@gap>| !gapinput@i:=[12,14]+s;;|
+  !gapprompt@gap>| !gapinput@AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);|
+  [ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AperyListOfIdealOfNumericalSemigroupWRTElement}}
+\logpage{[ 7, 1, 24 ]}\nobreak
+\hyperdef{L}{X7D14AA4D7EE12369}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfIdealOfNumericalSemigroupWRTElement({\mdseries\slshape s})\index{AperyListOfIdealOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
+\label{AperyListOfIdealOfNumericalSemigroupWRTElement}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Computes the Ap{\a'e}ry table associated to the numerical semigroup \mbox{\texttt{\mdseries\slshape s}} as explained in \cite{CJZ}, that is, a list containing the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape s}} with respect to its multiplicity and the Ap{\a'e}ry lists of $kM$ (with $M$ the maximal ideal of \mbox{\texttt{\mdseries\slshape s}}) with respect to the multiplicity of \mbox{\texttt{\mdseries\slshape s}}, for $k\in\{1,\ldots,r\}$, where $r$ is the reduction number of $M$ (see ReductionNumberIdealNumericalSemigroup). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,11,13);;|
+  !gapprompt@gap>| !gapinput@AperyTableOfNumericalSemigroup(s);|
+  [ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], 
+    [ 10, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], 
+    [ 20, 21, 22, 23, 24, 35, 26, 37, 48, 39 ], 
+    [ 30, 31, 32, 33, 34, 35, 36, 37, 48, 39 ], 
+    [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ]
 \end{Verbatim}
  }
 
@@ -2263,6 +2504,31 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 \end{Verbatim}
  }
 
+ 
+
+\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithFrobeniusNumber}}
+\logpage{[ 8, 2, 4 ]}\nobreak
+\hyperdef{L}{X85CD144384FD55F3}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{ArfNumericalSemigroupsWithFrobeniusNumber@\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{ArfNumericalSemigroupsWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all Arf
+numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ArfNumericalSemigroupsWithFrobeniusNumber(10);|
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+    <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+    <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+  !gapprompt@gap>| !gapinput@List(last,MinimalGeneratingSystemOfNumericalSemigroup);|
+  [ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
+    [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
+    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+    [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
+\end{Verbatim}
+ }
+
  }
 
   
@@ -2311,10 +2577,35 @@ with greatest common divisor equal to one (see \cite{RGbook}).
 
  Returns the saturated closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15, 1$|
+  !gapprompt@gap>| !gapinput@SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));|
   <Numerical semigroup>
-  !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfNumericalSemigroup(last);                        |
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfNumericalSemigroup(last);|
   [ 8 .. 15 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{SaturatedNumericalSemigroupsWithFrobeniusNumber}}
+\logpage{[ 8, 3, 3 ]}\nobreak
+\hyperdef{L}{X7CC07D997880E298}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SaturatedNumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{SaturatedNumericalSemigroupsWithFrobeniusNumber@\texttt{Saturated}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{SaturatedNumericalSemigroupsWithFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all
+Saturated numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@SaturatedNumericalSemigroupsWithFrobeniusNumber(10);|
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+    <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+    <Numerical semigroup>, <Numerical semigroup> ]
+  !gapprompt@gap>| !gapinput@ List(last,MinimalGeneratingSystemOfNumericalSemigroup);|
+  [ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
+    [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], 
+    [ 11 .. 21 ] ]
 \end{Verbatim}
  }
 
@@ -2323,8 +2614,8 @@ with greatest common divisor equal to one (see \cite{RGbook}).
  }
 
  
-\chapter{\textcolor{Chapter }{ Catenary and Tame degrees of numerical semigroups }}\logpage{[ 9, 0, 0 ]}
-\hyperdef{L}{X7C76B03A84BA7574}{}
+\chapter{\textcolor{Chapter }{ Nonunique invariants for factorizations in numerical semigroups }}\logpage{[ 9, 0, 0 ]}
+\hyperdef{L}{X7B6F914879CD505F}{}
 {
    
 \section{\textcolor{Chapter }{ Factorizations in Numerical Semigroups }}\logpage{[ 9, 1, 0 ]}
@@ -2343,8 +2634,26 @@ with greatest common divisor equal to one (see \cite{RGbook}).
  The basic properties of these constants can be found in \cite{GHKb}. The algorithm used to compute the catenary and tame degree is an adaptation
 of the algorithms appearing in \cite{CGLPR} for numerical semigroup (see \cite{CGL}). The computation of the elascitiy of a numerical semigroup reduces to $m/n$ with $m$ the multiplicity of the semigroup and $n$ its largest minimal generator (see \cite{CHM06} or \cite{GHKb}). 
 
-\subsection{\textcolor{Chapter }{FactorizationsElementWRTNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{FactorizationsIntegerWRTList}}
 \logpage{[ 9, 1, 1 ]}\nobreak
+\hyperdef{L}{X8429AECF78EE7EAB}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FactorizationsIntegerWRTList({\mdseries\slshape n, ls})\index{FactorizationsIntegerWRTList@\texttt{FactorizationsIntegerWRTList}}
+\label{FactorizationsIntegerWRTList}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a list of integers and \mbox{\texttt{\mdseries\slshape n}} an integer. The output is the set of factorizations of \mbox{\texttt{\mdseries\slshape n}} in terms of the elements in the list \mbox{\texttt{\mdseries\slshape ls}}. This function uses RestrictedPartitions. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@FactorizationsIntegerWRTList(100,[11,13,15,19]);|
+  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+    [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{FactorizationsElementWRTNumericalSemigroup}}
+\logpage{[ 9, 1, 2 ]}\nobreak
 \hyperdef{L}{X78C6D3BF7C7C2760}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FactorizationsElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{FactorizationsElementWRTNumericalSemigroup@\texttt{Factorizations}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{FactorizationsElementWRTNumericalSemigroup}
@@ -2356,15 +2665,55 @@ of the algorithms appearing in \cite{CGLPR} for numerical semigroup (see \cite{C
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(101,113,196,272,278,286);|
   <Numerical semigroup with 6 generators>
   !gapprompt@gap>| !gapinput@FactorizationsElementWRTNumericalSemigroup(1100,s);|
-  [ [ 0, 0, 0, 2, 2, 0 ], [ 0, 2, 3, 0, 0, 1 ], [ 0, 8, 1, 0, 0, 0 ],
-    [ 5, 1, 1, 0, 0, 1 ] ]
+  [ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ], 
+    [ 0, 2, 3, 0, 0, 1 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{LengthsOfFactorizationsIntegerWRTList}}
+\logpage{[ 9, 1, 3 ]}\nobreak
+\hyperdef{L}{X7D4CC092859AF81F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LengthsOfFactorizationsIntegerWRTList({\mdseries\slshape n, ls})\index{LengthsOfFactorizationsIntegerWRTList@\texttt{Lengths}\-\texttt{Of}\-\texttt{Factorizations}\-\texttt{Integer}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{List}}
+\label{LengthsOfFactorizationsIntegerWRTList}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a list of integers and \mbox{\texttt{\mdseries\slshape n}} an integer. The output is the set of lengths of the factorizations of \mbox{\texttt{\mdseries\slshape n}} in terms of the elements in \mbox{\texttt{\mdseries\slshape ls}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);|
+  [ 6, 8 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{RClassesOfSetOfFactorizations}}
+\logpage{[ 9, 1, 4 ]}\nobreak
+\hyperdef{L}{X813D2A3A83916A36}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RClassesOfSetOfFactorizations({\mdseries\slshape ls})\index{RClassesOfSetOfFactorizations@\texttt{RClassesOfSetOfFactorizations}}
+\label{RClassesOfSetOfFactorizations}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a set of factorizations (a list of lists of nonnegative integers with the
+same lenght). The output is the set of $\mathcal R$-classes of this set of factorizations as defined in Chapter 7 of \cite{RGbook}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,11,19,23);;|
+  !gapprompt@gap>| !gapinput@BettiElementsOfNumericalSemigroup(s);|
+  [ 30, 33, 42, 57, 69 ]
+  !gapprompt@gap>| !gapinput@FactorizationsElementWRTNumericalSemigroup(69,s);|
+  [ [ 5, 0, 1, 0 ], [ 2, 1, 2, 0 ], [ 0, 0, 0, 3 ] ]
+  !gapprompt@gap>| !gapinput@RClassesOfSetOfFactorizations(last);|
+  [ [ [ 2, 1, 2, 0 ], [ 5, 0, 1, 0 ] ], [ [ 0, 0, 0, 3 ] ] ]
 \end{Verbatim}
  }
 
  
 
 \subsection{\textcolor{Chapter }{LengthsOfFactorizationsElementWRTNumericalSemigroup}}
-\logpage{[ 9, 1, 2 ]}\nobreak
+\logpage{[ 9, 1, 5 ]}\nobreak
 \hyperdef{L}{X7FDE4F94870951B1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LengthsOfFactorizationsElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{LengthsOfFactorizationsElementWRTNumericalSemigroup@\texttt{Lengths}\-\texttt{Of}\-\texttt{Factorizations}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{LengthsOfFactorizationsElementWRTNumericalSemigroup}
@@ -2384,7 +2733,7 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
  
 
 \subsection{\textcolor{Chapter }{ElasticityOfFactorizationsElementWRTNumericalSemigroup}}
-\logpage{[ 9, 1, 3 ]}\nobreak
+\logpage{[ 9, 1, 6 ]}\nobreak
 \hyperdef{L}{X85C2987C7827D18D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ElasticityOfFactorizationsElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{ElasticityOfFactorizationsElementWRTNumericalSemigroup@\texttt{Elasticity}\-\texttt{Of}\-\texttt{Factorizations}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ElasticityOfFactorizationsElementWRTNumericalSemigroup}
@@ -2404,7 +2753,7 @@ length of the factorizations of \mbox{\texttt{\mdseries\slshape n}} in terms of 
  
 
 \subsection{\textcolor{Chapter }{ElasticityOfNumericalSemigroup}}
-\logpage{[ 9, 1, 4 ]}\nobreak
+\logpage{[ 9, 1, 7 ]}\nobreak
 \hyperdef{L}{X7FE2D6F77BE96716}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ElasticityOfNumericalSemigroup({\mdseries\slshape S})\index{ElasticityOfNumericalSemigroup@\texttt{ElasticityOfNumericalSemigroup}}
 \label{ElasticityOfNumericalSemigroup}
@@ -2422,8 +2771,27 @@ length of the factorizations of \mbox{\texttt{\mdseries\slshape n}} in terms of 
 
  
 
+\subsection{\textcolor{Chapter }{DeltaSetOfSetOfIntegers}}
+\logpage{[ 9, 1, 8 ]}\nobreak
+\hyperdef{L}{X84667349840AF1F9}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetOfSetOfIntegers({\mdseries\slshape ls})\index{DeltaSetOfSetOfIntegers@\texttt{DeltaSetOfSetOfIntegers}}
+\label{DeltaSetOfSetOfIntegers}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is list of integers. The output is the Delta set of the elements in \mbox{\texttt{\mdseries\slshape ls}}, that is, the set of differences of consecutive elements in the list. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);|
+  [ 6, 8 ]
+  !gapprompt@gap>| !gapinput@DeltaSetOfSetOfIntegers(last);|
+  [ 2 ]
+\end{Verbatim}
+ }
+
+ 
+
 \subsection{\textcolor{Chapter }{DeltaSetOfFactorizationsElementWRTNumericalSemigroup}}
-\logpage{[ 9, 1, 5 ]}\nobreak
+\logpage{[ 9, 1, 9 ]}\nobreak
 \hyperdef{L}{X8384DBFE7D82A634}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetOfFactorizationsElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{DeltaSetOfFactorizationsElementWRTNumericalSemigroup@\texttt{Delta}\-\texttt{Set}\-\texttt{Of}\-\texttt{Factorizations}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{DeltaSetOfFactorizationsElementWRTNumericalSemigroup}
@@ -2442,7 +2810,7 @@ length of the factorizations of \mbox{\texttt{\mdseries\slshape n}} in terms of 
  
 
 \subsection{\textcolor{Chapter }{MaximumDegreeOfElementWRTNumericalSemigroup}}
-\logpage{[ 9, 1, 6 ]}\nobreak
+\logpage{[ 9, 1, 10 ]}\nobreak
 \hyperdef{L}{X7E3ED34D78F3A8CA}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaximumDegreeOfElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{MaximumDegreeOfElementWRTNumericalSemigroup@\texttt{Maximum}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MaximumDegreeOfElementWRTNumericalSemigroup}
@@ -2461,8 +2829,29 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
 
  
 
+\subsection{\textcolor{Chapter }{CatenaryDegreeOfSetOfFactorizations}}
+\logpage{[ 9, 1, 11 ]}\nobreak
+\hyperdef{L}{X7E8A56F3810F1769}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfSetOfFactorizations({\mdseries\slshape ls})\index{CatenaryDegreeOfSetOfFactorizations@\texttt{CatenaryDegreeOfSetOfFactorizations}}
+\label{CatenaryDegreeOfSetOfFactorizations}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a set of factorizations (a list of lists of nonnegative integers with the
+same lenght). The output is the catenary degree of this set of factorizations. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@FactorizationsIntegerWRTList(100,[11,13,15,19]);|
+  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+    [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+  !gapprompt@gap>| !gapinput@CatenaryDegreeOfSetOfFactorizations(last);|
+  5
+\end{Verbatim}
+ }
+
+ 
+
 \subsection{\textcolor{Chapter }{CatenaryDegreeOfNumericalSemigroup}}
-\logpage{[ 9, 1, 7 ]}\nobreak
+\logpage{[ 9, 1, 12 ]}\nobreak
 \hyperdef{L}{X7FAF204E85D9C21B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{CatenaryDegreeOfNumericalSemigroup@\texttt{CatenaryDegreeOfNumericalSemigroup}}
 \label{CatenaryDegreeOfNumericalSemigroup}
@@ -2481,7 +2870,7 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
  
 
 \subsection{\textcolor{Chapter }{CatenaryDegreeOfElementInNumericalSemigroup}}
-\logpage{[ 9, 1, 8 ]}\nobreak
+\logpage{[ 9, 1, 13 ]}\nobreak
 \hyperdef{L}{X812500217B183FC3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{CatenaryDegreeOfElementInNumericalSemigroup@\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{CatenaryDegreeOfElementInNumericalSemigroup}
@@ -2499,8 +2888,29 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
 
  
 
+\subsection{\textcolor{Chapter }{TameDegreeOfSetOfFactorizations}}
+\logpage{[ 9, 1, 14 ]}\nobreak
+\hyperdef{L}{X86D5A10183C150FC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfSetOfFactorizations({\mdseries\slshape ls})\index{TameDegreeOfSetOfFactorizations@\texttt{TameDegreeOfSetOfFactorizations}}
+\label{TameDegreeOfSetOfFactorizations}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a set of factorizations (a list of lists of nonnegative integers with the
+same lenght). The output is the tame degree of this set of factorizations. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@FactorizationsIntegerWRTList(100,[11,13,15,19]);|
+  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ],
+    [ 1, 1, 0, 4 ] ]
+  !gapprompt@gap>| !gapinput@TameDegreeOfSetOfFactorizations(last);|
+  4
+\end{Verbatim}
+ }
+
+ 
+
 \subsection{\textcolor{Chapter }{TameDegreeOfNumericalSemigroup}}
-\logpage{[ 9, 1, 9 ]}\nobreak
+\logpage{[ 9, 1, 15 ]}\nobreak
 \hyperdef{L}{X860BDF5B85975B73}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{TameDegreeOfNumericalSemigroup@\texttt{TameDegreeOfNumericalSemigroup}}
 \label{TameDegreeOfNumericalSemigroup}
@@ -2519,7 +2929,7 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
  
 
 \subsection{\textcolor{Chapter }{TameDegreeOfElementInNumericalSemigroup}}
-\logpage{[ 9, 1, 10 ]}\nobreak
+\logpage{[ 9, 1, 16 ]}\nobreak
 \hyperdef{L}{X8738B4F87E782ED2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{TameDegreeOfElementInNumericalSemigroup@\texttt{Tame}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{TameDegreeOfElementInNumericalSemigroup}
@@ -2538,7 +2948,7 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
  
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfElementInNumericalSemigroup}}
-\logpage{[ 9, 1, 11 ]}\nobreak
+\logpage{[ 9, 1, 17 ]}\nobreak
 \hyperdef{L}{X86B0E91684B39839}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{OmegaPrimalityOfElementInNumericalSemigroup@\texttt{Omega}\-\texttt{Primality}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{OmegaPrimalityOfElementInNumericalSemigroup}
@@ -2549,7 +2959,7 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,11,13);        |
   <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@OmegaPrimalityOfElementinNumericalSemigroup(100,s);|
+  !gapprompt@gap>| !gapinput@OmegaPrimalityOfElementInNumericalSemigroup(100,s);|
   13
 \end{Verbatim}
  }
@@ -2557,7 +2967,7 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
  
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfNumericalSemigroup}}
-\logpage{[ 9, 1, 12 ]}\nobreak
+\logpage{[ 9, 1, 18 ]}\nobreak
 \hyperdef{L}{X7919066C7A7265E1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfNumericalSemigroup({\mdseries\slshape n, S})\index{OmegaPrimalityOfNumericalSemigroup@\texttt{OmegaPrimalityOfNumericalSemigroup}}
 \label{OmegaPrimalityOfNumericalSemigroup}
@@ -2611,7 +3021,6 @@ rational numbers are silently transformed into irreducible fractions.)
   [ 4/5, 1, 3/2, 5/3, 7/4, 9/5, 11/6, 13/7, 15/8, 17/9, 19/10, 21/11, 23/12,
     25/13, 27/14, 29/15, 31/16, 33/17, 35/18, 37/19, 39/20, 41/21, 43/22,
     45/23, 47/24, 49/25, 51/26, 53/27 ]
-  
 \end{Verbatim}
  }
 
@@ -2673,6 +3082,29 @@ the fact that positions in a list must be positive (not a 0).
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@RepresentsPeriodicSubAdditiveFunction([1,2,3,4,0]);|
   true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsListOfIntegersNS}}
+\logpage{[ "A", 2, 2 ]}\nobreak
+\hyperdef{L}{X7DFEDA6B87BB2E1F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsListOfIntegersNS({\mdseries\slshape L})\index{IsListOfIntegersNS@\texttt{IsListOfIntegersNS}}
+\label{IsListOfIntegersNS}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Detects wheter \mbox{\texttt{\mdseries\slshape L}} is a nonempty list of integers. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@IsListOfIntegersNS([1,-1,0]);|
+  true
+  !gapprompt@gap>| !gapinput@IsListOfIntegersNS(2);|
+  false
+  !gapprompt@gap>| !gapinput@IsListOfIntegersNS([[2],3]);|
+  false
+  !gapprompt@gap>| !gapinput@IsListOfIntegersNS([]);|
+  false
 \end{Verbatim}
  }
 
@@ -2809,8 +3241,7 @@ objects.
  Returns true if the graded ring associated to $K[[\mbox{\texttt{\mdseries\slshape S}}]]$ is Buchsbaum, and false otherwise. This test is the implementation of the
 algorithm given in \cite{DA-M-M}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);|
   true
 \end{Verbatim}
@@ -2830,12 +3261,10 @@ algorithm given in \cite{DA-M-M}.
 
  Test for the M-Purity of the numerical semigroup S \mbox{\texttt{\mdseries\slshape S}}. This test is based on \cite{Br}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@IsMpureNumericalSemigroup(s);                                       |
   false
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
   !gapprompt@gap>| !gapinput@IsMpureNumericalSemigroup(s); |
   true
 \end{Verbatim}
@@ -2855,12 +3284,10 @@ algorithm given in \cite{DA-M-M}.
 
  Test for the purity of the numerical semigroup S \mbox{\texttt{\mdseries\slshape S}}. This test is based on \cite{Br}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@IsPureNumericalSemigroup(s);                                       |
   false
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
   !gapprompt@gap>| !gapinput@IsPureNumericalSemigroup(s); |
   true
 \end{Verbatim}
@@ -2881,14 +3308,135 @@ algorithm given in \cite{DA-M-M}.
  Returns true if the graded ring associated to $K[[\mbox{\texttt{\mdseries\slshape S}}]]$ is Gorenstein, and false otherwise. This test is the implementation of the
 algorithm given in \cite{DA-M-S}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);|
-  <Numerical semigroup with 10 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupGorenstein(s);|
   false
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);|
-  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
   !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupGorenstein(s);|
   true
+\end{Verbatim}
+ }
+
+  
+
+\subsection{\textcolor{Chapter }{IsGradedAssociatedRingNumericalSemigroupCI}}
+\logpage{[ "C", 1, 5 ]}\nobreak
+\hyperdef{L}{X7800C5D68641E2B7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGradedAssociatedRingNumericalSemigroupCI({\mdseries\slshape S})\index{IsGradedAssociatedRingNumericalSemigroupCI@\texttt{IsGraded}\-\texttt{Associated}\-\texttt{Ring}\-\texttt{Numerical}\-\texttt{SemigroupCI}}
+\label{IsGradedAssociatedRingNumericalSemigroupCI}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Returns true if the Complete Intersection property of the associated graded
+ring of a numerical semigroup ring associated to $K[[\mbox{\texttt{\mdseries\slshape S}}]]$, and false otherwise. This test is the implementation of the algorithm given
+in \cite{DAMSwhen}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
+  !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupCI(s);|
+  false
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@IsGradedAssociatedRingNumericalSemigroupCI(s);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsAperySetGammaRectangular}}
+\logpage{[ "C", 1, 6 ]}\nobreak
+\hyperdef{L}{X80CAA1FA7F6FF4FD}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAperySetGammaRectangular({\mdseries\slshape S})\index{IsAperySetGammaRectangular@\texttt{IsAperySetGammaRectangular}}
+\label{IsAperySetGammaRectangular}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Test for the Gamma-Rectangularity of the Ap{\a'e}ry Set of a numerical
+semigroup. This test is the implementation of the algorithm given in \cite{DAMSClasses}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
+  !gapprompt@gap>| !gapinput@IsAperySetGammaRectangular(s);|
+  false
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@IsAperySetGammaRectangular(s);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsAperySetBetaRectangular}}
+\logpage{[ "C", 1, 7 ]}\nobreak
+\hyperdef{L}{X7E6E262C7C421635}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAperySetBetaRectangular({\mdseries\slshape S})\index{IsAperySetBetaRectangular@\texttt{IsAperySetBetaRectangular}}
+\label{IsAperySetBetaRectangular}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Test for the Beta-Rectangularity of the Ap{\a'e}ry Set of a numerical
+semigroup. This test is the implementation of the algorithm given in \cite{DAMSClasses}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
+  !gapprompt@gap>| !gapinput@IsAperySetBetaRectangular(s);|
+  false
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@IsAperySetBetaRectangular(s);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsAperySetAlphaRectangular}}
+\logpage{[ "C", 1, 8 ]}\nobreak
+\hyperdef{L}{X86F52FB67F76D2CB}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAperySetAlphaRectangular({\mdseries\slshape S})\index{IsAperySetAlphaRectangular@\texttt{IsAperySetAlphaRectangular}}
+\label{IsAperySetAlphaRectangular}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Test for the Alpha-Rectangularity of the Ap{\a'e}ry Set of a numerical
+semigroup. This test is the implementation of the algorithm given in \cite{DAMSClasses}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
+  !gapprompt@gap>| !gapinput@IsAperySetAlphaRectangular(s);|
+  false
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@IsAperySetAlphaRectangular(s);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{TypeSequenceOfNumericalSemigroup}}
+\logpage{[ "C", 1, 9 ]}\nobreak
+\hyperdef{L}{X7D2A75F086A5466B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TypeSequenceOfNumericalSemigroup({\mdseries\slshape S})\index{TypeSequenceOfNumericalSemigroup@\texttt{TypeSequenceOfNumericalSemigroup}}
+\label{TypeSequenceOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Computes the type sequence of a numerical semigroup. This test is the
+implementation of the algorithm given in \cite{BDF97}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
+  !gapprompt@gap>| !gapinput@TypeSequenceOfNumericalSemigroup(s);|
+  [ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1, 
+    1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 
+    1, 1, 1 ]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@TypeSequenceOfNumericalSemigroup(s);|
+  [ 1, 1, 1, 1, 1, 1, 1 ]
 \end{Verbatim}
  }
 

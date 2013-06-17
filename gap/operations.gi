@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: operations.gi,v 0.971 $
+#H  @(#)$Id: operations.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado, 
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais

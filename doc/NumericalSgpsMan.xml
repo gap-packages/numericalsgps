@@ -6,7 +6,7 @@
 <Book Name="NumericalSgps">
 
 <TitlePage>
-  <Title>Numerical Semigroups</Title>
+  <Title><Package>numericalsgps</Package>, a package for numerical semigroups</Title>
   <Version>( Version <#Include SYSTEM "../version"> )
   </Version>
   <Author> Manuel Delgado
@@ -20,7 +20,7 @@
   <Author> José João Morais
  <!--   <Email>josejoao@fc.up.pt</Email> -->
   </Author>
-  <Copyright> &copyright; 2005--2011 Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain<P/>
+  <Copyright> &copyright; 2005--2013 Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain<P/>
           <!--    We adopt the copyright regulations of &GAP; as detailed in the
               copyright notice in the &GAP; manual. -->
  <E>Numericalsgps</E> is free software; you can redistribute it and/or modify it under the terms of the 
@@ -36,18 +36,19 @@ Porto</E> (CMUP), financed by FCT (Portugal) through the programs POCTI
 Operacional Sociedade da Informação), with national and European Community
 structural funds and a sabbatical grant of FCT.
 <P/>
-The second author was supported by the projects MTM2004-01446, MTM2010-15595, FQM-343, and FQM-5849, 
+The second author was supported by the projects MTM2004-01446, FQM-343, 
 and FEDER founds.
 <P/>
 The third author acknowledges financial support of FCT and the POCTI program
 through a scholarship given by <E>Centro de Matemática da Universidade do Porto</E>.
 <P/>
-The authors wish to thank J. I. García-García for many helpful discussions
-and for helping in the programming of preliminary versions of some functions.
+The authors wish to thank J. I. García-García and Alfredo Sánchez-R. Navarro for many helpful discussions
+and for helping in the programming of preliminary versions of some functions, and also to A. Sammartano for his 
+contributions (see Contributions Chapter).
 <P/>
 <P/>
 <P/>
-Concerning the mantainment:
+<B>Concerning the mantainment:</B>
 <P/>
 <P/>
 The first author was/is (partially) supported by the FCT project PTDC/MAT/65481/2006 and also by the
@@ -57,7 +58,7 @@ Porto</E> (CMUP), funded by the European Regional Development Fund through the p
 
 <P/>
 <P/>
-The second author was/is supported by the projects MTM2007-62346 and MTM2010-15595.
+The second author was/is supported by the projects MTM2007-62346, MTM2010-15595, and FQM-5849.
 
 </Acknowledgements>
 
@@ -139,7 +140,8 @@ If you have predominantly used the functions in the Appendix, contributed by oth
             </Heading>
 
 <#Include SYSTEM "Irreducible_numerical_semigroups.xml">
-
+<#Include SYSTEM "Complete_Intersections.xml">
+<#Include SYSTEM "Almost_symmetric.xml">
 </Chapter>
 
 
@@ -167,7 +169,7 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 <Chapter>
 	<Heading>
-		Catenary and Tame degrees of numerical semigroups
+		Nonunique invariants for factorizations in numerical semigroups
 	</Heading>
 
 	<#Include SYSTEM "catenary-tame.xml">

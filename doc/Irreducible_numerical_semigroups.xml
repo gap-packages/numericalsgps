@@ -15,14 +15,15 @@
                 numerical semigroups with odd (respectively even) Frobenius number.
                 <P/>
                 
-                In <Cite Key="RGGJ03"></Cite> it is shown that a numerical semigroup is irreducible if and 
+                In <Cite Key="RGGJ03"></Cite> it is shown that a nontrivial numerical semigroup is irreducible if and 
                 only if it has only one special gap. We use this characterization.
                 <P/>
                 
                 In this section we show how to construct the set of all numerical semigroups with a 
-                given Frobenius number. First we construct an irreducible numerical semigroup with 
+                given Frobenius number. In old versions of the package, we first constructed an irreducible numerical semigroup with 
                 the given Frobenius number (as explained in <Cite Key="RGS04"></Cite>), and then 
-                we construct the rest from it. That is why we have separated both functions.
+                we constructed the rest from it. That is why we separated both functions. 
+				The present version uses a faster procedure presented in <Cite Key="BR13"></Cite>.
                 <P/>
                 
                 Every numerical semigroup can be expressed as an intersection of irreducible 
@@ -30,7 +31,9 @@
                 with <M>S_i</M> irreducible numerical semigroups, and no factor can be removed, then
                 we say that this decomposition is minimal. Minimal decompositions can be computed by 
                 using Algorithm 26 in <Cite Key="RGGJ03"></Cite>.
-                
+                <P/>
+
+
                 <ManSection>
                     <Func Arg="s" Name="IsIrreducibleNumericalSemigroup"></Func>
                     <Description>
@@ -109,44 +112,10 @@ gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
                         decomposition of <A>s</A> as intersection into irreducibles. 
                         <Example><![CDATA[
 gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
-[ <Numerical semigroup>, <Numerical semigroup> ]
+[ <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 4 generators> ]
 ]]></Example>          
                     </Description>
                 </ManSection>
                 
-                 <ManSection>
-                    <Func Arg="s" Name="AsGluingOfNumericalSemigroups"></Func>
-                    <Description>
-                        <A>s</A> is a numerical semigroup. Returns all partitions <M>\{A_1,A_2\}</M> of the minimal generating set of <A>s</A> such
-that <A>s</A> is a gluing of <M>\leftangle A_1\rightangle</M> and <M>\leftangle A_2\rightangle</M> by <M>gcd(A_1)gcd(A_2)</M> 
-                        <Example><![CDATA[
-gap> s := NumericalSemigroup( 10, 15, 16 );                   
-<Numerical semigroup with 3 generators>
-gap> AsGluingOfNumericalSemigroups(s);     
-[ [ [ 10, 15 ], [ 16 ] ], [ [ 10, 16 ], [ 15 ] ] ]
-gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
-<Numerical semigroup with 8 generators>
-gap> AsGluingOfNumericalSemigroups(s);                        
-[  ]
-]]></Example>          
-                    </Description>
-                </ManSection>
-
-                <ManSection>
-                    <Func Arg="s" Name="IsACompleteIntersectionNumericalSemigroup"></Func>
-                    <Description>
-                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is a complete intersection, that is, the cardinality of a (any) minimal presentation equals its embedding dimension minus one.
-                        <Example><![CDATA[
-gap> s := NumericalSemigroup( 10, 15, 16 );       
-<Numerical semigroup with 3 generators>
-gap> IsACompleteIntersectionNumericalSemigroup(s);
-true
-gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
-<Numerical semigroup with 8 generators>
-gap> IsACompleteIntersectionNumericalSemigroup(s);            
-false
-]]></Example>          
-                    </Description>
-                </ManSection>
-               
             </Section>

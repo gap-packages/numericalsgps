@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: preliminaries.gi,v 0.971 $
+#H  @(#)$Id: preliminaries.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -106,9 +106,12 @@ InstallGlobalFunction(IsBezoutSequence, function(L)
     local i;
 
     if not (IsList(L) and ForAll(L, x -> IsRat(x))) then
-        Error("The argument must be a list of rational numbers");
+        return false; # Error("The argument must be a list of rational numbers");
     fi;
 
+	if L=[] or Minimum(L)<0 then
+		return false;
+	fi;
     for i in [1..Length(L)-1] do
         if NumeratorRat(L[i+1])*DenominatorRat(L[i])-
            NumeratorRat(L[i])*DenominatorRat(L[i+1]) <> 1 then
@@ -134,14 +137,18 @@ end);
 InstallGlobalFunction(RepresentsPeriodicSubAdditiveFunction, function(L)
     local i, j, k, m;
 
-    if not IsList(L) then
-        Error("The argument must be a list");
+    if not IsListOfIntegersNS(L) then
+        return false; #Error("The argument must be a non empty list of integers");
     fi;
 
     m := Length(L);
     if not L[m] = 0 then
         return false;
     fi;
+
+	if Minimum(L)<0 then
+		return false;
+	fi;
 
     for i in [1..m] do
         for j in [1..m] do
@@ -172,10 +179,13 @@ end);
 InstallGlobalFunction(RepresentsSmallElementsOfNumericalSemigroup, function(L)
     local L0, n, m, sum ,p;
 
-    if not IsList(L) then
-        Error("The argument must be a list");
+    if not IsListOfIntegersNS(L) then
+        return false; #Error("The argument must be a nonempty list of integers");
     fi;
 
+	if Minimum(L)<0 then
+		return false;
+	fi;
 
     if not Set(L) = L or not 0 in L then
         return false;
@@ -217,7 +227,27 @@ InstallGlobalFunction(CeilingOfRational, function(R)
     fi;
 end);
 
-
+#############################################################################
+##
+#F  IsListOfIntegersNS(list)
+##
+##  Tests whether L is a nonemty list integers.
+##
+#############################################################################
+InstallGlobalFunction(IsListOfIntegersNS, function(list)
+	if not(IsList(list)) then 
+		return false;
+	fi;
+	
+	if list <> [] then
+		if IsInt(list[1]) then
+			if IsHomogeneousList(list) then
+				return true;
+			fi;
+		fi;
+	fi;
+	return false;
+end);
 
 #############################################################################
 ##
@@ -229,9 +259,15 @@ end);
 InstallGlobalFunction(IsAperyListOfNumericalSemigroup, function(L)
     local   m,  firstToLastPosition,  K,  i,  j,  k;
 
-    if not (IsList(L) and ForAll(L, i -> IsInt(i))) then
-        Error("The argument of IsAperyListOfNumericalSemigroup must be a list of integers\n");
+    #if not (IsList(L) and ForAll(L, i -> IsInt(i))) then
+	if not(IsListOfIntegersNS(L)) then
+        return false; #Error("The argument of IsAperyListOfNumericalSemigroup must be a nonempty list of integers\n");
     fi;
+
+	if Minimum(L)<0 then
+		return false;
+	fi;
+
     m := Length(L);
 
     #####################################################################

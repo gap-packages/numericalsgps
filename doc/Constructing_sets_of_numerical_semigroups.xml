@@ -22,10 +22,10 @@
                         containing it.           
                         <Example><![CDATA[
 gap> OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));
-[ <Numerical semigroup with 1 generators>, <Numerical semigroup>,
-  <Numerical semigroup>, <Numerical semigroup with 3 generators> ]
+[ <The numerical semigroup N>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup with 3 generators> ]
 gap> List(last,s->MinimalGeneratingSystemOfNumericalSemigroup(s));
-[ [ 1 ], [ 3, 4, 5 ], [ 2, 3 ], [ 3, 5, 7 ] ]
+[ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
 ]]></Example>          
                     </Description>
                 </ManSection>
@@ -76,12 +76,11 @@ gap> NumericalSemigroupsWithGenus(5);
   <Numerical semigroup with 4 generators>, 
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators>, 
-  <Numerical semigroup with 2 generators> ]
+  <Modular numerical semigroup satisfying 11x mod 22 <= x > ]
 gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
-
 ]]></Example>          
                     </Description>
                 </ManSection>

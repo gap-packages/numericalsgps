@@ -17,8 +17,7 @@
 
 
                         <Example><![CDATA[
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
-<Numerical semigroup with 10 generators>
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
 true
 ]]></Example>
@@ -38,12 +37,10 @@ true
                         <Cite Key="Br"></Cite>.
 
                         <Example><![CDATA[
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
-<Numerical semigroup with 10 generators>
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsMpureNumericalSemigroup(s);                                       
 false
-gap> s:=NumericalSemigroup(4,6,11);
-<Numerical semigroup with 3 generators>
+gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsMpureNumericalSemigroup(s); 
 true
 ]]></Example>
@@ -64,12 +61,10 @@ true
                         <Cite Key="Br"></Cite>.
 
                         <Example><![CDATA[
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
-<Numerical semigroup with 10 generators>
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsPureNumericalSemigroup(s);                                       
 false
-gap> s:=NumericalSemigroup(4,6,11);
-<Numerical semigroup with 3 generators>
+gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsPureNumericalSemigroup(s); 
 true
 ]]></Example>
@@ -91,14 +86,126 @@ true
 
 
                         <Example><![CDATA[
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);
-<Numerical semigroup with 10 generators>
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
 false
-gap> s:=NumericalSemigroup(4,6,11);
-<Numerical semigroup with 3 generators>
+gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
 true
+]]></Example>
+                    </Description>
+                </ManSection>
+
+<!--the functions below first appeared in version 0.98-->
+<ManSection>
+                    <Func Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupCI"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Returns true if the Complete Intersection property of the associated graded ring of a numerical semigroup ring associated to <M>K[[<A>S</A>]]</M>, and false otherwise.
+                        This test is the implementation of the algorithm given in
+                        <Cite Key="DAMSwhen"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+<ManSection>
+                    <Func Arg="S" Name="IsAperySetGammaRectangular"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup.
+                        This test is the implementation of the algorithm given in
+                        <Cite Key="DAMSClasses"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetGammaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetGammaRectangular(s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+<ManSection>
+                    <Func Arg="S" Name="IsAperySetBetaRectangular"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Test for the Beta-Rectangularity of the Apéry Set of a numerical semigroup.
+                        This test is the implementation of the algorithm given in
+                        <Cite Key="DAMSClasses"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetBetaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetBetaRectangular(s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+<ManSection>
+                    <Func Arg="S" Name="IsAperySetAlphaRectangular"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                        Test for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup.
+                        This test is the implementation of the algorithm given in
+                        <Cite Key="DAMSClasses"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetAlphaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetAlphaRectangular(s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+<ManSection>
+                    <Func Arg="S" Name="TypeSequenceOfNumericalSemigroup"></Func>
+                    <Description>
+
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+			
+                         Computes the type sequence of a numerical semigroup.
+                        This test is the implementation of the algorithm given in
+                        <Cite Key="BDF97"></Cite>.
+
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> TypeSequenceOfNumericalSemigroup(s);
+[ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1, 
+  1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 
+  1, 1, 1 ]
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> TypeSequenceOfNumericalSemigroup(s);
+[ 1, 1, 1, 1, 1, 1, 1 ]
 ]]></Example>
                     </Description>
                 </ManSection>

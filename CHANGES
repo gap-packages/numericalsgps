@@ -2,6 +2,59 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 
+0.971 -> 0.98
+- Fixed N not to be irreducible nor symmetric.
+- Gluings of numerical semigroups added to the manual.
+- New functions for almost symmetric numerical semigroups:
+	-IsAlmostSymmetricNumericalSemigroup
+	-AlmostSymmetricNumericalSemogrupsFromIrreducible
+	-AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
+- New functions for complete intersection numerical semigroups
+	- CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber
+	- IsFreeNumericalSemigroup
+	- FreeNumericalSemigroupsWithFrobeniusNumber
+	- IsTelescopicNumericalSemigroup
+	- TelescopicNumericalSemigroupsWithFrobeniusNumber
+	- IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+	- NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
+- New (faster) implementation of 
+        - IrreducibleNumericalSemigroupsWithFrobeniusNumber
+- The output of BettiElementsOfNumericalSemigroup is now a set
+- NumericalSemigroupsWithGenus(0) now returns []
+- Improvements in 
+        - BelongsToNumericalSemigroup
+        - FundamentalGapsOfNumericalSemigroup (much faster)
+        - SpacialGapsOfNumericalSemigroup
+- New functions for maximal embedding dimension numerical semigroups
+	- ArfNumericalSemigroupsWithFrobeniusNumber
+	- SaturatedNumericalSemigroupsWithFrobeniusNumber
+- New functions related to factorizations of integers
+	- RClassesOfSetsOfFactorizations
+	- TameDegreeOfSetOfFactorizations
+	- CatenaryDegreeOfSetOfFactorizations
+	- DeltaSetOfSetOfIntegers
+	- LengthsOfFactorizationsIntegerWRTList
+	- FactorizationsIntegerWRTList
+- New functions for Apery sets added
+	- AperyListOfIdealOfNumericalSemigroupWRTElement
+	- AperyTableOfNumericalSemigroup
+	- AperyListOfNumericalSemigroupWRTInteger
+- New synonym included: S-I denotes (0+S)-I, the oposite or dual of the ideal I
+- New contributions by Sammartano
+	- TypeSequenceOfNumericalSemigroup
+	- IsAperySetAlphaRectangular
+	- IsAperySetBetaRectangular
+	- IsAperySetGammaRectangular
+	- IsGradedAssociatedRingNumericalSemigroupCI
+- Factorizations of an integer (expressions as sums with nonnegative
+coefficients of elements in a list) are now performed with 
+RestrictedPartitions, with a speed up of the functions that deal with 
+factorizations 
+- Improvement (speed up) of TameDegreeOfNumericalSemigroup
+- The computation of minimal presentations now uses 
+RClassesOfSetsOfFactorizations and the FactorizationsIntegerWRTList, 
+and now is much faster
+
 0.97 -> 0.971
 - Fixed some bugs related to the numerical semigroup N. (These bugs did not produce wrong results.) 
 - New functions added

@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: init.g,v 0.971 $
+#H  @(#)$Id: init.g,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro A. Garcia-Sanchez and Jose Joao Morais
@@ -31,6 +31,7 @@ ReadPackage( "numericalsgps", "gap/ideals-def.gd" );
 ReadPackage( "numericalsgps", "gap/arf-med.gd" );
 ReadPackage( "numericalsgps", "gap/catenary-tame.gd" );
 ReadPackage( "numericalsgps", "gap/contributions.gd" );
+ReadPackage( "numericalsgps", "gap/numsgps-utils.gd" );
 
 
 #E  init.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here

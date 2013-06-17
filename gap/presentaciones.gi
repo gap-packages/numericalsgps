@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: presentaciones.gi,v 0.971 $
+#H  @(#)$Id: presentaciones.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado, 
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -110,26 +110,13 @@ end);
 ##  {\bf 6} (1996), no. 4, 441--455.
 #############################################################################
 InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
-    local   expressionNC,  connectedComponents,  msg,  ap,  candidates,  
+    local   connectedComponents,  msg,  ap,  candidates,  
             pairs,  expandexpression,  presentation,  pair,  n,  components,  
-            expression,  ii;
+            rclasses,  ii;
     
-    ##  Produces the set of coefficients of a expression
-    ##  of n as linear combinations of the elements of l
-    ##  with integer coefficients. 
-    ##  Called from minimalpresentation, thus we know that such
-    ##  an expression exists.
-    expressionNC := function(n,l)    
-        local sol;
-        sol:=FortenTruncatedNCForNumericalSemigroups(Concatenation([-n],l));
-        if (sol=fail) then
-            return fail;
-        fi;
-        return sol{[2..Length(sol)]};
-    end;
-    ##  End of expressionNC()  --
-    
-    
+    if(not(IsNumericalSemigroup(s))) then
+        Error(s," must be a numerical semigroup.\n");        
+    fi;
     
     ##  Computes the set of connected components of the
     ##  graph with vertices v and edges e. Returns a 
@@ -138,15 +125,15 @@ InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
     connectedComponents := function(g)
         local current,possible, colission, rest, tmp, components, v, e;
     
-        if(not(IsList(g))) then
-            Error("The argument must be a list");
-        fi;
-        if((Length(g)<>2)) then
-            Error("The argument must have two elements: vertices and edges.\n");
-        fi;
-        if(not(IsList(g[1]) and IsList(g[2]))) then
-            Error("The two elements of the argument are lists: one with the vertices and the other with the edges.\n");
-        fi;
+        # if(not(IsList(g))) then
+        #     Error("The argument must be a list");
+        # fi;
+        # if((Length(g)<>2)) then
+        #     Error("The argument must have two elements: vertices and edges.\n");
+        # fi;
+        # if(not(IsList(g[1]) and IsList(g[2]))) then
+        #     Error("The two elements of the argument are lists: one with the vertices and the other with the edges.\n");
+        # fi;
         
         v:=g[1]; #vertices
         e:=g[2]; #edges
@@ -177,12 +164,7 @@ InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
         od;
         return components;
     end;
-    ##  End of connectedComponents()  --
-
-    
-    if(not(IsNumericalSemigroup(s))) then
-        Error(s," must be a numerical semigroup.\n");        
-    fi;
+    ##  End of connectedComponents()  --    
     
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     if(msg=[1]) then
@@ -194,42 +176,16 @@ InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
     candidates:=Union(List(msg,n->List(ap,m->m+n)));
                                 # Gn not conneted implies n=wi+minimalgenerator
                                 #    thus these are the candidates
-    pairs:=List(candidates,n->[n,connectedComponents(
-                    GraphAssociatedToElementInNumericalSemigroup(n,s))]);
-                                # from every n y obtain the connected components
-                                #   they will give me the expressions of n
-                                #   that yield minimal generators
-    pairs:=Filtered(pairs,p->1<Length(p[2]));
-                                # this chooses those n relevant
+    candidates:=Filtered(candidates,n->Length(connectedComponents(
+                    GraphAssociatedToElementInNumericalSemigroup(n,s)))>1);
+                                # choose n with nonconnected graphs
 
-
-    expandexpression:=function(k,lg) #k an element lg the generators 
-        local partialexpr, expr,i;
-        expr:=[];
-        partialexpr:=expressionNC(k,lg);
-
-        for i in [1..Length(msg)] do
-            if (msg[i] in lg) then
-                expr[i]:=partialexpr[Position(lg,msg[i])];
-            else
-                expr[i]:=0;
-            fi;
-        od;
-        return expr;
-    end;
     presentation:=[];
-    while(pairs<>[]) do
-        pair:=pairs[1];
-        pairs:=pairs{[2..Length(pairs)]};
-        n:=pair[1]; #the element
-        components:=pair[2]; #the components
-
-        expression:=expandexpression(n,components[1]);
-        
-        for ii in [2..Length(components)] do
-            Add(presentation,[expression,expandexpression(n,components[ii])]);
-        od; 
-    od;
+	for n in candidates do
+		rclasses:=RClassesOfSetOfFactorizations(FactorizationsIntegerWRTList(n,msg));
+		pairs:=List([2..Length(rclasses)],i-> [rclasses[1][1],rclasses[i][1]]);		
+		presentation:=Union(presentation,pairs);
+	od;
     
     return presentation;
 
@@ -253,5 +209,5 @@ InstallGlobalFunction(BettiElementsOfNumericalSemigroup, function(s)
     
     mgs:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     pre:=MinimalPresentationOfNumericalSemigroup(s);
-    return List(pre,r->r[1]*mgs);
+    return Set(pre,r->r[1]*mgs);
 end);

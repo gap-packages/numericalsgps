@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: arf-med.gi,v 0.971 $
+#H  @(#)$Id: arf-med.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -124,6 +124,101 @@ InstallMethod(MinimalArfGeneratingSystemOfArfNumericalSemigroup,
         fi;
     od;
     return gen;
+end);
+
+#####################################################################
+##
+#F ArfNumericalSemigroupsWithFrobeniusNumber(f)
+##
+## The argument f is an integer
+## Returns the set of Arf numerical semigroups with Frobenius number f 
+## as explained in the preprint
+##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+#############################################################################
+InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
+	local par2sem, testArfSeq, arfsequences;
+
+    if(not(IsInt(f))) then
+		Error("The argument must be an integer.\n");
+    fi;
+	
+	if f=0 or f<-1 then
+		return [];
+	fi;
+	if f=-1 then 
+		return [NumericalSemigroup(1)];
+	fi;
+	#transforms a partition list of an element to the set of sums 
+	# which will correspond with the set of small elements of the semigroup
+	par2sem:=function(l)
+		local n, sm, i;
+
+		sm:=[0];
+		n:=0;
+		for i in l do;
+			n:=n+i;
+			Add(sm,n);
+		od;
+
+		return sm;
+
+	end;
+
+	#this function tests if a partition l is an Arf sequence
+	testArfSeq:=function(l)
+		local i, lt, pl, size;
+
+		if 1 in l then
+			return false;
+		fi;
+
+		size:=Length(l);
+
+		for i in [1..Length(l)-1] do
+			lt:=l{[i+1..size]};
+			pl:=par2sem(lt);
+			#Print(l[i]," ",pl,"\n");
+			if (l[i]<Maximum(pl)) and not(l[i] in pl) then
+				return false;
+			fi;
+		od;
+		return true;
+	end;
+
+	# computes all Arf sequences with sumset equal n+1 (the conductor)
+	# and translate them to small elements in the semigroup
+	# to this end we compute  all partitions inspired in 
+	# Algorithm 3.1 of Jerome Kelleher, Barry O'Sullivan, Generating All Partitions: A 
+	# Comparison Of Two Encodings  arXiv:0909.2331
+	arfsequences:=function(n)
+		local x,y,k, a, ra, l; 
+
+		l:=Set([]);
+		k:=2; a:=[0,n+1];
+		while k<>1 do
+			y:=a[k]-1;
+			k:=k-1;
+			x:=a[k]+1;
+			if x=1 then  #to avoid ones
+				x:=2;
+				y:=y-1;
+			fi;
+			while (x<=y)  do
+				a[k]:=x;
+				y:=y-x;
+				k:=k+1;
+			od;
+			a[k]:=x+y;
+			ra:=Reversed(a{[1..k]});
+			if testArfSeq(ra) then 
+				Add(l,par2sem(ra));
+			fi;
+		od;
+	
+		return l;
+	end;
+	
+	return List(arfsequences(f),NumericalSemigroupBySmallElementsNC);
 end);
 
 
@@ -303,3 +398,157 @@ InstallMethod(IsSaturatedNumericalSemigroup,
     
 end);
  
+#####################################################################
+##
+#F SaturatedNumericalSemigroupsWithFrobeniusNumber(f)
+##
+## The argument f is an integer
+## returns the the set of saturated numerical semigroups with Frobenius number f
+## as explained in the preprint
+##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+#############################################################################
+InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f)
+	local alg23, alg24, satpart, listsatseq, L, C, Ll, l, t, satsystem, i;
+
+	if(not(IsInt(f))) then
+		Error("The argument must be an integer.\n");
+    fi;
+	
+	if f=0 or f<-1 then
+		return [];
+	fi;
+	if f=-1 then 
+		return [NumericalSemigroup(1)];
+	fi;
+
+	#returns the set nonnegative integer of solutions x
+	# with l.x=c; l is a (saturated) sequence 
+	# l[i+1]|l[i], l[i+1]<>l[i], l[Length(l)]=1
+	satpart:=function(l,c)
+		local sols, len, i, j, sol, next, cand;
+
+		len:=Length(l);
+	 	sol:=[];
+		for i in [1..len-1] do Add(sol, 0); od;
+		sol[len]:=c;
+		sols:=[sol];
+
+		while true do
+			j:=First(Reversed([1..len-1]), i-> sol{[i+1..len]}*l{[i+1..len]}>=l[i]);
+			if j=fail then
+				return sols;
+			fi;
+			next:=[];
+			for i in [1..j-1] do next[i]:=sol[i]; od;
+			next[j]:=sol[j]+1;
+			for i in [j+1..len-1] do next[i]:=0; od;
+			next[len]:=sol{[j+1..len]}*l{[j+1..len]}-l[j];
+			sol:=next;#sol:=ShallowCopy(next);
+			Add(sols, sol);
+		od; 	
+	
+	end;
+
+	#returns saturated semigroups associated to a saturaded sequence
+	# with Frobenius number f
+	listsatseq:=function(d, f)
+		local c, l, ok, sum, len, ones, i;
+
+		l:=[];
+		ok:=false;
+		sum:=Sum(d);
+		len:=Length(d);
+
+		if (f+1>=sum) and (Gcd(f+1,d[len-1])=1) and (((f+1) mod d[len-1])<>1) then 
+			ok:=true;
+			c:=f+1-sum;
+		fi;
+	
+		if (f+2>=sum) and (((f+2) mod d[len-1])=1) then 
+			ok:=true;
+			c:=f+2-sum;
+		fi;
+
+		if not(ok) then 
+			return [];
+		fi;
+		ones:=[];
+		for i in [1..len] do ones[i]:=1; od;
+
+		l:=satpart(d,c);
+		l:=l+ones;
+		l:=Filtered(l, t-> ForAll([1..len-1], i-> Gcd(d[i]/d[i+1],t[i+1])=1));	
+		return l;
+
+	end;
+
+	#implements Algorithm 23
+	alg23:=function(f)
+		local tot, A, AA, cand, d, x, dd;
+
+		cand:=Filtered([2..f], x-> Gcd(f+1,x)=1 and f mod x<> 0);
+		A:=List(cand, x-> [x,1]);
+		tot:=A;
+	
+		while (A<>[]) do
+			AA:=[];
+			for d in A do
+				for x in [2..Int((f+1-Sum(d))/d[1])] do
+					dd:=ShallowCopy(d);
+					dd[1]:=x*d[1];
+					dd{[2..Length(d)+1]}:=d;	
+					Add(AA, dd);
+				od;
+			od;
+			A:=AA;
+			tot:=Union(tot,A);
+		od;
+
+		return tot; 
+
+	end;
+
+	#implements Algorithm 24
+	alg24:=function(f)
+		local tot, A, AA, cand, d, x, dd;
+
+		cand:=Difference(DivisorsInt(f+1),[1]);
+		A:=List(cand, x-> [x,1]);
+		tot:=A;
+	
+		while (A<>[]) do
+			AA:=[];
+			for d in A do
+				for x in [2..Int((f+2-Sum(d))/d[1])] do
+					dd:=ShallowCopy(d);
+					dd[1]:=x*d[1];
+					dd{[2..Length(d)+1]}:=d;	
+					Add(AA, dd);
+				od;
+			od;
+			A:=AA;
+			tot:=Union(tot,A);
+		od;
+
+		return tot; 
+
+	end;
+	#main 
+	L:=Union(alg23(f),alg24(f));
+	C:=[];
+	for l in L do 
+		Ll:=listsatseq(l,f);
+		for t in Ll do 
+			satsystem:=[];
+			satsystem[1]:=l[1];
+			for i in [2..Length(l)] do
+				satsystem[i]:=l{[1..i]}*t{[1..i]};
+			od;			
+			Add(C,satsystem);
+		od;		
+	od;
+
+	return Set(C, SaturatedNumericalSemigroupClosure);
+end);
+
+

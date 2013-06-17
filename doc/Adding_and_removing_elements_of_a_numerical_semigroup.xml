@@ -42,8 +42,7 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
                         (see <Cite Key="RGGJ03"></Cite>, where it is explained why this set is a 
                         numerical semigroup).            
                         <Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);
-<Numerical semigroup with 3 generators>
+gap> s:=NumericalSemigroup(3,5,7);;
 gap> s2:=RemoveMinimalGeneratorFromNumericalSemigroup(5,s);
 <Numerical semigroup with 3 generators>
 gap> s3:=AddSpecialGapOfNumericalSemigroup(5,s2);
@@ -68,7 +67,7 @@ true
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> T := NumericalSemigroup(2,17);
-<Numerical semigroup with 2 generators>
+<Modular numerical semigroup satisfying 17x mod 34 <= x >
 gap> SmallElementsOfNumericalSemigroup(S);
 [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
 gap> SmallElementsOfNumericalSemigroup(T);
@@ -89,7 +88,7 @@ gap> SmallElementsOfNumericalSemigroup(last);
 <C>S / n</C> may be used as a short for <C>QuotientOfNumericalSemigroup(S, n)</C>.
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,29);
-<Numerical semigroup with 2 generators>
+<Modular numerical semigroup satisfying 58x mod 87 <= x >
 gap> SmallElementsOfNumericalSemigroup(s);
 [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
   39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]

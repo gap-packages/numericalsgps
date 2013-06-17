@@ -33,13 +33,32 @@ false
                         <P/>
                         Returns the saturated closure of <A>S</A>.
                         <Example><![CDATA[
-gap> SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15, 1$
+gap> SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));
 <Numerical semigroup>
-gap> MinimalGeneratingSystemOfNumericalSemigroup(last);                        
+gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
 [ 8 .. 15 ]
 ]]></Example>          
                     </Description>
                 </ManSection>
                 
+                
+                <ManSection>
+                    <Func Arg="f" Name="SaturatedNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Saturated 
+                        numerical semigroups with Frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> SaturatedNumericalSemigroupsWithFrobeniusNumber(10);
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup> ]
+gap>  List(last,MinimalGeneratingSystemOfNumericalSemigroup);
+[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
+  [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], 
+  [ 11 .. 21 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection> 
                 
             </Section>

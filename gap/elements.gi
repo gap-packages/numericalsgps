@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: elements.gi,v 0.971 $
+#H  @(#)$Id: elements.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado, 
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais

@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: basics.gd,v 0.971 $
+#H  @(#)$Id: basics.gd,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -159,6 +159,18 @@ DeclareOperation( "BelongsToNumericalSemigroup", [IsInt, IsNumericalSemigroup]);
 ##
 #############################################################################
 DeclareOperation( "AperyListOfNumericalSemigroupWRTElement",[IsNumericalSemigroup,IsInt]);
+
+
+#############################################################################
+##
+#F  AperyListOfNumericalSemigroupWRTInteger(S,n)
+##
+##  Returns the Apery list of the numerical
+##  semigroup S with respect to the positive integer n.
+##
+#############################################################################
+DeclareGlobalFunction("AperyListOfNumericalSemigroupWRTInteger");
+
 
 #############################################################################
 ##

@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: numsgp-def.gi,v 0.971 $
+#H  @(#)$Id: numsgp-def.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -30,11 +30,16 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
     else
         L := Difference(Set(arg),[0]);
     fi;
+
+	if L=[] then
+		Error("There should be at list one generator.\n");
+	fi;
+
     if not ForAll(L, x -> IsPosInt(x)) then
-        Error("The arguments should be positive integers");
+        Error("The arguments should be positive integers.\n");
     fi;
     if Gcd(L) <> 1 then
-        Error("The greatest common divisor is not 1");
+        Error("The greatest common divisor is not 1.\n");
     fi;
     M:= Objectify( NewType( FamilyObj( L ),
                 IsAttributeStoringRep and IsNumericalSemigroup),
@@ -165,8 +170,11 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGenerators, function(arg)
     else
         L := Difference(Set(arg),[0]);
     fi;
+	if L=[] then 
+		Error("There should be at least one generator.\n");
+	fi;
     if not ForAll(L, x -> IsPosInt(x)) then
-        Error("The arguments should be positive integers");
+        Error("The arguments should be positive integers.\n");
     fi;
     if Gcd(L) <> 1 then
         Error("The greatest common divisor is not 1");
@@ -175,7 +183,7 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGenerators, function(arg)
 
     l := minimalGSNS(L);
     if not Length(L) = Length(l) then
-        Info(InfoNumSgps,1, "The given list was not the minimal generating set. The list ", l, " will be used instead.");
+        Info(InfoNumSgps,0, "The given list was not the minimal generating set. The list ", l, " will be used instead.");
         L := l;
     fi;
     M:= Objectify( NewType( FamilyObj( L ),
@@ -476,6 +484,29 @@ InstallGlobalFunction(NumericalSemigroupBySmallElements, function(L)
     return M;
 end);
 
+#############################################################################
+##
+#F  NumericalSemigroupBySmallElementsNC(L)
+##
+## NC version of NumericalSemigroupBySmallElements
+##
+#############################################################################
+InstallGlobalFunction(NumericalSemigroupBySmallElementsNC, function(L)
+    local i, M, K, R;
+
+   if L = [0] or 1 in L then
+        return NumericalSemigroup(1);
+    fi;    
+    K := Difference([1..L[Length(L)]],L);
+    R := Intersection([0..K[Length(K)]+1],L);
+
+    M:= Objectify( NewType( FamilyObj( R ),
+                IsAttributeStoringRep and IsNumericalSemigroup),
+                rec(elements := R, gaps := Difference([1..R[Length(R)]], R)) );
+    Setter(IsNumericalSemigroupBySmallElements)(M,true);
+    Setter(IsNumericalSemigroupByGaps)(M,true);
+    return M;
+end);
 
 
 

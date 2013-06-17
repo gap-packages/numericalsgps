@@ -176,7 +176,7 @@ gap> NumericalSemigroup("propmodular",67,98,1);
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,11);
-<Numerical semigroup with 2 generators>
+<Modular numerical semigroup satisfying 22x mod 33 <= x >
 gap> GapsOfNumericalSemigroup(s);
 [ 1, 2, 4, 5, 7, 8, 10, 13, 16, 19 ]
 gap> t:=NumericalSemigroupByGaps(last);

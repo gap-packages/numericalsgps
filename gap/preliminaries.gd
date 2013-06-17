@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: preliminaries.gd,v 0.971 $
+#H  @(#)$Id: preliminaries.gd,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado, 
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -77,7 +77,14 @@ DeclareGlobalFunction( "RepresentsSmallElementsOfNumericalSemigroup" );
 #############################################################################
 DeclareGlobalFunction( "CeilingOfRational" );
 
-
+#############################################################################
+##
+#F  IsListOfIntegersNS(list)
+##
+##  Tests whether L is a list integers.
+##
+#############################################################################
+DeclareGlobalFunction("IsListOfIntegersNS");
 
 #############################################################################
 ##

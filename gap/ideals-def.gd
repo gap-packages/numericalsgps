@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: ideals-def.gd,v 0.971 $
+#H  @(#)$Id: ideals-def.gd,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -300,3 +300,29 @@ DeclareGlobalFunction("TranslationOfIdealOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("IntersectionIdealsOfNumericalSemigroup");
+
+########################################################################
+##
+#F AperyListOfIdealOfNumericalSemigroupWRTElement(I,n)
+##
+##  Computes the sets of elements x of I such that x-n not in I,
+##  where n is supposed to be in the ambient semigroup of I.
+##  The element in the i-th position of the output list (starting in 0) 
+##  is congruent with i modulo n 
+########################################################################
+DeclareGlobalFunction("AperyListOfIdealOfNumericalSemigroupWRTElement");
+
+########################################################################
+##
+#F AperyTableOfNumericalSemigroup(S)
+##
+##  Computes the Apéry table associated to S as 
+## explained in [CJZ],
+##  that is, a list containing the Apéry list of S with respect to 
+## its multiplicity and the Apéry lists of kM (with M the maximal 
+##  ideal of S) with respect to the multiplicity of S, for k=1..r,
+##  where r is the reduction number of M 
+##  (see ReductionNumberIdealNumericalSemigroup).
+########################################################################
+DeclareGlobalFunction("AperyTableOfNumericalSemigroup");
+
