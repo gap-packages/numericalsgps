@@ -63,6 +63,23 @@ gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup(
                     </Description>
                 </ManSection>
                 
-                
+                <ManSection>
+                    <Func Arg="f" Name="ArfNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf 
+                        numerical semigroups with Frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> ArfNumericalSemigroupsWithFrobeniusNumber(10);
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
+[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
+  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
+  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+  [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection> 
                 
             </Section>

@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: numsgp-def.gd,v 0.971 $
+#H  @(#)$Id: numsgp-def.gd,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -184,6 +184,16 @@ DeclareGlobalFunction( "NumericalSemigroupByAperyList" );
 ##
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupBySmallElements" );
+
+
+#############################################################################
+##
+#F  NumericalSemigroupBySmallElementsNC(L)
+##
+## NC version of NumericalSemigroupBySmallElements
+##
+#############################################################################
+DeclareGlobalFunction( "NumericalSemigroupBySmallElementsNC" );
 
 
 #############################################################################

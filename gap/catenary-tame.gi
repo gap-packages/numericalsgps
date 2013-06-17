@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: catenary-tame.gi,v 0.971 $
+#H  @(#)$Id: catenary-tame.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -72,32 +72,7 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction( CatenaryDegreeOfNumericalSemigroup, function(s)
-    local   rClasses,  msg,  ap,  candidates,  rclasses;
-
-    # used to determine the different R-classes of the
-    #   factorizations of an element
-    rClasses:=function(l)
-        local current, pos, len, colisionan, cola;
-
-        current:=List(l,n->[n]);
-        pos :=1;
-        len:=Length(current);
-        while (pos<len) do
-            colisionan:=Filtered(current{[(pos+1)..len]},k->First(Cartesian(k,current[pos]),n->n[1]*n[2]<>0)<>fail);
-            if(colisionan<>[]) then
-                current[pos]:=Union(current[pos],Union(colisionan));
-                cola:=Difference(current{[(pos+1)..len]},colisionan);
-                current:=Concatenation(current{[1..pos]},cola);
-                len:=Length(current);
-                pos:=0;
-            fi;
-            pos:=pos+1;
-        od;
-
-        return(current);
-
-    end;
-
+    local    msg,  ap,  candidates,  rclasses;
 
     if(not(IsNumericalSemigroup(s))) then
         Error(s," must be a numerical semigroup.\n");
@@ -105,7 +80,7 @@ InstallGlobalFunction( CatenaryDegreeOfNumericalSemigroup, function(s)
 
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     if(msg=[1]) then
-     Error("The catenary degree does not make sense for ",s,"\n");
+    	return 0;  #Error("The catenary degree does not make sense for ",s,"\n");
     fi;
 
     ap:=AperyListOfNumericalSemigroupWRTElement(s,msg[1]);
@@ -114,7 +89,7 @@ InstallGlobalFunction( CatenaryDegreeOfNumericalSemigroup, function(s)
     candidates:=Union(List(msg,n->List(ap,m->m+n)));
                                 # Gn not conneted implies n=wi+minimalgenerator
                                 #    thus these are the candidates
-    rclasses:=List(candidates,n->rClasses(NSGPfactorizationsNC(n,msg)));
+    rclasses:=List(candidates,n->RClassesOfSetOfFactorizations(FactorizationsIntegerWRTList(n,msg)));
                                 # from every n y obtain the connected components
                                 #   they will give me the expressions of n
                                 #   that yield minimal generators
@@ -201,7 +176,7 @@ InstallGlobalFunction(CatenaryDegreeOfElementInNumericalSemigroup_NC, function(n
 
         k := Length(a);
         if k <> Length(b) then
-            Error("The lengths of a and b are different");
+            Error("The lengths of a and b are different.\n");
         fi;
 
 
@@ -290,7 +265,7 @@ InstallGlobalFunction(CatenaryDegreeOfElementInNumericalSemigroup, function(n,S)
 
     #---- Tests on the arguments ------------------------------
     if not (IsNumericalSemigroup(S) and IsPosInt(n-1)) then
-        Error(" The arguments of CatenaryDegreeOfElementInNumericalSemigroup are a nonnegativeinteger and a numerical semigroup");
+        Error(" The arguments of CatenaryDegreeOfElementInNumericalSemigroup are a nonnegativeinteger and a numerical semigroup.\n");
     fi;
 
     #---- End of Tests on the arguments -----------------------
@@ -358,7 +333,7 @@ InstallGlobalFunction( TameDegreeOfElementInNumericalSemigroup, function(n,s)
     fi;
 
     max:=0;
-    fact:=NSGPfactorizationsNC(n,msg);
+    fact:=FactorizationsIntegerWRTList(n,msg);
 
     for i in [1..Length(msg)] do
         candidates:=Filtered(fact, x->x[i]=0);
@@ -392,13 +367,21 @@ end);
 ##    D. Llena,  The catenary and tame degree of numerical
 ##    monoids, Forum Math. 2007 1--13.
 ##
+##  Improved by Alfredo Sánchez-R. Navarro and P. A. García-Sánchez
+##  for Alfredo Sánchez-R. Navarro's PhD Thesis
+##
 #############################################################################
 InstallGlobalFunction( TameDegreeOfNumericalSemigroup, function(s)
-    local msg, ap, candidates;
+   local msg, ap, candidates, rp, facts, translate;
+
 
     if(not(IsNumericalSemigroup(s))) then
         Error(s," must be a numerical semigroup.\n");
     fi;
+
+    translate:=function(l) #translates partitions to factorizations	
+		return List(msg, x-> Length(Positions(l,x)));
+    end;
 
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     #Print(msg);
@@ -410,9 +393,15 @@ InstallGlobalFunction( TameDegreeOfNumericalSemigroup, function(s)
 
     candidates:=Set(Cartesian(ap,msg),Sum);
 
-    return Maximum(Set(candidates,n->TameDegreeOfElementInNumericalSemigroup(n,s)));
+	# remove elements having in all its factorizations a common atom
+    rp:=List(candidates, x->RestrictedPartitions(x, msg));
+    rp:=Filtered(rp, x->Intersection(x)=[]);
+    facts:=List(rp, x->List(x, translate));
+    if facts=[] then
+      return 0;
+    fi;
+    return Maximum(Set(facts,n->TameDegreeOfSetOfFactorizations(n)));
 end);
-
 
 
 #############################################################################
@@ -429,22 +418,16 @@ InstallGlobalFunction(FactorizationsElementWRTNumericalSemigroup, function(n,s)
     local gen;
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
-    if n=0 then
-        return [List(MinimalGeneratingSystemOfNumericalSemigroup(s),n->0)];
-    fi;
-
-
-    if not IsPosInt(n) then
-        Error("The first argument must be a nonnegative integer.");
-    fi;
+    if not (n in s) then
+        Error("The first argument does not belong to the second.\n");
+    fi; #this ensures that the lenghts won't be zero
 
     gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    return NSGPfactorizationsNC(n,gen);
+    return FactorizationsIntegerWRTList(n,gen);
 end);
-
 
 
 #############################################################################
@@ -461,20 +444,15 @@ InstallGlobalFunction(LengthsOfFactorizationsElementWRTNumericalSemigroup, funct
     local gen;
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
-
-    if n=0 then
-        return [0];
-    fi;
-
-    if not IsPosInt(n) then
-        Error("The first argument must be a nonnegative integer.");
-    fi;
+    if not (n in s) then
+        Error("The first argument does not belong to the second.\n");
+    fi; #this ensures that the lenghts won't be zero
 
     gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    return Set(NSGPfactorizationsNC(n,gen),Sum);
+    return LengthsOfFactorizationsIntegerWRTList(n,gen);
 end);
 
 
@@ -493,19 +471,19 @@ InstallGlobalFunction(ElasticityOfFactorizationsElementWRTNumericalSemigroup, fu
     local gen,max,min,lenfact;
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
     if not IsPosInt(n) then
-        Error("The first argument must be a positive integer.");
+        Error("The first argument must be a positive integer.\n");
     fi;
 
     if not (n in s) then
-        Error("The first argument does not belong to the second.");
+        Error("The first argument does not belong to the second.\n");
     fi; #this ensures that the lengths won't be zero
 
     gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    lenfact:=Set(NSGPfactorizationsNC(n,gen),Sum);
+    lenfact:=Set(LengthsOfFactorizationsIntegerWRTList(n,gen));
     min:=Minimum(lenfact);
     max:=Maximum(lenfact);
 
@@ -528,7 +506,7 @@ InstallGlobalFunction(ElasticityOfNumericalSemigroup, function(s)
     local gen,max,min;
 
     if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup.");
+        Error("The argument must be a numerical semigroup.\n");
     fi;
 
 
@@ -555,7 +533,7 @@ InstallGlobalFunction(DeltaSetOfFactorizationsElementWRTNumericalSemigroup, func
     local gen,max,min,lenfact;
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
     if n=0 then
@@ -564,15 +542,15 @@ InstallGlobalFunction(DeltaSetOfFactorizationsElementWRTNumericalSemigroup, func
 
 
     if not IsPosInt(n) then
-        Error("The first argument must be a nonnegative integer.");
+        Error("The first argument must be a nonnegative integer.\n");
     fi;
 
     if not (n in s) then
-        Error("The first argument does not belong to the second.");
+        Error("The first argument does not belong to the second.\n");
     fi; #this ensures that the lenghts won't be zero
 
     gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    lenfact:=Set(NSGPfactorizationsNC(n,gen),Sum);
+    lenfact:=LengthsOfFactorizationsIntegerWRTList(n,gen);
     return Set([1..(Length(lenfact)-1)], i->lenfact[i+1]-lenfact[i]);
 
 end);
@@ -592,22 +570,24 @@ InstallGlobalFunction(MaximumDegreeOfElementWRTNumericalSemigroup, function(n,s)
     local gen;
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
     if n=0 then
         return 0;
     fi;
 
-
     if not IsPosInt(n) then
-        Error("The first argument must be a nonnegative integer.");
+        Error("The first argument must be a nonnegative integer.\n");
     fi;
 
-    gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    return Maximum(List(NSGPfactorizationsNC(n,gen),Sum));
-end);
+    if not (n in s) then
+        Error("The first argument does not belong to the second.\n");
+    fi; #this ensures that the lenghts won't be empty
 
+    gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    return Maximum(LengthsOfFactorizationsIntegerWRTList(n,gen));
+end);
 
 #############################################################################
 ##
@@ -624,12 +604,12 @@ InstallGlobalFunction(OmegaPrimalityOfElementInNumericalSemigroup, function(n,s)
 	local candidates,msg,fact,c, le,sum;
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
 
     if not ( n in s ) then
-        Error("The first argument must be an element of the second.");
+        Error("The first argument must be an element of the second.\n");
     fi;
 
         le:=function(a,b)  #ordinary partial order
@@ -642,7 +622,7 @@ InstallGlobalFunction(OmegaPrimalityOfElementInNumericalSemigroup, function(n,s)
         fact:=[];
 
         for c in candidates do
-            fact:=Union(fact,FactorizationsElementWRTNumericalSemigroup(c,s));
+            fact:=Union(fact,FactorizationsIntegerWRTList(c,msg));
         od;
 
         fact:=Filtered(fact, f-> ForAll(fact, z-> not(le(z,f)) or z=f));
@@ -661,11 +641,277 @@ end);
 InstallGlobalFunction(OmegaPrimalityOfNumericalSemigroup, function(s)
 
     if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.");
+        Error("The second argument must be a numerical semigroup.\n");
     fi;
 
       return Maximum(Set(MinimalGeneratingSystemOfNumericalSemigroup(s),
 	n->OmegaPrimalityOfElementInNumericalSemigroup(n,s)));
+
+end);
+
+
+
+#############################################################################
+##
+#F  FactorizationsIntegerWRTList(n,ls)
+##
+##  Computes the set of factorizations
+##  of an integer n as linear combinations
+##  with nonnegative coefficients of the elements in the list of positive integers ls
+##  Makes use of RestrictedPartitions
+#############################################################################
+InstallGlobalFunction(FactorizationsIntegerWRTList,function(n,ls)
+	local translate;
+
+	if not(IsListOfIntegersNS(ls) and ForAll(ls, x->IsPosInt(x))) then
+		Error("The list must be a list of positive integers.\n");
+	fi;
+	
+	translate:=function(l) 
+	
+		return List(ls, x-> Length(Positions(l,x)));
+
+	end;
+
+	return List(RestrictedPartitions(n,ls), translate);
+end);
+
+#############################################################################
+##
+#F  LengthsOfFactorizationsIntegerWRTList(n,ls)
+##
+##  Computes the lengths of the set of
+##  factorizations of an  integer <n> as linear combinations
+##  with nonnegative coefficients of the elements in the list of positive integers <ls> 
+##
+#############################################################################
+InstallGlobalFunction(LengthsOfFactorizationsIntegerWRTList,function(n,ls)
+
+	if not(IsListOfIntegersNS(ls) and ForAll(ls, x->IsPosInt(x))) then
+		Error("The list must be a list of positive integers.\n");
+	fi;
+	
+	return Set(RestrictedPartitions(n,ls), Length);
+end);
+
+
+#############################################################################
+##
+#F  DeltaSetOfSetOfIntegers(ls)
+##
+##  Computes the set of differences between
+##  consecutive elements in the list <ls>
+##
+#############################################################################
+InstallGlobalFunction(DeltaSetOfSetOfIntegers,function(ls)
+	local lenfact;
+	
+	if not(IsListOfIntegersNS(ls)) then 
+		Error("The argument must be a nonempty list of integers.\n");
+	fi;
+
+	lenfact:=Set(ls);
+
+    return Set([1..(Length(lenfact)-1)], i->lenfact[i+1]-lenfact[i]);
+
+end);
+
+
+#############################################################################
+##
+#F  CatenaryDegreeOfSetOfFactorizations(fact)
+##
+##  Computes the catenary degree of the set of factorizations 
+##
+#############################################################################
+InstallGlobalFunction(CatenaryDegreeOfSetOfFactorizations,function(fact)
+    local   len,  distance,  V,  underlyinggraph,  i,  weights,  
+            weightedgraph,  j,  dd,  d,  w;
+
+	if not(IsRectangularTable(fact) and IsListOfIntegersNS(fact[1])) then
+		Error("The argument is not a list of factorizations.\n");
+	fi;
+	if Minimum(Flat(fact))<0 then 
+		Error("Coefficients must be nonnegative integers.\n");
+	fi;
+
+    #---- Local functions definitions -------------------------
+    #==========================================================
+    #==========================================================
+    #Given two factorizations a and b of n, the distance between a 
+    #and b is d(a,b)=max |a-gcd(a,b)|,|b-gcd(a,b)|, where 
+    #gcd((a_1,...,a_n),(b_1,...,b_n))=(min(a_1,b_1),...,min(a_n,b_n)).
+
+
+    #----------------------------------------------------------
+    distance := function(a,b)
+        local   k,  gcd,  i;
+
+        k := Length(a);
+        if k <> Length(b) then
+            Error("The lengths of a and b are different.\n");
+        fi;
+
+
+        gcd := [];
+        for i in [1..k] do
+            Add(gcd, Minimum(a[i],b[i]));
+        od;
+        return(Maximum(Sum(a-gcd),Sum(b-gcd)));
+
+    end;
+    ## ----  End of distance()  ---- 
+
+    #==========================================================
+    #---- End of Local functions definitions ------------------
+
+    #==========================================================
+    #-----------      MAIN CODE       -------------------------
+    #----------------------------------------------------------
+
+    V := Length(fact);
+    if V = 1 then
+        return 0;
+    elif V = 2 then
+        return distance(fact[1],fact[2]);
+    fi;
+
+
+    # compute the directed weighted graph
+    underlyinggraph := [];
+    for i in [2 .. V] do
+        Add(underlyinggraph, [i..V]);
+    od;
+    Add(underlyinggraph, []);
+    weights := [];
+    weightedgraph := StructuralCopy(underlyinggraph);
+    for i in [1..Length(weightedgraph)] do
+        for j in [1..Length(weightedgraph[i])] do
+            dd := distance(fact[i],fact[weightedgraph[i][j]]);
+            Add(weights,dd);
+            weightedgraph[i][j] := [weightedgraph[i][j],dd];
+
+        od;
+    od;
+    weights:=Set(weights);
+    d := 0;
+    while IsConnectedGraphNCForNumericalSemigroups(underlyinggraph) do
+        w := weights[Length(weights)-d];
+        d := d+1;
+        for i in weightedgraph do
+            for j in i do
+                if IsBound(j[2]) and j[2]= w then
+                    Unbind(i[Position(i,j)]);
+                fi;
+            od;
+        od;
+        for i in [1..Length(weightedgraph)] do
+            weightedgraph[i] := Compacted(weightedgraph[i]);
+        od;
+        underlyinggraph := [];
+        for i in weightedgraph do
+            if i <> [] then
+                Add(underlyinggraph, TransposedMatMutable(i)[1]);
+            else
+                Add(underlyinggraph, []);
+            fi;
+        od;
+    od;
+
+
+    return(weights[Length(weights)-d+1]);      
+
+end);
+
+#############################################################################
+##
+#F  TameDegreeOfSetOfFactorizations(fact)
+##
+##  Computes the tame degree of the set of factorizations 
+##
+#############################################################################
+InstallGlobalFunction(TameDegreeOfSetOfFactorizations,function(fact)
+    local distance, i, max, mtemp, candidates, rest, len;
+
+	if not(IsRectangularTable(fact) and IsListOfIntegersNS(fact[1])) then
+		Error("The argument is not a list of factorizations.\n");
+	fi;
+	if Minimum(Flat(fact))<0 then 
+		Error("Coefficients must be nonnegative integers.\n");
+	fi;
+
+    # distance between two factorizations
+    distance:=function(x,y)
+        local p,n,i,z;
+
+        p:=0; n:=0;
+        z:=x-y;
+        for i in [1..Length(z)] do
+            if z[i]>0 then
+                p:=p+z[i];
+            else
+                n:=n+z[i];
+            fi;
+        od;
+
+        return Maximum(p,-n);
+    end;
+
+    if Length(fact) <= 1 then
+      return 0;
+    fi;
+    
+    max:=0;
+    len := Length(fact[1]);
+    for i in [1..len] do
+        candidates:=Filtered(fact, x->x[i]=0);
+        rest:=Filtered(fact,x->x[i]<>0);
+        if (rest=[] or candidates=[]) then
+            mtemp:=0;
+        else
+            mtemp:=Maximum(List(candidates,x->Minimum(List(rest, z->distance(x,z)))));
+        fi;
+        if mtemp>max then
+            max:=mtemp;
+        fi;
+    od;
+    return max;
+end);
+
+#############################################################################
+##
+#F  RClassesOfSetsOfFactorizations(l)
+##
+##  Determine the set of R-classes (Chapter 7 [RGBook] of a set of factorizations
+##
+#############################################################################
+InstallGlobalFunction(RClassesOfSetOfFactorizations, function(l)
+    local current, pos, len, colisionan, cola;
+
+	if not(IsRectangularTable(l) and IsListOfIntegersNS(l[1])) then
+		Error("The argument is not a list of factorizations.\n");
+	fi;
+
+	if Minimum(Flat(l))<0 then 
+		Error("Coefficients must be nonnegative integers.\n");
+	fi;
+
+    current:=List(l,n->[n]);
+    pos :=1;
+    len:=Length(current);
+    while (pos<len) do
+        colisionan:=Filtered(current{[(pos+1)..len]},k->First(Cartesian(k,current[pos]),n->n[1]*n[2]<>0)<>fail);
+        if(colisionan<>[]) then
+            current[pos]:=Union(current[pos],Union(colisionan));
+            cola:=Difference(current{[(pos+1)..len]},colisionan);
+            current:=Concatenation(current{[1..pos]},cola);
+            len:=Length(current);
+            pos:=0;
+        fi;
+        pos:=pos+1;
+    od;
+
+    return(current);
 
 end);
 

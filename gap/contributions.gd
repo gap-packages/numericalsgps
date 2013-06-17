@@ -3,7 +3,7 @@
 #W  contributions.gd          
 ##
 ##
-#H  @(#)$Id: contributions.gd,v 0.971 $
+#H  @(#)$Id: contributions.gd,v 0.98 $
 ##
 #Y  The functions in this file have been implemented by researchers that do 
 #Y  not appear as authors of the package. References to its usage should be 
@@ -64,3 +64,65 @@ DeclareGlobalFunction("IsPureNumericalSemigroup");
 ##
 ##############################################################################################################
 DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupGorenstein");
+##############################################################################################################
+## the functions below first appeared in version 0.98
+##############################################################################################################
+##
+#F  IsGradedAssociatedRingNumericalSemigroupCI
+##
+##  Test for the Complete Intersection property of the associated graded ring of a numerical semigroup ring k[[S]]
+##  Based on "When the associated graded ring of a semigroup ring is Complete Intersection"
+## 
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupCI");
+##############################################################################################################
+##
+#F  IsAperySetGammaRectangular
+##
+##  Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup
+##  Based on "Classes Of Complete Intersection Numerical Semigroups"
+##  Marco D'Anna, Vincenzo Micale, Alessio Sammartano
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+DeclareGlobalFunction("IsAperySetGammaRectangular");
+##############################################################################################################
+##
+#F  IsAperySetBetaRectangular
+##
+##  Test for the Beta-Rectangularity of the Apéry Set of a numerical semigroup
+##  Based on "Classes Of Complete Intersection Numerical Semigroups"
+##  Marco D'Anna, Vincenzo Micale, Alessio Sammartano
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+DeclareGlobalFunction("IsAperySetBetaRectangular");
+##############################################################################################################
+##
+#F  IsAperySetAlphaRectangular
+##
+##  Test for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup
+##  Based on "Classes Of Complete Intersection Numerical Semigroups"
+##  Marco D'Anna, Vincenzo Micale, Alessio Sammartano
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+DeclareGlobalFunction("IsAperySetAlphaRectangular");
+##############################################################################################################
+##
+#F  TypeSequenceOfNumericalSemigroup
+##
+##  Computes the type sequence of a numerical semigroup
+##  Based on "Maximality properties in numerical semigroups and applications to one-dimensional analytically irreducible local domains"
+##  V. Barucci, D. E. Dobbs, M. Fontana
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+DeclareGlobalFunction("TypeSequenceOfNumericalSemigroup");

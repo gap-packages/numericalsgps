@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: basics2.gi,v 0.971 $
+#H  @(#)$Id: basics2.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado, 
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -91,7 +91,7 @@ end);
 InstallGlobalFunction(RepresentsGapsOfNumericalSemigroup, function(L)
     local ld, ns;
     
-    if not (IsList(L) and ForAll(L, i -> IsPosInt(i))) then
+    if not (IsListOfIntegersNS(L) and ForAll(L, i -> IsPosInt(i))) then
         Error("The argument must be a list of positive integers");
     fi;
     ld := Union(List(L,DivisorsInt));
@@ -141,7 +141,7 @@ InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
                            Difference([0..ld[Length(ld)]+1],ld)) then
                     Unbind(ll[i]);
                 fi;
-               listNodivs:=Filtered([1..(list[1]-1)],x-> not ForAny(list,i -> i mod x = 0) );
+                listNodivs:=Filtered([1..(list[1]-1)],x-> not ForAny(list,i -> i mod x = 0) );
                 for x in listNodivs do
                     Append(ll,[Union([x],list)]);
                 od;
@@ -263,11 +263,11 @@ InstallGlobalFunction(NumericalSemigroupsWithGenus,function(g)
     end;
 
     if(not(IsInt(g)) or g<-1) then
-        Error("the argument must be an integer.\n");
+        Error("the argument must be a positive integer.\n");
     fi;
 
     if g=0 then
-        return [];
+        return [NumericalSemigroup(1)];
     fi;
     l:=[[3]];
     i:=1;

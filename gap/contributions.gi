@@ -3,7 +3,7 @@
 #W  contributions.gi          
 ##
 ##
-#H  @(#)$Id: contributions.gi,v 0.971 $
+#H  @(#)$Id: contributions.gi,v 0.98 $
 ##
 #Y  The functions in this file have been implemented by researchers that do 
 #Y  not appear as authors of the package. References to its usage should be 
@@ -122,8 +122,8 @@ end);
 #F  IsGradedAssociatedRingNumericalSemigroupGorenstein(S)
 ##
 ##  Test for the Gorenstein property of the associated graded ring of a numerical semigroup ring
-##  Based on D'Anna, M., Micale, V. and Sammartano, A. "On the Associated Ring of a Semigroup Ring", 
-##  preprint
+##  Based on D'Anna, M., Micale, V. and Sammartano, A. "On the Associated Ring of a Semigroup Ring", J. Commut. Algebra Volume 3, Number 2 (2011), 147-168.
+## 
 ##
 ##  Implemented by Alessio Sammartano
 ##
@@ -133,4 +133,165 @@ InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupGorenstein,functio
 		return true;
 	fi;
 	return false;
+end);
+##############################################################################################################
+## the functions below first appeared in version 0.98
+##############################################################################################################
+##
+#F  IsGradedAssociatedRingNumericalSemigroupCI
+##
+##  Test for the Complete Intersection property of the associated graded ring of a numerical semigroup ring k[[S]]
+##  Based on "When the associated graded ring of a semigroup ring is Complete Intersection"
+## 
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupCI,function(S)
+	if IsGradedAssociatedRingNumericalSemigroupCM(S) and IsAperySetGammaRectangular(S) then
+		return true;
+	fi;
+	return false;
+end);
+      
+##############################################################################################################
+##
+#F  IsAperySetGammaRectangular
+##
+##  Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup
+##  Based on "Classes Of Complete Intersection Numerical Semigroups"
+##  Marco D'Anna, Vincenzo Micale, Alessio Sammartano
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+InstallGlobalFunction(IsAperySetGammaRectangular,function(S)
+	local g, ni,  i, j, c,b, LL, G, G1;
+	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
+	ni:=Length(g);
+	if ni <= 2 then 
+		return true;
+	fi;
+	c:=[];
+	for i in [1..ni-1] do
+		c[i]:=1;
+		repeat
+			c[i]:=c[i]+1;
+			if BelongsToNumericalSemigroup(c[i]*g[i+1]-g[1],S) then
+				break;
+			fi;			
+			G:=GraphAssociatedToElementInNumericalSemigroup(c[i]*g[i+1],S);
+			G1:=Difference(G[1],[g[i+1]]);
+			LL:=List(G1, n-> MaximumDegreeOfElementWRTNumericalSemigroup(c[i]*g[i+1] - n,S));		
+			if Length(LL) >0 and Maximum(LL)>= c[i]-1 then 
+				break;
+			fi;
+		until false;
+	od;
+	if g[1]=Product(c) then
+		return true;
+	fi;
+	return false;
+end);
+##############################################################################################################
+##
+#F  IsAperySetBetaRectangular
+##
+##  Test for the Beta-Rectangularity of the Apéry Set of a numerical semigroup
+##  Based on "Classes Of Complete Intersection Numerical Semigroups"
+##  Marco D'Anna, Vincenzo Micale, Alessio Sammartano
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+InstallGlobalFunction(IsAperySetBetaRectangular,function(S)
+	local g, ni, m, i, b;
+	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
+	ni:=Length(g);
+	if ni <= 2 then 
+		return true;
+	fi;
+	m:=g[1];
+	b:=[];
+	for i in [1..ni-1] do
+		b[i]:=1;
+		repeat
+			b[i]:=b[i]+1;
+			if BelongsToNumericalSemigroup(b[i]*g[i+1]-g[1],S) or MaximumDegreeOfElementWRTNumericalSemigroup(b[i]*g[i+1],S)>b[i] then
+				break;
+			fi;
+		until false;
+	od;
+	if Product(b)=g[1] then
+		return true;
+	fi;
+	return false;
+end);
+##############################################################################################################
+##
+#F  IsAperySetAlphaRectangular
+##
+##  Test for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup
+##  Based on "Classes Of Complete Intersection Numerical Semigroups"
+##  Marco D'Anna, Vincenzo Micale, Alessio Sammartano
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+InstallGlobalFunction(IsAperySetAlphaRectangular,function(S)
+	local g, ni, m, i, a;
+	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
+	ni:=Length(g);
+	if ni <= 2 then 
+		return true;
+	fi;
+	m:=g[1];
+	a:=[];
+	for i in [1..ni-1] do
+		a[i]:=1;
+		repeat
+			a[i]:=a[i]+1;
+			if BelongsToNumericalSemigroup(a[i]*g[i+1]-g[1],S) then
+				break;
+			fi;
+		until false;
+	od;
+	if Product(a)=g[1] then
+		return true;
+	fi;
+	return false;
+end);
+##############################################################################################################
+##
+#F  TypeSequenceOfNumericalSemigroup
+##
+##  Computes the type sequence of a numerical semigroup
+##  Based on "Maximality properties in numerical semigroups and applications to one-dimensional analytically irreducible local domains"
+##  V. Barucci, D. E. Dobbs, M. Fontana
+##
+##  Implemented by Alessio Sammartano
+##
+##############################################################################################################
+InstallGlobalFunction(TypeSequenceOfNumericalSemigroup,function(S)
+	local Ga,Sma,n,g,i,j,L,l,t,h;
+	Ga:=GapsOfNumericalSemigroup(S);
+	Sma:=SmallElementsOfNumericalSemigroup(S);	
+	n:=Length(Sma)-1;
+	g:=Length(Ga);
+	L:=[];	
+	for j in [1..g]  do
+		i:=n+1;
+		while BelongsToNumericalSemigroup(Ga[j]+Sma[i],S) do
+			i:=i-1;
+		od;
+		L[j]:=i;
+	od;
+	t:=[];
+	for h in [1..n] do
+		t[h]:=0; 
+	od;
+	for l in L do
+		t[l]:=t[l]+1;
+	od;
+	return t;
 end);

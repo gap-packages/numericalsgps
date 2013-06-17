@@ -44,6 +44,21 @@
         multiplicity of the semigroup and <M>n</M> its largest minimal generator (see <Cite Key="CHM06"></Cite>
         or <Cite Key="GHKb"></Cite>).
 
+    <ManSection>
+
+        <Func Arg="n, ls" Name="FactorizationsIntegerWRTList"></Func>
+        <Description>
+            <A>ls</A> is a list of integers and <A>n</A> an integer.
+            The output is the set of factorizations of <A>n</A> in terms of the elements in the list <A>ls</A>. This function uses RestrictedPartitions.
+
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+]]></Example>
+         </Description>
+    </ManSection>
+
 
     <ManSection>
 
@@ -57,12 +72,44 @@
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);
 <Numerical semigroup with 6 generators>
 gap> FactorizationsElementWRTNumericalSemigroup(1100,s);
-[ [ 0, 0, 0, 2, 2, 0 ], [ 0, 2, 3, 0, 0, 1 ], [ 0, 8, 1, 0, 0, 0 ],
-  [ 5, 1, 1, 0, 0, 1 ] ]
+[ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ], 
+  [ 0, 2, 3, 0, 0, 1 ] ]
 ]]></Example>
          </Description>
     </ManSection>
 
+    <ManSection>
+
+        <Func Arg="n, ls" Name="LengthsOfFactorizationsIntegerWRTList"></Func>
+        <Description>
+            <A>ls</A> is a list of integers and <A>n</A> an  integer.
+            The output is the set of lengths of the factorizations of <A>n</A> in terms of the elements in <A>ls</A>.
+
+            <Example><![CDATA[
+gap> LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ 6, 8 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
+    <ManSection>
+
+        <Func Arg="ls" Name="RClassesOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same lenght).
+            The output is the set of <M>\mathcal R</M>-classes of this set of factorizations as defined in Chapter 7 of <Cite Key="RGbook"></Cite>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,11,19,23);;
+gap> BettiElementsOfNumericalSemigroup(s);
+[ 30, 33, 42, 57, 69 ]
+gap> FactorizationsElementWRTNumericalSemigroup(69,s);
+[ [ 5, 0, 1, 0 ], [ 2, 1, 2, 0 ], [ 0, 0, 0, 3 ] ]
+gap> RClassesOfSetOfFactorizations(last);
+[ [ [ 2, 1, 2, 0 ], [ 5, 0, 1, 0 ] ], [ [ 0, 0, 0, 3 ] ] ]
+]]></Example>
+         </Description>
+    </ManSection>
 
     <ManSection>
 
@@ -120,6 +167,23 @@ gap> ElasticityOfNumericalSemigroup(s);
 
     <ManSection>
 
+        <Func Arg="ls" Name="DeltaSetOfSetOfIntegers"></Func>
+        <Description>
+            <A>ls</A> is list of integers.
+            The output is the Delta set of the elements in <A>ls</A>, that is, the set of differences of consecutive elements in the list.
+
+            <Example><![CDATA[
+gap> LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ 6, 8 ]
+gap> DeltaSetOfSetOfIntegers(last);
+[ 2 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
+
         <Func Arg="n, S" Name="DeltaSetOfFactorizationsElementWRTNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> a nonnegative integer.
@@ -155,6 +219,24 @@ gap> MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);
 
     <ManSection>
 
+        <Func Arg="ls" Name="CatenaryDegreeOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same lenght).
+            The output is the catenary degree of this set of factorizations.
+
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+gap> CatenaryDegreeOfSetOfFactorizations(last);
+5
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
+
         <Func Arg="S" Name="CatenaryDegreeOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -168,6 +250,7 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
 ]]></Example>
          </Description>
     </ManSection>
+
 
     <ManSection>
 
@@ -184,6 +267,23 @@ gap> CatenaryDegreeOfElementInNumericalSemigroup(1157,NumericalSemigroup(13,18))
 ]]></Example>
          </Description>
     </ManSection>
+
+    <ManSection>
+        <Func Arg="ls" Name="TameDegreeOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same lenght).
+            The output is the tame degree of this set of factorizations.
+           
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ],
+  [ 1, 1, 0, 4 ] ]
+gap> TameDegreeOfSetOfFactorizations(last);
+4
+]]></Example>          
+        </Description>
+    </ManSection>
+
 
     <ManSection>
         <Func Arg="S" Name="TameDegreeOfNumericalSemigroup"></Func>
@@ -226,7 +326,7 @@ gap> TameDegreeOfElementInNumericalSemigroup(100,s);
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);        
 <Numerical semigroup with 3 generators>
-gap> OmegaPrimalityOfElementinNumericalSemigroup(100,s);
+gap> OmegaPrimalityOfElementInNumericalSemigroup(100,s);
 13
 ]]></Example>          
         </Description>

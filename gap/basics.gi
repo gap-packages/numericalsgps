@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: basics.gi,v 0.971 $
+#H  @(#)$Id: basics.gi,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -550,22 +550,23 @@ InstallMethod( FundamentalGapsOfNumericalSemigroup,
         true,
         [IsNumericalSemigroup],
         function(S)
-    local i, j, h, fh;
-    if IsBound(S!.fundamentalgaps) then
-        return S!.fundamentalgaps;
-    fi;
-    h := GapsOfNumericalSemigroup(S);
-    fh := [];
-    for i in h do
-        if Filtered(h, j-> j mod i = 0) = [i] then
-            Add(fh, i);
-        fi;
+  local  g, h, fh;
 
-    od;
-    S!.fundamentalgaps := fh;
-    return fh;
+  h := ShallowCopy(GapsOfNumericalSemigroup(S));
+  if IsBound(S!.fundamentalgaps) then
+    return S!.fundamentalgaps;
+  fi;
+  h := GapsOfNumericalSemigroup(S);
+  fh := [];
+  while h <> [] do
+    g := h[Length(h)];
+    Add(fh,g);
+    h := Difference(h,DivisorsInt(g));
+  od;
+  fh := Set(fh);
+  S!.fundamentalgaps := fh;
+  return fh;
 end);
-
 
 
 #############################################################################
@@ -608,23 +609,22 @@ end);
 ##  semigroup S.
 ##
 #############################################################################
-InstallMethod( SpecialGapsOfNumericalSemigroup,
-        "returns the list of special gaps",
-        true,
-        [IsNumericalSemigroup],
-        function(S)
-    local y, Y;
+  InstallMethod( SpecialGapsOfNumericalSemigroup,
+          "returns the list of special gaps",
+          true,
+          [IsNumericalSemigroup],
+          function(S)
+    local  PF, Y, y;
+
+    PF := PseudoFrobeniusOfNumericalSemigroup(S);
     Y := [];
-    for y in GapsOfNumericalSemigroup(S) do
-        if BelongsToNumericalSemigroup(2*y,S) then
-            Add(Y,y);
-        fi;
+    for y in PF do
+      if BelongsToNumericalSemigroup(2*y,S) then
+        Add(Y,y);
+      fi;
     od;
-
-    return Intersection(PseudoFrobeniusOfNumericalSemigroup(S),Y);
-end);
-
-
+    return Y;
+  end);
 
 
 #############################################################################
@@ -738,6 +738,7 @@ InstallMethod( BelongsToNumericalSemigroup,
                 else
                     AddSet(R,s+t);
                 fi;
+
             od;
         od;
         return R;
@@ -754,6 +755,9 @@ InstallMethod( BelongsToNumericalSemigroup,
         gen := S!.generators;
     fi;
     ss := sumNS(gen,gen);
+	if n in ss then
+		return true;
+	fi;
     if n < Minimum(ss) then
         return false;
     else
@@ -791,7 +795,7 @@ end);
 ##
 #############################################################################
 InstallMethod( AperyListOfNumericalSemigroupWRTElement,
-        "returns the Apery list of a  numerical semigroup with respect to a nunzero element of the semigroup",
+        "returns the Apery list of a  numerical semigroup with respect to a nonzero element of the semigroup",
         true,
         [IsNumericalSemigroup,IsInt],
         function(S,n)
@@ -801,7 +805,7 @@ InstallMethod( AperyListOfNumericalSemigroupWRTElement,
     #        return S!.aperylist;
     #    elif not BelongsToNumericalSemigroup(n,S) then
     if not BelongsToNumericalSemigroup(n,S) then
-        Error("n must be an element of S in AperyListOfNumericalSemigroupWRTElement");
+        Error("The second argument  must be an element of the first argument in AperyListOfNumericalSemigroupWRTElement");
     else
         Ap := [0];
         f := FrobeniusNumberOfNumericalSemigroup(S);
@@ -814,6 +818,35 @@ InstallMethod( AperyListOfNumericalSemigroupWRTElement,
         fi;
     fi;
     return ShallowCopy(Ap);
+end);
+
+
+#############################################################################
+##
+#F  AperyListOfNumericalSemigroupWRTInteger(S,n)
+##
+##  Returns the Apery list of the numerical
+##  semigroup S with respect to the positive integer n.
+##
+#############################################################################
+InstallGlobalFunction( AperyListOfNumericalSemigroupWRTInteger,
+        function(S,n)
+    local   Ap,  f,  max,  i;
+
+    if not(IsInt(n)) then
+        Error("The second argument must be a positive integer");
+	fi;
+	if n<=0 then
+        Error("The second argument must be a positive integer");
+	fi;
+
+	if not(IsNumericalSemigroup(S)) then 
+		Error("The first argument must be a numerical semigroup");
+	fi;
+    f := FrobeniusNumberOfNumericalSemigroup(S);
+    max := f + n+1; #from this point on x-n is in S
+    Ap:=Filtered(Difference([0..max],GapsOfNumericalSemigroup(S)), x -> not((x-n) in S));
+	return Ap;
 end);
 
 

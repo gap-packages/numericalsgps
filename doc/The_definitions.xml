@@ -125,6 +125,33 @@ gap> AperyListOfNumericalSemigroupWRTElement(S,12);
                 </ManSection>
 
 
+                <ManSection>
+                    <Oper Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>m</A> is a positive integer. 
+						Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the 
+						set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>. 
+						If <A>m</A> is an element in <A>S</A>, then the output, as sets, is the same as <A>AperyListOfNumericalSemigroupWRTInteger</A>, 
+						though without side effects, 
+						in the sense that this information is no longer used by the package.
+
+                        <Example><![CDATA[
+gap>  s:=NumericalSemigroup(10,13,19,27);
+<Numerical semigroup with 4 generators>
+gap> AperyListOfNumericalSemigroupWRTInteger(s,11);
+[ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+gap> Length(last);
+18
+gap> AperyListOfNumericalSemigroupWRTInteger(s,10);
+[ 0, 13, 19, 26, 27, 32, 38, 45, 51, 54 ]
+gap> AperyListOfNumericalSemigroupWRTElement(s,10);
+[ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
+gap> Length(last);
+10
+]]></Example>
+                    </Description>
+                </ManSection>
+
 
 <ManSection>
                     <Func Name="AperyListOfNumericalSemigroupAsGraph" Arg="ap"/>
@@ -135,8 +162,7 @@ in <M>E</M> iff <M>v - u</M> is in <M>ap</M>.
 The 0 is ignored.
 
 <Example><![CDATA[
-gap> s:=NumericalSemigroup(3,7);
-<Numerical semigroup with 2 generators>
+gap> s:=NumericalSemigroup(3,7);;
 gap> AperyListOfNumericalSemigroupWRTElement(s,10);
 [ 0, 21, 12, 3, 14, 15, 6, 7, 18, 9 ]
 gap> AperyListOfNumericalSemigroupAsGraph(last);

@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: arf-med.gd,v 0.971 $
+#H  @(#)$Id: arf-med.gd,v 0.98 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
@@ -56,6 +56,16 @@ DeclareAttribute("IsArfNumericalSemigroup", IsNumericalSemigroup);
 DeclareAttribute("MinimalArfGeneratingSystemOfArfNumericalSemigroup", IsNumericalSemigroup);
 
 
+#####################################################################
+##
+#F ArfNumericalSemigroupsWithFrobeniusNumber(f)
+##
+## The argument f is an integer
+## Returns the set of Arf numerical semigroups with Frobenius number f 
+## as explained in the preprint
+##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+#############################################################################
+DeclareGlobalFunction("ArfNumericalSemigroupsWithFrobeniusNumber");
 
 #####################################################################
 ##                        MED
@@ -120,3 +130,14 @@ DeclareGlobalFunction("SaturatedNumericalSemigroupClosure");
 ## 
 #####################################################################
 DeclareAttribute("IsSaturatedNumericalSemigroup", IsNumericalSemigroup);
+
+#####################################################################
+##
+#F SaturatedNumericalSemigroupsWithFrobeniusNumber(f)
+##
+## The argument f is an integer
+## returns the the set of saturated numerical semigroups with Frobenius number f
+## as explained in the preprint
+##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+########################################################################
+DeclareGlobalFunction("SaturatedNumericalSemigroupsWithFrobeniusNumber");
