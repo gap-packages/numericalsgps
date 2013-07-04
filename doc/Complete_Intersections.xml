@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Complete intersection numerical semigroups
+                </Heading>
+
+				The cardinality of a minimal presentation of a numerical semigroup is alwas greater than or equal to its embedding 
+				dimension minus one. Complete intersection numerical semigroups are numerical semigroups reching this bound, and they are 
+				irreducible.  It can be shown that every complete intersection (other that <M>\mathbb N</M>) is a complete intersection if
+				and only if it is the gluing of two complete intersections. When in this gluing, one of the copies is isomorphic to <M>\mathbb N</M>, 
+				then we obtain a free semigroups in the sense of <Cite Key="BC77"></Cite>. Two special kinds of free semigroups are telescopic semigroups 
+				(<Cite Key="KP95"></Cite>) and those associated to an irreducible planar curve (<Cite Key="Z86"></Cite>). We use the algorithms presented
+				in <Cite Key="AGS13"></Cite> to find the set of all complete intersections (also free, telescopic and associated to irreducible planar curves) numerical
+				semigroups with given Frobenius number.
+<P/>
+
+                 <ManSection>
+                    <Func Arg="s" Name="AsGluingOfNumericalSemigroups"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup. Returns all partitions <M>\{A_1,A_2\}</M> of the minimal generating set of <A>s</A> such
+that <A>s</A> is a gluing of <M>\leftangle A_1\rightangle</M> and <M>\leftangle A_2\rightangle</M> by <M>gcd(A_1)gcd(A_2)</M> 
+                        <Example><![CDATA[
+gap> s := NumericalSemigroup( 10, 15, 16 );                   
+<Numerical semigroup with 3 generators>
+gap> AsGluingOfNumericalSemigroups(s);     
+[ [ [ 10, 15 ], [ 16 ] ], [ [ 10, 16 ], [ 15 ] ] ]
+gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
+<Numerical semigroup with 8 generators>
+gap> AsGluingOfNumericalSemigroups(s);                        
+[  ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="s" Name="IsACompleteIntersectionNumericalSemigroup"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is a complete intersection, that is, the cardinality of a (any) minimal presentation equals its embedding dimension minus one.
+                        <Example><![CDATA[
+gap> s := NumericalSemigroup( 10, 15, 16 );       
+<Numerical semigroup with 3 generators>
+gap> IsACompleteIntersectionNumericalSemigroup(s);
+true
+gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
+<Numerical semigroup with 8 generators>
+gap> IsACompleteIntersectionNumericalSemigroup(s);            
+false
+]]></Example>          
+                    </Description>
+                </ManSection>
+               
+                <ManSection>
+                    <Func Arg="f" Name="CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        complete intersection numerical semigroups with frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> Length(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(57));
+34
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="s" Name="IsFreeNumericalSemigroup"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is free in the sense of <Cite Key="BC77"></Cite>: 
+						it is either <M>\mathbb N</M> or the gluing of a copy of  <M>\mathbb N</M> with a free numerical semigroup.
+                        <Example><![CDATA[
+gap> IsFreeNumericalSemigroup(NumericalSemigroup(10,15,16));
+true
+gap> IsFreeNumericalSemigroup(NumericalSemigroup(3,5,7));
+false
+]]></Example>          
+                    </Description>
+                </ManSection>
+               
+                <ManSection>
+                    <Func Arg="f" Name="FreeNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        free numerical semigroups with frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> Length(FreeNumericalSemigroupsWithFrobeniusNumber(57));
+33
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="s" Name="IsTelescopicNumericalSemigroup"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is telescopic in the sense of <Cite Key="KP95"></Cite>: 
+						it is either <M>\mathbb N</M> or the gluing of   <M>\langle n_e\rangle</M> and <M>s'=\langle n_1/d,\ldots, n_{e-1}/d\rangle</M>, 
+						and <M>s'</M> is again a telescopic numerical semigroup, where <M>n_1\lt \cdots \lt n_e </M> are the minimal generators of <A>s</A>.
+                        <Example><![CDATA[
+gap> IsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));
+false
+gap> IsFreeNumericalSemigroup(NumericalSemigroup(4,11,14));
+true
+]]></Example>          
+                    </Description>
+                </ManSection>
+               
+                <ManSection>
+                    <Func Arg="f" Name="TelescopicNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        telescopic numerical semigroups with frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));
+20
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="s" Name="IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is associated to an irreducible planar curve singularity
+						(<Cite Key="Z86"></Cite>). These semigroups are telescopic.
+                        <Example><![CDATA[
+gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,14));
+false
+gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,19));
+true
+]]></Example>          
+                    </Description>
+                </ManSection>
+               
+                <ManSection>
+                    <Func Arg="f" Name="NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        numerical semigroups associated to irreducible planar curves singularities with frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber(57));
+7
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+</Section>
+

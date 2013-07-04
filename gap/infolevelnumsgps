@@ -1,9 +1,0 @@
-infonumsgps := function(n)
-  
-    SetInfoLevel(InfoNumSgps, n);
-     
-    Print("Info Level for InfoNumSgps is set to ",n, "\n");
-end;
-
-
-SetInfoLevel(InfoNumSgps, 1);

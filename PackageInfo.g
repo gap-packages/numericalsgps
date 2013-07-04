@@ -38,7 +38,7 @@ Subtitle := "A package for numerical semigroups",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "0.98",
+Version := "0.980",
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
@@ -48,7 +48,7 @@ Date := "17/06/2013",
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.98">
+##  <!ENTITY VERSION "0.980">
 ##  <!ENTITY RELEASEDATE "17 June 2013">
 ##  <#/GAPDoc>
 
