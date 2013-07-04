@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Almost-symmetric numerical semigroups
+                </Heading>
+
+
+				A numerical semigroup is almost-symmetric (<Cite Key="BF97"></Cite>) if its genus is the arithmetic mean of its Frobenius number and type. 
+				We use a procedure presented in <Cite Key="RGS13"></Cite> to determine the set of all almost-symmetric numerical semigroups with given Frobenius 
+				number. In order to do this, we first calculate the set of all almost-symmetric numerical semigroups that can be constructed from an irreducible
+				numerical semigroup.
+<P/>
+                <ManSection>
+                    <Func Arg="s" Name="AlmostSymmetricNumericalSemigroupsFromIrreducible"></Func>
+                    <Description>
+                        <A>s</A> is an irreducible numerical semigroup.  The output is the set of almost-symetric numerical semigroups that can be constructed 
+						from <A>s</A> by removing some of its generators as explained in <Cite Key="RGS13"></Cite>). 
+                        <Example><![CDATA[
+gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,11));
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
+[ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+               
+                <ManSection>
+                    <Func Arg="s" Name="IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity"></Func>
+                    <Description>
+                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is almost symmetric.
+                        <Example><![CDATA[
+gap> IsAlmostSymmetricNumericalSemigroup(NumericalSemigroup(5,8,11,14,17));
+true
+]]></Example>          
+                    </Description>
+                </ManSection>
+               
+                <ManSection>
+                    <Func Arg="f" Name="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all almost symmetric
+                        numerical semigroups with Frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12));
+15
+gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(12));
+2
+]]></Example>          
+                    </Description>
+                </ManSection>
+</Section>
