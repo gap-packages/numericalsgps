@@ -183,7 +183,7 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGenerators, function(arg)
 
     l := minimalGSNS(L);
     if not Length(L) = Length(l) then
-        Info(InfoNumSgps,0, "The given list was not the minimal generating set. The list ", l, " will be used instead.");
+        Info(InfoWarning,1,"The list ", L, " can not be the minimal generating set. The list ", l, " will be used instead.");
         L := l;
     fi;
     M:= Objectify( NewType( FamilyObj( L ),
