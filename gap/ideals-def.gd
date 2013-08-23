@@ -75,6 +75,8 @@ BindGlobal( "IdealsOfNumericalSemigroupsType",
 ##
 #############################################################################
 DeclareGlobalFunction("IdealOfNumericalSemigroup");
+#A
+DeclareAttribute( "UnderlyingNSIdeal", IsNumericalSemigroup);
 
 
 #############################################################################
@@ -86,6 +88,8 @@ DeclareGlobalFunction("IdealOfNumericalSemigroup");
 ##  is the set returned.
 ############################################################################
 DeclareGlobalFunction("GeneratorsOfIdealOfNumericalSemigroup");
+#A
+DeclareAttribute( "GeneratorsIdealNS", IsIdealOfNumericalSemigroup);
 
 
 #############################################################################

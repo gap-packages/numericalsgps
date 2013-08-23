@@ -218,12 +218,6 @@ gap> GeneratorsOfNumericalSemigroup(S);
 [ 3, 5, 53 ]
 gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
-gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
-[ 5, 7, 9, 25 ]
-gap> ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   
-[ 5, 7, 9, 28 ]
-gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   
-[ 5, 7, 9 ]
 
 gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ 0, 3, 5 ]
@@ -237,6 +231,11 @@ gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> AperyListOfNumericalSemigroup(S);
+[ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
 
 gap>  s:=NumericalSemigroup(10,13,19,27);
 <Numerical semigroup with 4 generators>

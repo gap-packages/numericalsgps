@@ -24,8 +24,8 @@ gap> MultiplicityOfNumericalSemigroup(S);
 
                 <ManSection>
                     <Func Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
-                    <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
-                    <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/>
+                   <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
+                  <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/> -->
 <Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
                     <Description>
                         <A>S</A>
@@ -34,16 +34,18 @@ gap> MultiplicityOfNumericalSemigroup(S);
                         returns a set of generators of <C>S</C>, which may
                         not be minimal.
 
-                        <C>GeneratorsOfNumericalSemigroupNC</C>
+                 <!--       <C>GeneratorsOfNumericalSemigroupNC</C>
                         returns the set of generators recorded in <C>S!.generators</C>, which may
                         not be minimal
                         <C>ReducedSetOfGeneratorsOfNumericalSemigroupNC</C>
                         Returns a set with possibly fewer generators than those recorded in <C>S!.generators</C>. It changes <C>S!.generators</C> to the set returned.
-The function has 1 to 3 arguments. One of them a numerical semigroup. Then an argument is a boolean (<E>true</E> means that all the elements not belonging to the Apery set with respect to the multiplicity are removed; the default is "false") and another argument is a positive integer <M>n</M> (meaning that generators that can be written as the sum of <M>n</M> or less generators are removed; the default is "2"). The boolean or the integer may not be present. If a minimal generating set for <M>S</M> is known or no generating set is known, then the minimal generating system is returned.
+The function has 1 to 3 arguments. One of them a numerical semigroup. Then an argument is a boolean (<E>true</E> means that all the elements not belonging to the Apery set with respect to the multiplicity are removed; the default is "false") and another argument is a positive integer <M>n</M> (meaning that generators that can be written as the sum of <M>n</M> or less generators are removed; the default is "2"). The boolean or the integer may not be present. If a minimal generating set for <M>S</M> is known or no generating set is known, then the minimal generating system is returned.-->
                         
 
                         <C>MinimalGeneratingSystemOfNumericalSemigroup</C>
                         returns the minimal set of generators of <C>S</C>.
+<P/>
+From Version 0.980, <C>ReducedSetOfGeneratorsOfNumericalSemigroup</C> is just a synonym of <C>MinimalGeneratingSystemOfNumericalSemigroup</C> and <C>GeneratorsOfNumericalSemigroupNC</C> is just a synonym of <C>GeneratorsOfNumericalSemigroup</C>. The names are kept for compatibility with code produced for previous versions, but will be removed in the future.
 
                         <Example><![CDATA[
 gap> S := NumericalSemigroup("modular", 5,53);
@@ -56,12 +58,12 @@ gap> GeneratorsOfNumericalSemigroup(S);
 [ 3, 5, 53 ]
 gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
-gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
+<!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
 [ 5, 7, 9, 25 ]
 gap> ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   
 [ 5, 7, 9, 28 ]
 gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   
-[ 5, 7, 9 ]
+[ 5, 7, 9 ]-->
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -123,10 +125,22 @@ gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 ]]></Example>
                     </Description>
                 </ManSection>
+                <ManSection>
+                    <Oper Name="AperyListOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup. It computes the Apéry list of <A>S</A> with respect to the multiplicity of <A>S</A>. 
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> AperyListOfNumericalSemigroup(S);
+[ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+]]></Example>
+                    </Description>
+                </ManSection>
 
 
                 <ManSection>
-                    <Oper Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
+                    <Func Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
                     <Description>
                         <A>S</A> is a numerical semigroup and <A>m</A> is a positive integer. 
 						Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the 
