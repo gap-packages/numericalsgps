@@ -95,7 +95,7 @@
 
 \hypersetup{pdftitle=\textsf{numericalsgps}, a package for numerical semigroups}
 \markright{\scriptsize \mbox{}\hfill \textsf{numericalsgps}, a package for numerical semigroups \hfill\mbox{}}
-{\Huge ( Version 0.98 ) \mbox{}}\\[1cm]
+{\Huge ( Version 0.981 ) \mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{ Manuel Delgado   \mbox{}}}\\
 {\Large \textbf{ Pedro A. Garc{\a'\i}a-S{\a'a}nchez   \mbox{}}}\\
@@ -706,40 +706,32 @@ returns \texttt{true} when the periodic function represented by \mbox{\texttt{\m
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfNumericalSemigroup({\mdseries\slshape S})\index{GeneratorsOfNumericalSemigroup@\texttt{GeneratorsOfNumericalSemigroup}}
 \label{GeneratorsOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfNumericalSemigroupNC({\mdseries\slshape S})\index{GeneratorsOfNumericalSemigroupNC@\texttt{GeneratorsOfNumericalSemigroupNC}}
-\label{GeneratorsOfNumericalSemigroupNC}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ReducedSetOfGeneratorsOfNumericalSemigroup({\mdseries\slshape S[, bool, n]})\index{ReducedSetOfGeneratorsOfNumericalSemigroup@\texttt{Reduced}\-\texttt{Set}\-\texttt{Of}\-\texttt{Generators}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
-\label{ReducedSetOfGeneratorsOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystemOfNumericalSemigroup({\mdseries\slshape S})\index{MinimalGeneratingSystemOfNumericalSemigroup@\texttt{Minimal}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalGeneratingSystemOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. \texttt{GeneratorsOfNumericalSemigroup} returns a set of generators of \texttt{S}, which may not be minimal. \texttt{GeneratorsOfNumericalSemigroupNC} returns the set of generators recorded in \texttt{S!.generators}, which may not be minimal \texttt{ReducedSetOfGeneratorsOfNumericalSemigroupNC} Returns a set with possibly fewer generators than those recorded in \texttt{S!.generators}. It changes \texttt{S!.generators} to the set returned. The function has 1 to 3 arguments. One of them a
-numerical semigroup. Then an argument is a boolean (\emph{true} means that all the elements not belonging to the Apery set with respect to the
-multiplicity are removed; the default is "false") and another argument is a
-positive integer $n$ (meaning that generators that can be written as the sum of $n$ or less generators are removed; the default is "2"). The boolean or the
-integer may not be present. If a minimal generating set for $S$ is known or no generating set is known, then the minimal generating system is
-returned. \texttt{MinimalGeneratingSystemOfNumericalSemigroup} returns the minimal set of generators of \texttt{S}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. \texttt{GeneratorsOfNumericalSemigroup} returns a set of generators of \texttt{S}, which may not be minimal.  \texttt{MinimalGeneratingSystemOfNumericalSemigroup} returns the minimal set of generators of \texttt{S}. 
+
+ From Version 0.980, \texttt{ReducedSetOfGeneratorsOfNumericalSemigroup} is just a synonym of \texttt{MinimalGeneratingSystemOfNumericalSemigroup} and \texttt{GeneratorsOfNumericalSemigroupNC} is just a synonym of \texttt{GeneratorsOfNumericalSemigroup}. The names are kept for compatibility with code produced for previous
+versions, but will be removed in the future. 
+\begin{Verbatim}[commandchars=@|A,fontsize=\small,frame=single,label=Example]
+  @gapprompt|gap>A @gapinput|S := NumericalSemigroup("modular", 5,53);A
   <Modular numerical semigroup satisfying 5x mod 53 <= x >
-  !gapprompt@gap>| !gapinput@GeneratorsOfNumericalSemigroup(S);|
+  @gapprompt|gap>A @gapinput|GeneratorsOfNumericalSemigroup(S);A
   [ 11, 12, 13, 32, 53 ]
-  !gapprompt@gap>| !gapinput@S := NumericalSemigroup(3, 5, 53);|
+  @gapprompt|gap>A @gapinput|S := NumericalSemigroup(3, 5, 53);A
   <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@GeneratorsOfNumericalSemigroup(S);|
+  @gapprompt|gap>A @gapinput|GeneratorsOfNumericalSemigroup(S);A
   [ 3, 5, 53 ]
-  !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfNumericalSemigroup(S);|
+  @gapprompt|gap>A @gapinput|MinimalGeneratingSystemOfNumericalSemigroup(S);A
   [ 3, 5 ]
-  !gapprompt@gap>| !gapinput@ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));|
+  <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
   [ 5, 7, 9, 25 ]
-  !gapprompt@gap>| !gapinput@ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   |
+  @gapprompt|gap>A @gapinput|ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   A
   [ 5, 7, 9, 28 ]
-  !gapprompt@gap>| !gapinput@ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   |
-  [ 5, 7, 9 ]
+  @gapprompt|gap>A @gapinput|ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   A
+  [ 5, 7, 9 ]-->
 \end{Verbatim}
  }
 
@@ -814,12 +806,31 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupWRTInteger}}
+\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroup}}
 \logpage{[ 3, 1, 7 ]}\nobreak
+\hyperdef{L}{X85EACCB87E7F563B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroup({\mdseries\slshape S})\index{AperyListOfNumericalSemigroup@\texttt{AperyListOfNumericalSemigroup}}
+\label{AperyListOfNumericalSemigroup}
+}\hfill{\scriptsize (operation)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. It computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to the multiplicity of \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
+  <Modular numerical semigroup satisfying 5x mod 53 <= x >
+  !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroup(S);|
+  [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupWRTInteger}}
+\logpage{[ 3, 1, 8 ]}\nobreak
 \hyperdef{L}{X877266A18524982E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTInteger({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTInteger@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Integer}}
 \label{AperyListOfNumericalSemigroupWRTInteger}
-}\hfill{\scriptsize (operation)}}\\
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is a positive integer. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}, that is, the set of elements $x$ in \mbox{\texttt{\mdseries\slshape S}} such that $x-$\mbox{\texttt{\mdseries\slshape m}} is not in \mbox{\texttt{\mdseries\slshape S}}. If \mbox{\texttt{\mdseries\slshape m}} is an element in \mbox{\texttt{\mdseries\slshape S}}, then the output, as sets, is the same as \mbox{\texttt{\mdseries\slshape AperyListOfNumericalSemigroupWRTInteger}}, though without side effects, in the sense that this information is no longer
@@ -843,7 +854,7 @@ used by the package.
  
 
 \subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupAsGraph}}
-\logpage{[ 3, 1, 8 ]}\nobreak
+\logpage{[ 3, 1, 9 ]}\nobreak
 \hyperdef{L}{X8022CC477E9BF678}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupAsGraph({\mdseries\slshape ap})\index{AperyListOfNumericalSemigroupAsGraph@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{As}\-\texttt{Graph}}
 \label{AperyListOfNumericalSemigroupAsGraph}

@@ -1,8 +1,15 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+0.980 -> ...
 
-0.971 -> 0.98
+- The function AperyListOfNumericalSemigroup has been added. It has only a numerical semigroup as argument and does the same than AperyListOfNumericalSemigroupWRTElement when considered relative to the multiplicity (which is, by far, the most important case). 
+
+- The components of the objects "NumericalSemigroup" and "IdealOfNumericalSemigroup" became atributes. All "!." used either to access the components and to assign new values to them have been changed accordinly. It affected various files.
+
+- ReducedSetOfGeneratorsOfNumericalSemigroup became just a synonym of MinimalGeneratingSystemOfNumericalSemigroup, since this function is now reasonably fast and the former one was not significantly used. The name was kept for compatibility with code produced for previous versions.
+- GeneratorsOfNumericalSemigroupNC became a synonym of GeneratorsOfNumericalSemigroup. The former one had no interest. The name was kept for compatibility with code produced for previous versions.
+0.971 -> 0.980
 - Fixed N not to be irreducible nor symmetric.
 - Gluings of numerical semigroups added to the manual.
 - New functions for almost symmetric numerical semigroups:

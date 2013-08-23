@@ -27,11 +27,15 @@
 ##
 #############################################################################
 InstallGlobalFunction(IdealOfNumericalSemigroup, function(l,S)
-    if not (IsNumericalSemigroup(S) and IsListOfIntegersNS(l)) then
+  local  I;
+      if not (IsNumericalSemigroup(S) and IsListOfIntegersNS(l)) then
         Error("The arguments of IdealOfNumericalSemigroup must be a numerical semigroup and a nonempty list of integers.");
     fi;
-    return(Objectify( IdealsOfNumericalSemigroupsType,
-                  rec(sgp := S, generators := Set(l))));
+    I := Objectify( IdealsOfNumericalSemigroupsType,
+                  rec());
+    SetUnderlyingNSIdeal(I,S);
+    SetGeneratorsIdealNS(I,Set(l));
+    return I;
 end );
 
 
@@ -69,7 +73,7 @@ InstallMethod( PrintObj,
         "prints an Ideal of a Numerical Semigroup",
         [ IsIdealOfNumericalSemigroup],
         function( I )
-    Print(I!.generators," + NumericalSemigroup( ", GeneratorsOfNumericalSemigroup(I!.sgp), " )\n");
+    Print(GeneratorsIdealNS(I)," + NumericalSemigroup( ", GeneratorsOfNumericalSemigroup(UnderlyingNSIdeal(I)), " )\n");
 end);
 
 #############################################################################
@@ -185,7 +189,7 @@ InstallGlobalFunction(GeneratorsOfIdealOfNumericalSemigroup, function(I)
     if HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I) then
        return (MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I));
     fi;
-    return(ShallowCopy(I!.generators));
+    return(GeneratorsIdealNS(I));
     
 end);
 
@@ -200,7 +204,7 @@ InstallGlobalFunction(GeneratorsOfIdealOfNumericalSemigroupNC, function(I)
     if not IsIdealOfNumericalSemigroup(I) then
         Error("The argument must be an ideal of a numerical semigroup.");
     fi;
-    return(ShallowCopy(I!.generators));
+    return(GeneratorsIdealNS(I));
 end);
 
 #############################################################################
@@ -213,7 +217,7 @@ InstallGlobalFunction(AmbientNumericalSemigroupOfIdeal, function(I)
     if not IsIdealOfNumericalSemigroup(I) then
         Error("The argument must be an ideal of a numerical semigroup.");
     fi;
-    return(ShallowCopy(I!.sgp));
+    return(UnderlyingNSIdeal(I));
 end);
 
 #############################################################################
