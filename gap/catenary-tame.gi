@@ -915,3 +915,208 @@ InstallGlobalFunction(RClassesOfSetOfFactorizations, function(l)
 
 end);
 
+########################################################
+#  MaximalDenumerantOfElementInNumericalSemigroup(x,s)
+#  returns the number of factorizations of maximal length of x in 
+#  the numerical semigroup s
+########################################################
+InstallGlobalFunction(MaximalDenumerantOfElementInNumericalSemigroup, 
+function(x,s)
+	local max, fact;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.\n");
+    fi;
+
+    if not ( x in s ) then
+        Error("The first argument must be an element of the second.\n");
+    fi;
+	
+	fact:=FactorizationsElementWRTNumericalSemigroup(x,s);
+	max:=Maximum(Set(fact,Sum));
+	
+	return Length(Filtered(fact, x->Sum(x)=max));
+end);
+
+########################################################
+#  MaximalDenumerantOfSetOfFactorizations(ls)
+#  returns the number of factorizations of maximal length in ls
+########################################################
+InstallGlobalFunction(MaximalDenumerantOfSetOfFactorizations,
+function(ls)
+	local max;
+	
+	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
+		Error("The argument is not a list of factorizations.\n");
+	fi;
+	if Minimum(Flat(ls))<0 then 
+		Error("Coefficients must be nonnegative integers.\n");
+	fi;
+
+	max:=Maximum(Set(ls,Sum));
+	
+	return Length(Filtered(ls, x->Sum(x)=max));
+end);
+
+
+########################################################
+# MaximalDenumerantOfNumericalSemigroup(s)
+# computes the maximal denumerant of a numerical semigroup
+# by using de algorithm given by Bryant and Hamblin 
+# Semigroup Forum 86 (2013), 571-582
+########################################################
+InstallGlobalFunction(MaximalDenumerantOfNumericalSemigroup, function(s)
+	local adj, ord, minord, msg, bmsg, p, m, ap, adjSi, i, Si, apb, bi, b, x, md, j, lr, bj;
+	
+	if(not(IsNumericalSemigroup(s)))then
+		Error("The argument must be anumerical semigroup.\n");
+	fi;
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	m:=MultiplicityOfNumericalSemigroup(s);
+	ap:=AperyListOfNumericalSemigroupWRTElement(s,m);
+	b:=BlowUpOfNumericalSemigroup(s);
+	apb:=AperyListOfNumericalSemigroupWRTElement(b,m);
+
+	bmsg:=ShallowCopy(msg-m);
+	bmsg[1]:=m;
+
+	ord:=function(x)
+		return Maximum(LengthsOfFactorizationsIntegerWRTList(x,msg));
+	end;
+
+	adj:=function(x)
+		return x-ord(x)*m;
+	end;
+
+	md:=0;
+
+	for i in [0..m-1] do
+		x:=ap[i+1];
+		Si:=[x];
+		bi:=apb[i+1]+m*Minimum(LengthsOfFactorizationsIntegerWRTList(apb[i+1],bmsg));
+		while x<= bi do
+			x:=x+m;
+			if x in s then 
+				Add(Si,x);
+			fi;
+		od;
+		adjSi:=Set(Si,adj);
+		#Print(adjSi," ");
+		lr:=[];
+		lr[1]:=Length(FactorizationsIntegerWRTList(adjSi[1],bmsg));
+		for j in [2..Length(adjSi)] do
+			bj:=Minimum(LengthsOfFactorizationsIntegerWRTList(adjSi[j-1],bmsg))-(adjSi[j]-adjSi[j-1])/m;
+			lr[j]:=Length(Filtered(FactorizationsIntegerWRTList(adjSi[j],bmsg), x->Sum(x)<bj)); 
+			#Print(lr[j]," ");
+		od;
+		#Print(Maximum(lr),"\n");
+		md:=Maximum(md,Maximum(lr));
+	od;
+	return md;
+end);
+
+########################################################
+# AdjustmentOfNumericalSemigroup(s)
+# computes the adjustment a numerical semigroup
+# by using de algorithm given by Bryant and Hamblin 
+# Semigroup Forum 86 (2013), 571-582
+########################################################
+InstallGlobalFunction(AdjustmentOfNumericalSemigroup,function(s)
+	local adj, ord, minord, msg, bmsg, p, m, ap, adjSi, i, Si, apb, bi, b, x, j, bj, adjust;
+	
+	if(not(IsNumericalSemigroup(s)))then
+		Error("The argument must be anumerical semigroup.\n");
+	fi;
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	m:=MultiplicityOfNumericalSemigroup(s);
+	ap:=AperyListOfNumericalSemigroupWRTElement(s,m);
+	b:=BlowUpOfNumericalSemigroup(s);
+	apb:=AperyListOfNumericalSemigroupWRTElement(b,m);
+
+	bmsg:=ShallowCopy(msg-m);
+	bmsg[1]:=m;
+
+	ord:=function(x)
+		return Maximum(LengthsOfFactorizationsIntegerWRTList(x,msg));
+	end;
+
+	adj:=function(x)
+		return x-ord(x)*m;
+	end;
+
+	adjust:=[];
+	for i in [0..m-1] do
+		x:=ap[i+1];
+		Si:=[x];
+		bi:=apb[i+1]+m*Minimum(LengthsOfFactorizationsIntegerWRTList(apb[i+1],bmsg));
+		while x<= bi do
+			x:=x+m;
+			if x in s then 
+				Add(Si,x);
+			fi;
+		od;
+		adjSi:=Set(Si,adj);
+		#Print(adjSi," ");
+		adjust:=Union(adjust,adjSi);
+	od;
+	return adjust;
+end);
+
+##############################################################
+# IsAdditiveNumericalSemigroup(s)
+# Detects if s is an additive numerical semigroup, that is, 
+# ord(m+x)=ord(x)+1 for all x in s. For these semigroups gr_m(K[[s]]) is 
+# Cohen-Macaulay.	
+# We use Proposition 4.7 in  Semigroup Forum 86 (2013), 571-582
+##############################################################
+InstallGlobalFunction(IsAdditiveNumericalSemigroup, function(s)
+	local b,m;
+
+	if(not(IsNumericalSemigroup(s)))then
+		Error("The argument must be anumerical semigroup.\n");
+	fi;
+
+	m:=MultiplicityOfNumericalSemigroup(s);
+	b:=BlowUpOfNumericalSemigroup(s);
+	return AdjustmentOfNumericalSemigroup(s)
+				=AperyListOfNumericalSemigroupWRTElement(b,m);
+end);
+
+
+##############################################################
+# IsSuperSymmetricNumericalSemigroup(s)
+# Detects if s is a numerical semigroup is supersymmetric, that is, 
+# it is symmetric, additive and whenever w+w'=f+m 
+# (with m the multiplicity and f the Frobenius number) we have 
+# ord(w+w')=ord(w)+ord(w')
+##############################################################
+InstallGlobalFunction(IsSuperSymmetricNumericalSemigroup,function(s)
+	local ap,m, ord, msg, f, om;
+
+	if(not(IsNumericalSemigroup(s)))then
+		Error("The argument must be anumerical semigroup.\n");
+	fi;
+
+	if not(IsSymmetricNumericalSemigroup(s)) then
+		return false;
+	fi;
+
+	if not(IsAdditiveNumericalSemigroup(s)) then
+		return false;
+	fi;
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	m:=MultiplicityOfNumericalSemigroup(s);
+	ap:=AperyListOfNumericalSemigroupWRTElement(s,m);
+	f:=FrobeniusNumberOfNumericalSemigroup(s);
+
+	ord:=function(x)
+		return Maximum(LengthsOfFactorizationsIntegerWRTList(x,msg));
+	end;
+	
+	ap:=Filtered(ap, x-> x<=(f+m)/2);
+	om:=ord(f+m);
+	return ForAll(ap, x-> om=ord(x)+ord(f+m-x));
+end);
