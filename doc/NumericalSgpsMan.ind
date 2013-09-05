@@ -1,6 +1,7 @@
 \begin{theindex}
 
   \item \texttt  {AddSpecialGapOfNumericalSemigroup}, \hyperpage{21}
+  \item \texttt  {AdjustmentOfNumericalSemigroup}, \hyperpage{48}
   \item \texttt  {Almost}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {From}\discretionary {-}{}{}\texttt  {Irreducible}, 
 		\hyperpage{29}
   \item \texttt  {Almost}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
@@ -27,7 +28,7 @@
   \item \texttt  {BelongsToIdealOfNumericalSemigroup}, \hyperpage{33}
   \item \texttt  {BelongsToNumericalSemigroup}, \hyperpage{13}
   \item \texttt  {BettiElementsOfNumericalSemigroup}, \hyperpage{20}
-  \item \texttt  {BezoutSequence}, \hyperpage{50}
+  \item \texttt  {BezoutSequence}, \hyperpage{52}
   \item \texttt  {BlowUpIdealOfNumericalSemigroup}, \hyperpage{35}
   \item \texttt  {BlowUpOfNumericalSemigroup}, \hyperpage{36}
 
@@ -35,10 +36,10 @@
 
   \item \texttt  {CanonicalIdealOfNumericalSemigroup}, \hyperpage{37}
   \item \texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{47}
-  \item \texttt  {CatenaryDegreeOfNumericalSemigroup}, \hyperpage{47}
-  \item \texttt  {CatenaryDegreeOfSetOfFactorizations}, \hyperpage{47}
-  \item \texttt  {CeilingOfRational}, \hyperpage{51}
+		\hyperpage{49}
+  \item \texttt  {CatenaryDegreeOfNumericalSemigroup}, \hyperpage{49}
+  \item \texttt  {CatenaryDegreeOfSetOfFactorizations}, \hyperpage{49}
+  \item \texttt  {CeilingOfRational}, \hyperpage{53}
   \item \texttt  {Complete}\discretionary {-}{}{}\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{28}
   \item \texttt  {ConductorOfNumericalSemigroup}, \hyperpage{17}
@@ -47,7 +48,7 @@
 
   \item \texttt  {DecomposeIntoIrreducibles}, \hyperpage{26}
   \item \texttt  {Delta}\discretionary {-}{}{}\texttt  {Set}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{46}
+		\hyperpage{47}
   \item \texttt  {DeltaSetOfSetOfIntegers}, \hyperpage{46}
   \item \texttt  {Difference}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{34}
@@ -99,28 +100,29 @@
 		\hyperpage{26}
   \item \texttt  {IsA}\discretionary {-}{}{}\texttt  {Complete}\discretionary {-}{}{}\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{27}
+  \item \texttt  {IsAdditiveNumericalSemigroup}, \hyperpage{48}
   \item \texttt  {IsAperyListOfNumericalSemigroup}, \hyperpage{12}
-  \item \texttt  {IsAperySetAlphaRectangular}, \hyperpage{56}
-  \item \texttt  {IsAperySetBetaRectangular}, \hyperpage{56}
-  \item \texttt  {IsAperySetGammaRectangular}, \hyperpage{55}
+  \item \texttt  {IsAperySetAlphaRectangular}, \hyperpage{58}
+  \item \texttt  {IsAperySetBetaRectangular}, \hyperpage{58}
+  \item \texttt  {IsAperySetGammaRectangular}, \hyperpage{57}
   \item \texttt  {IsArfNumericalSemigroup}, \hyperpage{41}
-  \item \texttt  {IsBezoutSequence}, \hyperpage{50}
+  \item \texttt  {IsBezoutSequence}, \hyperpage{52}
   \item \texttt  {IsFreeNumericalSemigroup}, \hyperpage{28}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Buchsbaum}, 
-		\hyperpage{54}
+		\hyperpage{56}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {SemigroupCI}, 
-		\hyperpage{55}
+		\hyperpage{57}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {SemigroupCM}, 
 		\hyperpage{37}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Gorenstein}, 
-		\hyperpage{55}
+		\hyperpage{57}
   \item \texttt  {IsIdealOfNumericalSemigroup}, \hyperpage{31}
   \item \texttt  {IsIrreducibleNumericalSemigroup}, \hyperpage{25}
-  \item \texttt  {IsListOfIntegersNS}, \hyperpage{51}
+  \item \texttt  {IsListOfIntegersNS}, \hyperpage{53}
   \item \texttt  {IsMEDNumericalSemigroup}, \hyperpage{40}
   \item \texttt  {IsModularNumericalSemigroup}, \hyperpage{11}
   \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{38}
-  \item \texttt  {IsMpureNumericalSemigroup}, \hyperpage{54}
+  \item \texttt  {IsMpureNumericalSemigroup}, \hyperpage{56}
   \item \texttt  {IsNumericalSemigroup}, \hyperpage{11}
   \item \texttt  {IsNumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Irreducible}\discretionary {-}{}{}\texttt  {Planar}\discretionary {-}{}{}\texttt  {Curve}\discretionary {-}{}{}\texttt  {Singularity}, 
 		\hyperpage{29, 30}
@@ -139,21 +141,28 @@
   \item \texttt  {IsProportionally}\discretionary {-}{}{}\texttt  {Modular}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{11}
   \item \texttt  {IsPseudoSymmetricNumericalSemigroup}, \hyperpage{26}
-  \item \texttt  {IsPureNumericalSemigroup}, \hyperpage{54}
+  \item \texttt  {IsPureNumericalSemigroup}, \hyperpage{56}
   \item \texttt  {IsSaturatedNumericalSemigroup}, \hyperpage{43}
   \item \texttt  {IsSubsemigroupOfNumericalSemigroup}, \hyperpage{12}
+  \item \texttt  {IsSuperSymmetricNumericalSemigroup}, \hyperpage{48}
   \item \texttt  {IsSymmetricNumericalSemigroup}, \hyperpage{26}
   \item \texttt  {IsTelescopicNumericalSemigroup}, \hyperpage{28}
 
   \indexspace
 
   \item \texttt  {Lengths}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{45}
+		\hyperpage{46}
   \item \texttt  {Lengths}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}\discretionary {-}{}{}\texttt  {Integer}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {List}, 
 		\hyperpage{45}
 
   \indexspace
 
+  \item \texttt  {Maximal}\discretionary {-}{}{}\texttt  {Denumerant}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
+		\hyperpage{47}
+  \item \texttt  {Maximal}\discretionary {-}{}{}\texttt  {Denumerant}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
+		\hyperpage{48}
+  \item \texttt  {Maximal}\discretionary {-}{}{}\texttt  {Denumerant}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Set}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}, 
+		\hyperpage{47}
   \item \texttt  {MaximalIdealOfNumericalSemigroup}, \hyperpage{36}
   \item \texttt  {Maximum}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{47}
@@ -198,8 +207,8 @@
   \indexspace
 
   \item \texttt  {Omega}\discretionary {-}{}{}\texttt  {Primality}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{48}
-  \item \texttt  {OmegaPrimalityOfNumericalSemigroup}, \hyperpage{49}
+		\hyperpage{50}
+  \item \texttt  {OmegaPrimalityOfNumericalSemigroup}, \hyperpage{51}
   \item \texttt  {OverSemigroupsNumericalSemigroup}, \hyperpage{23}
 
   \indexspace
@@ -214,13 +223,13 @@
 
   \indexspace
 
-  \item \texttt  {RandomListForNS}, \hyperpage{52}
+  \item \texttt  {RandomListForNS}, \hyperpage{54}
   \item \texttt  {Random}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {Representing}\discretionary {-}{}{}\texttt  {Sub}\discretionary {-}{}{}\texttt  {Additive}\discretionary {-}{}{}\texttt  {Function}, 
-		\hyperpage{53}
-  \item \texttt  {RandomModularNumericalSemigroup}, \hyperpage{52}
-  \item \texttt  {RandomNumericalSemigroup}, \hyperpage{52}
+		\hyperpage{55}
+  \item \texttt  {RandomModularNumericalSemigroup}, \hyperpage{54}
+  \item \texttt  {RandomNumericalSemigroup}, \hyperpage{54}
   \item \texttt  {Random}\discretionary {-}{}{}\texttt  {Proportionally}\discretionary {-}{}{}\texttt  {Modular}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{53}
+		\hyperpage{55}
   \item \texttt  {RClassesOfSetOfFactorizations}, \hyperpage{45}
   \item \texttt  {Reduction}\discretionary {-}{}{}\texttt  {Number}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{35}
@@ -228,7 +237,7 @@
 		\hyperpage{21}
   \item \texttt  {RepresentsGapsOfNumericalSemigroup}, \hyperpage{12}
   \item \texttt  {Represents}\discretionary {-}{}{}\texttt  {Periodic}\discretionary {-}{}{}\texttt  {Sub}\discretionary {-}{}{}\texttt  {Additive}\discretionary {-}{}{}\texttt  {Function}, 
-		\hyperpage{51}
+		\hyperpage{53}
   \item \texttt  {Represents}\discretionary {-}{}{}\texttt  {Small}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{11}
 
@@ -247,14 +256,14 @@
   \indexspace
 
   \item \texttt  {Tame}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{48}
-  \item \texttt  {TameDegreeOfNumericalSemigroup}, \hyperpage{48}
-  \item \texttt  {TameDegreeOfSetOfFactorizations}, \hyperpage{48}
+		\hyperpage{50}
+  \item \texttt  {TameDegreeOfNumericalSemigroup}, \hyperpage{50}
+  \item \texttt  {TameDegreeOfSetOfFactorizations}, \hyperpage{50}
   \item \texttt  {Telescopic}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{29}
   \item \texttt  {Translation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{35}
   \item \texttt  {TypeOfNumericalSemigroup}, \hyperpage{17}
-  \item \texttt  {TypeSequenceOfNumericalSemigroup}, \hyperpage{56}
+  \item \texttt  {TypeSequenceOfNumericalSemigroup}, \hyperpage{58}
 
 \end{theindex}

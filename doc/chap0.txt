@@ -206,22 +206,31 @@
     9.1 [33X[0;0YFactorizations in Numerical Semigroups[133X
       9.1-1 FactorizationsIntegerWRTList
       9.1-2 FactorizationsElementWRTNumericalSemigroup
-      9.1-3 LengthsOfFactorizationsIntegerWRTList
-      9.1-4 RClassesOfSetOfFactorizations
-      9.1-5 LengthsOfFactorizationsElementWRTNumericalSemigroup
-      9.1-6 ElasticityOfFactorizationsElementWRTNumericalSemigroup
-      9.1-7 ElasticityOfNumericalSemigroup
-      9.1-8 DeltaSetOfSetOfIntegers
-      9.1-9 DeltaSetOfFactorizationsElementWRTNumericalSemigroup
-      9.1-10 MaximumDegreeOfElementWRTNumericalSemigroup
-      9.1-11 CatenaryDegreeOfSetOfFactorizations
-      9.1-12 CatenaryDegreeOfNumericalSemigroup
-      9.1-13 CatenaryDegreeOfElementInNumericalSemigroup
-      9.1-14 TameDegreeOfSetOfFactorizations
-      9.1-15 TameDegreeOfNumericalSemigroup
-      9.1-16 TameDegreeOfElementInNumericalSemigroup
-      9.1-17 OmegaPrimalityOfElementInNumericalSemigroup
-      9.1-18 OmegaPrimalityOfNumericalSemigroup
+      9.1-3 RClassesOfSetOfFactorizations
+    9.2 [33X[0;0YInvariants based on lengths[133X
+      9.2-1 LengthsOfFactorizationsIntegerWRTList
+      9.2-2 LengthsOfFactorizationsElementWRTNumericalSemigroup
+      9.2-3 ElasticityOfFactorizationsElementWRTNumericalSemigroup
+      9.2-4 ElasticityOfNumericalSemigroup
+      9.2-5 DeltaSetOfSetOfIntegers
+      9.2-6 DeltaSetOfFactorizationsElementWRTNumericalSemigroup
+      9.2-7 MaximumDegreeOfElementWRTNumericalSemigroup
+      9.2-8 MaximalDenumerantOfElementInNumericalSemigroup
+      9.2-9 MaximalDenumerantOfSetOfFactorizations
+      9.2-10 MaximalDenumerantOfNumericalSemigroup
+      9.2-11 AdjustmentOfNumericalSemigroup
+      9.2-12 IsAdditiveNumericalSemigroup
+      9.2-13 IsSuperSymmetricNumericalSemigroup
+    9.3 [33X[0;0YInvariants based on distances[133X
+      9.3-1 CatenaryDegreeOfSetOfFactorizations
+      9.3-2 CatenaryDegreeOfNumericalSemigroup
+      9.3-3 CatenaryDegreeOfElementInNumericalSemigroup
+      9.3-4 TameDegreeOfSetOfFactorizations
+      9.3-5 TameDegreeOfNumericalSemigroup
+      9.3-6 TameDegreeOfElementInNumericalSemigroup
+    9.4 [33X[0;0YPrimality[133X
+      9.4-1 OmegaPrimalityOfElementInNumericalSemigroup
+      9.4-2 OmegaPrimalityOfNumericalSemigroup
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence
