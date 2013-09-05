@@ -78,19 +78,6 @@ gap> FactorizationsElementWRTNumericalSemigroup(1100,s);
          </Description>
     </ManSection>
 
-    <ManSection>
-
-        <Func Arg="n, ls" Name="LengthsOfFactorizationsIntegerWRTList"></Func>
-        <Description>
-            <A>ls</A> is a list of integers and <A>n</A> an  integer.
-            The output is the set of lengths of the factorizations of <A>n</A> in terms of the elements in <A>ls</A>.
-
-            <Example><![CDATA[
-gap> LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);
-[ 6, 8 ]
-]]></Example>
-         </Description>
-    </ManSection>
 
     <ManSection>
 
@@ -110,6 +97,28 @@ gap> RClassesOfSetOfFactorizations(last);
 ]]></Example>
          </Description>
     </ManSection>
+
+</Section>
+
+<Section>
+    <Heading>
+        Invariants based on lengths
+    </Heading>
+
+    <ManSection>
+
+        <Func Arg="n, ls" Name="LengthsOfFactorizationsIntegerWRTList"></Func>
+        <Description>
+            <A>ls</A> is a list of integers and <A>n</A> an  integer.
+            The output is the set of lengths of the factorizations of <A>n</A> in terms of the elements in <A>ls</A>.
+
+            <Example><![CDATA[
+gap> LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ 6, 8 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
 
     <ManSection>
 
@@ -216,6 +225,110 @@ gap> MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);
          </Description>
     </ManSection>
 
+    <ManSection>
+
+        <Func Arg="n, S" Name="MaximalDenumerantOfElementInNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup and <A>n</A> a positive integer.
+            The output is the numbero of factorizations of  <A>n</A> in terms of the minimal
+            generating set of <A>S</A> with maximal length.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,196,272,278,286);;
+gap> MaximalDenumerantOfElementInNumericalSemigroup(1100,s);
+1
+gap> MaximalDenumerantOfElementInNumericalSemigroup(1311,s);
+2
+]]></Example>
+         </Description>
+    </ManSection>
+
+   <ManSection>
+
+        <Func Arg="ls" Name="MaximalDenumerantOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is list of factorizations (a list of lists of nonnegative integers with the same lenght).
+            The output is number of elements in <A>ls</A> with maximal length.
+
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+gap> MaximalDenumerantOfSetOfFactorizations(last);
+6
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+        <Func Arg="S" Name="MaximalDenumerantOfNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup.
+            The output is the maximal denumerant of <A>S</A>, that is, the maximum of the maximal denumerant of the elements in <A>S</A> (see <Cite Key="BH"></Cite>). 
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,196,272,278,286);;
+gap> MaximalDenumerantOfNumericalSemigroup(s);
+4
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+        <Func Arg="S" Name="AdjustmentOfNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup.
+            The output is the adjustment of <A>S</A> as defined in <Cite Key="BH"></Cite>. 
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,196,272,278,286);;
+gap> AdjustmentOfNumericalSemigroup(s);
+[ 0, 12, 24, 36, 48, 60, 72, 84, 95, 96, 107, 108, 119, 120, 131, 132, 143, 144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185,
+  189, 190, 191, 192, 195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228, 231, 233, 237, 239, 240, 243,
+  245, 249, 251, 252, 255, 257, 261, 263, 264, 266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299, 300,
+  304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341, 342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362,
+  364, 365, 366, 368, 370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394, 395, 396, 400, 401, 402, 406,
+  407, 408, 412, 413, 414, 418, 419, 420, 424, 425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456, 460,
+  465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514, 519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543,
+  545, 549, 551, 555, 561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704, 710, 716, 722 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
+        <Func Arg="S" Name="IsAdditiveNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup. Detects if <A>S</A> is additive, that is, <M>ord(m+x)=ord(x)+1</M> for all <M>x</M> in <A>S</A>, where <M>m</M> is the multiplicity of <A>S</A> and <M>ord</M> stands for MaximumDegreeOfElementWRTNumericalSemigroup. For these semigroups <M>gr_m(K[[S]])</M> is  Cohen-Macaulay(see <Cite Key="BH"></Cite>). 
+
+            <Example><![CDATA[
+gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
+gap> Length(l);
+109
+gap> Length(Filtered(l,IsAdditiveNumericalSemigroup));
+20
+]]></Example>
+         </Description>
+    </ManSection>
+
+        <Func Arg="S" Name="IsSuperSymmetricNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup. Detects if <A>S</A> is supersymmetric, that is, it is symmetric, additive and whenever <M>w+w'=f+m</M>  (with <M>m</M> the multiplicity and <M>f</M> the Frobenius number) we have <M>ord(w+w')=ord(w)+ord(w')</M>, where <M>ord</M> stands for MaximumDegreeOfElementWRTNumericalSemigroup.
+
+            <Example><![CDATA[
+gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
+gap> Length(l);
+109
+gap> Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));
+7
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+</Section>
+
+<Section>
+    <Heading>
+        Invariants based on distances
+    </Heading>
 
     <ManSection>
 
@@ -315,6 +428,13 @@ gap> TameDegreeOfElementInNumericalSemigroup(100,s);
 ]]></Example>          
         </Description>
     </ManSection>
+
+</Section>
+
+<Section>
+    <Heading>
+        Primality
+    </Heading>
 
     <ManSection>
         <Func Arg="n, S" Name="OmegaPrimalityOfElementInNumericalSemigroup"></Func>

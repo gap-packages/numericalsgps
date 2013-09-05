@@ -276,3 +276,55 @@ DeclareGlobalFunction("TameDegreeOfSetOfFactorizations");
 #############################################################################
 DeclareGlobalFunction("RClassesOfSetOfFactorizations");
 
+########################################################
+#  MaximalDenumerantOfElementInNumericalSemigroup(x,s)
+#  returns the number of factorizations of maximal length of x in 
+#  the numerical semigroup s
+########################################################
+DeclareGlobalFunction("MaximalDenumerantOfElementInNumericalSemigroup");
+
+########################################################
+#  MaximalDenumerantOfSetOfFactorizations(ls)
+#  returns the number of factorizations of maximal length in ls
+########################################################
+DeclareGlobalFunction("MaximalDenumerantOfSetOfFactorizations");
+
+########################################################
+# MaximalDenumerantOfNumericalSemigroup(s)
+# computes the maximal denumerant of a numerical semigroup
+# by using de algorithm given by Bryant and Hamblin 
+# Semigroup Forum 86 (2013), 571-582
+########################################################
+DeclareGlobalFunction("MaximalDenumerantOfNumericalSemigroup");
+
+########################################################
+# AdjustmentOfNumericalSemigroup(s)
+# computes the adjustment a numerical semigroup
+# by using de algorithm given by Bryant and Hamblin 
+# Semigroup Forum 86 (2013), 571-582
+########################################################
+DeclareGlobalFunction("AdjustmentOfNumericalSemigroup");
+
+##############################################################
+# IsAdditiveNumericalSemigroup(s)
+# Detects if s is an additive numerical semigroup, that is, 
+# ord(m+x)=ord(x)+1 for all x in s. For these semigroups gr_m(K[[s]]) is 
+# Cohen-Macaulay.	
+# We use Proposition 4.7 in  Semigroup Forum 86 (2013), 571-582
+##############################################################
+DeclareGlobalFunction("IsAdditiveNumericalSemigroup");
+
+##############################################################
+# IsSuperSymmetricNumericalSemigroup(s)
+# Detects if s is a numerical semigroup is supersymmetric, that is, 
+# it is symmetric, additive and whenever w+w'=f+m 
+# (with m the multiplicity and f the Frobenius number) we have 
+# ord(w+w')=ord(w)+ord(w')
+##############################################################
+DeclareGlobalFunction("IsSuperSymmetricNumericalSemigroup");
+
+
+
+
+
+
