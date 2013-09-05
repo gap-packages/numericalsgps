@@ -260,6 +260,7 @@ gap> MaximalDenumerantOfSetOfFactorizations(last);
     </ManSection>
 
 
+   <ManSection>
         <Func Arg="S" Name="MaximalDenumerantOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -274,6 +275,7 @@ gap> MaximalDenumerantOfNumericalSemigroup(s);
     </ManSection>
 
 
+   <ManSection>
         <Func Arg="S" Name="AdjustmentOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -294,6 +296,7 @@ gap> AdjustmentOfNumericalSemigroup(s);
          </Description>
     </ManSection>
 
+   <ManSection>
         <Func Arg="S" Name="IsAdditiveNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup. Detects if <A>S</A> is additive, that is, <M>ord(m+x)=ord(x)+1</M> for all <M>x</M> in <A>S</A>, where <M>m</M> is the multiplicity of <A>S</A> and <M>ord</M> stands for MaximumDegreeOfElementWRTNumericalSemigroup. For these semigroups <M>gr_m(K[[S]])</M> is  Cohen-Macaulay(see <Cite Key="BH"></Cite>). 
@@ -308,6 +311,7 @@ gap> Length(Filtered(l,IsAdditiveNumericalSemigroup));
          </Description>
     </ManSection>
 
+   <ManSection>
         <Func Arg="S" Name="IsSuperSymmetricNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup. Detects if <A>S</A> is supersymmetric, that is, it is symmetric, additive and whenever <M>w+w'=f+m</M>  (with <M>m</M> the multiplicity and <M>f</M> the Frobenius number) we have <M>ord(w+w')=ord(w)+ord(w')</M>, where <M>ord</M> stands for MaximumDegreeOfElementWRTNumericalSemigroup.
