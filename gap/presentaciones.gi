@@ -110,75 +110,18 @@ end);
 ##  {\bf 6} (1996), no. 4, 441--455.
 #############################################################################
 InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
-    local   connectedComponents,  msg,  ap,  candidates,  
-            pairs,  expandexpression,  presentation,  pair,  n,  components,  
-            rclasses,  ii;
+    local   candidates,  pairs,  presentation,  pair,  n,  rclasses, msg;
     
     if(not(IsNumericalSemigroup(s))) then
         Error(s," must be a numerical semigroup.\n");        
     fi;
-    
-    ##  Computes the set of connected components of the
-    ##  graph with vertices v and edges e. Returns a 
-    ##  list of lists, each one containing the vertices of 
-    ##  a connected component.
-    connectedComponents := function(g)
-        local current,possible, colission, rest, tmp, components, v, e;
-    
-        # if(not(IsList(g))) then
-        #     Error("The argument must be a list");
-        # fi;
-        # if((Length(g)<>2)) then
-        #     Error("The argument must have two elements: vertices and edges.\n");
-        # fi;
-        # if(not(IsList(g[1]) and IsList(g[2]))) then
-        #     Error("The two elements of the argument are lists: one with the vertices and the other with the edges.\n");
-        # fi;
-        
-        v:=g[1]; #vertices
-        e:=g[2]; #edges
-        
-        tmp:=List(v,n->[n]);
-        possible:=Union(tmp,e);
-        
-        if(possible=[]) then
-            return [];
-        fi;
-        
-        components:=[];
-        while(possible<>[]) do
-            current:=possible[1];
-            possible:=possible{[2..Length(possible)]};
-            colission:=Union(Filtered(possible,s->Intersection(s,current)<>[]));
-            rest:=Filtered(possible,s->Intersection(s,current)=[]); 
-                #this should be optimized, this is the complement 
-                #      of colission in possible before the union
-            
-            while(colission<>[]) do            
-                current:=Union(colission,current);
-                colission:=Union(Filtered(possible,s->Intersection(s,current)<>[]));
-                rest:=Filtered(possible,s->Intersection(s,current)=[]);             
-                possible:=rest;
-            od;
-            Add(components,current);
-        od;
-        return components;
-    end;
-    ##  End of connectedComponents()  --    
-    
+
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     if(msg=[1]) then
      return [];
     fi;
-    ap:=AperyListOfNumericalSemigroupWRTElement(s,msg[1]);
-    ap:=ap{[2..Length(ap)]};    # I remove the zero, 
-                                #   minimal generators yield conneted graphs
-    candidates:=Union(List(msg,n->List(ap,m->m+n)));
-                                # Gn not conneted implies n=wi+minimalgenerator
-                                #    thus these are the candidates
-    candidates:=Filtered(candidates,n->Length(connectedComponents(
-                    GraphAssociatedToElementInNumericalSemigroup(n,s)))>1);
-                                # choose n with nonconnected graphs
+    
+    candidates:=BettiElementsOfNumericalSemigroup(s);
 
     presentation:=[];
 	for n in candidates do
@@ -201,13 +144,54 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(BettiElementsOfNumericalSemigroup, function(s)
-    local mgs, pre;
-
+    local   isconnected,  msg,  ap,  candidates;
+    
     if(not(IsNumericalSemigroup(s))) then
-        Error("The argument must be a numerical semigroup.\n");        
+        Error(s," must be a numerical semigroup.\n");        
     fi;
     
-    mgs:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    pre:=MinimalPresentationOfNumericalSemigroup(s);
-    return Set(pre,r->r[1]*mgs);
+    ##  detects if the graph associated to n is connected
+	##  it uses adjacency matrix
+	isconnected:=function(n)
+		local i,j,k, adj, aa, c, vert;
+		vert:=Filtered(msg, x->n-x in s);
+		k:=Length(vert);
+		adj:=NullMat(k,k);
+		for i in [1..k-1] do
+			for j in [i+1..k] do
+				if (n-vert[i]-vert[j] in s) then
+					adj[i][j]:=1;
+					adj[j][i]:=1;
+				fi;
+			od;
+		od;
+		c:=IdentityMat(k);
+		aa:=IdentityMat(k);
+		for i in [1..k-1] do
+			aa:=aa*adj;
+			c:=c+aa;
+		od;
+		for i in [1..k] do
+			for j in [i+1..k] do
+				if c[i][j]=0 then
+					return false;
+				fi;
+			od;
+		od;
+		return true;
+	end;
+    ##  End of isconnected()  --    
+    
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    if(msg=[1]) then
+     return [];
+    fi;
+    ap:=AperyListOfNumericalSemigroupWRTElement(s,msg[1]);
+    ap:=ap{[2..Length(ap)]};    # I remove the zero, 
+                                #   minimal generators yield conneted graphs
+    candidates:=Union(List(msg,n->List(ap,m->m+n)));
+                                # Gn not conneted implies n=wi+minimalgenerator
+                                #    thus these are the candidates
+    return Filtered(candidates,n->not(isconnected(n)));
+                                # choose n with nonconnected graphs
 end);
