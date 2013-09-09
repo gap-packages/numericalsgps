@@ -6,45 +6,45 @@ Database file #1: NumericalSgpsMan.bib
  : @article
  :         ={PH,
 I'm skipping whatever remains of this entry
-You've used 39 entries,
+You've used 40 entries,
             2543 wiz_defined-function locations,
-            812 strings with 9605 characters,
-and the built_in function-call counts, 15675 in all, are:
-= -- 1595
-> -- 794
+            817 strings with 9760 characters,
+and the built_in function-call counts, 16129 in all, are:
+= -- 1642
+> -- 819
 < -- 11
-+ -- 279
-- -- 270
-* -- 1168
-:= -- 2650
-add.period$ -- 120
-call.type$ -- 39
-change.case$ -- 244
-chr.to.int$ -- 37
-cite$ -- 39
-duplicate$ -- 570
-empty$ -- 1081
-format.name$ -- 314
-if$ -- 3128
++ -- 288
+- -- 279
+* -- 1207
+:= -- 2726
+add.period$ -- 123
+call.type$ -- 40
+change.case$ -- 251
+chr.to.int$ -- 38
+cite$ -- 40
+duplicate$ -- 584
+empty$ -- 1111
+format.name$ -- 324
+if$ -- 3217
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 44
-newline$ -- 200
-num.names$ -- 117
-pop$ -- 181
+missing$ -- 45
+newline$ -- 205
+num.names$ -- 120
+pop$ -- 185
 preamble$ -- 1
-purify$ -- 288
+purify$ -- 296
 quote$ -- 0
-skip$ -- 485
+skip$ -- 497
 stack$ -- 0
-substring$ -- 944
-swap$ -- 56
+substring$ -- 976
+swap$ -- 57
 text.length$ -- 11
 text.prefix$ -- 6
 top$ -- 0
-type$ -- 292
+type$ -- 300
 warning$ -- 0
-while$ -- 160
-width$ -- 42
-write$ -- 506
+while$ -- 165
+width$ -- 43
+write$ -- 519
 (There was 1 error message)
