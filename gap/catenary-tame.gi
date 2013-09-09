@@ -1120,3 +1120,116 @@ InstallGlobalFunction(IsSuperSymmetricNumericalSemigroup,function(s)
 	om:=ord(f+m);
 	return ForAll(ap, x-> om=ord(x)+ord(f+m-x));
 end);
+
+#######################################################################
+# BelongsToHomogenizationOfNumericalSemigroup(n,s)
+# checks if the pair n belongs to the homogenization of s
+#######################################################################
+InstallGlobalFunction(BelongsToHomogenizationOfNumericalSemigroup, function(n,s)
+	local msg;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.\n");
+    fi;
+	
+	if not IsListOfIntegersNS(n) then 
+		Error("The first argument must be a list of integers");
+	fi;
+
+	if n[1]<0 or n[2]<0 then 
+		return false;
+	fi;
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	return First(FactorizationsIntegerWRTList(n[2],msg), x-> Sum(x)<= n[1])<>fail;	
+end);
+
+#######################################################################
+# FactorizationsInHomogenizationOfNumericalSemigroup(n,s)
+# computes the set of factorizations of  n with respect to generators of  
+# the homogenization of s
+#######################################################################
+InstallGlobalFunction(FactorizationsInHomogenizationOfNumericalSemigroup, function(n,s)
+	local msg, fact, facthom, x, xhom;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.\n");
+    fi;
+	
+	if not IsListOfIntegersNS(n) then 
+		Error("The first argument must be a list of integers");
+	fi;
+
+	if n[1]<0 or n[2]<0 then 
+		return [];
+	fi;
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	fact:=Filtered(FactorizationsIntegerWRTList(n[2],msg), x-> Sum(x)<= n[1]);	
+	facthom:=[];
+	for x in fact do
+		xhom:=Concatenation([n[1]-Sum(x)],x);
+		Add(facthom,xhom);
+	od;
+	return facthom;
+end);
+
+#######################################################################
+# HomogeneousBettiElementsOfNumericalSemigroup(s) 
+#  Computes the Betti elements of the Homogenization of s 
+#  uses Cox-Little-O'Shea, Chapter 8, Theorem 4  [CLOS] for finding 
+#  a system of generators of the ideal of S^h
+#######################################################################
+InstallGlobalFunction(HomogeneousBettiElementsOfNumericalSemigroup,function( s )
+    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial,  candidates, mp;
+    
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    ed:=Length(msg);
+	mp:=MinimalPresentationOfNumericalSemigroup(s);
+    p := [];
+	# list of exponents to monomial	
+	monomial:=function(l)
+		local i;
+		pol:=1;
+		for i in [1..ed] do
+			pol:=pol*Indeterminate(Rationals,i)^l[i];
+		od;
+		return pol;
+	end;
+
+    for rel in mp do
+        Add( p, monomial(rel[1])-monomial(rel[2])); 
+    od;
+
+    rgb := ReducedGroebnerBasis( p, MonomialGrevlexOrdering() );
+    ## the homogenization of this is a system of genetators of the ideal of S^h
+
+	 ##computes the s^h degree of a pol in the semigroup ideal 
+    sdegree:=function(r) 
+		local mon;
+		mon:=LeadingMonomialOfPolynomial(r,MonomialGrlexOrdering() );
+		return [Sum(List([1..ed],i->DegreeIndeterminate(mon,i))),Sum(List([1..ed],i-> msg[i]*DegreeIndeterminate(mon,i)))];
+    end;
+
+    candidates:=List(rgb, g-> sdegree(g));    
+
+    candidates:=Filtered(candidates, x-> Length(RClassesOfSetOfFactorizations(
+		FactorizationsInHomogenizationOfNumericalSemigroup(x,s)))>1);
+    return Set(candidates);
+end);
+
+####################################################################
+#F HomogeneousCatenaryDegreeOfNumericalSemigroup(s) computes the 
+##  homogeneous catenary degree of the numerical semigroup s ([GSOSN])
+####################################################################
+InstallGlobalFunction(HomogeneousCatenaryDegreeOfNumericalSemigroup,function( s )
+	local betti;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The argument must be a numerical semigroup.\n");
+    fi;
+	betti:=HomogeneousBettiElementsOfNumericalSemigroup(s);
+	
+	return Maximum(Set(betti,b-> CatenaryDegreeOfSetOfFactorizations(
+		FactorizationsInHomogenizationOfNumericalSemigroup(b,s))));
+end);
