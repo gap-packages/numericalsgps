@@ -323,8 +323,29 @@ DeclareGlobalFunction("IsAdditiveNumericalSemigroup");
 ##############################################################
 DeclareGlobalFunction("IsSuperSymmetricNumericalSemigroup");
 
+#######################################################################
+# BelongsToHomogenizationOfNumericalSemigroup(n,s)
+# checks if the pair n belongs to the homogenization of s
+#######################################################################
+DeclareGlobalFunction("BelongsToHomogenizationOfNumericalSemigroup");
 
+#######################################################################
+# FactorizationsInHomogenizationOfNumericalSemigroup(n,s)
+# computes the set of factorizations of  n with respect to generators of  
+# the homogenization of s
+#######################################################################
+DeclareGlobalFunction("FactorizationsInHomogenizationOfNumericalSemigroup");
 
+#######################################################################
+# HomogeneousBettiElementsOfNumericalSemigroup(s) 
+#  Computes the Betti elements of the Homogenization of s 
+#  uses Cox-Little-O'Shea, Chapter 8, Theorem 4  for finding 
+#  a system of generators of the ideal of S^h
+#######################################################################
+DeclareGlobalFunction("HomogeneousBettiElementsOfNumericalSemigroup");
 
-
-
+####################################################################
+#F HomogeneousCatenaryDegreeOfNumericalSemigroup(s) computes the 
+##  homogeneous catenary degree of the numerical semigroup s ([GSOSN])
+####################################################################
+DeclareGlobalFunction("HomogeneousCatenaryDegreeOfNumericalSemigroup");
