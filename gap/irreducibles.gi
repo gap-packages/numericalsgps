@@ -512,7 +512,7 @@ InstallGlobalFunction(AsGluingOfNumericalSemigroups,function(s)
 		s1:=NumericalSemigroup(l1/d1);
 		s2:=NumericalSemigroup(l2/d2);
 
-		return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
+		return (not(d1 in l2/d2) and not(d2 in l1/d1)) and ((d1 in s2) and (d2 in s1));
 	end;
 
 
