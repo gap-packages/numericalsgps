@@ -1,6 +1,7 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+- fixed bug in the definition of proportionaly modular semigroups (affected the case a < c (in this case it should return the entire N) -- )
 0.980 -> ...
 
 - The function AperyListOfNumericalSemigroup has been added. It has only a numerical semigroup as argument and does the same than AperyListOfNumericalSemigroupWRTElement when considered relative to the multiplicity (which is, by far, the most important case). 
