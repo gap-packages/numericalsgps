@@ -1,0 +1,1995 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  9 SEP 2013 16:01
+entering extended mode
+ %&-line parsing enabled.
+**NumericalSgpsMan
+(./NumericalSgpsMan.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, portuguese, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+\openout3 = `NumericalSgpsMan.idx'.
+
+
+Writing index file NumericalSgpsMan.idx
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count88
+))
+(/usr/share/texmf-texlive/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz) (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\FV@CodeLineNo=\count89
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count90
+\FV@StepNumber=\count91
+\FV@OutFile=\write4
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen103
+\Hy@linkcounter=\count92
+\Hy@pagecounter=\count93
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+))
+Package hyperref Info: Option `bookmarks' set `true' on input line 2864.
+Package hyperref Info: Option `colorlinks' set `true' on input line 2864.
+Package hyperref Info: Option `breaklinks' set `true' on input line 2864.
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing ON on input line 2993.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3191.
+(/usr/share/texmf-texlive/tex/latex/hyperref/backref.sty
+Package: backref 2006/09/05 v1.28 Bibliographical back referencing
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count94
+\Field@Width=\dimen104
+\Fld@charsize=\dimen105
+\Field@toks=\toks18
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing ON on input line 4390.
+Package hyperref Info: Link coloring ON on input line 4395.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+*hyperref using driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count98
+)
+\pagenrlog=\write5
+\openout5 = `NumericalSgpsMan.pnr'.
+
+
+(/usr/share/texmf-texlive/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2009/05/18 v2.2 Customized lists
+\enit@toks=\toks19
+\labelindent=\skip43
+\enit@outerparindent=\dimen106
+\enitdp@desc=\count99
+)
+(./NumericalSgpsMan.aux
+
+LaTeX Warning: Label `IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingu
+larity' multiply defined.
+
+
+LaTeX Warning: Label `AperyListOfIdealOfNumericalSemigroupWRTElement' multiply 
+defined.
+
+)
+\openout1 = `NumericalSgpsMan.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 87.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen107
+\scratchbox=\box27
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen108
+\MPnumerator=\count104
+\everyMPtoPDFconversion=\toks21
+)
+\big@size=\dimen109
+Package hyperref Info: Link coloring ON on input line 87.
+ (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count105
+)
+LaTeX Info: Redefining \ref on input line 87.
+LaTeX Info: Redefining \pageref on input line 87.
+
+(./NumericalSgpsMan.out) (./NumericalSgpsMan.out)
+\@outlinefile=\write6
+\openout6 = `NumericalSgpsMan.out'.
+
+\AtBeginShipoutBox=\box28
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 93.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <50> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 93.
+
+
+! Package keyval Error: a package for numerical semigroups undefined.
+
+See the keyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 ...sgps}, a package for numerical semigroups}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 100.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 108.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 108.
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 106--113
+
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 119.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 122--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--176
+
+ []
+
+[2]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 180.
+ (./NumericalSgpsMan.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+ [3
+
+])
+\tf@toc=\write7
+\openout7 = `NumericalSgpsMan.toc'.
+
+ [4]
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 184.
+[5
+
+] [6] [7]
+Chapter 2.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 320.
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--326
+
+ []
+
+[8
+
+]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 355.
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--392
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 406--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--459
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 496--532
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 558--561
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 582--585
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--610
+
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 612--614
+[]\T1/ptm/m/n/10.95 Tests whether a list [] of in-te-gers may rep-re-sent the A
+péry list of a nu-mer-i-cal semi-
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 612--614
+\T1/ptm/m/n/10.95 group. It re-turns \T1/cmtt/m/n/10.95 true \T1/ptm/m/n/10.95 
+when the pe-ri-odic func-tion rep-re-sented by [] is sub-ad-di-tive (see
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 625--628
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--651
+
+ []
+
+[12] [13]
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--690
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 706--712
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
+[]\T1/ptm/m/n/10.95 From Ver-sion 0.980, \T1/cmtt/m/n/10.95 ReducedSetOfGenerat
+orsOfNumericalSemigroup
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
+\T1/ptm/m/n/10.95 is just a syn-onym of \T1/cmtt/m/n/10.95 MinimalGeneratingSys
+temOfNumericalSemigroup
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
+\T1/ptm/m/n/10.95 and \T1/cmtt/m/n/10.95 GeneratorsOfNumericalSemigroupNC \T1/p
+tm/m/n/10.95 is just a syn-onym of
+ []
+
+[14
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 743--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 756--759
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--777
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 793--796
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 812--815
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--862
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 889--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--910
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 919--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--934
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 950--953
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 970--973
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 987--990
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1021--1024
+
+ []
+
+[18]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1056
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1085
+
+ []
+
+[19
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X7969F7F27A
+AF0BF1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1091  T
+         his function is used to compute a minimal presentation of the numer...
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1107--1110
+
+ []
+
+[20]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1144--1147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1169--1172
+
+ []
+
+[21
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1198--1201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1225--1228
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 1265--1268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1311--1314
+
+ []
+
+[23] [24]
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1379--1382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1398--1401
+
+ []
+
+[25
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X83C597EC7F
+AA1C0F}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1403  \mbox{\texttt{\mdseries\slshape s}}
+                                            is a numerical semigroup. The ou...
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1417--1420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1436--1439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1455--1458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1476
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1507--1510
+
+ []
+
+! Undefined control sequence.
+<recently read> \leftangle 
+                           
+l.1512 ...s\slshape s}} is a gluing of $\leftangle
+                                                   A_1\rightangle$ and $\lef...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1512 ...s a gluing of $\leftangle A_1\rightangle
+                                                  $ and $\leftangle A_2\righ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \leftangle 
+                           
+l.1512 ...eftangle A_1\rightangle$ and $\leftangle
+                                                   A_2\rightangle$ by $gcd(A...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1512 ...ghtangle$ and $\leftangle A_2\rightangle
+                                                  $ by $gcd(A_1)gcd(A_2)$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1534--1537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1563--1566
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 1582--1585
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1604--1607
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1623--1626
+
+ []
+
+! Undefined control sequence.
+l.1629 ...copic numerical semigroup, where $n_1\lt
+                                                   \cdots \lt n_e $ are the ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1629 ...ical semigroup, where $n_1\lt \cdots \lt
+                                                   n_e $ are the minimal gen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1645--1648
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1664--1667
+
+ []
+
+
+Overfull \hbox (64.23305pt too wide) in paragraph at lines 1683--1683
+[][]\T1/ptm/b/n/12 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingulari
+tyWithFrobeniusNumber[] 
+ []
+
+
+Overfull \hbox (42.28542pt too wide) in paragraph at lines 1686--1689
+[]$\OML/ztmcm/m/it/10.95 .$  \T1/cmtt/m/n/10.95 NumericalSemigroupsAssociatedIr
+reduciblePlanarCurveSingularityWithFrobeniusNumber(\T1/cmtt/m/sl/10.95 f\T1/cmt
+t/m/n/10.95 )[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1689
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1718--1721
+
+ []
+
+[29]pdfTeX warning (ext4): destination with the same identifier (name{L.X847CD0
+EF8452F771}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1739 \hyperdef{L}{X847CD0EF8452F771}{}
+                                        
+Underfull \hbox (badness 10000) in paragraph at lines 1740--1743
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1759--1762
+
+ []
+
+[30]
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1797--1800
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1824--1827
+
+ []
+
+[31
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X83C2F0CF82
+5B3869}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1836 \end{Verbatim}
+                     ]
+Underfull \hbox (badness 10000) in paragraph at lines 1844--1847
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1864--1870
+
+ []
+
+
+Underfull \hbox (badness 3138) in paragraph at lines 1874--1876
+\T1/ptm/m/n/10.95 the ideal. If the min-i-mal sys-tem of gen-er-a-tors is known
+, then it is used as out-put.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1897
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1914--1917
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1938--1941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1966--1969
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1995--1998
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 2017--2020
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2047--2050
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2073--2076
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 2100--2103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2120--2123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2141--2144
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 2161--2164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2178--2181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2207--2210
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 2231--2234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2267--2270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2292--2295
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 2311--2314
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2336--2339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2355--2358
+
+ []
+
+[38pdfTeX warning (ext4): destination with the same identifier (name{L.X7D14AA4
+D7EE12369}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2361 ...tsize=\small,frame=single,label=Example]
+                                                  ] [39]
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2395--2398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2418--2421
+
+ []
+
+[40
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X7D2E70FC82
+D979D3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2423  \mbox{\texttt{\mdseries\slshape S}}
+                                            is a numerical semigroup.]
+Underfull \hbox (badness 10000) in paragraph at lines 2441--2444
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2476--2479
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 2501--2504
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2524--2527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2546--2549
+
+ []
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+573.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+573.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+573.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+573.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+573.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+573.
+
+Missing character: There is no · in font zptmcm7t!
+Missing character: There is no · in font zptmcm7t!
+Missing character: There is no · in font zptmcm7t!
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+574.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+574.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+574.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+574.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+575.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 2
+575.
+
+Missing character: There is no · in font zptmcm7t!
+Missing character: There is no · in font zptmcm7t!
+Missing character: There is no · in font zptmcm7t!
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 2584--2587
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2605--2608
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2626--2629
+
+ []
+
+[43]
+Chapter 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2674--2677
+
+ []
+
+[44
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2692--2695
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2712--2715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2741--2744
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2758--2761
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 2778--2781
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2798--2801
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2817--2820
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2836--2839
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 2855--2858
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2875--2878
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2895--2898
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2915--2918
+
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 2933--2936
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2958--2961
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2978--2981
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 3004--3007
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3025--3028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3044--3047
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3063--3066
+
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 3084--3087
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3103--3106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3128--3131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3147--3150
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 3174--3177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3194--3197
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 3222--3225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3243--3246
+
+ []
+
+[52]
+Appendix A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3284--3287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3305--3308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3325--3328
+
+ []
+
+[53
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3348--3351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3366--3369
+
+ []
+
+[54]
+Appendix B.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3402--3405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3421--3424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3438--3441
+
+ []
+
+[55
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X86746B487B
+54A2D6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3449 \end{Verbatim}
+                     ]
+Underfull \hbox (badness 10000) in paragraph at lines 3457--3460
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3476--3479
+
+ []
+
+[56]
+Appendix C.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3507--3510
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3528--3531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3551--3554
+
+ []
+
+[57
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3574--3577
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3598--3601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3623--3626
+
+ []
+
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 3647--3650
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3671--3674
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3695--3698
+
+ []
+
+[59] (./NumericalSgpsMan.bbl (./NumericalSgpsMan.brf)
+\tf@brf=\write8
+\openout8 = `NumericalSgpsMan.brf'.
+
+ [60] [61
+
+] [62]) [63]
+(./NumericalSgpsMan.ind
+Underfull \hbox (badness 10000) in paragraph at lines 5--7
+[]\T1/cmtt/m/n/10.95 Almost\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Symmetric\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
+ Semigroups\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+[]\T1/cmtt/m/n/10.95 Almost\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Symmetric\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
+ Semigroups\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+[]\T1/cmtt/m/n/10.95 AnIrreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeric
+al\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/
+n/10.95 With\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+[]\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerica
+l\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
+/10.95 W\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+[]\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 As\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Graph\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+[]\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
+5 T\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+[]\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
+5 T\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
+[]\T1/cmtt/m/n/10.95 Arf\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W
+ith\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+[]\T1/cmtt/m/n/10.95 Belongs\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 To\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Homogenization\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+[]\T1/cmtt/m/n/10.95 Catenary\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/pt
+m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+[]\T1/cmtt/m/n/10.95 Complete\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Intersection
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
+mber\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
+[]\T1/cmtt/m/n/10.95 Delta\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/
+10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Factorization
+s\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
+0.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
+.95 T\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+[]\T1/cmtt/m/n/10.95 Difference\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Ideals\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+[]\T1/cmtt/m/n/10.95 Elasticity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/
+n/10.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+[]\T1/cmtt/m/n/10.95 Embedding\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Dimension\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
+erical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+[]\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elemen
+t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
+merical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+[]\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/
+ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Homogenization\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
+/10.95 Of\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+[]\T1/cmtt/m/n/10.95 Free\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+[]\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/
+ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
+5 Semigroup\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
+[]\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/
+ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
+[]\T1/cmtt/m/n/10.95 Graph\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 To\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elemen
+t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
+[]\T1/cmtt/m/n/10.95 Hilbert\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
+merical\T1/ptm/m/n/10.95 -
+ []
+
+[64
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+[]\T1/cmtt/m/n/10.95 Homogeneous\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Betti\T1/
+ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
+ Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+[]\T1/cmtt/m/n/10.95 Homogeneous\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
+5 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+[]\T1/cmtt/m/n/10.95 Intersection\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideals\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
+erical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+[]\T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
+/10.95 With\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+[]\T1/cmtt/m/n/10.95 IsA\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Complete\T1/ptm/m
+/n/10.95 -\T1/cmtt/m/n/10.95 Intersection\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--125
+[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+[]\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+\T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Planar\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Curve\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+[]\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 F
+undamental\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Gaps\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+[]\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M
+inimal\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+[]\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 S
+ub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+[]\T1/cmtt/m/n/10.95 IsProportionally\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modu
+lar\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
+[]\T1/cmtt/m/n/10.95 Lengths\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
+0.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+[]\T1/cmtt/m/n/10.95 Lengths\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
+/10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Integer\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
+0.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
+.95 List\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+[]\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elem
+ent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
+5 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
+[]\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
+rical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+[]\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
+[]\T1/cmtt/m/n/10.95 Maximum\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
+rical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Arf\T1/ptm/m/
+n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sys
+tem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
+5 Arf\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
+.95 Of\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M\T1/ptm/m/n/
+10.95 -\T1/cmtt/m/n/10.95 E\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 D\T1/ptm/m/n/1
+0.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 E\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 D\
+T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presentation\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
+merical\T1/ptm/m/n/10.95 -
+ []
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+[]\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Min
+imal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+[]\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Min
+imal\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+[]\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sub
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+[]\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+\T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Planar\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Curve\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+\T1/cmtt/m/n/10.95 Singularity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umber\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+[]\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Frobenius\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+[]\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
+m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+[]\T1/cmtt/m/n/10.95 Proportionally\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modula
+r\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+[]\T1/cmtt/m/n/10.95 Random\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/
+n/10.95 -\T1/cmtt/m/n/10.95 Representing\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 S
+ub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--241
+[]\T1/cmtt/m/n/10.95 Random\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Proportionally
+\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modular\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
+.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
+[]\T1/cmtt/m/n/10.95 Reduction\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Number\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
+erical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+[]\T1/cmtt/m/n/10.95 Remove\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Minimal\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Generator\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 F
+rom\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+[]\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Periodic\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ad
+ditive\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
+[]\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Small\T1/p
+tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
+Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+[]\T1/cmtt/m/n/10.95 Saturated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
+0.95 With\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
+[]\T1/cmtt/m/n/10.95 Small\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
+rical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
+[]\T1/cmtt/m/n/10.95 Tame\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/
+n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/
+ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numer
+ical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
+[]\T1/cmtt/m/n/10.95 Telescopic\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\
+T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/
+10.95 With\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--274
+[]\T1/cmtt/m/n/10.95 Translation\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm
+/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
+ []
+
+[66]) (./NumericalSgpsMan.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6790 strings out of 495041
+ 100299 string characters out of 1181897
+ 166088 words of memory out of 6000000
+ 9354 multiletter control sequences out of 15000+50000
+ 84396 words of font info for 106 fonts, out of 3000000 for 9000
+ 30 hyphenation exceptions out of 8191
+ 38i,7n,37p,789b,595s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/mdelgado/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecst1095.600pk> </hom
+e/mdelgado/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/share/te
+xmf-texlive/fonts/enc/dvips/base/8r.enc} </home/mdelgado/.texmf-var/fonts/pk/lj
+four/jknappen/ec/ectt1000.600pk></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-texlive/fonts/type1
+/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhv
+r8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/ut
+mb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on NumericalSgpsMan.pdf (66 pages, 473118 bytes).
+PDF statistics:
+ 1454 PDF objects out of 1728 (max. 8388607)
+ 454 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
+

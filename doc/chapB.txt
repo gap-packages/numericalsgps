@@ -1,0 +1,80 @@
+  
+  [1XB [33X[0;0YRandom functions[133X[101X
+  
+  [33X[0;0YHere  we  describe  some  functions  which  allow to create several "random"
+  objects.[133X
+  
+  
+  [1XB.1 [33X[0;0YRandom functions[133X[101X
+  
+  [1XB.1-1 RandomNumericalSemigroup[101X
+  
+  [29X[2XRandomNumericalSemigroup[102X( [3Xn[103X, [3Xa[103X[, [3Xb[103X] ) [32X function
+  
+  [33X[0;0YReturns  a  ``random"  numerical semigroup with no more than [3Xn[103X generators in
+  [1..[3Xa[103X] (or in [[3Xa[103X..[3Xb[103X], if [3Xb[103X is present).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomNumericalSemigroup(3,9);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XRandomNumericalSemigroup(3,9,55);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-2 RandomListForNS[101X
+  
+  [29X[2XRandomListForNS[102X( [3Xn[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0YReturns  a  set  of  length  not greater than [3Xn[103X of random integers in [3X[a..b][103X
+  whose GCD is 1. It is used to create "random" numerical semigroups.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomListForNS(13,1,79);[127X[104X
+    [4X[28X[ 22, 26, 29, 31, 34, 46, 53, 61, 62, 73, 76 ][128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-3 RandomModularNumericalSemigroup[101X
+  
+  [29X[2XRandomModularNumericalSemigroup[102X( [3Xk[103X[, [3Xm[103X] ) [32X function
+  
+  [33X[0;0YReturns  a ``random" modular numerical semigroup [22XS(a,b)[122X with [22Xa le k[122X (see [14X1.[114X)
+  and multiplicity at least [22Xm[122X, were [22Xm[122X is the second argument, which may not be
+  present..[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomModularNumericalSemigroup(9);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 5x mod 6 <= x >[128X[104X
+    [4X[25Xgap>[125X [27XRandomModularNumericalSemigroup(10,25);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 4x mod 157 <= x >[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-4 RandomProportionallyModularNumericalSemigroup[101X
+  
+  [29X[2XRandomProportionallyModularNumericalSemigroup[102X( [3Xk[103X[, [3Xm[103X] ) [32X function
+  
+  [33X[0;0YReturns a ``random" proportionally modular numerical semigroup [22XS(a,b,c)[122X with
+  [22Xa  le k[122X (see [14X1.[114X) and multiplicity at least [22Xm[122X, were [22Xm[122X is the second argument,
+  which may not be present.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomProportionallyModularNumericalSemigroup(9);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 2x mod 3 <= 2x >[128X[104X
+    [4X[25Xgap>[125X [27XRandomProportionallyModularNumericalSemigroup(10,25);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 6x mod 681 <= 2x >[128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-5 RandomListRepresentingSubAdditiveFunction[101X
+  
+  [29X[2XRandomListRepresentingSubAdditiveFunction[102X( [3Xm[103X, [3Xa[103X ) [32X function
+  
+  [33X[0;0YProduces a ``random" list representing a subadditive function (see [14X1.[114X) which
+  is  periodic  with  period  [3Xm[103X  (or  less).  When possible, the images are in
+  [3X[a..20*a][103X. (Otherwise, the list of possible images is enlarged.)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomListRepresentingSubAdditiveFunction(7,9);[127X[104X
+    [4X[28X[ 173, 114, 67, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XRepresentsPeriodicSubAdditiveFunction(last);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
