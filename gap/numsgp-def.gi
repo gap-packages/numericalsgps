@@ -296,7 +296,7 @@ InstallGlobalFunction(ProportionallyModularNumericalSemigroup, function(a,b,c)
                 rec() );
     SetProportionallyModularConditionNS(M,[a,b,c]);
     Setter(IsProportionallyModularNumericalSemigroup)(M,true);
-    if a <> c then
+    if a > c then
       SetClosedIntervalNS(M, [b/a,b/(a-c)]);
         Setter(IsNumericalSemigroupByInterval)(M,true);
     else 
