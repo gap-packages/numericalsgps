@@ -195,3 +195,32 @@ InstallGlobalFunction(BettiElementsOfNumericalSemigroup, function(s)
     return Filtered(candidates,n->not(isconnected(n)));
                                 # choose n with nonconnected graphs
 end);
+
+#############################################################################
+##
+#F  IsUniquelyPresentedNumericalSemigroup(s)
+##
+##  For a numerical semigroup s, checks it it has a unique minimal presentation
+##  Basado en GS-O
+##
+#############################################################################
+InstallGlobalFunction(IsUniquelyPresentedNumericalSemigroup,function(s)
+	return ForAll(BettiElementsOfNumericalSemigroup(s), b->Length(FactorizationsElementWRTNumericalSemigroup(b,s))=2);
+end);
+
+#############################################################################
+##
+#F  IsGenericNumericalSemigroup(s)
+##
+##  For a numerical semigroup s, checks it it has a generic presentation,
+##  that is, in every relation all minimal generators appear. These semigroups are uniquely
+##  presented véase B-GS-G.
+##
+#############################################################################
+InstallGlobalFunction(IsGenericNumericalSemigroup,function(s)
+	local mp;
+	mp:=MinimalPresentationOfNumericalSemigroup(s);
+	return ForAll(mp,p->Product(p[1]+p[2])<>0);
+end);
+
+
