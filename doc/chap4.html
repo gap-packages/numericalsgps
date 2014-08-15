@@ -32,6 +32,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7D8199858781EB41">4.1-1 MinimalPresentationOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X81CC5A6C870377E1">4.1-2 GraphAssociatedToElementInNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X836B6BF4853DB8E2">4.1-3 BettiElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X87A72C497E37760D">4.1-4 IsUniquelyPresentedNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7955C87C80F41CFE">4.1-5 IsGenericNumericalSemigroup</a></span>
 </div></div>
 </div>
 
@@ -101,6 +103,40 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BettiElementsOfNumericalSemigroup(s);</span>
 [ 10, 12, 14 ]
+
+                        </pre></div>
+
+<p><a id="X87A72C497E37760D" name="X87A72C497E37760D"></a></p>
+
+<h5>4.1-4 IsUniquelyPresentedNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>The output is true if <var class="Arg">S</var> has essentially a unique minimal presentation (see <a href="chapBib.html#biBGS-O">[GO10]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsUniquelyPresentedNumericalSemigroup(s);</span>
+true
+
+                        </pre></div>
+
+<p><a id="X7955C87C80F41CFE" name="X7955C87C80F41CFE"></a></p>
+
+<h5>4.1-5 IsGenericNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>The output is true if <var class="Arg">S</var> generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented (see <a href="chapBib.html#biBB-GS-G">[BGG10]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGenericNumericalSemigroup(s);</span>
+true
 
                         </pre></div>
 

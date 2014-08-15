@@ -1233,3 +1233,21 @@ InstallGlobalFunction(HomogeneousCatenaryDegreeOfNumericalSemigroup,function( s 
 	return Maximum(Set(betti,b-> CatenaryDegreeOfSetOfFactorizations(
 		FactorizationsInHomogenizationOfNumericalSemigroup(b,s))));
 end);
+
+########################################
+#F DenumerantElementInNumericalSemigroup(n,s)
+## returns the denumerant
+########################################
+InstallGlobalFunction(DenumerantOfElementInNumericalSemigroup, function(x,s)
+	
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.\n");
+    fi;
+
+    if not ( x in s ) then
+		return 0;
+    fi;
+	
+	return Length(FactorizationsElementWRTNumericalSemigroup(x,s));
+end);
+

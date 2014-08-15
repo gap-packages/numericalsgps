@@ -349,3 +349,10 @@ DeclareGlobalFunction("HomogeneousBettiElementsOfNumericalSemigroup");
 ##  homogeneous catenary degree of the numerical semigroup s ([GSOSN])
 ####################################################################
 DeclareGlobalFunction("HomogeneousCatenaryDegreeOfNumericalSemigroup");
+
+########################################
+#F DenumerantElementInNumericalSemigroup(n,s)
+## returns the denumerant
+########################################
+DeclareGlobalFunction("DenumerantOfElementInNumericalSemigroup");
+

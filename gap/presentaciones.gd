@@ -73,3 +73,26 @@ DeclareGlobalFunction("MinimalPresentationOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("BettiElementsOfNumericalSemigroup");
+
+#############################################################################
+##
+#F  IsUniquelyPresentedNumericalSemigroup(s)
+##
+##  For a numerical semigroup s, checks it it has a unique minimal presentation
+##  Basado en GS-O
+##
+#############################################################################
+DeclareGlobalFunction("IsUniquelyPresentedNumericalSemigroup");
+
+#############################################################################
+##
+#F  IsGenericNumericalSemigroup(s)
+##
+##  For a numerical semigroup s, checks it it has a generic presentation,
+##  that is, in every relation all minimal generators appear. These semigroups are uniquely
+##  presented véase B-GS-G.
+##
+#############################################################################
+DeclareGlobalFunction("IsGenericNumericalSemigroup");
+
+

@@ -80,4 +80,36 @@ gap> BettiElementsOfNumericalSemigroup(s);
                     </Description>
                 </ManSection>
                 
+
+                 <ManSection>
+                    <Func Arg="S" Name="IsUniquelyPresentedNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+                        The output is true if <A>S</A> has essentially a unique minimal presentation (see <Cite Key="GS-O"></Cite>).
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsUniquelyPresentedNumericalSemigroup(s);
+true
+]]>
+                        </Example>          
+                                        
+                    </Description>
+                </ManSection>
+
+                 <ManSection>
+                    <Func Arg="S" Name="IsGenericNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+                        The output is true if <A>S</A> generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented  (see <Cite Key="B-GS-G"></Cite>).
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsGenericNumericalSemigroup(s);
+true
+]]>
+                        </Example>                                                  
+                    </Description>
+                </ManSection>
             </Section>
+
