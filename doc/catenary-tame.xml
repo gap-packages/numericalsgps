@@ -98,6 +98,22 @@ gap> RClassesOfSetOfFactorizations(last);
          </Description>
     </ManSection>
 
+    <ManSection>
+
+        <Func Arg="n, S" Name="DenumerantOfElementInNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup and <A>n</A> a positive integer.
+            The output is the number of factorizations of  <A>n</A> in terms of the minimal
+            generating set of <A>S</A>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,195,272,278,286);;
+gap> DenumerantOfElementInNumericalSemigroup(1311,s);
+6
+]]></Example>
+         </Description>
+    </ManSection>
+
 </Section>
 
 <Section>
@@ -225,12 +241,13 @@ gap> MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);
          </Description>
     </ManSection>
 
-    <ManSection>
 
+
+    <ManSection>
         <Func Arg="n, S" Name="MaximalDenumerantOfElementInNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> a positive integer.
-            The output is the numbero of factorizations of  <A>n</A> in terms of the minimal
+            The output is the number of factorizations of  <A>n</A> in terms of the minimal
             generating set of <A>S</A> with maximal length.
 
             <Example><![CDATA[

@@ -34,6 +34,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8429AECF78EE7EAB">9.1-1 FactorizationsIntegerWRTList</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X78C6D3BF7C7C2760">9.1-2 FactorizationsElementWRTNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X813D2A3A83916A36">9.1-3 RClassesOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86D58E0084CFD425">9.1-4 DenumerantOfElementInNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X846FEE457D4EC03D">9.2 <span class="Heading">
         Invariants based on lengths
@@ -156,6 +157,20 @@
 [ [ [ 2, 1, 2, 0 ], [ 5, 0, 1, 0 ] ], [ [ 0, 0, 0, 3 ] ] ]
 </pre></div>
 
+<p><a id="X86D58E0084CFD425" name="X86D58E0084CFD425"></a></p>
+
+<h5>9.1-4 DenumerantOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DenumerantOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a positive integer. The output is the number of factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,195,272,278,286);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DenumerantOfElementInNumericalSemigroup(1311,s);</span>
+6
+</pre></div>
+
 <p><a id="X846FEE457D4EC03D" name="X846FEE457D4EC03D"></a></p>
 
 <h4>9.2 <span class="Heading">
@@ -270,7 +285,7 @@
 <h5>9.2-8 MaximalDenumerantOfElementInNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalDenumerantOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a positive integer. The output is the numbero of factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var> with maximal length.</p>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a positive integer. The output is the number of factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var> with maximal length.</p>
 
 
 <div class="example"><pre>

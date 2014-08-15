@@ -83,6 +83,19 @@
     [4X[28X[ [ [ 2, 1, 2, 0 ], [ 5, 0, 1, 0 ] ], [ [ 0, 0, 0, 3 ] ] ][128X[104X
   [4X[32X[104X
   
+  [1X9.1-4 DenumerantOfElementInNumericalSemigroup[101X
+  
+  [29X[2XDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a positive integer. The output is the
+  number of factorizations of [3Xn[103X in terms of the minimal generating set of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(101,113,195,272,278,286);;[127X[104X
+    [4X[25Xgap>[125X [27XDenumerantOfElementInNumericalSemigroup(1311,s);[127X[104X
+    [4X[28X6[128X[104X
+  [4X[32X[104X
+  
   
   [1X9.2 [33X[0;0YInvariants based on lengths[133X[101X
   
@@ -190,7 +203,7 @@
   [29X[2XMaximalDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a positive integer. The output is the
-  numbero  of  factorizations of [3Xn[103X in terms of the minimal generating set of [3XS[103X
+  number  of  factorizations  of [3Xn[103X in terms of the minimal generating set of [3XS[103X
   with maximal length.[133X
   
   [4X[32X  Example  [32X[104X
