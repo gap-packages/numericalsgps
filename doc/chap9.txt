@@ -393,7 +393,8 @@
   [29X[2XOmegaPrimalityOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   
   [33X[0;0Y[3Xn[103X  is  an elment of the numerical semigroup [3XS[103X. The output is the [22Xω[122X-primality
-  of [3Xn[103X in [3XS[103X as explained in [BGG10].[133X
+  of  [3Xn[103X  in  [3XS[103X  as  explained in [BGG10]. The current implementation is due to
+  Chris O'Neill based on a work in progress with Pelayo and Thomas.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);        [127X[104X
