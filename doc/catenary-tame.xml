@@ -462,7 +462,7 @@ gap> TameDegreeOfElementInNumericalSemigroup(100,s);
         <Description>
 	    <A>n</A> is an elment of the numerical semigroup <A>S</A>.
 
-            The output is the <M>\omega</M>-primality of <A>n</A> in <A>S</A> as explained in <Cite Key="B-GS-G"></Cite>.
+            The output is the <M>\omega</M>-primality of <A>n</A> in <A>S</A> as explained in <Cite Key="B-GS-G"></Cite>. The current implementation is due to Chris O'Neill based on a work in progress with Pelayo and Thomas.
            
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);        

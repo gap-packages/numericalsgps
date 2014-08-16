@@ -35,6 +35,12 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X86F52FB67F76D2CB">C.1-8 IsAperySetAlphaRectangular</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X7D2A75F086A5466B">C.1-9 TypeSequenceOfNumericalSemigroup</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC.html#X821A695C7C0BDF59">C.2 <span class="Heading">Functions implemented by C. O'Neill</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X85EB5E2581FFB8B2">C.2-1 OmegaPrimalityOfElementListInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X87C9E03C818AE1AA">C.2-2 FactorizationsElementListWRTNumericalSemigroup</a></span>
+</div></div>
 </div>
 
 <h3>C <span class="Heading">Contributions</span></h3>
@@ -211,6 +217,59 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TypeSequenceOfNumericalSemigroup(s);</span>
 [ 1, 1, 1, 1, 1, 1, 1 ]
+</pre></div>
+
+<p><a id="X821A695C7C0BDF59" name="X821A695C7C0BDF59"></a></p>
+
+<h4>C.2 <span class="Heading">Functions implemented by C. O'Neill</span></h4>
+
+<p><a id="X85EB5E2581FFB8B2" name="X85EB5E2581FFB8B2"></a></p>
+
+<h5>C.2-1 OmegaPrimalityOfElementListInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementListInNumericalSemigroup</code>( <var class="Arg">l</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">l</var> a list of elements of <var class="Arg">S</var>.</p>
+
+<p>Computes the omega-values of all the elements in <var class="Arg">l</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=FirstElementsOfNumericalSemigroup(100,s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(l,x-&gt;OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;</span>
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 8, 8, 8, 8,
+  9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 12, 11,
+  11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 13, 14, 13, 13, 13,
+  13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15,
+  15, 15, 15 ]
+125
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;</span>
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 8, 8, 8, 8,
+  9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 12, 11,
+  11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 13, 14, 13, 13, 13,
+  13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15,
+  15, 15, 15 ]
+16
+</pre></div>
+
+<p><a id="X87C9E03C818AE1AA" name="X87C9E03C818AE1AA"></a></p>
+
+<h5>C.2-2 FactorizationsElementListWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsElementListWRTNumericalSemigroup</code>( <var class="Arg">l</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">l</var> a list of elements of <var class="Arg">S</var>.</p>
+
+<p>Computes the factorizations of all the elements in <var class="Arg">l</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);</span>
+[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
+  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
+  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
+
 </pre></div>
 
 
