@@ -295,3 +295,123 @@ InstallGlobalFunction(TypeSequenceOfNumericalSemigroup,function(S)
 	od;
 	return t;
 end);
+
+#############################################################################
+##
+#F  OmegaPrimalityOfElementListInNumericalSemigroup(l,s)
+##
+##  Computes the omega primality of a list of elmenents l in S, 
+##  Implemented by Chris O'Neill.  
+##
+#############################################################################
+InstallGlobalFunction(OmegaPrimalityOfElementListInNumericalSemigroup,function(l,s)
+	local frob, msg, values, bullets, omegas, n, i, b, toadd, omegaval, bl, getbullets, setbullets, getomega, setomega;
+	
+	if not IsNumericalSemigroup(s) then
+		Error("The argument must be a numerical semigroup.");
+	fi;
+	
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	frob:=FrobeniusNumberOfNumericalSemigroup(s);
+	
+	values := [-frob .. Maximum(l)];
+	bullets := List(values, x->[]);
+	omegas := List(values, x->0);
+	
+	getbullets:=function(n)  #add base case
+		if n < -frob then
+			return [List(msg,x->0)];
+		fi;
+		return bullets[n+frob+1];
+	end;
+	
+	setbullets:=function(n,bl)
+		if n >= -frob then
+			bullets[n+frob+1] := bl;
+		fi;
+	end;
+	
+	getomega:=function(n)
+		if n < -frob then
+			return 0;
+		fi;
+		return omegas[n+frob+1];
+	end;
+	
+	setomega:=function(n,om)
+		if n >= -frob then
+			omegas[n+frob+1] := om;
+		fi;
+	end;
+	
+	for n in values do
+		bl := [];
+		
+		for i in [1..Length(msg)] do
+			for b in getbullets(n - msg[i]) do
+				toadd := List(b);
+				
+				if toadd[i] > 0 or not(toadd*msg-n in s) then
+					toadd[i] := toadd[i] + 1;
+				fi;
+				
+				Add(bl,toadd);
+			od;
+		od;
+		
+		setbullets(n,Set(bl));
+		setbullets(n-msg[Length(msg)],[]);
+		
+		setomega(n,Maximum(List(getbullets(n),x->Sum(x))));
+		
+		# for garbage collection
+		# GASMAN("coillect");
+	od;
+	
+	return List(l,x->getomega(x));
+end);
+
+
+#############################################################################
+##
+#F  FactorizationsElementListWRTNumericalSemigroup(l,s)
+##
+##  Computes the factorizations of a list of elmenents l in S, 
+##  Implemented by Chris O'Neill
+##
+#############################################################################
+InstallGlobalFunction(FactorizationsElementListWRTNumericalSemigroup,function(l,s)
+	local msg, factorizations, n, i, f, facts, toadd;
+	
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	factorizations:=[];
+	
+	for n in [1 .. Maximum(l)] do
+		factorizations[n]:=[];
+		
+		for i in [1 .. Length(msg)] do
+			if n-msg[i] >= 0 then
+				facts:=[List(msg,x->0)];
+				if n-msg[i] > 0 then
+					facts:=factorizations[n-msg[i]];
+				fi;
+				
+				for f in facts do
+					toadd:=List(f);
+					toadd[i]:=toadd[i]+1;
+					Add(factorizations[n],toadd);
+				od;
+			fi;
+		od;
+		
+		factorizations[n]:=Set(factorizations[n]);
+		
+		# allow garbage collection
+		#if n > Maximum(msg) then
+		#	factorizations[n-Maximum(msg)]:=[];
+		#fi;
+	od;
+	
+	return List(l,x->factorizations[x]);
+end);
+
