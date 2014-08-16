@@ -1121,10 +1121,17 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{Uniquely Presented Numerical Semigroups}}\logpage{[ 4, 2, 0 ]}
+\hyperdef{L}{X7D7EA20F818A5994}{}
+{
+  A numerical semigroup $S$ is uniquely presented if for any two minimal presentations $\sigma$ and $\tau$ and any $(a,b)\in \sigma$, either $(a,b)\in \tau$ or $(b,a)\in \tau$, that is, there is essentially a unique minimal presentation (up to
+arrangement of the components of the pairs in it). 
 
 \subsection{\textcolor{Chapter }{IsUniquelyPresentedNumericalSemigroup}}
-\logpage{[ 4, 1, 4 ]}\nobreak
+\logpage{[ 4, 2, 1 ]}\nobreak
 \hyperdef{L}{X87A72C497E37760D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedNumericalSemigroup({\mdseries\slshape S})\index{IsUniquelyPresentedNumericalSemigroup@\texttt{IsUniquely}\-\texttt{Presented}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{IsUniquelyPresentedNumericalSemigroup}
@@ -1133,7 +1140,7 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
 
- The output is true if \mbox{\texttt{\mdseries\slshape S}} has essentially a unique minimal presentation (see \cite{GS-O}). 
+ The output is true if \mbox{\texttt{\mdseries\slshape S}} has uniquely presented. The implementation is based on (see \cite{GS-O}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@IsUniquelyPresentedNumericalSemigroup(s);|
@@ -1146,7 +1153,7 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
  
 
 \subsection{\textcolor{Chapter }{IsGenericNumericalSemigroup}}
-\logpage{[ 4, 1, 5 ]}\nobreak
+\logpage{[ 4, 2, 2 ]}\nobreak
 \hyperdef{L}{X7955C87C80F41CFE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericNumericalSemigroup({\mdseries\slshape S})\index{IsGenericNumericalSemigroup@\texttt{IsGenericNumericalSemigroup}}
 \label{IsGenericNumericalSemigroup}
@@ -1803,15 +1810,15 @@ symmetric numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\sls
 \chapter{\textcolor{Chapter }{ Ideals of numerical semigroups }}\logpage{[ 7, 0, 0 ]}
 \hyperdef{L}{X83C2F0CF825B3869}{}
 {
-   
-\section{\textcolor{Chapter }{ Ideals of numerical semigroups }}\logpage{[ 7, 1, 0 ]}
-\hyperdef{L}{X83C2F0CF825B3869}{}
-{
-  Let $S$ be a numerical semigroup. A set $I$ of integers is an \emph{ideal relative} to a numerical semigroup $S$ provided that $I+S\subseteq I$ and that there exists $d\in S$ such that $d+I\subseteq S$. 
+   Let $S$ be a numerical semigroup. A set $I$ of integers is an \emph{ideal relative} to a numerical semigroup $S$ provided that $I+S\subseteq I$ and that there exists $d\in S$ such that $d+I\subseteq S$. 
 
  If $\{i_1,\ldots,i_k\}$ is a subset of ${\mathbb Z}$, then the set $I=\{i_1,\ldots,i_k\}+S=\bigcup_{n=1}^k i_n+S$ is an ideal relative to $S$, and $\{i_1,\ldots, i_k\}$ is a system of generators of $I$. A system of generators $M$ is minimal if no proper subset of $M$ generates the same ideal. Usually, ideals are specified by means of its
 generators and the ambient numerical semigroup to which they are ideals (for
 more information see for instance \cite{BDF97}). 
+\section{\textcolor{Chapter }{ Definitions and basic operations }}\logpage{[ 7, 1, 0 ]}
+\hyperdef{L}{X84B6453A8015B40B}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{IdealOfNumericalSemigroup}}
 \logpage{[ 7, 1, 1 ]}\nobreak
@@ -2116,8 +2123,75 @@ plus one.
 
  
 
-\subsection{\textcolor{Chapter }{HilbertFunctionOfIdealOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IntersectionIdealsOfNumericalSemigroup}}
 \logpage{[ 7, 1, 13 ]}\nobreak
+\hyperdef{L}{X85CC100F78608D5E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IntersectionIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{IntersectionIdealsOfNumericalSemigroup@\texttt{Intersection}\-\texttt{Ideals}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{IntersectionIdealsOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given two ideals \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} of a numerical semigroup \mbox{\texttt{\mdseries\slshape S}} returns the ideal of the numerical semigroup \mbox{\texttt{\mdseries\slshape S}} which is the intersection of the ideals \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@i:=IdealOfNumericalSemigroup([75,89],s);;|
+  !gapprompt@gap>| !gapinput@j:=IdealOfNumericalSemigroup([115,289],s);;|
+  !gapprompt@gap>| !gapinput@IntersectionIdealsOfNumericalSemigroup(i,j);|
+  <Ideal of numerical semigroup>
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MaximalIdealOfNumericalSemigroup}}
+\logpage{[ 7, 1, 14 ]}\nobreak
+\hyperdef{L}{X829EACA378BE3665}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaximalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{MaximalIdealOfNumericalSemigroup@\texttt{MaximalIdealOfNumericalSemigroup}}
+\label{MaximalIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Returns the maximal ideal of the numerical semigroup \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@MaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));|
+  <Ideal of numerical semigroup>
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{CanonicalIdealOfNumericalSemigroup}}
+\logpage{[ 7, 1, 15 ]}\nobreak
+\hyperdef{L}{X835890A078F5D6DC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CanonicalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{CanonicalIdealOfNumericalSemigroup@\texttt{CanonicalIdealOfNumericalSemigroup}}
+\label{CanonicalIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Computes a canonical ideal of \mbox{\texttt{\mdseries\slshape S}} (\cite{BF06}): $\{ x \in \mathbb{Z} | g-x \not \in S\} $. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
+  !gapprompt@gap>| !gapinput@m:=MaximalIdealOfNumericalSemigroup(s);;|
+  !gapprompt@gap>| !gapinput@c:=CanonicalIdealOfNumericalSemigroup(s);|
+  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@(m-c)-c=m;|
+  true
+  !gapprompt@gap>| !gapinput@id:=3+s;|
+  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@(id-c)-c=id;|
+  true
+\end{Verbatim}
+ }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{ Other functions for ideals }}\logpage{[ 7, 2, 0 ]}
+\hyperdef{L}{X81DC1C0284968537}{}
+{
+  
+
+\subsection{\textcolor{Chapter }{HilbertFunctionOfIdealOfNumericalSemigroup}}
+\logpage{[ 7, 2, 1 ]}\nobreak
 \hyperdef{L}{X82156F18807B00BF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertFunctionOfIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{HilbertFunctionOfIdealOfNumericalSemigroup@\texttt{Hilbert}\-\texttt{Function}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{HilbertFunctionOfIdealOfNumericalSemigroup}
@@ -2137,7 +2211,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{BlowUpIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 14 ]}\nobreak
+\logpage{[ 7, 2, 2 ]}\nobreak
 \hyperdef{L}{X7C00A86F83024003}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BlowUpIdealOfNumericalSemigroup({\mdseries\slshape I})\index{BlowUpIdealOfNumericalSemigroup@\texttt{BlowUpIdealOfNumericalSemigroup}}
 \label{BlowUpIdealOfNumericalSemigroup}
@@ -2158,7 +2232,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{ReductionNumberIdealNumericalSemigroup}}
-\logpage{[ 7, 1, 15 ]}\nobreak
+\logpage{[ 7, 2, 3 ]}\nobreak
 \hyperdef{L}{X82C2BF5E840C815D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ReductionNumberIdealNumericalSemigroup({\mdseries\slshape I})\index{ReductionNumberIdealNumericalSemigroup@\texttt{Reduction}\-\texttt{Number}\-\texttt{Ideal}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ReductionNumberIdealNumericalSemigroup}
@@ -2177,25 +2251,8 @@ plus one.
 
  
 
-\subsection{\textcolor{Chapter }{MaximalIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 16 ]}\nobreak
-\hyperdef{L}{X829EACA378BE3665}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaximalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{MaximalIdealOfNumericalSemigroup@\texttt{MaximalIdealOfNumericalSemigroup}}
-\label{MaximalIdealOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- Returns the maximal ideal of the numerical semigroup \mbox{\texttt{\mdseries\slshape S}}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@MaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));|
-  <Ideal of numerical semigroup>
-\end{Verbatim}
- }
-
- 
-
 \subsection{\textcolor{Chapter }{BlowUpOfNumericalSemigroup}}
-\logpage{[ 7, 1, 17 ]}\nobreak
+\logpage{[ 7, 2, 4 ]}\nobreak
 \hyperdef{L}{X84B5121C7EEECB30}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BlowUpOfNumericalSemigroup({\mdseries\slshape S})\index{BlowUpOfNumericalSemigroup@\texttt{BlowUpOfNumericalSemigroup}}
 \label{BlowUpOfNumericalSemigroup}
@@ -2224,7 +2281,7 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
  
 
 \subsection{\textcolor{Chapter }{MicroInvariantsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 18 ]}\nobreak
+\logpage{[ 7, 2, 5 ]}\nobreak
 \hyperdef{L}{X7B29CDA7783FC0D2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MicroInvariantsOfNumericalSemigroup({\mdseries\slshape S})\index{MicroInvariantsOfNumericalSemigroup@\texttt{MicroInvariantsOfNumericalSemigroup}}
 \label{MicroInvariantsOfNumericalSemigroup}
@@ -2248,7 +2305,7 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
  
 
 \subsection{\textcolor{Chapter }{IsGradedAssociatedRingNumericalSemigroupCM}}
-\logpage{[ 7, 1, 19 ]}\nobreak
+\logpage{[ 7, 2, 6 ]}\nobreak
 \hyperdef{L}{X7876199778D6B320}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGradedAssociatedRingNumericalSemigroupCM({\mdseries\slshape S})\index{IsGradedAssociatedRingNumericalSemigroupCM@\texttt{IsGraded}\-\texttt{Associated}\-\texttt{Ring}\-\texttt{Numerical}\-\texttt{SemigroupCM}}
 \label{IsGradedAssociatedRingNumericalSemigroupCM}
@@ -2281,54 +2338,10 @@ algorithm given in \cite{BF06}.
 \end{Verbatim}
  }
 
- 
-
-\subsection{\textcolor{Chapter }{CanonicalIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 20 ]}\nobreak
-\hyperdef{L}{X835890A078F5D6DC}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CanonicalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{CanonicalIdealOfNumericalSemigroup@\texttt{CanonicalIdealOfNumericalSemigroup}}
-\label{CanonicalIdealOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- Computes a canonical ideal of \mbox{\texttt{\mdseries\slshape S}} (\cite{BF06}): $\{ x \in \mathbb{Z} | g-x \not \in S\} $. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,11);;|
-  !gapprompt@gap>| !gapinput@m:=MaximalIdealOfNumericalSemigroup(s);;|
-  !gapprompt@gap>| !gapinput@c:=CanonicalIdealOfNumericalSemigroup(s);|
-  <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@(m-c)-c=m;|
-  true
-  !gapprompt@gap>| !gapinput@id:=3+s;|
-  <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@(id-c)-c=id;|
-  true
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{IntersectionIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 21 ]}\nobreak
-\hyperdef{L}{X85CC100F78608D5E}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IntersectionIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{IntersectionIdealsOfNumericalSemigroup@\texttt{Intersection}\-\texttt{Ideals}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
-\label{IntersectionIdealsOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- Given two ideals \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} of a numerical semigroup \mbox{\texttt{\mdseries\slshape S}} returns the ideal of the numerical semigroup \mbox{\texttt{\mdseries\slshape S}} which is the intersection of the ideals \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@i:=IdealOfNumericalSemigroup([75,89],s);;|
-  !gapprompt@gap>| !gapinput@j:=IdealOfNumericalSemigroup([115,289],s);;|
-  !gapprompt@gap>| !gapinput@IntersectionIdealsOfNumericalSemigroup(i,j);|
-  <Ideal of numerical semigroup>
-\end{Verbatim}
- }
-
   
 
 \subsection{\textcolor{Chapter }{IsMonomialNumericalSemigroup}}
-\logpage{[ 7, 1, 22 ]}\nobreak
+\logpage{[ 7, 2, 7 ]}\nobreak
 \hyperdef{L}{X7A04B8887F493733}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMonomialNumericalSemigroup({\mdseries\slshape S})\index{IsMonomialNumericalSemigroup@\texttt{IsMonomialNumericalSemigroup}}
 \label{IsMonomialNumericalSemigroup}
@@ -2353,7 +2366,7 @@ algorithm given in \cite{BF06}.
   
 
 \subsection{\textcolor{Chapter }{AperyListOfIdealOfNumericalSemigroupWRTElement}}
-\logpage{[ 7, 1, 23 ]}\nobreak
+\logpage{[ 7, 2, 8 ]}\nobreak
 \hyperdef{L}{X7D14AA4D7EE12369}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfIdealOfNumericalSemigroupWRTElement({\mdseries\slshape I, n})\index{AperyListOfIdealOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
 \label{AperyListOfIdealOfNumericalSemigroupWRTElement}
@@ -2372,7 +2385,7 @@ algorithm given in \cite{BF06}.
  
 
 \subsection{\textcolor{Chapter }{AperyListOfIdealOfNumericalSemigroupWRTElement}}
-\logpage{[ 7, 1, 24 ]}\nobreak
+\logpage{[ 7, 2, 9 ]}\nobreak
 \hyperdef{L}{X7D14AA4D7EE12369}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfIdealOfNumericalSemigroupWRTElement({\mdseries\slshape s})\index{AperyListOfIdealOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
 \label{AperyListOfIdealOfNumericalSemigroupWRTElement}
@@ -2394,7 +2407,7 @@ algorithm given in \cite{BF06}.
  
 
 \subsection{\textcolor{Chapter }{StarClosureOfIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 25 ]}\nobreak
+\logpage{[ 7, 2, 10 ]}\nobreak
 \hyperdef{L}{X7A16238D7EDB2AB3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{StarClosureOfIdealOfNumericalSemigroup({\mdseries\slshape i, is})\index{StarClosureOfIdealOfNumericalSemigroup@\texttt{Star}\-\texttt{Closure}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{StarClosureOfIdealOfNumericalSemigroup}
@@ -3301,7 +3314,7 @@ homogenization of \mbox{\texttt{\mdseries\slshape S}}.
 \subsection{\textcolor{Chapter }{HomogeneousCatenaryDegreeOfNumericalSemigroup}}
 \logpage{[ 9, 5, 4 ]}\nobreak
 \hyperdef{L}{X7DFFCAC87B3B632B}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HomogeneousCatenaryDegreeOfNumericalSemigroup({\mdseries\slshape n, S})\index{HomogeneousCatenaryDegreeOfNumericalSemigroup@\texttt{Homogeneous}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HomogeneousCatenaryDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{HomogeneousCatenaryDegreeOfNumericalSemigroup@\texttt{Homogeneous}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{HomogeneousCatenaryDegreeOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
@@ -3314,6 +3327,32 @@ and FactorizationsInHomogenizationOfNumericalSemigroup.
   7
   !gapprompt@gap>| !gapinput@HomogeneousCatenaryDegreeOfNumericalSemigroup(s);|
   9
+\end{Verbatim}
+ }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{ Divisors, posets }}\logpage{[ 9, 6, 0 ]}
+\hyperdef{L}{X7A54E9FD7D4CB18F}{}
+{
+  Given a numerical semigroup $S$ and two integers $a,b$, we write $a\le_S b$ if $b-a\in S$. We also say that $a$ divides $b$ (with respecto to $S$). The semigroup $S$ with this binary relation is a poset. 
+
+\subsection{\textcolor{Chapter }{MoebiusFunctionAssociatedToNumericalSemigroup}}
+\logpage{[ 9, 6, 1 ]}\nobreak
+\hyperdef{L}{X853930E97F7F8A43}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MoebiusFunctionAssociatedToNumericalSemigroup({\mdseries\slshape S, n})\index{MoebiusFunctionAssociatedToNumericalSemigroup@\texttt{Moebius}\-\texttt{Function}\-\texttt{Associated}\-\texttt{To}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{MoebiusFunctionAssociatedToNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape n}} is an integer. As $(S,\le_S)$ is a poset, we can define the M{\"o}bius function associtate to it as in \cite{CHRA}. The output is the value of the M{\"o}bius function in the integer \mbox{\texttt{\mdseries\slshape n}}, that is, the alternate sum of the number of chains from 0 to \mbox{\texttt{\mdseries\slshape n}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@MoebiusFunctionAssociatedToNumericalSemigroup(s,10);|
+  2
+  !gapprompt@gap>| !gapinput@MoebiusFunctionAssociatedToNumericalSemigroup(s,34);|
+  25
 \end{Verbatim}
  }
 

@@ -1,9 +1,6 @@
   
   [1X7 [33X[0;0YIdeals of numerical semigroups[133X[101X
   
-  
-  [1X7.1 [33X[0;0YIdeals of numerical semigroups[133X[101X
-  
   [33X[0;0YLet  [22XS[122X be a numerical semigroup. A set [22XI[122X of integers is an [13Xideal relative[113X to
   a numerical semigroup [22XS[122X provided that [22XI+S⊆ I[122X and that there exists [22Xd∈ S[122X such
   that [22Xd+I⊆ S[122X.[133X
@@ -14,6 +11,9 @@
   [22XM[122X  generates  the  same ideal. Usually, ideals are specified by means of its
   generators and the ambient numerical semigroup to which they are ideals (for
   more information see for instance [BDF97]).[133X
+  
+  
+  [1X7.1 [33X[0;0YDefinitions and basic operations[133X[101X
   
   [1X7.1-1 IdealOfNumericalSemigroup[101X
   
@@ -250,7 +250,54 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-13 HilbertFunctionOfIdealOfNumericalSemigroup[101X
+  [1X7.1-13 IntersectionIdealsOfNumericalSemigroup[101X
+  
+  [29X[2XIntersectionIdealsOfNumericalSemigroup[102X( [3XI[103X, [3XJ[103X ) [32X function
+  
+  [33X[0;0YGiven two ideals [3XI[103X and [3XJ[103X of a numerical semigroup [3XS[103X returns the ideal of the
+  numerical semigroup [3XS[103X which is the intersection of the ideals [3XI[103X and [3XJ[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xi:=IdealOfNumericalSemigroup([75,89],s);;[127X[104X
+    [4X[25Xgap>[125X [27Xj:=IdealOfNumericalSemigroup([115,289],s);;[127X[104X
+    [4X[25Xgap>[125X [27XIntersectionIdealsOfNumericalSemigroup(i,j);[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-14 MaximalIdealOfNumericalSemigroup[101X
+  
+  [29X[2XMaximalIdealOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YReturns the maximal ideal of the numerical semigroup [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-15 CanonicalIdealOfNumericalSemigroup[101X
+  
+  [29X[2XCanonicalIdealOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YComputes a canonical ideal of [3XS[103X ([BF06]): [22X{ x ∈ Z | g-x not ∈ S}[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
+    [4X[25Xgap>[125X [27Xm:=MaximalIdealOfNumericalSemigroup(s);;[127X[104X
+    [4X[25Xgap>[125X [27Xc:=CanonicalIdealOfNumericalSemigroup(s);[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27X(m-c)-c=m;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xid:=3+s;[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27X(id-c)-c=id;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X7.2 [33X[0;0YOther functions for ideals[133X[101X
+  
+  [1X7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup[101X
   
   [29X[2XHilbertFunctionOfIdealOfNumericalSemigroup[102X( [3Xn[103X, [3XI[103X ) [32X function
   
@@ -265,7 +312,7 @@
     [4X[28X[ 3, 5, 6, 6, 6, 6, 6 ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-14 BlowUpIdealOfNumericalSemigroup[101X
+  [1X7.2-2 BlowUpIdealOfNumericalSemigroup[101X
   
   [29X[2XBlowUpIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function
   
@@ -280,7 +327,7 @@
     [4X[28X[ 0, 2, 4, 6, 8 ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-15 ReductionNumberIdealNumericalSemigroup[101X
+  [1X7.2-3 ReductionNumberIdealNumericalSemigroup[101X
   
   [29X[2XReductionNumberIdealNumericalSemigroup[102X( [3XI[103X ) [32X function
   
@@ -294,18 +341,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X7.1-16 MaximalIdealOfNumericalSemigroup[101X
-  
-  [29X[2XMaximalIdealOfNumericalSemigroup[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0YReturns the maximal ideal of the numerical semigroup [3XS[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XMaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));[127X[104X
-    [4X[28X<Ideal of numerical semigroup>[128X[104X
-  [4X[32X[104X
-  
-  [1X7.1-17 BlowUpOfNumericalSemigroup[101X
+  [1X7.2-4 BlowUpOfNumericalSemigroup[101X
   
   [29X[2XBlowUpOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -328,7 +364,7 @@
     [4X[28X  40, 41, 42, 44 ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-18 MicroInvariantsOfNumericalSemigroup[101X
+  [1X7.2-5 MicroInvariantsOfNumericalSemigroup[101X
   
   [29X[2XMicroInvariantsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -348,7 +384,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-19 IsGradedAssociatedRingNumericalSemigroupCM[101X
+  [1X7.2-6 IsGradedAssociatedRingNumericalSemigroupCM[101X
   
   [29X[2XIsGradedAssociatedRingNumericalSemigroupCM[102X( [3XS[103X ) [32X function
   
@@ -379,40 +415,7 @@
     [4X[28X[ 0, 2, 1, 1 ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-20 CanonicalIdealOfNumericalSemigroup[101X
-  
-  [29X[2XCanonicalIdealOfNumericalSemigroup[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0YComputes a canonical ideal of [3XS[103X ([BF06]): [22X{ x ∈ Z | g-x not ∈ S}[122X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27Xm:=MaximalIdealOfNumericalSemigroup(s);;[127X[104X
-    [4X[25Xgap>[125X [27Xc:=CanonicalIdealOfNumericalSemigroup(s);[127X[104X
-    [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27X(m-c)-c=m;[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27Xid:=3+s;[127X[104X
-    [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27X(id-c)-c=id;[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1X7.1-21 IntersectionIdealsOfNumericalSemigroup[101X
-  
-  [29X[2XIntersectionIdealsOfNumericalSemigroup[102X( [3XI[103X, [3XJ[103X ) [32X function
-  
-  [33X[0;0YGiven two ideals [3XI[103X and [3XJ[103X of a numerical semigroup [3XS[103X returns the ideal of the
-  numerical semigroup [3XS[103X which is the intersection of the ideals [3XI[103X and [3XJ[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xi:=IdealOfNumericalSemigroup([75,89],s);;[127X[104X
-    [4X[25Xgap>[125X [27Xj:=IdealOfNumericalSemigroup([115,289],s);;[127X[104X
-    [4X[25Xgap>[125X [27XIntersectionIdealsOfNumericalSemigroup(i,j);[127X[104X
-    [4X[28X<Ideal of numerical semigroup>[128X[104X
-  [4X[32X[104X
-  
-  [1X7.1-22 IsMonomialNumericalSemigroup[101X
+  [1X7.2-7 IsMonomialNumericalSemigroup[101X
   
   [29X[2XIsMonomialNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -438,7 +441,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X7.1-23 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
+  [1X7.2-8 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
   
   [29X[2XAperyListOfIdealOfNumericalSemigroupWRTElement[102X( [3XI[103X, [3Xn[103X ) [32X function
   
@@ -453,7 +456,7 @@
     [4X[28X[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-24 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
+  [1X7.2-9 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
   
   [29X[2XAperyListOfIdealOfNumericalSemigroupWRTElement[102X( [3Xs[103X ) [32X function
   
@@ -473,7 +476,7 @@
     [4X[28X  [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-25 StarClosureOfIdealOfNumericalSemigroup[101X
+  [1X7.2-10 StarClosureOfIdealOfNumericalSemigroup[101X
   
   [29X[2XStarClosureOfIdealOfNumericalSemigroup[102X( [3Xi[103X, [3Xis[103X ) [32X function
   

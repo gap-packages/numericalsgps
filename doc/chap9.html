@@ -85,6 +85,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X857CC7FF85C05318">9.5-3 HomogeneousBettiElementsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7DFFCAC87B3B632B">9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7A54E9FD7D4CB18F">9.6 <span class="Heading">
+        Divisors, posets
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X853930E97F7F8A43">9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup</a></span>
+</div></div>
 </div>
 
 <h3>9 <span class="Heading">
@@ -580,7 +587,7 @@ false
 
 <h5>9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. The output is the homogeneus catenary degree of <var class="Arg">S</var>. Observe that for a single element in the homogenization of <var class="Arg">S</var>, its catenary degree can be computed with CatenaryDegreeOfSetOfFactorizations and FactorizationsInHomogenizationOfNumericalSemigroup.</p>
 
 
@@ -590,6 +597,30 @@ false
 7
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HomogeneousCatenaryDegreeOfNumericalSemigroup(s);</span>
 9
+</pre></div>
+
+<p><a id="X7A54E9FD7D4CB18F" name="X7A54E9FD7D4CB18F"></a></p>
+
+<h4>9.6 <span class="Heading">
+        Divisors, posets
+    </span></h4>
+
+<p>Given a numerical semigroup <span class="SimpleMath">S</span> and two integers <span class="SimpleMath">a,b</span>, we write <span class="SimpleMath">ale_S b</span> if <span class="SimpleMath">b-a∈ S</span>. We also say that <span class="SimpleMath">a</span> divides <span class="SimpleMath">b</span> (with respecto to <span class="SimpleMath">S</span>). The semigroup <span class="SimpleMath">S</span> with this binary relation is a poset.</p>
+
+<p><a id="X853930E97F7F8A43" name="X853930E97F7F8A43"></a></p>
+
+<h5>9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MoebiusFunctionAssociatedToNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an integer. As <span class="SimpleMath">(S,le_S)</span> is a poset, we can define the Möbius function associtate to it as in <a href="chapBib.html#biBCHRA">[CA13]</a>. The output is the value of the Möbius function in the integer <var class="Arg">n</var>, that is, the alternate sum of the number of chains from 0 to <var class="Arg">n</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MoebiusFunctionAssociatedToNumericalSemigroup(s,10);</span>
+2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MoebiusFunctionAssociatedToNumericalSemigroup(s,34);</span>
+25
 </pre></div>
 
 

@@ -560,7 +560,7 @@ gap> HomogeneousBettiElementsOfNumericalSemigroup(s);
     </ManSection>
 
     <ManSection>
-        <Func Arg="n, S" Name="HomogeneousCatenaryDegreeOfNumericalSemigroup"></Func>
+        <Func Arg="S" Name="HomogeneousCatenaryDegreeOfNumericalSemigroup"></Func>
         <Description>
 	    <A>S</A> is a numerical semigroup.
 
@@ -575,6 +575,32 @@ gap> HomogeneousCatenaryDegreeOfNumericalSemigroup(s);
 ]]></Example>          
         </Description>
     </ManSection>
+    
+</Section>
 
+<Section>
+    <Heading>
+        Divisors, posets
+    </Heading>
 
+	Given a numerical semigroup <M>S</M> and two integers <M>a,b</M>, we write <M>a\le_S b</M> if <M>b-a\in S</M>. We also say that <M>a</M> divides <M>b</M> (with respecto to <M>S</M>). The semigroup <M>S</M> with this binary relation is a poset.
+
+    <ManSection>
+        <Func Arg="S,n" Name="MoebiusFunctionAssociatedToNumericalSemigroup"></Func>
+        <Description>
+	    <A>S</A> is a numerical semigroup and <A>n</A> is an integer.
+
+           As <M>(S,\le_S)</M> is a poset, we can define the Möbius function associtate to it as in <Cite Key="CHRA"></Cite>. The output is the value of the Möbius function in the integer <A>n</A>, that is, the alternate sum of the number of chains from 0 to <A>n</A>.
+           
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,10);
+2
+gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
+25
+]]></Example>          
+        </Description>
+    </ManSection>
+
+	
 </Section>
