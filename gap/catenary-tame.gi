@@ -1256,3 +1256,51 @@ InstallGlobalFunction(DenumerantOfElementInNumericalSemigroup, function(x,s)
 	return Length(FactorizationsElementWRTNumericalSemigroup(x,s));
 end);
 
+####################################################################
+#F MoebiusFunctionAssociatedToNumericalSemigroup(s,x)
+## Computes the value in x of  Moebius function of the poset 
+## associated to a numerial semigroup s 
+## -Chappelon and Ramirez Alfonsin, Semigroup Forum 87 (2013), 313-330
+####################################################################
+InstallGlobalFunction(MoebiusFunctionAssociatedToNumericalSemigroup,function(s,x)
+	local small, mu, msg, m, ap;
+
+	if not(IsNumericalSemigroup(s)) then
+		Error("The first argument must be a numerical semigroup.\n");
+	fi;	
+
+
+	if not(IsInt(x)) then
+		Error("The second argument must be an integer.\n");
+	fi;	
+
+	if x<0 then return 0;	fi;
+
+	if x=0 then return 1; fi;
+
+	if not(x in s) then return 0; fi;
+
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+
+	if x in msg then return -1; fi;
+
+	m:=MultiplicityOfNumericalSemigroup(s);
+	ap:=Difference(AperyListOfNumericalSemigroupWRTElement(s,m),[0]);
+	small:=Filtered(ap, y->y<=x);
+
+	#Print(small,"\n");
+	mu:=function(y)
+		local sm;
+		if y=0 then return 1; fi;
+		if y in msg then return -1; fi;
+		if not(y in s) then return 0;fi;
+		sm:=Filtered(ap,z->z<=y);
+		return -Sum(List(y-sm,mu));
+	end;
+	
+
+	return -Sum(List(x-small,mu));
+	
+end);
+

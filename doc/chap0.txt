@@ -129,8 +129,9 @@
       4.1-1 MinimalPresentationOfNumericalSemigroup
       4.1-2 GraphAssociatedToElementInNumericalSemigroup
       4.1-3 BettiElementsOfNumericalSemigroup
-      4.1-4 IsUniquelyPresentedNumericalSemigroup
-      4.1-5 IsGenericNumericalSemigroup
+    4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X
+      4.2-1 IsUniquelyPresentedNumericalSemigroup
+      4.2-2 IsGenericNumericalSemigroup
   5 [33X[0;0YConstructing numerical semigroups from others[133X
     5.1 [33X[0;0YAdding and removing elements of a numerical semigroup[133X
       5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup
@@ -165,7 +166,7 @@
       6.3-2 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
       6.3-3 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
   7 [33X[0;0YIdeals of numerical semigroups[133X
-    7.1 [33X[0;0YIdeals of numerical semigroups[133X
+    7.1 [33X[0;0YDefinitions and basic operations[133X
       7.1-1 IdealOfNumericalSemigroup
       7.1-2 IsIdealOfNumericalSemigroup
       7.1-3 MinimalGeneratingSystemOfIdealOfNumericalSemigroup
@@ -178,19 +179,20 @@
       7.1-10 SubtractIdealsOfNumericalSemigroup
       7.1-11 DifferenceOfIdealsOfNumericalSemigroup
       7.1-12 TranslationOfIdealOfNumericalSemigroup
-      7.1-13 HilbertFunctionOfIdealOfNumericalSemigroup
-      7.1-14 BlowUpIdealOfNumericalSemigroup
-      7.1-15 ReductionNumberIdealNumericalSemigroup
-      7.1-16 MaximalIdealOfNumericalSemigroup
-      7.1-17 BlowUpOfNumericalSemigroup
-      7.1-18 MicroInvariantsOfNumericalSemigroup
-      7.1-19 IsGradedAssociatedRingNumericalSemigroupCM
-      7.1-20 CanonicalIdealOfNumericalSemigroup
-      7.1-21 IntersectionIdealsOfNumericalSemigroup
-      7.1-22 IsMonomialNumericalSemigroup
-      7.1-23 AperyListOfIdealOfNumericalSemigroupWRTElement
-      7.1-24 AperyListOfIdealOfNumericalSemigroupWRTElement
-      7.1-25 StarClosureOfIdealOfNumericalSemigroup
+      7.1-13 IntersectionIdealsOfNumericalSemigroup
+      7.1-14 MaximalIdealOfNumericalSemigroup
+      7.1-15 CanonicalIdealOfNumericalSemigroup
+    7.2 [33X[0;0YOther functions for ideals[133X
+      7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
+      7.2-2 BlowUpIdealOfNumericalSemigroup
+      7.2-3 ReductionNumberIdealNumericalSemigroup
+      7.2-4 BlowUpOfNumericalSemigroup
+      7.2-5 MicroInvariantsOfNumericalSemigroup
+      7.2-6 IsGradedAssociatedRingNumericalSemigroupCM
+      7.2-7 IsMonomialNumericalSemigroup
+      7.2-8 AperyListOfIdealOfNumericalSemigroupWRTElement
+      7.2-9 AperyListOfIdealOfNumericalSemigroupWRTElement
+      7.2-10 StarClosureOfIdealOfNumericalSemigroup
   8 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
     8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
       8.1-1 IsMEDNumericalSemigroup
@@ -240,6 +242,8 @@
       9.5-2 FactorizationsInHomogenizationOfNumericalSemigroup
       9.5-3 HomogeneousBettiElementsOfNumericalSemigroup
       9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup
+    9.6 [33X[0;0YDivisors, posets[133X
+      9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence

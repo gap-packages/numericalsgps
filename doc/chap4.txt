@@ -75,14 +75,22 @@
     [4X[28X                        [128X[104X
   [4X[32X[104X
   
-  [1X4.1-4 IsUniquelyPresentedNumericalSemigroup[101X
+  
+  [1X4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X[101X
+  
+  [33X[0;0YA  numerical  semigroup  [22XS[122X  is  uniquely  presented  if  for any two minimal
+  presentations  [22Xσ[122X  and  [22Xτ[122X and any [22X(a,b)∈ σ[122X, either [22X(a,b)∈ τ[122X or [22X(b,a)∈ τ[122X, that
+  is, there is essentially a unique minimal presentation (up to arrangement of
+  the components of the pairs in it).[133X
+  
+  [1X4.2-1 IsUniquelyPresentedNumericalSemigroup[101X
   
   [29X[2XIsUniquelyPresentedNumericalSemigroup[102X( [3XS[103X ) [32X function
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
-  [33X[0;0YThe  output  is true if [3XS[103X has essentially a unique minimal presentation (see
-  [GO10]).[133X
+  [33X[0;0YThe  output is true if [3XS[103X has uniquely presented. The implementation is based
+  on (see [GO10]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -92,7 +100,7 @@
     [4X[28X                        [128X[104X
   [4X[32X[104X
   
-  [1X4.1-5 IsGenericNumericalSemigroup[101X
+  [1X4.2-2 IsGenericNumericalSemigroup[101X
   
   [29X[2XIsGenericNumericalSemigroup[102X( [3XS[103X ) [32X function
   

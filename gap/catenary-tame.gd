@@ -356,3 +356,11 @@ DeclareGlobalFunction("HomogeneousCatenaryDegreeOfNumericalSemigroup");
 ########################################
 DeclareGlobalFunction("DenumerantOfElementInNumericalSemigroup");
 
+####################################################################
+#F MoebiusFunctionAssociatedToNumericalSemigroup(s,x)
+## Computes the value in x of  Moebius function of the poset 
+## associated to a numerial semigroup s 
+## -Chappelon and Ramirez Alfonsin, Semigroup Forum 87 (2013), 313-330
+####################################################################
+DeclareGlobalFunction("MoebiusFunctionAssociatedToNumericalSemigroup");
+
