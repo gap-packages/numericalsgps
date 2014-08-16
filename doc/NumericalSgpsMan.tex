@@ -1561,7 +1561,7 @@ Frobenius number.
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. Returns all partitions $\{A_1,A_2\}$ of the minimal generating set of \mbox{\texttt{\mdseries\slshape s}} such that \mbox{\texttt{\mdseries\slshape s}} is a gluing of $\leftangle A_1\rightangle$ and $\leftangle A_2\rightangle$ by $gcd(A_1)gcd(A_2)$ 
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. Returns all partitions $\{A_1,A_2\}$ of the minimal generating set of \mbox{\texttt{\mdseries\slshape s}} such that \mbox{\texttt{\mdseries\slshape s}} is a gluing of $\langle A_1\rangle$ and $\langle A_2\rangle$ by $gcd(A_1)gcd(A_2)$ 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s := NumericalSemigroup( 10, 15, 16 );                   |
   <Numerical semigroup with 3 generators>
@@ -1666,7 +1666,7 @@ numerical semigroups with frobenius number \mbox{\texttt{\mdseries\slshape f}}.
 
 
  \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if the numerical semigroup is
-telescopic in the sense of \cite{KP95}: it is either $\mathbb N$ or the gluing of $\langle n_e\rangle$ and $s'=\langle n_1/d,\ldots, n_{e-1}/d\rangle$, and $s'$ is again a telescopic numerical semigroup, where $n_1\lt \cdots \lt n_e $ are the minimal generators of \mbox{\texttt{\mdseries\slshape s}}. 
+telescopic in the sense of \cite{KP95}: it is either $\mathbb N$ or the gluing of $\langle n_e\rangle$ and $s'=\langle n_1/d,\ldots, n_{e-1}/d\rangle$, and $s'$ is again a telescopic numerical semigroup, where $n_1 < \cdots < n_e $ are the minimal generators of \mbox{\texttt{\mdseries\slshape s}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));|
   false
@@ -2625,9 +2625,7 @@ numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}.
 \hyperdef{L}{X7E6D857179E5BF1B}{}
 {
   Saturated numerical semigroups with the Arf property are a special kind of
-numerical semigroups with maximal embedding dimension. A numerical semigroup $S$ is saturated if the following condition holds: $ s, s_1 , . . . , s_r$ in $S$ are such that $s_i \leq s$ for all $i$ in $\{1, . . . , r\}$ and $z_1 , . . . , z_r$ in $\mathbb Z$ are such that $z_1 s_1 + {\textperiodcentered} {\textperiodcentered} {\textperiodcentered} +
-z_r s_r\geq 0$, then $s + z_1 s_1 + {\textperiodcentered} {\textperiodcentered}
-{\textperiodcentered} + z_r s_r$ in $S$. 
+numerical semigroups with maximal embedding dimension. A numerical semigroup $S$ is saturated if the following condition holds: $ s, s_1 , \ldots , s_r$ in $S$ are such that $s_i \leq s$ for all $i$ in $\{1, \ldots , r\}$ and $z_1 , \ldots , z_r$ in $\mathbb Z$ are such that $z_1 s_1 + \cdots + z_r s_r\geq 0$, then $s + z_1 s_1 + \cdots + z_r s_r$ in $S$. 
 
  The intersection of two saturated numerical semigroups is again saturated, and
 thus we can consider the saturated closure of a set of nonnegative integers

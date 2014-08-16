@@ -133,8 +133,8 @@
   [29X[2XAsGluingOfNumericalSemigroups[102X( [3Xs[103X ) [32X function
   
   [33X[0;0Y[3Xs[103X  is a numerical semigroup. Returns all partitions [22X{A_1,A_2}[122X of the minimal
-  generating  set  of [3Xs[103X such that [3Xs[103X is a gluing of [22Xleftangle A_1rightangle[122X and
-  [22Xleftangle A_2rightangle[122X by [22Xgcd(A_1)gcd(A_2)[122X[133X
+  generating  set  of  [3Xs[103X  such  that  [3Xs[103X  is  a  gluing of [22X⟨ A_1⟩[122X and [22X⟨ A_2⟩[122X by
+  [22Xgcd(A_1)gcd(A_2)[122X[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );                   [127X[104X
@@ -212,7 +212,7 @@
   [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
   telescopic  in  the  sense of [KP95]: it is either [22XN[122X or the gluing of [22X⟨ n_e⟩[122X
   and  [22Xs'=⟨  n_1/d,...,  n_e-1/d⟩[122X,  and  [22Xs'[122X  is  again  a telescopic numerical
-  semigroup, where [22Xn_1lt ⋯ lt n_e[122X are the minimal generators of [3Xs[103X.[133X
+  semigroup, where [22Xn_1 < ⋯ < n_e[122X are the minimal generators of [3Xs[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));[127X[104X

@@ -160,10 +160,9 @@
   
   [33X[0;0YSaturated  numerical  semigroups with the Arf property are a special kind of
   numerical semigroups with maximal embedding dimension. A numerical semigroup
-  [22XS[122X  is  saturated if the following condition holds: [22Xs, s_1 , . . . , s_r[122X in [22XS[122X
-  are such that [22Xs_i ≤ s[122X for all [22Xi[122X in [22X{1, . . . , r}[122X and [22Xz_1 , . . . , z_r[122X in [22XZ[122X
-  are  such  that [22Xz_1 s_1 + · · · + z_r s_r≥ 0[122X, then [22Xs + z_1 s_1 + · · · + z_r
-  s_r[122X in [22XS[122X.[133X
+  [22XS[122X is saturated if the following condition holds: [22Xs, s_1 , ... , s_r[122X in [22XS[122X are
+  such  that  [22Xs_i  ≤  s[122X for all [22Xi[122X in [22X{1, ... , r}[122X and [22Xz_1 , ... , z_r[122X in [22XZ[122X are
+  such that [22Xz_1 s_1 + ⋯ + z_r s_r≥ 0[122X, then [22Xs + z_1 s_1 + ⋯ + z_r s_r[122X in [22XS[122X.[133X
   
   [33X[0;0YThe  intersection  of two saturated numerical semigroups is again saturated,
   and  thus  we  can  consider  the  saturated closure of a set of nonnegative

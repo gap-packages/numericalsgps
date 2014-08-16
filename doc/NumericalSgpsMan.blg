@@ -1,50 +1,51 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: NumericalSgpsMan.aux
 The style file: alpha.bst
 Database file #1: NumericalSgpsMan.bib
-"=" immediately follows an entry type---line 421 of file NumericalSgpsMan.bib
+"=" immediately follows an entry type---line 429 of file NumericalSgpsMan.bib
  : @article
  :         ={PH,
 I'm skipping whatever remains of this entry
-You've used 40 entries,
+You've used 42 entries,
             2543 wiz_defined-function locations,
-            817 strings with 9760 characters,
-and the built_in function-call counts, 16129 in all, are:
-= -- 1642
-> -- 819
-< -- 11
-+ -- 288
-- -- 279
-* -- 1207
-:= -- 2726
-add.period$ -- 123
-call.type$ -- 40
-change.case$ -- 251
-chr.to.int$ -- 38
-cite$ -- 40
-duplicate$ -- 584
-empty$ -- 1111
-format.name$ -- 324
-if$ -- 3217
+            828 strings with 10004 characters,
+and the built_in function-call counts, 16806 in all, are:
+= -- 1712
+> -- 846
+< -- 12
++ -- 296
+- -- 287
+* -- 1253
+:= -- 2840
+add.period$ -- 129
+call.type$ -- 42
+change.case$ -- 262
+chr.to.int$ -- 40
+cite$ -- 42
+duplicate$ -- 612
+empty$ -- 1161
+format.name$ -- 335
+if$ -- 3352
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 45
-newline$ -- 205
-num.names$ -- 120
-pop$ -- 185
+missing$ -- 47
+newline$ -- 215
+num.names$ -- 126
+pop$ -- 193
 preamble$ -- 1
-purify$ -- 296
+purify$ -- 309
 quote$ -- 0
-skip$ -- 497
+skip$ -- 521
 stack$ -- 0
-substring$ -- 976
-swap$ -- 57
-text.length$ -- 11
-text.prefix$ -- 6
+substring$ -- 1015
+swap$ -- 59
+text.length$ -- 12
+text.prefix$ -- 7
 top$ -- 0
-type$ -- 300
+type$ -- 316
 warning$ -- 0
-while$ -- 165
-width$ -- 43
-write$ -- 519
+while$ -- 172
+width$ -- 45
+write$ -- 544
 (There was 1 error message)
