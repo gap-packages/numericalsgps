@@ -59,3 +59,43 @@ DeclareGlobalFunction("IsCyclotomicNumericalSemigroup");
 #####################################################
 DeclareGlobalFunction("IsSelfReciprocalUnivariatePolynomial");
 
+#################################################################
+##
+# F SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f)
+##  Computes the semigroup of values {mult(f,g) | g curve} of a plane curve 
+##   with one place at the infinity in the variables X(Rationals,1) and X(Rationals,2)
+##  f must be monic on X(Rationals(2))
+##  SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all")
+##    The same as above, but the output are the approximate roots and  
+##    delta-sequence
+##
+#################################################################
+DeclareGlobalFunction("SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity");
+
+#########################################################################
+## 
+#F IsDeltaSequence(l)
+## tests whether or not l is a \delta-sequence (see for instancd [AGS14])
+##
+#########################################################################
+DeclareGlobalFunction("IsDeltaSequence");
+
+#########################################################
+##
+#F DeltaSequencesWithFrobeniusNumber(f)
+##   Computes  the list of delta-sequences with Frobenius number f
+##
+#########################################################
+DeclareGlobalFunction("DeltaSequencesWithFrobeniusNumber");
+
+#####################################################
+##
+#F CurveAssociatedToDeltaSequence(l)
+##  computes the curve associated to a delta-sequence l in 
+##  the variables X(Rationals,1) and X(Rationals,2)
+##  as explained in [AGS14]
+##
+#####################################################
+DeclareGlobalFunction("CurveAssociatedToDeltaSequence");
+
+
