@@ -1,0 +1,111 @@
+<Section>
+	<Head>
+		Generating functions or Hilbert series
+	</Head>
+
+Let <M>S</M> be a numerical semigroup. The Hilbert  series or generating function associated to <M>S</M> is <M>H_S(x)=\sum_{s\in S}x^s</M> (actually it is the Hilbert function of the ring <M>K[S]</M> with <M>K</M> a field). See for instance <Cite Key="M"></Cite>.
+	
+    <ManSection>
+
+        <Func Arg="s, x" Name="NumericalSemigroupPolynomial"></Func>
+        <Description>
+            <A>s</A> is a numerical semigroups and <A>x</A> a variable (or a value to evaluate in).
+            The output is the polynomial <M>\sum_{s\in \mathbb N\setminus S} x^s</M>, which equals <M>(1-x)H_S(x)</M>.
+            
+            <Example><![CDATA[
+gap> x:=X(Rationals,"x");;
+gap> s:=NumericalSemigroup(5,7,9);
+<Numerical semigroup with 3 generators>
+gap> NumericalSemigroupPolynomial(s,x);
+x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
+]]></Example>
+         </Description>
+    </ManSection>
+
+    <ManSection>
+
+        <Func Arg="p" Name="GraeffePolynomial"></Func>
+        <Description>
+            <A>p</A> is a polynomial.
+            Computes the Graeffe polynomial of <A>p</A>. Needed to test if <A>p</A> is a cyclotomic polynomial (see <Cite Key="BD-cyclotomic"></Cite>).
+            
+            <Example><![CDATA[
+gap> x:=X(Rationals,"x");;
+gap> GraeffePolynomial(x^2-1);
+x^2-2*x+1
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
+        <Func Arg="p" Name="IsCyclotomicPolynomial"></Func>
+        <Description>
+            <A>p</A> is a polynomial.
+            Detects if  <A>p</A> is a cyclotomic polynomial using the procedure given in  <Cite Key="BD-cyclotomic"></Cite>.
+            
+            <Example><![CDATA[
+gap> CyclotomicPolynomial(Rationals,3);
+x^2+x+1
+gap> IsCyclotomicPolynomial(last);
+true
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
+        <Func Arg="p" Name="IsKroneckerPolynomial"></Func>
+        <Description>
+            <A>p</A> is a polynomial.
+            Detects if  <A>p</A> is a Kronecker polynomial, that is, a monic polynomial with integer coefficients having all its roots in the unit circunference, or equivalently, a product of cyclotomic polynomials.
+            
+            <Example><![CDATA[
+gap> x:=X(Rationals,"x");;
+gap>  s:=NumericalSemigroup(3,5,7);;
+gap>  t:=NumericalSemigroup(4,6,9);;
+gap> p:=NumericalSemigroupPolynomial(s,x);
+x^5-x^4+x^3-x+1
+gap> q:=NumericalSemigroupPolynomial(t,x);
+x^12-x^11+x^8-x^7+x^6-x^5+x^4-x+1
+gap> IsKroneckerPolynomial(p);
+false
+gap> IsKroneckerPolynomial(q);
+true
+]]></Example>
+         </Description>
+    </ManSection>
+
+    <ManSection>
+        <Func Arg="s" Name="IsCyclotomicNumericalSemigroup"></Func>
+        <Description>
+            <A>s</A> is a numerical semigroup. 
+            Detects if  the polynomial associated to <A>s</A> is a Kronecker polynomial.
+            
+            <Example><![CDATA[
+gap> l:=CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(21);;
+gap> ForAll(l,IsCyclotomicNumericalSemigroup);
+true
+]]></Example>
+
+
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
+        <Func Arg="p" Name="IsSelfReciprocalUnivariatePolynomial"></Func>
+        <Description>
+            <A>p</A> is a polynomial.
+            Detects if  <A>p</A> is a selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <Cite Key="M"></Cite> 
+            
+            <Example><![CDATA[
+gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;
+gap> x:=X(Rationals,"x");;
+gap> ForAll(l, s->IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));
+true
+]]></Example>
+         </Description>
+    </ManSection>
+
+</Section>
