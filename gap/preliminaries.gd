@@ -95,12 +95,4 @@ DeclareGlobalFunction("IsListOfIntegersNS");
 #############################################################################
 DeclareGlobalFunction( "IsAperyListOfNumericalSemigroup" );
 
-#############################################################################
-##
-#F ShadedSetOfElementInNumericalSemigroup(x,s)
-## computes the shading set of x in s as defined in 
-##  -Székely, L. A.; Wormald, N. C. Generating functions for the Frobenius 
-##    problem with 2 and 3 generators. Math. Chronicle 15 (1986), 49–57.
-#############################################################################
-DeclareGlobalFunction("ShadedSetOfElementInNumericalSemigroup");
 

@@ -129,6 +129,7 @@
       4.1-1 MinimalPresentationOfNumericalSemigroup
       4.1-2 GraphAssociatedToElementInNumericalSemigroup
       4.1-3 BettiElementsOfNumericalSemigroup
+      4.1-4 ShadedSetOfElementInNumericalSemigroup
     4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X
       4.2-1 IsUniquelyPresentedNumericalSemigroup
       4.2-2 IsGenericNumericalSemigroup
@@ -244,6 +245,14 @@
       9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup
     9.6 [33X[0;0YDivisors, posets[133X
       9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup
+  10 [33X[0;0YPolynomials and numerical semigroups[133X
+    10.1 [33X[0;0YGenerating functions or Hilbert series[133X
+      10.1-1 NumericalSemigroupPolynomial
+      10.1-2 GraeffePolynomial
+      10.1-3 IsCyclotomicPolynomial
+      10.1-4 IsKroneckerPolynomial
+      10.1-5 IsCyclotomicNumericalSemigroup
+      10.1-6 IsSelfReciprocalUnivariatePolynomial
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence

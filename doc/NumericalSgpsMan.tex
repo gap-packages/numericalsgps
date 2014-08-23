@@ -1121,6 +1121,31 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 \end{Verbatim}
  }
 
+ 
+
+\subsection{\textcolor{Chapter }{ShadedSetOfElementInNumericalSemigroup}}
+\logpage{[ 4, 1, 4 ]}\nobreak
+\hyperdef{L}{X7C42DEB68285F2B8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ShadedSetOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{ShadedSetOfElementInNumericalSemigroup@\texttt{Shaded}\-\texttt{Set}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{ShadedSetOfElementInNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape n}} is an element in \mbox{\texttt{\mdseries\slshape S}}. 
+
+ The output is a simplicial complex $C$. If $ \{m_1,\ldots,m_n\} $ is the set of minimal generators of \mbox{\texttt{\mdseries\slshape S}}, then $L \in C$ if $n-\sum_{i\in L} m_i\in S$. 
+
+ This function is used to compute a minimal presentation of the numerical
+semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@ShadedSetOfElementInNumericalSemigroup(10,s);|
+  [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
+  
+                          
+\end{Verbatim}
+  }
+
  }
 
  
@@ -3351,6 +3376,142 @@ and FactorizationsInHomogenizationOfNumericalSemigroup.
   2
   !gapprompt@gap>| !gapinput@MoebiusFunctionAssociatedToNumericalSemigroup(s,34);|
   25
+\end{Verbatim}
+ }
+
+ }
+
+ }
+
+ 
+\chapter{\textcolor{Chapter }{ Polynomials and numerical semigroups }}\logpage{[ 10, 0, 0 ]}
+\hyperdef{L}{X7D2C77607815273E}{}
+{
+   
+\section{\textcolor{Chapter }{ Generating functions or Hilbert series }}\logpage{[ 10, 1, 0 ]}
+\hyperdef{L}{X808FAEE28572191C}{}
+{
+  Let $S$ be a numerical semigroup. The Hilbert series or generating function associated
+to $S$ is $H_S(x)=\sum_{s\in S}x^s$ (actually it is the Hilbert function of the ring $K[S]$ with $K$ a field). See for instance \cite{M}. 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupPolynomial}}
+\logpage{[ 10, 1, 1 ]}\nobreak
+\hyperdef{L}{X8391C8E782FBFA8A}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupPolynomial({\mdseries\slshape s, x})\index{NumericalSemigroupPolynomial@\texttt{NumericalSemigroupPolynomial}}
+\label{NumericalSemigroupPolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroups and \mbox{\texttt{\mdseries\slshape x}} a variable (or a value to evaluate in). The output is the polynomial $\sum_{s\in \mathbb N\setminus S} x^s$, which equals $(1-x)H_S(x)$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@NumericalSemigroupPolynomial(s,x);|
+  x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{GraeffePolynomial}}
+\logpage{[ 10, 1, 2 ]}\nobreak
+\hyperdef{L}{X87C88E5C7B56931F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraeffePolynomial({\mdseries\slshape p})\index{GraeffePolynomial@\texttt{GraeffePolynomial}}
+\label{GraeffePolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is a polynomial. Computes the Graeffe polynomial of \mbox{\texttt{\mdseries\slshape p}}. Needed to test if \mbox{\texttt{\mdseries\slshape p}} is a cyclotomic polynomial (see \cite{BD-cyclotomic}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
+  !gapprompt@gap>| !gapinput@GraeffePolynomial(x^2-1);|
+  x^2-2*x+1
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsCyclotomicPolynomial}}
+\logpage{[ 10, 1, 3 ]}\nobreak
+\hyperdef{L}{X87A46B53815B158F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCyclotomicPolynomial({\mdseries\slshape p})\index{IsCyclotomicPolynomial@\texttt{IsCyclotomicPolynomial}}
+\label{IsCyclotomicPolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is a polynomial. Detects if \mbox{\texttt{\mdseries\slshape p}} is a cyclotomic polynomial using the procedure given in \cite{BD-cyclotomic}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@CyclotomicPolynomial(Rationals,3);|
+  x^2+x+1
+  !gapprompt@gap>| !gapinput@IsCyclotomicPolynomial(last);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsKroneckerPolynomial}}
+\logpage{[ 10, 1, 4 ]}\nobreak
+\hyperdef{L}{X7D9618ED83776B0B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsKroneckerPolynomial({\mdseries\slshape p})\index{IsKroneckerPolynomial@\texttt{IsKroneckerPolynomial}}
+\label{IsKroneckerPolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is a polynomial. Detects if \mbox{\texttt{\mdseries\slshape p}} is a Kronecker polynomial, that is, a monic polynomial with integer
+coefficients having all its roots in the unit circunference, or equivalently,
+a product of cyclotomic polynomials. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
+  !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@ t:=NumericalSemigroup(4,6,9);;|
+  !gapprompt@gap>| !gapinput@p:=NumericalSemigroupPolynomial(s,x);|
+  x^5-x^4+x^3-x+1
+  !gapprompt@gap>| !gapinput@q:=NumericalSemigroupPolynomial(t,x);|
+  x^12-x^11+x^8-x^7+x^6-x^5+x^4-x+1
+  !gapprompt@gap>| !gapinput@IsKroneckerPolynomial(p);|
+  false
+  !gapprompt@gap>| !gapinput@IsKroneckerPolynomial(q);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsCyclotomicNumericalSemigroup}}
+\logpage{[ 10, 1, 5 ]}\nobreak
+\hyperdef{L}{X8366BB727C496D31}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCyclotomicNumericalSemigroup({\mdseries\slshape s})\index{IsCyclotomicNumericalSemigroup@\texttt{IsCyclotomicNumericalSemigroup}}
+\label{IsCyclotomicNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. Detects if the polynomial associated to \mbox{\texttt{\mdseries\slshape s}} is a Kronecker polynomial. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@l:=CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(21);;|
+  !gapprompt@gap>| !gapinput@ForAll(l,IsCyclotomicNumericalSemigroup);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsSelfReciprocalUnivariatePolynomial}}
+\logpage{[ 10, 1, 6 ]}\nobreak
+\hyperdef{L}{X82C6355287C3BDD1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSelfReciprocalUnivariatePolynomial({\mdseries\slshape p})\index{IsSelfReciprocalUnivariatePolynomial@\texttt{IsSelf}\-\texttt{Reciprocal}\-\texttt{Univariate}\-\texttt{Polynomial}}
+\label{IsSelfReciprocalUnivariatePolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is a polynomial. Detects if \mbox{\texttt{\mdseries\slshape p}} is a selfreciprocal. A numerical semigroup is symmetric if and only if it is
+selfreciprocal, \cite{M} 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;|
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
+  !gapprompt@gap>| !gapinput@ForAll(l, s->IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));|
+  true
 \end{Verbatim}
  }
 
