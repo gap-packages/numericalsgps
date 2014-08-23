@@ -82,10 +82,9 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xn[103X is an element in [3XS[103X.[133X
   
   [33X[0;0YThe output is a simplicial complex [22XC[122X. If [22X{m_1,...,m_n}[122X is the set of minimal
-  generators of [3XS[103X, then [22XL ∈ C[122X if [22Xn-∑_i∈ L m_i∈ S[122X.[133X
+  generators of [3XS[103X, then [22XL ∈ C[122X if [22Xn-∑_i∈ L m_i∈ S[122X ([SW86]).[133X
   
-  [33X[0;0YThis  function  is  used  to compute a minimal presentation of the numerical
-  semigroup [3XS[103X, as explained in [Ros96a].[133X
+  [33X[0;0YThis function is a generalization of the graph associated to [3Xn[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
