@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Section>
-	<Head>
+	<Heading>
 		Generating functions or Hilbert series
-	</Head>
+	</Heading>
 
 Let <M>S</M> be a numerical semigroup. The Hilbert  series or generating function associated to <M>S</M> is <M>H_S(x)=\sum_{s\in S}x^s</M> (actually it is the Hilbert function of the ring <M>K[S]</M> with <M>K</M> a field). See for instance <Cite Key="M"></Cite>.
+
 	
     <ManSection>
 

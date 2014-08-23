@@ -223,4 +223,27 @@ InstallGlobalFunction(IsGenericNumericalSemigroup,function(s)
 	return ForAll(mp,p->Product(p[1]+p[2])<>0);
 end);
 
+#############################################################################
+##
+#F ShadedSetOfElementInNumericalSemigroup(x,s)
+## computes the shading set of x in s as defined in 
+## -  Székely, L. A.; Wormald, N. C. Generating functions for the Frobenius problem
+##      with 2 and 3 generators. Math. Chronicle 15 (1986), 49–57.
+#############################################################################
+InstallGlobalFunction(ShadedSetOfElementInNumericalSemigroup, function(x,s)
+
+	local msg;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.\n");
+    fi;
+
+    if not ( x in s ) then
+        Error("The first argument must be an element of the second.\n");
+    fi;
+
+	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	return Filtered(Combinations(msg), c-> (x-Sum(c)) in s);
+
+end);
 
