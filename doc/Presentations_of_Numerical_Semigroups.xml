@@ -88,10 +88,9 @@ gap> BettiElementsOfNumericalSemigroup(s);
                         <P/>
                         The output is a simplicial complex <M>C</M>. If <M> \{m_1,\ldots,m_n\} </M> is the set of minimal 
                         generators of <A>S</A>, then <M>L \in C</M> if 
-                        <M>n-\sum_{i\in L} m_i\in S</M>.                        
+                        <M>n-\sum_{i\in L} m_i\in S</M> (<Cite Key="SzW"></Cite>).                        
                         <P/>
-                        This function is used to compute a minimal presentation of the numerical semigroup
-                        <A>S</A>, as explained in <Cite Key="Ros96"></Cite>. 
+                        This function is a generalization of the graph associated to <A>n</A>. 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> ShadedSetOfElementInNumericalSemigroup(10,s);
