@@ -32,6 +32,7 @@ ReadPackage( "numericalsgps", "gap/arf-med.gd" );
 ReadPackage( "numericalsgps", "gap/catenary-tame.gd" );
 ReadPackage( "numericalsgps", "gap/contributions.gd" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gd" );
+ReadPackage( "numericalsgps", "gap/polynomials.gd" );
 
 
 #E  init.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here

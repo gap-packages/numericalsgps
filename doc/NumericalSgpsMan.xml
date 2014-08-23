@@ -110,8 +110,7 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
-
-        <Chapter>
+<Chapter>
             <Heading>
                 Presentations of Numerical Semigroups
             </Heading>
@@ -176,6 +175,14 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
+<Chapter>
+	<Heading>
+		Polynomials and numerical semigroups
+	</Heading>
+
+	<#Include SYSTEM "polynomial.xml">
+
+</Chapter>
 
 </Body>
 
