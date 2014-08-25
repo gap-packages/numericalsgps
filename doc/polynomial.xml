@@ -117,7 +117,7 @@ true
 		Semigroup of values of plane algebraic curves with a single place at infinity.
 	</Heading>
 
-	Let <M>f(x,y)\in \mathbb K[x,y]</M>, with <M>\mathbb K</M> an algebraically close field of characteristic zero. Let <M>f(x,y)=y^n+a_1(x)y^{n-1}+\dots+a_n(x)</M> be a nonzero polynomial of <M>\mathbb K[x][y]</M>. After possibly a change of variables, we may assume that, that <M>\deg_x(a_i(x))\le i-1</M> for all <M>i\in\{1,\ldots, n\}</M>. For <M>g\in\mathbb K[x,y]</M> that is not a multiple of <M>f</M>, define <M>\mathrm{int}(f,g)=\dim_\mathbb K \frac{\mathbb K[x,y]}{(f,g)\}</M>. If <M>f</M> as a one place at infinity, then the set <M>\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}</M> is a free numerical semigroup (and thus a complete intersection).
+	Let <M>f(x,y)\in \mathbb K[x,y]</M>, with <M>\mathbb K</M> an algebraically close field of characteristic zero. Let <M>f(x,y)=y^n+a_1(x)y^{n-1}+\dots+a_n(x)</M> be a nonzero polynomial of <M>\mathbb K[x][y]</M>. After possibly a change of variables, we may assume that, that <M>\deg_x(a_i(x))\le i-1</M> for all <M>i\in\{1,\ldots, n\}</M>. For <M>g\in\mathbb K[x,y]</M> that is not a multiple of <M>f</M>, define <M>\mathrm{int}(f,g)=\dim_\mathbb K \frac{\mathbb K[x,y]}{(f,g)}</M>. If <M>f</M> as a one place at infinity, then the set <M>\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}</M> is a free numerical semigroup (and thus a complete intersection).
 
     <ManSection>
         <Func Arg="f" Name="SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity"></Func>
