@@ -1304,3 +1304,90 @@ InstallGlobalFunction(MoebiusFunctionAssociatedToNumericalSemigroup,function(s,x
 	
 end);
 
+###################################################################
+#F  AdjacentCatenaryDegreeOfSetOfFactorizations(ls)
+## computes the adjacent catenary degree of the set of factorizations ls
+###################################################################
+InstallGlobalFunction(AdjacentCatenaryDegreeOfSetOfFactorizations,function(ls)
+    local distance, Fn, lenset, Zi, facti, i;
+
+
+	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
+		Error("The argument is not a list of factorizations.\n");
+	fi;
+
+    # distance between two factorizations
+    distance:=function(x,y)
+        local p,n,i,z;
+
+        p:=0; n:=0;
+        z:=x-y;
+        for i in [1..Length(z)] do
+            if z[i]>0 then
+                p:=p+z[i];
+            else
+                n:=n+z[i];
+            fi;
+        od;
+
+        return Maximum(p,-n);
+    end;    
+
+	Fn:=Set(ShallowCopy(ls));
+    lenset:=Set( ls, Sum );
+    if Length(lenset)=1 then 
+	return 0;
+    fi;
+    Zi:=[];
+    for i in lenset do
+        facti:=Filtered( Fn, x->Sum(x)=i );
+        SubtractSet( Fn, facti );
+        Add( Zi, facti );
+    od;
+    return Maximum( List( [2..Length( Zi )], t->Minimum( List( Zi[t-1], x->Minimum( List( Zi[t], y->distance( x, y ) ) ) ) ) ) );
+end);
+
+###################################################################
+#F EqualCatenaryDegreeOfSetOfFactorizations(ls) 
+## computes the equal catenary degree of of the set of factorizations
+###################################################################
+InstallGlobalFunction(EqualCatenaryDegreeOfSetOfFactorizations,function(ls)
+    local distance, lFni;
+
+	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
+		Error("The argument is not a list of factorizations.\n");
+	fi;
+
+ 
+   # distance between two factorizations
+    distance:=function(x,y)
+        local p,n,i,z;
+
+        p:=0; n:=0;
+        z:=x-y;
+        for i in [1..Length(z)] do
+            if z[i]>0 then
+                p:=p+z[i];
+            else
+                n:=n+z[i];
+            fi;
+        od;
+
+        return Maximum(p,-n);
+    end;    
+
+
+    lFni:=Set( ls, t->Sum( t ) );
+    return Maximum( List( lFni, y->CatenaryDegreeOfSetOfFactorizations( Filtered( ls, x->Sum( x )=y ) ) ) );
+end);
+
+
+###################################################################
+#F MonotoneCatenaryDegreeOfSetOfFactorizations(ls) 
+## computes the equal catenary degree of of the set of factorizations
+###################################################################
+InstallGlobalFunction(MonotoneCatenaryDegreeOfSetOfFactorizations,function(ls)
+    return Maximum(AdjacentCatenaryDegreeOfSetOfFactorizations(ls), 
+		EqualCatenaryDegreeOfSetOfFactorizations( ls ));
+end);
+
