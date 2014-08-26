@@ -23,10 +23,32 @@
 ##################################################
 InstallGlobalFunction(NumericalSemigroupPolynomial, function(s,x)
 	local gaps, p;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The first argument must be a numerical semigroup.\n");
+    fi;
 	
 	gaps:=GapsOfNumericalSemigroup(s);
 	p:=List(gaps, g-> x^g);
 	return 1+(x-1)*Sum(p);
+end);
+
+###################################################
+#F HilbertSeriesOfNumericalSemigroup(s,x)
+## Computes the Hilber series of s in x : \sum_{s\in S}x^s
+###################################################
+InstallGlobalFunction(HilbertSeriesOfNumericalSemigroup,function(s,x)
+	local m,ap;
+    if not IsNumericalSemigroup(s) then
+        Error("The first argument must be a numerical semigroup.\n");
+    fi;
+
+	if HasAperyListNS(s) then #uses J.Ramirez-Alfonsin trick
+		m:=MultiplicityOfNumericalSemigroup(s);
+		ap:=AperyListOfNumericalSemigroup(s);
+		return 1/(1-x^m)*Sum(List(ap, w->x^w));
+	fi;
+	return NumericalSemigroupPolynomial(s,x)/(1-x);
 end);
 
 

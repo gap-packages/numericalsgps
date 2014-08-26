@@ -6,20 +6,37 @@
 
 Let <M>S</M> be a numerical semigroup. The Hilbert  series or generating function associated to <M>S</M> is <M>H_S(x)=\sum_{s\in S}x^s</M> (actually it is the Hilbert function of the ring <M>K[S]</M> with <M>K</M> a field). See for instance <Cite Key="M"></Cite>.
 
+
 	
     <ManSection>
 
         <Func Arg="s, x" Name="NumericalSemigroupPolynomial"></Func>
         <Description>
             <A>s</A> is a numerical semigroups and <A>x</A> a variable (or a value to evaluate in).
-            The output is the polynomial <M>\sum_{s\in \mathbb N\setminus S} x^s</M>, which equals <M>(1-x)H_S(x)</M>.
+            The output is the polynomial <M>1+(x-1)\sum_{s\in \mathbb N\setminus S} x^s</M>, which equals <M>(1-x)H_S(x)</M>. 
             
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");;
-gap> s:=NumericalSemigroup(5,7,9);
-<Numerical semigroup with 3 generators>
+gap> s:=NumericalSemigroup(5,7,9);;
 gap> NumericalSemigroupPolynomial(s,x);
 x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
+
+        <Func Arg="s, x" Name="HilbertSeriesOfNumericalSemigroup"></Func>
+        <Description>
+            <A>s</A> is a numerical semigroups and <A>x</A> a variable (or a value to evaluate in).
+            The output is the series <M>\sum_{s\in \setminus S} x^s</M>. The series is given as a rational function.
+            
+            <Example><![CDATA[
+gap> x:=X(Rationals,"x");;
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> HilbertSeriesOfNumericalSemigroup(s,x);
+(x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1)/(-x+1)
 ]]></Example>
          </Description>
     </ManSection>
