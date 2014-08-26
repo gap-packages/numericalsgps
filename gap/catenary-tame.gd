@@ -364,3 +364,22 @@ DeclareGlobalFunction("DenumerantOfElementInNumericalSemigroup");
 ####################################################################
 DeclareGlobalFunction("MoebiusFunctionAssociatedToNumericalSemigroup");
 
+###################################################################
+#F  AdjacentCatenaryDegreeOfSetOfFactorizations(ls)
+## computes the adjacent catenary degree of the set of factorizations ls
+###################################################################
+DeclareGlobalFunction("AdjacentCatenaryDegreeOfSetOfFactorizations");
+
+###################################################################
+#F EqualCatenaryDegreeOfSetOfFactorizations(ls) 
+## computes the equal catenary degree of of the set of factorizations
+###################################################################
+DeclareGlobalFunction("EqualCatenaryDegreeOfSetOfFactorizations");
+
+###################################################################
+#F MonotoneCatenaryDegreeOfSetOfFactorizations(ls) 
+## computes the equal catenary degree of of the set of factorizations
+###################################################################
+DeclareGlobalFunction("MonotoneCatenaryDegreeOfSetOfFactorizations");
+
+
