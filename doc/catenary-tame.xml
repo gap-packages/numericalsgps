@@ -368,6 +368,51 @@ gap> CatenaryDegreeOfSetOfFactorizations(last);
          </Description>
     </ManSection>
 
+    <ManSection>
+        <Func Arg="ls" Name="AdjacentCatenaryDegreeOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). 
+            The output is the adjacent catenary degree of this set of factorizations, that is, the supremum of the distance between to sets of factorizations with adjacet lengths. More precisely, if <M>l_1,\ldots,l_t</M> are the lengths of the factorizations of the elements in <A>ls</A>, and <M>Z_{l_i}</M> is the set of factorizations in <A>ls</A> with length <M>l_i</M>, then the adjacent catenary degre is the maximum of the distances <M>\mathrm d (Z_{l_i},Z_{l_{i+1}})</M>.
+
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+gap> AdjacentCatenaryDegreeOfSetOfFactorizations(last);
+5
+]]></Example>
+         </Description>
+    </ManSection>
+
+    <ManSection>
+        <Func Arg="ls" Name="EqualCatenaryDegreeOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations joined by the chain must have the same length, and the elements in the chain also. Equivalently,  if <M>l_1,\ldots,l_t</M> are the lengths of the factorizations of the elements in <A>ls</A>, and <M>Z_{l_i}</M> is the set of factorizations in <A>ls</A> with length <M>l_i</M>, then the equal catenary degre is the maximum of the CatenaryDegreeOfSetOfFactorizations of <M>\mathrm d (Z_{l_i},Z_{l_{i+1}})</M>.
+
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+gap> EqualCatenaryDegreeOfSetOfFactorizations(last);
+2
+]]></Example>
+         </Description>
+    </ManSection>
+
+    <ManSection>
+        <Func Arg="ls" Name="MonotoneCatenaryDegreeOfSetOfFactorizations"></Func>
+        <Description>
+            <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations are joined by a chain with nondecreasing lengths. Equivalently, it is the maximum of the AdjacentCatenaryDegreeOfSetOfFactorizations and the EqualCatenaryDegreeOfSetOfFactorizations.
+
+            <Example><![CDATA[
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+gap> MonotoneCatenaryDegreeOfSetOfFactorizations(last);
+5
+]]></Example>
+         </Description>
+    </ManSection>
 
     <ManSection>
 
