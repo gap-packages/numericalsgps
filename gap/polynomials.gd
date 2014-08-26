@@ -20,6 +20,12 @@
 ##################################################
 DeclareGlobalFunction("NumericalSemigroupPolynomial");
 
+###################################################
+#F HilbertSeriesOfNumericalSemigroup(s,x)
+## Computes the Hilber series of s in x : \sum_{s\in S}x^s
+###################################################
+DeclareGlobalFunction("HilbertSeriesOfNumericalSemigroup");
+
 ######################################################
 ##
 #F Computes the Graeffe polynomial of p
