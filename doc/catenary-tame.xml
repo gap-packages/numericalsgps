@@ -98,6 +98,7 @@ gap> RClassesOfSetOfFactorizations(last);
          </Description>
     </ManSection>
 
+
     <ManSection>
 
         <Func Arg="n, S" Name="DenumerantOfElementInNumericalSemigroup"></Func>
@@ -114,6 +115,8 @@ gap> DenumerantOfElementInNumericalSemigroup(1311,s);
          </Description>
     </ManSection>
 
+
+ 
 </Section>
 
 <Section>
