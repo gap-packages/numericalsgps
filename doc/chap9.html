@@ -61,11 +61,14 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7E8A56F3810F1769">9.3-1 CatenaryDegreeOfSetOfFactorizations</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7FAF204E85D9C21B">9.3-2 CatenaryDegreeOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X812500217B183FC3">9.3-3 CatenaryDegreeOfElementInNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86D5A10183C150FC">9.3-4 TameDegreeOfSetOfFactorizations</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X860BDF5B85975B73">9.3-5 TameDegreeOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8738B4F87E782ED2">9.3-6 TameDegreeOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7DDB40BB84FF0042">9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86E0CAD28655839C">9.3-3 EqualCatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X845D850F7812E176">9.3-4 MonotoneCatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7FAF204E85D9C21B">9.3-5 CatenaryDegreeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X812500217B183FC3">9.3-6 CatenaryDegreeOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86D5A10183C150FC">9.3-7 TameDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X860BDF5B85975B73">9.3-8 TameDegreeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8738B4F87E782ED2">9.3-9 TameDegreeOfElementInNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X78EBC6A57B8167E6">9.4 <span class="Heading">
         Primality
@@ -407,9 +410,57 @@
 5
 </pre></div>
 
+<p><a id="X7DDB40BB84FF0042" name="X7DDB40BB84FF0042"></a></p>
+
+<h5>9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdjacentCatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The output is the adjacent catenary degree of this set of factorizations, that is, the supremum of the distance between to sets of factorizations with adjacet lengths. More precisely, if <span class="SimpleMath">l_1,...,l_t</span> are the lengths of the factorizations of the elements in <var class="Arg">ls</var>, and <span class="SimpleMath">Z_l_i</span> is the set of factorizations in <var class="Arg">ls</var> with length <span class="SimpleMath">l_i</span>, then the adjacent catenary degre is the maximum of the distances <span class="SimpleMath">mathrm d (Z_l_i,Z_l_i+1})</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AdjacentCatenaryDegreeOfSetOfFactorizations(last);</span>
+5
+</pre></div>
+
+<p><a id="X86E0CAD28655839C" name="X86E0CAD28655839C"></a></p>
+
+<h5>9.3-3 EqualCatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations joined by the chain must have the same length, and the elements in the chain also. Equivalently, if <span class="SimpleMath">l_1,...,l_t</span> are the lengths of the factorizations of the elements in <var class="Arg">ls</var>, and <span class="SimpleMath">Z_l_i</span> is the set of factorizations in <var class="Arg">ls</var> with length <span class="SimpleMath">l_i</span>, then the equal catenary degre is the maximum of the CatenaryDegreeOfSetOfFactorizations of <span class="SimpleMath">mathrm d (Z_l_i,Z_l_i+1})</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EqualCatenaryDegreeOfSetOfFactorizations(last);</span>
+2
+</pre></div>
+
+<p><a id="X845D850F7812E176" name="X845D850F7812E176"></a></p>
+
+<h5>9.3-4 MonotoneCatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations are joined by a chain with nondecreasing lengths. Equivalently, it is the maximum of the AdjacentCatenaryDegreeOfSetOfFactorizations and the EqualCatenaryDegreeOfSetOfFactorizations.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MonotoneCatenaryDegreeOfSetOfFactorizations(last);</span>
+5
+</pre></div>
+
 <p><a id="X7FAF204E85D9C21B" name="X7FAF204E85D9C21B"></a></p>
 
-<h5>9.3-2 CatenaryDegreeOfNumericalSemigroup</h5>
+<h5>9.3-5 CatenaryDegreeOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. The output is the catenary degree of <var class="Arg">S</var>.</p>
@@ -424,7 +475,7 @@
 
 <p><a id="X812500217B183FC3" name="X812500217B183FC3"></a></p>
 
-<h5>9.3-3 CatenaryDegreeOfElementInNumericalSemigroup</h5>
+<h5>9.3-6 CatenaryDegreeOfElementInNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">n</var> is a nonnegative integer and <var class="Arg">S</var> is a numerical semigroup. The output is the catenary degree of <var class="Arg">n</var> relative to <var class="Arg">S</var>.</p>
@@ -439,7 +490,7 @@
 
 <p><a id="X86D5A10183C150FC" name="X86D5A10183C150FC"></a></p>
 
-<h5>9.3-4 TameDegreeOfSetOfFactorizations</h5>
+<h5>9.3-7 TameDegreeOfSetOfFactorizations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The output is the tame degree of this set of factorizations.</p>
@@ -455,7 +506,7 @@
 
 <p><a id="X860BDF5B85975B73" name="X860BDF5B85975B73"></a></p>
 
-<h5>9.3-5 TameDegreeOfNumericalSemigroup</h5>
+<h5>9.3-8 TameDegreeOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. The output is the tame degree of <var class="Arg">S</var>.</p>
@@ -470,7 +521,7 @@
 
 <p><a id="X8738B4F87E782ED2" name="X8738B4F87E782ED2"></a></p>
 
-<h5>9.3-6 TameDegreeOfElementInNumericalSemigroup</h5>
+<h5>9.3-9 TameDegreeOfElementInNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">n</var> is an elment of the numerical semigroup <var class="Arg">S</var>. The output is the tame degree of <var class="Arg">n</var> in <var class="Arg">S</var>.</p>
