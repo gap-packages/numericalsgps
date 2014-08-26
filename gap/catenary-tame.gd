@@ -382,4 +382,9 @@ DeclareGlobalFunction("EqualCatenaryDegreeOfSetOfFactorizations");
 ###################################################################
 DeclareGlobalFunction("MonotoneCatenaryDegreeOfSetOfFactorizations");
 
+############################################################
+#F LShapesOfNumericalSemigroup(s)
+## computes the set of LShapes associated to S (see [AG-GS])
+##########################################################
+DeclareGlobalFunction("LShapesOfNumericalSemigroup");
 

@@ -1391,3 +1391,35 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfSetOfFactorizations,function(ls)
 		EqualCatenaryDegreeOfSetOfFactorizations( ls ));
 end);
 
+
+############################################################
+#F LShapesOfNumericalSemigroup(s)
+## computes the set of LShapes associated to S (see [AG-GS])
+##########################################################
+InstallGlobalFunction(LShapesOfNumericalSemigroup,function(s)
+	local ap, facts, total, totalfact,  new, w, z, n, ones,l, leq ;
+
+	leq:=function(x,y)
+		return ForAll(y-x, t->t>=0);
+	end;
+
+	l:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
+	n:=Length(l);
+	ap:=Set(AperyListOfNumericalSemigroupWRTElement(s, l[n])) ;
+	ones:=List([1..n-1],_->1);
+
+	total:=[[]];
+	for w in ap do
+		facts:=FactorizationsIntegerWRTList(w,l{[1..n-1]});
+		totalfact:=[];
+		for z in facts do
+			new:=Filtered(total, ll->Length(Filtered(ll, x->leq(x,z)))=Product(z+ones)-1);
+			new:=List(new, ll->Concatenation(ll,[z]));
+			totalfact:=Union(totalfact,new);
+		od;
+		total:=(totalfact);
+	od;
+
+	return total;
+end);
+
