@@ -2806,8 +2806,31 @@ same lenght). The output is the set of $\mathcal R$-classes of this set of facto
 
  
 
-\subsection{\textcolor{Chapter }{DenumerantOfElementInNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{LShapesOfNumericalSemigroup}}
 \logpage{[ 9, 1, 4 ]}\nobreak
+\hyperdef{L}{X7D8BE22680E4A859}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LShapesOfNumericalSemigroup({\mdseries\slshape S})\index{LShapesOfNumericalSemigroup@\texttt{LShapesOfNumericalSemigroup}}
+\label{LShapesOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is the number of LShapes associated to \mbox{\texttt{\mdseries\slshape S}}. These are ways of arranging the set of factorizations of the elements in the
+Ap{\a'e}ry set of the largest generator, so that if one factorization $x$ is chosen for $w$ and $w-w'\in S$, then only the factorization of $x'$ of $w'$ with $x'\le $ can be in the LShape (and if there is no such a factorization, then we have no
+LShape with $x$ in it), see \cite{AG-GS}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,6,9);;|
+  !gapprompt@gap>| !gapinput@LShapesOfNumericalSemigroup(s);|
+  [ [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 0, 2 ], [ 2, 1 ], 
+        [ 1, 2 ], [ 2, 2 ] ], 
+    [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 3, 0 ], [ 2, 1 ], 
+        [ 4, 0 ], [ 5, 0 ] ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{DenumerantOfElementInNumericalSemigroup}}
+\logpage{[ 9, 1, 5 ]}\nobreak
 \hyperdef{L}{X86D58E0084CFD425}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DenumerantOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{DenumerantOfElementInNumericalSemigroup@\texttt{Denumerant}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{DenumerantOfElementInNumericalSemigroup}
