@@ -27,7 +27,7 @@ gap> MultiplicityOfNumericalSemigroup(S);
                    <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
                   <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/> -->
 <Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
-                    <Description>
+<Attr Name="MinimalGeneratingSystem" Arg="S"/>                    <Description>
                         <A>S</A>
                         is a numerical semigroup.
                         <C>GeneratorsOfNumericalSemigroup</C>
@@ -58,6 +58,8 @@ gap> GeneratorsOfNumericalSemigroup(S);
 [ 3, 5, 53 ]
 gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
+gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
+true
 <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
 [ 5, 7, 9, 25 ]
 gap> ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   
@@ -81,6 +83,7 @@ gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,2
 
                 <ManSection>
                     <Attr Name="SmallElementsOfNumericalSemigroup" Arg="NS"/>
+<Attr Name="SmallElements" Arg="NS"/>
                     <Description>
                         <C>NS</C>
                         is a numerical semigroup. It returns the list of small elements of <C>NS</C>.
@@ -88,6 +91,8 @@ Of course, the time consumed
                         to return a result may depend on the way the semigroup is given.
                         <Example><![CDATA[
 gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+[ 0, 3, 5 ]
+gap> SmallElements(NumericalSemigroup(3,5,7));                    
 [ 0, 3, 5 ]
 ]]></Example>
                     </Description>

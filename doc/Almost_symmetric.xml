@@ -25,7 +25,7 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
                 </ManSection>
                
                 <ManSection>
-                    <Func Arg="s" Name="IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity"></Func>
+                    <Func Arg="s" Name="IsAlmostSymmetricNumericalSemigroup"></Func>
                     <Description>
                         <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is almost symmetric.
                         <Example><![CDATA[

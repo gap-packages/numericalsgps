@@ -22,6 +22,7 @@
   
   [29X[2XGeneratorsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   [29X[2XMinimalGeneratingSystemOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  [29X[2XMinimalGeneratingSystem[102X( [3XS[103X ) [32X attribute
   
   [33X[0;0Y[3XS[103X  is a numerical semigroup. [10XGeneratorsOfNumericalSemigroup[110X returns a set of
   generators      of      [10XS[110X,      which      may      not      be     minimal.
@@ -45,6 +46,8 @@
     [4X[28X[ 3, 5, 53 ][128X[104X
     [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfNumericalSemigroup(S);[127X[104X
     [4X[28X[ 3, 5 ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[28X<!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));[128X[104X
     [4X[28X[ 5, 7, 9, 25 ][128X[104X
     [4X[25Xgap>[125X [27XReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   [127X[104X
@@ -63,6 +66,7 @@
   [1X3.1-4 SmallElementsOfNumericalSemigroup[101X
   
   [29X[2XSmallElementsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  [29X[2XSmallElements[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0Y[10XNS[110X is a numerical semigroup. It returns the list of small elements of [10XNS[110X. Of
   course,  the  time  consumed  to  return  a result may depend on the way the
@@ -70,6 +74,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
+    [4X[28X[ 0, 3, 5 ][128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(NumericalSemigroup(3,5,7));                    [127X[104X
     [4X[28X[ 0, 3, 5 ][128X[104X
   [4X[32X[104X
   

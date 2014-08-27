@@ -91,6 +91,7 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystemOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. <code class="code">GeneratorsOfNumericalSemigroup</code> returns a set of generators of <code class="code">S</code>, which may not be minimal. <code class="code">MinimalGeneratingSystemOfNumericalSemigroup</code> returns the minimal set of generators of <code class="code">S</code>.</p>
 
 <p>From Version 0.980, <code class="code">ReducedSetOfGeneratorsOfNumericalSemigroup</code> is just a synonym of <code class="code">MinimalGeneratingSystemOfNumericalSemigroup</code> and <code class="code">GeneratorsOfNumericalSemigroupNC</code> is just a synonym of <code class="code">GeneratorsOfNumericalSemigroup</code>. The names are kept for compatibility with code produced for previous versions, but will be removed in the future.</p>
@@ -107,6 +108,8 @@
 [ 3, 5, 53 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfNumericalSemigroup(S);</span>
 [ 3, 5 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);</span>
+true
 &lt;!--gap&gt; ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
 [ 5, 7, 9, 25 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   </span>
@@ -127,11 +130,14 @@
 <h5>3.1-4 SmallElementsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElementsOfNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><code class="code">NS</code> is a numerical semigroup. It returns the list of small elements of <code class="code">NS</code>. Of course, the time consumed to return a result may depend on the way the semigroup is given.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));</span>
+[ 0, 3, 5 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(NumericalSemigroup(3,5,7));                    </span>
 [ 0, 3, 5 ]
 </pre></div>
 

@@ -430,8 +430,25 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
         T:=Union(Elm{[2..Length(Elm)]},[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]]);
         return MinimalGeneratingSystemOfNumericalSemigroup(NumericalSemigroup(T));
     fi;
+  end);
+  
+#############################################################################
+##
+#F  MinimalGeneratingSystem(S)
+##  If S is a numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfNumericalSemigroup
+## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfIdealOfNumericalSemigroup
+##
+InstallGlobalFunction(MinimalGeneratingSystem,
+        function(S)
+  if IsNumericalSemigroup(S) then
+    return MinimalGeneratingSystemOfNumericalSemigroup(S);
+  elif IsIdealOfNumericalSemigroup(S) then
+    return MinimalGeneratingSystemOfIdealOfNumericalSemigroup(S);
+  else
+    Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
+  fi;
 end);
-
+          
 #############################################################################
 ##
 #F  ReducedSetOfGeneratorsOfNumericalSemigroup(arg)

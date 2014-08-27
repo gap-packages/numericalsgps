@@ -186,14 +186,13 @@ DeclareGlobalFunction("BlowUpIdealOfNumericalSemigroup");
 
 #############################################################################
 ##
-#A MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I)
+#A MinimalGeneratingSystem(I)
 ##
 ## The argument I is an ideal of a numerical semigroup
 ## returns the minimal generating system of I.
 ##
 #############################################################################
 DeclareAttribute("MinimalGeneratingSystemOfIdealOfNumericalSemigroup", IsIdealOfNumericalSemigroup);
-
 
 
 #############################################################################

@@ -60,7 +60,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7876199778D6B320">7.2-6 IsGradedAssociatedRingNumericalSemigroupCM</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7A04B8887F493733">7.2-7 IsMonomialNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D14AA4D7EE12369">7.2-8 AperyListOfIdealOfNumericalSemigroupWRTElement</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D14AA4D7EE12369">7.2-9 AperyListOfIdealOfNumericalSemigroupWRTElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8693990B8479E7E1">7.2-9 AperyTableOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7A16238D7EDB2AB3">7.2-10 StarClosureOfIdealOfNumericalSemigroup</a></span>
 </div></div>
 </div>
@@ -123,6 +123,7 @@ false
 <h5>7.1-3 MinimalGeneratingSystemOfIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystemOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
 
 <p>The output is the minimal system of generators of <var class="Arg">I</var>.</p>
@@ -131,6 +132,8 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);</span>
+[ 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(I);                           </span>
 [ 3 ]
 </pre></div>
 
@@ -178,6 +181,7 @@ false
 <h5>7.1-6 SmallElementsOfIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElementsOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
 
 <p>The output is a list with the elements in <var class="Arg">I</var> that are less than or equal to the greatest integer not belonging to the ideal plus one.</p>
@@ -187,6 +191,8 @@ false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfIdealOfNumericalSemigroup(I);</span>
 [ 3, 5, 7, 9, 11, 13 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(I) = SmallElementsOfIdealOfNumericalSemigroup(I);</span>
+true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J:=[2,11]+NumericalSemigroup(2,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfIdealOfNumericalSemigroup(J);</span>
 [ 2, 4, 6, 8, 10 ]
@@ -545,11 +551,11 @@ false
 [ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ]
 </pre></div>
 
-<p><a id="X7D14AA4D7EE12369" name="X7D14AA4D7EE12369"></a></p>
+<p><a id="X8693990B8479E7E1" name="X8693990B8479E7E1"></a></p>
 
-<h5>7.2-9 AperyListOfIdealOfNumericalSemigroupWRTElement</h5>
+<h5>7.2-9 AperyTableOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyListOfIdealOfNumericalSemigroupWRTElement</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyTableOfNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Computes the Apéry table associated to the numerical semigroup <var class="Arg">s</var> as explained in <a href="chapBib.html#biBCJZ">[BJA13]</a>, that is, a list containing the Apéry list of <var class="Arg">s</var> with respect to its multiplicity and the Apéry lists of <span class="SimpleMath">kM</span> (with <span class="SimpleMath">M</span> the maximal ideal of <var class="Arg">s</var>) with respect to the multiplicity of <var class="Arg">s</var>, for <span class="SimpleMath">k∈{1,...,r}</span>, where <span class="SimpleMath">r</span> is the reduction number of <span class="SimpleMath">M</span> (see ReductionNumberIdealNumericalSemigroup).</p>
 
 

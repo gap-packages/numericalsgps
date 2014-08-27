@@ -95,7 +95,7 @@
 
 \hypersetup{pdftitle=\textsf{numericalsgps}-- a package for numerical semigroups}
 \markright{\scriptsize \mbox{}\hfill \textsf{numericalsgps}-- a package for numerical semigroups \hfill\mbox{}}
-{\Huge ( Version 0.981 ) \mbox{}}\\[1cm]
+{\Huge ( Version 0.980 dev ) \mbox{}}\\[1cm]
 \mbox{}\\[2cm]
 {\Large \textbf{ Manuel Delgado   \mbox{}}}\\
 {\Large \textbf{ Pedro A. Garc{\a'\i}a-S{\a'a}nchez   \mbox{}}}\\
@@ -709,6 +709,9 @@ returns \texttt{true} when the periodic function represented by \mbox{\texttt{\m
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystemOfNumericalSemigroup({\mdseries\slshape S})\index{MinimalGeneratingSystemOfNumericalSemigroup@\texttt{Minimal}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalGeneratingSystemOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape S})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}}
+\label{MinimalGeneratingSystem}
+}\hfill{\scriptsize (attribute)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. \texttt{GeneratorsOfNumericalSemigroup} returns a set of generators of \texttt{S}, which may not be minimal.  \texttt{MinimalGeneratingSystemOfNumericalSemigroup} returns the minimal set of generators of \texttt{S}. 
@@ -726,6 +729,8 @@ versions, but will be removed in the future.
   [ 3, 5, 53 ]
   @gapprompt|gap>A @gapinput|MinimalGeneratingSystemOfNumericalSemigroup(S);A
   [ 3, 5 ]
+  @gapprompt|gap>A @gapinput|MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);A
+  true
   <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
   [ 5, 7, 9, 25 ]
   @gapprompt|gap>A @gapinput|ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   A
@@ -756,12 +761,17 @@ system. }
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElementsOfNumericalSemigroup({\mdseries\slshape NS})\index{SmallElementsOfNumericalSemigroup@\texttt{SmallElementsOfNumericalSemigroup}}
 \label{SmallElementsOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape NS})\index{SmallElements@\texttt{SmallElements}}
+\label{SmallElements}
+}\hfill{\scriptsize (attribute)}}\\
 
 
  \texttt{NS} is a numerical semigroup. It returns the list of small elements of \texttt{NS}. Of course, the time consumed to return a result may depend on the way the
 semigroup is given. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));|
+  [ 0, 3, 5 ]
+  !gapprompt@gap>| !gapinput@SmallElements(NumericalSemigroup(3,5,7));                    |
   [ 0, 3, 5 ]
 \end{Verbatim}
  }
@@ -1790,11 +1800,11 @@ almost-symetric numerical semigroups that can be constructed from \mbox{\texttt{
 
  
 
-\subsection{\textcolor{Chapter }{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}}
+\subsection{\textcolor{Chapter }{IsAlmostSymmetricNumericalSemigroup}}
 \logpage{[ 6, 3, 2 ]}\nobreak
-\hyperdef{L}{X847CD0EF8452F771}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity({\mdseries\slshape s})\index{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity@\texttt{IsNumerical}\-\texttt{Semigroup}\-\texttt{Associated}\-\texttt{Irreducible}\-\texttt{Planar}\-\texttt{Curve}\-\texttt{Singularity}}
-\label{IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity}
+\hyperdef{L}{X7CF201F185943C30}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAlmostSymmetricNumericalSemigroup({\mdseries\slshape s})\index{IsAlmostSymmetricNumericalSemigroup@\texttt{IsAlmostSymmetricNumericalSemigroup}}
+\label{IsAlmostSymmetricNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -1897,6 +1907,9 @@ more information see for instance \cite{BDF97}).
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystemOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{MinimalGeneratingSystemOfIdealOfNumericalSemigroup@\texttt{Minimal}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalGeneratingSystemOfIdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape I})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}}
+\label{MinimalGeneratingSystem}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. 
@@ -1905,6 +1918,8 @@ more information see for instance \cite{BDF97}).
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);|
+  [ 3 ]
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystem(I);                           |
   [ 3 ]
 \end{Verbatim}
  }
@@ -1967,6 +1982,9 @@ known, then it is used as output. \texttt{GeneratorsOfIdealOfNumericalSemigroupN
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElementsOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{SmallElementsOfIdealOfNumericalSemigroup@\texttt{Small}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{SmallElementsOfIdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape I})\index{SmallElements@\texttt{SmallElements}}
+\label{SmallElements}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. 
@@ -1977,6 +1995,8 @@ plus one.
   !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@SmallElementsOfIdealOfNumericalSemigroup(I);|
   [ 3, 5, 7, 9, 11, 13 ]
+  !gapprompt@gap>| !gapinput@SmallElements(I) = SmallElementsOfIdealOfNumericalSemigroup(I);|
+  true
   !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@SmallElementsOfIdealOfNumericalSemigroup(J);|
   [ 2, 4, 6, 8, 10 ]
@@ -2408,11 +2428,11 @@ algorithm given in \cite{BF06}.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfIdealOfNumericalSemigroupWRTElement}}
+\subsection{\textcolor{Chapter }{AperyTableOfNumericalSemigroup}}
 \logpage{[ 7, 2, 9 ]}\nobreak
-\hyperdef{L}{X7D14AA4D7EE12369}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfIdealOfNumericalSemigroupWRTElement({\mdseries\slshape s})\index{AperyListOfIdealOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
-\label{AperyListOfIdealOfNumericalSemigroupWRTElement}
+\hyperdef{L}{X8693990B8479E7E1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyTableOfNumericalSemigroup({\mdseries\slshape s})\index{AperyTableOfNumericalSemigroup@\texttt{AperyTableOfNumericalSemigroup}}
+\label{AperyTableOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -3675,11 +3695,11 @@ plane curve with one place at infinity.
 
  
 
-\subsection{\textcolor{Chapter }{IsDeltaSequence}}
+\subsection{\textcolor{Chapter }{DeltaSequencesWithFrobeniusNumber}}
 \logpage{[ 10, 2, 3 ]}\nobreak
-\hyperdef{L}{X834D6B1A7C421B9F}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsDeltaSequence({\mdseries\slshape f})\index{IsDeltaSequence@\texttt{IsDeltaSequence}}
-\label{IsDeltaSequence}
+\hyperdef{L}{X824ABFD680A34495}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSequencesWithFrobeniusNumber({\mdseries\slshape f})\index{DeltaSequencesWithFrobeniusNumber@\texttt{DeltaSequencesWithFrobeniusNumber}}
+\label{DeltaSequencesWithFrobeniusNumber}
 }\hfill{\scriptsize (function)}}\\
 
 

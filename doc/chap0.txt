@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                               ( Version 0.981 )
+                             ( Version 0.980 dev )
   
   
                                  Manuel Delgado
@@ -164,7 +164,7 @@
       6.2-9 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
     6.3 [33X[0;0YAlmost-symmetric numerical semigroups[133X
       6.3-1 AlmostSymmetricNumericalSemigroupsFromIrreducible
-      6.3-2 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+      6.3-2 IsAlmostSymmetricNumericalSemigroup
       6.3-3 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
   7 [33X[0;0YIdeals of numerical semigroups[133X
     7.1 [33X[0;0YDefinitions and basic operations[133X
@@ -192,7 +192,7 @@
       7.2-6 IsGradedAssociatedRingNumericalSemigroupCM
       7.2-7 IsMonomialNumericalSemigroup
       7.2-8 AperyListOfIdealOfNumericalSemigroupWRTElement
-      7.2-9 AperyListOfIdealOfNumericalSemigroupWRTElement
+      7.2-9 AperyTableOfNumericalSemigroup
       7.2-10 StarClosureOfIdealOfNumericalSemigroup
   8 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
     8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
@@ -262,7 +262,7 @@
     infinity.[133X
       10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity
       10.2-2 IsDeltaSequence
-      10.2-3 IsDeltaSequence
+      10.2-3 DeltaSequencesWithFrobeniusNumber
       10.2-4 CurveAssociatedToDeltaSequence
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X

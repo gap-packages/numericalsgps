@@ -299,8 +299,24 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     return SmallElementsNS(sgp);
 end);
 
-
-
+#############################################################################
+##
+#F  SmallElements(S)
+##
+##  If S is a numerical semigroup, then this function just passes the task of computing the minimal generating system to SmallElementsOfNumericalSemigroup
+## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to SmallElementsOfIdealOfNumericalSemigroup
+##
+##
+InstallGlobalFunction(SmallElements,
+        function(S)
+  if IsNumericalSemigroup(S) then
+    return SmallElementsOfNumericalSemigroup(S);
+  elif IsIdealOfNumericalSemigroup(S) then
+    return SmallElementsOfIdealOfNumericalSemigroup(S);
+  else
+    Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
+  fi;
+end);
 
 #############################################################################
 ##
