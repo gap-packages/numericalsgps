@@ -62,6 +62,7 @@ false
 
                 <ManSection>
                     <Func Arg="I" Name="MinimalGeneratingSystemOfIdealOfNumericalSemigroup"></Func>
+<Func Arg="I" Name="MinimalGeneratingSystem"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         <P/>
@@ -71,6 +72,8 @@ false
                         <Example><![CDATA[
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);
+[ 3 ]
+gap> MinimalGeneratingSystem(I);                           
 [ 3 ]
 ]]></Example>
                     </Description>
@@ -121,7 +124,7 @@ gap> AmbientNumericalSemigroupOfIdeal(I);
 
 
                 <ManSection>
-                    <Func Arg="I" Name="SmallElementsOfIdealOfNumericalSemigroup"></Func>
+                    <Func Arg="I" Name="SmallElementsOfIdealOfNumericalSemigroup"></Func><Func Arg="I" Name="SmallElements"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         <P/>
@@ -133,6 +136,8 @@ gap> AmbientNumericalSemigroupOfIdeal(I);
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> SmallElementsOfIdealOfNumericalSemigroup(I);
 [ 3, 5, 7, 9, 11, 13 ]
+gap> SmallElements(I) = SmallElementsOfIdealOfNumericalSemigroup(I);
+true
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> SmallElementsOfIdealOfNumericalSemigroup(J);
 [ 2, 4, 6, 8, 10 ]
@@ -549,7 +554,7 @@ gap> AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);
 
 
                 <ManSection>
-                    <Func Arg="s" Name="AperyListOfIdealOfNumericalSemigroupWRTElement"></Func>
+                    <Func Arg="s" Name="AperyTableOfNumericalSemigroup"></Func>
                     <Description>
 				
 				 Computes the Apéry table associated to the numerical semigroup <A>s</A> as explained in <Cite Key="CJZ"></Cite>, 
