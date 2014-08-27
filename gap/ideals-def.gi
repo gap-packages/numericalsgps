@@ -304,9 +304,6 @@ InstallMethod(MinimalGeneratingSystemOfIdealOfNumericalSemigroup,
         function(I)
     local m, S;
 
-    if not IsIdealOfNumericalSemigroup(I) then
-        Error("<I> must be an ideal of a  numerical semigroup");
-    fi;
     S := AmbientNumericalSemigroupOfIdeal(I);
     m:=MaximalIdealOfNumericalSemigroup(S);
     return DifferenceOfIdealsOfNumericalSemigroup(I,m+I);

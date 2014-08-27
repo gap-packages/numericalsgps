@@ -89,6 +89,16 @@ DeclareSynonym( "GeneratorsOfNumericalSemigroupNC","GeneratorsOfNumericalSemigro
 ##
 #############################################################################
 DeclareAttribute( "MinimalGeneratingSystemOfNumericalSemigroup", IsNumericalSemigroup);
+#############################################################################
+#############################################################################
+##
+#F  MinimalGeneratingSystem(S)
+##
+##  If S is a numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfNumericalSemigroup
+## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfIdealOfNumericalSemigroup
+##
+#############################################################################
+DeclareGlobalFunction("MinimalGeneratingSystem");
 
 #############################################################################
 ##
@@ -100,7 +110,7 @@ DeclareAttribute( "MinimalGeneratingSystemOfNumericalSemigroup", IsNumericalSemi
 ##  
 #DeclareGlobalFunction("ReducedSetOfGeneratorsOfNumericalSemigroup");
 DeclareSynonym("ReducedSetOfGeneratorsOfNumericalSemigroup",MinimalGeneratingSystemOfNumericalSemigroup);
-  #############################################################################
+#############################################################################
 ##
 #F  EmbeddingDimensionOfNumericalSemigroup(S)
 ##
