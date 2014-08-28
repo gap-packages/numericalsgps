@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Numerical semigroups with maximal embedding dimension
+                </Heading>
+                If <M>S</M> is a numerical semigroup and <M>m</M> is its multiplicity (the least 
+                positive integer belonging to it), then the embedding dimension <M>e</M> of <M>S</M> (the 
+                cardinality of the minimal system of generators of <M>S</M>) is less than or equal
+                to <M>m</M>. We say that <M>S</M> has maximal embedding dimension (MED for short) when <M>e=m</M>. 
+                The intersection of two numerical semigroups with the same multiplicity and maximal embedding 
+                dimension is again of maximal embedding dimension. Thus we define the MED closure of a non-empty subset
+                of positive integers <M>M=\{m &lt; m_1 &lt; \cdots &lt; m_n &lt;\cdots\}</M> with <M>\gcd(M)=1</M>
+                as the intersection of all MED numerical semigroups with multiplicity <M>m</M>. 
+                
+                <P/> 
+                Given a MED numerical semigroup <M>S</M>, we say that <M>M=\{m_1 &lt; \cdots&lt; m_k\}</M> is a MED system 
+                of generators if the MED closure of <M>M</M> is <M>S</M>. Moreover, <M>M</M> is a minimal MED generating 
+                system for <M>S</M> provided that every proper subset of <M>M</M> is not a MED system of generators 
+                of <M>S</M>. Minimal MED generating systems are unique, and in general are smaller that the 
+                classical minimal generating systems (see <Cite Key="RGGB03"></Cite>).
+                
+                
+                <ManSection>
+                    <Func Arg="S" Name="IsMEDNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns true if <A>S</A> is a MED numerical semigroup and false otherwise. 
+                        <Example><![CDATA[
+gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7)); 
+true 
+gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5)); 
+false
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+                
+                <ManSection>
+                    <Func Arg="S" Name="MEDNumericalSemigroupClosure"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns the MED closure of <A>S</A>.
+                        <Example><![CDATA[
+gap> MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); 
+<Numerical semigroup> 
+gap> MinimalGeneratingSystemOfNumericalSemigroup(last); 
+[ 3, 5, 7 ]
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="MinimalMEDGeneratingSystemOfMEDNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a MED numerical semigroup.    
+                        <P/>
+                        Returns the minimal MED generating system of <A>S</A>.
+                        <Example><![CDATA[
+gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( 
+> NumericalSemigroup(3,5,7)); 
+[ 3, 5 ]
+]]>
+                        </Example>          
+                    </Description>
+                </ManSection>
+                
+            </Section>
