@@ -129,7 +129,8 @@
       4.1-1 MinimalPresentationOfNumericalSemigroup
       4.1-2 GraphAssociatedToElementInNumericalSemigroup
       4.1-3 BettiElementsOfNumericalSemigroup
-      4.1-4 ShadedSetOfElementInNumericalSemigroup
+      4.1-4 PrimitiveElementsOfNumericalSemigroup
+      4.1-5 ShadedSetOfElementInNumericalSemigroup
     4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X
       4.2-1 IsUniquelyPresentedNumericalSemigroup
       4.2-2 IsGenericNumericalSemigroup
@@ -234,11 +235,15 @@
       9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations
       9.3-3 EqualCatenaryDegreeOfSetOfFactorizations
       9.3-4 MonotoneCatenaryDegreeOfSetOfFactorizations
-      9.3-5 CatenaryDegreeOfNumericalSemigroup
-      9.3-6 CatenaryDegreeOfElementInNumericalSemigroup
-      9.3-7 TameDegreeOfSetOfFactorizations
-      9.3-8 TameDegreeOfNumericalSemigroup
-      9.3-9 TameDegreeOfElementInNumericalSemigroup
+      9.3-5 CatenaryDegreeOfElementInNumericalSemigroup
+      9.3-6 TameDegreeOfSetOfFactorizations
+      9.3-7 CatenaryDegreeOfNumericalSemigroup
+      9.3-8 EqualPrimitiveElementsOfNumericalSemigroup
+      9.3-9 EqualCatenaryDegreeOfNumericalSemigroup
+      9.3-10 MonotonePrimitiveElementsOfNumericalSemigroup
+      9.3-11 MonotoneCatenaryDegreeOfNumericalSemigroup
+      9.3-12 TameDegreeOfNumericalSemigroup
+      9.3-13 TameDegreeOfElementInNumericalSemigroup
     9.4 [33X[0;0YPrimality[133X
       9.4-1 OmegaPrimalityOfElementInNumericalSemigroup
       9.4-2 OmegaPrimalityOfNumericalSemigroup

@@ -1133,8 +1133,30 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 
  
 
-\subsection{\textcolor{Chapter }{ShadedSetOfElementInNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{PrimitiveElementsOfNumericalSemigroup}}
 \logpage{[ 4, 1, 4 ]}\nobreak
+\hyperdef{L}{X814717BB798E4E1E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveElementsOfNumericalSemigroup({\mdseries\slshape S})\index{PrimitiveElementsOfNumericalSemigroup@\texttt{Primitive}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{PrimitiveElementsOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ The output is the set of elements $s$ in \mbox{\texttt{\mdseries\slshape S}} such that there exists a minimal solution to $msg\cdot x-msg\cdot y = 0$, such that $x,y$ are factorizations of $s$, and $msg$ is the minimal generating system of \mbox{\texttt{\mdseries\slshape S}}. Betti elements are primitive, but not the way around in general. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@PrimitiveElementsOfNumericalSemigroup(s);|
+  [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+  
+                          
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ShadedSetOfElementInNumericalSemigroup}}
+\logpage{[ 4, 1, 5 ]}\nobreak
 \hyperdef{L}{X7C42DEB68285F2B8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ShadedSetOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{ShadedSetOfElementInNumericalSemigroup@\texttt{Shaded}\-\texttt{Set}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ShadedSetOfElementInNumericalSemigroup}
@@ -3228,27 +3250,8 @@ EqualCatenaryDegreeOfSetOfFactorizations.
 
  
 
-\subsection{\textcolor{Chapter }{CatenaryDegreeOfNumericalSemigroup}}
-\logpage{[ 9, 3, 5 ]}\nobreak
-\hyperdef{L}{X7FAF204E85D9C21B}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{CatenaryDegreeOfNumericalSemigroup@\texttt{CatenaryDegreeOfNumericalSemigroup}}
-\label{CatenaryDegreeOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is the catenary degree of \mbox{\texttt{\mdseries\slshape S}}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(101,113,196,272,278,286);|
-  <Numerical semigroup with 6 generators>
-  !gapprompt@gap>| !gapinput@CatenaryDegreeOfNumericalSemigroup(s);|
-  8
-\end{Verbatim}
- }
-
- 
-
 \subsection{\textcolor{Chapter }{CatenaryDegreeOfElementInNumericalSemigroup}}
-\logpage{[ 9, 3, 6 ]}\nobreak
+\logpage{[ 9, 3, 5 ]}\nobreak
 \hyperdef{L}{X812500217B183FC3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{CatenaryDegreeOfElementInNumericalSemigroup@\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{CatenaryDegreeOfElementInNumericalSemigroup}
@@ -3267,7 +3270,7 @@ EqualCatenaryDegreeOfSetOfFactorizations.
  
 
 \subsection{\textcolor{Chapter }{TameDegreeOfSetOfFactorizations}}
-\logpage{[ 9, 3, 7 ]}\nobreak
+\logpage{[ 9, 3, 6 ]}\nobreak
 \hyperdef{L}{X86D5A10183C150FC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfSetOfFactorizations({\mdseries\slshape ls})\index{TameDegreeOfSetOfFactorizations@\texttt{TameDegreeOfSetOfFactorizations}}
 \label{TameDegreeOfSetOfFactorizations}
@@ -3287,8 +3290,109 @@ same lenght). The output is the tame degree of this set of factorizations.
 
  
 
-\subsection{\textcolor{Chapter }{TameDegreeOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{CatenaryDegreeOfNumericalSemigroup}}
+\logpage{[ 9, 3, 7 ]}\nobreak
+\hyperdef{L}{X7FAF204E85D9C21B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{CatenaryDegreeOfNumericalSemigroup@\texttt{CatenaryDegreeOfNumericalSemigroup}}
+\label{CatenaryDegreeOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is the catenary degree of \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(101,113,196,272,278,286);|
+  <Numerical semigroup with 6 generators>
+  !gapprompt@gap>| !gapinput@CatenaryDegreeOfNumericalSemigroup(s);|
+  8
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{EqualPrimitiveElementsOfNumericalSemigroup}}
 \logpage{[ 9, 3, 8 ]}\nobreak
+\hyperdef{L}{X86498DA1858BA11B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EqualPrimitiveElementsOfNumericalSemigroup({\mdseries\slshape S})\index{EqualPrimitiveElementsOfNumericalSemigroup@\texttt{Equal}\-\texttt{Primitive}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{EqualPrimitiveElementsOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ The output is the set of elements $s$ in \mbox{\texttt{\mdseries\slshape S}} such that there exists a minimal solution to $msg\cdot x-msg\cdot y = 0$, such that $x,y$ are factorizations with the same length of $s$, and $msg$ is the minimal generating system of \mbox{\texttt{\mdseries\slshape S}}. These elements are used to compute the equal catenary degree of \mbox{\texttt{\mdseries\slshape S}}. Requires NormalizInterface package. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@BettiElementsOfNumericalSemigroup(s);|
+  [ 10, 12, 14 ]
+  
+                          
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{EqualCatenaryDegreeOfNumericalSemigroup}}
+\logpage{[ 9, 3, 9 ]}\nobreak
+\hyperdef{L}{X780E2C737FA8B2A9}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EqualCatenaryDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{EqualCatenaryDegreeOfNumericalSemigroup@\texttt{Equal}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{EqualCatenaryDegreeOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is the equal catenary degree of \mbox{\texttt{\mdseries\slshape S}}. Requires NormalizInterface package. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@EqualPrimitiveElementsOfNumericalSemigroup(s);|
+  [ 3, 5, 7, 10 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MonotonePrimitiveElementsOfNumericalSemigroup}}
+\logpage{[ 9, 3, 10 ]}\nobreak
+\hyperdef{L}{X842C07F77CAD3BD1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MonotonePrimitiveElementsOfNumericalSemigroup({\mdseries\slshape S})\index{MonotonePrimitiveElementsOfNumericalSemigroup@\texttt{Monotone}\-\texttt{Primitive}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{MonotonePrimitiveElementsOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ The output is the set of elements $s$ in \mbox{\texttt{\mdseries\slshape S}} such that there exists a minimal solution to $msg\cdot x-msg\cdot y = 0$, such that $x,y$ are factorizations of $s$, with $|x|\le |y|$; $msg$ stands the minimal generating system of \mbox{\texttt{\mdseries\slshape S}}. These elements are used to compute the monotone catenary degree of \mbox{\texttt{\mdseries\slshape S}}. Requires NormalizInterface package. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@MonotonePrimitiveElementsOfNumericalSemigroup(s);|
+  [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+  
+                          
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MonotoneCatenaryDegreeOfNumericalSemigroup}}
+\logpage{[ 9, 3, 11 ]}\nobreak
+\hyperdef{L}{X7E0458187956C395}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MonotoneCatenaryDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{MonotoneCatenaryDegreeOfNumericalSemigroup@\texttt{Monotone}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{MonotoneCatenaryDegreeOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is the monotone catenary degree of \mbox{\texttt{\mdseries\slshape S}}. Requires NormalizInterface package. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,23,31,44);;|
+  !gapprompt@gap>| !gapinput@CatenaryDegreeOfNumericalSemigroup(s);|
+  9
+  !gapprompt@gap>| !gapinput@MonotoneCatenaryDegreeOfNumericalSemigroup(s);|
+  21
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{TameDegreeOfNumericalSemigroup}}
+\logpage{[ 9, 3, 12 ]}\nobreak
 \hyperdef{L}{X860BDF5B85975B73}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfNumericalSemigroup({\mdseries\slshape S})\index{TameDegreeOfNumericalSemigroup@\texttt{TameDegreeOfNumericalSemigroup}}
 \label{TameDegreeOfNumericalSemigroup}
@@ -3307,7 +3411,7 @@ same lenght). The output is the tame degree of this set of factorizations.
  
 
 \subsection{\textcolor{Chapter }{TameDegreeOfElementInNumericalSemigroup}}
-\logpage{[ 9, 3, 9 ]}\nobreak
+\logpage{[ 9, 3, 13 ]}\nobreak
 \hyperdef{L}{X8738B4F87E782ED2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{TameDegreeOfElementInNumericalSemigroup@\texttt{Tame}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{TameDegreeOfElementInNumericalSemigroup}
