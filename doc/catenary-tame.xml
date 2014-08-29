@@ -436,25 +436,7 @@ gap> MonotoneCatenaryDegreeOfSetOfFactorizations(last);
          </Description>
     </ManSection>
 
-    <ManSection>
-
-        <Func Arg="S" Name="CatenaryDegreeOfNumericalSemigroup"></Func>
-        <Description>
-            <A>S</A> is a numerical semigroup.
-            The output is the catenary degree of <A>S</A>.
-
-            <Example><![CDATA[
-gap> s:=NumericalSemigroup(101,113,196,272,278,286);
-<Numerical semigroup with 6 generators>
-gap> CatenaryDegreeOfNumericalSemigroup(s);
-8
-]]></Example>
-         </Description>
-    </ManSection>
-
-
-    <ManSection>
-
+<ManSection>
         <Func Arg="n, S" Name="CatenaryDegreeOfElementInNumericalSemigroup"></Func>
         <Description>
             <A>n</A> is a nonnegative integer and <A>S</A> is a numerical semigroup.
@@ -484,6 +466,93 @@ gap> TameDegreeOfSetOfFactorizations(last);
 ]]></Example>          
         </Description>
     </ManSection>
+
+    <ManSection>
+        <Func Arg="S" Name="CatenaryDegreeOfNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup.
+            The output is the catenary degree of <A>S</A>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,196,272,278,286);
+<Numerical semigroup with 6 generators>
+gap> CatenaryDegreeOfNumericalSemigroup(s);
+8
+]]></Example>
+         </Description>
+    </ManSection>
+
+                <ManSection>
+                    <Func Arg="S" Name="EqualPrimitiveElementsOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations with the same length of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. These elements are used to compute the equal catenary degree of <A>S</A>. Requires NormalizInterface package.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> BettiElementsOfNumericalSemigroup(s);
+[ 10, 12, 14 ]
+]]>
+                        </Example>          
+                        
+                        
+                    </Description>
+                </ManSection>
+
+
+    <ManSection>
+
+        <Func Arg="S" Name="EqualCatenaryDegreeOfNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup.
+            The output is the equal catenary degree of <A>S</A>. Requires NormalizInterface package.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
+[ 3, 5, 7, 10 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
+                <ManSection>
+                    <Func Arg="S" Name="MonotonePrimitiveElementsOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.
+                        <P/>
+                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, with <M>|x|\le |y|</M>; <M>msg</M> stands the minimal generating system of <A>S</A>. These elements are used to compute the monotone catenary degree of <A>S</A>. Requires NormalizInterface package.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MonotonePrimitiveElementsOfNumericalSemigroup(s);
+[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+]]>
+                        </Example>          
+                        
+                        
+                    </Description>
+                </ManSection>
+
+
+    <ManSection>
+
+        <Func Arg="S" Name="MonotoneCatenaryDegreeOfNumericalSemigroup"></Func>
+        <Description>
+            <A>S</A> is a numerical semigroup.
+            The output is the monotone catenary degree of <A>S</A>. Requires NormalizInterface package.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,23,31,44);;
+gap> CatenaryDegreeOfNumericalSemigroup(s);
+9
+gap> MonotoneCatenaryDegreeOfNumericalSemigroup(s);
+21
+]]></Example>
+         </Description>
+    </ManSection>
+
+
 
 
     <ManSection>

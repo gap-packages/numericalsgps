@@ -75,7 +75,26 @@
     [4X[28X                        [128X[104X
   [4X[32X[104X
   
-  [1X4.1-4 ShadedSetOfElementInNumericalSemigroup[101X
+  [1X4.1-4 PrimitiveElementsOfNumericalSemigroup[101X
+  
+  [29X[2XPrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThe  output  is  the set of elements [22Xs[122X in [3XS[103X such that there exists a minimal
+  solution  to  [22Xmsg⋅  x-msg⋅ y = 0[122X, such that [22Xx,y[122X are factorizations of [22Xs[122X, and
+  [22Xmsg[122X is the minimal generating system of [3XS[103X. Betti elements are primitive, but
+  not the way around in general.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XPrimitiveElementsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X                        [128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-5 ShadedSetOfElementInNumericalSemigroup[101X
   
   [29X[2XShadedSetOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   

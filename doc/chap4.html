@@ -32,7 +32,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7D8199858781EB41">4.1-1 MinimalPresentationOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X81CC5A6C870377E1">4.1-2 GraphAssociatedToElementInNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X836B6BF4853DB8E2">4.1-3 BettiElementsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C42DEB68285F2B8">4.1-4 ShadedSetOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X814717BB798E4E1E">4.1-4 PrimitiveElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C42DEB68285F2B8">4.1-5 ShadedSetOfElementInNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7D7EA20F818A5994">4.2 <span class="Heading">Uniquely Presented Numerical Semigroups</span></a>
 </span>
@@ -111,9 +112,26 @@
 
                         </pre></div>
 
+<p><a id="X814717BB798E4E1E" name="X814717BB798E4E1E"></a></p>
+
+<h5>4.1-4 PrimitiveElementsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>The output is the set of elements <span class="SimpleMath">s</span> in <var class="Arg">S</var> such that there exists a minimal solution to <span class="SimpleMath">msg⋅ x-msg⋅ y = 0</span>, such that <span class="SimpleMath">x,y</span> are factorizations of <span class="SimpleMath">s</span>, and <span class="SimpleMath">msg</span> is the minimal generating system of <var class="Arg">S</var>. Betti elements are primitive, but not the way around in general.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrimitiveElementsOfNumericalSemigroup(s);</span>
+[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+
+                        </pre></div>
+
 <p><a id="X7C42DEB68285F2B8" name="X7C42DEB68285F2B8"></a></p>
 
-<h5>4.1-4 ShadedSetOfElementInNumericalSemigroup</h5>
+<h5>4.1-5 ShadedSetOfElementInNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an element in <var class="Arg">S</var>.</p>
