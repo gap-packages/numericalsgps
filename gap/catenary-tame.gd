@@ -388,3 +388,42 @@ DeclareGlobalFunction("MonotoneCatenaryDegreeOfSetOfFactorizations");
 ##########################################################
 DeclareGlobalFunction("LShapesOfNumericalSemigroup");
 
+###########################################################################
+#F  MonotonePrimitiveElementsOfNumericalSemigroup(s)
+##
+## Computes the sets of elements in s, such that there exists a minimal 
+## solution to msg*x-msg*y = 0, |x|<=|y| such that x,y are factorizations of s
+## Used to compute the monotone catenary degree of the semigroup s
+##
+#############################################################################
+DeclareGlobalFunction("MonotonePrimitiveElementsOfNumericalSemigroup");
+
+###########################################################################
+#F  EqualPrimitiveElementsOfNumericalSemigroup(s)
+##
+## Computes the sets of elements in s, such that there exists a minimal 
+## solution to msg*x-msg*y = 0, |x|=|y| such that x,y are factorizations of s
+## Used to compute the equal catenary degree of the semigroup
+##
+#############################################################################
+DeclareGlobalFunction("EqualPrimitiveElementsOfNumericalSemigroup");
+
+####################################################################
+#F EqualCatenaryDegreeOfNumericalSemigroup(s) computes the 
+##  adjacent catenary degree of the numerical semigroup s
+##  the equal catenary degree is reached in the set of primitive
+##  elements of s (see [PH])
+####################################################################
+DeclareGlobalFunction("EqualCatenaryDegreeOfNumericalSemigroup");
+
+####################################################################
+#F MonotoneCatenaryDegreeOfNumericalSemigroup(s) computes the 
+##  adjacent catenary degree of the numerical semigroup s
+##  the monotone catenary degree is reached in the set of primitive
+##  elements of s (see [PH])
+####################################################################
+DeclareGlobalFunction("MonotoneCatenaryDegreeOfNumericalSemigroup");
+
+
+
+

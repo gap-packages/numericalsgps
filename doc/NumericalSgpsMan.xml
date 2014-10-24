@@ -184,6 +184,17 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
+<Chapter>
+	<Heading>
+		Affine semigroups
+	</Heading>
+
+	<#Include SYSTEM "affine.xml">
+
+</Chapter>
+
+
+
 </Body>
 
 <#Include SYSTEM "generalstuff.xml">

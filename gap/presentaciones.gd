@@ -104,3 +104,13 @@ DeclareGlobalFunction("IsGenericNumericalSemigroup");
 #############################################################################
 DeclareGlobalFunction("ShadedSetOfElementInNumericalSemigroup");
 
+############################################################################
+##
+#F  PrimitiveElementsOfNumericalSemigroup(s)
+##
+## Computes the sets of elements in s, such that there exists a minimal 
+## solution to msg*x-msg*y = 0,  such that x,y are factorizations of s
+##
+#############################################################################
+DeclareGlobalFunction("PrimitiveElementsOfNumericalSemigroup");
+
