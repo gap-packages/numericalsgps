@@ -271,8 +271,9 @@
       10.2-4 CurveAssociatedToDeltaSequence
   11 [33X[0;0YAffine semigroups[133X
     11.1 [33X[0;0YDefining affine semigroups[133X
-      11.1-1 HilbertBasisOfSystemOfHomogeneousEquations
-      11.1-2 HilbertBasisOfSystemOfHomogeneousInequalities
+      11.1-1 AffineSemigroup
+      11.1-2 HilbertBasisOfSystemOfHomogeneousEquations
+      11.1-3 HilbertBasisOfSystemOfHomogeneousInequalities
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence
