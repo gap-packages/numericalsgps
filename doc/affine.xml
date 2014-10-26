@@ -15,6 +15,29 @@ To use the functions in this chapter the user must load UNDER CONSTRUCTION (so f
     The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually).  
 
     If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are call full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and evenetualy some of them in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficiens of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
+<P/>
+
+                To create an affine semigroup in &GAP; the function
+                <C>AffineSemigroup</C> is used.
+                <ManSection>
+                    <Func Name="AffineSemigroup" Arg="Representation, List"/>
+                    <Description>
+                        <C>Representation</C>
+                        <P/>
+
+                        May be <C>"generators"</C>, <C>"minimalgenerators"</C> according to
+                        whether the semigroup is to be given by means of a system of generators, a 
+			minimal system of generators, ...
+<P/>
+                        When no string is given as first argument it is assumed that the numerical
+                        semigroup will be given by means of a set of generators.
+                        <P/>
+                        <Example><![CDATA[
+gap> AffineSemigroup([1,3],[7,2],[1,5]);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+]]></Example>
+         </Description>
+    </ManSection>
 
     <ManSection>
 
