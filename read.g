@@ -35,6 +35,10 @@ ReadPackage( "numericalsgps", "gap/catenary-tame.gi" );
 ReadPackage( "numericalsgps", "gap/contributions.gi" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gi" );
 ReadPackage( "numericalsgps", "gap/polynomials.gi" );
-
+##
+## Affine
+##
+ReadPackage( "numericalsgps", "gap/affine-def.gi" );
+ReadPackage( "numericalsgps", "gap/affine.gi" );
 
 #E  read.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
