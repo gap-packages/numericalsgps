@@ -2,7 +2,7 @@ if not TestPackageAvailability("NormalizInterface") = fail then
     LoadPackage("NormalizInterface");
 fi;
 ##
-if not TestPackageAvailability("4ti2") = fail then
+if not TestPackageAvailability("4ti2Interface") = fail then
     LoadPackage("4ti2");
 fi;
 ##
@@ -10,9 +10,9 @@ if not TestPackageAvailability("SingularInterface") = fail then
     LoadPackage("SingularInterface");  
 fi;
 ##
-if not TestPackageAvailability("libsing") = fail then
-    LoadPackage("libsing");
-fi;
+#if not TestPackageAvailability("libsing") = fail then
+#    LoadPackage("libsing");
+#fi;
 ##
 
 ##########################################################################
@@ -38,7 +38,7 @@ InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousEquations,
             Error("The second argument must be a lists of integers.");
 	fi;
         
-        if not(ForAll(ms,x->x>0)) then
+        if not(ForAll(md,x->x>0)) then
             Error("The second argument must be a list of positive integers");
         fi;
         
@@ -207,9 +207,9 @@ InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
         function(ls)
 
 	return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,ls)));
-end;
+end);
 
-PrimitiveElementsOfAffineSemigroup:=function(ls)
+InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup,function(ls)
     local dir, filename, exec, filestream, matrix,
 				 facs, mat, trunc;
 
