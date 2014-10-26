@@ -52,6 +52,9 @@ DeclareGlobalFunction("OmegaPrimalityOfElementInAffineSemigroup");
 ###########################################################################
 DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
 
+
+DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup");
+
 ###############################################################################
 #F PrimitiveElementsOfAffineSemigroup_Normaliz
 # An implementation of PrimitiveElementsOfAffineSemigroup using 
