@@ -17,41 +17,41 @@ To use the functions in this chapter the user must load UNDER CONSTRUCTION (so f
     If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are call full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and evenetualy some of them in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficiens of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
 <P/>
 
-                To create an affine semigroup in &GAP; the function
-                <C>AffineSemigroup</C> is used.
-                <ManSection>
-                    <Func Name="AffineSemigroup" Arg="Representation, List"/>
-                    <Description>
-                        <C>Representation</C>
-                        <P/>
-
-                        May be <C>"generators"</C>, <C>"minimalgenerators"</C> according to
-                        whether the semigroup is to be given by means of a system of generators, a 
-			minimal system of generators, ...
-<P/>
-                        When no string is given as first argument it is assumed that the numerical
-                        semigroup will be given by means of a set of generators.
-                        <P/>
-                        <Example><![CDATA[
+To create an affine semigroup in &GAP; the function
+<C>AffineSemigroup</C> is used.
+<ManSection>
+  <Func Name="AffineSemigroup" Arg="Representation, List"/>
+  <Description>
+    <C>Representation</C>
+    <P/>
+    
+    May be <C>"generators"</C>, <C>"minimalgenerators"</C> according to
+    whether the semigroup is to be given by means of a system of generators, a 
+    minimal system of generators, ...
+    <P/>
+    When no string is given as first argument it is assumed that the numerical
+    semigroup will be given by means of a set of generators.
+    <P/>
+    <Example><![CDATA[
 gap> AffineSemigroup([1,3],[7,2],[1,5]);
 <Affine semigroup in 2 dimensional space, with 3 generators>
 ]]></Example>
-         </Description>
-    </ManSection>
+  </Description>
+</ManSection>
 
-    <ManSection>
+<ManSection>
+  
+  <Func Arg="ls, m" Name="HilbertBasisOfSystemOfHomogeneousEquations"></Func>
+  <Description>
+    <A>ls</A> is a list of lists of integers and <A>m</A> a list of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.  
+    The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the sytem <M>Ax=0</M> where the <M>k</M> first equations are in the congruences modulo <A>m[i]</A>, with <M>k</M> the length of <A>m</A>.
 
-        <Func Arg="ls, m" Name="HilbertBasisOfSystemOfHomogeneousEquations"></Func>
-        <Description>
-            <A>ls</A> is a list of lists of integers and <A>m</A> a list of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.  
-            The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the sytem <M>Ax=0</M> where the <M>k</M> first equations are in the congruences modulo <A>m[i]</A>, with <M>k</M> the length of <A>m</A>.
-
-            <Example><![CDATA[
+    <Example><![CDATA[
 gap> HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);
 [ [ 2, 0, 0 ], [ 1, 1, 1 ], [ 0, 2, 2 ] ]
 ]]></Example>
-         </Description>
-    </ManSection>
+  </Description>
+</ManSection>
 
 If <M>C</M> is a pointed cone (a cone in <M>\mathbb Q^k</M> not containing lines and <M>0\in C</M>), then <M>S=C\cap \mathbb N^k</M> is an affine semigroup (known as normal affine semigroup). So another way to give an affine semigroup is by a set of homogeneous inequalities, and we can represent these inequalities by its coefficients. If we put them in a matrix <M>S</M> can be defined as the set of nonnegative integer solutions to <M>Ax\ge 0</M>.
 
@@ -70,81 +70,98 @@ gap> HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);
 </ManSection>
 
 
+  <ManSection>
+    <Func Arg="v, ls" Name="BelongsToAffineSemigroup"></Func>
+    <Description>
+      <A>v</A> is a list of nonnegative integers and <A>a</A> an affine semigroup.   
+      Returns true if the vector is in the semigroup, and false otherwise.
+      
+      <Example><![CDATA[
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> BelongsToAffineSemigroup([5,5],a);
+true
+gap> BelongsToAffineSemigroup([1,2],a);
+false
+]]></Example>
+    </Description>
+  </ManSection>
+
+
 </Section>
 
 <Section>
-    <Heading>
-        Presentations of affine semigroups
-    </Heading>
+  <Heading>
+    Presentations of affine semigroups
+  </Heading>
 
-    A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups.
+  A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups.
 
 
-<ManSection>
-  <Func Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Func>
-  <Description>
-    <A>a</A> is a affine semigroup.  
-            The output is a minimal presentation for <A>a</A>.
-
-            <Example><![CDATA[
+  <ManSection>
+    <Func Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is a affine semigroup.  
+      The output is a minimal presentation for <A>a</A>.
+      
+      <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> MinimalPresentationOfAffineSemigroup(a);
 [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 ]]></Example>
-  </Description>
-</ManSection>
+    </Description>
+  </ManSection>
 
-<ManSection>
-  <Func Arg="a" Name="BettiElementsOfAffineSemigroup"></Func>
-  <Description>
-    <A>a</A> is a affine semigroup.  
-            The output is the set of Betti elements of <A>a</A> (defined as for numerical semigroups).
+  <ManSection>
+    <Func Arg="a" Name="BettiElementsOfAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is a affine semigroup.  
+      The output is the set of Betti elements of <A>a</A> (defined as for numerical semigroups).
 
-            <Example><![CDATA[
+      <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> BettiElementsOfAffineSemigroup(a);
 [ [ 2, 2 ] ]
 ]]></Example>
-  </Description>
-</ManSection>
+    </Description>
+  </ManSection>
 
 
-<ManSection>
-  <Func Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Func>
-  <Description>
-    <A>a</A> is a affine semigroup.  
-            The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
+  <ManSection>
+    <Func Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is a affine semigroup.  
+      The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
 
-            <Example><![CDATA[
+      <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> PrimitiveElementsOfAffineSemigroup(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
 ]]></Example>
-  </Description>
-</ManSection>
-
+    </Description>
+  </ManSection>
+  
 </Section>
 
 
 <Section>
-    <Heading>
-        Factorizations in affine semigroups
-    </Heading>
+  <Heading>
+    Factorizations in affine semigroups
+  </Heading>
 
-The invariants presented here are defined as for numerical semigroups. 
+  The invariants presented here are defined as for numerical semigroups. 
 
-<ManSection>
-  <Func Arg="v, ls" Name="FactorizationsVectorWRTList"></Func>
-  <Description>
-    <A>v</A> is a list of nonnegative integers and <A>ls</A> is a list of lists of nonnegative integers.   
-            The output is set of factorizations of <A>v</A> in terms of the elements of <A>ls</A>.
-
-            <Example><![CDATA[
+  <ManSection>
+    <Func Arg="v, ls" Name="FactorizationsVectorWRTList"></Func>
+    <Description>
+      <A>v</A> is a list of nonnegative integers and <A>ls</A> is a list of lists of nonnegative integers.   
+      The output is set of factorizations of <A>v</A> in terms of the elements of <A>ls</A>.
+      
+      <Example><![CDATA[
 gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
 [ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
 ]]></Example>
-  </Description>
-</ManSection>
+    </Description>
+  </ManSection>
 
 
 <ManSection>
