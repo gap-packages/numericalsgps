@@ -3932,6 +3932,182 @@ nonnegative integer solutions to $Ax\ge 0$.
 
  }
 
+ 
+\section{\textcolor{Chapter }{ Presentations of affine semigroups }}\logpage{[ 11, 2, 0 ]}
+\hyperdef{L}{X86A1018D7CB7BA81}{}
+{
+  A minimal presentation of an affine semigoup is defined analogously as for
+numerical semigroups. 
+
+\subsection{\textcolor{Chapter }{MinimalPresentationOfAffineSemigroup}}
+\logpage{[ 11, 2, 1 ]}\nobreak
+\hyperdef{L}{X7BCA9C077F76920E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalPresentationOfAffineSemigroup({\mdseries\slshape a})\index{MinimalPresentationOfAffineSemigroup@\texttt{Minimal}\-\texttt{Presentation}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
+\label{MinimalPresentationOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is a minimal presentation for \mbox{\texttt{\mdseries\slshape a}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);|
+  [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{BettiElementsOfAffineSemigroup}}
+\logpage{[ 11, 2, 2 ]}\nobreak
+\hyperdef{L}{X7C20CE97840ECF8E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElementsOfAffineSemigroup({\mdseries\slshape a})\index{BettiElementsOfAffineSemigroup@\texttt{BettiElementsOfAffineSemigroup}}
+\label{BettiElementsOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the set of Betti elements of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@BettiElementsOfAffineSemigroup(a);|
+  [ [ 2, 2 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{PrimitiveElementsOfAffineSemigroup}}
+\logpage{[ 11, 2, 3 ]}\nobreak
+\hyperdef{L}{X86EB7A9A8250E6DB}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveElementsOfAffineSemigroup({\mdseries\slshape a})\index{PrimitiveElementsOfAffineSemigroup@\texttt{PrimitiveElementsOfAffineSemigroup}}
+\label{PrimitiveElementsOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the set of primitive elements of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@PrimitiveElementsOfAffineSemigroup(a);|
+  [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
+\end{Verbatim}
+ }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{ Factorizations in affine semigroups }}\logpage{[ 11, 3, 0 ]}
+\hyperdef{L}{X80A934B0826E21A6}{}
+{
+  The invariants presented here are defined as for numerical semigroups. 
+
+\subsection{\textcolor{Chapter }{FactorizationsVectorWRTList}}
+\logpage{[ 11, 3, 1 ]}\nobreak
+\hyperdef{L}{X8780C7E5830B9AE2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FactorizationsVectorWRTList({\mdseries\slshape v, ls})\index{FactorizationsVectorWRTList@\texttt{FactorizationsVectorWRTList}}
+\label{FactorizationsVectorWRTList}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape v}} is a list of nonnegative integers and \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of nonnegative integers. The output is set of
+factorizations of \mbox{\texttt{\mdseries\slshape v}} in terms of the elements of \mbox{\texttt{\mdseries\slshape ls}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);|
+  [ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ElasticityOfAffineSemigroup}}
+\logpage{[ 11, 3, 2 ]}\nobreak
+\hyperdef{L}{X7D6B4FB38376C278}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ElasticityOfAffineSemigroup({\mdseries\slshape a})\index{ElasticityOfAffineSemigroup@\texttt{ElasticityOfAffineSemigroup}}
+\label{ElasticityOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the elasticity of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@ElasticityOfAffineSemigroup(a);|
+  1
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{CatenaryDegreeOfAffineSemigroup}}
+\logpage{[ 11, 3, 3 ]}\nobreak
+\hyperdef{L}{X8718FF377C186106}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{CatenaryDegreeOfAffineSemigroup@\texttt{CatenaryDegreeOfAffineSemigroup}}
+\label{CatenaryDegreeOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the catenary degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@CatenaryDegreeOfAffineSemigroup(a);|
+  2
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{TameDegreeOfAffineSemigroup}}
+\logpage{[ 11, 3, 4 ]}\nobreak
+\hyperdef{L}{X7B42B3B17D08FE1D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfAffineSemigroup({\mdseries\slshape a})\index{TameDegreeOfAffineSemigroup@\texttt{TameDegreeOfAffineSemigroup}}
+\label{TameDegreeOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the tame degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@TameDegreeOfAffineSemigroup(a);|
+  2
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{OmegaPrimalityOfElementInAffineSemigroup}}
+\logpage{[ 11, 3, 5 ]}\nobreak
+\hyperdef{L}{X7F32723C860EA4B2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfElementInAffineSemigroup({\mdseries\slshape v, a})\index{OmegaPrimalityOfElementInAffineSemigroup@\texttt{Omega}\-\texttt{Primality}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Affine}\-\texttt{Semigroup}}
+\label{OmegaPrimalityOfElementInAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape v}} is a list of nonnegative integers and \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the omega primality of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). Returns 0 if the element is not in the
+semigroup. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@OmegaPrimalityOfElementInAffineSemigroup([5,5],a);|
+  6
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{OmegaPrimalityOfAffineSemigroup}}
+\logpage{[ 11, 3, 6 ]}\nobreak
+\hyperdef{L}{X78DC427283B3C6FC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfAffineSemigroup({\mdseries\slshape a})\index{OmegaPrimalityOfAffineSemigroup@\texttt{OmegaPrimalityOfAffineSemigroup}}
+\label{OmegaPrimalityOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the omega primality of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@OmegaPrimalityOfAffineSemigroup(a);|
+  2
+\end{Verbatim}
+ }
+
+ }
+
  }
 
  
