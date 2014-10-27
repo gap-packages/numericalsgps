@@ -106,7 +106,7 @@ DeclareGlobalFunction("MinimalPresentationOfAffineSemigroup");
 DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup");
 
 ###############################################################################
-#F 
-#
+#F BelongsToAffineSemogroup
+# Determines if the vector v is in the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("");
+DeclareGlobalFunction("BelongsToAffineSemigroup");
