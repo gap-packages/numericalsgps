@@ -9,11 +9,6 @@ fi;
 if not TestPackageAvailability("SingularInterface") = fail then
     LoadPackage("SingularInterface");  
 fi;
-##
-#if not TestPackageAvailability("libsing") = fail then
-#    LoadPackage("libsing");
-#fi;
-##
 
 ##########################################################################
 # Computes the Hilbert basis of the system A X=0 mod md, where the rows
@@ -540,3 +535,32 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
 end);
 
 
+#
+#
+#
+InstallGlobalFunction(BelongsToAffineSemigroup,
+        function(v,a)
+    local belongs, gen;
+    
+      #determines if an element x is in the affine semigroup 
+      # spanned by gen
+      belongs:=function(x,gen)
+	if gen=[] then 
+            return false;
+	fi;
+
+	if ForAll(x,i->i=0) then
+            return true;
+	fi;
+
+	if ForAny(x,i->i<0) then
+            return false;
+	fi;
+
+	return belongs(x-gen[1],gen) or belongs(x,gen{[2..Length(gen)]});
+    end;
+
+    gen:=GeneratorsAS(a);
+    return belongs(v,gen);
+    
+end);
