@@ -18,69 +18,68 @@ fi;
 # to be homogeneous linear Diophantine equations
 # REQUERIMENTS: NormalizInterface
 ##########################################################################
-InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousEquations,
-        function(ls,md)
-	local matcong, cone, ncong, ncoord, nequ, matfree;
-
-	if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
-		Error("The arguments must be homogeneous lists.");
-	fi;
-
-	if not(ForAll(ls,IsListOfIntegersNS)) then 
-		Error("The first argument must be a list of lists of integers.");
-	fi;
+InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousEquations,function(ls,md)
+    local matcong, cone, ncong, ncoord, nequ, matfree;
+    
+    if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
+        Error("The arguments must be homogeneous lists.");
+    fi;
+    
+    if not(ForAll(ls,IsListOfIntegersNS)) then 
+        Error("The first argument must be a list of lists of integers.");
+    fi;
+    
+    if not(IsListOfIntegersNS(md)) then 
+        Error("The second argument must be a lists of integers.");
+    fi;
+    
+    if not(ForAll(md,x->x>0)) then
+        Error("The second argument must be a list of positive integers");
+    fi;
+    
+    if not(Length(Set(ls, Length))=1) then
+        Error("The first argument must be a list of lists all with the same length.");
+    fi;
         
-        if not(IsListOfIntegersNS(md)) then 
-            Error("The second argument must be a lists of integers.");
-	fi;
-        
-        if not(ForAll(md,x->x>0)) then
-            Error("The second argument must be a list of positive integers");
-        fi;
-        
-	if not(Length(Set(ls, Length))=1) then
-		Error("The first argument must be a list of lists all with the same length.");
-	fi;
-
-	ncong:=Length(md);
-        nequ:=Length(ls);
-        ncoord:=Length(ls[1]);
-	matcong:=[];
-	matfree:=[];
-
-	if ncoord=0 then
-            return [];
-	fi;
-
-	if ncong>0 and not(IsListOfIntegersNS(md)) then
-            Error("The second argument must be either an empty list or a list of integers");
-	fi;
-
-	if ncong>nequ then
-            Error("More mudulus than equations");
-	fi;
-
-	if nequ>ncong and ncong>0 then 
-		matcong:=ls{[1..ncong]};
-		matcong:=TransposedMat(
-                                 Concatenation(TransposedMat(matcong),[md]));
-		matfree:=ls{[ncong+1..nequ]};
-		cone:=NmzCone(["congruences",matcong,"equations",matfree]);
-	fi;
-
-	if nequ=ncong then
-            matcong:=TransposedMat(Concatenation(
-                             TransposedMat(ls),[md]));
-            cone:=NmzCone(["congruences",matcong]);
-	fi;
-	if ncong=0 then
-            matfree:=ls;
-            cone:=NmzCone(["equations",matfree]);		
-	fi;
-
-	NmzCompute(cone,"DualMode"); 	
-
-	return NmzHilbertBasis(cone);
+    ncong:=Length(md);
+    nequ:=Length(ls);
+    ncoord:=Length(ls[1]);
+    matcong:=[];
+    matfree:=[];
+    
+    if ncoord=0 then
+        return [];
+    fi;
+    
+    if ncong>0 and not(IsListOfIntegersNS(md)) then
+        Error("The second argument must be either an empty list or a list of integers");
+    fi;
+    
+    if ncong>nequ then
+        Error("More mudulus than equations");
+    fi;
+    
+    if nequ>ncong and ncong>0 then 
+        matcong:=ls{[1..ncong]};
+        matcong:=TransposedMat(
+                         Concatenation(TransposedMat(matcong),[md]));
+        matfree:=ls{[ncong+1..nequ]};
+        cone:=NmzCone(["congruences",matcong,"equations",matfree]);
+    fi;
+    
+    if nequ=ncong then
+        matcong:=TransposedMat(Concatenation(
+                         TransposedMat(ls),[md]));
+        cone:=NmzCone(["congruences",matcong]);
+    fi;
+    if ncong=0 then
+        matfree:=ls;
+        cone:=NmzCone(["equations",matfree]);		
+    fi;
+    
+    NmzCompute(cone,"DualMode"); 	
+    
+    return NmzHilbertBasis(cone);
 end);
 
 ##########################################################################
@@ -90,30 +89,30 @@ end);
 ##########################################################################
 InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousInequalities,
         function(ls)
-	local cone,  ncoord;
-
-	if not(IsHomogeneousList(ls)) then
-		Error("The argument must be a homogeneous lists.");
-	fi;
-
-	if not(ForAll(ls,IsListOfIntegersNS)) then 
-		Error("The argument must be a list of lists of integers.");
-	fi;
-
-	if not(Length(Set(ls, Length))=1) then
-		Error("The first argument must be a list of lists all with the same length.");
-	fi;
-
-	ncoord:=Length(ls[1]);
-
-	if ncoord=0 then
-		return [];
-	fi;
-
-        cone:=NmzCone(["inequalities",ls]);
-	NmzCompute(cone,"DualMode"); 	
-
-	return NmzHilbertBasis(cone);
+    local cone,  ncoord;
+    
+    if not(IsHomogeneousList(ls)) then
+        Error("The argument must be a homogeneous lists.");
+    fi;
+    
+    if not(ForAll(ls,IsListOfIntegersNS)) then 
+        Error("The argument must be a list of lists of integers.");
+    fi;
+    
+    if not(Length(Set(ls, Length))=1) then
+        Error("The first argument must be a list of lists all with the same length.");
+    fi;
+    
+    ncoord:=Length(ls[1]);
+    
+    if ncoord=0 then
+        return [];
+    fi;
+    
+    cone:=NmzCone(["inequalities",ls]);
+    NmzCompute(cone,"DualMode"); 	
+    
+    return NmzHilbertBasis(cone);
 end);
 
 
@@ -127,32 +126,32 @@ end);
 ########################################################################
 InstallGlobalFunction(FactorizationsVectorWRTList,
         function(v,ls)
-	local mat, cone, n, facs;
+    local mat, cone, n, facs;
+    
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,[-v]));
+    
+    if not(IsHomogeneousList(mat)) then
+        Error("The arguments must be homogeneous lists.");
+    fi;
+    
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    
+    if not(ForAll(ls,IsListOfIntegersNS)) then 
+        Error("The second argument must be a list of lists of integers.");
+    fi;
+    
+    if not(Length(Set(mat, Length))=1) then
+        Error("All lists must in the second argument have the same length as the first argument.");
+    fi;
+
 	
-	n:=Length(ls);
-	mat:=TransposedMat(Concatenation(ls,[-v]));
-
-	if not(IsHomogeneousList(mat)) then
-		Error("The arguments must be homogeneous lists.");
-	fi;
-
-	if not(IsListOfIntegersNS(v)) then
-		Error("The first argument must be a list of integers.");
-	fi;
-
-	if not(ForAll(ls,IsListOfIntegersNS)) then 
-		Error("The second argument must be a list of lists of integers.");
-	fi;
-
-	if not(Length(Set(mat, Length))=1) then
-		Error("All lists must in the second argument have the same length as the first argument.");
-	fi;
-
-	
-	cone:=NmzCone(["inhom_equations",mat]);
-	NmzCompute(cone,"DualMode"); 	
-	facs:=List(NmzConeProperty(cone,"ModuleGenerators"), f->f{[1..n]});
-	return facs;
+    cone:=NmzCone(["inhom_equations",mat]);
+    NmzCompute(cone,"DualMode"); 	
+    facs:=List(NmzConeProperty(cone,"ModuleGenerators"), f->f{[1..n]});
+    return facs;
 end);
 
 #####################################################################
@@ -162,42 +161,42 @@ end);
 
 InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup,
         function(v,a)
-	local mat, cone, n, hom, par, tot, le, ls;
-
+    local mat, cone, n, hom, par, tot, le, ls;
+    
     le:=function(a,b)  #ordinary partial order
     	return ForAll(b-a,x-> x>=0);
-	end;
-
-	if not(IsAffineSemigroup(a)) then
-		Error("The second argument must be an affine semigroup");
-	fi;
-
-	if not(IsListOfIntegersNS(v)) then
-		Error("The first argument must be a list of integers.");
-	fi;
-
-	if not(ForAll(v, x-> x>=0)) then
-		Error("The first argument must be a list of on nonnegative integers.");		
-	fi;
-	
-	ls:=GeneratorsAS(a);
-	n:=Length(ls);
-	mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
-
-	if not(IsHomogeneousList(mat)) then
-		Error("The first argument has not the dimension of the second.");
-	fi;
-
-	cone:=NmzCone(["inhom_equations",mat]);
-	NmzCompute(cone,"DualMode"); 	
-	par:=Set(NmzModuleGenerators(cone), f->f{[1..n]});
-	tot:=Filtered(par, f-> Filtered(par, g-> le(g,f))=[f]);
-	Info(InfoNumSgps,2,"Minimals of v+ls =",tot);
-        if tot=[] then 
-            return 0;      
-        fi;
+    end;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The second argument must be an affine semigroup");
+    fi;
         
-	return Maximum(Set(tot, Sum));
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    
+    if not(ForAll(v, x-> x>=0)) then
+        Error("The first argument must be a list of on nonnegative integers.");		
+    fi;
+	
+    ls:=GeneratorsAS(a);
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
+
+    if not(IsHomogeneousList(mat)) then
+        Error("The first argument has not the dimension of the second.");
+    fi;
+    
+    cone:=NmzCone(["inhom_equations",mat]);
+    NmzCompute(cone,"DualMode"); 	
+    par:=Set(NmzModuleGenerators(cone), f->f{[1..n]});
+    tot:=Filtered(par, f-> Filtered(par, g-> le(g,f))=[f]);
+    Info(InfoNumSgps,2,"Minimals of v+ls =",tot);
+    if tot=[] then 
+        return 0;      
+    fi;
+    
+    return Maximum(Set(tot, Sum));
 end);
 
 ######################################################################
@@ -207,15 +206,15 @@ end);
 
 InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
         function(a)
-	local ls;
+    local ls;
 
-
-	if not(IsAffineSemigroup(a)) then
-		Error("The argument must be an affine semigroup");
-	fi;
-
-	ls:=GeneratorsAS(a);
-	return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsAS(a);
+    return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
 end);
 
 ######################################################################
@@ -265,21 +264,21 @@ end);
 #labelled Normaliz, since this one is slower than with 4ti2
 InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup,
         function(a)
-	local mat, n, cone, facs, ls;
+    local mat, n, cone, facs, ls;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
 
-	if not(IsAffineSemigroup(a)) then
-		Error("The argument must be an affine semigroup");
-	fi;
-
-	ls:=GeneratorsAS(a);
-
-	n:=Length(ls);
-	mat:=TransposedMat(Concatenation(ls,-ls));
-	cone:=NmzCone(["equations",mat]);
-	NmzCompute(cone,"DualMode"); 	
-	facs:=Set(NmzHilbertBasis(cone), f->f{[1..n]});
-	
-	return Set(facs, f->f*ls);	
+    ls:=GeneratorsAS(a);
+    
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,-ls));
+    cone:=NmzCone(["equations",mat]);
+    NmzCompute(cone,"DualMode"); 	
+    facs:=Set(NmzHilbertBasis(cone), f->f{[1..n]});
+    
+    return Set(facs, f->f*ls);	
 end);
 
 #####################################################################
@@ -289,29 +288,29 @@ end);
 
 InstallGlobalFunction(TameDegreeOfAffineSemigroup,
         function(a)
-	local prim, tams, p, max, ls;
-
-	if not(IsAffineSemigroup(a)) then
-		Error("The argument must be an affine semigroup");
-	fi;
-
-	ls:=GeneratorsAS(a);
-
-	Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
-	prim:=PrimitiveElementsOfAffineSemigroup(a);
-	Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
-	max:=0;
-	for p in prim do
-		Info(InfoNumSgps,2,"Computing the tame degree of ",p);
-		tams:=TameDegreeOfSetOfFactorizations(
-				FactorizationsVectorWRTList(p,ls));
-		Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
-		if tams>max then
-			max:=tams;
-		fi;
-	od;
-
-	return max;
+    local prim, tams, p, max, ls;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsAS(a);
+        
+    Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
+    prim:=PrimitiveElementsOfAffineSemigroup(a);
+    Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
+    max:=0;
+    for p in prim do
+        Info(InfoNumSgps,2,"Computing the tame degree of ",p);
+        tams:=TameDegreeOfSetOfFactorizations(
+                      FactorizationsVectorWRTList(p,ls));
+        Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
+        if tams>max then
+            max:=tams;
+        fi;
+    od;
+    
+    return max;
 end);
 
 #####################################################################
@@ -320,22 +319,22 @@ end);
 #####################################################################
 InstallGlobalFunction(ElasticityOfAffineSemigroup,
         function(a)
-	local mat, n, cone, facs, ls;
+    local mat, n, cone, facs, ls;
+    
 
-
-	if not(IsAffineSemigroup(a)) then
-		Error("The argument must be an affine semigroup");
-	fi;
-
-	ls:=GeneratorsAS(a);
-
-	n:=Length(ls);
-	mat:=TransposedMat(Concatenation(ls,-ls));
-	cone:=NmzCone(["equations",mat]);
-	NmzCompute(cone,"DualMode"); 	
-	facs:=Set(NmzHilbertBasis(cone), f->[f{[1..n]},f{[n+1..2*n]}]);
-	
-	return Maximum(Set(facs, y->Sum(y[1])/Sum(y[2])));
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsAS(a);
+    
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,-ls));
+    cone:=NmzCone(["equations",mat]);
+    NmzCompute(cone,"DualMode"); 	
+    facs:=Set(NmzHilbertBasis(cone), f->[f{[1..n]},f{[n+1..2*n]}]);
+    
+    return Maximum(Set(facs, y->Sum(y[1])/Sum(y[2])));
 end);
 
 #########
@@ -454,57 +453,57 @@ InstallGlobalFunction(MinimalPresentationOfAffineSemigroup,
 		R,id, ie, vars, mingen, exps, bintopair, dim, zero, ls;
 
 
-	if not(IsAffineSemigroup(a)) then
-		Error("The argument must be an affine semigroup");
-	fi;
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsAS(a);
 
-	ls:=GeneratorsAS(a);
-
-
-	##computes the s degree of a pol in the semigroup ideal 
-        sdegree:=function(r) 
-            local exp;
-            exp:=_SI_Plistintvec(SI_leadexp(SI_leadmonom(r)));
-            return exp*msg;
-        end;
-
-	#tanslates binomial to pair of exponents
-	bintopair:=function(p)
-            local m1,m2, d1, d2;
-            m1:=p[1];#SI_leadmonom(p);
-            m2:=p[2];#m1-p;
-            d1:=_SI_Plistintvec(SI_leadexp(m1)); 
-            d2:=_SI_Plistintvec(SI_leadexp(m2));
-            return [d1{[1..ed]},d2{[1..ed]}];
-	end;
-
-        msg:=ls; #for now we do not check minimality of the generators
-        ed:=Length(msg);
-	if ed=0 then 
-            return [];
-	fi;
-	zero:=List([1..ed],_->0);
-	dim:=Length(ls[1]);
-	vars:=List([1..ed+dim],i->Concatenation("x",String(i)));
-	R:=SI_ring(0,vars,[["wp",List(msg, m->Sum(m))],["dp",dim]]);
-	p:=List([1..ed], i->SI_var(R,i)-
-		SI_monomial(R,SI_intvec(Concatenation(zero,msg[i]))));
-	id:=SI_ideal(p);
-	Info(InfoNumSgps,2,"Eliminating the variables ", Product(List([1..dim],i-> SI_var(R,ed+i))),
-             " from the ideal ", id);
-	ie:= SI_eliminate(id, Product(List([1..dim],i-> SI_var(R,ed+i)) ));	
-	Info(InfoNumSgps,2,"and we obtain ",ie);
-	vars:=vars{[1..ed]};
-	R:=SI_ring(0,vars,[["wp",List(msg, m->Sum(m))]]);
-	p:=[];
-	for i in [1..SI_ncols(ie)] do
-            exps:=bintopair(ie[i]);
-            Add( p, SI_monomial(R,SI_intvec(exps[1]))-
-                 SI_monomial(R,SI_intvec(exps[2]))); 
-	od;
-	id:=SI_ideal(p);
-	mingen:=SI_minbase(id);
-        return Set([1..SI_ncols(mingen)],i->bintopair(mingen[i]));
+            
+    ##computes the s degree of a pol in the semigroup ideal 
+    sdegree:=function(r) 
+        local exp;
+        exp:=_SI_Plistintvec(SI_leadexp(SI_leadmonom(r)));
+        return exp*msg;
+    end;
+    
+    #tanslates binomial to pair of exponents
+    bintopair:=function(p)
+        local m1,m2, d1, d2;
+        m1:=p[1];#SI_leadmonom(p);
+        m2:=p[2];#m1-p;
+        d1:=_SI_Plistintvec(SI_leadexp(m1)); 
+        d2:=_SI_Plistintvec(SI_leadexp(m2));
+        return [d1{[1..ed]},d2{[1..ed]}];
+    end;
+    
+    msg:=ls; #for now we do not check minimality of the generators
+    ed:=Length(msg);
+    if ed=0 then 
+        return [];
+    fi;
+    zero:=List([1..ed],_->0);
+    dim:=Length(ls[1]);
+    vars:=List([1..ed+dim],i->Concatenation("x",String(i)));
+    R:=SI_ring(0,vars,[["wp",List(msg, m->Sum(m))],["dp",dim]]);
+    p:=List([1..ed], i->SI_var(R,i)-
+            SI_monomial(R,SI_intvec(Concatenation(zero,msg[i]))));
+    id:=SI_ideal(p);
+    Info(InfoNumSgps,2,"Eliminating the variables ", Product(List([1..dim],i-> SI_var(R,ed+i))),
+         " from the ideal ", id);
+    ie:= SI_eliminate(id, Product(List([1..dim],i-> SI_var(R,ed+i)) ));	
+    Info(InfoNumSgps,2,"and we obtain ",ie);
+    vars:=vars{[1..ed]};
+    R:=SI_ring(0,vars,[["wp",List(msg, m->Sum(m))]]);
+    p:=[];
+    for i in [1..SI_ncols(ie)] do
+        exps:=bintopair(ie[i]);
+        Add( p, SI_monomial(R,SI_intvec(exps[1]))-
+             SI_monomial(R,SI_intvec(exps[2]))); 
+    od;
+    id:=SI_ideal(p);
+    mingen:=SI_minbase(id);
+    return Set([1..SI_ncols(mingen)],i->bintopair(mingen[i]));
 end);
 
 ######################################################################
@@ -513,54 +512,191 @@ end);
 ######################################################################
 InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
         function(a)
-	local betti, b, max, c, ls;
-	if not(IsAffineSemigroup(a)) then
-		Error("The argument must be an affine semigroup");
-	fi;
+    local betti, b, max, c, ls;
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsAS(a);
 
-	ls:=GeneratorsAS(a);
-
-	Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
-	betti:=BettiElementsOfAffineSemigroup(a);
-	Info(InfoNumSgps,2,"The Betti elements are ",betti);
-	max:=0;
-	for b in betti do
-		Info(InfoNumSgps,2,"Computing the catenary degree of ",b);
-		c:=CatenaryDegreeOfSetOfFactorizations(
-			FactorizationsVectorWRTList(b,ls));
-		Info(InfoNumSgps,2,"which equals ",c);
-		if c>max then max:=c; fi;	
-	od;
-	return max;
+    Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
+    betti:=BettiElementsOfAffineSemigroup(a);
+    Info(InfoNumSgps,2,"The Betti elements are ",betti);
+    max:=0;
+    for b in betti do
+        Info(InfoNumSgps,2,"Computing the catenary degree of ",b);
+        c:=CatenaryDegreeOfSetOfFactorizations(
+                   FactorizationsVectorWRTList(b,ls));
+        Info(InfoNumSgps,2,"which equals ",c);
+        if c>max then max:=c; fi;	
+    od;
+    return max;
 end);
 
 
+####################################################################
+# Decides if the vector v belongs to the affine semigroup a
 #
-#
-#
-InstallGlobalFunction(BelongsToAffineSemigroup,
-        function(v,a)
+####################################################################
+InstallGlobalFunction(BelongsToAffineSemigroup,function(v,a)
     local belongs, gen;
     
       #determines if an element x is in the affine semigroup 
       # spanned by gen
-      belongs:=function(x,gen)
+    belongs:=function(x,gen)
 	if gen=[] then 
             return false;
 	fi;
-
+        
 	if ForAll(x,i->i=0) then
             return true;
 	fi;
-
+        
 	if ForAny(x,i->i<0) then
             return false;
 	fi;
-
+        
 	return belongs(x-gen[1],gen) or belongs(x,gen{[2..Length(gen)]});
     end;
-
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The first argument must be an affine semigroup.");
+    fi;
+        
     gen:=GeneratorsAS(a);
+    if not(IsMatrix(Concatenation(gen,[v]))) then
+        Error("The dimension of the vector and the affine semigroup do not coincide.");
+    fi;
+      
     return belongs(v,gen);
     
+end);
+
+#############################################################
+# Computes a basis of a subgroup of Z^n with defining equations 
+# Ax =0 \in Z_m1\times\Z_mt \times Z^k, k is n-length(m),
+# m=[m1,...,mt]
+#############################################################
+InstallGlobalFunction(BasisOfGroupGivenByEquations,function(A,m)
+    local n,r, AA, i, er, b, homEqToBasis;
+    
+    # Compute a basis of a subgroup of Z^n with defining equations Ax=0
+    homEqToBasis:=function(A)
+	local snf, b, r, n;
+	snf:= SmithNormalFormIntegerMatTransforms(A);
+	r:=snf.rank;
+	n:=Length(A[1]);
+	b:=TransposedMat(snf.coltrans);
+	return b{[r+1..n]};
+    end;
+
+    
+    if not(IsMatrix(A)) then
+        Error("The first argument must be a matrix.");
+    fi;
+    if not(IsInt(A[1][1])) then
+        Error("The first argument must be a matrix of integers.");
+    fi;
+        
+    if not(IsListOfIntegersNS(m)) then 
+        Error("The second argument must be a lists of integers.");
+    fi;
+    
+    if not(ForAll(m,x->x>0)) then
+        Error("The second argument must be a list of positive integers");
+    fi;
+    
+    n:=Length(A[1]);
+    r:=Length(A);
+    AA:=ShallowCopy(TransposedMat(A));
+    er:=List([1..r],_->0);
+    for i in [1..Length(m)] do
+        if m[i]<>0 then
+            er[i]:=m[i];
+            Add(AA,ShallowCopy(er));
+            er[i]:=0;
+        fi;
+    od;
+    AA:=TransposedMat(AA);
+
+    b:=TransposedMat(homEqToBasis(AA));
+
+    b:=b{[1..n]};
+    return LLLReducedBasis(TransposedMat(b)).basis;
+end);
+
+#############################################################
+#  Computes the defining equations of the group of Z^n 
+#  generated by M
+#  the output is [A,m] such that Ax=0 mod m are the equations
+############################################################
+InstallGlobalFunction(EquationsOfGroupGeneratedBy,function(M)
+    local A, m, snf, nones;    
+
+    if not(IsMatrix(M)) then
+        Error("The first argument must be a matrix.");
+    fi;
+    if not(IsInt(M[1][1])) then
+        Error("The first argument must be a matrix of integers.");
+    fi;
+        
+    snf:=SmithNormalFormIntegerMatTransforms(M);
+    A:=TransposedMat(snf.coltrans);
+    m:=DiagonalOfMat(snf.normal); 
+    nones:=Length(Filtered(m,x->x=1));
+  
+    m:=Filtered(DiagonalOfMat(snf.normal),x->x<>0);
+    A:=A{[nones+1..Length(A)]};
+    m:=m{[nones+1..Length(m)]};
+    
+    return [A,m];
+end);
+
+
+##############################################################
+# Determines if there is a gluing of the two affine semigroups,
+# and if so, returns the gluing of them; fail otherwise
+##############################################################
+InstallGlobalFunction(GluingOfAffineSemigroups,function(a1,a2)
+	local int, d, intersectionOfSubgroups, g1, g2;
+        
+        
+        #computes the intersection of two groups of Z^n
+        # given by generators
+        intersectionOfSubgroups:=function(g1,g2)
+            local eq1, eq2, A, m;
+            
+            eq1:=EquationsOfGroupGeneratedBy(g1);
+            eq2:=EquationsOfGroupGeneratedBy(g2);
+            A:=Concatenation(eq1[1],eq2[1]);
+            m:=Concatenation(eq1[2],eq2[2]);
+            
+            return BasisOfGroupGivenByEquations(A,m);
+        end;
+        
+        if not(IsAffineSemigroup(a1)) or not(IsAffineSemigroup(a2)) then
+            Error("The arguments must be affine semigroups.");
+        fi;
+        
+        g1:=GeneratorsAS(a1);
+        g2:=GeneratorsAS(a2);
+        if not(IsMatrix(Concatenation(g1,g2)))then
+            Error("The semigroups must have the same dimension.");
+        fi;
+        
+	int:=intersectionOfSubgroups(g1,g2);
+	if Length(int)<> 1 then 
+            return false;
+	fi;
+        
+	d:=int[1];
+	if ForAny(d, i->i<0) then
+            d:=-d;
+	fi;
+	if BelongsToAffineSemigroup(d,a1) and 
+           BelongsToAffineSemigroup(d,a2) then
+            return AffineSemigroup(Concatenation(g1,g2));
+        fi;
+        return fail;
+        
 end);
