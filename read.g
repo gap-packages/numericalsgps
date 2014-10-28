@@ -40,5 +40,14 @@ ReadPackage( "numericalsgps", "gap/polynomials.gi" );
 ##
 ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
+if IsPackageMarkedForLoading("NormalizInterface","0.0") and
+	IsPackageMarkedForLoading("SingularInterface","0.0") 	then
+	ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
+	ReadPackage("numericalsgps", "gap/affine-extra-si.gi");
+else
+	Info(InfoAffSgps,1,"Please load packages NormalizInterface and SingularInterface");
+	Info(InfoAffSgps,1,"to have extended functionalities.");
+fi;
+
 
 #E  read.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
