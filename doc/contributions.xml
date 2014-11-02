@@ -214,6 +214,8 @@ gap> TypeSequenceOfNumericalSemigroup(s);
 
 <Section><Heading>Functions implemented by C. O'Neill</Heading>
 
+This section includes the implementations of some procedures described in <Cite Key="B-P-ON"></Cite>.
+
 <ManSection>
                     <Func Arg="l,S" Name="OmegaPrimalityOfElementListInNumericalSemigroup"></Func>
                     <Description>
@@ -246,15 +248,15 @@ gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
                 </ManSection>
 
 <ManSection>
-                    <Func Arg="l,S" Name="FactorizationsElementListWRTNumericalSemigroup"></Func>
-                    <Description>
+  <Func Arg="l,S" Name="FactorizationsElementListWRTNumericalSemigroup"></Func>
+  <Description>
 
-                        <A>S</A> is a numerical semigroup and <A>l</A> a list of elements of <A>S</A>.
-                        <P/>
-			
-                         Computes the factorizations of all the elements in <A>l</A>. 
-
-                        <Example><![CDATA[
+    <A>S</A> is a numerical semigroup and <A>l</A> a list of elements of <A>S</A>.
+    <P/>
+    
+    Computes the factorizations of all the elements in <A>l</A>. 
+    
+    <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);
 <Numerical semigroup with 3 generators>
 gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
@@ -263,8 +265,97 @@ gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
   [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
 
 ]]></Example>
-                    </Description>
-                </ManSection>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="S" Name="DeltaSetPeriodicityBoundForNumericalSemigroup"></Func>
+  <Description>
+
+    <A>S</A> is a numerical semigroup.
+    <P/>
+    
+    Computes the bound were the periodicity starts for Delta sets of the elements in <A>S</A>; see <Cite Key="GG-MF-VT"></Cite>. 
+    
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
+60
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="S" Name="DeltaSetPeriodicityStartForNumericalSemigroup"></Func>
+  <Description>
+
+    <A>S</A> is a numerical semigroup.
+    <P/>
+    
+    Computes the element were the periodicity starts for Delta sets of the elements in <A>S</A>. 
+    
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
+21
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="n, S" Name="DeltaSetListUpToElementWRTNumericalSemigroup"></Func>
+  <Description>
+
+    <A>S</A> is a numerical semigroup, <A>n</A> a nonnegative integer.
+    <P/>
+    
+    Computes the Delta sets of the integers up to (and including) <A>n</A>, if an integer is not in <A>S</A>, the corresponding Delta set is empty. 
+    
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
+[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
+  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
+  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="n, S" Name="DeltaSetUnionUpToElementWRTNumericalSemigroup"></Func>
+  <Description>
+
+    <A>S</A> is a numerical semigroup, <A>n</A> a nonnegative integer.
+    <P/>
+    
+
+    Computes the union of the delta sets of the elements of <A>S</A> up to and including <A>n</A>, using a ring buffer to conserve memory.
+    
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
+[ 2 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="S" Name="DeltaSetOfNumericalSemigroup"></Func>
+  <Description>
+
+    <A>S</A> is a numerical semigroup.
+    <P/>
+    
+    Computes the Delta set of <A>S</A>. 
+    
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetOfNumericalSemigroup(s);
+[ 2 ]
+]]></Example>
+  </Description>
+</ManSection>
 
 </Section>
 

@@ -172,6 +172,9 @@
   
   [1XC.2 [33X[0;0YFunctions implemented by C. O'Neill[133X[101X
   
+  [33X[0;0YThis  section  includes  the implementations of some procedures described in
+  [BOP14].[133X
+  
   [1XC.2-1 OmegaPrimalityOfElementListInNumericalSemigroup[101X
   
   [29X[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
@@ -215,5 +218,81 @@
     [4X[28X  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],[128X[104X
     [4X[28X  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ][128X[104X
     [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1XC.2-3 DeltaSetPeriodicityBoundForNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YComputes  the  bound  were  the  periodicity  starts  for  Delta sets of the
+  elements in [3XS[103X; see [GMV14].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetPeriodicityBoundForNumericalSemigroup(s);[127X[104X
+    [4X[28X60[128X[104X
+  [4X[32X[104X
+  
+  [1XC.2-4 DeltaSetPeriodicityStartForNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetPeriodicityStartForNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YComputes  the  element  were  the  periodicity  starts for Delta sets of the
+  elements in [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetPeriodicityStartForNumericalSemigroup(s);[127X[104X
+    [4X[28X21[128X[104X
+  [4X[32X[104X
+  
+  [1XC.2-5 DeltaSetListUpToElementWRTNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetListUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
+  
+  [33X[0;0YComputes  the  Delta  sets  of  the  integers up to (and including) [3Xn[103X, if an
+  integer is not in [3XS[103X, the corresponding Delta set is empty.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetListUpToElementWRTNumericalSemigroup(31,s);[127X[104X
+    [4X[28X[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [128X[104X
+    [4X[28X  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], [128X[104X
+    [4X[28X  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ][128X[104X
+  [4X[32X[104X
+  
+  [1XC.2-6 DeltaSetUnionUpToElementWRTNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetUnionUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
+  
+  [33X[0;0YComputes  the  union  of  the  delta  sets  of  the  elements of [3XS[103X up to and
+  including [3Xn[103X, using a ring buffer to conserve memory.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);[127X[104X
+    [4X[28X[ 2 ][128X[104X
+  [4X[32X[104X
+  
+  [1XC.2-7 DeltaSetOfNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YComputes the Delta set of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
   
