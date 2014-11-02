@@ -40,6 +40,11 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X85EB5E2581FFB8B2">C.2-1 OmegaPrimalityOfElementListInNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X87C9E03C818AE1AA">C.2-2 FactorizationsElementListWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X7A08CF05821DD2FC">C.2-3 DeltaSetPeriodicityBoundForNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X8123FC0E83ADEE45">C.2-4 DeltaSetPeriodicityStartForNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X80B5DF908246BEB1">C.2-5 DeltaSetListUpToElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X85C6973E81583E8B">C.2-6 DeltaSetUnionUpToElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapC.html#X8325EBE17ED95740">C.2-7 DeltaSetOfNumericalSemigroup</a></span>
 </div></div>
 </div>
 
@@ -223,6 +228,8 @@ true
 
 <h4>C.2 <span class="Heading">Functions implemented by C. O'Neill</span></h4>
 
+<p>This section includes the implementations of some procedures described in <a href="chapBib.html#biBB-P-ON">[BOP14]</a>.</p>
+
 <p><a id="X85EB5E2581FFB8B2" name="X85EB5E2581FFB8B2"></a></p>
 
 <h5>C.2-1 OmegaPrimalityOfElementListInNumericalSemigroup</h5>
@@ -270,6 +277,88 @@ true
   [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
   [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
 
+</pre></div>
+
+<p><a id="X7A08CF05821DD2FC" name="X7A08CF05821DD2FC"></a></p>
+
+<h5>C.2-3 DeltaSetPeriodicityBoundForNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetPeriodicityBoundForNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Computes the bound were the periodicity starts for Delta sets of the elements in <var class="Arg">S</var>; see <a href="chapBib.html#biBGG-MF-VT">[GMV14]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetPeriodicityBoundForNumericalSemigroup(s);</span>
+60
+</pre></div>
+
+<p><a id="X8123FC0E83ADEE45" name="X8123FC0E83ADEE45"></a></p>
+
+<h5>C.2-4 DeltaSetPeriodicityStartForNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetPeriodicityStartForNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Computes the element were the periodicity starts for Delta sets of the elements in <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetPeriodicityStartForNumericalSemigroup(s);</span>
+21
+</pre></div>
+
+<p><a id="X80B5DF908246BEB1" name="X80B5DF908246BEB1"></a></p>
+
+<h5>C.2-5 DeltaSetListUpToElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetListUpToElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, <var class="Arg">n</var> a nonnegative integer.</p>
+
+<p>Computes the Delta sets of the integers up to (and including) <var class="Arg">n</var>, if an integer is not in <var class="Arg">S</var>, the corresponding Delta set is empty.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetListUpToElementWRTNumericalSemigroup(31,s);</span>
+[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
+  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
+  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+</pre></div>
+
+<p><a id="X85C6973E81583E8B" name="X85C6973E81583E8B"></a></p>
+
+<h5>C.2-6 DeltaSetUnionUpToElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetUnionUpToElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, <var class="Arg">n</var> a nonnegative integer.</p>
+
+<p>Computes the union of the delta sets of the elements of <var class="Arg">S</var> up to and including <var class="Arg">n</var>, using a ring buffer to conserve memory.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);</span>
+[ 2 ]
+</pre></div>
+
+<p><a id="X8325EBE17ED95740" name="X8325EBE17ED95740"></a></p>
+
+<h5>C.2-7 DeltaSetOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Computes the Delta set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetOfNumericalSemigroup(s);</span>
+[ 2 ]
 </pre></div>
 
 

@@ -148,3 +148,54 @@ DeclareGlobalFunction("OmegaPrimalityOfElementListInNumericalSemigroup");
 DeclareGlobalFunction("FactorizationsElementListWRTNumericalSemigroup");
 
 
+#############################################################################
+##
+#F  DeltaSetPeriodicityBoundForNumericalSemigroup(s)
+##
+##  Returns a bound on the start of periodic behavior for the delta sets of elements of S.  
+##  Implemented by Chris O'Neill
+##
+#############################################################################
+DeclareGlobalFunction("DeltaSetPeriodicityBoundForNumericalSemigroup");
+
+#############################################################################
+##
+#F  DeltaSetPeriodicityStartForNumericalSemigroup(n,s)
+##
+##  Returns the exact start of periodicity for the delta sets of elements of S.  
+##  Implemented by Chris O'Neill
+##
+#############################################################################
+DeclareGlobalFunction("DeltaSetPeriodicityStartForNumericalSemigroup");
+
+#############################################################################
+##
+#F  DeltaSetListUpToElementWRTNumericalSemigroup(n,s)
+##
+##  Computes the delta sets of the elements of S up to and including n.  
+##  Implemented by Chris O'Neill
+##
+#############################################################################
+DeclareGlobalFunction("DeltaSetListUpToElementWRTNumericalSemigroup");
+
+#############################################################################
+##
+#F  DeltaSetUnionUpToElementWRTNumericalSemigroup(n,s)
+##
+##  Computes the union of the delta sets of the elements of S up to and including n, 
+##  using a ring buffer to conserve memory.  
+##  Implemented by Chris O'Neill
+##
+#############################################################################
+DeclareGlobalFunction("DeltaSetUnionUpToElementWRTNumericalSemigroup");
+
+#############################################################################
+##
+#F  DeltaSetOfNumericalSemigroup(s)
+##
+##  Computes the union of the delta sets of the elements of S up to the bound given in [TODO], 
+##  Implemented by Chris O'Neill
+##
+#############################################################################
+DeclareGlobalFunction("DeltaSetOfNumericalSemigroup");
+        

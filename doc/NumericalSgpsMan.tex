@@ -4656,7 +4656,7 @@ implementation of the algorithm given in \cite{BDF97}.
 \section{\textcolor{Chapter }{Functions implemented by C. O'Neill}}\logpage{[ "C", 2, 0 ]}
 \hyperdef{L}{X821A695C7C0BDF59}{}
 {
- 
+ This section includes the implementations of some procedures described in \cite{B-P-ON}. 
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfElementListInNumericalSemigroup}}
 \logpage{[ "C", 2, 1 ]}\nobreak
@@ -4710,6 +4710,110 @@ implementation of the algorithm given in \cite{BDF97}.
     [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
     [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
   
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{DeltaSetPeriodicityBoundForNumericalSemigroup}}
+\logpage{[ "C", 2, 3 ]}\nobreak
+\hyperdef{L}{X7A08CF05821DD2FC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetPeriodicityBoundForNumericalSemigroup({\mdseries\slshape S})\index{DeltaSetPeriodicityBoundForNumericalSemigroup@\texttt{Delta}\-\texttt{Set}\-\texttt{Periodicity}\-\texttt{Bound}\-\texttt{For}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{DeltaSetPeriodicityBoundForNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Computes the bound were the periodicity starts for Delta sets of the elements
+in \mbox{\texttt{\mdseries\slshape S}}; see \cite{GG-MF-VT}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,11);;|
+  !gapprompt@gap>| !gapinput@DeltaSetPeriodicityBoundForNumericalSemigroup(s);|
+  60
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{DeltaSetPeriodicityStartForNumericalSemigroup}}
+\logpage{[ "C", 2, 4 ]}\nobreak
+\hyperdef{L}{X8123FC0E83ADEE45}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetPeriodicityStartForNumericalSemigroup({\mdseries\slshape S})\index{DeltaSetPeriodicityStartForNumericalSemigroup@\texttt{Delta}\-\texttt{Set}\-\texttt{Periodicity}\-\texttt{Start}\-\texttt{For}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{DeltaSetPeriodicityStartForNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Computes the element were the periodicity starts for Delta sets of the
+elements in \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,11);;|
+  !gapprompt@gap>| !gapinput@DeltaSetPeriodicityStartForNumericalSemigroup(s);|
+  21
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{DeltaSetListUpToElementWRTNumericalSemigroup}}
+\logpage{[ "C", 2, 5 ]}\nobreak
+\hyperdef{L}{X80B5DF908246BEB1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetListUpToElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{DeltaSetListUpToElementWRTNumericalSemigroup@\texttt{Delta}\-\texttt{Set}\-\texttt{List}\-\texttt{Up}\-\texttt{To}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{DeltaSetListUpToElementWRTNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, \mbox{\texttt{\mdseries\slshape n}} a nonnegative integer. 
+
+ Computes the Delta sets of the integers up to (and including) \mbox{\texttt{\mdseries\slshape n}}, if an integer is not in \mbox{\texttt{\mdseries\slshape S}}, the corresponding Delta set is empty. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,11);;|
+  !gapprompt@gap>| !gapinput@DeltaSetListUpToElementWRTNumericalSemigroup(31,s);|
+  [ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
+    [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
+    [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{DeltaSetUnionUpToElementWRTNumericalSemigroup}}
+\logpage{[ "C", 2, 6 ]}\nobreak
+\hyperdef{L}{X85C6973E81583E8B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetUnionUpToElementWRTNumericalSemigroup({\mdseries\slshape n, S})\index{DeltaSetUnionUpToElementWRTNumericalSemigroup@\texttt{Delta}\-\texttt{Set}\-\texttt{Union}\-\texttt{Up}\-\texttt{To}\-\texttt{Element}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{DeltaSetUnionUpToElementWRTNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, \mbox{\texttt{\mdseries\slshape n}} a nonnegative integer. 
+
+ Computes the union of the delta sets of the elements of \mbox{\texttt{\mdseries\slshape S}} up to and including \mbox{\texttt{\mdseries\slshape n}}, using a ring buffer to conserve memory. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,11);;|
+  !gapprompt@gap>| !gapinput@DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);|
+  [ 2 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{DeltaSetOfNumericalSemigroup}}
+\logpage{[ "C", 2, 7 ]}\nobreak
+\hyperdef{L}{X8325EBE17ED95740}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetOfNumericalSemigroup({\mdseries\slshape S})\index{DeltaSetOfNumericalSemigroup@\texttt{DeltaSetOfNumericalSemigroup}}
+\label{DeltaSetOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
+
+ Computes the Delta set of \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,11);;|
+  !gapprompt@gap>| !gapinput@DeltaSetOfNumericalSemigroup(s);|
+  [ 2 ]
 \end{Verbatim}
  }
 
