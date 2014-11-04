@@ -39,3 +39,14 @@ DeclareGlobalFunction("EquationsOfGroupGeneratedBy");
 # if so, returns the gluin of them, and fail otherwise
 ##############################################################
 DeclareGlobalFunction("GluingOfAffineSemigroups");
+
+################################################################
+###
+#F IsFullAffineSemigroup
+# Detects if the affine semigroup is full: the nonnegative 
+# of the the group spanned by it coincides with the semigroup
+# itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
+# then a-b\in S
+################################################################
+
+DeclareGlobalFunction("IsFullAffineSemigroup");
