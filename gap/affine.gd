@@ -48,5 +48,5 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 # itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
 # then a-b\in S
 ################################################################
-
-DeclareGlobalFunction("IsFullAffineSemigroup");
+## moved to affine-def
+#DeclareGlobalFunction("IsFullAffineSemigroup");
