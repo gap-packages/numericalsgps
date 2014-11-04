@@ -98,6 +98,31 @@ DeclareGlobalFunction("GeneratorsOfAffineSemigroup");
 #A
 DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 
+#############################################################################
+## Full ffine semigroups
+#############################################################################
+##
+#F  AffineSemigroupByEquations(ls,md)
+##
+##  Returns the (full) affine semigroup defined by the system A X=0 mod md, where the rows
+## of A are the elements of ls.
+##
+#############################################################################
+DeclareGlobalFunction( "AffineSemigroupByEquations" );
+#A
+DeclareAttribute( "EquationsAS", IsAffineSemigroup);
+#############################################################################
+##
+#F  AffineSemigroupByInequalities(ls)
+##
+##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over the nonnegative 
+## integers
+##
+#############################################################################
+DeclareGlobalFunction( "AffineSemigroupByInequalities" );
+#A
+DeclareAttribute( "InequalitiesAS", IsAffineSemigroup);
+
 
 #############################################################################
 ##
@@ -105,7 +130,7 @@ DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 ##
 ##  This function's first argument may be one of:
 ##  "generators", "minimalgenerators", 
-## UNDER CONSTRUCTION: equations...
+## : equations...
 ##
 ##  The following arguments must conform to the arguments of
 ##  the corresponding function defined above.
@@ -121,7 +146,7 @@ DeclareGlobalFunction( "AffineSemigroup" );
 ##
 #P  IsAffineSemigroupByGenerators(S)
 ##
-##  Tests if a affine semigroup was given by its generators.
+##  Tests if the affine semigroup S was given by its generators.
 ##
 #############################################################################
 DeclareProperty( "IsAffineSemigroupByGenerators", IsAffineSemigroup);
@@ -131,7 +156,35 @@ DeclareProperty( "IsAffineSemigroupByGenerators", IsAffineSemigroup);
 ##
 #P  IsAffineSemigroupByMinimalGenerators(S)
 ##
-##  Tests if a affine semigroup was given by its minimal generators.
+##  Tests if the affine semigroup S was given by its minimal generators.
 ##
 #############################################################################
 DeclareProperty( "IsAffineSemigroupByMinimalGenerators", IsAffineSemigroup);
+
+#############################################################################
+##
+#P  IsAffineSemigroupByEquations(S)
+##
+##  Tests if the affine semigroup S was given by equations.
+##
+#############################################################################
+DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
+
+#############################################################################
+##
+#P  IsAffineSemigroupByInequalities(S)
+##
+##  Tests if the affine semigroup S was given by inequalities.
+##
+#############################################################################
+DeclareProperty( "IsAffineSemigroupByInequalities", IsAffineSemigroup);
+
+#############################################################################
+##
+#P  IsFullAffineSemigroup(S)
+##
+##  Tests if the affine semigroup S has the property of being full.
+##
+#############################################################################
+DeclareProperty( "IsFullAffineSemigroup", IsAffineSemigroup);
+

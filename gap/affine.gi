@@ -267,16 +267,16 @@ end);
 # itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
 # then a-b\in S
 ################################################################
-
-InstallGlobalFunction(IsFullAffineSemigroup,function(a)
-    local eq, h, gens;
+## moved to affine-def
+# InstallGlobalFunction(IsFullAffineSemigroup,function(a)
+#     local eq, h, gens;
     
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup.");
-    fi;
+#     if not(IsAffineSemigroup(a)) then
+#         Error("The argument must be an affine semigroup.");
+#     fi;
     
-    gens:=GeneratorsAS(a);
-    eq:=EquationsOfGroupGeneratedBy(gens);
-    h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-    return ForAll(h, x->BelongsToAffineSemigroup(x,a));    
-end);
+#     gens:=GeneratorsAS(a);
+#     eq:=EquationsOfGroupGeneratedBy(gens);
+#     h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+#     return ForAll(h, x->BelongsToAffineSemigroup(x,a));    
+# end);
