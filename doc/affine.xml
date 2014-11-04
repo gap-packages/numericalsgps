@@ -109,7 +109,25 @@ false
   </Description>
 </ManSection>
 
+<ManSection>
+  <Func Arg="S" Name="IsFullAffineSemigroup"></Func>
+  <Description>
+    <A>s</A> is an affine semigroup.<P/>
+
+    Returns true if the semigroup is full, false otherwise. The semigroup is full if whenever <M>a,b\in S</M> and <M>b-a\in \mathbb N^k</M>, then <M>a-b\in S</M>, where <M>k</M> is the dimension of <M>S</M>.
+    
+    <Example><![CDATA[
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> BelongsToAffineSemigroup([5,5],a);
+true
+gap> BelongsToAffineSemigroup([1,2],a);
+false
+]]></Example>
+  </Description>
+</ManSection>
+
 </Section>
+
 
 <Section>
   <Heading>

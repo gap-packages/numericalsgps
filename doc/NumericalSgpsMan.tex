@@ -3987,6 +3987,29 @@ otherwise.
 \end{Verbatim}
  }
 
+ 
+
+\subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
+\logpage{[ 11, 1, 7 ]}\nobreak
+\hyperdef{L}{X82FCB89B80D42205}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
+\label{IsFullAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape s}} is an affine semigroup.
+
+ Returns true if the semigroup is full, false otherwise. The semigroup is full
+if whenever $a,b\in S$ and $b-a\in \mathbb N^k$, then $a-b\in S$, where $k$ is the dimension of $S$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;|
+  !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([5,5],a);|
+  true
+  !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([1,2],a);|
+  false
+\end{Verbatim}
+ }
+
  }
 
  
