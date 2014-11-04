@@ -298,3 +298,43 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
     return Maximum(Set(facs, y->Sum(y[1])/Sum(y[2])));
 end);
 
+#############################################################
+#############################################################################################################################
+###
+#M IsFullAffineSemigroup
+# Detects if the affine semigroup is full: the nonnegative 
+# of the the group spanned by it coincides with the semigroup
+# itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
+# then a-b\in S
+################################################################
+## moved to affine-def
+# InstallGlobalFunction(IsFullAffineSemigroup,function(a)
+#     local eq, h, gens;
+    
+#     if not(IsAffineSemigroup(a)) then
+#         Error("The argument must be an affine semigroup.");
+#     fi;
+    
+#     gens:=GeneratorsAS(a);
+#     eq:=EquationsOfGroupGeneratedBy(gens);
+#     h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+#     return ForAll(h, x->BelongsToAffineSemigroup(x,a));    
+# end);
+##
+InstallMethod(IsFullAffineSemigroup,
+        "Tests if the affine semigroup S has the property of being full",
+        [IsAffineSemigroup],2,
+        function( S )
+  local  gens, eq, h;
+
+  gens := GeneratorsOfAffineSemigroup(S);
+  eq:=EquationsOfGroupGeneratedBy(gens);
+  h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+  if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
+    SetEquationsAS(eq);
+    Setter(IsAffineSemigroupByEquations)(S,true);
+    Setter(IsFullAffineSemigroup)(S,true);
+    return true;
+  fi; 
+  return false;
+end);

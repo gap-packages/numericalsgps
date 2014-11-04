@@ -46,18 +46,44 @@ end);
 ## of A are the elements of ls.
 ##
 #############################################################################
-InstallGlobalFunction(AffineSemigroupByEquations, function(ls,md)
-  local  basis, M;
-  
-  basis := HilbertBasisOfSystemOfHomogeneousEquations(ls,md);
-  
-  M := AffineSemigroupByGenerators(basis);
+InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
+  local  ls, md, M;
+
+  if Length(arg) = 1 then
+    ls := arg[1][1];
+    md := arg[1][2];
+  else
+    ls := arg[1];
+    md := arg[2];
+  fi;
+
+  if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
+    Error("The arguments must be homogeneous lists.");
+  fi;
+
+  if not(ForAll(ls,IsListOfIntegersNS)) then 
+    Error("The first argument must be a list of lists of integers.");
+  fi;
+
+  if not(IsListOfIntegersNS(md)) then 
+    Error("The second argument must be a lists of integers.");
+  fi;
+
+  if not(ForAll(md,x->x>0)) then
+    Error("The second argument must be a list of positive integers");
+  fi;
+
+  if not(Length(Set(ls, Length))=1) then
+    Error("The first argument must be a list of lists all with the same length.");
+  fi;
+
+  M:= Objectify( NewType( FamilyObj( ls ),
+              IsAttributeStoringRep and IsAffineSemigroup), rec());
   SetEquationsAS([ls,md]);
   Setter(IsAffineSemigroupByEquations)(M,true);
   Setter(IsFullAffineSemigroup)(M,true);
   return M;
 end);
-
 
 #############################################################################
 ##
@@ -67,12 +93,24 @@ end);
 ## integers
 ##
 #############################################################################
-InstallGlobalFunction(AffineSemigroupByInequalities, function(ls)
-  local  basis, M;
+InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
+  local  ls, M;
 
-  basis := HilbertBasisOfSystemOfHomogeneousInequalities(ls);
-  
-  M := AffineSemigroupByGenerators(basis);
+  if Length(arg) = 1 then
+    ls := Set(arg[1]);
+  else
+    ls := Set(arg);
+  fi;
+
+  if not IsMatrix(ls) then
+    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+  elif not ForAll(ls, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
+    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+  fi;
+
+  M:= Objectify( NewType( FamilyObj( ls ),
+              IsAttributeStoringRep and IsAffineSemigroup), rec());
+
   SetInequalitiesAS(ls);
   Setter(IsAffineSemigroupByEquations)(M,true);
   Setter(IsFullAffineSemigroup)(M,true);
@@ -88,7 +126,7 @@ end);
 ##
 ##  This function's first argument may be one of:
 ##  "generators", "minimalgenerators", 
-## UNDER CONSTRUCTION: equations...
+## "equations", "inequalities"...
 ##
 ##  The following arguments must conform to the arguments of
 ##  the corresponding function defined above.
@@ -98,23 +136,27 @@ end);
 ##
 ##
 #############################################################################
- InstallGlobalFunction(AffineSemigroup, function(arg)
+InstallGlobalFunction(AffineSemigroup, function(arg)
 
-   if IsString(arg[1]) then
-     if arg[1] = "generators" then
-       return AffineSemigroupByGenerators(arg{[2..Length(arg)]});
-     elif arg[1] = "minimalgenerators" then
-       return AffineSemigroupByMinimalGenerators(arg{[2..Length(arg)]});
-     else
-       Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\" ");
-     fi;
-   elif Length(arg) = 1 and IsList(arg[1]) then
-     return AffineSemigroupByGenerators(arg[1]);
-   else
-     return AffineSemigroupByGenerators(arg);
-   fi;
- end);
- 
+  if IsString(arg[1]) then
+    if arg[1] = "generators" then
+      return AffineSemigroupByGenerators(arg{[2..Length(arg)]});
+    elif arg[1] = "minimalgenerators" then
+      return AffineSemigroupByMinimalGenerators(arg{[2..Length(arg)]});
+    elif arg[1] = "equations" then
+      return AffineSemigroupByEquations(arg{[2..Length(arg)]});
+    elif arg[1] = "inequalities" then
+      return AffineSemigroupByInequalities(arg{[2..Length(arg)]});
+    else
+      Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\" ");
+    fi;
+  elif Length(arg) = 1 and IsList(arg[1]) then
+    return AffineSemigroupByGenerators(arg[1]);
+  else
+    return AffineSemigroupByGenerators(arg);
+  fi;
+end);
+
 #############################################################################
 ##
 #P  IsAffineSemigroupByGenerators(S)
@@ -182,25 +224,32 @@ end);
 #############################################################################
  InstallMethod(IsFullAffineSemigroup,
          "Tests if the affine semigroup S has the property of being full",
-         [IsAffineSemigroup],
+         [IsAffineSemigroup],1,
          function( S )
-   local  gens, eq, h;
    local  gens, eq, h;
 
    if IsFullAffineSemigroup(S) then 
      return true;
    fi;
-   gens := GeneratorsOfAffineSemigroup(S);
-   eq:=EquationsOfGroupGeneratedBy(gens);
-   h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-   if ForAll(h, x->BelongsToAffineSemigroup(x,a)) then
-     SetEquationsAS(eq);
-     Setter(IsAffineSemigroupByEquations)(S,true);
-     Setter(IsFullAffineSemigroup)(S,true);
-     return true;
-   else
-     return false;
+
+   # REQUERIMENTS: NormalizInterface   
+   if not TestPackageAvailability("NormalizInterface") = fail then
+     TryNextMethod();
+          # LoadPackage("NormalizInterface");
+     # gens := GeneratorsOfAffineSemigroup(S);
+     # eq:=EquationsOfGroupGeneratedBy(gens);
+     # h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+     # if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
+     #   SetEquationsAS(eq);
+     #   Setter(IsAffineSemigroupByEquations)(S,true);
+     #   Setter(IsFullAffineSemigroup)(S,true);
+     #   return true;
+     # fi; 
+     # return false;
    fi;
+   ## When NormalizInterface is not available...
+   Info(InfoNumSgps,2,"Unable to determine whether the semigroup is full...");
+   return false;   
  end);
 
  
