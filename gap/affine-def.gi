@@ -97,7 +97,7 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
     Error("The first argument must be a list of lists of integers.");
   fi;
 
-  if not(IsListOfIntegersNS(md)) then 
+  if not(md = [] or IsListOfIntegersNS(md)) then 
     Error("The second argument must be a lists of integers.");
   fi;
 
@@ -111,7 +111,7 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
 
   M:= Objectify( NewType( FamilyObj( ls ),
               IsAttributeStoringRep and IsAffineSemigroup), rec());
-  SetEquationsAS([ls,md]);
+  SetEquationsAS(M,[ls,md]);
   Setter(IsAffineSemigroupByEquations)(M,true);
   Setter(IsFullAffineSemigroup)(M,true);
   return M;
@@ -143,7 +143,7 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
   M:= Objectify( NewType( FamilyObj( ls ),
               IsAttributeStoringRep and IsAffineSemigroup), rec());
 
-  SetInequalitiesAS(ls);
+  SetInequalitiesAS(M,ls);
   Setter(IsAffineSemigroupByEquations)(M,true);
   Setter(IsFullAffineSemigroup)(M,true);
   return M;
