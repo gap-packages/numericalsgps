@@ -96,7 +96,19 @@ SetInfoLevel(InfoAffSgps,1);;
 # Decides if the vector v belongs to the affine semigroup a
 #
 ####################################################################
-InstallGlobalFunction(BelongsToAffineSemigroup,function(v,a)
+InstallMethod( \in,
+        "for affine semigroups",
+        [ IsHomogeneousList, IsAffineSemigroup],
+        function( v, a )
+    return BelongsToAffineSemigroup(v,a);
+end);
+
+InstallMethod(BelongsToAffineSemigroup,
+        "To test whether an integer belongs to a numerical semigroup",
+        true,
+        [ IsHomogeneousList, IsAffineSemigroup and HasGeneratorsAS],100,
+
+        function(v,a)
     local belongs, gen;
     
       #determines if an element x is in the affine semigroup 
@@ -259,3 +271,113 @@ InstallGlobalFunction(GluingOfAffineSemigroups,function(a1,a2)
     
 end);
 
+###################### ContejeanDevieAlgorithm
+
+#############################################################################################
+# l contains the list of coefficients of a system of linear equations. forten gives the 
+#  set of minimal generators of the affine semigroup of nonnegative soultions of this equation
+##############################################################################################
+
+InstallGlobalFunction(ContejanDevieAlgorithmForEquations,function(arg)
+  local  contejeanDevieAlgorithm, contejeanDevieAlgorithmWithCongruences, ls, 
+         md;
+
+  ## local functions ...
+  contejeanDevieAlgorithm:= function(l)
+    local solutions, m, x, explored, candidates, tmp, k,zero, lx, leq;
+
+
+    Info(InfoAffSgps,1,"It is recommended that you use NormalizInterface.");
+
+    #less than or equal to with the usual partial order
+    leq:= function(v1,v2)
+      local v;
+      v:=v2-v1;
+      return (First(v,n->n<0)=fail);
+    end;
+
+    solutions:=[];
+    explored:=[];
+
+    if not(IsMatrix(l)) then 
+      Error("The argument must be a matrix.");
+    fi;
+    if not(IsInt(l[1][1])) then
+      Error("The matrix must be of integers.");
+    fi;
+
+
+    m:=IdentityMat(Length(l[1]));
+    zero:=List([1..Length(l)],_->0);
+    candidates:=m;
+    while (not(candidates=[])) do
+      x:=candidates[1];
+      explored:=Union([x],explored);
+      candidates:=candidates{[2..Length(candidates)]};
+      lx:=l*x;
+      if(lx=zero) then	
+        solutions:=Union([x],solutions);
+        #    Print(x);
+      else
+        tmp:=Set(Filtered(m,n->(lx*(l*n)<0)),y->y+x);
+        tmp:=Difference(tmp,explored);
+        tmp:=Filtered(tmp,n->(First(solutions,y->leq(y,n))=fail));
+        candidates:=Union(candidates,tmp);
+      fi;
+    od;
+    return solutions;
+  end; 
+
+  contejeanDevieAlgorithmWithCongruences:=function(ls,md)
+    local l,n,m,diag,dim,d, hil, leq, zero;
+
+
+    #less than or equal to with the usual partial order
+    leq:= function(v1,v2)
+      local v;
+      v:=v2-v1;
+      return (First(v,n->n<0)=fail);
+    end;
+
+    if not(IsMatrix(ls)) then
+      Error("The first argument must be a matrix.");
+    fi;
+
+    if not(IsListOfIntegersNS(md)) or ForAny(md, x->not(IsPosInt(x))) then
+      Error("The second argument must be a list of positive integers.");
+    fi;
+
+    n:=Length(ls);
+    dim:=Length(ls[1]);
+    m:=Length(md);
+    if m>n then 
+      Error("There are more modulus than equations.");
+    fi;
+
+    diag:=Concatenation(md,List([1..n-m],_->0));
+    d:=DiagonalMat(diag);
+    l:=TransposedMat(Concatenation(TransposedMat(ls),d,-d));
+    zero:=List([1..dim],_->0);
+
+    hil:=Difference(List(contejeanDevieAlgorithm(l), x->x{[1..dim]}),[zero]);
+    return hil;
+
+    return Filtered(hil, y->Filtered(hil,x->leq(x,y))=[y]);
+  end;
+  ## end of local functions ...
+
+  ls := arg[1][1];
+  md := arg[1][2];
+  if md = [] then
+    return contejeanDevieAlgorithm(ls);
+  else
+    return contejeanDevieAlgorithmWithCongruences(ls,md);
+
+  fi;
+end);
+
+  ##############################################################################################
+
+InstallGlobalFunction(ContejanDevieAlgorithmForInequalities,function(arg)
+
+end);

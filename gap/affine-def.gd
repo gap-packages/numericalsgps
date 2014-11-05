@@ -88,13 +88,13 @@ DeclareGlobalFunction( "AffineSemigroupByMinimalGeneratorsNC" );
 
 #############################################################################
 ##
-#F  GeneratorsOfAffineSemigroup(S)
+#O  GeneratorsOfAffineSemigroup(S)
 ##
-##  Returns a set of generators of the ideal I.
-##  If a minimal generating system has already been computed, this
+##  Computes a set of generators of the affine semigroup S.
+##  If a set of generators has already been computed, this
 ##  is the set returned.
 ############################################################################
-DeclareGlobalFunction("GeneratorsOfAffineSemigroup");
+DeclareOperation("GeneratorsOfAffineSemigroup",[IsAffineSemigroup]);
 #A
 DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 
@@ -165,7 +165,7 @@ DeclareProperty( "IsAffineSemigroupByMinimalGenerators", IsAffineSemigroup);
 ##
 #P  IsAffineSemigroupByEquations(S)
 ##
-##  Tests if the affine semigroup S was given by equations.
+##  Tests if the affine semigroup S was given by equations or equations have already been computed.
 ##
 #############################################################################
 DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
@@ -174,7 +174,7 @@ DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
 ##
 #P  IsAffineSemigroupByInequalities(S)
 ##
-##  Tests if the affine semigroup S was given by inequalities.
+##  Tests if the affine semigroup S was given by inequalities or inequalities have already been computed.
 ##
 #############################################################################
 DeclareProperty( "IsAffineSemigroupByInequalities", IsAffineSemigroup);

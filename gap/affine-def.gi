@@ -37,6 +37,38 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
   return M;
 end);
 #############################################################################
+##
+#O  GeneratorsOfAffineSemigroup(S)
+##
+##  Computes a set of generators of the affine semigroup S.
+##  If a set of generators has already been computed, this
+##  is the set returned.
+############################################################################
+InstallMethod(GeneratorsOfAffineSemigroup, 
+         "Computes a set of generators of the affine semigroup",
+         [IsAffineSemigroup],1,        
+        function(S)
+  local  basis;
+
+  if HasGeneratorsAS(S) then
+    return GeneratorsAS(S);  
+  fi;
+  # REQUERIMENTS: NormalizInterface   
+  if not TestPackageAvailability("NormalizInterface") = fail then
+    TryNextMethod();
+    
+  fi;
+  if IsAffineSemigroupByEquations(S) then
+    basis := ContejanDevieAlgorithmForEquations(EquationsAS(S));
+    SetGeneratorsAS(S,basis);
+    return basis;
+  elif IsAffineSemigroupByInequalities(S) then
+    basis := ContejanDevieAlgorithmForInequalities(InequalitiesAS(S));
+    SetGeneratorsAS(S,basis);
+    return basis;
+  fi;     
+end);
+#############################################################################
 ## Full ffine semigroups
 #############################################################################
 ##
@@ -187,7 +219,7 @@ end);
 ##
 #P  IsAffineSemigroupByEquations(S)
 ##
-##  Tests if the affine semigroup S was given by equations.
+##  Tests if the affine semigroup S was given by equations or equations have already been computed.
 ##
  #############################################################################
  InstallMethod(IsAffineSemigroupByEquations,
@@ -201,7 +233,7 @@ end);
 ##
 #P  IsAffineSemigroupByInequalities(S)
 ##
-##  Tests if the affine semigroup S was given by inequalities.
+##  Tests if the affine semigroup S was given by inequalities or inequalities have already been computed.
 ##
  #############################################################################
  InstallMethod(IsAffineSemigroupByInequalities,
@@ -235,21 +267,10 @@ end);
    # REQUERIMENTS: NormalizInterface   
    if not TestPackageAvailability("NormalizInterface") = fail then
      TryNextMethod();
-          # LoadPackage("NormalizInterface");
-     # gens := GeneratorsOfAffineSemigroup(S);
-     # eq:=EquationsOfGroupGeneratedBy(gens);
-     # h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-     # if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
-     #   SetEquationsAS(eq);
-     #   Setter(IsAffineSemigroupByEquations)(S,true);
-     #   Setter(IsFullAffineSemigroup)(S,true);
-     #   return true;
-     # fi; 
-     # return false;
    fi;
    ## When NormalizInterface is not available...
-   Info(InfoNumSgps,2,"Unable to determine whether the semigroup is full...");
-   return false;   
+   Info(InfoNumSgps,2,"Unable to determine whether the semigroup is full, unless you install NormalizInterface");
+   return fail;   
  end);
 
  

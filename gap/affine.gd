@@ -9,10 +9,10 @@
 
 
 ###############################################################################
-#F BelongsToAffineSemogroup
+#O BelongsToAffineSemigroup
 # Determines if the vector v is in the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("BelongsToAffineSemigroup");
+DeclareOperation("BelongsToAffineSemigroup",[IsHomogeneousList,IsAffineSemigroup]);
 
 ###############################################################################
 #F BasisOfGroupGivenByEquations
@@ -50,3 +50,8 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 ################################################################
 ## moved to affine-def
 #DeclareGlobalFunction("IsFullAffineSemigroup");
+
+
+###################### ContejeanDevieAlgorithm
+DeclareGlobalFunction("ContejanDevieAlgorithmForEquations");
+DeclareGlobalFunction("ContejanDevieAlgorithmForInequalities");
