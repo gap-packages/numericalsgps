@@ -338,3 +338,31 @@ InstallMethod(IsFullAffineSemigroup,
   fi; 
   return false;
 end);
+#############################################################################
+##
+#O  GeneratorsOfAffineSemigroup(S)
+##
+##  Computes a set of generators of the affine semigroup S.
+##  If a set of generators has already been computed, this
+##  is the set returned.
+############################################################################
+InstallOtherMethod(GeneratorsOfAffineSemigroup, 
+        "Computes a set of generators of the affine semigroup",
+        [IsAffineSemigroup],2,        
+        function(S)
+  local  basis;
+
+  if HasGeneratorsAS(S) then
+    return GeneratorsAS(S);  
+  fi;
+  # REQUERIMENTS: NormalizInterface   
+  if IsAffineSemigroupByEquations(S) then
+    basis := HilbertBasisOfSystemOfHomogeneousEquations(EquationsAS(S));
+    SetGeneratorsAS(S,basis);
+    return basis;
+  elif IsAffineSemigroupByInequalities(S) then
+    basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
+    SetGeneratorsAS(S,basis);
+    return basis;
+  fi;     
+end);
