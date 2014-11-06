@@ -53,5 +53,5 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 
 
 ###################### ContejeanDevieAlgorithm
-DeclareGlobalFunction("ContejanDevieAlgorithmForEquations");
-DeclareGlobalFunction("ContejanDevieAlgorithmForInequalities");
+DeclareGlobalFunction("ContejeanDevieAlgorithmForEquations");
+DeclareGlobalFunction("ContejeanDevieAlgorithmForInequalities");

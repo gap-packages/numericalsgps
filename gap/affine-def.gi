@@ -54,16 +54,17 @@ InstallMethod(GeneratorsOfAffineSemigroup,
     return GeneratorsAS(S);  
   fi;
   # REQUERIMENTS: NormalizInterface   
-  if not TestPackageAvailability("NormalizInterface") = fail then
+  if IsPackageMarkedForLoading("NormalizInterface","0.0") then
+  #if not TestPackageAvailability("NormalizInterface") = fail then
     TryNextMethod();
     
   fi;
   if IsAffineSemigroupByEquations(S) then
-    basis := ContejanDevieAlgorithmForEquations(EquationsAS(S));
+    basis := ContejeanDevieAlgorithmForEquations(EquationsAS(S));
     SetGeneratorsAS(S,basis);
     return basis;
   elif IsAffineSemigroupByInequalities(S) then
-    basis := ContejanDevieAlgorithmForInequalities(InequalitiesAS(S));
+    basis := ContejeanDevieAlgorithmForInequalities(InequalitiesAS(S));
     SetGeneratorsAS(S,basis);
     return basis;
   fi;     
