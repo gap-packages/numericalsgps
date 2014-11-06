@@ -278,23 +278,24 @@ end);
 #  set of minimal generators of the affine semigroup of nonnegative soultions of this equation
 ##############################################################################################
 
-InstallGlobalFunction(ContejanDevieAlgorithmForEquations,function(arg)
+InstallGlobalFunction(ContejeanDevieAlgorithmForEquations,function(arg)
   local  contejeanDevieAlgorithm, contejeanDevieAlgorithmWithCongruences, ls, 
-         md;
+         md, leq;
 
   ## local functions ...
+    #less than or equal to with the usual partial order
+  leq:= function(v1,v2)
+      local v;
+      v:=v2-v1;
+      return (First(v,n->n<0)=fail);
+  end;
+  
   contejeanDevieAlgorithm:= function(l)
-    local solutions, m, x, explored, candidates, tmp, k,zero, lx, leq;
+    local solutions, m, x, explored, candidates, tmp, k,zero, lx;
 
 
     Info(InfoAffSgps,1,"It is recommended that you use NormalizInterface.");
 
-    #less than or equal to with the usual partial order
-    leq:= function(v1,v2)
-      local v;
-      v:=v2-v1;
-      return (First(v,n->n<0)=fail);
-    end;
 
     solutions:=[];
     explored:=[];
@@ -329,15 +330,7 @@ InstallGlobalFunction(ContejanDevieAlgorithmForEquations,function(arg)
   end; 
 
   contejeanDevieAlgorithmWithCongruences:=function(ls,md)
-    local l,n,m,diag,dim,d, hil, leq, zero;
-
-
-    #less than or equal to with the usual partial order
-    leq:= function(v1,v2)
-      local v;
-      v:=v2-v1;
-      return (First(v,n->n<0)=fail);
-    end;
+    local l,n,m,diag,dim,d, hil, zero;
 
     if not(IsMatrix(ls)) then
       Error("The first argument must be a matrix.");
@@ -376,8 +369,28 @@ InstallGlobalFunction(ContejanDevieAlgorithmForEquations,function(arg)
   fi;
 end);
 
-  ##############################################################################################
+##############################################################################################
+#
+# ls is a matrix of integers. It computes the set minimal nonzero nonnegative integer solutions
+# of ls*x>=0
+#
+InstallGlobalFunction(ContejeanDevieAlgorithmForInequalities,function(ls)
+    local mat, neq, dim, id, hil,zero ;
+    if not(IsMatrix(ls)) then 
+      Error("The argument must be a matrix.");
+    fi;
+    if not(IsInt(ls[1][1])) then
+      Error("The matrix must be of integers.");
+    fi;
 
-InstallGlobalFunction(ContejanDevieAlgorithmForInequalities,function(arg)
-
+    neq:=Length(ls);
+    dim:=Length(ls[1]);
+    zero:=List([1..dim],_->0);
+    
+    id:=IdentityMat(neq);
+    mat:=TransposedMat(Concatenation(TransposedMat(ls),-id));
+    hil:=ContejeanDevieAlgorithmForEquations([mat,[]]);
+    return List(hil,x->x{[1..dim]});
+    
+    
 end);
