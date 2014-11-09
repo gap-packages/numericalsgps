@@ -20,17 +20,6 @@ DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations");
 DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities");
 
 ###############################################################################
-#F FactorizationsVectorWRTList
-#
-# Computes the set of factorizations of v in terms of the elements of ls 
-# That is, a Hilbert basis for ls*X=v
-# If ls contains vectors that generate a nonreduced monoid, then it 
-# deprecates the infinite part of the solutions, or in other words, it
-# returns only the minimal solutions of the above system of equations
-########################################################################
-DeclareGlobalFunction("FactorizationsVectorWRTList");
-
-###############################################################################
 #F OmegaPrimalityOfElementInAffineSemigroup
 #
 # Computes the omega-primality of v in the monoid a
