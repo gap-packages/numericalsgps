@@ -117,17 +117,15 @@ end);
 # returns only the minimal solutions of the above system of equations
 # REQUERIMENTS: NormalizInterface
 ########################################################################
-InstallGlobalFunction(FactorizationsVectorWRTList,
+InstallOtherMethod(FactorizationsVectorWRTList,
+        "Computes the set of factorizations of the first argument in terms of the elements of the second",
+        [IsHomogeneousList, IsMatrix],2,
         function(v,ls)
     local mat, cone, n, facs;
     
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,[-v]));
-    
-    if not(IsHomogeneousList(mat)) then
-        Error("The arguments must be homogeneous lists.");
-    fi;
-    
+        
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
@@ -136,10 +134,9 @@ InstallGlobalFunction(FactorizationsVectorWRTList,
         Error("The second argument must be a list of lists of integers.");
     fi;
     
-    if not(Length(Set(mat, Length))=1) then
+    if not(IsMatrix(mat)) then
         Error("All lists must in the second argument have the same length as the first argument.");
     fi;
-
 	
     cone:=NmzCone(["inhom_equations",mat]);
     NmzCompute(cone,"DualMode"); 	
@@ -350,19 +347,20 @@ InstallOtherMethod(GeneratorsOfAffineSemigroup,
         "Computes a set of generators of the affine semigroup",
         [IsAffineSemigroup],2,        
         function(S)
-  local  basis;
+  local  basis, eq;
 
   if HasGeneratorsAS(S) then
     return GeneratorsAS(S);  
   fi;
   # REQUERIMENTS: NormalizInterface   
   if IsAffineSemigroupByEquations(S) then
-    basis := HilbertBasisOfSystemOfHomogeneousEquations(EquationsAS(S));
-    SetGeneratorsAS(S,basis);
-    return basis;
+      eq:=EquationsAS(S);
+      basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+      SetGeneratorsAS(S,basis);
+      return basis;
   elif IsAffineSemigroupByInequalities(S) then
-    basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
-    SetGeneratorsAS(S,basis);
-    return basis;
+      basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
+      SetGeneratorsAS(S,basis);
+      return basis;
   fi;     
 end);

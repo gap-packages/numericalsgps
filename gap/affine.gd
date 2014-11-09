@@ -55,3 +55,17 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 ###################### ContejeanDevieAlgorithm
 DeclareGlobalFunction("ContejeanDevieAlgorithmForEquations");
 DeclareGlobalFunction("ContejeanDevieAlgorithmForInequalities");
+
+
+###############################################################################
+#O FactorizationsVectorWRTList
+#
+# Computes the set of factorizations of v in terms of the elements of ls 
+# That is, a Hilbert basis for ls*X=v
+# While using normaliz:
+# If ls contains vectors that generate a nonreduced monoid, then it 
+# deprecates the infinite part of the solutions, or in other words, it
+# returns only the minimal solutions of the above system of equations
+# If not using nomaliz: then the above can cause an infinite loop
+########################################################################
+DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
