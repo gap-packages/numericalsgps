@@ -394,3 +394,68 @@ InstallGlobalFunction(ContejeanDevieAlgorithmForInequalities,function(ls)
     
     
 end);
+
+########################################################################
+# Computes the set of factorizations of v in terms of the elements of ls 
+# That is, a Hilbert basis for ls*X=v
+# If ls contains vectors that generate a nonreduced monoid, then it 
+# may enter in an infinite loop
+########################################################################
+InstallMethod(FactorizationsVectorWRTList,
+        "Computes the set of factorizations of the first argument in terms of the elements of the second",
+        [IsHomogeneousList, IsMatrix],1,
+        function(v,ls)
+    local len, e1, opt1, opt2, i, mat, dim;
+    # REQUERIMENTS: NormalizInterface   
+    if IsPackageMarkedForLoading("NormalizInterface","0.0") then
+        TryNextMethod();
+    fi;
+    
+    mat:=TransposedMat(Concatenation(ls,[-v]));
+        
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    
+    if not(ForAll(ls,IsListOfIntegersNS)) then 
+        Error("The second argument must be a list of lists of integers.");
+    fi;
+    
+    if not(IsMatrix(mat)) then
+        Error("All lists must in the second argument have the same length as the first argument.");
+    fi;
+    
+    len:=Length(ls);
+    if ls=[] then
+        return [];
+    fi;
+    if ForAll(v,x->x=0) then 
+        return [List([1..len],_->0)];
+    fi;
+    if ForAny(v,x->x<0) then 
+        return [];
+    fi;
+    
+    if Length(ls)=1 then
+        dim:=Length(ls[1]);
+      
+        i:=First([1..dim],x->ls[1][x]<>0);
+        
+        if i=fail then
+            Error("The second argument cannot contain the zero vector.");
+        fi;
+        if (v[i] mod ls[1][i]=0) and v=v[i]/ls[1][i]*ls[1] then 
+            return [ [v[i]/ls[1][i]] ];
+        fi;
+        return [];
+    fi;
+    e1:=List([1..len-1],_->0);
+    e1:=Concatenation([1],e1);
+    opt1:=[];
+    if ForAll(v-ls[1],x->x>=0) then
+        opt1:=List(FactorizationsVectorWRTList(v-ls[1],ls), x->x+e1);
+    fi;
+    opt2:=List(FactorizationsVectorWRTList(v,ls{[2..len]}), 
+               x->Concatenation([0],x));
+    return Concatenation(opt1,opt2);
+end);
