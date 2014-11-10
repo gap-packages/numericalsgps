@@ -15,7 +15,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
 		R,id, ie, vars, mingen, exps, bintopair, dim, zero, ls;
 
-
+	Info(InfoNumSgps,2,"Using SingularInterface to compute minimal presentations.");
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup");
     fi;

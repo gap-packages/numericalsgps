@@ -407,7 +407,7 @@ InstallMethod(FactorizationsVectorWRTList,
         function(v,ls)
     local len, e1, opt1, opt2, i, mat, dim;
     # REQUERIMENTS: NormalizInterface   
-    if IsPackageMarkedForLoading("NormalizInterface","0.0") then
+    if NumSgpsCanUseNI then
         TryNextMethod();
     fi;
     
@@ -472,10 +472,8 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen, 
           pres,c, rclass;
 
-    # REQUERIMENTS: SingularInterface   
-    if IsPackageMarkedForLoading("SingularInterface","0.0") or 
-	   IsPackageMarkedForLoading("singular","0.0")
-    then
+    # REQUERIMENTS: SingularInterface or Singular
+    if NumSgpsCanUseSI or NumSgpsCanUseSingular then
         TryNextMethod();
     fi;
     

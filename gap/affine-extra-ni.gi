@@ -122,7 +122,8 @@ InstallOtherMethod(FactorizationsVectorWRTList,
         [IsHomogeneousList, IsMatrix],2,
         function(v,ls)
     local mat, cone, n, facs;
-    
+   	Info(InfoNumSgps,2,"Using NormalizInterface to compute minimal factorization.");
+
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,[-v]));
         
