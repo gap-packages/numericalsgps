@@ -69,3 +69,22 @@ DeclareGlobalFunction("ContejeanDevieAlgorithmForInequalities");
 # If not using nomaliz: then the above can cause an infinite loop
 ########################################################################
 DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
+
+###############################################################################
+#O BettiElementsOfAffineSemigroup
+# Computes the Betti elements of the affine semigroup a
+###########################################################################
+DeclareOperation("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
+
+###############################################################################
+#O MinimalPresentationOfAffineSemigroup
+# Computes a minimal presentation of the affine semigroup a
+###########################################################################
+DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
+
+###############################################################################
+#F CatenaryDegreeOfAffineSemigroup
+# Computes the catenary degree of the affine semigroup a
+###########################################################################
+DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+
