@@ -10,14 +10,16 @@ fi;
 InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
 	"Computes the minimal presentation of an affine semigroup",
 	[IsAffineSemigroup],2,
+        function(a)
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
 		R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
 
 
     # REQUERIMENTS: SingularInterface   
-    if IsPackageMarkedForLoading("SingularInterface","0.0") then
+    if NumSgpsCanUseSI then
         TryNextMethod();
     fi;
+    Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
 
     ##computes the s degree of a monomial in the semigroup ideal 
     sdegree:=function(m) 
@@ -62,5 +64,5 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     ie:=Ideal(R,gens);
     mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
-end;
+end);
 
