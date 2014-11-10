@@ -36,12 +36,22 @@ ReadPackage( "numericalsgps", "gap/polynomials.gd" );
 ##
 ## Affine
 ##
+NumSgpsCanUseNI:=false;
+NumSgpsCanUseSingular:=false;
+NumSgpsCanUseSI:=false;
+
 ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
-if IsPackageMarkedForLoading("NormalizInterface","0.0") and
-	IsPackageMarkedForLoading("SingularInterface","0.0") 	then
+if IsPackageMarkedForLoading("NormalizInterface","0.0") then 
+	NumSgpsCanUseNI:=true;
 	ReadPackage("numericalsgps", "gap/affine-extra-ni.gd");
-	ReadPackage("numericalsgps", "gap/affine-extra-si.gd");
 fi;
+if IsPackageMarkedForLoading("SingularInterface","0.0") 	then
+	NumSgpsCanUseSI:=true;
+fi;
+if IsPackageMarkedForLoading("singular","0.0") 	then
+	NumSgpsCanUseSingular:=true;
+fi;
+
 
 #E  init.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
