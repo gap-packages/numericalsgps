@@ -459,3 +459,120 @@ InstallMethod(FactorizationsVectorWRTList,
                x->Concatenation([0],x));
     return Concatenation(opt1,opt2);
 end);
+
+############################################################
+# computes a minimal presentation using the package singular
+############################################################
+InstallMethod(MinimalPresentationOfAffineSemigroup,
+	"Computes the minimal presentation of an affine semigroup",
+	[IsAffineSemigroup],1,
+	function( a )
+	
+    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+          R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen, 
+          pres,c, rclass;
+
+    # REQUERIMENTS: SingularInterface   
+    if IsPackageMarkedForLoading("SingularInterface","0.0") or 
+	   IsPackageMarkedForLoading("singular","0.0")
+    then
+        TryNextMethod();
+    fi;
+    
+    ##computes the s degree of a monomial in the semigroup ideal 
+    sdegree:=function(m) 
+        local exp;
+        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
+        return exp*msg;
+    end;
+    
+    bintopair:=function(p)
+        local m1,m2, d1, d2;
+        m1:=LeadingMonomialOfPolynomial(p, MonomialLexOrdering());
+        m2:=m1-p;
+        d1:=List([1..ed], i->DegreeIndeterminate(m1,i));; 
+        d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
+        return [d1,d2];
+    end;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup.");
+    fi;
+    
+    msg:=GeneratorsOfAffineSemigroup(a); #for now we do not check minimality of the generators
+    ed:=Length(msg);
+    if ed=0 then 
+        return [];
+    fi;
+    zero:=List([1..ed],_->0);
+    dim:=Length(msg[1]);
+    vars:=List([1..ed+dim],i->X(Rationals,i));
+    R:=PolynomialRing(Rationals,vars); 
+    p:=List([1..ed], i->X(Rationals,i)-
+            Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
+    rgb:=ReducedGroebnerBasis( p, 
+                 EliminationOrdering(List([1..dim],i->X(Rationals,i+ed))));
+    rgb:=Filtered(rgb, 
+                 q->ForAll([1..dim], i->DegreeIndeterminate(q,i+ed)=0));
+    candidates:=Set(rgb,q->bintopair(q)[1]);
+    candidates:=Set(candidates,c->c*msg);
+    Info(InfoNumSgps,2, "Candidates to Betti elements",candidates);
+    pres:=[];
+    for c in candidates do
+        exps:=FactorizationsVectorWRTList(c,msg);
+        rclass:=RClassesOfSetOfFactorizations(exps);
+        if Length(rclass)>1 then
+            pres:=Concatenation(pres,List([2..Length(rclass)], 
+                          i->[rclass[1][1],rclass[i][1]]));
+        fi;
+    od;
+    return pres;
+end);
+
+###################################################################
+# Betti elements of the affine semigroup a using singular package
+###################################################################
+InstallMethod(BettiElementsOfAffineSemigroup,
+	"Computes the Betti elements of an affine semigroup",
+	[IsAffineSemigroup],1,
+	function(a)
+    local msg, pr;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup.");
+    fi;
+    
+    msg:=GeneratorsOfAffineSemigroup(a);
+    
+    pr:=MinimalPresentationOfAffineSemigroup(a);
+   
+    return Set(pr, p->p[1]*msg);
+    
+end);
+
+######################################################################
+# Computes the catenary degree of the affine semigroup a 
+# REQUERIMENTS: SingularInterface
+######################################################################
+InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
+        function(a)
+    local betti, b, max, c, ls;
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsAS(a);
+
+    Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
+    betti:=BettiElementsOfAffineSemigroup(a);
+    Info(InfoNumSgps,2,"The Betti elements are ",betti);
+    max:=0;
+    for b in betti do
+        Info(InfoNumSgps,2,"Computing the catenary degree of ",b);
+        c:=CatenaryDegreeOfSetOfFactorizations(
+                   FactorizationsVectorWRTList(b,ls));
+        Info(InfoNumSgps,2,"which equals ",c);
+        if c>max then max:=c; fi;	
+    od;
+    return max;
+end);
