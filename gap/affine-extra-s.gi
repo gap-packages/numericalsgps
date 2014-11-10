@@ -16,9 +16,9 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
 
 
     # REQUERIMENTS: SingularInterface   
-    if NumSgpsCanUseSI then
-        TryNextMethod();
-    fi;
+    #if NumSgpsCanUseSI then
+    #    TryNextMethod();
+    #fi;
     Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
 
     ##computes the s degree of a monomial in the semigroup ideal 
