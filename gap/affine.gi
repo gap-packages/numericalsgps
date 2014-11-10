@@ -294,7 +294,7 @@ InstallGlobalFunction(ContejeanDevieAlgorithmForEquations,function(arg)
     local solutions, m, x, explored, candidates, tmp, k,zero, lx;
 
 
-    Info(InfoAffSgps,1,"It is recommended that you use NormalizInterface.");
+    Info(InfoAffSgps,2,"Using Contejean and Devie algorithm.");
 
 
     solutions:=[];
@@ -407,9 +407,9 @@ InstallMethod(FactorizationsVectorWRTList,
         function(v,ls)
     local len, e1, opt1, opt2, i, mat, dim;
     # REQUERIMENTS: NormalizInterface   
-    if NumSgpsCanUseNI then
-        TryNextMethod();
-    fi;
+    #if NumSgpsCanUseNI then
+    #    TryNextMethod();
+    #fi;
     
     mat:=TransposedMat(Concatenation(ls,[-v]));
         
@@ -473,9 +473,9 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
           pres,c, rclass;
 
     # REQUERIMENTS: SingularInterface or Singular
-    if NumSgpsCanUseSI or NumSgpsCanUseSingular then
-        TryNextMethod();
-    fi;
+    #if NumSgpsCanUseSI or NumSgpsCanUseSingular then
+    #    TryNextMethod();
+    #fi;
     
     ##computes the s degree of a monomial in the semigroup ideal 
     sdegree:=function(m) 

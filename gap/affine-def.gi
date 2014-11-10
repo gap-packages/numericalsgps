@@ -54,11 +54,11 @@ InstallMethod(GeneratorsOfAffineSemigroup,
     return GeneratorsAS(S);  
   fi;
   # REQUERIMENTS: NormalizInterface   
-  if IsPackageMarkedForLoading("NormalizInterface","0.0") then
+  #if IsPackageMarkedForLoading("NormalizInterface","0.0") then
   #if not TestPackageAvailability("NormalizInterface") = fail then
-    TryNextMethod();
-    
-  fi;
+  #  TryNextMethod();
+  #  
+  #fi;
   if IsAffineSemigroupByEquations(S) then
     basis := ContejeanDevieAlgorithmForEquations(EquationsAS(S));
     SetGeneratorsAS(S,basis);
@@ -261,14 +261,14 @@ end);
          function( S )
    local  gens, eq, h;
 
-   if IsFullAffineSemigroup(S) then 
+   if IsAffineSemigroupByEquations(S) then 
      return true;
    fi;
 
    # REQUERIMENTS: NormalizInterface   
-   if not TestPackageAvailability("NormalizInterface") = fail then
-     TryNextMethod();
-   fi;
+   #if not TestPackageAvailability("NormalizInterface") = fail then
+   #  TryNextMethod();
+   #fi;
    ## When NormalizInterface is not available...
    Info(InfoNumSgps,2,"Unable to determine whether the semigroup is full, unless you install NormalizInterface");
    return fail;   
