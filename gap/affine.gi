@@ -277,10 +277,10 @@ end);
 # l contains the list of coefficients of a system of linear equations. forten gives the 
 #  set of minimal generators of the affine semigroup of nonnegative soultions of this equation
 ##############################################################################################
-
-InstallGlobalFunction(ContejeanDevieAlgorithmForEquations,function(arg)
-  local  contejeanDevieAlgorithm, contejeanDevieAlgorithmWithCongruences, ls, 
-         md, leq;
+InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some evetually in congruences.",[IsMatrix,IsHomogeneousList],1,
+  function(ls,md)
+  local  contejeanDevieAlgorithm, contejeanDevieAlgorithmWithCongruences, leq;
 
   ## local functions ...
     #less than or equal to with the usual partial order
@@ -359,8 +359,8 @@ InstallGlobalFunction(ContejeanDevieAlgorithmForEquations,function(arg)
   end;
   ## end of local functions ...
 
-  ls := arg[1][1];
-  md := arg[1][2];
+  #ls := arg[1][1];
+  #md := arg[1][2];
   if md = [] then
     return contejeanDevieAlgorithm(ls);
   else
@@ -374,7 +374,10 @@ end);
 # ls is a matrix of integers. It computes the set minimal nonzero nonnegative integer solutions
 # of ls*x>=0
 #
-InstallGlobalFunction(ContejeanDevieAlgorithmForInequalities,function(ls)
+InstallMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
+        "Computes the Hilbert basis of a set of inequalities",
+        [IsMatrix],1,
+        function(ls)
     local mat, neq, dim, id, hil,zero ;
     if not(IsMatrix(ls)) then 
       Error("The argument must be a matrix.");

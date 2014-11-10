@@ -88,3 +88,23 @@ DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
 ###########################################################################
 DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
 
+#############################################################################
+##
+#O  HilbertBasisOfSystemOfHomogeneousEquations
+#
+# Computes the Hilbert basis of the system A X=0 mod md, where the rows
+# of A are the elements of ls.
+# md can be empty of have some modulus, if the length of md is smaller than 
+# the lengths of the elements of ls, then the rest of equations are considered
+# to be homogeneous linear Diophantine equations
+##########################################################################
+DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsMatrix,IsHomogeneousList]);
+
+#############################################################################
+##
+#O  HilbertBasisOfSystemOfHomogeneousInequalities
+#
+# Computes the Hilbert basis of the system ls*X>=0 over the nonnegative 
+# integers
+##########################################################################
+DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsMatrix]);

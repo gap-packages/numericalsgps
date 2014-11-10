@@ -8,7 +8,8 @@
 # the lengths of the elements of ls, then the rest of equations are considered
 # to be homogeneous linear Diophantine equations
 ##########################################################################
-DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations");
+#DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations");
+#moved to affine.gd
 
 #############################################################################
 ##
@@ -17,7 +18,8 @@ DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations");
 # Computes the Hilbert basis of the system ls*X>=0 over the nonnegative 
 # integers
 ##########################################################################
-DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities");
+#DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities");
+#moved to affine.df
 
 ###############################################################################
 #F OmegaPrimalityOfElementInAffineSemigroup
