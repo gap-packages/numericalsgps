@@ -48,7 +48,7 @@ InstallMethod(GeneratorsOfAffineSemigroup,
          "Computes a set of generators of the affine semigroup",
          [IsAffineSemigroup],1,        
         function(S)
-  local  basis;
+  local  basis, eq;
 
   if HasGeneratorsAS(S) then
     return GeneratorsAS(S);  
@@ -60,11 +60,12 @@ InstallMethod(GeneratorsOfAffineSemigroup,
   #  
   #fi;
   if IsAffineSemigroupByEquations(S) then
-    basis := ContejeanDevieAlgorithmForEquations(EquationsAS(S));
-    SetGeneratorsAS(S,basis);
+      eq:=EquationsAS(S);
+      basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+      SetGeneratorsAS(S,basis);
     return basis;
   elif IsAffineSemigroupByInequalities(S) then
-    basis := ContejeanDevieAlgorithmForInequalities(InequalitiesAS(S));
+    basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
     SetGeneratorsAS(S,basis);
     return basis;
   fi;     
@@ -249,8 +250,8 @@ end);
 #P  IsFullAffineSemigroup(S)
 ##
 ##  Tests if the affine semigroup S has the property of being full.
- ##
- # Detects if the affine semigroup is full: the nonnegative 
+##
+# Detects if the affine semigroup is full: the nonnegative 
 # of the the group spanned by it coincides with the semigroup
 # itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
 # then a-b\in S
@@ -265,14 +266,19 @@ end);
      return true;
    fi;
 
-   # REQUERIMENTS: NormalizInterface   
-   #if not TestPackageAvailability("NormalizInterface") = fail then
-   #  TryNextMethod();
-   #fi;
-   ## When NormalizInterface is not available...
-   Info(InfoNumSgps,2,"Unable to determine whether the semigroup is full, unless you install NormalizInterface");
-   return fail;   
- end);
+
+  gens := GeneratorsOfAffineSemigroup(S);
+  eq:=EquationsOfGroupGeneratedBy(gens);
+  h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+  if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
+    SetEquationsAS(S,eq);
+    #Setter(IsAffineSemigroupByEquations)(S,true);
+    #Setter(IsFullAffineSemigroup)(S,true);
+    return true;
+  fi; 
+  return false;
+  
+end);
 
  
 #############################################################################
