@@ -11,9 +11,13 @@ fi;
 # to be homogeneous linear Diophantine equations
 # REQUERIMENTS: NormalizInterface
 ##########################################################################
-InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousEquations,function(ls,md)
+InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",[IsMatrix,IsHomogeneousList],2,
+        function(ls,md)
     local matcong, cone, ncong, ncoord, nequ, matfree;
     
+    Info(InfoAffSgps,2,"Using normaliz to find the Hilbert basis.");
+     
     if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
         Error("The arguments must be homogeneous lists.");
     fi;
@@ -80,9 +84,13 @@ end);
 # integers
 # REQUERIMENTS: NormalizInterface
 ##########################################################################
-InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousInequalities,
+InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
+        "Computes the Hilbert basis of a system of inequalities",
+        [IsMatrix],2,
         function(ls)
     local cone,  ncoord;
+    
+    Info(InfoAffSgps,2,"Using normaliz to find the Hilbert basis.");
     
     if not(IsHomogeneousList(ls)) then
         Error("The argument must be a homogeneous lists.");
@@ -319,23 +327,23 @@ end);
 #     return ForAll(h, x->BelongsToAffineSemigroup(x,a));    
 # end);
 ##
-InstallMethod(IsFullAffineSemigroup,
-        "Tests if the affine semigroup S has the property of being full",
-        [IsAffineSemigroup],2,
-        function( S )
-  local  gens, eq, h;
+# InstallMethod(IsFullAffineSemigroup,
+#         "Tests if the affine semigroup S has the property of being full",
+#         [IsAffineSemigroup],2,
+#         function( S )
+#   local  gens, eq, h;
 
-  gens := GeneratorsOfAffineSemigroup(S);
-  eq:=EquationsOfGroupGeneratedBy(gens);
-  h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-  if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
-    SetEquationsAS(eq);
-    Setter(IsAffineSemigroupByEquations)(S,true);
-    Setter(IsFullAffineSemigroup)(S,true);
-    return true;
-  fi; 
-  return false;
-end);
+#   gens := GeneratorsOfAffineSemigroup(S);
+#   eq:=EquationsOfGroupGeneratedBy(gens);
+#   h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+#   if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
+#     SetEquationsAS(eq);
+#     Setter(IsAffineSemigroupByEquations)(S,true);
+#     Setter(IsFullAffineSemigroup)(S,true);
+#     return true;
+#   fi; 
+#   return false;
+# end);
 #############################################################################
 ##
 #O  GeneratorsOfAffineSemigroup(S)
@@ -344,24 +352,24 @@ end);
 ##  If a set of generators has already been computed, this
 ##  is the set returned.
 ############################################################################
-InstallOtherMethod(GeneratorsOfAffineSemigroup, 
-        "Computes a set of generators of the affine semigroup",
-        [IsAffineSemigroup],2,        
-        function(S)
-  local  basis, eq;
+#InstallOtherMethod(GeneratorsOfAffineSemigroup, 
+#        "Computes a set of generators of the affine semigroup",
+#        [IsAffineSemigroup],2,        
+#        function(S)
+#  local  basis, eq;
 
-  if HasGeneratorsAS(S) then
-    return GeneratorsAS(S);  
-  fi;
-  # REQUERIMENTS: NormalizInterface   
-  if IsAffineSemigroupByEquations(S) then
-      eq:=EquationsAS(S);
-      basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-      SetGeneratorsAS(S,basis);
-      return basis;
-  elif IsAffineSemigroupByInequalities(S) then
-      basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
-      SetGeneratorsAS(S,basis);
-      return basis;
-  fi;     
-end);
+#  if HasGeneratorsAS(S) then
+#     return GeneratorsAS(S);  
+#   fi;
+#   # REQUERIMENTS: NormalizInterface   
+#   if IsAffineSemigroupByEquations(S) then
+#       eq:=EquationsAS(S);
+#       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+#       SetGeneratorsAS(S,basis);
+#       return basis;
+#   elif IsAffineSemigroupByInequalities(S) then
+#       basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
+#       SetGeneratorsAS(S,basis);
+#       return basis;
+#   fi;     
+# end);
