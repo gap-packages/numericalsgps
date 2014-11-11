@@ -26,14 +26,15 @@
 #
 # Computes the omega-primality of v in the monoid a
 ###########################################################################
-DeclareGlobalFunction("OmegaPrimalityOfElementInAffineSemigroup");
-
+#DeclareGlobalFunction("OmegaPrimalityOfElementInAffineSemigroup");
+#
 ###############################################################################
 #F OmegaPrimalityOfAffineSemigroup
 #
 # Computes the omega primality of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
+#DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
+# moved to affine.gd
 
 ###############################################################################
 #F PrimitiveElementsOfAffineSemigroup_Normaliz

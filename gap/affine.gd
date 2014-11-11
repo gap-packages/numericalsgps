@@ -108,3 +108,19 @@ DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsMatrix,IsHomoge
 # integers
 ##########################################################################
 DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsMatrix]);
+
+###############################################################################
+##
+#O OmegaPrimalityOfElementInAffineSemigroup
+#
+# Computes the omega-primality of v in the monoid a
+###########################################################################
+DeclareOperation("OmegaPrimalityOfElementInAffineSemigroup",[IsHomogeneousList,IsAffineSemigroup]);
+
+###############################################################################
+##
+#F OmegaPrimalityOfAffineSemigroup
+#
+# Computes the omega primality of the affine semigroup a
+###########################################################################
+DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
