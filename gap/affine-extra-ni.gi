@@ -157,8 +157,9 @@ end);
 # Computes the omega-primality of v in the affine semigroup a
 # REQUERIMENTS: NormalizInterface
 #####################################################################
-
-InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup,
+InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
+        "Computes the omega-primality of v in the affine semigroup a",
+        [IsHomogeneousList,IsAffineSemigroup],2,
         function(v,a)
     local mat, cone, n, hom, par, tot, le, ls;
     
@@ -178,7 +179,7 @@ InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup,
         Error("The first argument must be a list of on nonnegative integers.");		
     fi;
 	
-    ls:=GeneratorsAS(a);
+    ls:=GeneratorsOfAffineSemigroup(a);
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
 
@@ -198,22 +199,29 @@ InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup,
     return Maximum(Set(tot, Sum));
 end);
 
-######################################################################
-# Computes the omega primality of the affine semigroup a
-# REQUERIMENTS: NormalizInterface
-######################################################################
-
-InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
-        function(a)
-    local ls;
-
+InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
+        "Computes the omega-primality of v in the affine semigroup a",
+        [IsHomogeneousList,IsAffineSemigroup and HasEquationsAS],3,
+        function(v,a)
     
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup");
-    fi;
+    local mat, cone, n, hom, par, tot, le, ls, one;
+
+    le:=function(a,b)  #ordinary partial order
+    	return ForAll(b-a,x-> x>=0);
+    end;
+    
+    Info(InfoNumSgps,2,"Using that the semigroup is full.");
     
     ls:=GeneratorsAS(a);
-    return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
+    n:=Length(ls);
+    one:=[List([1..n],_->1)];
+    mat:=TransposedMat(Concatenation(ls,[-v]));
+    cone:=NmzCone(["inhom_inequalities",mat,"signs",one]);
+    NmzCompute(cone,"DualMode"); 	
+    par:=Set(NmzModuleGenerators(cone), f->f{[1..n]});
+
+    Info(InfoNumSgps,2,"Minimals =",par);
+    return Maximum(Set(par, Sum)); 
 end);
 
 ######################################################################
@@ -237,7 +245,7 @@ InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsAS(a);
+    ls:=GeneratorsOfAffineSemigroup(a);
     
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls));
@@ -261,7 +269,7 @@ InstallGlobalFunction(TameDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
     
-    ls:=GeneratorsAS(a);
+    ls:=GeneratorsOfAffineSemigroup(a);
         
     Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
     prim:=PrimitiveElementsOfAffineSemigroup(a);
@@ -293,7 +301,7 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
     
-    ls:=GeneratorsAS(a);
+    ls:=GeneratorsOfAffineSemigroup(a);
     
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls));
