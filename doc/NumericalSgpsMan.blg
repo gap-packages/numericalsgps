@@ -1,46 +1,53 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: NumericalSgpsMan.aux
 The style file: alpha.bst
 Database file #1: NumericalSgpsMan.bib
-You've used 49 entries,
+Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
+while executing---line 1185 of file alpha.bst
+Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
+while executing---line 1185 of file alpha.bst
+Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
+while executing---line 1250 of file alpha.bst
+You've used 58 entries,
             2543 wiz_defined-function locations,
-            872 strings with 10975 characters,
-and the built_in function-call counts, 19614 in all, are:
-= -- 2001
-> -- 980
-< -- 15
-+ -- 340
-- -- 331
-* -- 1451
-:= -- 3307
-add.period$ -- 151
-call.type$ -- 49
-change.case$ -- 305
-chr.to.int$ -- 47
-cite$ -- 49
-duplicate$ -- 721
-empty$ -- 1358
-format.name$ -- 387
-if$ -- 3925
-int.to.chr$ -- 3
+            929 strings with 12464 characters,
+and the built_in function-call counts, 23168 in all, are:
+= -- 2360
+> -- 1176
+< -- 16
++ -- 410
+- -- 399
+* -- 1709
+:= -- 3900
+add.period$ -- 178
+call.type$ -- 58
+change.case$ -- 364
+chr.to.int$ -- 55
+cite$ -- 58
+duplicate$ -- 832
+empty$ -- 1608
+format.name$ -- 465
+if$ -- 4639
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 54
-newline$ -- 250
-num.names$ -- 147
-pop$ -- 224
+missing$ -- 59
+newline$ -- 295
+num.names$ -- 174
+pop$ -- 281
 preamble$ -- 1
-purify$ -- 359
+purify$ -- 427
 quote$ -- 0
-skip$ -- 620
+skip$ -- 730
 stack$ -- 0
-substring$ -- 1181
-swap$ -- 77
-text.length$ -- 15
-text.prefix$ -- 8
+substring$ -- 1372
+swap$ -- 86
+text.length$ -- 16
+text.prefix$ -- 9
 top$ -- 0
-type$ -- 372
+type$ -- 444
 warning$ -- 0
-while$ -- 198
-width$ -- 53
-write$ -- 635
+while$ -- 233
+width$ -- 62
+write$ -- 748
+(There were 3 error messages)
