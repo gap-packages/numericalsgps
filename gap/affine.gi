@@ -467,7 +467,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
     
     id:=IdentityMat(neq);
     mat:=TransposedMat(Concatenation(TransposedMat(ls),-id));
-    hil:=ContejeanDevieAlgorithmForEquations([mat,[]]);
+    hil:=HilbertBasisOfSystemOfHomogeneousEquations(mat,[]);
     return List(hil,x->x{[1..dim]});
     
     
