@@ -106,7 +106,7 @@ end);
 InstallMethod(BelongsToAffineSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [ IsHomogeneousList, IsAffineSemigroup and HasGeneratorsAS],100,
+        [ IsHomogeneousList, IsAffineSemigroup and HasGeneratorsAS],50,
 
         function(v,a)
     local belongs, gen;
@@ -133,6 +133,10 @@ InstallMethod(BelongsToAffineSemigroup,
         Error("The first argument must be an affine semigroup.");
     fi;
         
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    
     gen:=GeneratorsAS(a);
     if not(IsMatrix(Concatenation(gen,[v]))) then
         Error("The dimension of the vector and the affine semigroup do not coincide.");
@@ -141,6 +145,77 @@ InstallMethod(BelongsToAffineSemigroup,
     return belongs(v,gen);
     
 end);
+
+InstallMethod(BelongsToAffineSemigroup,
+        "To test whether an integer belongs to a numerical semigroup",
+        true,
+        [ IsHomogeneousList, IsAffineSemigroup and HasEquationsAS],100,
+
+        function(v,a)
+    local equ,eq,md,ev,i;
+    
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The first argument must be an affine semigroup.");
+    fi;
+    
+    equ:=EquationsAS(a);
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    if ForAny(v,x->x<0) then
+        return false;
+    fi;
+       
+    eq:=equ[1];
+    md:=equ[2];
+    if Length(eq[1])<>Length(v) then
+        Error("The dimension of the vector and the affine semigroup do not coincide.");
+    fi;
+    ev:=eq*v;
+    
+    Info(InfoAffSgps,2,"Testing membership with equations.");
+    
+    for i in [1..Length(md)] do
+        ev[i]:=ev[i] mod md[i];
+    od;
+        
+    return ForAll(ev,x->x=0);
+    
+end);
+
+InstallMethod(BelongsToAffineSemigroup,
+        "To test whether an integer belongs to a numerical semigroup",
+        true,
+        [ IsHomogeneousList, IsAffineSemigroup and HasInequalitiesAS],70,
+
+        function(v,a)
+    local equ,ev;
+    
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The first argument must be an affine semigroup.");
+    fi;
+    
+    equ:=InequalitiesAS(a);
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    if ForAny(v,x->x<0) then
+        return false;
+    fi;
+       
+    if Length(equ[1])<>Length(v) then
+        Error("The dimension of the vector and the affine semigroup do not coincide.");
+    fi;
+    ev:=equ*v;
+    
+    Info(InfoAffSgps,2,"Testing membership with inequalities.");
+    
+    return ForAll(ev,x->x>=0);
+    
+end);
+
 
 #############################################################
 # Computes a basis of a subgroup of Z^n with defining equations 
@@ -248,8 +323,8 @@ InstallGlobalFunction(GluingOfAffineSemigroups,function(a1,a2)
         Error("The arguments must be affine semigroups.");
     fi;
     
-    g1:=GeneratorsAS(a1);
-    g2:=GeneratorsAS(a2);
+    g1:=GeneratorsOfAffineSemigroup(a1);
+    g2:=GeneratorsOfAffineSemigroup(a2);
     if not(IsMatrix(Concatenation(g1,g2)))then
         Error("The semigroups must have the same dimension.");
     fi;
@@ -562,7 +637,7 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
     
-    ls:=GeneratorsAS(a);
+    ls:=GeneratorsOfAffineSemigroup(a);
 
     Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
     betti:=BettiElementsOfAffineSemigroup(a);
@@ -577,3 +652,126 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
     od;
     return max;
 end);
+
+###############################################################################
+##
+#O OmegaPrimalityOfElementInAffineSemigroup
+#
+# Computes the omega-primality of v in the monoid a
+###########################################################################
+InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
+        "Computes the omega-primality of x in the monoid s",
+        [IsHomogeneousList,IsAffineSemigroup],1,
+        function(x,s)
+    
+    local i, j, p, rel, rgb, msg, pol, ed,  degree, monomial,  facts, fact, mp,id, reduce, nonnegative,
+          mu1,A,B,C, lt, tl, exp, new;
+    
+    msg:=GeneratorsOfAffineSemigroup(s);
+    ed:=Length(msg);
+    mp:=MinimalPresentationOfAffineSemigroup(s);
+    p := [];
+    # list of exponents to monomial	
+    monomial:=function(l)
+        local i;
+        pol:=1;
+        for i in [1..ed] do
+            pol:=pol*Indeterminate(Rationals,i)^l[i];
+        od;
+        return pol;
+    end;
+    ## monomial to exponents
+    exp:=function(mon)
+        return List([1..ed],i-> DegreeIndeterminate(mon,i));		
+    end;
+    ##computes the degree of a monomial 
+    degree:=function(mon) 
+        return Sum(exp(mon));
+    end;
+    ##nonnegative
+    nonnegative:=function(l)
+        return ForAll(l, x-> x>=0);
+    end;
+    
+    for rel in mp do
+        Add( p, monomial(rel[1])-monomial(rel[2])); 
+    od;
+
+    facts:=FactorizationsVectorWRTList(x,msg);
+    if facts=[] then
+        return 0;
+    fi;
+    Info(InfoNumSgps,2,"Factorizations of the element :", facts);
+    fact:=facts[Length(facts)];
+    id:=IdentityMat(ed);
+    
+    for i in [1..ed] do
+        Add(p,monomial(fact+id[i])-monomial(fact));
+    od;	
+    
+    # for j in [2..Length(facts)] do
+    #     for i in [1..ed] do
+    #         Add(p,monomial(facts[j]+id[i])-monomial(facts[j]));
+    #     od;
+    # od;
+    
+    Info(InfoNumSgps,2,"Computing a Groebner basis");
+    #a canonical system of generators of sigma_I
+    rgb := ReducedGroebnerBasis( p, MonomialGrevlexOrdering() );
+    
+    
+    #normal form wrt rgb
+    reduce:=function(r)
+        return PolynomialReducedRemainder(r,rgb, MonomialGrevlexOrdering());
+    end;
+    
+    #leading term 
+    lt:=function(r)
+        return LeadingMonomialOfPolynomial(r,MonomialGrevlexOrdering());
+    end;
+    
+    #tail
+    tl:=function(r)
+        return lt(r)-r;
+    end;
+    
+    mu1:=reduce(monomial(fact));
+    #A:=Set([mu1]);
+    A:=Union(Set([mu1]),Set(facts,monomial));
+    
+    Info(InfoNumSgps,2,"Computing minimal elements of the ideal.");
+    while true do
+        B:=[];
+        for i in A do
+            for rel in rgb do	
+                new:=Lcm(i,tl(rel))/tl(rel)*lt(rel);
+                if First(A, a->nonnegative(exp(new)-exp(a)))=fail then 
+                    AddSet(B,new);
+                    Info(InfoNumSgps,2,"New possible minimal element: ",exp(new));
+                fi;
+            od;
+        od;
+        if IsSubset(A,B) then 
+            A:=Filtered(A, i->First(Difference(A,[i]), j-> nonnegative(exp(i)-exp(j)))=fail); 
+            return Maximum(Set(Set(A,exp),Sum));
+        fi;
+        A:=Union(A,B);        
+    od;
+end);
+
+######################################################################
+# Computes the omega primality of the affine semigroup a
+# REQUERIMENTS: NormalizInterface
+######################################################################
+InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
+        function(a)
+    local ls;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsOfAffineSemigroup(a);
+    return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
+end);
+
