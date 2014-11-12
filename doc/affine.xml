@@ -247,8 +247,8 @@ gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
   <Description>
     <A>a</A> is a affine semigroup.  
             The output is the elasticity of <A>a</A> (defined as for numerical semigroups).
-<P/>This function requires <C>NormalizInterface</C> to be loaded prior to numericalsgps.
-
+	    <P/> The procedure used is based on <Cite Key="PH"></Cite>, where it is shown that the elasticity can be computed by using circuits. The set of circutis is calculated using <Cite Key="MR1394747"></Cite>.
+	    
             <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> ElasticityOfAffineSemigroup(a);

@@ -292,25 +292,26 @@ end);
 # Computes the elasticity of the affine semigroup a
 # REQUERIMENTS: NormalizInterface
 #####################################################################
-InstallGlobalFunction(ElasticityOfAffineSemigroup,
-        function(a)
-    local mat, n, cone, facs, ls;
+# InstallGlobalFunction(ElasticityOfAffineSemigroup,
+#         function(a)
+#     local mat, n, cone, facs, ls;
     
 
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup");
-    fi;
+#     if not(IsAffineSemigroup(a)) then
+#         Error("The argument must be an affine semigroup");
+#     fi;
     
-    ls:=GeneratorsOfAffineSemigroup(a);
+#     ls:=GeneratorsOfAffineSemigroup(a);
     
-    n:=Length(ls);
-    mat:=TransposedMat(Concatenation(ls,-ls));
-    cone:=NmzCone(["equations",mat]);
-    NmzCompute(cone,"DualMode"); 	
-    facs:=Set(NmzHilbertBasis(cone), f->[f{[1..n]},f{[n+1..2*n]}]);
+#     n:=Length(ls);
+#     mat:=TransposedMat(Concatenation(ls,-ls));
+#     cone:=NmzCone(["equations",mat]);
+#     NmzCompute(cone,"DualMode"); 	
+#     facs:=Set(NmzHilbertBasis(cone), f->[f{[1..n]},f{[n+1..2*n]}]);
     
-    return Maximum(Set(facs, y->Sum(y[1])/Sum(y[2])));
-end);
+#     return Maximum(Set(facs, y->Sum(y[1])/Sum(y[2])));
+# end);
+#Elasticity now done with circuits: much faster
 
 #############################################################
 #############################################################################################################################
