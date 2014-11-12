@@ -69,5 +69,5 @@ DeclareGlobalFunction("TameDegreeOfAffineSemigroup");
 #F ElasticityOfAffineSemigroup
 # Computes the elasticity of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("ElasticityOfAffineSemigroup");
-
+#DeclareGlobalFunction("ElasticityOfAffineSemigroup");
+#moved to affine.gd

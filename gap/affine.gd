@@ -124,3 +124,9 @@ DeclareOperation("OmegaPrimalityOfElementInAffineSemigroup",[IsHomogeneousList,I
 # Computes the omega primality of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
+
+###############################################################################
+#F ElasticityOfAffineSemigroup
+# Computes the elasticity of the affine semigroup a
+###########################################################################
+DeclareGlobalFunction("ElasticityOfAffineSemigroup");

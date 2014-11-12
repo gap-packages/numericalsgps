@@ -775,3 +775,70 @@ InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
     return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
 end);
 
+#####################################################################
+# Computes the elasticity of the affine semigroup a
+# REQUERIMENTS: NormalizInterface
+#####################################################################
+InstallGlobalFunction(ElasticityOfAffineSemigroup,
+         function(a)
+    
+    local circuits, gens, positive, negative, cir, el;
+    
+    #computes the circuits as explained in Eisenbud-Sturmfels Lemma 8.8
+    circuits:=function(a)
+        local cols,rows, e, comb, c, i, circ,mat, matt, sum;
+        rows:=Length(a);
+        cols:=Length(a[1]);
+        e:=IdentityMat(cols);
+        comb:=Combinations([1..cols],rows+1);
+        #Print("Combinations ",comb,"\n");
+        circ:=[];
+        for c in comb do
+            sum:=0;
+            for i in [1..rows+1] do 
+                mat:=TransposedMat(a);
+                matt:=mat{Difference(c,[c[i]])};
+                #Print("c ",c," da ",matt,"\n");
+                sum:=sum+(-1)^(i+1)*DeterminantIntMat(matt)*e[c[i]];
+            od;
+            if ForAny(sum, x->x<>0) then
+                Add(circ,sum/Gcd(sum));
+            fi;
+            
+        od;
+        return circ;
+    end;
+    
+    # computes x^+ 
+    positive:=function(x)
+        local p,i;
+        
+        p:=[];
+        for i in [1..Length(x)] do
+            p[i]:=Maximum(x[i],0);
+        od;
+        
+        return p;
+    end;
+    
+    # computes x^-
+    negative:=function(x)
+        local p,i;
+        
+        p:=[];
+        for i in [1..Length(x)] do
+            p[i]:=-Minimum(x[i],0);
+        od;
+        
+        return p;
+    end;
+    
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup.");
+    fi;
+    gens:=GeneratorsOfAffineSemigroup(a);
+    cir:=circuits(TransposedMat(gens));
+    cir:=Union(cir,-cir);
+    return Maximum(Set(cir, c->Sum(positive(c))/Sum(negative(c))));    
+end);
