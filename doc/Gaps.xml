@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>Gaps</Heading>
+                A <E>gap</E> of a numerical semigroup <M>S</M> is a nonnegative integer not belonging to 
+<M>S</M>. 
+The <E>fundamental gaps</E> of <M>S</M> are those gaps that are maximal with respect to the partial order induced by 
+division in <M>{\mathbb N}</M>.
+
+The <E>special gaps</E> of a numerical semigroup <M>S</M>, are 
+those fundamental gaps such that if they are added to the given numerical semigroup, 
+then the resulting set is again a numerical semigroup.
+
+                <ManSection>
+                    <Attr Name="GapsOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C> 
+                        is a numerical semigroup. It returns the set of gaps of <C>NS</C>.
+                        <Example><![CDATA[
+gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+[ 1, 2, 4 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Attr Name="GenusOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C> 
+                        is a numerical semigroup. It returns the number of  gaps of <C>NS</C>.
+                    </Description>
+                </ManSection>
+                
+                
+                <ManSection>
+                    <Attr Name="FundamentalGapsOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <C>S</C> 
+                        is a numerical semigroup. It returns the set of fundamental gaps of <A>S</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> FundamentalGapsOfNumericalSemigroup(S);
+[ 16, 17, 18, 19, 27, 28, 29, 30, 31, 40, 41, 42 ]
+gap> GapsOfNumericalSemigroup(S);
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 27, 28, 29,
+  30, 31, 40, 41, 42 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+                
+                
+                <ManSection>
+                    <Attr Name="SpecialGapsOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <C>S</C> 
+                        is a numerical semigroup. It returns the special gaps of <A>S</A>.
+                        
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> SpecialGapsOfNumericalSemigroup(S);
+[ 40, 41, 42 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+            </Section>
