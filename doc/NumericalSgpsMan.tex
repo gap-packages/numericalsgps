@@ -138,8 +138,11 @@ through a scholarship given by \emph{Centro de Matem{\a'a}tica da Universidade d
 
  The authors wish to thank J. I. Garc{\a'\i}a-Garc{\a'\i}a and Alfredo
 S{\a'a}nchez-R. Navarro for many helpful discussions and for helping in the
-programming of preliminary versions of some functions, and also to A.
-Sammartano for his contributions (see Contributions Chapter). 
+programming of preliminary versions of some functions, and also to C. O'Neill
+and A. Sammartano for their contributions (see Contributions Chapter). We are
+also in debt with S. Gutsche, M. Horm, H. Sch\texttt{\symbol{92}}"onemann, C.
+S\texttt{\symbol{92}}"oeger for their fruitful advices concerning
+4ti2Interface, SingularInterface, Singular, Normaliz and NormalizInterface. 
 
  
 
@@ -157,7 +160,7 @@ para a Ci{\^e}ncia e a Tecnologia under the project PEst-C/MAT/UI0144/2011.
  
 
  The second author was/is supported by the projects MTM2007-62346,
-MTM2010-15595, and FQM-5849. \mbox{}}\\[1cm]
+MTM2010-15595, FQM-343 and FQM-5849. \mbox{}}\\[1cm]
 {\small 
 \section*{Colophon}
 \logpage{[ 0, 0, 3 ]}
@@ -4116,7 +4119,8 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 
  \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the set of primitive elements of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
 
-This function requires \texttt{NormalizInterface} to be loaded prior to \texttt{numericalsgps}. 
+This function has two implementations (methods), one using Graver basis via
+the Lawrence lifting of \mbox{\texttt{\mdseries\slshape a}} and the other (much faster) using \texttt{NormalizInterface}. If this package is loaded, then the latter is used by default. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
   !gapprompt@gap>| !gapinput@PrimitiveElementsOfAffineSemigroup(a);|
@@ -4164,7 +4168,8 @@ performance is much better.
 
  \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the elasticity of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
 
-This function requires \texttt{NormalizInterface} to be loaded prior to numericalsgps. 
+ The procedure used is based on \cite{PH}, where it is shown that the elasticity can be computed by using circuits. The
+set of circutis is calculated using \cite{MR1394747}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
   !gapprompt@gap>| !gapinput@ElasticityOfAffineSemigroup(a);|
@@ -4205,8 +4210,6 @@ if \texttt{SingularInterface} (or in its absence \texttt{Singular}) is preloaded
 
 
  \mbox{\texttt{\mdseries\slshape a}} is a affine semigroup. The output is the tame degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
-
-This function requires \texttt{NormalizInterface} to be loaded prior to numericalsgps. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
   !gapprompt@gap>| !gapinput@TameDegreeOfAffineSemigroup(a);|

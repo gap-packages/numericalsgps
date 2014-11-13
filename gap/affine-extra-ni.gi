@@ -235,9 +235,9 @@ end);
 # Normaliz
 # REQUERIMENTS: NormalizInterface
 #####################################################################
-
-#labelled Normaliz, since this one is slower than with 4ti2
-InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup,
+InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
+        "Computes the primitive elements of an affine semigroup",
+        [IsAffineSemigroup],2,
         function(a)
     local mat, n, cone, facs, ls;
     
@@ -260,33 +260,33 @@ end);
 # Computes the tame degree of the affine semigroup a
 # REQUERIMENTS: NormalizInterface
 #####################################################################
-
-InstallGlobalFunction(TameDegreeOfAffineSemigroup,
-        function(a)
-    local prim, tams, p, max, ls;
+#moved to affine.gi
+# InstallGlobalFunction(TameDegreeOfAffineSemigroup,
+#         function(a)
+#     local prim, tams, p, max, ls;
     
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup");
-    fi;
+#     if not(IsAffineSemigroup(a)) then
+#         Error("The argument must be an affine semigroup");
+#     fi;
     
-    ls:=GeneratorsOfAffineSemigroup(a);
+#     ls:=GeneratorsOfAffineSemigroup(a);
         
-    Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
-    prim:=PrimitiveElementsOfAffineSemigroup(a);
-    Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
-    max:=0;
-    for p in prim do
-        Info(InfoNumSgps,2,"Computing the tame degree of ",p);
-        tams:=TameDegreeOfSetOfFactorizations(
-                      FactorizationsVectorWRTList(p,ls));
-        Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
-        if tams>max then
-            max:=tams;
-        fi;
-    od;
+#     Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
+#     prim:=PrimitiveElementsOfAffineSemigroup(a);
+#     Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
+#     max:=0;
+#     for p in prim do
+#         Info(InfoNumSgps,2,"Computing the tame degree of ",p);
+#         tams:=TameDegreeOfSetOfFactorizations(
+#                       FactorizationsVectorWRTList(p,ls));
+#         Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
+#         if tams>max then
+#             max:=tams;
+#         fi;
+#     od;
     
-    return max;
-end);
+#     return max;
+# end);
 
 #####################################################################
 # Computes the elasticity of the affine semigroup a

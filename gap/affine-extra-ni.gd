@@ -39,25 +39,23 @@
 ###############################################################################
 #F PrimitiveElementsOfAffineSemigroup_Normaliz
 # Computes the primitive elements of the affine semigroup a
-#####################################################################
-
-DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup");
+# #####################################################################
+# DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup");
+# moved to affine.gd
 
 ###############################################################################
 #F PrimitiveElementsOfAffineSemigroup_Normaliz
 # An implementation of PrimitiveElementsOfAffineSemigroup using 
 # Normaliz
 #####################################################################
-
-#labelled Normaliz, since this one is slower than with 4ti2
-###########################################################################
 #DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_Normaliz");
 
 ###############################################################################
 #F TameDegreeOfAffineSemigroup
 # Computes the tame degree of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("TameDegreeOfAffineSemigroup");
+#DeclareGlobalFunction("TameDegreeOfAffineSemigroup");
+# moved to affine.gd
 
 ###############################################################################
 #F ElasticityOfAffineSemigroup_Normaliz

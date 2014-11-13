@@ -130,3 +130,26 @@ DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
 # Computes the elasticity of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("ElasticityOfAffineSemigroup");
+
+###############################################################################
+##
+#F Lawrence lifting of an affine semigroup
+##############################################################################
+DeclareGlobalFunction("LawrenceLiftingOfAffineSemigroup");
+
+
+###############################################################################
+##
+#F PrimitiveElementsOfAffineSemigroup_Normaliz
+# An implementation of PrimitiveElementsOfAffineSemigroup using 
+# Normaliz
+#####################################################################
+DeclareOperation("PrimitiveElementsOfAffineSemigroup",[IsAffineSemigroup]);
+
+###############################################################################
+##
+#F TameDegreeOfAffineSemigroup
+# Computes the tame degree of the affine semigroup a
+###########################################################################
+DeclareGlobalFunction("TameDegreeOfAffineSemigroup");
+
