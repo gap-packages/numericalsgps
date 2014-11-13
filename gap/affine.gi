@@ -242,26 +242,31 @@ InstallGlobalFunction(BasisOfGroupGivenByEquations,function(A,m)
     if not(IsInt(A[1][1])) then
         Error("The first argument must be a matrix of integers.");
     fi;
-        
-    if not(IsListOfIntegersNS(m)) then 
-        Error("The second argument must be a lists of integers.");
-    fi;
-    
-    if not(ForAll(m,x->x>0)) then
-        Error("The second argument must be a list of positive integers");
-    fi;
-    
+
     n:=Length(A[1]);
     r:=Length(A);
-    AA:=ShallowCopy(TransposedMat(A));
-    er:=List([1..r],_->0);
-    for i in [1..Length(m)] do
-        if m[i]<>0 then
-            er[i]:=m[i];
-            Add(AA,ShallowCopy(er));
-            er[i]:=0;
+
+    if m=[] then
+        AA:=ShallowCopy(TransposedMat(A));
+    else    
+        if not(IsListOfIntegersNS(m)) then 
+            Error("The second argument must be a lists of integers.");
         fi;
-    od;
+    
+        if not(ForAll(m,x->x>0)) then
+            Error("The second argument must be a list of positive integers");
+        fi;
+    
+        AA:=ShallowCopy(TransposedMat(A));
+        er:=List([1..r],_->0);
+        for i in [1..Length(m)] do
+            if m[i]<>0 then
+                er[i]:=m[i];
+                Add(AA,ShallowCopy(er));
+                er[i]:=0;
+            fi;
+        od;
+    fi;
     AA:=TransposedMat(AA);
 
     b:=TransposedMat(homEqToBasis(AA));
