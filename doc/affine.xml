@@ -207,7 +207,7 @@ gap> BettiElementsOfAffineSemigroup(a);
     <Description>
       <A>a</A> is a affine semigroup.  
       The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
-<P/>This function requires <C>NormalizInterface</C> to be loaded prior to <C>numericalsgps</C>.
+<P/>This function has two implementations (methods), one using Graver basis via the Lawrence lifting of <A>a</A> and the other (much faster) using  <C>NormalizInterface</C>. If this package is loaded, then the latter is used by default.
       <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> PrimitiveElementsOfAffineSemigroup(a);
@@ -276,7 +276,7 @@ gap> CatenaryDegreeOfAffineSemigroup(a);
   <Description>
     <A>a</A> is a affine semigroup.  
             The output is the tame degree of <A>a</A> (defined as for numerical semigroups).
-<P/>This function requires <C>NormalizInterface</C> to be loaded prior to numericalsgps.
+
             <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> TameDegreeOfAffineSemigroup(a);

@@ -761,7 +761,6 @@ end);
 
 ######################################################################
 # Computes the omega primality of the affine semigroup a
-# REQUERIMENTS: NormalizInterface
 ######################################################################
 InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
         function(a)
@@ -777,7 +776,6 @@ end);
 
 #####################################################################
 # Computes the elasticity of the affine semigroup a
-# REQUERIMENTS: NormalizInterface
 #####################################################################
 InstallGlobalFunction(ElasticityOfAffineSemigroup,
          function(a)
@@ -841,4 +839,81 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
     cir:=circuits(TransposedMat(gens));
     cir:=Union(cir,-cir);
     return Maximum(Set(cir, c->Sum(positive(c))/Sum(negative(c))));    
+end);
+
+###################################################################
+#lawrence Lifting
+###################################################################
+InstallGlobalFunction(LawrenceLiftingOfAffineSemigroup,function(a)
+	local dim,ed, msg, id, lft, zero, zeroes, aid, zeroid;
+
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup.");
+    fi;
+    
+    msg:=GeneratorsOfAffineSemigroup(a);
+	ed:=Length(msg);
+	dim:=Length(msg[1]);
+	id:=IdentityMat(ed);
+	zero:=List([1..ed],_->0);
+	zeroes:=List([1..dim],_->zero);
+	
+	msg:=TransposedMat(msg);
+	aid:=TransposedMat(Concatenation(msg,id));	
+	zeroid:=TransposedMat(Concatenation(zeroes,id));
+	
+
+
+	lft:=(Concatenation(aid,zeroid));
+	return AffineSemigroup(lft);		
+end);
+
+#####################################################
+# primitiveElements with Lawrence lifting
+#####################################################
+InstallMethod(PrimitiveElementsOfAffineSemigroup,
+        "Computes the set of primitive elements of an affine semigroup",
+        [IsAffineSemigroup],1,
+        function(a)
+	local msg, ed, dim, prlft, lft;
+
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup.");
+    fi;
+    
+    msg:=GeneratorsOfAffineSemigroup(a);
+	ed:=Length(msg);
+	dim:=Length(msg[1]);
+	lft:=LawrenceLiftingOfAffineSemigroup(a);
+	prlft:=MinimalPresentationOfAffineSemigroup(lft);
+	return Set(prlft, p->(p[1]{[ed+1..ed+ed]})*msg);
+end);
+
+#####################################################################
+# Computes the tame degree of the affine semigroup a
+#####################################################################
+InstallGlobalFunction(TameDegreeOfAffineSemigroup,
+        function(a)
+    local prim, tams, p, max, ls;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsOfAffineSemigroup(a);
+        
+    Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
+    prim:=PrimitiveElementsOfAffineSemigroup(a);
+    Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
+    max:=0;
+    for p in prim do
+        Info(InfoNumSgps,2,"Computing the tame degree of ",p);
+        tams:=TameDegreeOfSetOfFactorizations(
+                      FactorizationsVectorWRTList(p,ls));
+        Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
+        if tams>max then
+            max:=tams;
+        fi;
+    od;    
+    return max;
 end);

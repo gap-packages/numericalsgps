@@ -44,7 +44,6 @@ ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
 if IsPackageMarkedForLoading("NormalizInterface","0.0") then 
 	NumSgpsCanUseNI:=true;
-	ReadPackage("numericalsgps", "gap/affine-extra-ni.gd");
 fi;
 if IsPackageMarkedForLoading("SingularInterface","0.0") 	then
 	NumSgpsCanUseSI:=true;
