@@ -12,7 +12,7 @@ fi;
 # REQUERIMENTS: NormalizInterface
 ##########################################################################
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
-        "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",[IsMatrix,IsHomogeneousList],2,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",[IsMatrix,IsHomogeneousList],5,
         function(ls,md)
     local matcong, cone, ncong, ncoord, nequ, matfree;
     
@@ -26,7 +26,9 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         Error("The first argument must be a list of lists of integers.");
     fi;
     
-    if not(IsListOfIntegersNS(md)) then 
+    ncong:=Length(md);
+    
+    if ncong>0 and not(IsListOfIntegersNS(md)) then 
         Error("The second argument must be a lists of integers.");
     fi;
     
@@ -34,11 +36,6 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         Error("The second argument must be a list of positive integers");
     fi;
     
-    if not(Length(Set(ls, Length))=1) then
-        Error("The first argument must be a list of lists all with the same length.");
-    fi;
-        
-    ncong:=Length(md);
     nequ:=Length(ls);
     ncoord:=Length(ls[1]);
     matcong:=[];
@@ -86,7 +83,7 @@ end);
 ##########################################################################
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes the Hilbert basis of a system of inequalities",
-        [IsMatrix],2,
+        [IsMatrix],5,
         function(ls)
     local cone,  ncoord;
     
@@ -127,7 +124,7 @@ end);
 ########################################################################
 InstallOtherMethod(FactorizationsVectorWRTList,
         "Computes the set of factorizations of the first argument in terms of the elements of the second",
-        [IsHomogeneousList, IsMatrix],2,
+        [IsHomogeneousList, IsMatrix],5,
         function(v,ls)
     local mat, cone, n, facs;
    	Info(InfoNumSgps,2,"Using NormalizInterface to compute minimal factorization.");
@@ -159,7 +156,7 @@ end);
 #####################################################################
 InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
         "Computes the omega-primality of v in the affine semigroup a",
-        [IsHomogeneousList,IsAffineSemigroup],2,
+        [IsHomogeneousList,IsAffineSemigroup],5,
         function(v,a)
     local mat, cone, n, hom, par, tot, le, ls;
     
@@ -237,7 +234,7 @@ end);
 #####################################################################
 InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
         "Computes the primitive elements of an affine semigroup",
-        [IsAffineSemigroup],2,
+        [IsAffineSemigroup],5,
         function(a)
     local mat, n, cone, facs, ls;
     
