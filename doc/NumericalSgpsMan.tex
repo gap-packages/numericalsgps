@@ -487,7 +487,7 @@ a list representing an entity of the type to which the function's name refers.
 \section{\textcolor{Chapter }{Some basic tests}}\logpage{[ 2, 2, 0 ]}
 \hyperdef{L}{X7EF4254C81ED6665}{}
 {
-  This section describes some basic tests on numerical semigroups.The first
+  This section describes some basic tests on numerical semigroups. The first
 described tests refer to what the semigroup is currently known to be (not
 necessarily the way it was created). Then are presented functions to test if a
 given list represents the small elements, gaps or the Ap{\a'e}ry set (see \ref{zlab1}) of a numerical semigroup; to test if an integer belongs to a numerical
@@ -3865,7 +3865,7 @@ list of lists of nonnegative integers; all lists in the list having the same
 length (a matrix actually). If $G$ is a subgroup of $\mathbb Z^k$, then $S=G\cap \mathbb N^k$ is an affine semigroup (these semigroups are call full affine semigroups). As $G$ can be represented by its defining equations (homogeneous and some of them
 possibly in congruences), we can represent $S$ by the defining equations of $G$; indeed $S$ is just the set of nonnegative solutions of this system of equations. We can
 represent the equations as a list of lists of integers, all with the same
-length. Every list is a row of the matrix of coefficiens of the system of
+length. Every list is a row of the matrix of coefficients of the system of
 equations. For the equations in congruences, if we arrange them so that they
 are the first ones in the list, we provide the corresponding moduli in a list.
 So for instance, the equations $x+y\equiv 0\bmod 2,\ x-2y=0$ will be represented as [[1,1],[1,-2]] and the moduli [2]. 
@@ -3890,91 +3890,51 @@ semigroup will be given by means of a set of generators.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AffineSemigroup([1,3],[7,2],[1,5]);|
   <Affine semigroup in 2 dimensional space, with 3 generators>
+  !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );  |
+  <Affine semigroup>
+  g
 \end{Verbatim}
  }
 
  
 
-\subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousEquations}}
+\subsection{\textcolor{Chapter }{IsAffineSemigroup}}
 \logpage{[ 11, 1, 2 ]}\nobreak
-\hyperdef{L}{X7D4D017A79AD98E2}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
-\label{HilbertBasisOfSystemOfHomogeneousEquations}
-}\hfill{\scriptsize (function)}}\\
+\hyperdef{L}{X7A2902207BAA3936}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroup({\mdseries\slshape AS})\index{IsAffineSemigroup@\texttt{IsAffineSemigroup}}
+\label{IsAffineSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByGenerators({\mdseries\slshape AS})\index{IsAffineSemigroupByGenerators@\texttt{IsAffineSemigroupByGenerators}}
+\label{IsAffineSemigroupByGenerators}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByMinimalGenerators({\mdseries\slshape AS})\index{IsAffineSemigroupByMinimalGenerators@\texttt{IsAffine}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Minimal}\-\texttt{Generators}}
+\label{IsAffineSemigroupByMinimalGenerators}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByEquations({\mdseries\slshape AS})\index{IsAffineSemigroupByEquations@\texttt{IsAffineSemigroupByEquations}}
+\label{IsAffineSemigroupByEquations}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByInequalities({\mdseries\slshape AS})\index{IsAffineSemigroupByInequalities@\texttt{IsAffineSemigroupByInequalities}}
+\label{IsAffineSemigroupByInequalities}
+}\hfill{\scriptsize (attribute)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of integers and \mbox{\texttt{\mdseries\slshape m}} a list of integers. The elements of \mbox{\texttt{\mdseries\slshape ls}} represent the rows of a matrix $A$. The output is a minimal generating system (Hilbert basis) of the set of
-nonnegative integer solutions of the sytem $Ax=0$ where the $k$ first equations are in the congruences modulo \mbox{\texttt{\mdseries\slshape m[i]}}, with $k$ the length of \mbox{\texttt{\mdseries\slshape m}}. 
-
- If the package \texttt{NormalizInterface} has not been loaded, then Contejean-Devie algorithm is used \cite{MR1283022} instead (if this is the case, congruences are treated as in \cite{R-GS}. 
+ \mbox{\texttt{\mdseries\slshape AS}} is an affine semigroup and these attributes are available (their names should
+be self explanatory). They reflect what is currently known about the
+semigroup. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);|
-  [ [ 2, 0, 0 ], [ 1, 1, 1 ], [ 0, 2, 2 ] ]
-\end{Verbatim}
- }
-
- If $C$ is a pointed cone (a cone in $\mathbb Q^k$ not containing lines and $0\in C$), then $S=C\cap \mathbb N^k$ is an affine semigroup (known as normal affine semigroup). So another way to
-give an affine semigroup is by a set of homogeneous inequalities, and we can
-represent these inequalities by its coefficients. If we put them in a matrix $S$ can be defined as the set of nonnegative integer solutions to $Ax \ge 0$. 
-
-\subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousInequalities}}
-\logpage{[ 11, 1, 3 ]}\nobreak
-\hyperdef{L}{X825B1CD37B0407A6}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
-\label{HilbertBasisOfSystemOfHomogeneousInequalities}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of integers. The elements of \mbox{\texttt{\mdseries\slshape ls}} represent the rows of a matrix $A$. The output is a minimal generating system (Hilbert basis) of the set of
-nonnegative integer solutions to $Ax\ge 0$. 
-
- If the package \texttt{NormalizInterface} has not been loaded, then Contejean-Devie algorithm is used \cite{MR1283022} instead (the use of slack variables is described in \cite{R-GS-GG-B}). 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);|
-  [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ]
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{EquationsOfGroupGeneratedBy}}
-\logpage{[ 11, 1, 4 ]}\nobreak
-\hyperdef{L}{X8307A0597864B098}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquationsOfGroupGeneratedBy({\mdseries\slshape M})\index{EquationsOfGroupGeneratedBy@\texttt{EquationsOfGroupGeneratedBy}}
-\label{EquationsOfGroupGeneratedBy}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape M}} is a matrix of integers. The output is a pair $[A,m]$ that reperesents the set of defining equations of the group spanned by the
-rows of \mbox{\texttt{\mdseries\slshape M}}: $Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k$, with $m=[n_1,\ldots,n_t]$. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@EquationsOfGroupGeneratedBy([[1,2,0],[2,-2,2]]);|
-  [ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ]
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{BasisOfGroupGivenByEquations}}
-\logpage{[ 11, 1, 5 ]}\nobreak
-\hyperdef{L}{X7A1CE5A98425CEA1}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BasisOfGroupGivenByEquations({\mdseries\slshape A, m})\index{BasisOfGroupGivenByEquations@\texttt{BasisOfGroupGivenByEquations}}
-\label{BasisOfGroupGivenByEquations}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape A}} is a matrix of integers and \mbox{\texttt{\mdseries\slshape m}} is a list of positive integers. The output is a basis for the group with
-defining equations $Ax=0\in \mathbb Z_{n_1}\times \mathbb Z_{n_t}\times \mathbb Z^k$, with $m=[n_1,\ldots,n_t$. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@BasisOfGroupGivenByEquations([[0,0,1],[2,-1,-3]],[2]);|
-  [ [ -1, -2, 0 ], [ -2, 2, -2 ] ]
+  !gapprompt@gap>| !gapinput@a1:=AffineSemigroup([[3,0],[2,1],[1,2],[0,3]]);|
+  <Affine semigroup in 2 dimensional space, with 4 generators>
+  !gapprompt@gap>| !gapinput@IsAffineSemigroupByEquations(a1);|
+  false
+  !gapprompt@gap>| !gapinput@IsAffineSemigroupByGenerators(a1);|
+  true
 \end{Verbatim}
  }
 
  
 
 \subsection{\textcolor{Chapter }{BelongsToAffineSemigroup}}
-\logpage{[ 11, 1, 6 ]}\nobreak
+\logpage{[ 11, 1, 3 ]}\nobreak
 \hyperdef{L}{X851788D781A13C50}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToAffineSemigroup({\mdseries\slshape v, a})\index{BelongsToAffineSemigroup@\texttt{BelongsToAffineSemigroup}}
 \label{BelongsToAffineSemigroup}
@@ -3999,7 +3959,7 @@ inequalities.
  
 
 \subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
-\logpage{[ 11, 1, 7 ]}\nobreak
+\logpage{[ 11, 1, 4 ]}\nobreak
 \hyperdef{L}{X82FCB89B80D42205}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
 \label{IsFullAffineSemigroup}
@@ -4019,6 +3979,84 @@ further use.
   true
   !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([1,2],a);|
   false
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousEquations}}
+\logpage{[ 11, 1, 5 ]}\nobreak
+\hyperdef{L}{X7D4D017A79AD98E2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
+\label{HilbertBasisOfSystemOfHomogeneousEquations}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of integers and \mbox{\texttt{\mdseries\slshape m}} a list of integers. The elements of \mbox{\texttt{\mdseries\slshape ls}} represent the rows of a matrix $A$. The output is a minimal generating system (Hilbert basis) of the set of
+nonnegative integer solutions of the sytem $Ax=0$ where the $k$ first equations are in the congruences modulo \mbox{\texttt{\mdseries\slshape m[i]}}, with $k$ the length of \mbox{\texttt{\mdseries\slshape m}}. 
+
+ If the package \texttt{NormalizInterface} has not been loaded, then Contejean-Devie algorithm is used \cite{MR1283022} instead (if this is the case, congruences are treated as in \cite{R-GS}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);|
+  [ [ 2, 0, 0 ], [ 1, 1, 1 ], [ 0, 2, 2 ] ]
+\end{Verbatim}
+ }
+
+ If $C$ is a pointed cone (a cone in $\mathbb Q^k$ not containing lines and $0\in C$), then $S=C\cap \mathbb N^k$ is an affine semigroup (known as normal affine semigroup). So another way to
+give an affine semigroup is by a set of homogeneous inequalities, and we can
+represent these inequalities by its coefficients. If we put them in a matrix $S$ can be defined as the set of nonnegative integer solutions to $Ax \ge 0$. 
+
+\subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousInequalities}}
+\logpage{[ 11, 1, 6 ]}\nobreak
+\hyperdef{L}{X825B1CD37B0407A6}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
+\label{HilbertBasisOfSystemOfHomogeneousInequalities}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of integers. The elements of \mbox{\texttt{\mdseries\slshape ls}} represent the rows of a matrix $A$. The output is a minimal generating system (Hilbert basis) of the set of
+nonnegative integer solutions to $Ax\ge 0$. 
+
+ If the package \texttt{NormalizInterface} has not been loaded, then Contejean-Devie algorithm is used \cite{MR1283022} instead (the use of slack variables is described in \cite{R-GS-GG-B}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);|
+  [ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{EquationsOfGroupGeneratedBy}}
+\logpage{[ 11, 1, 7 ]}\nobreak
+\hyperdef{L}{X8307A0597864B098}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquationsOfGroupGeneratedBy({\mdseries\slshape M})\index{EquationsOfGroupGeneratedBy@\texttt{EquationsOfGroupGeneratedBy}}
+\label{EquationsOfGroupGeneratedBy}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape M}} is a matrix of integers. The output is a pair $[A,m]$ that reperesents the set of defining equations of the group spanned by the
+rows of \mbox{\texttt{\mdseries\slshape M}}: $Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k$, with $m=[n_1,\ldots,n_t]$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@EquationsOfGroupGeneratedBy([[1,2,0],[2,-2,2]]);|
+  [ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{BasisOfGroupGivenByEquations}}
+\logpage{[ 11, 1, 8 ]}\nobreak
+\hyperdef{L}{X7A1CE5A98425CEA1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BasisOfGroupGivenByEquations({\mdseries\slshape A, m})\index{BasisOfGroupGivenByEquations@\texttt{BasisOfGroupGivenByEquations}}
+\label{BasisOfGroupGivenByEquations}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape A}} is a matrix of integers and \mbox{\texttt{\mdseries\slshape m}} is a list of positive integers. The output is a basis for the group with
+defining equations $Ax=0\in \mathbb Z_{n_1}\times \mathbb Z_{n_t}\times \mathbb Z^k$, with $m=[n_1,\ldots,n_t$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@BasisOfGroupGivenByEquations([[0,0,1],[2,-1,-3]],[2]);|
+  [ [ -1, -2, 0 ], [ -2, 2, -2 ] ]
 \end{Verbatim}
  }
 

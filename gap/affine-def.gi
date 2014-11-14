@@ -357,3 +357,48 @@ InstallMethod( Display,
  ####################################################
  
 
+############################################################################
+ ##
+ #M Methods for the comparison of affine semigroups.
+ ##
+ InstallMethod( \=,
+         "for two numerical semigroups",
+         [IsAffineSemigroup and IsAffineSemigroupRep,
+          IsAffineSemigroup and IsAffineSemigroupRep],
+         function(x, y )
+
+     if HasGeneratorsAS(x) and HasGeneratorsAS(y) and
+       GeneratorsAS(x) = GeneratorsAS(y) then
+         return  true;
+
+     elif  HasEquationsAS(x) and HasEquationsAS(y) and
+       EquationsAS(x) = EquationsAS(y) then
+         return true;
+
+     elif HasInequalitiesAS(x) and HasInequalitiesAS(y) and
+       InequalitiesAS(x) = InequalitiesAS(y) then
+       return true;
+     else
+         return fail;
+     fi;
+ end);
+
+ InstallMethod( \<,
+         "for two affine semigroups",
+         [IsAffineSemigroup,IsAffineSemigroup],
+         function(x, y )
+     if HasGeneratorsAS(x) and HasGeneratorsAS(y) and
+       GeneratorsAS(x) < GeneratorsAS(y) then
+         return  true;
+
+     elif  HasEquationsAS(x) and HasEquationsAS(y) and
+       EquationsAS(x) < EquationsAS(y) then
+         return true;
+
+     elif HasInequalitiesAS(x) and HasInequalitiesAS(y) and
+       InequalitiesAS(x) < InequalitiesAS(y) then
+       return true;
+     else
+         return fail;
+     fi;
+ end );
