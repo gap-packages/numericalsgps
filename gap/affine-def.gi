@@ -33,7 +33,7 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
   
   SetGeneratorsAS(M,gens);
   
-  Setter(IsAffineSemigroupByGenerators)(M,true);
+#  Setter(IsAffineSemigroupByGenerators)(M,true);
   return M;
 end);
 #############################################################################
@@ -59,12 +59,12 @@ InstallMethod(GeneratorsOfAffineSemigroup,
   #  TryNextMethod();
   #  
   #fi;
-  if IsAffineSemigroupByEquations(S) then
+  if HasEquationsAS(S) then
       eq:=EquationsAS(S);
       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
       SetGeneratorsAS(S,basis);
     return basis;
-  elif IsAffineSemigroupByInequalities(S) then
+  elif HasInequalitiesAS(S) then
     basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
     SetGeneratorsAS(S,basis);
     return basis;
@@ -114,8 +114,8 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
   M:= Objectify( NewType( FamilyObj( ls ),
               IsAttributeStoringRep and IsAffineSemigroup), rec());
   SetEquationsAS(M,[ls,md]);
-  Setter(IsAffineSemigroupByEquations)(M,true);
-  Setter(IsFullAffineSemigroup)(M,true);
+#  Setter(IsAffineSemigroupByEquations)(M,true);
+#  Setter(IsFullAffineSemigroup)(M,true);
   return M;
 end);
 
@@ -146,8 +146,8 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
               IsAttributeStoringRep and IsAffineSemigroup), rec());
 
   SetInequalitiesAS(M,ls);
-  Setter(IsAffineSemigroupByEquations)(M,true);
-  Setter(IsFullAffineSemigroup)(M,true);
+ # Setter(IsAffineSemigroupByEquations)(M,true);
+ # Setter(IsFullAffineSemigroup)(M,true);
   return M;
 end);
 
@@ -198,12 +198,12 @@ end);
 ##  Tests if the affine semigroup S was given by generators.
 ##
 #############################################################################
- InstallMethod(IsAffineSemigroupByGenerators,
-         "Tests if the affine semigroup S was given by generators",
-         [IsAffineSemigroup],
-         function( S )
-   return(HasIsAffineSemigroupByGenerators( S ));
- end);
+ # InstallMethod(IsAffineSemigroupByGenerators,
+ #         "Tests if the affine semigroup S was given by generators",
+ #         [IsAffineSemigroup],
+ #         function( S )
+ #   return(HasGeneratorsAS( S ));
+ # end);
 #############################################################################
 ##
 #P  IsAffineSemigroupByMinimalGenerators(S)
@@ -211,12 +211,12 @@ end);
 ##  Tests if the affine semigroup S was given by its minimal generators.
 ##
 #############################################################################
- InstallMethod(IsAffineSemigroupByMinimalGenerators,
-         "Tests if the affine semigroup S was given by its minimal generators",
-         [IsAffineSemigroup],
-         function( S )
-   return(HasIsAffineSemigroupByMinimalGenerators( S ));
- end);
+ # InstallMethod(IsAffineSemigroupByMinimalGenerators,
+ #         "Tests if the affine semigroup S was given by its minimal generators",
+ #         [IsAffineSemigroup],
+ #         function( S )
+ #   return(HasIsAffineSemigroupByMinimalGenerators( S ));
+ # end);
 #############################################################################
 ##
 #P  IsAffineSemigroupByEquations(S)
@@ -224,12 +224,12 @@ end);
 ##  Tests if the affine semigroup S was given by equations or equations have already been computed.
 ##
  #############################################################################
- InstallMethod(IsAffineSemigroupByEquations,
-         "Tests if the affine semigroup S was given by equations",
-         [IsAffineSemigroup],
-         function( S )
-   return(HasIsAffineSemigroupByEquations( S ));
- end);
+ # InstallMethod(IsAffineSemigroupByEquations,
+ #         "Tests if the affine semigroup S was given by equations",
+ #         [IsAffineSemigroup],
+ #         function( S )
+ #   return(HasEquationsAS( S ));
+ # end);
 
 #############################################################################
 ##
@@ -237,13 +237,13 @@ end);
 ##
 ##  Tests if the affine semigroup S was given by inequalities or inequalities have already been computed.
 ##
- #############################################################################
- InstallMethod(IsAffineSemigroupByInequalities,
-         "Tests if the affine semigroup S was given by inequalities",
-         [IsAffineSemigroup],
-         function( S )
-   return(HasIsAffineSemigroupByInequalities( S ));
- end);
+# #############################################################################
+ # InstallMethod(IsAffineSemigroupByInequalities,
+ #         "Tests if the affine semigroup S was given by inequalities",
+ #         [IsAffineSemigroup],
+ #         function( S )
+ #   return(HasInequalitiesAS( S ));
+ # end);
 
 #############################################################################
 ##
@@ -260,16 +260,24 @@ end);
          "Tests if the affine semigroup S has the property of being full",
          [IsAffineSemigroup],1,
          function( S )
-   local  gens, eq, h;
+   local  gens, eq, h, dim;
 
-   if IsAffineSemigroupByEquations(S) then 
+   if HasEquationsAS(S) then 
      return true;
    fi;
 
 
-  gens := GeneratorsOfAffineSemigroup(S);
-  eq:=EquationsOfGroupGeneratedBy(gens);
-  h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+   gens := GeneratorsOfAffineSemigroup(S);
+   if gens=[] then 
+       return true;
+   fi;
+   dim:=Length(gens[1]);
+   eq:=EquationsOfGroupGeneratedBy(gens);
+   if eq[1]=[] then
+       h:=IdentityMat(dim);
+   else
+       h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+   fi;
   if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
     SetEquationsAS(S,eq);
     #Setter(IsAffineSemigroupByEquations)(S,true);

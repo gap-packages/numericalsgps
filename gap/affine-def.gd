@@ -149,7 +149,7 @@ DeclareGlobalFunction( "AffineSemigroup" );
 ##  Tests if the affine semigroup S was given by its generators.
 ##
 #############################################################################
-DeclareProperty( "IsAffineSemigroupByGenerators", IsAffineSemigroup);
+#DeclareProperty( "IsAffineSemigroupByGenerators", IsAffineSemigroup);
 
 
 #############################################################################
@@ -159,7 +159,7 @@ DeclareProperty( "IsAffineSemigroupByGenerators", IsAffineSemigroup);
 ##  Tests if the affine semigroup S was given by its minimal generators.
 ##
 #############################################################################
-DeclareProperty( "IsAffineSemigroupByMinimalGenerators", IsAffineSemigroup);
+#DeclareProperty( "IsAffineSemigroupByMinimalGenerators", IsAffineSemigroup);
 
 #############################################################################
 ##
@@ -168,7 +168,7 @@ DeclareProperty( "IsAffineSemigroupByMinimalGenerators", IsAffineSemigroup);
 ##  Tests if the affine semigroup S was given by equations or equations have already been computed.
 ##
 #############################################################################
-DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
+#DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
 
 #############################################################################
 ##
@@ -177,7 +177,7 @@ DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
 ##  Tests if the affine semigroup S was given by inequalities or inequalities have already been computed.
 ##
 #############################################################################
-DeclareProperty( "IsAffineSemigroupByInequalities", IsAffineSemigroup);
+#DeclareProperty( "IsAffineSemigroupByInequalities", IsAffineSemigroup);
 
 #############################################################################
 ##
