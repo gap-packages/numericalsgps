@@ -402,8 +402,7 @@ gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
 227
 
 gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
-[ <Numerical semigroup with 3 generators>, 
-  <Numerical semigroup with 4 generators> ]
+[ <Numerical semigroup>, <Numerical semigroup> ]
 
 ##Complete_Intersections.xml
 

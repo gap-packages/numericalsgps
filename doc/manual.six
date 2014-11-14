@@ -66,11 +66,11 @@ X", "6.1", [ 6, 1, 0 ], 4, 27, "irreducible numerical semigroups",
       "X83C597EC7FAA1C0F" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YComplete intersection numerical semigroups\033[13\
-3X\033[101X", "6.2", [ 6, 2, 0 ], 115, 29, 
+3X\033[101X", "6.2", [ 6, 2, 0 ], 114, 29, 
       "complete intersection numerical semigroups", "X7D3FD9C8786B5D72" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YAlmost-symmetric numerical semigroups\033[133X\\
-033[101X", "6.3", [ 6, 3, 0 ], 264, 31, 
+033[101X", "6.3", [ 6, 3, 0 ], 263, 31, 
       "almost-symmetric numerical semigroups", "X7998FF857F70C9A2" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YIdeals of numerical semigroups\033[133X\033[101X"
@@ -366,45 +366,45 @@ finity.", "X81076AAE829C35FA" ],
   [ "\033[2XDecomposeIntoIrreducibles\033[102X", "6.1-6", [ 6, 1, 6 ], 101, 
       28, "decomposeintoirreducibles", "X8227EF2B7F67E2FB" ], 
   [ "\033[2XAsGluingOfNumericalSemigroups\033[102X", "6.2-1", [ 6, 2, 1 ], 
-      131, 29, "asgluingofnumericalsemigroups", "X848FCB49851D19B8" ], 
+      130, 29, "asgluingofnumericalsemigroups", "X848FCB49851D19B8" ], 
   [ "\033[2XIsACompleteIntersectionNumericalSemigroup\033[102X", "6.2-2", 
-      [ 6, 2, 2 ], 150, 29, "isacompleteintersectionnumericalsemigroup", 
+      [ 6, 2, 2 ], 149, 29, "isacompleteintersectionnumericalsemigroup", 
       "X86BE7CD17E99BE23" ], 
   [ 
       "\033[2XCompleteIntersectionNumericalSemigroupsWithFrobeniusNumber\033[102X\
-", "6.2-3", [ 6, 2, 3 ], 169, 30, 
+", "6.2-3", [ 6, 2, 3 ], 168, 30, 
       "completeintersectionnumericalsemigroupswithfrobeniusnumber", 
       "X86350BCE7D047599" ], 
-  [ "\033[2XIsFreeNumericalSemigroup\033[102X", "6.2-4", [ 6, 2, 4 ], 181, 
+  [ "\033[2XIsFreeNumericalSemigroup\033[102X", "6.2-4", [ 6, 2, 4 ], 180, 
       30, "isfreenumericalsemigroup", "X78FF54BF79F19AB3" ], 
   [ "\033[2XFreeNumericalSemigroupsWithFrobeniusNumber\033[102X", "6.2-5", 
-      [ 6, 2, 5 ], 196, 30, "freenumericalsemigroupswithfrobeniusnumber", 
+      [ 6, 2, 5 ], 195, 30, "freenumericalsemigroupswithfrobeniusnumber", 
       "X86B4BA6A79F734A8" ], 
   [ "\033[2XIsTelescopicNumericalSemigroup\033[102X", "6.2-6", [ 6, 2, 6 ], 
-      208, 30, "istelescopicnumericalsemigroup", "X7807E8998663F8C0" ], 
+      207, 30, "istelescopicnumericalsemigroup", "X7807E8998663F8C0" ], 
   [ "\033[2XTelescopicNumericalSemigroupsWithFrobeniusNumber\033[102X", 
-      "6.2-7", [ 6, 2, 7 ], 224, 31, 
+      "6.2-7", [ 6, 2, 7 ], 223, 31, 
       "telescopicnumericalsemigroupswithfrobeniusnumber", "X84475353846384E8" 
      ], 
   [ 
       "\033[2XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity\\
-033[102X", "6.2-8", [ 6, 2, 8 ], 236, 31, 
+033[102X", "6.2-8", [ 6, 2, 8 ], 235, 31, 
       "isnumericalsemigroupassociatedirreducibleplanarcurvesingularity", 
       "X847CD0EF8452F771" ], 
   [ 
       "\033[2XNumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithF\
-robeniusNumber\033[102X", "6.2-9", [ 6, 2, 9 ], 251, 31, 
+robeniusNumber\033[102X", "6.2-9", [ 6, 2, 9 ], 250, 31, 
       "numericalsemigroupsassociatedirreducibleplanarcurvesingularitywithfrobe\
 niusnumber", "X85BD8C3680F22594" ], 
   [ "\033[2XAlmostSymmetricNumericalSemigroupsFromIrreducible\033[102X", 
-      "6.3-1", [ 6, 3, 1 ], 274, 31, 
+      "6.3-1", [ 6, 3, 1 ], 273, 31, 
       "almostsymmetricnumericalsemigroupsfromirreducible", 
       "X7A81F31479DB5DF2" ], 
   [ "\033[2XIsAlmostSymmetricNumericalSemigroup\033[102X", "6.3-2", 
-      [ 6, 3, 2 ], 289, 32, "isalmostsymmetricnumericalsemigroup", 
+      [ 6, 3, 2 ], 288, 32, "isalmostsymmetricnumericalsemigroup", 
       "X7CF201F185943C30" ], 
   [ "\033[2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumber\033[102X", 
-      "6.3-3", [ 6, 3, 3 ], 301, 32, 
+      "6.3-3", [ 6, 3, 3 ], 300, 32, 
       "almostsymmetricnumericalsemigroupswithfrobeniusnumber", 
       "X7B0DF2FE7D00A9E0" ], 
   [ "\033[2XIdealOfNumericalSemigroup\033[102X", "7.1-1", [ 7, 1, 1 ], 18, 

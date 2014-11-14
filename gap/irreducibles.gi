@@ -761,9 +761,7 @@ InstallGlobalFunction(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingula
 
 	out:=[];
 	for i in pcs(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroup(i);
-		Setter(IsNumericalSemigroupByMinimalGenerators)(s,true);
-		Setter(IsNumericalSemigroupByGenerators)(s,true);
+		s:=NumericalSemigroupByMinimalGenerators(i);
 		Add(out,s);
 	od;
 	return out;
@@ -816,9 +814,7 @@ InstallGlobalFunction(TelescopicNumericalSemigroupsWithFrobeniusNumber,function(
 
 	out:=[];
 	for i in tel(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroup(i);
-		Setter(IsNumericalSemigroupByMinimalGenerators)(s,true);
-		Setter(IsNumericalSemigroupByGenerators)(s,true);
+		s:=NumericalSemigroupByMinimalGenerators(i);
 		Add(out,s);
 	od;
 	return out;
@@ -871,9 +867,7 @@ InstallGlobalFunction(FreeNumericalSemigroupsWithFrobeniusNumber,function(f)
 
 	out:=[];
 	for i in free(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroup(i);
-		Setter(IsNumericalSemigroupByMinimalGenerators)(s,true);
-		Setter(IsNumericalSemigroupByGenerators)(s,true);
+		s:=NumericalSemigroupByMinimalGenerators(i);
 		Add(out,s);
 	od;
 	return out;
@@ -946,9 +940,7 @@ InstallGlobalFunction(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber
 
 	out:=[];
 	for i in ci(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroup(i);
-		Setter(IsNumericalSemigroupByMinimalGenerators)(s,true);
-		Setter(IsNumericalSemigroupByGenerators)(s,true);
+		s:=NumericalSemigroupByMinimalGenerators(i);
 		Add(out,s);
 	od;
 	return out;

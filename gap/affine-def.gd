@@ -60,7 +60,7 @@ BindGlobal( "AffineSemigroupsType",
 DeclareGlobalFunction( "AffineSemigroupByGenerators" );
 #A
 DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
-
+DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGeneratorsAS);
 
 #############################################################################
 ##
@@ -74,6 +74,7 @@ DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 DeclareGlobalFunction( "AffineSemigroupByMinimalGenerators" );
 #A
 DeclareAttribute( "MinimalGeneratorsAS", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGeneratorsAS);
 
 
 #############################################################################
@@ -96,7 +97,7 @@ DeclareGlobalFunction( "AffineSemigroupByMinimalGeneratorsNC" );
 ############################################################################
 DeclareOperation("GeneratorsOfAffineSemigroup",[IsAffineSemigroup]);
 #A
-DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
+#DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 
 #############################################################################
 ## Full ffine semigroups
@@ -111,6 +112,7 @@ DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 DeclareGlobalFunction( "AffineSemigroupByEquations" );
 #A
 DeclareAttribute( "EquationsAS", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByEquations", HasEquationsAS);
 #############################################################################
 ##
 #F  AffineSemigroupByInequalities(ls)
@@ -122,6 +124,7 @@ DeclareAttribute( "EquationsAS", IsAffineSemigroup);
 DeclareGlobalFunction( "AffineSemigroupByInequalities" );
 #A
 DeclareAttribute( "InequalitiesAS", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalitiesAS);
 
 
 #############################################################################

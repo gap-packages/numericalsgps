@@ -173,11 +173,11 @@
   [1X2.2 [33X[0;0YSome basic tests[133X[101X
   
   [33X[0;0YThis  section  describes  some basic tests on numerical semigroups.The first
-  described  tests  refer  to  the  way  the  semigroup  was created. Then are
-  presented  functions  to test if a given list represents the small elements,
-  gaps  or  the  Apéry  set  (see  [14X1.[114X) of a numerical semigroup; to test if an
-  integer  belongs  to a numerical semigroup and if a numerical semigroup is a
-  subsemigroup of another one.[133X
+  described  tests  refer  to what the semigroup is currently known to be (not
+  necessarily the way it was created). Then are presented functions to test if
+  a  given  list represents the small elements, gaps or the Apéry set (see [14X1.[114X)
+  of  a  numerical  semigroup;  to  test  if an integer belongs to a numerical
+  semigroup and if a numerical semigroup is a subsemigroup of another one.[133X
   
   [1X2.2-1 IsNumericalSemigroup[101X
   

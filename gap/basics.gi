@@ -24,21 +24,21 @@
 #############################################################################
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup",
-        [IsNumericalSemigroup and IsNumericalSemigroupByGenerators],10,
+        [IsNumericalSemigroup and HasGeneratorsNS],10,
         function(S)
     return GeneratorsOfNumericalSemigroup(S)[1];
 end);
 
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup",
-        [IsNumericalSemigroup and IsNumericalSemigroupByAperyList],1,
+        [IsNumericalSemigroup and HasAperyListNS],1,
         function(S)
     return Minimum(Difference(S!.aperylist,[0]),Length(S!.aperylist));
 end);
 
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a modular numerical semigroup",
-        [IsNumericalSemigroup and IsModularNumericalSemigroup],
+        [IsNumericalSemigroup and HasModularConditionNS],
         function(S)
     local   a,  b;
 
@@ -49,7 +49,7 @@ end);
 
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a proportionally modular numerical semigroup",
-        [IsNumericalSemigroup and IsProportionallyModularNumericalSemigroup],
+        [IsNumericalSemigroup and HasProportionallyModularConditionNS],
         function(S)
     local   a,  b,  c;
 
@@ -62,7 +62,7 @@ end);
 # Agorithm in RosalesVasco2008MIA
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup given by a closed interval",
-        [IsNumericalSemigroup and IsNumericalSemigroupByInterval],
+        [IsNumericalSemigroup and HasClosedIntervalNS],
         function(S)
     local   r,  s,  ListReducedIntervalsNC,  P,  list,  j,  i,  n;
 
@@ -122,23 +122,22 @@ end);
 #############################################################################
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and IsNumericalSemigroupByAperyList],
-        function(S)
-    return(Maximum(AperyListNS(S))-Length(AperyListNS(S)));
-end);
-
-InstallMethod(FrobeniusNumberOfNumericalSemigroup,
-        "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and IsNumericalSemigroupByGaps],
+        [IsNumericalSemigroup and HasGapsNS],100,
         function(S)
     return(GapsNS(S)[Length(GapsNS(S))]);
 end);
 
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and IsNumericalSemigroupBySmallElements],
+        [IsNumericalSemigroup and HasSmallElementsNS],99,
         function(S)
     return(SmallElementsNS(S)[Length(SmallElementsNS(S))] - 1);
+end);
+InstallMethod(FrobeniusNumberOfNumericalSemigroup,
+        "Returns the Frobenius Number of the numerical sgp",
+        [IsNumericalSemigroup and HasAperyListNS],50,
+        function(S)
+    return(Maximum(AperyListNS(S))-Length(AperyListNS(S)));
 end);
 
 ##########
@@ -663,21 +662,20 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasSmallElementsOfNumericalSemigroup],100,
+        [IsInt,IsNumericalSemigroup and HasSmallElementsNS],100,
         function(n,S)
-    local f, s;
+    local s;
     if n=0 then
         return true;
     fi;
-    s := SmallElementsOfNumericalSemigroup(S);
-    f := FrobeniusNumberOfNumericalSemigroup(S);
-    return (n in s) or (n > f);
+    s := SmallElementsNS(S);
+    return (n in s) or (n >= Maximum(s));
 end);
 
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and IsNumericalSemigroupByAperyList],
+        [IsInt,IsNumericalSemigroup and HasAperyListNS],
         function(n,S)
     local   ap,  m;
 
@@ -696,7 +694,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasFundamentalGapsOfNumericalSemigroup],
+        [IsInt,IsNumericalSemigroup and HasFundamentalGapsNS],
         function(n,S)
     local   f;
 
@@ -710,7 +708,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and IsModularNumericalSemigroup],
+        [IsInt,IsNumericalSemigroup and HasModularConditionNS],
         function(n,S)
     local a,b;
     if n=0 then
@@ -724,7 +722,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and IsProportionallyModularNumericalSemigroup],
+        [IsInt,IsNumericalSemigroup and HasProportionallyModularConditionNS],
         function(n,S)
     local a,b,c;
     if n=0 then
@@ -739,7 +737,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and IsNumericalSemigroupByGenerators],
+        [IsInt,IsNumericalSemigroup and HasGeneratorsNS],
         function(n,S)
     local gen, ss, sumNS;
     #####################################################
