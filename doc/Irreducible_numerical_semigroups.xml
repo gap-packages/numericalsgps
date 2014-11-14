@@ -112,8 +112,7 @@ gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
                         decomposition of <A>s</A> as intersection into irreducibles. 
                         <Example><![CDATA[
 gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
-[ <Numerical semigroup with 3 generators>, 
-  <Numerical semigroup with 4 generators> ]
+[ <Numerical semigroup>, <Numerical semigroup> ]
 ]]></Example>          
                     </Description>
                 </ManSection>

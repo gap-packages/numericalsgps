@@ -488,9 +488,9 @@ a list representing an entity of the type to which the function's name refers.
 \hyperdef{L}{X7EF4254C81ED6665}{}
 {
   This section describes some basic tests on numerical semigroups.The first
-described tests refer to the way the semigroup was created. Then are presented
-functions to test if a given list represents the small elements, gaps or the
-Ap{\a'e}ry set (see \ref{zlab1}) of a numerical semigroup; to test if an integer belongs to a numerical
+described tests refer to what the semigroup is currently known to be (not
+necessarily the way it was created). Then are presented functions to test if a
+given list represents the small elements, gaps or the Ap{\a'e}ry set (see \ref{zlab1}) of a numerical semigroup; to test if an integer belongs to a numerical
 semigroup and if a numerical semigroup is a subsemigroup of another one. 
 
 \subsection{\textcolor{Chapter }{IsNumericalSemigroup}}
@@ -1590,8 +1590,7 @@ irreducible numerical semigroups with frobenius number \mbox{\texttt{\mdseries\s
 semigroups containing it. These elements appear in a minimal decomposition of \mbox{\texttt{\mdseries\slshape s}} as intersection into irreducibles. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));|
-  [ <Numerical semigroup with 3 generators>, 
-    <Numerical semigroup with 4 generators> ]
+  [ <Numerical semigroup>, <Numerical semigroup> ]
 \end{Verbatim}
  }
 
