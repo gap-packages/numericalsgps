@@ -25,31 +25,41 @@
 #############################################################################
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupBySmallElements ],
+        [IsNumericalSemigroup and HasSmallElementsNS ],100,
         function( sgp )
     return SmallElementsNS(sgp);
 end);
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupByGaps ],
+        [IsNumericalSemigroup and HasGapsNS ],99,
         function( sgp )
-    return SmallElementsNS(sgp);
+  local  G, K;
+  G := GapsNS(sgp);
+  K := Difference([0..G[Length(G)]+1],G);
+
+  return SmallElementsNS(sgp);
 end);
 
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupByFundamentalGaps ],
+        [IsNumericalSemigroup and HasFundamentalGapsNS ],99,
         function( sgp )
-    return SmallElementsNS(sgp);
+  local  L, G, K;
+  L := FundamentalGapsNS(sgp);
+  G := Set(Flat(List(L,i->DivisorsInt(i))));
+  K := Difference([0..G[Length(G)]+1],G);
+  SetSmallElementsNS(sgp,K);
+
+  return SmallElementsNS(sgp);
 end);
 
 
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupByAperyList ],
+        [IsNumericalSemigroup and HasAperyListNS ],50,
         function( sgp )
     local ap, m, x;
     ap := AperyListNS(sgp);
@@ -62,7 +72,7 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupByGenerators],
+        [IsNumericalSemigroup and HasGeneratorsNS],1,
          function( sgp )
      local g, S, n, bool, gen, R, sumNS, ss;
           
@@ -83,7 +93,6 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
         od;
         return R;
     end;
-    
     if HasMinimalGeneratorsNS(sgp) then
         gen := MinimalGeneratorsNS(sgp);
     else
@@ -139,7 +148,7 @@ end);
 #############################################################################
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsModularNumericalSemigroup],
+        [IsNumericalSemigroup and HasModularConditionNS],20,
          function( sgp )
     local a, b, g, R, S, x;
     a := ModularConditionNS(sgp)[1];
@@ -177,7 +186,7 @@ end);
 #############################################################################
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsProportionallyModularNumericalSemigroup],
+        [IsNumericalSemigroup and HasProportionallyModularConditionNS],20,
          function( sgp )
    local a, b, c, g, R, S, x;
     a := ProportionallyModularConditionNS(sgp)[1];
@@ -217,7 +226,7 @@ end);
 #############################################################################
 InstallMethod(SmallElementsOfNumericalSemigroup,
     "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupByOpenInterval],
+        [IsNumericalSemigroup and HasOpenIntervalNS],10,
          function( sgp )
     local   r,  s,  k,  max,  NS,  i,  R,  g;
     
@@ -264,7 +273,7 @@ end);
 #############################################################################
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and IsNumericalSemigroupBySubAdditiveFunction],
+        [IsNumericalSemigroup and HasSubAdditiveFunctionNS],10,
          function( sgp )
     local   L,  m,  F,  S,  x,  fx,  R,  g;
     

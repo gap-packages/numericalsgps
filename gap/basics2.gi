@@ -26,8 +26,8 @@
 InstallMethod( IsSubsemigroupOfNumericalSemigroup,
       "method for numerical semigroups",
       true,
-      [IsNumericalSemigroup and IsNumericalSemigroupByGenerators,
-       IsNumericalSemigroup and IsNumericalSemigroupByGenerators],0,
+      [IsNumericalSemigroup and HasGeneratorsNS,
+       IsNumericalSemigroup and HasGeneratorsNS],0,
       function(S,T)
       if IsSubset(GeneratorsOfNumericalSemigroup(S),GeneratorsOfNumericalSemigroup(T)) then
            return true;

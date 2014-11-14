@@ -81,6 +81,7 @@ BindGlobal( "NumericalSemigroupsType",
 DeclareGlobalFunction( "NumericalSemigroupByGenerators" );
 #A
 DeclareAttribute( "GeneratorsNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByGenerators", HasGeneratorsNS);
 
 
 #############################################################################
@@ -95,6 +96,7 @@ DeclareAttribute( "GeneratorsNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupByMinimalGenerators" );
 #A
 DeclareAttribute( "MinimalGeneratorsNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByMinimalGenerators", HasMinimalGeneratorsNS);
 
 
 
@@ -122,7 +124,6 @@ DeclareGlobalFunction( "ModularNumericalSemigroup" );
 DeclareAttribute( "ModularConditionNS", IsNumericalSemigroup);
 
 
-
 #############################################################################
 ##
 #F  ProportionallyModularNumericalSemigroup(a,b,c)
@@ -147,6 +148,7 @@ DeclareAttribute( "ProportionallyModularConditionNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupByInterval" );
 #A
 DeclareAttribute( "ClosedIntervalNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByInterval",HasClosedIntervalNS);
 
 
 
@@ -160,6 +162,7 @@ DeclareAttribute( "ClosedIntervalNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupByOpenInterval" );
 #A
 DeclareAttribute( "OpenIntervalNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByOpenInterval",HasOpenIntervalNS);
 
 
 
@@ -174,6 +177,7 @@ DeclareAttribute( "OpenIntervalNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupBySubAdditiveFunction" );
 #A
 DeclareAttribute( "SubAdditiveFunctionNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupBySubAdditiveFunction",HasSubAdditiveFunctionNS);
 
 
 
@@ -187,6 +191,7 @@ DeclareAttribute( "SubAdditiveFunctionNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupByAperyList" );
 #A
 DeclareAttribute( "AperyListNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByAperyList",HasAperyListNS);
 
 
 
@@ -202,6 +207,7 @@ DeclareAttribute( "AperyListNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupBySmallElements" );
 #A
 DeclareAttribute( "SmallElementsNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupBySmallElements",HasSmallElementsNS);
 
 
 #############################################################################
@@ -225,7 +231,7 @@ DeclareGlobalFunction( "NumericalSemigroupBySmallElementsNC" );
 DeclareGlobalFunction( "NumericalSemigroupByGaps" );
 #A
 DeclareAttribute( "GapsNS", IsNumericalSemigroup);
-
+DeclareSynonymAttr( "IsNumericalSemigroupByGaps",HasGapsNS);
 
 
 #############################################################################
@@ -239,7 +245,9 @@ DeclareAttribute( "GapsNS", IsNumericalSemigroup);
 DeclareGlobalFunction( "NumericalSemigroupByFundamentalGaps" );
 #A
 DeclareAttribute( "FundamentalGapsNS", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByFundamentalGaps",HasFundamentalGapsNS);
 
+        
 #############################################################################
 ##
 #F  NumericalSemigroup(arg)
@@ -258,104 +266,6 @@ DeclareAttribute( "FundamentalGapsNS", IsNumericalSemigroup);
 ##
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroup" );
-
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByGenerators(S)
-##
-##  Tests if a numerical semigroup was given by its generators.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByGenerators", IsNumericalSemigroup);
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByMinimalGenerators(S)
-##
-##  Tests if a numerical semigroup was given by its minimal generators.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByMinimalGenerators", IsNumericalSemigroup);
-
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByInterval(S)
-##
-##  Tests if a numerical semigroup was given by an interval.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByInterval", IsNumericalSemigroup);
-
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByOpenInterval(S)
-##
-##  Tests if a numerical semigroup was given by an open interval.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByOpenInterval", IsNumericalSemigroup);
-
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupBySubAdditiveFunction(S)
-##
-##  Tests if a numerical semigroup was given by a subadditive function.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupBySubAdditiveFunction", IsNumericalSemigroup);
-
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByAperyList(S)
-##
-##  Tests if a numerical semigroup was given by its Apery list.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByAperyList", IsNumericalSemigroup);
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupBySmallElements(S)
-##
-##  Tests if a numerical semigroup was given by its small elements.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupBySmallElements", IsNumericalSemigroup);
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByGaps(S)
-##
-##  Tests if a numerical semigroup was given by its gaps.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByGaps", IsNumericalSemigroup);
-
-
-
-
-#############################################################################
-##
-#P  IsNumericalSemigroupByFundamentalGaps(S)
-##
-##  Tests if a numerical semigroup was given by its fundamental gaps.
-##
-#############################################################################
-DeclareProperty( "IsNumericalSemigroupByFundamentalGaps", IsNumericalSemigroup);
-
 
 
 #############################################################################
@@ -380,4 +290,3 @@ DeclareProperty( "IsModularNumericalSemigroup", IsNumericalSemigroup);
 
 
 #############################################################################
-##DeclareAttribute( "nsgens", IsNumericalSemigroup);
