@@ -172,7 +172,7 @@ InstallMethod(BelongsToAffineSemigroup,
     if Length(eq[1])<>Length(v) then
         Error("The dimension of the vector and the affine semigroup do not coincide.");
     fi;
-    ev:=eq*v;
+    ev:=ShallowCopy(eq*v);
     
     Info(InfoAffSgps,2,"Testing membership with equations.");
     

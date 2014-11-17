@@ -42,27 +42,24 @@ ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
 if NumSgpsCanUseNI then
     ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
-else
-    Info(InfoAffSgps,1,"Please load package NormalizInterface");
-    Info(InfoAffSgps,1,"to have extended functionalities.");
 fi;
 if NumSgpsCanUse4ti2 then 
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
-else
-    Info(InfoAffSgps,1,"Please load package 4ti2Interface");
+fi;
+if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2) then
+    Info(InfoAffSgps,1,"Please load package NormalizInterface or 4ti2Interface");
     Info(InfoAffSgps,1,"to have extended functionalities.");   
 fi;
+
 if NumSgpsCanUseSI then
     ReadPackage("numericalsgps", "gap/affine-extra-si.gi");
 else
-    Info(InfoAffSgps,1,"Please load package SingularInterface");
-    Info(InfoAffSgps,1,"to have extended functionalities.");
-	if NumSgpsCanUseSingular then
-    ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
-	else
-    	Info(InfoAffSgps,1,"Please load package singular");
-    	Info(InfoAffSgps,1,"to have extended functionalities.");
-	fi;
+    if NumSgpsCanUseSingular then
+        ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
+    else
+        Info(InfoAffSgps,1,"Please load package SingularInterface or singular");
+        Info(InfoAffSgps,1,"(not both) to have extended functionalities.");
+    fi;
 fi;
     
 

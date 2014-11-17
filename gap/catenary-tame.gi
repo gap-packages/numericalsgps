@@ -598,38 +598,12 @@ end);
 ##  Semigroup-theoretical characterizations of arithmetical invariants with 
 ##  applications to numerical monoids and Krull monoids, {arXiv}:1006.4222v1.
 ##  Current implementation optimized by C. O'Neill based on a work in progress 
-##  by O'Neill, Pelayo and Thomas
+##  by O'Neill, Pelayo and Thomas and uses 
+##  OmegaPrimalityOfElemtListInNumericalSemgiroup
 #############################################################################
 InstallGlobalFunction(OmegaPrimalityOfElementInNumericalSemigroup, function(n,s)
-
-	#local candidates,msg,fact,c, le,sum;
-	local msg, aperys;
-    if not IsNumericalSemigroup(s) then
-        Error("The second argument must be a numerical semigroup.\n");
-    fi;
-    if not ( n in s ) then
-        Error("The first argument must be an element of the second.\n");
-    fi;
-
-    #    le:=function(a,b)  #ordinary partial order
-    #       return ForAll(b-a,x-> x>=0);
-    #    end;
-
-    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-
-    #    candidates:=Union(List(msg, x-> n + AperyListOfNumericalSemigroupWRTElement(s,x)));
-    #   fact:=[];
-    #    for c in candidates do
-    #       fact:=Union(fact,FactorizationsIntegerWRTList(c,msg));
-    #    od;
-    #   fact:=Filtered(fact, f-> ForAll(fact, z-> not(le(z,f)) or z=f));
-    #  sum:=Set(fact,Sum);
-    #   return Maximum(sum);
-   	aperys:=List(msg,x->AperyListOfNumericalSemigroupWRTElement(s,x));
-	
-	return Maximum(List(Union(List(Filtered(Combinations([1..Length(msg)]),y->Length(y)>0), 
-	x->Union(List(Intersection(aperys{x}), m->FactorizationsIntegerWRTList(n+m,msg{x}))))), b->Sum(b)));
-
+    return OmegaPrimalityOfElementListInNumericalSemigroup([n],s)[1];
+    
 end);
 
 #############################################################################
