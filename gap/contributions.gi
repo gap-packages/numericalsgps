@@ -305,70 +305,80 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(OmegaPrimalityOfElementListInNumericalSemigroup,function(l,s)
-	local frob, msg, values, bullets, omegas, n, i, b, toadd, omegaval, bl, getbullets, setbullets, getomega, setomega;
-	
-	if not IsNumericalSemigroup(s) then
-		Error("The argument must be a numerical semigroup.");
-	fi;
-	
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-	frob:=FrobeniusNumberOfNumericalSemigroup(s);
-	
-	values := [-frob .. Maximum(l)];
-	bullets := List(values, x->[]);
-	omegas := List(values, x->0);
-	
-	getbullets:=function(n)  #add base case
-		if n < -frob then
-			return [List(msg,x->0)];
-		fi;
-		return bullets[n+frob+1];
-	end;
-	
-	setbullets:=function(n,bl)
-		if n >= -frob then
-			bullets[n+frob+1] := bl;
-		fi;
-	end;
-	
-	getomega:=function(n)
-		if n < -frob then
-			return 0;
-		fi;
-		return omegas[n+frob+1];
-	end;
-	
-	setomega:=function(n,om)
-		if n >= -frob then
-			omegas[n+frob+1] := om;
-		fi;
-	end;
-	
-	for n in values do
-		bl := [];
-		
-		for i in [1..Length(msg)] do
-			for b in getbullets(n - msg[i]) do
-				toadd := List(b);
-				
-				if toadd[i] > 0 or not(toadd*msg-n in s) then
-					toadd[i] := toadd[i] + 1;
-				fi;
-				
-				Add(bl,toadd);
-			od;
-		od;
-		
-		setbullets(n,Set(bl));
-		setbullets(n-msg[Length(msg)],[]);
-		
-		setomega(n,Maximum(List(getbullets(n),x->Sum(x))));
-		
-		# for garbage collection
-		# GASMAN("coillect");
-	od;
-	
-	return List(l,x->getomega(x));
+    local frob, msg, values, bullets, omegas, n, i, j, b, w, toadd, omegaval, bl, bli, getbullets, setbullets, getomega, setomega;
+    
+    # Form of a bullet: (v,l)
+    # v - value of bullet expression
+    # l - sum of the components
+    
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup");
+    fi;
+    if not IsListOfIntegersNS(l) then 
+        Error("The first argument must be a list of integers");
+    fi;
+    
+    
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    frob:=FrobeniusNumberOfNumericalSemigroup(s);
+    
+    values := [-frob .. Maximum(l)];
+    bullets := List(values, x->[]);
+    omegas := List(values, x->0);
+    
+    getbullets:=function(n)  #add base case
+        if 0-n in s then
+            return [0];
+        fi;
+        return bullets[n+frob+1];
+    end;
+    
+    getomega:=function(n)
+        if n < -frob then
+            return 0;
+        fi;
+        return omegas[n+frob+1];
+    end;
+    
+    for n in values do
+        bl := [];
+        
+        for i in [1..Length(msg)] do
+            bli:=getbullets(n - msg[i]);
+            for j in [1..Length(bli)] do
+                if IsBound(bli[j]) then
+                    b:=j;
+                    w:=bli[j];
+                    if w <> 0 then
+                        b:=b+(n-msg[i]);
+                    fi;
+                    
+                    if not(b-1-n in s) then
+                        b:=b+msg[i];
+                        w:=w+1;
+                    fi;
+                    if IsBound(bl[b-n]) then
+                        bl[b-n]:=Maximum([w,bl[b-n]]);
+                    else
+                        bl[b-n]:=w;
+                    fi;
+                fi;
+            od;
+        od;
+        
+        bullets[n+frob+1]:=bl;
+        if n-msg[Length(msg)]+frob+1 > 0 then
+            bullets[n-msg[Length(msg)]+frob+1]:=[];
+        fi;
+        
+        omegas[n+frob+1]:=Maximum(bl);
+        
+        # for garbage collection
+        # GASMAN("coillect");
+    od;
+    
+    return List(l,x->getomega(x));
+    
 end);
 
 
