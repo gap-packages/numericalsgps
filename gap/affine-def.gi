@@ -32,7 +32,8 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
               IsAttributeStoringRep and IsAffineSemigroup), rec());
   
   SetGeneratorsAS(M,gens);
-  
+  SetDimensionAS(M,Length(gens[1]));
+
 #  Setter(IsAffineSemigroupByGenerators)(M,true);
   return M;
 end);
@@ -114,6 +115,8 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
   M:= Objectify( NewType( FamilyObj( ls ),
               IsAttributeStoringRep and IsAffineSemigroup), rec());
   SetEquationsAS(M,[ls,md]);
+  SetDimensionAS(M,Length(ls[1]));
+  
 #  Setter(IsAffineSemigroupByEquations)(M,true);
 #  Setter(IsFullAffineSemigroup)(M,true);
   return M;
@@ -146,6 +149,7 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
               IsAttributeStoringRep and IsAffineSemigroup), rec());
 
   SetInequalitiesAS(M,ls);
+  SetDimensionAS(M,Length(ls[1]));
  # Setter(IsAffineSemigroupByEquations)(M,true);
  # Setter(IsFullAffineSemigroup)(M,true);
   return M;
@@ -171,16 +175,16 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(AffineSemigroup, function(arg)
-
+  
   if IsString(arg[1]) then
     if arg[1] = "generators" then
-      return AffineSemigroupByGenerators(arg{[2..Length(arg)]});
+      return AffineSemigroupByGenerators(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "minimalgenerators" then
-      return AffineSemigroupByMinimalGenerators(arg{[2..Length(arg)]});
+      return AffineSemigroupByMinimalGenerators(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "equations" then
-      return AffineSemigroupByEquations(arg{[2..Length(arg)]});
+      return AffineSemigroupByEquations(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "inequalities" then
-      return AffineSemigroupByInequalities(arg{[2..Length(arg)]});
+      return AffineSemigroupByInequalities(Filtered(arg, x -> not IsString(x))[1]);
     else
       Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\" ");
     fi;
@@ -296,16 +300,20 @@ end);
  ##  This method for affine semigroups.
  ##
  #############################################################################
- InstallMethod( PrintObj,
-         "Prints an Affine Semigroup",
-         [ IsAffineSemigroup],
-         function( S )
-     if HasGeneratorsAS(S) then
-         Print("AffineSemigroup( ", GeneratorsAS(S), " )\n");
-     else
-         Print("AffineSemigroup( ", GeneratorsOfAffineSemigroup(S), " )\n");
-     fi;
- end);
+InstallMethod( PrintObj,
+        "Prints an Affine Semigroup",
+        [ IsAffineSemigroup],
+        function( S )
+  if HasGeneratorsAS(S) then
+    Print("AffineSemigroup( ", GeneratorsAS(S), " )\n");
+  elif HasEquationsAS(S) then
+    Print("AffineSemigroupByEquations( ", EquationsAS(S), " )\n");
+  elif HasInequalitiesAS(S) then
+    Print("AffineSemigroupByInequalities( ", InequalitiesAS(S), " )\n");
+  else
+    Print("AffineSemigroup( ", GeneratorsOfAffineSemigroup(S), " )\n");
+  fi;
+end);
 
 
 
@@ -345,7 +353,7 @@ InstallMethod( Display,
      if HasMinimalGeneratorsAS(S) then
          Print("<Affine semigroup in ", Length(MinimalGeneratorsAS(S)[1]),"-dimensional space, with ", Length(MinimalGeneratorsAS(S)), " generators>");
      elif HasGeneratorsNS(S) then
-         Print("<Affine semigroup in ", Length(MinimalGeneratorsAS(S)[1]),"-dimensional space, with ", Length(MinimalGeneratorsAS(S)), " generators>");
+         Print("<Affine semigroup in ", Length(GeneratorsAS(S)[1]),"-dimensional space, with ", Length(GeneratorsAS(S)), " generators>");
      else
          Print("<Affine semigroup>");
      fi;
@@ -357,7 +365,7 @@ InstallMethod( Display,
  ####################################################
  
 
-############################################################################
+ ############################################################################
  ##
  #M Methods for the comparison of affine semigroups.
  ##
@@ -366,39 +374,49 @@ InstallMethod( Display,
          [IsAffineSemigroup and IsAffineSemigroupRep,
           IsAffineSemigroup and IsAffineSemigroupRep],
          function(x, y )
-
-     if HasGeneratorsAS(x) and HasGeneratorsAS(y) and
-       GeneratorsAS(x) = GeneratorsAS(y) then
-         return  true;
-
-     elif  HasEquationsAS(x) and HasEquationsAS(y) and
+   local  genx, geny;
+   
+   if DimensionAS(x) <> DimensionAS(y) then
+     return false;
+   fi;
+   
+   if  HasEquationsAS(x) and HasEquationsAS(y) and
        EquationsAS(x) = EquationsAS(y) then
-         return true;
+     return true;
 
-     elif HasInequalitiesAS(x) and HasInequalitiesAS(y) and
-       InequalitiesAS(x) = InequalitiesAS(y) then
-       return true;
-     else
-         return fail;
-     fi;
+   elif HasInequalitiesAS(x) and HasInequalitiesAS(y) and
+     InequalitiesAS(x) = InequalitiesAS(y) then
+     return true;
+
+   elif HasGeneratorsAS(x) and HasGeneratorsAS(y) and
+     GeneratorsAS(x) = GeneratorsAS(y) then
+     return  true;
+
+   elif HasGeneratorsAS(x) and HasGeneratorsAS(y) and not(EquationsOfGroupGeneratedBy(GeneratorsAS(x))=EquationsOfGroupGeneratedBy(GeneratorsAS(y))) then 
+     return false;
+   fi;
+   genx:=GeneratorsOfAffineSemigroup(x);
+   geny:=GeneratorsOfAffineSemigroup(y);
+   return ForAll(genx, g-> g in y) and 
+          ForAll(geny, g-> g in x);
  end);
-
+ 
+ ## x < y returns true if:  (dimension(x)<dimension(y)) or (x is (strictly) contained in y) or (genx < geny), where genS is the *current* set of generators of S...   
  InstallMethod( \<,
          "for two affine semigroups",
          [IsAffineSemigroup,IsAffineSemigroup],
          function(x, y )
-     if HasGeneratorsAS(x) and HasGeneratorsAS(y) and
-       GeneratorsAS(x) < GeneratorsAS(y) then
-         return  true;
-
-     elif  HasEquationsAS(x) and HasEquationsAS(y) and
-       EquationsAS(x) < EquationsAS(y) then
-         return true;
-
-     elif HasInequalitiesAS(x) and HasInequalitiesAS(y) and
-       InequalitiesAS(x) < InequalitiesAS(y) then
-       return true;
-     else
-         return fail;
-     fi;
- end );
+   local  genx, geny;
+   
+   if DimensionAS(x) < DimensionAS(y) then
+     return true;
+   fi;
+   
+   genx:=GeneratorsOfAffineSemigroup(x);
+   geny:=GeneratorsOfAffineSemigroup(y);
+   if ForAll(genx, g-> g in y) and not ForAll(geny, g-> g in x) then
+     return true;
+   fi;
+   
+   return genx < geny;
+    end );

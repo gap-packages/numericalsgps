@@ -61,6 +61,9 @@ DeclareGlobalFunction( "AffineSemigroupByGenerators" );
 #A
 DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
 DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGeneratorsAS);
+#A
+DeclareAttribute( "DimensionAS", IsAffineSemigroup);
+DeclareSynonymAttr( "DimensionOfAffineSemigroup", HasDimensionAS);
 
 #############################################################################
 ##
