@@ -43,7 +43,7 @@ Version := "0.980 dev",
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "17/06/2013",
+Date := "19/11/2014",
         
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the 
 ##  version and the release date as shown below to read them while building
@@ -371,6 +371,6 @@ TestFile := "tst/testall.tst",
 ##  *Optional*: Here you can list some keyword related to the topic 
 ##  of the package.
 # Keywords := ["Smith normal form", "p-adic", "rational matrix inversion"]
-Keywords := ["Numerical Semigroups"]
+Keywords := ["Numerical Semigroups", "Affine semigroups"]
 
                     ));

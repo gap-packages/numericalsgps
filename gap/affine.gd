@@ -169,3 +169,33 @@ DeclareGlobalFunction("RandomAffineSemigroup");
 # Computes the tame degree of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("RandomFullAffineSemigroup");
+
+
+##########################################################################
+##
+#F NumSgpsUseNormaliz
+#  Loads the package NormalizInterface and reads affine-extra-ni
+##########################################################################
+DeclareGlobalFunction("NumSgpsUseNormaliz");
+
+##########################################################################
+##
+#F NumSgpsUseSingular
+#  Loads the package singular and reads affine-extra-s
+##########################################################################
+DeclareGlobalFunction("NumSgpsUseSingular");
+
+##########################################################################
+##
+#F NumSgpsUseSingularInterface
+#  Loads the package SingularInterface and reads affine-extra-si
+##########################################################################
+DeclareGlobalFunction("NumSgpsUseSingularInterface");
+
+##########################################################################
+##
+#F NumSgpsUse4ti2
+#  Loads the package 4ti2Interface and reads affine-extra-4ti2
+##########################################################################
+DeclareGlobalFunction("NumSgpsUse4ti2");
+
