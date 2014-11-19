@@ -979,3 +979,80 @@ InstallGlobalFunction(RandomFullAffineSemigroup,function(arg)
   return AffineSemigroup(type,RandomMat(rn,rd,[0..max]));
 end);
   
+##########################################################################
+##
+#F NumSgpsUseNormaliz
+#  Loads the package NormalizInterface and reads affine-extra-ni
+##########################################################################
+InstallGlobalFunction(NumSgpsUseNormaliz, function()
+    if LoadPackage("NormalizInterface") then
+        ReadPackage("numericalsgps/gap/affine-extra-ni.gi");
+        NumSgpsCanUseNI:=true;
+        return true;
+    else
+        return fail;
+    fi;
+    
+end);
+
+
+##########################################################################
+##
+#F NumSgpsUseSingular
+#  Loads the package singular and reads affine-extra-s
+##########################################################################
+InstallGlobalFunction(NumSgpsUseSingular, function()
+    if IsPackageMarkedForLoading("SingularInterface","0.0") then 
+        Print("SingularInterface is already loaded and it is incompatible with Singular.\n");
+        return fail;
+    fi;
+    
+    if LoadPackage("singular") then
+        ReadPackage("numericalsgps/gap/affine-extra-s.gi");
+        NumSgpsCanUseSingular:=true;
+        return true;
+    else
+        return fail;
+    fi;
+    
+end);
+
+##########################################################################
+##
+#F NumSgpsUseSingularInterface
+#  Loads the package SingularInterface and reads affine-extra-si
+##########################################################################
+InstallGlobalFunction(NumSgpsUseSingularInterface, function()
+    if IsPackageMarkedForLoading("Singular","0.0") then
+        Print("Singular is already loaded and it is incompatible with SingularInterface.\n");
+        return fail;
+    fi;
+    
+    if LoadPackage("SingularInterface") then
+        ReadPackage("numericalsgps/gap/affine-extra-si.gi");
+        NumSgpsCanUseSI:=true;
+        return true;
+    else
+        return fail;
+    fi;
+    
+end);
+
+##########################################################################
+##
+#F NumSgpsUse4ti2
+#  Loads the package 4ti2Interface and reads affine-extra-ni
+##########################################################################
+InstallGlobalFunction(NumSgpsUse4ti2, function()
+    if LoadPackage("4ti2Interface") then
+        ReadPackage("numericalsgps/gap/affine-extra-4ti2.gi");
+        NumSgpsCanUse4ti2:=true;
+        return true;
+    else
+        return fail;
+    fi;
+    
+end);
+
+
+
