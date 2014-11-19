@@ -124,7 +124,10 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
         [IsNumericalSemigroup and HasGapsNS],100,
         function(S)
-    return(GapsNS(S)[Length(GapsNS(S))]);
+  if GapsNS(S) = [] then
+    return -1;
+  fi;
+  return(GapsNS(S)[Length(GapsNS(S))]);
 end);
 
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,

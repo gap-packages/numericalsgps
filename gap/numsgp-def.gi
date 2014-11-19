@@ -46,8 +46,10 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
                 rec());
     SetGeneratorsNS(M,L);
     if 1 in L then
-         SetMinimalGeneratorsNS(M,[1]);
-        SetModularConditionNS(M,[1,2]); 
+        SetMinimalGeneratorsNS(M,[1]);
+        SetModularConditionNS(M,[1,2]);
+        SetGapsNS(M,[]);
+        SetSmallElementsNS(M,[0]);
     elif Length(L) = 2 then # a non-trivial numerical semigroup has at least 2 generators
         SetMinimalGeneratorsNS(M, L);
         a := L[1];
