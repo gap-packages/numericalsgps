@@ -1413,22 +1413,23 @@ InstallGlobalFunction(MonotonePrimitiveElementsOfNumericalSemigroup,function(s)
         Error("The argument must be a numerical semigroup.\n");
     fi;
 
-	if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
-		Error("The package NormalizInterface is not loaded.\n");
-	fi;
+    # if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
+    #     Error("The package NormalizInterface is not loaded.\n");
+    # fi;
 
-	l:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-	n:=Length(l);
-	ones:=List([1..n],_->1);
-	mat:=[];
-	mat[1]:=Concatenation(l,-l,[0]);
-	mat[2]:=Concatenation(ones,-ones,[1]);
-	nmzcone:=ValueGlobal("NmzCone");#Display(mat);
-	ncone:=nmzcone(["equations",mat]); 
-	nmzconeproperty:=ValueGlobal("NmzConeProperty");
-	facs:=nmzconeproperty(ncone,"HilbertBasis");
-	facs:=Set(facs,m->m{[1..n]});
-	return Set(facs, f-> f*l);
+    l:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    n:=Length(l);
+    ones:=List([1..n],_->1);
+    mat:=[];
+    mat[1]:=Concatenation(l,-l,[0]);
+    mat[2]:=Concatenation(ones,-ones,[1]);
+    # nmzcone:=ValueGlobal("NmzCone");#Display(mat);
+    # ncone:=nmzcone(["equations",mat]); 
+    # nmzconeproperty:=ValueGlobal("NmzConeProperty");
+    # facs:=nmzconeproperty(ncone,"HilbertBasis");
+    facs:=HilbertBasisOfSystemOfHomogeneousEquations(mat,[]);    
+    facs:=Set(facs,m->m{[1..n]});
+    return Set(facs, f-> f*l);
 end);
 
 ###########################################################################
@@ -1446,22 +1447,23 @@ InstallGlobalFunction(EqualPrimitiveElementsOfNumericalSemigroup,function(s)
         Error("The argument must be a numerical semigroup.\n");
     fi;
 
-	if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
-		Error("The package NormalizInterface is not loaded.\n");
-	fi;
+    # if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
+    # 	Error("The package NormalizInterface is not loaded.\n");
+    # fi;
 
-	l:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-	n:=Length(l);
-	ones:=List([1..n],_->1);
-	mat:=[];
-	mat[1]:=Concatenation(l,-l);
-	mat[2]:=Concatenation(ones,-ones);
-	nmzcone:=ValueGlobal("NmzCone");#Display(mat);
-	ncone:=nmzcone(["equations",mat]); 
-	nmzconeproperty:=ValueGlobal("NmzConeProperty");
-	facs:=nmzconeproperty(ncone,"HilbertBasis");
-	facs:=Set(facs,m->m{[1..n]});
-	return Set(facs, f-> f*l);
+    l:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    n:=Length(l);
+    ones:=List([1..n],_->1);
+    mat:=[];
+    mat[1]:=Concatenation(l,-l);
+    mat[2]:=Concatenation(ones,-ones);
+    # nmzcone:=ValueGlobal("NmzCone");#Display(mat);
+    # ncone:=nmzcone(["equations",mat]); 
+    # nmzconeproperty:=ValueGlobal("NmzConeProperty");
+    # facs:=nmzconeproperty(ncone,"HilbertBasis");
+    facs:=HilbertBasisOfSystemOfHomogeneousEquations(mat,[]);    
+    facs:=Set(facs,m->m{[1..n]});
+    return Set(facs, f-> f*l);
 end);
 
 
@@ -1477,15 +1479,15 @@ InstallGlobalFunction(EqualCatenaryDegreeOfNumericalSemigroup,function(s)
         Error("The argument must be a numerical semigroup.\n");
     fi;
 
-	if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
-		Error("The package NormalizInterface is not loaded.\n");
-	fi;
+    # if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
+    # 	Error("The package NormalizInterface is not loaded.\n");
+    # fi;
 
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-	prim:=EqualPrimitiveElementsOfNumericalSemigroup(s);
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    prim:=EqualPrimitiveElementsOfNumericalSemigroup(s);
 
-	return Maximum(Set(prim, n-> EqualCatenaryDegreeOfSetOfFactorizations(
-				FactorizationsIntegerWRTList(n,msg))));
+    return Maximum(Set(prim, n-> EqualCatenaryDegreeOfSetOfFactorizations(
+                   FactorizationsIntegerWRTList(n,msg))));
 end);
 
 ####################################################################
@@ -1500,14 +1502,14 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfNumericalSemigroup,function(s)
         Error("The argument must be a numerical semigroup.\n");
     fi;
 
-	if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
-		Error("The package NormalizInterface is not loaded.\n");
-	fi;
+    # if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
+    #     Error("The package NormalizInterface is not loaded.\n");
+    # fi;
 
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-	prim:=MonotonePrimitiveElementsOfNumericalSemigroup(s);
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    prim:=MonotonePrimitiveElementsOfNumericalSemigroup(s);
 
-	return Maximum(Set(prim, n-> MonotoneCatenaryDegreeOfSetOfFactorizations(
-				FactorizationsIntegerWRTList(n,msg))));
+    return Maximum(Set(prim, n-> MonotoneCatenaryDegreeOfSetOfFactorizations(
+                   FactorizationsIntegerWRTList(n,msg))));
 end);
 
