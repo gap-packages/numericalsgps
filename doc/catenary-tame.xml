@@ -487,7 +487,7 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         <P/>
-                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations with the same length of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. These elements are used to compute the equal catenary degree of <A>S</A>. Requires NormalizInterface package.
+                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations with the same length of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. These elements are used to compute the equal catenary degree of <A>S</A>. 
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -506,7 +506,7 @@ gap> BettiElementsOfNumericalSemigroup(s);
         <Func Arg="S" Name="EqualCatenaryDegreeOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
-            The output is the equal catenary degree of <A>S</A>. Requires NormalizInterface package.
+            The output is the equal catenary degree of <A>S</A>. 
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -521,7 +521,7 @@ gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         <P/>
-                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, with <M>|x|\le |y|</M>; <M>msg</M> stands the minimal generating system of <A>S</A>. These elements are used to compute the monotone catenary degree of <A>S</A>. Requires NormalizInterface package.
+                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, with <M>|x|\le |y|</M>; <M>msg</M> stands the minimal generating system of <A>S</A>. These elements are used to compute the monotone catenary degree of <A>S</A>. 
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -540,7 +540,7 @@ gap> MonotonePrimitiveElementsOfNumericalSemigroup(s);
         <Func Arg="S" Name="MonotoneCatenaryDegreeOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
-            The output is the monotone catenary degree of <A>S</A>. Requires NormalizInterface package.
+            The output is the monotone catenary degree of <A>S</A>. 
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,23,31,44);;
