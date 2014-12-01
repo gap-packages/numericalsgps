@@ -887,6 +887,49 @@ adjacency list of the graph $(ap, E)$ where the edge $u -> v$ is in $E$ iff $v -
 \end{Verbatim}
  }
 
+ 
+
+\subsection{\textcolor{Chapter }{KunzCoordinatesOfNumericalSemigroup}}
+\logpage{[ 3, 1, 10 ]}\nobreak
+\hyperdef{L}{X86A5FB907B917729}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KunzCoordinatesOfNumericalSemigroup({\mdseries\slshape S, m})\index{KunzCoordinatesOfNumericalSemigroup@\texttt{KunzCoordinatesOfNumericalSemigroup}}
+\label{KunzCoordinatesOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, and \mbox{\texttt{\mdseries\slshape m}} is a nonzero element of \mbox{\texttt{\mdseries\slshape S}}. The second argument is optional, and if missing it is assumed to be the
+multiplicity of \mbox{\texttt{\mdseries\slshape S}}. 
+
+ Then the Ap{\a'e}ry set of \mbox{\texttt{\mdseries\slshape m}} in \mbox{\texttt{\mdseries\slshape S}} has the form $[0,k_1m+1,...,k_{m-1}m+m-1]$, and the output is the $(m-1)$-uple $[k_1,k_2,...,k_{m-1}]$ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@KunzCoordinatesOfNumericalSemigroup(s);|
+  [ 2, 1 ]
+  !gapprompt@gap>| !gapinput@KunzCoordinatesOfNumericalSemigroup(s,5);|
+  [ 1, 1, 0, 1 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{KunzPolytope}}
+\logpage{[ 3, 1, 11 ]}\nobreak
+\hyperdef{L}{X7C21E5417A3894EC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{KunzPolytope({\mdseries\slshape m})\index{KunzPolytope@\texttt{KunzPolytope}}
+\label{KunzPolytope}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape m}} is a positive ingeger. 
+
+ The Kunz coordinates of the semigroups with that multiplicity \mbox{\texttt{\mdseries\slshape m}} are solutions of a system of inequalities $Ax\ge b$ (see \cite{R-GS-GG-B}). The output is the matrix $(A|-b)$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@KunzPolytope(3);|
+  [ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ]
+\end{Verbatim}
+ }
+
  }
 
   

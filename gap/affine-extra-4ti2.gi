@@ -199,9 +199,11 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     gens:=GeneratorsOfAffineSemigroup(a);
     
     gr:=4ti2Interface_groebner_matrix(gens);
+    Info(InfoAffSgps,2,"4ti output:",gr);
+    
     candidates:=Set(gr,q->positive(q));
     candidates:=Set(candidates,c->c*gens);
-    Info(InfoNumSgps,2, "Candidates to Betti elements",candidates);
+    Info(InfoAffSgps,2, "Candidates to Betti elements",candidates);
     pres:=[];
     for c in candidates do
         exps:=FactorizationsVectorWRTList(c,gens);

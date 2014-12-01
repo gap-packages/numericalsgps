@@ -40,6 +40,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X85EACCB87E7F563B">3.1-7 AperyListOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X877266A18524982E">3.1-8 AperyListOfNumericalSemigroupWRTInteger</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8022CC477E9BF678">3.1-9 AperyListOfNumericalSemigroupAsGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X86A5FB907B917729">3.1-10 KunzCoordinatesOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7C21E5417A3894EC">3.1-11 KunzPolytope</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7F97E0127A1D2835">3.2 <span class="Heading">Frobenius Number</span></a>
 </span>
@@ -225,6 +227,40 @@ true
 [ ,, [ 3, 6, 9, 12, 15, 18, 21 ],,, [ 6, 9, 12, 15, 18, 21 ],
 [ 7, 14, 21 ],, [ 9, 12, 15, 18, 21 ],,, [ 12, 15, 18, 21 ],,
 [ 14, 21 ], [ 15, 18, 21 ],,, [ 18, 21 ],,, [ 21 ] ]
+</pre></div>
+
+<p><a id="X86A5FB907B917729" name="X86A5FB907B917729"></a></p>
+
+<h5>3.1-10 KunzCoordinatesOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KunzCoordinatesOfNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">m</var> is a nonzero element of <var class="Arg">S</var>. The second argument is optional, and if missing it is assumed to be the multiplicity of <var class="Arg">S</var>.</p>
+
+<p>Then the Apéry set of <var class="Arg">m</var> in <var class="Arg">S</var> has the form <span class="SimpleMath">[0,k_1m+1,...,k_m-1m+m-1]</span>, and the output is the <span class="SimpleMath">(m-1)</span>-uple <span class="SimpleMath">[k_1,k_2,...,k_m-1]</span></p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KunzCoordinatesOfNumericalSemigroup(s);</span>
+[ 2, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KunzCoordinatesOfNumericalSemigroup(s,5);</span>
+[ 1, 1, 0, 1 ]
+</pre></div>
+
+<p><a id="X7C21E5417A3894EC" name="X7C21E5417A3894EC"></a></p>
+
+<h5>3.1-11 KunzPolytope</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; KunzPolytope</code>( <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">m</var> is a positive ingeger.</p>
+
+<p>The Kunz coordinates of the semigroups with that multiplicity <var class="Arg">m</var> are solutions of a system of inequalities <span class="SimpleMath">Axge b</span> (see <a href="chapBib.html#biBR-GS-GG-B">[CGB02]</a>). The output is the matrix <span class="SimpleMath">(A|-b)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KunzPolytope(3);</span>
+[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ]
 </pre></div>
 
 <p><a id="X7F97E0127A1D2835" name="X7F97E0127A1D2835"></a></p>
