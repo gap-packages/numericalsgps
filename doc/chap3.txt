@@ -167,6 +167,41 @@
     [4X[28X[ 14, 21 ], [ 15, 18, 21 ],,, [ 18, 21 ],,, [ 21 ] ][128X[104X
   [4X[32X[104X
   
+  [1X3.1-10 KunzCoordinatesOfNumericalSemigroup[101X
+  
+  [29X[2XKunzCoordinatesOfNumericalSemigroup[102X( [3XS[103X, [3Xm[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup,  and [3Xm[103X is a nonzero element of [3XS[103X. The second
+  argument is optional, and if missing it is assumed to be the multiplicity of
+  [3XS[103X.[133X
+  
+  [33X[0;0YThen the Apéry set of [3Xm[103X in [3XS[103X has the form [22X[0,k_1m+1,...,k_m-1m+m-1][122X, and the
+  output is the [22X(m-1)[122X-uple [22X[k_1,k_2,...,k_m-1][122X[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XKunzCoordinatesOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 2, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XKunzCoordinatesOfNumericalSemigroup(s,5);[127X[104X
+    [4X[28X[ 1, 1, 0, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-11 KunzPolytope[101X
+  
+  [29X[2XKunzPolytope[102X( [3Xm[103X ) [32X function
+  
+  [33X[0;0Y[3Xm[103X is a positive ingeger.[133X
+  
+  [33X[0;0YThe  Kunz  coordinates  of  the  semigroups  with  that  multiplicity  [3Xm[103X are
+  solutions  of  a  system of inequalities [22XAxge b[122X (see [CGB02]). The output is
+  the matrix [22X(A|-b)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XKunzPolytope(3);[127X[104X
+    [4X[28X[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ][128X[104X
+  [4X[32X[104X
+  
   
   [1X3.2 [33X[0;0YFrobenius Number[133X[101X
   

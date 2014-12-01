@@ -191,10 +191,44 @@ gap> AperyListOfNumericalSemigroupAsGraph(last);
 ]]></Example>
 
                     </Description>
-                </ManSection>
+</ManSection>
+
+
+<ManSection>
+  <Func Name="KunzCoordinatesOfNumericalSemigroup" Arg="S,m"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The second argument is optional, and if missing it is assumed to be the multiplicity of <A>S</A>.
+
+  <P/>
+  Then the Apéry set of <A>m</A> in <A>S</A> has the form <M>[0,k_1m+1,...,k_{m-1}m+m-1]</M>, and the output is the <M>(m-1)</M>-uple <M>[k_1,k_2,...,k_{m-1}]</M>
+    
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> KunzCoordinatesOfNumericalSemigroup(s);
+[ 2, 1 ]
+gap> KunzCoordinatesOfNumericalSemigroup(s,5);
+[ 1, 1, 0, 1 ]
+]]></Example>
+
+  </Description>
+</ManSection>
+		
+<ManSection>
+  <Func Name="KunzPolytope" Arg="m"/>
+  <Description>
+    <A>m</A> is a positive ingeger.
+
+  <P/>
+  The Kunz coordinates of the semigroups with that multiplicity <A>m</A> are solutions of a system of inequalities <M>Ax\ge b</M> (see <Cite Key="R-GS-GG-B"></Cite>). The output is the matrix <M>(A|-b)</M>.    
+<Example><![CDATA[
+gap> KunzPolytope(3);
+[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ]
+]]></Example>
+
+  </Description>
+</ManSection>
 
 
 
-
-
-            </Section>
+</Section>
