@@ -1164,7 +1164,14 @@ InstallGlobalFunction(HomogeneousBettiElementsOfNumericalSemigroup,function( s )
     
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     ed:=Length(msg);
-	mp:=MinimalPresentationOfNumericalSemigroup(s);
+    if NumSgpsCanUseSI or NumSgpsCanUseSingular or NumSgpsCanUse4ti2 then
+        msg:=List(msg, m->[1,m]);
+        msg:=Concatenation([[1,0]],msg);
+        return BettiElementsOfAffineSemigroup(
+                       AffineSemigroup(msg));      
+    fi;
+    
+    mp:=MinimalPresentationOfNumericalSemigroup(s);
     p := [];
 	# list of exponents to monomial	
 	monomial:=function(l)
