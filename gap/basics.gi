@@ -960,3 +960,79 @@ InstallGlobalFunction(FirstElementsOfNumericalSemigroup, function(n,s)
 
     return Concatenation( se, [max+1..(max+n-l)]);
 end);
+
+#############################################################################
+##
+#F KunzCoordinatesOfNumericalSemigroup(arg)
+##
+## If two argumets are given, the first is a semigroup s and the second an 
+## element m in s. If one argument is given, then it is the semigroup, and 
+## m is set to the multiplicity.
+## Then the Apéry set of m in s has the form [0,k_1m+1,...,k_{m-1}m+m-1], and
+## the output is the (m-1)-uple [k_1,k_2,...,k_{m-1}]
+#############################################################################
+InstallGlobalFunction(KunzCoordinatesOfNumericalSemigroup,
+        function(arg)
+    local narg,s,m,ap;
+    
+    narg:=Length(arg);
+    if narg>2 then
+        Error("The number of arguments is at most two");
+    fi;
+    s:=arg[1];
+    if not(IsNumericalSemigroup(s)) then
+        Error("The first argument must be a numerical semigroup");
+    fi;
+    if narg=2 then
+        m:=arg[2];
+        if not(m in s) then
+            Error("The second argument must be an element of the first");
+        fi;
+        if m=0 then
+            Error("The second argument cannot be zero");
+        fi;      
+    else
+        m:=MultiplicityOfNumericalSemigroup(s);
+    fi;
+    
+    ap:=AperyListOfNumericalSemigroupWRTElement(s,m);
+    return List([2..m],i->(ap[i]-i+1)/m); 
+end);
+
+#############################################################################
+##
+#F KunzPolytope(m)
+## For a fixed multiplicity, the Kunz coordinates of the semigroups 
+## with that multiplicity are solutions of a system of inequalities Ax\ge b 
+## (see [R-GS-GG-B]). The output is the matrix (A|-b)
+##
+#############################################################################
+InstallGlobalFunction(KunzPolytope,
+        function(m)
+    local mat,c, eq, row, it,zero;
+    
+    if not(IsPosInt(m)) then
+        Error("The argument must be a positive integer");
+    fi;
+    
+    c:=Cartesian([1..m-1],[1..m-1]);
+    eq:=IdentityMat(m-1);
+    eq:=TransposedMat(Concatenation(eq,[List([1..m-1],_->-1)]));
+    zero:=List([1..m],_->0);
+    
+    for it in c do
+        row:=ShallowCopy(zero);
+        row[it[1]]:=row[it[1]]+1;
+        row[it[2]]:=row[it[2]]+1;
+        if (it[1]+it[2])<m then
+            row[it[1]+it[2]]:=-1;
+            eq:=Concatenation(eq,[row]);
+        fi;
+        if (it[1]+it[2])>m then
+            row[it[1]+it[2]-m]:=-1;
+            row[m]:=1;
+            eq:=Concatenation(eq,[row]);
+        fi;
+    od;
+    return eq;
+end);

@@ -216,3 +216,25 @@ DeclareGlobalFunction("AperyListOfNumericalSemigroupAsGraph");
 ##
 #############################################################################
 DeclareGlobalFunction("FirstElementsOfNumericalSemigroup");
+
+#############################################################################
+##
+#F KunzCoordinatesOfNumericalSemigroup(arg)
+##
+## If two argumets are given, the first is a semigroup s and the second an 
+## element m in s. If one argument is given, then it is the semigroup, and 
+## m is set to the multiplicity.
+## Then the Apéry set of m in s has the form [0,k_1m+1,...,k_{m-1}m+m-1], and
+## the output is the (m-1)-uple [k_1,k_2,...,k_{m-1}]
+#############################################################################
+DeclareGlobalFunction("KunzCoordinatesOfNumericalSemigroup");
+
+#############################################################################
+##
+#F KunzPolytope(m)
+## For a fixed multiplicity, the Kunz coordinates of the semigroups 
+## with that multiplicity are solutions of a system of inequalities Ax\ge b 
+## (see [R-GS-GG-B]). The output is the matrix (A|-b)
+##
+#############################################################################
+DeclareGlobalFunction("KunzPolytope");
