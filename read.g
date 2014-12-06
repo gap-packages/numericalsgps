@@ -57,8 +57,10 @@ else
     if NumSgpsCanUseSingular then
         ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
     else
-        Info(InfoAffSgps,1,"Please load package SingularInterface or singular");
-        Info(InfoAffSgps,1,"(not both) to have extended functionalities.");
+        if not(NumSgpsCanUse4ti2) then
+            Info(InfoAffSgps,1,"Please load package SingularInterface or singular");
+            Info(InfoAffSgps,1,"(not both) to have extended functionalities.");
+        fi;
     fi;
 fi;
     

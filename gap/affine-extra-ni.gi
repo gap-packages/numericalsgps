@@ -140,7 +140,7 @@ InstallOtherMethod(FactorizationsVectorWRTList,
         Error("The second argument must be a list of lists of integers.");
     fi;
     
-    if not(IsMatrix(mat)) then
+    if not(IsRectangularTable(mat)) then
         Error("All lists must in the second argument have the same length as the first argument.");
     fi;
 	
