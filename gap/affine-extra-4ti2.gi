@@ -37,7 +37,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
 
         Info(InfoAffSgps,2,"Using 4ti2 for Hilbert.");
 
-        if not(IsMatrix(l)) then 
+        if not(IsRectangularTable(l)) then 
             Error("The argument must be a matrix.");
         fi;
         if not(IsInt(l[1][1])) then
@@ -69,7 +69,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
           return (First(v,n->n<0)=fail);
       end;
 
-      if not(IsMatrix(ls)) then
+      if not(IsRectangularTable(ls)) then
           Error("The first argument must be a matrix.");
       fi;
 
@@ -115,7 +115,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
 
     Info(InfoAffSgps,2,"Using 4ti2 for Hilbert.");
 
-    if not(IsMatrix(l)) then 
+    if not(IsRectangularTable(l)) then 
         Error("The argument must be a matrix.");
     fi;
     if not(IsInt(l[1][1])) then

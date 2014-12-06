@@ -138,7 +138,7 @@ InstallMethod(BelongsToAffineSemigroup,
     fi;
     
     gen:=GeneratorsAS(a);
-    if not(IsMatrix(Concatenation(gen,[v]))) then
+    if not(IsRectangularTable(Concatenation(gen,[v]))) then
         Error("The dimension of the vector and the affine semigroup do not coincide.");
     fi;
       
@@ -236,7 +236,7 @@ InstallGlobalFunction(BasisOfGroupGivenByEquations,function(A,m)
     end;
 
     
-    if not(IsMatrix(A)) then
+    if not(IsRectangularTable(A)) then
         Error("The first argument must be a matrix.");
     fi;
     if not(IsInt(A[1][1])) then
@@ -283,7 +283,7 @@ end);
 InstallGlobalFunction(EquationsOfGroupGeneratedBy,function(M)
     local A, m, snf, nones;    
 
-    if not(IsMatrix(M)) then
+    if not(IsRectangularTable(M)) then
         Error("The first argument must be a matrix.");
     fi;
     if not(IsInt(M[1][1])) then
@@ -330,7 +330,7 @@ InstallGlobalFunction(GluingOfAffineSemigroups,function(a1,a2)
     
     g1:=GeneratorsOfAffineSemigroup(a1);
     g2:=GeneratorsOfAffineSemigroup(a2);
-    if not(IsMatrix(Concatenation(g1,g2)))then
+    if not(IsRectangularTable(Concatenation(g1,g2)))then
         Error("The semigroups must have the same dimension.");
     fi;
     
@@ -380,7 +380,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     solutions:=[];
     explored:=[];
 
-    if not(IsMatrix(l)) then 
+    if not(IsRectangularTable(l)) then 
       Error("The argument must be a matrix.");
     fi;
     if not(IsInt(l[1][1])) then
@@ -412,7 +412,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
   contejeanDevieAlgorithmWithCongruences:=function(ls,md)
     local l,n,m,diag,dim,d, hil, zero;
 
-    if not(IsMatrix(ls)) then
+    if not(IsRectangularTable(ls)) then
       Error("The first argument must be a matrix.");
     fi;
 
@@ -459,7 +459,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         [IsMatrix],1,
         function(ls)
     local mat, neq, dim, id, hil,zero ;
-    if not(IsMatrix(ls)) then 
+    if not(IsRectangularTable(ls)) then 
       Error("The argument must be a matrix.");
     fi;
     if not(IsInt(ls[1][1])) then
@@ -504,7 +504,7 @@ InstallMethod(FactorizationsVectorWRTList,
         Error("The second argument must be a list of lists of integers.");
     fi;
     
-    if not(IsMatrix(mat)) then
+    if not(IsRectangularTable(mat)) then
         Error("All lists must in the second argument have the same length as the first argument.");
     fi;
     
