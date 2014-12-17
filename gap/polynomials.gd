@@ -105,3 +105,35 @@ DeclareGlobalFunction("DeltaSequencesWithFrobeniusNumber");
 DeclareGlobalFunction("CurveAssociatedToDeltaSequence");
 
 
+#################################################################
+##
+#F SemigroupOfValuesOfCurve_Global(arg)
+## Computes the semigroup of values of R=K[pols],
+## that is, the set of possible degrees of polynomials in this ring
+## pols is a set of polynomials in a single variable
+## The semigroup of values is a numerical semigroup if l(K[x]/R) is finite
+## If this length is not finite, the output is fail
+## If the second argument "basis" is given, then the output is a basis B of
+## R such that deg(B) minimally generates deg(R), and it is reduced
+## If the second argument is an integer, then the output is a polynomial f in R
+## with deg(f) that value (if there is none, then the output is fail)
+## Implementation based in [AGSM14]
+###########################################################
+DeclareGlobalFunction("SemigroupOfValuesOfCurve_Global");
+
+
+#################################################################
+##
+#F SemigroupOfValuesOfCurve_Local(arg)
+## Computes the semigroup of values of R=K[pols],
+## that is, the set of possible order of series in this ring
+## pols is a set of polynomials in a single variable
+## The semigroup of values is a numerical semigroup if l(K[[x]]/R) is finite
+## If this length is not finite, the output is fail
+## If the second argument "basis" is given, then the output is a basis B of
+## R such that o(B) minimally generates o(R), and it is reduced
+## If the second argument is an integer, then the output is a polynomial f in R
+## with o(f) that value (if there is none, then the output is fail)
+## Implementation based in [AGSM14]
+###########################################################
+DeclareGlobalFunction("SemigroupOfValuesOfCurve_Local");
