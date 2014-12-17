@@ -507,3 +507,461 @@ InstallGlobalFunction(CurveAssociatedToDeltaSequence,function(l)
 	return g[Length(g)];
 end);
 
+#################################################################
+##
+#F SemigroupOfValuesOfCurve_Local(arg)
+## Computes the semigroup of values of R=K[pols],
+## that is, the set of possible order of series in this ring
+## pols is a set of polynomials in a single variable
+## The semigroup of values is a numerical semigroup if l(K[[x]]/R) is finite
+## If this length is not finite, the output is fail
+## If the second argument "basis" is given, then the output is a basis B of
+## R such that o(B) minimally generates o(R), and it is reduced
+## If the second argument is an integer, then the output is a polynomial f in R
+## with o(f) that value (if there is none, then the output is fail)
+## Implementation based in [AGSM14]
+###########################################################
+InstallGlobalFunction(SemigroupOfValuesOfCurve_Local, function(arg)
+    local G, F, n, T, max, s, d, newG, c, kernel,var, tomoniclocal, order, subduction, t,tt, TT, narg,val,facts,pols, msg,reduce;
+
+    ### the order of the series (polynomial)
+    order:=function(p)
+        local cl;
+
+        if IsInt(p) or IsZero(p) then
+            return 0;
+        fi;
+
+        cl:=CoefficientsOfUnivariatePolynomial(p);
+        return First([1..Length(cl)], i->cl[i]<>0)-1;
+    end;
+
+    #### transforms to monic
+    tomoniclocal:=function(p)
+        local cl;
+        if IsZero(p) then
+            return 0*X(Rationals,var);
+        fi;
+        if IsConstantRationalFunction(p) or IsRat(p) then
+            return 1;
+        fi;
+        cl:=CoefficientsOfUnivariatePolynomial(p);
+        return p/First(cl,i->i<>0);
+    end;
+
+    #### subduction: tries to express p as a polynomial in pols
+    #### pols are supposed to be monic
+    subduction:=function(p)
+        local initial, facts, ord;
+
+        ord:=order(p);
+
+        if d<>1 and (ord mod d)<>0 then
+          return p;
+        fi;
+
+        if order(p)=0 then
+            return 0*X(Rationals,var);
+        fi;
+
+        if order(p)>c then
+          if d=1 then
+            return 0*X(Rationals,var);
+          else
+            return p;
+          fi;
+        fi;
+
+        initial:=List(F,order);
+
+        facts:=FactorizationsIntegerWRTList(order(p), initial);
+        if facts=[] then
+            return p;
+        fi;
+
+        Info(InfoNumSgps,2,"Reducing ",p, " to ",
+             tomoniclocal(p-Product(List([1..Length(F)],i->F[i]^(facts[1][i])))));
+
+        return subduction(tomoniclocal(p-Product(List([1..Length(F)],i->F[i]^(facts[1][i])))));
+    end;
+
+    #### reduces the elements in the minimal basis F, p is monic
+
+    reduce:=function(p)
+        local ords, cfs, cf, fact, reduced, head, tail;
+
+        head:=X(Rationals,var)^order(p);
+        tail:=p-head;
+
+        ords:=List(F,order);
+
+        repeat
+            reduced:=false;
+            #Print(p," ");
+
+            cfs:=CoefficientsOfUnivariatePolynomial(tail);
+            cf:=First([1..Length(cfs)], i->(cfs[i]<>0) and ((i-1) in s));
+            #Error("blabla");
+
+            #Print("cf",cf,"\n");
+
+            if cf<>fail then
+                fact:=FactorizationsIntegerWRTList(cf-1,ords)[1];
+                tail:=(tail-cfs[cf]*Product(List([1..Length(F)],i->F[i]^(fact[i])))) mod X(Rationals,var)^c;
+                cfs:=CoefficientsOfUnivariatePolynomial(tail);
+            else
+                reduced:=true;
+            fi;
+        until reduced;
+        return head+tail;
+
+
+    end;
+
+
+    #### computes the relations among the polynomials in pols
+    kernel:=function(pols)
+        local  p,  msg,  ed,  mp, ie, bintopair, minp, eval;
+
+        bintopair:=function(p)
+            local m1,m2, d1, d2;
+            m1:=LeadingMonomialOfPolynomial(p,MonomialGrlexOrdering());
+            m2:=m1-p;
+            d1:=List([var+1..var+ed], i->DegreeIndeterminate(m1,i));
+            d2:=List([var+1..var+ed], i->DegreeIndeterminate(m2,i));
+            return [d1,d2];
+        end;
+
+        eval:=function(pair)
+            local m1,m2;
+            m1:=tomoniclocal(Product(List([1..ed],i-> pols[i]^pair[1][i])));
+            m2:=tomoniclocal(Product(List([1..ed],i-> pols[i]^pair[2][i])));
+            return tomoniclocal(-m1+m2);
+        end;
+
+        msg:=List(pols,order);
+        ed:=Length(msg);
+        if ed=0 then
+            return [];
+        fi;
+        p:=List([1..ed], i->X(Rationals,var+i)-X(Rationals,var)^msg[i]);
+        ie:= ReducedGroebnerBasis( p, EliminationOrdering([X(Rationals,var)]));
+        ie:=Filtered(ie, q->IsZero(Derivative(q,X(Rationals,var))));
+
+        minp:=List(ie,q->bintopair(q));
+        Info(InfoNumSgps,2,"The exponents of the binomials of the kernel are ",minp);
+        return List(minp,eval);
+
+    end; #end of kernel
+
+    narg:=Length(arg);
+
+    if narg=2 then
+        pols:=arg[1];
+        val:=arg[2];
+        if not(IsInt(val)) and not(val="basis") then
+           Error("The second argument must be an integer or the string 'basis'");
+        fi;
+    fi;
+    if narg=1 then
+        pols:=arg[1];
+    fi;
+
+    if narg>2 then
+        Error("Wrong number of arguments (two or one)");
+    fi;
+
+
+
+    if not(IsHomogeneousList(pols)) then
+        Error("The argument must be a list of polynomials.");
+    fi;
+
+    if not(ForAll(pols, IsUnivariatePolynomial)) then
+        Error("The argument must be a list of polynomials.");
+    fi;
+    if Length(Set(pols, IndeterminateOfLaurentPolynomial))<>1 then
+        Error("The arguments must be polynomials in the same variable; constants not allowed nor the empty list.");
+    fi;
+
+    var:=IndeterminateNumberOfLaurentPolynomial(pols[1]);
+
+    F:=ShallowCopy(pols);
+    Sort(F,function(a,b) return order(a)< order(b); end);
+    F:=List(F,tomoniclocal);
+    G:=List(F,order);
+    n:=0;
+
+    while true do
+        d:=Gcd(G);
+        s:=NumericalSemigroup(G/d);
+        c:=d*ConductorOfNumericalSemigroup(s);
+        T:=kernel(F);
+        T:=Filtered(T, x->not(IsZero(x)));
+        Info(InfoNumSgps,2,"The kernel evaluated in the polynomials is ",T);
+        T:=Set(T,subduction);
+        T:=Filtered(T, x->not(IsZero(x)));
+        Info(InfoNumSgps,2,"After subduction: ",T);
+        if Gcd(G) = 1 then
+            T:=Filtered(T, t->order(t)<c);
+        fi;
+
+        if T=[] or F=Union(F,T) then
+            d:=Gcd(G);
+            if d=1 then
+                s:=NumericalSemigroup(G);
+                if narg=1 then
+                    return s;
+                fi;
+                msg:=MinimalGeneratingSystem(s);
+                F:=Filtered(F,f->order(f) in msg);
+                if val="basis" then
+                    return List(F,reduce);
+                fi;
+
+                if IsInt(val) then
+                    Info(InfoNumSgps,2,"The generators of the algebra are ",F);
+                    facts:=FactorizationsIntegerWRTList(val,List(F,order));
+                    if facts=[] then
+                        return fail;
+                    fi;
+                    return reduce(Product(List([1..Length(facts[1])],i->F[i]^facts[1][i])));
+                fi;
+            fi;
+            Info(InfoNumSgps,2,"The monoid is not a numerical semigroup and it is generated by ",
+                 G);
+            #d*MinimalGeneratingSystem(NumericalSemigroup(G/d)));
+            #return fail;
+        fi;
+        Info(InfoNumSgps,2,"Adding ",T," to my list of polynomials");
+        F:=Union(F,T);
+        newG:=Set(T,order);
+        G:=Union(G,newG);
+        Info(InfoNumSgps,1,"The set of possible values uptates to ",G);
+        n:=n+1;
+        d:=Gcd(G);
+        s:=NumericalSemigroup(G/d);
+        Info(InfoNumSgps,2,"Small elements ",d*SmallElements(s));
+    od;
+
+    return fail;
+end);
+        
+#################################################################
+##
+#F SemigroupOfValuesOfCurve_Global(arg)
+## Computes the semigroup of values of R=K[pols],
+## that is, the set of possible degrees of polynomials in this ring
+## pols is a set of polynomials in a single variable
+## The semigroup of values is a numerical semigroup if l(K[x]/R) is finite
+## If this length is not finite, the output is fail
+## If the second argument "basis" is given, then the output is a basis B of
+## R such that deg(B) minimally generates deg(R), and it is reduced
+## If the second argument is an integer, then the output is a polynomial f in R
+## with deg(f) that value (if there is none, then the output is fail)
+## Implementation based in [AGSM14]
+###########################################################
+InstallGlobalFunction(SemigroupOfValuesOfCurve_Global, function(arg)
+    local G, F, n, T, max, s, d, newG, c, kernel,var, tomonicglobal, degree, subduction, pols, val, narg, degs, facts, reduce, msg;
+
+    ### the degree of the polynomial
+    degree:=function(p)
+        return DegreeOfUnivariateLaurentPolynomial(p);
+
+    end;
+
+    #### transforms to monic
+    tomonicglobal:=function(p)
+        if IsZero(p) then
+            return 0*X(Rationals,1);
+        fi;
+        return p/LeadingCoefficient(p);
+    end;
+
+    #### subduction: tries to express p as a polynomial in pols
+    #### pols are supposed to be monic
+    subduction:=function(p)
+        local initial, facts;
+
+
+        if IsZero(p) then
+            return p;
+        fi;
+
+        if degree(p)=0 then
+            return 0*X(Rationals,1);
+        fi;
+
+        initial:=List(F,degree);
+
+        facts:=FactorizationsIntegerWRTList(degree(p), initial);
+        if facts=[] then
+            return p;
+        fi;
+
+        Info(InfoNumSgps,2,"Reducing ",p, " to ",
+             tomonicglobal(p-Product(List([1..Length(F)],i->F[i]^(facts[1][i])))));
+
+        return subduction(tomonicglobal(
+          p-Product(List([1..Length(F)],i->F[i]^(facts[1][i])))));
+    end;
+
+    #### reduces the elements in the minimal basis F, p is monic
+
+    reduce:=function(p)
+    local degs, cfs, cf, fact, reduced, head, tail;
+
+    head:=X(Rationals,var)^degree(p);
+    tail:=p-head;
+
+    degs:=List(F,degree);
+
+    repeat
+      reduced:=false;
+      #Print(p," ");
+
+      cfs:=CoefficientsOfUnivariatePolynomial(tail);
+      cf:=First([1..Length(cfs)], i->(cfs[i]<>0) and ((i-1) in s));
+      #Error("blabla");
+      #Print("cf",cf,"\n");
+      if cf<>fail then
+        fact:=FactorizationsIntegerWRTList(cf-1,degs)[1];
+        tail:=(tail-cfs[cf]*Product(List([1..Length(F)],i->F[i]^(fact[i]))));
+        cfs:=CoefficientsOfUnivariatePolynomial(tail);
+      else
+        reduced:=true;
+      fi;
+    until reduced;
+
+    return head+tail;
+    end;
+
+
+    #### computes the relations among the polynomials in pols
+    kernel:=function(pols)
+        local  p,  msg,  ed,  mp, ie, bintopair, minp, eval;
+
+        bintopair:=function(p)
+            local m1,m2, d1, d2;
+            m1:=LeadingMonomialOfPolynomial(p,MonomialGrlexOrdering());
+            m2:=m1-p;
+            d1:=List([var+1..var+ed], i->DegreeIndeterminate(m1,i));
+            d2:=List([var+1..var+ed], i->DegreeIndeterminate(m2,i));
+            return [d1,d2];
+        end;
+
+        eval:=function(pair)
+            local m1,m2;
+            m1:=tomonicglobal(Product(List([1..ed],i-> pols[i]^pair[1][i])));
+            m2:=tomonicglobal(Product(List([1..ed],i-> pols[i]^pair[2][i])));
+            return tomonicglobal(-m1+m2);
+        end;
+
+        msg:=List(pols,degree);
+        ed:=Length(msg);
+        if ed=0 then
+            return [];
+        fi;
+        p:=List([1..ed], i->X(Rationals,var+i)-X(Rationals,var)^msg[i]);
+        ie:= ReducedGroebnerBasis( p, EliminationOrdering([X(Rationals,var)]));
+        ie:=Filtered(ie, q->IsZero(Derivative(q,X(Rationals,var))));
+
+        minp:=List(ie,q->bintopair(q));
+        Info(InfoNumSgps,2,"The exponents of the binomials of the kernel are ",minp);
+        return List(minp,p->tomonicglobal(eval(p)));
+
+    end; #end of kernel
+
+    narg:=Length(arg);
+
+    if narg>2 then
+        Error("Wrong number of arguments (two or one)");
+    fi;
+    if narg=1 then
+        pols:=arg[1];
+    fi;
+
+    if narg=2 then
+      pols:=arg[1];
+      val:=arg[2];
+      if not(IsInt(val)) and not(val="basis") then
+        Error("The second argument must be an integer or the string 'basis'");
+      fi;
+    fi;
+
+    if not(IsHomogeneousList(pols)) then
+        Error("The argument must be a list of polynomials.");
+    fi;
+
+    if not(ForAll(pols, IsUnivariatePolynomial)) then
+        Error("The argument must be a list of polynomials.");
+    fi;
+    if Length(Set(pols, IndeterminateOfLaurentPolynomial))<>1 then
+        Error("The arguments must be polynomials in the same variable; constants not allowed nor the empty list.");
+    fi;
+
+    var:=IndeterminateNumberOfLaurentPolynomial(pols[1]);
+
+    F:=ShallowCopy(pols);
+    Sort(F,function(a,b) return degree(a)< degree(b); end);
+    F:=List(F,tomonicglobal);
+    G:=List(F,degree);
+    n:=0;
+
+    while true do
+        T:=kernel(F);
+        T:=Filtered(T, x->not(IsZero(x)));
+        Info(InfoNumSgps,2,"The kernel evaluated in the polynomials is ",T);
+        T:=Set(T,subduction);
+        T:=Filtered(T, x->not(IsZero(x)));
+        Info(InfoNumSgps,2,"After subduction: ",T);
+        if Gcd(G) = 1 then
+            s:=NumericalSemigroup(G);
+            c:=ConductorOfNumericalSemigroup(s);
+            T:=Filtered(T, t->degree(t)<c);
+        fi;
+
+        if T=[] or F=Union(F,T) then
+            d:=Gcd(G);
+            if d=1 then
+              s:=NumericalSemigroup(G);
+              if narg=1 then
+              return s;
+              fi;
+              msg:=MinimalGeneratingSystem(s);
+              F:=Filtered(F,f->degree(f) in msg);
+              if val="basis" then
+                return List(F,reduce);
+              fi;
+
+              if IsInt(val) then
+                Info(InfoNumSgps,2,"The generators of the algebra are ",F);
+                facts:=FactorizationsIntegerWRTList(val,List(F,degree));
+                if facts=[] then
+                  return fail;
+                fi;
+                return reduce(Product(List([1..Length(facts[1])],i->F[i]^facts[1][i])));
+              fi;
+            fi;
+            Info(InfoNumSgps,2,"The monoid is not a numerical semigroup and it is generated by ",
+                 G);
+            #d*MinimalGeneratingSystem(NumericalSemigroup(G/d)));
+            return fail;
+        fi;
+        Info(InfoNumSgps,2,"Adding ",T," to my list of polynomials");
+        F:=Union(F,T);
+        newG:=Set(T,degree);
+        G:=Union(G,newG);
+        if narg=2 and val in G then
+            return First(F,f->degree(f)=val);
+        fi;
+
+        Info(InfoNumSgps,1,"The set of possible values uptates to ",G);
+        n:=n+1;
+        d:=Gcd(G);
+        s:=NumericalSemigroup(G/d);
+        Info(InfoNumSgps,2,"Small elements ",d*SmallElements(s));
+    od;
+    return fail;
+end);
+    
