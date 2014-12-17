@@ -40,13 +40,13 @@ Ap}(S,s)=\{ w(0),w(1),\ldots, w(s-1)\}</M> is called the <E>Apéry set</E> of
 Let <M>a,b,c,d</M> be positive integers such that <M>a/b &lt; c/d</M>, and let <M>I=[a/b,c/d]</M>.
 Then the set <M>{\rm S}(I)={\mathbb N}\cap \bigcup_{n\geq 0} n I</M> is a numerical semigroup.
 This class of numerical semigroups coincides with that of sets of solutions to equations of the
-form <M> A x \ mod\ B \leq C x</M> with <M> A,B,C</M> positive integers. A numerical semigroup in
+form <M> A x \bmod\ B \leq C x</M> with <M> A,B,C</M> positive integers. A numerical semigroup in
 this class is said to be <E>proportionally modular</E>.
 If <M>C = 1</M>, then it is said to be <E>modular</E>.
 
 <P/>
 
-There are several different ways to specify a numerical semigroup <M>S</M>,
+There are different ways to specify a numerical semigroup <M>S</M>,
 namely, by its generators; by its gaps, its fundamental or special gaps
 by its Apéry set, just to name some.
 In this section we describe functions that may be used
@@ -67,8 +67,8 @@ to specify, in one of these ways, a numerical semigroup  in &GAP;.
                         <C>"fundamentalgaps"</C>, <C>"subadditive"</C> or <C>"apery"</C> according to
                         whether the semigroup is to be given by means of a system of generators, a 
 			minimal system of generators, a condition of the form 
-			<M> ax \ mod\ m</M> &tlt;<M>= x</M>, a condition of the form 
-			<M> ax \ mod\ m</M> &tlt;<M>= cx</M>, a set
+			<M> ax \bmod\ m \le  x</M>, a condition of the form 
+			<M> ax \bmod\ m\le  cx</M>, a set
                         of all elements up to the conductor, the set of gaps, the
                         set of fundamental gaps, a periodic subaditive function, or the Apéry set.
                         <P/>
@@ -129,7 +129,7 @@ gap> NumericalSemigroupByInterval(1/3,1/2);
                     <Description>
                         Given two positive integers <A>a</A> and <A>b</A>,
                         this function returns a modular numerical semigroup
-                        satisfying <M>ax \ mod\ b &lt;= x</M>.
+                        satisfying <M>ax \bmod\ b \le x</M>.
                         <Example><![CDATA[
 gap> ModularNumericalSemigroup(3,7);
 <Modular numerical semigroup satisfying 3x mod 7 <= x >
@@ -143,7 +143,7 @@ gap> ModularNumericalSemigroup(3,7);
                     <Description>
                         Given three positive integers <A>a</A>, <A>b</A> and <A>c</A>,
                         this function returns a proportionally modular numerical semigroup
-                        satisfying <M>ax\ mod\ b &lt;= cx</M>.
+                        satisfying <M>ax\bmod\ b \le cx</M>.
                         <Example><![CDATA[
 gap> ProportionallyModularNumericalSemigroup(3,7,12);
 <Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >

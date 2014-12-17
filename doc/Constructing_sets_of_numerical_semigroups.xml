@@ -29,7 +29,11 @@ gap> List(last,s->MinimalGeneratingSystemOfNumericalSemigroup(s));
 ]]></Example>          
                     </Description>
                 </ManSection>
-                
+
+</Section>
+
+<Section>
+  <Heading> Constructing the set of numerical semigroup with given Frobenius number</Heading>
                 <ManSection>
                     <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
@@ -43,7 +47,10 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
                         </Example>          
                     </Description>
                 </ManSection>
-                
+
+</Section>
+
+<Section>
                 <Heading>
                     Constructing the set of numerical semigroups with genus g, that is, numerical 
                     semigroups with exactly g gaps

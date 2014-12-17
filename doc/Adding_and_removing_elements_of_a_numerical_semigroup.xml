@@ -56,7 +56,10 @@ true
                         </Example>          
                     </Description>
                 </ManSection>
-                
+</Section>
+
+<Section>
+  <Heading>Intersections and quotients by integers</Heading>
                 <ManSection>
                     <Func Name="IntersectionOfNumericalSemigroups" Arg="S, T"/>
                     <Description>
