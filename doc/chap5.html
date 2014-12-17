@@ -33,17 +33,32 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C94611F7DD9E742">5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X865EA8377D632F53">5.1-2 AddSpecialGapOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X874494928728023E">5.1-3 IntersectionOfNumericalSemigroups</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83CCE63C82F34C25">5.1-4 QuotientOfNumericalSemigroup</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X867D9A9A87CEB869">5.2 <span class="Heading">
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7968F4A37A1329C3">5.2 <span class="Heading">Intersections and quotients by integers</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X874494928728023E">5.2-1 IntersectionOfNumericalSemigroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83CCE63C82F34C25">5.2-2 QuotientOfNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X867D9A9A87CEB869">5.3 <span class="Heading">
                     Constructing the set of all numerical semigroups containing a given numerical semigroup
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7EEA97AB85FE078C">5.2-1 OverSemigroupsNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87369D567AA6DBA0">5.2-2 NumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X86970F6A868DEA95">5.2-3 NumericalSemigroupsWithGenus</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7EEA97AB85FE078C">5.3-1 OverSemigroupsNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7F40052D7B0EC8ED">5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87369D567AA6DBA0">5.4-1 NumericalSemigroupsWithFrobeniusNumber</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X85725F5287D20CBB">5.5 <span class="Heading">
+                    Constructing the set of numerical semigroups with genus g, that is, numerical 
+                    semigroups with exactly g gaps
+                </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X86970F6A868DEA95">5.5-1 NumericalSemigroupsWithGenus</a></span>
 </div></div>
 </div>
 
@@ -103,9 +118,13 @@ true
 
                         </pre></div>
 
+<p><a id="X7968F4A37A1329C3" name="X7968F4A37A1329C3"></a></p>
+
+<h4>5.2 <span class="Heading">Intersections and quotients by integers</span></h4>
+
 <p><a id="X874494928728023E" name="X874494928728023E"></a></p>
 
-<h5>5.1-3 IntersectionOfNumericalSemigroups</h5>
+<h5>5.2-1 IntersectionOfNumericalSemigroups</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntersectionOfNumericalSemigroups</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups. Computes the intersection of <var class="Arg">S</var> and <var class="Arg">T</var> (which is a numerical semigroup).</p>
@@ -128,7 +147,7 @@ true
 
 <p><a id="X83CCE63C82F34C25" name="X83CCE63C82F34C25"></a></p>
 
-<h5>5.1-4 QuotientOfNumericalSemigroup</h5>
+<h5>5.2-2 QuotientOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientOfNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an integer. Computes the quotient of <var class="Arg">S</var> by <var class="Arg">n</var>, that is, the set <span class="SimpleMath">{ x∈ N | nx ∈ S}</span>, which is again a numerical semigroup. <code class="code">S / n</code> may be used as a short for <code class="code">QuotientOfNumericalSemigroup(S, n)</code>.</p>
@@ -152,7 +171,7 @@ true
 
 <p><a id="X867D9A9A87CEB869" name="X867D9A9A87CEB869"></a></p>
 
-<h4>5.2 <span class="Heading">
+<h4>5.3 <span class="Heading">
                     Constructing the set of all numerical semigroups containing a given numerical semigroup
                 </span></h4>
 
@@ -162,7 +181,7 @@ true
 
 <p><a id="X7EEA97AB85FE078C" name="X7EEA97AB85FE078C"></a></p>
 
-<h5>5.2-1 OverSemigroupsNumericalSemigroup</h5>
+<h5>5.3-1 OverSemigroupsNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OverSemigroupsNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is the set of numerical semigroups containing it.</p>
@@ -176,9 +195,13 @@ true
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
 </pre></div>
 
+<p><a id="X7F40052D7B0EC8ED" name="X7F40052D7B0EC8ED"></a></p>
+
+<h4>5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></h4>
+
 <p><a id="X87369D567AA6DBA0" name="X87369D567AA6DBA0"></a></p>
 
-<h5>5.2-2 NumericalSemigroupsWithFrobeniusNumber</h5>
+<h5>5.4-1 NumericalSemigroupsWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">f</var> is an non zero integer greater than or equal to -1. The output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var>. The algorithm implemented is given in <a href="chapBib.html#biBRGGJ04">[RGGM04]</a>.</p>
@@ -190,13 +213,20 @@ true
 
                         </pre></div>
 
+<p><a id="X85725F5287D20CBB" name="X85725F5287D20CBB"></a></p>
+
+<h4>5.5 <span class="Heading">
+                    Constructing the set of numerical semigroups with genus g, that is, numerical 
+                    semigroups with exactly g gaps
+                </span></h4>
+
 <p>Given a numerical semigroup of genus g, removing minimal generators, one obtains numerical semigroups of genus g+1. In order to avoid repetitions, we only remove minimal generators greater than the frobenius number of the numerical semigroup (this is accomplished with the local function sons).</p>
 
 <p>These procedures are described in <a href="chapBib.html#biBRGGB03">[RGGB03]</a> and <a href="chapBib.html#biBB-A08">[Bra08]</a>.</p>
 
 <p><a id="X86970F6A868DEA95" name="X86970F6A868DEA95"></a></p>
 
-<h5>5.2-3 NumericalSemigroupsWithGenus</h5>
+<h5>5.5-1 NumericalSemigroupsWithGenus</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithGenus</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">g</var> is a nonnegative integer. The output is the set of numerical semigroups with genus<var class="Arg">g</var> .</p>
