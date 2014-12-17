@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>Frobenius Number</Heading>
+         The largest nonnegative integer not belonging to a numerical semigroup 
+<M>S</M> is the <E>Frobenius number</E> of <M>S</M>. If <M>S</M> is the set of 
+nonnegative integers, then clearly its Frobenius number is <M>-1</M>, 
+otherwise its Frobenius number coincides with the maximum of the gaps (or 
+fundamental gaps) of <M>S</M>.
+                An integer <M>z</M> is a <E>pseudo-Frobenius 
+number</E> of <M>S</M> if <M>z+S\setminus\{0\}\subseteq S</M>.
+       
+                <ManSection>
+                    <Attr Name="FrobeniusNumberOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C> 
+                        is a numerical semigroup. It returns the Frobenius number of <C>NS</C>.
+ Of
+                        course, the time consumed to return a result may depend on the way the
+                        semigroup is given or on the knowledge already produced on the semigroup.
+                        <Example><![CDATA[
+gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+4
+]]></Example>
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Attr Name="FrobeniusNumber" Arg="NS"/>
+                    <Description>
+                        This is just a synonym of <Ref Func="FrobeniusNumberOfNumericalSemigroup" />.
+                    </Description>
+                </ManSection>
+                
+
+                <ManSection>
+                    <Attr Name="ConductorOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        This is just a synonym of <C> FrobeniusNumberOfNumericalSemigroup</C> (<C>NS</C>)<M>+1</M>.
+                    </Description>
+                </ManSection>
+
+
+                
+                <ManSection>
+                    <Attr Name="PseudoFrobeniusOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <C>S</C> 
+                        is a numerical semigroup. It returns set of pseudo-Frobenius numbers of <A>S</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> PseudoFrobeniusOfNumericalSemigroup(S);
+[ 21, 40, 41, 42 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Attr Name="TypeOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        Stands for <C>Length(PseudoFrobeniusOfNumericalSemigroup (NS))</C>.
+                    </Description>
+                </ManSection>
+
+            </Section>

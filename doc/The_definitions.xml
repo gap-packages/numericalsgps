@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Section>
+                <Heading>
+                    The definitions
+                </Heading>
+
+
+
+
+
+                <ManSection>
+                    <Attr Name="MultiplicityOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <A>NS</A> is a numerical semigroup. Returns the multiplicity of <A>NS</A>, which is the smallest positive integer belonging to <A>NS</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 7,53);
+<Modular numerical semigroup satisfying 7x mod 53 <= x >
+gap> MultiplicityOfNumericalSemigroup(S);
+8
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
+                   <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
+                  <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/> -->
+<Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
+<Attr Name="MinimalGeneratingSystem" Arg="S"/>                    <Description>
+                        <A>S</A>
+                        is a numerical semigroup.
+                        <C>GeneratorsOfNumericalSemigroup</C>
+                        returns a set of generators of <C>S</C>, which may
+                        not be minimal.
+
+                 <!--       <C>GeneratorsOfNumericalSemigroupNC</C>
+                        returns the set of generators recorded in <C>S!.generators</C>, which may
+                        not be minimal
+                        <C>ReducedSetOfGeneratorsOfNumericalSemigroupNC</C>
+                        Returns a set with possibly fewer generators than those recorded in <C>S!.generators</C>. It changes <C>S!.generators</C> to the set returned.
+The function has 1 to 3 arguments. One of them a numerical semigroup. Then an argument is a boolean (<E>true</E> means that all the elements not belonging to the Apery set with respect to the multiplicity are removed; the default is "false") and another argument is a positive integer <M>n</M> (meaning that generators that can be written as the sum of <M>n</M> or less generators are removed; the default is "2"). The boolean or the integer may not be present. If a minimal generating set for <M>S</M> is known or no generating set is known, then the minimal generating system is returned.-->
+                        
+
+                        <C>MinimalGeneratingSystemOfNumericalSemigroup</C>
+                        returns the minimal set of generators of <C>S</C>.
+<P/>
+From Version 0.980, <C>ReducedSetOfGeneratorsOfNumericalSemigroup</C> is just a synonym of <C>MinimalGeneratingSystemOfNumericalSemigroup</C> and <C>GeneratorsOfNumericalSemigroupNC</C> is just a synonym of <C>GeneratorsOfNumericalSemigroup</C>. The names are kept for compatibility with code produced for previous versions, but will be removed in the future.
+
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> GeneratorsOfNumericalSemigroup(S);
+[ 11, 12, 13, 32, 53 ]
+gap> S := NumericalSemigroup(3, 5, 53);
+<Numerical semigroup with 3 generators>
+gap> GeneratorsOfNumericalSemigroup(S);
+[ 3, 5, 53 ]
+gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
+[ 3, 5 ]
+gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
+true
+<!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
+[ 5, 7, 9, 25 ]
+gap> ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   
+[ 5, 7, 9, 28 ]
+gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   
+[ 5, 7, 9 ]-->
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Attr Name="EmbeddingDimensionOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the cardinality of its minimal generating system.
+                    </Description>
+                </ManSection>
+
+
+
+                <ManSection>
+                    <Attr Name="SmallElementsOfNumericalSemigroup" Arg="NS"/>
+<Attr Name="SmallElements" Arg="NS"/>
+                    <Description>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the list of small elements of <C>NS</C>.
+Of course, the time consumed
+                        to return a result may depend on the way the semigroup is given.
+                        <Example><![CDATA[
+gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+[ 0, 3, 5 ]
+gap> SmallElements(NumericalSemigroup(3,5,7));                    
+[ 0, 3, 5 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+				<ManSection>
+					<Func Name="FirstElementsOfNumericalSemigroup" Arg="n, NS"></Func>
+					<Description>
+						<C>NS</C> is a numerical semigroup. It returns the list with the
+						first <A>n</A> elements of <C>NS</C>.
+						<Example><![CDATA[
+gap> FirstElementsOfNumericalSemigroup(2,NumericalSemigroup(3,5,7));
+[ 0, 3 ]
+gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
+[ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
+]]></Example>
+					</Description>
+</ManSection>
+
+
+                <ManSection>
+                    <Oper Name="AperyListOfNumericalSemigroupWRTElement" Arg="S, m"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>m</A> is a positive element of
+                        <A>S</A>. Computes the Apéry list of <A>S</A> with respect to <A>m</A>. It contains for
+                        every <M>i\in \{0,\ldots,<A>m</A>-1\}</M>, in the <M>i+1</M>th position,
+                        the smallest element in the semigroup congruent with <M>i</M> modulo <A>m</A>.
+
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> AperyListOfNumericalSemigroupWRTElement(S,12);
+[ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+                <ManSection>
+                    <Oper Name="AperyListOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup. It computes the Apéry list of <A>S</A> with respect to the multiplicity of <A>S</A>. 
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> AperyListOfNumericalSemigroup(S);
+[ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>m</A> is a positive integer. 
+						Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the 
+						set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>. 
+						If <A>m</A> is an element in <A>S</A>, then the output, as sets, is the same as <A>AperyListOfNumericalSemigroupWRTInteger</A>, 
+						though without side effects, 
+						in the sense that this information is no longer used by the package.
+
+                        <Example><![CDATA[
+gap>  s:=NumericalSemigroup(10,13,19,27);
+<Numerical semigroup with 4 generators>
+gap> AperyListOfNumericalSemigroupWRTInteger(s,11);
+[ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+gap> Length(last);
+18
+gap> AperyListOfNumericalSemigroupWRTInteger(s,10);
+[ 0, 13, 19, 26, 27, 32, 38, 45, 51, 54 ]
+gap> AperyListOfNumericalSemigroupWRTElement(s,10);
+[ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
+gap> Length(last);
+10
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+<ManSection>
+                    <Func Name="AperyListOfNumericalSemigroupAsGraph" Arg="ap"/>
+                    <Description>
+                        <A>ap</A> is the Apéry list of a numerical semigroup.
+This function returns the adjacency list of the graph <M>(ap, E)</M> where the edge <M>u -> v</M> is
+in <M>E</M> iff <M>v - u</M> is in <M>ap</M>.
+The 0 is ignored.
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7);;
+gap> AperyListOfNumericalSemigroupWRTElement(s,10);
+[ 0, 21, 12, 3, 14, 15, 6, 7, 18, 9 ]
+gap> AperyListOfNumericalSemigroupAsGraph(last);
+[ ,, [ 3, 6, 9, 12, 15, 18, 21 ],,, [ 6, 9, 12, 15, 18, 21 ],
+[ 7, 14, 21 ],, [ 9, 12, 15, 18, 21 ],,, [ 12, 15, 18, 21 ],,
+[ 14, 21 ], [ 15, 18, 21 ],,, [ 18, 21 ],,, [ 21 ] ]
+]]></Example>
+
+                    </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Name="KunzCoordinatesOfNumericalSemigroup" Arg="S,m"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The second argument is optional, and if missing it is assumed to be the multiplicity of <A>S</A>.
+
+  <P/>
+  Then the Apéry set of <A>m</A> in <A>S</A> has the form <M>[0,k_1m+1,...,k_{m-1}m+m-1]</M>, and the output is the <M>(m-1)</M>-uple <M>[k_1,k_2,...,k_{m-1}]</M>
+    
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> KunzCoordinatesOfNumericalSemigroup(s);
+[ 2, 1 ]
+gap> KunzCoordinatesOfNumericalSemigroup(s,5);
+[ 1, 1, 0, 1 ]
+]]></Example>
+
+  </Description>
+</ManSection>
+		
+<ManSection>
+  <Func Name="KunzPolytope" Arg="m"/>
+  <Description>
+    <A>m</A> is a positive ingeger.
+
+  <P/>
+  The Kunz coordinates of the semigroups with that multiplicity <A>m</A> are solutions of a system of inequalities <M>Ax\ge b</M> (see <Cite Key="R-GS-GG-B"></Cite>). The output is the matrix <M>(A|-b)</M>.    
+<Example><![CDATA[
+gap> KunzPolytope(3);
+[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ]
+]]></Example>
+
+  </Description>
+</ManSection>
+
+
+
+</Section>
