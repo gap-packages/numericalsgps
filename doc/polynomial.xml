@@ -131,7 +131,7 @@ true
 
 <Section>
 	<Heading>
-		Semigroup of values of plane algebraic curves with a single place at infinity.
+		Semigroup of values of algebraic curves
 	</Heading>
 
 	Let <M>f(x,y)\in \mathbb K[x,y]</M>, with <M>\mathbb K</M> an algebraically close field of characteristic zero. Let <M>f(x,y)=y^n+a_1(x)y^{n-1}+\dots+a_n(x)</M> be a nonzero polynomial of <M>\mathbb K[x][y]</M>. After possibly a change of variables, we may assume that, that <M>\deg_x(a_i(x))\le i-1</M> for all <M>i\in\{1,\ldots, n\}</M>. For <M>g\in\mathbb K[x,y]</M> that is not a multiple of <M>f</M>, define <M>\mathrm{int}(f,g)=\dim_\mathbb K \frac{\mathbb K[x,y]}{(f,g)}</M>. If <M>f</M> as a one place at infinity, then the set <M>\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}</M> is a free numerical semigroup (and thus a complete intersection).
@@ -198,6 +198,56 @@ gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");
          </Description>
     </ManSection>
 
+
+    <ManSection>
+        <Func Arg="arg" Name="SemigroupOfValuesOfCurve_Local"></Func>
+        <Description>
+	  The function admits one or two parameters. In any case, the first is  a list of polynomials <A>pols</A>. And the second can be the string <A>"basis"</A> or an integer <A>val</A>. <P/>
+
+If only one argument is given, the output is the semigroup of all possible orders of <M>K[[pols]]</M> provided that <M>K[[x]]/K[[pols]]</M> has finite length. If the second argument <A>"basis"</A> is given, then the output is a (reduced) basis of the algebra <M>K[[pols]]</M> such that the orders of the basis elements generate minimally the semigroup of orders of <M>K[[pols]]</M>. If an integer <A>val</A> is the second argument, then the output is a polynomial in <M>K[[pols]]</M> with order <A>val</A> (<C>fail</C> if there is no such polynomioal, that is, <A>val</A> is not in the semigroup of values).<P/>
+
+The method is explained in <Cite Key="AGSM14"></Cite>.
+            
+            <Example><![CDATA[
+gap> x:=Indeterminate(Rationals,"x");;
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13]);
+<Numerical semigroup with 4 generators>
+gap> MinimalGeneratingSystem(last);
+[ 4, 6, 13, 15 ]
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");
+[ x^4, x^7+x^6, x^13, x^15 ]
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     
+x^20
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+
+    <ManSection>
+        <Func Arg="arg" Name="SemigroupOfValuesOfCurve_Global"></Func>
+        <Description>
+	  The function admits one or two parameters. In any case, the first is  a list of polynomials <A>pols</A>. And the second can be the string <A>"basis"</A> or an integer <A>val</A>. <P/>
+
+If only one argument is given, the output is the semigroup of all possible degrees of <M>K[pols]</M> provided that <M>K[x]/K[pols]</M> has finite length. If the second argument <A>"basis"</A> is given, then the output is a (reduced) basis of the algebra <M>K[pols]</M> such that the degrees of the basis elements generate minimally the semigroup of degrees of <M>K[pols]</M>. If an integer <A>val</A> is the second argument, then the output is a polynomial in <M>K[pols]</M> with degree <A>val</A> (<C>fail</C> if there is no such polynomioal, that is, <A>val</A> is not in the semigroup of values).<P/>
+
+The method is explained in <Cite Key="AGSM14"></Cite>.
+            
+            <Example><![CDATA[
+gap> x:=Indeterminate(Rationals,"x");;
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       
+<Numerical semigroup with 3 generators>
+gap> MinimalGeneratingSystem(last);                             
+[ 4, 7, 13 ]
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");
+[ x^4, x^7+x^6, x^13 ]
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     
+x^12
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); 
+fail
+]]></Example>
+         </Description>
+    </ManSection>
 
 
 </Section>

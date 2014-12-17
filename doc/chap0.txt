@@ -268,12 +268,13 @@
       10.1-5 IsKroneckerPolynomial
       10.1-6 IsCyclotomicNumericalSemigroup
       10.1-7 IsSelfReciprocalUnivariatePolynomial
-    10.2 [33X[0;0YSemigroup of values of plane algebraic curves with a single place at
-    infinity.[133X
+    10.2 [33X[0;0YSemigroup of values of algebraic curves[133X
       10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity
       10.2-2 IsDeltaSequence
       10.2-3 DeltaSequencesWithFrobeniusNumber
       10.2-4 CurveAssociatedToDeltaSequence
+      10.2-5 SemigroupOfValuesOfCurve_Local
+      10.2-6 SemigroupOfValuesOfCurve_Global
   11 [33X[0;0YAffine semigroups[133X
     11.1 [33X[0;0YUsing external packages[133X
       11.1-1 NumSgpsUse4ti2
