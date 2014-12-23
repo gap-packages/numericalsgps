@@ -194,3 +194,12 @@ DeclareGlobalFunction( "AffineSemigroup" );
 #############################################################################
 DeclareProperty( "IsFullAffineSemigroup", IsAffineSemigroup);
 
+#############################################################################
+##
+#F AsAffineSemigroup(S)
+##
+## Takes a numerical semigroup as argument and returns it as affine semigroup
+##
+#############################################################################
+DeclareGlobalFunction("AsAffineSemigroup");
+  

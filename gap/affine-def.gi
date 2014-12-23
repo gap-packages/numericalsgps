@@ -419,4 +419,25 @@ InstallMethod( Display,
    fi;
    
    return genx < geny;
-    end );
+end );
+    
+    
+#############################################################################
+##
+#F AsAffineSemigroup(S)
+##
+## Takes a numerical semigroup as argument and returns it as affine semigroup
+##
+#############################################################################
+InstallGlobalFunction(AsAffineSemigroup, function(s)
+    local msg;
+    
+    if not(IsNumericalSemigroup(s)) then
+        Error("The argument must be a numerical semigroup");
+    fi;
+    
+    msg:=MinimalGeneratingSystem(s);
+    return AffineSemigroup(List(msg, x->[x]));    
+    
+end);
+
