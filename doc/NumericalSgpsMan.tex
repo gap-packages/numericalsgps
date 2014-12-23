@@ -4063,14 +4063,47 @@ semigroup will be given by means of a set of generators.
   <Affine semigroup in 2 dimensional space, with 3 generators>
   !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );  |
   <Affine semigroup>
-  g
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AsAffineSemigroup}}
+\logpage{[ 11, 2, 2 ]}\nobreak
+\hyperdef{L}{X844806D97B4781B5}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsAffineSemigroup({\mdseries\slshape S})\index{AsAffineSemigroup@\texttt{AsAffineSemigroup}}
+\label{AsAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, the output is \mbox{\texttt{\mdseries\slshape S}} regarded as an affine semigroup. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(1310,1411,1546,1601);|
+  <Numerical semigroup with 4 generators>
+  !gapprompt@gap>| !gapinput@MinimalPresentationOfNumericalSemigroup(s);;time;|
+  2960
+  !gapprompt@gap>| !gapinput@a:=AsAffineSemigroup(s);|
+  <Affine semigroup in 1 dimensional space, with 4 generators>
+  !gapprompt@gap>| !gapinput@GeneratorsOfAffineSemigroup(a);|
+  [ [ 1310 ], [ 1411 ], [ 1546 ], [ 1601 ] ]
+  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);;time;                     |
+  237972
+\end{Verbatim}
+ If we use the package \texttt{SingularInterface}, the speed up is considerable. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@NumSgpsUseSingularInterface();|
+  ...
+  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);;time;                     |
+  32
 \end{Verbatim}
  }
 
  
 
 \subsection{\textcolor{Chapter }{IsAffineSemigroup}}
-\logpage{[ 11, 2, 2 ]}\nobreak
+\logpage{[ 11, 2, 3 ]}\nobreak
 \hyperdef{L}{X7A2902207BAA3936}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroup({\mdseries\slshape AS})\index{IsAffineSemigroup@\texttt{IsAffineSemigroup}}
 \label{IsAffineSemigroup}
@@ -4105,7 +4138,7 @@ semigroup.
  
 
 \subsection{\textcolor{Chapter }{BelongsToAffineSemigroup}}
-\logpage{[ 11, 2, 3 ]}\nobreak
+\logpage{[ 11, 2, 4 ]}\nobreak
 \hyperdef{L}{X851788D781A13C50}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToAffineSemigroup({\mdseries\slshape v, a})\index{BelongsToAffineSemigroup@\texttt{BelongsToAffineSemigroup}}
 \label{BelongsToAffineSemigroup}
@@ -4130,7 +4163,7 @@ inequalities.
  
 
 \subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
-\logpage{[ 11, 2, 4 ]}\nobreak
+\logpage{[ 11, 2, 5 ]}\nobreak
 \hyperdef{L}{X82FCB89B80D42205}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
 \label{IsFullAffineSemigroup}
@@ -4156,7 +4189,7 @@ further use.
  
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousEquations}}
-\logpage{[ 11, 2, 5 ]}\nobreak
+\logpage{[ 11, 2, 6 ]}\nobreak
 \hyperdef{L}{X7D4D017A79AD98E2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
 \label{HilbertBasisOfSystemOfHomogeneousEquations}
@@ -4178,7 +4211,7 @@ give an affine semigroup is by a set of homogeneous inequalities, and we can
 represent these inequalities by its coefficients. If we put them in a matrix $S$ can be defined as the set of nonnegative integer solutions to $Ax \ge 0$. 
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousInequalities}}
-\logpage{[ 11, 2, 6 ]}\nobreak
+\logpage{[ 11, 2, 7 ]}\nobreak
 \hyperdef{L}{X825B1CD37B0407A6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
 \label{HilbertBasisOfSystemOfHomogeneousInequalities}
@@ -4198,7 +4231,7 @@ nonnegative integer solutions to $Ax\ge 0$.
  
 
 \subsection{\textcolor{Chapter }{EquationsOfGroupGeneratedBy}}
-\logpage{[ 11, 2, 7 ]}\nobreak
+\logpage{[ 11, 2, 8 ]}\nobreak
 \hyperdef{L}{X8307A0597864B098}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquationsOfGroupGeneratedBy({\mdseries\slshape M})\index{EquationsOfGroupGeneratedBy@\texttt{EquationsOfGroupGeneratedBy}}
 \label{EquationsOfGroupGeneratedBy}
@@ -4216,7 +4249,7 @@ rows of \mbox{\texttt{\mdseries\slshape M}}: $Ax=0\in \mathbb Z_{n_1}\times \cdo
  
 
 \subsection{\textcolor{Chapter }{BasisOfGroupGivenByEquations}}
-\logpage{[ 11, 2, 8 ]}\nobreak
+\logpage{[ 11, 2, 9 ]}\nobreak
 \hyperdef{L}{X7A1CE5A98425CEA1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BasisOfGroupGivenByEquations({\mdseries\slshape A, m})\index{BasisOfGroupGivenByEquations@\texttt{BasisOfGroupGivenByEquations}}
 \label{BasisOfGroupGivenByEquations}
