@@ -25,11 +25,12 @@
   \item \texttt  {ArfNumericalSemigroupClosure}, \hyperpage{44}
   \item \texttt  {Arf}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{44}
+  \item \texttt  {AsAffineSemigroup}, \hyperpage{65}
   \item \texttt  {AsGluingOfNumericalSemigroups}, \hyperpage{29}
 
   \indexspace
 
-  \item \texttt  {BasisOfGroupGivenByEquations}, \hyperpage{66}
+  \item \texttt  {BasisOfGroupGivenByEquations}, \hyperpage{67}
   \item \texttt  {BelongsToAffineSemigroup}, \hyperpage{65}
   \item \texttt  {Belongs}\discretionary {-}{}{}\texttt  {To}\discretionary {-}{}{}\texttt  {Homogenization}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{56}
@@ -90,7 +91,7 @@
 		\hyperpage{52}
   \item \texttt  {Equal}\discretionary {-}{}{}\texttt  {Primitive}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{53}
-  \item \texttt  {EquationsOfGroupGeneratedBy}, \hyperpage{66}
+  \item \texttt  {EquationsOfGroupGeneratedBy}, \hyperpage{67}
 
   \indexspace
 
@@ -101,7 +102,7 @@
   \item \texttt  {Factorizations}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Homogenization}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{56}
   \item \texttt  {FactorizationsIntegerWRTList}, \hyperpage{46}
-  \item \texttt  {FactorizationsVectorWRTList}, \hyperpage{68}
+  \item \texttt  {FactorizationsVectorWRTList}, \hyperpage{69}
   \item \texttt  {FirstElementsOfNumericalSemigroup}, \hyperpage{15}
   \item \texttt  {Free}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{30}
@@ -165,7 +166,7 @@
   \item \texttt  {IsCyclotomicPolynomial}, \hyperpage{59}
   \item \texttt  {IsDeltaSequence}, \hyperpage{60}
   \item \texttt  {IsFreeNumericalSemigroup}, \hyperpage{30}
-  \item \texttt  {IsFullAffineSemigroup}, \hyperpage{65}
+  \item \texttt  {IsFullAffineSemigroup}, \hyperpage{66}
   \item \texttt  {IsGenericNumericalSemigroup}, \hyperpage{22}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Buchsbaum}, 
 		\hyperpage{75}
@@ -249,7 +250,7 @@
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {M}\discretionary {-}{}{}\texttt  {E}\discretionary {-}{}{}\texttt  {D}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {M}\discretionary {-}{}{}\texttt  {E}\discretionary {-}{}{}\texttt  {D}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{43}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{67}
+		\hyperpage{68}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{20}
   \item \texttt  {ModularNumericalSemigroup}, \hyperpage{9}
@@ -285,7 +286,7 @@
 		\hyperpage{31}
   \item \texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{25}
-  \item \texttt  {NumericalSemigroupsWithGenus}, \hyperpage{26}
+  \item \texttt  {NumericalSemigroupsWithGenus}, \hyperpage{25}
   \item \texttt  {NumSgpsUse4ti2}, \hyperpage{63}
   \item \texttt  {NumSgpsUseNormalize}, \hyperpage{63}
   \item \texttt  {NumSgpsUseSingular}, \hyperpage{63}
@@ -295,7 +296,7 @@
 
   \item \texttt  {OmegaPrimalityOfAffineSemigroup}, \hyperpage{70}
   \item \texttt  {Omega}\discretionary {-}{}{}\texttt  {Primality}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{69}
+		\hyperpage{70}
   \item \texttt  {Omega}\discretionary {-}{}{}\texttt  {Primality}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{55}
   \item \texttt  {Omega}\discretionary {-}{}{}\texttt  {Primality}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -361,7 +362,7 @@
 
   \indexspace
 
-  \item \texttt  {TameDegreeOfAffineSemigroup}, \hyperpage{69}
+  \item \texttt  {TameDegreeOfAffineSemigroup}, \hyperpage{70}
   \item \texttt  {Tame}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{55}
   \item \texttt  {TameDegreeOfNumericalSemigroup}, \hyperpage{54}
