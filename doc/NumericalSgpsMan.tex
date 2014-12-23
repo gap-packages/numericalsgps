@@ -312,9 +312,9 @@ division in ${\mathbb N}$.
  Given a numerical semigroup $S$ and a nonzero element $s$ in it, one can consider for every integer $i$ ranging from $0$ to $s-1$, the smallest element in $S$ congruent with $i$ modulo $s$, say $w(i)$ (this element exists since the complement of $S$ in ${\mathbb N}$ is finite). Clearly $w(0)=0$. The set ${\rm Ap}(S,s)=\{ w(0),w(1),\ldots, w(s-1)\}$ is called the \emph{Ap{\a'e}ry set} of $S$ with respect to $s$. 
 
  Let $a,b,c,d$ be positive integers such that $a/b < c/d$, and let $I=[a/b,c/d]$. Then the set ${\rm S}(I)={\mathbb N}\cap \bigcup_{n\geq 0} n I$ is a numerical semigroup. This class of numerical semigroups coincides with
-that of sets of solutions to equations of the form $ A x \ mod\ B \leq C x$ with $ A,B,C$ positive integers. A numerical semigroup in this class is said to be \emph{proportionally modular}. If $C = 1$, then it is said to be \emph{modular}. 
+that of sets of solutions to equations of the form $ A x \bmod\ B \leq C x$ with $ A,B,C$ positive integers. A numerical semigroup in this class is said to be \emph{proportionally modular}. If $C = 1$, then it is said to be \emph{modular}. 
 
- There are several different ways to specify a numerical semigroup $S$, namely, by its generators; by its gaps, its fundamental or special gaps by
+ There are different ways to specify a numerical semigroup $S$, namely, by its generators; by its gaps, its fundamental or special gaps by
 its Ap{\a'e}ry set, just to name some. In this section we describe functions
 that may be used to specify, in one of these ways, a numerical semigroup in \textsf{GAP}. 
 
@@ -331,7 +331,7 @@ that may be used to specify, in one of these ways, a numerical semigroup in \tex
  \texttt{Representation} 
 
  May be \texttt{"generators"}, \texttt{"minimalgenerators"}, \texttt{"modular"}, \texttt{"propmodular"}, \texttt{"elements"}, \texttt{"gaps"}, \texttt{"fundamentalgaps"}, \texttt{"subadditive"} or \texttt{"apery"} according to whether the semigroup is to be given by means of a system of
-generators, a minimal system of generators, a condition of the form $ ax \ mod\ m$ {\textless}$= x$, a condition of the form $ ax \ mod\ m$ {\textless}$= cx$, a set of all elements up to the conductor, the set of gaps, the set of
+generators, a minimal system of generators, a condition of the form $ ax \bmod\ m \le x$, a condition of the form $ ax \bmod\ m\le cx$, a set of all elements up to the conductor, the set of gaps, the set of
 fundamental gaps, a periodic subaditive function, or the Ap{\a'e}ry set. 
 
  When no string is given as first argument it is assumed that the numerical
@@ -394,7 +394,7 @@ solved faster for these semigroups.
 }\hfill{\scriptsize (function)}}\\
 
 
- Given two positive integers \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}}, this function returns a modular numerical semigroup satisfying $ax \ mod\ b <= x$. 
+ Given two positive integers \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}}, this function returns a modular numerical semigroup satisfying $ax \bmod\ b \le x$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ModularNumericalSemigroup(3,7);|
   <Modular numerical semigroup satisfying 3x mod 7 <= x >
@@ -412,7 +412,7 @@ solved faster for these semigroups.
 
 
  Given three positive integers \mbox{\texttt{\mdseries\slshape a}}, \mbox{\texttt{\mdseries\slshape b}} and \mbox{\texttt{\mdseries\slshape c}}, this function returns a proportionally modular numerical semigroup
-satisfying $ax\ mod\ b <= cx$. 
+satisfying $ax\bmod\ b \le cx$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ProportionallyModularNumericalSemigroup(3,7,12);|
   <Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
@@ -563,7 +563,7 @@ should be self explanatory).
 }\hfill{\scriptsize (attribute)}}\\
 
 
- Tests if the list \mbox{\texttt{\mdseries\slshape L}} (which has to be a set) may represent the ``small" \# elements of a numerical
+ Tests if the list \mbox{\texttt{\mdseries\slshape L}} (which has to be a set) may represent the ``small" elements of a numerical
 semigroup. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@L:=[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ];|
@@ -1344,10 +1344,16 @@ to a semigroup (see \cite{RGGJ03}).
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{Intersections and quotients by integers}}\logpage{[ 5, 2, 0 ]}
+\hyperdef{L}{X7968F4A37A1329C3}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{IntersectionOfNumericalSemigroups}}
-\logpage{[ 5, 1, 3 ]}\nobreak
+\logpage{[ 5, 2, 1 ]}\nobreak
 \hyperdef{L}{X874494928728023E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IntersectionOfNumericalSemigroups({\mdseries\slshape S, T})\index{IntersectionOfNumericalSemigroups@\texttt{IntersectionOfNumericalSemigroups}}
 \label{IntersectionOfNumericalSemigroups}
@@ -1374,7 +1380,7 @@ to a semigroup (see \cite{RGGJ03}).
  
 
 \subsection{\textcolor{Chapter }{QuotientOfNumericalSemigroup}}
-\logpage{[ 5, 1, 4 ]}\nobreak
+\logpage{[ 5, 2, 2 ]}\nobreak
 \hyperdef{L}{X83CCE63C82F34C25}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{QuotientOfNumericalSemigroup({\mdseries\slshape S, n})\index{QuotientOfNumericalSemigroup@\texttt{QuotientOfNumericalSemigroup}}
 \label{QuotientOfNumericalSemigroup}
@@ -1403,7 +1409,7 @@ to a semigroup (see \cite{RGGJ03}).
 
   
 \section{\textcolor{Chapter }{ Constructing the set of all numerical semigroups containing a given numerical
-semigroup }}\logpage{[ 5, 2, 0 ]}
+semigroup }}\logpage{[ 5, 3, 0 ]}
 \hyperdef{L}{X867D9A9A87CEB869}{}
 {
   In order to construct the set of numerical semigroups containing a fixed
@@ -1414,7 +1420,7 @@ repeat the process for each of this new numerical semigroups until we reach $ {\
  These procedures are described in \cite{RGGJ03}. 
 
 \subsection{\textcolor{Chapter }{OverSemigroupsNumericalSemigroup}}
-\logpage{[ 5, 2, 1 ]}\nobreak
+\logpage{[ 5, 3, 1 ]}\nobreak
 \hyperdef{L}{X7EEA97AB85FE078C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OverSemigroupsNumericalSemigroup({\mdseries\slshape s})\index{OverSemigroupsNumericalSemigroup@\texttt{OverSemigroupsNumericalSemigroup}}
 \label{OverSemigroupsNumericalSemigroup}
@@ -1432,10 +1438,16 @@ containing it.
 \end{Verbatim}
  }
 
+ }
+
  
+\section{\textcolor{Chapter }{ Constructing the set of numerical semigroup with given Frobenius number}}\logpage{[ 5, 4, 0 ]}
+\hyperdef{L}{X7F40052D7B0EC8ED}{}
+{
+  
 
 \subsection{\textcolor{Chapter }{NumericalSemigroupsWithFrobeniusNumber}}
-\logpage{[ 5, 2, 2 ]}\nobreak
+\logpage{[ 5, 4, 1 ]}\nobreak
 \hyperdef{L}{X87369D567AA6DBA0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupsWithFrobeniusNumber({\mdseries\slshape f})\index{NumericalSemigroupsWithFrobeniusNumber@\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}}
 \label{NumericalSemigroupsWithFrobeniusNumber}
@@ -1452,6 +1464,13 @@ numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \end{Verbatim}
  }
 
+ }
+
+ 
+\section{\textcolor{Chapter }{ Constructing the set of numerical semigroups with genus g, that is, numerical
+semigroups with exactly g gaps }}\logpage{[ 5, 5, 0 ]}
+\hyperdef{L}{X85725F5287D20CBB}{}
+{
   Given a numerical semigroup of genus g, removing minimal generators, one
 obtains numerical semigroups of genus g+1. In order to avoid repetitions, we
 only remove minimal generators greater than the frobenius number of the
@@ -1460,7 +1479,7 @@ numerical semigroup (this is accomplished with the local function sons).
  These procedures are described in \cite{RGGB03} and \cite{B-A08}. 
 
 \subsection{\textcolor{Chapter }{NumericalSemigroupsWithGenus}}
-\logpage{[ 5, 2, 3 ]}\nobreak
+\logpage{[ 5, 5, 1 ]}\nobreak
 \hyperdef{L}{X86970F6A868DEA95}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupsWithGenus({\mdseries\slshape g})\index{NumericalSemigroupsWithGenus@\texttt{NumericalSemigroupsWithGenus}}
 \label{NumericalSemigroupsWithGenus}
