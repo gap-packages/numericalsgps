@@ -44,8 +44,7 @@ true
                 <ManSection>
                     <Attr Name="RepresentsSmallElementsOfNumericalSemigroup" Arg="L"/>
                     <Description>
-                        Tests if the list <A>L</A> (which has to be a set) may represent the ``small" 
-                        # elements of a numerical semigroup.
+                        Tests if the list <A>L</A> (which has to be a set) may represent the ``small" elements of a numerical semigroup.
                         <Example><![CDATA[
 gap> L:=[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ];
 [ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
