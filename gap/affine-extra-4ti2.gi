@@ -35,7 +35,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     homogeneous:= function(l)
         local  dir, filename, exec, filestream, matrix,mat,sign;
 
-        Info(InfoAffSgps,2,"Using 4ti2 for Hilbert.");
+        Info(InfoNumSgps,2,"Using 4ti2 for Hilbert.");
 
         if not(IsRectangularTable(l)) then 
             Error("The argument must be a matrix.");
@@ -113,7 +113,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         function(l)
     local  dir, filename, exec, filestream, matrix,mat,sign,rel;
 
-    Info(InfoAffSgps,2,"Using 4ti2 for Hilbert.");
+    Info(InfoNumSgps,2,"Using 4ti2 for Hilbert.");
 
     if not(IsRectangularTable(l)) then 
         Error("The argument must be a matrix.");
@@ -147,7 +147,7 @@ InstallOtherMethod(FactorizationsVectorWRTList,
         function(v,l)
     local  dir, filename, exec, filestream, matrix,mat,rhs,sign;
 
-    Info(InfoAffSgps,2,"Using 4ti2 for factorizations.");
+    Info(InfoNumSgps,2,"Using 4ti2 for factorizations.");
     
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
@@ -199,11 +199,11 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     gens:=GeneratorsOfAffineSemigroup(a);
     
     gr:=4ti2Interface_groebner_matrix(gens);
-    Info(InfoAffSgps,2,"4ti output:",gr);
+    Info(InfoNumSgps,2,"4ti output:",gr);
     
     candidates:=Set(gr,q->positive(q));
     candidates:=Set(candidates,c->c*gens);
-    Info(InfoAffSgps,2, "Candidates to Betti elements",candidates);
+    Info(InfoNumSgps,2, "Candidates to Betti elements",candidates);
     pres:=[];
     for c in candidates do
         exps:=FactorizationsVectorWRTList(c,gens);

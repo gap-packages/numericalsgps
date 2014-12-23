@@ -16,7 +16,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         function(ls,md)
     local matcong, cone, ncong, ncoord, nequ, matfree;
     
-    Info(InfoAffSgps,2,"Using normaliz to find the Hilbert basis.");
+    Info(InfoNumSgps,2,"Using normaliz to find the Hilbert basis.");
      
     if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
         Error("The arguments must be homogeneous lists.");
@@ -87,7 +87,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         function(ls)
     local cone,  ncoord;
     
-    Info(InfoAffSgps,2,"Using normaliz to find the Hilbert basis.");
+    Info(InfoNumSgps,2,"Using normaliz to find the Hilbert basis.");
     
     if not(IsHomogeneousList(ls)) then
         Error("The argument must be a homogeneous lists.");

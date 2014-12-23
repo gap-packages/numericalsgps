@@ -5,8 +5,9 @@
 ##
 
 
-InfoAffSgps:=NewInfoClass("InfoAffSgps");;
-SetInfoLevel(InfoAffSgps,1);;
+# using the parent InfoNumSgps
+#InfoAffSgps:=NewInfoClass("InfoAffSgps");;
+#SetInfoLevel(InfoAffSgps,1);;
 
 
 ######################################################################
@@ -174,7 +175,7 @@ InstallMethod(BelongsToAffineSemigroup,
     fi;
     ev:=ShallowCopy(eq*v);
     
-    Info(InfoAffSgps,2,"Testing membership with equations.");
+    Info(InfoNumSgps,2,"Testing membership with equations.");
     
     for i in [1..Length(md)] do
         ev[i]:=ev[i] mod md[i];
@@ -210,7 +211,7 @@ InstallMethod(BelongsToAffineSemigroup,
     fi;
     ev:=equ*v;
     
-    Info(InfoAffSgps,2,"Testing membership with inequalities.");
+    Info(InfoNumSgps,2,"Testing membership with inequalities.");
     
     return ForAll(ev,x->x>=0);
     
@@ -374,7 +375,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     local solutions, m, x, explored, candidates, tmp, k,zero, lx;
 
 
-    Info(InfoAffSgps,2,"Using Contejean and Devie algorithm.");
+    Info(InfoNumSgps,2,"Using Contejean and Devie algorithm.");
 
 
     solutions:=[];
