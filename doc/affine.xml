@@ -74,20 +74,52 @@ gap> AffineSemigroup([1,3],[7,2],[1,5]);
 <Affine semigroup in 2 dimensional space, with 3 generators>
 gap> a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );  
 <Affine semigroup>
-g]]></Example>
+]]></Example>
   </Description>
 </ManSection>
 
-                <ManSection>
-                    <Attr Name="IsAffineSemigroup" Arg="AS"/>
-                    <Attr Name="IsAffineSemigroupByGenerators" Arg="AS"/>
-                    <Attr Name="IsAffineSemigroupByMinimalGenerators" Arg="AS"/>
-                    <Attr Name="IsAffineSemigroupByEquations" Arg="AS"/>
-                    <Attr Name="IsAffineSemigroupByInequalities" Arg="AS"/>
-                    <Description>
-                        <A>AS</A> is an affine semigroup and these attributes are available
-                        (their names should be self explanatory). They reflect what is currently known about the semigroup.
-                        <Example><![CDATA[
+<ManSection>
+  <Func Name="AsAffineSemigroup" Arg="S"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, the output is <A>S</A> regarded as an affine semigroup.
+    <P/>
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(1310,1411,1546,1601);
+<Numerical semigroup with 4 generators>
+gap> MinimalPresentationOfNumericalSemigroup(s);;time;
+2960
+gap> a:=AsAffineSemigroup(s);
+<Affine semigroup in 1 dimensional space, with 4 generators>
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 1310 ], [ 1411 ], [ 1546 ], [ 1601 ] ]
+gap> MinimalPresentationOfAffineSemigroup(a);;time;                     
+237972
+]]></Example>
+
+If we use the package <C>SingularInterface</C>, the speed up is considerable.
+
+    <Example><![CDATA[
+gap> NumSgpsUseSingularInterface();
+...
+gap> MinimalPresentationOfAffineSemigroup(a);;time;                     
+32
+]]></Example>
+
+
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="IsAffineSemigroup" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByGenerators" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByMinimalGenerators" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByEquations" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByInequalities" Arg="AS"/>
+  <Description>
+    <A>AS</A> is an affine semigroup and these attributes are available
+    (their names should be self explanatory). They reflect what is currently known about the semigroup.
+    <Example><![CDATA[
 gap> a1:=AffineSemigroup([[3,0],[2,1],[1,2],[0,3]]);
 <Affine semigroup in 2 dimensional space, with 4 generators>
 gap> IsAffineSemigroupByEquations(a1);
@@ -95,8 +127,11 @@ false
 gap> IsAffineSemigroupByGenerators(a1);
 true
 ]]></Example>
-                    </Description>
-                </ManSection>
+  </Description>
+</ManSection>
+
+
+
 
 <ManSection>
   <Func Arg="v, a" Name="BelongsToAffineSemigroup"></Func>

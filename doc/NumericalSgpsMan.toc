@@ -50,15 +50,12 @@
 \contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter } Adding and removing elements of a numerical semigroup }}{23}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }RemoveMinimalGeneratorFromNumericalSemigroup}}{23}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}\leavevmode {\color {Chapter }AddSpecialGapOfNumericalSemigroup}}{23}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Intersections and quotients by integers}}{24}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }IntersectionOfNumericalSemigroups}}{24}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}\leavevmode {\color {Chapter }QuotientOfNumericalSemigroup}}{24}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}\leavevmode {\color {Chapter } Constructing the set of all numerical semigroups containing a given numerical semigroup }}{25}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}\leavevmode {\color {Chapter }OverSemigroupsNumericalSemigroup}}{25}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}\leavevmode {\color {Chapter } Constructing the set of numerical semigroup with given Frobenius number}}{25}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}\leavevmode {\color {Chapter }NumericalSemigroupsWithFrobeniusNumber}}{25}{subsection.5.4.1}
-\contentsline {section}{\numberline {5.5}\leavevmode {\color {Chapter } Constructing the set of numerical semigroups with genus g, that is, numerical semigroups with exactly g gaps }}{26}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}\leavevmode {\color {Chapter }NumericalSemigroupsWithGenus}}{26}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.1.3}\leavevmode {\color {Chapter }IntersectionOfNumericalSemigroups}}{24}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}\leavevmode {\color {Chapter }QuotientOfNumericalSemigroup}}{24}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter } Constructing the set of all numerical semigroups containing a given numerical semigroup }}{25}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }OverSemigroupsNumericalSemigroup}}{25}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}\leavevmode {\color {Chapter }NumericalSemigroupsWithFrobeniusNumber}}{25}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}\leavevmode {\color {Chapter }NumericalSemigroupsWithGenus}}{25}{subsection.5.2.3}
 \contentsline {chapter}{\numberline {6}\leavevmode {\color {Chapter } Irreducible numerical semigroups }}{27}{chapter.6}
 \contentsline {section}{\numberline {6.1}\leavevmode {\color {Chapter } Irreducible numerical semigroups }}{27}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}\leavevmode {\color {Chapter }IsIrreducibleNumericalSemigroup}}{27}{subsection.6.1.1}
@@ -192,25 +189,26 @@
 \contentsline {subsection}{\numberline {11.1.4}\leavevmode {\color {Chapter }NumSgpsUseSingularInterface}}{64}{subsection.11.1.4}
 \contentsline {section}{\numberline {11.2}\leavevmode {\color {Chapter } Defining affine semigroups }}{64}{section.11.2}
 \contentsline {subsection}{\numberline {11.2.1}\leavevmode {\color {Chapter }AffineSemigroup}}{64}{subsection.11.2.1}
-\contentsline {subsection}{\numberline {11.2.2}\leavevmode {\color {Chapter }IsAffineSemigroup}}{65}{subsection.11.2.2}
-\contentsline {subsection}{\numberline {11.2.3}\leavevmode {\color {Chapter }BelongsToAffineSemigroup}}{65}{subsection.11.2.3}
-\contentsline {subsection}{\numberline {11.2.4}\leavevmode {\color {Chapter }IsFullAffineSemigroup}}{65}{subsection.11.2.4}
-\contentsline {subsection}{\numberline {11.2.5}\leavevmode {\color {Chapter }HilbertBasisOfSystemOfHomogeneousEquations}}{66}{subsection.11.2.5}
-\contentsline {subsection}{\numberline {11.2.6}\leavevmode {\color {Chapter }HilbertBasisOfSystemOfHomogeneousInequalities}}{66}{subsection.11.2.6}
-\contentsline {subsection}{\numberline {11.2.7}\leavevmode {\color {Chapter }EquationsOfGroupGeneratedBy}}{66}{subsection.11.2.7}
-\contentsline {subsection}{\numberline {11.2.8}\leavevmode {\color {Chapter }BasisOfGroupGivenByEquations}}{66}{subsection.11.2.8}
+\contentsline {subsection}{\numberline {11.2.2}\leavevmode {\color {Chapter }AsAffineSemigroup}}{65}{subsection.11.2.2}
+\contentsline {subsection}{\numberline {11.2.3}\leavevmode {\color {Chapter }IsAffineSemigroup}}{65}{subsection.11.2.3}
+\contentsline {subsection}{\numberline {11.2.4}\leavevmode {\color {Chapter }BelongsToAffineSemigroup}}{65}{subsection.11.2.4}
+\contentsline {subsection}{\numberline {11.2.5}\leavevmode {\color {Chapter }IsFullAffineSemigroup}}{66}{subsection.11.2.5}
+\contentsline {subsection}{\numberline {11.2.6}\leavevmode {\color {Chapter }HilbertBasisOfSystemOfHomogeneousEquations}}{66}{subsection.11.2.6}
+\contentsline {subsection}{\numberline {11.2.7}\leavevmode {\color {Chapter }HilbertBasisOfSystemOfHomogeneousInequalities}}{66}{subsection.11.2.7}
+\contentsline {subsection}{\numberline {11.2.8}\leavevmode {\color {Chapter }EquationsOfGroupGeneratedBy}}{67}{subsection.11.2.8}
+\contentsline {subsection}{\numberline {11.2.9}\leavevmode {\color {Chapter }BasisOfGroupGivenByEquations}}{67}{subsection.11.2.9}
 \contentsline {section}{\numberline {11.3}\leavevmode {\color {Chapter } Gluings of affine semigroups }}{67}{section.11.3}
 \contentsline {subsection}{\numberline {11.3.1}\leavevmode {\color {Chapter }GluingOfAffineSemigroups}}{67}{subsection.11.3.1}
-\contentsline {section}{\numberline {11.4}\leavevmode {\color {Chapter } Presentations of affine semigroups }}{67}{section.11.4}
-\contentsline {subsection}{\numberline {11.4.1}\leavevmode {\color {Chapter }MinimalPresentationOfAffineSemigroup}}{67}{subsection.11.4.1}
+\contentsline {section}{\numberline {11.4}\leavevmode {\color {Chapter } Presentations of affine semigroups }}{68}{section.11.4}
+\contentsline {subsection}{\numberline {11.4.1}\leavevmode {\color {Chapter }MinimalPresentationOfAffineSemigroup}}{68}{subsection.11.4.1}
 \contentsline {subsection}{\numberline {11.4.2}\leavevmode {\color {Chapter }BettiElementsOfAffineSemigroup}}{68}{subsection.11.4.2}
 \contentsline {subsection}{\numberline {11.4.3}\leavevmode {\color {Chapter }PrimitiveElementsOfAffineSemigroup}}{68}{subsection.11.4.3}
-\contentsline {section}{\numberline {11.5}\leavevmode {\color {Chapter } Factorizations in affine semigroups }}{68}{section.11.5}
-\contentsline {subsection}{\numberline {11.5.1}\leavevmode {\color {Chapter }FactorizationsVectorWRTList}}{68}{subsection.11.5.1}
+\contentsline {section}{\numberline {11.5}\leavevmode {\color {Chapter } Factorizations in affine semigroups }}{69}{section.11.5}
+\contentsline {subsection}{\numberline {11.5.1}\leavevmode {\color {Chapter }FactorizationsVectorWRTList}}{69}{subsection.11.5.1}
 \contentsline {subsection}{\numberline {11.5.2}\leavevmode {\color {Chapter }ElasticityOfAffineSemigroup}}{69}{subsection.11.5.2}
 \contentsline {subsection}{\numberline {11.5.3}\leavevmode {\color {Chapter }CatenaryDegreeOfAffineSemigroup}}{69}{subsection.11.5.3}
-\contentsline {subsection}{\numberline {11.5.4}\leavevmode {\color {Chapter }TameDegreeOfAffineSemigroup}}{69}{subsection.11.5.4}
-\contentsline {subsection}{\numberline {11.5.5}\leavevmode {\color {Chapter }OmegaPrimalityOfElementInAffineSemigroup}}{69}{subsection.11.5.5}
+\contentsline {subsection}{\numberline {11.5.4}\leavevmode {\color {Chapter }TameDegreeOfAffineSemigroup}}{70}{subsection.11.5.4}
+\contentsline {subsection}{\numberline {11.5.5}\leavevmode {\color {Chapter }OmegaPrimalityOfElementInAffineSemigroup}}{70}{subsection.11.5.5}
 \contentsline {subsection}{\numberline {11.5.6}\leavevmode {\color {Chapter }OmegaPrimalityOfAffineSemigroup}}{70}{subsection.11.5.6}
 \contentsline {chapter}{\numberline {A}\leavevmode {\color {Chapter }Generalities}}{71}{appendix.A}
 \contentsline {section}{\numberline {A.1}\leavevmode {\color {Chapter }B{\'e}zout sequences}}{71}{section.A.1}
