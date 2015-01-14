@@ -38,17 +38,18 @@ ReadPackage( "numericalsgps", "gap/polynomials.gi" );
 ##
 ## Affine
 ##
+SetInfoLevel(InfoNumSgps,1);
 ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
 if NumSgpsCanUseNI then
     ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
 fi;
-if NumSgpsCanUse4ti2 then 
+if NumSgpsCanUse4ti2 then
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
 fi;
 if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2) then
-    Info(InfoAffSgps,1,"Please load package NormalizInterface or 4ti2Interface");
-    Info(InfoAffSgps,1,"to have extended functionalities.");   
+    Info(InfoNumSgps,1,"Please load package NormalizInterface or 4ti2Interface");
+    Info(InfoNumSgps,1,"to have extended functionalities.");
 fi;
 
 if NumSgpsCanUseSI then
@@ -58,12 +59,12 @@ else
         ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
     else
         if not(NumSgpsCanUse4ti2) then
-            Info(InfoAffSgps,1,"Please load package SingularInterface or singular");
-            Info(InfoAffSgps,1,"(not both) to have extended functionalities.");
+            Info(InfoNumSgps,1,"Please load package SingularInterface or singular");
+            Info(InfoNumSgps,1,"(not both) to have extended functionalities.");
         fi;
     fi;
 fi;
-    
+
 
 
 
