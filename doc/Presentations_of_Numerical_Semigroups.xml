@@ -99,7 +99,7 @@
   </ManSection>
 
 
-  <ManSection>
+  <ManSection Label="shadedset">
     <Func Arg="n, S" Name="ShadedSetOfElementInNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup and <A>n</A> is an element in <A>S</A>.
@@ -127,7 +127,7 @@
   <Heading>Uniquely Presented Numerical Semigroups</Heading>
 
   A numerical semigroup <M>S</M> is uniquely presented if for any two minimal presentations <M>\sigma</M> and <M>\tau</M> and any <M>(a,b)\in \sigma</M>, either <M>(a,b)\in \tau</M> or <M>(b,a)\in \tau</M>, that is, there is essentially a unique minimal presentation (up to arrangement of the components of the pairs in it).
-  <ManSection>
+  <ManSection Label="UniqPre">
     <Func Arg="S" Name="IsUniquelyPresentedNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup.
@@ -143,12 +143,12 @@
     </Description>
   </ManSection>
 
-  <ManSection>
+  <ManSection Label="Generic">
     <Func Arg="S" Name="IsGenericNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup.
       <P/>
-      The output is true if <A>S</A> generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented  (see <Cite Key="B-GS-G"></Cite>).
+      The output is true if <A>S</A> has a generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented  (see <Cite Key="B-GS-G"></Cite>).
       <Example><![CDATA[
       gap> s:=NumericalSemigroup(3,5,7);;
       gap> IsGenericNumericalSemigroup(s);
