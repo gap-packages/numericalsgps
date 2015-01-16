@@ -201,7 +201,7 @@ end);
 #F  IsUniquelyPresentedNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, checks it it has a unique minimal presentation
-##  Basado en GS-O
+##  Based in GS-O
 ##
 #############################################################################
 InstallGlobalFunction(IsUniquelyPresentedNumericalSemigroup,function(s)
@@ -213,8 +213,8 @@ end);
 #F  IsGenericNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, checks it it has a generic presentation,
-##  that is, in every relation all minimal generators appear. These semigroups are uniquely
-##  presented véase B-GS-G.
+##  that is, in every relation all minimal generators appear. 
+##  These semigroups are uniquely presented; see B-GS-G.
 ##
 #############################################################################
 InstallGlobalFunction(IsGenericNumericalSemigroup,function(s)
