@@ -1203,6 +1203,7 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 
 \subsection{\textcolor{Chapter }{ShadedSetOfElementInNumericalSemigroup}}
 \logpage{[ 4, 1, 5 ]}\nobreak
+\label{shadedset}
 \hyperdef{L}{X7C42DEB68285F2B8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ShadedSetOfElementInNumericalSemigroup({\mdseries\slshape n, S})\index{ShadedSetOfElementInNumericalSemigroup@\texttt{Shaded}\-\texttt{Set}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ShadedSetOfElementInNumericalSemigroup}
@@ -1234,6 +1235,7 @@ arrangement of the components of the pairs in it).
 
 \subsection{\textcolor{Chapter }{IsUniquelyPresentedNumericalSemigroup}}
 \logpage{[ 4, 2, 1 ]}\nobreak
+\label{UniqPre}
 \hyperdef{L}{X87A72C497E37760D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedNumericalSemigroup({\mdseries\slshape S})\index{IsUniquelyPresentedNumericalSemigroup@\texttt{IsUniquely}\-\texttt{Presented}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{IsUniquelyPresentedNumericalSemigroup}
@@ -1256,6 +1258,7 @@ arrangement of the components of the pairs in it).
 
 \subsection{\textcolor{Chapter }{IsGenericNumericalSemigroup}}
 \logpage{[ 4, 2, 2 ]}\nobreak
+\label{Generic}
 \hyperdef{L}{X7955C87C80F41CFE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericNumericalSemigroup({\mdseries\slshape S})\index{IsGenericNumericalSemigroup@\texttt{IsGenericNumericalSemigroup}}
 \label{IsGenericNumericalSemigroup}
@@ -1264,8 +1267,8 @@ arrangement of the components of the pairs in it).
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
 
- The output is true if \mbox{\texttt{\mdseries\slshape S}} generic presentation, that is, in every minimal relation all generators occur.
-These semigroups are uniquely presented (see \cite{B-GS-G}). 
+ The output is true if \mbox{\texttt{\mdseries\slshape S}} has a generic presentation, that is, in every minimal relation all generators
+occur. These semigroups are uniquely presented (see \cite{B-GS-G}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
         gap> s:=NumericalSemigroup(3,5,7);;
         gap> IsGenericNumericalSemigroup(s);
@@ -4373,8 +4376,48 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 
  
 
-\subsection{\textcolor{Chapter }{PrimitiveElementsOfAffineSemigroup}}
+\subsection{\textcolor{Chapter }{ShadedSetOfElementInAffineSemigroup}}
 \logpage{[ 11, 4, 3 ]}\nobreak
+\hyperdef{L}{X7C1B355F83A55285}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ShadedSetOfElementInAffineSemigroup({\mdseries\slshape v, a})\index{ShadedSetOfElementInAffineSemigroup@\texttt{ShadedSetOfElementInAffineSemigroup}}
+\label{ShadedSetOfElementInAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup and \mbox{\texttt{\mdseries\slshape v}} is an element in \mbox{\texttt{\mdseries\slshape a}}. This is a translation of \texttt{ShadedSetOfElementInNumericalSemigroup} (\ref{shadedset}) but for affine semigroups. }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsGenericAffineSemigroup}}
+\logpage{[ 11, 4, 4 ]}\nobreak
+\hyperdef{L}{X84FF536281884DB8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericAffineSemigroup({\mdseries\slshape a})\index{IsGenericAffineSemigroup@\texttt{IsGenericAffineSemigroup}}
+\label{IsGenericAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. 
+
+ The same as \texttt{IsGenericNumericalSemigroup} (\ref{Generic}) but for affine semigroups. }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsUniquelyPresentedAffineSemigroup}}
+\logpage{[ 11, 4, 5 ]}\nobreak
+\hyperdef{L}{X87170BBB85E9DEC8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedAffineSemigroup({\mdseries\slshape a})\index{IsUniquelyPresentedAffineSemigroup@\texttt{IsUniquelyPresentedAffineSemigroup}}
+\label{IsUniquelyPresentedAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. 
+
+ The same as \texttt{IsUniquelyPresentedNumericalSemigroup} (\ref{UniqPre}) but for affine semigroups. }
+
+ 
+
+\subsection{\textcolor{Chapter }{PrimitiveElementsOfAffineSemigroup}}
+\logpage{[ 11, 4, 6 ]}\nobreak
 \hyperdef{L}{X86EB7A9A8250E6DB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveElementsOfAffineSemigroup({\mdseries\slshape a})\index{PrimitiveElementsOfAffineSemigroup@\texttt{PrimitiveElementsOfAffineSemigroup}}
 \label{PrimitiveElementsOfAffineSemigroup}

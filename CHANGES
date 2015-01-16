@@ -1,15 +1,35 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
-- fixed bug in the definition of proportionaly modular semigroups (affected the case a < c (in this case it should return the entire N) -- )
-0.980 -> ...
 
+0.980 -> 0.999
+- Fixed bug in the definition of proportionaly modular semigroups (affected the case a < c (in this case it should return the entire N) -- )
 - The function AperyListOfNumericalSemigroup has been added. It has only a numerical semigroup as argument and does the same than AperyListOfNumericalSemigroupWRTElement when considered relative to the multiplicity (which is, by far, the most important case). 
-
-- The components of the objects "NumericalSemigroup" and "IdealOfNumericalSemigroup" became atributes. All "!." used either to access the components and to assign new values to them have been changed accordinly. It affected various files.
-
+- The components of the objects "NumericalSemigroup" and "IdealOfNumericalSemigroup" became atributes. All "!." used either to access the components and to assign new values to them have been changed accordingly. It affected various files.
 - ReducedSetOfGeneratorsOfNumericalSemigroup became just a synonym of MinimalGeneratingSystemOfNumericalSemigroup, since this function is now reasonably fast and the former one was not significantly used. The name was kept for compatibility with code produced for previous versions.
 - GeneratorsOfNumericalSemigroupNC became a synonym of GeneratorsOfNumericalSemigroup. The former one had no interest. The name was kept for compatibility with code produced for previous versions.
+- Small bug with InfoLevel 0 corrected.
+- Connectedness of graphs now is faster, and thus BettiElementsOfNumericalSemigroup has been changed accordingly.
+- Added functions for denumerant, maximal denumerant, additive semigroup, supersymmetric semigroup, adjustment of a numerical semigroup .
+- Added functions for the homogenization of a numerical semigroup: Betti elements, catenary degreee (homogeneous catenary degree).
+- Fixed bug for the multiplicity of some proportionally modular numerical semigroups.
+- Added star operation for ideals of numerical semigroups.
+- Small bug fixed in the output of AsGluingOfNumericalSemigroups.
+- Added IsUniquelPresentedNumericalSemigroup, IsGenericNumericalSemigroup.
+- Fixed small bug in FactorizationsIntegerWRTList when there were duplicates in the second argument.
+- New contributions of Chris O'Neil (see the contribution appendix of the manual) for factorizations, delta sets and omega primality of numerical semigroups.
+- The chapters related to ideals and minimal presentations have been rearranged.
+- Added Moebius function associated to the poset defined by a numerical semigroup.
+- Added functions for cyclotomic numerical semigroups.
+- Added functions for semigroup of values of curves parametrized by polynomials (also local version; series) and planar curves with a single place at infinity (approximate roots).
+- MinimalGeneratingSystem is new function that admits both ideals and numerical semigroups (calling then the corresponding MinimalGeneratingSystem...).
+- Added LFormsOfNumericalSemigroup.
+- Added alternate catenary degrees: monotone, adjacent, equal, homogeneous.
+- Added a new chapter for affine semigroups.
+- Interaction with 4ti2Interface, NormalizInterface, singular and SingularInterface. Methods implemented depending if these packages have been loaded.
+- Now InfoNumSgps is used in more functions.
+
+
 0.971 -> 0.980
 - Fixed N not to be irreducible nor symmetric.
 - Gluings of numerical semigroups added to the manual.

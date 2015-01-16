@@ -545,7 +545,7 @@ InstallMethod(FactorizationsVectorWRTList,
 end);
 
 ############################################################
-# computes a minimal presentation using the package singular
+# computes a minimal presentation of a 
 ############################################################
 InstallMethod(MinimalPresentationOfAffineSemigroup,
 	"Computes the minimal presentation of an affine semigroup",
@@ -612,7 +612,7 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
 end);
 
 ###################################################################
-# Betti elements of the affine semigroup a using singular package
+# Betti elements of the affine semigroup a
 ###################################################################
 InstallMethod(BettiElementsOfAffineSemigroup,
 	"Computes the Betti elements of an affine semigroup",
@@ -632,9 +632,70 @@ InstallMethod(BettiElementsOfAffineSemigroup,
     
 end);
 
+
+#############################################################################
+##
+#F  IsUniquelyPresentedAffineSemigroup(a)
+##
+##  For an affine semigroup a, checks it it has a unique minimal presentation
+##  Based in GS-O
+##
+#############################################################################
+InstallGlobalFunction(IsUniquelyPresentedAffineSemigroup,function(a)
+    local gs;
+    if not IsAffineSemigroup(a) then
+        Error("The second argument must be an affine semigroup.\n");
+    fi;
+    gs:=GeneratorsOfAffineSemigroup(a);
+    return ForAll(BettiElementsOfAffineSemigroup(a), 
+                  b->Length(FactorizationsVectorWRTList(b,gs))=2);
+end);
+
+#############################################################################
+##
+#F  IsGenericAffineSemigroup(a)
+##
+##  For an affine semigroup a, checks it it has a generic presentation,
+##  that is, in every relation all generators appear. 
+##  These semigroups are uniquely presented; see B-GS-G.
+##
+#############################################################################
+InstallGlobalFunction(IsGenericAffineSemigroup,function(a)
+	local mp;
+    if not IsAffineSemigroup(a) then
+        Error("The second argument must be an affine semigroup.\n");
+    fi;
+    mp:=MinimalPresentationOfAffineSemigroup(a);
+    return ForAll(mp,p->Product(p[1]+p[2])<>0);
+end);
+
+#############################################################################
+##
+#F ShadedSetOfElementInAffineSemigroup(x,a)
+## computes the shading set of x in a as defined in 
+## -  Székely, L. A.; Wormald, N. C. Generating functions for the Frobenius problem
+##      with 2 and 3 generators. Math. Chronicle 15 (1986), 49–57.
+#############################################################################
+InstallGlobalFunction(ShadedSetOfElementInAffineSemigroup, function(x,a)
+
+    local msg;
+    
+    if not IsAffineSemigroup(a) then
+        Error("The second argument must be an affine semigroup.\n");
+    fi;
+
+    if not ( x in a ) then
+        Error("The first argument must be an element of the second.\n");
+    fi;
+
+    msg:=GeneratorsOfAffineSemigroup(a);
+    return Filtered(Combinations(msg), c-> (x-Sum(c)) in a);
+end);
+
+
+
 ######################################################################
 # Computes the catenary degree of the affine semigroup a 
-# REQUERIMENTS: SingularInterface
 ######################################################################
 InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
         function(a)

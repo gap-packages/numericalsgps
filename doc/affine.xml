@@ -299,6 +299,35 @@ gap> BettiElementsOfAffineSemigroup(a);
     </Description>
   </ManSection>
 
+  <ManSection>
+    <Func Arg="v, a" Name="ShadedSetOfElementInAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup and <A>v</A> is an element in <A>a</A>.
+
+      This is a translation of <C>ShadedSetOfElementInNumericalSemigroup</C> (<Ref Chap="shadedset"/>) but for affine semigroups.   
+      
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+    <Func Arg="a" Name="IsGenericAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      <P/>
+      The same as <C>IsGenericNumericalSemigroup</C> (<Ref Chap="Generic"/>) but for affine semigroups.
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="a" Name="IsUniquelyPresentedAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      <P/>
+      The same as <C>IsUniquelyPresentedNumericalSemigroup</C> (<Ref Chap="UniqPre"/>) but for affine semigroups.   
+    </Description>
+  </ManSection>
+
 
   <ManSection>
     <Func Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Func>

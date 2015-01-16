@@ -82,6 +82,37 @@ DeclareOperation("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
 ###########################################################################
 DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
 
+#############################################################################
+##
+#F  IsUniquelyPresentedAffineSemigroup(a)
+##
+##  For an affine semigroup s, checks it it has a unique minimal presentation
+##  Basado en GS-O
+##
+#############################################################################
+DeclareGlobalFunction("IsUniquelyPresentedAffineSemigroup");
+
+#############################################################################
+##
+#F  IsGenericAffineSemigroup(a)
+##
+##  For an affine semigroup a, checks it it has a generic presentation,
+##  that is, in every relation all minimal generators appear. These semigroups are uniquely
+##  presented véase B-GS-G.
+##
+#############################################################################
+DeclareGlobalFunction("IsGenericAffineSemigroup");
+
+#############################################################################
+##
+#F ShadedSetOfElementInAffineSemigroup(x,a)
+## computes the shading set of x in a as defined in 
+##  -Székely, L. A.; Wormald, N. C. Generating functions for the Frobenius 
+##    problem with 2 and 3 generators. Math. Chronicle 15 (1986), 49–57.
+#############################################################################
+DeclareGlobalFunction("ShadedSetOfElementInAffineSemigroup");
+
+
 ###############################################################################
 #F CatenaryDegreeOfAffineSemigroup
 # Computes the catenary degree of the affine semigroup a
