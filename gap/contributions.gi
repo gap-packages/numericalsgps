@@ -443,6 +443,10 @@ InstallGlobalFunction(DeltaSetPeriodicityBoundForNumericalSemigroup,function(s)
 	S:=[];
 	Sp:=[];
 	
+	if l <= 2 then
+		return Product(msg);
+	fi;
+	
 	for i in [2 .. l-1] do
 		g:=Gcd([msg[i]-msg[1],msg[1]-msg[l],msg[l]-msg[i]]);
 		S[i]:=CeilingOfRational(-(msg[2]*(msg[1]*d*g + (l-2)*(msg[1]-msg[i])*(msg[1]-msg[l])))/((msg[1]-msg[2])*g));
