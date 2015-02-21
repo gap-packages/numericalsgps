@@ -230,3 +230,9 @@ DeclareGlobalFunction("NumSgpsUseSingularInterface");
 ##########################################################################
 DeclareGlobalFunction("NumSgpsUse4ti2");
 
+##########################################################################
+##
+#F NumSgpsUse4ti2gap
+#  Loads the package 4ti2Interface and reads affine-extra-4ti2gap
+##########################################################################
+DeclareGlobalFunction("NumSgpsUse4ti2gap");

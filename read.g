@@ -47,7 +47,10 @@ fi;
 if NumSgpsCanUse4ti2 then
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
 fi;
-if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2) then
+if NumSgpsCanUse4ti2gap then
+    ReadPackage("numericalsgps", "gap/affine-extra-4ti2gap.gi");
+fi;
+if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2 or NumSgpsCanUse4ti2gap) then
     Info(InfoNumSgps,1,"Please load package NormalizInterface or 4ti2Interface");
     Info(InfoNumSgps,1,"to have extended functionalities.");
 fi;

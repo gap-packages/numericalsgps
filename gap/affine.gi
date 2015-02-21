@@ -506,7 +506,7 @@ InstallMethod(FactorizationsVectorWRTList,
     fi;
     
     if not(IsRectangularTable(mat)) then
-        Error("All lists must in the second argument have the same length as the first argument.");
+        Error("The list in the second argument must have the same length as the lists in the first argument.");
     fi;
     
     len:=Length(ls);
@@ -948,6 +948,7 @@ InstallMethod(PrimitiveElementsOfAffineSemigroup,
         Error("The argument must be an affine semigroup.");
     fi;
     
+    Info(InfoNumSgps,2,"Using Lawrence lifting for computing primitive elements.");
     msg:=GeneratorsOfAffineSemigroup(a);
 	ed:=Length(msg);
 	dim:=Length(msg[1]);
@@ -1109,6 +1110,22 @@ InstallGlobalFunction(NumSgpsUse4ti2, function()
     if LoadPackage("4ti2Interface") then
         ReadPackage("numericalsgps/gap/affine-extra-4ti2.gi");
         NumSgpsCanUse4ti2:=true;
+        return true;
+    else
+        return fail;
+    fi;
+    
+end);
+
+##########################################################################
+##
+#F NumSgpsUse4ti2gap
+#  Loads the package 4ti2gap and reads affine-extra-ni
+##########################################################################
+InstallGlobalFunction(NumSgpsUse4ti2gap, function()
+    if LoadPackage("4ti2Interface") then
+        ReadPackage("numericalsgps/gap/affine-extra-4ti2gap.gi");
+        NumSgpsCanUse4ti2gap:=true;
         return true;
     else
         return fail;
