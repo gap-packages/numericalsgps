@@ -19,6 +19,13 @@ The package tests if the user has downloaded any of the above packages, and if s
     </ManSection>
 
     <ManSection>
+      <Func Name="NumSgpsUse4ti2gap" Arg=""/>
+      <Description>
+	Tries to load the package <C>4ti2gap</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+    
+    <ManSection>
       <Func Name="NumSgpsUseNormalize" Arg=""/>
       <Description>
 	Tries to load the package <C>NormalizInterface</C>. If the package is available, then it also loads methods implemented using functions in this package.
