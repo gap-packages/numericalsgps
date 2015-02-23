@@ -621,16 +621,8 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Local, function(arg)
 
     #### computes the relations among the polynomials in pols
     kernel:=function(pols)
-        local  p,  msg,  ed,  mp, ie, bintopair, minp, eval;
+        local  p,  msg,  ed,  mp, minp, eval, candidates, c, pres, rclass, exps;
 
-        bintopair:=function(p)
-            local m1,m2, d1, d2;
-            m1:=LeadingMonomialOfPolynomial(p,MonomialGrlexOrdering());
-            m2:=m1-p;
-            d1:=List([var+1..var+ed], i->DegreeIndeterminate(m1,i));
-            d2:=List([var+1..var+ed], i->DegreeIndeterminate(m2,i));
-            return [d1,d2];
-        end;
 
         eval:=function(pair)
             local m1,m2;
@@ -644,14 +636,20 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Local, function(arg)
         if ed=0 then
             return [];
         fi;
-        p:=List([1..ed], i->X(Rationals,var+i)-X(Rationals,var)^msg[i]);
-        ie:= ReducedGroebnerBasis( p, EliminationOrdering([X(Rationals,var)]));
-        ie:=Filtered(ie, q->IsZero(Derivative(q,X(Rationals,var))));
-
-        minp:=List(ie,q->bintopair(q));
+        minp:=GeneratorsOfKernelCongruence(List(msg,x->[x]));
         Info(InfoNumSgps,2,"The exponents of the binomials of the kernel are ",minp);
-        return List(minp,eval);
-
+        # Contrary to the global case, here it is faster not to compute a minimal presentation
+        # candidates:=Set(minp, x->x[1]*msg);
+        # pres:=[];
+        # for c in candidates do
+        #     exps:=FactorizationsIntegerWRTList(c,msg);
+        #     rclass:=RClassesOfSetOfFactorizations(exps);
+        #     if Length(rclass)>1 then
+        #         pres:=Concatenation(pres,List([2..Length(rclass)], 
+        #                       i->[rclass[1][1],rclass[i][1]]));
+        #     fi;
+        # od;
+        return List(minp,p->eval(p));
     end; #end of kernel
 
     narg:=Length(arg);
@@ -839,16 +837,7 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Global, function(arg)
 
     #### computes the relations among the polynomials in pols
     kernel:=function(pols)
-        local  p,  msg,  ed,  mp, ie, bintopair, minp, eval;
-
-        bintopair:=function(p)
-            local m1,m2, d1, d2;
-            m1:=LeadingMonomialOfPolynomial(p,MonomialGrlexOrdering());
-            m2:=m1-p;
-            d1:=List([var+1..var+ed], i->DegreeIndeterminate(m1,i));
-            d2:=List([var+1..var+ed], i->DegreeIndeterminate(m2,i));
-            return [d1,d2];
-        end;
+        local  p,  msg,  ed,  mp, minp, eval, candidates, c, pres, rclass, exps;
 
         eval:=function(pair)
             local m1,m2;
@@ -862,14 +851,22 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Global, function(arg)
         if ed=0 then
             return [];
         fi;
-        p:=List([1..ed], i->X(Rationals,var+i)-X(Rationals,var)^msg[i]);
-        ie:= ReducedGroebnerBasis( p, EliminationOrdering([X(Rationals,var)]));
-        ie:=Filtered(ie, q->IsZero(Derivative(q,X(Rationals,var))));
 
-        minp:=List(ie,q->bintopair(q));
+        minp:=GeneratorsOfKernelCongruence(List(msg,x->[x]));
         Info(InfoNumSgps,2,"The exponents of the binomials of the kernel are ",minp);
-        return List(minp,p->tomonicglobal(eval(p)));
+        candidates:=Set(minp, x->x[1]*msg);
+        pres:=[];
+        for c in candidates do
+            exps:=FactorizationsIntegerWRTList(c,msg);
+            rclass:=RClassesOfSetOfFactorizations(exps);
+            if Length(rclass)>1 then
+                pres:=Concatenation(pres,List([2..Length(rclass)], 
+                              i->[rclass[1][1],rclass[i][1]]));
+            fi;
+        od;
+        return List(pres,p->tomonicglobal(eval(p)));
 
+    
     end; #end of kernel
 
     narg:=Length(arg);

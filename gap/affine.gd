@@ -76,6 +76,13 @@ DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
 ###########################################################################
 DeclareOperation("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
 
+############################################################
+#O GeneratorsOfKernelCongruence 
+# computes a set of generators of the kernel congruence 
+# of the monoid morphism associated to the matrix m 
+############################################################
+DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
+
 ###############################################################################
 #O MinimalPresentationOfAffineSemigroup
 # Computes a minimal presentation of the affine semigroup a
