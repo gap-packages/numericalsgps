@@ -273,6 +273,16 @@ gap> GeneratorsAS(last);
 
   A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.
 
+  <ManSection>
+    <Func Arg="M" Name="GeneratorsOfKernelCongruence"></Func>
+    <Description>
+      <A>M</A> is matrix with nonnegative integer coefficients.  
+      The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
+  <P/>
+  The main differe3nce with <C>MinimalPresentationOfAffineSemigroup</C> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
+    </Description>
+  </ManSection>
+  
   
   <ManSection>
     <Func Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Func>
