@@ -12,7 +12,7 @@ The features of this package include
 	- computing several properties of numerical semigroups,
 	   namely: multiplicity, Frobenius number,
            (minimal) system of generators,
-           Apéry set, gaps, fundamental gaps, etc.;
+           ApÃ©ry set, gaps, fundamental gaps, etc.;
 	- perform several operations on numerical semigroups and ideals,
 	   namely: intersection, quotient by an integer,
 	   decompose into irreducible semigroups, add a
@@ -29,8 +29,10 @@ us an email.  If you  have found important features missing or if there is a
 bug, we would appreciate it very much if you send us an email.
 
 The current maintainers of the package are:
+
 Manuel Delgado			<mdelgado@fc.up.pt>
-Pedro A. García-Sánchez		<pedro@ugr.es>
+
+Pedro A. GarcÃ­a-SÃ¡nchez		<pedro@ugr.es>
 
 Contents
 --------
@@ -41,13 +43,13 @@ directories:
 
 	EXAMPLES		some examples
 	
-	CHANGES 			changelog
+	CHANGES 		changelog
 
 	doc             		the manual
 
 	gap             		the GAP code
 
-	init.g          			the file that initializes this package
+	init.g          		the file that initializes this package
 
 	read.g          		the file that reads in the package
 
@@ -118,6 +120,3 @@ and in the file `.gap/gaprc`
 ----------
 
 In other systems, there are equivalent ways to do the same.
-
-
-
