@@ -39,9 +39,10 @@ Contents
 With this version you should have obtained the following files and
 directories:
 
-	README          	this file
-
-	EXAMPLES		some examples
+| File | Description |
+|:-----|:------|
+|README |   this file|
+|EXAMPLES|	some examples|
 	
 	CHANGES 		changelog
 
