@@ -4,7 +4,7 @@ The GAP 4 package `NumericalSgps' to compute with Numerical Semigroups
 Introduction
 ------------
 
-This is release 0.98 of  the package `NumericalSgps`.
+This is release 0.98 dev of  the package `NumericalSgps`.
 
 The features of this package include
 
@@ -60,14 +60,14 @@ just have to start GAP and type
 
 -----
 
-For updates between releases of GAP itself check the package Web pages
+For updates between releases of GAP itself check the package web page
 
-    http://www.fc.up.pt/cmup/mdelgado/numericalsgps/
+	https://bitbucket.org/gap-system/numericalsgps
 
 Unpacking
 ---------
 
-You may get `NumericalSgps' as a compressed tar archive (file name ends with
+You may get `NumericalSgps` as a compressed tar archive (file name ends with
 .tar.gz). Use the  appropriate  command  on  your system   to unpack the
 archive.
 
@@ -82,15 +82,21 @@ or, if tar on your system does not understand the option z, by
 
 which will in each case unpack the code into a directory 'numericalsgps'
 in the current directory. We assume that the current directory is the
-directory /usr/local/lib/gap4r5/pkg/.
+directory /usr/local/lib/gap4r7/pkg/.
 
 Installation
 ------------
 
+Copy the folder 'numericalsgp' to your pkg gap folder (for instance /usr/local/lib/gap4r7/pkg). 
+You can also place it somewhere else and then use the command `SetPackagePath`:
 
-You may have to start GAP with the -l option, for instance,
+	SetPackagePath("numericalsgps","whereveryouwant/numericalsgps"); 
 
-	gap -l "/usr/local/lib/gap4r5"
+or add this line to your `gaprc`.
+
+In order to check the installation, launch `gap`:
+
+	gap 
 
 Then try the following
 ```gap
@@ -100,17 +106,11 @@ gap>
 ```
 Good luck!
 
-If you use a LINUX system, you may want to, in order to save typing, write
-aliases:
-
-in the file `.bashrc' (or something equivalent, maybe with another syntax):
-
-	alias gap='gap -l "/usr/local/lib/gap4r5;"'
-
-and in the file `.gap/gaprc`
+You can also add the line 
 
 	LoadPackage( "numericalsgps" );
 
+to your `gaprc` file.
 ----------
 
 In other systems, there are equivalent ways to do the same.
