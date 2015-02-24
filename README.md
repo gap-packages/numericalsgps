@@ -39,24 +39,17 @@ Contents
 With this version you should have obtained the following files and
 directories:
 
-| File | Description |
+| File/directory | Description |
 |:-----|:------|
 |README |   this file|
 |EXAMPLES|	some examples|
-	
-	CHANGES 		changelog
-
-	doc             		the manual
-
-	gap             		the GAP code
-
-	init.g          		the file that initializes this package
-
-	read.g          		the file that reads in the package
-
-	PackageInfo.g	information file for automatic processing
-
-	version				the version number
+|CHANGES|	changelog|
+|doc  |	the manual|
+|gap  |the GAP code|
+|init.g| the file that initializes this package|
+|read.g |         		the file that reads in the package|
+|PackageInfo.g	| information file for automatic processing|
+|version	|the version number|
 
 Usage
 -----
