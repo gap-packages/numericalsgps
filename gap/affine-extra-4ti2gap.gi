@@ -1,29 +1,23 @@
-# InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
-#         "Computes the set of primitive elements of an affine semigroup",
-#         [IsAffineSemigroup],4, 
-#         function(a)
-#     local dir, filename, exec, filestream, matrix,
-# 				 facs, mat, trunc, ls;
+InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
+        "Computes the set of primitive elements of an affine semigroup",
+        [IsAffineSemigroup],4, 
+        function(a)
+    local  matrix, facs, mat, trunc, ls;
     
-#     ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=GeneratorsOfAffineSemigroup(a);
     
-#     dir := DirectoryTemporary();
-#     filename := Filename( dir, "gap_4ti2_temp_matrix" );
+    Info(InfoNumSgps,2,"Using 4ti2gap for Graver.");
+    
+    mat:=TransposedMat(ls);
+    matrix := GraverBasis4ti2(["mat",mat]);
 
-# 	mat:=TransposedMat(ls);
-#     4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
-#     exec := IO_FindExecutable( "graver" );
-#     filestream := IO_Popen2( exec, [ filename ]);
-#     while IO_ReadLine( filestream.stdout ) <> "" do od;
-#     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".gra" ) );
-
-#     trunc:=function(ls)
-# 		return List(ls, y->Maximum(y,0));
-# 	end;
-
-# 	matrix:=Set(matrix,trunc);
-#     return Set(matrix, x->x*ls);
-# end);
+    trunc:=function(ls)
+        return List(ls, y->Maximum(y,0));
+    end;
+    
+    matrix:=Set(matrix,trunc);
+    return Set(matrix, x->x*ls);
+end);
 
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,

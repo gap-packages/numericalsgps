@@ -256,24 +256,32 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(PrimitiveElementsOfNumericalSemigroup,function(s)
-	local l, n, facs, mat, ncone, nmzcone,nmzconeproperty;
+# 	local l, n, facs, mat, ncone, nmzcone,nmzconeproperty;
 
+#     if not IsNumericalSemigroup(s) then
+#         Error("The argument must be a numerical semigroup.\n");
+#     fi;
+
+# 	if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
+# 		Error("The package NormalizInterface is not loaded.\n");
+# 	fi;
+
+# 	l:=ShallowCopy(MinimalGeneratingSystemOfNumericalSemigroup(s));
+# 	n:=Length(l);
+# 	mat:=[Concatenation(l,-l)];
+# 	nmzcone:=ValueGlobal("NmzCone");
+# 	ncone:=nmzcone(["equations",mat]);
+# 	nmzconeproperty:=ValueGlobal("NmzConeProperty");
+# 	facs:=nmzconeproperty(ncone,"HilbertBasis");
+# 	facs:=Set(facs,m->m{[1..n]});
+# 	return Set(facs, f-> f*l);
+# end);
+    local a;
+    
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-
-	if not IsPackageMarkedForLoading("NormalizInterface","0.0") then
-		Error("The package NormalizInterface is not loaded.\n");
-	fi;
-
-	l:=ShallowCopy(MinimalGeneratingSystemOfNumericalSemigroup(s));
-	n:=Length(l);
-	mat:=[Concatenation(l,-l)];
-	nmzcone:=ValueGlobal("NmzCone");
-	ncone:=nmzcone(["equations",mat]);
-	nmzconeproperty:=ValueGlobal("NmzConeProperty");
-	facs:=nmzconeproperty(ncone,"HilbertBasis");
-	facs:=Set(facs,m->m{[1..n]});
-	return Set(facs, f-> f*l);
+    
+    a:=AsAffineSemigroup(s);
+    return Union(PrimitiveElementsOfAffineSemigroup(a));
 end);
-
