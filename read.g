@@ -32,6 +32,7 @@ ReadPackage( "numericalsgps", "gap/irreducibles.gi" );
 ReadPackage( "numericalsgps", "gap/ideals-def.gi" );
 ReadPackage( "numericalsgps", "gap/arf-med.gi" );
 ReadPackage( "numericalsgps", "gap/catenary-tame.gi" );
+ReadPackage( "numericalsgps", "gap/pseudoFrobenius.gi" );
 ReadPackage( "numericalsgps", "gap/contributions.gi" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gi" );
 ReadPackage( "numericalsgps", "gap/polynomials.gi" );

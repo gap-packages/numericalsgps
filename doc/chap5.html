@@ -60,6 +60,15 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X86970F6A868DEA95">5.5-1 NumericalSemigroupsWithGenus</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X8265233586477CC7">5.6 <span class="Heading">
+                    Constructing the set of numerical semigroups with a given set of pseudo-Frobenius numbers
+                </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7A183ABD87C742AE">5.6-1 ForcedGapsAndElementsForPseudoFrobenius</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7D6775A57B800892">5.6-2 NumericalSemigroupsWithPseudoFrobeniusNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X786F1A5A79374254">5.6-3 RandomNumericalSemigroupWithPseudoFrobeniusNumbers</a></span>
+</div></div>
 </div>
 
 <h3>5 <span class="Heading">
@@ -229,7 +238,7 @@ true
 <h5>5.5-1 NumericalSemigroupsWithGenus</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithGenus</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">g</var> is a nonnegative integer. The output is the set of numerical semigroups with genus<var class="Arg">g</var> .</p>
+<p><var class="Arg">g</var> is a nonnegative integer. The output is the set of numerical semigroups with genus<var class="Arg">g</var>.</p>
 
 
 <div class="example"><pre>
@@ -250,6 +259,114 @@ true
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
+</pre></div>
+
+<p><a id="X8265233586477CC7" name="X8265233586477CC7"></a></p>
+
+<h4>5.6 <span class="Heading">
+                    Constructing the set of numerical semigroups with a given set of pseudo-Frobenius numbers
+                </span></h4>
+
+<p>Refer to <code class="func">PseudoFrobeniusOfNumericalSemigroup</code> (<a href="chap3.html#X829A9C517A83FFD5"><span class="RefLink">3.2-4</span></a>).</p>
+
+<p>These procedures are described in <a href="chapBib.html#biBDGSRP15">[DGR15]</a>.</p>
+
+<p><a id="X7A183ABD87C742AE" name="X7A183ABD87C742AE"></a></p>
+
+<h5>5.6-1 ForcedGapsAndElementsForPseudoFrobenius</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ForcedGapsAndElementsForPseudoFrobenius</code>( <var class="Arg">PF</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is:</p>
+
+
+<ul>
+<li><p>in case there exists a numerical semigroup <span class="SimpleMath">S</span> such that <span class="SimpleMath">PF(S)=PF</span>:</p>
+
+
+<ul>
+<li><p>a list <span class="SimpleMath">[forced_gaps,forced_elts]</span> such that:</p>
+
+
+<ul>
+<li><p><span class="SimpleMath">forced_gaps</span> is contained in <span class="SimpleMath">N - S</span> for any numerical semigroup S such that <span class="SimpleMath">PF(S)={g_1,...,g_n}</span></p>
+
+</li>
+<li><p>forced_elts is contained in <span class="SimpleMath">S</span> for any numerical semigroup <span class="SimpleMath">S</span> such that <span class="SimpleMath">PF(S)={g_1,...,g_n}</span></p>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>"fail" in case it is found some condition that fails.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 58, 64, 75 ];</span>
+[ 58, 64, 75 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForcedGapsAndElementsForPseudoFrobenius(pf);                              </span>
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], 
+  [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ]
+</pre></div>
+
+<p><a id="X7D6775A57B800892" name="X7D6775A57B800892"></a></p>
+
+<h5>5.6-2 NumericalSemigroupsWithPseudoFrobeniusNumbers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
+
+<p>The option draw_tree may be useful, since it gives an output that gives some light on the way the computations are done</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 58, 64, 75 ];</span>
+[ 58, 64, 75 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));</span>
+561
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [11,19,22];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupsWithPseudoFrobeniusNumbers(</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">rec(pseudo_frobenius := pf, draw_tree := true));</span>
+[ [ [ 7, 9, &lt;Numerical semigroup&gt; ], [ 7, 10, &lt;Numerical semigroup&gt; ], 
+      [ 7, 13, "rightnonsgp" ], [ 9, &lt;Numerical semigroup&gt; ], 
+      [ 10, &lt;Numerical semigroup&gt; ], [ 12, &lt;Numerical semigroup&gt; ], 
+      [ 13, "leftnonsgp" ], [ "rightnonsgp" ] ], 
+  [ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
+      &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last[2],MinimalGeneratingSystemOfNumericalSemigroup);</span>
+[ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
+  [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
+  [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
+
+</pre></div>
+
+<p><a id="X786F1A5A79374254" name="X786F1A5A79374254"></a></p>
+
+<h5>5.6-3 RandomNumericalSemigroupWithPseudoFrobeniusNumbers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomNumericalSemigroupWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option The output is: A numerical semigrups S such that PF(S)=PF, at random. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...</p>
+
+<p>When Length(PF)=1, it makes use of the function <code class="func">AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code> (<a href="chap6.html#X7C8AB03F7E0B71F0"><span class="RefLink">6.1-4</span></a>)</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 83, 169, 173, 214, 259 ]; #free: 145</span>
+[ 83, 169, 173, 214, 259 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);</span>
+&lt;Numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 83, 169, 173, 214, 259 ];;                     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);</span>
+&lt;Numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gen := MinimalGeneratingSystem(last);</span>
+[ 38, 57, 64, 72, 79, 98, 99, 106, 118, 120, 124, 132, 134, 146, 147, 154, 
+  165, 168, 179 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns := NumericalSemigroup(gen);       </span>
+&lt;Numerical semigroup with 19 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PseudoFrobeniusOfNumericalSemigroup(ns);</span>
+[ 83, 169, 173, 214, 259 ]
 </pre></div>
 
 
