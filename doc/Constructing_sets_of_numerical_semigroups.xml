@@ -69,7 +69,7 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
                     <Func Arg="g" Name="NumericalSemigroupsWithGenus"></Func>
                     <Description>
                         <A>g</A> is a nonnegative integer. The output is the set of numerical semigroups
-                        with genus<A>g</A> .           
+                        with genus<A>g</A>.           
                         <Example><![CDATA[
 gap> NumericalSemigroupsWithGenus(5);
 [ <Proportionally modular numerical semigroup satisfying 11x mod 66 <= 5x >, 
@@ -91,6 +91,97 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 ]]></Example>          
                     </Description>
                 </ManSection>
-                
-                
+                              
             </Section>
+<Section>
+                <Heading>
+                    Constructing the set of numerical semigroups with a given set of pseudo-Frobenius numbers
+                </Heading>
+                Refer to <Ref Func="PseudoFrobeniusOfNumericalSemigroup" />.
+                
+                <P/>
+                These procedures are described in <Cite Key="DGSRP15"></Cite>.
+                 <ManSection>
+                    <Func Arg="PF" Name="ForcedGapsAndElementsForPseudoFrobenius"></Func>
+                    <Description>
+                        <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is:
+<List><Item>
+in case there exists a numerical semigroup <M>S</M> such that <M>PF(S)=PF</M>:
+<List><Item>  
+a list <M>[forced\_gaps,forced\_elts]</M> such that: 
+<List><Item>  
+<M>forced\_gaps</M> is contained in <M>{\mathbb N} - S</M> for any numerical semigroup S such that <M>PF(S)=\{g\_1,\ldots,g\_n\}</M>
+</Item><Item>   
+forced_elts is contained in <M>S</M> for any numerical semigroup <M>S</M> such that <M>PF(S)=\{g\_1,\ldots,g\_n\}</M>
+</Item></List>
+</Item></List>
+</Item><Item>
+"fail" in case it is found some condition that fails.  
+</Item></List>
+                        <Example><![CDATA[
+gap> pf := [ 58, 64, 75 ];
+[ 58, 64, 75 ]
+gap> ForcedGapsAndElementsForPseudoFrobenius(pf);                              
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], 
+  [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                              
+                  <ManSection>
+                    <Func Arg="g" Name="NumericalSemigroupsWithPseudoFrobeniusNumbers"></Func>
+                    <Description>
+                        <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF
+When Length(PF)=1, it makes use of the function <Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>
+<P/>
+The option draw_tree may be useful, since it gives an output that gives some light on the way the computations are done
+                        <Example><![CDATA[
+gap> pf := [ 58, 64, 75 ];
+[ 58, 64, 75 ]
+gap> Length(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));
+561
+gap> pf := [11,19,22];;
+gap> NumericalSemigroupsWithPseudoFrobeniusNumbers(
+> rec(pseudo_frobenius := pf, draw_tree := true));
+[ [ [ 7, 9, <Numerical semigroup> ], [ 7, 10, <Numerical semigroup> ], 
+      [ 7, 13, "rightnonsgp" ], [ 9, <Numerical semigroup> ], 
+      [ 10, <Numerical semigroup> ], [ 12, <Numerical semigroup> ], 
+      [ 13, "leftnonsgp" ], [ "rightnonsgp" ] ], 
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+      <Numerical semigroup>, <Numerical semigroup> ] ]
+gap> List(last[2],MinimalGeneratingSystemOfNumericalSemigroup);
+[ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
+  [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
+  [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
+
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                   <ManSection>
+                    <Func Arg="g" Name="RandomNumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
+                    <Description>
+                        <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option
+The output is: A numerical semigrups S such that PF(S)=PF, at random. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
+<P/>
+When Length(PF)=1, it makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>
+<P/>
+                        <Example><![CDATA[
+gap> pf := [ 83, 169, 173, 214, 259 ]; #free: 145
+[ 83, 169, 173, 214, 259 ]
+gap> RandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);
+<Numerical semigroup>
+gap> pf := [ 83, 169, 173, 214, 259 ];;                     
+gap> RandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);
+<Numerical semigroup>
+gap> gen := MinimalGeneratingSystem(last);
+[ 38, 57, 64, 72, 79, 98, 99, 106, 118, 120, 124, 132, 134, 146, 147, 154, 
+  165, 168, 179 ]
+gap> ns := NumericalSemigroup(gen);       
+<Numerical semigroup with 19 generators>
+gap> PseudoFrobeniusOfNumericalSemigroup(ns);
+[ 83, 169, 173, 214, 259 ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+          </Section>

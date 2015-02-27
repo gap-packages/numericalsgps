@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: NumericalSgpsMan.aux
 The style file: alpha.bst
@@ -9,45 +9,45 @@ Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and,
 while executing---line 1185 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1250 of file alpha.bst
-You've used 63 entries,
+You've used 64 entries,
             2543 wiz_defined-function locations,
-            957 strings with 13128 characters,
-and the built_in function-call counts, 24890 in all, are:
-= -- 2537
-> -- 1244
+            963 strings with 13223 characters,
+and the built_in function-call counts, 25255 in all, are:
+= -- 2573
+> -- 1269
 < -- 19
-+ -- 432
-- -- 420
-* -- 1820
-:= -- 4180
-add.period$ -- 193
-call.type$ -- 63
-change.case$ -- 392
-chr.to.int$ -- 60
-cite$ -- 63
-duplicate$ -- 897
-empty$ -- 1744
-format.name$ -- 493
-if$ -- 4989
++ -- 441
+- -- 429
+* -- 1846
+:= -- 4247
+add.period$ -- 196
+call.type$ -- 64
+change.case$ -- 399
+chr.to.int$ -- 61
+cite$ -- 64
+duplicate$ -- 910
+empty$ -- 1764
+format.name$ -- 503
+if$ -- 5059
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 62
-newline$ -- 320
-num.names$ -- 189
-pop$ -- 312
+missing$ -- 63
+newline$ -- 325
+num.names$ -- 192
+pop$ -- 316
 preamble$ -- 1
-purify$ -- 460
+purify$ -- 468
 quote$ -- 0
-skip$ -- 787
+skip$ -- 800
 stack$ -- 0
-substring$ -- 1477
-swap$ -- 91
+substring$ -- 1484
+swap$ -- 92
 text.length$ -- 19
 text.prefix$ -- 11
 top$ -- 0
-type$ -- 484
+type$ -- 492
 warning$ -- 0
-while$ -- 251
-width$ -- 67
-write$ -- 809
+while$ -- 254
+width$ -- 68
+write$ -- 822
 (There were 3 error messages)
