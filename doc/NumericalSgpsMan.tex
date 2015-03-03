@@ -1523,11 +1523,11 @@ pseudo-Frobenius numbers }}\logpage{[ 5, 6, 0 ]}
 
  These procedures are described in \cite{DGSRP15}. 
 
-\subsection{\textcolor{Chapter }{ForcedGapsAndElementsForPseudoFrobenius}}
+\subsection{\textcolor{Chapter }{ForcedIntegersForPseudoFrobenius}}
 \logpage{[ 5, 6, 1 ]}\nobreak
-\hyperdef{L}{X7A183ABD87C742AE}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ForcedGapsAndElementsForPseudoFrobenius({\mdseries\slshape PF})\index{ForcedGapsAndElementsForPseudoFrobenius@\texttt{Forced}\-\texttt{Gaps}\-\texttt{And}\-\texttt{Elements}\-\texttt{For}\-\texttt{Pseudo}\-\texttt{Frobenius}}
-\label{ForcedGapsAndElementsForPseudoFrobenius}
+\hyperdef{L}{X874B252180BD7EB4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ForcedIntegersForPseudoFrobenius({\mdseries\slshape PF})\index{ForcedIntegersForPseudoFrobenius@\texttt{ForcedIntegersForPseudoFrobenius}}
+\label{ForcedIntegersForPseudoFrobenius}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -1550,7 +1550,7 @@ output is:
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@pf := [ 58, 64, 75 ];|
   [ 58, 64, 75 ]
-  !gapprompt@gap>| !gapinput@ForcedGapsAndElementsForPseudoFrobenius(pf);                              |
+  !gapprompt@gap>| !gapinput@ForcedIntegersForPseudoFrobenius(pf);                              |
   [ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], 
     [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ]
 \end{Verbatim}
@@ -1558,8 +1558,46 @@ output is:
 
  
 
-\subsection{\textcolor{Chapter }{NumericalSemigroupsWithPseudoFrobeniusNumbers}}
+\subsection{\textcolor{Chapter }{ForcedIntegersForPseudoFrobenius{\textunderscore}QV}}
 \logpage{[ 5, 6, 2 ]}\nobreak
+\hyperdef{L}{X85966BB48443DE83}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ForcedIntegersForPseudoFrobenius{\textunderscore}QV({\mdseries\slshape fg, fe, PF})\index{ForcedIntegersForPseudoFrobeniusQV@\texttt{Forced}\-\texttt{Integers}\-\texttt{For}\-\texttt{Pseudo}\-\texttt{Frobenius{\textunderscore}QV}}
+\label{ForcedIntegersForPseudoFrobeniusQV}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Is just a quicker version of \texttt{ForcedIntegersForPseudoFrobenius} (\ref{ForcedIntegersForPseudoFrobenius}) 
+
+ \mbox{\texttt{\mdseries\slshape fg}} is a list of integers that we require to be gaps of the semigroup; \mbox{\texttt{\mdseries\slshape fe}} is a list of integers that we require to be elements of the semigroup; \mbox{\texttt{\mdseries\slshape PF}} is a list of positive integers. The output is: 
+\begin{itemize}
+\item  in case there exists a numerical semigroup $S$ such that $PF(S)=PF$: 
+\begin{itemize}
+\item  a list $[forced\_gaps,forced\_elts]$ such that: 
+\begin{itemize}
+\item  $forced\_gaps$ is contained in ${\mathbb N} - S$ for any numerical semigroup S such that $PF(S)=\{g\_1,\ldots,g\_n\}$ 
+\item  forced{\textunderscore}elts is contained in $S$ for any numerical semigroup $S$ such that $PF(S)=\{g\_1,\ldots,g\_n\}$ 
+\end{itemize}
+ 
+\end{itemize}
+ 
+\item  "fail" in case it is found some condition that fails. 
+\end{itemize}
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@pf := [ 15, 20, 27, 35 ];;                                               |
+  !gapprompt@gap>| !gapinput@fint := ForcedIntegersForPseudoFrobenius(pf); |
+  [ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 16, 20, 27, 35 ], 
+    [ 0, 19, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ]
+  !gapprompt@gap>| !gapinput@ForcedIntegersForPseudoFrobenius_QV(fint[1],Union(fint[2],[free[1]]),pf);|
+  [ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 20, 24, 27, 35 ], 
+    [ 0, 11, 19, 22, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupsWithPseudoFrobeniusNumbers}}
+\logpage{[ 5, 6, 3 ]}\nobreak
 \hyperdef{L}{X7D6775A57B800892}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupsWithPseudoFrobeniusNumbers({\mdseries\slshape g})\index{NumericalSemigroupsWithPseudoFrobeniusNumbers@\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Pseudo}\-\texttt{Frobenius}\-\texttt{Numbers}}
 \label{NumericalSemigroupsWithPseudoFrobeniusNumbers}
@@ -1597,7 +1635,7 @@ that gives some light on the way the computations are done
  
 
 \subsection{\textcolor{Chapter }{RandomNumericalSemigroupWithPseudoFrobeniusNumbers}}
-\logpage{[ 5, 6, 3 ]}\nobreak
+\logpage{[ 5, 6, 4 ]}\nobreak
 \hyperdef{L}{X786F1A5A79374254}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomNumericalSemigroupWithPseudoFrobeniusNumbers({\mdseries\slshape g})\index{RandomNumericalSemigroupWithPseudoFrobeniusNumbers@\texttt{Random}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{With}\-\texttt{Pseudo}\-\texttt{Frobenius}\-\texttt{Numbers}}
 \label{RandomNumericalSemigroupWithPseudoFrobeniusNumbers}
