@@ -195,9 +195,9 @@
   
   [33X[0;0YThese procedures are described in [DGR15].[133X
   
-  [1X5.6-1 ForcedGapsAndElementsForPseudoFrobenius[101X
+  [1X5.6-1 ForcedIntegersForPseudoFrobenius[101X
   
-  [29X[2XForcedGapsAndElementsForPseudoFrobenius[102X( [3XPF[103X ) [32X function
+  [29X[2XForcedIntegersForPseudoFrobenius[102X( [3XPF[103X ) [32X function
   
   [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
   The output is:[133X
@@ -217,12 +217,44 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xpf := [ 58, 64, 75 ];[127X[104X
     [4X[28X[ 58, 64, 75 ][128X[104X
-    [4X[25Xgap>[125X [27XForcedGapsAndElementsForPseudoFrobenius(pf);                              [127X[104X
+    [4X[25Xgap>[125X [27XForcedIntegersForPseudoFrobenius(pf);                              [127X[104X
     [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], [128X[104X
     [4X[28X  [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ][128X[104X
   [4X[32X[104X
   
-  [1X5.6-2 NumericalSemigroupsWithPseudoFrobeniusNumbers[101X
+  [1X5.6-2 ForcedIntegersForPseudoFrobenius_QV[101X
+  
+  [29X[2XForcedIntegersForPseudoFrobenius_QV[102X( [3Xfg[103X, [3Xfe[103X, [3XPF[103X ) [32X function
+  
+  [33X[0;0YIs just a quicker version of [2XForcedIntegersForPseudoFrobenius[102X ([14X5.6-1[114X)[133X
+  
+  [33X[0;0Y[3Xfg[103X  is a list of integers that we require to be gaps of the semigroup; [3Xfe[103X is
+  a  list of integers that we require to be elements of the semigroup; [3XPF[103X is a
+  list of positive integers. The output is:[133X
+  
+  [30X    [33X[0;6Yin case there exists a numerical semigroup [22XS[122X such that [22XPF(S)=PF[122X:[133X
+  
+        [30X    [33X[0;12Ya list [22X[forced_gaps,forced_elts][122X such that:[133X
+  
+              [30X    [33X[0;18Y[22Xforced_gaps[122X  is  contained  in  [22XN  -  S[122X  for any numerical
+                    semigroup S such that [22XPF(S)={g_1,...,g_n}[122X[133X
+  
+              [30X    [33X[0;18Yforced_elts  is contained in [22XS[122X for any numerical semigroup
+                    [22XS[122X such that [22XPF(S)={g_1,...,g_n}[122X[133X
+  
+  [30X    [33X[0;6Y"fail" in case it is found some condition that fails.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xpf := [ 15, 20, 27, 35 ];;                                               [127X[104X
+    [4X[25Xgap>[125X [27Xfint := ForcedIntegersForPseudoFrobenius(pf); [127X[104X
+    [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 16, 20, 27, 35 ], [128X[104X
+    [4X[28X  [ 0, 19, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ][128X[104X
+    [4X[25Xgap>[125X [27XForcedIntegersForPseudoFrobenius_QV(fint[1],Union(fint[2],[free[1]]),pf);[127X[104X
+    [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 20, 24, 27, 35 ], [128X[104X
+    [4X[28X  [ 0, 11, 19, 22, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers[101X
   
   [29X[2XNumericalSemigroupsWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function
   
@@ -255,7 +287,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X5.6-3 RandomNumericalSemigroupWithPseudoFrobeniusNumbers[101X
+  [1X5.6-4 RandomNumericalSemigroupWithPseudoFrobeniusNumbers[101X
   
   [29X[2XRandomNumericalSemigroupWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function
   

@@ -65,9 +65,10 @@
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7A183ABD87C742AE">5.6-1 ForcedGapsAndElementsForPseudoFrobenius</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7D6775A57B800892">5.6-2 NumericalSemigroupsWithPseudoFrobeniusNumbers</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X786F1A5A79374254">5.6-3 RandomNumericalSemigroupWithPseudoFrobeniusNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X874B252180BD7EB4">5.6-1 ForcedIntegersForPseudoFrobenius</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X85966BB48443DE83">5.6-2 ForcedIntegersForPseudoFrobenius_QV</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7D6775A57B800892">5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X786F1A5A79374254">5.6-4 RandomNumericalSemigroupWithPseudoFrobeniusNumbers</a></span>
 </div></div>
 </div>
 
@@ -271,11 +272,11 @@ true
 
 <p>These procedures are described in <a href="chapBib.html#biBDGSRP15">[DGR15]</a>.</p>
 
-<p><a id="X7A183ABD87C742AE" name="X7A183ABD87C742AE"></a></p>
+<p><a id="X874B252180BD7EB4" name="X874B252180BD7EB4"></a></p>
 
-<h5>5.6-1 ForcedGapsAndElementsForPseudoFrobenius</h5>
+<h5>5.6-1 ForcedIntegersForPseudoFrobenius</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ForcedGapsAndElementsForPseudoFrobenius</code>( <var class="Arg">PF</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ForcedIntegersForPseudoFrobenius</code>( <var class="Arg">PF</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is:</p>
 
 
@@ -306,14 +307,58 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 58, 64, 75 ];</span>
 [ 58, 64, 75 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForcedGapsAndElementsForPseudoFrobenius(pf);                              </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForcedIntegersForPseudoFrobenius(pf);                              </span>
 [ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], 
   [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ]
 </pre></div>
 
+<p><a id="X85966BB48443DE83" name="X85966BB48443DE83"></a></p>
+
+<h5>5.6-2 ForcedIntegersForPseudoFrobenius_QV</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ForcedIntegersForPseudoFrobenius_QV</code>( <var class="Arg">fg</var>, <var class="Arg">fe</var>, <var class="Arg">PF</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Is just a quicker version of <code class="func">ForcedIntegersForPseudoFrobenius</code> (<a href="chap5.html#X874B252180BD7EB4"><span class="RefLink">5.6-1</span></a>)</p>
+
+<p><var class="Arg">fg</var> is a list of integers that we require to be gaps of the semigroup; <var class="Arg">fe</var> is a list of integers that we require to be elements of the semigroup; <var class="Arg">PF</var> is a list of positive integers. The output is:</p>
+
+
+<ul>
+<li><p>in case there exists a numerical semigroup <span class="SimpleMath">S</span> such that <span class="SimpleMath">PF(S)=PF</span>:</p>
+
+
+<ul>
+<li><p>a list <span class="SimpleMath">[forced_gaps,forced_elts]</span> such that:</p>
+
+
+<ul>
+<li><p><span class="SimpleMath">forced_gaps</span> is contained in <span class="SimpleMath">N - S</span> for any numerical semigroup S such that <span class="SimpleMath">PF(S)={g_1,...,g_n}</span></p>
+
+</li>
+<li><p>forced_elts is contained in <span class="SimpleMath">S</span> for any numerical semigroup <span class="SimpleMath">S</span> such that <span class="SimpleMath">PF(S)={g_1,...,g_n}</span></p>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>"fail" in case it is found some condition that fails.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 15, 20, 27, 35 ];;                                               </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">fint := ForcedIntegersForPseudoFrobenius(pf); </span>
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 16, 20, 27, 35 ], 
+  [ 0, 19, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForcedIntegersForPseudoFrobenius_QV(fint[1],Union(fint[2],[free[1]]),pf);</span>
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 20, 24, 27, 35 ], 
+  [ 0, 11, 19, 22, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ]
+</pre></div>
+
 <p><a id="X7D6775A57B800892" name="X7D6775A57B800892"></a></p>
 
-<h5>5.6-2 NumericalSemigroupsWithPseudoFrobeniusNumbers</h5>
+<h5>5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
@@ -344,7 +389,7 @@ true
 
 <p><a id="X786F1A5A79374254" name="X786F1A5A79374254"></a></p>
 
-<h5>5.6-3 RandomNumericalSemigroupWithPseudoFrobeniusNumbers</h5>
+<h5>5.6-4 RandomNumericalSemigroupWithPseudoFrobeniusNumbers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RandomNumericalSemigroupWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option The output is: A numerical semigrups S such that PF(S)=PF, at random. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...</p>
