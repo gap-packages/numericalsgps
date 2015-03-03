@@ -55,14 +55,14 @@ DeclareGlobalFunction("NewElementsByExclusion");
 #F SimpleForcedIntegers
 ##
 ###########################################################################
-DeclareGlobalFunction("SimpleForcedIntegers");
+DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_QV");
   
 ######################################
 ##
 #F ForcedGapsAndElementsForPseudoFrobenius
 ##
 ###########################################################################
-DeclareGlobalFunction("ForcedGapsAndElementsForPseudoFrobenius");
+DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius");
   
 ######################################
 ##
