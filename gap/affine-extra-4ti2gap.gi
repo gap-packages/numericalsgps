@@ -140,13 +140,11 @@ InstallOtherMethod(FactorizationsVectorWRTList,
         Error("The list in the second argument must have the same length as all the lists in the first argument.");
     fi;
  
-    sign:=[List(mat[1],_->1)];
-    #rhs:=[v];
-    problem:=["mat",mat,"sign",sign];
-    matrix := HilbertBasis4ti2(problem);
-    n:=Length(l);
-    matrix:=Filtered(matrix,x->x[n+1]=1);
-    return List(matrix,x->x{[1..n]});
+    sign:=[List(l,_->1)];
+    rhs:=[v];
+    problem:=["mat",TransposedMat(l),"sign",sign,"rhs",rhs];
+    matrix := ZSolve4ti2(problem);
+    return matrix.zinhom;
     
 end); 
 
@@ -262,3 +260,50 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
     return Maximum(Set(tot, Sum));
 end);
 
+#####################################################################
+# Computes the omega-primality of v in the full affine semigroup a
+#####################################################################
+InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
+        "Computes the omega-primality of v in the full affine semigroup a",
+        [IsHomogeneousList,IsAffineSemigroup and HasEquationsAS],6,
+        function(v,a)
+    local  ls, n, mat,extfact,par,tot,le;
+    
+    le:=function(a,b)  #ordinary partial order
+    	return ForAll(b-a,x-> x>=0);
+    end;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The second argument must be an affine semigroup");
+    fi;
+        
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    
+    if not(ForAll(v, x-> x>=0)) then
+        Error("The first argument must be a list of on nonnegative integers.");		
+    fi;
+	
+    ls:=GeneratorsOfAffineSemigroup(a);
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
+
+    if not(IsHomogeneousList(mat)) then
+        Error("The first argument has not the dimension of the second.");
+    fi;
+    
+    Info(InfoNumSgps,2,"Using 4ti2gap with full affine semigroup");
+    
+    extfact:=ZSolve4ti2(["mat",TransposedMat(ls),"rel",List(v,_->1),
+                     "sign",List([1..n],_->1),"rhs",v ]);
+
+    tot:=extfact.zinhom;
+    Info(InfoNumSgps,2,"Minimals of v+ls =",tot);
+    if tot=[] then 
+        return 0;      
+    fi;    
+    return Maximum(Set(tot, Sum));
+end);
+
+#ZSolve4ti2(["mat",TransposedMat([[2,0],[0,2],[1,2],[2,1]]),"rel",[1,1],"sign",[1,1,1,1],"rhs",[[15,15]]]);
