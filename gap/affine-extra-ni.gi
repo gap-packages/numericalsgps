@@ -107,7 +107,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         return [];
     fi;
     
-    cone:=NmzCone(["inequalities",ls]);
+    cone:=NmzCone(["inequalities",ls,"signs",[List([1..ncoord],_->1)]]);
     NmzCompute(cone,"DualMode"); 	
     
     return NmzHilbertBasis(cone);

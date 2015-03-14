@@ -126,8 +126,8 @@ end);
 ##
 #F  AffineSemigroupByInequalities(ls)
 ##
-##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over the nonnegative 
-## integers
+##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over 
+##  the nonnegative integers
 ##
 #############################################################################
 InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
@@ -140,9 +140,7 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
   fi;
 
   if not IsMatrix(ls) then
-    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
-  elif not ForAll(ls, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
-    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+    Error("The arguments must be lists of integers with the same length, or a list of such lists");
   fi;
 
   M:= Objectify( NewType( FamilyObj( ls ),
