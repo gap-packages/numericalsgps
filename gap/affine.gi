@@ -779,6 +779,90 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
     return max;
 end);
 
+######################################################################
+# Computes the equal catenary degree of the affine semigroup a 
+# uses [GSOSN]
+######################################################################
+InstallGlobalFunction(EqualCatenaryDegreeOfAffineSemigroup,
+        function(a)
+    local ls, lsh, ah, primeq;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsOfAffineSemigroup(a);
+    lsh:=List(ls, x-> Concatenation(x,[1]));
+    ah:=AffineSemigroup(lsh);
+    primeq:=BettiElementsOfAffineSemigroup(ah);
+    
+    return Maximum(Set(primeq, x->CatenaryDegreeOfSetOfFactorizations(
+            FactorizationsVectorWRTList(x,lsh))));
+    
+end);
+
+######################################################################
+# Computes the homogeneous catenary degree of the affine semigroup a 
+# uses [GSOSN]
+######################################################################
+InstallGlobalFunction(HomogeneousCatenaryDegreeOfAffineSemigroup,
+        function(a)
+    local ls, lsh, ah, primeq, one;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsOfAffineSemigroup(a);
+    if ls=[] then return 0;    
+    fi;
+    
+    lsh:=List(ls, x-> Concatenation(x,[1]));
+    one:=List(ls[1],_->0);
+    Add(one,1);
+    Add(lsh,one);
+    
+    ah:=AffineSemigroup(lsh);
+    primeq:=BettiElementsOfAffineSemigroup(ah);
+    
+    return Maximum(Set(primeq, x->CatenaryDegreeOfSetOfFactorizations(
+            FactorizationsVectorWRTList(x,lsh))));
+    
+end);
+        
+######################################################################
+# Computes the monotone catenary degree of the affine semigroup a 
+# uses [PH] and Alfredo Sanchez-R.-Navarro thesis
+######################################################################
+InstallGlobalFunction(MonotoneCatenaryDegreeOfAffineSemigroup,
+        function(a)
+    local ls, lsh, ah, primeq, one, dim;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsOfAffineSemigroup(a);
+    
+    if ls=[] then return 0;    
+    fi;
+    dim:=Length(ls[1]);
+    
+    lsh:=List(ls, x-> Concatenation(x,[1]));
+    one:=List(ls[1],_->0);
+    Add(one,1);
+    Add(lsh,one);
+    
+    ah:=AffineSemigroup(lsh);
+    primeq:=PrimitiveElementsOfAffineSemigroup(ah);
+    primeq:=Set(primeq, x->x{[1..dim]});
+    
+    return Maximum(Set(primeq, x->MonotoneCatenaryDegreeOfSetOfFactorizations(
+            FactorizationsVectorWRTList(x,ls))));
+    
+end);
+
+
 ###############################################################################
 ##
 #O OmegaPrimalityOfElementInAffineSemigroup
