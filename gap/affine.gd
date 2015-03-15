@@ -126,6 +126,27 @@ DeclareGlobalFunction("ShadedSetOfElementInAffineSemigroup");
 ###########################################################################
 DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
 
+###############################################################################
+#F EqualCatenaryDegreeOfAffineSemigroup
+# Computes the equal catenary degree of the affine semigroup a
+# uses [GSOSN]
+###########################################################################
+DeclareGlobalFunction("EqualCatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+
+###############################################################################
+#F HomogeneousCatenaryDegreeOfAffineSemigroup
+# Computes the homogeneous catenary degree of the affine semigroup a
+# uses [GSOSN]
+###########################################################################
+DeclareGlobalFunction("HomogeneousCatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+
+###############################################################################
+#F MonotoneCatenaryDegreeOfAffineSemigroup
+# Computes the monotone catenary degree of the affine semigroup a
+# uses [PH]
+###########################################################################
+DeclareGlobalFunction("MonotoneCatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+
 #############################################################################
 ##
 #O  HilbertBasisOfSystemOfHomogeneousEquations
