@@ -1164,44 +1164,10 @@ InstallGlobalFunction(HomogeneousBettiElementsOfNumericalSemigroup,function( s )
     
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     ed:=Length(msg);
-    if NumSgpsCanUseSI or NumSgpsCanUseSingular or NumSgpsCanUse4ti2 then
-        msg:=List(msg, m->[1,m]);
-        msg:=Concatenation([[1,0]],msg);
-        return BettiElementsOfAffineSemigroup(
-                       AffineSemigroup(msg));      
-    fi;
+    msg:=List(msg, m->[1,m]);
+    msg:=Concatenation([[1,0]],msg);
+    return BettiElementsOfAffineSemigroup(AffineSemigroup(msg));      
     
-    mp:=MinimalPresentationOfNumericalSemigroup(s);
-    p := [];
-	# list of exponents to monomial	
-	monomial:=function(l)
-		local i;
-		pol:=1;
-		for i in [1..ed] do
-			pol:=pol*Indeterminate(Rationals,i)^l[i];
-		od;
-		return pol;
-	end;
-
-    for rel in mp do
-        Add( p, monomial(rel[1])-monomial(rel[2])); 
-    od;
-
-    rgb := ReducedGroebnerBasis( p, MonomialGrevlexOrdering() );
-    ## the homogenization of this is a system of genetators of the ideal of S^h
-
-	 ##computes the s^h degree of a pol in the semigroup ideal 
-    sdegree:=function(r) 
-		local mon;
-		mon:=LeadingMonomialOfPolynomial(r,MonomialGrlexOrdering() );
-		return [Sum(List([1..ed],i->DegreeIndeterminate(mon,i))),Sum(List([1..ed],i-> msg[i]*DegreeIndeterminate(mon,i)))];
-    end;
-
-    candidates:=List(rgb, g-> sdegree(g));    
-
-    candidates:=Filtered(candidates, x-> Length(RClassesOfSetOfFactorizations(
-		FactorizationsInHomogenizationOfNumericalSemigroup(x,s)))>1);
-    return Set(candidates);
 end);
 
 ####################################################################
