@@ -58,17 +58,21 @@ DeclareGlobalFunction("ContejeanDevieAlgorithmForInequalities");
 
 
 ###############################################################################
-#O FactorizationsVectorWRTList
+#F FactorizationsVectorWRTList
 #
 # Computes the set of factorizations of v in terms of the elements of ls 
 # That is, a Hilbert basis for ls*X=v
-# While using normaliz:
+# While using normaliz or 4ti2:
 # If ls contains vectors that generate a nonreduced monoid, then it 
 # deprecates the infinite part of the solutions, or in other words, it
 # returns only the minimal solutions of the above system of equations
 # If not using nomaliz: then the above can cause an infinite loop
 ########################################################################
-DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
+DeclareGlobalFunction("FactorizationsVectorWRTList");
+DeclareGlobalFunction("FactorizationsVectorWRTList_gap");
+DeclareGlobalFunction("FactorizationsVectorWRTList_4ti2");
+DeclareGlobalFunction("FactorizationsVectorWRTList_Normaliz");
+
 
 ###############################################################################
 #O BettiElementsOfAffineSemigroup
@@ -77,17 +81,22 @@ DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
 DeclareOperation("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
 
 ############################################################
-#O GeneratorsOfKernelCongruence 
+#F GeneratorsOfKernelCongruence 
 # computes a set of generators of the kernel congruence 
 # of the monoid morphism associated to the matrix m 
 ############################################################
-DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
+DeclareGlobalFunction("GeneratorsOfKernelCongruence");
+DeclareGlobalFunction("GeneratorsOfKernelCongruence_4ti2");
+DeclareGlobalFunction("GeneratorsOfKernelCongruence_Singular");
+
 
 ###############################################################################
 #O MinimalPresentationOfAffineSemigroup
 # Computes a minimal presentation of the affine semigroup a
 ###########################################################################
 DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
+
+DeclareGlobalFunction("MinimalPresentationOfAffineSemigroup_Singular");
 
 #############################################################################
 ##
@@ -128,7 +137,7 @@ DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
 
 #############################################################################
 ##
-#O  HilbertBasisOfSystemOfHomogeneousEquations
+#F  HilbertBasisOfSystemOfHomogeneousEquations
 #
 # Computes the Hilbert basis of the system A X=0 mod md, where the rows
 # of A are the elements of ls.
@@ -136,16 +145,20 @@ DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
 # the lengths of the elements of ls, then the rest of equations are considered
 # to be homogeneous linear Diophantine equations
 ##########################################################################
-DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsMatrix,IsHomogeneousList]);
+DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations");
+DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations_4ti2");
+DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations_Normaliz");
 
 #############################################################################
 ##
-#O  HilbertBasisOfSystemOfHomogeneousInequalities
+#F  HilbertBasisOfSystemOfHomogeneousInequalities
 #
 # Computes the Hilbert basis of the system ls*X>=0 over the nonnegative 
 # integers
 ##########################################################################
-DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsMatrix]);
+DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities");
+DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities_4ti2");
+DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities_Normaliz");
 
 ###############################################################################
 ##
@@ -178,11 +191,14 @@ DeclareGlobalFunction("LawrenceLiftingOfAffineSemigroup");
 
 ###############################################################################
 ##
-#F PrimitiveElementsOfAffineSemigroup_Normaliz
-# An implementation of PrimitiveElementsOfAffineSemigroup using 
-# Normaliz
+#F PrimitiveElementsOfAffineSemigroup
+# An implementation of PrimitiveElementsOfAffineSemigroup
 #####################################################################
-DeclareOperation("PrimitiveElementsOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup");
+DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_gap");
+DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_4ti2");
+DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_Normaliz");
+DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_Singular");
 
 ###############################################################################
 ##
