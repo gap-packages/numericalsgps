@@ -1,4 +1,5 @@
 LoadPackage("singular");
+#SetInfoLevel(InfoNumSgps,2);
 
 sing_exec:=`sing_exec;
 sing_exec_options:=`sing_exec_options;
@@ -285,64 +286,8 @@ end);
 # the lengths of the elements of ls, then the rest of equations are considered
 # to be homogeneous linear Diophantine equations
 ##########################################################################
-InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousEquations, function(ls,md)
-    local tasks, which, ncoord, ncong, nequ;
-    
-    if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
-        Error("The arguments must be homogeneous lists.");
-    fi;
-    
-    if not(ForAll(ls,IsListOfIntegersNS)) then 
-        Error("The first argument must be a list of lists of integers.");
-    fi;
-    
-    ncong:=Length(md);
-    
-    if ncong>0 and not(IsListOfIntegersNS(md)) then 
-        Error("The second argument must be a lists of integers.");
-    fi;
-    
-    if not(ForAll(md,x->x>0)) then
-        Error("The second argument must be a list of positive integers");
-    fi;
-        
-    nequ:=Length(ls);
-    
-    if nequ=0 then
-        Error("No equations");
-    fi;
-    
-    ncoord:=Length(ls[1]);
-    
-    if ncoord=0 then
-        return [];
-    fi;
-    
-    if ncong>0 and not(IsListOfIntegersNS(md)) then
-        Error("The second argument must be either an empty list or a list of integers");
-    fi;
-    
-    if ncong>nequ then
-        Error("More mudulus than equations");
-    fi;
-    
-    
-    tasks:=[DelayTask(HilbertBasisOfSystemOfHomogeneousEquations_4ti2,ls,md),
-            DelayTask(HilbertBasisOfSystemOfHomogeneousEquations_Normaliz,ls,md)];
-    which:=WaitAnyTask(tasks);
-    if which=1 then
-        Info(InfoNumSgps,2,"4ti2 used");
-    fi;
-    
-    if which=2 then
-        Info(InfoNumSgps,2,"Normaliz used");
-    fi;
-    
-    return TaskResult(tasks[which]);
-    
-end);
 
-# the same with NormalizInterface
+# NormalizInterface implementation
 
 InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousEquations_Normaliz, function(ls,md)
     local matcong, cone, ncong, ncoord, nequ, matfree;
@@ -486,31 +431,6 @@ end);
 # ls is a matrix of integers. It computes the set minimal nonzero nonnegative integer solutions
 # of ls*x>=0
 #
-InstallGlobalFunction(HilbertBasisOfSystemOfHomogeneousInequalities, function(ls)
-    local tasks, which;
-    
-    
-    if not(IsRectangularTable(ls)) then 
-        Error("The argument must be a matrix.");
-    fi;
-    if not(IsInt(ls[1][1])) then
-        Error("The matrix must be of integers.");
-    fi;
-    
-    tasks:=[DelayTask(HilbertBasisOfSystemOfHomogeneousInequalities_4ti2,ls),
-            DelayTask(HilbertBasisOfSystemOfHomogeneousInequalities_Normaliz,ls)];
-    which:=WaitAnyTask(tasks);
-    if which=1 then
-        Info(InfoNumSgps,2,"4ti2 used");
-    fi;
-    
-    if which=2 then
-        Info(InfoNumSgps,2,"Normaliz used");
-    fi;
-    
-    return TaskResult(tasks[which]);
-    
-end);
 
 # 4ti2 implementation
 
@@ -574,63 +494,63 @@ end);
 # If ls contains vectors that generate a nonreduced monoid, then it 
 # may enter in an infinite loop
 ########################################################################
-InstallGlobalFunction(FactorizationsVectorWRTList, function(v,ls)
-    local mat, len, which, tasks, result, i;
+# InstallGlobalFunction(FactorizationsVectorWRTList, function(v,ls)
+#     local mat, len, which, tasks, result, i;
     
-    mat:=TransposedMat(Concatenation(ls,[-v]));
+#     mat:=TransposedMat(Concatenation(ls,[-v]));
         
-    if not(IsListOfIntegersNS(v)) then
-        Error("The first argument must be a list of integers.");
-    fi;
+#     if not(IsListOfIntegersNS(v)) then
+#         Error("The first argument must be a list of integers.");
+#     fi;
     
-    if not(ForAll(ls,IsListOfIntegersNS)) then 
-        Error("The second argument must be a list of lists of integers.");
-    fi;
+#     if not(ForAll(ls,IsListOfIntegersNS)) then 
+#         Error("The second argument must be a list of lists of integers.");
+#     fi;
     
-    if not(IsRectangularTable(mat)) then
-        Error("The list in the second argument must have the same length as the lists in the first argument.");
-    fi;
+#     if not(IsRectangularTable(mat)) then
+#         Error("The list in the second argument must have the same length as the lists in the first argument.");
+#     fi;
     
-    len:=Length(ls);
-    if ls=[] then
-        return [];
-    fi;
-    if ForAll(v,x->x=0) then 
-        return [List([1..len],_->0)];
-    fi;
-    if ForAny(v,x->x<0) then 
-        return [];
-    fi;
+#     len:=Length(ls);
+#     if ls=[] then
+#         return [];
+#     fi;
+#     if ForAll(v,x->x=0) then 
+#         return [List([1..len],_->0)];
+#     fi;
+#     if ForAny(v,x->x<0) then 
+#         return [];
+#     fi;
     
-    tasks:=[DelayTask(FactorizationsVectorWRTList_gap,v,ls),
-            DelayTask(FactorizationsVectorWRTList_4ti2,v,ls),
-            DelayTask(FactorizationsVectorWRTList_Normaliz,v,ls)];
+#     tasks:=[DelayTask(FactorizationsVectorWRTList_gap,v,ls),
+#             DelayTask(FactorizationsVectorWRTList_4ti2,v,ls),
+#             DelayTask(FactorizationsVectorWRTList_Normaliz,v,ls)];
     
-    which:=WaitAnyTask(tasks);
-    if which=1 then
-        Info(InfoNumSgps,2,"gap used to factor", v);
-    fi;
+#     which:=WaitAnyTask(tasks);
+#     if which=1 then
+#         Info(InfoNumSgps,2,"gap used to factor", v);
+#     fi;
     
-    if which=2 then
-        Info(InfoNumSgps,2,"4ti2 used to factor", v);
-    fi;
+#     if which=2 then
+#         Info(InfoNumSgps,2,"4ti2 used to factor", v);
+#     fi;
     
-    if which=3 then
-        Info(InfoNumSgps,2,"Normaliz used to factor", v);
-    fi;
+#     if which=3 then
+#         Info(InfoNumSgps,2,"Normaliz used to factor", v);
+#     fi;
     
-    result:= TaskResult(tasks[which]);
+#     result:= TaskResult(tasks[which]);
       
-    for i in [1..3] do 
-        if i<> which then 
-            CancelTask(tasks[i]);
-        fi;
-    od;
+#     for i in [1..3] do 
+#         if i<> which then 
+#             CancelTask(tasks[i]);
+#         fi;
+#     od;
      
     
-    return result;
+#     return result;
     
-end);
+# end);
 
     
 # basic implementation    
@@ -751,37 +671,6 @@ end);
 # of the monoid morphism associated to the matrix m with 
 # nonnegative integer coefficients
 ############################################################
-InstallGlobalFunction(GeneratorsOfKernelCongruence, function( m )
-    local tasks, which, result, i;
-    
-    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
-        Error("The argument must be a matrix of nonnegative integers.");
-    fi;
-    
-    tasks:=[DelayTask(GeneratorsOfKernelCongruence_4ti2,m),
-            DelayTask(GeneratorsOfKernelCongruence_Singular,m)];
-    
-    which:=WaitAnyTask(tasks);
-    if which=1 then
-        Info(InfoNumSgps,2,"4ti2 used for kernel");
-    fi;
-    
-    if which=2 then
-        Info(InfoNumSgps,2,"Singular used for kernel");
-    fi;
-    
-    
-    result:= TaskResult(tasks[which]);
-      
-    for i in [1..2] do 
-        if i<> which then 
-            CancelTask(tasks[i]);
-        fi;
-    od;     
-    
-    return result;
-    
-end);
 
 # 4ti2 implementation
 
@@ -798,6 +687,8 @@ InstallGlobalFunction(GeneratorsOfKernelCongruence_4ti2, function(m)
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
         Error("The argument must be a matrix of nonnegative integers.");
     fi;
+    
+    OnTaskCancellation(ReturnFail);
 
     gr:=GroebnerBasis4ti2(TransposedMat(m));
     Info(InfoNumSgps,2,"4ti output:",gr);
@@ -823,8 +714,8 @@ InstallGlobalFunction(GeneratorsOfKernelCongruence_Singular, function(m)
     
     bintopair:=function(pp)
         local m1,m2, d1, d2, p;
-        p:=pp/LeadingCoefficientOfPolynomial(pp,MonomialLexOrdering());
-        m1:=LeadingMonomialOfPolynomial(p, MonomialLexOrdering());
+        p:=pp/LeadingCoefficient(pp);
+        m1:=LeadingMonomialOfPolynomial(p, MonomialGrlexOrdering());
         m2:=m1-p;
         d1:=List([1..ed], i->DegreeIndeterminate(m1,i));; 
         d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
@@ -863,30 +754,10 @@ end);
 ############################################################
 # computes a minimal presentation of a 
 ############################################################
-InstallMethod(MinimalPresentationOfAffineSemigroup,
-	"Computes the minimal presentation of an affine semigroup",
-	[IsAffineSemigroup],1,
-	function( a )
+InstallGlobalFunction(MinimalPresentationOfAffineSemigroup,function( a )
 	
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-          R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen, 
-          pres,c, rclass;
+    local msg, ed, dim, rel, pres, rclass, exps, c, candidates;
     
-    ##computes the s degree of a monomial in the semigroup ideal 
-    sdegree:=function(m) 
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
-    
-    bintopair:=function(p)
-        local m1,m2, d1, d2;
-        m1:=LeadingMonomialOfPolynomial(p, MonomialLexOrdering());
-        m2:=m1-p;
-        d1:=List([1..ed], i->DegreeIndeterminate(m1,i));; 
-        d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
-        return [d1,d2];
-    end;
     
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup.");
@@ -897,18 +768,9 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
     if ed=0 then 
         return [];
     fi;
-    zero:=List([1..ed],_->0);
     dim:=Length(msg[1]);
-    vars:=List([1..ed+dim],i->X(Rationals,i));
-    R:=PolynomialRing(Rationals,vars); 
-    p:=List([1..ed], i->X(Rationals,i)-
-            Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
-    rgb:=ReducedGroebnerBasis( p, 
-                 EliminationOrdering(List([1..dim],i->X(Rationals,i+ed))));
-    rgb:=Filtered(rgb, 
-                 q->ForAll([1..dim], i->DegreeIndeterminate(q,i+ed)=0));
-    candidates:=Set(rgb,q->bintopair(q)[1]);
-    candidates:=Set(candidates,c->c*msg);
+    rel:=GeneratorsOfKernelCongruence(msg);
+    candidates:=Set(rel,q->q[1]*msg);
     Info(InfoNumSgps,2, "Candidates to Betti elements",candidates);
     pres:=[];
     for c in candidates do
@@ -922,69 +784,11 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
     return pres;
 end);
 
-######################################################################
-# Computes a minimal presentation of the affine semigroup a 
-######################################################################
-InstallGlobalFunction(MinimalPresentationOfAffineSemigroup_Singular, function(a)
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-		R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
-
-    
-    Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
-
-    ##computes the s degree of a monomial in the semigroup ideal 
-    sdegree:=function(m) 
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
-    
-    bintopair:=function(pp)
-        local m1,m2, d1, d2, p;
-        p:=pp/LeadingCoefficientOfPolynomial(pp,MonomialLexOrdering());
-        m1:=LeadingMonomialOfPolynomial(p, MonomialLexOrdering());
-        m2:=m1-p;
-        d1:=List([1..ed], i->DegreeIndeterminate(m1,i));; 
-        d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
-        return [d1,d2];
-    end;
-    
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup.");
-    fi;
-    
-    msg:=GeneratorsOfAffineSemigroup(a); #for now we do not check minimality of the generators
-    ed:=Length(msg);
-    if ed=0 then 
-        return [];
-    fi;
-    zero:=List([1..ed],_->0);
-    dim:=Length(msg[1]);
-    vars:=List([1..ed+dim],i->X(Rationals,i));
-    R:=PolynomialRing(Rationals,vars); 
-    SetTermOrdering(R,"dp");
-    SingularSetBaseRing(R);
-    p:=List([1..ed], i->X(Rationals,i)-Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
-    id:=Ideal(R,p);
-    ie:=SingularInterface("eliminate",[id,Product(List([1..dim], j->X(Rationals,j+ed)))],"ideal");
-    gens:=GeneratorsOfIdeal(ie);
-    vars:=vars{[1..ed]};
-    R:=PolynomialRing(Rationals,vars);
-    SetTermOrdering(R, ["wp",List(msg, m->Sum(m))] );
-    SingularSetBaseRing(R);
-    ie:=Ideal(R,gens);
-    mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
-    return Set([1..Length(mingen)],i->bintopair(mingen[i]));
-end);
-
 
 ###################################################################
 # Betti elements of the affine semigroup a
 ###################################################################
-InstallMethod(BettiElementsOfAffineSemigroup,
-	"Computes the Betti elements of an affine semigroup",
-	[IsAffineSemigroup],1,
-	function(a)
+InstallGlobalFunction(BettiElementsOfAffineSemigroup, function(a)
     local msg, pr;
     
     if not(IsAffineSemigroup(a)) then
@@ -1064,9 +868,8 @@ end);
 ######################################################################
 # Computes the catenary degree of the affine semigroup a 
 ######################################################################
-InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
-        function(a)
-    local betti, b, max, c, ls;
+InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup, function(a)
+    local betti, cats, tasks, ls, lfac;
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup");
     fi;
@@ -1076,121 +879,147 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
     Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
     betti:=BettiElementsOfAffineSemigroup(a);
     Info(InfoNumSgps,2,"The Betti elements are ",betti);
-    max:=0;
-    for b in betti do
-        Info(InfoNumSgps,2,"Computing the catenary degree of ",b);
-        c:=CatenaryDegreeOfSetOfFactorizations(
-                   FactorizationsVectorWRTList(b,ls));
-        Info(InfoNumSgps,2,"which equals ",c);
-        if c>max then max:=c; fi;	
-    od;
-    return max;
+    
+    tasks:=List(betti,g->RunTask(x->(FactorizationsVectorWRTList(x,ls)),g));
+    lfac:=List(tasks,TaskResult);
+    tasks:=List(lfac,l->RunTask(x->(CatenaryDegreeOfSetOfFactorizations(x)),l));
+    cats:=Set(tasks,TaskResult);
+    
+    # Sequential version
+    # lfac:=List(betti, b->FactorizationsVectorWRTList(b,ls));
+    # cats:=Set(lfac, l->CatenaryDegreeOfSetOfFactorizations(l));
+    return Maximum(cats);
+    
+   
+end);
+
+
+InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup_seq, function(a)
+    local betti, cats, tasks, ls, lfac;
+    if not(IsAffineSemigroup(a)) then
+        Error("The argument must be an affine semigroup");
+    fi;
+    
+    ls:=GeneratorsOfAffineSemigroup(a);
+
+    Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
+    betti:=BettiElementsOfAffineSemigroup(a);
+    Info(InfoNumSgps,2,"The Betti elements are ",betti);
+    
+    
+    #Sequential version
+    lfac:=List(betti, b->FactorizationsVectorWRTList(b,ls));
+    cats:=Set(lfac, l->CatenaryDegreeOfSetOfFactorizations(l));
+    return Maximum(cats);
+    
+   
 end);
 
 ###############################################################################
 ##
-#O OmegaPrimalityOfElementInAffineSemigroup
+#F OmegaPrimalityOfElementInAffineSemigroup
 #
 # Computes the omega-primality of v in the monoid a
 ###########################################################################
-InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
-        "Computes the omega-primality of x in the monoid s",
-        [IsHomogeneousList,IsAffineSemigroup],1,
-        function(x,s)
-    
-    local i, j, p, rel, rgb, msg, pol, ed,  degree, monomial,  facts, fact, mp,id, reduce, nonnegative,
-          mu1,A,B,C, lt, tl, exp, new;
-    
-    msg:=GeneratorsOfAffineSemigroup(s);
-    ed:=Length(msg);
-    mp:=MinimalPresentationOfAffineSemigroup(s);
-    p := [];
-    # list of exponents to monomial	
-    monomial:=function(l)
-        local i;
-        pol:=1;
-        for i in [1..ed] do
-            pol:=pol*Indeterminate(Rationals,i)^l[i];
-        od;
-        return pol;
-    end;
-    ## monomial to exponents
-    exp:=function(mon)
-        return List([1..ed],i-> DegreeIndeterminate(mon,i));		
-    end;
-    ##computes the degree of a monomial 
-    degree:=function(mon) 
-        return Sum(exp(mon));
-    end;
-    ##nonnegative
-    nonnegative:=function(l)
-        return ForAll(l, x-> x>=0);
-    end;
-    
-    for rel in mp do
-        Add( p, monomial(rel[1])-monomial(rel[2])); 
-    od;
 
-    facts:=FactorizationsVectorWRTList(x,msg);
-    if facts=[] then
-        return 0;
+#Normaliz implementation
+
+InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup,
+        function(v,a)
+    
+    local mat, cone, n, hom, par, tot, le, ls, one;
+
+    le:=function(a,b)  #ordinary partial order
+    	return ForAll(b-a,x-> x>=0);
+    end;
+    
+    if not(IsAffineSemigroup(a)) then
+        Error("The second argument must be an affine semigroup");
     fi;
-    Info(InfoNumSgps,2,"Factorizations of the element :", facts);
-    fact:=facts[Length(facts)];
-    id:=IdentityMat(ed);
+        
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
     
-    for i in [1..ed] do
-        Add(p,monomial(fact+id[i])-monomial(fact));
-    od;	
+    if not(ForAll(v, x-> x>=0)) then
+        Error("The first argument must be a list of on nonnegative integers.");		
+    fi;
     
-    # for j in [2..Length(facts)] do
-    #     for i in [1..ed] do
-    #         Add(p,monomial(facts[j]+id[i])-monomial(facts[j]));
-    #     od;
-    # od;
+    ls:=GeneratorsOfAffineSemigroup(a);
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
+
+    if not(IsHomogeneousList(mat)) then
+        Error("The first argument has not the dimension of the second.");
+    fi;
+
+    if (HasEquationsAS(a)) then 
+        Info(InfoNumSgps,2,"Using that the semigroup is full.");
     
-    Info(InfoNumSgps,2,"Computing a Groebner basis");
-    #a canonical system of generators of sigma_I
-    rgb := ReducedGroebnerBasis( p, MonomialGrevlexOrdering() );
+        one:=[List([1..n],_->1)];
+        mat:=TransposedMat(Concatenation(ls,[-v]));
+        cone:=NmzCone(["inhom_inequalities",mat,"signs",one]);
+        NmzCompute(cone,"DualMode"); 	
+        par:=Set(NmzModuleGenerators(cone), f->f{[1..n]});
+
+        Info(InfoNumSgps,2,"Minimals of v+ls=",par);
+        return Maximum(Set(par, Sum)); 
+    fi;
     
+    cone:=NmzCone(["inhom_equations",mat]);
+    NmzCompute(cone,"DualMode"); 	
+    par:=Set(NmzModuleGenerators(cone), f->f{[1..n]});
+    tot:=Filtered(par, f-> Filtered(par, g-> le(g,f))=[f]);
+    Info(InfoNumSgps,2,"Minimals of v+ls =",tot);
+    if tot=[] then 
+        return 0;      
+    fi;
     
-    #normal form wrt rgb
-    reduce:=function(r)
-        return PolynomialReducedRemainder(r,rgb, MonomialGrevlexOrdering());
+    return Maximum(Set(tot, Sum));
+    
+end);
+
+# 4ti2 implementation
+
+InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup_4ti2, function(v,a)
+    local  ls, n, mat,extfact,par,tot,le;
+    
+    le:=function(a,b)  #ordinary partial order
+    	return ForAll(b-a,x-> x>=0);
     end;
     
-    #leading term 
-    lt:=function(r)
-        return LeadingMonomialOfPolynomial(r,MonomialGrevlexOrdering());
-    end;
+    if not(IsAffineSemigroup(a)) then
+        Error("The second argument must be an affine semigroup");
+    fi;
+        
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
     
-    #tail
-    tl:=function(r)
-        return lt(r)-r;
-    end;
+    if not(ForAll(v, x-> x>=0)) then
+        Error("The first argument must be a list of on nonnegative integers.");		
+    fi;
+	
+    ls:=GeneratorsOfAffineSemigroup(a);
+    n:=Length(ls);
+    mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
+
+    if not(IsHomogeneousList(mat)) then
+        Error("The first argument has not the dimension of the second.");
+    fi;
     
-    mu1:=reduce(monomial(fact));
-    #A:=Set([mu1]);
-    A:=Union(Set([mu1]),Set(facts,monomial));
+    extfact:=FactorizationsVectorWRTList(v,Concatenation(ls,-ls));
     
-    Info(InfoNumSgps,2,"Computing minimal elements of the ideal.");
-    while true do
-        B:=[];
-        for i in A do
-            for rel in rgb do	
-                new:=Lcm(i,tl(rel))/tl(rel)*lt(rel);
-                if First(A, a->nonnegative(exp(new)-exp(a)))=fail then 
-                    AddSet(B,new);
-                    Info(InfoNumSgps,2,"New possible minimal element: ",exp(new));
-                fi;
-            od;
-        od;
-        if IsSubset(A,B) then 
-            A:=Filtered(A, i->First(Difference(A,[i]), j-> nonnegative(exp(i)-exp(j)))=fail); 
-            return Maximum(Set(Set(A,exp),Sum));
-        fi;
-        A:=Union(A,B);        
-    od;
+    par:=Set(extfact, f->f{[1..n]});
+    tot:=Filtered(par, f-> Filtered(par, g-> le(g,f))=[f]);
+    Info(InfoNumSgps,2,"Minimals of v+ls =",tot);
+    if tot=[] then 
+        return 0;      
+    fi;
+    
+    return Maximum(Set(tot, Sum));
+
+    
 end);
 
 ######################################################################
@@ -1198,15 +1027,19 @@ end);
 ######################################################################
 InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
         function(a)
-    local ls;
+    local ls, omegas, tasks;
     
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup");
     fi;
     
     ls:=GeneratorsOfAffineSemigroup(a);
-    return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
+    tasks:=List(ls, g->RunTask(x->OmegaPrimalityOfElementInAffineSemigroup(x,a),g));
+    omegas:=Set(tasks,TaskResult);
+    return Maximum(omegas);
+    
 end);
+
 
 #####################################################################
 # Computes the elasticity of the affine semigroup a
@@ -1303,36 +1136,10 @@ InstallGlobalFunction(LawrenceLiftingOfAffineSemigroup,function(a)
 end);
 
 #####################################################
-# primitiveElements with Lawrence lifting (basic setting)
+# primitiveElements with Lawrence lifting 
 #####################################################
-InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup,function(a)
-          local tasks, which, result, i;
-          tasks:=[DelayTask(PrimitiveElementsOfAffineSemigroup_4ti2,a),
-                  #DelayTask(PrimitiveElementsOfAffineSemigroup_gap,a),
-                  #DelayTask(PrimitiveElementsOfAffineSemigroup_Singular,a),
-                  DelayTask(PrimitiveElementsOfAffineSemigroup_Normaliz,a)];
-          which:=WaitAnyTask(tasks);
-          if which=1 then
-              Info(InfoNumSgps,2,"4ti2 used");
-          fi;
-          
-          if which=2 then
-              Info(InfoNumSgps,2,"Singular used");
-          fi;
-          
-          if which=3 then
-              Info(InfoNumSgps,2,"Normaliz used");
-          fi;
-          result:= TaskResult(tasks[which]);
-          for i in [1..2] do 
-              if i<> which then 
-                  CancelTask(tasks[i]);
-              fi;
-          od;
-          
-          return result;
-          
-end);
+
+# (basic setting)
 
 InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup_gap,
         # "Computes the set of primitive elements of an affine semigroup",
@@ -1352,7 +1159,9 @@ InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup_gap,
     prlft:=MinimalPresentationOfAffineSemigroup(lft);
     return Set(prlft, p->(p[1]{[ed+1..ed+ed]})*msg);
 end);
+
 # same with 4ti2gap, but now with graver basis
+
 InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup_4ti2,
         # "Computes the set of primitive elements of an affine semigroup",
         # [IsAffineSemigroup],4, 
@@ -1362,7 +1171,10 @@ InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup_4ti2,
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup.");
     fi;
-
+    
+    OnTaskCancellationReturn(true);
+    
+      
     ls:=GeneratorsOfAffineSemigroup(a);
     
     Info(InfoNumSgps,2,"Using 4ti2gap for Graver.");
@@ -1389,7 +1201,9 @@ InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup_Normaliz,
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup");
     fi;
-
+    
+    OnTaskCancellationReturn(a);   
+      
     ls:=GeneratorsOfAffineSemigroup(a);
     
     Info(InfoNumSgps,2,"Using NormalizInterface for primitive elements.");
@@ -1417,18 +1231,16 @@ InstallGlobalFunction(PrimitiveElementsOfAffineSemigroup_Singular, function(a)
     ed:=Length(msg);
     dim:=Length(msg[1]);
     lft:=LawrenceLiftingOfAffineSemigroup(a);
-    prlft:=MinimalPresentationOfAffineSemigroup_Singular(lft);
+    prlft:=MinimalPresentationOfAffineSemigroup(lft);
     return Set(prlft, p->(p[1]{[ed+1..ed+ed]})*msg);
 end);
-    
-
 
 
 #####################################################################
 # Computes the tame degree of the affine semigroup a
 #####################################################################
 InstallGlobalFunction(TameDegreeOfAffineSemigroup,function(a)
-  local prim, tams, p, max, ls;
+  local prim, tams, ls, tasks;
 
   if not(IsAffineSemigroup(a)) then
     Error("The argument must be an affine semigroup");
@@ -1439,23 +1251,18 @@ InstallGlobalFunction(TameDegreeOfAffineSemigroup,function(a)
   Info(InfoNumSgps,2,"Computing primitive elements of ", ls);	
   prim:=PrimitiveElementsOfAffineSemigroup(a);
   Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
-  max:=0;
-  for p in prim do
-    Info(InfoNumSgps,2,"Computing the tame degree of ",p);
-    tams:=TameDegreeOfSetOfFactorizations(
-                  FactorizationsVectorWRTList(p,ls));
-    Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
-    if tams>max then
-      max:=tams;
-    fi;
-  od;    
-  return max;
+  
+  tasks:=List(prim, g->RunTask(x->TameDegreeOfSetOfFactorizations(
+                  FactorizationsVectorWRTList(x,ls)),g));
+  tams:=Set(tasks,TaskResult);
+  return Maximum(tams);
+  
 end);
 
   
   
 ###############################################################################
-## 
+## ramdom stuff
 ###############################################################################
 ###############################################################################
 ##
