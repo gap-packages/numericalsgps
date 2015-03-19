@@ -52,10 +52,6 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 #DeclareGlobalFunction("IsFullAffineSemigroup");
 
 
-###################### ContejeanDevieAlgorithm
-DeclareGlobalFunction("ContejeanDevieAlgorithmForEquations");
-DeclareGlobalFunction("ContejeanDevieAlgorithmForInequalities");
-
 
 ###############################################################################
 #F FactorizationsVectorWRTList
@@ -68,35 +64,33 @@ DeclareGlobalFunction("ContejeanDevieAlgorithmForInequalities");
 # returns only the minimal solutions of the above system of equations
 # If not using nomaliz: then the above can cause an infinite loop
 ########################################################################
-DeclareGlobalFunction("FactorizationsVectorWRTList");
 DeclareGlobalFunction("FactorizationsVectorWRTList_gap");
 DeclareGlobalFunction("FactorizationsVectorWRTList_4ti2");
 DeclareGlobalFunction("FactorizationsVectorWRTList_Normaliz");
-
+DeclareSynonym("FactorizationsVectorWRTList",FactorizationsVectorWRTList_4ti2);
 
 ###############################################################################
-#O BettiElementsOfAffineSemigroup
+#F BettiElementsOfAffineSemigroup
 # Computes the Betti elements of the affine semigroup a
 ###########################################################################
-DeclareOperation("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
 
 ############################################################
 #F GeneratorsOfKernelCongruence 
 # computes a set of generators of the kernel congruence 
 # of the monoid morphism associated to the matrix m 
 ############################################################
-DeclareGlobalFunction("GeneratorsOfKernelCongruence");
 DeclareGlobalFunction("GeneratorsOfKernelCongruence_4ti2");
 DeclareGlobalFunction("GeneratorsOfKernelCongruence_Singular");
+DeclareSynonym("GeneratorsOfKernelCongruence",GeneratorsOfKernelCongruence_4ti2);
 
 
 ###############################################################################
-#O MinimalPresentationOfAffineSemigroup
+#F MinimalPresentationOfAffineSemigroup
 # Computes a minimal presentation of the affine semigroup a
 ###########################################################################
-DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("MinimalPresentationOfAffineSemigroup");
 
-DeclareGlobalFunction("MinimalPresentationOfAffineSemigroup_Singular");
 
 #############################################################################
 ##
@@ -133,7 +127,8 @@ DeclareGlobalFunction("ShadedSetOfElementInAffineSemigroup");
 #F CatenaryDegreeOfAffineSemigroup
 # Computes the catenary degree of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup");
+DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup_seq");
 
 #############################################################################
 ##
@@ -145,9 +140,9 @@ DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
 # the lengths of the elements of ls, then the rest of equations are considered
 # to be homogeneous linear Diophantine equations
 ##########################################################################
-DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations");
 DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations_4ti2");
 DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations_Normaliz");
+DeclareSynonym("HilbertBasisOfSystemOfHomogeneousEquations",HilbertBasisOfSystemOfHomogeneousEquations_Normaliz);
 
 #############################################################################
 ##
@@ -156,17 +151,20 @@ DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousEquations_Normaliz");
 # Computes the Hilbert basis of the system ls*X>=0 over the nonnegative 
 # integers
 ##########################################################################
-DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities");
 DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities_4ti2");
 DeclareGlobalFunction("HilbertBasisOfSystemOfHomogeneousInequalities_Normaliz");
+DeclareSynonym("HilbertBasisOfSystemOfHomogeneousInequalities", HilbertBasisOfSystemOfHomogeneousInequalities_Normaliz);
 
 ###############################################################################
 ##
-#O OmegaPrimalityOfElementInAffineSemigroup
+#F OmegaPrimalityOfElementInAffineSemigroup
 #
 # Computes the omega-primality of v in the monoid a
 ###########################################################################
-DeclareOperation("OmegaPrimalityOfElementInAffineSemigroup",[IsHomogeneousList,IsAffineSemigroup]);
+DeclareGlobalFunction("OmegaPrimalityOfElementInAffineSemigroup_Normaliz");
+DeclareGlobalFunction("OmegaPrimalityOfElementInAffineSemigroup_4ti2");
+DeclareSynonym("OmegaPrimalityOfElementInAffineSemigroup", OmegaPrimalityOfElementInAffineSemigroup_Normaliz);
+
 
 ###############################################################################
 ##
@@ -191,14 +189,14 @@ DeclareGlobalFunction("LawrenceLiftingOfAffineSemigroup");
 
 ###############################################################################
 ##
-#F PrimitiveElementsOfAffineSemigroup
+#O PrimitiveElementsOfAffineSemigroup
 # An implementation of PrimitiveElementsOfAffineSemigroup
 #####################################################################
-DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup");
 DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_gap");
 DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_4ti2");
 DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_Normaliz");
 DeclareGlobalFunction("PrimitiveElementsOfAffineSemigroup_Singular");
+DeclareSynonym("PrimitiveElementsOfAffineSemigroup", PrimitiveElementsOfAffineSemigroup_4ti2);
 
 ###############################################################################
 ##
@@ -224,38 +222,3 @@ DeclareGlobalFunction("RandomAffineSemigroup");
 ###########################################################################
 DeclareGlobalFunction("RandomFullAffineSemigroup");
 
-
-##########################################################################
-##
-#F NumSgpsUseNormaliz
-#  Loads the package NormalizInterface and reads affine-extra-ni
-##########################################################################
-DeclareGlobalFunction("NumSgpsUseNormaliz");
-
-##########################################################################
-##
-#F NumSgpsUseSingular
-#  Loads the package singular and reads affine-extra-s
-##########################################################################
-DeclareGlobalFunction("NumSgpsUseSingular");
-
-##########################################################################
-##
-#F NumSgpsUseSingularInterface
-#  Loads the package SingularInterface and reads affine-extra-si
-##########################################################################
-DeclareGlobalFunction("NumSgpsUseSingularInterface");
-
-##########################################################################
-##
-#F NumSgpsUse4ti2
-#  Loads the package 4ti2Interface and reads affine-extra-4ti2
-##########################################################################
-DeclareGlobalFunction("NumSgpsUse4ti2");
-
-##########################################################################
-##
-#F NumSgpsUse4ti2gap
-#  Loads the package 4ti2Interface and reads affine-extra-4ti2gap
-##########################################################################
-DeclareGlobalFunction("NumSgpsUse4ti2gap");
