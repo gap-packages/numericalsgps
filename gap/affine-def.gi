@@ -52,23 +52,17 @@ InstallMethod(GeneratorsOfAffineSemigroup,
   local  basis, eq;
 
   if HasGeneratorsAS(S) then
-    return GeneratorsAS(S);  
+      return GeneratorsAS(S);  
   fi;
-  # REQUERIMENTS: NormalizInterface   
-  #if IsPackageMarkedForLoading("NormalizInterface","0.0") then
-  #if not TestPackageAvailability("NormalizInterface") = fail then
-  #  TryNextMethod();
-  #  
-  #fi;
   if HasEquationsAS(S) then
       eq:=EquationsAS(S);
       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
       SetGeneratorsAS(S,basis);
-    return basis;
+      return GeneratorsAS(S);  
   elif HasInequalitiesAS(S) then
-    basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
-    SetGeneratorsAS(S,basis);
-    return basis;
+      basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
+      SetGeneratorsAS(S,basis);
+      return GeneratorsAS(S);  
   fi;     
 end);
 #############################################################################
