@@ -684,12 +684,14 @@ InstallGlobalFunction(GeneratorsOfKernelCongruence_4ti2, function(m)
         return [d1,d2];
     end;
     
+    if not(IsRectangularTable(m)) then 
+        Error("The argument must be a matrix of nonnegative integers.");
+    fi;
+    
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
         Error("The argument must be a matrix of nonnegative integers.");
     fi;
     
-    OnTaskCancellation(ReturnFail);
-
     gr:=GroebnerBasis4ti2(TransposedMat(m));
     Info(InfoNumSgps,2,"4ti output:",gr);
     
@@ -924,7 +926,7 @@ end);
 
 #Normaliz implementation
 
-InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup,
+InstallGlobalFunction(OmegaPrimalityOfElementInAffineSemigroup_Normaliz,
         function(v,a)
     
     local mat, cone, n, hom, par, tot, le, ls, one;
