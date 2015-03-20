@@ -140,9 +140,9 @@ through a scholarship given by \emph{Centro de Matem{\a'a}tica da Universidade d
 S{\a'a}nchez-R. Navarro for many helpful discussions and for helping in the
 programming of preliminary versions of some functions, and also to C. O'Neill
 and A. Sammartano for their contributions (see Contributions Chapter). We are
-also in debt with S. Gutsche, M. Horm, H. Sch{\"o}nemann, C. S{\"o}eger for
-their fruitful advices concerning 4ti2Interface, SingularInterface, Singular,
-Normaliz and NormalizInterface. 
+also in debt with S. Gutsche, M. Horm, H. Sch{\"o}nemann, C. S{\"o}eger and M.
+Barakat for their fruitful advices concerning 4ti2Interface,
+SingularInterface, Singular, Normaliz, NormalizInterface and GradedModules. 
 
  
 
@@ -4135,7 +4135,7 @@ of degrees of $K[pols]$. If an integer \mbox{\texttt{\mdseries\slshape val}} is 
 \chapter{\textcolor{Chapter }{ Affine semigroups }}\logpage{[ 11, 0, 0 ]}
 \hyperdef{L}{X7D92A1997D098A00}{}
 {
-   The use of the packages \texttt{NormalizInterface} \cite{NmzInterface} (an interface to \texttt{Normalize} \cite{Normaliz}; or in its absence \texttt{4ti2Interface}\cite{4ti2Interface}, and interface to \texttt{4ti2}\cite{4ti2}), \texttt{SingularInterface} (an interface to \texttt{Singular} \cite{Singular}; or in its absence \texttt{Singular} \cite{Singularpackage}) is highly recomended for many of the functions presented in this chapter.
+   The use of the packages \texttt{NormalizInterface} \cite{NmzInterface} (an interface to \texttt{Normalize} \cite{Normaliz}; or in its absence \texttt{4ti2Interface}\cite{4ti2Interface}, and interface to \texttt{4ti2}\cite{4ti2}), \texttt{SingularInterface} (an interface to \texttt{Singular} \cite{Singular}; or in its absence \texttt{Singular} \cite{Singularpackage}); or in its absecnce \texttt{GradedModules} \cite{GradedModules} is highly recomended for many of the functions presented in this chapter.
 However, whenever possible a method not depending on these packages is also
 provided (though slower). The package tests if the user has downloaded any of
 the above packages, and if so puts \texttt{NumSgpsCanUsePackage} to true, where \texttt{Package} is any of the above. 
@@ -4212,6 +4212,21 @@ functions in this package.
 functions in this package. 
 
  To prevent incompatibilities, the package will not load if \texttt{singular} has been already loaded. }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumSgpsUseSingularGradedModules}}
+\logpage{[ 11, 1, 6 ]}\nobreak
+\hyperdef{L}{X7F7F2ED87E151582}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingularGradedModules({\mdseries\slshape })\index{NumSgpsUseSingularGradedModules@\texttt{NumSgpsUseSingularGradedModules}}
+\label{NumSgpsUseSingularGradedModules}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{GradedModules}. If the package is available, then it also loads methods implemented using
+functions in this package. 
+
+ It also creates a ring of rationals \texttt{NumSgpsRationals}. }
 
  }
 

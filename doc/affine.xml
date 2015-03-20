@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-The use of the packages <C>NormalizInterface</C> <Cite Key="NmzInterface"></Cite> (an interface to <C>Normalize</C> <Cite Key="Normaliz"></Cite>; or in its absence <C>4ti2Interface</C><Cite Key="4ti2Interface"></Cite>, and interface to <C>4ti2</C><Cite Key="4ti2"></Cite>), <C>SingularInterface</C> (an interface to <C>Singular</C> <Cite Key="Singular"></Cite>; or in its absence <C>Singular</C> <Cite Key="Singularpackage"></Cite>) is highly recomended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower). 
+The use of the packages <C>NormalizInterface</C> <Cite Key="NmzInterface"></Cite> (an interface to <C>Normalize</C> <Cite Key="Normaliz"></Cite>; or in its absence <C>4ti2Interface</C><Cite Key="4ti2Interface"></Cite>, and interface to <C>4ti2</C><Cite Key="4ti2"></Cite>), <C>SingularInterface</C> (an interface to <C>Singular</C> <Cite Key="Singular"></Cite>; or in its absence <C>Singular</C> <Cite Key="Singularpackage"></Cite>); or in its absecnce <C>GradedModules</C> <Cite Key="GradedModules"></Cite> is highly recomended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower). 
 
 The package tests if the user has downloaded any of the above packages, and if so puts <C>NumSgpsCanUsePackage</C> to true, where <C>Package</C> is any of the above. 
 
@@ -48,6 +48,15 @@ The package tests if the user has downloaded any of the above packages, and if s
       </Description>
     </ManSection>
 
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingularGradedModules" Arg=""/>
+      <Description>
+	Tries to load the package <C>GradedModules</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> It also creates a ring of rationals <C>NumSgpsRationals</C>.
+      </Description>
+    </ManSection>
+    
 </Section>
 
 <Section>

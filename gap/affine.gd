@@ -264,3 +264,11 @@ DeclareGlobalFunction("NumSgpsUse4ti2");
 #  Loads the package 4ti2Interface and reads affine-extra-4ti2gap
 ##########################################################################
 DeclareGlobalFunction("NumSgpsUse4ti2gap");
+
+
+##########################################################################
+##
+#F NumSgpsUseGradedModules
+#  Loads the package GradedModules and reads affine-extra-gm
+##########################################################################
+DeclareGlobalFunction("NumSgpsUseGradedModules");
