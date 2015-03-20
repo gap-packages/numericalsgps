@@ -42,6 +42,8 @@ NumSgpsCanUseSingular:=false;
 NumSgpsCanUseSI:=false;
 NumSgpsCanUse4ti2:=false;
 NumSgpsCanUse4ti2gap:=false;
+NumSgpsCanUseGradedModules:=false;
+
 
 ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
@@ -59,6 +61,9 @@ if IsPackageMarkedForLoading("SingularInterface","0.0") 	then
 fi;
 if IsPackageMarkedForLoading("singular","0.0") 	then
 	NumSgpsCanUseSingular:=true;
+fi;
+if IsPackageMarkedForLoading("GradedModules","0.0") 	then
+	NumSgpsCanUseGradedModules:=true;
 fi;
 
 
