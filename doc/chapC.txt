@@ -84,7 +84,7 @@
   [33X[0;0YReturns  true if the Complete Intersection property of the associated graded
   ring  of  a  numerical  semigroup  ring  associated  to  [22XK[[[3XS[103X]][122X,  and  false
   otherwise.  This  test  is  the  implementation  of  the  algorithm given in
-  [DMS13b].[133X
+  [DMS13].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
@@ -102,7 +102,7 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
   [33X[0;0YTest for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup.
-  This test is the implementation of the algorithm given in [DMS13a].[133X
+  This test is the implementation of the algorithm given in [DMS14].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
@@ -120,7 +120,7 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
   [33X[0;0YTest  for the Beta-Rectangularity of the Apéry Set of a numerical semigroup.
-  This test is the implementation of the algorithm given in [DMS13a].[133X
+  This test is the implementation of the algorithm given in [DMS14].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
@@ -138,7 +138,7 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
   [33X[0;0YTest for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup.
-  This test is the implementation of the algorithm given in [DMS13a].[133X
+  This test is the implementation of the algorithm given in [DMS14].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
