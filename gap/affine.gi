@@ -615,26 +615,6 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen, 
           pres,c, rclass;
 
-    # REQUERIMENTS: SingularInterface or Singular
-    #if NumSgpsCanUseSI or NumSgpsCanUseSingular then
-    #    TryNextMethod();
-    #fi;
-    
-    ##computes the s degree of a monomial in the semigroup ideal 
-    sdegree:=function(m) 
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
-    
-    bintopair:=function(p)
-        local m1,m2, d1, d2;
-        m1:=LeadingMonomialOfPolynomial(p, MonomialLexOrdering());
-        m2:=m1-p;
-        d1:=List([1..ed], i->DegreeIndeterminate(m1,i));; 
-        d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
-        return [d1,d2];
-    end;
     
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup.");
@@ -645,18 +625,9 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
     if ed=0 then 
         return [];
     fi;
-    zero:=List([1..ed],_->0);
     dim:=Length(msg[1]);
-    vars:=List([1..ed+dim],i->X(Rationals,i));
-    R:=PolynomialRing(Rationals,vars); 
-    p:=List([1..ed], i->X(Rationals,i)-
-            Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
-    rgb:=ReducedGroebnerBasis( p, 
-                 EliminationOrdering(List([1..dim],i->X(Rationals,i+ed))));
-    rgb:=Filtered(rgb, 
-                 q->ForAll([1..dim], i->DegreeIndeterminate(q,i+ed)=0));
-    candidates:=Set(rgb,q->bintopair(q)[1]);
-    candidates:=Set(candidates,c->c*msg);
+    candidates:=GeneratorsOfKernelCongruence(msg);
+    candidates:=Set(candidates,c->c[1]*msg);
     Info(InfoNumSgps,2, "Candidates to Betti elements",candidates);
     pres:=[];
     for c in candidates do
@@ -1247,7 +1218,7 @@ end);
 ##########################################################################
 ##
 #F NumSgpsUse4ti2
-#  Loads the package 4ti2Interface and reads affine-extra-ni
+#  Loads the package 4ti2Interface and reads affine-extra-4ti2
 ##########################################################################
 InstallGlobalFunction(NumSgpsUse4ti2, function()
     if LoadPackage("4ti2Interface") then
@@ -1263,7 +1234,7 @@ end);
 ##########################################################################
 ##
 #F NumSgpsUse4ti2gap
-#  Loads the package 4ti2gap and reads affine-extra-ni
+#  Loads the package 4ti2gap and reads affine-extra-4ti2gap
 ##########################################################################
 InstallGlobalFunction(NumSgpsUse4ti2gap, function()
     if LoadPackage("4ti2gap") then
@@ -1276,5 +1247,20 @@ InstallGlobalFunction(NumSgpsUse4ti2gap, function()
     
 end);
 
+##########################################################################
+##
+#F NumSgpsUseGradedModules
+#  Loads the package GradedModules and reads affine-extra-gm
+##########################################################################
+InstallGlobalFunction(NumSgpsUseGradedModules, function()
+    if LoadPackage("GradedModules") then
+        ReadPackage("numericalsgps/gap/affine-extra-gm.gi");
+        NumSgpsCanUseGradedModules:=true;
+        return true;
+    else
+        return fail;
+    fi;
+    
+end);
 
 

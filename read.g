@@ -44,31 +44,48 @@ ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
 if NumSgpsCanUseNI then
     ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
+    Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");    
 fi;
 if NumSgpsCanUse4ti2 then
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
+    Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2Interface)");
+
 fi;
 if NumSgpsCanUse4ti2gap then
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2gap.gi");
+    Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2gap)");
+
 fi;
 if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2 or NumSgpsCanUse4ti2gap) then
     Info(InfoNumSgps,1,"Please load package NormalizInterface or 4ti2Interface");
     Info(InfoNumSgps,1,"to have extended functionalities.");
 fi;
 
+NumSgpsWarnUseSingular:=true;
+
 if NumSgpsCanUseSI then
     ReadPackage("numericalsgps", "gap/affine-extra-si.gi");
+    Info(InfoNumSgps,1,"Loaded interface to Singular (SingularInterface)");
+    NumSgpsWarnUseSingular:=false;
 else
     if NumSgpsCanUseSingular then
         ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
+        Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
+        NumSgpsWarnUseSingular:=false;    
     else
-        if not(NumSgpsCanUse4ti2) then
-            Info(InfoNumSgps,1,"Please load package SingularInterface or singular");
-            Info(InfoNumSgps,1,"(not both) to have extended functionalities.");
+        if NumSgpsCanUseGradedModules then
+            #NumSgpsRationals:=HomalgFieldOfRationalsInSingular();            
+            ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
+            Info(InfoNumSgps,1,"Loaded interface to Singular (through GradedModules)");
+            NumSgpsWarnUseSingular:=false;
         fi;
     fi;
 fi;
 
+if NumSgpsWarnUseSingular then
+    Info(InfoNumSgps,1,"Please load package SingularInterface or singular (not both)");
+    Info(InfoNumSgps,1,"or GradedModules to have extended functionalities.");
+fi;
 
 
 
