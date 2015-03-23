@@ -42,7 +42,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         sign:=[List(l[1],_->1)];
         problem:=["mat",mat, "sign", sign];
         
-        matrix := HilbertBasis4ti2(problem);
+        matrix := HilbertBasis4ti2(problem).zhom;
         return matrix;
         
     end; 
