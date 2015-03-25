@@ -104,15 +104,18 @@ InstallGlobalFunction(SomeConditionsForPseudoFrobenius, function(arg)
   diff := PF[type] - PF[type-1];  
   if diff > PF[1] then
     return false; #justification: cor:naive_condition_g1
-  elif PF[1] - diff <> 0 then
-    if PF[1] - diff < mult then 
-      return false; #justification: cor:naive_condition_multiplicity
-    fi;
-  else
-    if PF[2] - diff < mult then
-      return false;
-    fi;
   fi;
+  
+  ### wrong!! it aparenty has to do with the fact that mult may not be the multiplicity
+  # if PF[1] - diff <> 0 then
+  #   if PF[1] - diff < mult then 
+  #     return false; #justification: cor:naive_condition_multiplicity
+  #   fi;
+  # else
+  #   if PF[2] - diff < mult then
+  #     return false;
+  #   fi;
+  # fi;
   return true;
 end);
 ###################################################
@@ -254,12 +257,12 @@ InstallGlobalFunction(NewElementsByExclusion, function(f_gaps,f_elts,PF)
 end);
 ######################################
 ##
-#F ForcedIntegersForPseudoFrobenius_QV (f_gaps,f_elts,PF)
+#F SimpleForcedIntegersForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ## consists of a loop that makes use of the functions "NewBigElements" and "NewElementsByExclusion" to discover new elements. When some are discovered, then GapsOfNumericalSemigroupForcedByGapsAndElements is also used to possibly discover new gaps.
 ##
 ## Returns a pair [forced_gaps, forced_elements] or "fail", when it finds to be not possible for a numerical semigroup having PF as set of pseudo-Frobenius numbers to have f_gaps as gaps and to contain f_elts.
-InstallGlobalFunction(ForcedIntegersForPseudoFrobenius_QV, function(f_gaps,f_elts,PF)
+InstallGlobalFunction(SimpleForcedIntegersForPseudoFrobenius, function(f_gaps,f_elts,PF)
   local  frob, iteration, f_g, closure, f_e, changes_excl, changes_big, 
          possibly_new_elts, changes;
   frob := Maximum(PF); 
@@ -375,7 +378,7 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius, function(arg)
     totest := Difference([1..frob], Union(f_g,f_e));
     while totest <> [] do
       v := totest[1];
-      pnf_ce:= ForcedIntegersForPseudoFrobenius_QV(f_g,Union(f_e,[v]),PF);
+      pnf_ce:= SimpleForcedIntegersForPseudoFrobenius(f_g,Union(f_e,[v]),PF);
       if pnf_ce <> fail then
 #        Error("--");
               
@@ -389,14 +392,36 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius, function(arg)
   end;
   ################ end of local function ###########
   ##################
-    f_ints := ForcedIntegersForPseudoFrobenius_QV(StartingForcedGaps(PF),[],PF);
+    f_ints := SimpleForcedIntegersForPseudoFrobenius(StartingForcedGaps(PF),[],PF);
     if f_ints = fail then
       return fail;
+    elif IsRange(Union(f_ints)) then
+      return f_ints;
     fi;
     n_ad := non_admissible(f_ints[1],f_ints[2]);   
     new_gaps := Difference(n_ad,f_ints[1]);
     Info(InfoTipo,1,"extra forced gaps\n",new_gaps,"\n");
-    return ForcedIntegersForPseudoFrobenius_QV(Union(new_gaps,f_ints[1]),f_ints[2],PF);
+    return SimpleForcedIntegersForPseudoFrobenius(Union(new_gaps,f_ints[1]),f_ints[2],PF);
+end);
+#############################################
+## a quick version
+InstallGlobalFunction(ForcedIntegersForPseudoFrobenius_QV, function(arg)
+  local  PF, type, frob, non_admissible, f_ints, n_ad, new_gaps;
+  ## arguments
+  if Length(arg) = 1 then
+    PF := Set(arg[1]);   
+  elif Length(arg) > 1 then 
+    PF := Set(arg);
+  fi;
+  ##
+  type := Length(PF);
+  frob := Maximum(PF);
+  ##
+  if type = 1 then 
+    return [DivisorsInt(frob),[0,frob+1]];
+  fi;
+  ##
+  return SimpleForcedIntegersForPseudoFrobenius(StartingForcedGaps(PF),[],PF);
 end);
 
 #############################################
@@ -530,7 +555,7 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius_original, function(arg)
     sfree := ShallowCopy(free);
     for v in free do
       if v in sfree then
-        left := ForcedIntegersForPseudoFrobenius_QV(f_g,Union(f_e,[v]),PF);
+        left := SimpleForcedIntegersForPseudoFrobenius(f_g,Union(f_e,[v]),PF);
         if left = fail then
           Info(InfoTipo,2,v, " can not be an element of any semigoup S with PF(S)=PF, thus it is a forced gap","\n");
           nf_gaps := Union(nf_gaps,DivisorsInt(v));
@@ -560,7 +585,7 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius_original, function(arg)
     changes_non_elt := false;
     #    Error("..");
 
-    forced_integers := ForcedIntegersForPseudoFrobenius_QV(f_gaps,f_elts,PF);
+    forced_integers := SimpleForcedIntegersForPseudoFrobenius(f_gaps,f_elts,PF);
     if forced_integers = fail then
       return fail;
     fi;
@@ -648,7 +673,7 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
 
   # forced integers
   if opt_quick then
-    initially_forced_integers := ForcedIntegersForPseudoFrobenius_QV(StartingForcedGaps(PF),[],PF);
+    initially_forced_integers := SimpleForcedIntegersForPseudoFrobenius(StartingForcedGaps(PF),[],PF);
   else
     initially_forced_integers := ForcedIntegersForPseudoFrobenius(PF);
   fi;
@@ -697,9 +722,9 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
     while Length(current_free) > 1 do
       nodes_visited := nodes_visited + 1;
       v := current_free[1];
-      left := ForcedIntegersForPseudoFrobenius_QV(nfg,Union(fe,[v]),PF);
+      left := SimpleForcedIntegersForPseudoFrobenius(nfg,Union(fe,[v]),PF);
       if left = fail then
-        right := ForcedIntegersForPseudoFrobenius_QV(Union(nfg,[v]),fe,PF);
+        right := SimpleForcedIntegersForPseudoFrobenius(Union(nfg,[v]),fe,PF);
         if (right = fail) or (Intersection(right[1],right[2]) <> []) then
           dead_nodes := dead_nodes + 1;
           break;     
@@ -715,12 +740,12 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
       nodes_visited := nodes_visited + 1;
       v := current_free[1];
       ##
-      left := ForcedIntegersForPseudoFrobenius_QV(nfg,Union(fe,[v]),PF);
+      left := SimpleForcedIntegersForPseudoFrobenius(nfg,Union(fe,[v]),PF);
 #      rightmostfreenode := true;
       if not((left = fail) or (Intersection(left[1],left[2]) <> [])) then
         ending_condition(left[1],left[2]);
       fi;
-      right := ForcedIntegersForPseudoFrobenius_QV(Union(nfg,[v]),fe,PF);
+      right := SimpleForcedIntegersForPseudoFrobenius(Union(nfg,[v]),fe,PF);
 #      rightmostfreenode := false;
       if not((right = fail) or (Intersection(right[1],right[2]) <> [])) then
         ##        Error("a possible example....");
@@ -791,11 +816,11 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
       nodes_visited := nodes_visited + 1;
       v := current_free[1];
       Append(path,[v]);#for the drawing of the tree
-      left := ForcedIntegersForPseudoFrobenius_QV(nfg,Union(fe,[v]),PF);
+      left := SimpleForcedIntegersForPseudoFrobenius(nfg,Union(fe,[v]),PF);
       if left = fail then
         Info(InfoTree,1,"There is no semigroup to the left of node ",v, "\n");
         add_leaf("leftnonsgp");#for the drawing of the tree
-        right := ForcedIntegersForPseudoFrobenius_QV(Union(nfg,[v]),fe,PF);
+        right := SimpleForcedIntegersForPseudoFrobenius(Union(nfg,[v]),fe,PF);
         if (right = fail) or (Intersection(right[1],right[2]) <> []) then
           Info(InfoTree,1,"There is no semigroup to the right of node ",v,"\n");
           add_leaf("rightnonsgp");#for the drawing of the tree
@@ -813,7 +838,7 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
       v := current_free[1];
       Append(path,[v]);#for the drawing of the tree
       ##
-      left := ForcedIntegersForPseudoFrobenius_QV(nfg,Union(fe,[v]),PF);
+      left := SimpleForcedIntegersForPseudoFrobenius(nfg,Union(fe,[v]),PF);
       rightmostfreenode := true;
       if not((left = fail) or (Intersection(left[1],left[2]) <> [])) then
         ending_condition_draw(left[1],left[2]);
@@ -821,7 +846,7 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
         Info(InfoTree,1,"There is no semigroup to the left of node ",v,"\n");
         add_leaf("leftnonsgp");#for the drawing of the tree        
       fi;
-      right := ForcedIntegersForPseudoFrobenius_QV(Union(nfg,[v]),fe,PF);
+      right := SimpleForcedIntegersForPseudoFrobenius(Union(nfg,[v]),fe,PF);
       rightmostfreenode := false;
       if (right = fail) or (Intersection(right[1],right[2]) <> []) then
         Info(InfoTree,1,"There is no semigroup to the right of node ",v,"\n");
@@ -864,12 +889,15 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
   Info(InfoTipo,1,"number of semigroups: ", Length(semigroups),"\n");
   Info(InfoTipo,1,"number of nodes visited: ", nodes_visited,"\n");
   Info(InfoTipo,3,"Minimal generators of the semigroups obtained by making choices for the free integers:\n",List(semigroups,MinimalGeneratingSystemOfNumericalSemigroup),"\n");
-  if Difference(Difference([1..frob],Union(initially_forced_integers)),Union(List(semigroups,SmallElementsOfNumericalSemigroup))) <> [] then
-    Info(InfoTipo,1, Difference(Difference([1..frob],Union(initially_forced_integers)),Union(List(semigroups,SmallElementsOfNumericalSemigroup))), " are gaps of all semigroups, but do not appear as forced gaps\n");
-  fi;  
-  if First(semigroups,s -> PseudoFrobeniusOfNumericalSemigroup(s)<>PF) <> fail then
-    Error("the list contains a semigroup whith a non expected set of pseudo-Frobenius numbers\n");
-  fi;
+  #### tests ### can be done by the user outside the function...
+  # if Difference(Difference([1..frob],Union(initially_forced_integers)),Union(List(semigroups,SmallElementsOfNumericalSemigroup))) <> [] then
+  #   Info(InfoTipo,1, Difference(Difference([1..frob],Union(initially_forced_integers)),Union(List(semigroups,SmallElementsOfNumericalSemigroup))), " are gaps of all semigroups, but do not appear as forced gaps\n");
+  # fi; 
+  ##
+  # if First(semigroups,s -> PseudoFrobeniusOfNumericalSemigroup(s)<>PF) <> fail then
+  #   Error("the list contains a semigroup whith a non expected set of pseudo-Frobenius numbers\n");
+  # fi;
+  ####
   if opt_draw_tree then
     return [tree,semigroups];
   fi;
@@ -936,13 +964,13 @@ InstallGlobalFunction(RandomNumericalSemigroupWithPseudoFrobeniusNumbers, functi
   for i in [1..m_att] do
     while free <> [] do
       v := RandomList(free);
-      nfig := ForcedIntegersForPseudoFrobenius_QV(Union(f_ints[1],[v]),f_ints[2],PF);
+      nfig := SimpleForcedIntegersForPseudoFrobenius(Union(f_ints[1],[v]),f_ints[2],PF);
       if nfig <> fail then
         if IsRange(Union(nfig)) then
           return NumericalSemigroupByGaps(nfig[1]);
         fi;
       fi;
-      nfie := ForcedIntegersForPseudoFrobenius_QV(f_ints[1],Union(f_ints[2],[v]),PF);
+      nfie := SimpleForcedIntegersForPseudoFrobenius(f_ints[1],Union(f_ints[2],[v]),PF);
       if nfie <> fail then
         if IsRange(Union(nfie)) then
           return NumericalSemigroupByGaps(nfie[1]);
