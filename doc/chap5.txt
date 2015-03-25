@@ -222,9 +222,9 @@
     [4X[28X  [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ][128X[104X
   [4X[32X[104X
   
-  [1X5.6-2 ForcedIntegersForPseudoFrobenius_QV[101X
+  [1X5.6-2 SimpleForcedIntegersForPseudoFrobenius[101X
   
-  [29X[2XForcedIntegersForPseudoFrobenius_QV[102X( [3Xfg[103X, [3Xfe[103X, [3XPF[103X ) [32X function
+  [29X[2XSimpleForcedIntegersForPseudoFrobenius[102X( [3Xfg[103X, [3Xfe[103X, [3XPF[103X ) [32X function
   
   [33X[0;0YIs just a quicker version of [2XForcedIntegersForPseudoFrobenius[102X ([14X5.6-1[114X)[133X
   
@@ -249,7 +249,9 @@
     [4X[25Xgap>[125X [27Xfint := ForcedIntegersForPseudoFrobenius(pf); [127X[104X
     [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 16, 20, 27, 35 ], [128X[104X
     [4X[28X  [ 0, 19, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ][128X[104X
-    [4X[25Xgap>[125X [27XForcedIntegersForPseudoFrobenius_QV(fint[1],Union(fint[2],[free[1]]),pf);[127X[104X
+    [4X[25Xgap>[125X [27Xfree := Difference([1..Maximum(pf)],Union(fint));[127X[104X
+    [4X[28X[ 11, 13, 14, 17, 18, 21, 22, 24 ][128X[104X
+    [4X[25Xgap>[125X [27XSimpleForcedIntegersForPseudoFrobenius(fint[1],Union(fint[2],[free[1]]),pf);[127X[104X
     [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 20, 24, 27, 35 ], [128X[104X
     [4X[28X  [ 0, 11, 19, 22, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ][128X[104X
   [4X[32X[104X
@@ -302,10 +304,6 @@
   [2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X ([14X6.1-4[114X)[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xpf := [ 83, 169, 173, 214, 259 ]; #free: 145[127X[104X
-    [4X[28X[ 83, 169, 173, 214, 259 ][128X[104X
-    [4X[25Xgap>[125X [27XRandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);[127X[104X
-    [4X[28X<Numerical semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xpf := [ 83, 169, 173, 214, 259 ];;                     [127X[104X
     [4X[25Xgap>[125X [27XRandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);[127X[104X
     [4X[28X<Numerical semigroup>[128X[104X
