@@ -52,16 +52,17 @@ DeclareGlobalFunction("NewBigElements");
 DeclareGlobalFunction("NewElementsByExclusion");
 ######################################
 ##
-#F ForcedIntegersForPseudoFrobenius_QV
+#F SimpleForcedIntegersForPseudoFrobenius
 ##
 ###########################################################################
-DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_QV");
+DeclareGlobalFunction("SimpleForcedIntegersForPseudoFrobenius");
   
 ######################################
 ##
 #F ForcedGapsAndElementsForPseudoFrobenius
 ##
 ###########################################################################
+DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_QV");
 DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius");
 DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_original"); #to be removed
  
