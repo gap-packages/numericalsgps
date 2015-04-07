@@ -24,14 +24,14 @@ DeclareInfoClass("InfoTree");
 ###################################################
 #F LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(elts,frob)
 ##
-## Returns the least numerical semigroup containing the list elts of elements and having the largest possible Frobenius number not greater than frob.
+## Returns the least numerical semigroup containing the list elts of positive integers and having the largest possible Frobenius number not greater than frob.
 ## This is just an "abreviation" of  NumericalSemigroup(Union(elts,[frob+1..frob+First(elts,IsPosInt)])) that is intended to turn the code mor readable.
 ##
 #############################################################
 InstallGlobalFunction(LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber, function(elts,frob)
   local  ns;
   if elts <> [] then
-    ns := NumericalSemigroup(Union(elts,[frob+1..frob+First(elts,IsPosInt)]));
+    ns := NumericalSemigroup(Union(elts,[frob+1..frob+Minimum(elts)]));
   else
     ns := NumericalSemigroup([frob+1..2*(frob+1)]);
   fi;
@@ -67,7 +67,7 @@ end);
 ##
 ## Test whether some necessary conditions for the given set PF to be the set of pseudo-Frobenius numbers of a numerical semigroup are fulfilled.
 InstallGlobalFunction(SomeConditionsForPseudoFrobenius, function(arg)
-  local  PF, type, mult, diff;
+  local  PF, type;
 
   ## check arguments
   if Length(arg) = 1 then
@@ -86,36 +86,12 @@ InstallGlobalFunction(SomeConditionsForPseudoFrobenius, function(arg)
     Error("please check the arguments...");
   fi; 
   type := Length(PF);
-  ##
-  mult := 0;
-
-  if Length(arg) = 1 then
-    if IsRecord(arg[1]) then
-      if IsBound(arg[1].mult_candidate) then 
-        mult := arg[1].mult_candidate;
-      fi;
-    fi;
-  fi;
-  mult := Maximum(mult,type+1);
-
   if type = 1 then
     return true;
   fi;
-  diff := PF[type] - PF[type-1];  
-  if diff > PF[1] then
+  if PF[type] - PF[type-1] > PF[1] then
     return false; #justification: cor:naive_condition_g1
   fi;
-  
-  ### wrong!! it aparenty has to do with the fact that mult may not be the multiplicity
-  # if PF[1] - diff <> 0 then
-  #   if PF[1] - diff < mult then 
-  #     return false; #justification: cor:naive_condition_multiplicity
-  #   fi;
-  # else
-  #   if PF[2] - diff < mult then
-  #     return false;
-  #   fi;
-  # fi;
   return true;
 end);
 ###################################################
@@ -144,11 +120,14 @@ InstallGlobalFunction(ConditionsForPseudoFrobeniusBasedOnForcedIntegers, functio
   fi;
   ##
   frob := Maximum(PF);
-  free := Difference([1..frob],Union(f_g,f_e));
-
-  # test whether there is a gap (not in PF) that would have to be a pseudo-Frobenius number of the numerical semigroup
-  fe0 := Difference(f_e,[0]);
-  es := Union(free,fe0); # a set containing all the small elements (except 0)
+  # free := Difference([1..frob],Union(f_g,f_e));
+  
+  ## (to be removed)
+  # # test whether there is a gap (not in PF) that would have to be a pseudo-Frobenius number of the numerical semigroup
+  # fe0 := Difference(f_e,[0]);
+  # es := Union(free,fe0); # a set containing all the small elements (except 0)
+  ##
+  es := Difference([1..frob+1],f_g);# a set containing all the small elements (except 0)
   #
   ifg := Difference(f_g,PF);  #can this be improved by using the obviously forced??
   #
@@ -175,7 +154,7 @@ InstallGlobalFunction(ConditionsForPseudoFrobeniusBasedOnForcedIntegers, functio
   for x in ifg do
     filt := List(PF-x, IsPosInt);
     ## uses: if not($f-x\not \in S$ for all $f\in PF(S))$ then $x \in S$
-    if First(filt, s -> not(s in f_g)) <> fail then #contradiction: there exists x \in S such that x\in G(S)
+    if ForAny(filt, s -> not(s in f_g)) then #contradiction: there exists x \in S such that x\in G(S)
       Info(InfoTipo,2,"There is no numerical semigroup with the given set as set of pseudo-Frobenius numbers and given forced integers, since the difference between ",x," and any element of PF is either a forced gap or negative (thus can not belong to that numerical semigroup).\n");
       return fail;
     fi;
@@ -286,6 +265,23 @@ InstallGlobalFunction(SimpleForcedIntegersForPseudoFrobenius, function(f_gaps,f_
     changes_big := false;
     iteration := iteration + 1; 
     ##
+    ############ big_elts elements versus small gaps #############
+    # elements
+    possibly_new_elts := NewBigElements(f_g,f_e,PF);
+    if possibly_new_elts <> [] then
+      changes_big := true;
+      closure := LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(Union(f_e,possibly_new_elts),frob);
+      f_e := SmallElementsOfNumericalSemigroup(closure);
+      f_e := Union(Intersection(f_e,[0..frob+1]),[Maximum(f_e)..frob+1]);
+      Info(InfoTipo,2,"forced big elements (iteration ",iteration,"):\n",f_e,"\n");
+      ##
+      #gaps
+      f_g := GapsOfNumericalSemigroupForcedByGapsAndElements(f_g,f_e);
+      if f_g = fail then
+        return fail;
+      fi;
+      Info(InfoTipo,2,"gaps forced by big elements (iteration ",iteration,"):\n",f_g,"\n");
+    fi;
     ############ elements vs gaps forced by NewElementsByExclusion #############
     # elements
     possibly_new_elts := NewElementsByExclusion(f_g,f_e,PF);
@@ -293,7 +289,7 @@ InstallGlobalFunction(SimpleForcedIntegersForPseudoFrobenius, function(f_gaps,f_
       changes_excl := true;
       closure := LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(Union(f_e,possibly_new_elts),frob);
       f_e := SmallElementsOfNumericalSemigroup(closure);
-      f_e := Union(f_e,[Maximum(f_e)..frob+1]);
+      f_e := Union(Intersection(f_e,[0..frob+1]),[Maximum(f_e)..frob+1]);
       Info(InfoTipo,2,"forced elements by NewElementsByExclusion (iteration ",iteration,"):\n",f_e,"\n");
       ##
       #gaps
@@ -304,24 +300,6 @@ InstallGlobalFunction(SimpleForcedIntegersForPseudoFrobenius, function(f_gaps,f_
       Info(InfoTipo,2,"gaps forced by NewElementsByExclusion (iteration ",iteration,"):\n",f_g,"\n");
     fi;
     ##
-
-    ############ big_elg elements versus small gaps #############
-    # elements
-    possibly_new_elts := NewBigElements(f_g,f_e,PF);
-    if possibly_new_elts <> [] then
-      changes_big := true;
-      closure := LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(Union(f_e,possibly_new_elts),frob);
-      f_e := SmallElementsOfNumericalSemigroup(closure);
-      f_e := Union(f_e,[Maximum(f_e)..frob+1]);
-      Info(InfoTipo,2,"forced big elements (iteration ",iteration,"):\n",f_e,"\n");
-      ##
-      #gaps
-      f_g := GapsOfNumericalSemigroupForcedByGapsAndElements(f_g,f_e);
-      if f_g = fail then
-        return fail;
-      fi;
-      Info(InfoTipo,2,"gaps forced by big elements (iteration ",iteration,"):\n",f_g,"\n");
-    fi;
     changes := changes_excl or changes_big;      
   until not changes;
   ##
@@ -661,8 +639,11 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
   type := Length(PF);
   frob := Maximum(PF);
   if type = 1 then
-    Info(InfoTipo,1, "As the type is 1, the function NumericalSemigroupsWithFrobeniusNumber will be used");    
-    return NumericalSemigroupsWithFrobeniusNumber(frob);
+    Info(InfoTipo,1, "As the type is 1, the function IrreducibleNumericalSemigroupsWithFrobeniusNumber will be used");    
+    return IrreducibleNumericalSemigroupsWithFrobeniusNumber(frob);
+  elif type = 2 and 2*PF[1] = PF[2] then
+     Info(InfoTipo,1, "As the type is 2 and frob is even, the function IrreducibleNumericalSemigroupsWithFrobeniusNumber will be used");    
+    return IrreducibleNumericalSemigroupsWithFrobeniusNumber(frob);
   fi;
 
   ## testing some simple conditions
@@ -941,15 +922,15 @@ InstallGlobalFunction(RandomNumericalSemigroupWithPseudoFrobeniusNumbers, functi
   fi; 
   type := Length(PF);
   frob := Maximum(PF);
-  if type = 1 then
-    Info(InfoTipo,1, "As the type is 1, the function AnIrreducibleNumericalSemigroupWithFrobeniusNumber will be used");    
+  if (type = 1) or (type = 2 and 2*PF[1] = PF[2]) then
+    Info(InfoTipo,1, "As the type is 1 (or 2 and frob is even), the function AnIrreducibleNumericalSemigroupWithFrobeniusNumber will be used");    
     return AnIrreducibleNumericalSemigroupWithFrobeniusNumber(frob);
   fi;
 
   ## testing some simple conditions
   if not SomeConditionsForPseudoFrobenius(rec(pseudo_frobenius := PF)) then
     Info(InfoTipo,1,"The initial conditions fail");
-    return [];
+    return \fail;
   fi;
 
   m_att := Minimum(7,Int(frob/3)); #many experiments suggest that it is a reasonable number
