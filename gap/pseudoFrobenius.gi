@@ -31,7 +31,7 @@ DeclareInfoClass("InfoTree");
 InstallGlobalFunction(LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber, function(elts,frob)
   local  ns;
   if elts <> [] then
-    ns := NumericalSemigroup(Union(elts,[frob+1..frob+Minimum(elts)]));
+    ns := NumericalSemigroup(Union(elts,[frob+1..frob+Minimum(Difference(elts,[0]))]));
   else
     ns := NumericalSemigroup([frob+1..2*(frob+1)]);
   fi;
@@ -102,7 +102,6 @@ end);
 ## Test whether some necessary conditions for the given set PF to be the set of pseudo-Frobenius numbers of a numerical semigroup are fulfilled. 
 ## The input is a record with fields "forced_elts" and "forced_gaps" and "pseudo_frobenius". 
 ##
-## Optionally, the option "quick" (which is "true" or "false") may be given.
 ## In case the conditions tested are not fulfilled, returns fail.
 ## 
 InstallGlobalFunction(ConditionsForPseudoFrobeniusBasedOnForcedIntegers, function(arg)
@@ -122,40 +121,14 @@ InstallGlobalFunction(ConditionsForPseudoFrobeniusBasedOnForcedIntegers, functio
   frob := Maximum(PF);
   # free := Difference([1..frob],Union(f_g,f_e));
   
-  ## (to be removed)
-  # # test whether there is a gap (not in PF) that would have to be a pseudo-Frobenius number of the numerical semigroup
-  # fe0 := Difference(f_e,[0]);
-  # es := Union(free,fe0); # a set containing all the small elements (except 0)
   ##
   es := Difference([1..frob+1],f_g);# a set containing all the small elements (except 0)
   #
   ifg := Difference(f_g,PF);  #can this be improved by using the obviously forced??
   #
   for f in ifg do    
-    if ForAll(f+es,e -> not(e in f_g)) then       
+    if ForAll(f+es,e -> not(e in f_g)) then
       Info(InfoTipo,2,"There is no numerical semigroup with the given set as set of pseudo-Frobenius numbers and given forced integers, since ",f," would have to be a pseudo-Frobenius number of that numerical semigroup.\n");
-      return fail;
-    fi;
-  od;
-  ###################################################  
-  opt_quick := true;
-  if IsBound(arg[1].quick) then 
-    opt_quick := arg[1].quick;
-  fi;
-  if opt_quick then 
-    return true;
-  fi;
-  ###################################################
-  ## the not so quick version
-  ###################################################
-  ## Another test. 
-  ## Warning: the time used in this test is not negligible
-  #
-  for x in ifg do
-    filt := List(PF-x, IsPosInt);
-    ## uses: if not($f-x\not \in S$ for all $f\in PF(S))$ then $x \in S$
-    if ForAny(filt, s -> not(s in f_g)) then #contradiction: there exists x \in S such that x\in G(S)
-      Info(InfoTipo,2,"There is no numerical semigroup with the given set as set of pseudo-Frobenius numbers and given forced integers, since the difference between ",x," and any element of PF is either a forced gap or negative (thus can not belong to that numerical semigroup).\n");
       return fail;
     fi;
   od;
