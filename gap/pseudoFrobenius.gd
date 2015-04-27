@@ -11,67 +11,53 @@
 ###########################################################################
 DeclareGlobalFunction("LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber");
 
-###################################################
-#F GapsOfNumericalSemigroupForcedByGapsAndElements(f_gaps,elts)
-##
 ###########################################################################
-DeclareGlobalFunction("GapsOfNumericalSemigroupForcedByGapsAndElements");
-
-###################################################
-##
-#F SomeConditionsForPseudoFrobenius(arg)
-##
-###########################################################################
-DeclareGlobalFunction("SomeConditionsForPseudoFrobenius");
-
-###################################################
-##
-#F ConditionsForPseudoFrobeniusBasedOnForcedIntegers(arg)
-## 
-###########################################################################
-DeclareGlobalFunction("ConditionsForPseudoFrobeniusBasedOnForcedIntegers");   
-
-###################################################
 ## Some auxiliary functions to be called by the functions below
-###################################################
+###########################################################################
 ##
-#F StartingForcedGaps(PF)
+#F StartingForcedGapsForPseudoFrobenius(PF)
 ##
 ###########################################################################
-DeclareGlobalFunction("StartingForcedGaps");
-#######################################
+DeclareGlobalFunction("StartingForcedGapsForPseudoFrobenius");
+###########################################################################
 ##
-#F NewBigElements(f_gaps,f_elts,PF)
+#F ElementsForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ###########################################################################
-DeclareGlobalFunction("NewBigElements");
-######################################
-##
-#F NewElementsByExclusion(f_gaps,f_elts,PF)
+DeclareGlobalFunction("ElementsForPseudoFrobenius");
 ###########################################################################
-DeclareGlobalFunction("NewElementsByExclusion");
-######################################
+##
+#F GapsForPseudoFrobenius(f_gaps,f_elts,PF)
+##
+###########################################################################
+DeclareGlobalFunction("GapsForPseudoFrobenius");
+###########################################################################
 ##
 #F SimpleForcedIntegersForPseudoFrobenius
 ##
 ###########################################################################
 DeclareGlobalFunction("SimpleForcedIntegersForPseudoFrobenius");
-  
-######################################
+###########################################################################
 ##
-#F ForcedGapsAndElementsForPseudoFrobenius
+#F NonAdmissibleForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ###########################################################################
-DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_QV");
+DeclareGlobalFunction("NonAdmissibleForPseudoFrobenius");
+###########################################################################
+##
+#F ForcedIntegersForPseudoFrobenius
+##
+###########################################################################
 DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius");
-DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_original"); #to be removed
- 
+DeclareGlobalFunction("ForcedIntegersForPseudoFrobenius_QV");
+
 ######################################
 ##
 #F NumericalSemigroupsWithPseudoFrobeniusNumbers
 ##
 ###########################################################################
 DeclareGlobalFunction("NumericalSemigroupsWithPseudoFrobeniusNumbers");
+#DeclareGlobalFunction("NumericalSemigroupsWithPseudoFrobeniusNumbers_QV");
   
 ######################################
 ##

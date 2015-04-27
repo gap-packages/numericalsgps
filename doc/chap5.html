@@ -365,8 +365,6 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
 
-<p>The option draw_tree may be useful, since it gives an output that gives some light on the way the computations are done</p>
-
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [ 58, 64, 75 ];</span>
@@ -374,15 +372,10 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));</span>
 561
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">pf := [11,19,22];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupsWithPseudoFrobeniusNumbers(</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">rec(pseudo_frobenius := pf, draw_tree := true));</span>
-[ [ [ 7, 9, &lt;Numerical semigroup&gt; ], [ 7, 10, &lt;Numerical semigroup&gt; ], 
-      [ 7, 13, "rightnonsgp" ], [ 9, &lt;Numerical semigroup&gt; ], 
-      [ 10, &lt;Numerical semigroup&gt; ], [ 12, &lt;Numerical semigroup&gt; ], 
-      [ 13, "leftnonsgp" ], [ "rightnonsgp" ] ], 
-  [ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
-      &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last[2],MinimalGeneratingSystemOfNumericalSemigroup);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupsWithPseudoFrobeniusNumbers(pf);</span>
+[ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
+  &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);   </span>
 [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
   [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
   [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
