@@ -1612,23 +1612,17 @@ output is:
 output is: a list of numerical semigrups S such that PF(S)=PF When
 Length(PF)=1, it makes use of the function \texttt{NumericalSemigroupsWithFrobeniusNumber} (\ref{NumericalSemigroupsWithFrobeniusNumber}) 
 
- The option draw{\textunderscore}tree may be useful, since it gives an output
-that gives some light on the way the computations are done 
+ 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@pf := [ 58, 64, 75 ];|
   [ 58, 64, 75 ]
   !gapprompt@gap>| !gapinput@Length(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));|
   561
   !gapprompt@gap>| !gapinput@pf := [11,19,22];;|
-  !gapprompt@gap>| !gapinput@NumericalSemigroupsWithPseudoFrobeniusNumbers(|
-  !gapprompt@>| !gapinput@rec(pseudo_frobenius := pf, draw_tree := true));|
-  [ [ [ 7, 9, <Numerical semigroup> ], [ 7, 10, <Numerical semigroup> ], 
-        [ 7, 13, "rightnonsgp" ], [ 9, <Numerical semigroup> ], 
-        [ 10, <Numerical semigroup> ], [ 12, <Numerical semigroup> ], 
-        [ 13, "leftnonsgp" ], [ "rightnonsgp" ] ], 
-    [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-        <Numerical semigroup>, <Numerical semigroup> ] ]
-  !gapprompt@gap>| !gapinput@List(last[2],MinimalGeneratingSystemOfNumericalSemigroup);|
+  !gapprompt@gap>| !gapinput@NumericalSemigroupsWithPseudoFrobeniusNumbers(pf);|
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+    <Numerical semigroup>, <Numerical semigroup> ]
+  !gapprompt@gap>| !gapinput@List(last,MinimalGeneratingSystemOfNumericalSemigroup);   |
   [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
     [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
     [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]

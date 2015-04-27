@@ -265,24 +265,16 @@
   Length(PF)=1,       it       makes       use       of      the      function
   [2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-1[114X)[133X
   
-  [33X[0;0YThe option draw_tree may be useful, since it gives an output that gives some
-  light on the way the computations are done[133X
-  
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xpf := [ 58, 64, 75 ];[127X[104X
     [4X[28X[ 58, 64, 75 ][128X[104X
     [4X[25Xgap>[125X [27XLength(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));[127X[104X
     [4X[28X561[128X[104X
     [4X[25Xgap>[125X [27Xpf := [11,19,22];;[127X[104X
-    [4X[25Xgap>[125X [27XNumericalSemigroupsWithPseudoFrobeniusNumbers([127X[104X
-    [4X[25X>[125X [27Xrec(pseudo_frobenius := pf, draw_tree := true));[127X[104X
-    [4X[28X[ [ [ 7, 9, <Numerical semigroup> ], [ 7, 10, <Numerical semigroup> ], [128X[104X
-    [4X[28X      [ 7, 13, "rightnonsgp" ], [ 9, <Numerical semigroup> ], [128X[104X
-    [4X[28X      [ 10, <Numerical semigroup> ], [ 12, <Numerical semigroup> ], [128X[104X
-    [4X[28X      [ 13, "leftnonsgp" ], [ "rightnonsgp" ] ], [128X[104X
-    [4X[28X  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, [128X[104X
-    [4X[28X      <Numerical semigroup>, <Numerical semigroup> ] ][128X[104X
-    [4X[25Xgap>[125X [27XList(last[2],MinimalGeneratingSystemOfNumericalSemigroup);[127X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupsWithPseudoFrobeniusNumbers(pf);[127X[104X
+    [4X[28X[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, [128X[104X
+    [4X[28X  <Numerical semigroup>, <Numerical semigroup> ][128X[104X
+    [4X[25Xgap>[125X [27XList(last,MinimalGeneratingSystemOfNumericalSemigroup);   [127X[104X
     [4X[28X[ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], [128X[104X
     [4X[28X  [ 10, 13, 14, 15, 16, 17, 18, 21 ], [128X[104X
     [4X[28X  [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ][128X[104X
