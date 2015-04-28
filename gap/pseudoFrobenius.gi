@@ -21,13 +21,13 @@ DeclareInfoClass("InfoTipo");
 ## Several auxiliary functions are included
 #############################################
 #################################################################
-#F LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(elts,frob)
+#F NumericalSemigroupWithGivenElementsAndFrobenius(elts,frob)
 ##
 ## Returns the least numerical semigroup containing the list elts of positive integers and having the largest possible Frobenius number not greater than frob.
-## This is just an "abreviation" of  NumericalSemigroup(Union(elts,[frob+1..frob+First(elts,IsPosInt)])) that is intended to turn the code mor readable.
+## This is just an "abreviation" of  NumericalSemigroup(Union(elts,[frob+1..frob+First(elts,IsPosInt)])) that is intended to turn the code more readable.
 ##
 #################################################################
-InstallGlobalFunction(LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber, function(elts,frob)
+InstallGlobalFunction(NumericalSemigroupWithGivenElementsAndFrobenius, function(elts,frob)
   local  ns;
   if elts <> [] then
     ns := NumericalSemigroup(Union(elts,[frob+1..frob+Minimum(Difference(elts,[0]))]));
@@ -41,7 +41,7 @@ end);
 ##
 #F StartingForcedGapsForPseudoFrobenius(PF)
 ##
-## Computes the set of starting forced gaps. 
+## Computes the set of starting forced gaps, according to the definition in [DG-SR-P15]. 
 ##
 #################################################################
 InstallGlobalFunction(StartingForcedGapsForPseudoFrobenius, function(PF)  
@@ -50,7 +50,7 @@ InstallGlobalFunction(StartingForcedGapsForPseudoFrobenius, function(PF)
   type := Length(PF);  
   forced_gaps := Union([1..Length(PF)],PF); # uses the fact m(S)>=t(S)+1
   ## justification: lemma:pseudo-comb-pseudo
-  closures := List([1..type-1], i->SmallElementsOfNumericalSemigroup(LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(PF{[1..i]},PF[i+1])));
+  closures := List([1..type-1], i->SmallElementsOfNumericalSemigroup(NumericalSemigroupWithGivenElementsAndFrobenius(PF{[1..i]},PF[i+1])));
   differences := [];
   for i in [2..type] do
     differences := Union(differences,Filtered(PF[i] - closures[i-1],IsPosInt));
@@ -105,7 +105,7 @@ InstallGlobalFunction(ElementsForPseudoFrobenius, function(f_gaps,f_elts,PF)
   bf_elts := Difference(frob - [1..m-1], PF);
   ### test
   nf_elts := Union(f_elts,ef_elts,bf_elts);  
-  closure := LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(nf_elts,frob);
+  closure := NumericalSemigroupWithGivenElementsAndFrobenius(nf_elts,frob);
   nf_elts := SmallElementsOfNumericalSemigroup(closure);
   nf_elts := Union(nf_elts,[Maximum(nf_elts)..frob+1]);
   

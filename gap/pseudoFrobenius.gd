@@ -6,10 +6,10 @@
 #Y  Copyright .........
 #############################################################################
 ###################################################
-#F LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber(elts,frob)
+#F NumericalSemigroupWithGivenElementsAndFrobenius(elts,frob)
 ##
 ###########################################################################
-DeclareGlobalFunction("LeastNumericalSemigroupWithGivenElementsAndUpperBoundForFrobeniusNumber");
+DeclareGlobalFunction("NumericalSemigroupWithGivenElementsAndFrobenius");
 
 ###########################################################################
 ## Some auxiliary functions to be called by the functions below
