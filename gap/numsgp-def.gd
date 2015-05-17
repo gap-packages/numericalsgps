@@ -39,27 +39,6 @@ DeclareRepresentation( "IsNumericalSemigroupRep", IsAttributeStoringRep, []);
 DeclareCategory( "IsNumericalSemigroup", IsObject and IsNumericalSemigroupRep);
 
 
-#############################################################################
-##
-#C  IsNumericalSemigroup
-##
-##  The family category of numerical semigroups.
-##
-#############################################################################
-DeclareCategoryFamily( "IsNumericalSemigroup" );
-
-
-#############################################################################
-##
-#C  IsNumericalSemigroup
-##
-##  The collections category of numerical semigroups.
-##
-#############################################################################
-DeclareCategoryCollections( "IsNumericalSemigroup" );
-
-
-
 BindGlobal( "NumericalSemigroupsFamily",
         NewFamily( "NumericalSemigroups", IsNumericalSemigroup ));
 

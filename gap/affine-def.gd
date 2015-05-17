@@ -23,24 +23,6 @@ DeclareRepresentation( "IsAffineSemigroupRep", IsAttributeStoringRep, [] );
 #############################################################################
 DeclareCategory( "IsAffineSemigroup", IsObject and IsAffineSemigroupRep);
 
-#############################################################################
-##
-#C  IsAffineSemigroup
-##
-##  The family category of affine semigroups.
-##
-#############################################################################
-DeclareCategoryFamily( "IsAffineSemigroup" );
-
-#############################################################################
-##
-#C  IsAffineSemigroup
-##
-##  The collections category of numerical semigroups.
-##
-#############################################################################
-DeclareCategoryCollections( "IsAffineSemigroup" );
-
 BindGlobal( "AffineSemigroupsFamily",
         NewFamily( "AffineSemigroups", IsAffineSemigroup ));
 
