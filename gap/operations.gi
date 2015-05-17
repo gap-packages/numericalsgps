@@ -55,7 +55,7 @@ end);
 ##  A short for QuotientOfNumericalSemigroup(S, p)
 ##
 #############################################################################
-InstallMethod(\/, "for a numerical semigroup and a positive integer", true,
+InstallOtherMethod(\/, "for a numerical semigroup and a positive integer", true,
         [IsNumericalSemigroup,
          IsPosInt and IsMultiplicativeElement], 999999990,
         function( S,p )

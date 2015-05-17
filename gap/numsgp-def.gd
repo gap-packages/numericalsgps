@@ -26,9 +26,7 @@ DeclareInfoClass("InfoNumSgps");
 ##  The representation of a numerical semigroup.
 ##
 #############################################################################
-DeclareRepresentation( "IsNumericalSemigroupRep",
-        IsComponentObjectRep and IsAttributeStoringRep and IsAdditiveElement and IsAdditiveElementWithInverse and IsMultiplicativeElement,
-        ["list"]);
+DeclareRepresentation( "IsNumericalSemigroupRep", IsAttributeStoringRep, []);
 
 
 #############################################################################
