@@ -28,8 +28,7 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
   elif not ForAll(gens, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
   fi;
-  M:= Objectify( NewType( FamilyObj( gens ),
-              IsAttributeStoringRep and IsAffineSemigroup), rec());
+  M:= Objectify( AffineSemigroupsType, rec());
   
   SetGeneratorsAS(M,gens);
   SetDimensionAS(M,Length(gens[1]));
@@ -106,8 +105,7 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
     Error("The first argument must be a list of lists all with the same length.");
   fi;
 
-  M:= Objectify( NewType( FamilyObj( ls ),
-              IsAttributeStoringRep and IsAffineSemigroup), rec());
+  M:= Objectify( AffineSemigroupsType, rec());
   SetEquationsAS(M,[ls,md]);
   SetDimensionAS(M,Length(ls[1]));
   
@@ -137,8 +135,7 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
     Error("The arguments must be lists of integers with the same length, or a list of such lists");
   fi;
 
-  M:= Objectify( NewType( FamilyObj( ls ),
-              IsAttributeStoringRep and IsAffineSemigroup), rec());
+  M:= Objectify( AffineSemigroupsType, rec());
 
   SetInequalitiesAS(M,ls);
   SetDimensionAS(M,Length(ls[1]));

@@ -36,16 +36,14 @@ DeclareRepresentation( "IsNumericalSemigroupRep", IsAttributeStoringRep, []);
 ##  The category of numerical semigroups.
 ##
 #############################################################################
-DeclareCategory( "IsNumericalSemigroup", IsObject and IsNumericalSemigroupRep);
+DeclareCategory( "IsNumericalSemigroup", IsAdditiveMagma and IsNumericalSemigroupRep);
 
 
-BindGlobal( "NumericalSemigroupsFamily",
-        NewFamily( "NumericalSemigroups", IsNumericalSemigroup ));
-
+# Elements of numerical semigroups are integers, so numerical semigroups are
+# collections of integers.
 BindGlobal( "NumericalSemigroupsType",
-        NewType( NumericalSemigroupsFamily, IsNumericalSemigroup));
-
-
+        NewType( CollectionsFamily(CyclotomicsFamily),
+                 IsNumericalSemigroup));
 
 
 #############################################################################

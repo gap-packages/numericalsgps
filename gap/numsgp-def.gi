@@ -41,9 +41,7 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
     if Gcd(L) <> 1 then
         Error("The greatest common divisor is not 1.\n");
     fi;
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec());
+    M:= Objectify( NumericalSemigroupsType, rec());
     SetGeneratorsNS(M,L);
     if 1 in L then
         SetMinimalGeneratorsNS(M,[1]);
@@ -184,9 +182,7 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGenerators, function(arg)
         Info(InfoWarning,1,"The list ", L, " can not be the minimal generating set. The list ", l, " will be used instead.");
         L := l;
     fi;
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                 rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     #    Setter(GeneratorsOfNumericalSemigroup)( M, AsList( L ) );
     SetMinimalGeneratorsNS(M,L);
     SetGeneratorsNS(M,L);
@@ -221,9 +217,7 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGeneratorsNC, function(arg)
     fi;
 
 
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     #    Setter(GeneratorsOfNumericalSemigroup)( M, AsList( L ) );
     SetMinimalGeneratorsNS(M,L);
     SetGeneratorsNS(M,L);
@@ -245,9 +239,7 @@ InstallGlobalFunction(ModularNumericalSemigroup, function(a,b)
     if not IsPosInt(a) or not IsPosInt(b) then
         Error("ModularNumericalSemigroup has 2 positive integers as arguments");
     fi;
-    M:= Objectify( NewType( FamilyObj( [a,b] ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetModularConditionNS(M,[a,b]);
     if (a = 1) or (b = 1) then #the semigroup is the entire N
         SetMinimalGeneratorsNS(M,[1]);
@@ -278,9 +270,7 @@ InstallGlobalFunction(ProportionallyModularNumericalSemigroup, function(a,b,c)
     if not IsPosInt(a) or not IsPosInt(b) or not IsPosInt(c) then
         Error("ProportionallyModularNumericalSemigroup has 3 positive integers as arguments");
     fi;
-    M:= Objectify( NewType( FamilyObj( [a,b,c] ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetProportionallyModularConditionNS(M,[a,b,c]);
     if a > c then
       SetClosedIntervalNS(M, [b/a,b/(a-c)]);
@@ -333,9 +323,7 @@ InstallGlobalFunction(NumericalSemigroupByInterval, function(arg)
         Error("The argument of NumericalSemigroupByInterval must consist of a pair of rational numbers, <r> and <s> and with r < s");
     fi;
 
-    M:= Objectify( NewType( FamilyObj( [r,s] ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetClosedIntervalNS(M,[r,s]);
 ## the semigroup is proportionally modular (Lemma 4.12 [Rosales & Garcia-Sanchez - book])
     b1 := NumeratorRat(r);
@@ -385,9 +373,7 @@ InstallGlobalFunction(NumericalSemigroupByOpenInterval, function(arg)
         Error("The argument of NumericalSemigroupByOpenInterval must consist of a pair of rational numbers, <r> and <s> and with r < s");
     fi;
 
-    M:= Objectify( NewType( FamilyObj( [r,s] ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetOpenIntervalNS(M,[r,s]);
     return M;
 end);
@@ -409,9 +395,7 @@ InstallGlobalFunction(NumericalSemigroupBySubAdditiveFunction, function(L)
         Error("The argument of NumericalSemigroupBySubAdditiveFunction must be a subadditive function");
     fi;
 
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetSubAdditiveFunctionNS(M,L);
     return M;
 end);
@@ -432,9 +416,7 @@ InstallGlobalFunction(NumericalSemigroupByAperyList, function(L)
         Error("The argument of NumericalSemigroupByAperyList must be The Apery List of some numerical semigroup");
     fi;
 
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetAperyListNS(M,L);
     return M;
 end);
@@ -463,9 +445,7 @@ InstallGlobalFunction(NumericalSemigroupBySmallElements, function(L)
     K := Difference([1..L[Length(L)]],L);
     R := Intersection([0..K[Length(K)]+1],L);
 
-    M:= Objectify( NewType( FamilyObj( R ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetGapsNS(M,Difference([1..R[Length(R)]], R));
     SetSmallElementsNS(M,R);
     return M;
@@ -487,9 +467,7 @@ InstallGlobalFunction(NumericalSemigroupBySmallElementsNC, function(L)
     K := Difference([1..L[Length(L)]],L);
     R := Intersection([0..K[Length(K)]+1],L);
 
-    M:= Objectify( NewType( FamilyObj( R ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetGapsNS(M,Difference([1..R[Length(R)]], R));
     SetSmallElementsNS(M,R);
     return M;
@@ -512,9 +490,7 @@ InstallGlobalFunction(NumericalSemigroupByGaps, function(L)
         Error("The argument does not represent the gaps of  a numerical semigroup");
     fi;
 
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetGapsNS(M,L);
     SetSmallElementsNS(M,K);    
     return M;
@@ -539,9 +515,7 @@ InstallGlobalFunction(NumericalSemigroupByFundamentalGaps, function(L)
         Error("The argument does not represent the fundamental gaps of  a numerical semigroup");
     fi;
 
-    M:= Objectify( NewType( FamilyObj( L ),
-                IsAttributeStoringRep and IsNumericalSemigroup),
-                rec() );
+    M:= Objectify( NumericalSemigroupsType, rec() );
     SetFundamentalGapsNS(M,L);
     SetGapsNS(M,G);
     SetSmallElementsNS(M,K);
