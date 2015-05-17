@@ -171,10 +171,6 @@ gap> L:=GapsOfNumericalSemigroup(s);
 [ 1, 2, 4, 5, 8, 11 ]
 gap> RepresentsGapsOfNumericalSemigroup(L);
 true
-#gap> L:=Set(List([1..21],i->RandomList([1..50])));
-#[ 2, 6, 7, 8, 10, 12, 14, 19, 24, 28, 31, 35, 42, 50 ]
-#gap> RepresentsGapsOfNumericalSemigroup(L);
-#false
 
 gap> IsAperyListOfNumericalSemigroup([0,21,7,28,14]);
 true
@@ -549,7 +545,6 @@ gap> DifferenceOfIdealsOfNumericalSemigroup(last2,last);
 
 gap> s:=NumericalSemigroup(13,23);;
 gap> l:=List([1..6], _ -> Random([8..34]));;
-#[ 22, 29, 34, 25, 10, 12 ]
 gap> I:=IdealOfNumericalSemigroup(l, s);;
 gap> It:=TranslationOfIdealOfNumericalSemigroup(7,I);
 <Ideal of numerical semigroup>
