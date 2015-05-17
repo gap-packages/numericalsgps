@@ -35,27 +35,6 @@ DeclareRepresentation( "IsIdealOfNumericalSemigroupRep", IsAttributeStoringRep,
 DeclareCategory( "IsIdealOfNumericalSemigroup", IsObject and IsIdealOfNumericalSemigroupRep);
 
 
-#############################################################################
-##
-#C  IsIdealOfNumericalSemigroup
-##
-##  The family category of ideals of numerical semigroups.
-##
-#############################################################################
-DeclareCategoryFamily( "IsIdealOfNumericalSemigroup" );
-
-
-#############################################################################
-##
-#C  IsIdealOfNumericalSemigroup
-##
-##  The collections category of ideals of numerical semigroups.
-##
-#############################################################################
-DeclareCategoryCollections( "IsIdealOfNumericalSemigroup" );
-
-
-
 BindGlobal( "IdealsOfNumericalSemigroupsFamily",
         NewFamily( "IdealsOfNumericalSemigroups", IsIdealOfNumericalSemigroup ));
 
