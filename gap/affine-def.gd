@@ -21,13 +21,13 @@ DeclareRepresentation( "IsAffineSemigroupRep", IsAttributeStoringRep, [] );
 ##  The category of affine semigroups.
 ##
 #############################################################################
-DeclareCategory( "IsAffineSemigroup", IsObject and IsAffineSemigroupRep);
+DeclareCategory( "IsAffineSemigroup", IsAdditiveMagma and IsAffineSemigroupRep) ;
 
-BindGlobal( "AffineSemigroupsFamily",
-        NewFamily( "AffineSemigroups", IsAffineSemigroup ));
-
+# Elements of affine semigroups are collections of integers, so affine
+# semigroups are collections of collections of integers.
 BindGlobal( "AffineSemigroupsType",
-        NewType( AffineSemigroupsFamily, IsAffineSemigroup));
+        NewType( CollectionsFamily(CollectionsFamily(CyclotomicsFamily)),
+                 IsAffineSemigroup));
 
 
 #############################################################################
