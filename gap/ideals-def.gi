@@ -31,10 +31,11 @@ InstallGlobalFunction(IdealOfNumericalSemigroup, function(l,S)
       if not (IsNumericalSemigroup(S) and IsListOfIntegersNS(l)) then
         Error("The arguments of IdealOfNumericalSemigroup must be a numerical semigroup and a nonempty list of integers.");
     fi;
-    I := Objectify( IdealsOfNumericalSemigroupsType,
-                  rec());
-    SetUnderlyingNSIdeal(I,S);
-    SetGeneratorsIdealNS(I,Set(l));
+    I := rec();
+    ObjectifyWithAttributes(I, IdealsOfNumericalSemigroupsType,
+        UnderlyingNSIdeal, S,
+        GeneratorsIdealNS, Set(l)
+        );
     return I;
 end );
 
@@ -43,7 +44,7 @@ end );
 ## L is a list of integers and S a numerical semigroup
 ## L + S is an abbreviation for IdealOfNumericalSemigroup(L, S)
 ##
-InstallMethod( \+, "for a list and a numerical semigroup", true,
+InstallOtherMethod( \+, "for a list and a numerical semigroup", true,
         [IsList and IsAdditiveElement,
          IsNumericalSemigroup], 0,
         function( L,S )
@@ -54,7 +55,7 @@ end);
 ## n is an integer and S a numerical semigroup
 ## n + S is an abbreviation for IdealOfNumericalSemigroup([n], S)
 ##
-InstallMethod( \+, "for an integer and a numerical semigroup", true,
+InstallOtherMethod( \+, "for an integer and a numerical semigroup", true,
         [IsInt and IsAdditiveElement,
          IsNumericalSemigroup], 0,
         function( n,S )
@@ -334,7 +335,7 @@ end);
 ## I + J means SumIdealsOfNumericalSemigroup(I,J)
 ##########
 
-InstallMethod( \+, "for ideals of the same numerical semigroup", true,
+InstallOtherMethod( \+, "for ideals of the same numerical semigroup", true,
         [IsIdealOfNumericalSemigroup,
          IsIdealOfNumericalSemigroup], 0,
         function( I, J )
@@ -397,14 +398,14 @@ end);
 ## I can be the ambient numerical semigroup of J
 ##########
 
-InstallMethod( \-, "for ideals of the same numerical semigroup", true,
+InstallOtherMethod( \-, "for ideals of the same numerical semigroup", true,
         [IsIdealOfNumericalSemigroup,
          IsIdealOfNumericalSemigroup], 0,
         function( I, J )
     return(SubtractIdealsOfNumericalSemigroup( I, J ));
 end);
 
-InstallMethod( \-, "for a numerical semigroup and one of its ideals", true,
+InstallOtherMethod( \-, "for a numerical semigroup and one of its ideals", true,
         [IsNumericalSemigroup,
          IsIdealOfNumericalSemigroup], 0,
         function( S, J )
@@ -466,7 +467,7 @@ end);
 ## n is an integer and S a numerical semigroup
 ## n * I is an abbreviation for MultipleOfIdealOfNumericalSemigroup(n,I)
 ##########
-InstallMethod( \*, "for a non negative integer and an ideal of a numerical semigroup", true,
+InstallOtherMethod( \*, "for a non negative integer and an ideal of a numerical semigroup", true,
         [IsInt and IsMultiplicativeElement,
          IsIdealOfNumericalSemigroup], 999999990,
         function( n,I )
@@ -688,7 +689,7 @@ end);
 ##  <k> is an integer and <I> an ideal of a numerical semigroup.
 ##  k + I is an abbreviation for TranslationOfIdealOfNumericalSemigroup(k, I)
 ##
-InstallMethod( \+, "for an integer and an ideal of a numerical semigroup", true,
+InstallOtherMethod( \+, "for an integer and an ideal of a numerical semigroup", true,
         [IsInt and IsAdditiveElement,
          IsIdealOfNumericalSemigroup], 0,
         function(k,I)

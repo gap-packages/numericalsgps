@@ -21,9 +21,8 @@
 ##  The representation of an ideal of a numerical semigroup.
 ##
 #############################################################################
-DeclareRepresentation( "IsIdealOfNumericalSemigroupRep",
-        IsComponentObjectRep and IsAttributeStoringRep and IsAdditiveElement and IsAdditiveElementWithInverse and IsMultiplicativeElement,
-        ["list"]);
+DeclareRepresentation( "IsIdealOfNumericalSemigroupRep", IsAttributeStoringRep,
+        ["UnderlyingNSIdeal", "GeneratorsIdealNS"] );
 
 
 #############################################################################

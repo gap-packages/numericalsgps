@@ -12,9 +12,7 @@
 ##  The representation of an affine semigroup.
 ##
 #############################################################################
-DeclareRepresentation( "IsAffineSemigroupRep",
-        IsComponentObjectRep and IsAttributeStoringRep and IsAdditiveElement and IsAdditiveElementWithInverse and IsMultiplicativeElement,
-        ["list"]);
+DeclareRepresentation( "IsAffineSemigroupRep", IsAttributeStoringRep, [] );
 
 #############################################################################
 ##
