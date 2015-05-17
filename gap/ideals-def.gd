@@ -32,15 +32,14 @@ DeclareRepresentation( "IsIdealOfNumericalSemigroupRep", IsAttributeStoringRep,
 ##  The category of ideals of numerical semigroups.
 ##
 #############################################################################
-DeclareCategory( "IsIdealOfNumericalSemigroup", IsObject and IsIdealOfNumericalSemigroupRep);
+DeclareCategory( "IsIdealOfNumericalSemigroup", IsAdditiveMagma and IsIdealOfNumericalSemigroupRep);
 
 
-BindGlobal( "IdealsOfNumericalSemigroupsFamily",
-        NewFamily( "IdealsOfNumericalSemigroups", IsIdealOfNumericalSemigroup ));
-
+# Elements of ideals of numerical semigroups are integers, so ideals of
+# numerical semigroups are collections of integers.
 BindGlobal( "IdealsOfNumericalSemigroupsType",
-        NewType( IdealsOfNumericalSemigroupsFamily, IsIdealOfNumericalSemigroup));
-
+        NewType( CollectionsFamily(CyclotomicsFamily),
+                 IsIdealOfNumericalSemigroup));
 
 
 #############################################################################
