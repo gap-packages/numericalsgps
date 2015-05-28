@@ -66,7 +66,7 @@ end);
 #################################################################
 #################################################################
 ##
-#F ElementsForPseudoFrobenius(f_gaps,f_elts,PF)
+#F FurtherForcedElementsForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ## computes a set of elements forced by the known forced gaps (f_gaps) and forced elements (f_elts) 
 ## returns the set computed if it is disjoint from f_gaps, returns fail otherwise.
@@ -79,7 +79,7 @@ end);
 ##  - big elements: if m is the multiplicity and 1 <= i < m, then frob-i + m \in S. So, either frob-i \in  S or frob-i is pseudo-frobenius.
 ## 
 #################################################################
-InstallGlobalFunction(ElementsForPseudoFrobenius, function(f_gaps,f_elts,PF)
+InstallGlobalFunction(FurtherForcedElementsForPseudoFrobenius, function(f_gaps,f_elts,PF)
   local  frob, ef_elts, x, filt, candidates, m, bf_elts, nf_elts, closure, 
          conflicts;
   
@@ -120,7 +120,7 @@ end);
 #################################################################
 #################################################################
 ##
-#F GapsForPseudoFrobenius(f_gaps,f_elts,PF)
+#F FurtherForcedGapsForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ## Returns a list of integers that must be gaps of any numerical semigroup containing elts and for which it is known that f_gaps are gaps
 ## Returns fail in case it finds an element that had to be a gap, which implies that no semigroup exists having the given sets of gaps and elements.
@@ -128,7 +128,7 @@ end);
 ## Justification: note that if f is a gap and e is an element, then f-e is a gap. (Otherwise f=(f-e)+e would be an element)
 ##
 #################################################################
-InstallGlobalFunction(GapsForPseudoFrobenius, function(f_gaps,f_elts,PF)
+InstallGlobalFunction(FurtherForcedGapsForPseudoFrobenius, function(f_gaps,f_elts,PF)
   local  frob, elts, nf_gaps, conflicts;
   
   frob := Maximum(PF);   
@@ -153,7 +153,7 @@ end);
 ##
 ## The aim of this function is to compute forced gaps and forced integers for a semigroup having PF as set of pseudo-Frobenius numbers, containing f_elts and having f_gaps as some of its gaps.
 ##
-## The function consists of a loop that makes use of the functions "NewGapsForPseudoFrobenius" and "NewElementsForPseudoFrobenius" to discover new forced gaps and new forced elements, respectively.
+## The function consists of a loop that makes use of the functions "FurtherForcedGapsForPseudoFrobenius" and "FurtherForcedElementsForPseudoFrobenius" to discover new forced gaps and new forced elements, respectively.
 ##
 ## If it is discovered an integers that simoultaniously had to be a gap and an element, we say that there is a conflict and "fail" is returned. Otherwise, the function returns a pair [forced_gaps, forced_elements].
 #################################################################
@@ -164,14 +164,14 @@ InstallGlobalFunction(SimpleForcedIntegersForPseudoFrobenius, function(f_gaps,f_
   nf_elts := ShallowCopy(f_elts);
   repeat
     changes := false;
-    gaps := GapsForPseudoFrobenius(nf_gaps,nf_elts,PF);  
+    gaps := FurtherForcedGapsForPseudoFrobenius(nf_gaps,nf_elts,PF);  
     if gaps = fail then
       return fail;
     elif gaps <> nf_gaps then
       changes := true;
       nf_gaps := gaps;      
     fi;
-    elts := ElementsForPseudoFrobenius(nf_gaps,nf_elts,PF);
+    elts := FurtherForcedElementsForPseudoFrobenius(nf_gaps,nf_elts,PF);
     if elts = fail then
       return fail;
     elif elts <> nf_elts then
@@ -416,10 +416,11 @@ end);
 ## When Length(PF)=1, it makes use of the function AnIrreducibleNumericalSemigroupWithFrobeniusNumber
 #################################################################
 InstallGlobalFunction(RandomNumericalSemigroupWithPseudoFrobeniusNumbers, function(arg)
-  local  PF, m_att, type, frob, f_ints, newForcedIntegers, free, i, v, nfig, 
+  local  m_att, PF, type, frob, of_ints, free, nspfn, i, f_ints, v, nfig, 
          nfie;
-
-  ## check arguments
+  
+    ## check arguments
+  m_att := fail;
   if Length(arg) = 1 then
     if IsRecord(arg[1]) then
       if IsBound(arg[1].pseudo_frobenius) then 
@@ -449,41 +450,51 @@ InstallGlobalFunction(RandomNumericalSemigroupWithPseudoFrobeniusNumbers, functi
   if PF[type] - PF[type-1] > PF[1] then
     return fail;
   fi;
-
-  m_att := Minimum(7,Int(frob/3)); #many experiments suggest that it is a reasonable number
-
+  
+  #maximum number of attempts
+  if m_att = fail then
+    m_att := Minimum(7,Int(frob/3)); #many experiments suggest that it is a reasonable number
+  fi;
+  
   # forced integers
-  f_ints := ForcedIntegersForPseudoFrobenius(PF);
+  of_ints := ForcedIntegersForPseudoFrobenius(PF);
 
-  if f_ints = fail then 
+  if of_ints = fail then 
     return fail;
   fi;
-  free := Difference([1..frob],Union(f_ints));
-  if free = [] then #there is at most one numerical semigroup fulfilling the conditions
-    return NumericalSemigroupsWithPseudoFrobeniusNumbers(PF);
+  
+  free := Difference([1..frob],Union(of_ints));
+  if Length(free) < Minimum(10,Int(frob/5)) then #NumericalSemigroupsWithPseudoFrobeniusNumbers is reasonably fast...
+    nspfn := NumericalSemigroupsWithPseudoFrobeniusNumbers(PF);
+    if nspfn = [] then
+      return fail;
+    else
+      return RandomList(nspfn);
+    fi;
   fi;
   for i in [1..m_att] do
+    f_ints := ShallowCopy(of_ints);
+    free := Difference([1..frob],Union(f_ints));
     while free <> [] do
       v := RandomList(free);
       nfig := SimpleForcedIntegersForPseudoFrobenius(Union(f_ints[1],[v]),f_ints[2],PF);
+      nfie := SimpleForcedIntegersForPseudoFrobenius(f_ints[1],Union(f_ints[2],[v]),PF);
       if nfig <> fail then
         if IsRange(Union(nfig)) then
           return NumericalSemigroupByGaps(nfig[1]);
         fi;
-      fi;
-      nfie := SimpleForcedIntegersForPseudoFrobenius(f_ints[1],Union(f_ints[2],[v]),PF);
-      if nfie <> fail then
-        if IsRange(Union(nfie)) then
-          return NumericalSemigroupByGaps(nfie[1]);
-        fi;
-      fi;
-      if nfig <> fail then
         f_ints := nfig;
         free := Difference([1..frob],Union(f_ints));
-      elif  nfie <> fail then
-        f_ints := nfie;
-        free := Difference([1..frob],Union(f_ints));
+      elif nfie <> fail then
+          if IsRange(Union(nfie)) then
+            return NumericalSemigroupByGaps(nfie[1]);
+          fi;
+          f_ints := nfie;
+          free := Difference([1..frob],Union(f_ints));       
+      else
+        break;
       fi;
+    Info(InfoTipo,1,"Length free: ",Length(free),"\n");
     od;
     Info(InfoTipo,1,"Attempt ",i,"\n");
   od;
@@ -491,3 +502,4 @@ InstallGlobalFunction(RandomNumericalSemigroupWithPseudoFrobeniusNumbers, functi
   return fail;
   
 end);
+
