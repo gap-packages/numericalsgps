@@ -21,16 +21,16 @@ DeclareGlobalFunction("NumericalSemigroupWithGivenElementsAndFrobenius");
 DeclareGlobalFunction("StartingForcedGapsForPseudoFrobenius");
 ###########################################################################
 ##
-#F ElementsForPseudoFrobenius(f_gaps,f_elts,PF)
+#F FurtherForcedElementsForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ###########################################################################
-DeclareGlobalFunction("ElementsForPseudoFrobenius");
+DeclareGlobalFunction("FurtherForcedElementsForPseudoFrobenius");
 ###########################################################################
 ##
-#F GapsForPseudoFrobenius(f_gaps,f_elts,PF)
+#F FurtherForcedGapsForPseudoFrobenius(f_gaps,f_elts,PF)
 ##
 ###########################################################################
-DeclareGlobalFunction("GapsForPseudoFrobenius");
+DeclareGlobalFunction("FurtherForcedGapsForPseudoFrobenius");
 ###########################################################################
 ##
 #F SimpleForcedIntegersForPseudoFrobenius
