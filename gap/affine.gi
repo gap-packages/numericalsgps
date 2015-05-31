@@ -1033,20 +1033,20 @@ InstallGlobalFunction(LawrenceLiftingOfAffineSemigroup,function(a)
     fi;
     
     msg:=GeneratorsOfAffineSemigroup(a);
-	ed:=Length(msg);
-	dim:=Length(msg[1]);
-	id:=IdentityMat(ed);
-	zero:=List([1..ed],_->0);
-	zeroes:=List([1..dim],_->zero);
-	
-	msg:=TransposedMat(msg);
-	aid:=TransposedMat(Concatenation(msg,id));	
-	zeroid:=TransposedMat(Concatenation(zeroes,id));
-	
+    ed:=Length(msg);
+    dim:=Length(msg[1]);
+    id:=IdentityMat(ed);
+    zero:=List([1..ed],_->0);
+    zeroes:=List([1..dim],_->zero);
+    
+    msg:=TransposedMat(msg);
+    aid:=TransposedMat(Concatenation(msg,id));	
+    zeroid:=TransposedMat(Concatenation(zeroes,id));
+    
 
 
-	lft:=(Concatenation(aid,zeroid));
-	return AffineSemigroup(lft);		
+    lft:=(Concatenation(aid,zeroid));
+    return AffineSemigroup(lft);		
 end);
 
 #####################################################
@@ -1056,19 +1056,31 @@ InstallMethod(PrimitiveElementsOfAffineSemigroup,
         "Computes the set of primitive elements of an affine semigroup",
         [IsAffineSemigroup],1,
         function(a)
-	local msg, ed, dim, prlft, lft;
+	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
 
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup.");
     fi;
     
     Info(InfoNumSgps,2,"Using Lawrence lifting for computing primitive elements.");
-    msg:=GeneratorsOfAffineSemigroup(a);
-	ed:=Length(msg);
-	dim:=Length(msg[1]);
-	lft:=LawrenceLiftingOfAffineSemigroup(a);
-	prlft:=MinimalPresentationOfAffineSemigroup(lft);
-	return Set(prlft, p->(p[1]{[ed+1..ed+ed]})*msg);
+    mgs:=GeneratorsOfAffineSemigroup(a);
+    ed:=Length(mgs);
+    dim:=Length(mgs[1]);
+    #lft:=LawrenceLiftingOfAffineSemigroup(a);
+    #prlft:=MinimalPresentationOfAffineSemigroup(lft);
+    id:=IdentityMat(ed);
+    zero:=List([1..ed],_->0);
+    zeroes:=List([1..dim],_->zero);
+    
+    msg:=TransposedMat(mgs);
+    aid:=TransposedMat(Concatenation(msg,id));	
+    zeroid:=TransposedMat(Concatenation(zeroes,id));
+    
+    lft:=(Concatenation(aid,zeroid));
+    prlft:=GeneratorsOfKernelCongruence(lft);
+    Info(InfoNumSgps,2,"The kernel congruence is ", prlft);
+
+    return Set(prlft, p->(p[1]{[ed+1..ed+ed]})*mgs);
 end);
 
 #####################################################################
