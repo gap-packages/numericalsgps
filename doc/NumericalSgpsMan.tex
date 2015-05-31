@@ -4263,7 +4263,7 @@ semigroup will be given by means of a set of generators.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AffineSemigroup([1,3],[7,2],[1,5]);|
   <Affine semigroup in 2 dimensional space, with 3 generators>
-  !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );  |
+  !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );|
   <Affine semigroup>
 \end{Verbatim}
  }
@@ -4290,14 +4290,14 @@ semigroup will be given by means of a set of generators.
   <Affine semigroup in 1 dimensional space, with 4 generators>
   !gapprompt@gap>| !gapinput@GeneratorsOfAffineSemigroup(a);|
   [ [ 1310 ], [ 1411 ], [ 1546 ], [ 1601 ] ]
-  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);;time;                     |
+  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);;time;|
   237972
 \end{Verbatim}
  If we use the package \texttt{SingularInterface}, the speed up is considerable. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@NumSgpsUseSingularInterface();|
   ...
-  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);;time;                     |
+  !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);;time;|
   32
 \end{Verbatim}
  }
@@ -4487,7 +4487,7 @@ defining equations $Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\
  \mbox{\texttt{\mdseries\slshape a1, a2}} are affine semigroups. Determines if they can be glued, and if so, returns the
 gluing. Otherwise it returns fail. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@a1:=AffineSemigroup([[2,0],[0,2]]);    |
+  !gapprompt@gap>| !gapinput@a1:=AffineSemigroup([[2,0],[0,2]]);|
   <Affine semigroup in 2 dimensional space, with 2 generators>
   !gapprompt@gap>| !gapinput@a2:=AffineSemigroup([[1,1]]);|
   <Affine semigroup in 2 dimensional space, with 1 generators>
@@ -4741,18 +4741,18 @@ This function is based on \cite{GSOSN}. }
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the monotone catenary degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups), computed as explained in \cite{PH}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]); |
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);|
   <Affine semigroup>
   !gapprompt@gap>| !gapinput@GeneratorsOfAffineSemigroup(a);|
   [ [ 1, 1 ], [ 2, 1 ], [ 1, 2 ], [ 3, 1 ] ]
-  !gapprompt@gap>| !gapinput@CatenaryDegreeOfAffineSemigroup(a);                  |
+  !gapprompt@gap>| !gapinput@CatenaryDegreeOfAffineSemigroup(a);|
   3
   !gapprompt@gap>| !gapinput@EqualCatenaryDegreeOfAffineSemigroup(a);|
   2
-  !gapprompt@gap>| !gapinput@HomogeneousCatenaryDegreeOfAffineSemigroup(a);   |
+  !gapprompt@gap>| !gapinput@HomogeneousCatenaryDegreeOfAffineSemigroup(a);|
   3
   !gapprompt@gap>| !gapinput@MonotoneCatenaryDegreeOfAffineSemigroup(a);|
-  3  
+  3
 \end{Verbatim}
  }
 
@@ -4766,7 +4766,8 @@ This function is based on \cite{GSOSN}. }
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the tame degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
+ \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the tame degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). If \mbox{\texttt{\mdseries\slshape a}} is given by equations (or its equations are known), then the procedure
+explained in \cite{GS} is used. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
   !gapprompt@gap>| !gapinput@TameDegreeOfAffineSemigroup(a);|
