@@ -2,7 +2,13 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 
-0.980 -> 0.999
+0.980 -> 1
+- NumSgpsTests() modified (Thanks Alexander!)
+- Corrected and simplified usage of GAP type objects and declarations of GAP representations (Thanks Max!)
+- Added functions to find the set of numerical semigrousp (or a random numerical semigroup) with a given set of pseudo-Frobenius numbers.
+- Small bug with NumSgpsUseSingular[Interface] solved.
+- Added GeneratorsOfKernelCongruence.
+- Primitive elements of affine semigroups via Lawrence lifting (if normaliz or 4ti2 are not used) are now done via GeneratorsOfKernelCongruence instead of MinimalPresentationOfAffineSemigroup, since in this setting the generators of the kernel congruence are already a minimal presentation.
 - Fixed bug in the definition of proportionaly modular semigroups (affected the case a < c (in this case it should return the entire N) -- )
 - The function AperyListOfNumericalSemigroup has been added. It has only a numerical semigroup as argument and does the same than AperyListOfNumericalSemigroupWRTElement when considered relative to the multiplicity (which is, by far, the most important case). 
 - The components of the objects "NumericalSemigroup" and "IdealOfNumericalSemigroup" became atributes. All "!." used either to access the components and to assign new values to them have been changed accordingly. It affected various files.
@@ -25,8 +31,9 @@
 - MinimalGeneratingSystem is new function that admits both ideals and numerical semigroups (calling then the corresponding MinimalGeneratingSystem...).
 - Added LFormsOfNumericalSemigroup.
 - Added alternate catenary degrees: monotone, adjacent, equal, homogeneous.
-- Added a new chapter for affine semigroups.
-- Interaction with 4ti2Interface, NormalizInterface, singular and SingularInterface. Methods implemented depending if these packages have been loaded.
+- Added a new chapter for affine semigroups with functions designed for them (see manual).
+- AsAffineSemigroup lets you see a numerical semigroup as an affine semigroup; whence use functions for affine semigroups with it.
+- Interaction with 4ti2Interface, NormalizInterface, singular, SingularInterface and GradedModules. Methods implemented depending if these packages have been loaded.
 - Now InfoNumSgps is used in more functions.
 
 
