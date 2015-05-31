@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  27 APR 2015 23:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.14)  31 MAY 2015 21:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **NumericalSgpsMan
 (./NumericalSgpsMan.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,16 +24,16 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/a4wide/a4wide.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/a4wide/a4wide.sty
 Package: a4wide 1994/08/30
 
-(/usr/share/texlive/texmf-dist/tex/latex/ntgclass/a4.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/ntgclass/a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
@@ -41,15 +41,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2014/04/30 v1.2b Input encoding file
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
 \@indexfile=\write3
@@ -57,31 +57,32 @@ Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 
 
 Writing index file NumericalSgpsMan.idx
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 137.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
-<2008/02/07> (tvz) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+<2008/02/07> (tvz)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 \FV@CodeLineNo=\count89
@@ -90,7 +91,8 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \c@FancyVerbLine=\count90
 \FV@StepNumber=\count91
 \FV@OutFile=\write4
-) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -126,17 +128,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -151,7 +153,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -217,14 +219,14 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -265,25 +267,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 
@@ -303,17 +305,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing ON on input line 4461.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/backref.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2012/07/25 v1.38 Bibliographical back referencing
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
 \c@Hy@tempcnt=\count95
 
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -338,7 +340,7 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver: hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
@@ -348,7 +350,7 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \openout5 = `NumericalSgpsMan.pnr'.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+(/usr/local/texlive/2014/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen107
@@ -380,7 +382,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 87.
@@ -388,10 +390,10 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 87.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen108
@@ -408,10 +410,10 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 \big@size=\dimen110
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 87.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count109
@@ -428,7 +430,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 93.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <50> not available
@@ -440,7 +442,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 108.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 Underfull \hbox (badness 10000) in paragraph at lines 106--113
@@ -449,11 +451,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--113
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 119.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 122--126
@@ -479,30 +481,30 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
@@ -1560,58 +1562,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 4787--4790
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4805--4808
+Underfull \hbox (badness 10000) in paragraph at lines 4806--4809
 
  []
 
 [73]
-Underfull \hbox (badness 10000) in paragraph at lines 4827--4830
+Underfull \hbox (badness 10000) in paragraph at lines 4828--4831
 
  []
 
 [74]
 Appendix A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4865--4868
+Underfull \hbox (badness 10000) in paragraph at lines 4866--4869
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4886--4889
+Underfull \hbox (badness 10000) in paragraph at lines 4887--4890
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4906--4909
+Underfull \hbox (badness 10000) in paragraph at lines 4907--4910
 
  []
 
 [75
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4929--4932
+Underfull \hbox (badness 10000) in paragraph at lines 4930--4933
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4947--4950
+Underfull \hbox (badness 10000) in paragraph at lines 4948--4951
 
  []
 
 [76]
 Appendix B.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4983--4986
+Underfull \hbox (badness 10000) in paragraph at lines 4984--4987
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5002--5005
+Underfull \hbox (badness 10000) in paragraph at lines 5003--5006
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5019--5022
+Underfull \hbox (badness 10000) in paragraph at lines 5020--5023
 
  []
 
@@ -1622,98 +1624,98 @@ pdfTeX warning (ext4): destination with the same identifier (name{L.X86746B487B
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.5030 \end{Verbatim}
+l.5031 \end{Verbatim}
                      ]
-Underfull \hbox (badness 10000) in paragraph at lines 5038--5041
+Underfull \hbox (badness 10000) in paragraph at lines 5039--5042
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5057--5060
+Underfull \hbox (badness 10000) in paragraph at lines 5058--5061
 
  []
 
 [78]
 Appendix C.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5088--5091
+Underfull \hbox (badness 10000) in paragraph at lines 5089--5092
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5109--5112
+Underfull \hbox (badness 10000) in paragraph at lines 5110--5113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5132--5135
+Underfull \hbox (badness 10000) in paragraph at lines 5133--5136
 
  []
 
 [79
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 5155--5158
+Underfull \hbox (badness 10000) in paragraph at lines 5156--5159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5179--5182
+Underfull \hbox (badness 10000) in paragraph at lines 5180--5183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5204--5207
+Underfull \hbox (badness 10000) in paragraph at lines 5205--5208
 
  []
 
 [80]
-Underfull \hbox (badness 10000) in paragraph at lines 5228--5231
+Underfull \hbox (badness 10000) in paragraph at lines 5229--5232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5252--5255
+Underfull \hbox (badness 10000) in paragraph at lines 5253--5256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5276--5279
+Underfull \hbox (badness 10000) in paragraph at lines 5277--5280
 
  []
 
 [81]
-Underfull \hbox (badness 10000) in paragraph at lines 5308--5311
+Underfull \hbox (badness 10000) in paragraph at lines 5309--5312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5341--5344
+Underfull \hbox (badness 10000) in paragraph at lines 5342--5345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5365--5368
+Underfull \hbox (badness 10000) in paragraph at lines 5366--5369
 
  []
 
 [82]
-Underfull \hbox (badness 10000) in paragraph at lines 5386--5389
+Underfull \hbox (badness 10000) in paragraph at lines 5387--5390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5407--5410
+Underfull \hbox (badness 10000) in paragraph at lines 5408--5411
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5429--5432
+Underfull \hbox (badness 10000) in paragraph at lines 5430--5433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5449--5452
+Underfull \hbox (badness 10000) in paragraph at lines 5450--5453
 
  []
 
@@ -1748,7 +1750,7 @@ th.rwth-aachen.de/~barakat/
 [85
 
 ] [86]
-Underfull \hbox (badness 1132) in paragraph at lines 240--240
+Underfull \hbox (badness 1132) in paragraph at lines 245--245
 []\T1/ptm/m/n/10.95 S. Gutsche.  4ti2interface, a link to 4ti2.  [][]$\T1/cmtt/
 m/n/10.95 http : / / www . gap-[]system . org /
  []
@@ -2506,51 +2508,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 391--393
  []
 
 [93])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5491.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5491.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5492.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5492.
  (./NumericalSgpsMan.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5491.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5491.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5492.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5492.
 
 Package rerunfilecheck Info: File `NumericalSgpsMan.out' has not changed.
 (rerunfilecheck)             Checksum: 42034406846F1A20C2B71AB113722920;4381.
 Package rerunfilecheck Info: File `NumericalSgpsMan.brf' has not changed.
-(rerunfilecheck)             Checksum: CA771FE998A658BAC45C575F3DEEB08F;4703.
+(rerunfilecheck)             Checksum: 2739AE868AFB5A20F798DFACFB2D6558;4751.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5491.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5492.
  ) 
 Here is how much of TeX's memory you used:
- 8209 strings out of 493304
- 124910 string characters out of 6139871
- 207223 words of memory out of 5000000
- 10836 multiletter control sequences out of 15000+600000
+ 8215 strings out of 493117
+ 125499 string characters out of 6135432
+ 207814 words of memory out of 5000000
+ 10845 multiletter control sequences out of 15000+600000
  89612 words of font info for 108 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  32i,7n,29p,789b,697s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/mdelgado/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecst1095.600pk> </hom
-e/mdelgado/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/share/te
-xlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/mdelgado/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ectt1000.600pk></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
-/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on NumericalSgpsMan.pdf (93 pages, 423972 bytes).
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/cm-super/sfst1095.pfb></usr/local/texlive/2014/t
+exmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2014/tex
+mf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
+w/symbol/usyr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/symbol/us
+yr.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on NumericalSgpsMan.pdf (93 pages, 474153 bytes).
 PDF statistics:
- 2103 PDF objects out of 2487 (max. 8388607)
- 1783 compressed objects within 18 object streams
- 689 named destinations out of 1000 (max. 500000)
+ 1915 PDF objects out of 2073 (max. 8388607)
+ 1784 compressed objects within 18 object streams
+ 690 named destinations out of 1000 (max. 500000)
  441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
