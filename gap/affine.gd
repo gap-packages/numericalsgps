@@ -199,7 +199,7 @@ DeclareGlobalFunction("LawrenceLiftingOfAffineSemigroup");
 
 ###############################################################################
 ##
-#F PrimitiveElementsOfAffineSemigroup_Normaliz
+#O PrimitiveElementsOfAffineSemigroup_Normaliz
 # An implementation of PrimitiveElementsOfAffineSemigroup using 
 # Normaliz
 #####################################################################
@@ -207,10 +207,10 @@ DeclareOperation("PrimitiveElementsOfAffineSemigroup",[IsAffineSemigroup]);
 
 ###############################################################################
 ##
-#F TameDegreeOfAffineSemigroup
+#O TameDegreeOfAffineSemigroup
 # Computes the tame degree of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("TameDegreeOfAffineSemigroup");
+DeclareOperation("TameDegreeOfAffineSemigroup",[IsAffineSemigroup]);
 
 ###############################################################################
 ## 

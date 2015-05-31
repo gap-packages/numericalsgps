@@ -307,3 +307,36 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
 end);
 
 #ZSolve4ti2(["mat",TransposedMat([[2,0],[0,2],[1,2],[2,1]]),"rel",[1,1],"sign",[1,1,1,1],"rhs",[[15,15]]]);
+
+########
+# Tame degree for full affine semigroups 
+########
+InstallMethod(TameDegreeOfAffineSemigroup,
+        "Computes the tame degree of the full affine semigroup a",
+        [IsAffineSemigroup and HasEquationsAS],2,
+        function(a)
+    local ls, min, tame, gen,m,n, facts, t, minfacts;
+    
+    Info(InfoNumSgps,2,"Using 4ti2gap with full affine semigroup");
+
+    ls:=GeneratorsOfAffineSemigroup(a);
+    tame:=0;
+    n:=Length(ls);
+    
+    for gen in ls do
+        minfacts:=ZSolve4ti2(["mat",TransposedMat(ls),"rel",List(gen,_->1),
+                     "sign",List([1..n],_->1),"rhs",gen ]).zinhom;
+        min:=List(minfacts, x->x*ls);
+        Info(InfoNumSgps,2,"Minimal elements of ",gen,"+a=",min);
+        for m in min do
+            facts:=FactorizationsVectorWRTList(m,ls);
+            t:=TameDegreeOfSetOfFactorizations(facts);
+            if t> tame then 
+                tame:=t;
+                Info(InfoNumSgps,2,"Tame degree updated to ",tame);
+            fi;
+        od;
+    od;
+    return tame;
+    
+end);
