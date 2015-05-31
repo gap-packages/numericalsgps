@@ -1074,7 +1074,9 @@ end);
 #####################################################################
 # Computes the tame degree of the affine semigroup a
 #####################################################################
-InstallGlobalFunction(TameDegreeOfAffineSemigroup,
+InstallMethod(TameDegreeOfAffineSemigroup,
+        "Computes the tame degree of an affine semigroup",
+        [IsAffineSemigroup],1,
         function(a)
   local prim, tams, p, max, ls;
 
@@ -1162,7 +1164,7 @@ end);
 #  Loads the package NormalizInterface and reads affine-extra-ni
 ##########################################################################
 InstallGlobalFunction(NumSgpsUseNormaliz, function()
-    if LoadPackage("NormalizInterface") then
+    if LoadPackage("NormalizInterface")=true then
         ReadPackage("numericalsgps/gap/affine-extra-ni.gi");
         NumSgpsCanUseNI:=true;
         return true;
@@ -1184,7 +1186,7 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
         return fail;
     fi;
     
-    if LoadPackage("singular") then
+    if LoadPackage("singular")=true then
         ReadPackage("numericalsgps/gap/affine-extra-s.gi");
         NumSgpsCanUseSingular:=true;
         return true;
@@ -1205,7 +1207,7 @@ InstallGlobalFunction(NumSgpsUseSingularInterface, function()
         return fail;
     fi;
     
-    if LoadPackage("SingularInterface") then
+    if LoadPackage("SingularInterface")=true then
         ReadPackage("numericalsgps/gap/affine-extra-si.gi");
         NumSgpsCanUseSI:=true;
         return true;
@@ -1221,7 +1223,7 @@ end);
 #  Loads the package 4ti2Interface and reads affine-extra-4ti2
 ##########################################################################
 InstallGlobalFunction(NumSgpsUse4ti2, function()
-    if LoadPackage("4ti2Interface") then
+    if LoadPackage("4ti2Interface")=true then
         ReadPackage("numericalsgps/gap/affine-extra-4ti2.gi");
         NumSgpsCanUse4ti2:=true;
         return true;
@@ -1237,7 +1239,7 @@ end);
 #  Loads the package 4ti2gap and reads affine-extra-4ti2gap
 ##########################################################################
 InstallGlobalFunction(NumSgpsUse4ti2gap, function()
-    if LoadPackage("4ti2gap") then
+    if LoadPackage("4ti2gap")=true then
         ReadPackage("numericalsgps/gap/affine-extra-4ti2gap.gi");
         NumSgpsCanUse4ti2gap:=true;
         return true;
@@ -1253,7 +1255,7 @@ end);
 #  Loads the package GradedModules and reads affine-extra-gm
 ##########################################################################
 InstallGlobalFunction(NumSgpsUseGradedModules, function()
-    if LoadPackage("GradedModules") then
+    if LoadPackage("GradedModules")=true then
         ReadPackage("numericalsgps/gap/affine-extra-gm.gi");
         NumSgpsCanUseGradedModules:=true;
         return true;
