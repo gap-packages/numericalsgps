@@ -195,7 +195,9 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
     
     return Maximum(Set(tot, Sum));
 end);
-
+############################################
+# Omega primality for full affine semigroups
+###########################################
 InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
         "Computes the omega-primality of v in the affine semigroup a",
         [IsHomogeneousList,IsAffineSemigroup and HasEquationsAS],3,
@@ -252,6 +254,57 @@ InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
     
     return Set(facs, f->f*ls);	
 end);
+
+########
+# Tame degree for full affine semigroups 
+########
+InstallMethod(TameDegreeOfAffineSemigroup,
+        "Computes the tame degree of the full affine semigroup a",
+        [IsAffineSemigroup and HasEquationsAS],3,
+        function(a)
+    local ls, min, tame, gen,m, facts, t, minimalElementsPrincipalIdealOfAffineSemigroup;
+    
+    # uses the procedure of arXiv:1504.02998
+    
+    minimalElementsPrincipalIdealOfAffineSemigroup:=function(v,a)
+        local mat, cone, n, hom, par, tot, le, ls, one;
+
+        le:=function(a,b)  #ordinary partial order
+            return ForAll(b-a,x-> x>=0);
+        end;
+        
+        ls:=GeneratorsAS(a);
+        n:=Length(ls);
+        one:=[List([1..n],_->1)];
+        mat:=TransposedMat(Concatenation(ls,[-v]));
+        cone:=NmzCone(["inhom_inequalities",mat,"signs",one]);
+        NmzCompute(cone,"DualMode"); 	
+        par:=Set(NmzModuleGenerators(cone), f->f{[1..n]});
+        #tot:=Filtered(par, f-> Filtered(par, g-> le(g,f))=[f]);
+        Info(InfoNumSgps,2,"Minimals Z(v+a)=",par);
+        return List(par,x->x*ls);
+    end;
+    
+    Info(InfoNumSgps,2,"Using NormalizInterface with full affine semigroup");
+
+    ls:=GeneratorsOfAffineSemigroup(a);
+    tame:=0;
+    for gen in ls do
+        min:=minimalElementsPrincipalIdealOfAffineSemigroup(gen,a);
+        Info(InfoNumSgps,2,"Minimal elements of ",gen,"+a=",min);
+        for m in min do
+            facts:=FactorizationsVectorWRTList(m,ls);
+            t:=TameDegreeOfSetOfFactorizations(facts);
+            if t> tame then 
+                tame:=t;
+                Info(InfoNumSgps,2,"Tame degree updated to ",tame);
+            fi;
+        od;
+    od;
+    return tame;
+    
+end);
+
 
 #####################################################################
 # Computes the tame degree of the affine semigroup a
