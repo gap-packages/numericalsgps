@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                             ( Version 0.980 dev )
+                                ( Version 1.0 )
   
   
                                  Manuel Delgado
@@ -53,21 +53,16 @@
   for  many  helpful  discussions  and  for  helping  in  the  programming  of
   preliminary  versions  of  some  functions,  and  also  to C. O'Neill and A.
   Sammartano  for their contributions (see Contributions Chapter). We are also
-  in  debt  with  S. Gutsche, M. Horm, H. Schönemann, C. Söeger and M. Barakat
+  in  debt  with  S. Gutsche, M. Horn, H. Schönemann, C. Söeger and M. Barakat
   for  their  fruitful  advices  concerning  4ti2Interface, SingularInterface,
   Singular, Normaliz, NormalizInterface and GradedModules.[133X
   
+  [33X[0;0YThe  first  and second authors warmly thank María Burgos for her support and
+  help.[133X
+  
   [33X[0;0Y[12XConcerning the mantainment:[112X[133X
   
-  [33X[0;0YThe   first   author   was/is  (partially)  supported  by  the  FCT  project
-  PTDC/MAT/65481/2006  and also by the [13XCentro de Matemática da Universidade do
-  Porto[113X  (CMUP),  funded by the European Regional Development Fund through the
-  programme  COMPETE  and  by  the  Portuguese  Government  through  the FCT -
-  Fundação    para    a   Ciência   e   a   Tecnologia   under   the   project
-  PEst-C/MAT/UI0144/2011.[133X
-  
-  [33X[0;0YThe   second   author   was/is  supported  by  the  projects  MTM2007-62346,
-  MTM2010-15595, FQM-343 and FQM-5849.[133X
+  [33X[0;0YThe first author was[133X
   
   [33X[0;0YThe  maintainers  want  to  thank the organizers of [10XGAPDays[110X in their several
   editions.[133X
@@ -76,9 +71,10 @@
   -------------------------------------------------------
   [1XColophon[101X
   [33X[0;0YThis  work started when (in 2004) the first author visited the University of
-  Granada  in  part  of  a sabbatical year. Since Version 0.96, the package is
-  maintained  by  the first two authors. Bug reports, suggestions and comments
-  are, of course, welcome. Please use our email addresses to this effect.[133X
+  Granada in part of a sabbatical year. Since Version 0.96 (released in 2008),
+  the package is maintained by the first two authors. Bug reports, suggestions
+  and comments are, of course, welcome. Please use our email addresses to this
+  effect.[133X
   
   [33X[0;0YIf  you have benefited from the use of the numerigalsgps GAP package in your
   research,  please  cite  it  in addition to GAP itself, following the scheme

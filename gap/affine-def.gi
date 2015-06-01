@@ -1,8 +1,9 @@
 #############################################################################
 ##
-#W  ideals-def.gi           Manuel Delgado <mdelgado@fc.up.pt>
+#W  affine-def.gi           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro Garcia-Sanchez <pedro@ugr.es>
-#Y  Copyright ........
+##
+#Y  Copyright 2015-- Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain
 #############################################################################
 #################        Defining Affine Semigroups           ###############
 ###############################################################################
