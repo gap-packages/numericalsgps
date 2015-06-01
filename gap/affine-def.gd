@@ -2,7 +2,8 @@
 ##
 #W  affine-def.gd           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
-#Y  Copyright .......
+##
+#Y  Copyright 2015-- Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain
 #############################################################################
 
 #############################################################################

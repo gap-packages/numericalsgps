@@ -38,19 +38,19 @@ Subtitle := "A package for numerical semigroups",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-#Version := "0.980",
-Version := "0.980 dev",
+Version := "1.0",
+#Version := "0.980 dev",
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "19/11/2014",
+Date := "01/06/2015",
         
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the 
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.980">
-##  <!ENTITY RELEASEDATE "17 June 2013">
+##  <!ENTITY VERSION "1.0">
+##  <!ENTITY RELEASEDATE "1 June 2015">
 ##  <#/GAPDoc>
 
 PackageWWWHome :=
@@ -191,17 +191,15 @@ Persons := [
 ##    "dev"           for development versions of packages 
 ##    "other"         for all other packages
 ##
-#Status := "accepted",
-Status := "deposited",
+Status := "accepted",
+#Status := "deposited",
 
 ##  You must provide the next two entries if and only if the status is 
 ##  "accepted" because is was successfully refereed:
 # format: 'name (place)'
-# CommunicatedBy := "Mike Atkinson (St. Andrews)",
-#CommunicatedBy := "",
+CommunicatedBy := "Leonard Soicher (QMUL)",
 # format: mm/yyyy
-# AcceptDate := "08/1999",
-#AcceptDate := "",
+AcceptDate := "05/2015",
 
 ##  For a central overview of all packages and a collection of all package
 ##  archives it is necessary to have two files accessible which should be
