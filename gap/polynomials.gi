@@ -601,9 +601,7 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Local, function(arg)
 
             cfs:=CoefficientsOfUnivariatePolynomial(tail);
             cf:=First([1..Length(cfs)], i->(cfs[i]<>0) and ((i-1) in s));
-            #Error("blabla");
 
-            #Print("cf",cf,"\n");
 
             if cf<>fail then
                 fact:=FactorizationsIntegerWRTList(cf-1,ords)[1];
@@ -735,7 +733,7 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Local, function(arg)
         F:=Union(F,T);
         newG:=Set(T,order);
         G:=Union(G,newG);
-        Info(InfoNumSgps,1,"The set of possible values uptates to ",G);
+        Info(InfoNumSgps,2,"The set of possible values uptates to ",G);
         n:=n+1;
         d:=Gcd(G);
         s:=NumericalSemigroup(G/d);
