@@ -190,7 +190,7 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
                         <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option
 The output is: A numerical semigrups S such that PF(S)=PF, at random. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
 <P/>
-When Length(PF)=1, it makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>
+It makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>, when Length(PF)=1.
 <P/>
                         <Example><![CDATA[
 gap> pf := [ 83, 169, 173, 214, 259 ];;                     

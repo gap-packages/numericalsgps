@@ -60,13 +60,13 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
 gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
 true
+]]></Example>
 <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
 [ 5, 7, 9, 25 ]
 gap> ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   
 [ 5, 7, 9, 28 ]
 gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   
 [ 5, 7, 9 ]-->
-]]></Example>
                     </Description>
                 </ManSection>
 

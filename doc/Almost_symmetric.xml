@@ -16,7 +16,8 @@
                         <A>s</A> is an irreducible numerical semigroup.  The output is the set of almost-symetric numerical semigroups that can be constructed 
 						from <A>s</A> by removing some of its generators as explained in <Cite Key="RGS13"></Cite>). 
                         <Example><![CDATA[
-gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,11));
+gap> ns := NumericalSemigroup(5,8,9,11);;
+gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(ns);
 [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
 gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]

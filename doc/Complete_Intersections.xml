@@ -120,9 +120,11 @@ gap> Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));
                         <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is associated to an irreducible planar curve singularity
 						(<Cite Key="Z86"></Cite>). These semigroups are telescopic.
                         <Example><![CDATA[
-gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,14));
+gap> ns := NumericalSemigroup(4,11,14);;
+gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);
 false
-gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,19));
+gap> ns := NumericalSemigroup(4,11,19);;                                 
+gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);
 true
 ]]></Example>          
                     </Description>
@@ -134,7 +136,9 @@ true
                         <A>f</A> is an integer greater than or equal to -1. The output is the set of all
                         numerical semigroups associated to irreducible planar curves singularities with frobenius number <A>f</A>.         
                         <Example><![CDATA[
-gap> Length(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber(57));
+gap> Length(                                                                         
+> NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
+> (57));                                                                           
 7
 ]]></Example>          
                     </Description>
