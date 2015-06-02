@@ -11,43 +11,43 @@ Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and,
 while executing---line 1250 of file alpha.bst
 You've used 66 entries,
             2543 wiz_defined-function locations,
-            981 strings with 13970 characters,
-and the built_in function-call counts, 26278 in all, are:
-= -- 2678
+            986 strings with 14104 characters,
+and the built_in function-call counts, 26498 in all, are:
+= -- 2705
 > -- 1317
 < -- 20
 + -- 458
 - -- 446
-* -- 1940
-:= -- 4407
+* -- 1973
+:= -- 4430
 add.period$ -- 203
 call.type$ -- 66
 change.case$ -- 414
 chr.to.int$ -- 64
 cite$ -- 66
-duplicate$ -- 937
-empty$ -- 1841
+duplicate$ -- 939
+empty$ -- 1865
 format.name$ -- 521
-if$ -- 5264
+if$ -- 5311
 int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 64
 newline$ -- 336
 num.names$ -- 198
-pop$ -- 329
+pop$ -- 327
 preamble$ -- 1
 purify$ -- 485
 quote$ -- 0
-skip$ -- 822
+skip$ -- 821
 stack$ -- 0
-substring$ -- 1580
+substring$ -- 1642
 swap$ -- 94
 text.length$ -- 20
 text.prefix$ -- 11
 top$ -- 0
 type$ -- 508
 warning$ -- 0
-while$ -- 265
+while$ -- 269
 width$ -- 70
-write$ -- 850
+write$ -- 851
 (There were 3 error messages)

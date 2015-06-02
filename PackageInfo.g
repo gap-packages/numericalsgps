@@ -43,14 +43,14 @@ Version := "1.0",
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "01/06/2015",
+Date := "02/06/2015",
         
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the 
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "1.0">
-##  <!ENTITY RELEASEDATE "1 June 2015">
+##  <!ENTITY RELEASEDATE "2 June 2015">
 ##  <#/GAPDoc>
 
 PackageWWWHome :=
