@@ -1080,7 +1080,7 @@ InstallMethod(PrimitiveElementsOfAffineSemigroup,
     prlft:=GeneratorsOfKernelCongruence(lft);
     Info(InfoNumSgps,2,"The kernel congruence is ", prlft);
 
-    return Set(prlft, p->(p[1]{[ed+1..ed+ed]})*mgs);
+    return Union(Set(prlft, p->(p[1]{[ed+1..ed+ed]})*mgs),mgs);
 end);
 
 #####################################################################
