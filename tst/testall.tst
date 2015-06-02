@@ -374,6 +374,34 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
 
+gap> pf := [ 58, 64, 75 ];
+[ 58, 64, 75 ]
+gap> ForcedIntegersForPseudoFrobenius(pf);                              
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], 
+  [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ]
+
+gap> pf := [ 15, 20, 27, 35 ];;                                               
+gap> fint := ForcedIntegersForPseudoFrobenius(pf); 
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 16, 20, 27, 35 ], 
+  [ 0, 19, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ]
+gap> free := Difference([1..Maximum(pf)],Union(fint));
+[ 11, 13, 14, 17, 18, 21, 22, 24 ]
+gap> SimpleForcedIntegersForPseudoFrobenius(fint[1],Union(fint[2],[free[1]]),pf);
+[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 20, 24, 27, 35 ], 
+  [ 0, 11, 19, 22, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ]
+gap> pf := [ 58, 64, 75 ];
+[ 58, 64, 75 ]
+gap> Length(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));
+561
+gap> pf := [11,19,22];;
+gap> NumericalSemigroupsWithPseudoFrobeniusNumbers(pf);
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup> ]
+gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);   
+[ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
+  [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
+  [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
+
 ##Irreducible_numerical_semigroups.xml
 
 gap> IsIrreducibleNumericalSemigroup(NumericalSemigroup(4,6,9));
@@ -832,6 +860,189 @@ gap> IsListOfIntegersNS([[2],3]);
 false
 gap> IsListOfIntegersNS([]);
 false
+
+##polynomial.xml
+gap> x:=X(Rationals,"x");;
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> NumericalSemigroupPolynomial(s,x);
+x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
+
+gap> x:=X(Rationals,"x");;
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> HilbertSeriesOfNumericalSemigroup(s,x);
+(x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1)/(-x+1)
+
+gap> x:=X(Rationals,"x");;
+gap> GraeffePolynomial(x^2-1);
+x^2-2*x+1
+
+gap> CyclotomicPolynomial(Rationals,3);
+x^2+x+1
+gap> IsCyclotomicPolynomial(last);
+true
+
+gap> x:=X(Rationals,"x");;
+gap>  s:=NumericalSemigroup(3,5,7);;
+gap>  t:=NumericalSemigroup(4,6,9);;
+gap> p:=NumericalSemigroupPolynomial(s,x);
+x^5-x^4+x^3-x+1
+gap> q:=NumericalSemigroupPolynomial(t,x);
+x^12-x^11+x^8-x^7+x^6-x^5+x^4-x+1
+gap> IsKroneckerPolynomial(p);
+false
+gap> IsKroneckerPolynomial(q);
+true
+
+gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;
+gap> x:=X(Rationals,"x");;
+gap> ForAll(l, s->IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));
+true
+
+gap> x:=X(Rationals,"x");; y:=X(Rationals,"y");;
+gap> f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;
+gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all");
+[ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
+
+gap> IsDeltaSequence([24,16,28,7]);
+true
+
+gap> DeltaSequencesWithFrobeniusNumber(21);
+[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], [ 15, 10, 4 ], [ 23, 2 ] ]
+
+gap> CurveAssociatedToDeltaSequence([24,16,28,7]);
+y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
+10*y^9-60*x^5*y^14+28*x^12*y^6+80*x^7*y^11+6*x^2*y^16-8*x^14*y^3-60*x^9*y^8-24\
+*x^4*y^13+x^16+24*x^11*y^5+36*x^6*y^10-4*x^13*y^2-24*x^8*y^7-4*x^3*y^12+6*x^10\
+*y^4+8*x^5*y^9-4*x^7*y^6+x^4*y^8-y^3+x^2
+gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");
+[ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
+gap> 
+
+gap> x:=Indeterminate(Rationals,"x");;
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13]);
+<Numerical semigroup with 4 generators>
+gap> MinimalGeneratingSystem(last);
+[ 4, 6, 13, 15 ]
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");
+[ x^4, x^7+x^6, x^13, x^15 ]
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     
+x^20
+
+gap> x:=Indeterminate(Rationals,"x");;
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       
+<Numerical semigroup with 3 generators>
+gap> MinimalGeneratingSystem(last);                             
+[ 4, 7, 13 ]
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");
+[ x^4, x^7+x^6, x^13 ]
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     
+x^12
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); 
+fail
+
+##affine.xml
+
+gap> AffineSemigroup([1,3],[7,2],[1,5]);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+gap> a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);
+<Affine semigroup>
+
+gap>  s:=NumericalSemigroup(1310,1411,1546,1601);
+<Numerical semigroup with 4 generators>
+gap> a:=AsAffineSemigroup(s);
+<Affine semigroup in 1 dimensional space, with 4 generators>
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 1310 ], [ 1411 ], [ 1546 ], [ 1601 ] ]
+
+gap> a1:=AffineSemigroup([[3,0],[2,1],[1,2],[0,3]]);
+<Affine semigroup in 2 dimensional space, with 4 generators>
+gap> IsAffineSemigroupByEquations(a1);
+false
+gap> IsAffineSemigroupByGenerators(a1);
+true
+
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> BelongsToAffineSemigroup([5,5],a);
+true
+gap> BelongsToAffineSemigroup([1,2],a);
+false
+
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> BelongsToAffineSemigroup([5,5],a);
+true
+gap> BelongsToAffineSemigroup([1,2],a);
+false
+
+gap> HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);
+[ [ 0, 2, 2 ], [ 1, 1, 1 ], [ 2, 0, 0 ] ]
+
+gap> HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);
+[ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ]
+
+gap> EquationsOfGroupGeneratedBy([[1,2,0],[2,-2,2]]);
+[ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ]
+
+gap> BasisOfGroupGivenByEquations([[0,0,1],[2,-1,-3]],[2]);
+[ [ -1, -2, 0 ], [ -2, 2, -2 ] ]
+
+gap> a1:=AffineSemigroup([[2,0],[0,2]]);
+<Affine semigroup in 2 dimensional space, with 2 generators>
+gap> a2:=AffineSemigroup([[1,1]]);
+<Affine semigroup in 2 dimensional space, with 1 generators>
+gap> GluingOfAffineSemigroups(a1,a2);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+gap> GeneratorsAS(last);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> MinimalPresentationOfAffineSemigroup(a);
+[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> BettiElementsOfAffineSemigroup(a);
+[ [ 2, 2 ] ]
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> PrimitiveElementsOfAffineSemigroup(a);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
+
+gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
+[ [ 2, 2, 1 ], [ 1, 1, 3 ], [ 0, 0, 5 ] ]
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> ElasticityOfAffineSemigroup(a);
+1
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> CatenaryDegreeOfAffineSemigroup(a);
+2
+
+gap> a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
+<Affine semigroup>
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 3, 1 ] ]
+gap> CatenaryDegreeOfAffineSemigroup(a);
+3
+gap> EqualCatenaryDegreeOfAffineSemigroup(a);
+2
+gap> HomogeneousCatenaryDegreeOfAffineSemigroup(a);
+3
+gap> MonotoneCatenaryDegreeOfAffineSemigroup(a);
+3
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> TameDegreeOfAffineSemigroup(a);
+2
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> OmegaPrimalityOfElementInAffineSemigroup([5,5],a);
+6
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> OmegaPrimalityOfAffineSemigroup(a);
+2
 
 ##random.xml
 ##contributions.xml
