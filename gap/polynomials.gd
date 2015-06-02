@@ -4,8 +4,6 @@
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
 ##
 ##
-#H  @(#)$Id: arf-med.gi,v 0.98 $
-##
 #Y  Copyright 2014 by Manuel Delgado and Pedro Garcia-Sanchez 
 #Y  We adopt the copyright regulations of GAP as detailed in the 
 #Y  copyright notice in the GAP manual.

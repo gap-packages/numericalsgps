@@ -4257,7 +4257,7 @@ semigroup will be given by means of a set of generators.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@AffineSemigroup([1,3],[7,2],[1,5]);|
   <Affine semigroup in 2 dimensional space, with 3 generators>
-  !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );|
+  !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);|
   <Affine semigroup>
 \end{Verbatim}
  }
@@ -4398,7 +4398,7 @@ nonnegative integer solutions of the sytem $Ax=0$ where the $k$ first equations 
  If the package \texttt{NormalizInterface} has not been loaded, then Contejean-Devie algorithm is used \cite{MR1283022} instead (if this is the case, congruences are treated as in \cite{R-GS}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);|
-  [ [ 2, 0, 0 ], [ 1, 1, 1 ], [ 0, 2, 2 ] ]
+  [ [ 0, 2, 2 ], [ 1, 1, 1 ], [ 2, 0, 0 ] ]
 \end{Verbatim}
  }
 
@@ -4537,7 +4537,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
   !gapprompt@gap>| !gapinput@MinimalPresentationOfAffineSemigroup(a);|
-  [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
+  [ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
   !gapprompt@gap>| !gapinput@GeneratorsOfAffineSemigroup(a);|
   [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 \end{Verbatim}
@@ -4652,7 +4652,7 @@ and thus slowly. If \texttt{NormalizInterface} is loaded, then a system of equat
 performance is much better. If \texttt{4ti2Interface} is loaded instead, then factorizations are calculated using \texttt{zsolve} command of \texttt{4ti2}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);|
-  [ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
+  [ [ 2, 2, 1 ], [ 1, 1, 3 ], [ 0, 0, 5 ] ]
 \end{Verbatim}
  }
 
@@ -4738,7 +4738,7 @@ This function is based on \cite{GSOSN}. }
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);|
   <Affine semigroup>
   !gapprompt@gap>| !gapinput@GeneratorsOfAffineSemigroup(a);|
-  [ [ 1, 1 ], [ 2, 1 ], [ 1, 2 ], [ 3, 1 ] ]
+  [ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 3, 1 ] ]
   !gapprompt@gap>| !gapinput@CatenaryDegreeOfAffineSemigroup(a);|
   3
   !gapprompt@gap>| !gapinput@EqualCatenaryDegreeOfAffineSemigroup(a);|
