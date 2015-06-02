@@ -88,7 +88,7 @@ To create an affine semigroup in &GAP; the function
     <Example><![CDATA[
 gap> AffineSemigroup([1,3],[7,2],[1,5]);
 <Affine semigroup in 2 dimensional space, with 3 generators>
-gap> a2 := AffineSemigroup("equations", [ [ -2, 1 ] ], [ 3 ] );
+gap> a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);
 <Affine semigroup>
 ]]></Example>
   </Description>
@@ -196,7 +196,7 @@ false
 
     <Example><![CDATA[
 gap> HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);
-[ [ 2, 0, 0 ], [ 1, 1, 1 ], [ 0, 2, 2 ] ]
+[ [ 0, 2, 2 ], [ 1, 1, 1 ], [ 2, 0, 0 ] ]
 ]]></Example>
   </Description>
 </ManSection>
@@ -304,7 +304,7 @@ gap> GeneratorsAS(last);
       <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> MinimalPresentationOfAffineSemigroup(a);
-[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
+[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
 gap> GeneratorsOfAffineSemigroup(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 ]]></Example>
@@ -392,7 +392,7 @@ gap> PrimitiveElementsOfAffineSemigroup(a);
 
       <Example><![CDATA[
 gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
-[ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
+[ [ 2, 2, 1 ], [ 1, 1, 3 ], [ 0, 0, 5 ] ]
 ]]></Example>
     </Description>
   </ManSection>
@@ -454,7 +454,7 @@ gap> CatenaryDegreeOfAffineSemigroup(a);
 gap> a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
 <Affine semigroup>
 gap> GeneratorsOfAffineSemigroup(a);
-[ [ 1, 1 ], [ 2, 1 ], [ 1, 2 ], [ 3, 1 ] ]
+[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 3, 1 ] ]
 gap> CatenaryDegreeOfAffineSemigroup(a);
 3
 gap> EqualCatenaryDegreeOfAffineSemigroup(a);
