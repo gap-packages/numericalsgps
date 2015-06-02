@@ -1,3 +1,11 @@
+#############################################################################
+##
+#W  affine-extra-4ti2gap.gi            
+#W                          Manuel Delgado <mdelgado@fc.up.pt>
+#W                          Pedro Garcia-Sanchez <pedro@ugr.es>
+##
+#Y  Copyright 2015-- Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain
+#############################################################################
 InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
         "Computes the set of primitive elements of an affine semigroup",
         [IsAffineSemigroup],4, 
@@ -21,7 +29,7 @@ end);
 
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
-        "Computes a Hilbert basiss of a systemd of linear Diophantine equations, some eventually in congruences.",
+        "Computes a Hilbert basis of a systemd of linear Diophantine equations, some eventually in congruences.",
         [IsMatrix,IsHomogeneousList],6,
         function(ls,md)
     local  homogeneous, withCongruences;
