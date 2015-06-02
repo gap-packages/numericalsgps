@@ -16,7 +16,7 @@ InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
     end;
     
     matrix:=Set(matrix,trunc);
-    return Set(matrix, x->x*ls);
+    return Union(Set(matrix, x->x*ls),ls);
 end);
 
 

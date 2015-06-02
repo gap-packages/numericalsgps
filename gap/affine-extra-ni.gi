@@ -252,7 +252,7 @@ InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
     NmzCompute(cone,"DualMode"); 	
     facs:=Set(NmzHilbertBasis(cone), f->f{[1..n]});
     
-    return Set(facs, f->f*ls);	
+    return Union(Set(facs, f->f*ls),ls);	
 end);
 
 ########
