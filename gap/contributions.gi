@@ -3,8 +3,6 @@
 #W  contributions.gi          
 ##
 ##
-#H  @(#)$Id: contributions.gi,v 0.98 $
-##
 #Y  The functions in this file have been implemented by researchers that do 
 #Y  not appear as authors of the package. References to its usage should be 
 #Y made as suggested in the manual
