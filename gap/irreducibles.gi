@@ -4,9 +4,6 @@
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
-##
-#H  @(#)$Id: irreducibles.gi,v 0.98 $
-##
 #Y  Copyright 2005 by Manuel Delgado, 
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
 #Y  We adopt the copyright regulations of GAP as detailed in the 
