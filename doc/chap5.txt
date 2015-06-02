@@ -193,7 +193,7 @@
   
   [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.2-4[114X).[133X
   
-  [33X[0;0YThese procedures are described in [DGR15].[133X
+  [33X[0;0YThese procedures are described in [{{{15].[133X
   
   [1X5.6-1 ForcedIntegersForPseudoFrobenius[101X
   
@@ -292,8 +292,9 @@
   NumericalSemigroupsWithPseudoFrobeniusNumbers   if   it   is   not  able  to
   conclude...[133X
   
-  [33X[0;0YWhen      Length(PF)=1,     it     makes     use     of     the     function
-  [2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X ([14X6.1-4[114X)[133X
+  [33X[0;0YIt           makes           use           of          the          function
+  [2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X       ([14X6.1-4[114X),       when
+  Length(PF)=1.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xpf := [ 83, 169, 173, 214, 259 ];;                     [127X[104X

@@ -717,27 +717,21 @@ returns \texttt{true} when the periodic function represented by \mbox{\texttt{\m
 
  From Version 0.980, \texttt{ReducedSetOfGeneratorsOfNumericalSemigroup} is just a synonym of \texttt{MinimalGeneratingSystemOfNumericalSemigroup} and \texttt{GeneratorsOfNumericalSemigroupNC} is just a synonym of \texttt{GeneratorsOfNumericalSemigroup}. The names are kept for compatibility with code produced for previous
 versions, but will be removed in the future. 
-\begin{Verbatim}[commandchars=@|A,fontsize=\small,frame=single,label=Example]
-  @gapprompt|gap>A @gapinput|S := NumericalSemigroup("modular", 5,53);A
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
   <Modular numerical semigroup satisfying 5x mod 53 <= x >
-  @gapprompt|gap>A @gapinput|GeneratorsOfNumericalSemigroup(S);A
+  !gapprompt@gap>| !gapinput@GeneratorsOfNumericalSemigroup(S);|
   [ 11, 12, 13, 32, 53 ]
-  @gapprompt|gap>A @gapinput|S := NumericalSemigroup(3, 5, 53);A
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup(3, 5, 53);|
   <Numerical semigroup with 3 generators>
-  @gapprompt|gap>A @gapinput|GeneratorsOfNumericalSemigroup(S);A
+  !gapprompt@gap>| !gapinput@GeneratorsOfNumericalSemigroup(S);|
   [ 3, 5, 53 ]
-  @gapprompt|gap>A @gapinput|MinimalGeneratingSystemOfNumericalSemigroup(S);A
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfNumericalSemigroup(S);|
   [ 3, 5 ]
-  @gapprompt|gap>A @gapinput|MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);A
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);|
   true
-  <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
-  [ 5, 7, 9, 25 ]
-  @gapprompt|gap>A @gapinput|ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));   A
-  [ 5, 7, 9, 28 ]
-  @gapprompt|gap>A @gapinput|ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);   A
-  [ 5, 7, 9 ]-->
 \end{Verbatim}
- }
+  }
 
  
 
@@ -1641,7 +1635,7 @@ such that PF(S)=PF, at random. Returns fail if it conludes that it exists and
 suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able
 to conclude... 
 
- When Length(PF)=1, it makes use of the function \texttt{AnIrreducibleNumericalSemigroupWithFrobeniusNumber} (\ref{AnIrreducibleNumericalSemigroupWithFrobeniusNumber}) 
+ It makes use of the function \texttt{AnIrreducibleNumericalSemigroupWithFrobeniusNumber} (\ref{AnIrreducibleNumericalSemigroupWithFrobeniusNumber}), when Length(PF)=1. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -1975,9 +1969,11 @@ telescopic numerical semigroups with frobenius number \mbox{\texttt{\mdseries\sl
  \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if the numerical semigroup is
 associated to an irreducible planar curve singularity (\cite{Z86}). These semigroups are telescopic. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,14));|
+  !gapprompt@gap>| !gapinput@ns := NumericalSemigroup(4,11,14);;|
+  !gapprompt@gap>| !gapinput@IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);|
   false
-  !gapprompt@gap>| !gapinput@IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,19));|
+  !gapprompt@gap>| !gapinput@ns := NumericalSemigroup(4,11,19);;                                 |
+  !gapprompt@gap>| !gapinput@IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);|
   true
 \end{Verbatim}
  }
@@ -1996,7 +1992,9 @@ associated to an irreducible planar curve singularity (\cite{Z86}). These semigr
 numerical semigroups associated to irreducible planar curves singularities
 with frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@Length(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber(57));|
+  !gapprompt@gap>| !gapinput@Length(                                                                         |
+  !gapprompt@>| !gapinput@NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber|
+  !gapprompt@>| !gapinput@(57));                                                                           |
   7
 \end{Verbatim}
  }
@@ -2026,7 +2024,8 @@ irreducible numerical semigroup.
  \mbox{\texttt{\mdseries\slshape s}} is an irreducible numerical semigroup. The output is the set of
 almost-symetric numerical semigroups that can be constructed from \mbox{\texttt{\mdseries\slshape s}} by removing some of its generators as explained in \cite{RGS13}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@AlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,11));|
+  !gapprompt@gap>| !gapinput@ns := NumericalSemigroup(5,8,9,11);;|
+  !gapprompt@gap>| !gapinput@AlmostSymmetricNumericalSemigroupsFromIrreducible(ns);|
   [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
   !gapprompt@gap>| !gapinput@List(last,MinimalGeneratingSystemOfNumericalSemigroup);|
   [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
@@ -3274,7 +3273,8 @@ of \mbox{\texttt{\mdseries\slshape n}} in terms of the minimal generating set of
 same lenght). The output is number of elements in \mbox{\texttt{\mdseries\slshape ls}} with maximal length. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FactorizationsIntegerWRTList(100,[11,13,15,19]);|
-  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], 
+    [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
   !gapprompt@gap>| !gapinput@MaximalDenumerantOfSetOfFactorizations(last);|
   6
 \end{Verbatim}
@@ -3312,14 +3312,20 @@ same lenght). The output is number of elements in \mbox{\texttt{\mdseries\slshap
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(101,113,196,272,278,286);;|
   !gapprompt@gap>| !gapinput@AdjustmentOfNumericalSemigroup(s);|
-  [ 0, 12, 24, 36, 48, 60, 72, 84, 95, 96, 107, 108, 119, 120, 131, 132, 143, 144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185,
-    189, 190, 191, 192, 195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228, 231, 233, 237, 239, 240, 243,
-    245, 249, 251, 252, 255, 257, 261, 263, 264, 266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299, 300,
-    304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341, 342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362,
-    364, 365, 366, 368, 370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394, 395, 396, 400, 401, 402, 406,
-    407, 408, 412, 413, 414, 418, 419, 420, 424, 425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456, 460,
-    465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514, 519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543,
-    545, 549, 551, 555, 561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704, 710, 716, 722 ]
+  [ 0, 12, 24, 36, 48, 60, 72, 84, 95, 96, 107, 108, 119, 120, 131, 132, 143,
+    144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185, 189, 190, 191, 192, 
+    195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228, 
+    231, 233, 237, 239, 240, 243, 245, 249, 251, 252, 255, 257, 261, 263, 264, 
+    266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299, 
+    300, 304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341, 
+    342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362, 364, 365, 366, 368, 
+    370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394, 
+    395, 396, 400, 401, 402, 406, 407, 408, 412, 413, 414, 418, 419, 420, 424, 
+    425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456, 
+    460, 465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514, 
+    519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543, 545, 549, 551, 555, 
+    561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704, 
+    710, 716, 722 ]
 \end{Verbatim}
  }
 
@@ -3494,8 +3500,8 @@ EqualCatenaryDegreeOfSetOfFactorizations.
 same lenght). The output is the tame degree of this set of factorizations. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FactorizationsIntegerWRTList(100,[11,13,15,19]);|
-  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ],
-    [ 1, 1, 0, 4 ] ]
+  [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+    [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
   !gapprompt@gap>| !gapinput@TameDegreeOfSetOfFactorizations(last);|
   4
 \end{Verbatim}
@@ -3958,7 +3964,8 @@ selfreciprocal, \cite{M}
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;|
   !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
-  !gapprompt@gap>| !gapinput@ForAll(l, s->IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));|
+  !gapprompt@gap>| !gapinput@ForAll(l, s->|
+  !gapprompt@>| !gapinput@IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));|
   true
 \end{Verbatim}
  }
@@ -4023,7 +4030,8 @@ plane curve with one place at infinity.
  \mbox{\texttt{\mdseries\slshape f}} is a positive integer. Computes the set of all $\delta$-sequences generating numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DeltaSequencesWithFrobeniusNumber(21);|
-  [ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], [ 15, 10, 4 ], [ 23, 2 ] ]
+  [ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], 
+    [ 15, 10, 4 ], [ 23, 2 ] ]
 \end{Verbatim}
  }
 
@@ -4041,11 +4049,11 @@ plane curve with one place at infinity.
 whose semigroup of values is generated by the \mbox{\texttt{\mdseries\slshape l}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@CurveAssociatedToDeltaSequence([24,16,28,7]);|
-  x_2^24-8*x_1^2*x_2^21+28*x_1^4*x_2^18-56*x_1^6*x_2^15-4*x_1*x_2^20+70*x_1^8*x_2^12+24*x_1^\
-  3*x_2^17-56*x_1^10*x_2^9-60*x_1^5*x_2^14+28*x_1^12*x_2^6+80*x_1^7*x_2^11+6*x_1^2*x_2^16-8*\
-  x_1^14*x_2^3-60*x_1^9*x_2^8-24*x_1^4*x_2^13+x_1^16+24*x_1^11*x_2^5+36*x_1^6*x_2^10-4*x_1^1\
-  3*x_2^2-24*x_1^8*x_2^7-4*x_1^3*x_2^12+6*x_1^10*x_2^4+8*x_1^5*x_2^9-4*x_1^7*x_2^6+x_1^4*x_2\
-  ^8-x_2^3+x_1^2
+  x_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\
+  3*x_2^17-56*x^10*x_2^9-60*x^5*x_2^14+28*x^12*x_2^6+80*x^7*x_2^11+6*x^2*x_2^16-\
+  8*x^14*x_2^3-60*x^9*x_2^8-24*x^4*x_2^13+x^16+24*x^11*x_2^5+36*x^6*x_2^10-4*x^1\
+  3*x_2^2-24*x^8*x_2^7-4*x^3*x_2^12+6*x^10*x_2^4+8*x^5*x_2^9-4*x^7*x_2^6+x^4*x_2\
+  ^8-x_2^3+x^2
   !gapprompt@gap>| !gapinput@SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");|
   [ [ 24, 16, 28, 7 ], [ x_2, x_2^3-x_1^2, x_2^6-2*x_1^2*x_2^3+x_1^4-x_1*x_2^2 ] ]
 \end{Verbatim}
@@ -5289,19 +5297,19 @@ implementation of the algorithm given in \cite{BDF97}.
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,11,13);;|
   !gapprompt@gap>| !gapinput@l:=FirstElementsOfNumericalSemigroup(100,s);;|
   !gapprompt@gap>| !gapinput@List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;|
-  [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 8, 8, 8, 8,
-    9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 12, 11,
-    11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 13, 14, 13, 13, 13,
-    13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15,
-    15, 15, 15 ]
-  125
+  [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
+    8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
+    10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
+    12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+    14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+  218
   !gapprompt@gap>| !gapinput@OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;|
-  [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 8, 8, 8, 8,
-    9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 10, 10, 10, 11, 12, 11,
-    11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 13, 14, 13, 13, 13,
-    13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15,
-    15, 15, 15 ]
-  16
+  [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
+    8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
+    10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
+    12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+    14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+  10
 \end{Verbatim}
  }
 

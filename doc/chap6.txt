@@ -241,9 +241,11 @@
   semigroups are telescopic.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,14));[127X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(4,11,14);;[127X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);[127X[104X
     [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(NumericalSemigroup(4,11,19));[127X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(4,11,19);;                                 [127X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
@@ -256,7 +258,9 @@
   with frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XLength(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber(57));[127X[104X
+    [4X[25Xgap>[125X [27XLength(                                                                         [127X[104X
+    [4X[25X>[125X [27XNumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber[127X[104X
+    [4X[25X>[125X [27X(57));                                                                           [127X[104X
     [4X[28X7[128X[104X
   [4X[32X[104X
   
@@ -279,7 +283,8 @@
   removing some of its generators as explained in [RG13]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XAlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,11));[127X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(5,8,9,11);;[127X[104X
+    [4X[25Xgap>[125X [27XAlmostSymmetricNumericalSemigroupsFromIrreducible(ns);[127X[104X
     [4X[28X[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ][128X[104X
     [4X[25Xgap>[125X [27XList(last,MinimalGeneratingSystemOfNumericalSemigroup);[127X[104X
     [4X[28X[ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ][128X[104X
