@@ -7,7 +7,7 @@
 
 <TitlePage>
   <Title><Package>numericalsgps</Package>-- a package for numerical semigroups</Title>
-  <Version>( Version <#Include SYSTEM "../version"> )
+  <Version> Version <#Include SYSTEM "../version"> 
   </Version>
   <Author> Manuel Delgado
     <Email>mdelgado@fc.up.pt</Email>
@@ -20,7 +20,7 @@
   <Author> José João Morais
  <!--   <Email>josejoao@fc.up.pt</Email> -->
   </Author>
-  <Copyright> &copyright; 2005--2013 Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain<P/>
+  <Copyright> &copyright; 2005--2015 Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain<P/>
           <!--    We adopt the copyright regulations of &GAP; as detailed in the
               copyright notice in the &GAP; manual. -->
  <E>Numericalsgps</E> is free software; you can redistribute it and/or modify it under the terms of the
@@ -51,7 +51,12 @@ The first and second authors warmly thank María Burgos for her support and help
 <B>Concerning the mantainment:</B>
 <P/>
 <P/>
-The first author was
+The first author was (partially) supported by the FCT project PTDC/MAT/65481/2006 and also by the
+<E>Centro de Matemática da Universidade do
+Porto</E> (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT - Fundação para a Ciência e a Tecnologia under the project PEst-C/MAT/UI0144/2011.
+<P/>
+The second author was/is supported by the projects MTM2007-62346 and MTM2010-15595.
+<P/> Both authors want to acknowledge partial support by CMUP (UID/MAT/00144/2013), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.
 <P/> The maintainers want to thank the organizers of <C>GAPDays</C> in their several editions.
 
 </Acknowledgements>
