@@ -20,7 +20,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         [IsRectangularTable],6,
         function(m)
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-		R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
+		Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
 
     
     Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
@@ -54,7 +54,8 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
     zero:=List([1..ed],_->0);
     dim:=Length(msg[1]);
     vars:=List([1..ed+dim],i->X(Rationals,i));
-    R:=PolynomialRing(Rationals,vars); 
+    R:=PolynomialRing(Rationals,vars);
+    Rtmp:=SingularBaseRing;
     SetTermOrdering(R,"dp");
     SingularSetBaseRing(R);
     p:=List([1..ed], i->X(Rationals,i)-Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
@@ -67,6 +68,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
     SingularSetBaseRing(R);
     ie:=Ideal(R,gens);
     mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
+    SingularSetBaseRing(Rtmp);
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
 end);
 
@@ -79,7 +81,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
 	[IsAffineSemigroup],2,
         function(a)
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-		R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
+		Rtmp,R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
 
     
     Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
@@ -113,6 +115,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     zero:=List([1..ed],_->0);
     dim:=Length(msg[1]);
     vars:=List([1..ed+dim],i->X(Rationals,i));
+    Rtmp:=SingularBaseRing;
     R:=PolynomialRing(Rationals,vars); 
     SetTermOrdering(R,"dp");
     SingularSetBaseRing(R);
@@ -126,6 +129,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     SingularSetBaseRing(R);
     ie:=Ideal(R,gens);
     mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
+    SingularSetBaseRing(Rtmp);
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
 end);
 
