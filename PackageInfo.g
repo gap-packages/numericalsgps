@@ -38,12 +38,12 @@ Subtitle := "A package for numerical semigroups",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-#Version := "1.0",
+#Version := "1.0.1",
 Version := "1.0.1 dev",
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
-Date := "02/06/2015",
+Date := "05/06/2015",
         
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the 
 ##  version and the release date as shown below to read them while building
@@ -274,7 +274,7 @@ PackageDoc := rec(
 Dependencies := rec(
   # GAP version, use the version string for specifying a least version,
   # prepend a '=' for specifying an exact version.
-  GAP := "4.4",
+  GAP := "4.7",
           
   # list of pairs [package name, version], package name is case
   # insensitive, exact version denoted with '=' prepended to version string.
