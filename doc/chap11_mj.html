@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (NumericalSgps) - Chapter 11: 
+		Affine semigroups
+	</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap11"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chapA_mj.html">A</a>  <a href="chapB_mj.html">B</a>  <a href="chapC_mj.html">C</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap10_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap11.html">[MathJax off]</a></p>
+<p><a id="X7D92A1997D098A00" name="X7D92A1997D098A00"></a></p>
+<div class="ChapSects"><a href="chap11_mj.html#X7D92A1997D098A00">11 <span class="Heading">
+		Affine semigroups
+	</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11_mj.html#X7BD18FC581F0C4D3">11.1 <span class="Heading">
+        Using external packages
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8736665E7CBEAB20">11.1-1 NumSgpsUse4ti2</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X875001717A8CF032">11.1-2 NumSgpsUse4ti2gap</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X875040237A692C3C">11.1-3 NumSgpsUseNormalize</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7CD12ADD78089CBE">11.1-4 NumSgpsUseSingular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7F7699A9829940C2">11.1-5 NumSgpsUseSingularInterface</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7F7F2ED87E151582">11.1-6 NumSgpsUseSingularGradedModules</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11_mj.html#X7E39DA7780D02DF5">11.2 <span class="Heading">
+        Defining affine semigroups
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7AFF988F8797A1EF">11.2-1 AffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X844806D97B4781B5">11.2-2 AsAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A2902207BAA3936">11.2-3 IsAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X851788D781A13C50">11.2-4 BelongsToAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X82FCB89B80D42205">11.2-5 IsFullAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7D4D017A79AD98E2">11.2-6 HilbertBasisOfSystemOfHomogeneousEquations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X825B1CD37B0407A6">11.2-7 HilbertBasisOfSystemOfHomogeneousInequalities</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8307A0597864B098">11.2-8 EquationsOfGroupGeneratedBy</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A1CE5A98425CEA1">11.2-9 BasisOfGroupGivenByEquations</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11_mj.html#X7F13DF9D7A4FB547">11.3 <span class="Heading">
+    Gluings of affine semigroups
+  </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7FE3B3C380641DDC">11.3-1 GluingOfAffineSemigroups</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11_mj.html#X86A1018D7CB7BA81">11.4 <span class="Heading">
+    Presentations of affine semigroups
+  </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7EE005267DEBC1DE">11.4-1 GeneratorsOfKernelCongruence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7BCA9C077F76920E">11.4-2 MinimalPresentationOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7C20CE97840ECF8E">11.4-3 BettiElementsOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7C1B355F83A55285">11.4-4 ShadedSetOfElementInAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X84FF536281884DB8">11.4-5 IsGenericAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X87170BBB85E9DEC8">11.4-6 IsUniquelyPresentedAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X86EB7A9A8250E6DB">11.4-7 PrimitiveElementsOfAffineSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11_mj.html#X80A934B0826E21A6">11.5 <span class="Heading">
+    Factorizations in affine semigroups
+  </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8780C7E5830B9AE2">11.5-1 FactorizationsVectorWRTList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7D6B4FB38376C278">11.5-2 ElasticityOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8718FF377C186106">11.5-3 CatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7EADD306875FCBE6">11.5-4 EqualCatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X84FE571A7E9E1AE9">11.5-5 HomogeneousCatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8510C1527F2FE18E">11.5-6 MonotoneCatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7B42B3B17D08FE1D">11.5-7 TameDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7F32723C860EA4B2">11.5-8 OmegaPrimalityOfElementInAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X78DC427283B3C6FC">11.5-9 OmegaPrimalityOfAffineSemigroup</a></span>
+</div></div>
+</div>
+
+<h3>11 <span class="Heading">
+		Affine semigroups
+	</span></h3>
+
+<p>The use of the packages <code class="code">NormalizInterface</code> <a href="chapBib_mj.html#biBNmzInterface">[GHS14]</a> (an interface to <code class="code">Normalize</code> <a href="chapBib_mj.html#biBNormaliz">[BIRC14]</a>; or in its absence <code class="code">4ti2Interface</code><a href="chapBib_mj.html#biB4ti2Interface">[Gut]</a>, and interface to <code class="code">4ti2</code><a href="chapBib_mj.html#biB4ti2">[4t]</a>), <code class="code">SingularInterface</code> (an interface to <code class="code">Singular</code> <a href="chapBib_mj.html#biBSingular">[DGPS12]</a>; or in its absence <code class="code">Singular</code> <a href="chapBib_mj.html#biBSingularpackage">[CG12]</a>); or in its absecnce <code class="code">GradedModules</code> <a href="chapBib_mj.html#biBGradedModules">[BGJLLM14]</a> is highly recomended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower). The package tests if the user has downloaded any of the above packages, and if so puts <code class="code">NumSgpsCanUsePackage</code> to true, where <code class="code">Package</code> is any of the above.</p>
+
+<p><a id="X7BD18FC581F0C4D3" name="X7BD18FC581F0C4D3"></a></p>
+
+<h4>11.1 <span class="Heading">
+        Using external packages
+    </span></h4>
+
+<p>As mentioned above some methods are specifially implemented to take advantage of several external packages. The following functions can be used in case these packages have not been loaded prior to <code class="code">numericalsgps</code>.</p>
+
+<p><a id="X8736665E7CBEAB20" name="X8736665E7CBEAB20"></a></p>
+
+<h5>11.1-1 NumSgpsUse4ti2</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUse4ti2</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tries to load the package <code class="code">4ti2Interface</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
+
+<p><a id="X875001717A8CF032" name="X875001717A8CF032"></a></p>
+
+<h5>11.1-2 NumSgpsUse4ti2gap</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUse4ti2gap</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tries to load the package <code class="code">4ti2gap</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
+
+<p><a id="X875040237A692C3C" name="X875040237A692C3C"></a></p>
+
+<h5>11.1-3 NumSgpsUseNormalize</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUseNormalize</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tries to load the package <code class="code">NormalizInterface</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
+
+<p><a id="X7CD12ADD78089CBE" name="X7CD12ADD78089CBE"></a></p>
+
+<h5>11.1-4 NumSgpsUseSingular</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUseSingular</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tries to load the package <code class="code">singular</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
+
+<p>To prevent incompatibilities, the package will not load if <code class="code">SingularInterface</code> has been already loaded.</p>
+
+<p><a id="X7F7699A9829940C2" name="X7F7699A9829940C2"></a></p>
+
+<h5>11.1-5 NumSgpsUseSingularInterface</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUseSingularInterface</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tries to load the package <code class="code">SingularInterface</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
+
+<p>To prevent incompatibilities, the package will not load if <code class="code">singular</code> has been already loaded.</p>
+
+<p><a id="X7F7F2ED87E151582" name="X7F7F2ED87E151582"></a></p>
+
+<h5>11.1-6 NumSgpsUseSingularGradedModules</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUseSingularGradedModules</code>(  )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tries to load the package <code class="code">GradedModules</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
+
+<p>It also creates a ring of rationals <code class="code">NumSgpsRationals</code>.</p>
+
+<p><a id="X7E39DA7780D02DF5" name="X7E39DA7780D02DF5"></a></p>
+
+<h4>11.2 <span class="Heading">
+        Defining affine semigroups
+    </span></h4>
+
+<p>An affine semigroup <span class="SimpleMath">\(S\)</span> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<span class="SimpleMath">\( a s= b s\)</span> implies <span class="SimpleMath">\(a=b\)</span>, with <span class="SimpleMath">\(a,b\in \mathbb N\)</span> and <span class="SimpleMath">\(s\in S\)</span>). Up to isomorphisms any affine semigroup can ve viewed as a finitely generated submonoid of <span class="SimpleMath">\(\mathbb N^k\)</span> for some positive integer <span class="SimpleMath">\(k\)</span>. Thus affine semigroups are a natural generalization of numerical semigroups. The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually). If <span class="SimpleMath">\(G\)</span> is a subgroup of <span class="SimpleMath">\(\mathbb Z^k\)</span>, then <span class="SimpleMath">\(S=G\cap \mathbb N^k\)</span> is an affine semigroup (these semigroups are call full affine semigroups). As <span class="SimpleMath">\(G\)</span> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <span class="SimpleMath">\(S\)</span> by the defining equations of <span class="SimpleMath">\(G\)</span>; indeed <span class="SimpleMath">\(S\)</span> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <span class="SimpleMath">\(x+y\equiv 0\bmod 2,\ x-2y=0\)</span> will be represented as [[1,1],[1,-2]] and the moduli [2].</p>
+
+<p>To create an affine semigroup in <strong class="pkg">GAP</strong> the function <code class="code">AffineSemigroup</code> is used.</p>
+
+<p><a id="X7AFF988F8797A1EF" name="X7AFF988F8797A1EF"></a></p>
+
+<h5>11.2-1 AffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">Representation</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><code class="code">Representation</code> may be <code class="code">"generators"</code>, <code class="code">"minimalgenerators"</code> according to whether the semigroup is to be given by means of a system of generators, a minimal system of generators, ...</p>
+
+<p>When no string is given as first argument it is assumed that the numerical semigroup will be given by means of a set of generators.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AffineSemigroup([1,3],[7,2],[1,5]);</span>
+&lt;Affine semigroup in 2 dimensional space, with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);</span>
+&lt;Affine semigroup&gt;
+</pre></div>
+
+<p><a id="X844806D97B4781B5" name="X844806D97B4781B5"></a></p>
+
+<h5>11.2-2 AsAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, the output is <var class="Arg">S</var> regarded as an affine semigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(1310,1411,1546,1601);</span>
+&lt;Numerical semigroup with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentationOfNumericalSemigroup(s);;time;</span>
+2960
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AsAffineSemigroup(s);</span>
+&lt;Affine semigroup in 1 dimensional space, with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfAffineSemigroup(a);</span>
+[ [ 1310 ], [ 1411 ], [ 1546 ], [ 1601 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentationOfAffineSemigroup(a);;time;</span>
+237972
+</pre></div>
+
+<p>If we use the package <code class="code">SingularInterface</code>, the speed up is considerable.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumSgpsUseSingularInterface();</span>
+...
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentationOfAffineSemigroup(a);;time;</span>
+32
+</pre></div>
+
+<p><a id="X7A2902207BAA3936" name="X7A2902207BAA3936"></a></p>
+
+<h5>11.2-3 IsAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroup</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByGenerators</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByMinimalGenerators</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByEquations</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByInequalities</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><var class="Arg">AS</var> is an affine semigroup and these attributes are available (their names should be self explanatory). They reflect what is currently known about the semigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1:=AffineSemigroup([[3,0],[2,1],[1,2],[0,3]]);</span>
+&lt;Affine semigroup in 2 dimensional space, with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAffineSemigroupByEquations(a1);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAffineSemigroupByGenerators(a1);</span>
+true
+</pre></div>
+
+<p><a id="X851788D781A13C50" name="X851788D781A13C50"></a></p>
+
+<h5>11.2-4 BelongsToAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">a</var> an affine semigroup. Returns true if the vector is in the semigroup, and false otherwise.</p>
+
+<p>If the semigroup is full and its equations are known (either because the semigroup was defined by equations, or because the user has called <code class="code">IsFullAffineSemgiroup(a)</code> and the output was true), then membership is performed by evaluating <var class="Arg">v</var> in the equations. The same holds for normal semigroups and its defining inequalities.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToAffineSemigroup([5,5],a);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToAffineSemigroup([1,2],a);</span>
+false
+</pre></div>
+
+<p><a id="X82FCB89B80D42205" name="X82FCB89B80D42205"></a></p>
+
+<h5>11.2-5 IsFullAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFullAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">s</var> is an affine semigroup.</p>
+
+<p>Returns true if the semigroup is full, false otherwise. The semigroup is full if whenever <span class="SimpleMath">\(a,b\in S\)</span> and <span class="SimpleMath">\(b-a\in \mathbb N^k\)</span>, then <span class="SimpleMath">\(a-b\in S\)</span>, where <span class="SimpleMath">\(k\)</span> is the dimension of <span class="SimpleMath">\(S\)</span>.</p>
+
+<p>If the semigroup is full, then its equations are stored in the semigroup for further use.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToAffineSemigroup([5,5],a);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToAffineSemigroup([1,2],a);</span>
+false
+</pre></div>
+
+<p><a id="X7D4D017A79AD98E2" name="X7D4D017A79AD98E2"></a></p>
+
+<h5>11.2-6 HilbertBasisOfSystemOfHomogeneousEquations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousEquations</code>( <var class="Arg">ls</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a list of lists of integers and <var class="Arg">m</var> a list of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">\(A\)</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the sytem <span class="SimpleMath">\(Ax=0\)</span> where the <span class="SimpleMath">\(k\)</span> first equations are in the congruences modulo <var class="Arg">m[i]</var>, with <span class="SimpleMath">\(k\)</span> the length of <var class="Arg">m</var>.</p>
+
+<p>If the package <code class="code">NormalizInterface</code> has not been loaded, then Contejean-Devie algorithm is used <a href="chapBib_mj.html#biBMR1283022">[CD94]</a> instead (if this is the case, congruences are treated as in <a href="chapBib_mj.html#biBR-GS">[RG98]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);</span>
+[ [ 0, 2, 2 ], [ 1, 1, 1 ], [ 2, 0, 0 ] ]
+</pre></div>
+
+<p>If <span class="SimpleMath">\(C\)</span> is a pointed cone (a cone in <span class="SimpleMath">\(\mathbb Q^k\)</span> not containing lines and <span class="SimpleMath">\(0\in C\)</span>), then <span class="SimpleMath">\(S=C\cap \mathbb N^k\)</span> is an affine semigroup (known as normal affine semigroup). So another way to give an affine semigroup is by a set of homogeneous inequalities, and we can represent these inequalities by its coefficients. If we put them in a matrix <span class="SimpleMath">\(S\)</span> can be defined as the set of nonnegative integer solutions to <span class="SimpleMath">\(Ax \ge 0\)</span>.</p>
+
+<p><a id="X825B1CD37B0407A6" name="X825B1CD37B0407A6"></a></p>
+
+<h5>11.2-7 HilbertBasisOfSystemOfHomogeneousInequalities</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousInequalities</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a list of lists of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">\(A\)</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions to <span class="SimpleMath">\(Ax\ge 0\)</span>.</p>
+
+<p>If the package <code class="code">NormalizInterface</code> has not been loaded, then Contejean-Devie algorithm is used <a href="chapBib_mj.html#biBMR1283022">[CD94]</a> instead (the use of slack variables is described in <a href="chapBib_mj.html#biBR-GS-GG-B">[CGB02]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);</span>
+[ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ]
+</pre></div>
+
+<p><a id="X8307A0597864B098" name="X8307A0597864B098"></a></p>
+
+<h5>11.2-8 EquationsOfGroupGeneratedBy</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquationsOfGroupGeneratedBy</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">M</var> is a matrix of integers. The output is a pair <span class="SimpleMath">\([A,m]\)</span> that reperesents the set of defining equations of the group spanned by the rows of <var class="Arg">M</var>: <span class="SimpleMath">\(Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k\)</span>, with <span class="SimpleMath">\(m=[n_1,\ldots,n_t]\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EquationsOfGroupGeneratedBy([[1,2,0],[2,-2,2]]);</span>
+[ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ]
+</pre></div>
+
+<p><a id="X7A1CE5A98425CEA1" name="X7A1CE5A98425CEA1"></a></p>
+
+<h5>11.2-9 BasisOfGroupGivenByEquations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisOfGroupGivenByEquations</code>( <var class="Arg">A</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">A</var> is a matrix of integers and <var class="Arg">m</var> is a list of positive integers. The output is a basis for the group with defining equations <span class="SimpleMath">\(Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k\)</span>, with <span class="SimpleMath">\(m=[n_1,\ldots,n_t]\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisOfGroupGivenByEquations([[0,0,1],[2,-1,-3]],[2]);</span>
+[ [ -1, -2, 0 ], [ -2, 2, -2 ] ]
+</pre></div>
+
+<p><a id="X7F13DF9D7A4FB547" name="X7F13DF9D7A4FB547"></a></p>
+
+<h4>11.3 <span class="Heading">
+    Gluings of affine semigroups
+  </span></h4>
+
+<p>Let <span class="SimpleMath">\(S_1\)</span> and <span class="SimpleMath">\(S_2\)</span> be two affine semigroups with the same dimension generated by <span class="SimpleMath">\(A_1\)</span> and <span class="SimpleMath">\(A_2\)</span>, respectively. We say that the affine semigroup <span class="SimpleMath">\(S\)</span> generated by the union of <span class="SimpleMath">\(A_1\)</span> and <span class="SimpleMath">\(A_2\)</span> is a gluing of <span class="SimpleMath">\(S_1\)</span> and <span class="SimpleMath">\(S_2\)</span> if <span class="SimpleMath">\(G(S_1)\cap G(S_2)=d\mathbb Z\)</span> (<span class="SimpleMath">\(G(\cdot)\)</span> stands for group spanned by) for some <span class="SimpleMath">\(d\in S_1\cap S_2\)</span>.</p>
+
+<p>The algorithm used is explained in <a href="chapBib_mj.html#biBMR1678508">[RG99b]</a>.</p>
+
+<p><a id="X7FE3B3C380641DDC" name="X7FE3B3C380641DDC"></a></p>
+
+<h5>11.3-1 GluingOfAffineSemigroups</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GluingOfAffineSemigroups</code>( <var class="Arg">a1</var>, <var class="Arg">a2</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a1, a2</var> are affine semigroups. Determines if they can be glued, and if so, returns the gluing. Otherwise it returns fail.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1:=AffineSemigroup([[2,0],[0,2]]);</span>
+&lt;Affine semigroup in 2 dimensional space, with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a2:=AffineSemigroup([[1,1]]);</span>
+&lt;Affine semigroup in 2 dimensional space, with 1 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GluingOfAffineSemigroups(a1,a2);</span>
+&lt;Affine semigroup in 2 dimensional space, with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsAS(last);</span>
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+</pre></div>
+
+<p><a id="X86A1018D7CB7BA81" name="X86A1018D7CB7BA81"></a></p>
+
+<h4>11.4 <span class="Heading">
+    Presentations of affine semigroups
+  </span></h4>
+
+<p>A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.</p>
+
+<p><a id="X7EE005267DEBC1DE" name="X7EE005267DEBC1DE"></a></p>
+
+<h5>11.4-1 GeneratorsOfKernelCongruence</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfKernelCongruence</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">M</var> is matrix with nonnegative integer coefficients. The output is a system of generators of the congruence <span class="SimpleMath">\(\{(x,y)\mid xM=yM\}\)</span>.</p>
+
+<p>The main differe3nce with <code class="code">MinimalPresentationOfAffineSemigroup</code> is that the matrix <var class="Arg">M</var> can have repeated columns and these are not treated as a set.</p>
+
+<p><a id="X7BCA9C077F76920E" name="X7BCA9C077F76920E"></a></p>
+
+<h5>11.4-2 MinimalPresentationOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is a minimal presentation for <var class="Arg">a</var>.</p>
+
+<p>There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<a href="chapBib_mj.html#biBMR0269762">[Her70]</a>). The fastest procedure is achived when <code class="code">SingularInterface</code> is loaded, followed by <code class="code">Singular</code>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of gerating binomials must be refined, and for this Rclasses are used (if <code class="code">NormalizInterface</code> is loaded, then the factorizations are faster). The <code class="code">4ti2</code> implementation uses <code class="code">4ti2</code> internal Gröbner bases and factorizations are done via <code class="code">zsolve</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentationOfAffineSemigroup(a);</span>
+[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfAffineSemigroup(a);</span>
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+</pre></div>
+
+<p><a id="X7C20CE97840ECF8E" name="X7C20CE97840ECF8E"></a></p>
+
+<h5>11.4-3 BettiElementsOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the set of Betti elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+<p>This function relies on the computation of a minimal presentation.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BettiElementsOfAffineSemigroup(a);</span>
+[ [ 2, 2 ] ]
+</pre></div>
+
+<p><a id="X7C1B355F83A55285" name="X7C1B355F83A55285"></a></p>
+
+<h5>11.4-4 ShadedSetOfElementInAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup and <var class="Arg">v</var> is an element in <var class="Arg">a</var>. This is a translation of <code class="code">ShadedSetOfElementInNumericalSemigroup</code> (<a href="chap4_mj.html#X7C42DEB68285F2B8"><span class="RefLink">4.1-5</span></a>) but for affine semigroups.</p>
+
+<p><a id="X84FF536281884DB8" name="X84FF536281884DB8"></a></p>
+
+<h5>11.4-5 IsGenericAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup.</p>
+
+<p>The same as <code class="code">IsGenericNumericalSemigroup</code> (<a href="chap4_mj.html#X7955C87C80F41CFE"><span class="RefLink">4.2-2</span></a>) but for affine semigroups.</p>
+
+<p><a id="X87170BBB85E9DEC8" name="X87170BBB85E9DEC8"></a></p>
+
+<h5>11.4-6 IsUniquelyPresentedAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup.</p>
+
+<p>The same as <code class="code">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4_mj.html#X87A72C497E37760D"><span class="RefLink">4.2-1</span></a>) but for affine semigroups.</p>
+
+<p><a id="X86EB7A9A8250E6DB" name="X86EB7A9A8250E6DB"></a></p>
+
+<h5>11.4-7 PrimitiveElementsOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the set of primitive elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+<p>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <var class="Arg">a</var> and the other (much faster) using <code class="code">NormalizInterface</code>. Also a <code class="code">4ti2</code> version using its Graber basis computation is provided.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrimitiveElementsOfAffineSemigroup(a);</span>
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
+</pre></div>
+
+<p><a id="X80A934B0826E21A6" name="X80A934B0826E21A6"></a></p>
+
+<h4>11.5 <span class="Heading">
+    Factorizations in affine semigroups
+  </span></h4>
+
+<p>The invariants presented here are defined as for numerical semigroups.</p>
+
+<p>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.</p>
+
+<p><a id="X8780C7E5830B9AE2" name="X8780C7E5830B9AE2"></a></p>
+
+<h5>11.5-1 FactorizationsVectorWRTList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsVectorWRTList</code>( <var class="Arg">v</var>, <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">ls</var> is a list of lists of nonnegative integers. The output is set of factorizations of <var class="Arg">v</var> in terms of the elements of <var class="Arg">ls</var>.</p>
+
+<p>If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <code class="code">NormalizInterface</code> is loaded, then a system of equations is solve with Normaliz, and the performance is much better. If <code class="code">4ti2Interface</code> is loaded instead, then factorizations are calculated using <code class="code">zsolve</code> command of <code class="code">4ti2</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);</span>
+[ [ 2, 2, 1 ], [ 1, 1, 3 ], [ 0, 0, 5 ] ]
+</pre></div>
+
+<p><a id="X7D6B4FB38376C278" name="X7D6B4FB38376C278"></a></p>
+
+<h5>11.5-2 ElasticityOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElasticityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the elasticity of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+<p>The procedure used is based on <a href="chapBib_mj.html#biBPH">[Phi10]</a>, where it is shown that the elasticity can be computed by using circuits. The set of circutis is calculated using <a href="chapBib_mj.html#biBMR1394747">[ES96]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ElasticityOfAffineSemigroup(a);</span>
+1
+</pre></div>
+
+<p><a id="X8718FF377C186106" name="X8718FF377C186106"></a></p>
+
+<h5>11.5-3 CatenaryDegreeOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfAffineSemigroup(a);</span>
+2
+</pre></div>
+
+<p><a id="X7EADD306875FCBE6" name="X7EADD306875FCBE6"></a></p>
+
+<h5>11.5-4 EqualCatenaryDegreeOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the equal catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+<p>This function relies on the results presented in <a href="chapBib_mj.html#biBGSOSN">[SO-13]</a>.</p>
+
+<p><a id="X84FE571A7E9E1AE9" name="X84FE571A7E9E1AE9"></a></p>
+
+<h5>11.5-5 HomogeneousCatenaryDegreeOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the homogeneous catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+<p>This function is based on <a href="chapBib_mj.html#biBGSOSN">[SO-13]</a>.</p>
+
+<p><a id="X8510C1527F2FE18E" name="X8510C1527F2FE18E"></a></p>
+
+<h5>11.5-6 MonotoneCatenaryDegreeOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the monotone catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups), computed as explained in <a href="chapBib_mj.html#biBPH">[Phi10]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);</span>
+&lt;Affine semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfAffineSemigroup(a);</span>
+[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 3, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfAffineSemigroup(a);</span>
+3
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EqualCatenaryDegreeOfAffineSemigroup(a);</span>
+2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HomogeneousCatenaryDegreeOfAffineSemigroup(a);</span>
+3
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MonotoneCatenaryDegreeOfAffineSemigroup(a);</span>
+3
+</pre></div>
+
+<p><a id="X7B42B3B17D08FE1D" name="X7B42B3B17D08FE1D"></a></p>
+
+<h5>11.5-7 TameDegreeOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the tame degree of <var class="Arg">a</var> (defined as for numerical semigroups). If <var class="Arg">a</var> is given by equations (or its equations are known), then the procedure explained in <a href="chapBib_mj.html#biBGS">[Gar14]</a> is used.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TameDegreeOfAffineSemigroup(a);</span>
+2
+</pre></div>
+
+<p><a id="X7F32723C860EA4B2" name="X7F32723C860EA4B2"></a></p>
+
+<h5>11.5-8 OmegaPrimalityOfElementInAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">a</var> is an affine semigroup. The output is the omega primality of <var class="Arg">a</var> (defined as for numerical semigroups). Returns 0 if the element is not in the semigroup.</p>
+
+<p>The implementation of this procedure is performed as explained in <a href="chapBib_mj.html#biBB-GS-G">[BGG11]</a> (also, if the semigroup has defining equations, then it takes advantage of this fact as explained in this reference).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OmegaPrimalityOfElementInAffineSemigroup([5,5],a);</span>
+6
+</pre></div>
+
+<p><a id="X78DC427283B3C6FC" name="X78DC427283B3C6FC"></a></p>
+
+<h5>11.5-9 OmegaPrimalityOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the omega primality of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OmegaPrimalityOfAffineSemigroup(a);</span>
+2
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap10_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chapA_mj.html">A</a>  <a href="chapB_mj.html">B</a>  <a href="chapC_mj.html">C</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
