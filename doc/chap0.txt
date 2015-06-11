@@ -155,9 +155,11 @@
     5.1 [33X[0;0YAdding and removing elements of a numerical semigroup[133X
       5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup
       5.1-2 AddSpecialGapOfNumericalSemigroup
-    5.2 [33X[0;0YIntersections and quotients by integers[133X
+    5.2 [33X[0;0YIntersections, and quotients and multiples by integers[133X
       5.2-1 IntersectionOfNumericalSemigroups
       5.2-2 QuotientOfNumericalSemigroup
+      5.2-3 MultipleOfNumericalSemigroup
+      5.2-4 InductiveNumericalSemigroup
     5.3 [33X[0;0YConstructing the set of all numerical semigroups containing a given
     numerical semigroup[133X
       5.3-1 OverSemigroupsNumericalSemigroup

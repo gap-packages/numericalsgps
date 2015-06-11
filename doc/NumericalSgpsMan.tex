@@ -1349,9 +1349,9 @@ to a semigroup (see \cite{RGGJ03}).
 
  }
 
- 
-\section{\textcolor{Chapter }{Intersections and quotients by integers}}\logpage{[ 5, 2, 0 ]}
-\hyperdef{L}{X7968F4A37A1329C3}{}
+  
+\section{\textcolor{Chapter }{Intersections, and quotients and multiples by integers}}\logpage{[ 5, 2, 0 ]}
+\hyperdef{L}{X78C3BC0F85B40690}{}
 {
   
 
@@ -1365,18 +1365,19 @@ to a semigroup (see \cite{RGGJ03}).
 
  \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} are numerical semigroups. Computes the intersection of \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} (which is a numerical semigroup). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
-  <Modular numerical semigroup satisfying 5x mod 53 <= x >
-  !gapprompt@gap>| !gapinput@T := NumericalSemigroup(2,17);|
-  <Modular numerical semigroup satisfying 17x mod 34 <= x >
-  !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(S);|
-  [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
-  !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(T);|
-  [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
-  !gapprompt@gap>| !gapinput@IntersectionOfNumericalSemigroups(S,T);|
-  <Numerical semigroup>
-  !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(last);|
-  [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+        gap> S := NumericalSemigroup("modular", 5,53);
+        <Modular numerical semigroup satisfying 5x mod 53 <= x >
+        gap> T := NumericalSemigroup(2,17);
+        <Modular numerical semigroup satisfying 17x mod 34 <= x >
+        gap> SmallElementsOfNumericalSemigroup(S);
+        [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+        gap> SmallElementsOfNumericalSemigroup(T);
+        [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
+        gap> IntersectionOfNumericalSemigroups(S,T);
+        <Numerical semigroup>
+        gap> SmallElementsOfNumericalSemigroup(last);
+        [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+        
 \end{Verbatim}
  }
 
@@ -1392,19 +1393,59 @@ to a semigroup (see \cite{RGGJ03}).
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape n}} is an integer. Computes the quotient of \mbox{\texttt{\mdseries\slshape S}} by \mbox{\texttt{\mdseries\slshape n}}, that is, the set $\{ x\in {\mathbb N}\ |\ nx \in S\}$, which is again a numerical semigroup. \texttt{S / n} may be used as a short for \texttt{QuotientOfNumericalSemigroup(S, n)}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,29);|
-  <Modular numerical semigroup satisfying 58x mod 87 <= x >
-  !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(s);|
-  [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
-    39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
-  !gapprompt@gap>| !gapinput@t:=QuotientOfNumericalSemigroup(s,7);|
-  <Numerical semigroup>
-  !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(t);|
-  [ 0, 3, 5, 6, 8 ]
-  !gapprompt@gap>| !gapinput@u := s / 7;|
-  <Numerical semigroup>
-  !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(u);|
-  [ 0, 3, 5, 6, 8 ]
+        gap> s:=NumericalSemigroup(3,29);
+        <Modular numerical semigroup satisfying 58x mod 87 <= x >
+        gap> SmallElementsOfNumericalSemigroup(s);
+        [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
+        39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
+        gap> t:=QuotientOfNumericalSemigroup(s,7);
+        <Numerical semigroup>
+        gap> SmallElementsOfNumericalSemigroup(t);
+        [ 0, 3, 5, 6, 8 ]
+        gap> u := s / 7;
+        <Numerical semigroup>
+        gap> SmallElementsOfNumericalSemigroup(u);
+        [ 0, 3, 5, 6, 8 ]
+        
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MultipleOfNumericalSemigroup}}
+\logpage{[ 5, 2, 3 ]}\nobreak
+\hyperdef{L}{X7BE8DD6884DE693F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultipleOfNumericalSemigroup({\mdseries\slshape S, a, b})\index{MultipleOfNumericalSemigroup@\texttt{MultipleOfNumericalSemigroup}}
+\label{MultipleOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, and \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}} are positive integers. Computes $a S\cup \{b,b+1,\to\}$. If \mbox{\texttt{\mdseries\slshape b}} is smaller than $a c$, with $c$ the conductor of $S$, then a warning is displayed. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+        gap> N:=NumericalSemigroup(1);;
+        gap> s:=MultipleOfNumericalSemigroup(N,4,20);;
+        gap> SmallElements(s);
+        [ 0, 4, 8, 12, 16, 20 ]
+        
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{InductiveNumericalSemigroup}}
+\logpage{[ 5, 2, 4 ]}\nobreak
+\hyperdef{L}{X7DCEC67A82130CD8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{InductiveNumericalSemigroup({\mdseries\slshape S, a, b})\index{InductiveNumericalSemigroup@\texttt{InductiveNumericalSemigroup}}
+\label{InductiveNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, and \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}} are lists of positive integers, such that $b[i+1]\ge a[i]b[i]$. Computes inductively $S_0=\mathbb N$ and $S_{i+1}=a[i]S_i\cup \{a[i]b[i],a[i]b[i]+1,\to\}$, and returns $S_{k}$, with $k$ the length of \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+        gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;  
+        gap> SmallElements(s);
+        [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]
+        
 \end{Verbatim}
  }
 

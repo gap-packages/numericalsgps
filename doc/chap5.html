@@ -34,11 +34,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C94611F7DD9E742">5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X865EA8377D632F53">5.1-2 AddSpecialGapOfNumericalSemigroup</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7968F4A37A1329C3">5.2 <span class="Heading">Intersections and quotients by integers</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X78C3BC0F85B40690">5.2 <span class="Heading">Intersections, and quotients and multiples by integers</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X874494928728023E">5.2-1 IntersectionOfNumericalSemigroups</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83CCE63C82F34C25">5.2-2 QuotientOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7BE8DD6884DE693F">5.2-3 MultipleOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7DCEC67A82130CD8">5.2-4 InductiveNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X867D9A9A87CEB869">5.3 <span class="Heading">
                     Constructing the set of all numerical semigroups containing a given numerical semigroup
@@ -128,9 +130,9 @@ true
 
                         </pre></div>
 
-<p><a id="X7968F4A37A1329C3" name="X7968F4A37A1329C3"></a></p>
+<p><a id="X78C3BC0F85B40690" name="X78C3BC0F85B40690"></a></p>
 
-<h4>5.2 <span class="Heading">Intersections and quotients by integers</span></h4>
+<h4>5.2 <span class="Heading">Intersections, and quotients and multiples by integers</span></h4>
 
 <p><a id="X874494928728023E" name="X874494928728023E"></a></p>
 
@@ -141,19 +143,19 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := NumericalSemigroup("modular", 5,53);</span>
-&lt;Modular numerical semigroup satisfying 5x mod 53 &lt;= x &gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T := NumericalSemigroup(2,17);</span>
-&lt;Modular numerical semigroup satisfying 17x mod 34 &lt;= x &gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(S);</span>
-[ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(T);</span>
-[ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IntersectionOfNumericalSemigroups(S,T);</span>
-&lt;Numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(last);</span>
-[ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
-</pre></div>
+      gap&gt; S := NumericalSemigroup("modular", 5,53);
+      &lt;Modular numerical semigroup satisfying 5x mod 53 &lt;= x &gt;
+      gap&gt; T := NumericalSemigroup(2,17);
+      &lt;Modular numerical semigroup satisfying 17x mod 34 &lt;= x &gt;
+      gap&gt; SmallElementsOfNumericalSemigroup(S);
+      [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+      gap&gt; SmallElementsOfNumericalSemigroup(T);
+      [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
+      gap&gt; IntersectionOfNumericalSemigroups(S,T);
+      &lt;Numerical semigroup&gt;
+      gap&gt; SmallElementsOfNumericalSemigroup(last);
+      [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+      </pre></div>
 
 <p><a id="X83CCE63C82F34C25" name="X83CCE63C82F34C25"></a></p>
 
@@ -164,20 +166,49 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,29);</span>
-&lt;Modular numerical semigroup satisfying 58x mod 87 &lt;= x &gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(s);</span>
-[ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
-  39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=QuotientOfNumericalSemigroup(s,7);</span>
-&lt;Numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(t);</span>
-[ 0, 3, 5, 6, 8 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">u := s / 7;</span>
-&lt;Numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(u);</span>
-[ 0, 3, 5, 6, 8 ]
-</pre></div>
+      gap&gt; s:=NumericalSemigroup(3,29);
+      &lt;Modular numerical semigroup satisfying 58x mod 87 &lt;= x &gt;
+      gap&gt; SmallElementsOfNumericalSemigroup(s);
+      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
+      39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
+      gap&gt; t:=QuotientOfNumericalSemigroup(s,7);
+      &lt;Numerical semigroup&gt;
+      gap&gt; SmallElementsOfNumericalSemigroup(t);
+      [ 0, 3, 5, 6, 8 ]
+      gap&gt; u := s / 7;
+      &lt;Numerical semigroup&gt;
+      gap&gt; SmallElementsOfNumericalSemigroup(u);
+      [ 0, 3, 5, 6, 8 ]
+      </pre></div>
+
+<p><a id="X7BE8DD6884DE693F" name="X7BE8DD6884DE693F"></a></p>
+
+<h5>5.2-3 MultipleOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MultipleOfNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">a</var> and <var class="Arg">b</var> are positive integers. Computes <span class="SimpleMath">a S∪ {b,b+1,-&gt;}</span>. If <var class="Arg">b</var> is smaller than <span class="SimpleMath">a c</span>, with <span class="SimpleMath">c</span> the conductor of <span class="SimpleMath">S</span>, then a warning is displayed.</p>
+
+
+<div class="example"><pre>
+      gap&gt; N:=NumericalSemigroup(1);;
+      gap&gt; s:=MultipleOfNumericalSemigroup(N,4,20);;
+      gap&gt; SmallElements(s);
+      [ 0, 4, 8, 12, 16, 20 ]
+      </pre></div>
+
+<p><a id="X7DCEC67A82130CD8" name="X7DCEC67A82130CD8"></a></p>
+
+<h5>5.2-4 InductiveNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InductiveNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">a</var> and <var class="Arg">b</var> are lists of positive integers, such that <span class="SimpleMath">b[i+1]ge a[i]b[i]</span>. Computes inductively <span class="SimpleMath">S_0= N</span> and <span class="SimpleMath">S_i+1=a[i]S_i∪ {a[i]b[i],a[i]b[i]+1,-&gt;}</span>, and returns <span class="SimpleMath">S_k</span>, with <span class="SimpleMath">k</span> the length of <var class="Arg">a</var> and <var class="Arg">b</var>.</p>
+
+
+<div class="example"><pre>
+      gap&gt; s:=InductiveNumericalSemigroup([4,2],[5,23]);;  
+      gap&gt; SmallElements(s);
+      [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]
+      </pre></div>
 
 <p><a id="X867D9A9A87CEB869" name="X867D9A9A87CEB869"></a></p>
 
