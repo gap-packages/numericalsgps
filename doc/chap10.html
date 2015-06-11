@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (NumericalSgps) - Chapter 10: 
+		Polynomials and numerical semigroups
+	</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap10"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap9.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap11.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap10_mj.html">[MathJax on]</a></p>
+<p><a id="X7D2C77607815273E" name="X7D2C77607815273E"></a></p>
+<div class="ChapSects"><a href="chap10.html#X7D2C77607815273E">10 <span class="Heading">
+		Polynomials and numerical semigroups
+	</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10.html#X808FAEE28572191C">10.1 <span class="Heading">
+		Generating functions or Hilbert series
+	</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X8391C8E782FBFA8A">10.1-1 NumericalSemigroupPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X780479F978D166B0">10.1-2 HilbertSeriesOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X87C88E5C7B56931F">10.1-3 GraeffePolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X87A46B53815B158F">10.1-4 IsCyclotomicPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7D9618ED83776B0B">10.1-5 IsKroneckerPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X8366BB727C496D31">10.1-6 IsCyclotomicNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X82C6355287C3BDD1">10.1-7 IsSelfReciprocalUnivariatePolynomial</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10.html#X7EEF2A1781432A2D">10.2 <span class="Heading">
+		Semigroup of values of algebraic curves
+	</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7FFF949A7BEEA912">10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X834D6B1A7C421B9F">10.2-2 IsDeltaSequence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X824ABFD680A34495">10.2-3 DeltaSequencesWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X87B819B886CA5A5C">10.2-4 CurveAssociatedToDeltaSequence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7F88774F7812D30E">10.2-5 SemigroupOfValuesOfCurve_Local</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X8597259279D1E793">10.2-6 SemigroupOfValuesOfCurve_Global</a></span>
+</div></div>
+</div>
+
+<h3>10 <span class="Heading">
+		Polynomials and numerical semigroups
+	</span></h3>
+
+<p><a id="X808FAEE28572191C" name="X808FAEE28572191C"></a></p>
+
+<h4>10.1 <span class="Heading">
+		Generating functions or Hilbert series
+	</span></h4>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup. The Hilbert series or generating function associated to <span class="SimpleMath">S</span> is <span class="SimpleMath">H_S(x)=∑_s∈ Sx^s</span> (actually it is the Hilbert function of the ring <span class="SimpleMath">K[S]</span> with <span class="SimpleMath">K</span> a field). See for instance <a href="chapBib.html#biBM">[Mor14]</a>.</p>
+
+<p><a id="X8391C8E782FBFA8A" name="X8391C8E782FBFA8A"></a></p>
+
+<h5>10.1-1 NumericalSemigroupPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupPolynomial</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroups and <var class="Arg">x</var> a variable (or a value to evaluate in). The output is the polynomial <span class="SimpleMath">1+(x-1)∑_s∈ N∖ S x^s</span>, which equals <span class="SimpleMath">(1-x)H_S(x)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupPolynomial(s,x);</span>
+x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
+</pre></div>
+
+<p><a id="X780479F978D166B0" name="X780479F978D166B0"></a></p>
+
+<h5>10.1-2 HilbertSeriesOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertSeriesOfNumericalSemigroup</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroups and <var class="Arg">x</var> a variable (or a value to evaluate in). The output is the series <span class="SimpleMath">∑_s∈ ∖ S x^s</span>. The series is given as a rational function.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HilbertSeriesOfNumericalSemigroup(s,x);</span>
+(x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1)/(-x+1)
+</pre></div>
+
+<p><a id="X87C88E5C7B56931F" name="X87C88E5C7B56931F"></a></p>
+
+<h5>10.1-3 GraeffePolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraeffePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is a polynomial. Computes the Graeffe polynomial of <var class="Arg">p</var>. Needed to test if <var class="Arg">p</var> is a cyclotomic polynomial (see <a href="chapBib.html#biBBD-cyclotomic">[BD89]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraeffePolynomial(x^2-1);</span>
+x^2-2*x+1
+</pre></div>
+
+<p><a id="X87A46B53815B158F" name="X87A46B53815B158F"></a></p>
+
+<h5>10.1-4 IsCyclotomicPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a cyclotomic polynomial using the procedure given in <a href="chapBib.html#biBBD-cyclotomic">[BD89]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CyclotomicPolynomial(Rationals,3);</span>
+x^2+x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCyclotomicPolynomial(last);</span>
+true
+</pre></div>
+
+<p><a id="X7D9618ED83776B0B" name="X7D9618ED83776B0B"></a></p>
+
+<h5>10.1-5 IsKroneckerPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsKroneckerPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a Kronecker polynomial, that is, a monic polynomial with integer coefficients having all its roots in the unit circunference, or equivalently, a product of cyclotomic polynomials.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> t:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=NumericalSemigroupPolynomial(s,x);</span>
+x^5-x^4+x^3-x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q:=NumericalSemigroupPolynomial(t,x);</span>
+x^12-x^11+x^8-x^7+x^6-x^5+x^4-x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKroneckerPolynomial(p);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsKroneckerPolynomial(q);</span>
+true
+</pre></div>
+
+<p><a id="X8366BB727C496D31" name="X8366BB727C496D31"></a></p>
+
+<h5>10.1-6 IsCyclotomicNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup. Detects if the polynomial associated to <var class="Arg">s</var> is a Kronecker polynomial.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(21);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(l,IsCyclotomicNumericalSemigroup);</span>
+true
+</pre></div>
+
+<p><a id="X82C6355287C3BDD1" name="X82C6355287C3BDD1"></a></p>
+
+<h5>10.1-7 IsSelfReciprocalUnivariatePolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSelfReciprocalUnivariatePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <a href="chapBib.html#biBM">[Mor14]</a></p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAll(l, s-&gt;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));</span>
+true
+</pre></div>
+
+<p><a id="X7EEF2A1781432A2D" name="X7EEF2A1781432A2D"></a></p>
+
+<h4>10.2 <span class="Heading">
+		Semigroup of values of algebraic curves
+	</span></h4>
+
+<p>Let <span class="SimpleMath">f(x,y)∈ K[x,y]</span>, with <span class="SimpleMath">K</span> an algebraically close field of characteristic zero. Let <span class="SimpleMath">f(x,y)=y^n+a_1(x)y^n-1+dots+a_n(x)</span> be a nonzero polynomial of <span class="SimpleMath">K[x][y]</span>. After possibly a change of variables, we may assume that, that <span class="SimpleMath">deg_x(a_i(x))le i-1</span> for all <span class="SimpleMath">i∈{1,..., n}</span>. For <span class="SimpleMath">g∈ K[x,y]</span> that is not a multiple of <span class="SimpleMath">f</span>, define <span class="SimpleMath">mathrmint(f,g)=dim_ K frac K[x,y](f,g)</span>. If <span class="SimpleMath">f</span> as a one place at infinity, then the set <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span> is a free numerical semigroup (and thus a complete intersection).</p>
+
+<p><a id="X7FFF949A7BEEA912" name="X7FFF949A7BEEA912"></a></p>
+
+<h5>10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">δ</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib.html#biBAGS14">[AG14]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");; y:=X(Rationals,"y");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all");</span>
+[ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
+</pre></div>
+
+<p><a id="X834D6B1A7C421B9F" name="X834D6B1A7C421B9F"></a></p>
+
+<h5>10.2-2 IsDeltaSequence</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDeltaSequence</code>( <var class="Arg">l</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">l</var> is a list of positive integers. Assume that <var class="Arg">l</var> equals <span class="SimpleMath">a_0,a_1,dots,a_h</span>. Then <var class="Arg">l</var> is a <span class="SimpleMath">δ</span>-sequence if <span class="SimpleMath">gcd(a_0,..., a_h)=1</span>, <span class="SimpleMath">⟨ a_0,⋯ a_s</span> is free, <span class="SimpleMath">a_kD_k &gt; a_k+1D_k+1</span> and <span class="SimpleMath">a_0&gt; a_1 &gt; D_2 &gt; D_3 &gt; ... &gt; D_h+1</span>, where <span class="SimpleMath">D_1=a_0</span>, <span class="SimpleMath">D_k=gcd(D_k-1,a_k-1</span>.</p>
+
+<p>Every <span class="SimpleMath">δ</span>-sequence generates a numerical semigroup that is the semigroup of values of a plane curve with one place at infinity.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDeltaSequence([24,16,28,7]);</span>
+true
+</pre></div>
+
+<p><a id="X824ABFD680A34495" name="X824ABFD680A34495"></a></p>
+
+<h5>10.2-3 DeltaSequencesWithFrobeniusNumber</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSequencesWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">f</var> is a positive integer. Computes the set of all <span class="SimpleMath">δ</span>-sequences generating numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSequencesWithFrobeniusNumber(21);</span>
+[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], 
+  [ 15, 10, 4 ], [ 23, 2 ] ]
+</pre></div>
+
+<p><a id="X87B819B886CA5A5C" name="X87B819B886CA5A5C"></a></p>
+
+<h5>10.2-4 CurveAssociatedToDeltaSequence</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CurveAssociatedToDeltaSequence</code>( <var class="Arg">l</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">l</var> is a <span class="SimpleMath">δ</span>-sequence. Computes a curve in the variables X(Rationals,1) and X(Rationals,2) whose semigroup of values is generated by the <var class="Arg">l</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CurveAssociatedToDeltaSequence([24,16,28,7]);</span>
+x_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\
+3*x_2^17-56*x^10*x_2^9-60*x^5*x_2^14+28*x^12*x_2^6+80*x^7*x_2^11+6*x^2*x_2^16-\
+8*x^14*x_2^3-60*x^9*x_2^8-24*x^4*x_2^13+x^16+24*x^11*x_2^5+36*x^6*x_2^10-4*x^1\
+3*x_2^2-24*x^8*x_2^7-4*x^3*x_2^12+6*x^10*x_2^4+8*x^5*x_2^9-4*x^7*x_2^6+x^4*x_2\
+^8-x_2^3+x^2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");</span>
+[ [ 24, 16, 28, 7 ], [ x_2, x_2^3-x_1^2, x_2^6-2*x_1^2*x_2^3+x_1^4-x_1*x_2^2 ] ]
+</pre></div>
+
+<p><a id="X7F88774F7812D30E" name="X7F88774F7812D30E"></a></p>
+
+<h5>10.2-5 SemigroupOfValuesOfCurve_Local</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Local</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>The function admits one or two parameters. In any case, the first is a list of polynomials <var class="Arg">pols</var>. And the second can be the string <var class="Arg">"basis"</var> or an integer <var class="Arg">val</var>.</p>
+
+<p>If only one argument is given, the output is the semigroup of all possible orders of <span class="SimpleMath">K[[pols]]</span> provided that <span class="SimpleMath">K[[x]]/K[[pols]]</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">K[[pols]]</span> such that the orders of the basis elements generate minimally the semigroup of orders of <span class="SimpleMath">K[[pols]]</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">K[[pols]]</span> with order <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomioal, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
+
+<p>The method is explained in <a href="chapBib.html#biBAGSM14">[AGM14]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=Indeterminate(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13]);</span>
+&lt;Numerical semigroup with 4 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(last);</span>
+[ 4, 6, 13, 15 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");</span>
+[ x^4, x^7+x^6, x^13, x^15 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     </span>
+x^20
+</pre></div>
+
+<p><a id="X8597259279D1E793" name="X8597259279D1E793"></a></p>
+
+<h5>10.2-6 SemigroupOfValuesOfCurve_Global</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Global</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>The function admits one or two parameters. In any case, the first is a list of polynomials <var class="Arg">pols</var>. And the second can be the string <var class="Arg">"basis"</var> or an integer <var class="Arg">val</var>.</p>
+
+<p>If only one argument is given, the output is the semigroup of all possible degrees of <span class="SimpleMath">K[pols]</span> provided that <span class="SimpleMath">K[x]/K[pols]</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">K[pols]</span> such that the degrees of the basis elements generate minimally the semigroup of degrees of <span class="SimpleMath">K[pols]</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">K[pols]</span> with degree <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomioal, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
+
+<p>The method is explained in <a href="chapBib.html#biBAGSM14">[AGM14]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=Indeterminate(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       </span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(last);                             </span>
+[ 4, 7, 13 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");</span>
+[ x^4, x^7+x^6, x^13 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     </span>
+x^12
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); </span>
+fail
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap9.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap11.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
