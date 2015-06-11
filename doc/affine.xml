@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+The use of the packages <C>NormalizInterface</C> <Cite Key="NmzInterface"></Cite> (an interface to <C>Normalize</C> <Cite Key="Normaliz"></Cite>; or in its absence <C>4ti2Interface</C><Cite Key="4ti2Interface"></Cite>, and interface to <C>4ti2</C><Cite Key="4ti2"></Cite>), <C>SingularInterface</C> (an interface to <C>Singular</C> <Cite Key="Singular"></Cite>; or in its absence <C>Singular</C> <Cite Key="Singularpackage"></Cite>); or in its absecnce <C>GradedModules</C> <Cite Key="GradedModules"></Cite> is highly recomended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower).
+
+The package tests if the user has downloaded any of the above packages, and if so puts <C>NumSgpsCanUsePackage</C> to true, where <C>Package</C> is any of the above.
+
+<Section>
+    <Heading>
+        Using external packages
+    </Heading>
+    As mentioned above some methods are specifially implemented to take advantage of several external packages. The following functions can be used in case these packages have not been loaded prior to <C>numericalsgps</C>.
+
+
+    <ManSection>
+      <Func Name="NumSgpsUse4ti2" Arg=""/>
+      <Description>
+	Tries to load the package <C>4ti2Interface</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUse4ti2gap" Arg=""/>
+      <Description>
+	Tries to load the package <C>4ti2gap</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUseNormalize" Arg=""/>
+      <Description>
+	Tries to load the package <C>NormalizInterface</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingular" Arg=""/>
+      <Description>
+	Tries to load the package <C>singular</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> To prevent incompatibilities, the package will not load if <C>SingularInterface</C> has been already loaded.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingularInterface" Arg=""/>
+      <Description>
+	Tries to load the package <C>SingularInterface</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> To prevent incompatibilities, the package will not load if <C>singular</C> has been already loaded.
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingularGradedModules" Arg=""/>
+      <Description>
+	Tries to load the package <C>GradedModules</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> It also creates a ring of rationals <C>NumSgpsRationals</C>.
+      </Description>
+    </ManSection>
+
+</Section>
+
+<Section>
+    <Heading>
+        Defining affine semigroups
+    </Heading>
+
+    An affine semigroup <M>S</M> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<M> a s= b s</M> implies <M>a=b</M>, with <M>a,b\in \mathbb N</M> and <M>s\in S</M>).
+
+    Up to isomorphisms any affine semigroup can ve viewed as a finitely generated submonoid of <M>\mathbb N^k</M> for some positive integer <M>k</M>. Thus affine semigroups are a natural generalization of numerical semigroups.
+
+    The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually).
+
+    If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are call full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
+<P/>
+
+To create an affine semigroup in &GAP; the function
+<C>AffineSemigroup</C> is used.
+<ManSection>
+  <Func Name="AffineSemigroup" Arg="Representation, List"/>
+  <Description>
+    <C>Representation</C> may be <C>"generators"</C>, <C>"minimalgenerators"</C> according to
+    whether the semigroup is to be given by means of a system of generators, a
+    minimal system of generators, ...
+    <P/>
+    When no string is given as first argument it is assumed that the numerical
+    semigroup will be given by means of a set of generators.
+    <P/>
+    <Example><![CDATA[
+gap> AffineSemigroup([1,3],[7,2],[1,5]);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+gap> a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);
+<Affine semigroup>
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="AsAffineSemigroup" Arg="S"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, the output is <A>S</A> regarded as an affine semigroup.
+    <P/>
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(1310,1411,1546,1601);
+<Numerical semigroup with 4 generators>
+gap> MinimalPresentationOfNumericalSemigroup(s);;time;
+2960
+gap> a:=AsAffineSemigroup(s);
+<Affine semigroup in 1 dimensional space, with 4 generators>
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 1310 ], [ 1411 ], [ 1546 ], [ 1601 ] ]
+gap> MinimalPresentationOfAffineSemigroup(a);;time;
+237972
+]]></Example>
+
+If we use the package <C>SingularInterface</C>, the speed up is considerable.
+
+    <Example><![CDATA[
+gap> NumSgpsUseSingularInterface();
+...
+gap> MinimalPresentationOfAffineSemigroup(a);;time;
+32
+]]></Example>
+
+
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="IsAffineSemigroup" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByGenerators" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByMinimalGenerators" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByEquations" Arg="AS"/>
+  <Attr Name="IsAffineSemigroupByInequalities" Arg="AS"/>
+  <Description>
+    <A>AS</A> is an affine semigroup and these attributes are available
+    (their names should be self explanatory). They reflect what is currently known about the semigroup.
+    <Example><![CDATA[
+gap> a1:=AffineSemigroup([[3,0],[2,1],[1,2],[0,3]]);
+<Affine semigroup in 2 dimensional space, with 4 generators>
+gap> IsAffineSemigroupByEquations(a1);
+false
+gap> IsAffineSemigroupByGenerators(a1);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
+
+<ManSection>
+  <Func Arg="v, a" Name="BelongsToAffineSemigroup"></Func>
+  <Description>
+    <A>v</A> is a list of nonnegative integers and <A>a</A> an affine semigroup.
+    Returns true if the vector is in the semigroup, and false otherwise.
+
+    <P/>
+    If the semigroup is full and its equations are known (either because the semigroup was defined by equations, or because the user has called <C>IsFullAffineSemgiroup(a)</C> and the output was true), then membership is performed by evaluating <A>v</A> in the equations. The same holds for normal semigroups and its defining inequalities.
+    <Example><![CDATA[
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> BelongsToAffineSemigroup([5,5],a);
+true
+gap> BelongsToAffineSemigroup([1,2],a);
+false
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="S" Name="IsFullAffineSemigroup"></Func>
+  <Description>
+    <A>s</A> is an affine semigroup.<P/>
+
+    Returns true if the semigroup is full, false otherwise. The semigroup is full if whenever <M>a,b\in S</M> and <M>b-a\in \mathbb N^k</M>, then <M>a-b\in S</M>, where <M>k</M> is the dimension of <M>S</M>.
+    <P/>
+    If the semigroup is full, then its equations are stored in the semigroup for further use.
+
+    <Example><![CDATA[
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> BelongsToAffineSemigroup([5,5],a);
+true
+gap> BelongsToAffineSemigroup([1,2],a);
+false
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+
+  <Func Arg="ls, m" Name="HilbertBasisOfSystemOfHomogeneousEquations"></Func>
+  <Description>
+    <A>ls</A> is a list of lists of integers and <A>m</A> a list of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.
+    The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the sytem <M>Ax=0</M> where the <M>k</M> first equations are in the congruences modulo <A>m[i]</A>, with <M>k</M> the length of <A>m</A>. <P/>
+    If the package <C>NormalizInterface</C> has not been loaded, then Contejean-Devie algorithm is used <Cite Key="MR1283022"></Cite> instead (if this is the case, congruences are treated as in <Cite Key="R-GS"></Cite>.
+
+    <Example><![CDATA[
+gap> HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);
+[ [ 0, 2, 2 ], [ 1, 1, 1 ], [ 2, 0, 0 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+If <M>C</M> is a pointed cone (a cone in <M>\mathbb Q^k</M> not containing lines and <M>0\in C</M>), then <M>S=C\cap \mathbb N^k</M> is an affine semigroup (known as normal affine semigroup). So another way to give an affine semigroup is by a set of homogeneous inequalities, and we can represent these inequalities by its coefficients. If we put them in a matrix <M>S</M> can be defined as the set of nonnegative integer solutions to <M>Ax \ge 0</M>.
+
+<ManSection>
+  <Func Arg="ls" Name="HilbertBasisOfSystemOfHomogeneousInequalities"></Func>
+  <Description>
+    <A>ls</A> is a list of lists of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.
+            The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions to  <M>Ax\ge 0</M>.
+ <P/>
+    If the package <C>NormalizInterface</C> has not been loaded, then Contejean-Devie algorithm is used <Cite Key="MR1283022"></Cite> instead (the use of slack variables is described in <Cite Key="R-GS-GG-B"></Cite>).
+
+            <Example><![CDATA[
+gap> HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);
+[ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="M" Name="EquationsOfGroupGeneratedBy"></Func>
+  <Description>
+    <A>M</A> is a matrix of integers. The output is a pair <M>[A,m]</M> that reperesents the set of defining equations of the group spanned by the rows of <A>M</A>: <M>Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k</M>, with <M>m=[n_1,\ldots,n_t]</M>.
+
+    <Example><![CDATA[
+gap> EquationsOfGroupGeneratedBy([[1,2,0],[2,-2,2]]);
+[ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="A, m" Name="BasisOfGroupGivenByEquations"></Func>
+  <Description>
+    <A>A</A> is a matrix of integers and <A>m</A> is a list of positive integers. The output is a basis for the group with defining equations  <M>Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k</M>, with <M>m=[n_1,\ldots,n_t]</M>.
+
+    <Example><![CDATA[
+gap> BasisOfGroupGivenByEquations([[0,0,1],[2,-1,-3]],[2]);
+[ [ -1, -2, 0 ], [ -2, 2, -2 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+</Section>
+
+
+<Section>
+  <Heading>
+    Gluings of affine semigroups
+  </Heading>
+
+  Let <M>S_1</M> and <M>S_2</M> be two affine semigroups with the same dimension generated by <M>A_1</M> and <M>A_2</M>, respectively. We say that the affine semigroup <M>S</M> generated by the union of <M>A_1</M> and <M>A_2</M> is a gluing of <M>S_1</M> and <M>S_2</M> if <M>G(S_1)\cap G(S_2)=d\mathbb Z</M> (<M>G(\cdot)</M> stands for group spanned by) for some <M>d\in S_1\cap S_2</M>.
+  <P/> The algorithm used is explained in <Cite Key="MR1678508"></Cite>.
+
+<ManSection>
+  <Func Arg="a1, a2" Name="GluingOfAffineSemigroups"></Func>
+  <Description>
+    <A>a1, a2</A> are affine semigroups. Determines if they can be glued, and if so, returns the gluing. Otherwise it returns fail.
+
+    <Example><![CDATA[
+gap> a1:=AffineSemigroup([[2,0],[0,2]]);
+<Affine semigroup in 2 dimensional space, with 2 generators>
+gap> a2:=AffineSemigroup([[1,1]]);
+<Affine semigroup in 2 dimensional space, with 1 generators>
+gap> GluingOfAffineSemigroups(a1,a2);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+gap> GeneratorsAS(last);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+</Section>
+
+<Section>
+  <Heading>
+    Presentations of affine semigroups
+  </Heading>
+
+  A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.
+
+  <ManSection>
+    <Func Arg="M" Name="GeneratorsOfKernelCongruence"></Func>
+    <Description>
+      <A>M</A> is matrix with nonnegative integer coefficients.
+      The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
+  <P/>
+  The main differe3nce with <C>MinimalPresentationOfAffineSemigroup</C> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+    <Func Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      The output is a minimal presentation for <A>a</A>.
+  <P/>
+  There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<Cite Key="MR0269762"></Cite>). The fastest procedure is achived when <C>SingularInterface</C> is loaded, followed by <C>Singular</C>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of gerating binomials must be refined, and for this Rclasses are used (if <C>NormalizInterface</C> is loaded, then the factorizations are faster). The <C>4ti2</C> implementation uses <C>4ti2</C> internal Gröbner bases and factorizations are done via <C>zsolve</C>.
+
+      <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> MinimalPresentationOfAffineSemigroup(a);
+[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="a" Name="BettiElementsOfAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      The output is the set of Betti elements of <A>a</A> (defined as for numerical semigroups).
+<P/> This function relies on the computation of a minimal presentation.
+      <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> BettiElementsOfAffineSemigroup(a);
+[ [ 2, 2 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="v, a" Name="ShadedSetOfElementInAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup and <A>v</A> is an element in <A>a</A>.
+
+      This is a translation of <C>ShadedSetOfElementInNumericalSemigroup</C> (<Ref Chap="shadedset"/>) but for affine semigroups.
+
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+    <Func Arg="a" Name="IsGenericAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      <P/>
+      The same as <C>IsGenericNumericalSemigroup</C> (<Ref Chap="Generic"/>) but for affine semigroups.
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="a" Name="IsUniquelyPresentedAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      <P/>
+      The same as <C>IsUniquelyPresentedNumericalSemigroup</C> (<Ref Chap="UniqPre"/>) but for affine semigroups.
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+    <Func Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Func>
+    <Description>
+      <A>a</A> is an affine semigroup.
+      The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
+<P/>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <A>a</A> and the other (much faster) using  <C>NormalizInterface</C>. Also a <C>4ti2</C> version using its Graber basis computation is provided.
+      <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> PrimitiveElementsOfAffineSemigroup(a);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+</Section>
+
+
+<Section>
+  <Heading>
+    Factorizations in affine semigroups
+  </Heading>
+
+  The invariants presented here are defined as for numerical semigroups.
+
+  <P/>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.
+
+
+  <ManSection>
+    <Func Arg="v, ls" Name="FactorizationsVectorWRTList"></Func>
+    <Description>
+      <A>v</A> is a list of nonnegative integers and <A>ls</A> is a list of lists of nonnegative integers.
+      The output is set of factorizations of <A>v</A> in terms of the elements of <A>ls</A>.
+  <P/>
+  If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <C>NormalizInterface</C> is loaded, then a system of equations is solve with Normaliz, and the performance is much better. If <C>4ti2Interface</C> is loaded instead, then factorizations are calculated using <C>zsolve</C> command of <C>4ti2</C>.
+
+      <Example><![CDATA[
+gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
+[ [ 2, 2, 1 ], [ 1, 1, 3 ], [ 0, 0, 5 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+
+<ManSection>
+  <Func Arg="a" Name="ElasticityOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the elasticity of <A>a</A> (defined as for numerical semigroups).
+	    <P/> The procedure used is based on <Cite Key="PH"></Cite>, where it is shown that the elasticity can be computed by using circuits. The set of circutis is calculated using <Cite Key="MR1394747"></Cite>.
+
+            <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> ElasticityOfAffineSemigroup(a);
+1
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="a" Name="CatenaryDegreeOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the catenary degree of <A>a</A> (defined as for numerical semigroups).
+<Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> CatenaryDegreeOfAffineSemigroup(a);
+2
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="a" Name="EqualCatenaryDegreeOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the equal catenary degree of <A>a</A> (defined as for numerical semigroups).
+<P/>This function relies on the results presented in <Cite Key="GSOSN"></Cite>.
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="a" Name="HomogeneousCatenaryDegreeOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the homogeneous catenary degree of <A>a</A> (defined as for numerical semigroups).
+<P/>This function is based on <Cite Key="GSOSN"></Cite>.
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="a" Name="MonotoneCatenaryDegreeOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the monotone catenary degree of <A>a</A> (defined as for numerical semigroups), computed as explained in  <Cite Key="PH"></Cite>.
+            <Example><![CDATA[
+gap> a:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
+<Affine semigroup>
+gap> GeneratorsOfAffineSemigroup(a);
+[ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 3, 1 ] ]
+gap> CatenaryDegreeOfAffineSemigroup(a);
+3
+gap> EqualCatenaryDegreeOfAffineSemigroup(a);
+2
+gap> HomogeneousCatenaryDegreeOfAffineSemigroup(a);
+3
+gap> MonotoneCatenaryDegreeOfAffineSemigroup(a);
+3
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
+<ManSection>
+  <Func Arg="a" Name="TameDegreeOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the tame degree of <A>a</A> (defined as for numerical semigroups). If <A>a</A> is given by equations (or its equations are known), then the procedure explained in <Cite Key="GS"></Cite> is used.
+
+            <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> TameDegreeOfAffineSemigroup(a);
+2
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="v,a" Name="OmegaPrimalityOfElementInAffineSemigroup"></Func>
+  <Description>
+    <A>v</A> is a list of nonnegative integers and <A>a</A> is an affine semigroup.
+            The output is the omega primality of <A>a</A> (defined as for numerical semigroups). Returns 0 if the element is not in the semigroup.
+<P/> The implementation of this procedure is performed as explained in <Cite Key="B-GS-G"></Cite> (also, if the semigroup has defining equations, then it takes advantage of this fact as explained in this reference).
+
+            <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> OmegaPrimalityOfElementInAffineSemigroup([5,5],a);
+6
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="a" Name="OmegaPrimalityOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the omega primality of <A>a</A> (defined as for numerical semigroups).
+
+            <Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> OmegaPrimalityOfAffineSemigroup(a);
+2
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
+</Section>
