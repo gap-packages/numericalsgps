@@ -1,0 +1,256 @@
+  
+  [1X10 [33X[0;0YPolynomials and numerical semigroups[133X[101X
+  
+  
+  [1X10.1 [33X[0;0YGenerating functions or Hilbert series[133X[101X
+  
+  [33X[0;0YLet  [22XS[122X  be  a numerical semigroup. The Hilbert series or generating function
+  associated  to [22XS[122X is [22XH_S(x)=∑_s∈ Sx^s[122X (actually it is the Hilbert function of
+  the ring [22XK[S][122X with [22XK[122X a field). See for instance [Mor14].[133X
+  
+  [1X10.1-1 NumericalSemigroupPolynomial[101X
+  
+  [29X[2XNumericalSemigroupPolynomial[102X( [3Xs[103X, [3Xx[103X ) [32X function
+  
+  [33X[0;0Y[3Xs[103X  is  a  numerical semigroups and [3Xx[103X a variable (or a value to evaluate in).
+  The output is the polynomial [22X1+(x-1)∑_s∈ N∖ S x^s[122X, which equals [22X(1-x)H_S(x)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,9);;[127X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupPolynomial(s,x);[127X[104X
+    [4X[28Xx^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-2 HilbertSeriesOfNumericalSemigroup[101X
+  
+  [29X[2XHilbertSeriesOfNumericalSemigroup[102X( [3Xs[103X, [3Xx[103X ) [32X function
+  
+  [33X[0;0Y[3Xs[103X  is  a  numerical semigroups and [3Xx[103X a variable (or a value to evaluate in).
+  The  output  is  the  series [22X∑_s∈ ∖ S x^s[122X. The series is given as a rational
+  function.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,9);;[127X[104X
+    [4X[25Xgap>[125X [27XHilbertSeriesOfNumericalSemigroup(s,x);[127X[104X
+    [4X[28X(x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1)/(-x+1)[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-3 GraeffePolynomial[101X
+  
+  [29X[2XGraeffePolynomial[102X( [3Xp[103X ) [32X function
+  
+  [33X[0;0Y[3Xp[103X is a polynomial. Computes the Graeffe polynomial of [3Xp[103X. Needed to test if [3Xp[103X
+  is a cyclotomic polynomial (see [BD89]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27XGraeffePolynomial(x^2-1);[127X[104X
+    [4X[28Xx^2-2*x+1[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-4 IsCyclotomicPolynomial[101X
+  
+  [29X[2XIsCyclotomicPolynomial[102X( [3Xp[103X ) [32X function
+  
+  [33X[0;0Y[3Xp[103X  is  a  polynomial.  Detects  if  [3Xp[103X  is  a cyclotomic polynomial using the
+  procedure given in [BD89].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XCyclotomicPolynomial(Rationals,3);[127X[104X
+    [4X[28Xx^2+x+1[128X[104X
+    [4X[25Xgap>[125X [27XIsCyclotomicPolynomial(last);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-5 IsKroneckerPolynomial[101X
+  
+  [29X[2XIsKroneckerPolynomial[102X( [3Xp[103X ) [32X function
+  
+  [33X[0;0Y[3Xp[103X  is a polynomial. Detects if [3Xp[103X is a Kronecker polynomial, that is, a monic
+  polynomial  with  integer  coefficients  having  all  its  roots in the unit
+  circunference, or equivalently, a product of cyclotomic polynomials.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27X s:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27X t:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27Xp:=NumericalSemigroupPolynomial(s,x);[127X[104X
+    [4X[28Xx^5-x^4+x^3-x+1[128X[104X
+    [4X[25Xgap>[125X [27Xq:=NumericalSemigroupPolynomial(t,x);[127X[104X
+    [4X[28Xx^12-x^11+x^8-x^7+x^6-x^5+x^4-x+1[128X[104X
+    [4X[25Xgap>[125X [27XIsKroneckerPolynomial(p);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsKroneckerPolynomial(q);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-6 IsCyclotomicNumericalSemigroup[101X
+  
+  [29X[2XIsCyclotomicNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  
+  [33X[0;0Y[3Xs[103X  is  a numerical semigroup. Detects if the polynomial associated to [3Xs[103X is a
+  Kronecker polynomial.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xl:=CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(21);;[127X[104X
+    [4X[25Xgap>[125X [27XForAll(l,IsCyclotomicNumericalSemigroup);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-7 IsSelfReciprocalUnivariatePolynomial[101X
+  
+  [29X[2XIsSelfReciprocalUnivariatePolynomial[102X( [3Xp[103X ) [32X function
+  
+  [33X[0;0Y[3Xp[103X  is  a polynomial. Detects if [3Xp[103X is a selfreciprocal. A numerical semigroup
+  is symmetric if and only if it is selfreciprocal, [Mor14][133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xl:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;[127X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27XForAll(l, s->[127X[104X
+    [4X[25X>[125X [27XIsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X10.2 [33X[0;0YSemigroup of values of algebraic curves[133X[101X
+  
+  [33X[0;0YLet  [22Xf(x,y)∈  K[x,y][122X,  with [22XK[122X an algebraically close field of characteristic
+  zero.  Let  [22Xf(x,y)=y^n+a_1(x)y^n-1+dots+a_n(x)[122X  be  a  nonzero polynomial of
+  [22XK[x][y][122X.  After  possibly  a  change  of variables, we may assume that, that
+  [22Xdeg_x(a_i(x))le  i-1[122X  for  all  [22Xi∈{1,...,  n}[122X.  For  [22Xg∈ K[x,y][122X that is not a
+  multiple  of [22Xf[122X, define [22Xmathrmint(f,g)=dim_ K frac K[x,y](f,g)[122X. If [22Xf[122X as a one
+  place  at  infinity,  then the set [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X is a free
+  numerical semigroup (and thus a complete intersection).[133X
+  
+  [1X10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity[101X
+  
+  [29X[2XSemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  a  polynomial  in  the  variables  X(Rationals,1) and X(Rationals,2).
+  Computes the semigroup [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X. The algorithm checks
+  if  [3Xf[103X  has one place at infinity. If the extra argument "all" is given, then
+  the  output  is  the  [22Xδ[122X-sequence  and  approximate roots of [3Xf[103X. The method is
+  explained in [AG14].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");; y:=X(Rationals,"y");;[127X[104X
+    [4X[25Xgap>[125X [27Xf:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;[127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all");[127X[104X
+    [4X[28X[ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-2 IsDeltaSequence[101X
+  
+  [29X[2XIsDeltaSequence[102X( [3Xl[103X ) [32X function
+  
+  [33X[0;0Y[3Xl[103X  is  a  list  of positive integers. Assume that [3Xl[103X equals [22Xa_0,a_1,dots,a_h[122X.
+  Then [3Xl[103X is a [22Xδ[122X-sequence if [22Xgcd(a_0,..., a_h)=1[122X, [22X⟨ a_0,⋯ a_s[122X is free, [22Xa_kD_k >
+  a_k+1D_k+1[122X  and  [22Xa_0>  a_1  >  D_2  >  D_3  >  ...  >  D_h+1[122X, where [22XD_1=a_0[122X,
+  [22XD_k=gcd(D_k-1,a_k-1[122X.[133X
+  
+  [33X[0;0YEvery  [22Xδ[122X-sequence  generates  a numerical semigroup that is the semigroup of
+  values of a plane curve with one place at infinity.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsDeltaSequence([24,16,28,7]);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-3 DeltaSequencesWithFrobeniusNumber[101X
+  
+  [29X[2XDeltaSequencesWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  a  positive  integer.  Computes the set of all [22Xδ[122X-sequences generating
+  numerical semigroups with Frobenius number [3Xf[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDeltaSequencesWithFrobeniusNumber(21);[127X[104X
+    [4X[28X[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], [128X[104X
+    [4X[28X  [ 15, 10, 4 ], [ 23, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-4 CurveAssociatedToDeltaSequence[101X
+  
+  [29X[2XCurveAssociatedToDeltaSequence[102X( [3Xl[103X ) [32X function
+  
+  [33X[0;0Y[3Xl[103X  is  a  [22Xδ[122X-sequence.  Computes  a curve in the variables X(Rationals,1) and
+  X(Rationals,2) whose semigroup of values is generated by the [3Xl[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XCurveAssociatedToDeltaSequence([24,16,28,7]);[127X[104X
+    [4X[28Xx_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\[128X[104X
+    [4X[28X3*x_2^17-56*x^10*x_2^9-60*x^5*x_2^14+28*x^12*x_2^6+80*x^7*x_2^11+6*x^2*x_2^16-\[128X[104X
+    [4X[28X8*x^14*x_2^3-60*x^9*x_2^8-24*x^4*x_2^13+x^16+24*x^11*x_2^5+36*x^6*x_2^10-4*x^1\[128X[104X
+    [4X[28X3*x_2^2-24*x^8*x_2^7-4*x^3*x_2^12+6*x^10*x_2^4+8*x^5*x_2^9-4*x^7*x_2^6+x^4*x_2\[128X[104X
+    [4X[28X^8-x_2^3+x^2[128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");[127X[104X
+    [4X[28X[ [ 24, 16, 28, 7 ], [ x_2, x_2^3-x_1^2, x_2^6-2*x_1^2*x_2^3+x_1^4-x_1*x_2^2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-5 SemigroupOfValuesOfCurve_Local[101X
+  
+  [29X[2XSemigroupOfValuesOfCurve_Local[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThe  function admits one or two parameters. In any case, the first is a list
+  of  polynomials [3Xpols[103X. And the second can be the string [3X"basis"[103X or an integer
+  [3Xval[103X.[133X
+  
+  [33X[0;0YIf  only  one argument is given, the output is the semigroup of all possible
+  orders of [22XK[[pols]][122X provided that [22XK[[x]]/K[[pols]][122X has finite length. If the
+  second  argument  [3X"basis"[103X  is given, then the output is a (reduced) basis of
+  the  algebra  [22XK[[pols]][122X  such that the orders of the basis elements generate
+  minimally  the  semigroup  of  orders of [22XK[[pols]][122X. If an integer [3Xval[103X is the
+  second argument, then the output is a polynomial in [22XK[[pols]][122X with order [3Xval[103X
+  ([10Xfail[110X  if there is no such polynomioal, that is, [3Xval[103X is not in the semigroup
+  of values).[133X
+  
+  [33X[0;0YThe method is explained in [AGM14].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13]);[127X[104X
+    [4X[28X<Numerical semigroup with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(last);[127X[104X
+    [4X[28X[ 4, 6, 13, 15 ][128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");[127X[104X
+    [4X[28X[ x^4, x^7+x^6, x^13, x^15 ][128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     [127X[104X
+    [4X[28Xx^20[128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-6 SemigroupOfValuesOfCurve_Global[101X
+  
+  [29X[2XSemigroupOfValuesOfCurve_Global[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0YThe  function admits one or two parameters. In any case, the first is a list
+  of  polynomials [3Xpols[103X. And the second can be the string [3X"basis"[103X or an integer
+  [3Xval[103X.[133X
+  
+  [33X[0;0YIf  only  one argument is given, the output is the semigroup of all possible
+  degrees  of  [22XK[pols][122X  provided  that  [22XK[x]/K[pols][122X has finite length. If the
+  second  argument  [3X"basis"[103X  is given, then the output is a (reduced) basis of
+  the  algebra  [22XK[pols][122X  such  that the degrees of the basis elements generate
+  minimally  the  semigroup  of  degrees  of [22XK[pols][122X. If an integer [3Xval[103X is the
+  second  argument, then the output is a polynomial in [22XK[pols][122X with degree [3Xval[103X
+  ([10Xfail[110X  if there is no such polynomioal, that is, [3Xval[103X is not in the semigroup
+  of values).[133X
+  
+  [33X[0;0YThe method is explained in [AGM14].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       [127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(last);                             [127X[104X
+    [4X[28X[ 4, 7, 13 ][128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");[127X[104X
+    [4X[28X[ x^4, x^7+x^6, x^13 ][128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     [127X[104X
+    [4X[28Xx^12[128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); [127X[104X
+    [4X[28Xfail[128X[104X
+  [4X[32X[104X
+  
