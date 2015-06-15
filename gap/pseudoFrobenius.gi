@@ -29,7 +29,7 @@ DeclareInfoClass("InfoTipo");
 #################################################################
 InstallGlobalFunction(NumericalSemigroupWithGivenElementsAndFrobenius, function(elts,frob)
   local  ns;
-  if elts <> [] then
+  if elts <> [] and elts <> [0] then
     ns := NumericalSemigroup(Union(elts,[frob+1..frob+Minimum(Difference(elts,[0]))]));
   else
     ns := NumericalSemigroup([frob+1..2*(frob+1)]);
