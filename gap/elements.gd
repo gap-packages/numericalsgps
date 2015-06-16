@@ -83,7 +83,7 @@ DeclareGlobalFunction("ProfileOfNumericalSemigroup");
 
 #############################################################################
 ##
-#F  EliahouSliceOfNumericalSemigroup(S)
+#F  EliahouSlicesOfNumericalSemigroup(S)
 ##
 ##  Returns a list of lists of integers, each list is the set of elements in 
 ##  S belonging to [jm-r, (j+1)m-r[ where m is the mulitiplicity of S,
@@ -91,6 +91,6 @@ DeclareGlobalFunction("ProfileOfNumericalSemigroup");
 ##  (see [E])
 ##
 #############################################################################
-DeclareGlobalFunction("EliahouSliceOfNumericalSemigroup");
+DeclareGlobalFunction("EliahouSlicesOfNumericalSemigroup");
 
 
