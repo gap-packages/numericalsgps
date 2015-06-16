@@ -356,3 +356,100 @@ InstallGlobalFunction(GenusOfNumericalSemigroup,
 	    fi;
 	return Length(GapsOfNumericalSemigroup(sgp));
 end);
+
+
+#############################################################################
+##
+#F  WilfNumberOfNumericalSemigroup(S)
+##
+##  Let c,edim and se be the conductor, embedding dimension and number of
+##  elements smaller than c in S. Returns the edim*se-c, which was conjetured
+##  by Wilf to be nonnegative.
+##
+#############################################################################
+InstallGlobalFunction(WilfNumberOfNumericalSemigroup,function(s)
+    local se, edim, c;
+    
+    if not IsNumericalSemigroup(s) then
+        Error("The argument must be a numerical semigroup");
+    fi;
+
+    edim:=EmbeddingDimensionOfNumericalSemigroup(s);
+    c:=ConductorOfNumericalSemigroup(s);
+    se:=Length(SmallElements(s))-1;
+    return edim*se-c;    
+end);
+
+#############################################################################
+##
+#F  TruncatedWilfNumberOfNumericalSemigroup(S)
+##
+##  Returns W_0(S) (see [E])
+##
+#############################################################################
+InstallGlobalFunction(TruncatedWilfNumberOfNumericalSemigroup,function(s)
+    local se, edim, c, msg, dq, smsg, r,m,q;
+    
+    if not IsNumericalSemigroup(s) then
+        Error("The argument must be a numerical semigroup");
+    fi;
+    msg:=MinimalGeneratingSystem(s);
+    m:=Minimum(msg);
+    edim:=Length(msg);
+    c:=ConductorOfNumericalSemigroup(s);
+    smsg:=Length(Intersection(msg,[0..c-1]));
+    se:=Length(SmallElements(s))-1;
+    q:=CeilingOfRational(c/m);
+    r:=q*m-c;
+    dq:=Length(Difference([c..c+m-1],msg));
+    return smsg*se-q*dq+r;
+    
+end);
+
+
+#############################################################################
+##
+#F  ProfileOfNumericalSemigroup(S)
+##
+##  Returns the profile of a numerical semigroup (see [E]);
+##  corresponds with the sizes of the intervals (except the last) returned by
+##  EliahouSliceOfNumericalSemigroup(S)
+##
+#############################################################################
+InstallGlobalFunction(ProfileOfNumericalSemigroup,function(s)
+    local c, m, msg, r, q;
+    if not IsNumericalSemigroup(s) then
+        Error("The argument must be a numerical semigroup");
+    fi;
+    m:=MultiplicityOfNumericalSemigroup(s);
+    c:=ConductorOfNumericalSemigroup(s);
+    msg:=MinimalGeneratingSystem(s);
+    q:=CeilingOfRational(c/m);
+    r:=q*m-c;
+    return List([1..q-1],i->Length(Intersection(msg,[i*m-r..(i+1)*m-r])));
+    
+end);
+
+#############################################################################
+##
+#F  EliahouSliceOfNumericalSemigroup(S)
+##
+##  Returns a list of lists of integers, each list is the set of elements in 
+##  S belonging to [jm-r, (j+1)m-r[ where m is the mulitiplicity of S,
+##  and j in [1..q-1]; with q,r such that c=qm-r, c the conductor of S 
+##  (see [E])
+##
+#############################################################################
+InstallGlobalFunction(EliahouSliceOfNumericalSemigroup,function(s)
+    local c, m, msg, r, q;
+    if not IsNumericalSemigroup(s) then
+        Error("The argument must be a numerical semigroup");
+    fi;
+    m:=MultiplicityOfNumericalSemigroup(s);
+    c:=ConductorOfNumericalSemigroup(s);
+    msg:=MinimalGeneratingSystem(s);
+    q:=CeilingOfRational(c/m);
+    r:=q*m-c;
+    return List([1..q-1],i->Intersection(s,[i*m-r..(i+1)*m-r]));
+    
+end);

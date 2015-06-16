@@ -1090,6 +1090,98 @@ numerical semigroup, then the resulting set is again a numerical semigroup.
 
  }
 
+  
+\section{\textcolor{Chapter }{Wilf's conjecture}}\logpage{[ 3, 4, 0 ]}
+\hyperdef{L}{X7EE22CA979CCAAB9}{}
+{
+  Let $S$ be a numerical semigroup, with conductor $c$ and embedding dimension $e$. Denote by $l$ the cardinality of the set of elements in $S$ smaller than $c$. Wilf in \cite{Wilf} asked whether or not $l/c\ge 1/e$ for all numerical semigroups. In this section we give some functions to
+experiment with this conjecture, as defined in \cite{E}. 
+
+\subsection{\textcolor{Chapter }{WilfNumberOfNumericalSemigroup}}
+\logpage{[ 3, 4, 1 ]}\nobreak
+\hyperdef{L}{X808D266284F0D479}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{WilfNumberOfNumericalSemigroup({\mdseries\slshape S})\index{WilfNumberOfNumericalSemigroup@\texttt{WilfNumberOfNumericalSemigroup}}
+\label{WilfNumberOfNumericalSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \texttt{S} is a numerical semigroup. Let $c$, $e$ and $l$ be the conductor, embedding dimension and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}. Returns the $e l-c$, which was conjetured by Wilf to be nonnegative. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@l:=NumericalSemigroupsWithGenus(21);;|
+  !gapprompt@gap>| !gapinput@Filtered(l, s->WilfNumberOfNumericalSemigroup(s)<0); |
+  [  ]
+  !gapprompt@gap>| !gapinput@Maximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));|
+  378
+        
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{TruncatedWilfNumberOfNumericalSemigroup}}
+\logpage{[ 3, 4, 2 ]}\nobreak
+\hyperdef{L}{X87DC06717858C391}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TruncatedWilfNumberOfNumericalSemigroup({\mdseries\slshape S})\index{TruncatedWilfNumberOfNumericalSemigroup@\texttt{Truncated}\-\texttt{Wilf}\-\texttt{Number}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{TruncatedWilfNumberOfNumericalSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \texttt{S} is a numerical semigroup. Let $c$, $m$, $s$ and $l$ be the conductor, multiplicity, number of generators smaller than $c$, and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns the $s l-qd_p+r$, where $d_p$ corresponds with the number of integers in $[c,c+m[$ that are not minimal generators of \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);;|
+  !gapprompt@gap>| !gapinput@TruncatedWilfNumberOfNumericalSemigroup(s);|
+  4
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;|
+  !gapprompt@gap>| !gapinput@TruncatedWilfNumberOfNumericalSemigroup(s);|
+  -1
+        
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ProfileOfNumericalSemigroup}}
+\logpage{[ 3, 4, 3 ]}\nobreak
+\hyperdef{L}{X7B45623E7D539CB6}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ProfileOfNumericalSemigroup({\mdseries\slshape S})\index{ProfileOfNumericalSemigroup@\texttt{ProfileOfNumericalSemigroup}}
+\label{ProfileOfNumericalSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \texttt{S} is a numerical semigroup. Let $c$ and $m$ be the conductor and multiplicity of \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns a list of lists of integers, each list is the cardinality of $ S \cap [jm-r, (j+1)m-r[$ with $ j$ in [1..q-1]. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);;|
+  !gapprompt@gap>| !gapinput@ProfileOfNumericalSemigroup(s);|
+  [ 3, 1 ]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;|
+  !gapprompt@gap>| !gapinput@ProfileOfNumericalSemigroup(s);|
+  [ 3, 0, 0 ]
+        
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{EliahouSliceOfNumericalSemigroup}}
+\logpage{[ 3, 4, 4 ]}\nobreak
+\hyperdef{L}{X7A9DCB4486130AAB}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EliahouSliceOfNumericalSemigroup({\mdseries\slshape S})\index{EliahouSliceOfNumericalSemigroup@\texttt{EliahouSliceOfNumericalSemigroup}}
+\label{EliahouSliceOfNumericalSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \texttt{S} is a numerical semigroup. Let $c$ and $m$ be the conductor and multiplicity of \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns a list of lists of integers, each list is the set $ S \cap [jm-r, (j+1)m-r[$ with $ j$ in [1..q]. So this is a partition of the set of small elements of \mbox{\texttt{\mdseries\slshape S}} (without $0$). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);;                                     |
+  !gapprompt@gap>| !gapinput@EliahouSliceOfNumericalSemigroup(s); |
+  [ [ 5, 7, 9 ], [ 9, 10, 12, 14 ] ]
+  !gapprompt@gap>| !gapinput@SmallElements(s);|
+  [ 0, 5, 7, 9, 10, 12, 14 ]
+\end{Verbatim}
+ }
+
+ }
+
  }
 
  

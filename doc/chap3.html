@@ -60,6 +60,14 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X81EC33E978C73FEA">3.3-3 FundamentalGapsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7E373952877AC30A">3.3-4 SpecialGapsOfNumericalSemigroup</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7EE22CA979CCAAB9">3.4 <span class="Heading">Wilf's conjecture</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X808D266284F0D479">3.4-1 WilfNumberOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X87DC06717858C391">3.4-2 TruncatedWilfNumberOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B45623E7D539CB6">3.4-3 ProfileOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7A9DCB4486130AAB">3.4-4 EliahouSliceOfNumericalSemigroup</a></span>
+</div></div>
 </div>
 
 <h3>3 <span class="Heading">
@@ -369,6 +377,78 @@ true
 &lt;Modular numerical semigroup satisfying 5x mod 53 &lt;= x &gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SpecialGapsOfNumericalSemigroup(S);</span>
 [ 40, 41, 42 ]
+</pre></div>
+
+<p><a id="X7EE22CA979CCAAB9" name="X7EE22CA979CCAAB9"></a></p>
+
+<h4>3.4 <span class="Heading">Wilf's conjecture</span></h4>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup, with conductor <span class="SimpleMath">c</span> and embedding dimension <span class="SimpleMath">e</span>. Denote by <span class="SimpleMath">l</span> the cardinality of the set of elements in <span class="SimpleMath">S</span> smaller than <span class="SimpleMath">c</span>. Wilf in <a href="chapBib.html#biBWilf">[Wil78]</a> asked whether or not <span class="SimpleMath">l/cge 1/e</span> for all numerical semigroups. In this section we give some functions to experiment with this conjecture, as defined in <a href="chapBib.html#biBE">[Eli14]</a>.</p>
+
+<p><a id="X808D266284F0D479" name="X808D266284F0D479"></a></p>
+
+<h5>3.4-1 WilfNumberOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WilfNumberOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. Let <span class="SimpleMath">c</span>, <span class="SimpleMath">e</span> and <span class="SimpleMath">l</span> be the conductor, embedding dimension and number of elements smaller than <span class="SimpleMath">c</span> in <var class="Arg">S</var>. Returns the <span class="SimpleMath">e l-c</span>, which was conjetured by Wilf to be nonnegative.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=NumericalSemigroupsWithGenus(21);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Filtered(l, s-&gt;WilfNumberOfNumericalSemigroup(s)&lt;0); </span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Maximum(Set(l, s-&gt;WilfNumberOfNumericalSemigroup(s)));</span>
+378
+      </pre></div>
+
+<p><a id="X87DC06717858C391" name="X87DC06717858C391"></a></p>
+
+<h5>3.4-2 TruncatedWilfNumberOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TruncatedWilfNumberOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. Let <span class="SimpleMath">c</span>, <span class="SimpleMath">m</span>, <span class="SimpleMath">s</span> and <span class="SimpleMath">l</span> be the conductor, multiplicity, number of generators smaller than <span class="SimpleMath">c</span>, and number of elements smaller than <span class="SimpleMath">c</span> in <var class="Arg">S</var>, respectively. Let <span class="SimpleMath">q</span> and <span class="SimpleMath">r</span> be the quotient and negative remainder of the division of <span class="SimpleMath">c</span> by <span class="SimpleMath">m</span>, that is, <span class="SimpleMath">c=qm-r</span>. Returns the <span class="SimpleMath">s l-qd_p+r</span>, where <span class="SimpleMath">d_p</span> corresponds with the number of integers in <span class="SimpleMath">[c,c+m[</span> that are not minimal generators of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TruncatedWilfNumberOfNumericalSemigroup(s);</span>
+4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TruncatedWilfNumberOfNumericalSemigroup(s);</span>
+-1
+      </pre></div>
+
+<p><a id="X7B45623E7D539CB6" name="X7B45623E7D539CB6"></a></p>
+
+<h5>3.4-3 ProfileOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProfileOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. Let <span class="SimpleMath">c</span> and <span class="SimpleMath">m</span> be the conductor and multiplicity of <var class="Arg">S</var>, respectively. Let <span class="SimpleMath">q</span> and <span class="SimpleMath">r</span> be the quotient and negative remainder of the division of <span class="SimpleMath">c</span> by <span class="SimpleMath">m</span>, that is, <span class="SimpleMath">c=qm-r</span>. Returns a list of lists of integers, each list is the cardinality of <span class="SimpleMath">S ∩ [jm-r, (j+1)m-r[</span> with <span class="SimpleMath">j</span> in [1..q-1].</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ProfileOfNumericalSemigroup(s);</span>
+[ 3, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ProfileOfNumericalSemigroup(s);</span>
+[ 3, 0, 0 ]
+      </pre></div>
+
+<p><a id="X7A9DCB4486130AAB" name="X7A9DCB4486130AAB"></a></p>
+
+<h5>3.4-4 EliahouSliceOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EliahouSliceOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. Let <span class="SimpleMath">c</span> and <span class="SimpleMath">m</span> be the conductor and multiplicity of <var class="Arg">S</var>, respectively. Let <span class="SimpleMath">q</span> and <span class="SimpleMath">r</span> be the quotient and negative remainder of the division of <span class="SimpleMath">c</span> by <span class="SimpleMath">m</span>, that is, <span class="SimpleMath">c=qm-r</span>. Returns a list of lists of integers, each list is the set <span class="SimpleMath">S ∩ [jm-r, (j+1)m-r[</span> with <span class="SimpleMath">j</span> in [1..q]. So this is a partition of the set of small elements of <var class="Arg">S</var> (without <span class="SimpleMath">0</span>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,9);;                                     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EliahouSliceOfNumericalSemigroup(s); </span>
+[ [ 5, 7, 9 ], [ 9, 10, 12, 14 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(s);</span>
+[ 0, 5, 7, 9, 10, 12, 14 ]
 </pre></div>
 
 

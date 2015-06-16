@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1->1 dev
+- Added functions for Wilf's conjecture based on Eliahou's paper
 - Fixed bug while using SingularSetBaseRing in affine-extra-s.gi
 - Added MultipleOfNumericalSemigroup and InductiveNumericalSemigroup
 0.980 -> 1
