@@ -426,13 +426,13 @@ InstallGlobalFunction(ProfileOfNumericalSemigroup,function(s)
     msg:=MinimalGeneratingSystem(s);
     q:=CeilingOfRational(c/m);
     r:=q*m-c;
-    return List([1..q-1],i->Length(Intersection(msg,[i*m-r..(i+1)*m-r])));
+    return List([1..q-1],i->Length(Intersection(msg,[i*m-r..(i+1)*m-r-1])));
     
 end);
 
 #############################################################################
 ##
-#F  EliahouSliceOfNumericalSemigroup(S)
+#F  EliahouSlicesOfNumericalSemigroup(S)
 ##
 ##  Returns a list of lists of integers, each list is the set of elements in 
 ##  S belonging to [jm-r, (j+1)m-r[ where m is the mulitiplicity of S,
@@ -440,7 +440,7 @@ end);
 ##  (see [E])
 ##
 #############################################################################
-InstallGlobalFunction(EliahouSliceOfNumericalSemigroup,function(s)
+InstallGlobalFunction(EliahouSlicesOfNumericalSemigroup,function(s)
     local c, m, msg, r, q;
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup");
@@ -450,6 +450,6 @@ InstallGlobalFunction(EliahouSliceOfNumericalSemigroup,function(s)
     msg:=MinimalGeneratingSystem(s);
     q:=CeilingOfRational(c/m);
     r:=q*m-c;
-    return List([1..q-1],i->Intersection(s,[i*m-r..(i+1)*m-r]));
+    return List([1..q-1],i->Intersection(s,[i*m-r..(i+1)*m-r-1]));
     
 end);
