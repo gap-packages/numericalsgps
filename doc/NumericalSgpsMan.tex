@@ -1105,7 +1105,7 @@ experiment with this conjecture, as defined in \cite{E}.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- \texttt{S} is a numerical semigroup. Let $c$, $e$ and $l$ be the conductor, embedding dimension and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}. Returns the $e l-c$, which was conjetured by Wilf to be nonnegative. 
+ \texttt{S} is a numerical semigroup. Let $c$, $e$ and $l$ be the conductor, embedding dimension and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}. Returns $e l-c$, which was conjetured by Wilf to be nonnegative. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@l:=NumericalSemigroupsWithGenus(21);;|
   !gapprompt@gap>| !gapinput@Filtered(l, s->WilfNumberOfNumericalSemigroup(s)<0); |
@@ -1126,7 +1126,7 @@ experiment with this conjecture, as defined in \cite{E}.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- \texttt{S} is a numerical semigroup. Let $c$, $m$, $s$ and $l$ be the conductor, multiplicity, number of generators smaller than $c$, and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns the $s l-qd_p+r$, where $d_p$ corresponds with the number of integers in $[c,c+m[$ that are not minimal generators of \mbox{\texttt{\mdseries\slshape S}}. 
+ \texttt{S} is a numerical semigroup. Let $c$, $m$, $s$ and $l$ be the conductor, multiplicity, number of generators smaller than $c$, and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns $s l-qd_q+r$, where $d_q$ corresponds with the number of integers in $[c,c+m[$ that are not minimal generators of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);;|
   !gapprompt@gap>| !gapinput@TruncatedWilfNumberOfNumericalSemigroup(s);|
@@ -1148,11 +1148,11 @@ experiment with this conjecture, as defined in \cite{E}.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- \texttt{S} is a numerical semigroup. Let $c$ and $m$ be the conductor and multiplicity of \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns a list of lists of integers, each list is the cardinality of $ S \cap [jm-r, (j+1)m-r[$ with $ j$ in [1..q-1]. 
+ \texttt{S} is a numerical semigroup. Let $c$ and $m$ be the conductor and multiplicity of \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and nonpositive remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns a list of lists of integers, each list is the cardinality of $ S \cap [jm-r, (j+1)m-r[$ with $ j$ in [1..q-1]. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);;|
   !gapprompt@gap>| !gapinput@ProfileOfNumericalSemigroup(s);|
-  [ 3, 1 ]
+  [ 2, 1 ]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;|
   !gapprompt@gap>| !gapinput@ProfileOfNumericalSemigroup(s);|
   [ 3, 0, 0 ]
@@ -1162,19 +1162,19 @@ experiment with this conjecture, as defined in \cite{E}.
 
  
 
-\subsection{\textcolor{Chapter }{EliahouSliceOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{EliahouSlicesOfNumericalSemigroup}}
 \logpage{[ 3, 4, 4 ]}\nobreak
-\hyperdef{L}{X7A9DCB4486130AAB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EliahouSliceOfNumericalSemigroup({\mdseries\slshape S})\index{EliahouSliceOfNumericalSemigroup@\texttt{EliahouSliceOfNumericalSemigroup}}
-\label{EliahouSliceOfNumericalSemigroup}
+\hyperdef{L}{X7846F90E7EA43C47}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EliahouSlicesOfNumericalSemigroup({\mdseries\slshape S})\index{EliahouSlicesOfNumericalSemigroup@\texttt{EliahouSlicesOfNumericalSemigroup}}
+\label{EliahouSlicesOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
 
  \texttt{S} is a numerical semigroup. Let $c$ and $m$ be the conductor and multiplicity of \mbox{\texttt{\mdseries\slshape S}}, respectively. Let $q$ and $r$ be the quotient and negative remainder of the division of $c$ by $m$, that is, $c=qm-r$. Returns a list of lists of integers, each list is the set $ S \cap [jm-r, (j+1)m-r[$ with $ j$ in [1..q]. So this is a partition of the set of small elements of \mbox{\texttt{\mdseries\slshape S}} (without $0$). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,7,9);;                                     |
-  !gapprompt@gap>| !gapinput@EliahouSliceOfNumericalSemigroup(s); |
-  [ [ 5, 7, 9 ], [ 9, 10, 12, 14 ] ]
+  !gapprompt@gap>| !gapinput@EliahouSlicesOfNumericalSemigroup(s);|
+  [ [ 5, 7 ], [ 9, 10, 12 ] ]
   !gapprompt@gap>| !gapinput@SmallElements(s);|
   [ 0, 5, 7, 9, 10, 12, 14 ]
 \end{Verbatim}
