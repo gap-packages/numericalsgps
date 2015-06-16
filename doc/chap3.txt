@@ -305,3 +305,87 @@
     [4X[28X[ 40, 41, 42 ][128X[104X
   [4X[32X[104X
   
+  
+  [1X3.4 [33X[0;0YWilf's conjecture[133X[101X
+  
+  [33X[0;0YLet  [22XS[122X be a numerical semigroup, with conductor [22Xc[122X and embedding dimension [22Xe[122X.
+  Denote by [22Xl[122X the cardinality of the set of elements in [22XS[122X smaller than [22Xc[122X. Wilf
+  in  [Wil78]  asked whether or not [22Xl/cge 1/e[122X for all numerical semigroups. In
+  this  section  we give some functions to experiment with this conjecture, as
+  defined in [Eli14].[133X
+  
+  [1X3.4-1 WilfNumberOfNumericalSemigroup[101X
+  
+  [29X[2XWilfNumberOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[10XS[110X  is  a  numerical  semigroup.  Let  [22Xc[122X, [22Xe[122X and [22Xl[122X be the conductor, embedding
+  dimension  and  number  of  elements smaller than [22Xc[122X in [3XS[103X. Returns the [22Xe l-c[122X,
+  which was conjetured by Wilf to be nonnegative.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xl:=NumericalSemigroupsWithGenus(21);;[127X[104X
+    [4X[25Xgap>[125X [27XFiltered(l, s->WilfNumberOfNumericalSemigroup(s)<0); [127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27XMaximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));[127X[104X
+    [4X[28X378[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [1X3.4-2 TruncatedWilfNumberOfNumericalSemigroup[101X
+  
+  [29X[2XTruncatedWilfNumberOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[10XS[110X  is  a  numerical  semigroup.  Let  [22Xc[122X,  [22Xm[122X,  [22Xs[122X  and  [22Xl[122X  be  the  conductor,
+  multiplicity,  number  of  generators smaller than [22Xc[122X, and number of elements
+  smaller  than [22Xc[122X in [3XS[103X, respectively. Let [22Xq[122X and [22Xr[122X be the quotient and negative
+  remainder  of  the  division  of  [22Xc[122X  by  [22Xm[122X,  that  is, [22Xc=qm-r[122X. Returns the [22Xs
+  l-qd_p+r[122X,  where [22Xd_p[122X corresponds with the number of integers in [22X[c,c+m[[122X that
+  are not minimal generators of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,9);;[127X[104X
+    [4X[25Xgap>[125X [27XTruncatedWilfNumberOfNumericalSemigroup(s);[127X[104X
+    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;[127X[104X
+    [4X[25Xgap>[125X [27XTruncatedWilfNumberOfNumericalSemigroup(s);[127X[104X
+    [4X[28X-1[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [1X3.4-3 ProfileOfNumericalSemigroup[101X
+  
+  [29X[2XProfileOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[10XS[110X is a numerical semigroup. Let [22Xc[122X and [22Xm[122X be the conductor and multiplicity of
+  [3XS[103X,  respectively.  Let [22Xq[122X and [22Xr[122X be the quotient and negative remainder of the
+  division  of  [22Xc[122X  by [22Xm[122X, that is, [22Xc=qm-r[122X. Returns a list of lists of integers,
+  each list is the cardinality of [22XS ∩ [jm-r, (j+1)m-r[[122X with [22Xj[122X in [1..q-1].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,9);;[127X[104X
+    [4X[25Xgap>[125X [27XProfileOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 3, 1 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;[127X[104X
+    [4X[25Xgap>[125X [27XProfileOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 3, 0, 0 ][128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [1X3.4-4 EliahouSliceOfNumericalSemigroup[101X
+  
+  [29X[2XEliahouSliceOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[10XS[110X is a numerical semigroup. Let [22Xc[122X and [22Xm[122X be the conductor and multiplicity of
+  [3XS[103X,  respectively.  Let [22Xq[122X and [22Xr[122X be the quotient and negative remainder of the
+  division  of  [22Xc[122X  by [22Xm[122X, that is, [22Xc=qm-r[122X. Returns a list of lists of integers,
+  each  list  is  the  set [22XS ∩ [jm-r, (j+1)m-r[[122X with [22Xj[122X in [1..q]. So this is a
+  partition of the set of small elements of [3XS[103X (without [22X0[122X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,9);;                                     [127X[104X
+    [4X[25Xgap>[125X [27XEliahouSliceOfNumericalSemigroup(s); [127X[104X
+    [4X[28X[ [ 5, 7, 9 ], [ 9, 10, 12, 14 ] ][128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(s);[127X[104X
+    [4X[28X[ 0, 5, 7, 9, 10, 12, 14 ][128X[104X
+  [4X[32X[104X
+  

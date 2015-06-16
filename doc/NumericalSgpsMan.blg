@@ -9,45 +9,45 @@ Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and,
 while executing---line 1185 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1250 of file alpha.bst
-You've used 66 entries,
+You've used 68 entries,
             2543 wiz_defined-function locations,
-            986 strings with 14104 characters,
-and the built_in function-call counts, 26498 in all, are:
-= -- 2705
-> -- 1317
-< -- 20
-+ -- 458
-- -- 446
-* -- 1973
-:= -- 4430
-add.period$ -- 203
-call.type$ -- 66
-change.case$ -- 414
-chr.to.int$ -- 64
-cite$ -- 66
-duplicate$ -- 939
-empty$ -- 1865
-format.name$ -- 521
-if$ -- 5311
+            998 strings with 14263 characters,
+and the built_in function-call counts, 27119 in all, are:
+= -- 2769
+> -- 1333
+< -- 22
++ -- 463
+- -- 450
+* -- 2013
+:= -- 4532
+add.period$ -- 209
+call.type$ -- 68
+change.case$ -- 424
+chr.to.int$ -- 66
+cite$ -- 68
+duplicate$ -- 968
+empty$ -- 1915
+format.name$ -- 529
+if$ -- 5435
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 64
-newline$ -- 336
-num.names$ -- 198
-pop$ -- 327
+missing$ -- 66
+newline$ -- 346
+num.names$ -- 204
+pop$ -- 335
 preamble$ -- 1
-purify$ -- 485
+purify$ -- 497
 quote$ -- 0
-skip$ -- 821
+skip$ -- 843
 stack$ -- 0
-substring$ -- 1642
-swap$ -- 94
-text.length$ -- 20
-text.prefix$ -- 11
+substring$ -- 1682
+swap$ -- 96
+text.length$ -- 22
+text.prefix$ -- 13
 top$ -- 0
-type$ -- 508
+type$ -- 524
 warning$ -- 0
-while$ -- 269
-width$ -- 70
-write$ -- 851
+while$ -- 275
+width$ -- 72
+write$ -- 876
 (There were 3 error messages)
