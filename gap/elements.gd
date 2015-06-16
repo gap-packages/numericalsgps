@@ -49,3 +49,48 @@ DeclareAttribute( "GapsOfNumericalSemigroup", IsNumericalSemigroup);
 ##
 #############################################################################
 DeclareGlobalFunction("GenusOfNumericalSemigroup");
+
+#############################################################################
+##
+#F  WilfNumberOfNumericalSemigroup(S)
+##
+##  Let c,edim and se be the conductor, embedding dimension and number of
+##  elements smaller than c in S. Returns the edim*se-c, which was conjetured
+##  by Wilf to be nonnegative.
+##
+#############################################################################
+DeclareGlobalFunction("WilfNumberOfNumericalSemigroup");
+
+
+#############################################################################
+##
+#F  TruncatedWilfNumberOfNumericalSemigroup(S)
+##
+##  Returns W_0(S) (see [E])
+##
+#############################################################################
+DeclareGlobalFunction("TruncatedWilfNumberOfNumericalSemigroup");
+
+
+#############################################################################
+##
+#F  ProfileOfNumericalSemigroup(S)
+##
+##  Returns the profile of a numerical semigroup (see [E])
+##
+#############################################################################
+DeclareGlobalFunction("ProfileOfNumericalSemigroup");
+
+#############################################################################
+##
+#F  EliahouSliceOfNumericalSemigroup(S)
+##
+##  Returns a list of lists of integers, each list is the set of elements in 
+##  S belonging to [jm-r, (j+1)m-r[ where m is the mulitiplicity of S,
+##  and j in [1..q-1]; with q,r such that c=qm-r, c the conductor of S 
+##  (see [E])
+##
+#############################################################################
+DeclareGlobalFunction("EliahouSliceOfNumericalSemigroup");
+
+
