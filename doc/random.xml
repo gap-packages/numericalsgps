@@ -79,6 +79,29 @@ true
             </Description>
         </ManSection>
 
+        <ManSection>
+            <Func Name="NumericalSemigroupWithRandomElementsAndFrobenius" Arg="n,mult,frob"></Func>
+            <Description>
+Produces a "random" semigroup containing (at least) <A>n</A> elements greater than or equal to <A>mult</A> and less than <A>frob</A>, choosen at random. The semigroup returned has multiplicity choosen at random but no smaller than <A>mult</A> and having Frobenius number choosen at random but not greater than <A>frob</A>. Returns <M>fail</M> if <A>frob</A> is greater than <A>mult</A>.
+                <Example><![CDATA[
+gap> ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);
+<Numerical semigroup with 17 generators>
+gap> MinimalGeneratingSystem(ns);
+[ 12, 13, 19, 27, 47 ]
+gap> SmallElements(ns);
+[ 0, 12, 13, 19, 24, 25, 26, 27, 31, 32, 36, 37, 38, 39, 40, 43 ]
+gap> ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9); 
+#I  The third argument must not be smaller than the second
+fail
+gap> ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);
+<Proportionally modular numerical semigroup satisfying 20x mod 200 <= 10x >
+gap> MinimalGeneratingSystem(ns3);                                    
+[ 10 .. 19 ]
+gap> SmallElements(ns3);                                              
+[ 0, 10 ]
+]]></Example>
+            </Description>
+        </ManSection>
 </Section>
 
 </Appendix>

@@ -78,3 +78,31 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
+  [1XB.1-6 NumericalSemigroupWithRandomElementsAndFrobenius[101X
+  
+  [29X[2XNumericalSemigroupWithRandomElementsAndFrobenius[102X( [3Xn[103X, [3Xmult[103X, [3Xfrob[103X ) [32X function
+  
+  [33X[0;0YProduces  a "random" semigroup containing (at least) [3Xn[103X elements greater than
+  or  equal  to  [3Xmult[103X  and  less  than  [3Xfrob[103X, choosen at random. The semigroup
+  returned  has  multiplicity  choosen  at random but no smaller than [3Xmult[103X and
+  having Frobenius number choosen at random but not greater than [3Xfrob[103X. Returns
+  [22Xfail[122X if [3Xfrob[103X is greater than [3Xmult[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);[127X[104X
+    [4X[28X<Numerical semigroup with 17 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(ns);[127X[104X
+    [4X[28X[ 12, 13, 19, 27, 47 ][128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(ns);[127X[104X
+    [4X[28X[ 0, 12, 13, 19, 24, 25, 26, 27, 31, 32, 36, 37, 38, 39, 40, 43 ][128X[104X
+    [4X[25Xgap>[125X [27Xns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9); [127X[104X
+    [4X[28X#I  The third argument must not be smaller than the second[128X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27Xns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 20x mod 200 <= 10x >[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(ns3);                                    [127X[104X
+    [4X[28X[ 10 .. 19 ][128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(ns3);                                              [127X[104X
+    [4X[28X[ 0, 10 ][128X[104X
+  [4X[32X[104X
+  

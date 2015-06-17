@@ -5191,6 +5191,37 @@ objects.
 \end{Verbatim}
  }
 
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupWithRandomElementsAndFrobenius}}
+\logpage{[ "B", 1, 6 ]}\nobreak
+\hyperdef{L}{X7B459C8C825194E4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupWithRandomElementsAndFrobenius({\mdseries\slshape n, mult, frob})\index{NumericalSemigroupWithRandomElementsAndFrobenius@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{With}\-\texttt{Random}\-\texttt{Elements}\-\texttt{And}\-\texttt{Frobenius}}
+\label{NumericalSemigroupWithRandomElementsAndFrobenius}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Produces a "random" semigroup containing (at least) \mbox{\texttt{\mdseries\slshape n}} elements greater than or equal to \mbox{\texttt{\mdseries\slshape mult}} and less than \mbox{\texttt{\mdseries\slshape frob}}, choosen at random. The semigroup returned has multiplicity choosen at random
+but no smaller than \mbox{\texttt{\mdseries\slshape mult}} and having Frobenius number choosen at random but not greater than \mbox{\texttt{\mdseries\slshape frob}}. Returns $fail$ if \mbox{\texttt{\mdseries\slshape frob}} is greater than \mbox{\texttt{\mdseries\slshape mult}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);|
+  <Numerical semigroup with 17 generators>
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystem(ns);|
+  [ 12, 13, 19, 27, 47 ]
+  !gapprompt@gap>| !gapinput@SmallElements(ns);|
+  [ 0, 12, 13, 19, 24, 25, 26, 27, 31, 32, 36, 37, 38, 39, 40, 43 ]
+  !gapprompt@gap>| !gapinput@ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9); |
+  #I  The third argument must not be smaller than the second
+  fail
+  !gapprompt@gap>| !gapinput@ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);|
+  <Proportionally modular numerical semigroup satisfying 20x mod 200 <= 10x >
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystem(ns3);                                    |
+  [ 10 .. 19 ]
+  !gapprompt@gap>| !gapinput@SmallElements(ns3);                                              |
+  [ 0, 10 ]
+\end{Verbatim}
+ }
+
  }
 
  }

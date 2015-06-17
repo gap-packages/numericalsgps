@@ -70,3 +70,12 @@ DeclareGlobalFunction( "RandomProportionallyModularNumericalSemigroup" );
 ##
 #############################################################################
 DeclareGlobalFunction( "RandomModularNumericalSemigroup" );
+
+#############################################################################
+##
+#F  NumericalSemigroupWithRandomElementsAndFrobenius(n,mult,frob)
+##
+##  Produces a "random" semigroup containing (at least) <n> elements greater than or equal to <mult> and less than <frob>, choosen at random. The semigroup returned has multiplicity choosen at random but no smaller than <mult> and having Frobenius number choosen at random but not greater than <frob>.
+##
+#############################################################################
+DeclareGlobalFunction( "NumericalSemigroupWithRandomElementsAndFrobenius" );

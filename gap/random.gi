@@ -158,3 +158,23 @@ InstallGlobalFunction(RandomModularNumericalSemigroup, function(arg)
 
     return(NumericalSemigroup("modular",a/l,b/l));
 end);
+#############################################################################
+##
+#F  NumericalSemigroupWithRandomElementsAndFrobenius(n,mult,frob)
+##
+##  Produces a "random" semigroup containing (at least) <n> elements greater than or equal to <mult> and less than <frob>, choosen at random. The semigroup returned has multiplicity choosen at random but no smaller than <mult> and having Frobenius number choosen at random but not greater than <frob>.
+##
+#############################################################################
+InstallGlobalFunction(NumericalSemigroupWithRandomElementsAndFrobenius, function(n,mult,frob)
+  local  fr, elts;
+  
+  if mult > frob then
+    Info(InfoWarning,1,"The third argument must not be smaller than the second");
+    
+    return fail;
+  fi;
+  
+  fr := Random([mult..frob]); 
+  elts := SSortedList(List([1 .. Random([1 .. n])], j -> Random([mult..frob])));
+  return NumericalSemigroupWithGivenElementsAndFrobenius(elts,fr);
+end);
