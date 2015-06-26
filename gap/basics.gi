@@ -269,7 +269,9 @@ end);
 ##  Returns the conductor of the numerical semigroup S. 
 ##
 #############################################################################
-InstallGlobalFunction(ConductorOfNumericalSemigroup,
+InstallMethod(Conductor, 
+        "Returns the conductor of a numerical semigroup",
+        [IsNumericalSemigroup ],
         function( sgp )
     if not IsNumericalSemigroup(sgp) then
         Error("The argument must be a numerical semigroup");
