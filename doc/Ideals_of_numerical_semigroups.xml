@@ -122,6 +122,23 @@ gap> AmbientNumericalSemigroupOfIdeal(I);
                     </Description>
                 </ManSection>
 
+                <ManSection>
+                    <Func Arg="I" Name="IsIntegralIdealOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup, say <M>S</M>.
+                        <P/>
+
+                        Detects if  <M>I\subseteq S</M>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> IsIntegralIdealOfNumericalSemigroup(4+s);
+false
+gap> IsIntegralIdealOfNumericalSemigroup(10+s);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
 
                 <ManSection>
                     <Func Arg="I" Name="SmallElementsOfIdealOfNumericalSemigroup"></Func><Func Arg="I" Name="SmallElements"></Func>
@@ -141,6 +158,24 @@ true
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> SmallElementsOfIdealOfNumericalSemigroup(J);
 [ 2, 4, 6, 8, 10 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+		<ManSection>
+                    <Func Arg="I" Name="ConductorOfIdealOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup.
+                        <P/>
+
+                        The output is the largest element in  <A>SmallElements(I)</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> ConductorOfIdealOfNumericalSemigroup(10+s);
+15
+gap> SmallElements(10+s);
+[ 10, 13, 15 ]
 ]]></Example>
                     </Description>
                 </ManSection>

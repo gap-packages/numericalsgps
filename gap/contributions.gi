@@ -564,3 +564,286 @@ InstallGlobalFunction(DeltaSetOfNumericalSemigroup,function(s)
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	return DeltaSetUnionUpToElementWRTNumericalSemigroup(DeltaSetPeriodicityBoundForNumericalSemigroup(s)+msg[Length(msg)]-1,s);
 end);
+
+
+#############################################################################
+##
+#F  IsAdmissiblePattern(p)
+##
+##  p is the list of integers that are the coefficients of a pattern
+##  returns true or false depending if p is admissible or not  
+##  see cite [BA-GS]
+##
+##  Implemented with Klara Stokes 
+##
+#############################################################################
+InstallGlobalFunction("IsAdmissiblePattern",function(p)
+     local len;
+
+     if not(IsListOfIntegersNS(p)) then
+         Error("The argument must be a list of integers containing the coefficients of a pattern");
+     fi;
+
+     len:=Length(p);
+     
+     return ForAll([1..len], i->Sum(p{[1..i]})>=0);
+end);
+
+
+#############################################################################
+##
+#F  IsStronglyAdmissiblePattern(p)
+##
+##  p is the list of integers that are the coefficients of a pattern
+##  returns true or false depending if p is strongly admissible or not  
+##  see cite [BA-GS]
+##
+#############################################################################
+InstallGlobalFunction("IsStronglyAdmissiblePattern",function(p)
+     local len, pp;
+
+     if not(IsAdmissiblePattern(p)) then return false;
+     fi;
+
+     len:=Length(p);
+     pp:=ShallowCopy(p);
+
+     if p[1]>0 then
+         pp[1]:=p[1]-1;
+     else
+         pp:=pp{[2..len]};
+     fi;
+
+     return IsAdmissiblePattern(pp);
+end);
+
+
+
+#############################################################################
+##
+#F  AsIdealOfNumericalSemigroup(I,T)
+##  For an ideal I of a numerical semigroup S, and a numerical semigroup T, 
+##  detects if I is an ideal of T, and if so, returns I as an ideal of T 
+##  (otherwise it returns fail)
+##
+##  Implented with Klara Stokes  (see [Stokes])
+##
+#############################################################################
+InstallGlobalFunction("AsIdealOfNumericalSemigroup", function(I,T)
+     local seI, Ci, Ct;
+
+     if not(IsNumericalSemigroup(T)) then
+         Error("The second argument must be a numerical semigroup");
+     fi;
+     if not(IsIdealOfNumericalSemigroup(I)) then
+         Error("The first argument must be an ideal of a numerical semigroup");
+     fi;
+     if not(IsIntegralIdealOfNumericalSemigroup(I)) then
+         Error("The first argument must be an integral ideal of a numerical semigroup");
+     fi;
+
+     seI:=SmallElementsOfIdealOfNumericalSemigroup(I);
+     Ci:=ConductorOfIdealOfNumericalSemigroup(I);
+     Ct:=ConductorOfNumericalSemigroup(T);
+     if IsSubset(T,seI) and (Ci >= Ct) then
+         return seI+T;
+     fi;
+     Info(InfoNumSgps,2,"The first argument is not included in the second");
+     return fail;
+end);
+
+#############################################################################
+##
+#F  BoundForConductorOfImageOfPattern(p, C)
+##  Takes an admissible pattern p and calculates an upper bound of the 
+##  smallest element K in p(I) such that all integers larger than K is 
+##  contained in p(I), where I is an ideal of a numerical semigroup. 
+##  Instead of taking I as parameter, the function takes C, which is assumed 
+##  to be the smallest element in I such that all integers larger than C is 
+##  contained in I.
+##
+##  Implemented by Klara Stokes (see [Stokes])
+##
+#############################################################################
+InstallGlobalFunction("BoundForConductorOfImageOfPattern", function(p,C)
+     local a,b,n,i,s;
+     if not IsAdmissiblePattern(p) then
+         Error("The first argument must be an admissible pattern.");
+     fi;
+     if not C in Integers or C< 0 then
+         Error("The second argument must be a positive integer.");
+     fi;
+     s:=[];
+     n:=Length(p);
+     b:=GcdRepresentation(p );
+     a:=Sum(p)-1;
+     s[n]:=C-Minimum(0,a*b[n]);
+     for i in [1..n-1] do
+         s[n-i]:=s[n-i+1]+Maximum(0,a*(b[n-i+1]-b[n-i]));
+     od;
+     return p*s;
+end);
+
+#############################################################################
+##
+#F ApplyPatternToIdeal(p,I)
+## Takes a strongly  admissible pattern p and calculates p(I), where I is 
+## an ideal of a numerical semigroup 
+##
+## Implemented by Klara Stokes (see [Stokes]) 
+##
+#############################################################################
+InstallGlobalFunction("ApplyPatternToIdeal",function(p,I)
+     local C,S,q,d,n,s2,s1,stop,y,sum, i,m,s,ni,a,N;
+     if not IsIdealOfNumericalSemigroup(I) then
+         Error("The second argument must be an ideal of a numerical semigroup.");
+     fi;
+     if not(IsIntegralIdealOfNumericalSemigroup(I)) then
+         Error("The second argument must be an integral ideal of a numerical semigroup");
+     fi;
+     if not IsStronglyAdmissiblePattern(p ) then
+         Error("The first argument must be an admissible pattern.");
+     fi;
+     n:=Length(p);
+     d:=Gcd(p);
+     q:=p/d;
+     C:=BoundForConductorOfImageOfPattern(q,ConductorOfIdealOfNumericalSemigroup(I));
+     m:=0;
+     S:=[];
+     if 0 in I then
+         Add(S,q*(0*[1..n]));
+     fi;
+     repeat
+         m:=m+1;
+         if not (m-1 in I) then stop:=false; continue; fi;
+         stop:=true;
+         a:=0;
+         repeat
+             s:=[1..n];
+             ni:=true;
+             s[1]:=m-1;
+             for i in [2..n-1] do
+                 s[i]:=RemInt(QuoInt(a,m^(n-i)),m);
+                 if s[i]>s[i-1] or not s[i] in I then ni:=false; break; fi;
+             od;
+             s[n]:=RemInt(a,m);
+             if s[n]>s[n-1] or not s[n] in I then ni:=false;fi;
+             if ni then
+                 y:=q*s;
+                 if y<C then
+                     stop:=false;
+                     Add(S,y);
+                 fi;
+             fi;
+             a:=a+1;
+         until a=m^(n-1);
+     until stop;
+     if 0 in S then
+         return [d,0+NumericalSemigroupBySmallElements(Set(S))];
+     else
+         Add(S,0);
+         N:=NumericalSemigroupBySmallElements(Set(S));
+         return [d,MaximalIdealOfNumericalSemigroup(N)];
+     fi;
+end);
+
+#############################################################################
+##
+#F ApplyPatternToNumericalSemigroup(p,S)
+## Takes a strongly  admissible pattern p and calculates p(S), where S is 
+## a numerical semigroup 
+##
+## Implemented by Klara Stokes (see [Stokes]) 
+##
+#############################################################################
+InstallGlobalFunction("ApplyPatternToNumericalSemigroup",function(p,S)
+     if not IsNumericalSemigroup(S) then
+         Error("The second argument must be a numerical semigroup");
+     fi;
+     if not IsStronglyAdmissiblePattern(p) then
+         Error("The first argument must be an strongly admissible pattern");
+     fi;
+
+     return ApplyPatternToIdeal(p,0+S);
+ end);
+
+#############################################################################
+##
+#F  IsAdmittedPatternByIdeal(p,I,J)
+## 
+##  Takes astrongly admissible pattern p and tests whether p(I) is 
+##  contained in J, for I and J ideals of numerical semigroups 
+##  (not necessarily the same one)
+##
+##  Implemented by Klara Stokes  (see [Stokes])
+##
+#############################################################################
+InstallGlobalFunction("IsAdmittedPatternByIdeal", function(p,I,J)
+     local C,S,q,d,n,s2,s1,stop,y,sum,  i, s,m,a,ni;
+     if not IsIdealOfNumericalSemigroup(I) then
+         Error("The second argument must be an ideal of a numerical semigroup.");
+     fi;
+     if not(IsIntegralIdealOfNumericalSemigroup(I)) then
+         Error("The second argument must be an integral ideal of a numerical semigroup");
+     fi;
+     if not IsIdealOfNumericalSemigroup(J) then
+         Error("The third argument must be an ideal of a numerical semigroup.");
+     fi;
+     if not(IsIntegralIdealOfNumericalSemigroup(J)) then
+         Error("The third argument must be an integral ideal of a numerical semigroup");
+     fi;
+     if not IsStronglyAdmissiblePattern(p ) then
+         Error("The first argument must be a strongly admissible pattern.");
+     fi;
+     n:=Length(p);
+     C:=ConductorOfIdealOfNumericalSemigroup(J);
+     m:=0;
+     if 0 in I then
+         if not p*(0*[1..n]) in J then return false; fi;
+     fi;
+     repeat
+         m:=m+1;
+         if not (m-1 in I) then stop:=false; continue; fi;
+         stop:=true;
+         a:=0;
+         repeat
+             s:=[1..n];
+             ni:=true;
+             s[1]:=m-1;
+             for i in [2..n-1] do
+                 s[i]:=RemInt(QuoInt(a,m^(n-i)),m);
+                 if s[i]>s[i-1] or not s[i] in I then ni:=false; break; fi;
+             od;
+             s[n]:=RemInt(a,m);
+             if s[n]>s[n-1] or not s[n] in I then ni:=false;fi;
+             if ni then
+                 y:=p*s;
+                 if y<C then
+                     stop:=false;
+                     if not y in J then return false; fi;
+                 fi;
+             fi;
+             a:=a+1;
+         until a=m^(n-1);
+     until stop;
+     return true;
+end);
+
+#############################################################################
+##
+#F  IsAdmittedPatternByNumericalSemigroup(p,S,T)
+##  Takes a strongly  admissible pattern p and tests whether p(S) is 
+##  contained in T, for S and T numerical semigroups.
+##
+##  Implemented by Klara Stokes  (see [Stokes])
+##  
+#############################################################################
+InstallGlobalFunction("IsAdmittedPatternByNumericalSemigroup",function(p,S,T)
+     if not IsNumericalSemigroup(S) then
+         Error("The second argument must be a numerical semigroup");
+     fi;
+     if not IsNumericalSemigroup(T) then
+         Error("The third argument must be a numerical semigroup");
+     fi;
+     return IsAdmittedPatternByIdeal(p,0+S,0+T);
+end);

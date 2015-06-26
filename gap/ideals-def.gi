@@ -221,6 +221,22 @@ end);
 
 #############################################################################
 ##
+#F  IsIntegralIdealOfNumericalSemigroup(i)
+##
+##  Detects if the ideal i is contained in its ambient semigroup
+##
+#############################################################################
+InstallGlobalFunction("IsIntegralIdealOfNumericalSemigroup",function(I)
+     local s;
+
+     s:=AmbientNumericalSemigroupOfIdeal(I);
+
+     return IsSubset(s,MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I));
+end);
+
+
+#############################################################################
+##
 #A SmallElementsOfIdealOfNumericalSemigroup
 ##
 ##  Returns the list of elements in the ideal I up to the last gap + 1.
@@ -253,6 +269,25 @@ InstallMethod(SmallElementsOfIdealOfNumericalSemigroup,
         maxgap := Maximum(Difference(l2,l));
         return(Intersection(l,[min..maxgap+1]));
     fi;
+end);
+
+
+#############################################################################
+##
+#F  ConductorOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the conductor of I, the largest element in SmallElements(I)
+##
+#############################################################################
+InstallGlobalFunction("ConductorOfIdealOfNumericalSemigroup", function(I)
+     local seI;
+
+     if not IsIdealOfNumericalSemigroup(I) then
+         Error("The argument must be an ideal of a numerical semigroup");
+     fi;
+     seI:=SmallElementsOfIdealOfNumericalSemigroup(I);
+
+     return seI[Length(seI)];
 end);
 
 
