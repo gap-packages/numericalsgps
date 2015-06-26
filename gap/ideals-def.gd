@@ -85,6 +85,14 @@ DeclareGlobalFunction("GeneratorsOfIdealOfNumericalSemigroupNC");
 ############################################################################
 DeclareGlobalFunction("AmbientNumericalSemigroupOfIdeal");
 
+#############################################################################
+##
+#F  IsIntegralIdealOfNumericalSemigroup(i)
+##
+##  Detects if the ideal i is contained in its ambient semigroup
+##
+#############################################################################
+DeclareGlobalFunction("IsIntegralIdealOfNumericalSemigroup");
 
 
 #############################################################################
@@ -179,7 +187,14 @@ DeclareAttribute("MinimalGeneratingSystemOfIdealOfNumericalSemigroup", IsIdealOf
 #############################################################################
 DeclareAttribute( "SmallElementsOfIdealOfNumericalSemigroup", IsIdealOfNumericalSemigroup);
 
-
+#############################################################################
+##
+#F  ConductorOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the conductor of I, the largest element in SmallElements(I)
+##
+#############################################################################
+DeclareGlobalFunction("ConductorOfIdealOfNumericalSemigroup");
 
 #############################################################################
 ##

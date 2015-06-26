@@ -359,4 +359,159 @@ gap> DeltaSetOfNumericalSemigroup(s);
 
 </Section>
 
+<Section><Heading>Functions implemented by K. Stokes</Heading>
+
+In this section we document the functions implmented by K. Stokes related to patterns of ideals in numerical semigroups. The correctedness of the algorithms can be found in <Cite Key="Stokes"></Cite>.
+
+
+<ManSection>
+  <Func Arg="p" Name="IsAdmissiblePattern"></Func>
+  <Description>
+
+    <A>p</A> is the list of integers that are the coefficients of a pattern. <P/>
+
+    Returns true or false depending if the pattern is admissible or not  (see <Cite Key="BA-GS"></Cite>). 
+    
+    <Example><![CDATA[
+gap> IsAdmissiblePattern([1,1,-1]);
+true
+gap> IsAdmissiblePattern([1,-2]);
+false
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="p" Name="IsStronglyAdmissiblePattern"></Func>
+  <Description>
+
+    <A>p</A> is the list of integers that are the coefficients of a pattern. <P/>
+
+    Returns true or false depending if the pattern is strongly admissible or not  (see <Cite Key="BA-GS"></Cite>). 
+    
+    <Example><![CDATA[
+gap> IsAdmissiblePattern([1,-1]);
+true
+gap> IsStronglyAdmissiblePattern([1,-1]);
+false
+gap> IsStronglyAdmissiblePattern([1,1,-1]);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="I,T" Name="AsIdealOfNumericalSemigroup"></Func>
+  <Description>
+
+    <A>I</A> is an ideal of a numerical semigroup <M>S</M>, and <A>T</A> is a numerical semgigroup. Detects if <A>I</A> is an ideal of <A>T</A> and contained in <A>T</A> (integral ideal), and if so, returns <A>I</A> as an ideal of <A>T</A> (otherwise it returns <C>fail</C>).
+    
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> t:=NumericalSemigroup(10,11,14);;                                             
+gap> AsIdealOfNumericalSemigroup(10+s,t);
+fail
+gap> AsIdealOfNumericalSemigroup(100+s,t);
+<Ideal of numerical semigroup>
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="p,C" Name="BoundForConductorOfImageOfPattern"></Func>
+  <Description>
+
+     <A>p</A> is the list of integers that are the coefficients of an admissible pattern. <A>C</A> is a positive integer. 
+
+     Calculates an upper bound of the smallest element <M>K</M> in <M>p(I)</M> such that all integers larger than <M>K</M> are contained in <M>p(I)</M>, where <M>I</M> is an ideal of a
+numerical semigroup. Instead of taking <M>I</M> as parameter, the function takes <M>C</M>, which is assumed to be the conductor of <M>I</M>.
+    <Example><![CDATA[
+gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
+10
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="p,I" Name="ApplyPatternToIdeal"></Func>
+  <Description>
+
+    <A>p</A> is the list of integers that are the coefficients of a strongly admissible pattern. <A>I</A> is an ideal of a numerical semigroup.<P/>
+
+    Calculates <M>p(I)</M>. Outputs <M>p(I)</M>, represented as <C>[d,p(I)/d]</C>, where <C>d</C > is the gcd of the coefficients of <A>p</A>. 
+
+
+     <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> i:=10+s;;
+gap> ApplyPatternToIdeal([1,1,-1],i);
+[ 1, <Ideal of numerical semigroup> ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="p,S" Name="ApplyPatternToNumericalSemigroup"></Func>
+  <Description>
+
+    <A>p</A> is the list of integers that are the coefficients of a strongly admissible pattern. <A>S</A> is  a numerical semigroup.<P/>
+
+    Outputs <C>ApplyPatternToIdeal(p,0+S)</C>.
+
+     <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
+[ 1, <Ideal of numerical semigroup> ]
+gap> SmallElements(last[2]);
+[ 0, 3 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="p,I,J" Name="IsAdmittedPatternByIdeal"></Func>
+  <Description>
+
+    <A>p</A> is the list of integers that are the coefficients of a strongly admissible pattern. <A>I</A> and <A>J</A> are ideals of certain numericals semigroups.<P/>
+
+
+    Tests wheter or not <M>p(I)</M> is contained in <A>J</A>.
+    
+     <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> i:=[3,5]+s;;
+gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);
+false
+gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="p,S,T" Name="IsAdmittedPatternByNumericalSemigroup"></Func>
+  <Description>
+
+    <A>p</A> is the list of integers that are the coefficients of a strongly admissible pattern. <A>S</A> and <A>T</A> are numericals semigroups.<P/>
+
+
+    Tests wheter or not <M>p(S)</M> is contained in <A>T</A>.
+    
+     <Example><![CDATA[
+gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
+true
+gap> IsArfNumericalSemigroup(s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
+</Section>
+
 </Appendix>
