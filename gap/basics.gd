@@ -38,12 +38,14 @@ DeclareSynonymAttr( "FrobeniusNumber", FrobeniusNumberOfNumericalSemigroup);
 
 #############################################################################
 ##
-#F  ConductorOfNumericalSemigroup(S)
+#A  ConductorOfNumericalSemigroup(S)
 ##
 ##  Returns the conductor of the numerical semigroup S. 
 ##
 #############################################################################
-DeclareGlobalFunction("ConductorOfNumericalSemigroup");
+DeclareAttribute("Conductor", IsNumericalSemigroup);
+DeclareSynonymAttr("ConductorOfNumericalSemigroup", Conductor);
+#DeclareGlobalFunction("ConductorOfNumericalSemigroup");
 
 #############################################################################
 ##

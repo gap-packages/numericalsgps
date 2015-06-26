@@ -37,7 +37,7 @@
   \item \texttt  {BelongsToAffineSemigroup}, \hyperpage{73}
   \item \texttt  {Belongs}\discretionary {-}{}{}\texttt  {To}\discretionary {-}{}{}\texttt  {Homogenization}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{63}
-  \item \texttt  {BelongsToIdealOfNumericalSemigroup}, \hyperpage{41}
+  \item \texttt  {BelongsToIdealOfNumericalSemigroup}, \hyperpage{42}
   \item \texttt  {BelongsToNumericalSemigroup}, \hyperpage{14}
   \item \texttt  {BettiElementsOfAffineSemigroup}, \hyperpage{76}
   \item \texttt  {BettiElementsOfNumericalSemigroup}, \hyperpage{24}
@@ -57,6 +57,7 @@
   \item \texttt  {CeilingOfRational}, \hyperpage{81}
   \item \texttt  {Complete}\discretionary {-}{}{}\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{36}
+  \item \texttt  {Conductor}, \hyperpage{19}, \hyperpage{41}
   \item \texttt  {Conductor}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{41}
   \item \texttt  {ConductorOfNumericalSemigroup}, \hyperpage{19}
@@ -142,7 +143,7 @@
   \item \texttt  {Hilbert}\discretionary {-}{}{}\texttt  {Basis}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Homogeneous}\discretionary {-}{}{}\texttt  {Inequalities}, 
 		\hyperpage{74}
   \item \texttt  {Hilbert}\discretionary {-}{}{}\texttt  {Function}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{44}
+		\hyperpage{45}
   \item \texttt  {HilbertSeriesOfNumericalSemigroup}, \hyperpage{65}
   \item \texttt  {Homogeneous}\discretionary {-}{}{}\texttt  {Betti}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{63}
@@ -202,7 +203,7 @@
   \item \texttt  {IsListOfIntegersNS}, \hyperpage{81}
   \item \texttt  {IsMEDNumericalSemigroup}, \hyperpage{49}
   \item \texttt  {IsModularNumericalSemigroup}, \hyperpage{12}
-  \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{46}
+  \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{47}
   \item \texttt  {IsMpureNumericalSemigroup}, \hyperpage{85}
   \item \texttt  {IsNumericalSemigroup}, \hyperpage{12}
   \item \texttt  {IsNumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Irreducible}\discretionary {-}{}{}\texttt  {Planar}\discretionary {-}{}{}\texttt  {Curve}\discretionary {-}{}{}\texttt  {Singularity}, 
@@ -393,8 +394,8 @@
   \item \texttt  {SmallElementsOfNumericalSemigroup}, \hyperpage{16}
   \item \texttt  {SpecialGapsOfNumericalSemigroup}, \hyperpage{20}
   \item \texttt  {Star}\discretionary {-}{}{}\texttt  {Closure}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{47}
-  \item \texttt  {SubtractIdealsOfNumericalSemigroup}, \hyperpage{42}
+		\hyperpage{48}
+  \item \texttt  {SubtractIdealsOfNumericalSemigroup}, \hyperpage{43}
   \item \texttt  {SumIdealsOfNumericalSemigroup}, \hyperpage{42}
 
   \indexspace

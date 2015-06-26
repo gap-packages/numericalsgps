@@ -52,8 +52,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7828CD2B83E380FA">3.2-1 FrobeniusNumberOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7B7DFAB2834B2B36">3.2-2 FrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X87AAF6807D727149">3.2-3 ConductorOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X829A9C517A83FFD5">3.2-4 PseudoFrobeniusOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X82AD9C1281FB1F58">3.2-5 TypeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F9FE5C787A38C79">3.2-4 Conductor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X829A9C517A83FFD5">3.2-5 PseudoFrobeniusOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X82AD9C1281FB1F58">3.2-6 TypeOfNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X787FE6F180C6291F">3.3 <span class="Heading">Gaps</span></a>
 </span>
@@ -285,6 +286,8 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));</span>
 4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Conductor(NumericalSemigroup(3,5,7));                                   </span>
+5
 </pre></div>
 
 <p><a id="X7B7DFAB2834B2B36" name="X7B7DFAB2834B2B36"></a></p>
@@ -301,9 +304,16 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConductorOfNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>This is just a synonym of <code class="code"> FrobeniusNumberOfNumericalSemigroup</code> (<code class="code">NS</code>)<span class="SimpleMath">\(+1\)</span>.</p>
 
+<p><a id="X7F9FE5C787A38C79" name="X7F9FE5C787A38C79"></a></p>
+
+<h5>3.2-4 Conductor</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Conductor</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>This is just a synonym of <code class="code"> ConductorOfNumericalSemigroup</code> (<code class="code">NS</code>).</p>
+
 <p><a id="X829A9C517A83FFD5" name="X829A9C517A83FFD5"></a></p>
 
-<h5>3.2-4 PseudoFrobeniusOfNumericalSemigroup</h5>
+<h5>3.2-5 PseudoFrobeniusOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PseudoFrobeniusOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><code class="code">S</code> is a numerical semigroup. It returns set of pseudo-Frobenius numbers of <var class="Arg">S</var>.</p>
@@ -318,7 +328,7 @@ true
 
 <p><a id="X82AD9C1281FB1F58" name="X82AD9C1281FB1F58"></a></p>
 
-<h5>3.2-5 TypeOfNumericalSemigroup</h5>
+<h5>3.2-6 TypeOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TypeOfNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>Stands for <code class="code">Length(PseudoFrobeniusOfNumericalSemigroup (NS))</code>.</p>

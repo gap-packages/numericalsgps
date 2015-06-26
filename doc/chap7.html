@@ -39,15 +39,16 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X814D5DF27E63204E">7.1-6 IsIntegralIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7BDEBFCB7A1DAFC7">7.1-7 SmallElementsOfIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X81B71CA285457EF3">7.1-8 ConductorOfIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X87508E7A7CFB0B20">7.1-9 BelongsToIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7B39610D7AD5A654">7.1-10 SumIdealsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X857FE5C57EE98F5E">7.1-11 MultipleOfIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78743CE2845B5860">7.1-12 SubtractIdealsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7C2DAB737ECE7D34">7.1-13 DifferenceOfIdealsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X803921F97BEDCA88">7.1-14 TranslationOfIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X85CC100F78608D5E">7.1-15 IntersectionIdealsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X829EACA378BE3665">7.1-16 MaximalIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X835890A078F5D6DC">7.1-17 CanonicalIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7F9FE5C787A38C79">7.1-9 Conductor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X87508E7A7CFB0B20">7.1-10 BelongsToIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7B39610D7AD5A654">7.1-11 SumIdealsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X857FE5C57EE98F5E">7.1-12 MultipleOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78743CE2845B5860">7.1-13 SubtractIdealsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7C2DAB737ECE7D34">7.1-14 DifferenceOfIdealsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X803921F97BEDCA88">7.1-15 TranslationOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X85CC100F78608D5E">7.1-16 IntersectionIdealsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X829EACA378BE3665">7.1-17 MaximalIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X835890A078F5D6DC">7.1-18 CanonicalIdealOfNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X81DC1C0284968537">7.2 <span class="Heading">
                     Other functions for ideals
@@ -232,13 +233,20 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConductorOfIdealOfNumericalSemigroup(10+s);</span>
 15
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(10+s);</span>
-[ 10, 13, 15 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Conductor(10+s);</span>
+15
 </pre></div>
+
+<p><a id="X7F9FE5C787A38C79" name="X7F9FE5C787A38C79"></a></p>
+
+<h5>7.1-9 Conductor</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Conductor</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>This is just a synonym of <code class="code"> ConductorOfIdealOfNumericalSemigroup</code> (<code class="code">NS</code>).</p>
 
 <p><a id="X87508E7A7CFB0B20" name="X87508E7A7CFB0B20"></a></p>
 
-<h5>7.1-9 BelongsToIdealOfNumericalSemigroup</h5>
+<h5>7.1-10 BelongsToIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToIdealOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup, <var class="Arg">n</var> is an integer.</p>
@@ -262,7 +270,7 @@ true
 
 <p><a id="X7B39610D7AD5A654" name="X7B39610D7AD5A654"></a></p>
 
-<h5>7.1-10 SumIdealsOfNumericalSemigroup</h5>
+<h5>7.1-11 SumIdealsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SumIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I, J</var> are ideals of a numerical semigroup.</p>
@@ -287,7 +295,7 @@ true
 
 <p><a id="X857FE5C57EE98F5E" name="X857FE5C57EE98F5E"></a></p>
 
-<h5>7.1-11 MultipleOfIdealOfNumericalSemigroup</h5>
+<h5>7.1-12 MultipleOfIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MultipleOfIdealOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup, <var class="Arg">n</var> is a non negative integer.</p>
@@ -305,7 +313,7 @@ true
 
 <p><a id="X78743CE2845B5860" name="X78743CE2845B5860"></a></p>
 
-<h5>7.1-12 SubtractIdealsOfNumericalSemigroup</h5>
+<h5>7.1-13 SubtractIdealsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubtractIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I, J</var> are ideals of a numerical semigroup.</p>
@@ -331,7 +339,7 @@ true
 
 <p><a id="X7C2DAB737ECE7D34" name="X7C2DAB737ECE7D34"></a></p>
 
-<h5>7.1-13 DifferenceOfIdealsOfNumericalSemigroup</h5>
+<h5>7.1-14 DifferenceOfIdealsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferenceOfIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I, J</var> are ideals of a numerical semigroup. <var class="Arg">J</var> must be contained in <var class="Arg">I</var>.</p>
@@ -353,7 +361,7 @@ true
 
 <p><a id="X803921F97BEDCA88" name="X803921F97BEDCA88"></a></p>
 
-<h5>7.1-14 TranslationOfIdealOfNumericalSemigroup</h5>
+<h5>7.1-15 TranslationOfIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TranslationOfIdealOfNumericalSemigroup</code>( <var class="Arg">k</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Given an ideal <var class="Arg">I</var> of a numerical semigroup S and an integer <var class="Arg">k</var> returns an ideal of the numerical semigroup S generated by <span class="SimpleMath">{i_1+k,...,i_n+k}</span> where <span class="SimpleMath">{i_1,...,i_n}</span> is the system of generators of <var class="Arg">I</var>.</p>
@@ -376,7 +384,7 @@ true
 
 <p><a id="X85CC100F78608D5E" name="X85CC100F78608D5E"></a></p>
 
-<h5>7.1-15 IntersectionIdealsOfNumericalSemigroup</h5>
+<h5>7.1-16 IntersectionIdealsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntersectionIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Given two ideals <var class="Arg">I</var> and <var class="Arg">J</var> of a numerical semigroup <var class="Arg">S</var> returns the ideal of the numerical semigroup <var class="Arg">S</var> which is the intersection of the ideals <var class="Arg">I</var> and <var class="Arg">J</var>.</p>
@@ -391,7 +399,7 @@ true
 
 <p><a id="X829EACA378BE3665" name="X829EACA378BE3665"></a></p>
 
-<h5>7.1-16 MaximalIdealOfNumericalSemigroup</h5>
+<h5>7.1-17 MaximalIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalIdealOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Returns the maximal ideal of the numerical semigroup <var class="Arg">S</var>.</p>
@@ -404,7 +412,7 @@ true
 
 <p><a id="X835890A078F5D6DC" name="X835890A078F5D6DC"></a></p>
 
-<h5>7.1-17 CanonicalIdealOfNumericalSemigroup</h5>
+<h5>7.1-18 CanonicalIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Computes a canonical ideal of <var class="Arg">S</var> (<a href="chapBib.html#biBBF06">[BF06]</a>): <span class="SimpleMath">{ x ∈ Z | g-x not ∈ S}</span>.</p>

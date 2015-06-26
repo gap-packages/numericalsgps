@@ -189,12 +189,13 @@ DeclareAttribute( "SmallElementsOfIdealOfNumericalSemigroup", IsIdealOfNumerical
 
 #############################################################################
 ##
-#F  ConductorOfIdealOfNumericalSemigroup(I)
+#A  ConductorOfIdealOfNumericalSemigroup(I)
 ##
 ##  Returns the conductor of I, the largest element in SmallElements(I)
 ##
 #############################################################################
-DeclareGlobalFunction("ConductorOfIdealOfNumericalSemigroup");
+DeclareAttribute("Conductor", IsIdealOfNumericalSemigroup);
+DeclareSynonymAttr("ConductorOfIdealOfNumericalSemigroup", Conductor);
 
 #############################################################################
 ##

@@ -258,6 +258,8 @@ gap> AperyListOfNumericalSemigroupAsGraph(last);
 
 gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 4
+gap> Conductor(NumericalSemigroup(3,5,7));                                   
+5
 
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
@@ -525,6 +527,12 @@ gap> SmallElementsOfIdealOfNumericalSemigroup(I);
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> SmallElementsOfIdealOfNumericalSemigroup(J);
 [ 2, 4, 6, 8, 10 ]
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> ConductorOfIdealOfNumericalSemigroup(10+s);
+15
+gap> Conductor(10+s);
+15
 
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> BelongsToIdealOfNumericalSemigroup(9,J);
@@ -1108,6 +1116,96 @@ gap> TypeSequenceOfNumericalSemigroup(s);
 gap> s:=NumericalSemigroup(4,6,11);;
 gap> TypeSequenceOfNumericalSemigroup(s);
 [ 1, 1, 1, 1, 1, 1, 1 ]
+
+##Functions implemented by C. O'Neill
+gap> s:=NumericalSemigroup(10,11,13);;
+gap> l:=FirstElementsOfNumericalSemigroup(100,s);;
+gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s));
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+
+gap> s:=NumericalSemigroup(10,11,13);
+<Numerical semigroup with 3 generators>
+gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
+[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
+  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
+  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
+60
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
+21
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
+[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
+  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
+  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
+[ 2 ]
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetOfNumericalSemigroup(s);
+[ 2 ]
+
+##Functions implemented by Klara Stokes
+
+gap> IsAdmissiblePattern([1,1,-1]);
+true
+gap> IsAdmissiblePattern([1,-2]);
+false
+
+gap> IsAdmissiblePattern([1,-1]);
+true
+gap> IsStronglyAdmissiblePattern([1,-1]);
+false
+gap> IsStronglyAdmissiblePattern([1,1,-1]);
+true
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> t:=NumericalSemigroup(10,11,14);;                                             
+gap> AsIdealOfNumericalSemigroup(10+s,t);
+fail
+gap> AsIdealOfNumericalSemigroup(100+s,t);
+<Ideal of numerical semigroup>
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> i:=10+s;;
+gap> ApplyPatternToIdeal([1,1,-1],i);
+[ 1, <Ideal of numerical semigroup> ]
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
+[ 1, <Ideal of numerical semigroup> ]
+gap> SmallElements(last[2]);
+[ 0, 3 ]
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> i:=[3,5]+s;;
+gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);
+false
+gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
+true
+
+gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
+true
+gap> IsArfNumericalSemigroup(s);
+true
+
 
 gap> STOP_TEST( "testall.tst", 10000 );
 ## The first argument of STOP_TEST should be the name of the test file.

@@ -952,6 +952,8 @@ semigroup is given or on the knowledge already produced on the semigroup.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));|
   4
+  !gapprompt@gap>| !gapinput@Conductor(NumericalSemigroup(3,5,7));                                   |
+  5
 \end{Verbatim}
  }
 
@@ -981,8 +983,20 @@ semigroup is given or on the knowledge already produced on the semigroup.
 
  
 
-\subsection{\textcolor{Chapter }{PseudoFrobeniusOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Conductor}}
 \logpage{[ 3, 2, 4 ]}\nobreak
+\hyperdef{L}{X7F9FE5C787A38C79}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Conductor({\mdseries\slshape NS})\index{Conductor@\texttt{Conductor}}
+\label{Conductor}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ This is just a synonym of \texttt{ ConductorOfNumericalSemigroup} (\texttt{NS}). }
+
+ 
+
+\subsection{\textcolor{Chapter }{PseudoFrobeniusOfNumericalSemigroup}}
+\logpage{[ 3, 2, 5 ]}\nobreak
 \hyperdef{L}{X829A9C517A83FFD5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PseudoFrobeniusOfNumericalSemigroup({\mdseries\slshape S})\index{PseudoFrobeniusOfNumericalSemigroup@\texttt{PseudoFrobeniusOfNumericalSemigroup}}
 \label{PseudoFrobeniusOfNumericalSemigroup}
@@ -1001,7 +1015,7 @@ semigroup is given or on the knowledge already produced on the semigroup.
  
 
 \subsection{\textcolor{Chapter }{TypeOfNumericalSemigroup}}
-\logpage{[ 3, 2, 5 ]}\nobreak
+\logpage{[ 3, 2, 6 ]}\nobreak
 \hyperdef{L}{X82AD9C1281FB1F58}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TypeOfNumericalSemigroup({\mdseries\slshape NS})\index{TypeOfNumericalSemigroup@\texttt{TypeOfNumericalSemigroup}}
 \label{TypeOfNumericalSemigroup}
@@ -2419,15 +2433,27 @@ plus one.
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
   !gapprompt@gap>| !gapinput@ConductorOfIdealOfNumericalSemigroup(10+s);|
   15
-  !gapprompt@gap>| !gapinput@SmallElements(10+s);|
-  [ 10, 13, 15 ]
+  !gapprompt@gap>| !gapinput@Conductor(10+s);|
+  15
 \end{Verbatim}
  }
 
  
 
-\subsection{\textcolor{Chapter }{BelongsToIdealOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Conductor}}
 \logpage{[ 7, 1, 9 ]}\nobreak
+\hyperdef{L}{X7F9FE5C787A38C79}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Conductor({\mdseries\slshape NS})\index{Conductor@\texttt{Conductor}}
+\label{Conductor}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ This is just a synonym of \texttt{ ConductorOfIdealOfNumericalSemigroup} (\texttt{NS}). }
+
+ 
+
+\subsection{\textcolor{Chapter }{BelongsToIdealOfNumericalSemigroup}}
+\logpage{[ 7, 1, 10 ]}\nobreak
 \hyperdef{L}{X87508E7A7CFB0B20}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{BelongsToIdealOfNumericalSemigroup@\texttt{BelongsToIdealOfNumericalSemigroup}}
 \label{BelongsToIdealOfNumericalSemigroup}
@@ -2455,7 +2481,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{SumIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 10 ]}\nobreak
+\logpage{[ 7, 1, 11 ]}\nobreak
 \hyperdef{L}{X7B39610D7AD5A654}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SumIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{SumIdealsOfNumericalSemigroup@\texttt{SumIdealsOfNumericalSemigroup}}
 \label{SumIdealsOfNumericalSemigroup}
@@ -2484,7 +2510,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{MultipleOfIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 11 ]}\nobreak
+\logpage{[ 7, 1, 12 ]}\nobreak
 \hyperdef{L}{X857FE5C57EE98F5E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultipleOfIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{MultipleOfIdealOfNumericalSemigroup@\texttt{MultipleOfIdealOfNumericalSemigroup}}
 \label{MultipleOfIdealOfNumericalSemigroup}
@@ -2506,7 +2532,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{SubtractIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 12 ]}\nobreak
+\logpage{[ 7, 1, 13 ]}\nobreak
 \hyperdef{L}{X78743CE2845B5860}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SubtractIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{SubtractIdealsOfNumericalSemigroup@\texttt{SubtractIdealsOfNumericalSemigroup}}
 \label{SubtractIdealsOfNumericalSemigroup}
@@ -2536,7 +2562,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{DifferenceOfIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 13 ]}\nobreak
+\logpage{[ 7, 1, 14 ]}\nobreak
 \hyperdef{L}{X7C2DAB737ECE7D34}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DifferenceOfIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{DifferenceOfIdealsOfNumericalSemigroup@\texttt{Difference}\-\texttt{Of}\-\texttt{Ideals}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{DifferenceOfIdealsOfNumericalSemigroup}
@@ -2562,7 +2588,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{TranslationOfIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 14 ]}\nobreak
+\logpage{[ 7, 1, 15 ]}\nobreak
 \hyperdef{L}{X803921F97BEDCA88}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TranslationOfIdealOfNumericalSemigroup({\mdseries\slshape k, I})\index{TranslationOfIdealOfNumericalSemigroup@\texttt{Translation}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{TranslationOfIdealOfNumericalSemigroup}
@@ -2589,7 +2615,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{IntersectionIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 15 ]}\nobreak
+\logpage{[ 7, 1, 16 ]}\nobreak
 \hyperdef{L}{X85CC100F78608D5E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IntersectionIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{IntersectionIdealsOfNumericalSemigroup@\texttt{Intersection}\-\texttt{Ideals}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{IntersectionIdealsOfNumericalSemigroup}
@@ -2608,7 +2634,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{MaximalIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 16 ]}\nobreak
+\logpage{[ 7, 1, 17 ]}\nobreak
 \hyperdef{L}{X829EACA378BE3665}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaximalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{MaximalIdealOfNumericalSemigroup@\texttt{MaximalIdealOfNumericalSemigroup}}
 \label{MaximalIdealOfNumericalSemigroup}
@@ -2625,7 +2651,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{CanonicalIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 17 ]}\nobreak
+\logpage{[ 7, 1, 18 ]}\nobreak
 \hyperdef{L}{X835890A078F5D6DC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CanonicalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{CanonicalIdealOfNumericalSemigroup@\texttt{CanonicalIdealOfNumericalSemigroup}}
 \label{CanonicalIdealOfNumericalSemigroup}

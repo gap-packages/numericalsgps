@@ -113,7 +113,7 @@ InstallGlobalFunction(FurtherForcedElementsForPseudoFrobenius, function(f_gaps,f
   if conflicts = [] then
     return nf_elts;
   else
-    Info(InfoTipo,2,"There is no numerical semigroup with the given set as set of pseudo-Frobenius numbers, since the integers",conflicts," would have to be at the same time forced gaps and forced integers.\n");
+    Info(InfoTipo,2,"There is no numerical semigroup with the given set as set of pseudo-Frobenius numbers, since the integers ",conflicts," would have to be at the same time forced gaps and forced integers.\n");
     return fail;
   fi;
 end);
