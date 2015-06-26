@@ -197,3 +197,99 @@ DeclareGlobalFunction("DeltaSetUnionUpToElementWRTNumericalSemigroup");
 #############################################################################
 DeclareGlobalFunction("DeltaSetOfNumericalSemigroup");
         
+#############################################################################
+##
+#F  IsAdmissiblePattern(p)
+##
+##  p is the list of integers that are the coefficients of a pattern
+##  returns true or false depending if p is admissible or not  
+##  see cite [BA-GS]
+##
+##  Implemented by Klara Stokes
+##
+#############################################################################
+DeclareGlobalFunction("IsAdmissiblePattern");
+
+#############################################################################
+##
+#F  IsStronglyAdmissiblePattern(p)
+##
+##  p is the list of integers that are the coefficients of a pattern
+##  returns true or false depending if p is strongly admissible or not  
+##  see cite [BA-GS]
+##
+#############################################################################
+DeclareGlobalFunction("IsStronglyAdmissiblePattern");
+
+#############################################################################
+##
+#F  AsIdealOfNumericalSemigroup(I,T)
+##  For an ideal I of a numerical semigroup S, and a numerical semigroup T, 
+##  detects if I is an ideal of T, and if so, returns I as an ideal of T 
+##  (otherwise it returns fail)
+##
+##  Implented with Klara Stokes
+##
+#############################################################################
+DeclareGlobalFunction("AsIdealOfNumericalSemigroup");
+
+#############################################################################
+##
+#F  BoundForConductorOfImageOfPattern(p, C)
+##  Takes an admissible pattern p and calculates an upper bound of the 
+##  smallest element K in p(I) such that all integers larger than K is 
+##  contained in p(I), where I is an ideal of a numerical semigroup. 
+##  Instead of taking I as parameter, the function takes C, which is assumed 
+##  to be the smallest element in I such that all integers larger than C is 
+##  contained in I.
+##
+##  Implemented by Klara Stokes
+##
+#############################################################################
+DeclareGlobalFunction("BoundForConductorOfImageOfPattern");
+
+#############################################################################
+##
+#F ApplyPatternToIdeal(p,I)
+## Takes a strongly  admissible pattern p and calculates p(I), where I is 
+## an ideal of a numerical semigroup
+##
+## Implemented by Klara Stokes
+##
+#############################################################################
+DeclareGlobalFunction("ApplyPatternToIdeal");
+
+#############################################################################
+##
+#F ApplyPatternToNumericalSemigroup(p,S)
+## Takes a strongly  admissible pattern p and calculates p(S), where S is 
+## a numerical semigroup 
+##
+## Implemented by Klara Stokes (see [Stokes]) 
+##
+#############################################################################
+DeclareGlobalFunction("ApplyPatternToNumericalSemigroup");
+
+#############################################################################
+##
+#F  IsAdmittedPatternByIdeal(p,I,J)
+## 
+##  Takes astrongly admissible pattern p and tests whether p(I) is 
+##  contained in J, for I and J ideals of numerical semigroups 
+##  (not necessarily the same one)
+##
+##  Implemented by Klara Stokes
+##
+#############################################################################
+DeclareGlobalFunction("IsAdmittedPatternByIdeal");
+
+#############################################################################
+##
+#F  IsAdmittedPatternByNumericalSemigroup(p,S,T)
+##  Takes a strongly  admissible pattern p and tests whether p(S) is 
+##  contained in T, for S and T numerical semigroups.
+##
+##  Implemented by Klara Stokes
+##  
+#############################################################################
+DeclareGlobalFunction("IsAdmittedPatternByNumericalSemigroup");
