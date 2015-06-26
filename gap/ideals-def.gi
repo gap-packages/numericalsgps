@@ -271,7 +271,6 @@ InstallMethod(SmallElementsOfIdealOfNumericalSemigroup,
     fi;
 end);
 
-
 #############################################################################
 ##
 #F  ConductorOfIdealOfNumericalSemigroup(I)
@@ -279,7 +278,10 @@ end);
 ##  Returns the conductor of I, the largest element in SmallElements(I)
 ##
 #############################################################################
-InstallGlobalFunction("ConductorOfIdealOfNumericalSemigroup", function(I)
+InstallMethod(Conductor, 
+        "Returns the conductor of I, the largest element in SmallElements(I)",
+        [IsIdealOfNumericalSemigroup ],
+        function(I)
      local seI;
 
      if not IsIdealOfNumericalSemigroup(I) then
@@ -289,7 +291,6 @@ InstallGlobalFunction("ConductorOfIdealOfNumericalSemigroup", function(I)
 
      return seI[Length(seI)];
 end);
-
 
 #############################################################################
 ##

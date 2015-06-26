@@ -20,6 +20,8 @@ number</E> of <M>S</M> if <M>z+S\setminus\{0\}\subseteq S</M>.
                         <Example><![CDATA[
 gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 4
+gap> Conductor(NumericalSemigroup(3,5,7));                                   
+5
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -36,6 +38,12 @@ gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
                     <Attr Name="ConductorOfNumericalSemigroup" Arg="NS"/>
                     <Description>
                         This is just a synonym of <C> FrobeniusNumberOfNumericalSemigroup</C> (<C>NS</C>)<M>+1</M>.
+                    </Description>
+                </ManSection>
+                <ManSection>
+                    <Attr Name="Conductor" Arg="NS"/>
+                    <Description>
+                        This is just a synonym of <C> ConductorOfNumericalSemigroup</C> (<C>NS</C>).
                     </Description>
                 </ManSection>
 
