@@ -280,7 +280,8 @@ InstallGlobalFunction(ProportionallyModularNumericalSemigroup, function(a,b,c)
     if a <> c and b/(a-c) > 2*m -1 then #the semigroup is a halfline
         SetSmallElementsOfNumericalSemigroup(M,[0,m]);
         SetFrobeniusNumberOfNumericalSemigroup(M,m-1);
-        SetMinimalGeneratorsNS(M, [m,2*m-1]);
+#        SetMinimalGeneratorsNS(M, [m,2*m-1]); # bug pointed out by Ilya Frolov (fixed from version 1.0.1)
+        SetMinimalGeneratorsNS(M, [m..2*m-1]);
     fi;
     if b = 1 then #the semigroup is the entire N
         SetMinimalGeneratorsNS(M, [1]);
