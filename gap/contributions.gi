@@ -730,7 +730,7 @@ InstallGlobalFunction("ApplyPatternToIdeal",function(p,I)
              if s[n]>s[n-1] or not s[n] in I then ni:=false;fi;
              if ni then
                  y:=q*s;
-                 if y<C then
+                 if y<=C then
                      stop:=false;
                      Add(S,y);
                  fi;

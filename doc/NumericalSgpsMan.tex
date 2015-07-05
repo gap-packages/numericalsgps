@@ -5748,7 +5748,7 @@ algorithms can be found in \cite{Stokes}.
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup $S$, and \mbox{\texttt{\mdseries\slshape T}} is a numerical semgigroup. Detects if \mbox{\texttt{\mdseries\slshape I}} is an ideal of \mbox{\texttt{\mdseries\slshape T}} and contained in \mbox{\texttt{\mdseries\slshape T}} (integral ideal), and if so, returns \mbox{\texttt{\mdseries\slshape I}} as an ideal of \mbox{\texttt{\mdseries\slshape T}} (otherwise it returns \texttt{fail}). 
+ \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup $S$, and \mbox{\texttt{\mdseries\slshape T}} is a numerical semgigroup. Detects if \mbox{\texttt{\mdseries\slshape I}} is an ideal of \mbox{\texttt{\mdseries\slshape T}} and contained in \mbox{\texttt{\mdseries\slshape T}} (integral ideal), and if so, returns \mbox{\texttt{\mdseries\slshape I}} as an ideal of \mbox{\texttt{\mdseries\slshape T}}. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape I}} is an ideal of some semigroup but not an integral ideal of \mbox{\texttt{\mdseries\slshape t}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
   !gapprompt@gap>| !gapinput@t:=NumericalSemigroup(10,11,14);;                                             |
@@ -5789,7 +5789,8 @@ algorithms can be found in \cite{Stokes}.
  \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
 pattern. \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup.
 
- Calculates $p(I)$. Outputs $p(I)$, represented as \texttt{[d,p(I)/d]}, where \texttt{d} is the gcd of the coefficients of \mbox{\texttt{\mdseries\slshape p}}. 
+ Calculates $p(I)$. Outputs $p(I)$, represented as \texttt{[d,p(I)/d]}, where \texttt{d} is the gcd of the coefficients of \mbox{\texttt{\mdseries\slshape p}}. All elements of $p(I)$ are divisible by $d$, and $p(I)/d$ is an ideal of some numerical semigroup. It is returned as the maximal ideal
+of the numerical semigroup $p(I)/d \cup \{0\}$. The parent numerical semigroup can later be changed with the funcion \texttt{AsIdealOfNumericalSemigroup}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
   !gapprompt@gap>| !gapinput@i:=10+s;;|
@@ -5832,9 +5833,9 @@ pattern. \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup.
 
 
  \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
-pattern. \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} are ideals of certain numericals semigroups.
+pattern. \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} are ideals of certain numerical semigroups.
 
- Tests wheter or not $p(I)$ is contained in \mbox{\texttt{\mdseries\slshape J}}. 
+ Tests whether or not $p(I)$ is contained in \mbox{\texttt{\mdseries\slshape J}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
   !gapprompt@gap>| !gapinput@i:=[3,5]+s;;|
@@ -5856,9 +5857,9 @@ pattern. \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape
 
 
  \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
-pattern. \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} are numericals semigroups.
+pattern. \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} are numerical semigroups.
 
- Tests wheter or not $p(S)$ is contained in \mbox{\texttt{\mdseries\slshape T}}. 
+ Tests whether or not $p(S)$ is contained in \mbox{\texttt{\mdseries\slshape T}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);|
   true
