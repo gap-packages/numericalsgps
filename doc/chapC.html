@@ -420,7 +420,7 @@ true
 <h5>C.3-3 AsIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsIdealOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">I</var> is an ideal of a numerical semigroup <span class="SimpleMath">S</span>, and <var class="Arg">T</var> is a numerical semgigroup. Detects if <var class="Arg">I</var> is an ideal of <var class="Arg">T</var> and contained in <var class="Arg">T</var> (integral ideal), and if so, returns <var class="Arg">I</var> as an ideal of <var class="Arg">T</var> (otherwise it returns <code class="code">fail</code>).</p>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup <span class="SimpleMath">S</span>, and <var class="Arg">T</var> is a numerical semgigroup. Detects if <var class="Arg">I</var> is an ideal of <var class="Arg">T</var> and contained in <var class="Arg">T</var> (integral ideal), and if so, returns <var class="Arg">I</var> as an ideal of <var class="Arg">T</var>. It returns <code class="code">fail</code> if <var class="Arg">I</var> is an ideal of some semigroup but not an integral ideal of <var class="Arg">t</var>.</p>
 
 
 <div class="example"><pre>
@@ -452,7 +452,7 @@ fail
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ApplyPatternToIdeal</code>( <var class="Arg">p</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
 
-<p>Calculates <span class="SimpleMath">p(I)</span>. Outputs <span class="SimpleMath">p(I)</span>, represented as <code class="code">[d,p(I)/d]</code>, where <code class="code">d</code> is the gcd of the coefficients of <var class="Arg">p</var>.</p>
+<p>Calculates <span class="SimpleMath">p(I)</span>. Outputs <span class="SimpleMath">p(I)</span>, represented as <code class="code">[d,p(I)/d]</code>, where <code class="code">d</code> is the gcd of the coefficients of <var class="Arg">p</var>. All elements of <span class="SimpleMath">p(I)</span> are divisible by <span class="SimpleMath">d</span>, and <span class="SimpleMath">p(I)/d</span> is an ideal of some numerical semigroup. It is returned as the maximal ideal of the numerical semigroup <span class="SimpleMath">p(I)/d ∪ {0}</span>. The parent numerical semigroup can later be changed with the funcion <code class="code">AsIdealOfNumericalSemigroup</code>.</p>
 
 
 <div class="example"><pre>
@@ -485,9 +485,9 @@ fail
 <h5>C.3-7 IsAdmittedPatternByIdeal</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAdmittedPatternByIdeal</code>( <var class="Arg">p</var>, <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">I</var> and <var class="Arg">J</var> are ideals of certain numericals semigroups.</p>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">I</var> and <var class="Arg">J</var> are ideals of certain numerical semigroups.</p>
 
-<p>Tests wheter or not <span class="SimpleMath">p(I)</span> is contained in <var class="Arg">J</var>.</p>
+<p>Tests whether or not <span class="SimpleMath">p(I)</span> is contained in <var class="Arg">J</var>.</p>
 
 
 <div class="example"><pre>
@@ -504,9 +504,9 @@ true
 <h5>C.3-8 IsAdmittedPatternByNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAdmittedPatternByNumericalSemigroup</code>( <var class="Arg">p</var>, <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">S</var> and <var class="Arg">T</var> are numericals semigroups.</p>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups.</p>
 
-<p>Tests wheter or not <span class="SimpleMath">p(S)</span> is contained in <var class="Arg">T</var>.</p>
+<p>Tests whether or not <span class="SimpleMath">p(S)</span> is contained in <var class="Arg">T</var>.</p>
 
 
 <div class="example"><pre>
