@@ -257,7 +257,7 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
 
-    if not(IsHomogeneousList(mat)) then
+    if not(IsRectangularTable(mat)) then
         Error("The first argument has not the dimension of the second.");
     fi;
     
