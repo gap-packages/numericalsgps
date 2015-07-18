@@ -278,7 +278,7 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity, fu
 	end;
 	#semigroup of values
 	sv:=function(f)
-		local  m, d,dd, n,g,it, max, lt, e, coef, deg, tsti,red,rd, var, gred, id, R, aroots;
+		local  m, d,dd, n,g,it, max, lt, e, coef, deg, tsti,rd, var, id, R, aroots;
 
 		if not(IsPolynomial(f)) then
 			Error("The argument must be a polynomial\n");
@@ -313,7 +313,6 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity, fu
 		d:=Gcd(m); 
 		e:=m[1]/d;
 		g:=f; 
-		red:=[];
 		var:=[X(Rationals,2),X(Rationals,1)];
 		aroots:=[X(Rationals,2)];
 		while d>1  do
@@ -496,9 +495,6 @@ InstallGlobalFunction(CurveAssociatedToDeltaSequence,function(l)
 		if fact=fail then 
 			Error("The sequence is not valid\n");
 		fi; 
-		if fact=fail then
-			Error("The sequence is not valid\n");
-		fi;
 		g[k+1]:=g[k]^e[k-1]-Product(List([1..k-1], i->g[i]^fact[i]));
 		Info(InfoNumSgps,2,"Temporal curve: ",g[k+1]);
 	od;
