@@ -94,3 +94,18 @@ DeclareGlobalFunction("ProfileOfNumericalSemigroup");
 DeclareGlobalFunction("EliahouSlicesOfNumericalSemigroup");
 
 
+#########################################################
+## 
+#F LatticePathAssociatedToNumericalSemigroup(s,p,q)
+##
+## s is a numerical semigroup, and p,q are elements in s
+## Then s is an oversemigroup of <p,q> and all its gaps 
+## are gaps of <p,q>. If c is the conductor of <p,q>,
+## every gap g in <p,q> is expressed uniquely as 
+## g=c-1-(ap+bq) for some nonnegative integers a and b,
+## whence g has associated coordinates (a,b)
+## The output is the path in N^2 such that every point 
+## in N^2 corresponding to a gap of <p,q> above the path
+## correspond to gaps of s (see [K-W])
+#########################################################
+DeclareGlobalFunction("LatticePathAssociatedToNumericalSemigroup");

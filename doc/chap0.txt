@@ -80,6 +80,11 @@
   [33X[0;0YThe  maintainers  want  to  thank the organizers of [10XGAPDays[110X in their several
   editions.[133X
   
+  [33X[0;0YThe  authors  also  thank  the Centro de Servicios de Informática y Redes de
+  Comunicaciones  (CSIRC), Universidad de Granada, for providing the computing
+  time, specially Rafael Arco Arredondo for installing everything this package
+  and the extra software needed in alhambra.ugr.es.[133X
+  
   
   -------------------------------------------------------
   [1XColophon[101X
@@ -139,9 +144,10 @@
       3.2-6 TypeOfNumericalSemigroup
     3.3 [33X[0;0YGaps[133X
       3.3-1 GapsOfNumericalSemigroup
-      3.3-2 GenusOfNumericalSemigroup
-      3.3-3 FundamentalGapsOfNumericalSemigroup
-      3.3-4 SpecialGapsOfNumericalSemigroup
+      3.3-2 LatticePathAssociatedToNumericalSemigroup
+      3.3-3 GenusOfNumericalSemigroup
+      3.3-4 FundamentalGapsOfNumericalSemigroup
+      3.3-5 SpecialGapsOfNumericalSemigroup
     3.4 [33X[0;0YWilf's conjecture[133X
       3.4-1 WilfNumberOfNumericalSemigroup
       3.4-2 TruncatedWilfNumberOfNumericalSemigroup

@@ -453,3 +453,43 @@ InstallGlobalFunction(EliahouSlicesOfNumericalSemigroup,function(s)
     return List([1..q-1],i->Intersection(s,[i*m-r..(i+1)*m-r-1]));
     
 end);
+
+#########################################################
+## 
+#F LatticePathAssociatedToNumericalSemigroup(s,p,q)
+##
+## s is a numerical semigroup, and p,q are elements in s
+## Then s is an oversemigroup of <p,q> and all its gaps 
+## are gaps of <p,q>. If c is the conductor of <p,q>,
+## every gap g in <p,q> is expressed uniquely as 
+## g=c-1-(ap+bq) for some nonnegative integers a and b,
+## whence g has associated coordinates (a,b)
+## The output is the path in N^2 such that every point 
+## in N^2 corresponding to a gap of <p,q> above the path
+## correspond to gaps of s (see [K-W])
+#########################################################
+InstallGlobalFunction(LatticePathAssociatedToNumericalSemigroup, function(s,p,q)
+    
+    local gaps, coords, c, le;
+    
+    le:=function(p1,p2)
+        return ((p1[1]<=p2[1]) and (p1[2]<=p2[2]));
+    end;
+    
+    
+    if not(IsNumericalSemigroup(s)) then
+        Error("The first argument must be a numerical semigroup");
+    fi;
+    
+    if not((p in s) and (q in s)) then
+        Error("The second and third argument must be elements in the semigroup");
+    fi;
+    
+    gaps:=GapsOfNumericalSemigroup(s);
+    
+    c:=ConductorOfNumericalSemigroup(NumericalSemigroup(p,q));
+    coords:=List(gaps, g-> FactorizationsIntegerWRTList(c-1-g,[p,q])[1]);
+    Info(InfoNumSgps,2,"Coordinates of gaps wrt p,q\n",coords);
+    return Filtered(coords, x->Filtered(coords, y ->le(x,y))=[x]);
+    
+end);

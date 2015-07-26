@@ -278,13 +278,36 @@
     [4X[28X[ 1, 2, 4 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-2 GenusOfNumericalSemigroup[101X
+  [1X3.3-2 LatticePathAssociatedToNumericalSemigroup[101X
+  
+  [29X[2XLatticePathAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xp[103X, [3Xq[103X ) [32X attribute
+  
+  [33X[0;0Y[10XS[110X is a numerical semigroup and [10Xp,q[110X are two elements in [10XS[110X.[133X
+  
+  [33X[0;0YIn  this  setting [10XS[110X is an oversemigroup of [22X⟨ p,q⟩[122X, and consequently evey gap
+  of  [10XS[110X  is a gap of [22X⟨ p,q⟩[122X. If [22Xc[122X is teh conductor of [22X⟨ p,q⟩[122X, then every gap [22Xg[122X
+  of  [22X⟨  p,q⟩[122X  can  be  written uniquely as [22Xg=c-1-(ap+bp)[122X for some nonnegative
+  integers [22Xa,b[122X. We say that [22X(a,b)[122X are the coordinates associated to [22Xg[122X.[133X
+  
+  [33X[0;0YThe  output  is  a  path  in  [22XN^2[122X  such  that  coordinates  of the gaps of [22XS[122X
+  correspond  exactly  with the points in [22XN^2[122X that are between the path en the
+  line [22Xax+by=c-1[122X. See [KW14].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(16,17,71,72);;[127X[104X
+    [4X[25Xgap>[125X [27XlatticePathAssociatedToNumericalSemigroup(s,16,17);[127X[104X
+    [4X[28X[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ], [128X[104X
+    [4X[28X  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ], [128X[104X
+    [4X[28X  [ 14, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X3.3-3 GenusOfNumericalSemigroup[101X
   
   [29X[2XGenusOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0Y[10XNS[110X is a numerical semigroup. It returns the number of gaps of [10XNS[110X.[133X
   
-  [1X3.3-3 FundamentalGapsOfNumericalSemigroup[101X
+  [1X3.3-4 FundamentalGapsOfNumericalSemigroup[101X
   
   [29X[2XFundamentalGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -300,7 +323,7 @@
     [4X[28X  30, 31, 40, 41, 42 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-4 SpecialGapsOfNumericalSemigroup[101X
+  [1X3.3-5 SpecialGapsOfNumericalSemigroup[101X
   
   [29X[2XSpecialGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
