@@ -407,15 +407,15 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
 end);
 #################################################################
 ##
-#F RandomNumericalSemigroupWithPseudoFrobeniusNumbers(arg)
+#F ANumericalSemigroupWithPseudoFrobeniusNumbers(arg)
 ## Input: PF (a set of postive integers) 
 # Alternativelly
 #  * a record with fields "pseudo_frobenius" and "max_attempts" option
 ##
-## ouput: A numerical semigrups S such that PF(S)=PF, at random. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
-## When Length(PF)=1, it makes use of the function AnIrreducibleNumericalSemigroupWithFrobeniusNumber
+## ouput: A numerical semigrups S such that PF(S)=PF. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
+## When Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2], it makes use of the function AnIrreducibleNumericalSemigroupWithFrobeniusNumber
 #################################################################
-InstallGlobalFunction(RandomNumericalSemigroupWithPseudoFrobeniusNumbers, function(arg)
+InstallGlobalFunction(ANumericalSemigroupWithPseudoFrobeniusNumbers, function(arg)
   local  m_att, PF, type, frob, of_ints, free, nspfn, i, f_ints, v, nfig, 
          nfie;
   
