@@ -44,7 +44,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X78906CCD7BEE0E58">2.2-3 RepresentsGapsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X84A611557B5ACF42">2.2-4 IsAperyListOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86D5B3517AF376D4">2.2-5 IsSubsemigroupOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X864C2D8E80DD6D16">2.2-6 BelongsToNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X79CA175481F8105F">2.2-6 IsSubset</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X864C2D8E80DD6D16">2.2-7 BelongsToNumericalSemigroup</a></span>
 </div></div>
 </div>
 
@@ -308,9 +309,30 @@ true
 false
 </pre></div>
 
+<p><a id="X79CA175481F8105F" name="X79CA175481F8105F"></a></p>
+
+<h5>2.2-6 IsSubset</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubset</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. <var class="Arg">T</var> can be a numerical semigroup, in which case the function is just a synonym of <code class="func">IsSubsemigroupOfNumericalSemigroup</code> (<a href="chap2.html#X86D5B3517AF376D4"><span class="RefLink">2.2-5</span></a>), or a list of integers, in which case tests whether all elements of the list belong to <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns1 := NumericalSemigroup(5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns2 := NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubset(ns1,ns2);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubset(ns2,[5,15]);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubset(ns1,[5,11]);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubset(ns2,ns1);   </span>
+true
+</pre></div>
+
 <p><a id="X864C2D8E80DD6D16" name="X864C2D8E80DD6D16"></a></p>
 
-<h5>2.2-6 BelongsToNumericalSemigroup</h5>
+<h5>2.2-7 BelongsToNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p><var class="Arg">n</var> is an integer and <var class="Arg">S</var> is a numerical semigroup. Tests whether <var class="Arg">n</var> belongs to <var class="Arg">S</var>. <code class="code">n in S</code> is the short for <code class="code">BelongsToNumericalSemigroup(n,S)</code>.</p>

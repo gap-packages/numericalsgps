@@ -656,8 +656,34 @@ returns \texttt{true} when the periodic function represented by \mbox{\texttt{\m
 
  
 
-\subsection{\textcolor{Chapter }{BelongsToNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsSubset}}
 \logpage{[ 2, 2, 6 ]}\nobreak
+\hyperdef{L}{X79CA175481F8105F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSubset({\mdseries\slshape S, T})\index{IsSubset@\texttt{IsSubset}}
+\label{IsSubset}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. \mbox{\texttt{\mdseries\slshape T}} can be a numerical semigroup, in which case the function is just a synonym of \texttt{IsSubsemigroupOfNumericalSemigroup} (\ref{IsSubsemigroupOfNumericalSemigroup}), or a list of integers, in which case tests whether all elements of the list
+belong to \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ns1 := NumericalSemigroup(5,7);;|
+  !gapprompt@gap>| !gapinput@ns2 := NumericalSemigroup(5,7,11);;|
+  !gapprompt@gap>| !gapinput@IsSubset(ns1,ns2);|
+  false
+  !gapprompt@gap>| !gapinput@IsSubset(ns2,[5,15]);|
+  true
+  !gapprompt@gap>| !gapinput@IsSubset(ns1,[5,11]);|
+  false
+  !gapprompt@gap>| !gapinput@IsSubset(ns2,ns1);   |
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{BelongsToNumericalSemigroup}}
+\logpage{[ 2, 2, 7 ]}\nobreak
 \hyperdef{L}{X864C2D8E80DD6D16}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToNumericalSemigroup({\mdseries\slshape n, S})\index{BelongsToNumericalSemigroup@\texttt{BelongsToNumericalSemigroup}}
 \label{BelongsToNumericalSemigroup}
@@ -1071,7 +1097,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  The output is a path in $\mathbb{N}^2$ such that coordinates of the gaps of $S$ correspond exactly with the points in $\mathbb{N}^2$ that are between the path en the line $ax+by=c-1$. See \cite{K-W}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(16,17,71,72);;|
-  !gapprompt@gap>| !gapinput@latticePathAssociatedToNumericalSemigroup(s,16,17);|
+  !gapprompt@gap>| !gapinput@LatticePathAssociatedToNumericalSemigroup(s,16,17);|
   [ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ], 
     [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ], 
     [ 14, 0 ] ]
@@ -1783,7 +1809,7 @@ output is:
 
 
  \mbox{\texttt{\mdseries\slshape PF}} is a list of positive integers (given as a list or individual elements). The
-output is: a list of numerical semigrups S such that PF(S)=PF When
+output is: a list of numerical semigrups S such that PF(S)=PF. When
 Length(PF)=1, it makes use of the function \texttt{NumericalSemigroupsWithFrobeniusNumber} (\ref{NumericalSemigroupsWithFrobeniusNumber}) 
 
  
@@ -1806,27 +1832,27 @@ Length(PF)=1, it makes use of the function \texttt{NumericalSemigroupsWithFroben
 
  
 
-\subsection{\textcolor{Chapter }{RandomNumericalSemigroupWithPseudoFrobeniusNumbers}}
+\subsection{\textcolor{Chapter }{ANumericalSemigroupWithPseudoFrobeniusNumbers}}
 \logpage{[ 5, 6, 4 ]}\nobreak
-\hyperdef{L}{X786F1A5A79374254}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RandomNumericalSemigroupWithPseudoFrobeniusNumbers({\mdseries\slshape g})\index{RandomNumericalSemigroupWithPseudoFrobeniusNumbers@\texttt{Random}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{With}\-\texttt{Pseudo}\-\texttt{Frobenius}\-\texttt{Numbers}}
-\label{RandomNumericalSemigroupWithPseudoFrobeniusNumbers}
+\hyperdef{L}{X862DBFA379D52E2C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ANumericalSemigroupWithPseudoFrobeniusNumbers({\mdseries\slshape g})\index{ANumericalSemigroupWithPseudoFrobeniusNumbers@\texttt{ANumerical}\-\texttt{Semigroup}\-\texttt{With}\-\texttt{Pseudo}\-\texttt{Frobenius}\-\texttt{Numbers}}
+\label{ANumericalSemigroupWithPseudoFrobeniusNumbers}
 }\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape PF}} is a list of positive integers (given as a list or individual elements).
 Alternatively, a record with fields "pseudo{\textunderscore}frobenius" and
 "max{\textunderscore}attempts" option The output is: A numerical semigrups S
-such that PF(S)=PF, at random. Returns fail if it conludes that it exists and
-suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able
-to conclude... 
+such that PF(S)=PF. Returns fail if it conludes that it exists and suggets to
+use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to
+conclude... 
 
- It makes use of the function \texttt{AnIrreducibleNumericalSemigroupWithFrobeniusNumber} (\ref{AnIrreducibleNumericalSemigroupWithFrobeniusNumber}), when Length(PF)=1. 
+ It makes use of the function \texttt{AnIrreducibleNumericalSemigroupWithFrobeniusNumber} (\ref{AnIrreducibleNumericalSemigroupWithFrobeniusNumber}), when Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2]. 
 
  
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@pf := [ 83, 169, 173, 214, 259 ];;                     |
-  !gapprompt@gap>| !gapinput@RandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);|
+  !gapprompt@gap>| !gapinput@ANumericalSemigroupWithPseudoFrobeniusNumbers(pf);|
   <Numerical semigroup>
   !gapprompt@gap>| !gapinput@gen := MinimalGeneratingSystem(last);|
   [ 38, 57, 64, 72, 79, 98, 99, 106, 118, 120, 124, 132, 134, 146, 147, 154, 

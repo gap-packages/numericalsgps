@@ -121,7 +121,8 @@
       2.2-3 RepresentsGapsOfNumericalSemigroup
       2.2-4 IsAperyListOfNumericalSemigroup
       2.2-5 IsSubsemigroupOfNumericalSemigroup
-      2.2-6 BelongsToNumericalSemigroup
+      2.2-6 IsSubset
+      2.2-7 BelongsToNumericalSemigroup
   3 [33X[0;0YBasic operations with numerical semigroups[133X
     3.1 [33X[0;0YThe definitions[133X
       3.1-1 MultiplicityOfNumericalSemigroup
@@ -186,7 +187,7 @@
       5.6-1 ForcedIntegersForPseudoFrobenius
       5.6-2 SimpleForcedIntegersForPseudoFrobenius
       5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers
-      5.6-4 RandomNumericalSemigroupWithPseudoFrobeniusNumbers
+      5.6-4 ANumericalSemigroupWithPseudoFrobeniusNumbers
   6 [33X[0;0YIrreducible numerical semigroups[133X
     6.1 [33X[0;0YIrreducible numerical semigroups[133X
       6.1-1 IsIrreducibleNumericalSemigroup

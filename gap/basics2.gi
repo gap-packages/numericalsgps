@@ -42,8 +42,21 @@ InstallMethod( IsSubsemigroupOfNumericalSemigroup,
         function(S,T)
     return IsSubset(GapsOfNumericalSemigroup(T),GapsOfNumericalSemigroup(S));
 end);
-
-
+#############################################################################
+##
+#O  IsSubset(S,T)
+## 
+##  A synonym of IsSubsemigroupOfNumericalSemigroup
+##
+#############################################################################
+InstallMethod( IsSubset,
+"method for numerical semigroups",
+        true,
+        [IsNumericalSemigroup,IsNumericalSemigroup],0,
+        function(S,T)
+   return IsSubsemigroupOfNumericalSemigroup(S,T);
+end); 
+######
 #############################################################################
 ##
 #F  IntersectionOfNumericalSemigroups(S,T)
