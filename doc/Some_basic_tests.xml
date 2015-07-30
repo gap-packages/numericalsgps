@@ -114,7 +114,25 @@ false
 ]]></Example>
                     </Description>
                 </ManSection>
-                
+                <ManSection>
+                    <Attr Name="IsSubset" Arg="S, T"/>
+                    <Description>
+<A>S</A> is a numerical semigroup. <A>T</A> can be a numerical semigroup, in which case the function is just a synonym of <Ref Func="IsSubsemigroupOfNumericalSemigroup" />, or a list of integers, in which case tests whether all elements of the list belong to <A>S</A>.
+<Example><![CDATA[
+gap> ns1 := NumericalSemigroup(5,7);;
+gap> ns2 := NumericalSemigroup(5,7,11);;
+gap> IsSubset(ns1,ns2);
+false
+gap> IsSubset(ns2,[5,15]);
+true
+gap> IsSubset(ns1,[5,11]);
+false
+gap> IsSubset(ns2,ns1);   
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+                 
                 
                 <ManSection>
                     <Oper Name="BelongsToNumericalSemigroup" Arg="n,S"/>

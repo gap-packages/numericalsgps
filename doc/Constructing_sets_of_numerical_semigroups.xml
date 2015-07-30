@@ -163,7 +163,7 @@ gap> SimpleForcedIntegersForPseudoFrobenius(fint[1],Union(fint[2],[free[1]]),pf)
                   <ManSection>
                     <Func Arg="g" Name="NumericalSemigroupsWithPseudoFrobeniusNumbers"></Func>
                     <Description>
-                        <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF
+                        <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF.
 When Length(PF)=1, it makes use of the function <Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>
 <P/>
                         <Example><![CDATA[
@@ -185,16 +185,16 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
                 </ManSection>
 
                    <ManSection>
-                    <Func Arg="g" Name="RandomNumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
+                    <Func Arg="g" Name="ANumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
                     <Description>
                         <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option
-The output is: A numerical semigrups S such that PF(S)=PF, at random. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
+The output is: A numerical semigrups S such that PF(S)=PF. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
 <P/>
-It makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>, when Length(PF)=1.
+It makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>, when Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2].
 <P/>
                         <Example><![CDATA[
 gap> pf := [ 83, 169, 173, 214, 259 ];;                     
-gap> RandomNumericalSemigroupWithPseudoFrobeniusNumbers(pf);
+gap> ANumericalSemigroupWithPseudoFrobeniusNumbers(pf);
 <Numerical semigroup>
 gap> gen := MinimalGeneratingSystem(last);
 [ 38, 57, 64, 72, 79, 98, 99, 106, 118, 120, 124, 132, 134, 146, 147, 154, 

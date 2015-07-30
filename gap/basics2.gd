@@ -15,12 +15,15 @@
 #############################################################################
 ##
 #O  IsSubsemigroupOfNumericalSemigroup(S,T)
+#O  IsSubset (is a synonym) 
 ## 
 ##  Test whether the numerical semigroup T is contained in the 
 ##  numerical semigroup S
 ##
 #############################################################################
 DeclareOperation( "IsSubsemigroupOfNumericalSemigroup",[IsNumericalSemigroup,IsNumericalSemigroup]);
+########
+DeclareOperation( "IsSubset",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
 
 #############################################################################

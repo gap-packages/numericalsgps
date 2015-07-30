@@ -184,6 +184,17 @@ true
 gap> IsSubsemigroupOfNumericalSemigroup(S,T);
 false
 
+gap> ns1 := NumericalSemigroup(5,7);;
+gap> ns2 := NumericalSemigroup(5,7,11);;
+gap> IsSubset(ns1,ns2);
+false
+gap> IsSubset(ns2,[5,15]);
+true
+gap> IsSubset(ns1,[5,11]);
+false
+gap> IsSubset(ns2,ns1);   
+true
+
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> BelongsToNumericalSemigroup(15,S);
@@ -1192,7 +1203,7 @@ gap> s:=NumericalSemigroup(3,7,5);;
 gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
 [ 1, <Ideal of numerical semigroup> ]
 gap> SmallElements(last[2]);
-[ 0, 3 ]
+[ 0, 3, 5 ]
 
 gap> s:=NumericalSemigroup(3,7,5);;
 gap> i:=[3,5]+s;;
