@@ -282,6 +282,12 @@ gap> PseudoFrobeniusOfNumericalSemigroup(S);
 gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ 1, 2, 4 ]
 
+gap> s:=NumericalSemigroup(16,17,71,72);;
+gap> LatticePathAssociatedToNumericalSemigroup(s,16,17);
+[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ], 
+  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ], 
+  [ 14, 0 ] ]
+
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> FundamentalGapsOfNumericalSemigroup(S);
