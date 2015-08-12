@@ -5,6 +5,15 @@
 - Added functions for Wilf's conjecture based on Eliahou's paper
 - Fixed bug while using SingularSetBaseRing in affine-extra-s.gi
 - Added MultipleOfNumericalSemigroup and InductiveNumericalSemigroup
+- Added functions for patterns on ideals and semigroups (contribution K. Stokes)
+- Added synonym for ANumericslSemigroupWithPseudoFrobeniusNumbers
+- Conductor now gathers ConductorOfNumericalSemigroup and ConductorOfIdeal…
+- Added LatticePathAssociatedToNumericalSemigroup (from the paper by Kunz and Waldi)
+- Cleaned code from polynomials.gi
+- IsHomogeneousList -> IsRectangularTable in omega primality
+- Fixed bug (reported by I. Frolov) on the definition of proportionally modular numerical semigroups
+- Added NumericalSemigroupWithGivenElementsAndFrobenius and auxiliary functions
+
 0.980 -> 1
 - NumSgpsTests() modified (Thanks Alexander!)
 - Corrected and simplified usage of GAP type objects and declarations of GAP representations (Thanks Max!)
