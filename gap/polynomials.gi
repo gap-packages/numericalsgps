@@ -326,22 +326,22 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity, fu
 			Info(InfoNumSgps,2,"Independent term ", it);
 			max:=degreepol(it,m/Gcd(m));
 			if (max=0) then #or (d=Gcd(d,max)) or (max in m) then
-				Error("Error the polynomial is not irreductible or it has not a single place at infinity (deg 0)\n");
+				Error("The polynomial is not irreducible or it has not a single place at infinity (deg 0)\n");
 			fi;
 			#irreducibility test
 			tsti:=First(coef{[2..Length(coef)]}, t->degreepol(t,m/d)>=max);
 			if tsti<>fail then
 				Info(InfoNumSgps,1,"Term ", tsti," produces error");
-				Error("Error the polynomial is not irreductible", "\n");
+				Error("The polynomial is not irreducible", "\n");
 			fi;
 			dd:=Gcd(d,max);
 			Info(InfoNumSgps,2,"New candidate: ",max);
 			if (d=Gcd(d,max)) or (max in m) then
-				Error("Error the polynomial is not irreductible or it has not a single place at infinity\n");
+				Error("The polynomial is not irreducible or it has not a single place at infinity\n");
 			fi;
 			m[n+1]:=max; 
 			if(m[n]*Gcd(m{[1..n-1]})<=max*d)then
-				Error("Error the polynomial is not irreductible (not subdescending sequence)", m,"\n");
+				Error("The polynomial is not irreducible (not subdescending sequence)", m,"\n");
 			fi;
 			e:=d/Gcd(d,max);
 			d:=dd; 
