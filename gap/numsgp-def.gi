@@ -770,7 +770,7 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
     b2 := arrangement[k];
     a2 := (-arrangement[k-1])^-1 mod b2;
 
-    SetClosedIntervalNS([b1/a1,b2/a2]);    
+    SetClosedIntervalNS(S, [b1/a1,b2/a2]);    
     SetProportionallyModularConditionNS(S, [a1*b2,b1*b2,a1*b2-a2*b1]);
     if b1*b2 = 1 then #the semigroup is the entire N
         SetMinimalGeneratorsNS(S,[1]);
