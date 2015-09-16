@@ -23,7 +23,7 @@
 #############################################################################
 DeclareOperation( "IsSubsemigroupOfNumericalSemigroup",[IsNumericalSemigroup,IsNumericalSemigroup]);
 ########
-DeclareOperation( "IsSubset",[IsNumericalSemigroup,IsNumericalSemigroup]);
+#DeclareOperation( "IsSubset",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
 
 #############################################################################
