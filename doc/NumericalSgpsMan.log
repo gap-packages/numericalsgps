@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  30 JUL 2015 23:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.14)  17 SEP 2015 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1860,7 +1860,13 @@ Underfull \hbox (badness 1132) in paragraph at lines 255--255
 m/n/10.95 http : / / www . gap-[]system . org /
  []
 
-[95] [96]) [97] (./NumericalSgpsMan.ind
+[95] [96]
+Underfull \hbox (badness 1132) in paragraph at lines 380--380
+[]\T1/ptm/m/n/10.95 Dario Spir-ito.  Star op-er-a-tions on nu-mer-i-cal semi-gr
+oups.  \T1/ptm/m/it/10.95 Comm. Al-ge-bra\T1/ptm/m/n/10.95 ,
+ []
+
+) [97] (./NumericalSgpsMan.ind
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 []\T1/cmtt/m/n/10.95 Adjacent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
@@ -2660,7 +2666,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5981.
 Package rerunfilecheck Info: File `NumericalSgpsMan.out' has not changed.
 (rerunfilecheck)             Checksum: 2C9F50602C1E56CF8CF9407F40F88D76;4542.
 Package rerunfilecheck Info: File `NumericalSgpsMan.brf' has not changed.
-(rerunfilecheck)             Checksum: DB363F41B1D28FDAA687D2C971D99324;5018.
+(rerunfilecheck)             Checksum: F46E7F1A99F06BBFC39EEF291DD5B80F;5033.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2669,8 +2675,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5981.
  ) 
 Here is how much of TeX's memory you used:
  8315 strings out of 493304
- 126614 string characters out of 6139871
- 208938 words of memory out of 5000000
+ 126669 string characters out of 6139871
+ 208951 words of memory out of 5000000
  10882 multiletter control sequences out of 15000+600000
  89612 words of font info for 108 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -2692,7 +2698,7 @@ type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on NumericalSgpsMan.pdf (102 pages, 447644 bytes).
+Output written on NumericalSgpsMan.pdf (102 pages, 447680 bytes).
 PDF statistics:
  2254 PDF objects out of 2487 (max. 8388607)
  1917 compressed objects within 20 object streams

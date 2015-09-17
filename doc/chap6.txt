@@ -269,7 +269,7 @@
   
   [33X[0;0YA  numerical  semigroup  is  almost-symmetric  ([BR97])  if its genus is the
   arithmetic  mean  of  its  Frobenius  number  and  type.  We use a procedure
-  presented  in  [RG13] to determine the set of all almost-symmetric numerical
+  presented  in  [RG14] to determine the set of all almost-symmetric numerical
   semigroups  with  given  Frobenius  number.  In  order  to do this, we first
   calculate  the  set of all almost-symmetric numerical semigroups that can be
   constructed from an irreducible numerical semigroup.[133X
@@ -280,7 +280,7 @@
   
   [33X[0;0Y[3Xs[103X  is  an  irreducible  numerical  semigroup.  The  output  is  the  set  of
   almost-symetric  numerical  semigroups  that  can  be  constructed from [3Xs[103X by
-  removing some of its generators as explained in [RG13]).[133X
+  removing some of its generators as explained in [RG14]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xns := NumericalSemigroup(5,8,9,11);;[127X[104X
