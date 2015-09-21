@@ -106,8 +106,12 @@ InstallGlobalFunction(RepresentsGapsOfNumericalSemigroup, function(L)
         Error("The argument must be a list of positive integers");
     fi;
     ld := Union(List(L,DivisorsInt));
-    ns := Difference([0..ld[Length(ld)]+1],ld);
-    return RepresentsSmallElementsOfNumericalSemigroup(ns);
+    if ld <> L then
+      return false;
+    else
+      ns := Difference([0..ld[Length(ld)]+1],ld);
+      return RepresentsSmallElementsOfNumericalSemigroup(ns);
+    fi;
 end);
     
     

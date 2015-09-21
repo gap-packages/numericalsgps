@@ -229,7 +229,7 @@ end);
 ##
 #F  IsListOfIntegersNS(list)
 ##
-##  Tests whether L is a nonemty list integers.
+##  Tests whether L is a nonempty list integers.
 ##
 #############################################################################
 InstallGlobalFunction(IsListOfIntegersNS, function(list)
