@@ -7,19 +7,56 @@
 Let <M>S</M> be a numerical semigroup. The Hilbert  series or generating function associated to <M>S</M> is <M>H_S(x)=\sum_{s\in S}x^s</M> (actually it is the Hilbert function of the ring <M>K[S]</M> with <M>K</M> a field). See for instance <Cite Key="M"></Cite>.
 
 
-	
+
     <ManSection>
 
         <Func Arg="s, x" Name="NumericalSemigroupPolynomial"></Func>
         <Description>
             <A>s</A> is a numerical semigroups and <A>x</A> a variable (or a value to evaluate in).
-            The output is the polynomial <M>1+(x-1)\sum_{s\in \mathbb N\setminus S} x^s</M>, which equals <M>(1-x)H_S(x)</M>. 
-            
+            The output is the polynomial <M>1+(x-1)\sum_{s\in \mathbb N\setminus S} x^s</M>, which equals <M>(1-x)H_S(x)</M>.
+
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");;
 gap> s:=NumericalSemigroup(5,7,9);;
 gap> NumericalSemigroupPolynomial(s,x);
 x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
+]]></Example>
+         </Description>
+    </ManSection>
+
+		<ManSection>
+
+        <Func Arg="f" Name="IsNumericalSemigroupPolynomial"></Func>
+        <Description>
+            <A>f</A> is polynomial in one variable. The output is true if there exists a numerical semigroup <M>S</M> such that <A>f</A> equals
+						<M>(1-x)H_S(x)</M>, that is, the polynomial associated to <M>S</M> (false otherwise).
+
+            <Example><![CDATA[
+gap> x:=X(Rationals,"x");;
+gap> s:=NumericalSemigroup(5,6,7,8);;
+gap> f:=NumericalSemigroupPolynomial(s,x);
+x^10-x^9+x^5-x+1
+gap> IsNumericalSemigroupPolynomial(f);
+true
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+		<ManSection>
+
+        <Func Arg="f" Name="NumericalSemigroupFromNumericalSemigroupPolynomial"></Func>
+        <Description>
+            <A>f</A> is polynomial associated to a numerical semigroup (otherwise yields error). The output is the numerical semigroup <M>S</M> such that <A>f</A> equals
+						<M>(1-x)H_S(x)</M>.
+
+            <Example><![CDATA[
+gap> x:=X(Rationals,"x");;
+gap> s:=NumericalSemigroup(5,6,7,8);;
+gap> f:=NumericalSemigroupPolynomial(s,x);
+x^10-x^9+x^5-x+1
+gap> NumericalSemigroupFromNumericalSemigroupPolynomial(f)=s;
+true
 ]]></Example>
          </Description>
     </ManSection>
@@ -31,7 +68,7 @@ x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
         <Description>
             <A>s</A> is a numerical semigroups and <A>x</A> a variable (or a value to evaluate in).
             The output is the series <M>\sum_{s\in \setminus S} x^s</M>. The series is given as a rational function.
-            
+
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");;
 gap> s:=NumericalSemigroup(5,7,9);;
@@ -47,7 +84,7 @@ gap> HilbertSeriesOfNumericalSemigroup(s,x);
         <Description>
             <A>p</A> is a polynomial.
             Computes the Graeffe polynomial of <A>p</A>. Needed to test if <A>p</A> is a cyclotomic polynomial (see <Cite Key="BD-cyclotomic"></Cite>).
-            
+
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");;
 gap> GraeffePolynomial(x^2-1);
@@ -62,7 +99,7 @@ x^2-2*x+1
         <Description>
             <A>p</A> is a polynomial.
             Detects if  <A>p</A> is a cyclotomic polynomial using the procedure given in  <Cite Key="BD-cyclotomic"></Cite>.
-            
+
             <Example><![CDATA[
 gap> CyclotomicPolynomial(Rationals,3);
 x^2+x+1
@@ -78,7 +115,7 @@ true
         <Description>
             <A>p</A> is a polynomial.
             Detects if  <A>p</A> is a Kronecker polynomial, that is, a monic polynomial with integer coefficients having all its roots in the unit circunference, or equivalently, a product of cyclotomic polynomials.
-            
+
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");;
 gap>  s:=NumericalSemigroup(3,5,7);;
@@ -98,9 +135,9 @@ true
     <ManSection>
         <Func Arg="s" Name="IsCyclotomicNumericalSemigroup"></Func>
         <Description>
-            <A>s</A> is a numerical semigroup. 
+            <A>s</A> is a numerical semigroup.
             Detects if  the polynomial associated to <A>s</A> is a Kronecker polynomial.
-            
+
             <Example><![CDATA[
 gap> l:=CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(21);;
 gap> ForAll(l,IsCyclotomicNumericalSemigroup);
@@ -116,8 +153,8 @@ true
         <Func Arg="p" Name="IsSelfReciprocalUnivariatePolynomial"></Func>
         <Description>
             <A>p</A> is a polynomial.
-            Detects if  <A>p</A> is a selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <Cite Key="M"></Cite> 
-            
+            Detects if  <A>p</A> is a selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <Cite Key="M"></Cite>
+
             <Example><![CDATA[
 gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;
 gap> x:=X(Rationals,"x");;
@@ -140,10 +177,10 @@ true
     <ManSection>
         <Func Arg="f" Name="SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity"></Func>
         <Description>
-            <A>f</A> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). 
+            <A>f</A> is a polynomial in the variables X(Rationals,1) and X(Rationals,2).
 
             Computes the semigroup <M>\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}</M>. The algorithm checks if <A>f</A> has one place at infinity. If the extra argument "all" is given, then the output is the <M>\delta</M>-sequence and approximate roots of <A>f</A>. The method is explained in <Cite Key="AGS14"></Cite>.
-            
+
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");; y:=X(Rationals,"y");;
 gap> f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;
@@ -156,11 +193,11 @@ gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all");
     <ManSection>
         <Func Arg="l" Name="IsDeltaSequence"></Func>
         <Description>
-            <A>l</A> is a list of positive integers. Assume that <A>l</A> equals <M>a_0,a_1,\dots,a_h</M>. Then <A>l</A> is a <M>\delta</M>-sequence if <M>\gcd(a_0,\ldots, a_h)=1</M>, <M>\langle a_0,\cdots a_s</M> is free, <M>a_kD_k &gt; a_{k+1}D_{k+1}</M> and <M>a_0&gt; a_1 &gt; D_2 &gt; D_3 &gt; \ldots &gt; D_{h+1}</M>, where <M>D_1=a_0</M>, <M>D_k=\gcd(D_{k-1},a_{k-1}</M>. 
+            <A>l</A> is a list of positive integers. Assume that <A>l</A> equals <M>a_0,a_1,\dots,a_h</M>. Then <A>l</A> is a <M>\delta</M>-sequence if <M>\gcd(a_0,\ldots, a_h)=1</M>, <M>\langle a_0,\cdots a_s</M> is free, <M>a_kD_k &gt; a_{k+1}D_{k+1}</M> and <M>a_0&gt; a_1 &gt; D_2 &gt; D_3 &gt; \ldots &gt; D_{h+1}</M>, where <M>D_1=a_0</M>, <M>D_k=\gcd(D_{k-1},a_{k-1}</M>.
             <P/>
 			Every <M>\delta</M>-sequence generates a numerical semigroup that is the semigroup of values of a plane curve with one place at infinity.
 
-            
+
             <Example><![CDATA[
 gap> IsDeltaSequence([24,16,28,7]);
 true
@@ -171,12 +208,12 @@ true
     <ManSection>
         <Func Arg="f" Name="DeltaSequencesWithFrobeniusNumber"></Func>
         <Description>
-            <A>f</A> is a positive integer. 
+            <A>f</A> is a positive integer.
 			Computes the set of all <M>\delta</M>-sequences generating numerical semigroups with Frobenius number <A>f</A>.
-            
+
             <Example><![CDATA[
 gap> DeltaSequencesWithFrobeniusNumber(21);
-[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], 
+[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ],
   [ 15, 10, 4 ], [ 23, 2 ] ]
 ]]></Example>
          </Description>
@@ -186,7 +223,7 @@ gap> DeltaSequencesWithFrobeniusNumber(21);
         <Func Arg="l" Name="CurveAssociatedToDeltaSequence"></Func>
         <Description>
             <A>l</A> is a <M>\delta</M>-sequence. Computes a curve in the variables X(Rationals,1) and X(Rationals,2) whose semigroup of values is generated by the <A>l</A>.
-            
+
             <Example><![CDATA[
 gap> CurveAssociatedToDeltaSequence([24,16,28,7]);
 x_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\
@@ -209,7 +246,7 @@ gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");
 If only one argument is given, the output is the semigroup of all possible orders of <M>K[[pols]]</M> provided that <M>K[[x]]/K[[pols]]</M> has finite length. If the second argument <A>"basis"</A> is given, then the output is a (reduced) basis of the algebra <M>K[[pols]]</M> such that the orders of the basis elements generate minimally the semigroup of orders of <M>K[[pols]]</M>. If an integer <A>val</A> is the second argument, then the output is a polynomial in <M>K[[pols]]</M> with order <A>val</A> (<C>fail</C> if there is no such polynomioal, that is, <A>val</A> is not in the semigroup of values).<P/>
 
 The method is explained in <Cite Key="AGSM14"></Cite>.
-            
+
             <Example><![CDATA[
 gap> x:=Indeterminate(Rationals,"x");;
 gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13]);
@@ -218,7 +255,7 @@ gap> MinimalGeneratingSystem(last);
 [ 4, 6, 13, 15 ]
 gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");
 [ x^4, x^7+x^6, x^13, x^15 ]
-gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     
+gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);
 x^20
 ]]></Example>
          </Description>
@@ -234,18 +271,18 @@ x^20
 If only one argument is given, the output is the semigroup of all possible degrees of <M>K[pols]</M> provided that <M>K[x]/K[pols]</M> has finite length. If the second argument <A>"basis"</A> is given, then the output is a (reduced) basis of the algebra <M>K[pols]</M> such that the degrees of the basis elements generate minimally the semigroup of degrees of <M>K[pols]</M>. If an integer <A>val</A> is the second argument, then the output is a polynomial in <M>K[pols]</M> with degree <A>val</A> (<C>fail</C> if there is no such polynomioal, that is, <A>val</A> is not in the semigroup of values).<P/>
 
 The method is explained in <Cite Key="AGSM14"></Cite>.
-            
+
             <Example><![CDATA[
 gap> x:=Indeterminate(Rationals,"x");;
-gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);
 <Numerical semigroup with 3 generators>
-gap> MinimalGeneratingSystem(last);                             
+gap> MinimalGeneratingSystem(last);
 [ 4, 7, 13 ]
 gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");
 [ x^4, x^7+x^6, x^13 ]
-gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);
 x^12
-gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); 
+gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6);
 fail
 ]]></Example>
          </Description>
