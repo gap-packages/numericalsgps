@@ -35,12 +35,14 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8391C8E782FBFA8A">10.1-1 NumericalSemigroupPolynomial</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X780479F978D166B0">10.1-2 HilbertSeriesOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X87C88E5C7B56931F">10.1-3 GraeffePolynomial</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X87A46B53815B158F">10.1-4 IsCyclotomicPolynomial</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7D9618ED83776B0B">10.1-5 IsKroneckerPolynomial</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8366BB727C496D31">10.1-6 IsCyclotomicNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X82C6355287C3BDD1">10.1-7 IsSelfReciprocalUnivariatePolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7F59E1167C1EE578">10.1-2 IsNumericalSemigroupPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X855497F77D13436F">10.1-3 NumericalSemigroupFromNumericalSemigroupPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X780479F978D166B0">10.1-4 HilbertSeriesOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X87C88E5C7B56931F">10.1-5 GraeffePolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X87A46B53815B158F">10.1-6 IsCyclotomicPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7D9618ED83776B0B">10.1-7 IsKroneckerPolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8366BB727C496D31">10.1-8 IsCyclotomicNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X82C6355287C3BDD1">10.1-9 IsSelfReciprocalUnivariatePolynomial</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X7EEF2A1781432A2D">10.2 <span class="Heading">
 		Semigroup of values of algebraic curves
@@ -83,9 +85,43 @@
 x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
 </pre></div>
 
+<p><a id="X7F59E1167C1EE578" name="X7F59E1167C1EE578"></a></p>
+
+<h5>10.1-2 IsNumericalSemigroupPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupPolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">f</var> is polynomial in one variable. The output is true if there exists a numerical semigroup <span class="SimpleMath">\(S\)</span> such that <var class="Arg">f</var> equals <span class="SimpleMath">\((1-x)H_S(x)\)</span>, that is, the polynomial associated to <span class="SimpleMath">\(S\)</span> (false otherwise).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,6,7,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=NumericalSemigroupPolynomial(s,x);</span>
+x^10-x^9+x^5-x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNumericalSemigroupPolynomial(f);</span>
+true
+</pre></div>
+
+<p><a id="X855497F77D13436F" name="X855497F77D13436F"></a></p>
+
+<h5>10.1-3 NumericalSemigroupFromNumericalSemigroupPolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupFromNumericalSemigroupPolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">f</var> is polynomial associated to a numerical semigroup (otherwise yields error). The output is the numerical semigroup <span class="SimpleMath">\(S\)</span> such that <var class="Arg">f</var> equals <span class="SimpleMath">\((1-x)H_S(x)\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,6,7,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=NumericalSemigroupPolynomial(s,x);</span>
+x^10-x^9+x^5-x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupFromNumericalSemigroupPolynomial(f)=s;</span>
+true
+</pre></div>
+
 <p><a id="X780479F978D166B0" name="X780479F978D166B0"></a></p>
 
-<h5>10.1-2 HilbertSeriesOfNumericalSemigroup</h5>
+<h5>10.1-4 HilbertSeriesOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertSeriesOfNumericalSemigroup</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroups and <var class="Arg">x</var> a variable (or a value to evaluate in). The output is the series <span class="SimpleMath">\(\sum_{s\in \setminus S} x^s\)</span>. The series is given as a rational function.</p>
@@ -100,7 +136,7 @@ x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
 
 <p><a id="X87C88E5C7B56931F" name="X87C88E5C7B56931F"></a></p>
 
-<h5>10.1-3 GraeffePolynomial</h5>
+<h5>10.1-5 GraeffePolynomial</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraeffePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Computes the Graeffe polynomial of <var class="Arg">p</var>. Needed to test if <var class="Arg">p</var> is a cyclotomic polynomial (see <a href="chapBib_mj.html#biBBD-cyclotomic">[BD89]</a>).</p>
@@ -114,7 +150,7 @@ x^2-2*x+1
 
 <p><a id="X87A46B53815B158F" name="X87A46B53815B158F"></a></p>
 
-<h5>10.1-4 IsCyclotomicPolynomial</h5>
+<h5>10.1-6 IsCyclotomicPolynomial</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a cyclotomic polynomial using the procedure given in <a href="chapBib_mj.html#biBBD-cyclotomic">[BD89]</a>.</p>
@@ -129,7 +165,7 @@ true
 
 <p><a id="X7D9618ED83776B0B" name="X7D9618ED83776B0B"></a></p>
 
-<h5>10.1-5 IsKroneckerPolynomial</h5>
+<h5>10.1-7 IsKroneckerPolynomial</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsKroneckerPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a Kronecker polynomial, that is, a monic polynomial with integer coefficients having all its roots in the unit circunference, or equivalently, a product of cyclotomic polynomials.</p>
@@ -151,7 +187,7 @@ true
 
 <p><a id="X8366BB727C496D31" name="X8366BB727C496D31"></a></p>
 
-<h5>10.1-6 IsCyclotomicNumericalSemigroup</h5>
+<h5>10.1-8 IsCyclotomicNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. Detects if the polynomial associated to <var class="Arg">s</var> is a Kronecker polynomial.</p>
@@ -165,7 +201,7 @@ true
 
 <p><a id="X82C6355287C3BDD1" name="X82C6355287C3BDD1"></a></p>
 
-<h5>10.1-7 IsSelfReciprocalUnivariatePolynomial</h5>
+<h5>10.1-9 IsSelfReciprocalUnivariatePolynomial</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSelfReciprocalUnivariatePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <a href="chapBib_mj.html#biBM">[Mor14]</a></p>
@@ -227,7 +263,7 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSequencesWithFrobeniusNumber(21);</span>
-[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], 
+[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ],
   [ 15, 10, 4 ], [ 23, 2 ] ]
 </pre></div>
 
@@ -270,7 +306,7 @@ x_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\
 [ 4, 6, 13, 15 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");</span>
 [ x^4, x^7+x^6, x^13, x^15 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);</span>
 x^20
 </pre></div>
 
@@ -288,15 +324,15 @@ x^20
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=Indeterminate(Rationals,"x");;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);</span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(last);                             </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(last);</span>
 [ 4, 7, 13 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");</span>
 [ x^4, x^7+x^6, x^13 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);</span>
 x^12
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6);</span>
 fail
 </pre></div>
 

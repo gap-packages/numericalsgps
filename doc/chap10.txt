@@ -22,7 +22,41 @@
     [4X[28Xx^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1[128X[104X
   [4X[32X[104X
   
-  [1X10.1-2 HilbertSeriesOfNumericalSemigroup[101X
+  [1X10.1-2 IsNumericalSemigroupPolynomial[101X
+  
+  [29X[2XIsNumericalSemigroupPolynomial[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  polynomial  in  one  variable.  The  output is true if there exists a
+  numerical  semigroup  [22XS[122X  such  that  [3Xf[103X  equals  [22X(1-x)H_S(x)[122X,  that  is,  the
+  polynomial associated to [22XS[122X (false otherwise).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,6,7,8);;[127X[104X
+    [4X[25Xgap>[125X [27Xf:=NumericalSemigroupPolynomial(s,x);[127X[104X
+    [4X[28Xx^10-x^9+x^5-x+1[128X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupPolynomial(f);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-3 NumericalSemigroupFromNumericalSemigroupPolynomial[101X
+  
+  [29X[2XNumericalSemigroupFromNumericalSemigroupPolynomial[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  polynomial  associated  to  a  numerical  semigroup (otherwise yields
+  error).  The  output  is  the  numerical  semigroup  [22XS[122X  such  that  [3Xf[103X equals
+  [22X(1-x)H_S(x)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,6,7,8);;[127X[104X
+    [4X[25Xgap>[125X [27Xf:=NumericalSemigroupPolynomial(s,x);[127X[104X
+    [4X[28Xx^10-x^9+x^5-x+1[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupFromNumericalSemigroupPolynomial(f)=s;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-4 HilbertSeriesOfNumericalSemigroup[101X
   
   [29X[2XHilbertSeriesOfNumericalSemigroup[102X( [3Xs[103X, [3Xx[103X ) [32X function
   
@@ -37,7 +71,7 @@
     [4X[28X(x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1)/(-x+1)[128X[104X
   [4X[32X[104X
   
-  [1X10.1-3 GraeffePolynomial[101X
+  [1X10.1-5 GraeffePolynomial[101X
   
   [29X[2XGraeffePolynomial[102X( [3Xp[103X ) [32X function
   
@@ -50,7 +84,7 @@
     [4X[28Xx^2-2*x+1[128X[104X
   [4X[32X[104X
   
-  [1X10.1-4 IsCyclotomicPolynomial[101X
+  [1X10.1-6 IsCyclotomicPolynomial[101X
   
   [29X[2XIsCyclotomicPolynomial[102X( [3Xp[103X ) [32X function
   
@@ -64,7 +98,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X10.1-5 IsKroneckerPolynomial[101X
+  [1X10.1-7 IsKroneckerPolynomial[101X
   
   [29X[2XIsKroneckerPolynomial[102X( [3Xp[103X ) [32X function
   
@@ -86,7 +120,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X10.1-6 IsCyclotomicNumericalSemigroup[101X
+  [1X10.1-8 IsCyclotomicNumericalSemigroup[101X
   
   [29X[2XIsCyclotomicNumericalSemigroup[102X( [3Xs[103X ) [32X function
   
@@ -99,7 +133,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X10.1-7 IsSelfReciprocalUnivariatePolynomial[101X
+  [1X10.1-9 IsSelfReciprocalUnivariatePolynomial[101X
   
   [29X[2XIsSelfReciprocalUnivariatePolynomial[102X( [3Xp[103X ) [32X function
   
@@ -168,7 +202,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDeltaSequencesWithFrobeniusNumber(21);[127X[104X
-    [4X[28X[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], [128X[104X
+    [4X[28X[ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ],[128X[104X
     [4X[28X  [ 15, 10, 4 ], [ 23, 2 ] ][128X[104X
   [4X[32X[104X
   
@@ -217,7 +251,7 @@
     [4X[28X[ 4, 6, 13, 15 ][128X[104X
     [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");[127X[104X
     [4X[28X[ x^4, x^7+x^6, x^13, x^15 ][128X[104X
-    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     [127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);[127X[104X
     [4X[28Xx^20[128X[104X
   [4X[32X[104X
   
@@ -242,15 +276,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
-    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       [127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(last);                             [127X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(last);[127X[104X
     [4X[28X[ 4, 7, 13 ][128X[104X
     [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");[127X[104X
     [4X[28X[ x^4, x^7+x^6, x^13 ][128X[104X
-    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     [127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);[127X[104X
     [4X[28Xx^12[128X[104X
-    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); [127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6);[127X[104X
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
