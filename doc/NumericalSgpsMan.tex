@@ -4117,8 +4117,52 @@ to $S$ is $H_S(x)=\sum_{s\in S}x^s$ (actually it is the Hilbert function of the 
 
  
 
-\subsection{\textcolor{Chapter }{HilbertSeriesOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsNumericalSemigroupPolynomial}}
 \logpage{[ 10, 1, 2 ]}\nobreak
+\hyperdef{L}{X7F59E1167C1EE578}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsNumericalSemigroupPolynomial({\mdseries\slshape f})\index{IsNumericalSemigroupPolynomial@\texttt{IsNumericalSemigroupPolynomial}}
+\label{IsNumericalSemigroupPolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is polynomial in one variable. The output is true if there exists a numerical
+semigroup $S$ such that \mbox{\texttt{\mdseries\slshape f}} equals $(1-x)H_S(x)$, that is, the polynomial associated to $S$ (false otherwise). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,6,7,8);;|
+  !gapprompt@gap>| !gapinput@f:=NumericalSemigroupPolynomial(s,x);|
+  x^10-x^9+x^5-x+1
+  !gapprompt@gap>| !gapinput@IsNumericalSemigroupPolynomial(f);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupFromNumericalSemigroupPolynomial}}
+\logpage{[ 10, 1, 3 ]}\nobreak
+\hyperdef{L}{X855497F77D13436F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupFromNumericalSemigroupPolynomial({\mdseries\slshape f})\index{NumericalSemigroupFromNumericalSemigroupPolynomial@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{From}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{Polynomial}}
+\label{NumericalSemigroupFromNumericalSemigroupPolynomial}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is polynomial associated to a numerical semigroup (otherwise yields error).
+The output is the numerical semigroup $S$ such that \mbox{\texttt{\mdseries\slshape f}} equals $(1-x)H_S(x)$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,6,7,8);;|
+  !gapprompt@gap>| !gapinput@f:=NumericalSemigroupPolynomial(s,x);|
+  x^10-x^9+x^5-x+1
+  !gapprompt@gap>| !gapinput@NumericalSemigroupFromNumericalSemigroupPolynomial(f)=s;|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{HilbertSeriesOfNumericalSemigroup}}
+\logpage{[ 10, 1, 4 ]}\nobreak
 \hyperdef{L}{X780479F978D166B0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertSeriesOfNumericalSemigroup({\mdseries\slshape s, x})\index{HilbertSeriesOfNumericalSemigroup@\texttt{HilbertSeriesOfNumericalSemigroup}}
 \label{HilbertSeriesOfNumericalSemigroup}
@@ -4137,7 +4181,7 @@ to $S$ is $H_S(x)=\sum_{s\in S}x^s$ (actually it is the Hilbert function of the 
  
 
 \subsection{\textcolor{Chapter }{GraeffePolynomial}}
-\logpage{[ 10, 1, 3 ]}\nobreak
+\logpage{[ 10, 1, 5 ]}\nobreak
 \hyperdef{L}{X87C88E5C7B56931F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraeffePolynomial({\mdseries\slshape p})\index{GraeffePolynomial@\texttt{GraeffePolynomial}}
 \label{GraeffePolynomial}
@@ -4155,7 +4199,7 @@ to $S$ is $H_S(x)=\sum_{s\in S}x^s$ (actually it is the Hilbert function of the 
  
 
 \subsection{\textcolor{Chapter }{IsCyclotomicPolynomial}}
-\logpage{[ 10, 1, 4 ]}\nobreak
+\logpage{[ 10, 1, 6 ]}\nobreak
 \hyperdef{L}{X87A46B53815B158F}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCyclotomicPolynomial({\mdseries\slshape p})\index{IsCyclotomicPolynomial@\texttt{IsCyclotomicPolynomial}}
 \label{IsCyclotomicPolynomial}
@@ -4174,7 +4218,7 @@ to $S$ is $H_S(x)=\sum_{s\in S}x^s$ (actually it is the Hilbert function of the 
  
 
 \subsection{\textcolor{Chapter }{IsKroneckerPolynomial}}
-\logpage{[ 10, 1, 5 ]}\nobreak
+\logpage{[ 10, 1, 7 ]}\nobreak
 \hyperdef{L}{X7D9618ED83776B0B}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsKroneckerPolynomial({\mdseries\slshape p})\index{IsKroneckerPolynomial@\texttt{IsKroneckerPolynomial}}
 \label{IsKroneckerPolynomial}
@@ -4202,7 +4246,7 @@ a product of cyclotomic polynomials.
  
 
 \subsection{\textcolor{Chapter }{IsCyclotomicNumericalSemigroup}}
-\logpage{[ 10, 1, 6 ]}\nobreak
+\logpage{[ 10, 1, 8 ]}\nobreak
 \hyperdef{L}{X8366BB727C496D31}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCyclotomicNumericalSemigroup({\mdseries\slshape s})\index{IsCyclotomicNumericalSemigroup@\texttt{IsCyclotomicNumericalSemigroup}}
 \label{IsCyclotomicNumericalSemigroup}
@@ -4220,7 +4264,7 @@ a product of cyclotomic polynomials.
  
 
 \subsection{\textcolor{Chapter }{IsSelfReciprocalUnivariatePolynomial}}
-\logpage{[ 10, 1, 7 ]}\nobreak
+\logpage{[ 10, 1, 9 ]}\nobreak
 \hyperdef{L}{X82C6355287C3BDD1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSelfReciprocalUnivariatePolynomial({\mdseries\slshape p})\index{IsSelfReciprocalUnivariatePolynomial@\texttt{IsSelf}\-\texttt{Reciprocal}\-\texttt{Univariate}\-\texttt{Polynomial}}
 \label{IsSelfReciprocalUnivariatePolynomial}
@@ -4298,7 +4342,7 @@ plane curve with one place at infinity.
  \mbox{\texttt{\mdseries\slshape f}} is a positive integer. Computes the set of all $\delta$-sequences generating numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DeltaSequencesWithFrobeniusNumber(21);|
-  [ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ], 
+  [ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ],
     [ 15, 10, 4 ], [ 23, 2 ] ]
 \end{Verbatim}
  }
@@ -4353,7 +4397,7 @@ orders of $K[[pols]]$. If an integer \mbox{\texttt{\mdseries\slshape val}} is th
   [ 4, 6, 13, 15 ]
   !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], "basis");|
   [ x^4, x^7+x^6, x^13, x^15 ]
-  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);     |
+  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13], 20);|
   x^20
 \end{Verbatim}
  }
@@ -4378,15 +4422,15 @@ of degrees of $K[pols]$. If an integer \mbox{\texttt{\mdseries\slshape val}} is 
  The method is explained in \cite{AGSM14}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@x:=Indeterminate(Rationals,"x");;|
-  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);       |
+  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13]);|
   <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@MinimalGeneratingSystem(last);                             |
+  !gapprompt@gap>| !gapinput@MinimalGeneratingSystem(last);|
   [ 4, 7, 13 ]
   !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],"basis");|
   [ x^4, x^7+x^6, x^13 ]
-  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);     |
+  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],12);|
   x^12
-  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6); |
+  !gapprompt@gap>| !gapinput@SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6);|
   fail
 \end{Verbatim}
  }

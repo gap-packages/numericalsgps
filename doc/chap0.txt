@@ -303,12 +303,14 @@
   10 [33X[0;0YPolynomials and numerical semigroups[133X
     10.1 [33X[0;0YGenerating functions or Hilbert series[133X
       10.1-1 NumericalSemigroupPolynomial
-      10.1-2 HilbertSeriesOfNumericalSemigroup
-      10.1-3 GraeffePolynomial
-      10.1-4 IsCyclotomicPolynomial
-      10.1-5 IsKroneckerPolynomial
-      10.1-6 IsCyclotomicNumericalSemigroup
-      10.1-7 IsSelfReciprocalUnivariatePolynomial
+      10.1-2 IsNumericalSemigroupPolynomial
+      10.1-3 NumericalSemigroupFromNumericalSemigroupPolynomial
+      10.1-4 HilbertSeriesOfNumericalSemigroup
+      10.1-5 GraeffePolynomial
+      10.1-6 IsCyclotomicPolynomial
+      10.1-7 IsKroneckerPolynomial
+      10.1-8 IsCyclotomicNumericalSemigroup
+      10.1-9 IsSelfReciprocalUnivariatePolynomial
     10.2 [33X[0;0YSemigroup of values of algebraic curves[133X
       10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity
       10.2-2 IsDeltaSequence
