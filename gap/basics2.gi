@@ -5,9 +5,9 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#Y  Copyright 2005 by Manuel Delgado, 
+#Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
-#Y  We adopt the copyright regulations of GAP as detailed in the 
+#Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ##
 #############################################################################
@@ -15,8 +15,8 @@
 #############################################################################
 ##
 #O  IsSubsemigroupOfNumericalSemigroup(S,T)
-## 
-##  Test whether the numerical semigroup T is contained in the 
+##
+##  Test whether the numerical semigroup T is contained in the
 ##  numerical semigroup S
 ##
 #############################################################################
@@ -45,7 +45,7 @@ end);
 #############################################################################
 ##
 #O  IsSubset(S,T)
-## 
+##
 ##  A synonym of IsSubsemigroupOfNumericalSemigroup
 ##
 #############################################################################
@@ -55,12 +55,12 @@ InstallMethod( IsSubset,
         [IsNumericalSemigroup,IsNumericalSemigroup],0,
         function(S,T)
    return IsSubsemigroupOfNumericalSemigroup(S,T);
-end); 
+end);
 ######
 #############################################################################
 ##
 #F  IntersectionOfNumericalSemigroups(S,T)
-## 
+##
 ##  Returns the intersection of the numerical
 ##  semigroups S and T.
 ##
@@ -101,7 +101,7 @@ end);
 #############################################################################
 InstallGlobalFunction(RepresentsGapsOfNumericalSemigroup, function(L)
     local ld, ns;
-    
+
     if not (IsListOfIntegersNS(L) and ForAll(L, i -> IsPosInt(i))) then
         Error("The argument must be a list of positive integers");
     fi;
@@ -113,20 +113,20 @@ InstallGlobalFunction(RepresentsGapsOfNumericalSemigroup, function(L)
       return RepresentsSmallElementsOfNumericalSemigroup(ns);
     fi;
 end);
-    
-    
+
+
 #############################################################################
 ##
 #F  NumericalSemigroupsWithFrobeniusNumber(g)
 ##
 ##  Computes the set of numerical semigroups with Frobenius number g.
-##  The algorithm is based on 
+##  The algorithm is based on
 ##  "Fundamental gaps in numerical semigroup".
 ##
 #############################################################################
 InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
     local fg, fundamentalGapsRepresentingNSGenerator;
-    
+
     if(not(IsInt(g)) or g<-1) then
         Error("the argument must be an integer.\n");
     fi;
@@ -136,21 +136,21 @@ InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
     if(g=-1) then
         return [NumericalSemigroup("generators",[1])];
     fi;
-    
-    
-  
+
+
+
     fundamentalGapsRepresentingNSGenerator := function(g)
         local   ll,  initial,  final,  i,  list,  ld,  listNodivs,  x;
-        
+
         ll:=[[g]];
         initial:=1;
         final:=Length(ll);
-    
+
         repeat
             for i in [initial..final] do
                 list:=ll[i];
-                
-                
+
+
                 ld := Union(List(ll[i],DivisorsInt));
                 if not RepresentsSmallElementsOfNumericalSemigroup(
                            Difference([0..ld[Length(ld)]+1],ld)) then
@@ -165,13 +165,13 @@ InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
             initial:=final+1;
             final:=Length(ll);
         until initial >= final;
-    
+
         return Compacted(ll);
     end;
-    
+
     fg := fundamentalGapsRepresentingNSGenerator(g);
 
-    if not RepresentsGapsOfNumericalSemigroup(fg[1]) then
+    if not RepresentsGapsOfNumericalSemigroup(Union(List(fg[1],DivisorsInt))) then
         fg := fg{[2..Length(fg)]};
     fi;
     return List(fg,x->NumericalSemigroupByFundamentalGaps(x));
@@ -180,35 +180,35 @@ end);
 
 ##############################################################################
 ##
-#F NumericalSemigroupsWithGenus 
+#F NumericalSemigroupsWithGenus
 ##computes the set of numerical semigroups with genus g,
 # that is, numerical semigroups with exactly g gaps
 #
 #
 # numerical semigroups are encoded in lists containing the apery set with
 # respect to the multiplicity removing the zero element. The multiplicity
-# is thus the lenght of the list plus one. In this way deciding membership 
+# is thus the lenght of the list plus one. In this way deciding membership
 # to a numerical semigroup is straightforward (belongs). The computation of
 # the Frobenius number is performed using Selmer's idea (frob). Removing a new
-# generator is easy (removegen), as well as computing those minimal generators 
-# greater than the Frobenius number (minimalgeneratorsf). 
-# Given a numerical semigroup of genus g, removing minimal generators, one 
+# generator is easy (removegen), as well as computing those minimal generators
+# greater than the Frobenius number (minimalgeneratorsf).
+# Given a numerical semigroup of genus g, removing minimal generators, one
 # obtains numerical semigroups of genus g+1. In order to avoid repetitions,
-# we only remove minimal generators greater than the frobenius number of 
+# we only remove minimal generators greater than the frobenius number of
 # the numerical semigroup (this is accomplished with the local function sons).
-# References: 
-# -J. C. Rosales, P. A. García-Sánchez, J. I. García-García and 
-#  J. A. Jimenez-Madrid, The oversemigroups of a numerical semigroup. 
+# References:
+# -J. C. Rosales, P. A. Garcï¿½a-Sï¿½nchez, J. I. Garcï¿½a-Garcï¿½a and
+#  J. A. Jimenez-Madrid, The oversemigroups of a numerical semigroup.
 #  Semigroup Forum 67 (2003), 145--158.
-# -M. Bras-Amorós, Fibonacci-like behavior of the number of numerical 
+# -M. Bras-Amorï¿½s, Fibonacci-like behavior of the number of numerical
 #  semigroups of a given genus. Semigroup Forum 76 (2008), 379--384.
 ##
 
 InstallGlobalFunction(NumericalSemigroupsWithGenus,function(g)
-    local   mult,  frob,  removegen,  belongs,  minimalgeneratorsf,  sons,  
+    local   mult,  frob,  removegen,  belongs,  minimalgeneratorsf,  sons,
             l,  i;
 
-    mult:=function(l) 
+    mult:=function(l)
         return Length(l)+1;
     end;
 
@@ -233,10 +233,10 @@ InstallGlobalFunction(NumericalSemigroupsWithGenus,function(g)
     belongs:=function(n,l)
         local m;
             m:=mult(l);
-            if n<0 then 
+            if n<0 then
             return false;
         fi;
-        if (n mod m)=0 then 
+        if (n mod m)=0 then
             return true;
         fi;
         return l[n mod m]<=n;
@@ -250,30 +250,30 @@ InstallGlobalFunction(NumericalSemigroupsWithGenus,function(g)
         if(f<=len) then
             return [len+1..2*len+1];
         fi;
-    
+
         genmf:=[];
         for i in [1..len] do
-            if (l[i]>f) then 
+            if (l[i]>f) then
             minimal:=true;
             j:=1;
             while (j<=len and minimal) do
-                if (i<>j) then 
+                if (i<>j) then
                     if belongs(l[i]-l[j],l) then
                         minimal:=false;
                     fi;
                 fi;
                 j:=j+1;
-            od;  
+            od;
             if minimal then
                 Append(genmf,[l[i]]);
             fi;
             fi;
         od;
-    
+
         return genmf;
     end;
 
-    sons:=function(l)    
+    sons:=function(l)
         return List(minimalgeneratorsf(l),x->removegen(x,l));
     end;
 
