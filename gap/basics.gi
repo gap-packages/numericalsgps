@@ -91,7 +91,7 @@ InstallMethod(MultiplicityOfNumericalSemigroup,
     j := Length(list);
     P[j] := CeilingOfRational(list[j][1]);
     if j >1 then
-        for i in [2..j] do 
+        for i in [2..j] do
             n := j-i+2;
             P[n-1] := 1/P[n] + Int(list[n-1][1]);
         od;
@@ -147,7 +147,7 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
         [IsNumericalSemigroup],
         function(S)
-    local   set,  len,  min_mult_n3_in_n1n2,  gens,  n,  C,  gg,  n1,  n2,  
+    local   set,  len,  min_mult_n3_in_n1n2,  gens,  n,  C,  gg,  n1,  n2,
             n3,  c1,  c2,  c3,  delta,  d,  gn,  og,  newgens;
 
     if not (HasMinimalGeneratorsNS(S) or HasGeneratorsNS(S)) then
@@ -160,8 +160,8 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
     ## Rosales&Vasco
     min_mult_n3_in_n1n2 := function(n1,n2,n3)
         local   u,  a,  b,  c, ns;
-        
-        if n1=n3 then 
+
+        if n1=n3 then
             return 1;
         fi;
         u := n2^-1 mod n1; #requires gcd(n1,n2)=1
@@ -184,7 +184,7 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
             n2 := gens[2];
             n3 := gens[3];
             c1 := min_mult_n3_in_n1n2(n2,n3,n1);
-            c2 := min_mult_n3_in_n1n2(n1,n3,n2); 
+            c2 := min_mult_n3_in_n1n2(n1,n3,n2);
             c3 := min_mult_n3_in_n1n2(n1,n2,n3);
 
             delta := RootInt((c1*n1+c2*n2+c3*n3)^2-4*(c1*n1*c2*n2+c1*n1*c3*n3+c2*n2*c3*n3-n1*n2*n3));
@@ -266,10 +266,10 @@ end);
 ##
 #F  ConductorOfNumericalSemigroup(S)
 ##
-##  Returns the conductor of the numerical semigroup S. 
+##  Returns the conductor of the numerical semigroup S.
 ##
 #############################################################################
-InstallMethod(Conductor, 
+InstallMethod(Conductor,
         "Returns the conductor of a numerical semigroup",
         [IsNumericalSemigroup ],
         function( sgp )
@@ -283,7 +283,7 @@ end);
 ##
 #F  TypeOfNumericalSemigroup(S)
 ##
-##  Returns the type of the numerical semigroup S. 
+##  Returns the type of the numerical semigroup S.
 ##
 #############################################################################
 InstallGlobalFunction(TypeOfNumericalSemigroup,
@@ -352,7 +352,7 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
         [IsNumericalSemigroup],0,
         function(S)
     local   sumNS,  Elm,  g,  T,  generators,  m,  aux,  i,  gen,  ss;
-    
+
     #####################################################
     # Computes the sum of subsets of numerical semigroups
     # WARNING: the arguments have to be non empty sets, not just lists
@@ -389,7 +389,7 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
         return MinimalGeneratorsNS(S);
 
     elif HasGeneratorsNS(S) then
-        # Note that the minimal generators are precisely those generators that are irreducible. 
+        # Note that the minimal generators are precisely those generators that are irreducible.
         # The fact that minimal generators are incongruent modulo the multiplicity is used (for small multiplicities, since for big ones the reduction is slow and may not bring any advantages)
 
         generators := GeneratorsNS(S);
@@ -400,7 +400,7 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
             return MinimalGeneratorsNS(S);
         elif m = 2 then
             SetMinimalGeneratorsNS(S, [2,First(generators, g -> g mod 2 = 1)]);
-            return MinimalGeneratorsNS(S); 
+            return MinimalGeneratorsNS(S);
         elif m < LogInt(Length(generators),2)^4 then
             aux := [m];
             for i in [1..m-1] do
@@ -412,7 +412,7 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
             gen := Set(aux);
         else
             gen := ShallowCopy(generators);
-        fi;   
+        fi;
 
         ss := sumNS(gen,gen);
         while ss <> [] do
@@ -433,7 +433,7 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
         return MinimalGeneratingSystemOfNumericalSemigroup(NumericalSemigroup(T));
     fi;
   end);
-  
+
 #############################################################################
 ##
 #F  MinimalGeneratingSystem(S)
@@ -450,14 +450,14 @@ InstallGlobalFunction(MinimalGeneratingSystem,
     Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
   fi;
 end);
-          
+
 #############################################################################
 ##
 #F  ReducedSetOfGeneratorsOfNumericalSemigroup(arg)
 ##
 ##  Returns a set with possibly fewer generators than those recorded in <C>S!.generators</C>. It changes <C>S!.generators</C> to the set returned.
 ##The function has 1 to 3 arguments. One of them a numerical semigroup. Then an argument is a boolean (<E>true</E> means that all the elements not belonging to the Apery set with respect to the multiplicity are removed; the default is "false") and another argument is a positive integer <M>n</M> (meaning that generators that can be written as the sum of <n> or less generators are removed; the default is "2"). The boolean or the integer may not be present. If a minimal generating set for <M>S</M> is known or no generating set is known, then the minimal generating system is returned.
-##  
+##
 # InstallGlobalFunction( ReducedSetOfGeneratorsOfNumericalSemigroup, function(arg)
 #     local   sumNS,  S,  apery,  n,  generators,  m,  aux,  i,  g,  gen,  ss;
 
@@ -487,7 +487,7 @@ end);
 #     apery := First(arg, s -> IsBool(s));
 #     if apery = fail then
 #         apery := false;
-#     fi;       
+#     fi;
 #     n := First(arg, s -> IsInt(s));
 #     if n = fail then
 #         n := 2;
@@ -789,7 +789,7 @@ InstallMethod( BelongsToNumericalSemigroup,
         [IsInt,IsNumericalSemigroup],
         function(n,S)
     local   m,  ap;
-    
+
     if n=0 then
         return true;
     fi;
@@ -851,7 +851,7 @@ InstallGlobalFunction( AperyListOfNumericalSemigroup,
   return(AperyListOfNumericalSemigroupWRTElement(S,
                 MultiplicityOfNumericalSemigroup(S)));
 end);
- 
+
 #############################################################################
 ##
 #F  AperyListOfNumericalSemigroupWRTInteger(S,n)
@@ -867,11 +867,11 @@ InstallGlobalFunction( AperyListOfNumericalSemigroupWRTInteger,
     if not(IsInt(n)) then
         Error("The second argument must be a positive integer");
 	fi;
-	if n<=0 then
-        Error("The second argument must be a positive integer");
-	fi;
+	#if n<=0 then
+  #      Error("The second argument must be a positive integer");
+	#fi;
 
-	if not(IsNumericalSemigroup(S)) then 
+	if not(IsNumericalSemigroup(S)) then
 		Error("The first argument must be a numerical semigroup");
 	fi;
     f := FrobeniusNumberOfNumericalSemigroup(S);
@@ -965,8 +965,8 @@ end);
 ##
 #F KunzCoordinatesOfNumericalSemigroup(arg)
 ##
-## If two argumets are given, the first is a semigroup s and the second an 
-## element m in s. If one argument is given, then it is the semigroup, and 
+## If two argumets are given, the first is a semigroup s and the second an
+## element m in s. If one argument is given, then it is the semigroup, and
 ## m is set to the multiplicity.
 ## Then the Apéry set of m in s has the form [0,k_1m+1,...,k_{m-1}m+m-1], and
 ## the output is the (m-1)-uple [k_1,k_2,...,k_{m-1}]
@@ -974,7 +974,7 @@ end);
 InstallGlobalFunction(KunzCoordinatesOfNumericalSemigroup,
         function(arg)
     local narg,s,m,ap;
-    
+
     narg:=Length(arg);
     if narg>2 then
         Error("The number of arguments is at most two");
@@ -990,36 +990,36 @@ InstallGlobalFunction(KunzCoordinatesOfNumericalSemigroup,
         fi;
         if m=0 then
             Error("The second argument cannot be zero");
-        fi;      
+        fi;
     else
         m:=MultiplicityOfNumericalSemigroup(s);
     fi;
-    
+
     ap:=AperyListOfNumericalSemigroupWRTElement(s,m);
-    return List([2..m],i->(ap[i]-i+1)/m); 
+    return List([2..m],i->(ap[i]-i+1)/m);
 end);
 
 #############################################################################
 ##
 #F KunzPolytope(m)
-## For a fixed multiplicity, the Kunz coordinates of the semigroups 
-## with that multiplicity are solutions of a system of inequalities Ax\ge b 
+## For a fixed multiplicity, the Kunz coordinates of the semigroups
+## with that multiplicity are solutions of a system of inequalities Ax\ge b
 ## (see [R-GS-GG-B]). The output is the matrix (A|-b)
 ##
 #############################################################################
 InstallGlobalFunction(KunzPolytope,
         function(m)
     local mat,c, eq, row, it,zero;
-    
+
     if not(IsPosInt(m)) then
         Error("The argument must be a positive integer");
     fi;
-    
+
     c:=Cartesian([1..m-1],[1..m-1]);
     eq:=IdentityMat(m-1);
     eq:=TransposedMat(Concatenation(eq,[List([1..m-1],_->-1)]));
     zero:=List([1..m],_->0);
-    
+
     for it in c do
         row:=ShallowCopy(zero);
         row[it[1]]:=row[it[1]]+1;
