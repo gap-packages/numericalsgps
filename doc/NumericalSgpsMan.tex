@@ -805,7 +805,7 @@ semigroup is given.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));|
   [ 0, 3, 5 ]
-  !gapprompt@gap>| !gapinput@SmallElements(NumericalSemigroup(3,5,7));                    |
+  !gapprompt@gap>| !gapinput@SmallElements(NumericalSemigroup(3,5,7));|
   [ 0, 3, 5 ]
 \end{Verbatim}
  }
@@ -877,7 +877,7 @@ semigroup is given.
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is a positive integer. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}, that is, the set of elements $x$ in \mbox{\texttt{\mdseries\slshape S}} such that $x-$\mbox{\texttt{\mdseries\slshape m}} is not in \mbox{\texttt{\mdseries\slshape S}}. If \mbox{\texttt{\mdseries\slshape m}} is an element in \mbox{\texttt{\mdseries\slshape S}}, then the output, as sets, is the same as \mbox{\texttt{\mdseries\slshape AperyListOfNumericalSemigroupWRTInteger}}, though without side effects, in the sense that this information is no longer
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is an integer. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}, that is, the set of elements $x$ in \mbox{\texttt{\mdseries\slshape S}} such that $x-$\mbox{\texttt{\mdseries\slshape m}} is not in \mbox{\texttt{\mdseries\slshape S}}. If \mbox{\texttt{\mdseries\slshape m}} is an element in \mbox{\texttt{\mdseries\slshape S}}, then the output, as sets, is the same as \mbox{\texttt{\mdseries\slshape AperyListOfNumericalSemigroupWRTInteger}}, though without side effects, in the sense that this information is no longer
 used by the package. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(10,13,19,27);|
