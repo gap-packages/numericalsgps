@@ -124,6 +124,30 @@ DeclareGlobalFunction("IsAperySetAlphaRectangular");
 ##
 ##############################################################################################################
 DeclareGlobalFunction("TypeSequenceOfNumericalSemigroup");
+##########################################################
+##
+#F TorsionOfAssociatedGradedRingNumericalSemigroup(S)
+## This function returns the set of elements in the numerical 
+## semigroup S corresponding to a K-basis of the torsion 
+## submodule of the associated graded ring of the numerical 
+## semigroup ring K[[S]]. It uses the Apery table
+## as explained in [Benitez, Jafari, Zarzuela; Semigroup Forum, 2013]
+##
+## Implemented by A. Sammartano
+###########################################################
+DeclareGlobalFunction("TorsionOfAssociatedGradedRingNumericalSemigroup");
+#################################################################################
+##
+#F BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup(S)
+## This function returns the smallest non-negative integer k for which the 
+## associated graded ring G of a given numerical semigroup ring is k-Buchsbaum, 
+## that is, the least k for which the torsion submodule of G is annihilated by 
+## the k-th power of the homogeneous maximal ideal of G.
+##
+##  Implemented by A. Sammartano
+##################################################################################
+DeclareGlobalFunction("BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup");
+
 
 #############################################################################
 ##

@@ -20,7 +20,43 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-2 IsMpureNumericalSemigroup[101X
+  [1XC.1-2 TorsionOfAssociatedGradedRingNumericalSemigroup[101X
+  
+  [29X[2XTorsionOfAssociatedGradedRingNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThis  function  returns  the  set  of  elements in the numerical semigroup [3XS[103X
+  corresponding to a [22XK[122X-basis of the torsion submodule of the associated graded
+  ring  of  the  numerical  semigroup  ring [22XK[[S]][122X. It uses the Apery table as
+  explained in [BJA13].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
+    [4X[25Xgap>[125X [27XTorsionOfAssociatedGradedRingNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 181, 153, 157, 193, 169, 148 ][128X[104X
+  [4X[32X[104X
+  
+  [1XC.1-3 BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup[101X
+  
+  [29X[2XBuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThis  function  returns  the  smallest  non-negative integer [22Xk[122X for which the
+  associated graded ring [22XG[122X of a given numerical semigroup ring is [22Xk[122X-Buchsbaum,
+  that  is, the least [22Xk[122X for which the torsion submodule of [22XG[122X is annihilated by
+  the [22Xk[122X-th power of the homogeneous maximal ideal of [22XG[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
+    [4X[25Xgap>[125X [27XBuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup(s);[127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1XC.1-4 IsMpureNumericalSemigroup[101X
   
   [29X[2XIsMpureNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -38,7 +74,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-3 IsPureNumericalSemigroup[101X
+  [1XC.1-5 IsPureNumericalSemigroup[101X
   
   [29X[2XIsPureNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -56,7 +92,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-4 IsGradedAssociatedRingNumericalSemigroupGorenstein[101X
+  [1XC.1-6 IsGradedAssociatedRingNumericalSemigroupGorenstein[101X
   
   [29X[2XIsGradedAssociatedRingNumericalSemigroupGorenstein[102X( [3XS[103X ) [32X function
   
@@ -75,7 +111,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-5 IsGradedAssociatedRingNumericalSemigroupCI[101X
+  [1XC.1-7 IsGradedAssociatedRingNumericalSemigroupCI[101X
   
   [29X[2XIsGradedAssociatedRingNumericalSemigroupCI[102X( [3XS[103X ) [32X function
   
@@ -95,7 +131,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-6 IsAperySetGammaRectangular[101X
+  [1XC.1-8 IsAperySetGammaRectangular[101X
   
   [29X[2XIsAperySetGammaRectangular[102X( [3XS[103X ) [32X function
   
@@ -113,7 +149,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-7 IsAperySetBetaRectangular[101X
+  [1XC.1-9 IsAperySetBetaRectangular[101X
   
   [29X[2XIsAperySetBetaRectangular[102X( [3XS[103X ) [32X function
   
@@ -131,7 +167,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-8 IsAperySetAlphaRectangular[101X
+  [1XC.1-10 IsAperySetAlphaRectangular[101X
   
   [29X[2XIsAperySetAlphaRectangular[102X( [3XS[103X ) [32X function
   
@@ -149,7 +185,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1XC.1-9 TypeSequenceOfNumericalSemigroup[101X
+  [1XC.1-11 TypeSequenceOfNumericalSemigroup[101X
   
   [29X[2XTypeSequenceOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
