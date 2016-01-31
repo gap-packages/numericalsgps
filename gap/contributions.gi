@@ -294,6 +294,95 @@ InstallGlobalFunction(TypeSequenceOfNumericalSemigroup,function(S)
 	return t;
 end);
 
+
+##########################################################
+##
+#F TorsionOfAssociatedGradedRingNumericalSemigroup(S)
+## This function returns the set of elements in the numerical 
+## semigroup S corresponding to a K-basis of the torsion 
+## submodule of the associated graded ring of the numerical 
+## semigroup ring K[[S]]. It uses the Apery table
+## as explained in [Benitez, Jafari, Zarzuela; Semigroup Forum, 2013]
+##
+## Implemented by A. Sammartano
+###########################################################
+InstallGlobalFunction(TorsionOfAssociatedGradedRingNumericalSemigroup,
+        function(S)
+    local AT, m, r, torsion, i, w, truelanding, j, q, l;
+    AT:=AperyTableOfNumericalSemigroup(S);
+    m:=Length(AT[1]);
+    r:=Length(AT)-1;
+    torsion:=[];
+    for i in [1..m] do
+        w:=AT[1][i];
+        truelanding:= false;
+        j:=r;
+        while j > 0 and AT[j+1][i]>w do
+            if AT[j][i]=AT[j+1][i] then
+                truelanding:=true;
+                break;
+            fi;
+            j:=j-1;
+        od;
+        if truelanding then 
+            q:=(AT[j][i]-w)/m;
+            for l in [0..q-1] do
+                Append(torsion,[w+m*l]);
+            od;
+        fi;
+    od;
+    return torsion;
+end);			
+
+
+#################################################################################
+##
+#F BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup(S)
+## This function returns the smallest non-negative integer k for which the 
+## associated graded ring G of a given numerical semigroup ring is k-Buchsbaum, 
+## that is, the least k for which the torsion submodule of G is annihilated by 
+## the k-th power of the homogeneous maximal ideal of G.
+##
+##  Implemented by A. Sammartano
+##################################################################################
+InstallGlobalFunction(BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup,
+        function(S)
+    local T, M, n, D, H, s, c, j, tbr;
+    T:=TorsionOfAssociatedGradedRingNumericalSemigroup(S);	
+    if Length(T)=0 then 
+        return 0;
+    fi;
+    M:=MaximalIdealOfNumericalSemigroup(S);
+    n:=0;
+    while Length(T)>0 do
+        n:=n+1;
+        D:=DifferenceOfIdealsOfNumericalSemigroup(n*M,(n+1)*M);
+        H:=Length(D);
+        tbr:=[];
+        for s in T do
+            c:=MaximumDegreeOfElementWRTNumericalSemigroup(s,S);
+            j:=1;
+            while j<=H and MaximumDegreeOfElementWRTNumericalSemigroup(s+D[j],S)>c+n   do
+                j:=j+1;
+            od;
+            if j=H+1 then
+                Append(tbr,[s]); 
+            fi;
+        od;
+        T:=Set(T);
+        for s in tbr do 
+            RemoveSet(T,s);
+        od;
+        T:=List(T);
+    od;
+    return n;
+end);
+
+
+
+
+
+
 #############################################################################
 ##
 #F  OmegaPrimalityOfElementListInNumericalSemigroup(l,s)
