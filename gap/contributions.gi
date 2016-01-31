@@ -337,7 +337,7 @@ end);
 
 #################################################################################
 ##
-#F BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup(S)
+#F BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup(S)
 ## This function returns the smallest non-negative integer k for which the 
 ## associated graded ring G of a given numerical semigroup ring is k-Buchsbaum, 
 ## that is, the least k for which the torsion submodule of G is annihilated by 
@@ -345,7 +345,7 @@ end);
 ##
 ##  Implemented by A. Sammartano
 ##################################################################################
-InstallGlobalFunction(BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup,
+InstallGlobalFunction(BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup,
         function(S)
     local T, M, n, D, H, s, c, j, tbr;
     T:=TorsionOfAssociatedGradedRingNumericalSemigroup(S);	
