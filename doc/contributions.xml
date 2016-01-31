@@ -10,7 +10,7 @@
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
                         is Buchsbaum, and false otherwise.
                         This test is the implementation of the algorithm given in <Cite Key="DA-M-M"></Cite>.
@@ -27,10 +27,10 @@ true
 <ManSection>
   <Func Arg="S" Name="TorsionOfAssociatedGradedRingNumericalSemigroup"></Func>
   <Description>
-    
+
     <A>S</A> is a numerical semigroup.
     <P/>
-    
+
     This function returns the set of elements in the numerical semigroup <A>S</A> corresponding to a <M>\mathbb{K}</M>-basis of the torsion submodule of the associated graded ring of the numerical semigroup ring <M>\mathbb{K}[\![S]\!]</M>. It uses the Apery table as explained in <Cite Key="CJZ"></Cite>.
 
 <Example><![CDATA[
@@ -43,17 +43,17 @@ gap> TorsionOfAssociatedGradedRingNumericalSemigroup(s);
 
 
 <ManSection>
-  <Func Arg="S" Name="BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup"></Func>
+  <Func Arg="S" Name="BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup"></Func>
   <Description>
-    
+
     <A>S</A> is a numerical semigroup.
     <P/>
-    
+
     This function returns the smallest non-negative integer <M>k</M> for which the associated graded ring <M>G</M> of a given numerical semigroup ring is <M>k</M>-Buchsbaum, that is, the least <M>k</M> for which the torsion submodule of <M>G</M> is annihilated by the <M>k</M>-th power of the homogeneous maximal ideal of <M>G</M>.
 
 <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup(s);
+gap> BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup(s);
 1
 gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
 true
@@ -67,17 +67,17 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Test for the M-Purity of the numerical semigroup S <A>S</A>.
 			This test is based on
                         <Cite Key="Br"></Cite>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsMpureNumericalSemigroup(s);                                       
+gap> IsMpureNumericalSemigroup(s);
 false
 gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsMpureNumericalSemigroup(s); 
+gap> IsMpureNumericalSemigroup(s);
 true
 ]]></Example>
                     </Description>
@@ -91,17 +91,17 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Test for the purity of the numerical semigroup S <A>S</A>.
 			This test is based on
                         <Cite Key="Br"></Cite>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsPureNumericalSemigroup(s);                                       
+gap> IsPureNumericalSemigroup(s);
 false
 gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsPureNumericalSemigroup(s); 
+gap> IsPureNumericalSemigroup(s);
 true
 ]]></Example>
                     </Description>
@@ -114,7 +114,7 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
                         is Gorenstein, and false otherwise.
                         This test is the implementation of the algorithm given in
@@ -139,7 +139,7 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Returns true if the Complete Intersection property of the associated graded ring of a numerical semigroup ring associated to <M>K[[<A>S</A>]]</M>, and false otherwise.
                         This test is the implementation of the algorithm given in
                         <Cite Key="DAMSwhen"></Cite>.
@@ -161,7 +161,7 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup.
                         This test is the implementation of the algorithm given in
                         <Cite Key="DAMSClasses"></Cite>.
@@ -183,7 +183,7 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Test for the Beta-Rectangularity of the Apéry Set of a numerical semigroup.
                         This test is the implementation of the algorithm given in
                         <Cite Key="DAMSClasses"></Cite>.
@@ -205,7 +205,7 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                         Test for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup.
                         This test is the implementation of the algorithm given in
                         <Cite Key="DAMSClasses"></Cite>.
@@ -228,7 +228,7 @@ true
 
                         <A>S</A> is a numerical semigroup.
                         <P/>
-			
+
                          Computes the type sequence of a numerical semigroup.
                         This test is the implementation of the algorithm given in
                         <Cite Key="BDF97"></Cite>.
@@ -237,8 +237,8 @@ true
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> TypeSequenceOfNumericalSemigroup(s);
-[ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1, 
-  1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 
+[ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1,
+  1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,
   1, 1, 1 ]
 gap> s:=NumericalSemigroup(4,6,11);;
 gap> TypeSequenceOfNumericalSemigroup(s);
@@ -246,7 +246,7 @@ gap> TypeSequenceOfNumericalSemigroup(s);
 ]]></Example>
                     </Description>
 </ManSection>
-		
+
 
 
 </Section>
@@ -261,25 +261,25 @@ This section includes the implementations of some procedures described in <Cite 
 
                         <A>S</A> is a numerical semigroup and <A>l</A> a list of elements of <A>S</A>.
                         <P/>
-			
-                         Computes the omega-values of all the elements in <A>l</A>. 
+
+                         Computes the omega-values of all the elements in <A>l</A>.
 
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);;
 gap> l:=FirstElementsOfNumericalSemigroup(100,s);;
 gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;
-[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
-  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
-  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
-  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
   14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
 218
 gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
-[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
-  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
-  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
-  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
   14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
 10
 ]]></Example>
@@ -292,9 +292,9 @@ gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
 
     <A>S</A> is a numerical semigroup and <A>l</A> a list of elements of <A>S</A>.
     <P/>
-    
-    Computes the factorizations of all the elements in <A>l</A>. 
-    
+
+    Computes the factorizations of all the elements in <A>l</A>.
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);
 <Numerical semigroup with 3 generators>
@@ -313,9 +313,9 @@ gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
 
     <A>S</A> is a numerical semigroup.
     <P/>
-    
-    Computes the bound were the periodicity starts for Delta sets of the elements in <A>S</A>; see <Cite Key="GG-MF-VT"></Cite>. 
-    
+
+    Computes the bound were the periodicity starts for Delta sets of the elements in <A>S</A>; see <Cite Key="GG-MF-VT"></Cite>.
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,11);;
 gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
@@ -330,9 +330,9 @@ gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
 
     <A>S</A> is a numerical semigroup.
     <P/>
-    
-    Computes the element were the periodicity starts for Delta sets of the elements in <A>S</A>. 
-    
+
+    Computes the element were the periodicity starts for Delta sets of the elements in <A>S</A>.
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,11);;
 gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
@@ -348,14 +348,14 @@ gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
 
     <A>S</A> is a numerical semigroup, <A>n</A> a nonnegative integer.
     <P/>
-    
-    Computes the Delta sets of the integers up to (and including) <A>n</A>, if an integer is not in <A>S</A>, the corresponding Delta set is empty. 
-    
+
+    Computes the Delta sets of the integers up to (and including) <A>n</A>, if an integer is not in <A>S</A>, the corresponding Delta set is empty.
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,11);;
 gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
-[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
-  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
+[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],
+  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],
   [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
 ]]></Example>
   </Description>
@@ -367,10 +367,10 @@ gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
 
     <A>S</A> is a numerical semigroup, <A>n</A> a nonnegative integer.
     <P/>
-    
+
 
     Computes the union of the delta sets of the elements of <A>S</A> up to and including <A>n</A>, using a ring buffer to conserve memory.
-    
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,11);;
 gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
@@ -385,9 +385,9 @@ gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
 
     <A>S</A> is a numerical semigroup.
     <P/>
-    
-    Computes the Delta set of <A>S</A>. 
-    
+
+    Computes the Delta set of <A>S</A>.
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,11);;
 gap> DeltaSetOfNumericalSemigroup(s);
@@ -409,8 +409,8 @@ In this section we document the functions implmented by K. Stokes related to pat
 
     <A>p</A> is the list of integers that are the coefficients of a pattern. <P/>
 
-    Returns true or false depending if the pattern is admissible or not  (see <Cite Key="BA-GS"></Cite>). 
-    
+    Returns true or false depending if the pattern is admissible or not  (see <Cite Key="BA-GS"></Cite>).
+
     <Example><![CDATA[
 gap> IsAdmissiblePattern([1,1,-1]);
 true
@@ -427,8 +427,8 @@ false
 
     <A>p</A> is the list of integers that are the coefficients of a pattern. <P/>
 
-    Returns true or false depending if the pattern is strongly admissible or not  (see <Cite Key="BA-GS"></Cite>). 
-    
+    Returns true or false depending if the pattern is strongly admissible or not  (see <Cite Key="BA-GS"></Cite>).
+
     <Example><![CDATA[
 gap> IsAdmissiblePattern([1,-1]);
 true
@@ -446,10 +446,10 @@ true
   <Description>
 
     <A>I</A> is an ideal of a numerical semigroup <M>S</M>, and <A>T</A> is a numerical semgigroup. Detects if <A>I</A> is an ideal of <A>T</A> and contained in <A>T</A> (integral ideal), and if so, returns <A>I</A> as an ideal of <A>T</A>. It returns <C>fail</C> if <A>I</A> is an ideal of some semigroup but not an integral ideal of <A>t</A>.
-    
+
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7,5);;
-gap> t:=NumericalSemigroup(10,11,14);;                                             
+gap> t:=NumericalSemigroup(10,11,14);;
 gap> AsIdealOfNumericalSemigroup(10+s,t);
 fail
 gap> AsIdealOfNumericalSemigroup(100+s,t);
@@ -462,7 +462,7 @@ gap> AsIdealOfNumericalSemigroup(100+s,t);
   <Func Arg="p,C" Name="BoundForConductorOfImageOfPattern"></Func>
   <Description>
 
-     <A>p</A> is the list of integers that are the coefficients of an admissible pattern. <A>C</A> is a positive integer. 
+     <A>p</A> is the list of integers that are the coefficients of an admissible pattern. <A>C</A> is a positive integer.
 
      Calculates an upper bound of the smallest element <M>K</M> in <M>p(I)</M> such that all integers larger than <M>K</M> are contained in <M>p(I)</M>, where <M>I</M> is an ideal of a
 numerical semigroup. Instead of taking <M>I</M> as parameter, the function takes <M>C</M>, which is assumed to be the conductor of <M>I</M>.
@@ -519,7 +519,7 @@ gap> SmallElements(last[2]);
 
 
     Tests whether or not <M>p(I)</M> is contained in <A>J</A>.
-    
+
      <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7,5);;
 gap> i:=[3,5]+s;;
@@ -539,7 +539,7 @@ true
 
 
     Tests whether or not <M>p(S)</M> is contained in <A>T</A>.
-    
+
      <Example><![CDATA[
 gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
 true
