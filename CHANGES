@@ -2,6 +2,12 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1->1 dev
+- AperyListOfNumericalSemigroupWRTInteger now admits negative intgers
+- Fixed bug with number of numerical semigroups with given Frobenius number
+- Fixed bug in RepresentsGapsOfNumericalSemigroup
+- IsSubset must not be declared -- fixed
+- Some error messages with typos in SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity corrected
+- Fixed bug in IsProportionallyModularNumericalSemigroup
 - Added functions for Wilf's conjecture based on Eliahou's paper
 - Fixed bug while using SingularSetBaseRing in affine-extra-s.gi
 - Added MultipleOfNumericalSemigroup and InductiveNumericalSemigroup
