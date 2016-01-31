@@ -22,8 +22,44 @@ gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
 true
 ]]></Example>
                     </Description>
-                </ManSection>
+</ManSection>
 
+<ManSection>
+  <Func Arg="S" Name="TorsionOfAssociatedGradedRingNumericalSemigroup"></Func>
+  <Description>
+    
+    <A>S</A> is a numerical semigroup.
+    <P/>
+    
+    This function returns the set of elements in the numerical semigroup <A>S</A> corresponding to a <M>\mathbb{K}</M>-basis of the torsion submodule of the associated graded ring of the numerical semigroup ring <M>\mathbb{K}[\![S]\!]</M>. It uses the Apery table as explained in <Cite Key="CJZ"></Cite>.
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> TorsionOfAssociatedGradedRingNumericalSemigroup(s);
+[ 181, 153, 157, 193, 169, 148 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="S" Name="BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup"></Func>
+  <Description>
+    
+    <A>S</A> is a numerical semigroup.
+    <P/>
+    
+    This function returns the smallest non-negative integer <M>k</M> for which the associated graded ring <M>G</M> of a given numerical semigroup ring is <M>k</M>-Buchsbaum, that is, the least <M>k</M> for which the torsion submodule of <M>G</M> is annihilated by the <M>k</M>-th power of the homogeneous maximal ideal of <M>G</M>.
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> BuchsbaumnessNumberOfAssociatedGradedRingNumericalSemigroup(s);
+1
+gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
+true
+]]></Example>
+  </Description>
+</ManSection>
 
 <ManSection>
                     <Func Arg="S" Name="IsMpureNumericalSemigroup"></Func>
@@ -184,7 +220,8 @@ gap> IsAperySetAlphaRectangular(s);
 true
 ]]></Example>
                     </Description>
-                </ManSection>
+</ManSection>
+
 <ManSection>
                     <Func Arg="S" Name="TypeSequenceOfNumericalSemigroup"></Func>
                     <Description>
@@ -208,7 +245,9 @@ gap> TypeSequenceOfNumericalSemigroup(s);
 [ 1, 1, 1, 1, 1, 1, 1 ]
 ]]></Example>
                     </Description>
-                </ManSection>
+</ManSection>
+		
+
 
 </Section>
 
