@@ -309,6 +309,27 @@ end);
 
  #############################################################################
  ##
+ #M  ViewString(S)
+ ##
+ ##  This method for affine semigroups.
+ ##
+ #############################################################################
+ InstallMethod( ViewString,
+         "Displays an Affine Semigroup",
+         [IsAffineSemigroup],
+         function( S )
+   if HasMinimalGeneratorsAS(S) then
+         return Concatenation("Affine semigroup in ", String(Length(MinimalGeneratorsAS(S)[1]))," dimensional space, with ", String(Length(MinimalGeneratorsAS(S))), " generators");
+     elif HasGeneratorsAS(S) then
+         return Concatenation("Affine semigroup in ", String(Length(GeneratorsAS(S)[1]))," dimensional space, with ", String(Length(GeneratorsAS(S))), " generators");
+     else
+         return ("<Affine semigroup>");
+     fi;
+ end);
+
+
+ #############################################################################
+ ##
  #M  ViewObj(S)
  ##
  ##  This method for affine semigroups.

@@ -77,6 +77,21 @@ end);
 
 #############################################################################
 ##
+#M  ViewString(S)
+##
+##  This method for ideals of numerical semigroups.
+##
+#############################################################################
+
+InstallMethod( ViewString,
+        "prints an Ideal of a Numerical Semigroup",
+        [ IsIdealOfNumericalSemigroup],
+        function( I )
+    return ("Ideal of numerical semigroup");
+end);
+
+#############################################################################
+##
 #M  ViewObj(S)
 ##
 ##  This method for ideals of numerical semigroups.
