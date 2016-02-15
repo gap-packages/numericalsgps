@@ -625,6 +625,31 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
      fi;
  end);
 
+ #############################################################################
+ ##
+ #M  ViewString(S)
+ ##
+ ##  This method for numerical semigroups.
+ ##
+ #############################################################################
+ InstallMethod( ViewString,
+         "displays a Numerical Semigroup",
+         [IsNumericalSemigroup],
+         function( S )
+     if HasMinimalGeneratorsNS(S) and 1 in MinimalGeneratorsNS(S) then
+         return ("The numerical semigroup N");
+     elif HasModularConditionNS(S) then
+         return Concatenation("Modular numerical semigroup satisfying ", String(ModularConditionNS(S)[1]),"x mod ",String(ModularConditionNS(S)[2]), " <= x");
+     elif HasProportionallyModularConditionNS(S) then
+         return Concatenation("Proportionally modular numerical semigroup satisfying ", String(ProportionallyModularConditionNS(S)[1]),"x mod ",String(ProportionallyModularConditionNS(S)[2]), " <= ",String(ProportionallyModularConditionNS(S)[3]),"x");
+     elif HasMinimalGeneratorsNS(S) then
+         return Concatenation("Numerical semigroup with ", String(Length(MinimalGeneratorsNS(S))), " generators");
+     elif HasGeneratorsNS(S) then
+         return Concatenation("Numerical semigroup with ", String(Length(GeneratorsNS(S))), " generators");
+     else
+         return ("Numerical semigroup");
+     fi;
+ end);
 
 
  #############################################################################
