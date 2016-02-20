@@ -7,7 +7,7 @@
 
 <TitlePage>
   <Title><Package>numericalsgps</Package>-- a package for numerical semigroups</Title>
-  <Version> Version <#Include SYSTEM "../version"> 
+  <Version> Version <#Include SYSTEM "../version">
   </Version>
   <Author> Manuel Delgado
     <Email>mdelgado@fc.up.pt</Email>
@@ -194,6 +194,14 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
+<Chapter>
+	<Heading>
+		Good semigroups
+	</Heading>
+
+	<#Include SYSTEM "good-semigroups.xml">
+
+</Chapter>
 
 
 </Body>

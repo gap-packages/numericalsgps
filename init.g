@@ -34,6 +34,7 @@ ReadPackage( "numericalsgps", "gap/pseudoFrobenius.gd" );
 ReadPackage( "numericalsgps", "gap/contributions.gd" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gd" );
 ReadPackage( "numericalsgps", "gap/polynomials.gd" );
+ReadPackage( "numericalsgps", "gap/good-semigroups.gd" );
 ##
 ## Affine
 ##
@@ -47,13 +48,13 @@ NumSgpsCanUseGradedModules:=false;
 
 ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
-if IsPackageMarkedForLoading("NormalizInterface","0.0") then 
+if IsPackageMarkedForLoading("NormalizInterface","0.0") then
 	NumSgpsCanUseNI:=true;
 fi;
-if IsPackageMarkedForLoading("4ti2Interface","0.0") then 
+if IsPackageMarkedForLoading("4ti2Interface","0.0") then
 	NumSgpsCanUse4ti2:=true;
 fi;
-if IsPackageMarkedForLoading("4ti2gap","0.0") then 
+if IsPackageMarkedForLoading("4ti2gap","0.0") then
 	NumSgpsCanUse4ti2gap:=true;
 fi;
 if IsPackageMarkedForLoading("SingularInterface","0.0") 	then
