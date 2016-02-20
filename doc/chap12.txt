@@ -51,7 +51,7 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup, [3XE[103X is an ideal of a numerical semigroup [22XT[122X with [22XE⊆
   T[122X, and [3Xb[103X is an integer such that multiplication by [3Xb[103X is a morphism from [3XS[103X to
   [22XT[122X, say [22Xg[122X. The output is [22XS⋈^g E= D∪(g^-1(E)× E)∪ {a∧ b∣ a∈ D, b∈ g^-1(E)× E},[122X
-  where [22XD={(s,s)∣ s∈ S}[122X.[133X
+  where [22XD={(s,b s)∣ s∈ S}[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(2,3);;[127X[104X
