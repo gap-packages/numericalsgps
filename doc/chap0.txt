@@ -172,7 +172,8 @@
       5.2-1 IntersectionOfNumericalSemigroups
       5.2-2 QuotientOfNumericalSemigroup
       5.2-3 MultipleOfNumericalSemigroup
-      5.2-4 InductiveNumericalSemigroup
+      5.2-4 NumericalDuplication
+      5.2-5 InductiveNumericalSemigroup
     5.3 [33X[0;0YConstructing the set of all numerical semigroups containing a given
     numerical semigroup[133X
       5.3-1 OverSemigroupsNumericalSemigroup
@@ -356,6 +357,20 @@
       11.5-7 TameDegreeOfAffineSemigroup
       11.5-8 OmegaPrimalityOfElementInAffineSemigroup
       11.5-9 OmegaPrimalityOfAffineSemigroup
+  12 [33X[0;0YGood semigroups[133X
+    12.1 [33X[0;0YDefining good semigroups[133X
+      12.1-1 IsGoodSemigroup
+      12.1-2 SemigroupDuplication
+      12.1-3 Amalgamation
+      12.1-4 CartesianProduct
+      12.1-5 GoodSemigroup
+    12.2 [33X[0;0YNotable elements[133X
+      12.2-1 Conductor
+      12.2-2 SmallElementsOfGoodSemigroup
+      12.2-3 RepresentsSmallElementsOfGoodSemigroup
+      12.2-4 MinimalGoodGeneratingSystemOfGoodSemigroup
+    12.3 [33X[0;0YSymmetric semigroups[133X
+      12.3-1 IsSymmetricGoodSemigroup
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence
