@@ -17,7 +17,7 @@
 <body class="chap5"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -40,7 +40,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X874494928728023E">5.2-1 IntersectionOfNumericalSemigroups</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83CCE63C82F34C25">5.2-2 QuotientOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7BE8DD6884DE693F">5.2-3 MultipleOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7DCEC67A82130CD8">5.2-4 InductiveNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7F395079839BBE9D">5.2-4 NumericalDuplication</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7DCEC67A82130CD8">5.2-5 InductiveNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X867D9A9A87CEB869">5.3 <span class="Heading">
                     Constructing the set of all numerical semigroups containing a given numerical semigroup
@@ -169,7 +170,7 @@ true
       gap&gt; s:=NumericalSemigroup(3,29);
       &lt;Modular numerical semigroup satisfying 58x mod 87 &lt;= x &gt;
       gap&gt; SmallElementsOfNumericalSemigroup(s);
-      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
+      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,
       39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
       gap&gt; t:=QuotientOfNumericalSemigroup(s,7);
       &lt;Numerical semigroup&gt;
@@ -196,16 +197,35 @@ true
       [ 0, 4, 8, 12, 16, 20 ]
       </pre></div>
 
+<p><a id="X7F395079839BBE9D" name="X7F395079839BBE9D"></a></p>
+
+<h5>5.2-4 NumericalDuplication</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalDuplication</code>( <var class="Arg">S</var>, <var class="Arg">E</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">E</var> and ideal of <var class="Arg">S</var> with <span class="SimpleMath">E⊆ S</span>, and <var class="Arg">b</var> are positive odd integer in <var class="Arg">S</var>. Computes <span class="SimpleMath">2S∪ (2E+b)</span>.</p>
+
+
+<div class="example"><pre>
+      gap&gt; s:=NumericalSemigroup(3,5,7);
+      &lt;Numerical semigroup with 3 generators&gt;
+      gap&gt; e:=6+s;
+      &lt;Ideal of numerical semigroup&gt;
+      gap&gt; ndup:=NumericalDuplication(s,e,3);
+      &lt;Numerical semigroup&gt;
+      gap&gt; SmallElements(ndup);
+      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
+    </pre></div>
+
 <p><a id="X7DCEC67A82130CD8" name="X7DCEC67A82130CD8"></a></p>
 
-<h5>5.2-4 InductiveNumericalSemigroup</h5>
+<h5>5.2-5 InductiveNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InductiveNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">a</var> and <var class="Arg">b</var> are lists of positive integers, such that <span class="SimpleMath">b[i+1]ge a[i]b[i]</span>. Computes inductively <span class="SimpleMath">S_0= N</span> and <span class="SimpleMath">S_i+1=a[i]S_i∪ {a[i]b[i],a[i]b[i]+1,-&gt;}</span>, and returns <span class="SimpleMath">S_k</span>, with <span class="SimpleMath">k</span> the length of <var class="Arg">a</var> and <var class="Arg">b</var>.</p>
 
 
 <div class="example"><pre>
-      gap&gt; s:=InductiveNumericalSemigroup([4,2],[5,23]);;  
+      gap&gt; s:=InductiveNumericalSemigroup([4,2],[5,23]);;
       gap&gt; SmallElements(s);
       [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]
       </pre></div>
@@ -440,7 +460,7 @@ true
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

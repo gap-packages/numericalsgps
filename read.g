@@ -36,6 +36,7 @@ ReadPackage( "numericalsgps", "gap/pseudoFrobenius.gi" );
 ReadPackage( "numericalsgps", "gap/contributions.gi" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gi" );
 ReadPackage( "numericalsgps", "gap/polynomials.gi" );
+ReadPackage( "numericalsgps", "gap/good-semigroups.gi");
 ##
 ## Affine
 ##
@@ -44,7 +45,7 @@ ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
 if NumSgpsCanUseNI then
     ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
-    Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");    
+    Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");
 fi;
 if NumSgpsCanUse4ti2 then
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
@@ -71,10 +72,10 @@ else
     if NumSgpsCanUseSingular then
         ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
         Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
-        NumSgpsWarnUseSingular:=false;    
+        NumSgpsWarnUseSingular:=false;
     else
         if NumSgpsCanUseGradedModules then
-            #NumSgpsRationals:=HomalgFieldOfRationalsInSingular();            
+            #NumSgpsRationals:=HomalgFieldOfRationalsInSingular();
             ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
             Info(InfoNumSgps,1,"Loaded interface to Singular (through GradedModules)");
             NumSgpsWarnUseSingular:=false;

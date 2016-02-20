@@ -4,7 +4,7 @@
   <ManSection>
     <Func Name="IntersectionOfNumericalSemigroups" Arg="S, T"/>
     <Description>
-      <A>S</A> and <A>T</A> 
+      <A>S</A> and <A>T</A>
       are numerical semigroups. Computes the intersection of <A>S</A> and <A>T</A>
       (which is a numerical semigroup).
       <Example><![CDATA[
@@ -23,7 +23,7 @@
       ]]></Example>
     </Description>
   </ManSection>
-  
+
   <ManSection>
     <Func Name="QuotientOfNumericalSemigroup" Arg="S, n"/>
     <Description>
@@ -34,7 +34,7 @@
       gap> s:=NumericalSemigroup(3,29);
       <Modular numerical semigroup satisfying 58x mod 87 <= x >
       gap> SmallElementsOfNumericalSemigroup(s);
-      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 
+      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,
       39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
       gap> t:=QuotientOfNumericalSemigroup(s,7);
       <Numerical semigroup>
@@ -62,13 +62,32 @@
     </Description>
   </ManSection>
 
+
+  <ManSection>
+  <Func Name="NumericalDuplication" Arg="S, E, b"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, and <A>E</A> and ideal of <A>S</A> with <M>E\subseteq S</M>, and <A>b</A> are positive odd integer in <A>S</A>.
+    Computes  <M>2S\cup (2E+b)</M>.
+    <Example><![CDATA[
+      gap> s:=NumericalSemigroup(3,5,7);
+      <Numerical semigroup with 3 generators>
+      gap> e:=6+s;
+      <Ideal of numerical semigroup>
+      gap> ndup:=NumericalDuplication(s,e,3);
+      <Numerical semigroup>
+      gap> SmallElements(ndup);
+      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
+    ]]></Example>
+  </Description>
+</ManSection>
+
   <ManSection>
     <Func Name="InductiveNumericalSemigroup" Arg="S, a, b"/>
     <Description>
-      <A>S</A> is a numerical semigroup, and <A>a</A> and <A>b</A> are lists of positive integers, such that <M>b[i+1]\ge a[i]b[i]</M>. 
+      <A>S</A> is a numerical semigroup, and <A>a</A> and <A>b</A> are lists of positive integers, such that <M>b[i+1]\ge a[i]b[i]</M>.
       Computes inductively <M>S_0=\mathbb N</M> and <M>S_{i+1}=a[i]S_i\cup \{a[i]b[i],a[i]b[i]+1,\to\}</M>, and returns <M>S_{k}</M>, with <M>k</M> the length of <A>a</A> and <A>b</A>.
       <Example><![CDATA[
-      gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;  
+      gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;
       gap> SmallElements(s);
       [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]
       ]]></Example>
@@ -76,5 +95,5 @@
   </ManSection>
 
 
-  
+
 </Section>
