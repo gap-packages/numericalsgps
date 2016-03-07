@@ -587,7 +587,12 @@ InstallMethod(BelongsToGoodSemigroup,
         return O;
     end;
 
-
+    if Length(v)<>2 then
+      Error("The first argument must be a list with two integers (a pair)");
+    fi;
+    if not(ForAll(v, IsInt)) then
+      Error("The first argument must be a list with two integers (a pair)");
+    fi;
     if IsGoodSemigroupByDuplication(a) then
         S:=NumericalSemigroupGS(a);
         E:=IdealGS(a);
