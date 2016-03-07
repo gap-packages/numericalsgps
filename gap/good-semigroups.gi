@@ -1,3 +1,10 @@
+#############################################################################
+##
+#W  affine-def.gd           Manuel Delgado <mdelgado@fc.up.pt>
+#W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
+##
+#Y  Copyright 2016-- Centro de Matemática da Universidade do Porto, Portugal and IEMath-GR, Universidad de Granada, Spain
+#############################################################################
 
 ####################################################
 ##
