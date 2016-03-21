@@ -8,7 +8,7 @@
 
 ####################################################
 ##
-#F NumericalDublication(S,E,b)
+#F NumericalDuplication(S,E,b)
 ## returns 2S\cup(2E+b)
 ####################################################
 InstallGlobalFunction(NumericalDuplication, function(S,E,b)
@@ -28,7 +28,7 @@ InstallGlobalFunction(NumericalDuplication, function(S,E,b)
 
     mgsE:=MinimalGeneratingSystem(E);
     if not(ForAll(mgsE, x -> x in S)) then
-      Error("The second argument must be an ideal of the first");
+      Error("The second argument must be a integral ideal of the first");
     fi;
 
     f:=2*Conductor(E)+b;
@@ -57,7 +57,7 @@ InstallGlobalFunction(SemigroupDuplication,function(S,E)
 
     mgsE:=MinimalGeneratingSystem(E);
     if not(ForAll(mgsE, x -> x in S)) then
-      Error("The second argument must be an ideal of the first");
+      Error("The second argument must be an integral ideal of the first");
     fi;
 
     M:=Objectify(GoodSemigroupsType, rec());
@@ -188,7 +188,7 @@ end);
 InstallGlobalFunction(GoodSemigroup, function(G,C)
     local M, p1, p2, CC, sm, SemiRing_NS;
 
-    if not(IsMatrix(G)) and ForAll(G, x->Length(x)=2) then
+    if not(IsMatrix(G)) and ForAll(G, x->IsList(x) and Length(x)=2) then
       Error("The argument must be a list of pairs of positive integers");
     fi;
 
@@ -521,7 +521,7 @@ end);
 ## decides if a vector is in the semigroup
 ##################################################
 InstallMethod(BelongsToGoodSemigroup,
-         "Tests if the vectori is in the semigroup",
+         "Tests if the vector is in the semigroup",
          [IsHomogeneousList, IsGoodSemigroup], 50,
 #BelongsToGoodSemigroup:=
   function(v, a)
