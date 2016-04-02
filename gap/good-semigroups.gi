@@ -277,7 +277,7 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
     fi;
 
 
-    sm:=SemiRing_NS(G,C);
+    sm:=Union(SemiRing_NS(G,C),[C]);
     if not(RepresentsSmallElementsOfGoodSemigroup(sm)) then
       Error("The given set does not generate a good semigroup");
     fi;
