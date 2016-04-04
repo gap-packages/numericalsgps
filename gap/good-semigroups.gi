@@ -186,7 +186,7 @@ end);
 ## with conductor C
 ###################################################
 InstallGlobalFunction(GoodSemigroup, function(G,C)
-    local M, p1, p2, CC, sm, SemiRing_NS;
+    local M, p1, p2, c, CC, sm, SemiRing_NS, gen;
 
     if not(IsMatrix(G)) and ForAll(G, x->IsList(x) and Length(x)=2) then
       Error("The argument must be a list of pairs of positive integers");
@@ -282,9 +282,25 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
       Error("The given set does not generate a good semigroup");
     fi;
 
+    c:=C;
+    while ((c-[0,1]) in sm) or ((c-[1,0]) in sm) do
+      if ((c-[0,1]) in sm) and ((c-[1,0]) in sm) then #c-[1,1] also in sm
+        c:=c-[1,1];
+      elif c-[0,1] in sm then
+        c:=c-[0,1];
+      else
+        c:=c-[1,0];
+      fi;
+    od;
+    if C<>c then #sm must be redefined, and gens
+      Info(InfoNumSgps,2,"Conductor redefined");
+      sm:=Filtered(sm, x->x[1]<=c[1] and x[2]<=c[2]);
+      gen:=Filtered(G, x->x[1]<=c[1] and x[2]<=c[2]);
+    fi;
+
     M:=Objectify(GoodSemigroupsType, rec());
-    SetGeneratorsGS(M,G);
-    SetConductor(M,C);
+    SetGeneratorsGS(M,gen);
+    SetConductor(M,c);
     SetSmallElementsGS(M,sm);
     return M;
 end);
