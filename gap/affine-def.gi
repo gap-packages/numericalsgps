@@ -31,8 +31,8 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
   fi;
   M:= Objectify( AffineSemigroupsType, rec());
   
-  SetGeneratorsAS(M,gens);
-  SetDimensionAS(M,Length(gens[1]));
+  SetGenerators(M,gens);
+  SetDimension(M,Length(gens[1]));
 
 #  Setter(IsAffineSemigroupByGenerators)(M,true);
   return M;
@@ -51,18 +51,18 @@ InstallMethod(GeneratorsOfAffineSemigroup,
         function(S)
   local  basis, eq;
 
-  if HasGeneratorsAS(S) then
-      return GeneratorsAS(S);  
+  if HasGenerators(S) then
+      return Generators(S);  
   fi;
-  if HasEquationsAS(S) then
-      eq:=EquationsAS(S);
+  if HasEquations(S) then
+      eq:=Equations(S);
       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-      SetGeneratorsAS(S,basis);
-      return GeneratorsAS(S);  
-  elif HasInequalitiesAS(S) then
-      basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
-      SetGeneratorsAS(S,basis);
-      return GeneratorsAS(S);  
+      SetGenerators(S,basis);
+      return Generators(S);  
+  elif HasInequalities(S) then
+      basis := HilbertBasisOfSystemOfHomogeneousInequalities(Inequalities(S));
+      SetGenerators(S,basis);
+      return Generators(S);  
   fi;     
 end);
 #############################################################################
@@ -107,8 +107,8 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
   fi;
 
   M:= Objectify( AffineSemigroupsType, rec());
-  SetEquationsAS(M,[ls,md]);
-  SetDimensionAS(M,Length(ls[1]));
+  SetEquations(M,[ls,md]);
+  SetDimension(M,Length(ls[1]));
   
 #  Setter(IsAffineSemigroupByEquations)(M,true);
 #  Setter(IsFullAffineSemigroup)(M,true);
@@ -138,8 +138,8 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
 
   M:= Objectify( AffineSemigroupsType, rec());
 
-  SetInequalitiesAS(M,ls);
-  SetDimensionAS(M,Length(ls[1]));
+  SetInequalities(M,ls);
+  SetDimension(M,Length(ls[1]));
  # Setter(IsAffineSemigroupByEquations)(M,true);
  # Setter(IsFullAffineSemigroup)(M,true);
   return M;
@@ -256,7 +256,7 @@ end);
          function( S )
    local  gens, eq, h, dim;
 
-   if HasEquationsAS(S) then 
+   if HasEquations(S) then 
      return true;
    fi;
 
@@ -273,7 +273,7 @@ end);
        h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
    fi;
   if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
-    SetEquationsAS(S,eq);
+    SetEquations(S,eq);
     #Setter(IsAffineSemigroupByEquations)(S,true);
     #Setter(IsFullAffineSemigroup)(S,true);
     return true;
@@ -294,12 +294,12 @@ InstallMethod( PrintObj,
         "Prints an Affine Semigroup",
         [ IsAffineSemigroup],
         function( S )
-  if HasGeneratorsAS(S) then
-    Print("AffineSemigroup( ", GeneratorsAS(S), " )\n");
-  elif HasEquationsAS(S) then
-    Print("AffineSemigroupByEquations( ", EquationsAS(S), " )\n");
-  elif HasInequalitiesAS(S) then
-    Print("AffineSemigroupByInequalities( ", InequalitiesAS(S), " )\n");
+  if HasGenerators(S) then
+    Print("AffineSemigroup( ", Generators(S), " )\n");
+  elif HasEquations(S) then
+    Print("AffineSemigroupByEquations( ", Equations(S), " )\n");
+  elif HasInequalities(S) then
+    Print("AffineSemigroupByInequalities( ", Inequalities(S), " )\n");
   else
     Print("AffineSemigroup( ", GeneratorsOfAffineSemigroup(S), " )\n");
   fi;
@@ -318,10 +318,10 @@ end);
          "Displays an Affine Semigroup",
          [IsAffineSemigroup],
          function( S )
-   if HasMinimalGeneratorsAS(S) then
-         return Concatenation("Affine semigroup in ", String(Length(MinimalGeneratorsAS(S)[1]))," dimensional space, with ", String(Length(MinimalGeneratorsAS(S))), " generators");
-     elif HasGeneratorsAS(S) then
-         return Concatenation("Affine semigroup in ", String(Length(GeneratorsAS(S)[1]))," dimensional space, with ", String(Length(GeneratorsAS(S))), " generators");
+   if HasMinimalGenerators(S) then
+         return Concatenation("Affine semigroup in ", String(Length(MinimalGenerators(S)[1]))," dimensional space, with ", String(Length(MinimalGenerators(S))), " generators");
+     elif HasGenerators(S) then
+         return Concatenation("Affine semigroup in ", String(Length(Generators(S)[1]))," dimensional space, with ", String(Length(Generators(S))), " generators");
      else
          return ("<Affine semigroup>");
      fi;
@@ -339,10 +339,10 @@ end);
          "Displays an Affine Semigroup",
          [IsAffineSemigroup],
          function( S )
-   if HasMinimalGeneratorsAS(S) then
-         Print("<Affine semigroup in ", Length(MinimalGeneratorsAS(S)[1])," dimensional space, with ", Length(MinimalGeneratorsAS(S)), " generators>");
-     elif HasGeneratorsAS(S) then
-         Print("<Affine semigroup in ", Length(GeneratorsAS(S)[1])," dimensional space, with ", Length(GeneratorsAS(S)), " generators>");
+   if HasMinimalGenerators(S) then
+         Print("<Affine semigroup in ", Length(MinimalGenerators(S)[1])," dimensional space, with ", Length(MinimalGenerators(S)), " generators>");
+     elif HasGenerators(S) then
+         Print("<Affine semigroup in ", Length(Generators(S)[1])," dimensional space, with ", Length(Generators(S)), " generators>");
      else
          Print("<Affine semigroup>");
      fi;
@@ -361,10 +361,10 @@ InstallMethod( Display,
          "Displays an Affine Semigroup",
          [IsAffineSemigroup],
          function( S )
-     if HasMinimalGeneratorsAS(S) then
-         Print("<Affine semigroup in ", Length(MinimalGeneratorsAS(S)[1]),"-dimensional space, with ", Length(MinimalGeneratorsAS(S)), " generators>");
-     elif HasGeneratorsNS(S) then
-         Print("<Affine semigroup in ", Length(GeneratorsAS(S)[1]),"-dimensional space, with ", Length(GeneratorsAS(S)), " generators>");
+     if HasMinimalGenerators(S) then
+         Print("<Affine semigroup in ", Length(MinimalGenerators(S)[1]),"-dimensional space, with ", Length(MinimalGenerators(S)), " generators>");
+     elif HasGenerators(S) then
+         Print("<Affine semigroup in ", Length(Generators(S)[1]),"-dimensional space, with ", Length(Generators(S)), " generators>");
      else
          Print("<Affine semigroup>");
      fi;
@@ -387,23 +387,23 @@ InstallMethod( Display,
          function(x, y )
    local  genx, geny;
    
-   if DimensionAS(x) <> DimensionAS(y) then
+   if Dimension(x) <> Dimension(y) then
      return false;
    fi;
    
-   if  HasEquationsAS(x) and HasEquationsAS(y) and
-       EquationsAS(x) = EquationsAS(y) then
+   if  HasEquations(x) and HasEquations(y) and
+       Equations(x) = Equations(y) then
      return true;
 
-   elif HasInequalitiesAS(x) and HasInequalitiesAS(y) and
-     InequalitiesAS(x) = InequalitiesAS(y) then
+   elif HasInequalities(x) and HasInequalities(y) and
+     Inequalities(x) = Inequalities(y) then
      return true;
 
-   elif HasGeneratorsAS(x) and HasGeneratorsAS(y) and
-     GeneratorsAS(x) = GeneratorsAS(y) then
+   elif HasGenerators(x) and HasGenerators(y) and
+     Generators(x) = Generators(y) then
      return  true;
 
-   elif HasGeneratorsAS(x) and HasGeneratorsAS(y) and not(EquationsOfGroupGeneratedBy(GeneratorsAS(x))=EquationsOfGroupGeneratedBy(GeneratorsAS(y))) then 
+   elif HasGenerators(x) and HasGenerators(y) and not(EquationsOfGroupGeneratedBy(Generators(x))=EquationsOfGroupGeneratedBy(Generators(y))) then 
      return false;
    fi;
    genx:=GeneratorsOfAffineSemigroup(x);
@@ -419,7 +419,7 @@ InstallMethod( Display,
          function(x, y )
    local  genx, geny;
    
-   if DimensionAS(x) < DimensionAS(y) then
+   if Dimension(x) < Dimension(y) then
      return true;
    fi;
    

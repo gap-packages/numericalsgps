@@ -31,9 +31,12 @@ DeclareAttribute( "MultiplicityOfNumericalSemigroup", IsNumericalSemigroup);
 ##  semigroup S.
 ##
 #############################################################################
-DeclareAttribute( "FrobeniusNumberOfNumericalSemigroup", IsNumericalSemigroup);
+# DeclareAttribute( "FrobeniusNumberOfNumericalSemigroup", IsNumericalSemigroup);
 
-DeclareSynonymAttr( "FrobeniusNumber", FrobeniusNumberOfNumericalSemigroup);
+# DeclareSynonymAttr( "FrobeniusNumber", FrobeniusNumberOfNumericalSemigroup);
+DeclareAttribute( "FrobeniusNumber", IsNumericalSemigroup);
+
+DeclareSynonymAttr( "FrobeniusNumberOfNumericalSemigroup", FrobeniusNumber);
 
 
 #############################################################################
@@ -58,14 +61,17 @@ DeclareGlobalFunction("TypeOfNumericalSemigroup");
 
 #############################################################################
 ##
-#F  GeneratorsOfNumericalSemigroup(S)
+#A  Generators(S)
+#A  GeneratorsOfNumericalSemigroup(S)
 ##
 ##  Returns a set of generators of the numerical
 ##  semigroup S. If a minimal generating system has already been computed, this
 ##  is the set returned.
 ##
 #############################################################################
-DeclareGlobalFunction( "GeneratorsOfNumericalSemigroup");
+#DeclareAttribute( "Generators", IsNumericalSemigroup);
+DeclareSynonymAttr( "GeneratorsOfNumericalSemigroup", Generators);
+#DeclareGlobalFunction( "GeneratorsOfNumericalSemigroup");
 
 
 #############################################################################
@@ -82,13 +88,18 @@ DeclareSynonym( "GeneratorsOfNumericalSemigroupNC","GeneratorsOfNumericalSemigro
 
 #############################################################################
 ##
+#A  MinimalGenerators(S)
+#A  MinimalGeneratingSystem(S)
 #A  MinimalGeneratingSystemOfNumericalSemigroup(S)
 ##
 ##  Returns the minimal generating system of the numerical
 ##  semigroup S.
 ##
 #############################################################################
-DeclareAttribute( "MinimalGeneratingSystemOfNumericalSemigroup", IsNumericalSemigroup);
+#DeclareAttribute( "MinimalGenerators", IsNumericalSemigroup);
+DeclareSynonymAttr( "MinimalGeneratingSystem", MinimalGenerators);
+DeclareSynonymAttr( "MinimalGeneratingSystemOfNumericalSemigroup", MinimalGenerators);
+
 #############################################################################
 #############################################################################
 ##
@@ -98,7 +109,7 @@ DeclareAttribute( "MinimalGeneratingSystemOfNumericalSemigroup", IsNumericalSemi
 ## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfIdealOfNumericalSemigroup
 ##
 #############################################################################
-DeclareGlobalFunction("MinimalGeneratingSystem");
+#DeclareGlobalFunction("MinimalGeneratingSystem");
 
 #############################################################################
 ##
@@ -122,13 +133,14 @@ DeclareGlobalFunction("EmbeddingDimensionOfNumericalSemigroup");
 
 #############################################################################
 ##
+#A  FundamentalGaps(S)
 #A  FundamentalGapsOfNumericalSemigroup(S)
 ##
 ##  Returns the fundamental gaps of the numerical
 ##  semigroup S.
 ##
 #############################################################################
-DeclareAttribute( "FundamentalGapsOfNumericalSemigroup",IsNumericalSemigroup);
+DeclareSynonymAttr( "FundamentalGapsOfNumericalSemigroup",FundamentalGaps);
 
 
 #############################################################################
@@ -175,13 +187,16 @@ DeclareOperation( "AperyListOfNumericalSemigroupWRTElement",[IsNumericalSemigrou
 
 #############################################################################
 ##
-#F  AperyListOfNumericalSemigroup(S)
+#A  AperyList(S)
+#A  AperyListOfNumericalSemigroup(S)
 ##
 ##  Returns the Apery list of the numerical
 ##  semigroup S with respect to the multiplicity.
 ##
 #############################################################################
-DeclareGlobalFunction("AperyListOfNumericalSemigroup");
+#DeclareAttribute( "AperyList", IsNumericalSemigroup);
+DeclareSynonymAttr( "AperyListOfNumericalSemigroup", AperyList);
+#DeclareGlobalFunction("AperyListOfNumericalSemigroup");
 
 #############################################################################
 ##

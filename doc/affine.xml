@@ -266,7 +266,7 @@ gap> a2:=AffineSemigroup([[1,1]]);
 <Affine semigroup in 2 dimensional space, with 1 generators>
 gap> GluingOfAffineSemigroups(a1,a2);
 <Affine semigroup in 2 dimensional space, with 3 generators>
-gap> GeneratorsAS(last);
+gap> Generators(last);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 ]]></Example>
   </Description>

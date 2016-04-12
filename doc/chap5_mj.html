@@ -150,7 +150,7 @@ true
       gap&gt; S := NumericalSemigroup("modular", 5,53);
       &lt;Modular numerical semigroup satisfying 5x mod 53 &lt;= x &gt;
       gap&gt; T := NumericalSemigroup(2,17);
-      &lt;Modular numerical semigroup satisfying 17x mod 34 &lt;= x &gt;
+      &lt;Numerical semigroup with 2 generators&gt;
       gap&gt; SmallElementsOfNumericalSemigroup(S);
       [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
       gap&gt; SmallElementsOfNumericalSemigroup(T);
@@ -171,7 +171,7 @@ true
 
 <div class="example"><pre>
       gap&gt; s:=NumericalSemigroup(3,29);
-      &lt;Modular numerical semigroup satisfying 58x mod 87 &lt;= x &gt;
+      &lt;Numerical semigroup with 2 generators&gt;
       gap&gt; SmallElementsOfNumericalSemigroup(s);
       [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,
       39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
@@ -253,7 +253,8 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));</span>
-[ &lt;The numerical semigroup N&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
+[ &lt;The numerical semigroup N&gt;, &lt;Numerical semigroup with 2 generators&gt;, 
+  &lt;Numerical semigroup with 3 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,s-&gt;MinimalGeneratingSystemOfNumericalSemigroup(s));</span>
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
@@ -298,7 +299,7 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupsWithGenus(5);</span>
-[ &lt;Proportionally modular numerical semigroup satisfying 11x mod 66 &lt;= 5x &gt;, 
+[ &lt;Numerical semigroup with 6 generators&gt;, 
   &lt;Numerical semigroup with 5 generators&gt;, 
   &lt;Numerical semigroup with 5 generators&gt;, 
   &lt;Numerical semigroup with 5 generators&gt;, 
@@ -309,7 +310,7 @@ true
   &lt;Numerical semigroup with 4 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt;, 
-  &lt;Modular numerical semigroup satisfying 11x mod 22 &lt;= x &gt; ]
+  &lt;Numerical semigroup with 2 generators&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);</span>
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 

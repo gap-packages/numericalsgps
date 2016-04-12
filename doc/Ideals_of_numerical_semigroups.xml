@@ -61,8 +61,9 @@ false
 
 
                 <ManSection>
-                    <Func Arg="I" Name="MinimalGeneratingSystemOfIdealOfNumericalSemigroup"></Func>
-<Func Arg="I" Name="MinimalGeneratingSystem"></Func>
+                    <Attr Arg="I" Name="MinimalGeneratingSystemOfIdealOfNumericalSemigroup"></Attr>
+<Attr Arg="I" Name="MinimalGeneratingSystem"></Attr>
+<Attr Arg="I" Name="MinimalGenerators"></Attr>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         <P/>
@@ -75,20 +76,23 @@ gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);
 [ 3 ]
 gap> MinimalGeneratingSystem(I);                           
 [ 3 ]
+gap> MinimalGenerators([3,5]+NumericalSemigroup(2,11));
+[ 3 ]
 ]]></Example>
                     </Description>
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="I" Name="GeneratorsOfIdealOfNumericalSemigroup"></Func>
-                    <Func Arg="I" Name="GeneratorsOfIdealOfNumericalSemigroupNC"></Func>
+                    <Attr Arg="I" Name="Generators"></Attr>
+                    <Attr Arg="I" Name="GeneratorsOfIdealOfNumericalSemigroup"></Attr>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         <P/>
 
-                        The output of <C>GeneratorsOfIdealOfNumericalSemigroup</C> is a system of generators of the ideal. If the minimal system of generators
-                        is known, then it is used as output.
-                        <C>GeneratorsOfIdealOfNumericalSemigroupNC</C> always returns the set of generators stored in <A>I!.generators</A>.
+                        The output of <C>Generators</C> and of <C>GeneratorsOfIdealOfNumericalSemigroup</C> is a system of generators of the ideal.
+			<P/>
+			Remark: from Version 1.1 on, this value does not change even when a set of minimal generators is computed.
+                        
 
                         <Example><![CDATA[
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
@@ -96,9 +100,7 @@ gap> GeneratorsOfIdealOfNumericalSemigroup(I);
 [ 3, 5, 9 ]
 gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);
 [ 3 ]
-gap> GeneratorsOfIdealOfNumericalSemigroup(I);
-[ 3 ]
-gap> GeneratorsOfIdealOfNumericalSemigroupNC(I);
+gap> Generators(I);                                        
 [ 3, 5, 9 ]
 ]]></Example>
                     </Description>
@@ -117,7 +119,7 @@ gap> GeneratorsOfIdealOfNumericalSemigroupNC(I);
                         <Example><![CDATA[
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> AmbientNumericalSemigroupOfIdeal(I);
-<Modular numerical semigroup satisfying 11x mod 22 <= x >
+<Numerical semigroup with 2 generators>
 ]]></Example>
                     </Description>
                 </ManSection>

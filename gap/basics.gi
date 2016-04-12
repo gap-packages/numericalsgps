@@ -22,14 +22,14 @@
 #############################################################################
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup",
-        [IsNumericalSemigroup and HasGeneratorsNS],10,
+        [IsNumericalSemigroup and HasGenerators],10,
         function(S)
     return GeneratorsOfNumericalSemigroup(S)[1];
 end);
 
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup",
-        [IsNumericalSemigroup and HasAperyListNS],1,
+        [IsNumericalSemigroup and HasAperyList],1,
         function(S)
     return Minimum(Difference(S!.aperylist,[0]),Length(S!.aperylist));
 end);
@@ -112,6 +112,7 @@ end);
 
 #############################################################################
 ##
+#A  FrobeniusNumber(S)
 #A  FrobeniusNumberOfNumericalSemigroup(S)
 ##
 ##  Returns the Frobenius number of the numerical
@@ -120,25 +121,25 @@ end);
 #############################################################################
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and HasGapsNS],100,
+        [IsNumericalSemigroup and HasGaps],100,
         function(S)
-  if GapsNS(S) = [] then
+  if Gaps(S) = [] then
     return -1;
   fi;
-  return(GapsNS(S)[Length(GapsNS(S))]);
+  return(Gaps(S)[Length(Gaps(S))]);
 end);
 
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and HasSmallElementsNS],99,
+        [IsNumericalSemigroup and HasSmallElements],99,
         function(S)
-    return(SmallElementsNS(S)[Length(SmallElementsNS(S))] - 1);
+    return(SmallElements(S)[Length(SmallElements(S))] - 1);
 end);
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and HasAperyListNS],50,
+        [IsNumericalSemigroup and HasAperyList],50,
         function(S)
-    return(Maximum(AperyListNS(S))-Length(AperyListNS(S)));
+    return(Maximum(AperyList(S))-Length(AperyList(S)));
 end);
 
 ##########
@@ -150,7 +151,7 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
     local   set,  len,  min_mult_n3_in_n1n2,  gens,  n,  C,  gg,  n1,  n2,
             n3,  c1,  c2,  c3,  delta,  d,  gn,  og,  newgens;
 
-    if not (HasMinimalGeneratorsNS(S) or HasGeneratorsNS(S)) then
+    if not (HasMinimalGenerators(S) or HasGenerators(S)) then
         set := SmallElementsOfNumericalSemigroup(S);
         len := Length(set);
         return(set[len] - 1);
@@ -296,22 +297,26 @@ end);
 
 #############################################################################
 ##
-#F  GeneratorsOfNumericalSemigroup(S)
+#A  Generators(S)
+#A  GeneratorsOfNumericalSemigroup(S)
 ##
 ##  Returns a set of generators of the numerical
 ##  semigroup S. If a minimal generating system has already been computed, this
 ##  is the set returned.
 ##
 #############################################################################
-InstallGlobalFunction( GeneratorsOfNumericalSemigroup, function(S)
+InstallMethod( GeneratorsOfNumericalSemigroup, 
+        "Returns generators of a numerical sgp",
+        [IsNumericalSemigroup], 
+        function(S)
     if not IsNumericalSemigroup(S) then
         Error("The argument must be a numerical semigroup");
     fi;
 
-    if HasMinimalGeneratorsNS(S) then
-        return(MinimalGeneratorsNS(S));
-    elif HasGeneratorsNS(S) then
-        return(GeneratorsNS(S));
+    if HasMinimalGenerators(S) then
+        return(MinimalGenerators(S));
+    elif HasGenerators(S) then
+        return(Generators(S));
     fi;
     return(MinimalGeneratingSystemOfNumericalSemigroup(S));
 end);
@@ -330,8 +335,8 @@ end);
 #     if not IsNumericalSemigroup(S) then
 #         Error("The argument must be a numerical semigroup");
 #     fi;
-#     if HasGeneratorsNS(S) then
-#         return(GeneratorsNS(S));
+#     if HasGenerators(S) then
+#         return(Generators(S));
 #     fi;
 #     return(MinimalGeneratingSystemOfNumericalSemigroup(S));
 # end);
@@ -340,6 +345,7 @@ end);
 
 #############################################################################
 ##
+#A  MinimalGeneratingSystem(S)
 #A  MinimalGeneratingSystemOfNumericalSemigroup(S)
 ##
 ##  Returns the minimal generating system of the numerical
@@ -374,33 +380,33 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
     end;
     ##
 
-    if HasMinimalGeneratorsNS(S) then
-      return MinimalGeneratorsNS(S);
+    if HasMinimalGenerators(S) then
+      return MinimalGenerators(S);
     elif HasFrobeniusNumberOfNumericalSemigroup(S) then
         Elm := SmallElementsOfNumericalSemigroup(S);
         if Elm = [0] then
-            SetMinimalGeneratorsNS(S, [1]);
-            return MinimalGeneratorsNS(S);
+            SetMinimalGenerators(S, [1]);
+            return MinimalGenerators(S);
         fi;
 
         g := FrobeniusNumberOfNumericalSemigroup(S);
         T:=Union(Elm{[2..Length(Elm)]},[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]]);
-        SetMinimalGeneratorsNS(S, Difference(T,sumNS(T,T)));
-        return MinimalGeneratorsNS(S);
+        SetMinimalGenerators(S, Difference(T,sumNS(T,T)));
+        return MinimalGenerators(S);
 
-    elif HasGeneratorsNS(S) then
+    elif HasGenerators(S) then
         # Note that the minimal generators are precisely those generators that are irreducible.
         # The fact that minimal generators are incongruent modulo the multiplicity is used (for small multiplicities, since for big ones the reduction is slow and may not bring any advantages)
 
-        generators := GeneratorsNS(S);
+        generators := Generators(S);
         m := Minimum(generators); # the multiplicity
 
         if m = 1 then
-            SetMinimalGeneratorsNS(S, [1]);
-            return MinimalGeneratorsNS(S);
+            SetMinimalGenerators(S, [1]);
+            return MinimalGenerators(S);
         elif m = 2 then
-            SetMinimalGeneratorsNS(S, [2,First(generators, g -> g mod 2 = 1)]);
-            return MinimalGeneratorsNS(S);
+            SetMinimalGenerators(S, [2,First(generators, g -> g mod 2 = 1)]);
+            return MinimalGenerators(S);
         elif m < LogInt(Length(generators),2)^4 then
             aux := [m];
             for i in [1..m-1] do
@@ -419,14 +425,14 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
             gen :=  Difference(gen,ss);
             ss := sumNS(ss,gen);
         od;
-        SetMinimalGeneratorsNS(S, gen);
-        return MinimalGeneratorsNS(S);
+        SetMinimalGenerators(S, gen);
+        return MinimalGenerators(S);
 
     else
         Elm := SmallElementsOfNumericalSemigroup(S);
         if Elm = [0] then
-            SetMinimalGeneratorsNS(S, [1]);
-            return MinimalGeneratorsNS(S);
+            SetMinimalGenerators(S, [1]);
+            return MinimalGenerators(S);
         fi;
         g := FrobeniusNumberOfNumericalSemigroup(S);
         T:=Union(Elm{[2..Length(Elm)]},[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]]);
@@ -440,16 +446,16 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
 ##  If S is a numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfNumericalSemigroup
 ## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to MinimalGeneratingSystemOfIdealOfNumericalSemigroup
 ##
-InstallGlobalFunction(MinimalGeneratingSystem,
-        function(S)
-  if IsNumericalSemigroup(S) then
-    return MinimalGeneratingSystemOfNumericalSemigroup(S);
-  elif IsIdealOfNumericalSemigroup(S) then
-    return MinimalGeneratingSystemOfIdealOfNumericalSemigroup(S);
-  else
-    Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
-  fi;
-end);
+# InstallGlobalFunction(MinimalGeneratingSystem,
+#         function(S)
+#   if IsNumericalSemigroup(S) then
+#     return MinimalGeneratingSystemOfNumericalSemigroup(S);
+#   elif IsIdealOfNumericalSemigroup(S) then
+#     return MinimalGeneratingSystemOfIdealOfNumericalSemigroup(S);
+#   else
+#     Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
+#   fi;
+# end);
 
 #############################################################################
 ##
@@ -572,8 +578,8 @@ InstallMethod( FundamentalGapsOfNumericalSemigroup,
   local  g, h, fh;
 
   h := ShallowCopy(GapsOfNumericalSemigroup(S));
-  if HasFundamentalGapsNS(S) then
-    return FundamentalGapsNS(S);
+  if HasFundamentalGaps(S) then
+    return FundamentalGaps(S);
   fi;
   h := GapsOfNumericalSemigroup(S);
   fh := [];
@@ -583,8 +589,9 @@ InstallMethod( FundamentalGapsOfNumericalSemigroup,
     h := Difference(h,DivisorsInt(g));
   od;
   fh := Set(fh);
-  SetFundamentalGapsNS(S, fh);
-  return FundamentalGapsNS(S);
+  return fh;
+#  SetFundamentalGaps(S, fh);
+#  return FundamentalGaps(S);
 end);
 
 
@@ -665,27 +672,27 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasSmallElementsNS],100,
+        [IsInt,IsNumericalSemigroup and HasSmallElements],100,
         function(n,S)
     local s;
     if n=0 then
         return true;
     fi;
-    s := SmallElementsNS(S);
+    s := SmallElements(S);
     return (n in s) or (n >= Maximum(s));
 end);
 
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasAperyListNS],
+        [IsInt,IsNumericalSemigroup and HasAperyList],
         function(n,S)
     local   ap,  m;
 
     if n=0 then
         return true;
     fi;
-    ap := AperyListNS(S);
+    ap := AperyList(S);
     m := Length(ap);
     if First([1..m], i-> (n mod m = i-1) and n >= ap[i]) <> fail then
         return true;
@@ -697,14 +704,14 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasFundamentalGapsNS],
+        [IsInt,IsNumericalSemigroup and HasFundamentalGaps],
         function(n,S)
     local   f;
 
     if n=0 then
         return true;
     fi;
-    f := FundamentalGapsNS(S);
+    f := FundamentalGaps(S);
     return First(f, i -> i mod n =0) = fail;
 end);
 
@@ -740,7 +747,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasGeneratorsNS],
+        [IsInt,IsNumericalSemigroup and HasGenerators],
         function(n,S)
     local gen, ss, sumNS;
     #####################################################
@@ -764,13 +771,13 @@ InstallMethod( BelongsToNumericalSemigroup,
     if n=0 then
         return true;
     fi;
-    if n in GeneratorsNS(S) then
+    if n in Generators(S) then
         return true;
     fi;
-    if HasMinimalGeneratorsNS(S) then
-        gen := MinimalGeneratorsNS(S);
+    if HasMinimalGenerators(S) then
+        gen := MinimalGenerators(S);
     else
-        gen := GeneratorsNS(S);
+        gen := Generators(S);
     fi;
     ss := sumNS(gen,gen);
 	if n in ss then
@@ -832,7 +839,7 @@ InstallMethod( AperyListOfNumericalSemigroupWRTElement,
             Add(Ap, First(Difference([1..max],GapsOfNumericalSemigroup(S)), j -> j mod n = i));
         od;
         if n =MultiplicityOfNumericalSemigroup(S) then
-            SetAperyListNS(S, Ap); #
+            SetAperyList(S, Ap); #
         fi;
     fi;
     return ShallowCopy(Ap);
@@ -840,13 +847,17 @@ end);
 
 #############################################################################
 ##
-#F  AperyListOfNumericalSemigroup(S)
+#A  AperyList(S)
+#A  AperyListOfNumericalSemigroup(S)
 ##
 ##  Returns the Apery list of the numerical
 ##  semigroup S with respect to the multiplicity.
 ##
 #############################################################################
-InstallGlobalFunction( AperyListOfNumericalSemigroup,
+InstallMethod( AperyList,
+        "returns the Apery list of a  numerical semigroup with respect to the multiplicity",
+        true,
+        [IsNumericalSemigroup],
         function(S)
   return(AperyListOfNumericalSemigroupWRTElement(S,
                 MultiplicityOfNumericalSemigroup(S)));

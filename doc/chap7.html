@@ -34,7 +34,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78E5F44E81485C17">7.1-1 IdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X85BD6FAD7EA3B5DD">7.1-2 IsIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7CF1EA687B137C3D">7.1-3 MinimalGeneratingSystemOfIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X86A9200283D1B32B">7.1-4 GeneratorsOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7BD5B55C802805B4">7.1-4 Generators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X81E445518529C175">7.1-5 AmbientNumericalSemigroupOfIdeal</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X814D5DF27E63204E">7.1-6 IsIntegralIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7BDEBFCB7A1DAFC7">7.1-7 SmallElementsOfIdealOfNumericalSemigroup</a></span>
@@ -125,8 +125,9 @@ false
 
 <h5>7.1-3 MinimalGeneratingSystemOfIdealOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystemOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystemOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
 
 <p>The output is the minimal system of generators of <var class="Arg">I</var>.</p>
@@ -138,17 +139,21 @@ false
 [ 3 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(I);                           </span>
 [ 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators([3,5]+NumericalSemigroup(2,11));</span>
+[ 3 ]
 </pre></div>
 
-<p><a id="X86A9200283D1B32B" name="X86A9200283D1B32B"></a></p>
+<p><a id="X7BD5B55C802805B4" name="X7BD5B55C802805B4"></a></p>
 
-<h5>7.1-4 GeneratorsOfIdealOfNumericalSemigroup</h5>
+<h5>7.1-4 Generators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfIdealOfNumericalSemigroupNC</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
 
-<p>The output of <code class="code">GeneratorsOfIdealOfNumericalSemigroup</code> is a system of generators of the ideal. If the minimal system of generators is known, then it is used as output. <code class="code">GeneratorsOfIdealOfNumericalSemigroupNC</code> always returns the set of generators stored in <var class="Arg">I!.generators</var>.</p>
+<p>The output of <code class="code">Generators</code> and of <code class="code">GeneratorsOfIdealOfNumericalSemigroup</code> is a system of generators of the ideal.</p>
+
+<p>Remark: from Version 1.1 on, this value does not change even when a set of minimal generators is computed.</p>
 
 
 <div class="example"><pre>
@@ -157,9 +162,7 @@ false
 [ 3, 5, 9 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);</span>
 [ 3 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfIdealOfNumericalSemigroup(I);</span>
-[ 3 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfIdealOfNumericalSemigroupNC(I);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(I);                                        </span>
 [ 3, 5, 9 ]
 </pre></div>
 
@@ -176,7 +179,7 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AmbientNumericalSemigroupOfIdeal(I);</span>
-&lt;Modular numerical semigroup satisfying 11x mod 22 &lt;= x &gt;
+&lt;Numerical semigroup with 2 generators&gt;
 </pre></div>
 
 <p><a id="X814D5DF27E63204E" name="X814D5DF27E63204E"></a></p>

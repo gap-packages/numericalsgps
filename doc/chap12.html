@@ -32,9 +32,9 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X79E86DEE79281BF2">12.1-1 IsGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X872E9DE67EE1D268">12.1-2 SemigroupDuplication</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7F1451EA81F089F7">12.1-3 Amalgamation</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7C6ABFEC7C5BB711">12.1-4 CartesianProduct</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82A8863E78650FC4">12.1-2 NumericalSemigroupDuplication</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X873FE7B37A747247">12.1-3 AmalgamationOfNumericalSemigroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X855341C57F43DB72">12.1-4 CartesianProductOfNumericalSemigroups</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7856241678224958">12.1-5 GoodSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap12.html#X8431465B82643392">12.2 <span class="Heading">
@@ -44,8 +44,9 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7F9FE5C787A38C79">12.2-1 Conductor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X8213214879AC6027">12.2-2 SmallElementsOfGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82D40159783F0D48">12.2-3 RepresentsSmallElementsOfGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82E24F8E79648AAC">12.2-4 MinimalGoodGeneratingSystemOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7F8244367C137D75">12.2-3 SmallElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82D40159783F0D48">12.2-4 RepresentsSmallElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82E24F8E79648AAC">12.2-5 MinimalGoodGeneratingSystemOfGoodSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap12.html#X812981548765092E">12.3 <span class="Heading">
       Symmetric semigroups
@@ -79,33 +80,34 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>Detects if <var class="Arg">S</var> is a an object type good semigroup.</p>
 
-<p><a id="X872E9DE67EE1D268" name="X872E9DE67EE1D268"></a></p>
+<p><a id="X82A8863E78650FC4" name="X82A8863E78650FC4"></a></p>
 
-<h5>12.1-2 SemigroupDuplication</h5>
+<h5>12.1-2 NumericalSemigroupDuplication</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupDuplication</code>( <var class="Arg">S</var>, <var class="Arg">E</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupDuplication</code>( <var class="Arg">S</var>, <var class="Arg">E</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">E</var> is an ideal of <var class="Arg">S</var> with <span class="SimpleMath">E⊆ S</span>. The output is <span class="SimpleMath">S⋈ E= D∪ (E× E)∪{ a∧ b∣ a∈ D, b∈ E× E},</span> where <span class="SimpleMath">D={(s,s)∣ s∈ S}</span>.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=SemigroupDuplication(s,e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=Cartesian([1..11],[1..11]);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Intersection(dup,l);</span>
-[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ], [ 6, 11 ],
-  [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ], [ 9, 11 ],
-  [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ], 
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], 
+  [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], 
+  [ 11, 9 ], [ 11, 11 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[384938749837,349823749827] in dup;</span>
 true
           </pre></div>
 
-<p><a id="X7F1451EA81F089F7" name="X7F1451EA81F089F7"></a></p>
+<p><a id="X873FE7B37A747247" name="X873FE7B37A747247"></a></p>
 
-<h5>12.1-3 Amalgamation</h5>
+<h5>12.1-3 AmalgamationOfNumericalSemigroups</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Amalgamation</code>( <var class="Arg">S</var>, <var class="Arg">E</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmalgamationOfNumericalSemigroups</code>( <var class="Arg">S</var>, <var class="Arg">E</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup, <var class="Arg">E</var> is an ideal of a numerical semigroup <span class="SimpleMath">T</span> with <span class="SimpleMath">E⊆ T</span>, and <var class="Arg">b</var> is an integer such that multiplication by <var class="Arg">b</var> is a morphism from <var class="Arg">S</var> to <span class="SimpleMath">T</span>, say <span class="SimpleMath">g</span>. The output is <span class="SimpleMath">S⋈^g E= D∪(g^-1(E)× E)∪ {a∧ b∣ a∈ D, b∈ g^-1(E)× E},</span> where <span class="SimpleMath">D={(s,b s)∣ s∈ S}</span>.</p>
 
 
@@ -113,23 +115,23 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(2,3);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroup(3,4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=3+t;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=Amalgamation(s,e,2);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=AmalgamationOfNumericalSemigroups(s,e,2);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[2,3] in dup;</span>
 true
             </pre></div>
 
-<p><a id="X7C6ABFEC7C5BB711" name="X7C6ABFEC7C5BB711"></a></p>
+<p><a id="X855341C57F43DB72" name="X855341C57F43DB72"></a></p>
 
-<h5>12.1-4 CartesianProduct</h5>
+<h5>12.1-4 CartesianProductOfNumericalSemigroups</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CartesianProduct</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CartesianProductOfNumericalSemigroups</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups. The output is <span class="SimpleMath">S× T</span>, which is a good semigroup.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(2,3);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroup(3,4);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGoodSemigroup(CartesianProduct(s,t));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));</span>
 true
             </pre></div>
 
@@ -143,8 +145,8 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];</span>
-[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ], [ 25, 12 ],
-  [ 25, 16 ] ]
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ], 
+  [ 25, 12 ], [ 25, 16 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=[25,27];</span>
 [ 25, 27 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoodSemigroup(G,C);</span>
@@ -168,7 +170,7 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=SemigroupDuplication(s,e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Conductor(dup);</span>
 [ 11, 11 ]
@@ -185,17 +187,38 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=SemigroupDuplication(s,e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfGoodSemigroup(dup);</span>
-[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
-  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],
-  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], 
+  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], 
+  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], 
+  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+        </pre></div>
+
+<p><a id="X7F8244367C137D75" name="X7F8244367C137D75"></a></p>
+
+<h5>12.2-3 SmallElements</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>This is just a synonym of <code class="code"> SmallElementsOfGoodSemigroup</code> (<code class="code">NS</code>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
+&lt;Good semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(dup);</span>
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], 
+  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], 
+  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], 
+  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
         </pre></div>
 
 <p><a id="X82D40159783F0D48" name="X82D40159783F0D48"></a></p>
 
-<h5>12.2-3 RepresentsSmallElementsOfGoodSemigroup</h5>
+<h5>12.2-4 RepresentsSmallElementsOfGoodSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RepresentsSmallElementsOfGoodSemigroup</code>( <var class="Arg">X</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">X</var> is a list of points in the nonnegative orthant of the plane with integert coordinates. Determines if it represents the set of small elements of a good semigroup.</p>
@@ -204,7 +227,7 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=SemigroupDuplication(s,e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfGoodSemigroup(dup);</span>
 [ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
@@ -216,7 +239,7 @@ true
 
 <p><a id="X82E24F8E79648AAC" name="X82E24F8E79648AAC"></a></p>
 
-<h5>12.2-4 MinimalGoodGeneratingSystemOfGoodSemigroup</h5>
+<h5>12.2-5 MinimalGoodGeneratingSystemOfGoodSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGoodGeneratingSystemOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).</p>
@@ -225,7 +248,7 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=SemigroupDuplication(s,e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGoodGeneratingSystemOfGoodSemigroup(dup);</span>
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
@@ -249,7 +272,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=CanonicalIdealOfNumericalSemigroup(s);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=15+e;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=SemigroupDuplication(s,e);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricGoodSemigroup(dup);</span>
 true
         </pre></div>
