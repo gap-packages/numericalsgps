@@ -14,13 +14,15 @@
 
 #############################################################################
 ##
+#A  SmallElements(S)
 #A  SmallElementsOfNumericalSemigroup(S)
 ##
 ##  Returns the list of elements in the numerical semigroup S,
 ##  not greater than the Frobenius number + 1.
 ##
 #############################################################################
-DeclareAttribute( "SmallElementsOfNumericalSemigroup", IsNumericalSemigroup);
+#DeclareAttribute( "SmallElements", IsNumericalSemigroup);
+DeclareSynonymAttr( "SmallElementsOfNumericalSemigroup", SmallElements);
 #############################################################################
 ##
 #F  SmallElements(S)
@@ -29,17 +31,19 @@ DeclareAttribute( "SmallElementsOfNumericalSemigroup", IsNumericalSemigroup);
 ## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to SmallElementsOfIdealOfNumericalSemigroup
 ##
 #############################################################################
-DeclareGlobalFunction("SmallElements");
+##DeclareGlobalFunction("SmallElements");
 
 
 #############################################################################
 ##
+#A  Gaps(S)
 #A  GapsOfNumericalSemigroup(S)
 ##
 ##  Returns the list of the gaps of the numerical semigroup S.
 ##
 #############################################################################
-DeclareAttribute( "GapsOfNumericalSemigroup", IsNumericalSemigroup);
+#DeclareAttribute( "Gaps", IsNumericalSemigroup);
+DeclareSynonymAttr( "GapsOfNumericalSemigroup", Gaps);
 
 #############################################################################
 ##

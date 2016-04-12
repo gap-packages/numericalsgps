@@ -32,7 +32,7 @@ InstallGlobalFunction(IdealOfNumericalSemigroup, function(l,S)
     I := rec();
     ObjectifyWithAttributes(I, IdealsOfNumericalSemigroupsType,
         UnderlyingNSIdeal, S,
-        GeneratorsIdealNS, Set(l)
+        Generators, Set(l)
         );
     return I;
 end );
@@ -72,7 +72,7 @@ InstallMethod( PrintObj,
         "prints an Ideal of a Numerical Semigroup",
         [ IsIdealOfNumericalSemigroup],
         function( I )
-    Print(GeneratorsIdealNS(I)," + NumericalSemigroup( ", GeneratorsOfNumericalSemigroup(UnderlyingNSIdeal(I)), " )\n");
+    Print(Generators(I)," + NumericalSemigroup( ", GeneratorsOfNumericalSemigroup(UnderlyingNSIdeal(I)), " )\n");
 end);
 
 #############################################################################
@@ -189,22 +189,21 @@ end );
 
 #############################################################################
 ##
-#F  GeneratorsOfIdealOfNumericalSemigroup(I)
+#A  Generators(I)
+#A  GeneratorsOfIdealOfNumericalSemigroup(I)
 ##
 ##  Returns a set of generators of the ideal I.
 ##  If a minimal generating system has already been computed, this
 ##  is the set returned.
 ############################################################################
-
-InstallGlobalFunction(GeneratorsOfIdealOfNumericalSemigroup, function(I)
-    if not IsIdealOfNumericalSemigroup(I) then
-        Error("The argument must be an ideal of a numerical semigroup.");
+InstallMethod(GeneratorsOfIdealOfNumericalSemigroup,
+        "Returns the minimal generating system of an ideal",
+        [IsIdealOfNumericalSemigroup],
+        function(I)
+    if HasMinimalGenerators(I) then
+       return (MinimalGenerators(I));
     fi;
-    if HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I) then
-       return (MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I));
-    fi;
-    return(GeneratorsIdealNS(I));
-    
+    return(Generators(I));   
 end);
 
 
@@ -214,12 +213,12 @@ end);
 ##
 ##  Returns a set of generators of the ideal I.
 ############################################################################
-InstallGlobalFunction(GeneratorsOfIdealOfNumericalSemigroupNC, function(I)
-    if not IsIdealOfNumericalSemigroup(I) then
-        Error("The argument must be an ideal of a numerical semigroup.");
-    fi;
-    return(GeneratorsIdealNS(I));
-end);
+# InstallGlobalFunction(GeneratorsOfIdealOfNumericalSemigroupNC, function(I)
+#     if not IsIdealOfNumericalSemigroup(I) then
+#         Error("The argument must be an ideal of a numerical semigroup.");
+#     fi;
+#     return(GeneratorsIdealNS(I));
+# end);
 
 #############################################################################
 ##
@@ -263,9 +262,9 @@ InstallMethod(SmallElementsOfIdealOfNumericalSemigroup,
         function(I)
     local   smallS,  g,  gI,  l,  min,  l2,  maxgap;
 
-    if not (IsIdealOfNumericalSemigroup(I)) then
-        Error("The argument must be an ideal of a numerical semigroup");
-    fi;
+    # if not (IsIdealOfNumericalSemigroup(I)) then
+    #     Error("The argument must be an ideal of a numerical semigroup");
+    # fi;
 
     smallS := SmallElementsOfNumericalSemigroup(AmbientNumericalSemigroupOfIdeal(I));
     g := smallS[Length(smallS)]; #Frobenius number + 1
@@ -299,9 +298,9 @@ InstallMethod(Conductor,
         function(I)
      local seI;
 
-     if not IsIdealOfNumericalSemigroup(I) then
-         Error("The argument must be an ideal of a numerical semigroup");
-     fi;
+     # if not IsIdealOfNumericalSemigroup(I) then
+     #     Error("The argument must be an ideal of a numerical semigroup");
+     # fi;
      seI:=SmallElementsOfIdealOfNumericalSemigroup(I);
 
      return seI[Length(seI)];
@@ -342,6 +341,8 @@ end);
 
 #############################################################################
 ##
+#A MinimalGenerators(I)
+#A MinimalGeneratingSystem(I)
 #A MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I)
 ##
 ## The argument I is an ideal of a numerical semigroup
@@ -352,13 +353,15 @@ InstallMethod(MinimalGeneratingSystemOfIdealOfNumericalSemigroup,
         "Returns the minimal generating system of an ideal",
         [IsIdealOfNumericalSemigroup],
         function(I)
-    local m, S;
+  local  S, m, mingens;
 
     S := AmbientNumericalSemigroupOfIdeal(I);
-    m:=MaximalIdealOfNumericalSemigroup(S);
-    return DifferenceOfIdealsOfNumericalSemigroup(I,m+I);
-end);
-
+    m := MaximalIdealOfNumericalSemigroup(S);
+    mingens := DifferenceOfIdealsOfNumericalSemigroup(I,m+I);
+#    Setter(Generators)(I,mingens); #does not work
+    return mingens;
+  end);
+  
 #############################################################################
 ##
 #F SumIdealsOfNumericalSemigroup(I,J)

@@ -23,54 +23,54 @@
 #############################################################################
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and HasSmallElementsNS ],100,
+        [IsNumericalSemigroup and HasSmallElements ],100,
         function( sgp )
-    return SmallElementsNS(sgp);
+    return SmallElements(sgp);
 end);
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and HasGapsNS ],99,
+        [IsNumericalSemigroup and HasGaps ],99,
         function( sgp )
   local  G, K;
-  G := GapsNS(sgp);
+  G := Gaps(sgp);
   K := Difference([0..G[Length(G)]+1],G);
 
-  return SmallElementsNS(sgp);
+  return SmallElements(sgp);
 end);
 
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and HasFundamentalGapsNS ],99,
+        [IsNumericalSemigroup and HasFundamentalGaps ],99,
         function( sgp )
   local  L, G, K;
-  L := FundamentalGapsNS(sgp);
+  L := FundamentalGaps(sgp);
   G := Set(Flat(List(L,i->DivisorsInt(i))));
   K := Difference([0..G[Length(G)]+1],G);
-  SetSmallElementsNS(sgp,K);
+  SetSmallElements(sgp,K);
 
-  return SmallElementsNS(sgp);
+  return SmallElements(sgp);
 end);
 
 
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and HasAperyListNS ],50,
+        [IsNumericalSemigroup and HasAperyList ],50,
         function( sgp )
     local ap, m, x;
-    ap := AperyListNS(sgp);
+    ap := AperyList(sgp);
     m := Length(ap);
-    SetSmallElementsNS(sgp, Filtered([0..FrobeniusNumber(sgp)+1], x -> x mod m = 0 or ap[x mod m + 1] <= x));
-    return SmallElementsNS(sgp);
+    SetSmallElements(sgp, Filtered([0..FrobeniusNumber(sgp)+1], x -> x mod m = 0 or ap[x mod m + 1] <= x));
+    return SmallElements(sgp);
   end);
 
 
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
-        [IsNumericalSemigroup and HasGeneratorsNS],1,
+        [IsNumericalSemigroup and HasGenerators],1,
          function( sgp )
      local g, S, n, bool, gen, R, sumNS, ss;
           
@@ -91,10 +91,10 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
         od;
         return R;
     end;
-    if HasMinimalGeneratorsNS(sgp) then
-        gen := MinimalGeneratorsNS(sgp);
+    if HasMinimalGenerators(sgp) then
+        gen := MinimalGenerators(sgp);
     else
-        gen := GeneratorsNS(sgp);
+        gen := Generators(sgp);
         # a naive reduction of the number of generators
         ss := sumNS(gen,gen);
         gen := Difference(gen,ss);
@@ -130,8 +130,8 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     fi;
     SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
     
-    SetSmallElementsNS(sgp, Intersection([0..g+1],Union(S, [g+1])));
-    return SmallElementsNS(sgp);
+    SetSmallElements(sgp, Intersection([0..g+1],Union(S, [g+1])));
+    return SmallElements(sgp);
 end);
 
 
@@ -168,8 +168,8 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     fi;
     SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
     
-    SetSmallElementsNS(sgp, Intersection([0..g+1],Union(S, [g+1])));
-    return SmallElementsNS(sgp);
+    SetSmallElements(sgp, Intersection([0..g+1],Union(S, [g+1])));
+    return SmallElements(sgp);
 end);
 
 
@@ -208,8 +208,8 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     fi;
     SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
     
-    SetSmallElementsNS(sgp, Intersection([0..g+1],Union(S, [g+1])));
-    return SmallElementsNS(sgp);
+    SetSmallElements(sgp, Intersection([0..g+1],Union(S, [g+1])));
+    return SmallElements(sgp);
 end);
 
 
@@ -252,8 +252,8 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     fi;
     SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
     
-    SetSmallElementsNS(sgp, Intersection([0..g+1],Union(NS, [g+1])));
-    return SmallElementsNS(sgp);
+    SetSmallElements(sgp, Intersection([0..g+1],Union(NS, [g+1])));
+    return SmallElements(sgp);
 end);
     
 
@@ -302,8 +302,8 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     fi;
     SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
     
-    SetSmallElementsNS(sgp, Intersection([0..g+1],Union(S, [g+1])));
-    return SmallElementsNS(sgp);
+    SetSmallElements(sgp, Intersection([0..g+1],Union(S, [g+1])));
+    return SmallElements(sgp);
 end);
 
 #############################################################################
@@ -314,16 +314,16 @@ end);
 ## If S is an ideal of numerical semigroup, then this function just passes the task of computing the minimal generating system to SmallElementsOfIdealOfNumericalSemigroup
 ##
 ##
-InstallGlobalFunction(SmallElements,
-        function(S)
-  if IsNumericalSemigroup(S) then
-    return SmallElementsOfNumericalSemigroup(S);
-  elif IsIdealOfNumericalSemigroup(S) then
-    return SmallElementsOfIdealOfNumericalSemigroup(S);
-  else
-    Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
-  fi;
-end);
+# InstallGlobalFunction(SmallElements,
+#         function(S)
+#   if IsNumericalSemigroup(S) then
+#     return SmallElementsOfNumericalSemigroup(S);
+#   elif IsIdealOfNumericalSemigroup(S) then
+#     return SmallElementsOfIdealOfNumericalSemigroup(S);
+#   else
+#     Error("The argument must be a numerical semigroup or an ideal of a numerical semigroup.");
+#   fi;
+# end);
 
 #############################################################################
 ##

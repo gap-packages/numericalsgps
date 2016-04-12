@@ -120,7 +120,7 @@ InstallGlobalFunction(HilbertSeriesOfNumericalSemigroup,function(s,x)
         Error("The first argument must be a numerical semigroup.\n");
     fi;
 
-	if HasAperyListNS(s) then #uses J.Ramirez-Alfonsin trick
+	if HasAperyList(s) then #uses J.Ramirez-Alfonsin trick
 		m:=MultiplicityOfNumericalSemigroup(s);
 		ap:=AperyListOfNumericalSemigroup(s);
 		return 1/(1-x^m)*Sum(List(ap, w->x^w));

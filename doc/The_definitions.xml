@@ -23,11 +23,12 @@ gap> MultiplicityOfNumericalSemigroup(S);
                 </ManSection>
 
                 <ManSection>
-                    <Func Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
+                    <Attr Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
                    <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
                   <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/> -->
 <Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
-<Attr Name="MinimalGeneratingSystem" Arg="S"/>                    <Description>
+<Attr Name="MinimalGeneratingSystem" Arg="S"/>
+<Attr Name="MinimalGenerators" Arg="S"/>               <Description>
                         <A>S</A>
                         is a numerical semigroup.
                         <C>GeneratorsOfNumericalSemigroup</C>
@@ -60,6 +61,16 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
 gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
 true
+gap> s := NumericalSemigroup(3,5,7,15);
+<Numerical semigroup with 4 generators>
+gap> HasGenerators(s);
+true
+gap> HasMinimalGenerators(s);
+false
+gap> MinimalGenerators(s);
+[ 3, 5, 7 ]
+gap> Generators(s);       
+[ 3, 5, 7, 15 ]
 ]]></Example>
 <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
 [ 5, 7, 9, 25 ]

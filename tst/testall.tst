@@ -30,7 +30,7 @@ true
 
 # Check that the data are consistent  
 gap> ns := NumericalSemigroup([10..30]);
-<Proportionally modular numerical semigroup satisfying 30x mod 300 <= 20x >
+<Numerical semigroup with 10 generators>
 gap> IsNumericalSemigroup(ns);
 true
 gap> MinimalGeneratingSystemOfNumericalSemigroup(ns);
@@ -52,7 +52,7 @@ gap> List(last, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
   [ 6, 8, 9, 10, 11, 13 ], [ 8 .. 15 ] ]
 
 gap> NumericalSemigroupsWithGenus(5);
-[ <Proportionally modular numerical semigroup satisfying 11x mod 66 <= 5x >, 
+[ <Numerical semigroup with 6 generators>, 
   <Numerical semigroup with 5 generators>, 
   <Numerical semigroup with 5 generators>, 
   <Numerical semigroup with 5 generators>, 
@@ -63,14 +63,14 @@ gap> NumericalSemigroupsWithGenus(5);
   <Numerical semigroup with 4 generators>, 
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators>, 
-  <Modular numerical semigroup satisfying 11x mod 22 <= x > ]
+  <Numerical semigroup with 2 generators> ]
 gap> List(last, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
 
 gap> ns := NumericalSemigroup([10..30]);
-<Proportionally modular numerical semigroup satisfying 30x mod 300 <= 20x >
+<Numerical semigroup with 10 generators>
 gap> IsNumericalSemigroup(ns);
 true
 gap> MinimalGeneratingSystemOfNumericalSemigroup(ns);
@@ -108,11 +108,11 @@ gap> s := NumericalSemigroup("minimalgenerators",3,7);
 gap> s := NumericalSemigroup("modular",3,5);
 <Modular numerical semigroup satisfying 3x mod 5 <= x >
 gap> s1:=NumericalSemigroup("generators",2,5);       
-<Modular numerical semigroup satisfying 5x mod 10 <= x >
+<Numerical semigroup with 2 generators>
 gap> s = s1;
 true
 gap> s:=NumericalSemigroup(4,5,6);
-<Proportionally modular numerical semigroup satisfying 6x mod 24 <= 2x >
+<Numerical semigroup with 3 generators>
 
 gap> NumericalSemigroup(1);
 <The numerical semigroup N>
@@ -126,7 +126,7 @@ gap> ProportionallyModularNumericalSemigroup(3,7,12);
 <Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
 
 gap> s:=NumericalSemigroup(3,11);
-<Modular numerical semigroup satisfying 22x mod 33 <= x >
+<Numerical semigroup with 2 generators>
 gap> GapsOfNumericalSemigroup(s);
 [ 1, 2, 4, 5, 7, 8, 10, 13, 16, 19 ]
 gap> t:=NumericalSemigroupByGaps(last);
@@ -143,7 +143,7 @@ true
 ##Some_basic_tests.xml
 
 gap> s:=NumericalSemigroup(3,7);
-<Modular numerical semigroup satisfying 7x mod 21 <= x >
+<Numerical semigroup with 2 generators>
 gap> AperyListOfNumericalSemigroupWRTElement(s,30);;
 gap> t:=NumericalSemigroupByAperyList(last);
 <Numerical semigroup>
@@ -166,7 +166,7 @@ gap> RepresentsSmallElementsOfNumericalSemigroup(L);
 false
 
 gap> s:=NumericalSemigroup(3,7);
-<Modular numerical semigroup satisfying 7x mod 21 <= x >
+<Numerical semigroup with 2 generators>
 gap> L:=GapsOfNumericalSemigroup(s);
 [ 1, 2, 4, 5, 8, 11 ]
 gap> RepresentsGapsOfNumericalSemigroup(L);
@@ -178,7 +178,7 @@ true
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> T:=NumericalSemigroup(2,3);
-<Modular numerical semigroup satisfying 3x mod 6 <= x >
+<Numerical semigroup with 2 generators>
 gap> IsSubsemigroupOfNumericalSemigroup(T,S);
 true
 gap> IsSubsemigroupOfNumericalSemigroup(S,T);
@@ -225,6 +225,18 @@ gap> GeneratorsOfNumericalSemigroup(S);
 [ 3, 5, 53 ]
 gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
+gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
+true
+gap> s := NumericalSemigroup(3,5,7,15);
+<Numerical semigroup with 4 generators>
+gap> HasGenerators(s);
+true
+gap> HasMinimalGenerators(s);
+false
+gap> MinimalGenerators(s);
+[ 3, 5, 7 ]
+gap> Generators(s);       
+[ 3, 5, 7, 15 ]
 
 gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ 0, 3, 5 ]
@@ -337,10 +349,12 @@ true
 gap> s=s3;
 true
 
+#Operations_Numerical_Semigroups.xml
+
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> T := NumericalSemigroup(2,17);
-<Modular numerical semigroup satisfying 17x mod 34 <= x >
+<Numerical semigroup with 2 generators>
 gap> SmallElementsOfNumericalSemigroup(S);
 [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
 gap> SmallElementsOfNumericalSemigroup(T);
@@ -351,7 +365,7 @@ gap> SmallElementsOfNumericalSemigroup(last);
 [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
 
 gap> s:=NumericalSemigroup(3,29);
-<Modular numerical semigroup satisfying 58x mod 87 <= x >
+<Numerical semigroup with 2 generators>
 gap> SmallElementsOfNumericalSemigroup(s);
 [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38, 39, 41, 42, 
   44, 45, 47, 48, 50, 51, 53, 54, 56 ]
@@ -367,7 +381,8 @@ gap> SmallElementsOfNumericalSemigroup(u);
 ##Constructing_sets_of_numerical_semigroups.xml
 
 gap> OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));
-[ <The numerical semigroup N>, <Numerical semigroup>, <Numerical semigroup>, 
+[ <The numerical semigroup N>, <Numerical semigroup with 2 generators>, 
+  <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators> ]
 gap> List(last,s->MinimalGeneratingSystemOfNumericalSemigroup(s));
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
@@ -376,7 +391,7 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
 900
 
 gap> NumericalSemigroupsWithGenus(5);
-[ <Proportionally modular numerical semigroup satisfying 11x mod 66 <= 5x >, 
+[ <Numerical semigroup with 6 generators>, 
   <Numerical semigroup with 5 generators>, 
   <Numerical semigroup with 5 generators>, 
   <Numerical semigroup with 5 generators>, 
@@ -387,7 +402,7 @@ gap> NumericalSemigroupsWithGenus(5);
   <Numerical semigroup with 4 generators>, 
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators>, 
-  <Modular numerical semigroup satisfying 11x mod 22 <= x > ]
+  <Numerical semigroup with 2 generators> ]
 gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
@@ -445,7 +460,8 @@ gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
 227
 
 gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
-[ <Numerical semigroup>, <Numerical semigroup> ]
+[ <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 4 generators> ]
 
 ##Complete_Intersections.xml
 
@@ -491,7 +507,9 @@ gap> Length(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFr
 ##Almost_symmetric.xml
 
 gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,11));
-[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+[ <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators> ]
 gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
 
@@ -523,20 +541,22 @@ false
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);
 [ 3 ]
+gap> MinimalGeneratingSystem(I);                           
+[ 3 ]
+gap> MinimalGenerators([3,5]+NumericalSemigroup(2,11));
+[ 3 ]
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> GeneratorsOfIdealOfNumericalSemigroup(I);
 [ 3, 5, 9 ]
 gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);
 [ 3 ]
-gap> GeneratorsOfIdealOfNumericalSemigroup(I);
-[ 3 ]
-gap> GeneratorsOfIdealOfNumericalSemigroupNC(I);
+gap> Generators(I);                                        
 [ 3, 5, 9 ]
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> AmbientNumericalSemigroupOfIdeal(I);
-<Modular numerical semigroup satisfying 11x mod 22 <= x >
+<Numerical semigroup with 2 generators>
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> SmallElementsOfIdealOfNumericalSemigroup(I);
@@ -754,9 +774,14 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
 [ 8 .. 15 ]
 
 gap> SaturatedNumericalSemigroupsWithFrobeniusNumber(10);
-[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup> ]
+[ <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 6 generators>, 
+  <Numerical semigroup with 6 generators>, 
+  <Numerical semigroup with 7 generators>, 
+  <Numerical semigroup with 8 generators>, 
+  <Numerical semigroup with 9 generators>, 
+  <Numerical semigroup with 11 generators> ]
 gap>  List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
   [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
@@ -1016,7 +1041,7 @@ gap> a2:=AffineSemigroup([[1,1]]);
 <Affine semigroup in 2 dimensional space, with 1 generators>
 gap> GluingOfAffineSemigroups(a1,a2);
 <Affine semigroup in 2 dimensional space, with 3 generators>
-gap> GeneratorsAS(last);
+gap> Generators(last);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
@@ -1068,6 +1093,94 @@ gap> OmegaPrimalityOfElementInAffineSemigroup([5,5],a);
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> OmegaPrimalityOfAffineSemigroup(a);
 2
+
+##good-semigroups.xml
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> l:=Cartesian([1..11],[1..11]);;
+gap> Intersection(dup,l);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ], 
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], 
+  [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], 
+  [ 11, 9 ], [ 11, 11 ] ]
+gap> [384938749837,349823749827] in dup;
+true
+
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4);;
+gap> e:=3+t;;
+gap> dup:=AmalgamationOfNumericalSemigroups(s,e,2);;
+gap> [2,3] in dup;
+true
+
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4);;
+gap> IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));
+true
+
+gap> G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ], 
+  [ 25, 12 ], [ 25, 16 ] ]
+gap> C:=[25,27];
+[ 25, 27 ]
+gap> GoodSemigroup(G,C);
+<Good semigroup>
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> Conductor(dup);
+[ 11, 11 ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElementsOfGoodSemigroup(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], 
+  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], 
+  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], 
+  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElements(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], 
+  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], 
+  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], 
+  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElementsOfGoodSemigroup(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],
+  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+gap> RepresentsSmallElementsOfGoodSemigroup(last);
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=CanonicalIdealOfNumericalSemigroup(s);;
+gap> e:=15+e;;
+gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> IsSymmetricGoodSemigroup(dup);
+true
+
 
 ##random.xml
 ##contributions.xml

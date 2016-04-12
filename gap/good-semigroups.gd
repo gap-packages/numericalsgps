@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W  affine-def.gd           Manuel Delgado <mdelgado@fc.up.pt>
+#W  good-semigroups.gd           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
 ##
 #Y  Copyright 2016-- Centro de Matemática da Universidade do Porto, Portugal and IEMath-GR, Universidad de Granada, Spain
@@ -28,27 +28,60 @@ DeclareCategory( "IsGoodSemigroup", IsAdditiveMagma and IsGoodSemigroupRep) ;
 # semigroups are collections of collections of integers.
 BindGlobal( "GoodSemigroupsType",
         NewType( CollectionsFamily(CollectionsFamily(CyclotomicsFamily)),
-                 IsGoodSemigroup));
+                IsGoodSemigroup));
 
+###################################################
+##
+#F GoodSemigroup(X)
+## define the good semigroup from the set of points G
+###################################################
+DeclareGlobalFunction("GoodSemigroup");
 
-
+## ATTRIBUTES ##
+##
 DeclareAttribute( "DefinedByDuplication", IsGoodSemigroup);
+DeclareSynonymAttr( "IsGoodSemigroupByDuplication", HasDefinedByDuplication);
+##
 DeclareAttribute( "DefinedByAmalgamation", IsGoodSemigroup);
+DeclareSynonymAttr( "IsGoodSemigroupByAmalgamation", HasDefinedByAmalgamation);
+##
 DeclareAttribute( "DefinedByCartesianProduct", IsGoodSemigroup);
+DeclareSynonymAttr( "IsGoodSemigroupByCartesianProduct", HasDefinedByCartesianProduct);
+##
+DeclareAttribute( "Generators", IsGoodSemigroup);
+##
+###################################################
+##
+#A MinimalGenerators(M)
+#A MinimalGoodGeneratingSystemOfGoodSemigroup(M)
+## returns the unique minimal good generating of the
+## good semigroup M
+###################################################
+DeclareAttribute( "MinimalGenerators", IsGoodSemigroup);
+DeclareSynonymAttr("MinimalGoodGeneratingSystemOfGoodSemigroup",MinimalGenerators);
+
+##
+DeclareAttribute( "Conductor", IsGoodSemigroup);
+###################################################
+##
+#A SmallElements(M)
+#A SmallElementsOfGoodSemigroup(M)
+## returns de small elements of M, that is,
+## the elements below the conductor
+##################################################
+DeclareAttribute( "SmallElements", IsGoodSemigroup);
+DeclareSynonymAttr("SmallElementsOfGoodSemigroup",SmallElements);
+
+########???????????
 DeclareAttribute( "NumericalSemigroupGS", IsGoodSemigroup);
 DeclareAttribute( "NumericalSemigroupListGS", IsGoodSemigroup);
 DeclareAttribute( "IdealGS", IsGoodSemigroup);
 DeclareAttribute( "MorphismGS", IsGoodSemigroup);
-DeclareAttribute( "GeneratorsGS", IsGoodSemigroup);
-DeclareAttribute( "Conductor", IsGoodSemigroup);
-DeclareAttribute( "SmallElementsGS", IsGoodSemigroup);
 
-DeclareSynonymAttr( "IsGoodSemigroupByAmalgamation", HasDefinedByAmalgamation);
-DeclareSynonymAttr( "IsGoodSemigroupByDuplication", HasDefinedByDuplication);
-DeclareSynonymAttr( "IsGoodSemigroupByCartesianProduct", HasDefinedByCartesianProduct);
-
+## OPERATIONS ##
 DeclareOperation("BelongsToGoodSemigroup",[IsHomogeneousList,IsGoodSemigroup]);
 
+## FUNCTIONS ##
 
  ####################################################
  ##
@@ -59,25 +92,25 @@ DeclareGlobalFunction("NumericalDuplication");
 
 ###################################################
 ##
-#F SemigroupDuplication(S,E)
+#F NumericalSemigroupDuplication(S,E)
 ## returns S\bowtie E
 ###################################################
-DeclareGlobalFunction("SemigroupDuplication");
+DeclareGlobalFunction("NumericalSemigroupDuplication");
 
 ###################################################
 ##
-#F Amalgamation(S,E,c)
+#F AmalgamationOfNumericalSemigroups(S,E,c)
 ## returns S\bowtie^f E, f multiplication by c
 ###################################################
-DeclareGlobalFunction("Amalgamation");
+DeclareGlobalFunction("AmalgamationOfNumericalSemigroups");
 
 ###################################################
 ##
-#F CartesianProduct(S1,S2)
+#F CartesianProductOfNumericalSemigroups(S1,S2)
 ## Computes the cartesian product of S1 and S2, which
 ## is a good semigroup
 ###################################################
-DeclareGlobalFunction("CartesianProduct");
+DeclareGlobalFunction("CartesianProductOfNumericalSemigroups");
 
 ###################################################
 ##
@@ -86,22 +119,6 @@ DeclareGlobalFunction("CartesianProduct");
 ###################################################
 DeclareGlobalFunction("RepresentsSmallElementsOfGoodSemigroup");
 
-###################################################
-##
-#F GoodSemigroup(X)
-## define the good semigroup from the set of points G
-###################################################
-DeclareGlobalFunction("GoodSemigroup");
-
-###################################################
-##
-#F SmallElementsOfGoodSemigroup(M)
-## returns de small elements of M, that is,
-## the elements below the conductor
-##################################################
-DeclareGlobalFunction("SmallElementsOfGoodSemigroup");
-
-
 ###############################################################
 ##
 #F IsSymmetricGoodSemigroup(M)
@@ -109,10 +126,216 @@ DeclareGlobalFunction("SmallElementsOfGoodSemigroup");
 ###############################################################
 DeclareGlobalFunction("IsSymmetricGoodSemigroup");
 
-###################################################
-##
-#F MinimalGoodGeneratingSystemOfGoodSemigroup(M)
-## returns the unique minimal good generating of the
-## good semigroup M
-###################################################
-DeclareGlobalFunction("MinimalGoodGeneratingSystemOfGoodSemigroup");
+# ## FUNCTIONS ##
+
+#  ####################################################
+#  ##
+#  #F NumericalDublication(S,E,b)
+#  ## returns 2S\cup(2E+b)
+#  ####################################################
+# DeclareGlobalFunction("NumericalDuplication");
+
+# ###################################################
+# ##
+# #F SemigroupDuplication(S,E)
+# ## returns S\bowtie E
+# ###################################################
+# DeclareGlobalFunction("SemigroupDuplication");
+
+# ###################################################
+# ##
+# #F Amalgamation(S,E,c)
+# ## returns S\bowtie^f E, f multiplication by c
+# ###################################################
+# DeclareGlobalFunction("Amalgamation");
+
+# ###################################################
+# ##
+# #F CartesianProduct(S1,S2)
+# ## Computes the cartesian product of S1 and S2, which
+# ## is a good semigroup
+# ###################################################
+# DeclareGlobalFunction("CartesianProduct");
+
+# ###################################################
+# ##
+# #F RepresentsSmallElementsOfGoodSemigroup(X)
+# ## detects if X is a good semiring
+# ###################################################
+# DeclareGlobalFunction("RepresentsSmallElementsOfGoodSemigroup");
+
+
+
+
+
+
+
+
+
+# #############
+
+# DeclareAttribute( "DefinedByDuplication", IsGoodSemigroup);
+# DeclareAttribute( "DefinedByAmalgamation", IsGoodSemigroup);
+# DeclareAttribute( "DefinedByCartesianProduct", IsGoodSemigroup);
+# DeclareAttribute( "NumericalSemigroupGS", IsGoodSemigroup);
+# DeclareAttribute( "NumericalSemigroupListGS", IsGoodSemigroup);
+# DeclareAttribute( "IdealGS", IsGoodSemigroup);
+# DeclareAttribute( "MorphismGS", IsGoodSemigroup);
+# DeclareAttribute( "GeneratorsGS", IsGoodSemigroup);
+# DeclareAttribute( "Conductor", IsGoodSemigroup);
+
+# DeclareSynonymAttr( "IsGoodSemigroupByAmalgamation", HasDefinedByAmalgamation);
+# DeclareSynonymAttr( "IsGoodSemigroupByDuplication", HasDefinedByDuplication);
+# DeclareSynonymAttr( "IsGoodSemigroupByCartesianProduct", HasDefinedByCartesianProduct);
+
+# DeclareOperation("BelongsToGoodSemigroup",[IsHomogeneousList,IsGoodSemigroup]);
+
+
+#  ####################################################
+#  ##
+#  #F NumericalDublication(S,E,b)
+#  ## returns 2S\cup(2E+b)
+#  ####################################################
+# DeclareGlobalFunction("NumericalDuplication");
+
+# ###################################################
+# ##
+# #F SemigroupDuplication(S,E)
+# ## returns S\bowtie E
+# ###################################################
+# DeclareGlobalFunction("SemigroupDuplication");
+
+# ###################################################
+# ##
+# #F Amalgamation(S,E,c)
+# ## returns S\bowtie^f E, f multiplication by c
+# ###################################################
+# DeclareGlobalFunction("Amalgamation");
+
+# ###################################################
+# ##
+# #F CartesianProduct(S1,S2)
+# ## Computes the cartesian product of S1 and S2, which
+# ## is a good semigroup
+# ###################################################
+# DeclareGlobalFunction("CartesianProduct");
+
+# ###################################################
+# ##
+# #F RepresentsSmallElementsOfGoodSemigroup(X)
+# ## detects if X is a good semiring
+# ###################################################
+# DeclareGlobalFunction("RepresentsSmallElementsOfGoodSemigroup");
+
+# ###################################################
+# ##
+# #F GoodSemigroup(X)
+# ## define the good semigroup from the set of points G
+# ###################################################
+# DeclareGlobalFunction("GoodSemigroup");
+
+# ###################################################
+# ##
+# #A SmallElements(M)
+# #A SmallElementsOfGoodSemigroup(M)
+# ## returns de small elements of M, that is,
+# ## the elements below the conductor
+# ##################################################
+# DeclareAttribute( "SmallElements", IsGoodSemigroup);
+# DeclareSynonymAttr("SmallElementsOfGoodSemigroup",SmallElements);
+
+
+
+
+
+
+
+
+
+# #############
+
+# DeclareAttribute( "DefinedByDuplication", IsGoodSemigroup);
+# DeclareAttribute( "DefinedByAmalgamation", IsGoodSemigroup);
+# DeclareAttribute( "DefinedByCartesianProduct", IsGoodSemigroup);
+# DeclareAttribute( "NumericalSemigroupGS", IsGoodSemigroup);
+# DeclareAttribute( "NumericalSemigroupListGS", IsGoodSemigroup);
+# DeclareAttribute( "IdealGS", IsGoodSemigroup);
+# DeclareAttribute( "MorphismGS", IsGoodSemigroup);
+# DeclareAttribute( "GeneratorsGS", IsGoodSemigroup);
+# DeclareAttribute( "Conductor", IsGoodSemigroup);
+
+# DeclareSynonymAttr( "IsGoodSemigroupByAmalgamation", HasDefinedByAmalgamation);
+# DeclareSynonymAttr( "IsGoodSemigroupByDuplication", HasDefinedByDuplication);
+# DeclareSynonymAttr( "IsGoodSemigroupByCartesianProduct", HasDefinedByCartesianProduct);
+
+# DeclareOperation("BelongsToGoodSemigroup",[IsHomogeneousList,IsGoodSemigroup]);
+
+
+#  ####################################################
+#  ##
+#  #F NumericalDublication(S,E,b)
+#  ## returns 2S\cup(2E+b)
+#  ####################################################
+# DeclareGlobalFunction("NumericalDuplication");
+
+# ###################################################
+# ##
+# #F SemigroupDuplication(S,E)
+# ## returns S\bowtie E
+# ###################################################
+# DeclareGlobalFunction("SemigroupDuplication");
+
+# ###################################################
+# ##
+# #F Amalgamation(S,E,c)
+# ## returns S\bowtie^f E, f multiplication by c
+# ###################################################
+# DeclareGlobalFunction("Amalgamation");
+
+# ###################################################
+# ##
+# #F CartesianProduct(S1,S2)
+# ## Computes the cartesian product of S1 and S2, which
+# ## is a good semigroup
+# ###################################################
+# DeclareGlobalFunction("CartesianProduct");
+
+# ###################################################
+# ##
+# #F RepresentsSmallElementsOfGoodSemigroup(X)
+# ## detects if X is a good semiring
+# ###################################################
+# DeclareGlobalFunction("RepresentsSmallElementsOfGoodSemigroup");
+
+# ###################################################
+# ##
+# #F GoodSemigroup(X)
+# ## define the good semigroup from the set of points G
+# ###################################################
+# DeclareGlobalFunction("GoodSemigroup");
+
+# ###################################################
+# ##
+# #A SmallElements(M)
+# #A SmallElementsOfGoodSemigroup(M)
+# ## returns de small elements of M, that is,
+# ## the elements below the conductor
+# ##################################################
+# DeclareAttribute( "SmallElements", IsGoodSemigroup);
+# DeclareSynonymAttr("SmallElementsOfGoodSemigroup",SmallElements);
+
+
+# ###############################################################
+# ##
+# #F IsSymmetricGoodSemigroup(M)
+# ## Determines if M is symmetric
+# ###############################################################
+# DeclareGlobalFunction("IsSymmetricGoodSemigroup");
+
+# ###################################################
+# ##
+# #F MinimalGoodGeneratingSystemOfGoodSemigroup(M)
+# ## returns the unique minimal good generating of the
+# ## good semigroup M
+# ###################################################
+# DeclareGlobalFunction("MinimalGoodGeneratingSystemOfGoodSemigroup");

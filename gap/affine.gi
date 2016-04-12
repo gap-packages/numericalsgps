@@ -107,7 +107,7 @@ end);
 InstallMethod(BelongsToAffineSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [ IsHomogeneousList, IsAffineSemigroup and HasGeneratorsAS],50,
+        [ IsHomogeneousList, IsAffineSemigroup and HasGenerators],50,
 
         function(v,a)
     local belongs, gen;
@@ -138,7 +138,7 @@ InstallMethod(BelongsToAffineSemigroup,
         Error("The first argument must be a list of integers.");
     fi;
 
-    gen:=GeneratorsAS(a);
+    gen:=Generators(a);
     if not(IsRectangularTable(Concatenation(gen,[v]))) then
         Error("The dimension of the vector and the affine semigroup do not coincide.");
     fi;
@@ -150,7 +150,7 @@ end);
 InstallMethod(BelongsToAffineSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [ IsHomogeneousList, IsAffineSemigroup and HasEquationsAS],100,
+        [ IsHomogeneousList, IsAffineSemigroup and HasEquations],100,
 
         function(v,a)
     local equ,eq,md,ev,i;
@@ -160,7 +160,7 @@ InstallMethod(BelongsToAffineSemigroup,
         Error("The first argument must be an affine semigroup.");
     fi;
 
-    equ:=EquationsAS(a);
+    equ:=Equations(a);
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
@@ -188,7 +188,7 @@ end);
 InstallMethod(BelongsToAffineSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [ IsHomogeneousList, IsAffineSemigroup and HasInequalitiesAS],70,
+        [ IsHomogeneousList, IsAffineSemigroup and HasInequalities],70,
 
         function(v,a)
     local equ,ev;
@@ -198,7 +198,7 @@ InstallMethod(BelongsToAffineSemigroup,
         Error("The first argument must be an affine semigroup.");
     fi;
 
-    equ:=InequalitiesAS(a);
+    equ:=Inequalities(a);
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
@@ -665,13 +665,16 @@ end);
 
 #############################################################################
 ##
-#F  IsUniquelyPresentedAffineSemigroup(a)
+#P  IsUniquelyPresentedAffineSemigroup(a)
 ##
 ##  For an affine semigroup a, checks it it has a unique minimal presentation
 ##  Based in GS-O
 ##
 #############################################################################
-InstallGlobalFunction(IsUniquelyPresentedAffineSemigroup,function(a)
+InstallMethod(IsUniquelyPresentedAffineSemigroup,
+         "Tests if the affine semigroup S has a unique minimal presentation",
+         [IsAffineSemigroup],1,
+        function(a)
     local gs;
     if not IsAffineSemigroup(a) then
         Error("The second argument must be an affine semigroup.\n");
@@ -683,14 +686,17 @@ end);
 
 #############################################################################
 ##
-#F  IsGenericAffineSemigroup(a)
+#P  IsGenericAffineSemigroup(a)
 ##
 ##  For an affine semigroup a, checks it it has a generic presentation,
 ##  that is, in every relation all generators appear.
 ##  These semigroups are uniquely presented; see B-GS-G.
 ##
 #############################################################################
-InstallGlobalFunction(IsGenericAffineSemigroup,function(a)
+InstallMethod(IsGenericAffineSemigroup,
+         "Tests if the affine semigroup S has a generic presentation",
+         [IsAffineSemigroup],1,
+        function(a)
 	local mp;
     if not IsAffineSemigroup(a) then
         Error("The second argument must be an affine semigroup.\n");

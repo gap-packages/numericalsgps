@@ -2,6 +2,8 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1->1 dev
+- Added several new attributes, namely "Generators", "MinimalGenerators" and "SmallElements", which work for the various kinds of semigroups where they make sense
+  REMARK. From this version on, the value of "Generators" (and consequently the value returned by GeneratorsOf..." or by "Generators") does not change even when the MinimalGenerators are computed  
 - New functions by Alessio Sammartano (thanks!): TorsionOfAssociatedGradedRingNumericalSemigroup and BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup
 - AperyListOfNumericalSemigroupWRTInteger now admits negative intgers
 - Fixed bug with number of numerical semigroups with given Frobenius number
