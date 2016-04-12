@@ -40,11 +40,11 @@ BindGlobal( "AffineSemigroupsType",
 #############################################################################
 DeclareGlobalFunction( "AffineSemigroupByGenerators" );
 #A
-DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
-DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGeneratorsAS);
+DeclareAttribute( "Generators", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGenerators);
 #A
-DeclareAttribute( "DimensionAS", IsAffineSemigroup);
-DeclareSynonymAttr( "DimensionOfAffineSemigroup", DimensionAS);
+DeclareAttribute( "Dimension", IsAffineSemigroup);
+DeclareSynonymAttr( "DimensionOfAffineSemigroup", Dimension);
 
 #############################################################################
 ##
@@ -57,8 +57,8 @@ DeclareSynonymAttr( "DimensionOfAffineSemigroup", DimensionAS);
 #############################################################################
 DeclareGlobalFunction( "AffineSemigroupByMinimalGenerators" );
 #A
-DeclareAttribute( "MinimalGeneratorsAS", IsAffineSemigroup);
-DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGeneratorsAS);
+DeclareAttribute( "MinimalGenerators", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGenerators);
 
 
 #############################################################################
@@ -80,8 +80,9 @@ DeclareGlobalFunction( "AffineSemigroupByMinimalGeneratorsNC" );
 ##  is the set returned.
 ############################################################################
 DeclareOperation("GeneratorsOfAffineSemigroup",[IsAffineSemigroup]);
-#A
-#DeclareAttribute( "GeneratorsAS", IsAffineSemigroup);
+# #A
+# DeclareAttribute( "Generators", IsAffineSemigroup);
+# DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGenerators);
 
 #############################################################################
 ## Full ffine semigroups
@@ -95,8 +96,8 @@ DeclareOperation("GeneratorsOfAffineSemigroup",[IsAffineSemigroup]);
 #############################################################################
 DeclareGlobalFunction( "AffineSemigroupByEquations" );
 #A
-DeclareAttribute( "EquationsAS", IsAffineSemigroup);
-DeclareSynonymAttr( "IsAffineSemigroupByEquations", HasEquationsAS);
+DeclareAttribute( "Equations", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByEquations", HasEquations);
 #############################################################################
 ##
 #F  AffineSemigroupByInequalities(ls)
@@ -107,8 +108,8 @@ DeclareSynonymAttr( "IsAffineSemigroupByEquations", HasEquationsAS);
 #############################################################################
 DeclareGlobalFunction( "AffineSemigroupByInequalities" );
 #A
-DeclareAttribute( "InequalitiesAS", IsAffineSemigroup);
-DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalitiesAS);
+DeclareAttribute( "Inequalities", IsAffineSemigroup);
+DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalities);
 
 
 #############################################################################
@@ -129,42 +130,6 @@ DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalitiesAS);
 #############################################################################
 DeclareGlobalFunction( "AffineSemigroup" );
 
-#############################################################################
-##
-#P  IsAffineSemigroupByGenerators(S)
-##
-##  Tests if the affine semigroup S was given by its generators.
-##
-#############################################################################
-#DeclareProperty( "IsAffineSemigroupByGenerators", IsAffineSemigroup);
-
-
-#############################################################################
-##
-#P  IsAffineSemigroupByMinimalGenerators(S)
-##
-##  Tests if the affine semigroup S was given by its minimal generators.
-##
-#############################################################################
-#DeclareProperty( "IsAffineSemigroupByMinimalGenerators", IsAffineSemigroup);
-
-#############################################################################
-##
-#P  IsAffineSemigroupByEquations(S)
-##
-##  Tests if the affine semigroup S was given by equations or equations have already been computed.
-##
-#############################################################################
-#DeclareProperty( "IsAffineSemigroupByEquations", IsAffineSemigroup);
-
-#############################################################################
-##
-#P  IsAffineSemigroupByInequalities(S)
-##
-##  Tests if the affine semigroup S was given by inequalities or inequalities have already been computed.
-##
-#############################################################################
-#DeclareProperty( "IsAffineSemigroupByInequalities", IsAffineSemigroup);
 
 #############################################################################
 ##

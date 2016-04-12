@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W  affine-def.gd           Manuel Delgado <mdelgado@fc.up.pt>
+#W  good-semigroups.gd           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
 ##
 #Y  Copyright 2016-- Centro de Matemática da Universidade do Porto, Portugal and IEMath-GR, Universidad de Granada, Spain
@@ -44,10 +44,10 @@ end);
 
 ###################################################
 ##
-#F SemigroupDuplication(S,E)
+#F NumericalSemigroupDuplication(S,E)
 ## returns S\bowtie E
 ###################################################
-InstallGlobalFunction(SemigroupDuplication,function(S,E)
+InstallGlobalFunction(NumericalSemigroupDuplication,function(S,E)
     local M, mgsE;
 
 
@@ -71,10 +71,10 @@ end);
 
 ###################################################
 ##
-#F Amalgamation(S,E,c)
+#F AmalgamationOfNumericalSemigroups(S,E,c)
 ## returns S\bowtie^f E, f multiplication by c
 ###################################################
-InstallGlobalFunction(Amalgamation, function(S,E,c)
+InstallGlobalFunction(AmalgamationOfNumericalSemigroups, function(S,E,c)
     local M, T, msg;
 
     if not(IsNumericalSemigroup(S)) or not(IsIdealOfNumericalSemigroup(E)) then
@@ -102,11 +102,11 @@ end);
 
 ###################################################
 ##
-#F CartesianProduct(S1,S2)
+#F CartesianProductOfNumericalSemigroups(S1,S2)
 ## Computes the cartesian product of S1 and S2, which
 ## is a good semigroup
 ###################################################
-InstallGlobalFunction(CartesianProduct, function(S1,S2)
+InstallGlobalFunction(CartesianProductOfNumericalSemigroups, function(S1,S2)
     local M;
 
     if not(IsNumericalSemigroup(S1)) or not(IsNumericalSemigroup(S2)) then
@@ -299,16 +299,16 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
     fi;
 
     M:=Objectify(GoodSemigroupsType, rec());
-    SetGeneratorsGS(M,gen);
+    SetGenerators(M,gen);
     SetConductor(M,c);
-    SetSmallElementsGS(M,sm);
+    SetSmallElements(M,sm);
     return M;
 end);
 
 ###################################################
 ##
 #M Conductor(M)
-## returns de conductor of M
+## returns the conductor of M
 ##################################################
 InstallMethod(Conductor,
         "Calculates the conductor of the semigroup",
@@ -320,8 +320,8 @@ InstallMethod(Conductor,
         return(Conductor(M));
     fi;
 
-    if HasSmallElementsGS(M) then
-      s:=SmallElementsGS(M);
+    if HasSmallElements(M) then
+      s:=SmallElements(M);
       c:=s[Length(s)];
       SetConductor(M,c);
       return c;
@@ -365,30 +365,33 @@ InstallMethod(Conductor,
 
 end);
 
-
 ###################################################
 ##
-#F SmallElementsOfGoodSemigroup(M)
+#A SmallElements(M)
+#A SmallElementsOfGoodSemigroup(M)
 ## returns de small elements of M, that is,
 ## the elements below the conductor
 ##################################################
-InstallGlobalFunction(SmallElementsOfGoodSemigroup, function(M)
+InstallMethod(SmallElementsOfGoodSemigroup, 
+        "Calculates the small elements of the semigroup",
+        [IsGoodSemigroup ],50,        
+        function(M)
     local C,box, sm;
 
-    if HasSmallElementsGS(M) then
-        return SmallElementsGS(M);
+    if HasSmallElements(M) then
+        return SmallElements(M);
     fi;
 
     if IsGoodSemigroupByCartesianProduct(M) then
       sm:=Cartesian(SmallElements(NumericalSemigroupListGS(M)[1]),
                     SmallElements(NumericalSemigroupListGS(M)[2]));
-      SetSmallElementsGS(M,sm);
+      SetSmallElements(M,sm);
       return sm;
     fi;
     C:=Conductor(M);
     box:=Cartesian([0..C[1]],[0..C[2]]);
     sm:=Intersection(box,M);
-    SetSmallElementsGS(M,sm);
+    SetSmallElements(M,sm);
     return sm;
 end);
 
@@ -412,11 +415,15 @@ end);
 
 ###################################################
 ##
-#F MinimalGoodGeneratingSystemOfGoodSemigroup(M)
+#A MinimalGenerators(M)
+#A MinimalGoodGeneratingSystemOfGoodSemigroup(M)
 ## returns the unique minimal good generating of the
 ## good semigroup M
 ###################################################
-InstallGlobalFunction(MinimalGoodGeneratingSystemOfGoodSemigroup, function(M)
+InstallMethod(MinimalGoodGeneratingSystemOfGoodSemigroup, 
+       "Calculates the minimal generating system of the semigroup",
+        [IsGoodSemigroup ],50,        
+        function(M)
   local filter,mingen,C;
 
   ## G is a given set of small elements
@@ -520,14 +527,14 @@ InstallGlobalFunction(MinimalGoodGeneratingSystemOfGoodSemigroup, function(M)
   fi;
 
   C:=Conductor(M);
-  if HasGeneratorsGS(M) then
-    mingen:=filter(GeneratorsGS(M),C);
-    #SetGeneratorsGS(M,mingen);
+  if HasGenerators(M) then
+    mingen:=filter(Generators(M),C);
+    #SetGenerators(M,mingen);
     return mingen;
   fi;
 
   mingen:=filter(SmallElementsOfGoodSemigroup(M),C);
-  SetGeneratorsGS(M,mingen);
+  SetGenerators(M,mingen);
   return mingen;
 end);
 
@@ -669,14 +676,14 @@ InstallMethod(BelongsToGoodSemigroup,
               v[2] in NumericalSemigroupListGS(a)[2];
     fi;
 
-    if HasSmallElementsGS(a) then
+    if HasSmallElements(a) then
         C:=Conductor(a);
 
         if v[1]>=C[1] and v[2]>=C[2] then
             return true;
         fi;
 
-        sm:=SmallElementsGS(a);
+        sm:=SmallElements(a);
 
         if v[1]>C[1] then
             edge:=Filtered(sm,x->x[1]=C[1]);
@@ -693,18 +700,18 @@ InstallMethod(BelongsToGoodSemigroup,
     fi;
 
 
-    if HasGeneratorsGS(a) then
-        X:=GeneratorsGS(a);
+    if HasGenerators(a) then
+        X:=Generators(a);
         C:=Conductor(a);
 
         if v[1]>=C[1] and v[2]>=C[2] then
             return true;
         fi;
 
-        if not(HasSmallElementsGS(a)) then
-            SetSmallElementsGS(a,saturation(X));
+        if not(HasSmallElements(a)) then
+            SetSmallElements(a,saturation(X));
         fi;
-        sm:=SmallElementsGS(a);
+        sm:=SmallElements(a);
 
         if v[1]>C[1] then
             edge:=Filtered(sm,x->x[1]=C[1]);

@@ -20,7 +20,7 @@
 ##
 #############################################################################
 DeclareRepresentation( "IsIdealOfNumericalSemigroupRep", IsAttributeStoringRep,
-        ["UnderlyingNSIdeal", "GeneratorsIdealNS"] );
+        ["UnderlyingNSIdeal", "Generators"] );
 
 
 #############################################################################
@@ -56,24 +56,26 @@ DeclareAttribute( "UnderlyingNSIdeal", IsNumericalSemigroup);
 
 #############################################################################
 ##
-#F  GeneratorsOfIdealOfNumericalSemigroup(I)
+#A  Generators(I)
+#A  GeneratorsOfIdealOfNumericalSemigroup(I)
 ##
 ##  Returns a set of generators of the ideal I.
 ##  If a minimal generating system has already been computed, this
 ##  is the set returned.
 ############################################################################
-DeclareGlobalFunction("GeneratorsOfIdealOfNumericalSemigroup");
+##DeclareGlobalFunction("GeneratorsOfIdealOfNumericalSemigroup");
 #A
-DeclareAttribute( "GeneratorsIdealNS", IsIdealOfNumericalSemigroup);
+DeclareAttribute( "Generators", IsIdealOfNumericalSemigroup);
+DeclareSynonymAttr( "GeneratorsOfIdealOfNumericalSemigroup", Generators);
 
 
 #############################################################################
 ##
 #F  GeneratorsOfIdealOfNumericalSemigroupNC(I)
-##
+## just for compatibility of code...
 ##  Returns a set of generators of the ideal I.
 ############################################################################
-DeclareGlobalFunction("GeneratorsOfIdealOfNumericalSemigroupNC");
+DeclareSynonym("GeneratorsOfIdealOfNumericalSemigroupNC",GeneratorsOfIdealOfNumericalSemigroup);
 
 
 
@@ -169,23 +171,29 @@ DeclareGlobalFunction("BlowUpIdealOfNumericalSemigroup");
 
 #############################################################################
 ##
+#A MinimalGenerators(I)
 #A MinimalGeneratingSystem(I)
+#A MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I)
 ##
 ## The argument I is an ideal of a numerical semigroup
 ## returns the minimal generating system of I.
 ##
 #############################################################################
-DeclareAttribute("MinimalGeneratingSystemOfIdealOfNumericalSemigroup", IsIdealOfNumericalSemigroup);
+DeclareAttribute( "MinimalGenerators", IsIdealOfNumericalSemigroup);
+#DeclareSynonymAttr("MinimalGeneratingSystem", MinimalGenerators);
+DeclareSynonymAttr("MinimalGeneratingSystemOfIdealOfNumericalSemigroup", MinimalGenerators);
 
 
 #############################################################################
 ##
+#A SmallElements
 #A SmallElementsOfIdealOfNumericalSemigroup
 ##
 ##  Returns the list of elements in the ideal I up to the last gap + 1.
 ##
 #############################################################################
-DeclareAttribute( "SmallElementsOfIdealOfNumericalSemigroup", IsIdealOfNumericalSemigroup);
+DeclareAttribute("SmallElements", IsIdealOfNumericalSemigroup);
+DeclareSynonymAttr( "SmallElementsOfIdealOfNumericalSemigroup", SmallElements);
 
 #############################################################################
 ##

@@ -24,7 +24,7 @@ and if a numerical semigroup is a subsemigroup of another one.
                         (their names should be self explanatory).
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7);
-<Modular numerical semigroup satisfying 7x mod 21 <= x >
+<Numerical semigroup with 2 generators>
 gap> AperyListOfNumericalSemigroupWRTElement(s,30);;
 gap> t:=NumericalSemigroupByAperyList(last);
 <Numerical semigroup>
@@ -67,7 +67,7 @@ false
                         (see <Ref Label="xx1" />)   of a numerical semigroup.
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7);
-<Modular numerical semigroup satisfying 7x mod 21 <= x >
+<Numerical semigroup with 2 generators>
 gap> L:=GapsOfNumericalSemigroup(s);
 [ 1, 2, 4, 5, 8, 11 ]
 gap> RepresentsGapsOfNumericalSemigroup(L);
@@ -106,7 +106,7 @@ true
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> T:=NumericalSemigroup(2,3);
-<Modular numerical semigroup satisfying 3x mod 6 <= x >
+<Numerical semigroup with 2 generators>
 gap> IsSubsemigroupOfNumericalSemigroup(T,S);
 true
 gap> IsSubsemigroupOfNumericalSemigroup(S,T);

@@ -38,6 +38,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87206D597873EAFF">2.1-2 ModularNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X879171CD7AC80BB5">2.1-3 ProportionallyModularNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79B38AB3816BF3C5">2.1-4 NumericalSemigroupByGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87206D597873EAFF">2.1-5 ModularNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X879171CD7AC80BB5">2.1-6 ProportionallyModularNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79B38AB3816BF3C5">2.1-7 NumericalSemigroupByGenerators</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7EF4254C81ED6665">2.2 <span class="Heading">Some basic tests</span></a>
 </span>
@@ -114,11 +117,11 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup("modular",3,5);</span>
 &lt;Modular numerical semigroup satisfying 3x mod 5 &lt;= x &gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1:=NumericalSemigroup("generators",2,5);       </span>
-&lt;Modular numerical semigroup satisfying 5x mod 10 &lt;= x &gt;
+&lt;Numerical semigroup with 2 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s = s1;</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,5,6);</span>
-&lt;Proportionally modular numerical semigroup satisfying 6x mod 24 &lt;= 2x &gt;
+&lt;Numerical semigroup with 3 generators&gt;
 </pre></div>
 
 <p>Once it is known that a numerical semigroup contains the element <span class="SimpleMath">\(1\)</span>, i.e. the semigroup is <span class="SimpleMath">\(\mathbb N\)</span>, the semigroup is treated as such.</p>
@@ -184,7 +187,154 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,11);</span>
-&lt;Modular numerical semigroup satisfying 22x mod 33 &lt;= x &gt;
+&lt;/M&gt;,
+the smallest element in &lt;M&gt;S&lt;/M&gt; congruent with &lt;M&gt;i&lt;/M&gt; modulo &lt;M&gt;s&lt;/M&gt;, say
+&lt;M&gt;w(i)&lt;/M&gt; (this element exists since the complement of &lt;M&gt;S&lt;/M&gt; in
+&lt;M&gt;{\mathbb N}&lt;/M&gt; is finite). Clearly &lt;M&gt;w(0)=0&lt;/M&gt;. The set &lt;M&gt;{\rm
+Ap}(S,s)=\{ w(0),w(1),\ldots, w(s-1)\}&lt;/M&gt; is called the &lt;E&gt;Apéry set&lt;/E&gt; of
+&lt;M&gt;S&lt;/M&gt; with respect to &lt;M&gt;s&lt;/M&gt;.
+
+&lt;P/&gt;
+
+Let &lt;M&gt;a,b,c,d&lt;/M&gt; be positive integers such that &lt;M&gt;a/b &amp;lt; c/d&lt;/M&gt;, and let &lt;M&gt;I=[a/b,c/d]&lt;/M&gt;.
+Then the set &lt;M&gt;{\rm S}(I)={\mathbb N}\cap \bigcup_{n\geq 0} n I&lt;/M&gt; is a numerical semigroup.
+This class of numerical semigroups coincides with that of sets of solutions to equations of the
+form &lt;M&gt; A x \bmod\ B \leq C x&lt;/M&gt; with &lt;M&gt; A,B,C&lt;/M&gt; positive integers. A numerical semigroup in
+this class is said to be &lt;E&gt;proportionally modular&lt;/E&gt;.
+If &lt;M&gt;C = 1&lt;/M&gt;, then it is said to be &lt;E&gt;modular&lt;/E&gt;.
+
+&lt;P/&gt;
+
+There are different ways to specify a numerical semigroup &lt;M&gt;S&lt;/M&gt;,
+namely, by its generators; by its gaps, its fundamental or special gaps
+by its Apéry set, just to name some.
+In this section we describe functions that may be used
+to specify, in one of these ways, a numerical semigroup  in &amp;GAP;.
+
+&lt;P/&gt;
+
+                To create a numerical semigroup in &amp;GAP; the function
+                &lt;C&gt;NumericalSemigroup&lt;/C&gt; is used.
+                &lt;ManSection&gt;
+                    &lt;Func Name="NumericalSemigroup" Arg="Representation, List"/&gt;
+                    &lt;Description&gt;
+                        &lt;C&gt;Representation&lt;/C&gt;
+                        &lt;P/&gt;
+
+                        May be &lt;C&gt;"generators"&lt;/C&gt;, &lt;C&gt;"minimalgenerators"&lt;/C&gt;, &lt;C&gt;"modular"&lt;/C&gt;,
+                        &lt;C&gt;"propmodular"&lt;/C&gt;, &lt;C&gt;"elements"&lt;/C&gt;, &lt;C&gt;"gaps"&lt;/C&gt;,
+                        &lt;C&gt;"fundamentalgaps"&lt;/C&gt;, &lt;C&gt;"subadditive"&lt;/C&gt; or &lt;C&gt;"apery"&lt;/C&gt; according to
+                        whether the semigroup is to be given by means of a system of generators, a 
+			minimal system of generators, a condition of the form 
+			&lt;M&gt; ax \bmod\ m \le  x&lt;/M&gt;, a condition of the form 
+			&lt;M&gt; ax \bmod\ m\le  cx&lt;/M&gt;, a set
+                        of all elements up to the conductor, the set of gaps, the
+                        set of fundamental gaps, a periodic subaditive function, or the Apéry set.
+                        &lt;P/&gt;
+                        When no string is given as first argument it is assumed that the numerical
+                        semigroup will be given by means of a set of generators.
+                        &lt;P/&gt;
+                        &lt;C&gt;List&lt;/C&gt;
+                        &lt;P/&gt;
+                        When the semigroup is given through a set of generators, this set
+                        may be given as a list or through its individual elements.
+                        &lt;P/&gt;
+                        The set of all elements up to the conductor, the set of
+                        gaps, the set of fundamental gaps or the Apéry set are given through lists.
+                        &lt;P/&gt;
+                        A periodic subadditive function with period &lt;M&gt;m&lt;/M&gt; is given through the
+                        list of images of the elements, from &lt;M&gt;1&lt;/M&gt; to &lt;M&gt;m&lt;/M&gt;. The image of &lt;M&gt;m&lt;/M&gt;
+                        has to be &lt;M&gt;0&lt;/M&gt;.
+			&lt;P/&gt;
+			Numerical semigroups generated by an interval of positive integers and 
+			embedding dimension two numerical semigroups are known to 
+			be proportionally modular, and thus they are treated as such 
+			(unles the representation "minimalgenerators" is specified), since membership 
+			and other problems are solved faster for these semigroups. 
+			&lt;P/&gt;
+                        &lt;Example&gt;&lt;![CDATA[
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := NumericalSemigroup("generators",3,5,7);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s2 := NumericalSemigroup("generators",[3,5,7]);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1=s2;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup("minimalgenerators",3,7);</span>
+&lt;Numerical semigroup with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup("modular",3,5);</span>
+&lt;Modular numerical semigroup satisfying 3x mod 5 &lt;= x &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1:=NumericalSemigroup("generators",2,5);       </span>
+&lt;Numerical semigroup with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s = s1;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,5,6);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+</pre></div>
+
+<p>Once it is known that a numerical semigroup contains the element <span class="SimpleMath">\(1\)</span>, i.e. the semigroup is <span class="SimpleMath">\(\mathbb N\)</span>, the semigroup is treated as such.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroup(1);</span>
+&lt;The numerical semigroup N&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupByInterval(1/3,1/2);</span>
+&lt;The numerical semigroup N&gt;
+ </pre></div>
+
+<p><a id="X87206D597873EAFF" name="X87206D597873EAFF"></a></p>
+
+<h5>2.1-5 ModularNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ModularNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given two positive integers <var class="Arg">a</var> and <var class="Arg">b</var>, this function returns a modular numerical semigroup satisfying <span class="SimpleMath">\(ax \bmod\ b \le x\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ModularNumericalSemigroup(3,7);</span>
+&lt;Modular numerical semigroup satisfying 3x mod 7 &lt;= x &gt;
+</pre></div>
+
+<p><a id="X879171CD7AC80BB5" name="X879171CD7AC80BB5"></a></p>
+
+<h5>2.1-6 ProportionallyModularNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProportionallyModularNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given three positive integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, this function returns a proportionally modular numerical semigroup satisfying <span class="SimpleMath">\(ax\bmod\ b \le cx\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ProportionallyModularNumericalSemigroup(3,7,12);</span>
+&lt;Proportionally modular numerical semigroup satisfying 3x mod 7 &lt;= 12x &gt;
+</pre></div>
+
+<p>When <span class="SimpleMath">\(c=1\)</span>, the semigroup is seen as a modular numerical semigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroup("propmodular",67,98,1);         </span>
+&lt;Modular numerical semigroup satisfying 67x mod 98 &lt;= x &gt;
+</pre></div>
+
+<p><a id="X79B38AB3816BF3C5" name="X79B38AB3816BF3C5"></a></p>
+
+<h5>2.1-7 NumericalSemigroupByGenerators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByMinimalGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByMinimalGeneratorsNC</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByInterval</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByOpenInterval</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupBySubAdditiveFunction</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByAperyList</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupBySmallElements</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGaps</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByFundamentalGaps</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>The function <code class="func">NumericalSemigroup</code> (<a href="chap2_mj.html#X86DEEBFE854B60A6"><span class="RefLink">2.1-1</span></a>) is a front-end for these functions. The argument of each of these functions is a list representing an entity of the type to which the function's name refers.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,11);</span>
+&lt;Numerical semigroup with 2 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GapsOfNumericalSemigroup(s);</span>
 [ 1, 2, 4, 5, 7, 8, 10, 13, 16, 19 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroupByGaps(last);</span>
@@ -226,7 +376,7 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7);</span>
-&lt;Modular numerical semigroup satisfying 7x mod 21 &lt;= x &gt;
+&lt;Numerical semigroup with 2 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AperyListOfNumericalSemigroupWRTElement(s,30);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroupByAperyList(last);</span>
 &lt;Numerical semigroup&gt;
@@ -269,7 +419,7 @@ false
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7);</span>
-&lt;Modular numerical semigroup satisfying 7x mod 21 &lt;= x &gt;
+&lt;Numerical semigroup with 2 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:=GapsOfNumericalSemigroup(s);</span>
 [ 1, 2, 4, 5, 8, 11 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RepresentsGapsOfNumericalSemigroup(L);</span>
@@ -305,7 +455,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := NumericalSemigroup("modular", 5,53);</span>
 &lt;Modular numerical semigroup satisfying 5x mod 53 &lt;= x &gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:=NumericalSemigroup(2,3);</span>
-&lt;Modular numerical semigroup satisfying 3x mod 6 &lt;= x &gt;
+&lt;Numerical semigroup with 2 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubsemigroupOfNumericalSemigroup(T,S);</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubsemigroupOfNumericalSemigroup(S,T);</span>

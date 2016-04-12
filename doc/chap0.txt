@@ -115,6 +115,9 @@
       2.1-2 ModularNumericalSemigroup
       2.1-3 ProportionallyModularNumericalSemigroup
       2.1-4 NumericalSemigroupByGenerators
+      2.1-5 ModularNumericalSemigroup
+      2.1-6 ProportionallyModularNumericalSemigroup
+      2.1-7 NumericalSemigroupByGenerators
     2.2 [33X[0;0YSome basic tests[133X
       2.2-1 IsNumericalSemigroup
       2.2-2 RepresentsSmallElementsOfNumericalSemigroup
@@ -216,7 +219,7 @@
       7.1-1 IdealOfNumericalSemigroup
       7.1-2 IsIdealOfNumericalSemigroup
       7.1-3 MinimalGeneratingSystemOfIdealOfNumericalSemigroup
-      7.1-4 GeneratorsOfIdealOfNumericalSemigroup
+      7.1-4 Generators
       7.1-5 AmbientNumericalSemigroupOfIdeal
       7.1-6 IsIntegralIdealOfNumericalSemigroup
       7.1-7 SmallElementsOfIdealOfNumericalSemigroup
@@ -360,15 +363,16 @@
   12 [33X[0;0YGood semigroups[133X
     12.1 [33X[0;0YDefining good semigroups[133X
       12.1-1 IsGoodSemigroup
-      12.1-2 SemigroupDuplication
-      12.1-3 Amalgamation
-      12.1-4 CartesianProduct
+      12.1-2 NumericalSemigroupDuplication
+      12.1-3 AmalgamationOfNumericalSemigroups
+      12.1-4 CartesianProductOfNumericalSemigroups
       12.1-5 GoodSemigroup
     12.2 [33X[0;0YNotable elements[133X
       12.2-1 Conductor
       12.2-2 SmallElementsOfGoodSemigroup
-      12.2-3 RepresentsSmallElementsOfGoodSemigroup
-      12.2-4 MinimalGoodGeneratingSystemOfGoodSemigroup
+      12.2-3 SmallElements
+      12.2-4 RepresentsSmallElementsOfGoodSemigroup
+      12.2-5 MinimalGoodGeneratingSystemOfGoodSemigroup
     12.3 [33X[0;0YSymmetric semigroups[133X
       12.3-1 IsSymmetricGoodSemigroup
   A [33X[0;0YGeneralities[133X

@@ -18,7 +18,9 @@
                         <Example><![CDATA[
 gap> ns := NumericalSemigroup(5,8,9,11);;
 gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(ns);
-[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+[ <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators> ]
 gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
 ]]></Example>          

@@ -55,8 +55,8 @@ BindGlobal( "NumericalSemigroupsType",
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByGenerators" );
 #A
-DeclareAttribute( "GeneratorsNS", IsNumericalSemigroup);
-DeclareSynonymAttr( "IsNumericalSemigroupByGenerators", HasGeneratorsNS);
+DeclareAttribute( "Generators", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByGenerators", HasGenerators);
 
 
 #############################################################################
@@ -70,8 +70,9 @@ DeclareSynonymAttr( "IsNumericalSemigroupByGenerators", HasGeneratorsNS);
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByMinimalGenerators" );
 #A
-DeclareAttribute( "MinimalGeneratorsNS", IsNumericalSemigroup);
-DeclareSynonymAttr( "IsNumericalSemigroupByMinimalGenerators", HasMinimalGeneratorsNS);
+#DeclareAttribute( "MinimalGeneratorsNS", IsNumericalSemigroup);
+DeclareAttribute( "MinimalGenerators", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByMinimalGenerators", HasMinimalGenerators);
 
 
 
@@ -165,8 +166,9 @@ DeclareSynonymAttr( "IsNumericalSemigroupBySubAdditiveFunction",HasSubAdditiveFu
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByAperyList" );
 #A
-DeclareAttribute( "AperyListNS", IsNumericalSemigroup);
-DeclareSynonymAttr( "IsNumericalSemigroupByAperyList",HasAperyListNS);
+#DeclareAttribute( "AperyListNS", IsNumericalSemigroup);
+DeclareAttribute( "AperyList", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByAperyList",HasAperyList);
 
 
 
@@ -181,8 +183,8 @@ DeclareSynonymAttr( "IsNumericalSemigroupByAperyList",HasAperyListNS);
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupBySmallElements" );
 #A
-DeclareAttribute( "SmallElementsNS", IsNumericalSemigroup);
-DeclareSynonymAttr( "IsNumericalSemigroupBySmallElements",HasSmallElementsNS);
+DeclareAttribute( "SmallElements", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupBySmallElements",HasSmallElements);
 
 
 #############################################################################
@@ -205,8 +207,9 @@ DeclareGlobalFunction( "NumericalSemigroupBySmallElementsNC" );
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByGaps" );
 #A
-DeclareAttribute( "GapsNS", IsNumericalSemigroup);
-DeclareSynonymAttr( "IsNumericalSemigroupByGaps",HasGapsNS);
+#DeclareAttribute( "GapsNS", IsNumericalSemigroup);
+DeclareAttribute( "Gaps", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByGaps",HasGaps);
 
 
 #############################################################################
@@ -219,8 +222,8 @@ DeclareSynonymAttr( "IsNumericalSemigroupByGaps",HasGapsNS);
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByFundamentalGaps" );
 #A
-DeclareAttribute( "FundamentalGapsNS", IsNumericalSemigroup);
-DeclareSynonymAttr( "IsNumericalSemigroupByFundamentalGaps",HasFundamentalGapsNS);
+DeclareAttribute( "FundamentalGaps", IsNumericalSemigroup);
+DeclareSynonymAttr( "IsNumericalSemigroupByFundamentalGaps",HasFundamentalGaps);
 
         
 #############################################################################

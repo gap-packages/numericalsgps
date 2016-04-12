@@ -168,7 +168,8 @@ false
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));</span>
-[ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ]
+[ &lt;Numerical semigroup with 3 generators&gt;, 
+  &lt;Numerical semigroup with 4 generators&gt; ]
 </pre></div>
 
 <p><a id="X7D3FD9C8786B5D72" name="X7D3FD9C8786B5D72"></a></p>
@@ -337,7 +338,9 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns := NumericalSemigroup(5,8,9,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AlmostSymmetricNumericalSemigroupsFromIrreducible(ns);</span>
-[ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ]
+[ &lt;Numerical semigroup with 4 generators&gt;, 
+  &lt;Numerical semigroup with 5 generators&gt;, 
+  &lt;Numerical semigroup with 5 generators&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);</span>
 [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
 </pre></div>

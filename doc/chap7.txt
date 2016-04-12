@@ -52,8 +52,9 @@
   
   [1X7.1-3 MinimalGeneratingSystemOfIdealOfNumericalSemigroup[101X
   
-  [29X[2XMinimalGeneratingSystemOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function
-  [29X[2XMinimalGeneratingSystem[102X( [3XI[103X ) [32X function
+  [29X[2XMinimalGeneratingSystemOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X attribute
+  [29X[2XMinimalGeneratingSystem[102X( [3XI[103X ) [32X attribute
+  [29X[2XMinimalGenerators[102X( [3XI[103X ) [32X attribute
   
   [33X[0;0Y[3XI[103X is an ideal of a numerical semigroup.[133X
   
@@ -65,19 +66,22 @@
     [4X[28X[ 3 ][128X[104X
     [4X[25Xgap>[125X [27XMinimalGeneratingSystem(I);                           [127X[104X
     [4X[28X[ 3 ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators([3,5]+NumericalSemigroup(2,11));[127X[104X
+    [4X[28X[ 3 ][128X[104X
   [4X[32X[104X
   
-  [1X7.1-4 GeneratorsOfIdealOfNumericalSemigroup[101X
+  [1X7.1-4 Generators[101X
   
-  [29X[2XGeneratorsOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function
-  [29X[2XGeneratorsOfIdealOfNumericalSemigroupNC[102X( [3XI[103X ) [32X function
+  [29X[2XGenerators[102X( [3XI[103X ) [32X attribute
+  [29X[2XGeneratorsOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X attribute
   
   [33X[0;0Y[3XI[103X is an ideal of a numerical semigroup.[133X
   
-  [33X[0;0YThe   output   of   [10XGeneratorsOfIdealOfNumericalSemigroup[110X  is  a  system  of
-  generators  of the ideal. If the minimal system of generators is known, then
-  it is used as output. [10XGeneratorsOfIdealOfNumericalSemigroupNC[110X always returns
-  the set of generators stored in [3XI!.generators[103X.[133X
+  [33X[0;0YThe  output  of [10XGenerators[110X and of [10XGeneratorsOfIdealOfNumericalSemigroup[110X is a
+  system of generators of the ideal.[133X
+  
+  [33X[0;0YRemark:  from  Version 1.1 on, this value does not change even when a set of
+  minimal generators is computed.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XI:=[3,5,9]+NumericalSemigroup(2,11);;[127X[104X
@@ -85,9 +89,7 @@
     [4X[28X[ 3, 5, 9 ][128X[104X
     [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);[127X[104X
     [4X[28X[ 3 ][128X[104X
-    [4X[25Xgap>[125X [27XGeneratorsOfIdealOfNumericalSemigroup(I);[127X[104X
-    [4X[28X[ 3 ][128X[104X
-    [4X[25Xgap>[125X [27XGeneratorsOfIdealOfNumericalSemigroupNC(I);[127X[104X
+    [4X[25Xgap>[125X [27XGenerators(I);                                        [127X[104X
     [4X[28X[ 3, 5, 9 ][128X[104X
   [4X[32X[104X
   
@@ -102,7 +104,7 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XI:=[3,5,9]+NumericalSemigroup(2,11);;[127X[104X
     [4X[25Xgap>[125X [27XAmbientNumericalSemigroupOfIdeal(I);[127X[104X
-    [4X[28X<Modular numerical semigroup satisfying 11x mod 22 <= x >[128X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
   [4X[32X[104X
   
   [1X7.1-6 IsIntegralIdealOfNumericalSemigroup[101X

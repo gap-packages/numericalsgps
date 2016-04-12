@@ -91,24 +91,24 @@ DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
 
 #############################################################################
 ##
-#F  IsUniquelyPresentedAffineSemigroup(a)
+#P  IsUniquelyPresentedAffineSemigroup(a)
 ##
 ##  For an affine semigroup s, checks it it has a unique minimal presentation
 ##  Basado en GS-O
 ##
 #############################################################################
-DeclareGlobalFunction("IsUniquelyPresentedAffineSemigroup");
+DeclareProperty("IsUniquelyPresentedAffineSemigroup", IsAffineSemigroup);
 
 #############################################################################
 ##
-#F  IsGenericAffineSemigroup(a)
+#P  IsGenericAffineSemigroup(a)
 ##
 ##  For an affine semigroup a, checks it it has a generic presentation,
 ##  that is, in every relation all minimal generators appear. These semigroups are uniquely
 ##  presented véase B-GS-G.
 ##
 #############################################################################
-DeclareGlobalFunction("IsGenericAffineSemigroup");
+DeclareProperty("IsGenericAffineSemigroup", IsAffineSemigroup);
 
 #############################################################################
 ##
