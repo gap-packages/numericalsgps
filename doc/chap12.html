@@ -47,6 +47,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7F8244367C137D75">12.2-3 SmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82D40159783F0D48">12.2-4 RepresentsSmallElementsOfGoodSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82E24F8E79648AAC">12.2-5 MinimalGoodGeneratingSystemOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7D861A02806D200C">12.2-6 MinimalGenerators</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap12.html#X812981548765092E">12.3 <span class="Heading">
       Symmetric semigroups
@@ -200,8 +201,8 @@ true
 
 <h5>12.2-3 SmallElements</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>This is just a synonym of <code class="code"> SmallElementsOfGoodSemigroup</code> (<code class="code">NS</code>).</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>This is just a synonym of <code class="code"> SmallElementsOfGoodSemigroup</code> (<code class="code">S</code>).</p>
 
 
 <div class="example"><pre>
@@ -221,7 +222,7 @@ true
 <h5>12.2-4 RepresentsSmallElementsOfGoodSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RepresentsSmallElementsOfGoodSemigroup</code>( <var class="Arg">X</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">X</var> is a list of points in the nonnegative orthant of the plane with integert coordinates. Determines if it represents the set of small elements of a good semigroup.</p>
+<p><var class="Arg">X</var> is a list of points in the nonnegative orthant of the plane with integer coordinates. Determines if it represents the set of small elements of a good semigroup.</p>
 
 
 <div class="example"><pre>
@@ -251,6 +252,23 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGoodGeneratingSystemOfGoodSemigroup(dup);</span>
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+        </pre></div>
+
+<p><a id="X7D861A02806D200C" name="X7D861A02806D200C"></a></p>
+
+<h5>12.2-6 MinimalGenerators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>This is just a synonym of <code class="code"> MinimalGoodGeneratingSystemOfGoodSemigroup</code> (<code class="code">S</code>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
+&lt;Good semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(dup);</span>
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
         </pre></div>
 

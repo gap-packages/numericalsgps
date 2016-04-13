@@ -255,6 +255,8 @@ gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> AperyListOfNumericalSemigroup(S);
 [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+gap> AperyList(NumericalSemigroup(5,7,11));                           
+[ 0, 11, 7, 18, 14 ]
 
 gap>  s:=NumericalSemigroup(10,13,19,27);
 <Numerical semigroup with 4 generators>
@@ -293,6 +295,8 @@ gap> PseudoFrobeniusOfNumericalSemigroup(S);
 
 gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ 1, 2, 4 ]
+gap> Gaps(NumericalSemigroup(5,7,11));
+[ 1, 2, 3, 4, 6, 8, 9, 13 ]
 
 gap> s:=NumericalSemigroup(16,17,71,72);;
 gap> LatticePathAssociatedToNumericalSemigroup(s,16,17);
@@ -307,6 +311,10 @@ gap> FundamentalGapsOfNumericalSemigroup(S);
 gap> GapsOfNumericalSemigroup(S);
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 27, 28, 29,
   30, 31, 40, 41, 42 ]
+gap> Gaps(NumericalSemigroup(5,7,11));
+[ 1, 2, 3, 4, 6, 8, 9, 13 ]
+gap> FundamentalGaps(NumericalSemigroup(5,7,11));
+[ 6, 8, 9, 13 ]
 
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
@@ -1172,6 +1180,13 @@ gap> e:=6+s;;
 gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
 gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> MinimalGenerators(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
 
 gap> s:=NumericalSemigroup(3,5,7);;

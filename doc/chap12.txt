@@ -141,9 +141,9 @@
   
   [1X12.2-3 SmallElements[101X
   
-  [29X[2XSmallElements[102X( [3XNS[103X ) [32X attribute
+  [29X[2XSmallElements[102X( [3XS[103X ) [32X attribute
   
-  [33X[0;0YThis is just a synonym of [10X SmallElementsOfGoodSemigroup[110X ([10XNS[110X).[133X
+  [33X[0;0YThis is just a synonym of [10X SmallElementsOfGoodSemigroup[110X ([10XS[110X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -162,7 +162,7 @@
   
   [29X[2XRepresentsSmallElementsOfGoodSemigroup[102X( [3XX[103X ) [32X function
   
-  [33X[0;0Y[3XX[103X  is a list of points in the nonnegative orthant of the plane with integert
+  [33X[0;0Y[3XX[103X  is  a list of points in the nonnegative orthant of the plane with integer
   coordinates. Determines if it represents the set of small elements of a good
   semigroup.[133X
   
@@ -193,6 +193,22 @@
     [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-6 MinimalGenerators[101X
+  
+  [29X[2XMinimalGenerators[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0YThis is just a synonym of [10X MinimalGoodGeneratingSystemOfGoodSemigroup[110X ([10XS[110X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(dup);[127X[104X
     [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ][128X[104X
     [4X[28X        [128X[104X
   [4X[32X[104X
