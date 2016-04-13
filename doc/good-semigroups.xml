@@ -138,9 +138,9 @@ gap> SmallElementsOfGoodSemigroup(dup);
   </ManSection>
 
   <ManSection>
-      <Attr Name="SmallElements" Arg="NS"/>
+      <Attr Name="SmallElements" Arg="S"/>
       <Description>
-       This is just a synonym of <C> SmallElementsOfGoodSemigroup</C> (<C>NS</C>).
+       This is just a synonym of <C> SmallElementsOfGoodSemigroup</C> (<C>S</C>).
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=6+s;;
@@ -158,7 +158,7 @@ gap> SmallElements(dup);
   <ManSection>
     <Func Arg="X" Name="RepresentsSmallElementsOfGoodSemigroup"></Func>
     <Description>
-      <A>X</A> is a list of points in the nonnegative orthant of the plane with integert coordinates. Determines if it represents the set of small elements of a good semigroup.
+      <A>X</A> is a list of points in the nonnegative orthant of the plane with integer coordinates. Determines if it represents the set of small elements of a good semigroup.
 
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -191,6 +191,20 @@ gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
         ]]></Example>
     </Description>
   </ManSection>
+  <ManSection>
+      <Attr Name="MinimalGenerators" Arg="S"/>
+      <Description>
+       This is just a synonym of <C> MinimalGoodGeneratingSystemOfGoodSemigroup</C> (<C>S</C>).
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> MinimalGenerators(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+        ]]></Example>
+     </Description>
+   </ManSection>
 
 </Section>
 

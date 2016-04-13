@@ -24,7 +24,8 @@ gap> MultiplicityOfNumericalSemigroup(S);
 
                 <ManSection>
                     <Attr Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
-                   <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
+		    <Attr Name="Generators" Arg="S"/>
+                    <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
                   <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/> -->
 <Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
 <Attr Name="MinimalGeneratingSystem" Arg="S"/>
@@ -126,6 +127,7 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 
 
                 <ManSection>
+                    <Attr Name="AperyList" Arg="S, m"/>
                     <Oper Name="AperyListOfNumericalSemigroupWRTElement" Arg="S, m"/>
                     <Description>
                         <A>S</A> is a numerical semigroup and <A>m</A> is a positive element of
@@ -142,7 +144,8 @@ gap> AperyListOfNumericalSemigroupWRTElement(S,12);
                     </Description>
                 </ManSection>
                 <ManSection>
-                    <Oper Name="AperyListOfNumericalSemigroup" Arg="S"/>
+                    <Attr Name="AperyList" Arg="S"/>
+                    <Attr Name="AperyListOfNumericalSemigroup" Arg="S"/>
                     <Description>
                         <A>S</A> is a numerical semigroup. It computes the Apéry list of <A>S</A> with respect to the multiplicity of <A>S</A>.
                         <Example><![CDATA[
@@ -150,6 +153,8 @@ gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> AperyListOfNumericalSemigroup(S);
 [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+gap> AperyList(NumericalSemigroup(5,7,11));                           
+[ 0, 11, 7, 18, 14 ]
 ]]></Example>
                     </Description>
                 </ManSection>

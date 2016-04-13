@@ -11,13 +11,16 @@ those fundamental gaps such that if they are added to the given numerical semigr
 then the resulting set is again a numerical semigroup.
 
                 <ManSection>
+                    <Attr Name="Gaps" Arg="NS"/>
                     <Attr Name="GapsOfNumericalSemigroup" Arg="NS"/>
                     <Description>
                         <C>NS</C> 
-                        is a numerical semigroup. It returns the set of gaps of <C>NS</C>.
+                        is a numerical semigroup. Both return the set of gaps of <C>NS</C>.
                         <Example><![CDATA[
 gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ 1, 2, 4 ]
+gap> Gaps(NumericalSemigroup(5,7,11));
+[ 1, 2, 3, 4, 6, 8, 9, 13 ]
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -50,6 +53,7 @@ gap> LatticePathAssociatedToNumericalSemigroup(s,16,17);
                 
                 
                 <ManSection>
+                    <Attr Name="FundamentalGaps" Arg="S"/>
                     <Attr Name="FundamentalGapsOfNumericalSemigroup" Arg="S"/>
                     <Description>
                         <C>S</C> 
@@ -62,6 +66,10 @@ gap> FundamentalGapsOfNumericalSemigroup(S);
 gap> GapsOfNumericalSemigroup(S);
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 27, 28, 29,
   30, 31, 40, 41, 42 ]
+gap> Gaps(NumericalSemigroup(5,7,11));
+[ 1, 2, 3, 4, 6, 8, 9, 13 ]
+gap> FundamentalGaps(NumericalSemigroup(5,7,11));
+[ 6, 8, 9, 13 ]
 ]]></Example>
                     </Description>
                 </ManSection>

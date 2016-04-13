@@ -922,6 +922,9 @@ belong to \mbox{\texttt{\mdseries\slshape S}}.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfNumericalSemigroup({\mdseries\slshape S})\index{GeneratorsOfNumericalSemigroup@\texttt{GeneratorsOfNumericalSemigroup}}
 \label{GeneratorsOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape S})\index{Generators@\texttt{Generators}}
+\label{Generators}
+}\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystemOfNumericalSemigroup({\mdseries\slshape S})\index{MinimalGeneratingSystemOfNumericalSemigroup@\texttt{Minimal}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalGeneratingSystemOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
@@ -1020,10 +1023,13 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupWRTElement}}
+\subsection{\textcolor{Chapter }{AperyList}}
 \logpage{[ 3, 1, 6 ]}\nobreak
-\hyperdef{L}{X86C699F2800F9ED0}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTElement({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
+\hyperdef{L}{X82362D7184AEAB0B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyList({\mdseries\slshape S, m})\index{AperyList@\texttt{AperyList}}
+\label{AperyList}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTElement({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
 \label{AperyListOfNumericalSemigroupWRTElement}
 }\hfill{\scriptsize (operation)}}\\
 
@@ -1039,12 +1045,15 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{AperyList}}
 \logpage{[ 3, 1, 7 ]}\nobreak
-\hyperdef{L}{X85EACCB87E7F563B}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroup({\mdseries\slshape S})\index{AperyListOfNumericalSemigroup@\texttt{AperyListOfNumericalSemigroup}}
+\hyperdef{L}{X82362D7184AEAB0B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyList({\mdseries\slshape S})\index{AperyList@\texttt{AperyList}}
+\label{AperyList}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroup({\mdseries\slshape S})\index{AperyListOfNumericalSemigroup@\texttt{AperyListOfNumericalSemigroup}}
 \label{AperyListOfNumericalSemigroup}
-}\hfill{\scriptsize (operation)}}\\
+}\hfill{\scriptsize (attribute)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. It computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to the multiplicity of \mbox{\texttt{\mdseries\slshape S}}. 
@@ -1053,6 +1062,8 @@ semigroup is given.
   <Modular numerical semigroup satisfying 5x mod 53 <= x >
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroup(S);|
   [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+  !gapprompt@gap>| !gapinput@AperyList(NumericalSemigroup(5,7,11));                           |
+  [ 0, 11, 7, 18, 14 ]
 \end{Verbatim}
  }
 
@@ -1254,18 +1265,23 @@ semigroup is given or on the knowledge already produced on the semigroup.
 division in ${\mathbb N}$. The \emph{special gaps} of a numerical semigroup $S$, are those fundamental gaps such that if they are added to the given
 numerical semigroup, then the resulting set is again a numerical semigroup. 
 
-\subsection{\textcolor{Chapter }{GapsOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Gaps}}
 \logpage{[ 3, 3, 1 ]}\nobreak
-\hyperdef{L}{X7B1BEC5786C66244}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GapsOfNumericalSemigroup({\mdseries\slshape NS})\index{GapsOfNumericalSemigroup@\texttt{GapsOfNumericalSemigroup}}
+\hyperdef{L}{X787FE6F180C6291F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Gaps({\mdseries\slshape NS})\index{Gaps@\texttt{Gaps}}
+\label{Gaps}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GapsOfNumericalSemigroup({\mdseries\slshape NS})\index{GapsOfNumericalSemigroup@\texttt{GapsOfNumericalSemigroup}}
 \label{GapsOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
 
- \texttt{NS} is a numerical semigroup. It returns the set of gaps of \texttt{NS}. 
+ \texttt{NS} is a numerical semigroup. Both return the set of gaps of \texttt{NS}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));|
   [ 1, 2, 4 ]
+  !gapprompt@gap>| !gapinput@Gaps(NumericalSemigroup(5,7,11));|
+  [ 1, 2, 3, 4, 6, 8, 9, 13 ]
 \end{Verbatim}
  }
 
@@ -1307,10 +1323,13 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
 
  
 
-\subsection{\textcolor{Chapter }{FundamentalGapsOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{FundamentalGaps}}
 \logpage{[ 3, 3, 4 ]}\nobreak
-\hyperdef{L}{X81EC33E978C73FEA}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FundamentalGapsOfNumericalSemigroup({\mdseries\slshape S})\index{FundamentalGapsOfNumericalSemigroup@\texttt{FundamentalGapsOfNumericalSemigroup}}
+\hyperdef{L}{X808FA9A7786F9426}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FundamentalGaps({\mdseries\slshape S})\index{FundamentalGaps@\texttt{FundamentalGaps}}
+\label{FundamentalGaps}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FundamentalGapsOfNumericalSemigroup({\mdseries\slshape S})\index{FundamentalGapsOfNumericalSemigroup@\texttt{FundamentalGapsOfNumericalSemigroup}}
 \label{FundamentalGapsOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
@@ -1324,6 +1343,10 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
   !gapprompt@gap>| !gapinput@GapsOfNumericalSemigroup(S);|
   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 27, 28, 29,
     30, 31, 40, 41, 42 ]
+  !gapprompt@gap>| !gapinput@Gaps(NumericalSemigroup(5,7,11));|
+  [ 1, 2, 3, 4, 6, 8, 9, 13 ]
+  !gapprompt@gap>| !gapinput@FundamentalGaps(NumericalSemigroup(5,7,11));|
+  [ 6, 8, 9, 13 ]
 \end{Verbatim}
  }
 
@@ -5540,12 +5563,12 @@ ordering.
 \subsection{\textcolor{Chapter }{SmallElements}}
 \logpage{[ 12, 2, 3 ]}\nobreak
 \hyperdef{L}{X7F8244367C137D75}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape NS})\index{SmallElements@\texttt{SmallElements}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape S})\index{SmallElements@\texttt{SmallElements}}
 \label{SmallElements}
 }\hfill{\scriptsize (attribute)}}\\
 
 
- This is just a synonym of \texttt{ SmallElementsOfGoodSemigroup} (\texttt{NS}). 
+ This is just a synonym of \texttt{ SmallElementsOfGoodSemigroup} (\texttt{S}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@e:=6+s;;|
@@ -5570,7 +5593,7 @@ ordering.
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape X}} is a list of points in the nonnegative orthant of the plane with integert
+ \mbox{\texttt{\mdseries\slshape X}} is a list of points in the nonnegative orthant of the plane with integer
 coordinates. Determines if it represents the set of small elements of a good
 semigroup. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -5606,6 +5629,28 @@ is unique in the local case).
   !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);|
   <Good semigroup>
   !gapprompt@gap>| !gapinput@MinimalGoodGeneratingSystemOfGoodSemigroup(dup);|
+  [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+          
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MinimalGenerators}}
+\logpage{[ 12, 2, 6 ]}\nobreak
+\hyperdef{L}{X7D861A02806D200C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}}
+\label{MinimalGenerators}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ This is just a synonym of \texttt{ MinimalGoodGeneratingSystemOfGoodSemigroup} (\texttt{S}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@e:=6+s;;|
+  !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@MinimalGenerators(dup);|
   [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
           
 \end{Verbatim}
