@@ -296,6 +296,8 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
       Info(InfoNumSgps,2,"Conductor redefined");
       sm:=Filtered(sm, x->x[1]<=c[1] and x[2]<=c[2]);
       gen:=Filtered(G, x->x[1]<=c[1] and x[2]<=c[2]);
+    else
+      gen:=ShallowCopy(G);
     fi;
 
     M:=Objectify(GoodSemigroupsType, rec());
@@ -372,9 +374,9 @@ end);
 ## returns de small elements of M, that is,
 ## the elements below the conductor
 ##################################################
-InstallMethod(SmallElementsOfGoodSemigroup, 
+InstallMethod(SmallElementsOfGoodSemigroup,
         "Calculates the small elements of the semigroup",
-        [IsGoodSemigroup ],50,        
+        [IsGoodSemigroup ],50,
         function(M)
     local C,box, sm;
 
@@ -420,9 +422,9 @@ end);
 ## returns the unique minimal good generating of the
 ## good semigroup M
 ###################################################
-InstallMethod(MinimalGoodGeneratingSystemOfGoodSemigroup, 
+InstallMethod(MinimalGoodGeneratingSystemOfGoodSemigroup,
        "Calculates the minimal generating system of the semigroup",
-        [IsGoodSemigroup ],50,        
+        [IsGoodSemigroup ],50,
         function(M)
   local filter,mingen,C;
 
