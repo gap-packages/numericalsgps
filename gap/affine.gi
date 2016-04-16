@@ -1250,6 +1250,7 @@ end);
 InstallGlobalFunction(NumSgpsUse4ti2, function()
     if LoadPackage("4ti2Interface")=true then
         ReadPackage("numericalsgps/gap/affine-extra-4ti2.gi");
+        ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2i.gi");
         NumSgpsCanUse4ti2:=true;
         return true;
     else
@@ -1266,6 +1267,7 @@ end);
 InstallGlobalFunction(NumSgpsUse4ti2gap, function()
     if LoadPackage("4ti2gap")=true then
         ReadPackage("numericalsgps/gap/affine-extra-4ti2gap.gi");
+        ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2gap.gi");
         NumSgpsCanUse4ti2gap:=true;
         return true;
     else
