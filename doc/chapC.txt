@@ -477,3 +477,12 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
+  
+  [1XC.4 [33X[0;0YFunctions implemented by I. Ojeda and C. J. Moreno Ávila[133X[101X
+  
+  [33X[0;0YIgnacio  and  Carlos  Jesús  implemented the algorithms given in [Rou08] and
+  [MOT15]  for  the  calculation  of  the  Frobenius number and Apéry set of a
+  numerical  semigroup using Gröbner basis calculations. These methods will be
+  used if 4ti2 is loaded (either 4ti2Interface or 4ti2gap). A faster algorithm
+  is employed provided that singular is loaded.[133X
+  
