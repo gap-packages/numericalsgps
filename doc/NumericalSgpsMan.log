@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  16 APR 2016 09:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  16 APR 2016 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2062,7 +2062,7 @@ m/n/10.95 http : / / www . gap-[]system . org /
  []
 
 [107] [108]
-Underfull \hbox (badness 1132) in paragraph at lines 385--385
+Underfull \hbox (badness 1132) in paragraph at lines 396--396
 []\T1/ptm/m/n/10.95 Dario Spir-ito.  Star op-er-a-tions on nu-mer-i-cal semi-gr
 oups.  \T1/ptm/m/it/10.95 Comm. Al-ge-bra\T1/ptm/m/n/10.95 ,
  []
@@ -2906,27 +2906,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 451--453
 [114
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6681.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6681.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6690.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6690.
  (./NumericalSgpsMan.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6681.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6681.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6690.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6690.
 
 Package rerunfilecheck Info: File `NumericalSgpsMan.out' has not changed.
-(rerunfilecheck)             Checksum: E400666900A2419EEF957DBA21F58BDA;4809.
+(rerunfilecheck)             Checksum: 25D0AC68F4EE0DCD35148CC8CA0D7E3E;4916.
 Package rerunfilecheck Info: File `NumericalSgpsMan.brf' has not changed.
-(rerunfilecheck)             Checksum: 4461C636931EE50E6BCE0F9083162DE9;5127.
+(rerunfilecheck)             Checksum: C897EFCAA3CDABAFF50FB47BDB36469C;5214.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6681.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6690.
  ) 
 Here is how much of TeX's memory you used:
- 8405 strings out of 493033
- 128807 string characters out of 6134139
- 212504 words of memory out of 5000000
- 10990 multiletter control sequences out of 15000+600000
+ 8418 strings out of 493033
+ 128943 string characters out of 6134139
+ 212568 words of memory out of 5000000
+ 10999 multiletter control sequences out of 15000+600000
  89612 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,7n,29p,789b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2949,10 +2949,10 @@ yr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NumericalSgpsMan.pdf (114 pages, 526062 bytes).
+Output written on NumericalSgpsMan.pdf (114 pages, 527376 bytes).
 PDF statistics:
- 2225 PDF objects out of 2487 (max. 8388607)
- 2070 compressed objects within 21 object streams
- 808 named destinations out of 1000 (max. 500000)
- 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2238 PDF objects out of 2487 (max. 8388607)
+ 2083 compressed objects within 21 object streams
+ 812 named destinations out of 1000 (max. 500000)
+ 497 words of extra memory for PDF output out of 10000 (max. 10000000)
 

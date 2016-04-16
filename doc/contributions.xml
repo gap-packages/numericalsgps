@@ -553,4 +553,9 @@ true
 
 </Section>
 
+<Section><Heading>Functions implemented by I. Ojeda and C. J. Moreno Ávila</Heading>
+
+Ignacio and Carlos Jesús implemented the algorithms given in <Cite Key="Roune"></Cite> and <Cite Key="MC-O-T"></Cite> for the calculation of the Frobenius number and Apéry set of a numerical semigroup using Gröbner basis calculations. These methods will be used if 4ti2 is loaded (either 4ti2Interface or 4ti2gap). A faster algorithm is employed provided that singular is loaded.
+</Section>
+
 </Appendix>
