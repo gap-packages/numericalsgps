@@ -126,6 +126,21 @@ DeclareGlobalFunction("RepresentsSmallElementsOfGoodSemigroup");
 ###############################################################
 DeclareGlobalFunction("IsSymmetricGoodSemigroup");
 
+###############################################################
+##
+#F GoodSemigroupBySmallElements(M)
+## Constructs good semigroup from a set of small elements
+###############################################################
+DeclareGlobalFunction("GoodSemigroupBySmallElements");
+
+
+###############################################################
+##
+#F ArfGoodSemigroupClosure(M)
+## Constructs Arf good semigroup closure of M
+###############################################################
+DeclareGlobalFunction("ArfGoodSemigroupClosure");
+
 # ## FUNCTIONS ##
 
 #  ####################################################
