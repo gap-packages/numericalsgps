@@ -5427,9 +5427,9 @@ infimums, if $C_1$ and $C_2$ fulfill $C_i+\mathbb{N}^n\subseteq S$, then $C_1\we
   <Good semigroup>
   !gapprompt@gap>| !gapinput@l:=Cartesian([1..11],[1..11]);;|
   !gapprompt@gap>| !gapinput@Intersection(dup,l);|
-  [ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ], 
-    [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], 
-    [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], 
+  [ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+    [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ],
+    [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ],
     [ 11, 9 ], [ 11, 11 ] ]
   !gapprompt@gap>| !gapinput@[384938749837,349823749827] in dup;|
   true
@@ -5493,7 +5493,7 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
  \mbox{\texttt{\mdseries\slshape X}} is a list of points with nonnegative integer coordinates and $C$ is a pair of nonnegative integer (a list with two elements). If $M$ is the affine and infimum closure of \mbox{\texttt{\mdseries\slshape X}}, decides if it is a good semigroup, and if so, outputs it. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];|
-  [ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ], 
+  [ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
     [ 25, 12 ], [ 25, 16 ] ]
   !gapprompt@gap>| !gapinput@C:=[25,27];|
   [ 25, 27 ]
@@ -5550,9 +5550,9 @@ ordering.
   !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);|
   <Good semigroup>
   !gapprompt@gap>| !gapinput@SmallElementsOfGoodSemigroup(dup);|
-  [ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], 
-    [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], 
-    [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], 
+  [ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],
+    [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
+    [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
     [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
           
 \end{Verbatim}
@@ -5575,9 +5575,9 @@ ordering.
   !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);|
   <Good semigroup>
   !gapprompt@gap>| !gapinput@SmallElements(dup);|
-  [ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], 
-    [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], 
-    [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], 
+  [ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],
+    [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
+    [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
     [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
           
 \end{Verbatim}
@@ -5613,8 +5613,38 @@ semigroup.
 
  
 
-\subsection{\textcolor{Chapter }{MinimalGoodGeneratingSystemOfGoodSemigroup}}
+\subsection{\textcolor{Chapter }{GoodSemigroupBySmallElements}}
 \logpage{[ 12, 2, 5 ]}\nobreak
+\hyperdef{L}{X7E538585815C94D0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GoodSemigroupBySmallElements({\mdseries\slshape X})\index{GoodSemigroupBySmallElements@\texttt{GoodSemigroupBySmallElements}}
+\label{GoodSemigroupBySmallElements}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape X}} is a list of points in the nonnegative orthant of the plane with integer
+coordinates. Determines if it represents the set of small elements of a good
+semigroup, and then outputs the good semigroup having \mbox{\texttt{\mdseries\slshape X}} as set of small elements. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@e:=6+s;;|
+  !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@SmallElementsOfGoodSemigroup(dup);|
+  [ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+    [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],
+    [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+  !gapprompt@gap>| !gapinput@G:=GoodSemigroupBySmallElements(last);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@dup=G;|
+  true
+    
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MinimalGoodGeneratingSystemOfGoodSemigroup}}
+\logpage{[ 12, 2, 6 ]}\nobreak
 \hyperdef{L}{X82E24F8E79648AAC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGoodGeneratingSystemOfGoodSemigroup({\mdseries\slshape S})\index{MinimalGoodGeneratingSystemOfGoodSemigroup@\texttt{Minimal}\-\texttt{Good}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Good}\-\texttt{Semigroup}}
 \label{MinimalGoodGeneratingSystemOfGoodSemigroup}
@@ -5637,7 +5667,7 @@ is unique in the local case).
  
 
 \subsection{\textcolor{Chapter }{MinimalGenerators}}
-\logpage{[ 12, 2, 6 ]}\nobreak
+\logpage{[ 12, 2, 7 ]}\nobreak
 \hyperdef{L}{X7D861A02806D200C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}}
 \label{MinimalGenerators}
@@ -5680,6 +5710,34 @@ is unique in the local case).
   !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);;|
   !gapprompt@gap>| !gapinput@IsSymmetricGoodSemigroup(dup);|
   true
+          
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ArfGoodSemigroupClosure}}
+\logpage{[ 12, 3, 2 ]}\nobreak
+\hyperdef{L}{X7E4744C9841CFE9C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfGoodSemigroupClosure({\mdseries\slshape S})\index{ArfGoodSemigroupClosure@\texttt{ArfGoodSemigroupClosure}}
+\label{ArfGoodSemigroupClosure}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a good semigroup. Determines the Arf good semigroup closure of \mbox{\texttt{\mdseries\slshape S}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+          gap> G:=[[3,3],[4,4],[5,4],[4,6]];
+          [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ]
+          gap> C:=[6,6];
+          [ 6, 6 ]
+          gap> S:=GoodSemigroup(G,C);
+          <Good semigroup>
+          gap> SmallElements(S);
+          [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
+          gap> A:=ArfGoodSemigroupClosure(S);
+          <Good semigroup>
+          gap> SmallElements(A);
+          [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
           
 \end{Verbatim}
  }

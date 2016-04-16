@@ -540,6 +540,104 @@ InstallMethod(MinimalGoodGeneratingSystemOfGoodSemigroup,
   return mingen;
 end);
 
+###############################################################
+##
+#F GoodSemigroupBySmallElements(M)
+## Constructs good semigroup from a set of small elements
+###############################################################
+InstallGlobalFunction(GoodSemigroupBySmallElements, function(X)
+  local M, C, c, sm;
+  if not(IsMatrix(X)) and ForAll(X, x->Length(x)=2) then
+    Error("The argument must be a list of pairs of positive integers");
+  fi;
+
+  if not(ForAll(X, x->IsInt(x[1]) and IsInt(x[2]) and x[1]>=0 and x[2]>=0)) then
+    Error("The argument must be a list of pairs of positive integers");
+  fi;
+
+  if not(RepresentsSmallElementsOfGoodSemigroup(X)) then
+    Error("This set is not the set of small elements of a good semigroup");
+  fi;
+
+  C:=[Maximum(List(X,x->x[1])),Maximum(List(X,x->x[2]))];
+
+  #now we see if C is the minimum conductor
+  c:=C;
+  sm:=ShallowCopy(X);
+  while ((c-[0,1]) in sm) or ((c-[1,0]) in sm) do
+    if ((c-[0,1]) in sm) and ((c-[1,0]) in sm) then #c-[1,1] also in sm
+      c:=c-[1,1];
+    elif c-[0,1] in sm then
+      c:=c-[0,1];
+    else
+      c:=c-[1,0];
+    fi;
+  od;
+  if C<>c then #small elements must be redefined
+    Info(InfoNumSgps,2,"Conductor redefined");
+    sm:=Filtered(X, x->x[1]<=c[1] and x[2]<=c[2]);
+  fi;
+
+  M:=Objectify(GoodSemigroupsType, rec());
+  #SetGenerators(M,gen);
+  SetConductor(M,c);
+  SetSmallElements(M,sm);
+  return M;
+end);
+
+###############################################################
+##
+#F ArfGoodSemigroupClosure(M)
+## Constructs Arf good semigroup closure of M
+###############################################################
+InstallGlobalFunction(ArfGoodSemigroupClosure,function(s)
+  local s1, s2, t1, t2, sm, sma, c, included, i, cand, ca, c1, c2, gena, a, tail1, tail2, car;
+
+  if not(IsGoodSemigroup(s)) then
+    Error("The argument must be a good semigroup");
+  fi;
+
+  sm := SmallElementsOfGoodSemigroup(s);
+  c:= Conductor(s);
+  s1:=Set(sm, x->x[1]);
+  s2:=Set(sm, x->x[2]);
+  s1:=NumericalSemigroupBySmallElements(s1);
+  s2:=NumericalSemigroupBySmallElements(s2);
+  t1:=ArfNumericalSemigroupClosure(s1);
+  t2:=ArfNumericalSemigroupClosure(s2);
+  c1:=Conductor(t1);
+  c2:=Conductor(t2);
+
+  t1:=Intersection([0..c[1]],t1);
+  t2:=Intersection([0..c[2]],t2);
+  ca:=[c1,c2];
+
+  i:=1;
+  included:=true;
+  while included do
+    if i>Length(t1) or i>Length(t2) then
+      i:=i-1;
+      sma:=List([1..i], i->[t1[i],t2[i]]);
+      return GoodSemigroupBySmallElements(sma);
+    fi;
+    sma:=Union(List([1..i], i->[t1[i],t2[i]]), Cartesian(t1{[i+1..Length(t1)]}, t2{[i+1..Length(t2)]}));
+    if First(sm, x->not(x in sma))<> fail then
+      included:=false;
+    else
+        i:=i+1;
+    fi;
+  od;
+  i:=i-1;
+  tail1:=Intersection(t1{[i+1..Length(t1)]},[0..c[1]]);
+  tail2:=Intersection(t2{[i+1..Length(t2)]},[0..c[2]]);
+  car:=Cartesian(tail1,tail2);
+  sma:=Union(List([1..i], i->[t1[i],t2[i]]), car);
+
+  return GoodSemigroupBySmallElements(sma);
+end);
+
+
+
 ###################################################
 ##
 #M BelongsToGoodSemigroup
@@ -743,6 +841,18 @@ InstallMethod( \in,
         [ IsHomogeneousList, IsGoodSemigroup],
         function( v, a )
     return BelongsToGoodSemigroup(v,a);
+end);
+
+###################################################
+##
+#M Equality of good semigroups
+## decides if the two good semigroups are equal
+##################################################
+InstallMethod( \=,
+        "for good semigroups",
+        [ IsGoodSemigroup, IsGoodSemigroup],
+        function( a, b )
+    return Conductor(a)=Conductor(b) and SmallElements(a)=SmallElements(b);
 end);
 
 

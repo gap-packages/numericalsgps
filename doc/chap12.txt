@@ -36,9 +36,9 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xl:=Cartesian([1..11],[1..11]);;[127X[104X
     [4X[25Xgap>[125X [27XIntersection(dup,l);[127X[104X
-    [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ], [128X[104X
-    [4X[28X  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [128X[104X
-    [4X[28X  [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [128X[104X
+    [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],[128X[104X
+    [4X[28X  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ],[128X[104X
+    [4X[28X  [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ],[128X[104X
     [4X[28X  [ 11, 9 ], [ 11, 11 ] ][128X[104X
     [4X[25Xgap>[125X [27X[384938749837,349823749827] in dup;[127X[104X
     [4X[28Xtrue[128X[104X
@@ -90,7 +90,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];[127X[104X
-    [4X[28X[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ], [128X[104X
+    [4X[28X[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],[128X[104X
     [4X[28X  [ 25, 12 ], [ 25, 16 ] ][128X[104X
     [4X[25Xgap>[125X [27XC:=[25,27];[127X[104X
     [4X[28X[ 25, 27 ][128X[104X
@@ -132,9 +132,9 @@
     [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XSmallElementsOfGoodSemigroup(dup);[127X[104X
-    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [128X[104X
-    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [128X[104X
-    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [128X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],[128X[104X
+    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
+    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
     [4X[28X  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
     [4X[28X        [128X[104X
   [4X[32X[104X
@@ -151,9 +151,9 @@
     [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XSmallElements(dup);[127X[104X
-    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [128X[104X
-    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [128X[104X
-    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [128X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],[128X[104X
+    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
+    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
     [4X[28X  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
     [4X[28X        [128X[104X
   [4X[32X[104X
@@ -180,7 +180,32 @@
     [4X[28X        [128X[104X
   [4X[32X[104X
   
-  [1X12.2-5 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
+  [1X12.2-5 GoodSemigroupBySmallElements[101X
+  
+  [29X[2XGoodSemigroupBySmallElements[102X( [3XX[103X ) [32X function
+  
+  [33X[0;0Y[3XX[103X  is  a list of points in the nonnegative orthant of the plane with integer
+  coordinates. Determines if it represents the set of small elements of a good
+  semigroup,  and  then  outputs  the  good semigroup having [3XX[103X as set of small
+  elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],[128X[104X
+    [4X[28X  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],[128X[104X
+    [4X[28X  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
+    [4X[25Xgap>[125X [27XG:=GoodSemigroupBySmallElements(last);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xdup=G;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-6 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
   
   [29X[2XMinimalGoodGeneratingSystemOfGoodSemigroup[102X( [3XS[103X ) [32X function
   
@@ -197,7 +222,7 @@
     [4X[28X        [128X[104X
   [4X[32X[104X
   
-  [1X12.2-6 MinimalGenerators[101X
+  [1X12.2-7 MinimalGenerators[101X
   
   [29X[2XMinimalGenerators[102X( [3XS[103X ) [32X attribute
   
@@ -229,6 +254,28 @@
     [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);;[127X[104X
     [4X[25Xgap>[125X [27XIsSymmetricGoodSemigroup(dup);[127X[104X
     [4X[28Xtrue[128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.3-2 ArfGoodSemigroupClosure[101X
+  
+  [29X[2XArfGoodSemigroupClosure[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. Determines the Arf good semigroup closure of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X        gap> G:=[[3,3],[4,4],[5,4],[4,6]];[128X[104X
+    [4X[28X        [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ][128X[104X
+    [4X[28X        gap> C:=[6,6];[128X[104X
+    [4X[28X        [ 6, 6 ][128X[104X
+    [4X[28X        gap> S:=GoodSemigroup(G,C);[128X[104X
+    [4X[28X        <Good semigroup>[128X[104X
+    [4X[28X        gap> SmallElements(S);[128X[104X
+    [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ][128X[104X
+    [4X[28X        gap> A:=ArfGoodSemigroupClosure(S);[128X[104X
+    [4X[28X        <Good semigroup>[128X[104X
+    [4X[28X        gap> SmallElements(A);[128X[104X
+    [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ][128X[104X
     [4X[28X        [128X[104X
   [4X[32X[104X
   
