@@ -208,7 +208,7 @@ end);
 ###########################################
 InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
         "Computes the omega-primality of v in the affine semigroup a",
-        [IsHomogeneousList,IsAffineSemigroup and HasEquationsAS],3,
+        [IsHomogeneousList,IsAffineSemigroup and HasEquations],3,
         function(v,a)
 
     local mat, cone, n, hom, par, tot, le, ls, one;
@@ -268,7 +268,7 @@ end);
 ########
 InstallMethod(TameDegreeOfAffineSemigroup,
         "Computes the tame degree of the full affine semigroup a",
-        [IsAffineSemigroup and HasEquationsAS],3,
+        [IsAffineSemigroup and HasEquations],3,
         function(a)
     local ls, min, tame, gen,m, facts, t, minimalElementsPrincipalIdealOfAffineSemigroup;
 
