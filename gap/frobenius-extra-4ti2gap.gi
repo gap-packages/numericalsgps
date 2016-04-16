@@ -88,7 +88,7 @@ InstallMethod(AperyList,
     function( S )
     local v, n, M, msm, c, L, MonomialIdeal, MaximalStandardMonomials, BelongsToMonomialIdeal, MinimalGeneratingSystemOfMonomialIdeal, QuotientOfMonomialIdealByMonomial, LatticePointsInBoxGivenByDiagonal;
 
-    Info(InfoNumSgps,2,"Using 4ti2Interface for the calculation of the Apery set");
+    Info(InfoNumSgps,2,"Using 4ti2gap for the calculation of the Apery set");
 
     MonomialIdeal := function(v)
         local n, I, M, E, upperbound, C, m, L, ap, i;
