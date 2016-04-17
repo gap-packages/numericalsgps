@@ -72,6 +72,9 @@ else
     if NumSgpsCanUseSingular then
         ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
         Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
+        if NumSgpsCanUse4ti2 then
+          ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
+        fi;
         NumSgpsWarnUseSingular:=false;
     else
         if NumSgpsCanUseGradedModules then
