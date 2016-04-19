@@ -1,13 +1,29 @@
 #############################################################################
 ##
 #W  frobenius-extra-4ti2gap.gi        Ignacio Ojeda <mdelgado@fc.up.pt>
-#W                                    Carlos Jesús Moreno Ávila
+#W                                    Carlos Jesús Moreno Ávila <camorenoa@alumnos.unex.es>
 #W                                    Manuel Delgado <mdelgado@fc.up.pt>
 #W                                    Pedro Garcia-Sanchez <pedro@ugr.es>
 ##
 #Y  Copyright 2015-- Universidad de Extremadura and Universidad de Granada, Spain
 #############################################################################
 
+#############################################################################
+##
+#F  FrobeniusNumber(s)
+##
+##  Computes the Frobenius Number of the numerical semigroup <s>.
+##
+##  The definition of Frobenius Number can be found in
+##  the book
+##   - Rosales, J. C.; García-Sánchez, P. A. Numerical semigroups.
+##     Developments in Mathematics, 20. Springer, New York, 2009.
+##  The main algorithm used appears in
+##   - Roune, B.H. The slice algorithm for irreducible decomposition of
+##     monomial ideals.J. Symbolic Comput. 44 (2009), no. 4, 358–381.
+##
+##   REQUERIMENTS: 4ti2Interface
+#############################################################################
 InstallMethod(FrobeniusNumber,
     "method using 4ti2 for the calculaction of the Frobenius number",
     [IsNumericalSemigroup],60,
@@ -81,6 +97,24 @@ InstallMethod(FrobeniusNumber,
     msm := MaximalStandardMonomials(M,[],Zero([1 .. n-1]),1,[]);
     return Maximum(msm*v{[2 .. Length(v)]})-v[1]; #return maximum S-degree - v_1
 end);
+
+#############################################################################
+##
+#F  AperyList(s)
+##
+##  Computes the Apery set of the numerical semigroup <s> with respect to
+##  the multiplicit of <s>
+##
+##  The definition of Apery set can be found in
+##  the book
+##   - Rosales, J. C.; García-Sánchez, P. A. Numerical semigroups.
+##     Developments in Mathematics, 20. Springer, New York, 2009.
+##  The main algorithm used appears in
+##   - Roune, B.H. The slice algorithm for irreducible decomposition of
+##     monomial ideals.J. Symbolic Comput. 44 (2009), no. 4, 358–381.
+##
+##   REQUERIMENTS: 4ti2Interface
+#############################################################################
 
 InstallMethod(AperyList,
     "method using 4ti2 for the calculaction of the Apery set",
