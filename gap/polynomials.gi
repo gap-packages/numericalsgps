@@ -1026,7 +1026,7 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Global, function(arg)
             return First(F,f->degree(f)=val);
         fi;
 
-        Info(InfoNumSgps,1,"The set of possible values uptates to ",G);
+        Info(InfoNumSgps,2,"The set of possible values uptates to ",G);
         n:=n+1;
         d:=Gcd(G);
         s:=NumericalSemigroup(G/d);
