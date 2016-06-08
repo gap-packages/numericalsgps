@@ -198,6 +198,58 @@ true
   </ManSection>
 
   <ManSection>
+      <Attr Name="MaximalElementsOfGoodSemigroup" Arg="S"/>
+      <Description>
+       <A>S</A> is a good semigroup. The output is the set of elements <M>(x,y)</M>
+       of <A>S</A> with the following property: there is no other element <M>(x',y')</M> in <A>S</A>
+       with <M>(x,y)\le (x',y')</M> sharing a coordinate with <M>(x,y)</M>.
+      <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17]];;
+gap> g:=GoodSemigroup(G,[11,17]);;
+gap> mx:=MaximalElementsOfGoodSemigroup(g);
+[ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
+        ]]></Example>
+     </Description>
+   </ManSection>
+
+   <ManSection>
+       <Attr Name="IrreducibleMaximalElementsOfGoodSemigroup" Arg="S"/>
+       <Description>
+        <A>S</A> is a good semigroup. The output is the set of elements nonzero maximal elements that cannot be expressed as a sum of two nonzero maximal elements of the good semigroup.
+       <Example><![CDATA[
+ gap> G:=[[4,3],[7,13],[11,17]];;
+ gap> g:=GoodSemigroup(G,[11,17]);;
+ gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
+[ [ 4, 3 ], [ 7, 13 ] ]
+         ]]></Example>
+      </Description>
+    </ManSection>
+
+
+  <ManSection>
+    <Func Arg="S, T, M, C" Name="GoodSemigroupByMaximalElements"></Func>
+    <Description>
+      <A>S</A> and <A>T</A> are numerical semigroups, <A>M</A> is a list of pairs in <M>S\times T</M>. <A>C</A> is the conductor, and thus a pair of nonnegative integers.
+      The output is the set of elements of <M>S\times T</M> that are not above an element in <A>M</A>, that is, if they share a coordinate with an element in <A>M</A>, then they must be smaller or equalt to that element with respect to the usual partial ordering. The output is a good semigroup, if <A>M</A> is an correct set of maximal elements.
+
+      <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17]];;
+gap> g:=GoodSemigroup(G,[11,17]);;
+gap> sm:=SmallElements(g);;
+gap> mx:=MaximalElementsOfGoodSemigroup(g);;
+gap> s:=NumericalSemigroupBySmallElements(Set(sm,x->x[1]));;
+gap> t:=NumericalSemigroupBySmallElements(Set(sm,x->x[2]));;
+gap> Conductor(g);
+[ 11, 15 ]
+gap> gg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);
+<Good semigroup>
+gap> gg=g;
+true
+                      ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
     <Func Arg="S" Name="MinimalGoodGeneratingSystemOfGoodSemigroup"></Func>
     <Description>
       <A>S</A> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).
