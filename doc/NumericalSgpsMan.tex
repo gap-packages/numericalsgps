@@ -5643,8 +5643,80 @@ semigroup, and then outputs the good semigroup having \mbox{\texttt{\mdseries\sl
 
  
 
-\subsection{\textcolor{Chapter }{MinimalGoodGeneratingSystemOfGoodSemigroup}}
+\subsection{\textcolor{Chapter }{MaximalElementsOfGoodSemigroup}}
 \logpage{[ 12, 2, 6 ]}\nobreak
+\hyperdef{L}{X83F444E586D96723}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaximalElementsOfGoodSemigroup({\mdseries\slshape S})\index{MaximalElementsOfGoodSemigroup@\texttt{MaximalElementsOfGoodSemigroup}}
+\label{MaximalElementsOfGoodSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a good semigroup. The output is the set of elements $(x,y)$ of \mbox{\texttt{\mdseries\slshape S}} with the following property: there is no other element $(x',y')$ in \mbox{\texttt{\mdseries\slshape S}} with $(x,y)\le (x',y')$ sharing a coordinate with $(x,y)$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@G:=[[4,3],[7,13],[11,17]];;|
+  !gapprompt@gap>| !gapinput@g:=GoodSemigroup(G,[11,17]);;|
+  !gapprompt@gap>| !gapinput@mx:=MaximalElementsOfGoodSemigroup(g);|
+  [ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
+          
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IrreducibleMaximalElementsOfGoodSemigroup}}
+\logpage{[ 12, 2, 7 ]}\nobreak
+\hyperdef{L}{X8503AC767A90C2BD}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IrreducibleMaximalElementsOfGoodSemigroup({\mdseries\slshape S})\index{IrreducibleMaximalElementsOfGoodSemigroup@\texttt{Irreducible}\-\texttt{Maximal}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Good}\-\texttt{Semigroup}}
+\label{IrreducibleMaximalElementsOfGoodSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is a good semigroup. The output is the set of elements nonzero maximal
+elements that cannot be expressed as a sum of two nonzero maximal elements of
+the good semigroup. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+   gap> G:=[[4,3],[7,13],[11,17]];;
+   gap> g:=GoodSemigroup(G,[11,17]);;
+   gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
+  [ [ 4, 3 ], [ 7, 13 ] ]
+           
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{GoodSemigroupByMaximalElements}}
+\logpage{[ 12, 2, 8 ]}\nobreak
+\hyperdef{L}{X78B456D27856761F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GoodSemigroupByMaximalElements({\mdseries\slshape S, T, M, C})\index{GoodSemigroupByMaximalElements@\texttt{GoodSemigroupByMaximalElements}}
+\label{GoodSemigroupByMaximalElements}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} are numerical semigroups, \mbox{\texttt{\mdseries\slshape M}} is a list of pairs in $S\times T$. \mbox{\texttt{\mdseries\slshape C}} is the conductor, and thus a pair of nonnegative integers. The output is the
+set of elements of $S\times T$ that are not above an element in \mbox{\texttt{\mdseries\slshape M}}, that is, if they share a coordinate with an element in \mbox{\texttt{\mdseries\slshape M}}, then they must be smaller or equalt to that element with respect to the
+usual partial ordering. The output is a good semigroup, if \mbox{\texttt{\mdseries\slshape M}} is an correct set of maximal elements. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@G:=[[4,3],[7,13],[11,17]];;|
+  !gapprompt@gap>| !gapinput@g:=GoodSemigroup(G,[11,17]);;|
+  !gapprompt@gap>| !gapinput@sm:=SmallElements(g);;|
+  !gapprompt@gap>| !gapinput@mx:=MaximalElementsOfGoodSemigroup(g);;|
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroupBySmallElements(Set(sm,x->x[1]));;|
+  !gapprompt@gap>| !gapinput@t:=NumericalSemigroupBySmallElements(Set(sm,x->x[2]));;|
+  !gapprompt@gap>| !gapinput@Conductor(g);|
+  [ 11, 15 ]
+  !gapprompt@gap>| !gapinput@gg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@gg=g;|
+  true
+                        
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MinimalGoodGeneratingSystemOfGoodSemigroup}}
+\logpage{[ 12, 2, 9 ]}\nobreak
 \hyperdef{L}{X82E24F8E79648AAC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGoodGeneratingSystemOfGoodSemigroup({\mdseries\slshape S})\index{MinimalGoodGeneratingSystemOfGoodSemigroup@\texttt{Minimal}\-\texttt{Good}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Good}\-\texttt{Semigroup}}
 \label{MinimalGoodGeneratingSystemOfGoodSemigroup}
@@ -5667,7 +5739,7 @@ is unique in the local case).
  
 
 \subsection{\textcolor{Chapter }{MinimalGenerators}}
-\logpage{[ 12, 2, 7 ]}\nobreak
+\logpage{[ 12, 2, 10 ]}\nobreak
 \hyperdef{L}{X7D861A02806D200C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}}
 \label{MinimalGenerators}

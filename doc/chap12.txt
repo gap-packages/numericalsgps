@@ -205,7 +205,66 @@
     [4X[28X  [128X[104X
   [4X[32X[104X
   
-  [1X12.2-6 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
+  [1X12.2-6 MaximalElementsOfGoodSemigroup[101X
+  
+  [29X[2XMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. The output is the set of elements [22X(x,y)[122X of [3XS[103X with the
+  following  property:  there  is  no  other element [22X(x',y')[122X in [3XS[103X with [22X(x,y)le
+  (x',y')[122X sharing a coordinate with [22X(x,y)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17]];;[127X[104X
+    [4X[25Xgap>[125X [27Xg:=GoodSemigroup(G,[11,17]);;[127X[104X
+    [4X[25Xgap>[125X [27Xmx:=MaximalElementsOfGoodSemigroup(g);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-7 IrreducibleMaximalElementsOfGoodSemigroup[101X
+  
+  [29X[2XIrreducibleMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[3XS[103X  is  a  good  semigroup. The output is the set of elements nonzero maximal
+  elements  that  cannot be expressed as a sum of two nonzero maximal elements
+  of the good semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X gap> G:=[[4,3],[7,13],[11,17]];;[128X[104X
+    [4X[28X gap> g:=GoodSemigroup(G,[11,17]);;[128X[104X
+    [4X[28X gap> IrreducibleMaximalElementsOfGoodSemigroup(g);[128X[104X
+    [4X[28X[ [ 4, 3 ], [ 7, 13 ] ][128X[104X
+    [4X[28X         [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-8 GoodSemigroupByMaximalElements[101X
+  
+  [29X[2XGoodSemigroupByMaximalElements[102X( [3XS[103X, [3XT[103X, [3XM[103X, [3XC[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical semigroups, [3XM[103X is a list of pairs in [22XS× T[122X. [3XC[103X is the
+  conductor, and thus a pair of nonnegative integers. The output is the set of
+  elements  of [22XS× T[122X that are not above an element in [3XM[103X, that is, if they share
+  a  coordinate  with  an element in [3XM[103X, then they must be smaller or equalt to
+  that  element  with  respect  to the usual partial ordering. The output is a
+  good semigroup, if [3XM[103X is an correct set of maximal elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17]];;[127X[104X
+    [4X[25Xgap>[125X [27Xg:=GoodSemigroup(G,[11,17]);;[127X[104X
+    [4X[25Xgap>[125X [27Xsm:=SmallElements(g);;[127X[104X
+    [4X[25Xgap>[125X [27Xmx:=MaximalElementsOfGoodSemigroup(g);;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupBySmallElements(Set(sm,x->x[1]));;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroupBySmallElements(Set(sm,x->x[2]));;[127X[104X
+    [4X[25Xgap>[125X [27XConductor(g);[127X[104X
+    [4X[28X[ 11, 15 ][128X[104X
+    [4X[25Xgap>[125X [27Xgg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xgg=g;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X                      [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
   
   [29X[2XMinimalGoodGeneratingSystemOfGoodSemigroup[102X( [3XS[103X ) [32X function
   
@@ -222,7 +281,7 @@
     [4X[28X        [128X[104X
   [4X[32X[104X
   
-  [1X12.2-7 MinimalGenerators[101X
+  [1X12.2-10 MinimalGenerators[101X
   
   [29X[2XMinimalGenerators[102X( [3XS[103X ) [32X attribute
   

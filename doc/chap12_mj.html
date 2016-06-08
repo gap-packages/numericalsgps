@@ -50,8 +50,11 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7F8244367C137D75">12.2-3 SmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X82D40159783F0D48">12.2-4 RepresentsSmallElementsOfGoodSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7E538585815C94D0">12.2-5 GoodSemigroupBySmallElements</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X82E24F8E79648AAC">12.2-6 MinimalGoodGeneratingSystemOfGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7D861A02806D200C">12.2-7 MinimalGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X83F444E586D96723">12.2-6 MaximalElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X8503AC767A90C2BD">12.2-7 IrreducibleMaximalElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X78B456D27856761F">12.2-8 GoodSemigroupByMaximalElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X82E24F8E79648AAC">12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7D861A02806D200C">12.2-10 MinimalGenerators</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap12_mj.html#X812981548765092E">12.3 <span class="Heading">
       Symmetric semigroups
@@ -266,9 +269,62 @@ true
 true
   </pre></div>
 
+<p><a id="X83F444E586D96723" name="X83F444E586D96723"></a></p>
+
+<h5>12.2-6 MaximalElementsOfGoodSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalElementsOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><var class="Arg">S</var> is a good semigroup. The output is the set of elements <span class="SimpleMath">\((x,y)\)</span> of <var class="Arg">S</var> with the following property: there is no other element <span class="SimpleMath">\((x',y')\)</span> in <var class="Arg">S</var> with <span class="SimpleMath">\((x,y)\le (x',y')\)</span> sharing a coordinate with <span class="SimpleMath">\((x,y)\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=[[4,3],[7,13],[11,17]];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=GoodSemigroup(G,[11,17]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mx:=MaximalElementsOfGoodSemigroup(g);</span>
+[ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
+        </pre></div>
+
+<p><a id="X8503AC767A90C2BD" name="X8503AC767A90C2BD"></a></p>
+
+<h5>12.2-7 IrreducibleMaximalElementsOfGoodSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleMaximalElementsOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><var class="Arg">S</var> is a good semigroup. The output is the set of elements nonzero maximal elements that cannot be expressed as a sum of two nonzero maximal elements of the good semigroup.</p>
+
+
+<div class="example"><pre>
+ gap&gt; G:=[[4,3],[7,13],[11,17]];;
+ gap&gt; g:=GoodSemigroup(G,[11,17]);;
+ gap&gt; IrreducibleMaximalElementsOfGoodSemigroup(g);
+[ [ 4, 3 ], [ 7, 13 ] ]
+         </pre></div>
+
+<p><a id="X78B456D27856761F" name="X78B456D27856761F"></a></p>
+
+<h5>12.2-8 GoodSemigroupByMaximalElements</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GoodSemigroupByMaximalElements</code>( <var class="Arg">S</var>, <var class="Arg">T</var>, <var class="Arg">M</var>, <var class="Arg">C</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups, <var class="Arg">M</var> is a list of pairs in <span class="SimpleMath">\(S\times T\)</span>. <var class="Arg">C</var> is the conductor, and thus a pair of nonnegative integers. The output is the set of elements of <span class="SimpleMath">\(S\times T\)</span> that are not above an element in <var class="Arg">M</var>, that is, if they share a coordinate with an element in <var class="Arg">M</var>, then they must be smaller or equalt to that element with respect to the usual partial ordering. The output is a good semigroup, if <var class="Arg">M</var> is an correct set of maximal elements.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=[[4,3],[7,13],[11,17]];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=GoodSemigroup(G,[11,17]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sm:=SmallElements(g);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mx:=MaximalElementsOfGoodSemigroup(g);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroupBySmallElements(Set(sm,x-&gt;x[1]));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroupBySmallElements(Set(sm,x-&gt;x[2]));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Conductor(g);</span>
+[ 11, 15 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);</span>
+&lt;Good semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gg=g;</span>
+true
+                      </pre></div>
+
 <p><a id="X82E24F8E79648AAC" name="X82E24F8E79648AAC"></a></p>
 
-<h5>12.2-6 MinimalGoodGeneratingSystemOfGoodSemigroup</h5>
+<h5>12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGoodGeneratingSystemOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).</p>
@@ -285,7 +341,7 @@ true
 
 <p><a id="X7D861A02806D200C" name="X7D861A02806D200C"></a></p>
 
-<h5>12.2-7 MinimalGenerators</h5>
+<h5>12.2-10 MinimalGenerators</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>This is just a synonym of <code class="code"> MinimalGoodGeneratingSystemOfGoodSemigroup</code> (<code class="code">S</code>).</p>

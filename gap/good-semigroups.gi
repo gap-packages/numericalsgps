@@ -636,6 +636,70 @@ InstallGlobalFunction(ArfGoodSemigroupClosure,function(s)
   return GoodSemigroupBySmallElements(sma);
 end);
 
+###############################################################
+##
+#F MaximalElementsOfGoodSemigroup(M)
+## returns the set of maximal elements of M
+###############################################################
+InstallGlobalFunction(MaximalElementsOfGoodSemigroup,function(g)
+  local sm;
+  if not(IsGoodSemigroup(g)) then
+    Error("The argument must be a good semigroup");
+  fi;
+
+  sm:=SmallElements(g);
+  return Filtered(Difference(sm,[Conductor(g)]), x->not(ForAny(sm,
+      y->((y[1]=x[1] and y[2]>x[2]) or (y[1]>x[1] and y[2]=x[2])))));
+end);
+
+###############################################################
+##
+#F IrreducibleMaximalElementsOfGoodSemigroup(M)
+## returns the set of irreducible maximal elements of M
+###############################################################
+InstallGlobalFunction(IrreducibleMaximalElementsOfGoodSemigroup,
+function(g)
+  local mx;
+  mx:=MaximalElementsOfGoodSemigroup(g);
+  if Length(mx)=1 then
+    return mx;
+  fi;
+  return Filtered(Difference(mx,[[0,0]]), x->not(ForAny(Difference(mx,[[0,0]]), y->y<>x and (y[1]<=x[1]) and (y[2]<=x[2]) and ((x-y) in mx))));
+end);
+
+###############################################################
+##
+#F GoodSemigroupByMaximalElements(S1,S2,mx,c)
+## returns the good semigroup determined by removing from
+## S1 x S2 the set of points "above" a maximal element; c is
+## the conductor
+###############################################################
+InstallGlobalFunction(GoodSemigroupByMaximalElements,
+function(s1,s2,mx,c)
+  local l1,l2, m1,m2,c1,c2,q, v, cc, g1,g2;
+
+  if not(IsNumericalSemigroup(s1)) then
+    Error("The first argument must be a numerical semigroup");
+  fi;
+  if not(IsNumericalSemigroup(s2)) then
+    Error("The second argument must be a numerical semigroup");
+  fi;
+
+  l1:=List(mx,x->x[1]);
+  l2:=List(mx,x->x[2]);
+  q:=c;
+  # removed because this is true only for curves
+  #if ForAny(mx, x-> not(q-x in mx)) then
+  #  Error("There is no symmetry in the third argument");
+  #fi;
+  g1:=Intersection([0..q[1]+1],s1);
+  g2:=Intersection([0..q[2]+1],s2);
+  cc:=Cartesian(g1,g2);
+  return GoodSemigroupBySmallElements(Difference(cc,
+    Filtered(cc, x->ForAny(mx,
+      y->((y[1]=x[1] and x[2]>y[2]) or (x[1]>y[1] and y[2]=x[2]))))
+    ));
+end);
 
 
 ###################################################
