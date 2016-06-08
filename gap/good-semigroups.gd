@@ -141,6 +141,29 @@ DeclareGlobalFunction("GoodSemigroupBySmallElements");
 ###############################################################
 DeclareGlobalFunction("ArfGoodSemigroupClosure");
 
+###############################################################
+##
+#F MaximalElementsOfGoodSemigroup(M)
+## returns the set of maximal elements of M
+###############################################################
+DeclareGlobalFunction("MaximalElementsOfGoodSemigroup");
+
+###############################################################
+##
+#F IrreducibleMaximalElementsOfGoodSemigroup(M)
+## returns the set of irreducible maximal elements of M
+###############################################################
+DeclareGlobalFunction("IrreducibleMaximalElementsOfGoodSemigroup");
+
+###############################################################
+##
+#F GoodSemigroupByMaximalElements(S1,S2,mx)
+## returns the good semigroup determined by removing from
+## S1 x S2 the set of points "above" a maximal element
+###############################################################
+DeclareGlobalFunction("GoodSemigroupByMaximalElements");
+
+
 # ## FUNCTIONS ##
 
 #  ####################################################
