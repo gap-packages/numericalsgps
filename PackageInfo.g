@@ -2,7 +2,7 @@
 ##  
 ##  PackageInfo.g for the package `NumericalSgps'              Manuel Delgado
 ##                                                    Pedro A. Garcia-Sanchez
-##  (created from Frank Lübeck's PackageInfo.g template file)
+##  (created from Frank LÃ¼beck's PackageInfo.g template file)
 ##  
 ##  This is a GAP readable file. Of course you can change and remove all
 ##  comments as you like.
@@ -117,7 +117,7 @@ ArchiveFormats := ".tar.gz",
 ##     rec(
 ##     # these are compulsory, the strings can be encoded in UTF-8 or latin1,
 ##     # so using German umlauts or other special characters is ok:
-##     LastName := "Müller",
+##     LastName := "MÃ¼ller",
 ##     FirstNames := "Fritz Eduard",
 ##  
 ##     # At least one of the following two entries must be given and set 
@@ -134,7 +134,7 @@ ArchiveFormats := ".tar.gz",
 ##     # complete URL, starting with protocol
 ##     WWWHome := "http://www.no.org/~Mueller",
 ##     # separate lines by '\n' (*optional*)
-##     PostalAddress := "Dr. F. Müller\nNo Org Institute\nNo Place 13\n\
+##     PostalAddress := "Dr. F. MÃ¼ller\nNo Org Institute\nNo Place 13\n\
 ##     12345 Notown\nNocountry"
 ##     
 ##     # If you want, add one or both of the following entries (*optional*)
@@ -151,12 +151,12 @@ Persons := [
     Email         := "mdelgado@fc.up.pt",
     WWWHome       := "http://www.fc.up.pt/cmup/mdelgado/",
     PostalAddress := Concatenation( [
-                   "Departamento de Matemática - Faculdade de Ciências\n",
+                   "Departamento de MatemÃ¡tica - Faculdade de CiÃªncias\n",
                    "Rua do Campo Alegre, 687\n",
                    "Porto\n",
                    "Portugal" ] ),
     Place         := "Porto",
-    Institution   := "Faculdade de Ciências"
+    Institution   := "Faculdade de CiÃªncias"
   ),
       
   rec( 
@@ -213,6 +213,10 @@ AcceptDate := "05/2015",
 #
 README_URL := Concatenation( ~.PackageWWWHome, "README"),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g"),
+SourceRepository := rec( 
+  Type := "hg", 
+  URL := "https://bitbucket.org/gap-system/numericalsgps"
+),
 
 ##  Here you  must provide a short abstract explaining the package content 
 ##  in HTML format (used on the package overview Web page) and an URL 
