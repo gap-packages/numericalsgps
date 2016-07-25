@@ -164,10 +164,11 @@
   [29X[2XSemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity[102X( [3Xf[103X ) [32X function
   
   [33X[0;0Y[3Xf[103X  is  a  polynomial  in  the  variables  X(Rationals,1) and X(Rationals,2).
-  Computes the semigroup [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X. The algorithm checks
-  if  [3Xf[103X  has one place at infinity. If the extra argument "all" is given, then
-  the  output  is  the  [22Xδ[122X-sequence  and  approximate roots of [3Xf[103X. The method is
-  explained in [AG14].[133X
+  Computes    the    semigroup    [22X{mathrmint(f,g)∣   g∈   K[x,y]∖(f)}[122X,   where
+  [22Xmathrmint(f,g)=dim_  K  (  K[x,y]/(f,g))[122X.  The algorithm checks if [3Xf[103X has one
+  place  at infinity. If the extra argument "all" is given, then the output is
+  the  [22Xδ[122X-sequence  and  approximate  roots  of  [3Xf[103X.  The method is explained in
+  [AG14].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");; y:=X(Rationals,"y");;[127X[104X
@@ -224,7 +225,34 @@
     [4X[28X[ [ 24, 16, 28, 7 ], [ x_2, x_2^3-x_1^2, x_2^6-2*x_1^2*x_2^3+x_1^4-x_1*x_2^2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X10.2-5 SemigroupOfValuesOfCurve_Local[101X
+  [1X10.2-5 SemigroupOfValuesOfPlaneCurve[101X
+  
+  [29X[2XSemigroupOfValuesOfPlaneCurve[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  a  polynomial in the variables X(Rationals,1) and X(Rationals,2). The
+  singular  package  is  mandatory.  Either  by  loading it prior to numerical
+  semigroups or by using [3XNumSgpsUseSingular()[103X. If $f$ is irreducible, computes
+  the semigroup [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X, where [22Xmathrmint(f,g)=dim_ K (
+  K[[x,y]]/(f,g))[122X. If it has two components, the output is the value semigroup
+  in  two  variables, and thus a good semigroup. If there are more components,
+  then the output is that of [3Xsemigroup[103X in the alexpoly singular library.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");; y:=X(Rationals,"y");;[127X[104X
+    [4X[25Xgap>[125X [27Xf:= y^4-2*x^3*y^2-4*x^5*y+x^6-x^7;[127X[104X
+    [4X[28X-x^7+x^6-4*x^5*y-2*x^3*y^2+y^4[128X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfPlaneCurve(f);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
+    [4X[28X[ 4, 6, 13 ][128X[104X
+    [4X[25Xgap>[125X [27Xf:=(y^4-2*x^3*y^2-4*x^5*y+x^6-x^7)*(y^2-x^3);;[127X[104X
+    [4X[25Xgap>[125X [27XSemigroupOfValuesOfPlaneCurve(f);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
+    [4X[28X[ [ 4, 2 ], [ 6, 3 ], [ 13, 15 ], [ 29, 13 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-6 SemigroupOfValuesOfCurve_Local[101X
   
   [29X[2XSemigroupOfValuesOfCurve_Local[102X( [3Xarg[103X ) [32X function
   
@@ -255,7 +283,7 @@
     [4X[28Xx^20[128X[104X
   [4X[32X[104X
   
-  [1X10.2-6 SemigroupOfValuesOfCurve_Global[101X
+  [1X10.2-7 SemigroupOfValuesOfCurve_Global[101X
   
   [29X[2XSemigroupOfValuesOfCurve_Global[102X( [3Xarg[103X ) [32X function
   
