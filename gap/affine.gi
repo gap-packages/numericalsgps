@@ -1213,6 +1213,8 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
 
     if LoadPackage("singular")=true then
         ReadPackage("numericalsgps/gap/affine-extra-s.gi");
+        ReadPackage("numericalsgps/gap/polynomials-extra-s.gd");        
+        ReadPackage("numericalsgps/gap/polynomials-extra-s.gi");
         NumSgpsCanUseSingular:=true;
         if NumSgpsCanUse4ti2 then
           ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
