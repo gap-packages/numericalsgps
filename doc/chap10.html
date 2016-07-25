@@ -50,8 +50,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X834D6B1A7C421B9F">10.2-2 IsDeltaSequence</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X824ABFD680A34495">10.2-3 DeltaSequencesWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X87B819B886CA5A5C">10.2-4 CurveAssociatedToDeltaSequence</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7F88774F7812D30E">10.2-5 SemigroupOfValuesOfCurve_Local</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X8597259279D1E793">10.2-6 SemigroupOfValuesOfCurve_Global</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7E2C3E9A7DE7A078">10.2-5 SemigroupOfValuesOfPlaneCurve</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7F88774F7812D30E">10.2-6 SemigroupOfValuesOfCurve_Local</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X8597259279D1E793">10.2-7 SemigroupOfValuesOfCurve_Global</a></span>
 </div></div>
 </div>
 
@@ -225,7 +226,7 @@ true
 <h5>10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">δ</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib.html#biBAGS14">[AG14]</a>.</p>
+<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span>, where <span class="SimpleMath">mathrmint(f,g)=dim_ K ( K[x,y]/(f,g))</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">δ</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib.html#biBAGS14">[AG14]</a>.</p>
 
 
 <div class="example"><pre>
@@ -283,9 +284,32 @@ x_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\
 [ [ 24, 16, 28, 7 ], [ x_2, x_2^3-x_1^2, x_2^6-2*x_1^2*x_2^3+x_1^4-x_1*x_2^2 ] ]
 </pre></div>
 
+<p><a id="X7E2C3E9A7DE7A078" name="X7E2C3E9A7DE7A078"></a></p>
+
+<h5>10.2-5 SemigroupOfValuesOfPlaneCurve</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurve</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). The singular package is mandatory. Either by loading it prior to numerical semigroups or by using <var class="Arg">NumSgpsUseSingular()</var>. If $f$ is irreducible, computes the semigroup <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span>, where <span class="SimpleMath">mathrmint(f,g)=dim_ K ( K[[x,y]]/(f,g))</span>. If it has two components, the output is the value semigroup in two variables, and thus a good semigroup. If there are more components, then the output is that of <var class="Arg">semigroup</var> in the alexpoly singular library.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");; y:=X(Rationals,"y");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:= y^4-2*x^3*y^2-4*x^5*y+x^6-x^7;</span>
+-x^7+x^6-4*x^5*y-2*x^3*y^2+y^4
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfPlaneCurve(f);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last);</span>
+[ 4, 6, 13 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=(y^4-2*x^3*y^2-4*x^5*y+x^6-x^7)*(y^2-x^3);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfPlaneCurve(f);</span>
+&lt;Good semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last);</span>
+[ [ 4, 2 ], [ 6, 3 ], [ 13, 15 ], [ 29, 13 ] ]
+</pre></div>
+
 <p><a id="X7F88774F7812D30E" name="X7F88774F7812D30E"></a></p>
 
-<h5>10.2-5 SemigroupOfValuesOfCurve_Local</h5>
+<h5>10.2-6 SemigroupOfValuesOfCurve_Local</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Local</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>The function admits one or two parameters. In any case, the first is a list of polynomials <var class="Arg">pols</var>. And the second can be the string <var class="Arg">"basis"</var> or an integer <var class="Arg">val</var>.</p>
@@ -309,7 +333,7 @@ x^20
 
 <p><a id="X8597259279D1E793" name="X8597259279D1E793"></a></p>
 
-<h5>10.2-6 SemigroupOfValuesOfCurve_Global</h5>
+<h5>10.2-7 SemigroupOfValuesOfCurve_Global</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Global</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>The function admits one or two parameters. In any case, the first is a list of polynomials <var class="Arg">pols</var>. And the second can be the string <var class="Arg">"basis"</var> or an integer <var class="Arg">val</var>.</p>
