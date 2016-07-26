@@ -167,12 +167,12 @@ InstallGlobalFunction(RepresentsSmallElementsOfGoodSemigroup, function(X)
     fi;
     conG2:=First(X, x->x[1]<C[1] and ForAny(X,y-> x[1]=y[1] and x[2]<y[2] and not(ForAny(X, z->x[2]=z[2] and z[1]>x[1]))));
     if conG2<>fail then
-        Info(InfoNumSgps,2,"The set is not a good semiring.");
+        Info(InfoNumSgps,2,"The set is not a good semiring: ",conG2);
         return false;
     fi;
     conG2:=First(X, x->x[2]<C[2] and ForAny(X,y-> x[2]=y[2] and x[1]<y[1] and not(ForAny(X, z->x[1]=z[1] and z[2]>x[2]))));
     if conG2<>fail then
-        Info(InfoNumSgps,2,"The set is not a good semiring.");
+        Info(InfoNumSgps,2,"The set is not a good semiring: ",conG2);
         return false;
     fi;
     return true;
@@ -185,14 +185,14 @@ end);
 ## define the good semigroup from the set of points G
 ## with conductor C
 ###################################################
-InstallGlobalFunction(GoodSemigroup, function(G,C)
-    local M, p1, p2, c, CC, sm, SemiRing_NS, gen;
+InstallGlobalFunction(GoodSemigroup, function(Gn,C)
+    local M, p1, p2, c, CC, sm, SemiRing_NS, gen, inf, G;
 
-    if not(IsMatrix(G)) and ForAll(G, x->IsList(x) and Length(x)=2) then
+    if not(IsMatrix(Gn)) and ForAll(Gn, x->IsList(x) and Length(x)=2) then
       Error("The argument must be a list of pairs of positive integers");
     fi;
 
-    if not(ForAll(G, x->IsInt(x[1]) and IsInt(x[2]) and x[1]>=0 and x[2]>=0)) then
+    if not(ForAll(Gn, x->IsInt(x[1]) and IsInt(x[2]) and x[1]>=0 and x[2]>=0)) then
       Error("The argument must be a list of pairs of positive integers");
     fi;
 
@@ -204,6 +204,10 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
       Error("The second argument must be a list (pair) of nonnegative integers");
     fi;
 
+    inf:=function(u,v)
+        return [Minimum(u[1],v[1]),Minimum(u[2],v[2])];
+    end;
+
       ###############################################################
       ##
       #F SemiRing_NS(G,C)
@@ -211,11 +215,8 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
       ## computes the saturation wrt sum (cutted by C) and inf
       ################################################################
       SemiRing_NS:=function(G,C)
-          local inf, O, OO, new,i,j, o;
+          local O, OO, new,i,j, o;
 
-          inf:=function(u,v)
-              return [Minimum(u[1],v[1]),Minimum(u[2],v[2])];
-          end;
 
           O:=G;
           # sum saturation
@@ -267,13 +268,14 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
           return O;
       end; # of SemiRing_NS
 
-
+    G:=ShallowCopy(Gn);
     p1:=List(G,x->x[1]);
     p2:=List(G,x->x[2]);
 
     CC:=[Maximum(p1), Maximum(p2)];
     if not(C[1]>=CC[1] and C[2]>=CC[2]) then
-        Error("The conductor is not larger than the maximum of the given set");
+        Info(InfoNumSgps, 2, "The conductor is not larger than the maximum of the given set");
+        G:=List(G, x->inf(x,C));
     fi;
 
 
@@ -295,7 +297,7 @@ InstallGlobalFunction(GoodSemigroup, function(G,C)
     if C<>c then #sm must be redefined, and gens
       Info(InfoNumSgps,2,"Conductor redefined");
       sm:=Filtered(sm, x->x[1]<=c[1] and x[2]<=c[2]);
-      gen:=Filtered(G, x->x[1]<=c[1] and x[2]<=c[2]);
+      gen:=Filtered(G, x->inf(x,c));#x[1]<=c[1] and x[2]<=c[2]);
     else
       gen:=ShallowCopy(G);
     fi;
