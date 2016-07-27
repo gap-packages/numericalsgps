@@ -22,7 +22,11 @@
 #################################################################
 InstallGlobalFunction(SemigroupOfValuesOfPlaneCurve,
   function(f)
-  local l,x,y,R,T, gens, wgens, w1, w2, c;
+  local l,x,y,R,T, gens, wgens, w1, w2, c, inf;
+
+  inf:=function(u,v)
+      return [Minimum(u[1],v[1]),Minimum(u[2],v[2])];
+  end;
 
   if not(IsPolynomial(f)) then
     Error("The argument must be a polynomial\n");
@@ -49,9 +53,11 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurve,
 
   if Length(gens[1])=2 then # good sem dim two
     if not(ForAll(Union(gens,wgens), x->x[1]<=c[1] and x[2]<=c[2])) then
-      c:=Reversed(c);
-      wgens:=Reversed(wgens);
-      Info(InfoNumSgps,2,"Warning: conductor and w-generators reversed ");
+      #c:=Reversed(c);
+      #wgens:=Reversed(wgens);
+      Info(InfoNumSgps,2,"Warning: w-generators or generators not smaller than the conductor");
+      gens:=List(gens, x->inf(x,c));
+      wgens:=List(wgens,x->inf(x,c));
     fi;
     w1:=wgens[1];
     gens:=Union(gens,List([w1[1]..c[1]], i->[i,w1[2]]));
