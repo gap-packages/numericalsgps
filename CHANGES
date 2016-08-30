@@ -2,6 +2,8 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1->1 dev
+- Added tools to deal with good semigroups in N^2
+- Added SemigroupOfValuesOfPlaneCurve (depends on the package singular)
 - Added several new attributes, namely "Generators", "MinimalGenerators" and "SmallElements", which work for the various kinds of semigroups where they make sense
   REMARK. From this version on, the value of "Generators" (and consequently the value returned by GeneratorsOf..." or by "Generators") does not change even when the MinimalGenerators are computed  
 - New functions by Alessio Sammartano (thanks!): TorsionOfAssociatedGradedRingNumericalSemigroup and BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup
