@@ -2,13 +2,16 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1->1 dev
-- Added tools to deal with good semigroups in N^2
+- Added tools to deal with good semigroups in N^2 (membership, minimal good systems of generators, Arf closure, Arf test..)
+- New function NumericalDuplication
+- New function InductiveSemigroup
+- New methods for computing the Frobenius number of a numerical semigroup and Apéry sets; these rely on the package singular, 4ti2Interface and/or 4ti2gap
 - New functions for counting Arf numerical semigroups
 - Added SemigroupOfValuesOfPlaneCurve (depends on the package singular)
 - Added several new attributes, namely "Generators", "MinimalGenerators" and "SmallElements", which work for the various kinds of semigroups where they make sense
-  REMARK. From this version on, the value of "Generators" (and consequently the value returned by GeneratorsOf..." or by "Generators") does not change even when the MinimalGenerators are computed  
+  REMARK. From this version on, the value of "Generators" (and consequently the value returned by GeneratorsOf..." or by "Generators") does not change even when the MinimalGenerators are computed
 - New functions by Alessio Sammartano (thanks!): TorsionOfAssociatedGradedRingNumericalSemigroup and BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup
-- AperyListOfNumericalSemigroupWRTInteger now admits negative intgers
+- AperyListOfNumericalSemigroupWRTInteger now admits negative integers
 - Fixed bug with number of numerical semigroups with given Frobenius number
 - Fixed bug in RepresentsGapsOfNumericalSemigroup
 - IsSubset must not be declared -- fixed
