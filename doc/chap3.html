@@ -36,8 +36,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X87B2695083DE2A83">3.1-3 EmbeddingDimensionOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X79D6E4727B612B54">3.1-4 SmallElementsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F0EDFA77F929120">3.1-5 FirstElementsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X82362D7184AEAB0B">3.1-6 AperyList</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X82362D7184AEAB0B">3.1-7 AperyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X86C699F2800F9ED0">3.1-6 AperyListOfNumericalSemigroupWRTElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X84F59AF37E2F8A85">3.1-7 AperyList</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X877266A18524982E">3.1-8 AperyListOfNumericalSemigroupWRTInteger</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8022CC477E9BF678">3.1-9 AperyListOfNumericalSemigroupAsGraph</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X86A5FB907B917729">3.1-10 KunzCoordinatesOfNumericalSemigroup</a></span>
@@ -49,7 +49,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7828CD2B83E380FA">3.2-1 FrobeniusNumberOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7B7DFAB2834B2B36">3.2-2 FrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X87AAF6807D727149">3.2-3 ConductorOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F9FE5C787A38C79">3.2-4 Conductor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F45C4497EC0506F">3.2-4 Conductor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X829A9C517A83FFD5">3.2-5 PseudoFrobeniusOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X82AD9C1281FB1F58">3.2-6 TypeOfNumericalSemigroup</a></span>
 </div></div>
@@ -175,11 +175,10 @@ false
 [ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
 </pre></div>
 
-<p><a id="X82362D7184AEAB0B" name="X82362D7184AEAB0B"></a></p>
+<p><a id="X86C699F2800F9ED0" name="X86C699F2800F9ED0"></a></p>
 
-<h5>3.1-6 AperyList</h5>
+<h5>3.1-6 AperyListOfNumericalSemigroupWRTElement</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyList</code>( <var class="Arg">S</var>, <var class="Arg">m</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyListOfNumericalSemigroupWRTElement</code>( <var class="Arg">S</var>, <var class="Arg">m</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">m</var> is a positive element of <var class="Arg">S</var>. Computes the Apéry list of <var class="Arg">S</var> with respect to <var class="Arg">m</var>. It contains for every <span class="SimpleMath">i∈ {0,...,<var class="Arg">m</var>-1}</span>, in the <span class="SimpleMath">i+1</span>th position, the smallest element in the semigroup congruent with <span class="SimpleMath">i</span> modulo <var class="Arg">m</var>.</p>
 
@@ -191,7 +190,7 @@ false
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
 </pre></div>
 
-<p><a id="X82362D7184AEAB0B" name="X82362D7184AEAB0B"></a></p>
+<p><a id="X84F59AF37E2F8A85" name="X84F59AF37E2F8A85"></a></p>
 
 <h5>3.1-7 AperyList</h5>
 
@@ -319,7 +318,7 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConductorOfNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>This is just a synonym of <code class="code"> FrobeniusNumberOfNumericalSemigroup</code> (<code class="code">NS</code>)<span class="SimpleMath">+1</span>.</p>
 
-<p><a id="X7F9FE5C787A38C79" name="X7F9FE5C787A38C79"></a></p>
+<p><a id="X7F45C4497EC0506F" name="X7F45C4497EC0506F"></a></p>
 
 <h5>3.2-4 Conductor</h5>
 
