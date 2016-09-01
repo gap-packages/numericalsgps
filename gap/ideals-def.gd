@@ -163,10 +163,10 @@ DeclareGlobalFunction("HilbertFunctionOfIdealOfNumericalSemigroup");
 ##
 #F BlowUpIdealOfNumericalSemigroup(I)
 ##
-##
+##  Computes the Blow Up (of the maximal ideal) of
+##  the numerical semigroup <s>.
 #############################################################################
 DeclareGlobalFunction("BlowUpIdealOfNumericalSemigroup");
-
 
 
 #############################################################################
@@ -231,6 +231,7 @@ DeclareGlobalFunction("IsMonomialNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("BlowUpOfNumericalSemigroup");
+DeclareSynonym("LipmanSemigroup",BlowUpOfNumericalSemigroup);
 
 
 #############################################################################
