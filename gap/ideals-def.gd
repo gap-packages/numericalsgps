@@ -232,7 +232,14 @@ DeclareGlobalFunction("IsMonomialNumericalSemigroup");
 #############################################################################
 DeclareGlobalFunction("BlowUpOfNumericalSemigroup");
 DeclareSynonym("LipmanSemigroup",BlowUpOfNumericalSemigroup);
-
+#############################################################################
+##
+#F MultiplicitySequenceOfNumericalSemigroup(s)
+##
+##  Computes the multiplicity sequence of the numerical semigroup <s>.
+##
+#############################################################################
+DeclareGlobalFunction("MultiplicitySequenceOfNumericalSemigroup");
 
 #############################################################################
 ##
