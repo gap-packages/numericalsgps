@@ -37,7 +37,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86DEEBFE854B60A6">2.1-1 NumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87206D597873EAFF">2.1-2 ModularNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X879171CD7AC80BB5">2.1-3 ProportionallyModularNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79B38AB3816BF3C5">2.1-4 NumericalSemigroupByGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7ACD94F478992185">2.1-4 NumericalSemigroupByAffineMap</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79B38AB3816BF3C5">2.1-5 NumericalSemigroupByGenerators</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7EF4254C81ED6665">2.2 <span class="Heading">Some basic tests</span></a>
 </span>
@@ -165,9 +166,24 @@ true
 &lt;Modular numerical semigroup satisfying 67x mod 98 &lt;= x &gt;
 </pre></div>
 
+<p><a id="X7ACD94F478992185" name="X7ACD94F478992185"></a></p>
+
+<h5>2.1-4 NumericalSemigroupByAffineMap</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByAffineMap</code>( <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given three nonnegative integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, with <span class="SimpleMath">\(a,c&gt;0\)</span> and <span class="SimpleMath">\(\gcd(b,c)=1\)</span>, this function returns the least (with restpect to set order inclusion) numerical semigroup containing <var class="Arg">c</var> and closed under the map <span class="SimpleMath">\(x\mapsto ax+b\)</span>. The procedure is explained in <a href="chapBib_mj.html#biBUgolini">[Ugo16]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroupByAffineMap(3,1,3);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(s);</span>
+[ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+</pre></div>
+
 <p><a id="X79B38AB3816BF3C5" name="X79B38AB3816BF3C5"></a></p>
 
-<h5>2.1-4 NumericalSemigroupByGenerators</h5>
+<h5>2.1-5 NumericalSemigroupByGenerators</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByMinimalGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>

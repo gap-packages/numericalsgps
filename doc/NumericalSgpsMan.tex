@@ -437,8 +437,28 @@ satisfying $ax\bmod\ b \le cx$.
 
  
 
-\subsection{\textcolor{Chapter }{NumericalSemigroupByGenerators}}
+\subsection{\textcolor{Chapter }{NumericalSemigroupByAffineMap}}
 \logpage{[ 2, 1, 4 ]}\nobreak
+\hyperdef{L}{X7ACD94F478992185}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAffineMap({\mdseries\slshape a, b, c})\index{NumericalSemigroupByAffineMap@\texttt{NumericalSemigroupByAffineMap}}
+\label{NumericalSemigroupByAffineMap}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given three nonnegative integers \mbox{\texttt{\mdseries\slshape a}}, \mbox{\texttt{\mdseries\slshape b}} and \mbox{\texttt{\mdseries\slshape c}}, with $a,c>0$ and $\gcd(b,c)=1$, this function returns the least (with restpect to set order inclusion)
+numerical semigroup containing \mbox{\texttt{\mdseries\slshape c}} and closed under the map $x\mapsto ax+b$. The procedure is explained in \cite{Ugolini}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroupByAffineMap(3,1,3);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@SmallElements(s);|
+  [ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByGenerators}}
+\logpage{[ 2, 1, 5 ]}\nobreak
 \hyperdef{L}{X79B38AB3816BF3C5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGenerators({\mdseries\slshape List})\index{NumericalSemigroupByGenerators@\texttt{NumericalSemigroupByGenerators}}
 \label{NumericalSemigroupByGenerators}

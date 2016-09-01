@@ -135,7 +135,23 @@
     [4X[28X<Modular numerical semigroup satisfying 67x mod 98 <= x >[128X[104X
   [4X[32X[104X
   
-  [1X2.1-4 NumericalSemigroupByGenerators[101X
+  [1X2.1-4 NumericalSemigroupByAffineMap[101X
+  
+  [29X[2XNumericalSemigroupByAffineMap[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function
+  
+  [33X[0;0YGiven three nonnegative integers [3Xa[103X, [3Xb[103X and [3Xc[103X, with [22Xa,c>0[122X and [22Xgcd(b,c)=1[122X, this
+  function  returns the least (with restpect to set order inclusion) numerical
+  semigroup  containing  [3Xc[103X  and closed under the map [22Xx↦ ax+b[122X. The procedure is
+  explained in [Ugo16].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupByAffineMap(3,1,3);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(s);[127X[104X
+    [4X[28X[ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-5 NumericalSemigroupByGenerators[101X
   
   [29X[2XNumericalSemigroupByGenerators[102X( [3XList[103X ) [32X function
   [29X[2XNumericalSemigroupByMinimalGenerators[102X( [3XList[103X ) [32X function

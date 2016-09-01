@@ -53,7 +53,7 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
         fr := a*b - a - b; #(Sylvester)
         SetFrobeniusNumberOfNumericalSemigroup(M,fr);
         # M is modular...
-        u:=PowerModInt(b,-1,a);#the inverse ou b mod a        
+        u:=PowerModInt(b,-1,a);#the inverse ou b mod a
         SetModularConditionNS(M,[b*u,a*b]);
     fi;
     #when the set of generators is an interval, using Rosales and Garcia-Sanchez (pacific), the  Frobenius number and the "small elements" are easily computed
@@ -77,7 +77,7 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
 
         # M is proportionaly modular...
         SetProportionallyModularConditionNS(M, [a+b,a*(a+b),b]);
-         SetClosedIntervalNS(M,[L[1],L[Length(L)]]);    
+         SetClosedIntervalNS(M,[L[1],L[Length(L)]]);
 
     fi;
 
@@ -164,7 +164,7 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGenerators, function(arg)
     else
         L := Difference(Set(arg),[0]);
     fi;
-	if L=[] then 
+	if L=[] then
 		Error("There should be at least one generator.\n");
 	fi;
     if not ForAll(L, x -> IsPosInt(x)) then
@@ -272,10 +272,10 @@ InstallGlobalFunction(ProportionallyModularNumericalSemigroup, function(a,b,c)
     SetProportionallyModularConditionNS(M,[a,b,c]);
     if a > c then
       SetClosedIntervalNS(M, [b/a,b/(a-c)]);
-    else 
+    else
         SetClosedIntervalNS(M, [1,2]);
-    fi;  
-        
+    fi;
+
     m := CeilingOfRational(b/a);
     if a <> c and b/(a-c) > 2*m -1 then #the semigroup is a halfline
         SetSmallElementsOfNumericalSemigroup(M,[0,m]);
@@ -289,7 +289,7 @@ InstallGlobalFunction(ProportionallyModularNumericalSemigroup, function(a,b,c)
     if c = 1 then
         SetModularConditionNS(M, [a,b]);
     fi;
-    
+
     return M;
 end);
 
@@ -333,11 +333,11 @@ InstallGlobalFunction(NumericalSemigroupByInterval, function(arg)
     if b1*b2 = 1 then #the semigroup is the entire N
         SetMinimalGenerators(M,[1]);
     fi;
-    
+
     if a1*b2-a2*b1 = 1 then
       SetModularConditionNS(M, [a1*b2,b1*b2]);
     fi;
-    
+
     m := CeilingOfRational(r);
     if s > 2*m -1 then #the semigroup is a halfline
         SetSmallElements(M,[0,m]);
@@ -440,7 +440,7 @@ InstallGlobalFunction(NumericalSemigroupBySmallElements, function(L)
     fi;
     if L = [0] or 1 in L then
         return NumericalSemigroup(1);
-    fi;    
+    fi;
     K := Difference([1..L[Length(L)]],L);
     R := Intersection([0..K[Length(K)]+1],L);
 
@@ -462,7 +462,7 @@ InstallGlobalFunction(NumericalSemigroupBySmallElementsNC, function(L)
 
    if L = [0] or 1 in L then
         return NumericalSemigroup(1);
-    fi;    
+    fi;
     K := Difference([1..L[Length(L)]],L);
     R := Intersection([0..K[Length(K)]+1],L);
 
@@ -491,7 +491,7 @@ InstallGlobalFunction(NumericalSemigroupByGaps, function(L)
 
     M:= Objectify( NumericalSemigroupsType, rec() );
     SetGaps(M,L);
-    SetSmallElements(M,K);    
+    SetSmallElements(M,K);
     return M;
 end);
 
@@ -522,6 +522,43 @@ InstallGlobalFunction(NumericalSemigroupByFundamentalGaps, function(L)
 end);
 
 
+#############################################################################
+##
+#F NumericalSemigroupByAffineMap(a,b,c)
+## Computes the smallest numerical semigroup
+## containing c and closed under x->ax+b
+## see http://arxiv.org/pdf/1505.06580v4.pdf
+#############################################################################
+InstallGlobalFunction(NumericalSemigroupByAffineMap,function(a,b,c)
+    local gs,gen, t ,sk;
+    if not(ForAll([a,b,c],x-> IsInt(x) and x>=0)) then
+        Error("The arguments must be integers");
+    fi;
+
+    if not(Gcd(b,c)=1)then
+        Error("The second and third arguments must be coprime");
+    fi;
+
+    if not(a>0) then
+        Error("The first argument must be a positive integer");
+    fi;
+    if c=1 then
+        return NumericalSemigroup(1);
+    fi;
+
+    t:=function(x)
+        return a*x+b;
+    end;
+    gs:=[c];
+    gen:=c;
+    sk:=0;
+    while sk<c do
+        gen:=t(gen);
+        Add(gs,gen);
+        sk:=a*sk+1;
+    od;
+    return NumericalSemigroup(gs);
+end);
 
 #############################################################################
 ##
@@ -735,35 +772,35 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
  ##  Tests if a numerical semigroup is proportionally modular.
  ##
  #############################################################################
- # this implementation is based in Theorem 5.35 of [RGbook] 
+ # this implementation is based in Theorem 5.35 of [RGbook]
  #############################################################################
  InstallMethod(IsProportionallyModularNumericalSemigroup,
          "Tests if a Numerical Semigroup is proportionally modular",
          [IsNumericalSemigroup],
          function( S )
-     local   gens,  arrangements,  gs,  k,  addgenerator,  g,  arrangement,  
+     local   gens,  arrangements,  gs,  k,  addgenerator,  g,  arrangement,
              b1,  a1,  b2,  a2;
-     
-     if HasProportionallyModularConditionNS(S) then 
+
+     if HasProportionallyModularConditionNS(S) then
        return true;
      fi;
-     
+
     gens := MinimalGeneratingSystemOfNumericalSemigroup(S);
 #    if Length(gens) <= 2 then
 #        return true;
 #    fi;
     if Length(gens) = 1 then
-        SetClosedIntervalNS(S, [1,2]); 
-        SetProportionallyModularConditionNS(S, [1,1,1]); 
+        SetClosedIntervalNS(S, [1,2]);
+        SetProportionallyModularConditionNS(S, [1,1,1]);
         SetModularConditionNS(S, [1,1]);
         return true;
     else
         arrangements := [[gens[1],gens[2]]];
         gs := gens{[3..Length(gens)]};
     fi;
-    
+
     k := 2;
-    
+
     addgenerator := function(h)
         local   newarrangement,  a,  left,  right;
         k:=k+1;
@@ -771,7 +808,7 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
         for a in arrangements do
             left := Concatenation([h],a);
             right := Concatenation(a,[h]);
-            
+
             if (left[1]+left[3]) mod left[2] = 0 then
                 Add(newarrangement, left);
             fi;
@@ -781,10 +818,10 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
         od;
         return newarrangement;
     end;
-    
+
     for g in gs do
         arrangements := addgenerator(g);
-        if arrangements = [] then 
+        if arrangements = [] then
             return false;
         fi;
     od;
@@ -795,7 +832,7 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
     b2 := arrangement[k];
     a2 := (-arrangement[k-1])^-1 mod b2;
 
-    SetClosedIntervalNS(S, [b1/a1,b2/a2]);    
+    SetClosedIntervalNS(S, [b1/a1,b2/a2]);
     SetProportionallyModularConditionNS(S, [a1*b2,b1*b2,a1*b2-a2*b1]);
     if b1*b2 = 1 then #the semigroup is the entire N
         SetMinimalGenerators(S,[1]);
@@ -808,7 +845,7 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
 end);
 
  #############################################################################
- # this function has been replaced by the above one in version 0.971. 
+ # this function has been replaced by the above one in version 0.971.
  #############################################################################
 # InstallMethod(IsProportionallyModularNumericalSemigroup,
 #         "Tests if a Numerical Semigroup is proportionally modular",
@@ -828,12 +865,12 @@ end);
 #
 #         generators:=Set(ShallowCopy(gs));
 #
-#         if bs = [] then 
-#             a:=Minimum(generators); 
+#         if bs = [] then
+#             a:=Minimum(generators);
 #             RemoveSet(generators,a);
-#             b:=Minimum(generators); 
+#             b:=Minimum(generators);
 #             RemoveSet(generators,b);
-#             if GcdInt(a,b) <> 1 then 
+#             if GcdInt(a,b) <> 1 then
 #                 return false;
 #             fi;
 #             return pm([[a,PowerMod(b,-1,a)], [b,b-PowerMod(a,-1,b)]], generators);
@@ -845,7 +882,7 @@ end);
 #
 #         inverse:=(1+a*first[2])/first[1];
 #
-#         if IsInt(inverse) then 
+#         if IsInt(inverse) then
 #             RemoveSet(generators,a);
 #             bezoutseq:=Concatenation([[a,inverse]],bs);
 #             return pm(bezoutseq,generators);
@@ -856,8 +893,8 @@ end);
 #
 #         inverse:=(-1+a*last[2])/last[1];
 #
-#         if IsInt(inverse) then 
-#             RemoveSet(generators,a);	
+#         if IsInt(inverse) then
+#             RemoveSet(generators,a);
 #             bezoutseq:=Concatenation(bs,[[a,inverse]]);
 #             return pm(bezoutseq,generators);
 #         fi;
@@ -868,9 +905,9 @@ end);
 #
 #     gens := MinimalGeneratingSystemOfNumericalSemigroup(S);
 #     if Length(gens) = 1 then
-#        S!.closedinterval := [1,2]; 
+#        S!.closedinterval := [1,2];
 #        Setter(IsNumericalSemigroupByInterval)(S,true);
-#        S!.proportionallymodularcondition := [1,1,1]; 
+#        S!.proportionallymodularcondition := [1,1,1];
 #        Setter(IsProportionallyModularNumericalSemigroup)(S,true);
 #        S!.modularcondition := [1,1];
 #        Setter(IsModularNumericalSemigroup)(S,true);
@@ -878,14 +915,14 @@ end);
 #     else
 #         bzs := pm([],gens); # the test...
 #     fi;
-#     
+#
 #     if bzs = false then
 #         return false;
 #     else
 #         gg := List(bzs, l -> l[1]/l[2]);
 #         r := Minimum(gg);
 #         s := Maximum(gg);
-#         S!.closedinterval := [r,s];    
+#         S!.closedinterval := [r,s];
 #         Setter(IsNumericalSemigroupByInterval)(S,true);
 #         b1 := NumeratorRat(r);
 #         a1 := DenominatorRat(r);
@@ -919,7 +956,7 @@ end);
          function( S )
      local   lhs,  gs,  ms,  b,  A,  a,  C,  c,  Ac;
 
-     if HasModularConditionNS(S) then 
+     if HasModularConditionNS(S) then
        return true;
      fi;
 
@@ -1047,8 +1084,3 @@ end);
          function(x, y )
      return(SmallElementsOfNumericalSemigroup(x) < SmallElementsOfNumericalSemigroup(y));
  end );
-
-
-
-
-    

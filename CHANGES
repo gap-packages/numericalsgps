@@ -5,6 +5,7 @@
 - Added tools to deal with good semigroups in N^2 (membership, minimal good systems of generators, Arf closure, Arf test..)
 - New function NumericalDuplication
 - New function InductiveSemigroup and MultipleOfNumericalSemigroup
+- New function NumericalSemigroupByAffineMap
 - New methods for computing the Frobenius number of a numerical semigroup and Apéry sets; these rely on the package singular, 4ti2Interface and/or 4ti2gap
 - New functions for counting Arf numerical semigroups
 - Added SemigroupOfValuesOfPlaneCurve (depends on the package singular)
