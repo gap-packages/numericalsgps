@@ -64,7 +64,7 @@
     [4X[25Xgap>[125X [27XI:=[3,5,9]+NumericalSemigroup(2,11);;[127X[104X
     [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);[127X[104X
     [4X[28X[ 3 ][128X[104X
-    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(I);                           [127X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystem(I);[127X[104X
     [4X[28X[ 3 ][128X[104X
     [4X[25Xgap>[125X [27XMinimalGenerators([3,5]+NumericalSemigroup(2,11));[127X[104X
     [4X[28X[ 3 ][128X[104X
@@ -89,7 +89,7 @@
     [4X[28X[ 3, 5, 9 ][128X[104X
     [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);[127X[104X
     [4X[28X[ 3 ][128X[104X
-    [4X[25Xgap>[125X [27XGenerators(I);                                        [127X[104X
+    [4X[25Xgap>[125X [27XGenerators(I);[127X[104X
     [4X[28X[ 3, 5, 9 ][128X[104X
   [4X[32X[104X
   
@@ -410,7 +410,36 @@
     [4X[28X  40, 41, 42, 44 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-5 MicroInvariantsOfNumericalSemigroup[101X
+  [1X7.2-5 LipmanSemigroup[101X
+  
+  [29X[2XLipmanSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0YThis is just a synonym of [2XBlowUpOfNumericalSemigroup[102X ([14X7.2-4[114X)([10XS[110X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
+    [4X[25Xgap>[125X [27XLipmanSemigroup(s);[127X[104X
+    [4X[28X<Numerical semigroup with 10 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfNumericalSemigroup(last);[127X[104X
+    [4X[28X[ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,[128X[104X
+    [4X[28X  40, 41, 42, 44 ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.2-6 MultiplicitySequenceOfNumericalSemigroup[101X
+  
+  [29X[2XMultiplicitySequenceOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[3XS[103X  is a numerical semigroup. The ouptut is a list with the multiplicities of
+  the sequence [22XS⊆ L(S)⊆ ⋯ ⊆ N[122X, where [22XL(⋅)[122X means [2XLipmanSemigroup[102X ([14X7.2-5[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMultiplicitySequenceOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 3, 2, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.2-7 MicroInvariantsOfNumericalSemigroup[101X
   
   [29X[2XMicroInvariantsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -430,7 +459,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.2-6 IsGradedAssociatedRingNumericalSemigroupCM[101X
+  [1X7.2-8 IsGradedAssociatedRingNumericalSemigroupCM[101X
   
   [29X[2XIsGradedAssociatedRingNumericalSemigroupCM[102X( [3XS[103X ) [32X function
   
@@ -461,7 +490,7 @@
     [4X[28X[ 0, 2, 1, 1 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-7 IsMonomialNumericalSemigroup[101X
+  [1X7.2-9 IsMonomialNumericalSemigroup[101X
   
   [29X[2XIsMonomialNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -487,7 +516,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X7.2-8 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
+  [1X7.2-10 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
   
   [29X[2XAperyListOfIdealOfNumericalSemigroupWRTElement[102X( [3XI[103X, [3Xn[103X ) [32X function
   
@@ -502,7 +531,7 @@
     [4X[28X[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-9 AperyTableOfNumericalSemigroup[101X
+  [1X7.2-11 AperyTableOfNumericalSemigroup[101X
   
   [29X[2XAperyTableOfNumericalSemigroup[102X( [3Xs[103X ) [32X function
   
@@ -515,14 +544,14 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);;[127X[104X
     [4X[25Xgap>[125X [27XAperyTableOfNumericalSemigroup(s);[127X[104X
-    [4X[28X[ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], [128X[104X
-    [4X[28X  [ 10, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], [128X[104X
-    [4X[28X  [ 20, 21, 22, 23, 24, 35, 26, 37, 48, 39 ], [128X[104X
-    [4X[28X  [ 30, 31, 32, 33, 34, 35, 36, 37, 48, 39 ], [128X[104X
+    [4X[28X[ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ],[128X[104X
+    [4X[28X  [ 10, 11, 22, 13, 24, 35, 26, 37, 48, 39 ],[128X[104X
+    [4X[28X  [ 20, 21, 22, 23, 24, 35, 26, 37, 48, 39 ],[128X[104X
+    [4X[28X  [ 30, 31, 32, 33, 34, 35, 36, 37, 48, 39 ],[128X[104X
     [4X[28X  [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-10 StarClosureOfIdealOfNumericalSemigroup[101X
+  [1X7.2-12 StarClosureOfIdealOfNumericalSemigroup[101X
   
   [29X[2XStarClosureOfIdealOfNumericalSemigroup[102X( [3Xi[103X, [3Xis[103X ) [32X function
   
