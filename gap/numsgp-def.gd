@@ -112,13 +112,22 @@ DeclareGlobalFunction( "ProportionallyModularNumericalSemigroup" );
 #A
 DeclareAttribute( "ProportionallyModularConditionNS", IsNumericalSemigroup);
 
+#############################################################################
+##
+#F NumericalSemigroupByAffineMap(a,b,c)
+## Computes the smallest numerical semigroup 
+## containing c and closed under x->ax+b
+##
+#############################################################################
+DeclareGlobalFunction( "NumericalSemigroupByAffineMap");
 
 
 #############################################################################
 ##
 #F  NumericalSemigroupByInterval(arg)
 ##
-##  Returns the numerical semigroup
+##  The set of numerators of all rational numbers in the interval is a 
+##  numerical semigroup. Returns this  numerical semigroup
 ##
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByInterval" );
@@ -132,7 +141,8 @@ DeclareSynonymAttr( "IsNumericalSemigroupByInterval",HasClosedIntervalNS);
 ##
 #F  NumericalSemigroupByOpenInterval(arg)
 ##
-##  Returns the numerical semigroup
+##  The set of numerators of all rational numbers in the interval is a 
+##  numerical semigroup. Returns this  numerical semigroup
 ##
 #############################################################################
 DeclareGlobalFunction( "NumericalSemigroupByOpenInterval" );
