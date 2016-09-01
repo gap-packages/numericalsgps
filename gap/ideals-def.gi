@@ -615,6 +615,29 @@ InstallGlobalFunction(BlowUpOfNumericalSemigroup, function(s)
 
     return NumericalSemigroup(genbu);
 end);
+#############################################################################
+##
+#F MultiplicitySequenceOfNumericalSemigroup(s)
+##
+##  Computes the multiplicity sequence of the numerical semigroup <s>.
+##
+#############################################################################
+InstallGlobalFunction(MultiplicitySequenceOfNumericalSemigroup, function(s)
+      local msg, m;
+
+    if not(IsNumericalSemigroup(s)) then
+      Error("The argument must be a numerical semigroup");
+    fi;
+
+    if (1 in s) then
+      return [1];
+    fi;
+
+    msg:=MinimalGenerators(s);
+    m:=MultiplicityOfNumericalSemigroup(s);
+    msg:=Union(Difference(msg-m,[0]),[m]);
+    return Concatenation([m],MultiplicitySequenceOfNumericalSemigroup(NumericalSemigroup(msg)));
+end);
 
 
 #############################################################################
