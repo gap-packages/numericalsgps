@@ -305,9 +305,9 @@ end);
 ##  is the set returned.
 ##
 #############################################################################
-InstallMethod( GeneratorsOfNumericalSemigroup, 
+InstallMethod( GeneratorsOfNumericalSemigroup,
         "Returns generators of a numerical sgp",
-        [IsNumericalSemigroup], 
+        [IsNumericalSemigroup],
         function(S)
     if not IsNumericalSemigroup(S) then
         Error("The argument must be a numerical semigroup");
@@ -1046,4 +1046,23 @@ InstallGlobalFunction(KunzPolytope,
         fi;
     od;
     return eq;
+end);
+
+#############################################################################
+##
+#F HolesOfNumericalSemigroup(s)
+## For a numerical semigroup, finds the set of gaps x such that F(S)-x is
+## is also a gap
+##
+#############################################################################
+InstallGlobalFunction(HolesOfNumericalSemigroup, function(s)
+  local gs, f;
+  if not(IsNumericalSemigroup(s)) then
+    Error("The argument must be a numerical semigroup");
+  fi;
+
+  gs:=GapsOfNumericalSemigroup(s);
+  f:=FrobeniusNumber(s);
+  return Filtered(gs, x-> not((f-x) in s));
+
 end);

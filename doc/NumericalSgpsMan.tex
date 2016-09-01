@@ -1131,8 +1131,29 @@ numerical semigroup, then the resulting set is again a numerical semigroup.
 
  
 
-\subsection{\textcolor{Chapter }{LatticePathAssociatedToNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{HolesOfNumericalSemigroup}}
 \logpage{[ 3, 3, 2 ]}\nobreak
+\hyperdef{L}{X8615DE647E27584A}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HolesOfNumericalSemigroup({\mdseries\slshape S})\index{HolesOfNumericalSemigroup@\texttt{HolesOfNumericalSemigroup}}
+\label{HolesOfNumericalSemigroup}
+}\hfill{\scriptsize (attribute)}}\\
+
+
+ \texttt{S} is a numerical semigroup. Returns the set of gaps $x$ of \texttt{S} such that $F(S)-x$ is also a gap, where $F(S)$ stands for the Frobenius number of \texttt{S}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5);;|
+  !gapprompt@gap>| !gapinput@HolesOfNumericalSemigroup(s);|
+  [  ]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@HolesOfNumericalSemigroup(s);|
+  [ 2 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{LatticePathAssociatedToNumericalSemigroup}}
+\logpage{[ 3, 3, 3 ]}\nobreak
 \hyperdef{L}{X794E615F85C2AAB0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LatticePathAssociatedToNumericalSemigroup({\mdseries\slshape S, p, q})\index{LatticePathAssociatedToNumericalSemigroup@\texttt{Lattice}\-\texttt{Path}\-\texttt{Associated}\-\texttt{To}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{LatticePathAssociatedToNumericalSemigroup}
@@ -1147,8 +1168,8 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(16,17,71,72);;|
   !gapprompt@gap>| !gapinput@LatticePathAssociatedToNumericalSemigroup(s,16,17);|
-  [ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ], 
-    [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ], 
+  [ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ],
+    [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ],
     [ 14, 0 ] ]
 \end{Verbatim}
  }
@@ -1156,7 +1177,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{GenusOfNumericalSemigroup}}
-\logpage{[ 3, 3, 3 ]}\nobreak
+\logpage{[ 3, 3, 4 ]}\nobreak
 \hyperdef{L}{X7CC51E047DBB8F24}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GenusOfNumericalSemigroup({\mdseries\slshape NS})\index{GenusOfNumericalSemigroup@\texttt{GenusOfNumericalSemigroup}}
 \label{GenusOfNumericalSemigroup}
@@ -1168,7 +1189,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{FundamentalGaps}}
-\logpage{[ 3, 3, 4 ]}\nobreak
+\logpage{[ 3, 3, 5 ]}\nobreak
 \hyperdef{L}{X808FA9A7786F9426}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FundamentalGaps({\mdseries\slshape S})\index{FundamentalGaps@\texttt{FundamentalGaps}}
 \label{FundamentalGaps}
@@ -1197,7 +1218,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{SpecialGapsOfNumericalSemigroup}}
-\logpage{[ 3, 3, 5 ]}\nobreak
+\logpage{[ 3, 3, 6 ]}\nobreak
 \hyperdef{L}{X7E373952877AC30A}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpecialGapsOfNumericalSemigroup({\mdseries\slshape S})\index{SpecialGapsOfNumericalSemigroup@\texttt{SpecialGapsOfNumericalSemigroup}}
 \label{SpecialGapsOfNumericalSemigroup}

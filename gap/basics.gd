@@ -43,7 +43,7 @@ DeclareSynonymAttr( "FrobeniusNumberOfNumericalSemigroup", FrobeniusNumber);
 ##
 #A  ConductorOfNumericalSemigroup(S)
 ##
-##  Returns the conductor of the numerical semigroup S. 
+##  Returns the conductor of the numerical semigroup S.
 ##
 #############################################################################
 DeclareAttribute("Conductor", IsNumericalSemigroup);
@@ -54,7 +54,7 @@ DeclareSynonymAttr("ConductorOfNumericalSemigroup", Conductor);
 ##
 #F  TypeOfNumericalSemigroup(S)
 ##
-##  Returns the type of the numerical semigroup S. 
+##  Returns the type of the numerical semigroup S.
 ##
 #############################################################################
 DeclareGlobalFunction("TypeOfNumericalSemigroup");
@@ -118,7 +118,7 @@ DeclareSynonymAttr( "MinimalGeneratingSystemOfNumericalSemigroup", MinimalGenera
 ##
 ##  Returns a set with possibly fewer generators than those recorded in <C>S!.generators</C>. It changes <C>S!.generators</C> to the set returned.
 ##The function has 1 to 3 arguments. One of them a numerical semigroup. Then an argument is a boolean (<E>true</E> means that all the elements not belonging to the Apery set with respect to the multiplicity are removed; the default is "false") and another argument is a positive integer <M>n</M> (meaning that generators that can be written as the sum of <n> or less generators are removed; the default is "2"). The boolean or the integer may not be present. If a minimal generating set for <M>S</M> is known or no generating set is known, then the minimal generating system is returned.
-##  
+##
 #DeclareGlobalFunction("ReducedSetOfGeneratorsOfNumericalSemigroup");
 DeclareSynonym("ReducedSetOfGeneratorsOfNumericalSemigroup",MinimalGeneratingSystemOfNumericalSemigroup);
 #############################################################################
@@ -236,8 +236,8 @@ DeclareGlobalFunction("FirstElementsOfNumericalSemigroup");
 ##
 #F KunzCoordinatesOfNumericalSemigroup(arg)
 ##
-## If two argumets are given, the first is a semigroup s and the second an 
-## element m in s. If one argument is given, then it is the semigroup, and 
+## If two argumets are given, the first is a semigroup s and the second an
+## element m in s. If one argument is given, then it is the semigroup, and
 ## m is set to the multiplicity.
 ## Then the Apéry set of m in s has the form [0,k_1m+1,...,k_{m-1}m+m-1], and
 ## the output is the (m-1)-uple [k_1,k_2,...,k_{m-1}]
@@ -247,9 +247,18 @@ DeclareGlobalFunction("KunzCoordinatesOfNumericalSemigroup");
 #############################################################################
 ##
 #F KunzPolytope(m)
-## For a fixed multiplicity, the Kunz coordinates of the semigroups 
-## with that multiplicity are solutions of a system of inequalities Ax\ge b 
+## For a fixed multiplicity, the Kunz coordinates of the semigroups
+## with that multiplicity are solutions of a system of inequalities Ax\ge b
 ## (see [R-GS-GG-B]). The output is the matrix (A|-b)
 ##
 #############################################################################
 DeclareGlobalFunction("KunzPolytope");
+
+#############################################################################
+##
+#F HolesOfNumericalSemigroup(s)
+## For a numerical semigroup, finds the set of gaps x such that F(S)-x is
+## is also a gap
+##
+#############################################################################
+DeclareGlobalFunction("HolesOfNumericalSemigroup");
