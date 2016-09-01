@@ -57,10 +57,11 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X787FE6F180C6291F">3.3-1 Gaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X794E615F85C2AAB0">3.3-2 LatticePathAssociatedToNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7CC51E047DBB8F24">3.3-3 GenusOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X808FA9A7786F9426">3.3-4 FundamentalGaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7E373952877AC30A">3.3-5 SpecialGapsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8615DE647E27584A">3.3-2 HolesOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X794E615F85C2AAB0">3.3-3 LatticePathAssociatedToNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7CC51E047DBB8F24">3.3-4 GenusOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X808FA9A7786F9426">3.3-5 FundamentalGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7E373952877AC30A">3.3-6 SpecialGapsOfNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7EE22CA979CCAAB9">3.4 <span class="Heading">Wilf's conjecture</span></a>
 </span>
@@ -369,9 +370,26 @@ false
 [ 1, 2, 3, 4, 6, 8, 9, 13 ]
 </pre></div>
 
+<p><a id="X8615DE647E27584A" name="X8615DE647E27584A"></a></p>
+
+<h5>3.3-2 HolesOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HolesOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. Returns the set of gaps <span class="SimpleMath">x</span> of <code class="code">S</code> such that <span class="SimpleMath">F(S)-x</span> is also a gap, where <span class="SimpleMath">F(S)</span> stands for the Frobenius number of <code class="code">S</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HolesOfNumericalSemigroup(s);</span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HolesOfNumericalSemigroup(s);</span>
+[ 2 ]
+</pre></div>
+
 <p><a id="X794E615F85C2AAB0" name="X794E615F85C2AAB0"></a></p>
 
-<h5>3.3-2 LatticePathAssociatedToNumericalSemigroup</h5>
+<h5>3.3-3 LatticePathAssociatedToNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LatticePathAssociatedToNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">p</var>, <var class="Arg">q</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><code class="code">S</code> is a numerical semigroup and <code class="code">p,q</code> are two elements in <code class="code">S</code>.</p>
@@ -384,21 +402,21 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(16,17,71,72);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LatticePathAssociatedToNumericalSemigroup(s,16,17);</span>
-[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ], 
-  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ], 
+[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ],
+  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ],
   [ 14, 0 ] ]
 </pre></div>
 
 <p><a id="X7CC51E047DBB8F24" name="X7CC51E047DBB8F24"></a></p>
 
-<h5>3.3-3 GenusOfNumericalSemigroup</h5>
+<h5>3.3-4 GenusOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GenusOfNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><code class="code">NS</code> is a numerical semigroup. It returns the number of gaps of <code class="code">NS</code>.</p>
 
 <p><a id="X808FA9A7786F9426" name="X808FA9A7786F9426"></a></p>
 
-<h5>3.3-4 FundamentalGaps</h5>
+<h5>3.3-5 FundamentalGaps</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FundamentalGaps</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FundamentalGapsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
@@ -421,7 +439,7 @@ false
 
 <p><a id="X7E373952877AC30A" name="X7E373952877AC30A"></a></p>
 
-<h5>3.3-5 SpecialGapsOfNumericalSemigroup</h5>
+<h5>3.3-6 SpecialGapsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpecialGapsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><code class="code">S</code> is a numerical semigroup. It returns the special gaps of <var class="Arg">S</var>.</p>

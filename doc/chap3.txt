@@ -296,7 +296,23 @@
     [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-2 LatticePathAssociatedToNumericalSemigroup[101X
+  [1X3.3-2 HolesOfNumericalSemigroup[101X
+  
+  [29X[2XHolesOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[10XS[110X  is a numerical semigroup. Returns the set of gaps [22Xx[122X of [10XS[110X such that [22XF(S)-x[122X
+  is also a gap, where [22XF(S)[122X stands for the Frobenius number of [10XS[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5);;[127X[104X
+    [4X[25Xgap>[125X [27XHolesOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XHolesOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 2 ][128X[104X
+  [4X[32X[104X
+  
+  [1X3.3-3 LatticePathAssociatedToNumericalSemigroup[101X
   
   [29X[2XLatticePathAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xp[103X, [3Xq[103X ) [32X attribute
   
@@ -314,18 +330,18 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(16,17,71,72);;[127X[104X
     [4X[25Xgap>[125X [27XLatticePathAssociatedToNumericalSemigroup(s,16,17);[127X[104X
-    [4X[28X[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ], [128X[104X
-    [4X[28X  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ], [128X[104X
+    [4X[28X[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ],[128X[104X
+    [4X[28X  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ],[128X[104X
     [4X[28X  [ 14, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-3 GenusOfNumericalSemigroup[101X
+  [1X3.3-4 GenusOfNumericalSemigroup[101X
   
   [29X[2XGenusOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0Y[10XNS[110X is a numerical semigroup. It returns the number of gaps of [10XNS[110X.[133X
   
-  [1X3.3-4 FundamentalGaps[101X
+  [1X3.3-5 FundamentalGaps[101X
   
   [29X[2XFundamentalGaps[102X( [3XS[103X ) [32X attribute
   [29X[2XFundamentalGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
@@ -346,7 +362,7 @@
     [4X[28X[ 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-5 SpecialGapsOfNumericalSemigroup[101X
+  [1X3.3-6 SpecialGapsOfNumericalSemigroup[101X
   
   [29X[2XSpecialGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   

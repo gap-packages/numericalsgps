@@ -3,6 +3,7 @@
                    ----------------------------------------
 1->1 dev
 - Added tools to deal with good semigroups in N^2 (membership, minimal good systems of generators, Arf closure, Arf test..)
+- Added KunzCoordinatesOfNumericalSemigroup and KunzPolytope
 - New function NumericalDuplication
 - New function InductiveSemigroup and MultipleOfNumericalSemigroup
 - New function NumericalSemigroupByAffineMap
@@ -22,7 +23,7 @@
 - Fixed bug while using SingularSetBaseRing in affine-extra-s.gi
 - Added MultipleOfNumericalSemigroup and InductiveNumericalSemigroup
 - Added functions for patterns on ideals and semigroups (contribution K. Stokes)
-- Added synonym for ANumericslSemigroupWithPseudoFrobeniusNumbers
+- Added synonym for ANumericalSemigroupWithPseudoFrobeniusNumbers
 - Conductor now gathers ConductorOfNumericalSemigroup and ConductorOfIdeal…
 - Added LatticePathAssociatedToNumericalSemigroup (from the paper by Kunz and Waldi)
 - Cleaned code from polynomials.gi
