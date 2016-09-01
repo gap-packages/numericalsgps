@@ -479,6 +479,18 @@ gap> SmallElementsOfIdealOfNumericalSemigroup(last);
 ]]></Example>
                     </Description>
                 </ManSection>
+  <ManSection>
+      <Attr Name="LipmanSemigroup" Arg="S"/>
+      <Description>
+       This is just a synonym of <C>BlowUpOfNumericalSemigroup</C> (<C>S</C>).
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> LipmanSemigroup(s);
+<Numerical semigroup with 10 generators>
+gap> SmallElementsOfNumericalSemigroup(last);
+[ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,
+  40, 41, 42, 44 ]
+]]></Example>
 
 
 <ManSection>
