@@ -356,8 +356,8 @@
   [29X[2XGoodIdeal[102X( [3XX[103X, [3XS[103X ) [32X function
   
   [33X[0;0Y[3XX[103X  is  a  list  of points with nonnegative integer coordinates and [22XS[122X is good
-  semigroup.  Decides if [22XX+S[122X is a relative good ideal of [22XS[122X, and if so, outputs
-  it.[133X
+  semigroup.  Decides  if the closure of [22XX+S[122X under infimums is a relative good
+  ideal of [22XS[122X, and if so, outputs it.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];[127X[104X
@@ -370,5 +370,75 @@
     [4X[25Xgap>[125X [27Xi:=GoodIdeal([[2,3]],g);[127X[104X
     [4X[28X<Good ideal of good semigroup>[128X[104X
     [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-2 GoodGeneratingSystemOfGoodIdeal[101X
+  
+  [29X[2XGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup. The output is a good generating
+  system of [3XI[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27XGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
+    [4X[28X[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ][128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-3 AmbientGoodSemigroupOfGoodIdeal[101X
+  
+  [29X[2XAmbientGoodSemigroupOfGoodIdeal[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0YIf [3XI[103X is a good ideal of a good semigroup [22XM[122X, then the output is [22XM[122X. The output
+  is a good generating system of [3XI[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27Xa=AmbientGoodSemigroupOfGoodIdeal(e);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal[101X
+  
+  [29X[2XMinimalGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a  good semigroup. The output is the minimal good
+  generating system of [3XI[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
+    [4X[28X[ [ 2, 3 ], [ 3, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-5 BelongsToGoodIdeal[101X
+  
+  [29X[2XBelongsToGoodIdeal[102X( [3Xv[103X, [3XI[103X ) [32X operation
+  [29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup and [3Xv[103X is a pair of integers. The
+  output  is  [10Xtrue[110X  if  [3Xv[103X is in [3XI[103X, and [10Xfalse[110X otherwise. Other ways to use this
+  operation are [10X\in(v,I)[110X and [10Xv in I[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27X[1,1] in e;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27X[2,2] in e;[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   

@@ -67,6 +67,10 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X843CA9D5874A33F2">12.4-1 GoodIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X7E4FC6DB794992E0">12.4-2 GoodGeneratingSystemOfGoodIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X82D384397EE5CAC4">12.4-3 AmbientGoodSemigroupOfGoodIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X84636A127ECEDA24">12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12.html#X797999937E4E1E2B">12.4-5 BelongsToGoodIdeal</a></span>
 </div></div>
 </div>
 
@@ -427,7 +431,7 @@ true
 <h5>12.4-1 GoodIdeal</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GoodIdeal</code>( <var class="Arg">X</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">X</var> is a list of points with nonnegative integer coordinates and <span class="SimpleMath">S</span> is good semigroup. Decides if <span class="SimpleMath">X+S</span> is a relative good ideal of <span class="SimpleMath">S</span>, and if so, outputs it.</p>
+<p><var class="Arg">X</var> is a list of points with nonnegative integer coordinates and <span class="SimpleMath">S</span> is good semigroup. Decides if the closure of <span class="SimpleMath">X+S</span> under infimums is a relative good ideal of <span class="SimpleMath">S</span>, and if so, outputs it.</p>
 
 
 <div class="example"><pre>
@@ -441,6 +445,77 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=GoodIdeal([[2,3]],g);</span>
 &lt;Good ideal of good semigroup&gt;
           </pre></div>
+
+<p><a id="X7E4FC6DB794992E0" name="X7E4FC6DB794992E0"></a></p>
+
+<h5>12.4-2 GoodGeneratingSystemOfGoodIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GoodGeneratingSystemOfGoodIdeal</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is a good ideal of a good semigroup. The output is a good generating system of <var class="Arg">I</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=10+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AmalgamationOfNumericalSemigroups(s,e,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoodGeneratingSystemOfGoodIdeal(e);</span>
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
+          </pre></div>
+
+<p><a id="X82D384397EE5CAC4" name="X82D384397EE5CAC4"></a></p>
+
+<h5>12.4-3 AmbientGoodSemigroupOfGoodIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientGoodSemigroupOfGoodIdeal</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>If <var class="Arg">I</var> is a good ideal of a good semigroup <span class="SimpleMath">M</span>, then the output is <span class="SimpleMath">M</span>. The output is a good generating system of <var class="Arg">I</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=10+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AmalgamationOfNumericalSemigroups(s,e,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a=AmbientGoodSemigroupOfGoodIdeal(e);</span>
+true
+          </pre></div>
+
+<p><a id="X84636A127ECEDA24" name="X84636A127ECEDA24"></a></p>
+
+<h5>12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGoodGeneratingSystemOfGoodIdeal</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is a good ideal of a good semigroup. The output is the minimal good generating system of <var class="Arg">I</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=10+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AmalgamationOfNumericalSemigroups(s,e,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGoodGeneratingSystemOfGoodIdeal(e);</span>
+[ [ 2, 3 ], [ 3, 2 ] ]
+</pre></div>
+
+<p><a id="X797999937E4E1E2B" name="X797999937E4E1E2B"></a></p>
+
+<h5>12.4-5 BelongsToGoodIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToGoodIdeal</code>( <var class="Arg">v</var>, <var class="Arg">I</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \in</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p><var class="Arg">I</var> is a good ideal of a good semigroup and <var class="Arg">v</var> is a pair of integers. The output is <code class="code">true</code> if <var class="Arg">v</var> is in <var class="Arg">I</var>, and <code class="code">false</code> otherwise. Other ways to use this operation are <code class="code">\in(v,I)</code> and <code class="code">v in I</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=10+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AmalgamationOfNumericalSemigroups(s,e,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2]],a);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[1,1] in e;</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[2,2] in e;</span>
+true
+</pre></div>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap11.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA.html">[Next Chapter]</a>&nbsp;  </div>

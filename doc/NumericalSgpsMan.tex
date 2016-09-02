@@ -5772,7 +5772,7 @@ is unique in the local case).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape X}} is a list of points with nonnegative integer coordinates and $S$ is good semigroup. Decides if $X+S$ is a relative good ideal of $S$, and if so, outputs it. 
+ \mbox{\texttt{\mdseries\slshape X}} is a list of points with nonnegative integer coordinates and $S$ is good semigroup. Decides if the closure of $X+S$ under infimums is a relative good ideal of $S$, and if so, outputs it. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];|
   [ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
@@ -5784,6 +5784,98 @@ is unique in the local case).
   !gapprompt@gap>| !gapinput@i:=GoodIdeal([[2,3]],g);|
   <Good ideal of good semigroup>
             
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{GoodGeneratingSystemOfGoodIdeal}}
+\logpage{[ 12, 4, 2 ]}\nobreak
+\hyperdef{L}{X7E4FC6DB794992E0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GoodGeneratingSystemOfGoodIdeal({\mdseries\slshape I})\index{GoodGeneratingSystemOfGoodIdeal@\texttt{GoodGeneratingSystemOfGoodIdeal}}
+\label{GoodGeneratingSystemOfGoodIdeal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is a good ideal of a good semigroup. The output is a good generating system of \mbox{\texttt{\mdseries\slshape I}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@e:=10+s;;|
+  !gapprompt@gap>| !gapinput@a:=AmalgamationOfNumericalSemigroups(s,e,5);;|
+  !gapprompt@gap>| !gapinput@e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;|
+  !gapprompt@gap>| !gapinput@GoodGeneratingSystemOfGoodIdeal(e);|
+  [ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
+            
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AmbientGoodSemigroupOfGoodIdeal}}
+\logpage{[ 12, 4, 3 ]}\nobreak
+\hyperdef{L}{X82D384397EE5CAC4}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AmbientGoodSemigroupOfGoodIdeal({\mdseries\slshape I})\index{AmbientGoodSemigroupOfGoodIdeal@\texttt{AmbientGoodSemigroupOfGoodIdeal}}
+\label{AmbientGoodSemigroupOfGoodIdeal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ If \mbox{\texttt{\mdseries\slshape I}} is a good ideal of a good semigroup $M$, then the output is $M$. The output is a good generating system of \mbox{\texttt{\mdseries\slshape I}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@e:=10+s;;|
+  !gapprompt@gap>| !gapinput@a:=AmalgamationOfNumericalSemigroups(s,e,5);;|
+  !gapprompt@gap>| !gapinput@e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;|
+  !gapprompt@gap>| !gapinput@a=AmbientGoodSemigroupOfGoodIdeal(e);|
+  true
+            
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MinimalGoodGeneratingSystemOfGoodIdeal}}
+\logpage{[ 12, 4, 4 ]}\nobreak
+\hyperdef{L}{X84636A127ECEDA24}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGoodGeneratingSystemOfGoodIdeal({\mdseries\slshape I})\index{MinimalGoodGeneratingSystemOfGoodIdeal@\texttt{Minimal}\-\texttt{Good}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Good}\-\texttt{Ideal}}
+\label{MinimalGoodGeneratingSystemOfGoodIdeal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is a good ideal of a good semigroup. The output is the minimal good generating
+system of \mbox{\texttt{\mdseries\slshape I}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@e:=10+s;;|
+  !gapprompt@gap>| !gapinput@a:=AmalgamationOfNumericalSemigroups(s,e,5);;|
+  !gapprompt@gap>| !gapinput@e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;|
+  !gapprompt@gap>| !gapinput@MinimalGoodGeneratingSystemOfGoodIdeal(e);|
+  [ [ 2, 3 ], [ 3, 2 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{BelongsToGoodIdeal}}
+\logpage{[ 12, 4, 5 ]}\nobreak
+\hyperdef{L}{X797999937E4E1E2B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToGoodIdeal({\mdseries\slshape v, I})\index{BelongsToGoodIdeal@\texttt{BelongsToGoodIdeal}}
+\label{BelongsToGoodIdeal}
+}\hfill{\scriptsize (operation)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape n, S})\index{in@\texttt{\texttt{\symbol{92}}in}!membership for good ideals of good semigroups}
+\label{in:membership for good ideals of good semigroups}
+}\hfill{\scriptsize (operation)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is a good ideal of a good semigroup and \mbox{\texttt{\mdseries\slshape v}} is a pair of integers. The output is \texttt{true} if \mbox{\texttt{\mdseries\slshape v}} is in \mbox{\texttt{\mdseries\slshape I}}, and \texttt{false} otherwise. Other ways to use this operation are \texttt{\texttt{\symbol{92}}in(v,I)} and \texttt{v in I}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@e:=10+s;;|
+  !gapprompt@gap>| !gapinput@a:=AmalgamationOfNumericalSemigroups(s,e,5);;|
+  !gapprompt@gap>| !gapinput@e:=GoodIdeal([[2,3],[3,2]],a);;|
+  !gapprompt@gap>| !gapinput@[1,1] in e;|
+  false
+  !gapprompt@gap>| !gapinput@[2,2] in e;|
+  true
 \end{Verbatim}
  }
 
