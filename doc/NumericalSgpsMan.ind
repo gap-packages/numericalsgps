@@ -16,8 +16,7 @@
 		\hyperpage{36}
   \item \texttt  {ANumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}, 
 		\hyperpage{34}
-  \item \texttt  {AperyList}
-    \subitem AperyListNS, \hyperpage{18}
+  \item \texttt  {AperyList}, \hyperpage{18}
   \item \texttt  {Apery}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Element}, 
 		\hyperpage{50}
   \item \texttt  {AperyListOfNumericalSemigroup}, \hyperpage{18}
@@ -70,9 +69,9 @@
   \item \texttt  {Complete}\discretionary {-}{}{}\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{38}
   \item \texttt  {Conductor}
-    \subitem ConductorGood, \hyperpage{86}
-    \subitem ConductorIdeal, \hyperpage{43}
-    \subitem ConductorNS, \hyperpage{20}
+    \subitem for good semigroup, \hyperpage{86}
+    \subitem for ideal, \hyperpage{43}
+    \subitem for Numerical Semigroups, \hyperpage{20}
   \item \texttt  {Conductor}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{43}
   \item \texttt  {ConductorOfNumericalSemigroup}, \hyperpage{20}
@@ -141,8 +140,9 @@
 
   \item \texttt  {Gaps}, \hyperpage{21}
   \item \texttt  {GapsOfNumericalSemigroup}, \hyperpage{21}
-  \item \texttt  {Generators}, \hyperpage{42}
-    \subitem GeneratorsNS, \hyperpage{16}
+  \item \texttt  {Generators}
+    \subitem for ideal, \hyperpage{42}
+    \subitem for numerical semigroup, \hyperpage{16}
   \item \texttt  {Generators}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{42}
   \item \texttt  {GeneratorsOfKernelCongruence}, \hyperpage{79}
@@ -178,9 +178,14 @@
   \indexspace
 
   \item \texttt  {IdealOfNumericalSemigroup}, \hyperpage{41}
+<<<<<<< local
+  \item \texttt  {\texttt  {\char 92\relax }in}
+    \subitem element test for numerical semigroup, \hyperpage{14}
+=======
   \item \texttt  {\texttt  {\char 92\relax }in}
     \subitem membership for good ideals of good semigroups, 
 		\hyperpage{91}
+>>>>>>> other
   \item \texttt  {InductiveNumericalSemigroup}, \hyperpage{30}
   \item \texttt  {Intersection}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{46}
@@ -300,17 +305,23 @@
   \item \texttt  {MicroInvariantsOfNumericalSemigroup}, \hyperpage{48}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Arf}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Arf}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{53}
-  \item \texttt  {MinimalGeneratingSystem}, \hyperpage{42}
-    \subitem MinimalGeneratingSystemNS, \hyperpage{16}
+  \item \texttt  {MinimalGeneratingSystem}
+    \subitem for ideal, \hyperpage{42}
+    \subitem for numerical semigroup, \hyperpage{16}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{42}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{16}
   \item \texttt  {MinimalGenerators}, \hyperpage{89}
+<<<<<<< local
+    \subitem for ideal, \hyperpage{42}
+    \subitem for numerical semigroup, \hyperpage{16}
+=======
     \subitem MinimalGeneratorsIdeal, \hyperpage{42}
     \subitem MinimalGeneratorsNS, \hyperpage{16}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Ideal}, 
 		\hyperpage{91}
+>>>>>>> other
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{88}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {M}\discretionary {-}{}{}\texttt  {E}\discretionary {-}{}{}\texttt  {D}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {M}\discretionary {-}{}{}\texttt  {E}\discretionary {-}{}{}\texttt  {D}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -440,9 +451,9 @@
   \item \texttt  {Simple}\discretionary {-}{}{}\texttt  {Forced}\discretionary {-}{}{}\texttt  {Integers}\discretionary {-}{}{}\texttt  {For}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}, 
 		\hyperpage{33}
   \item \texttt  {SmallElements}
-    \subitem SmallElementsGood, \hyperpage{86}
-    \subitem SmallElementsIdeal, \hyperpage{43}
-    \subitem SmallElementsNS, \hyperpage{17}
+    \subitem for good semigroup, \hyperpage{86}
+    \subitem for ideal, \hyperpage{43}
+    \subitem for numerical semigroup, \hyperpage{17}
   \item \texttt  {SmallElementsOfGoodSemigroup}, \hyperpage{86}
   \item \texttt  {Small}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{43}

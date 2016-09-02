@@ -24,12 +24,12 @@ gap> MultiplicityOfNumericalSemigroup(S);
 
                 <ManSection>
                     <Attr Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
-		    <Attr Name="Generators" Arg="S" Label="GeneratorsNS"/>
+		    <Attr Name="Generators" Arg="S" Label="for numerical semigroup"/>
                     <!--   <Func Name="GeneratorsOfNumericalSemigroupNC" Arg="S"/>
                   <Func Name="ReducedSetOfGeneratorsOfNumericalSemigroup" Arg="S,[bool,n]"/> -->
 <Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
-<Attr Name="MinimalGeneratingSystem" Arg="S" Label="MinimalGeneratingSystemNS"/>
-<Attr Name="MinimalGenerators" Arg="S" Label="MinimalGeneratorsNS"/>               <Description>
+<Attr Name="MinimalGeneratingSystem" Arg="S" Label="for numerical semigroup"/>
+<Attr Name="MinimalGenerators" Arg="S" Label="for numerical semigroup"/>               <Description>
                         <A>S</A>
                         is a numerical semigroup.
                         <C>GeneratorsOfNumericalSemigroup</C>
@@ -95,7 +95,7 @@ gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,2
 
                 <ManSection>
                     <Attr Name="SmallElementsOfNumericalSemigroup" Arg="NS"/>
-<Attr Name="SmallElements" Arg="NS" Label="SmallElementsNS"/>
+<Attr Name="SmallElements" Arg="NS" Label="for numerical semigroup"/>
                     <Description>
                         <C>NS</C>
                         is a numerical semigroup. It returns the list of small elements of <C>NS</C>.
@@ -143,7 +143,7 @@ gap> AperyListOfNumericalSemigroupWRTElement(S,12);
                     </Description>
                 </ManSection>
                 <ManSection>
-                    <Attr Name="AperyList" Arg="S" Label="AperyListNS"/>
+                    <Attr Name="AperyList" Arg="S"/>
                     <Attr Name="AperyListOfNumericalSemigroup" Arg="S"/>
                     <Description>
                         <A>S</A> is a numerical semigroup. It computes the Apéry list of <A>S</A> with respect to the multiplicity of <A>S</A>.

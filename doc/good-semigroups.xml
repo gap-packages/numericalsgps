@@ -109,7 +109,7 @@ gap> GoodSemigroup(G,C);
 
 
   <ManSection>
-    <Func Arg="S" Name="Conductor" Label="ConductorGood"></Func>
+    <Func Arg="S" Name="Conductor" Label="for good semigroup"></Func>
     <Description>
       <A>S</A> is a good semigroup. The output is its conductor.
 
@@ -144,7 +144,7 @@ gap> SmallElementsOfGoodSemigroup(dup);
   </ManSection>
 
   <ManSection>
-      <Attr Name="SmallElements" Arg="S" Label="SmallElementsGood"/>
+      <Attr Name="SmallElements" Arg="S" Label="for good semigroup"/>
       <Description>
        This is just a synonym of <C> SmallElementsOfGoodSemigroup</C> (<C>S</C>).
       <Example><![CDATA[

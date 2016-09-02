@@ -41,7 +41,7 @@ gap> Conductor(NumericalSemigroup(3,5,7));
                     </Description>
                 </ManSection>
                 <ManSection>
-                    <Attr Name="Conductor" Arg="NS" Label="ConductorNS"/>
+                    <Attr Name="Conductor" Arg="NS" Label="for Numerical Semigroups"/>
                     <Description>
                         This is just a synonym of <C> ConductorOfNumericalSemigroup</C> (<C>NS</C>).
                     </Description>
