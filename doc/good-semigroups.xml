@@ -108,8 +108,29 @@ gap> GoodSemigroup(G,C);
   </Heading>
 
 
+    <ManSection>
+      <Oper Arg="v,S" Name="BelongsToGoodSemigroup"></Oper>
+      <Oper Name="\in" Arg="v,S" Label="membership for good semigroups"/>
+      <Description>
+        <A>S</A> is a good semigroup and <A>v</A> is a pair of integers. The output is <C>true</C> if <A>v</A> is in <A>S</A>, and <C>false</C> otherwise.
+
+        Other ways to use this operation are <C>\in(v,S)</C> and <C>v in S</C>.
+        <Example><![CDATA[
+gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> s:=NumericalSemigroup(2,3);
+<Numerical semigroup with 2 generators>
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+gap> [2,2] in dup;
+true
+gap> [3,2] in dup;
+false
+      ]]></Example>
+      </Description>
+    </ManSection>
+
   <ManSection>
-    <Func Arg="S" Name="Conductor" Label="for good semigroup"></Func>
+    <Func Arg="S" Name="Conductor" Label="ConductorGood"></Func>
     <Description>
       <A>S</A> is a good semigroup. The output is its conductor.
 
@@ -144,7 +165,7 @@ gap> SmallElementsOfGoodSemigroup(dup);
   </ManSection>
 
   <ManSection>
-      <Attr Name="SmallElements" Arg="S" Label="for good semigroup"/>
+      <Attr Name="SmallElements" Arg="S" Label="SmallElementsGood"/>
       <Description>
        This is just a synonym of <C> SmallElementsOfGoodSemigroup</C> (<C>S</C>).
       <Example><![CDATA[

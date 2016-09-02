@@ -297,7 +297,7 @@ InstallGlobalFunction(GoodSemigroup, function(Gn,C)
     if C<>c then #sm must be redefined, and gens
       Info(InfoNumSgps,2,"Conductor redefined");
       sm:=Filtered(sm, x->x[1]<=c[1] and x[2]<=c[2]);
-      gen:=Filtered(G, x->inf(x,c));#x[1]<=c[1] and x[2]<=c[2]);
+      gen:=List(G, x->inf(x,c));#x[1]<=c[1] and x[2]<=c[2]);
     else
       gen:=ShallowCopy(G);
     fi;
