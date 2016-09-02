@@ -62,8 +62,8 @@ false
 
                 <ManSection>
                     <Attr Arg="I" Name="MinimalGeneratingSystemOfIdealOfNumericalSemigroup"></Attr>
-<Attr Arg="I" Name="MinimalGeneratingSystem"></Attr>
-<Attr Arg="I" Name="MinimalGenerators" Label="MinimalGeneratorsIdeal"></Attr>
+<Attr Arg="I" Name="MinimalGeneratingSystem" Label="for ideal"></Attr>
+<Attr Arg="I" Name="MinimalGenerators" Label="for ideal"></Attr>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         <P/>
@@ -83,7 +83,7 @@ gap> MinimalGenerators([3,5]+NumericalSemigroup(2,11));
                 </ManSection>
 
                 <ManSection>
-                    <Attr Arg="I" Name="Generators"></Attr>
+                    <Attr Arg="I" Name="Generators" Label="for ideal"></Attr>
                     <Attr Arg="I" Name="GeneratorsOfIdealOfNumericalSemigroup"></Attr>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
@@ -143,7 +143,7 @@ true
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="I" Name="SmallElementsOfIdealOfNumericalSemigroup"></Func><Func Arg="I" Name="SmallElements" Label="SmallElementsIdeal"></Func>
+                    <Func Arg="I" Name="SmallElementsOfIdealOfNumericalSemigroup"></Func><Func Arg="I" Name="SmallElements" Label="for ideal"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         <P/>
@@ -182,7 +182,7 @@ gap> Conductor(10+s);
                     </Description>
                 </ManSection>
                 <ManSection>
-                    <Attr Name="Conductor" Arg="NS" Label="ConductorIdeal"/>
+                    <Attr Name="Conductor" Arg="NS" Label="for ideal"/>
                     <Description>
                         This is just a synonym of <C> ConductorOfIdealOfNumericalSemigroup</C> (<C>NS</C>).
                     </Description>
