@@ -147,6 +147,8 @@ gap> Conductor(dup);
 
   <ManSection>
     <Func Arg="S" Name="SmallElementsOfGoodSemigroup"></Func>
+    <Func Arg="S" Name="SmallElements" Label="for good semigroup"></Func>
+
     <Description>
       <A>S</A> is a good semigroup. The output is its set of small elements, that is, the elements smaller than its conductor with respect to the usual partial ordering.
 
@@ -163,24 +165,6 @@ gap> SmallElementsOfGoodSemigroup(dup);
         ]]></Example>
     </Description>
   </ManSection>
-
-  <ManSection>
-      <Attr Name="SmallElements" Arg="S" Label="SmallElementsGood"/>
-      <Description>
-       This is just a synonym of <C> SmallElementsOfGoodSemigroup</C> (<C>S</C>).
-      <Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> e:=6+s;;
-gap> dup:=NumericalSemigroupDuplication(s,e);
-<Good semigroup>
-gap> SmallElements(dup);
-[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],
-  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
-  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
-  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
-        ]]></Example>
-     </Description>
-   </ManSection>
 
   <ManSection>
     <Func Arg="X" Name="RepresentsSmallElementsOfGoodSemigroup"></Func>
@@ -450,20 +434,43 @@ true
       </Description>
     </ManSection>
 
+
     <ManSection>
-      <Func Arg="S" Name="Conductor" Label="for good ideal"></Func>
+      <Func Arg="I" Name="SmallElementsOfGoodIdeal"></Func>
+      <Func Arg="I" Name="SmallElements" Label="for good ideal"></Func>
+
       <Description>
-        <A>S</A> is a good ideal. The output is its conductor.
+        <A>I</A> is a good ideal. The output is its set of small elements, that is, the elements smaller than its conductor and larger than its minimum element (with respect to the usual partial ordering).
 
         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=10+s;;
 gap> d:=NumericalSemigroupDuplication(s,e);;
-gap> e:=GoodIdeal([[2,3],[3,2]],a);;
-gap> Conductor(e);
-[ 7, 7 ]
+gap> e:=GoodIdeal([[2,3],[3,2]],d);;
+gap> SmallElements(e);
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ]
           ]]></Example>
       </Description>
     </ManSection>
+
+
+    <ManSection>
+      <Func Arg="S" Name="CanonicalIdealOfGoodSemigroup" ></Func>
+      <Description>
+        <A>S</A> is a good semigroup. The output is the canonical ideal of <A>S</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> c:=CanonicalIdealOfGoodSemigroup(d);;
+gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
+[ [ 0, 0 ], [ 2, 2 ] ]
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+
+
 
 </Section>

@@ -370,9 +370,9 @@
       12.1-4 CartesianProductOfNumericalSemigroups
       12.1-5 GoodSemigroup
     12.2 [33X[0;0YNotable elements[133X
-      12.2-1 Conductor
-      12.2-2 SmallElementsOfGoodSemigroup
-      12.2-3 SmallElements
+      12.2-1 BelongsToGoodSemigroup
+      12.2-2 Conductor
+      12.2-3 SmallElementsOfGoodSemigroup
       12.2-4 RepresentsSmallElementsOfGoodSemigroup
       12.2-5 GoodSemigroupBySmallElements
       12.2-6 MaximalElementsOfGoodSemigroup
@@ -389,6 +389,8 @@
       12.4-3 AmbientGoodSemigroupOfGoodIdeal
       12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal
       12.4-5 BelongsToGoodIdeal
+      12.4-6 SmallElementsOfGoodIdeal
+      12.4-7 CanonicalIdealOfGoodSemigroup
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence

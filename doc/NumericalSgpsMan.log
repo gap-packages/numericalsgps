@@ -1,8 +1,4 @@
-<<<<<<< local
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.23)  2 SEP 2016 14:11
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  2 SEP 2016 17:05
->>>>>>> other
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  2 SEP 2016 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -10,9 +6,9 @@ entering extended mode
 (./NumericalSgpsMan.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -28,16 +24,16 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/a4wide/a4wide.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/a4wide/a4wide.sty
 Package: a4wide 1994/08/30
 
-(/usr/share/texlive/texmf-dist/tex/latex/ntgclass/a4.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ntgclass/a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
@@ -45,15 +41,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
 \@indexfile=\write3
@@ -61,30 +57,31 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 
 
 Writing index file NumericalSgpsMan.idx
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 143.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
-<2008/02/07> (tvz) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+<2008/02/07> (tvz)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
@@ -94,7 +91,8 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \c@FancyVerbLine=\count90
 \FV@StepNumber=\count91
 \FV@OutFile=\write4
-) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -130,17 +128,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -155,7 +153,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 334.
@@ -222,14 +220,14 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -270,25 +268,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 
@@ -308,17 +306,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing ON on input line 4461.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/backref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2012/07/25 v1.38 Bibliographical back referencing
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
 \c@Hy@tempcnt=\count95
 
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -343,7 +341,7 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver: hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
@@ -353,7 +351,7 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \openout5 = `NumericalSgpsMan.pnr'.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen107
@@ -379,7 +377,7 @@ LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 87.
@@ -387,10 +385,10 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 87.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen108
@@ -407,10 +405,10 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 \big@size=\dimen110
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 87.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count109
@@ -427,7 +425,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 93.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <50> not available
@@ -439,7 +437,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 108.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Underfull \hbox (badness 10000) in paragraph at lines 106--113
@@ -448,11 +446,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--113
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 119.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 122--126
@@ -478,30 +476,30 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
@@ -1693,500 +1691,308 @@ Underfull \hbox (badness 10000) in paragraph at lines 5461--5464
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5490--5493
+Underfull \hbox (badness 10000) in paragraph at lines 5490--5496
 
  []
 
 [85]
-Underfull \hbox (badness 10000) in paragraph at lines 5512--5515
+Underfull \hbox (badness 10000) in paragraph at lines 5518--5521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5539--5542
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5564--5567
+Underfull \hbox (badness 10000) in paragraph at lines 5540--5546
 
  []
 
 [86]
-Underfull \hbox (badness 10000) in paragraph at lines 5592--5595
+Underfull \hbox (badness 10000) in paragraph at lines 5570--5573
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5622--5625
+Underfull \hbox (badness 10000) in paragraph at lines 5598--5601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5628--5631
 
  []
 
 [87]
-Underfull \hbox (badness 10000) in paragraph at lines 5642--5645
+Underfull \hbox (badness 10000) in paragraph at lines 5648--5651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5664--5667
+Underfull \hbox (badness 10000) in paragraph at lines 5670--5673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5694--5697
+Underfull \hbox (badness 10000) in paragraph at lines 5700--5703
 
  []
 
 [88]
-Underfull \hbox (badness 10000) in paragraph at lines 5717--5720
+Underfull \hbox (badness 10000) in paragraph at lines 5723--5726
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5745--5748
+Underfull \hbox (badness 10000) in paragraph at lines 5751--5754
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5767--5770
+Underfull \hbox (badness 10000) in paragraph at lines 5773--5776
 
  []
 
 [89]
-Underfull \hbox (badness 10000) in paragraph at lines 5801--5804
+Underfull \hbox (badness 10000) in paragraph at lines 5807--5810
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5823--5826
+Underfull \hbox (badness 10000) in paragraph at lines 5832--5835
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5845--5848
+Underfull \hbox (badness 10000) in paragraph at lines 5854--5857
 
  []
 
 [90]
-Underfull \hbox (badness 10000) in paragraph at lines 5867--5870
+Underfull \hbox (badness 10000) in paragraph at lines 5876--5879
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5889--5895
+Underfull \hbox (badness 10000) in paragraph at lines 5898--5904
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5924--5930
 
  []
 
 [91]
-Appendix A.
-
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 5846--5849
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5867--5870
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5887--5890
-
- []
-
-[91
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 5935--5938
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5956--5959
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5976--5979
-
- []
-
-[92
->>>>>>> other
-
-]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 5910--5913
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5928--5931
+Underfull \hbox (badness 10000) in paragraph at lines 5951--5954
 
  []
 
 [92]
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 5999--6002
+Appendix A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5993--5996
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6017--6020
-
- []
-
-[93]
->>>>>>> other
-Appendix B.
-
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 5964--5967
+Underfull \hbox (badness 10000) in paragraph at lines 6014--6017
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5983--5986
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6000--6003
+Underfull \hbox (badness 10000) in paragraph at lines 6034--6037
 
  []
 
 [93
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6053--6056
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 6057--6060
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6072--6075
+Underfull \hbox (badness 10000) in paragraph at lines 6075--6078
+
+ []
+
+[94]
+Appendix B.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6111--6114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6089--6092
+Underfull \hbox (badness 10000) in paragraph at lines 6130--6133
 
  []
 
-[94
->>>>>>> other
+
+Underfull \hbox (badness 10000) in paragraph at lines 6147--6150
+
+ []
+
+[95
 
 pdfTeX warning (ext4): destination with the same identifier (name{L.X86746B487B
 54A2D6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-<<<<<<< local
-l.6011 \end{Verbatim}
-=======
-l.6100 \end{Verbatim}
->>>>>>> other
+l.6158 \end{Verbatim}
                      ]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6019--6022
+Underfull \hbox (badness 10000) in paragraph at lines 6166--6169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6038--6041
+Underfull \hbox (badness 10000) in paragraph at lines 6185--6188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6057--6060
+Underfull \hbox (badness 10000) in paragraph at lines 6204--6207
 
  []
 
-[94] [95]
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6108--6111
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6127--6130
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6146--6149
-
- []
-
-[95] [96]
->>>>>>> other
+[96] [97]
 Appendix C.
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6100--6103
+Underfull \hbox (badness 10000) in paragraph at lines 6247--6250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6121--6124
+Underfull \hbox (badness 10000) in paragraph at lines 6268--6271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6142--6145
+Underfull \hbox (badness 10000) in paragraph at lines 6289--6292
 
  []
 
-[96
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6189--6192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6210--6213
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6231--6234
-
- []
-
-[97
->>>>>>> other
+[98
 
 ]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6164--6167
+Underfull \hbox (badness 10000) in paragraph at lines 6311--6314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6187--6190
+Underfull \hbox (badness 10000) in paragraph at lines 6334--6337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6210--6213
+Underfull \hbox (badness 10000) in paragraph at lines 6357--6360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6234--6237
-
- []
-
-[97]
-Underfull \hbox (badness 10000) in paragraph at lines 6259--6262
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6283--6286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6307--6310
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6253--6256
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6276--6279
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6299--6302
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6323--6326
->>>>>>> other
-
- []
-
-[98]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6331--6334
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6363--6366
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6348--6351
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6372--6375
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6396--6399
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 6381--6384
 
  []
 
 [99]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6396--6399
+Underfull \hbox (badness 10000) in paragraph at lines 6406--6409
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6420--6423
+Underfull \hbox (badness 10000) in paragraph at lines 6430--6433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6441--6444
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6462--6465
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6420--6423
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6452--6455
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 6454--6457
 
  []
 
 [100]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6484--6487
+Underfull \hbox (badness 10000) in paragraph at lines 6478--6481
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6504--6507
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6532--6535
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6485--6488
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6509--6512
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6530--6533
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6551--6554
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 6510--6513
 
  []
 
 [101]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6553--6556
+Underfull \hbox (badness 10000) in paragraph at lines 6543--6546
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6577--6580
+Underfull \hbox (badness 10000) in paragraph at lines 6567--6570
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6598--6601
+Underfull \hbox (badness 10000) in paragraph at lines 6588--6591
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6615--6618
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6573--6576
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6593--6596
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6621--6624
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 6609--6612
 
  []
 
 [102]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 6638--6641
+Underfull \hbox (badness 10000) in paragraph at lines 6631--6634
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6661--6664
+Underfull \hbox (badness 10000) in paragraph at lines 6651--6654
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6685--6688
-
- []
-
-[103] (./NumericalSgpsMan.bbl (./NumericalSgpsMan.brf)
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 6642--6645
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6666--6669
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6687--6690
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6704--6707
+Underfull \hbox (badness 10000) in paragraph at lines 6679--6682
 
  []
 
 [103]
-Underfull \hbox (badness 10000) in paragraph at lines 6727--6730
+Underfull \hbox (badness 10000) in paragraph at lines 6700--6703
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6750--6753
+Underfull \hbox (badness 10000) in paragraph at lines 6724--6727
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6774--6777
+Underfull \hbox (badness 10000) in paragraph at lines 6745--6748
 
  []
 
-[104] (./NumericalSgpsMan.bbl (./NumericalSgpsMan.brf)
->>>>>>> other
+
+Underfull \hbox (badness 10000) in paragraph at lines 6762--6765
+
+ []
+
+[104]
+Underfull \hbox (badness 10000) in paragraph at lines 6785--6788
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6808--6811
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6832--6835
+
+ []
+
+[105] (./NumericalSgpsMan.bbl (./NumericalSgpsMan.brf)
 \tf@brf=\write8
 \openout8 = `NumericalSgpsMan.brf'.
 
- [105]
+ [106]
 Underfull \hbox (badness 1259) in paragraph at lines 74--74
 []\T1/ptm/m/n/10.95 M. Barakat, S. Gutsche, S. Jam-bor, M. Lange-Hegermann, A. 
 Lorenz, and
@@ -2210,21 +2016,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--74
 th.rwth-aachen.de/~barakat/
  []
 
-[106
+[107
 
-] [107] [108]
+] [108] [109]
 Underfull \hbox (badness 1132) in paragraph at lines 260--260
 []\T1/ptm/m/n/10.95 S. Gutsche.  4ti2interface, a link to 4ti2.  [][]$\T1/cmtt/
 m/n/10.95 http : / / www . gap-[]system . org /
  []
 
-[109]
+[110]
 Underfull \hbox (badness 1132) in paragraph at lines 396--396
 []\T1/ptm/m/n/10.95 Dario Spir-ito.  Star op-er-a-tions on nu-mer-i-cal semi-gr
 oups.  \T1/ptm/m/it/10.95 Comm. Al-ge-bra\T1/ptm/m/n/10.95 ,
  []
 
-) [110] (./NumericalSgpsMan.ind
+) [111] (./NumericalSgpsMan.ind
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 []\T1/cmtt/m/n/10.95 Adjacent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
@@ -2261,11 +2067,7 @@ Pseudo\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 21--23
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
 []\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerica
@@ -2274,11 +2076,7 @@ l\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 24--26
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
 []\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
@@ -2286,11 +2084,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--26
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 24--26
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 26--28
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
 []\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
@@ -2299,11 +2093,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--28
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 26--28
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 28--30
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
 []\T1/cmtt/m/n/10.95 Apery\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
@@ -2312,33 +2102,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--30
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 35--37
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 []\T1/cmtt/m/n/10.95 Arf\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W
 ith\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 46--48
->>>>>>> other
 []\T1/cmtt/m/n/10.95 Belongs\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 To\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Homogenization\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
-=======
 Underfull \hbox (badness 10000) in paragraph at lines 56--58
->>>>>>> other
 []\T1/cmtt/m/n/10.95 Buchsbaum\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Number\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associ
 ated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Graded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
@@ -2346,22 +2124,14 @@ ated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Graded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
 []\T1/cmtt/m/n/10.95 Cartesian\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Product\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numer
 ical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 65--67
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
 []\T1/cmtt/m/n/10.95 Catenary\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
@@ -2369,32 +2139,20 @@ umerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
 []\T1/cmtt/m/n/10.95 Complete\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Intersection
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
 \T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
 mber\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
 []\T1/cmtt/m/n/10.95 Conductor\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2402,11 +2160,7 @@ tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 85--87
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
 []\T1/cmtt/m/n/10.95 Delta\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Up\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 To\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1
@@ -2415,12 +2169,11 @@ ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeri
 cal\T1/ptm/m/n/10.95 -
  []
 
+[112
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
->>>>>>> other
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
 []\T1/cmtt/m/n/10.95 Delta\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Factorization
 s\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
@@ -2428,15 +2181,8 @@ s\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 .95 T\T1/ptm/m/n/10.95 -
  []
 
-[111
 
-
-]
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
 []\T1/cmtt/m/n/10.95 Delta\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 Periodicity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Boun
 d\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 For\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2444,11 +2190,7 @@ d\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 For\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
 []\T1/cmtt/m/n/10.95 Delta\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 Periodicity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Star
 t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 For\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2456,11 +2198,7 @@ t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 For\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 []\T1/cmtt/m/n/10.95 Delta\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 Union\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Up\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 To\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T
@@ -2470,33 +2208,21 @@ ical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
 []\T1/cmtt/m/n/10.95 Denumerant\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 []\T1/cmtt/m/n/10.95 Difference\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Ideals\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
 []\T1/cmtt/m/n/10.95 Elasticity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
 95 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/
@@ -2504,22 +2230,14 @@ n/10.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 106--108
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
 []\T1/cmtt/m/n/10.95 Embedding\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Dimension\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
 erical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 []\T1/cmtt/m/n/10.95 Equal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Affine\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2527,22 +2245,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--113
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 113--115
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
 []\T1/cmtt/m/n/10.95 Equal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 []\T1/cmtt/m/n/10.95 Equal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of
@@ -2550,22 +2260,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--117
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 []\T1/cmtt/m/n/10.95 Equal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primitive\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 120--122
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 []\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elemen
 t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2573,11 +2275,7 @@ t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 122--124
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
 []\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elemen
 t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
@@ -2585,29 +2283,21 @@ merical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
 []\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Homogenization\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
 /10.95 Of\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 130--132
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
 []\T1/cmtt/m/n/10.95 Free\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
 []\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
@@ -2615,19 +2305,11 @@ ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 []\T1/cmtt/m/n/10.95 Graph\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 To\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elemen
 t\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Numerical\T1/ptm/m/n/10.95 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
-[]\T1/cmtt/m/n/10.95 Hilbert\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Basis\T1/ptm/
-m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1
-/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Homo
-geneous\T1/ptm/m/n/10.95 -
  []
 
 
@@ -2640,6 +2322,14 @@ geneous\T1/ptm/m/n/10.95 -
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 167--169
+[]\T1/cmtt/m/n/10.95 Hilbert\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Basis\T1/ptm/
+m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1
+/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Homo
+geneous\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
 []\T1/cmtt/m/n/10.95 Hilbert\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
@@ -2647,248 +2337,158 @@ merical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 []\T1/cmtt/m/n/10.95 Homogeneous\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Betti\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
 []\T1/cmtt/m/n/10.95 Homogeneous\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Affine\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
 []\T1/cmtt/m/n/10.95 Homogeneous\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 181--183
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
 []\T1/cmtt/m/n/10.95 Intersection\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideals\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
 erical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 []\T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Maximal\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
 95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m/n/10.95 -
  []
 
-
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
->>>>>>> other
+[113]
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
 []\T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
 /10.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
 []\T1/cmtt/m/n/10.95 IsA\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Complete\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Intersection\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Numerical\T1/ptm/m/n/10.95 -
  []
 
-<<<<<<< local
-[111]
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
-=======
-[112]
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
->>>>>>> other
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 []\T1/cmtt/m/n/10.95 IsAdmitted\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Pattern\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
 rical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
-<<<<<<< local
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--201
-=======
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
 []\T1/cmtt/m/n/10.95 IsAffine\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Mini
 mal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 216--218
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 []\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--220
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
 []\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-=======
->>>>>>> other
-Underfull \hbox (badness 10000) in paragraph at lines 220--222
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
 []\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 []\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
-[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
-1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
-umerical\T1/ptm/m/n/10.95 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
-[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
-1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
-umerical\T1/ptm/m/n/10.95 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--228
-[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
-1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
-umerical\T1/ptm/m/n/10.95 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 \T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Planar\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Curve\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 241--243
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 F
 undamental\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Gaps\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 246--248
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M
 inimal\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 246--248
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 S
 ub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
 []\T1/cmtt/m/n/10.95 IsProportionally\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modu
 lar\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 258--260
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
 []\T1/cmtt/m/n/10.95 IsSelf\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Reciprocal\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Univariate\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
 95 Polynomial\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 264--266
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 268--270
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
 []\T1/cmtt/m/n/10.95 IsUniquely\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presented\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 0.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 274--276
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 278--280
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 []\T1/cmtt/m/n/10.95 Lattice\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Path\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 To
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 276--278
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 []\T1/cmtt/m/n/10.95 Lengths\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
@@ -2896,11 +2496,7 @@ Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 278--280
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
 []\T1/cmtt/m/n/10.95 Lengths\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Integer\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
@@ -2908,12 +2504,8 @@ Integer\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 .95 List\T1/ptm/m/n/10.95 ,
  []
 
-
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 285--287
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
->>>>>>> other
+[114]
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
 []\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elem
 ent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
@@ -2921,35 +2513,21 @@ ent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 291--293
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
 []\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
 rical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
-<<<<<<< local
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
-=======
-[113]
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 []\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -
  []
 
-<<<<<<< local
-[112]
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
-=======
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--299
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
 []\T1/cmtt/m/n/10.95 Maximum\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T
@@ -2957,13 +2535,8 @@ T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T
 rical\T1/ptm/m/n/10.95 -
  []
 
-<<<<<<< local
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--299
-=======
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Arf\T1/ptm/m/
 n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sys
 tem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
@@ -2971,11 +2544,7 @@ tem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 309--311
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
@@ -2983,42 +2552,30 @@ Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 307--309
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 311--313
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 309--311
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 312--314
->>>>>>> other
-[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m
-/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sy
-stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
-95 Good\T1/ptm/m/n/10.95 -
- []
-
-
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 314--316
-[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m
-/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sy
-stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
-95 Good\T1/ptm/m/n/10.95 -
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 316--318
->>>>>>> other
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m
+/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sy
+stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 Good\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--320
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m
+/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sy
+stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 Good\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--322
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 E\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 D\T1/ptm/m/n/1
 0.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System
@@ -3028,66 +2585,42 @@ T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 313--315
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 322--324
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presentation\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Af
 fine\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 315--317
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 320--322
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presentation\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
 merical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 323--325
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 327--329
 []\T1/cmtt/m/n/10.95 Moebius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 To\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 320--322
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 325--327
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Affine\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 327--329
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 331--333
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 324--326
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 329--331
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 333--335
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -3095,141 +2628,89 @@ f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 326--328
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primitive\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 336--338
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
 []\T1/cmtt/m/n/10.95 Multiplicity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sequence
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 344--346
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 353--355
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Min
 imal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 351--353
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 355--357
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Min
 imal\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 350--352
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sub
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 358--360
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 362--364
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 From\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 365--367
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 365--367
 \T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Planar\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Curve\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 365--367
 \T1/cmtt/m/n/10.95 Singularity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umber\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 358--360
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 363--365
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Frobenius\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 361--363
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 366--368
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Pseudo\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 363--365
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 368--370
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 372--374
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R
 andom\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 375--377
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 380--382
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
 []\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 A
@@ -3237,147 +2718,92 @@ ffine\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 377--379
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 386--388
 []\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
-
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 379--381
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
->>>>>>> other
+[115]
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 []\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  In\T1/ptm/m/n/10.95 -
  []
 
-<<<<<<< local
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--389
-=======
-[114]
-Underfull \hbox (badness 10000) in paragraph at lines 392--394
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 396--398
 []\T1/cmtt/m/n/10.95 Primitive\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
 rical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
-<<<<<<< local
-[113]
-Underfull \hbox (badness 10000) in paragraph at lines 390--392
-=======
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--397
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 399--401
 []\T1/cmtt/m/n/10.95 Proportionally\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modula
 r\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
-<<<<<<< local
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--403
-=======
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--408
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
 []\T1/cmtt/m/n/10.95 Random\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/
 n/10.95 -\T1/cmtt/m/n/10.95 Representing\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 S
 ub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
 []\T1/cmtt/m/n/10.95 Random\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Proportionally
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modular\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
 .95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 408--410
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
 []\T1/cmtt/m/n/10.95 Reduction\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Number\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
 erical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 []\T1/cmtt/m/n/10.95 Remove\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Minimal\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Generator\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 F
 rom\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 422--424
 []\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Periodic\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ad
 ditive\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/ptm/m/n/10.95 ,
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 420--422
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
 []\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Small\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 417--419
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 422--424
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
 []\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Small\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 423--425
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 428--430
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
 []\T1/cmtt/m/n/10.95 Saturated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 0.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 430--432
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
 []\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Values\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Plane\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Cu
@@ -3385,11 +2811,7 @@ rve\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 438--440
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
 []\T1/cmtt/m/n/10.95 Shaded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeri
@@ -3397,22 +2819,14 @@ cal\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 440--442
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 444--446
 []\T1/cmtt/m/n/10.95 Simple\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Forced\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Integers\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 For
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Pseudo\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 447--449
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 453--455
 []\T1/cmtt/m/n/10.95 Small\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
@@ -3420,11 +2834,7 @@ rical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 446--448
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 451--453
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
 []\T1/cmtt/m/n/10.95 Star\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Closure\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeri
@@ -3432,11 +2842,7 @@ cal\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 454--456
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 459--461
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 465--467
 []\T1/cmtt/m/n/10.95 Tame\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/
 n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numer
@@ -3444,113 +2850,54 @@ ical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 458--460
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 463--465
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 469--471
 []\T1/cmtt/m/n/10.95 Telescopic\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/
 10.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 460--462
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 465--467
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 471--473
 []\T1/cmtt/m/n/10.95 Torsion\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Grad
 ed\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 462--464
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 467--469
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 473--475
 []\T1/cmtt/m/n/10.95 Translation\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-<<<<<<< local
-Underfull \hbox (badness 10000) in paragraph at lines 464--466
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 469--471
->>>>>>> other
+Underfull \hbox (badness 10000) in paragraph at lines 475--477
 []\T1/cmtt/m/n/10.95 Truncated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Wilf\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Number\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
-<<<<<<< local
-[114])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6738.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6738.
-=======
-[115])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6827.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6827.
->>>>>>> other
+[116])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6885.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 6885.
  (./NumericalSgpsMan.aux)
-<<<<<<< local
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6738.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6738.
-=======
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6827.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6827.
->>>>>>> other
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6885.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6885.
 
 Package rerunfilecheck Info: File `NumericalSgpsMan.out' has not changed.
 (rerunfilecheck)             Checksum: 19E9918D170A273116745A5AD319873C;4978.
 Package rerunfilecheck Info: File `NumericalSgpsMan.brf' has not changed.
-<<<<<<< local
-(rerunfilecheck)             Checksum: FA8CA60C27BFB2C4A7F82109F6BB134F;5267.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6738.
-=======
-(rerunfilecheck)             Checksum: 1274993E91A3269037F8D337C8FEB55F;5270.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6827.
->>>>>>> other
+(rerunfilecheck)             Checksum: 0D6A84857D49DA203A80399F72CC19FE;5273.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6885.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< local
- 8462 strings out of 493029
- 129474 string characters out of 6136234
- 212085 words of memory out of 5000000
- 11022 multiletter control sequences out of 15000+600000
-=======
- 8475 strings out of 493033
- 130283 string characters out of 6134139
- 212386 words of memory out of 5000000
- 11026 multiletter control sequences out of 15000+600000
->>>>>>> other
+ 8486 strings out of 493033
+ 130550 string characters out of 6134139
+ 212840 words of memory out of 5000000
+ 11032 multiletter control sequences out of 15000+600000
  89612 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,7n,29p,789b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
-<<<<<<< local
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfst1095.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
-vb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NumericalSgpsMan.pdf (114 pages, 529969 bytes).
-=======
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
@@ -3570,17 +2917,10 @@ yr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NumericalSgpsMan.pdf (115 pages, 532553 bytes).
->>>>>>> other
+Output written on NumericalSgpsMan.pdf (116 pages, 534985 bytes).
 PDF statistics:
-<<<<<<< local
- 2271 PDF objects out of 2487 (max. 8388607)
- 2115 compressed objects within 22 object streams
- 833 named destinations out of 1000 (max. 500000)
-=======
- 2290 PDF objects out of 2487 (max. 8388607)
- 2133 compressed objects within 22 object streams
- 842 named destinations out of 1000 (max. 500000)
->>>>>>> other
+ 2305 PDF objects out of 2487 (max. 8388607)
+ 2147 compressed objects within 22 object streams
+ 847 named destinations out of 1000 (max. 500000)
  505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
