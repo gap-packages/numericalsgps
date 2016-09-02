@@ -324,9 +324,11 @@
   [1X2.2-7 BelongsToNumericalSemigroup[101X
   
   [29X[2XBelongsToNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  [29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation
   
   [33X[0;0Y[3Xn[103X  is  an integer and [3XS[103X is a numerical semigroup. Tests whether [3Xn[103X belongs to
-  [3XS[103X. [10Xn in S[110X is the short for [10XBelongsToNumericalSemigroup(n,S)[110X.[133X
+  [3XS[103X.  [10X\in(n,S)[110X calls the infix variant [10Xn in S[110X, and both can be seen as a short
+  for [10XBelongsToNumericalSemigroup(n,S)[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X
