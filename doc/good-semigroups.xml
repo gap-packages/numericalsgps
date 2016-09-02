@@ -110,7 +110,7 @@ gap> GoodSemigroup(G,C);
 
     <ManSection>
       <Oper Arg="v,S" Name="BelongsToGoodSemigroup"></Oper>
-      <Oper Name="\in" Arg="v,S" Label="membership for good semigroups"/>
+      <Oper Name="\in" Arg="v,S" Label="membership for good semigroup"/>
       <Description>
         <A>S</A> is a good semigroup and <A>v</A> is a pair of integers. The output is <C>true</C> if <A>v</A> is in <A>S</A>, and <C>false</C> otherwise.
 
@@ -130,7 +130,7 @@ false
     </ManSection>
 
   <ManSection>
-    <Func Arg="S" Name="Conductor" Label="ConductorGood"></Func>
+    <Func Arg="S" Name="Conductor" Label="for good semigroup"></Func>
     <Description>
       <A>S</A> is a good semigroup. The output is its conductor.
 
@@ -390,8 +390,8 @@ gap> i:=GoodIdeal([[2,3]],g);
         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=10+s;;
-gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
-gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
 gap> GoodGeneratingSystemOfGoodIdeal(e);
 [ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
           ]]></Example>
@@ -422,8 +422,8 @@ true
         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=10+s;;
-gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
-gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
 gap> MinimalGoodGeneratingSystemOfGoodIdeal(e);
 [ [ 2, 3 ], [ 3, 2 ] ]
 ]]></Example>
@@ -432,7 +432,7 @@ gap> MinimalGoodGeneratingSystemOfGoodIdeal(e);
 
     <ManSection>
       <Oper Arg="v,I" Name="BelongsToGoodIdeal"></Oper>
-      <Oper Name="\in" Arg="n,S" Label="membership for good ideals of good semigroups"/>
+      <Oper Name="\in" Arg="v,I" Label="membership for good ideal"/>
       <Description>
         <A>I</A> is a good ideal of a good semigroup and <A>v</A> is a pair of integers. The output is <C>true</C> if <A>v</A> is in <A>I</A>, and <C>false</C> otherwise.
 
@@ -440,13 +440,29 @@ gap> MinimalGoodGeneratingSystemOfGoodIdeal(e);
         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=10+s;;
-gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
-gap> e:=GoodIdeal([[2,3],[3,2]],a);;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2]],d);;
 gap> [1,1] in e;
 false
 gap> [2,2] in e;
 true
 ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="S" Name="Conductor" Label="for good ideal"></Func>
+      <Description>
+        <A>S</A> is a good ideal. The output is its conductor.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2]],a);;
+gap> Conductor(e);
+[ 7, 7 ]
+          ]]></Example>
       </Description>
     </ManSection>
 

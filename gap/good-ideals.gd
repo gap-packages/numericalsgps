@@ -116,8 +116,8 @@ DeclareAttribute("MinimalGoodGeneratorsIdealGS", IsGoodIdeal);
 ##  Returns the list of elements in the ideal I
 ##
 #############################################################################
-DeclareAttribute( "SmallElementsOfGoodIdeal", IsGoodIdeal);
-
+DeclareAttribute( "SmallElements", IsGoodIdeal);
+DeclareSynonymAttr( "SmallElementsOfGoodIdeal", SmallElements);
 #############################################################################
 ##
 #A  ConductorOfGoodIdeal(I)
