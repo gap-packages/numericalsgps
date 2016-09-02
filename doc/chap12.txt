@@ -1,0 +1,444 @@
+  
+  [1X12 [33X[0;0YGood semigroups[133X[101X
+  
+  [33X[0;0YWe will only cover here good semigroups of [22XN^2[122X.[133X
+  
+  [33X[0;0YA good semigroup [22XS[122X is a submonoid of [22XN^2[122X, with the following properties.[133X
+  
+  [33X[0;0Y(G1) It is closed under infimums (minimum componentwise).[133X
+  
+  [33X[0;0Y(G2)  if [22Xa, b ∈ M[122X and [22Xa_i = b_i[122X for some [22Xi ∈ {1, 2}[122X, then there exists [22Xc ∈ M[122X
+  such that [22Xc_i > a_i = b_i[122X and [22Xc_j = min{a_j,b_j}[122X, with [22Xj∈{1,2}∖ {i}[122X.[133X
+  
+  [33X[0;0Y(G3) there exists [22XC∈N^n[122X such that [22XC+N^n⊆ S[122X.[133X
+  
+  [33X[0;0YValue  semigroups  of  algebroid branches are good semigroups, but there are
+  good  semigroups that are not of this form. Since good semigroups are closed
+  under  infimums, if [22XC_1[122X and [22XC_2[122X fulfill [22XC_i+N^n⊆ S[122X, then [22XC_1∧ C_2+N^n⊆ S[122X. So
+  there  is  a minimum [22XC[122X fulfilling [22XC+N^n⊆ S[122X, which is called the conductor of
+  [22XS[122X.[133X
+  
+  [33X[0;0YThe contents of this chapter are described in [DGM16].[133X
+  
+  
+  [1X12.1 [33X[0;0YDefining good semigroups[133X[101X
+  
+  [1X12.1-1 IsGoodSemigroup[101X
+  
+  [29X[2XIsGoodSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0YDetects if [3XS[103X is a an object type good semigroup.[133X
+  
+  [1X12.1-2 NumericalSemigroupDuplication[101X
+  
+  [29X[2XNumericalSemigroupDuplication[102X( [3XS[103X, [3XE[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a numerical semigroup and [3XE[103X is an ideal of [3XS[103X with [22XE⊆ S[122X. The output is
+  [22XS⋈ E= D∪ (E× E)∪{ a∧ b∣ a∈ D, b∈ E× E},[122X where [22XD={(s,s)∣ s∈ S}[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xl:=Cartesian([1..11],[1..11]);;[127X[104X
+    [4X[25Xgap>[125X [27XIntersection(dup,l);[127X[104X
+    [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],[128X[104X
+    [4X[28X  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ],[128X[104X
+    [4X[28X  [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ],[128X[104X
+    [4X[28X  [ 11, 9 ], [ 11, 11 ] ][128X[104X
+    [4X[25Xgap>[125X [27X[384938749837,349823749827] in dup;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.1-3 AmalgamationOfNumericalSemigroups[101X
+  
+  [29X[2XAmalgamationOfNumericalSemigroups[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, [3XE[103X is an ideal of a numerical semigroup [22XT[122X with [22XE⊆
+  T[122X, and [3Xb[103X is an integer such that multiplication by [3Xb[103X is a morphism from [3XS[103X to
+  [22XT[122X, say [22Xg[122X. The output is [22XS⋈^g E= D∪(g^-1(E)× E)∪ {a∧ b∣ a∈ D, b∈ g^-1(E)× E},[122X
+  where [22XD={(s,b s)∣ s∈ S}[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(2,3);;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroup(3,4);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=3+t;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=AmalgamationOfNumericalSemigroups(s,e,2);;[127X[104X
+    [4X[25Xgap>[125X [27X[2,3] in dup;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X            [128X[104X
+  [4X[32X[104X
+  
+  [1X12.1-4 CartesianProductOfNumericalSemigroups[101X
+  
+  [29X[2XCartesianProductOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical  semigroups.  The  output is [22XS× T[122X, which is a good
+  semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(2,3);;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroup(3,4);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X            [128X[104X
+  [4X[32X[104X
+  
+  [1X12.1-5 GoodSemigroup[101X
+  
+  [29X[2XGoodSemigroup[102X( [3XX[103X, [3XC[103X ) [32X function
+  
+  [33X[0;0Y[3XX[103X  is  a list of points with nonnegative integer coordinates and [22XC[122X is a pair
+  of  nonnegative  integer  (a list with two elements). If [22XM[122X is the affine and
+  infimum  closure of [3XX[103X, decides if it is a good semigroup, and if so, outputs
+  it.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];[127X[104X
+    [4X[28X[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],[128X[104X
+    [4X[28X  [ 25, 12 ], [ 25, 16 ] ][128X[104X
+    [4X[25Xgap>[125X [27XC:=[25,27];[127X[104X
+    [4X[28X[ 25, 27 ][128X[104X
+    [4X[25Xgap>[125X [27XGoodSemigroup(G,C);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[28X            [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X12.2 [33X[0;0YNotable elements[133X[101X
+  
+  [1X12.2-1 Conductor[101X
+  
+  [29X[2XConductor[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. The output is its conductor.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XConductor(dup);[127X[104X
+    [4X[28X[ 11, 11 ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-2 SmallElementsOfGoodSemigroup[101X
+  
+  [29X[2XSmallElementsOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. The output is its set of small elements, that is, the
+  elements  smaller  than  its  conductor  with  respect  to the usual partial
+  ordering.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],[128X[104X
+    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
+    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
+    [4X[28X  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-3 SmallElements[101X
+  
+  [29X[2XSmallElements[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0YThis is just a synonym of [10X SmallElementsOfGoodSemigroup[110X ([10XS[110X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(dup);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],[128X[104X
+    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
+    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
+    [4X[28X  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-4 RepresentsSmallElementsOfGoodSemigroup[101X
+  
+  [29X[2XRepresentsSmallElementsOfGoodSemigroup[102X( [3XX[103X ) [32X function
+  
+  [33X[0;0Y[3XX[103X  is  a list of points in the nonnegative orthant of the plane with integer
+  coordinates. Determines if it represents the set of small elements of a good
+  semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],[128X[104X
+    [4X[28X  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],[128X[104X
+    [4X[28X  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
+    [4X[25Xgap>[125X [27XRepresentsSmallElementsOfGoodSemigroup(last);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-5 GoodSemigroupBySmallElements[101X
+  
+  [29X[2XGoodSemigroupBySmallElements[102X( [3XX[103X ) [32X function
+  
+  [33X[0;0Y[3XX[103X  is  a list of points in the nonnegative orthant of the plane with integer
+  coordinates. Determines if it represents the set of small elements of a good
+  semigroup,  and  then  outputs  the  good semigroup having [3XX[103X as set of small
+  elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],[128X[104X
+    [4X[28X  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],[128X[104X
+    [4X[28X  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
+    [4X[25Xgap>[125X [27XG:=GoodSemigroupBySmallElements(last);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xdup=G;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-6 MaximalElementsOfGoodSemigroup[101X
+  
+  [29X[2XMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. The output is the set of elements [22X(x,y)[122X of [3XS[103X with the
+  following  property:  there  is  no  other element [22X(x',y')[122X in [3XS[103X with [22X(x,y)le
+  (x',y')[122X sharing a coordinate with [22X(x,y)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17]];;[127X[104X
+    [4X[25Xgap>[125X [27Xg:=GoodSemigroup(G,[11,17]);;[127X[104X
+    [4X[25Xgap>[125X [27Xmx:=MaximalElementsOfGoodSemigroup(g);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-7 IrreducibleMaximalElementsOfGoodSemigroup[101X
+  
+  [29X[2XIrreducibleMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0Y[3XS[103X  is  a  good  semigroup. The output is the set of elements nonzero maximal
+  elements  that  cannot be expressed as a sum of two nonzero maximal elements
+  of the good semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X gap> G:=[[4,3],[7,13],[11,17]];;[128X[104X
+    [4X[28X gap> g:=GoodSemigroup(G,[11,17]);;[128X[104X
+    [4X[28X gap> IrreducibleMaximalElementsOfGoodSemigroup(g);[128X[104X
+    [4X[28X[ [ 4, 3 ], [ 7, 13 ] ][128X[104X
+    [4X[28X         [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-8 GoodSemigroupByMaximalElements[101X
+  
+  [29X[2XGoodSemigroupByMaximalElements[102X( [3XS[103X, [3XT[103X, [3XM[103X, [3XC[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical semigroups, [3XM[103X is a list of pairs in [22XS× T[122X. [3XC[103X is the
+  conductor, and thus a pair of nonnegative integers. The output is the set of
+  elements  of [22XS× T[122X that are not above an element in [3XM[103X, that is, if they share
+  a  coordinate  with  an element in [3XM[103X, then they must be smaller or equalt to
+  that  element  with  respect  to the usual partial ordering. The output is a
+  good semigroup, if [3XM[103X is an correct set of maximal elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17]];;[127X[104X
+    [4X[25Xgap>[125X [27Xg:=GoodSemigroup(G,[11,17]);;[127X[104X
+    [4X[25Xgap>[125X [27Xsm:=SmallElements(g);;[127X[104X
+    [4X[25Xgap>[125X [27Xmx:=MaximalElementsOfGoodSemigroup(g);;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupBySmallElements(Set(sm,x->x[1]));;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroupBySmallElements(Set(sm,x->x[2]));;[127X[104X
+    [4X[25Xgap>[125X [27XConductor(g);[127X[104X
+    [4X[28X[ 11, 15 ][128X[104X
+    [4X[25Xgap>[125X [27Xgg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xgg=g;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X                      [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
+  
+  [29X[2XMinimalGoodGeneratingSystemOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a  good  semigroup.  The output is its minimal good generating system
+  (which is unique in the local case).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-10 MinimalGenerators[101X
+  
+  [29X[2XMinimalGenerators[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0YThis is just a synonym of [10X MinimalGoodGeneratingSystemOfGoodSemigroup[110X ([10XS[110X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(dup);[127X[104X
+    [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X12.3 [33X[0;0YSymmetric semigroups[133X[101X
+  
+  [1X12.3-1 IsSymmetricGoodSemigroup[101X
+  
+  [29X[2XIsSymmetricGoodSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. Determines if [3XS[103X is a symmetric good semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=CanonicalIdealOfNumericalSemigroup(s);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=15+e;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27XIsSymmetricGoodSemigroup(dup);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  [1X12.3-2 ArfGoodSemigroupClosure[101X
+  
+  [29X[2XArfGoodSemigroupClosure[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. Determines the Arf good semigroup closure of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X        gap> G:=[[3,3],[4,4],[5,4],[4,6]];[128X[104X
+    [4X[28X        [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ][128X[104X
+    [4X[28X        gap> C:=[6,6];[128X[104X
+    [4X[28X        [ 6, 6 ][128X[104X
+    [4X[28X        gap> S:=GoodSemigroup(G,C);[128X[104X
+    [4X[28X        <Good semigroup>[128X[104X
+    [4X[28X        gap> SmallElements(S);[128X[104X
+    [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ][128X[104X
+    [4X[28X        gap> A:=ArfGoodSemigroupClosure(S);[128X[104X
+    [4X[28X        <Good semigroup>[128X[104X
+    [4X[28X        gap> SmallElements(A);[128X[104X
+    [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ][128X[104X
+    [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X12.4 [33X[0;0YGood ideals[133X[101X
+  
+  [33X[0;0YA  relative  ideal [22XI[122X of a relative good semigroup [22XM[122X is a relative good ideal
+  if [22XI[122X fulfills conditions (G1) and (G2) of the definition of good semigroup.[133X
+  
+  [1X12.4-1 GoodIdeal[101X
+  
+  [29X[2XGoodIdeal[102X( [3XX[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XX[103X  is  a  list  of points with nonnegative integer coordinates and [22XS[122X is good
+  semigroup.  Decides  if the closure of [22XX+S[122X under infimums is a relative good
+  ideal of [22XS[122X, and if so, outputs it.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];[127X[104X
+    [4X[28X[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],[128X[104X
+    [4X[28X[ 25, 12 ], [ 25, 16 ] ][128X[104X
+    [4X[25Xgap>[125X [27XC:=[25,27];[127X[104X
+    [4X[28X[ 25, 27 ][128X[104X
+    [4X[25Xgap>[125X [27XGoodSemigroup(G,C);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xi:=GoodIdeal([[2,3]],g);[127X[104X
+    [4X[28X<Good ideal of good semigroup>[128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-2 GoodGeneratingSystemOfGoodIdeal[101X
+  
+  [29X[2XGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup. The output is a good generating
+  system of [3XI[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27XGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
+    [4X[28X[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ][128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-3 AmbientGoodSemigroupOfGoodIdeal[101X
+  
+  [29X[2XAmbientGoodSemigroupOfGoodIdeal[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0YIf [3XI[103X is a good ideal of a good semigroup [22XM[122X, then the output is [22XM[122X. The output
+  is a good generating system of [3XI[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27Xa=AmbientGoodSemigroupOfGoodIdeal(e);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal[101X
+  
+  [29X[2XMinimalGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a  good semigroup. The output is the minimal good
+  generating system of [3XI[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
+    [4X[28X[ [ 2, 3 ], [ 3, 2 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-5 BelongsToGoodIdeal[101X
+  
+  [29X[2XBelongsToGoodIdeal[102X( [3Xv[103X, [3XI[103X ) [32X operation
+  [29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup and [3Xv[103X is a pair of integers. The
+  output  is  [10Xtrue[110X  if  [3Xv[103X is in [3XI[103X, and [10Xfalse[110X otherwise. Other ways to use this
+  operation are [10X\in(v,I)[110X and [10Xv in I[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27X[1,1] in e;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27X[2,2] in e;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
