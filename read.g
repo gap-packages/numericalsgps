@@ -36,7 +36,11 @@ ReadPackage( "numericalsgps", "gap/pseudoFrobenius.gi" );
 ReadPackage( "numericalsgps", "gap/contributions.gi" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gi" );
 ReadPackage( "numericalsgps", "gap/polynomials.gi" );
+##
+## Good semigroups N^2
+##
 ReadPackage( "numericalsgps", "gap/good-semigroups.gi");
+ReadPackage( "numericalsgps", "gap/good-ideals.gi");
 ##
 ## Affine
 ##

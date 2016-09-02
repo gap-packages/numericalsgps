@@ -1,9 +1,16 @@
   
   [1X12 [33X[0;0YGood semigroups[133X[101X
   
-  [33X[0;0YA  good  semigroup  [22XS[122X  is  a  submonoid of [22XN^n[122X, for some positive [22Xn[122X, that is
-  closed  under  infimums  (minimum componentwise) and there exists [22XC∈N^n[122X such
-  that [22XC+N^n⊆ S[122X. We will only cover here good semigroups of [22XN^2[122X.[133X
+  [33X[0;0YWe will only cover here good semigroups of [22XN^2[122X.[133X
+  
+  [33X[0;0YA good semigroup [22XS[122X is a submonoid of [22XN^2[122X, with the following properties.[133X
+  
+  [33X[0;0Y(G1) It is closed under infimums (minimum componentwise).[133X
+  
+  [33X[0;0Y(G2)  if [22Xa, b ∈ M[122X and [22Xa_i = b_i[122X for some [22Xi ∈ {1, 2}[122X, then there exists [22Xc ∈ M[122X
+  such that [22Xc_i > a_i = b_i[122X and [22Xc_j = min{a_j,b_j}[122X, with [22Xj∈{1,2}∖ {i}[122X.[133X
+  
+  [33X[0;0Y(G3) there exists [22XC∈N^n[122X such that [22XC+N^n⊆ S[122X.[133X
   
   [33X[0;0YValue  semigroups  of  algebroid branches are good semigroups, but there are
   good  semigroups that are not of this form. Since good semigroups are closed
@@ -336,5 +343,32 @@
     [4X[28X        gap> SmallElements(A);[128X[104X
     [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ][128X[104X
     [4X[28X        [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X12.4 [33X[0;0YGood ideals[133X[101X
+  
+  [33X[0;0YA  relative  ideal [22XI[122X of a relative good semigroup [22XM[122X is a relative good ideal
+  if [22XI[122X fulfills conditions (G1) and (G2) of the definition of good semigroup.[133X
+  
+  [1X12.4-1 GoodIdeal[101X
+  
+  [29X[2XGoodIdeal[102X( [3XX[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XX[103X  is  a  list  of points with nonnegative integer coordinates and [22XS[122X is good
+  semigroup.  Decides if [22XX+S[122X is a relative good ideal of [22XS[122X, and if so, outputs
+  it.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];[127X[104X
+    [4X[28X[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],[128X[104X
+    [4X[28X[ 25, 12 ], [ 25, 16 ] ][128X[104X
+    [4X[25Xgap>[125X [27XC:=[25,27];[127X[104X
+    [4X[28X[ 25, 27 ][128X[104X
+    [4X[25Xgap>[125X [27XGoodSemigroup(G,C);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xi:=GoodIdeal([[2,3]],g);[127X[104X
+    [4X[28X<Good ideal of good semigroup>[128X[104X
+    [4X[28X          [128X[104X
   [4X[32X[104X
   
