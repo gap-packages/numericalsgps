@@ -360,4 +360,73 @@ gap> i:=GoodIdeal([[2,3]],g);
       </Description>
     </ManSection>
 
+
+    <ManSection>
+      <Func Arg="I" Name="GoodGeneratingSystemOfGoodIdeal"></Func>
+      <Description>
+        <A>I</A> is a good ideal of a good semigroup. The output is a good generating system of <A>I</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> GoodGeneratingSystemOfGoodIdeal(e);
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="I" Name="AmbientGoodSemigroupOfGoodIdeal"></Func>
+      <Description>
+        If <A>I</A> is a good ideal of a good semigroup <M>M</M>, then the output is <M>M</M>. The output is a good generating system of <A>I</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> a=AmbientGoodSemigroupOfGoodIdeal(e);
+true
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="I" Name="MinimalGoodGeneratingSystemOfGoodIdeal"></Func>
+      <Description>
+        <A>I</A> is a good ideal of a good semigroup. The output is the minimal good generating system of <A>I</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> MinimalGoodGeneratingSystemOfGoodIdeal(e);
+[ [ 2, 3 ], [ 3, 2 ] ]
+]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Oper Arg="v,I" Name="BelongsToGoodIdeal"></Oper>
+      <Oper Name="\in" Arg="n,S" Label="membership for good ideals of good semigroups"/>
+      <Description>
+        <A>I</A> is a good ideal of a good semigroup and <A>v</A> is a pair of integers. The output is <C>true</C> if <A>v</A> is in <A>I</A>, and <C>false</C> otherwise.
+
+        Other ways to use this operation are <C>\in(v,I)</C> and <C>v in I</C>.
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
+gap> e:=GoodIdeal([[2,3],[3,2]],a);;
+gap> [1,1] in e;
+false
+gap> [2,2] in e;
+true
+]]></Example>
+      </Description>
+    </ManSection>
+
 </Section>
