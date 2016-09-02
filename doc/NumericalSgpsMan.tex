@@ -5321,7 +5321,15 @@ this fact as explained in this reference).
 \chapter{\textcolor{Chapter }{ Good semigroups }}\logpage{[ 12, 0, 0 ]}
 \hyperdef{L}{X7A9271AC84C7277F}{}
 {
-   A good semigroup $S$ is a submonoid of $\mathbb{N}^n$, for some positive $n$, that is closed under infimums (minimum componentwise) and there exists $C\in\mathbb{N}^n$ such that $C+\mathbb{N}^n\subseteq S$. We will only cover here good semigroups of $\mathbb{N}^2$. 
+   We will only cover here good semigroups of $\mathbb{N}^2$. 
+
+ A good semigroup $S$ is a submonoid of $\mathbb{N}^2$, with the following properties. 
+
+ (G1) It is closed under infimums (minimum componentwise). 
+
+ (G2) if $a, b \in M$ and $a_i = b_i$ for some $i \in \{1, 2\}$, then there exists $c \in M$ such that $c_i > a_i = b_i$ and $c_j = \min\{a_j,b_j\}$, with $j{\ensuremath{\in}}\{1,2\}\setminus \{i\}$.
+
+ (G3) there exists $C\in\mathbb{N}^n$ such that $C+\mathbb{N}^n\subseteq S$. 
 
  Value semigroups of algebroid branches are good semigroups, but there are good
 semigroups that are not of this form. Since good semigroups are closed under
@@ -5745,6 +5753,37 @@ is unique in the local case).
           gap> SmallElements(A);
           [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
           
+\end{Verbatim}
+ }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{ Good ideals }}\logpage{[ 12, 4, 0 ]}
+\hyperdef{L}{X7FA8DCAC7951F7FB}{}
+{
+  A relative ideal $I$ of a relative good semigroup $M$ is a relative good ideal if $I$ fulfills conditions (G1) and (G2) of the definition of good semigroup. 
+
+\subsection{\textcolor{Chapter }{GoodIdeal}}
+\logpage{[ 12, 4, 1 ]}\nobreak
+\hyperdef{L}{X843CA9D5874A33F2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GoodIdeal({\mdseries\slshape X, S})\index{GoodIdeal@\texttt{GoodIdeal}}
+\label{GoodIdeal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape X}} is a list of points with nonnegative integer coordinates and $S$ is good semigroup. Decides if $X+S$ is a relative good ideal of $S$, and if so, outputs it. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];|
+  [ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
+  [ 25, 12 ], [ 25, 16 ] ]
+  !gapprompt@gap>| !gapinput@C:=[25,27];|
+  [ 25, 27 ]
+  !gapprompt@gap>| !gapinput@GoodSemigroup(G,C);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@i:=GoodIdeal([[2,3]],g);|
+  <Good ideal of good semigroup>
+            
 \end{Verbatim}
  }
 

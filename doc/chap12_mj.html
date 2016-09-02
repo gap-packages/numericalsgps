@@ -64,13 +64,28 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7B5A4096831DF55A">12.3-1 IsSymmetricGoodSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7E4744C9841CFE9C">12.3-2 ArfGoodSemigroupClosure</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap12_mj.html#X7FA8DCAC7951F7FB">12.4 <span class="Heading">
+      Good ideals
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X843CA9D5874A33F2">12.4-1 GoodIdeal</a></span>
+</div></div>
 </div>
 
 <h3>12 <span class="Heading">
 		Good semigroups
 	</span></h3>
 
-<p>A good semigroup <span class="SimpleMath">\(S\)</span> is a submonoid of <span class="SimpleMath">\(\mathbb{N}^n\)</span>, for some positive <span class="SimpleMath">\(n\)</span>, that is closed under infimums (minimum componentwise) and there exists <span class="SimpleMath">\(C\in\mathbb{N}^n\)</span> such that <span class="SimpleMath">\(C+\mathbb{N}^n\subseteq S\)</span>. We will only cover here good semigroups of <span class="SimpleMath">\(\mathbb{N}^2\)</span>.</p>
+<p>We will only cover here good semigroups of <span class="SimpleMath">\(\mathbb{N}^2\)</span>.</p>
+
+<p>A good semigroup <span class="SimpleMath">\(S\)</span> is a submonoid of <span class="SimpleMath">\(\mathbb{N}^2\)</span>, with the following properties.</p>
+
+<p>(G1) It is closed under infimums (minimum componentwise).</p>
+
+<p>(G2) if <span class="SimpleMath">\(a, b \in M\)</span> and <span class="SimpleMath">\(a_i = b_i\)</span> for some <span class="SimpleMath">\(i \in \{1, 2\}\)</span>, then there exists <span class="SimpleMath">\(c \in M\)</span> such that <span class="SimpleMath">\(c_i &gt; a_i = b_i\)</span> and <span class="SimpleMath">\(c_j = \min\{a_j,b_j\}\)</span>, with <span class="SimpleMath">\(j∈\{1,2\}\setminus \{i\}\)</span>.</p>
+
+<p>(G3) there exists <span class="SimpleMath">\(C\in\mathbb{N}^n\)</span> such that <span class="SimpleMath">\(C+\mathbb{N}^n\subseteq S\)</span>.</p>
 
 <p>Value semigroups of algebroid branches are good semigroups, but there are good semigroups that are not of this form. Since good semigroups are closed under infimums, if <span class="SimpleMath">\(C_1\)</span> and <span class="SimpleMath">\(C_2\)</span> fulfill <span class="SimpleMath">\(C_i+\mathbb{N}^n\subseteq S\)</span>, then <span class="SimpleMath">\(C_1\wedge C_2+\mathbb{N}^n\subseteq S\)</span>. So there is a minimum <span class="SimpleMath">\(C\)</span> fulfilling <span class="SimpleMath">\(C+\mathbb{N}^n\subseteq S\)</span>, which is called the conductor of <span class="SimpleMath">\(S\)</span>.</p>
 
@@ -401,6 +416,34 @@ true
         gap&gt; SmallElements(A);
         [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
         </pre></div>
+
+<p><a id="X7FA8DCAC7951F7FB" name="X7FA8DCAC7951F7FB"></a></p>
+
+<h4>12.4 <span class="Heading">
+      Good ideals
+    </span></h4>
+
+<p>A relative ideal <span class="SimpleMath">\(I\)</span> of a relative good semigroup <span class="SimpleMath">\(M\)</span> is a relative good ideal if <span class="SimpleMath">\(I\)</span> fulfills conditions (G1) and (G2) of the definition of good semigroup.</p>
+
+<p><a id="X843CA9D5874A33F2" name="X843CA9D5874A33F2"></a></p>
+
+<h5>12.4-1 GoodIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GoodIdeal</code>( <var class="Arg">X</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">X</var> is a list of points with nonnegative integer coordinates and <span class="SimpleMath">\(S\)</span> is good semigroup. Decides if <span class="SimpleMath">\(X+S\)</span> is a relative good ideal of <span class="SimpleMath">\(S\)</span>, and if so, outputs it.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];</span>
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
+[ 25, 12 ], [ 25, 16 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">C:=[25,27];</span>
+[ 25, 27 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoodSemigroup(G,C);</span>
+&lt;Good semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=GoodIdeal([[2,3]],g);</span>
+&lt;Good ideal of good semigroup&gt;
+          </pre></div>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap11_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA_mj.html">[Next Chapter]</a>&nbsp;  </div>
