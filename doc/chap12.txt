@@ -109,7 +109,29 @@
   
   [1X12.2 [33X[0;0YNotable elements[133X[101X
   
-  [1X12.2-1 Conductor[101X
+  [1X12.2-1 BelongsToGoodSemigroup[101X
+  
+  [29X[2XBelongsToGoodSemigroup[102X( [3Xv[103X, [3XS[103X ) [32X operation
+  [29X[2X\in[102X( [3Xv[103X, [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X  is  a good semigroup and [3Xv[103X is a pair of integers. The output is [10Xtrue[110X if [3Xv[103X
+  is  in [3XS[103X, and [10Xfalse[110X otherwise. Other ways to use this operation are [10X\in(v,S)[110X
+  and [10Xv in S[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(2,3);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[25Xgap>[125X [27X[2,2] in dup;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X[3,2] in dup;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X      [128X[104X
+  [4X[32X[104X
+  
+  [1X12.2-2 Conductor[101X
   
   [29X[2XConductor[102X( [3XS[103X ) [32X function
   
@@ -125,9 +147,10 @@
     [4X[28X        [128X[104X
   [4X[32X[104X
   
-  [1X12.2-2 SmallElementsOfGoodSemigroup[101X
+  [1X12.2-3 SmallElementsOfGoodSemigroup[101X
   
   [29X[2XSmallElementsOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  [29X[2XSmallElements[102X( [3XS[103X ) [32X function
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is its set of small elements, that is, the
   elements  smaller  than  its  conductor  with  respect  to the usual partial
@@ -139,25 +162,6 @@
     [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XSmallElementsOfGoodSemigroup(dup);[127X[104X
-    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],[128X[104X
-    [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
-    [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
-    [4X[28X  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
-    [4X[28X        [128X[104X
-  [4X[32X[104X
-  
-  [1X12.2-3 SmallElements[101X
-  
-  [29X[2XSmallElements[102X( [3XS[103X ) [32X attribute
-  
-  [33X[0;0YThis is just a synonym of [10X SmallElementsOfGoodSemigroup[110X ([10XS[110X).[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
-    [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
-    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
-    [4X[28X<Good semigroup>[128X[104X
-    [4X[25Xgap>[125X [27XSmallElements(dup);[127X[104X
     [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],[128X[104X
     [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
     [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
@@ -382,8 +386,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
     [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
-    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
-    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27Xd:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],d);;[127X[104X
     [4X[25Xgap>[125X [27XGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
     [4X[28X[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ][128X[104X
     [4X[28X          [128X[104X
@@ -416,8 +420,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
     [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
-    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
-    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27Xd:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],d);;[127X[104X
     [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
     [4X[28X[ [ 2, 3 ], [ 3, 2 ] ][128X[104X
   [4X[32X[104X
@@ -425,7 +429,7 @@
   [1X12.4-5 BelongsToGoodIdeal[101X
   
   [29X[2XBelongsToGoodIdeal[102X( [3Xv[103X, [3XI[103X ) [32X operation
-  [29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  [29X[2X\in[102X( [3Xv[103X, [3XI[103X ) [32X operation
   
   [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup and [3Xv[103X is a pair of integers. The
   output  is  [10Xtrue[110X  if  [3Xv[103X is in [3XI[103X, and [10Xfalse[110X otherwise. Other ways to use this
@@ -434,11 +438,46 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
     [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
-    [4X[25Xgap>[125X [27Xa:=AmalgamationOfNumericalSemigroups(s,e,5);;[127X[104X
-    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2]],a);;[127X[104X
+    [4X[25Xgap>[125X [27Xd:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2]],d);;[127X[104X
     [4X[25Xgap>[125X [27X[1,1] in e;[127X[104X
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27X[2,2] in e;[127X[104X
     [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-6 SmallElementsOfGoodIdeal[101X
+  
+  [29X[2XSmallElementsOfGoodIdeal[102X( [3XI[103X ) [32X function
+  [29X[2XSmallElements[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0Y[3XI[103X  is  a  good  ideal. The output is its set of small elements, that is, the
+  elements  smaller  than  its  conductor  and larger than its minimum element
+  (with respect to the usual partial ordering).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xd:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2]],d);;[127X[104X
+    [4X[25Xgap>[125X [27XSmallElements(e);[127X[104X
+    [4X[28X[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ][128X[104X
+    [4X[28X          [128X[104X
+  [4X[32X[104X
+  
+  [1X12.4-7 CanonicalIdealOfGoodSemigroup[101X
+  
+  [29X[2XCanonicalIdealOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a good semigroup. The output is the canonical ideal of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xe:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27Xd:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27Xc:=CanonicalIdealOfGoodSemigroup(d);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodIdeal(c);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 2, 2 ] ][128X[104X
+    [4X[28X          [128X[104X
   [4X[32X[104X
   
