@@ -69,6 +69,7 @@ InstallGlobalFunction(GoodIdeal, function(l,S)
       Error("The set given set does not generate a good ideal.");
     fi;
 
+    sm:=Union(sm,[c]);
     I := rec();
     ObjectifyWithAttributes(I, GoodIdealType,
         AmbientGS, S,
