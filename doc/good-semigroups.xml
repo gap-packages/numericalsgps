@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-A good semigroup <M>S</M> is a submonoid of <M>\mathbb{N}^n</M>, for some positive <M>n</M>, that is closed under infimums (minimum componentwise) and there exists <M>C\in\mathbb{N}^n</M> such that <M>C+\mathbb{N}^n\subseteq S</M>. We will only cover here good semigroups of <M>\mathbb{N}^2</M>. <P/>
+We will only cover here good semigroups of <M>\mathbb{N}^2</M>. <P/>
+
+A good semigroup <M>S</M> is a submonoid of <M>\mathbb{N}^2</M>, with the following properties. <P/>
+(G1) It is closed under infimums (minimum componentwise). <P/>
+(G2) if <M>a, b \in M</M> and <M>a_i = b_i</M> for some <M>i \in \{1, 2\}</M>, then there exists <M>c \in M</M> such that <M>c_i > a_i = b_i</M>
+and <M>c_j = \min\{a_j,b_j\}</M>, with <M>j∈\{1,2\}\setminus \{i\}</M>.<P/>
+(G3) there exists <M>C\in\mathbb{N}^n</M> such that <M>C+\mathbb{N}^n\subseteq S</M>. <P/>
 
 Value semigroups of algebroid branches are good semigroups, but there are good semigroups that are not of this form. Since good semigroups are closed under infimums, if <M>C_1</M> and <M>C_2</M> fulfill <M>C_i+\mathbb{N}^n\subseteq S</M>, then <M>C_1\wedge C_2+\mathbb{N}^n\subseteq S</M>. So there is a minimum <M>C</M> fulfilling <M>C+\mathbb{N}^n\subseteq S</M>, which is called the conductor of <M>S</M>. <P/>
 
@@ -324,5 +330,34 @@ true
         ]]></Example>
     </Description>
   </ManSection>
+
+</Section>
+
+<Section>
+    <Heading>
+      Good ideals
+    </Heading>
+
+    A relative ideal <M>I</M> of a relative good semigroup <M>M</M> is a relative good ideal if <M>I</M> fulfills conditions (G1) and (G2) of the definition of good semigroup.
+
+    <ManSection>
+      <Func Arg="X, S" Name="GoodIdeal"></Func>
+      <Description>
+        <A>X</A> is a list of points with nonnegative integer coordinates and <M>S</M> is good semigroup.
+        Decides if the closure of <M>X+S</M> under infimums is a relative good ideal of <M>S</M>, and if so, outputs it.
+
+        <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
+[ 25, 12 ], [ 25, 16 ] ]
+gap> C:=[25,27];
+[ 25, 27 ]
+gap> GoodSemigroup(G,C);
+<Good semigroup>
+gap> i:=GoodIdeal([[2,3]],g);
+<Good ideal of good semigroup>
+          ]]></Example>
+      </Description>
+    </ManSection>
 
 </Section>
