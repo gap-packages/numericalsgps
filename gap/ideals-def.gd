@@ -276,6 +276,16 @@ DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupCM");
 #############################################################################
 DeclareGlobalFunction("CanonicalIdealOfNumericalSemigroup");
 
+#############################################################################
+##
+#F  IsCanonicalIdealOfNumericalSemigroup(e)
+##
+##  Detects if the ideal e is a translation of the canonical ideal of its 
+##  ambient semigroup
+##
+#############################################################################
+DeclareGlobalFunction("IsCanonicalIdealOfNumericalSemigroup");
+
 
 #############################################################################
 ##
