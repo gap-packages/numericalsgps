@@ -329,10 +329,270 @@ that of sets of solutions to equations of the form $ A x \bmod\ B \leq C x$ with
 its Ap{\a'e}ry set, just to name some. In this section we describe functions
 that may be used to specify, in one of these ways, a numerical semigroup in \textsf{GAP}. 
 
+\subsection{\textcolor{Chapter }{NumericalSemigroupByGenerators}}
+\logpage{[ 2, 1, 1 ]}\nobreak
+\hyperdef{L}{X79B38AB3816BF3C5}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGenerators({\mdseries\slshape List})\index{NumericalSemigroupByGenerators@\texttt{NumericalSemigroupByGenerators}}
+\label{NumericalSemigroupByGenerators}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by generators (default)}
+\label{NumericalSemigroup:by generators (default)}
+}\hfill{\scriptsize (function)}}\\
+
+
+ The semigroup is given through a set of generators. This set may be given as a
+list or through its individual elements. 
+
+ \texttt{String} does not need to be present. When it is present, it must be \texttt{"generators"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s1 := NumericalSemigroupByGenerators(3,5,7);             |
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s2 := NumericalSemigroupByGenerators([3,5,7]);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s3 := NumericalSemigroup("generators",3,5,7); |
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s4 := NumericalSemigroup("generators",[3,5,7]);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s5 := NumericalSemigroup(3,5,7);               |
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s6 := NumericalSemigroup([3,5,7]);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@s1=s2;s2=s3;s3=s4;s4=s5;s5=s6;|
+  true
+  true
+  true
+  true
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupBySubAdditiveFunction}}
+\logpage{[ 2, 1, 2 ]}\nobreak
+\hyperdef{L}{X86D9D2EE7E1C16C2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySubAdditiveFunction({\mdseries\slshape List})\index{NumericalSemigroupBySubAdditiveFunction@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Sub}\-\texttt{Additive}\-\texttt{Function}}
+\label{NumericalSemigroupBySubAdditiveFunction}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySubAdditiveFunction({\mdseries\slshape List})\index{NumericalSemigroupBySubAdditiveFunction@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Sub}\-\texttt{Additive}\-\texttt{Function}}
+\label{NumericalSemigroupBySubAdditiveFunction}
+}\hfill{\scriptsize (function)}}\\
+
+
+ A periodic subadditive function with period $m$ is given through the list of images of the elements, from $1$ to $m$. The image of $m$ has to be $0$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByAperyList}}
+\logpage{[ 2, 1, 3 ]}\nobreak
+\hyperdef{L}{X799AC8727DB61A99}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAperyList({\mdseries\slshape List})\index{NumericalSemigroupByAperyList@\texttt{NumericalSemigroupByAperyList}}
+\label{NumericalSemigroupByAperyList}
+}\hfill{\scriptsize (function)}}\\
+
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupBySmallElements}}
+\logpage{[ 2, 1, 4 ]}\nobreak
+\hyperdef{L}{X81A7E3527998A74A}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySmallElements({\mdseries\slshape List})\index{NumericalSemigroupBySmallElements@\texttt{NumericalSemigroupBySmallElements}}
+\label{NumericalSemigroupBySmallElements}
+}\hfill{\scriptsize (function)}}\\
+
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByGaps}}
+\logpage{[ 2, 1, 5 ]}\nobreak
+\hyperdef{L}{X7BB0343D86EC5FEC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGaps({\mdseries\slshape List})\index{NumericalSemigroupByGaps@\texttt{NumericalSemigroupByGaps}}
+\label{NumericalSemigroupByGaps}
+}\hfill{\scriptsize (function)}}\\
+
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByFundamentalGaps}}
+\logpage{[ 2, 1, 6 ]}\nobreak
+\hyperdef{L}{X86AC8B0E7C11147F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByFundamentalGaps({\mdseries\slshape List})\index{NumericalSemigroupByFundamentalGaps@\texttt{NumericalSemigroupByFundamentalGaps}}
+\label{NumericalSemigroupByFundamentalGaps}
+}\hfill{\scriptsize (function)}}\\
+
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByAffineMap}}
+\logpage{[ 2, 1, 7 ]}\nobreak
+\hyperdef{L}{X7ACD94F478992185}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAffineMap({\mdseries\slshape a, b, c})\index{NumericalSemigroupByAffineMap@\texttt{NumericalSemigroupByAffineMap}}
+\label{NumericalSemigroupByAffineMap}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, a, b})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by affine map}
+\label{NumericalSemigroup:by affine map}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given three nonnegative integers \mbox{\texttt{\mdseries\slshape a}}, \mbox{\texttt{\mdseries\slshape b}} and \mbox{\texttt{\mdseries\slshape c}}, with $a,c>0$ and $\gcd(b,c)=1$, this function returns the least (with restpect to set order inclusion)
+numerical semigroup containing \mbox{\texttt{\mdseries\slshape c}} and closed under the map $x\mapsto ax+b$. The procedure is explained in \cite{Ugolini}. In the second form, \texttt{String} must be \texttt{"affinemap"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroupByAffineMap(3,1,3);|
+  <Numerical semigroup with 3 generators>
+  !gapprompt@gap>| !gapinput@SmallElements(s);|
+  [ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+  !gapprompt@gap>| !gapinput@t:=NumericalSemigroup("affinemap",3,1,3);;|
+  !gapprompt@gap>| !gapinput@s=t;|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ModularNumericalSemigroup}}
+\logpage{[ 2, 1, 8 ]}\nobreak
+\hyperdef{L}{X87206D597873EAFF}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ModularNumericalSemigroup({\mdseries\slshape a, b})\index{ModularNumericalSemigroup@\texttt{ModularNumericalSemigroup}}
+\label{ModularNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, a, b})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by modular condition}
+\label{NumericalSemigroup:by modular condition}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given two positive integers \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}}, this function returns a modular numerical semigroup satisfying $ax \bmod\ b \le x$. In the second form, \texttt{String} must be \texttt{"modular"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ModularNumericalSemigroup(3,7);|
+  <Modular numerical semigroup satisfying 3x mod 7 <= x >
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("modular",3,7);  |
+  <Modular numerical semigroup satisfying 3x mod 7 <= x >
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ProportionallyModularNumericalSemigroup}}
+\logpage{[ 2, 1, 9 ]}\nobreak
+\hyperdef{L}{X879171CD7AC80BB5}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ProportionallyModularNumericalSemigroup({\mdseries\slshape a, b, c})\index{ProportionallyModularNumericalSemigroup@\texttt{Proportionally}\-\texttt{Modular}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{ProportionallyModularNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, a, b})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by proportionally modular condition}
+\label{NumericalSemigroup:by proportionally modular condition}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Given three positive integers \mbox{\texttt{\mdseries\slshape a}}, \mbox{\texttt{\mdseries\slshape b}} and \mbox{\texttt{\mdseries\slshape c}}, this function returns a proportionally modular numerical semigroup
+satisfying $ax\bmod\ b \le cx$. In the second form, \texttt{String} must be \texttt{"propmodular"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ProportionallyModularNumericalSemigroup(3,7,12);|
+  <Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("propmodular",3,7,12);|
+  <Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
+\end{Verbatim}
+ When $c=1$, the semigroup is seen as a modular numerical semigroup. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("propmodular",67,98,1);|
+  <Modular numerical semigroup satisfying 67x mod 98 <= x >
+\end{Verbatim}
+ }
+
+ 
+
+ Numerical semigroups generated by an interval of positive integers are known
+to be proportionally modular, and thus they are treated as such (unles the
+representation "minimalgenerators" is specified), since membership and other
+problems can be solved efficiently for these semigroups. 
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByInterval}}
+\logpage{[ 2, 1, 10 ]}\nobreak
+\hyperdef{L}{X7D8F9D2A8173EF32}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByInterval({\mdseries\slshape List})\index{NumericalSemigroupByInterval@\texttt{NumericalSemigroupByInterval}}
+\label{NumericalSemigroupByInterval}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by (closed) interval}
+\label{NumericalSemigroup:by (closed) interval}
+}\hfill{\scriptsize (function)}}\\
+
+
+ The semigroup is given through a set of generators. This set may be given as a
+list or through its individual elements. 
+
+ \texttt{String} does not need to be present. When it is present, it must be \texttt{"generators"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@NumericalSemigroupByInterval(7/5,5/3);|
+  <Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("interval",[7/5,5/3]);|
+  <Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >
+  !gapprompt@gap>| !gapinput@SmallElements(last);|
+  [ 0, 3, 5 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalSemigroupByOpenInterval}}
+\logpage{[ 2, 1, 11 ]}\nobreak
+\hyperdef{L}{X7C800FB37D76612F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByOpenInterval({\mdseries\slshape List})\index{NumericalSemigroupByOpenInterval@\texttt{NumericalSemigroupByOpenInterval}}
+\label{NumericalSemigroupByOpenInterval}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by open interval}
+\label{NumericalSemigroup:by open interval}
+}\hfill{\scriptsize (function)}}\\
+
+
+ The semigroup is given through a set of generators. This set may be given as a
+list or through its individual elements. 
+
+ \texttt{String} does not need to be present. When it is present, it must be \texttt{"generators"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@NumericalSemigroupByOpenInterval(7/5,5/3);|
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("openinterval",[7/5,5/3]);|
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@SmallElements(last);                         |
+  [ 0, 3, 6, 8 ]
+  !gapprompt@gap>| !gapinput@|
+\end{Verbatim}
+ }
+
+  
+
  To create a numerical semigroup in \textsf{GAP} the function \texttt{NumericalSemigroup} is used. 
 
 \subsection{\textcolor{Chapter }{NumericalSemigroup}}
-\logpage{[ 2, 1, 1 ]}\nobreak
+\logpage{[ 2, 1, 12 ]}\nobreak
 \hyperdef{L}{X86DEEBFE854B60A6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape Representation, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}}
 \label{NumericalSemigroup}
@@ -398,7 +658,7 @@ solved faster for these semigroups.
  
 
 \subsection{\textcolor{Chapter }{ModularNumericalSemigroup}}
-\logpage{[ 2, 1, 2 ]}\nobreak
+\logpage{[ 2, 1, 13 ]}\nobreak
 \hyperdef{L}{X87206D597873EAFF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ModularNumericalSemigroup({\mdseries\slshape a, b})\index{ModularNumericalSemigroup@\texttt{ModularNumericalSemigroup}}
 \label{ModularNumericalSemigroup}
@@ -415,7 +675,7 @@ solved faster for these semigroups.
  
 
 \subsection{\textcolor{Chapter }{ProportionallyModularNumericalSemigroup}}
-\logpage{[ 2, 1, 3 ]}\nobreak
+\logpage{[ 2, 1, 14 ]}\nobreak
 \hyperdef{L}{X879171CD7AC80BB5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ProportionallyModularNumericalSemigroup({\mdseries\slshape a, b, c})\index{ProportionallyModularNumericalSemigroup@\texttt{Proportionally}\-\texttt{Modular}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ProportionallyModularNumericalSemigroup}
@@ -438,10 +698,13 @@ satisfying $ax\bmod\ b \le cx$.
  
 
 \subsection{\textcolor{Chapter }{NumericalSemigroupByAffineMap}}
-\logpage{[ 2, 1, 4 ]}\nobreak
+\logpage{[ 2, 1, 15 ]}\nobreak
 \hyperdef{L}{X7ACD94F478992185}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAffineMap({\mdseries\slshape a, b, c})\index{NumericalSemigroupByAffineMap@\texttt{NumericalSemigroupByAffineMap}}
 \label{NumericalSemigroupByAffineMap}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape string, a, b, c})\index{NumericalSemigroup@\texttt{NumericalSemigroup}}
+\label{NumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -452,13 +715,16 @@ numerical semigroup containing \mbox{\texttt{\mdseries\slshape c}} and closed un
   <Numerical semigroup with 3 generators>
   !gapprompt@gap>| !gapinput@SmallElements(s);|
   [ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+  !gapprompt@gap>| !gapinput@t:=NumericalSemigroup("affinemap",3,1,3);;|
+  !gapprompt@gap>| !gapinput@s=t;|
+  true
 \end{Verbatim}
  }
 
  
 
 \subsection{\textcolor{Chapter }{NumericalSemigroupByGenerators}}
-\logpage{[ 2, 1, 5 ]}\nobreak
+\logpage{[ 2, 1, 16 ]}\nobreak
 \hyperdef{L}{X79B38AB3816BF3C5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGenerators({\mdseries\slshape List})\index{NumericalSemigroupByGenerators@\texttt{NumericalSemigroupByGenerators}}
 \label{NumericalSemigroupByGenerators}
@@ -2829,11 +3095,32 @@ plus one.
   !gapprompt@gap>| !gapinput@m:=MaximalIdealOfNumericalSemigroup(s);;|
   !gapprompt@gap>| !gapinput@c:=CanonicalIdealOfNumericalSemigroup(s);|
   <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@(m-c)-c=m;|
+  !gapprompt@gap>| !gapinput@c-(c-m)=m;|
   true
   !gapprompt@gap>| !gapinput@id:=3+s;|
   <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@(id-c)-c=id;|
+  !gapprompt@gap>| !gapinput@c-(c-id)=id;|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsCanonicalIdealOfNumericalSemigroup}}
+\logpage{[ 7, 1, 19 ]}\nobreak
+\hyperdef{L}{X7CD2E69B84F1DAAF}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCanonicalIdealOfNumericalSemigroup({\mdseries\slshape E})\index{IsCanonicalIdealOfNumericalSemigroup@\texttt{IsCanonical}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{IsCanonicalIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape E}} is an ideal of a numerical semigroup, say $S$. Determines if \mbox{\texttt{\mdseries\slshape E}} is a translation of the canonical ideal of $S$, or equivalently, for every ideal $J$, $E-(E-J)=J$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@c:=3+CanonicalIdealOfNumericalSemigroup(s);;|
+  !gapprompt@gap>| !gapinput@c-(c-(3+s))=3+s;|
+  true
+  !gapprompt@gap>| !gapinput@IsCanonicalIdealOfNumericalSemigroup(c);|
   true
 \end{Verbatim}
  }
@@ -4754,8 +5041,9 @@ So for instance, the equations $x+y\equiv 0\bmod 2,\ x-2y=0$ will be represented
 }\hfill{\scriptsize (function)}}\\
 
 
- \texttt{Representation} may be \texttt{"generators"}, \texttt{"minimalgenerators"} according to whether the semigroup is to be given by means of a system of
-generators, a minimal system of generators, ... 
+ \texttt{Representation} may be \texttt{"generators"}, \texttt{"equations"} or \texttt{"inequalities"} according to whether the semigroup is to be given by means of a system of
+generators, a system of homogeneous linear Diophantine equations or a system
+of homogeneous linear Diophantine inequalities. 
 
  When no string is given as first argument it is assumed that the numerical
 semigroup will be given by means of a set of generators. 
@@ -4881,11 +5169,9 @@ if whenever $a,b\in S$ and $b-a\in \mathbb N^k$, then $a-b\in S$, where $k$ is t
  If the semigroup is full, then its equations are stored in the semigroup for
 further use. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;|
-  !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([5,5],a);|
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup("equations",[[[1,1,1],[0,0,2]],[2,2]]);;|
+  !gapprompt@gap>| !gapinput@IsFullAffineSemigroup(a);|
   true
-  !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([1,2],a);|
-  false
 \end{Verbatim}
  }
 

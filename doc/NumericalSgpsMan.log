@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.28)  2 SEP 2016 19:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.23)  3 SEP 2016 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,9 +6,9 @@ entering extended mode
 (./NumericalSgpsMan.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/report.cls
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,16 +24,16 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/a4wide/a4wide.sty
+(/usr/share/texlive/texmf-dist/tex/latex/a4wide/a4wide.sty
 Package: a4wide 1994/08/30
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ntgclass/a4.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ntgclass/a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
@@ -41,15 +41,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/makeidx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
 \@indexfile=\write3
@@ -57,31 +57,30 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 
 
 Writing index file NumericalSgpsMan.idx
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 143.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
-<2008/02/07> (tvz)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+<2008/02/07> (tvz) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
@@ -91,8 +90,7 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \c@FancyVerbLine=\count90
 \FV@StepNumber=\count91
 \FV@OutFile=\write4
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/mathptmx.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -128,17 +126,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/helvet.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -153,7 +151,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 334.
@@ -220,14 +218,14 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -268,25 +266,25 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 
@@ -306,17 +304,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing ON on input line 4461.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/backref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2012/07/25 v1.38 Bibliographical back referencing
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
 \c@Hy@tempcnt=\count95
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -341,7 +339,7 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver: hpdftex.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
@@ -351,7 +349,7 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \openout5 = `NumericalSgpsMan.pnr'.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip44
 \enit@outerparindent=\dimen107
@@ -359,7 +357,50 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box27
 \enitdp@description=\count102
 )
-(./NumericalSgpsMan.aux)
+(./NumericalSgpsMan.aux
+
+LaTeX Warning: Label `NumericalSemigroupBySubAdditiveFunction' multiply defined
+.
+
+
+LaTeX Warning: Label `ModularNumericalSemigroup' multiply defined.
+
+
+LaTeX Warning: Label `ProportionallyModularNumericalSemigroup' multiply defined
+.
+
+
+LaTeX Warning: Label `NumericalSemigroupByAffineMap' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroup' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupByGenerators' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupByInterval' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupByOpenInterval' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupBySubAdditiveFunction' multiply defined
+.
+
+
+LaTeX Warning: Label `NumericalSemigroupByAperyList' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupBySmallElements' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupByGaps' multiply defined.
+
+
+LaTeX Warning: Label `NumericalSemigroupByFundamentalGaps' multiply defined.
+
+)
 \openout1 = `NumericalSgpsMan.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
@@ -376,8 +417,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 87.
@@ -385,10 +425,10 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 87.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen108
@@ -405,10 +445,10 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 \big@size=\dimen110
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 87.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count109
@@ -425,7 +465,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <50> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 93.
 LaTeX Font Info:    Try loading font information for T1+phv on input line 93.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <50> not available
@@ -437,7 +477,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 108.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Underfull \hbox (badness 10000) in paragraph at lines 106--113
@@ -446,11 +486,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--113
 
 [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 119.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 122--126
@@ -476,30 +516,30 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
@@ -523,563 +563,582 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 ] [7] [8]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 334.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 332.
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--340
+Underfull \hbox (badness 10000) in paragraph at lines 335--341
 
  []
 
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 348.
 [9
 
 ]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 369.
+Underfull \hbox (badness 10000) in paragraph at lines 374--380
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--406
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--412
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--444
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 420--423
+Underfull \hbox (badness 10000) in paragraph at lines 457--463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--446
+Underfull \hbox (badness 10000) in paragraph at lines 483--489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--493
+Underfull \hbox (badness 10000) in paragraph at lines 505--511
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 530--566
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 592--595
+Underfull \hbox (badness 10000) in paragraph at lines 540--546
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--619
+Underfull \hbox (badness 10000) in paragraph at lines 567--573
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--644
+Underfull \hbox (badness 10000) in paragraph at lines 597--600
+
+ []
+
+[12]pdfTeX warning (ext4): destination with the same identifier (name{L.X87206D
+597873EAFF}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.662 \hyperdef{L}{X87206D597873EAFF}{}
+                                       
+Underfull \hbox (badness 10000) in paragraph at lines 663--666
+
+ []
+
+[13]pdfTeX warning (ext4): destination with the same identifier (name{L.X879171
+CD7AC80BB5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.679 \hyperdef{L}{X879171CD7AC80BB5}{}
+                                       
+Underfull \hbox (badness 10000) in paragraph at lines 680--683
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X7ACD94F478
+992185}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.702 \hyperdef{L}{X7ACD94F478992185}{}
+                                       
+Underfull \hbox (badness 10000) in paragraph at lines 703--709
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{L.X79B38AB381
+6BF3C5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.728 \hyperdef{L}{X79B38AB3816BF3C5}{}
+                                       
+Underfull \hbox (badness 10000) in paragraph at lines 729--759
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 796--832
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 858--861
 
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 646--648
+Underfull \hbox (badness 10000) in paragraph at lines 882--885
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--910
+
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 912--914
 []\T1/ptm/m/n/10.95 Tests whether a list [] of in-te-gers may rep-re-sent the A
 péry list of a nu-mer-i-cal semi-
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 646--648
+Underfull \hbox (badness 1881) in paragraph at lines 912--914
 \T1/ptm/m/n/10.95 group. It re-turns \T1/cmtt/m/n/10.95 true \T1/ptm/m/n/10.95 
 when the pe-ri-odic func-tion rep-re-sented by [] is sub-ad-di-tive (see
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 659--662
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 925--928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--685
+Underfull \hbox (badness 10000) in paragraph at lines 948--951
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 708--714
+Underfull \hbox (badness 10000) in paragraph at lines 974--980
 
  []
 
-[14] [15]
+[17] [18]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--753
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1019
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 769--784
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1050
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1056
 []\T1/ptm/m/n/10.95 From Ver-sion 0.980, \T1/cmtt/m/n/10.95 ReducedSetOfGenerat
 orsOfNumericalSemigroup
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1056
 \T1/ptm/m/n/10.95 is just a syn-onym of \T1/cmtt/m/n/10.95 MinimalGeneratingSys
 temOfNumericalSemigroup
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1056
 \T1/ptm/m/n/10.95 and \T1/cmtt/m/n/10.95 GeneratorsOfNumericalSemigroupNC \T1/p
 tm/m/n/10.95 is just a syn-onym of
  []
 
-[16
+[19
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 821--824
+Underfull \hbox (badness 10000) in paragraph at lines 1087--1090
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 834--840
+Underfull \hbox (badness 10000) in paragraph at lines 1100--1106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 857--860
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 876--879
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 895--901
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 919--922
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 947--950
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 970--973
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 994--997
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1020--1023
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 1040--1043
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1052--1055
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1067
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1079
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1095--1098
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1145
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1115--1121
+Underfull \hbox (badness 10000) in paragraph at lines 1161--1167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1140
+Underfull \hbox (badness 10000) in paragraph at lines 1185--1188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1158--1161
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1216
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1236--1239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1182--1185
-
- []
-
-[21pdfTeX warning (ext4): destination with the same identifier (name{L.X787FE6F
-180C6291F}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1187  \texttt{NS}
-                    is a numerical semigroup. It returns the number of gaps ...
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1194--1200
+Underfull \hbox (badness 10000) in paragraph at lines 1260--1263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1223--1226
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1249--1252
+Underfull \hbox (badness 10000) in paragraph at lines 1286--1289
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1270--1273
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1292--1295
+Underfull \hbox (badness 10000) in paragraph at lines 1318--1321
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1314--1317
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
 
  []
 
-[23] [24]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1364
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 1381--1387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1403--1406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1424--1427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1448--1451
+
+ []
+
+[24pdfTeX warning (ext4): destination with the same identifier (name{L.X787FE6F
+180C6291F}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1453  \texttt{NS}
+                    is a numerical semigroup. It returns the number of gaps ...
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1460--1466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1518
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1539
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1558--1561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1580--1583
+
+ []
+
+[26] [27]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1347--1350
+Underfull \hbox (badness 10000) in paragraph at lines 1613--1616
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1376--1379
+Underfull \hbox (badness 10000) in paragraph at lines 1642--1645
 
  []
 
-[25
+[28
 
 pdfTeX warning (ext4): destination with the same identifier (name{L.X7969F7F27A
 AF0BF1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1385  T
+l.1651  T
          his function is used to compute a minimal presentation of the numer...
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1667--1670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1423--1426
+Underfull \hbox (badness 10000) in paragraph at lines 1689--1692
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1449
-
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 1478--1481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1501--1504
-
- []
-
-[27]
-Chapter 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1539--1542
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1564--1567
-
- []
-
-[28
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1599--1602
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1627--1630
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1715
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1656--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1744--1747
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1676--1679
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1700--1703
+Underfull \hbox (badness 10000) in paragraph at lines 1767--1770
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1731--1734
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1808
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1759--1762
+Underfull \hbox (badness 10000) in paragraph at lines 1830--1833
+
+ []
+
+[31
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1791--1794
-
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 1833--1836
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1868--1871
+Underfull \hbox (badness 10000) in paragraph at lines 1893--1896
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1908--1911
+Underfull \hbox (badness 10000) in paragraph at lines 1922--1925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1940--1943
+Underfull \hbox (badness 10000) in paragraph at lines 1942--1945
 
  []
 
-[33] [34]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1966--1969
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1997--2000
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2025--2028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2057--2060
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 2099--2102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2134--2137
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 2174--2177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2206--2209
+
+ []
+
+[36] [37]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2009--2012
+Underfull \hbox (badness 10000) in paragraph at lines 2275--2278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2028--2031
+Underfull \hbox (badness 10000) in paragraph at lines 2294--2297
 
  []
 
-[35
+[38
 
 pdfTeX warning (ext4): destination with the same identifier (name{L.X83C597EC7F
 AA1C0F}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2033  \mbox{\texttt{\mdseries\slshape s}}
+l.2299  \mbox{\texttt{\mdseries\slshape s}}
                                             is a numerical semigroup. The ou...
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2047--2050
+Underfull \hbox (badness 10000) in paragraph at lines 2313--2316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2066--2069
+Underfull \hbox (badness 10000) in paragraph at lines 2332--2335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2085--2088
+Underfull \hbox (badness 10000) in paragraph at lines 2351--2354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2103--2106
+Underfull \hbox (badness 10000) in paragraph at lines 2369--2372
 
  []
 
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 2137--2140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2164--2167
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 2403--2406
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2193--2196
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 2212--2215
+Underfull \hbox (badness 10000) in paragraph at lines 2430--2433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2234--2237
+Underfull \hbox (badness 10000) in paragraph at lines 2459--2462
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 2478--2481
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2253--2256
+Underfull \hbox (badness 10000) in paragraph at lines 2500--2503
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2275--2278
-
- []
-
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 2294--2297
+Underfull \hbox (badness 10000) in paragraph at lines 2519--2522
 
  []
 
 
-Overfull \hbox (64.23305pt too wide) in paragraph at lines 2317--2317
+Underfull \hbox (badness 10000) in paragraph at lines 2541--2544
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 2560--2563
+
+ []
+
+
+Overfull \hbox (64.23305pt too wide) in paragraph at lines 2583--2583
 [][]\T1/ptm/b/n/12 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingulari
 tyWithFrobeniusNumber[] 
  []
 
 
-Overfull \hbox (42.28542pt too wide) in paragraph at lines 2320--2323
+Overfull \hbox (42.28542pt too wide) in paragraph at lines 2586--2589
 []$\OML/ztmcm/m/it/10.95 .$  \T1/cmtt/m/n/10.95 NumericalSemigroupsAssociatedIr
 reduciblePlanarCurveSingularityWithFrobeniusNumber(\T1/cmtt/m/sl/10.95 f\T1/cmt
 t/m/n/10.95 )[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2320--2323
+Underfull \hbox (badness 10000) in paragraph at lines 2586--2589
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2356--2359
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 2382--2385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2401--2404
-
- []
-
-[40]
-Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2439--2442
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2466--2469
-
- []
-
-[41
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 2486--2495
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2516--2522
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2546--2549
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2566--2569
+Underfull \hbox (badness 10000) in paragraph at lines 2622--2625
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 2588--2594
+Underfull \hbox (badness 10000) in paragraph at lines 2648--2651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2617--2620
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2639--2642
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2651--2654
+Underfull \hbox (badness 10000) in paragraph at lines 2667--2670
 
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 2679--2682
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2705--2708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2708--2711
+Underfull \hbox (badness 10000) in paragraph at lines 2732--2735
+
+ []
+
+[44
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2752--2761
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2730--2733
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 2760--2763
+Underfull \hbox (badness 10000) in paragraph at lines 2782--2788
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2786--2789
-
- []
-
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 2813--2816
+Underfull \hbox (badness 10000) in paragraph at lines 2812--2815
 
  []
 
@@ -1088,257 +1147,252 @@ Underfull \hbox (badness 10000) in paragraph at lines 2832--2835
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2849--2852
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 2854--2860
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2880--2883
+Underfull \hbox (badness 10000) in paragraph at lines 2883--2886
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2905--2908
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2917--2920
 
  []
 
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 2900--2903
+Underfull \hbox (badness 10000) in paragraph at lines 2945--2948
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2921--2924
+Underfull \hbox (badness 10000) in paragraph at lines 2974--2977
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2941--2944
+Underfull \hbox (badness 10000) in paragraph at lines 2996--2999
 
  []
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 2970--2973
+Underfull \hbox (badness 10000) in paragraph at lines 3026--3029
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2991--2994
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3011--3014
+Underfull \hbox (badness 10000) in paragraph at lines 3052--3055
 
  []
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 3035--3038
+Underfull \hbox (badness 10000) in paragraph at lines 3079--3082
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3071--3074
+Underfull \hbox (badness 10000) in paragraph at lines 3098--3101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3096--3099
-
- []
-
-[49]
 Underfull \hbox (badness 10000) in paragraph at lines 3115--3118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3137--3140
+Underfull \hbox (badness 10000) in paragraph at lines 3140--3143
+
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 3167--3170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3187--3190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3208--3211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3228--3231
 
  []
 
 [50]
+Underfull \hbox (badness 10000) in paragraph at lines 3257--3260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3278--3281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3298--3301
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 3322--3325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3358--3361
+
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 3383--3386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3402--3405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3424--3427
+
+ []
+
+[53] [54]
 Chapter 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3175--3178
+Underfull \hbox (badness 10000) in paragraph at lines 3462--3465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3198--3201
+Underfull \hbox (badness 10000) in paragraph at lines 3485--3488
 
  []
 
-[51
+[55
 
 pdfTeX warning (ext4): destination with the same identifier (name{L.X7D2E70FC82
 D979D3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3203  \mbox{\texttt{\mdseries\slshape S}}
+l.3490  \mbox{\texttt{\mdseries\slshape S}}
                                             is a numerical semigroup.]
-Underfull \hbox (badness 10000) in paragraph at lines 3221--3224
+Underfull \hbox (badness 10000) in paragraph at lines 3508--3511
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3256--3259
+Underfull \hbox (badness 10000) in paragraph at lines 3543--3546
 
  []
 
-[52]
-Underfull \hbox (badness 10000) in paragraph at lines 3281--3284
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3304--3307
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 3568--3571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3326--3329
-
- []
-
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 3362--3365
+Underfull \hbox (badness 10000) in paragraph at lines 3591--3594
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3383--3386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3404--3407
-
- []
-
-[54] [55]
-Chapter 9.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3457--3460
-
- []
-
-[56
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 3475--3478
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3495--3498
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3518--3521
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3541--3544
+Underfull \hbox (badness 10000) in paragraph at lines 3613--3616
 
  []
 
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 3565--3568
+Underfull \hbox (badness 10000) in paragraph at lines 3649--3652
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3582--3585
+Underfull \hbox (badness 10000) in paragraph at lines 3670--3673
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3602--3605
+Underfull \hbox (badness 10000) in paragraph at lines 3691--3694
+
+ []
+
+[58] [59]
+Chapter 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3744--3747
+
+ []
+
+[60
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3762--3765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3622--3625
-
- []
-
-[58]
-Underfull \hbox (badness 10000) in paragraph at lines 3641--3644
+Underfull \hbox (badness 10000) in paragraph at lines 3782--3785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3660--3663
+Underfull \hbox (badness 10000) in paragraph at lines 3805--3808
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3679--3682
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3699--3702
-
- []
-
-[59]
-Underfull \hbox (badness 10000) in paragraph at lines 3719--3722
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3740--3743
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3758--3761
-
- []
-
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 3789--3792
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3809--3812
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3835--3838
+Underfull \hbox (badness 10000) in paragraph at lines 3828--3831
 
  []
 
 [61]
-Underfull \hbox (badness 10000) in paragraph at lines 3856--3859
+Underfull \hbox (badness 10000) in paragraph at lines 3852--3855
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3879--3882
+Underfull \hbox (badness 10000) in paragraph at lines 3869--3872
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3903--3906
+Underfull \hbox (badness 10000) in paragraph at lines 3889--3892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3909--3912
 
  []
 
 [62]
-Underfull \hbox (badness 10000) in paragraph at lines 3927--3930
+Underfull \hbox (badness 10000) in paragraph at lines 3928--3931
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3946--3949
+Underfull \hbox (badness 10000) in paragraph at lines 3947--3950
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3967--3970
+Underfull \hbox (badness 10000) in paragraph at lines 3966--3969
 
  []
 
@@ -1348,136 +1402,134 @@ Underfull \hbox (badness 10000) in paragraph at lines 3986--3989
  []
 
 [63]
-Underfull \hbox (badness 10000) in paragraph at lines 4008--4011
+Underfull \hbox (badness 10000) in paragraph at lines 4006--4009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4026--4029
+Underfull \hbox (badness 10000) in paragraph at lines 4027--4030
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4048--4051
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4068--4071
+Underfull \hbox (badness 10000) in paragraph at lines 4045--4048
 
  []
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 4087--4090
+Underfull \hbox (badness 10000) in paragraph at lines 4076--4079
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4112--4115
+Underfull \hbox (badness 10000) in paragraph at lines 4096--4099
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4132--4135
+Underfull \hbox (badness 10000) in paragraph at lines 4122--4125
 
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 4159--4162
+Underfull \hbox (badness 10000) in paragraph at lines 4143--4146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4179--4182
+Underfull \hbox (badness 10000) in paragraph at lines 4166--4169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4207--4210
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4228--4231
+Underfull \hbox (badness 10000) in paragraph at lines 4190--4193
 
  []
 
 [66]
-Underfull \hbox (badness 10000) in paragraph at lines 4255--4258
+Underfull \hbox (badness 10000) in paragraph at lines 4214--4217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4233--4236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4254--4257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4273--4276
 
  []
 
 [67]
-Chapter 10.
-
-Underfull \hbox (badness 10000) in paragraph at lines 4288--4291
+Underfull \hbox (badness 10000) in paragraph at lines 4295--4298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4307--4310
+Underfull \hbox (badness 10000) in paragraph at lines 4313--4316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4329--4332
-
- []
-
-[68
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 4351--4354
+Underfull \hbox (badness 10000) in paragraph at lines 4335--4338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4370--4373
+Underfull \hbox (badness 10000) in paragraph at lines 4355--4358
+
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 4374--4377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4388--4391
+Underfull \hbox (badness 10000) in paragraph at lines 4399--4402
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4407--4410
+Underfull \hbox (badness 10000) in paragraph at lines 4419--4422
 
  []
 
 [69]
-Underfull \hbox (badness 10000) in paragraph at lines 4435--4438
+Underfull \hbox (badness 10000) in paragraph at lines 4446--4449
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4453--4456
+Underfull \hbox (badness 10000) in paragraph at lines 4466--4469
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4480--4483
+Underfull \hbox (badness 10000) in paragraph at lines 4494--4497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4515--4518
 
  []
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 4501--4504
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4521--4524
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4539--4542
+Underfull \hbox (badness 10000) in paragraph at lines 4542--4545
 
  []
 
 [71]
-Underfull \hbox (badness 10000) in paragraph at lines 4563--4566
+Chapter 10.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4575--4578
 
  []
 
@@ -1486,227 +1538,235 @@ Underfull \hbox (badness 10000) in paragraph at lines 4594--4597
 
  []
 
-[72]
-Underfull \hbox (badness 10000) in paragraph at lines 4625--4628
+
+Underfull \hbox (badness 10000) in paragraph at lines 4616--4619
 
  []
 
-[73]
-Chapter 11.
+[72
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4638--4641
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4657--4660
+
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 4675--4678
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4688--4691
+Underfull \hbox (badness 10000) in paragraph at lines 4694--4697
+
+ []
+
+[73]
+Underfull \hbox (badness 10000) in paragraph at lines 4722--4725
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4701--4704
+Underfull \hbox (badness 10000) in paragraph at lines 4740--4743
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4714--4717
+Underfull \hbox (badness 10000) in paragraph at lines 4767--4770
 
  []
 
-[74
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 4729--4732
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4744--4747
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 4788--4791
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4780--4783
+Underfull \hbox (badness 10000) in paragraph at lines 4808--4811
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4826--4829
 
  []
 
 [75]
-Underfull \hbox (badness 10000) in paragraph at lines 4805--4808
+Underfull \hbox (badness 10000) in paragraph at lines 4850--4853
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4839--4854
+Underfull \hbox (badness 10000) in paragraph at lines 4881--4884
 
  []
 
 [76]
-Underfull \hbox (badness 10000) in paragraph at lines 4874--4877
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4899--4902
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4925--4928
+Underfull \hbox (badness 10000) in paragraph at lines 4912--4915
 
  []
 
 [77]
-Underfull \hbox (badness 10000) in paragraph at lines 4947--4950
+Chapter 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4962--4965
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4967--4970
+Underfull \hbox (badness 10000) in paragraph at lines 4975--4978
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4985--4988
+Underfull \hbox (badness 10000) in paragraph at lines 4988--4991
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5011--5014
+Underfull \hbox (badness 10000) in paragraph at lines 5001--5004
 
  []
 
-[78]
-Underfull \hbox (badness 10000) in paragraph at lines 5044--5047
+[78
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 5016--5019
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5059--5062
+Underfull \hbox (badness 10000) in paragraph at lines 5031--5034
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5067--5070
 
  []
 
 [79]
-Underfull \hbox (badness 10000) in paragraph at lines 5086--5089
+Underfull \hbox (badness 10000) in paragraph at lines 5093--5096
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5106--5109
+Underfull \hbox (badness 10000) in paragraph at lines 5127--5142
+
+ []
+
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 5162--5165
 
  []
 
 
-Underfull \hbox (badness 4543) in paragraph at lines 5111--5112
+Underfull \hbox (badness 10000) in paragraph at lines 5187--5190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5211--5214
+
+ []
+
+[81]
+Underfull \hbox (badness 10000) in paragraph at lines 5233--5236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5253--5256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5271--5274
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5297--5300
+
+ []
+
+[82]
+Underfull \hbox (badness 10000) in paragraph at lines 5330--5333
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5345--5348
+
+ []
+
+[83]
+Underfull \hbox (badness 10000) in paragraph at lines 5372--5375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5392--5395
+
+ []
+
+
+Underfull \hbox (badness 4543) in paragraph at lines 5397--5398
 [][] \T1/ptm/m/n/10.95 is an affine semi-group and [] is an el-e-ment in []. Th
 is is a trans-la-tion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5118--5121
+Underfull \hbox (badness 10000) in paragraph at lines 5404--5407
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5132--5135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5146--5149
-
- []
-
-[80]
-Underfull \hbox (badness 10000) in paragraph at lines 5177--5180
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5199--5202
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5220--5223
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5238--5241
-
- []
-
-[81]
-Underfull \hbox (badness 10000) in paragraph at lines 5252--5255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5266--5269
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5293--5296
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5312--5315
-
- []
-
-[82]
-Underfull \hbox (badness 10000) in paragraph at lines 5334--5337
-
- []
-
-[83]
-Chapter 12.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5378--5381
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5390--5393
-
- []
-
-[84
-
-]
 Underfull \hbox (badness 10000) in paragraph at lines 5418--5421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5441--5444
+Underfull \hbox (badness 10000) in paragraph at lines 5432--5435
+
+ []
+
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 5463--5466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5461--5464
+Underfull \hbox (badness 10000) in paragraph at lines 5485--5488
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5490--5496
+Underfull \hbox (badness 10000) in paragraph at lines 5506--5509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5524--5527
 
  []
 
 [85]
-Underfull \hbox (badness 10000) in paragraph at lines 5518--5521
+Underfull \hbox (badness 10000) in paragraph at lines 5538--5541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5540--5546
+Underfull \hbox (badness 10000) in paragraph at lines 5552--5555
 
  []
 
-[86]
-Underfull \hbox (badness 10000) in paragraph at lines 5570--5573
+
+Underfull \hbox (badness 10000) in paragraph at lines 5579--5582
 
  []
 
@@ -1715,284 +1775,343 @@ Underfull \hbox (badness 10000) in paragraph at lines 5598--5601
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 5628--5631
+[86]
+Underfull \hbox (badness 10000) in paragraph at lines 5620--5623
 
  []
 
 [87]
-Underfull \hbox (badness 10000) in paragraph at lines 5648--5651
+Chapter 12.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5664--5667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5670--5673
+Underfull \hbox (badness 10000) in paragraph at lines 5676--5679
+
+ []
+
+[88
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 5704--5707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5700--5703
-
- []
-
-[88]
-Underfull \hbox (badness 10000) in paragraph at lines 5723--5726
+Underfull \hbox (badness 10000) in paragraph at lines 5727--5730
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5751--5754
+Underfull \hbox (badness 10000) in paragraph at lines 5747--5750
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5773--5776
+Underfull \hbox (badness 10000) in paragraph at lines 5776--5782
 
  []
 
 [89]
-Underfull \hbox (badness 10000) in paragraph at lines 5807--5810
+Underfull \hbox (badness 10000) in paragraph at lines 5804--5807
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5832--5835
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5854--5857
+Underfull \hbox (badness 10000) in paragraph at lines 5826--5832
 
  []
 
 [90]
-Underfull \hbox (badness 10000) in paragraph at lines 5876--5879
+Underfull \hbox (badness 10000) in paragraph at lines 5856--5859
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5898--5904
+Underfull \hbox (badness 10000) in paragraph at lines 5884--5887
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5924--5930
+Underfull \hbox (badness 10000) in paragraph at lines 5914--5917
 
  []
 
 [91]
-Underfull \hbox (badness 10000) in paragraph at lines 5951--5954
+Underfull \hbox (badness 10000) in paragraph at lines 5934--5937
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5956--5959
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5986--5989
 
  []
 
 [92]
-Appendix A.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5993--5996
+Underfull \hbox (badness 10000) in paragraph at lines 6009--6012
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6014--6017
+Underfull \hbox (badness 10000) in paragraph at lines 6037--6040
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6034--6037
+Underfull \hbox (badness 10000) in paragraph at lines 6059--6062
 
  []
 
-[93
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 6057--6060
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 6093--6096
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6075--6078
+Underfull \hbox (badness 10000) in paragraph at lines 6118--6121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6140--6143
 
  []
 
 [94]
+Underfull \hbox (badness 10000) in paragraph at lines 6162--6165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6184--6190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6210--6216
+
+ []
+
+[95]
+Underfull \hbox (badness 10000) in paragraph at lines 6237--6240
+
+ []
+
+[96]
+Appendix A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6279--6282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6300--6303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6320--6323
+
+ []
+
+[97
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 6343--6346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6361--6364
+
+ []
+
+[98]
 Appendix B.
 
-Underfull \hbox (badness 10000) in paragraph at lines 6111--6114
+Underfull \hbox (badness 10000) in paragraph at lines 6397--6400
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6130--6133
+Underfull \hbox (badness 10000) in paragraph at lines 6416--6419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6147--6150
+Underfull \hbox (badness 10000) in paragraph at lines 6433--6436
 
  []
 
-[95
+[99
 
 pdfTeX warning (ext4): destination with the same identifier (name{L.X86746B487B
 54A2D6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.6158 \end{Verbatim}
+l.6444 \end{Verbatim}
                      ]
-Underfull \hbox (badness 10000) in paragraph at lines 6166--6169
+Underfull \hbox (badness 10000) in paragraph at lines 6452--6455
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6185--6188
+Underfull \hbox (badness 10000) in paragraph at lines 6471--6474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6204--6207
+Underfull \hbox (badness 10000) in paragraph at lines 6490--6493
 
  []
 
-[96] [97]
+[100] [101]
 Appendix C.
 
-Underfull \hbox (badness 10000) in paragraph at lines 6247--6250
+Underfull \hbox (badness 10000) in paragraph at lines 6533--6536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6268--6271
+Underfull \hbox (badness 10000) in paragraph at lines 6554--6557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6289--6292
+Underfull \hbox (badness 10000) in paragraph at lines 6575--6578
 
  []
 
-[98
+[102
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 6311--6314
+Underfull \hbox (badness 10000) in paragraph at lines 6597--6600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6334--6337
+Underfull \hbox (badness 10000) in paragraph at lines 6620--6623
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6357--6360
+Underfull \hbox (badness 10000) in paragraph at lines 6643--6646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6381--6384
-
- []
-
-[99]
-Underfull \hbox (badness 10000) in paragraph at lines 6406--6409
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6430--6433
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6454--6457
-
- []
-
-[100]
-Underfull \hbox (badness 10000) in paragraph at lines 6478--6481
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6510--6513
-
- []
-
-[101]
-Underfull \hbox (badness 10000) in paragraph at lines 6543--6546
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6567--6570
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6588--6591
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6609--6612
-
- []
-
-[102]
-Underfull \hbox (badness 10000) in paragraph at lines 6631--6634
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6651--6654
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6679--6682
+Underfull \hbox (badness 10000) in paragraph at lines 6667--6670
 
  []
 
 [103]
-Underfull \hbox (badness 10000) in paragraph at lines 6700--6703
+Underfull \hbox (badness 10000) in paragraph at lines 6692--6695
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6724--6727
+Underfull \hbox (badness 10000) in paragraph at lines 6716--6719
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6745--6748
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6762--6765
+Underfull \hbox (badness 10000) in paragraph at lines 6740--6743
 
  []
 
 [104]
-Underfull \hbox (badness 10000) in paragraph at lines 6785--6788
+Underfull \hbox (badness 10000) in paragraph at lines 6764--6767
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6808--6811
+Underfull \hbox (badness 10000) in paragraph at lines 6796--6799
+
+ []
+
+[105]
+Underfull \hbox (badness 10000) in paragraph at lines 6829--6832
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6832--6835
+Underfull \hbox (badness 10000) in paragraph at lines 6853--6856
 
  []
 
-[105] (./NumericalSgpsMan.bbl (./NumericalSgpsMan.brf)
+
+Underfull \hbox (badness 10000) in paragraph at lines 6874--6877
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6895--6898
+
+ []
+
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 6917--6920
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6937--6940
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6965--6968
+
+ []
+
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 6986--6989
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7010--7013
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7031--7034
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7048--7051
+
+ []
+
+[108]
+Underfull \hbox (badness 10000) in paragraph at lines 7071--7074
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7094--7097
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7118--7121
+
+ []
+
+[109] (./NumericalSgpsMan.bbl (./NumericalSgpsMan.brf)
 \tf@brf=\write8
 \openout8 = `NumericalSgpsMan.brf'.
 
- [106]
+ [110]
 Underfull \hbox (badness 1259) in paragraph at lines 74--74
 []\T1/ptm/m/n/10.95 M. Barakat, S. Gutsche, S. Jam-bor, M. Lange-Hegermann, A. 
 Lorenz, and
@@ -2016,21 +2135,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--74
 th.rwth-aachen.de/~barakat/
  []
 
-[107
+[111
 
-] [108] [109]
+] [112] [113]
 Underfull \hbox (badness 1132) in paragraph at lines 260--260
 []\T1/ptm/m/n/10.95 S. Gutsche.  4ti2interface, a link to 4ti2.  [][]$\T1/cmtt/
 m/n/10.95 http : / / www . gap-[]system . org /
  []
 
-[110]
+[114]
 Underfull \hbox (badness 1132) in paragraph at lines 396--396
 []\T1/ptm/m/n/10.95 Dario Spir-ito.  Star op-er-a-tions on nu-mer-i-cal semi-gr
 oups.  \T1/ptm/m/it/10.95 Comm. Al-ge-bra\T1/ptm/m/n/10.95 ,
  []
 
-) [111] (./NumericalSgpsMan.ind
+) [115] (./NumericalSgpsMan.ind
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 []\T1/cmtt/m/n/10.95 Adjacent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
@@ -2169,7 +2288,7 @@ ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 T\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeri
 cal\T1/ptm/m/n/10.95 -
  []
 
-[112
+[116
 
 
 ]
@@ -2371,7 +2490,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--193
 95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m/n/10.95 -
  []
 
-[113]
+[117]
 Underfull \hbox (badness 10000) in paragraph at lines 193--195
 []\T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n
@@ -2400,10 +2519,10 @@ mal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
-[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
-1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
-umerical\T1/ptm/m/n/10.95 -
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+[]\T1/cmtt/m/n/10.95 IsCanonical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/
+ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numer
+ical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
@@ -2428,67 +2547,74 @@ umerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--243
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
+[]\T1/cmtt/m/n/10.95 IsGraded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T
+1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
+umerical\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--243
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 \T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Planar\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Curve\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 F
 undamental\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Gaps\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Underfull \hbox (badness 10000) in paragraph at lines 251--253
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M
 inimal\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
 []\T1/cmtt/m/n/10.95 IsNumerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 S
 ub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--258
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 []\T1/cmtt/m/n/10.95 IsProportionally\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modu
 lar\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
 []\T1/cmtt/m/n/10.95 IsSelf\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Reciprocal\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Univariate\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
 95 Polynomial\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--273
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
 []\T1/cmtt/m/n/10.95 IsUniquely\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presented\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 0.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
 []\T1/cmtt/m/n/10.95 Lattice\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Path\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 To
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
 []\T1/cmtt/m/n/10.95 Lengths\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
@@ -2496,7 +2622,7 @@ Element\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--287
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
 []\T1/cmtt/m/n/10.95 Lengths\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Factorizations\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Integer\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
@@ -2504,8 +2630,8 @@ Integer\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 .95 List\T1/ptm/m/n/10.95 ,
  []
 
-[114]
-Underfull \hbox (badness 10000) in paragraph at lines 292--294
+[118]
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
 []\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elem
 ent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
@@ -2513,21 +2639,21 @@ ent\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 []\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
 rical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 []\T1/cmtt/m/n/10.95 Maximal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Denumerant\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 []\T1/cmtt/m/n/10.95 Maximum\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 W\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R\T
@@ -2536,7 +2662,7 @@ rical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Arf\T1/ptm/m/
 n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sys
 tem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
@@ -2544,7 +2670,7 @@ tem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--311
+Underfull \hbox (badness 10000) in paragraph at lines 311--313
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
@@ -2552,18 +2678,10 @@ Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--313
+Underfull \hbox (badness 10000) in paragraph at lines 313--315
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--318
-[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m
-/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sy
-stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
-95 Good\T1/ptm/m/n/10.95 -
  []
 
 
@@ -2576,6 +2694,14 @@ stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 320--322
+[]\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m
+/n/10.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sy
+stem\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.
+95 Good\T1/ptm/m/n/10.95 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--324
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 M\T1/ptm/m/n/
 10.95 -\T1/cmtt/m/n/10.95 E\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 D\T1/ptm/m/n/1
 0.95 -\T1/cmtt/m/n/10.95 Generating\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 System
@@ -2585,42 +2711,42 @@ T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
+Underfull \hbox (badness 10000) in paragraph at lines 324--326
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presentation\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Af
 fine\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--326
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
 []\T1/cmtt/m/n/10.95 Minimal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Presentation\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nu
 merical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--329
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
 []\T1/cmtt/m/n/10.95 Moebius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 To\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--331
+Underfull \hbox (badness 10000) in paragraph at lines 332--334
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Affine\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--335
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Catenary\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 O
 f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2628,89 +2754,100 @@ f\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
 []\T1/cmtt/m/n/10.95 Monotone\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primitive\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.9
 5 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--342
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
 []\T1/cmtt/m/n/10.95 Multiplicity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sequence
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
+[]\T1/cmtt/m/n/10.95 NumericalSemigroupByFundamentalGaps\T1/ptm/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--370
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Min
 imal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Generators\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Min
 imal\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--361
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
+[]\T1/cmtt/m/n/10.95 NumericalSemigroupBySmallElements\T1/ptm/m/n/10.95 , [][]1
+0[][],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--378
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 By\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sub
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--364
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 From\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
 \T1/cmtt/m/n/10.95 Irreducible\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Planar\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Curve\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
 \T1/cmtt/m/n/10.95 Singularity\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Frobenius\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umber\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Frobenius\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Pseudo\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 389--391
 []\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 R
 andom\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+[119]
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
 []\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 A
@@ -2718,15 +2855,15 @@ ffine\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--388
+Underfull \hbox (badness 10000) in paragraph at lines 403--405
 []\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 N
 umerical\T1/ptm/m/n/10.95 -
  []
 
-[115]
-Underfull \hbox (badness 10000) in paragraph at lines 388--390
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
 []\T1/cmtt/m/n/10.95 Omega\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Primality\T1/pt
 m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95
@@ -2734,76 +2871,76 @@ m/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--398
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
 []\T1/cmtt/m/n/10.95 Primitive\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
 rical\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--401
+Underfull \hbox (badness 10000) in paragraph at lines 416--418
 []\T1/cmtt/m/n/10.95 Proportionally\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modula
 r\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
+Underfull \hbox (badness 10000) in paragraph at lines 427--429
 []\T1/cmtt/m/n/10.95 Random\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 List\T1/ptm/m/
 n/10.95 -\T1/cmtt/m/n/10.95 Representing\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 S
 ub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Additive\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--416
+Underfull \hbox (badness 10000) in paragraph at lines 431--433
 []\T1/cmtt/m/n/10.95 Random\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Proportionally
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Modular\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10
 .95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--419
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
 []\T1/cmtt/m/n/10.95 Reduction\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Number\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Num
 erical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--421
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
 []\T1/cmtt/m/n/10.95 Remove\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Minimal\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Generator\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 F
 rom\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--424
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
 []\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Periodic\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Sub\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ad
 ditive\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Function\T1/ptm/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--426
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
 []\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Small\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Good\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+Underfull \hbox (badness 10000) in paragraph at lines 443--445
 []\T1/cmtt/m/n/10.95 Represents\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Small\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 
 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--434
+Underfull \hbox (badness 10000) in paragraph at lines 449--451
 []\T1/cmtt/m/n/10.95 Saturated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/1
 0.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--441
+Underfull \hbox (badness 10000) in paragraph at lines 456--458
 []\T1/cmtt/m/n/10.95 Semigroup\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Values\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Plane\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Cu
@@ -2811,7 +2948,7 @@ rve\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 459--461
 []\T1/cmtt/m/n/10.95 Shaded\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Set\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeri
@@ -2819,14 +2956,14 @@ cal\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--446
+Underfull \hbox (badness 10000) in paragraph at lines 461--463
 []\T1/cmtt/m/n/10.95 Simple\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Forced\T1/ptm/
 m/n/10.95 -\T1/cmtt/m/n/10.95 Integers\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 For
 \T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Pseudo\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--455
+Underfull \hbox (badness 10000) in paragraph at lines 470--472
 []\T1/cmtt/m/n/10.95 Small\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Elements\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Nume
@@ -2834,7 +2971,7 @@ rical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
 []\T1/cmtt/m/n/10.95 Star\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Closure\T1/ptm/m
 /n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/p
 tm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numeri
@@ -2842,7 +2979,7 @@ cal\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--467
+Underfull \hbox (badness 10000) in paragraph at lines 482--484
 []\T1/cmtt/m/n/10.95 Tame\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Degree\T1/ptm/m/
 n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Element\T1/
 ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 In\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numer
@@ -2850,77 +2987,79 @@ ical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--471
+Underfull \hbox (badness 10000) in paragraph at lines 486--488
 []\T1/cmtt/m/n/10.95 Telescopic\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\
 T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Semigroups\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/
 10.95 With\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--473
+Underfull \hbox (badness 10000) in paragraph at lines 488--490
 []\T1/cmtt/m/n/10.95 Torsion\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm/m/n
 /10.95 -\T1/cmtt/m/n/10.95 Associated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Grad
 ed\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Ring\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 473--475
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
 []\T1/cmtt/m/n/10.95 Translation\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Ideal\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T1
 /ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--477
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
 []\T1/cmtt/m/n/10.95 Truncated\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Wilf\T1/ptm
 /m/n/10.95 -\T1/cmtt/m/n/10.95 Number\T1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Of\T
 1/ptm/m/n/10.95 -\T1/cmtt/m/n/10.95 Numerical\T1/ptm/m/n/10.95 -
  []
 
-[116])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 6885.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 6885.
+[120])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7171.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7171.
  (./NumericalSgpsMan.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 6885.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 6885.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 7171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 7171.
 
 Package rerunfilecheck Info: File `NumericalSgpsMan.out' has not changed.
 (rerunfilecheck)             Checksum: 19E9918D170A273116745A5AD319873C;4978.
 Package rerunfilecheck Info: File `NumericalSgpsMan.brf' has not changed.
-(rerunfilecheck)             Checksum: 0D6A84857D49DA203A80399F72CC19FE;5273.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 6885.
+(rerunfilecheck)             Checksum: AB3BD2055A5DB11FF15302EBBAD56097;5331.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 7171.
  ) 
 Here is how much of TeX's memory you used:
- 8486 strings out of 493033
- 130550 string characters out of 6134139
- 212840 words of memory out of 5000000
- 11032 multiletter control sequences out of 15000+600000
+ 8517 strings out of 493029
+ 130682 string characters out of 6136234
+ 213490 words of memory out of 5000000
+ 11039 multiletter control sequences out of 15000+600000
  89612 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,7n,29p,789b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/cm-super/sfst1095.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
-w/symbol/usyr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/symbol/us
-yr.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on NumericalSgpsMan.pdf (116 pages, 534985 bytes).
+ 32i,7n,29p,789b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfst1095.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
+vb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on NumericalSgpsMan.pdf (120 pages, 544478 bytes).
 PDF statistics:
- 2305 PDF objects out of 2487 (max. 8388607)
- 2147 compressed objects within 22 object streams
- 847 named destinations out of 1000 (max. 500000)
+ 2368 PDF objects out of 2487 (max. 8388607)
+ 2205 compressed objects within 23 object streams
+ 871 named destinations out of 1000 (max. 500000)
  505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
