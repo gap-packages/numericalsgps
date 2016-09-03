@@ -41,6 +41,7 @@ BindGlobal( "AffineSemigroupsType",
 DeclareGlobalFunction( "AffineSemigroupByGenerators" );
 #A
 DeclareAttribute( "Generators", IsAffineSemigroup);
+DeclareSynonymAttr( "GeneratorsOfAffineSemigroup", Generators);
 DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGenerators);
 #A
 DeclareAttribute( "Dimension", IsAffineSemigroup);
@@ -55,7 +56,7 @@ DeclareSynonymAttr( "DimensionOfAffineSemigroup", Dimension);
 ##  are computed and used.
 ##
 #############################################################################
-DeclareGlobalFunction( "AffineSemigroupByMinimalGenerators" );
+# DeclareGlobalFunction( "AffineSemigroupByMinimalGenerators" );
 #A
 DeclareAttribute( "MinimalGenerators", IsAffineSemigroup);
 DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGenerators);
@@ -69,17 +70,17 @@ DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGenerators
 ##  No test is made about args' minimality.
 ##
 #############################################################################
-DeclareGlobalFunction( "AffineSemigroupByMinimalGeneratorsNC" );
+# DeclareGlobalFunction( "AffineSemigroupByMinimalGeneratorsNC" );
 
 #############################################################################
 ##
-#O  GeneratorsOfAffineSemigroup(S)
+#O  Generators(S)
 ##
 ##  Computes a set of generators of the affine semigroup S.
 ##  If a set of generators has already been computed, this
 ##  is the set returned.
 ############################################################################
-DeclareOperation("GeneratorsOfAffineSemigroup",[IsAffineSemigroup]);
+#DeclareOperation("Generators",[IsAffineSemigroup]);
 # #A
 # DeclareAttribute( "Generators", IsAffineSemigroup);
 # DeclareSynonymAttr( "IsAffineSemigroupByGenerators", HasGenerators);

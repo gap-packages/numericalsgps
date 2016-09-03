@@ -39,13 +39,13 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
 end);
 #############################################################################
 ##
-#O  GeneratorsOfAffineSemigroup(S)
+#O  Generators(S)
 ##
 ##  Computes a set of generators of the affine semigroup S.
 ##  If a set of generators has already been computed, this
 ##  is the set returned.
 ############################################################################
-InstallMethod(GeneratorsOfAffineSemigroup, 
+InstallMethod(Generators, 
          "Computes a set of generators of the affine semigroup",
          [IsAffineSemigroup],1,        
         function(S)
@@ -54,17 +54,57 @@ InstallMethod(GeneratorsOfAffineSemigroup,
   if HasGenerators(S) then
       return Generators(S);  
   fi;
+  if HasMinimalGenerators(S) then
+      return MinimalGenerators(S);
+  fi;
+  
   if HasEquations(S) then
       eq:=Equations(S);
       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-      SetGenerators(S,basis);
-      return Generators(S);  
+      SetMinimalGenerators(S,basis);
+      return MinimalGenerators(S);  
   elif HasInequalities(S) then
       basis := HilbertBasisOfSystemOfHomogeneousInequalities(Inequalities(S));
-      SetGenerators(S,basis);
-      return Generators(S);  
+      SetMinimalGenerators(S,basis);
+      return MinimalGenerators(S);  
   fi;     
 end);
+
+#############################################################################
+##
+#O  MinimalGenerators(S)
+##
+##  Computes the set of minimal  generators of the affine semigroup S.
+##  If a set of generators has already been computed, this
+##  is the set returned.
+############################################################################
+InstallMethod(MinimalGenerators, 
+         "Computes the set of minimal generators of the affine semigroup",
+         [IsAffineSemigroup],1,        
+        function(S)
+  local  basis, eq, gen;
+
+  if HasMinimalGenerators(S) then
+      return MinimalGenerators(S);
+  fi;
+  
+  if HasEquations(S) then
+      eq:=Equations(S);
+      basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
+      SetMinimalGenerators(S,basis);
+      return MinimalGenerators(S);  
+  elif HasInequalities(S) then
+      basis := HilbertBasisOfSystemOfHomogeneousInequalities(Inequalities(S));
+      SetMinimalGenerators(S,basis);
+      return MinimalGenerators(S);  
+  fi;     
+  gen:=Generators(S);
+  basis:=Filtered(gen, y->ForAll(Difference(gen,[y]),x->not((y-x) in S)));
+  SetMinimalGenerators(S,basis);
+  return MinimalGenerators(S);
+  
+end);
+
 #############################################################################
 ## Full ffine semigroups
 #############################################################################
@@ -153,8 +193,7 @@ end);
 #F  AffineSemigroup(arg)
 ##
 ##  This function's first argument may be one of:
-##  "generators", "minimalgenerators", 
-## "equations", "inequalities"...
+##  "generators", "equations", "inequalities"...
 ##
 ##  The following arguments must conform to the arguments of
 ##  the corresponding function defined above.
@@ -169,8 +208,6 @@ InstallGlobalFunction(AffineSemigroup, function(arg)
   if IsString(arg[1]) then
     if arg[1] = "generators" then
       return AffineSemigroupByGenerators(Filtered(arg, x -> not IsString(x))[1]);
-    elif arg[1] = "minimalgenerators" then
-      return AffineSemigroupByMinimalGenerators(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "equations" then
       return AffineSemigroupByEquations(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "inequalities" then
