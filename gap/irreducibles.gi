@@ -147,62 +147,62 @@ end);
 ##   Frobenius number, Forum Math.
 #############################################################################
 InstallGlobalFunction(IrreducibleNumericalSemigroupsWithFrobeniusNumber, function(f)
-	local cf, irr, B, s, lsons, sons;
+    local cf, irr, B, s, lsons, sons;
 
     if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
-	if f<-1 or f =0 then 
-		return [];#Error(f," is not a valid Frobenius number.\n");
-	fi;
+    if f<-1 or f =0 then 
+        return [];#Error(f," is not a valid Frobenius number.\n");
+    fi;
 
-	if f=-1 then 
-		return [NumericalSemigroup(1)];
-	fi;
+    if f=-1 then 
+        return [NumericalSemigroup(1)];
+    fi;
 
-	sons:=function(s) #implements Th. 2.9, the sons of an  
-			  # irreducible numerical semigroup	 
-		local small,candidates, f, minimal, m;
+    sons:=function(s) #implements Th. 2.9, the sons of an  
+        # irreducible numerical semigroup	 
+        local small,candidates, f, minimal, m;
 
 
-		small:=SmallElementsOfNumericalSemigroup(s);	
-		f:=FrobeniusNumber(s);
-	 	m:=MultiplicityOfNumericalSemigroup(s);
+        small:=SmallElementsOfNumericalSemigroup(s);	
+        f:=FrobeniusNumber(s);
+        m:=MultiplicityOfNumericalSemigroup(s);
 
-		minimal:=function(x) #checks if x is a minimal generator 
-				     #	smaller than or equal to f+1
-			return Filtered(small, y-> (y<x) and (x-y) in small)=[0];
-		end;
-		#canditadates are the elements fulfilling (i)-(v) in Th. 2.9
-		candidates:=Filtered(small, x-> (x>f/2) and (x<f) and 
-			not(2*x-f in small) and not(3*x=2*f) and not(4*x=3*f) 
-			and (f-x<m) and (minimal(x)));
-	
-		return List(candidates, x-> 
-		NumericalSemigroupBySmallElements(Set(Concatenation(Difference(small,[x]),[f-x]))));	
-	
-	end;
+        minimal:=function(x) #checks if x is a minimal generator 
+            #	smaller than or equal to f+1
+            return Filtered(small, y-> (y<x) and (x-y) in small)=[0];
+        end;
+        #canditadates are the elements fulfilling (i)-(v) in Th. 2.9
+        candidates:=Filtered(small, x-> (x>f/2) and (x<f) and 
+                            not(2*x-f in small) and not(3*x=2*f) and not(4*x=3*f) 
+                            and (f-x<m) and (minimal(x)));
 
-	#cf is the root of the tree of irreducible numerical semigroups with Frobenius number f 
-	# as stated in Th. 2.9
-	if IsEvenInt(f) then 
-		cf:=NumericalSemigroupBySmallElements(Concatenation([0],[((f/2+1))..(f-1)],[f+1]));
-	else
-		cf:=NumericalSemigroupBySmallElements(Concatenation([0],[((f+1)/2)..(f-1)],[f+1]));
-	fi;
+        return List(candidates, x-> 
+                    NumericalSemigroupBySmallElements(Set(Concatenation(Difference(small,[x]),[f-x]))));	
 
-	B:=[cf];
-	irr:=[cf];
-	#we keep computing the sons in the tree for every new irreducible numerical semigroup
-	while B<>[] do
-		s:=B[1];
-		B:=B{[2..Length(B)]};
-		lsons:=sons(s);
-		irr:=Union(irr,lsons);
-		B:=Union(B,lsons);
-	od;
-	return irr;
+    end;
+
+    #cf is the root of the tree of irreducible numerical semigroups with Frobenius number f 
+    # as stated in Th. 2.9
+    if IsEvenInt(f) then 
+        cf:=NumericalSemigroupBySmallElements(Concatenation([0],[((f/2+1))..(f-1)],[f+1]));
+    else
+        cf:=NumericalSemigroupBySmallElements(Concatenation([0],[((f+1)/2)..(f-1)],[f+1]));
+    fi;
+
+    B:=[cf];
+    irr:=[cf];
+    #we keep computing the sons in the tree for every new irreducible numerical semigroup
+    while B<>[] do
+        s:=B[1];
+        B:=B{[2..Length(B)]};
+        lsons:=sons(s);
+        irr:=Union(irr,lsons);
+        B:=Union(B,lsons);
+    od;
+    return irr;
 end);
 
 
@@ -363,8 +363,8 @@ InstallGlobalFunction(IsSymmetricNumericalSemigroup, function(s)
 
     if(not(IsNumericalSemigroup(s))) then 
         Error("The argument must be a numerical semigroup.\n");
-      fi;
-      return Length(GapsOfNumericalSemigroup(s))=(FrobeniusNumberOfNumericalSemigroup(s)+1)/2;
+    fi;
+    return Length(GapsOfNumericalSemigroup(s))=(FrobeniusNumberOfNumericalSemigroup(s)+1)/2;
 end);
 
 
@@ -405,7 +405,7 @@ InstallGlobalFunction(IsAlmostSymmetricNumericalSemigroup,function(s)
         Error("The argument must be a numerical semigroup.\n");
     fi;
 
-	return 2*GenusOfNumericalSemigroup(s)=FrobeniusNumber(s)+TypeOfNumericalSemigroup(s);
+    return 2*GenusOfNumericalSemigroup(s)=FrobeniusNumber(s)+TypeOfNumericalSemigroup(s);
 end);
 
 
@@ -420,7 +420,7 @@ end);
 #####################################################################
 
 InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducible,function(s)
-	local msg, pow, conditionb, f,cand, small;
+    local msg, pow, conditionb, f,cand, small;
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
@@ -431,22 +431,22 @@ InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducible,function
     fi;
 
 
-	#implements Condition (b) in Proposition 1 of [RGS13]
-	conditionb:=function(l)
-		local cart;
-		cart:=Filtered(Cartesian(l,l),p->p[1]<=p[2]);
-		return ForAll(cart, p-> (p[1]+p[2]-f in l) or not(p[1]+p[2]-f in s));
-	end;
-	
-	f:=FrobeniusNumber(s);
-	small:=SmallElementsOfNumericalSemigroup(s);
+    #implements Condition (b) in Proposition 1 of [RGS13]
+    conditionb:=function(l)
+        local cart;
+        cart:=Filtered(Cartesian(l,l),p->p[1]<=p[2]);
+        return ForAll(cart, p-> (p[1]+p[2]-f in l) or not(p[1]+p[2]-f in s));
+    end;
 
-	#chooses minimal generators between f/2 and f, and then tests Condition (b)
-	msg:=Filtered(MinimalGeneratingSystemOfNumericalSemigroup(s), x-> (f/2<x) and (x<f));
-	pow:=Combinations(msg);
-	cand:=Filtered(pow, conditionb); 
+    f:=FrobeniusNumber(s);
+    small:=SmallElementsOfNumericalSemigroup(s);
 
-	return Set(cand,l->NumericalSemigroupBySmallElementsNC(Difference(small,l)));
+    #chooses minimal generators between f/2 and f, and then tests Condition (b)
+    msg:=Filtered(MinimalGeneratingSystemOfNumericalSemigroup(s), x-> (f/2<x) and (x<f));
+    pow:=Combinations(msg);
+    cand:=Filtered(pow, conditionb); 
+
+    return Set(cand,l->NumericalSemigroupBySmallElementsNC(Difference(small,l)));
 end);
 
 #####################################################################
@@ -460,20 +460,20 @@ end);
 InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber,function(f)
 
     if(not(IsInt(f))) then
-        	Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
 
-	if f<-1 or f =0 then 
-		return []; #Error(f," is not a valid Frobenius number.\n");
-	fi;
+    if f<-1 or f =0 then 
+        return []; #Error(f," is not a valid Frobenius number.\n");
+    fi;
 
-	if f=-1 then 
-		return [NumericalSemigroup(1)];
-	fi;
+    if f=-1 then 
+        return [NumericalSemigroup(1)];
+    fi;
 
-	return Union(Set(IrreducibleNumericalSemigroupsWithFrobeniusNumber(f),
-								AlmostSymmetricNumericalSemigroupsFromIrreducible));
+    return Union(Set(IrreducibleNumericalSemigroupsWithFrobeniusNumber(f),
+                   AlmostSymmetricNumericalSemigroupsFromIrreducible));
 end);
 
 
@@ -486,38 +486,38 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(AsGluingOfNumericalSemigroups,function(s)
-	local msg,partitions, gluing;
+    local msg,partitions, gluing;
 
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-	
-	gluing:=function(l1,l2) #this function checks if for  a couple of  
-				#	lists of integers, the numerical semigroup 
-				# 	generated by [l1,l2] is the gluing of those
-				# 	generated by l1/d1 and l2/d2
-		local d1, d2, t1, t2, s1, s2;
 
-		d1:=Gcd(l1);
-		d2:=Gcd(l2);
+    gluing:=function(l1,l2) #this function checks if for  a couple of  
+        #	lists of integers, the numerical semigroup 
+        # 	generated by [l1,l2] is the gluing of those
+        # 	generated by l1/d1 and l2/d2
+        local d1, d2, t1, t2, s1, s2;
 
-		if (not(Gcd(d1,d2)=1)) then 
-			return false;
-		fi;
+        d1:=Gcd(l1);
+        d2:=Gcd(l2);
 
-		s1:=NumericalSemigroup(l1/d1);
-		s2:=NumericalSemigroup(l2/d2);
+        if (not(Gcd(d1,d2)=1)) then 
+            return false;
+        fi;
 
-		return (not(d1 in l2/d2) and not(d2 in l1/d1)) and ((d1 in s2) and (d2 in s1));
-	end;
+        s1:=NumericalSemigroup(l1/d1);
+        s2:=NumericalSemigroup(l2/d2);
+
+        return (not(d1 in l2/d2) and not(d2 in l1/d1)) and ((d1 in s2) and (d2 in s1));
+    end;
 
 
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
 
-	partitions:=PartitionsSet(msg,2);
+    partitions:=PartitionsSet(msg,2);
 
-	return Filtered(partitions, p->gluing(p[1],p[2]));
+    return Filtered(partitions, p->gluing(p[1],p[2]));
 end);
 
 
@@ -534,12 +534,12 @@ InstallGlobalFunction(IsACompleteIntersectionNumericalSemigroup,function(s)
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
-      fi;
-      ## if the semigroup is no symmetric, then it not a complete intersection
+    fi;
+    ## if the semigroup is no symmetric, then it not a complete intersection
     if not IsSymmetricNumericalSemigroup(s) then
         return false;
     fi;
-      
+
     return Length(MinimalPresentationOfNumericalSemigroup(s))=EmbeddingDimensionOfNumericalSemigroup(s)-1;
 
 end);
@@ -553,43 +553,43 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsFreeNumericalSemigroup,function(s)
-	local gluing, msg;
+    local gluing, msg;
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-      ## if the semigroup is no symmetric, then it not free
+    ## if the semigroup is no symmetric, then it not free
     if not IsSymmetricNumericalSemigroup(s) then
         return false;
     fi;
 
-	gluing:=function(l1,l2) #this function checks if for  a couple of  
-				#	lists of integers, the numerical semigroup 
-				# 	generated by [l1,l2] is the gluing of those
-				# 	generated by l1/d1 and l2/d2
-		local d1, d2, t1, t2, s1, s2;
+    gluing:=function(l1,l2) #this function checks if for  a couple of  
+        #	lists of integers, the numerical semigroup 
+        # 	generated by [l1,l2] is the gluing of those
+        # 	generated by l1/d1 and l2/d2
+        local d1, d2, t1, t2, s1, s2;
 
-		d1:=Gcd(l1);
-		d2:=Gcd(l2);
+        d1:=Gcd(l1);
+        d2:=Gcd(l2);
 
-		if (not(Gcd(d1,d2)=1)) then 
-			return false;
-		fi;
+        if (not(Gcd(d1,d2)=1)) then 
+            return false;
+        fi;
 
-		s1:=NumericalSemigroup(l1/d1);
-		s2:=NumericalSemigroup(l2/d2);
+        s1:=NumericalSemigroup(l1/d1);
+        s2:=NumericalSemigroup(l2/d2);
 
-		return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
-	end;
+        return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
+    end;
 
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
 
-	if Length(msg)<=2 then
-		return true;
-	fi;
+    if Length(msg)<=2 then
+        return true;
+    fi;
 
-	return ForAny(msg, m-> gluing([m],Difference(msg,[m])) and 
-	IsFreeNumericalSemigroup(NumericalSemigroup(Difference(msg,[m])/Gcd(Difference(msg,[m])))));
+    return ForAny(msg, m-> gluing([m],Difference(msg,[m])) and 
+                  IsFreeNumericalSemigroup(NumericalSemigroup(Difference(msg,[m])/Gcd(Difference(msg,[m])))));
 end);
 
 #############################################################################
@@ -601,44 +601,44 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsTelescopicNumericalSemigroup,function(s)
-	local gluing, msg, max;
+    local gluing, msg, max;
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-      ## if the semigroup is no symmetric, then it not telescopic
+    ## if the semigroup is no symmetric, then it not telescopic
     if not IsSymmetricNumericalSemigroup(s) then
         return false;
     fi;
 
-	gluing:=function(l1,l2) #this function checks if for  a couple of  
-				#	lists of integers, the numerical semigroup 
-				# 	generated by [l1,l2] is the gluing of those
-				# 	generated by l1/d1 and l2/d2
-		local d1, d2, t1, t2, s1, s2;
+    gluing:=function(l1,l2) #this function checks if for  a couple of  
+        #	lists of integers, the numerical semigroup 
+        # 	generated by [l1,l2] is the gluing of those
+        # 	generated by l1/d1 and l2/d2
+        local d1, d2, t1, t2, s1, s2;
 
-		d1:=Gcd(l1);
-		d2:=Gcd(l2);
+        d1:=Gcd(l1);
+        d2:=Gcd(l2);
 
-		if (not(Gcd(d1,d2)=1)) then 
-			return false;
-		fi;
+        if (not(Gcd(d1,d2)=1)) then 
+            return false;
+        fi;
 
-		s1:=NumericalSemigroup(l1/d1);
-		s2:=NumericalSemigroup(l2/d2);
+        s1:=NumericalSemigroup(l1/d1);
+        s2:=NumericalSemigroup(l2/d2);
 
-		return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
-	end;
+        return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
+    end;
 
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
-	max:=Maximum(msg);
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
+    max:=Maximum(msg);
 
-	if Length(msg)<=2 then
-		return true;
-	fi;
+    if Length(msg)<=2 then
+        return true;
+    fi;
 
-	return gluing([max],Difference(msg,[max])) and 
-	IsTelescopicNumericalSemigroup(NumericalSemigroup(Difference(msg,[max])/Gcd(Difference(msg,[max]))));
+    return gluing([max],Difference(msg,[max])) and 
+           IsTelescopicNumericalSemigroup(NumericalSemigroup(Difference(msg,[max])/Gcd(Difference(msg,[max]))));
 
 end);
 
@@ -651,50 +651,50 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity,function(s)
-	local gluing, msg, max, di, dip1, rest, maxrest;
+    local gluing, msg, max, di, dip1, rest, maxrest;
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-      ## if the semigroup is no symmetric, then it not planar
+    ## if the semigroup is no symmetric, then it not planar
     if not IsSymmetricNumericalSemigroup(s) then
         return false;
     fi;
 
-	gluing:=function(l1,l2) #this function checks if for  a couple of  
-				#	lists of integers, the numerical semigroup 
-				# 	generated by [l1,l2] is the gluing of those
-				# 	generated by l1/d1 and l2/d2
-		local d1, d2, t1, t2, s1, s2;
+    gluing:=function(l1,l2) #this function checks if for  a couple of  
+        #	lists of integers, the numerical semigroup 
+        # 	generated by [l1,l2] is the gluing of those
+        # 	generated by l1/d1 and l2/d2
+        local d1, d2, t1, t2, s1, s2;
 
-		d1:=Gcd(l1);
-		d2:=Gcd(l2);
+        d1:=Gcd(l1);
+        d2:=Gcd(l2);
 
-		if (not(Gcd(d1,d2)=1)) then 
-			return false;
-		fi;
+        if (not(Gcd(d1,d2)=1)) then 
+            return false;
+        fi;
 
-		s1:=NumericalSemigroup(l1/d1);
-		s2:=NumericalSemigroup(l2/d2);
+        s1:=NumericalSemigroup(l1/d1);
+        s2:=NumericalSemigroup(l2/d2);
 
-		return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
-	end;
+        return (not(d1 in l2) and not(d2 in l1)) and ((d1 in s2) and (d2 in s1));
+    end;
 
-	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
-		
-	if Length(msg)<=2 then
-		return true;
-	fi;
+    msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);	
 
-	max:=Maximum(msg);
-	rest:=Difference(msg,[max]);
-	maxrest:=Maximum(rest);
-	di:=Gcd(Difference(rest,[maxrest]));
-	dip1:=Gcd(rest);
+    if Length(msg)<=2 then
+        return true;
+    fi;
 
-	return gluing([max],rest) and (di*maxrest< dip1*max) and
-		IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity( NumericalSemigroup(rest/Gcd(rest)) );
- 
+    max:=Maximum(msg);
+    rest:=Difference(msg,[max]);
+    maxrest:=Maximum(rest);
+    di:=Gcd(Difference(rest,[maxrest]));
+    dip1:=Gcd(rest);
+
+    return gluing([max],rest) and (di*maxrest< dip1*max) and
+           IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity( NumericalSemigroup(rest/Gcd(rest)) );
+
 end);
 
 #############################################################################
@@ -707,61 +707,61 @@ end);
 #############################################################################
 InstallGlobalFunction(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber, function(f)
 
-	local pcs, out, i, s;
+    local pcs, out, i, s;
 
     if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
- 	pcs:=function(f) #we first compute the list of all possible minimal generating systems
-		local dkcand, dk, rk, fp, candr, bound, total, pcscond;
+    pcs:=function(f) #we first compute the list of all possible minimal generating systems
+        local dkcand, dk, rk, fp, candr, bound, total, pcscond;
 
-		if (f<-1) or (f mod 2=0) then
-			return [];
-		fi;
+        if (f<-1) or (f mod 2=0) then
+            return [];
+        fi;
 
-		if (f=-1) then
-			return [[1]];
-		fi;
+        if (f=-1) then
+            return [[1]];
+        fi;
 
-		if (f=1) then 
-			return [[2,3]];
-		fi;
-	
-		#irreducible planar curve conditition
-		pcscond:=function(l,d,r)
-			local rest, max, dl;
+        if (f=1) then 
+            return [[2,3]];
+        fi;
 
-			if Length(l)=1 then
-				return true;
-			fi;
-			max:=Maximum(l);
-			rest:=Difference(l,[max]);
-			dl:=Gcd(rest);
-			return max*d*dl < r;
-		end;
+        #irreducible planar curve conditition
+        pcscond:=function(l,d,r)
+            local rest, max, dl;
 
-		total:=[[2,f+2]]; #this one is always 
-		for rk in [4..f-1] do
-			bound:=Minimum(rk-1, Int((f+1)/(rk-1)+1), RootInt(f+1)+1);
-			dkcand:=Filtered([2..bound],d->(Gcd(d,rk)=1)and((f+rk) mod d=0));
-			for dk in dkcand do
-				fp:=(f+rk*(1-dk))/dk;
-				candr:=Filtered(pcs(fp), l-> (rk> Maximum(l)*dk) and pcscond(l,dk,rk) and (rk in NumericalSemigroup(l)));
-				#Print(fp,candr,"\n");
-				candr:=List(candr, l-> Concatenation(l*dk, [rk]));
-				total:=Union(total,candr);	
-			od;		
-		od;
-		return total;
-	end;
+            if Length(l)=1 then
+                return true;
+            fi;
+            max:=Maximum(l);
+            rest:=Difference(l,[max]);
+            dl:=Gcd(rest);
+            return max*d*dl < r;
+        end;
 
-	out:=[];
-	for i in pcs(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroupByMinimalGenerators(i);
-		Add(out,s);
-	od;
-	return out;
+        total:=[[2,f+2]]; #this one is always 
+        for rk in [4..f-1] do
+            bound:=Minimum(rk-1, Int((f+1)/(rk-1)+1), RootInt(f+1)+1);
+            dkcand:=Filtered([2..bound],d->(Gcd(d,rk)=1)and((f+rk) mod d=0));
+            for dk in dkcand do
+                fp:=(f+rk*(1-dk))/dk;
+                candr:=Filtered(pcs(fp), l-> (rk> Maximum(l)*dk) and pcscond(l,dk,rk) and (rk in NumericalSemigroup(l)));
+                #Print(fp,candr,"\n");
+                candr:=List(candr, l-> Concatenation(l*dk, [rk]));
+                total:=Union(total,candr);	
+            od;		
+        od;
+        return total;
+    end;
+
+    out:=[];
+    for i in pcs(f) do
+        s:=NumericalSemigroup(i);
+        Add(out,s);
+    od;
+    return out;
 end);
 
 #############################################################################
@@ -773,48 +773,48 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(TelescopicNumericalSemigroupsWithFrobeniusNumber,function(f)
-	local tel, s, i, out;
+    local tel, s, i, out;
 
     if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
-	tel:=function(f) #we first compute the list of all possible minimal generating systems
-		local dkcand, dk, rk, fp, candr, bound, total;
-	 
+    tel:=function(f) #we first compute the list of all possible minimal generating systems
+        local dkcand, dk, rk, fp, candr, bound, total;
 
-		if (f<-1) or (f mod 2=0) then
-			return [];
-		fi;
 
-		if (f=-1) then
-			return [[1]];
-		fi;
+        if (f<-1) or (f mod 2=0) then
+            return [];
+        fi;
 
-		if (f=1) then 
-			return [[2,3]];
-		fi;
-	
-		total:=[[2,f+2]]; #this one is always
-		for rk in [4..f-1] do
-			bound:=Minimum(rk-1, Int((f+1)/(rk-1)+1), RootInt(f+1)+1);
-			dkcand:=Filtered([2..bound],d->(Gcd(d,rk)=1)and((f+rk) mod d=0));
-			for dk in dkcand do
-				fp:=(f+rk*(1-dk))/dk;
-				candr:=Filtered(tel(fp), l-> (rk> Maximum(l)*dk) and (rk in NumericalSemigroup(l)));
-				candr:=List(candr, l-> Concatenation(l*dk, [rk]));
-				total:=Union(total,candr);	
-			od;		
-		od;
-		return total;
-	end;
+        if (f=-1) then
+            return [[1]];
+        fi;
 
-	out:=[];
-	for i in tel(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroupByMinimalGenerators(i);
-		Add(out,s);
-	od;
-	return out;
+        if (f=1) then 
+            return [[2,3]];
+        fi;
+
+        total:=[[2,f+2]]; #this one is always
+        for rk in [4..f-1] do
+            bound:=Minimum(rk-1, Int((f+1)/(rk-1)+1), RootInt(f+1)+1);
+            dkcand:=Filtered([2..bound],d->(Gcd(d,rk)=1)and((f+rk) mod d=0));
+            for dk in dkcand do
+                fp:=(f+rk*(1-dk))/dk;
+                candr:=Filtered(tel(fp), l-> (rk> Maximum(l)*dk) and (rk in NumericalSemigroup(l)));
+                candr:=List(candr, l-> Concatenation(l*dk, [rk]));
+                total:=Union(total,candr);	
+            od;		
+        od;
+        return total;
+    end;
+
+    out:=[];
+    for i in tel(f) do
+        s:=NumericalSemigroup(i);
+        Add(out,s);
+    od;
+    return out;
 end);
 
 #############################################################################
@@ -826,48 +826,48 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(FreeNumericalSemigroupsWithFrobeniusNumber,function(f)
-	local free, s, i, out;
+    local free, s, i, out;
 
     if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
-	free:=function(f)#we first compute the list of all possible minimal generating systems
-		local dkcand, dk, rk, fp, candr, bound, total;
-	 
-		if (f<-1) or (f mod 2=0) then
-			return [];
-		fi;
+    free:=function(f)#we first compute the list of all possible minimal generating systems
+        local dkcand, dk, rk, fp, candr, bound, total;
 
-		if (f=-1) then
-			return [[1]];
-		fi;
+        if (f<-1) or (f mod 2=0) then
+            return [];
+        fi;
 
-		if (f=1) then 
-			return [[2,3]];
-		fi;
-	
-		total:=[[2,f+2]];
-		for rk in [4..f-1] do
-			bound:=(Int((f+1)/(rk-1)+1));
-			dkcand:=Filtered([2..bound],d->(Gcd(d,rk)=1)and((f+rk) mod d=0));
-			for dk in dkcand do
-				fp:=(f+rk*(1-dk))/dk;
-				candr:=Filtered(free(fp), l-> not(rk in l) and (rk in NumericalSemigroup(l)));
-				#Print(fp,candr,"\n");
-				candr:=List(candr, l-> Union(l*dk, [rk]));
-				total:=Union(total,candr);	
-			od;		
-		od;
-		return total;
-	end;
+        if (f=-1) then
+            return [[1]];
+        fi;
 
-	out:=[];
-	for i in free(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroupByMinimalGenerators(i);
-		Add(out,s);
-	od;
-	return out;
+        if (f=1) then 
+            return [[2,3]];
+        fi;
+
+        total:=[[2,f+2]];
+        for rk in [4..f-1] do
+            bound:=(Int((f+1)/(rk-1)+1));
+            dkcand:=Filtered([2..bound],d->(Gcd(d,rk)=1)and((f+rk) mod d=0));
+            for dk in dkcand do
+                fp:=(f+rk*(1-dk))/dk;
+                candr:=Filtered(free(fp), l-> not(rk in l) and (rk in NumericalSemigroup(l)));
+                #Print(fp,candr,"\n");
+                candr:=List(candr, l-> Union(l*dk, [rk]));
+                total:=Union(total,candr);	
+            od;		
+        od;
+        return total;
+    end;
+
+    out:=[];
+    for i in free(f) do 
+        s:=NumericalSemigroup(i);
+        Add(out,s);
+    od;
+    return out;
 end);
 
 #############################################################################
@@ -879,68 +879,68 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber,function(f)
-	local ci, s, i, out;
+    local ci, s, i, out;
 
     if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
-	ci:=function(f)
-		local d2cand, d1, d2, pairfcand, fcand1, fcand2, cand1, cand2, bound, total, partial, p;
-	 
-		if (f<-1) or (f mod 2=0) then
-			return [];
-		fi;
+    ci:=function(f)
+        local d2cand, d1, d2, pairfcand, fcand1, fcand2, cand1, cand2, bound, total, partial, p;
 
-		if (f=-1) then
-			return [[1]];
-		fi;
+        if (f<-1) or (f mod 2=0) then
+            return [];
+        fi;
 
-		if (f=1) then 
-			return [[2,3]];
-		fi;
-	
-		total:=[[2,f+2]];
-		for d1 in [3..f-1] do
-			bound:=Minimum(d1-1,Int((f+1)/(d1-1)+1)); #we consider d2<d1
-			d2cand:=Filtered([2..bound],d->(Gcd(d,d1)=1));
-	#		Print(f,":",d1,"->",d2cand,"\n");
-			for d2 in d2cand do
-				if((f+d1) mod d2=0) then 
-					cand2:=Filtered(ci((f+d1*(1-d2))/d2), l-> not(d1 in l) and (d1 in NumericalSemigroup(l)));
-					partial:=List(cand2, l-> Union([d1],d2*l));
-					total:=Union(total,partial); cand2:=[]; partial:=[];				
-				elif((f+d2) mod d1=0) then 
-					cand1:=Filtered(ci((f+d2*(1-d1))/d1), l-> not(d2 in l) and (d2 in NumericalSemigroup(l)));
-					partial:=List(cand1, l-> Union(d1*l,[d2]));
-					total:=Union(total,partial); cand1:=[]; partial:=[];					
-				fi;	
-				if(f-d1*d2>0) then
-					pairfcand:=FactorizationsIntegerWRTList(f-d1*d2,[d2,d1]);
-					pairfcand:=Filtered(pairfcand, p-> (p[1] mod 2=1) and (p[2] mod 2=1));
-					for p in pairfcand do
-						cand1:=Filtered(ci(p[2]), l-> not(d2 in l) and (d2 in NumericalSemigroup(l)));
-						cand2:=Filtered(ci(p[1]), l-> not(d1 in l) and (d1 in NumericalSemigroup(l)));
-						partial:=List(Cartesian(cand1,cand2), pp-> Union(d1*pp[1],d2*pp[2]));
-						total:=Union(total,partial);
-					od;
-				fi;
-			od;		
-		od;
-		return total;
-	end;
+        if (f=-1) then
+            return [[1]];
+        fi;
+
+        if (f=1) then 
+            return [[2,3]];
+        fi;
+
+        total:=[[2,f+2]];
+        for d1 in [3..f-1] do
+            bound:=Minimum(d1-1,Int((f+1)/(d1-1)+1)); #we consider d2<d1
+            d2cand:=Filtered([2..bound],d->(Gcd(d,d1)=1));
+            #		Print(f,":",d1,"->",d2cand,"\n");
+            for d2 in d2cand do
+                if((f+d1) mod d2=0) then 
+                    cand2:=Filtered(ci((f+d1*(1-d2))/d2), l-> not(d1 in l) and (d1 in NumericalSemigroup(l)));
+                    partial:=List(cand2, l-> Union([d1],d2*l));
+                    total:=Union(total,partial); cand2:=[]; partial:=[];				
+                elif((f+d2) mod d1=0) then 
+                    cand1:=Filtered(ci((f+d2*(1-d1))/d1), l-> not(d2 in l) and (d2 in NumericalSemigroup(l)));
+                    partial:=List(cand1, l-> Union(d1*l,[d2]));
+                    total:=Union(total,partial); cand1:=[]; partial:=[];					
+                fi;	
+                if(f-d1*d2>0) then
+                    pairfcand:=FactorizationsIntegerWRTList(f-d1*d2,[d2,d1]);
+                    pairfcand:=Filtered(pairfcand, p-> (p[1] mod 2=1) and (p[2] mod 2=1));
+                    for p in pairfcand do
+                        cand1:=Filtered(ci(p[2]), l-> not(d2 in l) and (d2 in NumericalSemigroup(l)));
+                        cand2:=Filtered(ci(p[1]), l-> not(d1 in l) and (d1 in NumericalSemigroup(l)));
+                        partial:=List(Cartesian(cand1,cand2), pp-> Union(d1*pp[1],d2*pp[2]));
+                        total:=Union(total,partial);
+                    od;
+                fi;
+            od;		
+        od;
+        return total;
+    end;
 
     if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
+        Error("The argument must be an integer.\n");
     fi;
 
 
-	out:=[];
-	for i in ci(f) do #from the construction we know that the sets of generators are minimal
-		s:=NumericalSemigroupByMinimalGenerators(i);
-		Add(out,s);
-	od;
-	return out;
+    out:=[];
+    for i in ci(f) do 
+        s:=NumericalSemigroup(i);
+        Add(out,s);
+    od;
+    return out;
 end);
 
 
