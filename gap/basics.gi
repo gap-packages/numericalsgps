@@ -863,6 +863,20 @@ InstallMethod( AperyList,
                 MultiplicityOfNumericalSemigroup(S)));
 end);
 
+# Now another method for the case an integer is specified
+
+InstallOtherMethod( AperyList,
+        "returns the Apery list of a  numerical semigroup with respect to the multiplicity",
+        true,
+        [IsNumericalSemigroup, IsInt],
+        function(S,n)
+    if n in S then 
+        return(AperyListOfNumericalSemigroupWRTElement(S,n));
+    fi;        
+    return(AperyListOfNumericalSemigroupWRTInteger(S,n));
+end);
+
+
 #############################################################################
 ##
 #F  AperyListOfNumericalSemigroupWRTInteger(S,n)
