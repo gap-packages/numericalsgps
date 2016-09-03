@@ -592,6 +592,12 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
             else
                 Error("For the proportionally modular case NumericalSemigroup must have 4 arguments");
             fi;
+        elif arg[1] = "affinemap" then
+            if Length(arg) = 4 then
+                return NumericalSemigroupByAffineMap(arg[2],arg[3],arg[4]);
+            else
+                Error("For the affine map case NumericalSemigroup must have 4 arguments");
+            fi;
         elif arg[1] = "interval" then
             if Length(arg) = 3 then
                 return NumericalSemigroupByInterval(arg[2],arg[3]);
