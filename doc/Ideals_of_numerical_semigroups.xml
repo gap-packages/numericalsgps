@@ -380,15 +380,31 @@ gap> s:=NumericalSemigroup(4,6,11);;
 gap> m:=MaximalIdealOfNumericalSemigroup(s);;
 gap> c:=CanonicalIdealOfNumericalSemigroup(s);
 <Ideal of numerical semigroup>
-gap> (m-c)-c=m;
+gap> c-(c-m)=m;
 true
 gap> id:=3+s;
 <Ideal of numerical semigroup>
-gap> (id-c)-c=id;
+gap> c-(c-id)=id;
 true
 ]]></Example>
                     </Description>
                 </ManSection>
+
+<ManSection>
+  <Func Arg="E" Name="IsCanonicalIdealOfNumericalSemigroup"></Func>
+  <Description>
+    <A>E</A> is an ideal of a numerical semigroup, say <M>S</M>. Determines if <A>E</A> is a translation of the canonical ideal of <M>S</M>, or equivalently, for every ideal <M>J</M>, <M>E-(E-J)=J</M>.
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> c:=3+CanonicalIdealOfNumericalSemigroup(s);;
+gap> c-(c-(3+s))=3+s;
+true
+gap> IsCanonicalIdealOfNumericalSemigroup(c);
+true
+]]></Example>
+    </Description>
+</ManSection>
 
 
 </Section>
