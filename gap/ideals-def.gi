@@ -709,6 +709,33 @@ InstallGlobalFunction(CanonicalIdealOfNumericalSemigroup, function(s)
             PseudoFrobeniusOfNumericalSemigroup(s),s);
 end);
 
+#############################################################################
+##
+#F  IsCanonicalIdealOfNumericalSemigroup(e)
+##
+##  Detects if the ideal e is a translation of the canonical ideal of its 
+##  ambient semigroup
+##
+#############################################################################
+InstallGlobalFunction(IsCanonicalIdealOfNumericalSemigroup, function(i)
+
+  local c, mc, me;
+
+  if not(IsIdealOfNumericalSemigroup(i)) then
+    Error("The argument must be an ideal of a numerical semigroup");
+  fi;
+
+  c:=CanonicalIdealOfNumericalSemigroup(AmbientNumericalSemigroupOfIdeal(i));
+  if c=i then
+    return true;
+  fi;
+
+  mc:=Minimum(Generators(c));
+  me:=Minimum(Generators(i));
+
+  return i=(me-mc)+c;
+end);
+
 
 #############################################################################
 ##
