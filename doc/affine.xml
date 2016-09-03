@@ -78,9 +78,8 @@ To create an affine semigroup in &GAP; the function
 <ManSection>
   <Func Name="AffineSemigroup" Arg="Representation, List"/>
   <Description>
-    <C>Representation</C> may be <C>"generators"</C>, <C>"minimalgenerators"</C> according to
-    whether the semigroup is to be given by means of a system of generators, a
-    minimal system of generators, ...
+    <C>Representation</C> may be <C>"generators"</C>, <C>"equations"</C> or <C>"inequalities"</C> according to
+    whether the semigroup is to be given by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities.
     <P/>
     When no string is given as first argument it is assumed that the numerical
     semigroup will be given by means of a set of generators.
@@ -176,12 +175,10 @@ false
     <P/>
     If the semigroup is full, then its equations are stored in the semigroup for further use.
 
-    <Example><![CDATA[
-gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
-gap> BelongsToAffineSemigroup([5,5],a);
+<Example><![CDATA[
+gap> a:=AffineSemigroup("equations",[[[1,1,1],[0,0,2]],[2,2]]);;
+gap> IsFullAffineSemigroup(a);
 true
-gap> BelongsToAffineSemigroup([1,2],a);
-false
 ]]></Example>
   </Description>
 </ManSection>
