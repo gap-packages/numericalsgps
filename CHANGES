@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1->1 dev
+- NumericalSegrmioupByMinimalGenerators and NumericalSegrmioupByMinimalGeneratorsNC will be deprecated, and so are now undocumented
 - New function MultiplicitySequenceOfNumericalSemigroup; also LipmanSemigroup is synonym of BlowUpOfNumericalSemigroup
 - New function HolesOfNumericalSemigroup
 - Added tools to deal with good semigroups in N^2 (membership, minimal good systems of generators, Arf closure, Arf test..) and good ideals
