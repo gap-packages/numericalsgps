@@ -52,6 +52,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X85CC100F78608D5E">7.1-16 IntersectionIdealsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X829EACA378BE3665">7.1-17 MaximalIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X835890A078F5D6DC">7.1-18 CanonicalIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7CD2E69B84F1DAAF">7.1-19 IsCanonicalIdealOfNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X81DC1C0284968537">7.2 <span class="Heading">
                     Other functions for ideals
@@ -431,11 +432,28 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:=MaximalIdealOfNumericalSemigroup(s);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c:=CanonicalIdealOfNumericalSemigroup(s);</span>
 &lt;Ideal of numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">(m-c)-c=m;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c-(c-m)=m;</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">id:=3+s;</span>
 &lt;Ideal of numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">(id-c)-c=id;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c-(c-id)=id;</span>
+true
+</pre></div>
+
+<p><a id="X7CD2E69B84F1DAAF" name="X7CD2E69B84F1DAAF"></a></p>
+
+<h5>7.1-19 IsCanonicalIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">E</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">E</var> is an ideal of a numerical semigroup, say <span class="SimpleMath">\(S\)</span>. Determines if <var class="Arg">E</var> is a translation of the canonical ideal of <span class="SimpleMath">\(S\)</span>, or equivalently, for every ideal <span class="SimpleMath">\(J\)</span>, <span class="SimpleMath">\(E-(E-J)=J\)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c:=3+CanonicalIdealOfNumericalSemigroup(s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c-(c-(3+s))=3+s;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCanonicalIdealOfNumericalSemigroup(c);</span>
 true
 </pre></div>
 

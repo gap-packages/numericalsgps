@@ -99,9 +99,10 @@
   
   [29X[2XAffineSemigroup[102X( [3XRepresentation[103X, [3XList[103X ) [32X function
   
-  [33X[0;0Y[10XRepresentation[110X may be [10X"generators"[110X, [10X"minimalgenerators"[110X according to whether
-  the  semigroup  is to be given by means of a system of generators, a minimal
-  system of generators, ...[133X
+  [33X[0;0Y[10XRepresentation[110X  may be [10X"generators"[110X, [10X"equations"[110X or [10X"inequalities"[110X according
+  to  whether the semigroup is to be given by means of a system of generators,
+  a  system  of  homogeneous  linear  Diophantine  equations  or  a  system of
+  homogeneous linear Diophantine inequalities.[133X
   
   [33X[0;0YWhen  no  string is given as first argument it is assumed that the numerical
   semigroup will be given by means of a set of generators.[133X
@@ -197,11 +198,9 @@
   further use.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([[2,0],[0,2],[1,1]]);;[127X[104X
-    [4X[25Xgap>[125X [27XBelongsToAffineSemigroup([5,5],a);[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup("equations",[[[1,1,1],[0,0,2]],[2,2]]);;[127X[104X
+    [4X[25Xgap>[125X [27XIsFullAffineSemigroup(a);[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27XBelongsToAffineSemigroup([1,2],a);[127X[104X
-    [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
   [1X11.2-6 HilbertBasisOfSystemOfHomogeneousEquations[101X
