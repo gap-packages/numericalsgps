@@ -262,3 +262,15 @@ DeclareGlobalFunction("KunzPolytope");
 ##
 #############################################################################
 DeclareGlobalFunction("HolesOfNumericalSemigroup");
+
+
+#############################################################################
+##
+#F  CocycleOfNumericalSemigroupWRTElement(S,n)
+##
+##  Returns the cocycle of the numerical semigroup S with respect to 
+##  the positive integer n (an element in S)
+##
+#############################################################################
+DeclareGlobalFunction("CocycleOfNumericalSemigroupWRTElement");
+
