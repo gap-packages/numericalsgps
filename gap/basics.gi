@@ -1080,3 +1080,33 @@ InstallGlobalFunction(HolesOfNumericalSemigroup, function(s)
   return Filtered(gs, x-> not((f-x) in s));
 
 end);
+
+
+#############################################################################
+##
+#F  CocycleOfNumericalSemigroupWRTElement(S,n)
+##
+##  Returns the cocycle of the numerical semigroup S with respect to 
+##  the positive integer n (an element in S)
+##
+#############################################################################
+InstallGlobalFunction(CocycleOfNumericalSemigroupWRTElement,function(S,s)
+  local i,j,b, ap;
+
+  if not(IsNumericalSemigroup(S)) then
+    Error("The first argument must be a numerical semigroup");
+  fi;
+
+  if not(s in S)then
+    Error("The second argument must be in the first");
+  fi;
+
+  b:=IdentityMat(s);
+  ap:=AperyListOfNumericalSemigroupWRTElement(S,s);
+  for i in [0..s-1] do
+    for j in [0..s-1] do
+      b[i+1][j+1]:=(ap[i+1]+ap[j+1]-ap[(i+j) mod s + 1])/s;
+    od;
+  od;
+  return b;
+end);
