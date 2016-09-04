@@ -167,7 +167,7 @@
 <h5>11.2-1 AffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">Representation</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">Representation</code> may be <code class="code">"generators"</code>, <code class="code">"minimalgenerators"</code> according to whether the semigroup is to be given by means of a system of generators, a minimal system of generators, ...</p>
+<p><code class="code">Representation</code> may be <code class="code">"generators"</code>, <code class="code">"equations"</code> or <code class="code">"inequalities"</code> according to whether the semigroup is to be given by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities.</p>
 
 <p>When no string is given as first argument it is assumed that the numerical semigroup will be given by means of a set of generators.</p>
 
@@ -262,11 +262,9 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToAffineSemigroup([5,5],a);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup("equations",[[[1,1,1],[0,0,2]],[2,2]]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsFullAffineSemigroup(a);</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToAffineSemigroup([1,2],a);</span>
-false
 </pre></div>
 
 <p><a id="X7D4D017A79AD98E2" name="X7D4D017A79AD98E2"></a></p>

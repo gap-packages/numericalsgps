@@ -52,6 +52,203 @@ by its Apéry set, just to name some.
 In this section we describe functions that may be used
 to specify, in one of these ways, a numerical semigroup  in &GAP;.
 
+                <ManSection>
+                    <Func Name="NumericalSemigroupByGenerators" Arg="List"/>
+            <!--    <Func Name="NumericalSemigroup" Arg="String, List" Label="by generators"/> -->
+                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by generators (default)"/>
+                    <Description>
+		      The semigroup is given through a set of generators. This set
+                      may be given as a list or through its individual elements.
+		      <P/>
+		      <C>String</C> does not need to be present. When it is present, it must be <C>"generators"</C>.
+			<Example><![CDATA[		
+gap> s1 := NumericalSemigroupByGenerators(3,5,7);             
+<Numerical semigroup with 3 generators>
+gap> s2 := NumericalSemigroupByGenerators([3,5,7]);
+<Numerical semigroup with 3 generators>
+gap> s3 := NumericalSemigroup("generators",3,5,7); 
+<Numerical semigroup with 3 generators>
+gap> s4 := NumericalSemigroup("generators",[3,5,7]);
+<Numerical semigroup with 3 generators>
+gap> s5 := NumericalSemigroup(3,5,7);               
+<Numerical semigroup with 3 generators>
+gap> s6 := NumericalSemigroup([3,5,7]);
+<Numerical semigroup with 3 generators>
+gap> s1=s2;s2=s3;s3=s4;s4=s5;s5=s6;
+true
+true
+true
+true
+true
+]]></Example>
+    </Description>
+		</ManSection>
+		
+<ManSection>
+ <Func Name="NumericalSemigroupBySubAdditiveFunction" Arg="List"/>
+  <Func Name="NumericalSemigroupBySubAdditiveFunction" Arg="List"/>
+
+ <Description>
+                           A periodic subadditive function with period <M>m</M> is given through the
+                        list of images of the elements, from <M>1</M> to <M>m</M>. The image of <M>m</M>
+                        has to be <M>0</M>.
+
+        <Example><![CDATA[
+
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+ <Func Name="NumericalSemigroupByAperyList" Arg="List"/>
+
+    <Description>
+        <Example><![CDATA[
+
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+<Func Name="NumericalSemigroupBySmallElements" Arg="List"/>
+  
+    <Description>
+        <Example><![CDATA[
+
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="NumericalSemigroupByGaps" Arg="List"/>
+    <Description>
+        <Example><![CDATA[
+
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="NumericalSemigroupByFundamentalGaps" Arg="List"/>
+    <Description>
+        <Example><![CDATA[
+
+]]></Example>
+    </Description>
+</ManSection>
+
+
+
+<ManSection>
+    <Func Name="NumericalSemigroupByAffineMap" Arg="a,b,c"/>
+    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by affine map"/>
+    <Description>
+        Given three nonnegative integers <A>a</A>, <A>b</A> and <A>c</A>, with <M>a,c>0</M> and <M>\gcd(b,c)=1</M>,
+        this function returns the least (with restpect to set order inclusion) numerical semigroup containing <A>c</A> and closed under the map <M>x\mapsto ax+b</M>. The procedure is explained in <Cite Key="Ugolini"></Cite>.
+			In the second form, <C>String</C> must be <C>"affinemap"</C>.
+        <Example><![CDATA[
+gap> s:=NumericalSemigroupByAffineMap(3,1,3);
+<Numerical semigroup with 3 generators>
+gap> SmallElements(s);
+[ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+gap> t:=NumericalSemigroup("affinemap",3,1,3);;
+gap> s=t;
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+                <ManSection>
+                    <Func Name="ModularNumericalSemigroup" Arg="a,b"/>
+                    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by modular condition"/>
+                    <Description>
+                        Given two positive integers <A>a</A> and <A>b</A>,
+                        this function returns a modular numerical semigroup
+                        satisfying <M>ax \bmod\ b \le x</M>.
+			In the second form, <C>String</C> must be <C>"modular"</C>.
+                        <Example><![CDATA[
+gap> ModularNumericalSemigroup(3,7);
+<Modular numerical semigroup satisfying 3x mod 7 <= x >
+gap> NumericalSemigroup("modular",3,7);  
+<Modular numerical semigroup satisfying 3x mod 7 <= x >
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Name="ProportionallyModularNumericalSemigroup" Arg="a,b,c"/>
+                    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by proportionally modular condition"/>
+                    <Description>
+                        Given three positive integers <A>a</A>, <A>b</A> and <A>c</A>,
+                        this function returns a proportionally modular numerical semigroup
+                        satisfying <M>ax\bmod\ b \le cx</M>.
+			In the second form, <C>String</C> must be <C>"propmodular"</C>.
+                        <Example><![CDATA[
+gap> ProportionallyModularNumericalSemigroup(3,7,12);
+<Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
+gap> NumericalSemigroup("propmodular",3,7,12);
+<Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
+]]></Example>
+When <M>c=1</M>, the semigroup is seen as a modular numerical semigroup.
+<Example><![CDATA[
+gap> NumericalSemigroup("propmodular",67,98,1);
+<Modular numerical semigroup satisfying 67x mod 98 <= x >
+]]></Example>
+                    </Description>
+                </ManSection>
+			<P/>
+			Numerical semigroups generated by an interval of positive integers are
+			known to be proportionally modular, and thus they are treated as such 
+			(unles the representation "minimalgenerators" is specified), since membership
+			and other problems can be solved efficiently for these semigroups.
+			<P/>
+
+                <ManSection>
+
+                    <Func Name="NumericalSemigroupByInterval" Arg="List"/>
+                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by (closed) interval"/>
+                    <Description>
+		      The semigroup is given through a set of generators. This set
+                      may be given as a list or through its individual elements.
+		      <P/>
+		       <C>String</C> does not need to be present. When it is present, it must be <C>"generators"</C>.
+			<Example><![CDATA[		
+gap> NumericalSemigroupByInterval(7/5,5/3);
+<Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >
+gap> NumericalSemigroup("interval",[7/5,5/3]);
+<Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >
+gap> SmallElements(last);
+[ 0, 3, 5 ]
+]]></Example>
+                    </Description>
+
+               </ManSection>
+
+                <ManSection>
+
+                    <Func Name="NumericalSemigroupByOpenInterval" Arg="List"/>
+                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by open interval"/>
+                    <Description>
+		      The semigroup is given through a set of generators. This set
+                      may be given as a list or through its individual elements.
+		      <P/>
+		       <C>String</C> does not need to be present. When it is present, it must be <C>"generators"</C>.
+			<Example><![CDATA[		
+gap> NumericalSemigroupByOpenInterval(7/5,5/3);
+<Numerical semigroup>
+gap> NumericalSemigroup("openinterval",[7/5,5/3]);
+<Numerical semigroup>
+gap> SmallElements(last);                         
+[ 0, 3, 6, 8 ]
+gap> 
+]]></Example>
+                    </Description>
+
+               </ManSection>
+
+<!-- -->
+
 <P/>
 
                 To create a numerical semigroup in &GAP; the function
@@ -159,6 +356,7 @@ gap> NumericalSemigroup("propmodular",67,98,1);
 
 <ManSection>
     <Func Name="NumericalSemigroupByAffineMap" Arg="a,b,c"/>
+    <Func Name="NumericalSemigroup" Arg="string, a,b,c"/>
     <Description>
         Given three nonnegative integers <A>a</A>, <A>b</A> and <A>c</A>, with <M>a,c>0</M> and <M>\gcd(b,c)=1</M>,
         this function returns the least (with restpect to set order inclusion) numerical semigroup containing <A>c</A> and closed under the map <M>x\mapsto ax+b</M>. The procedure is explained in <Cite Key="Ugolini"></Cite>.
@@ -167,6 +365,9 @@ gap> s:=NumericalSemigroupByAffineMap(3,1,3);
 <Numerical semigroup with 3 generators>
 gap> SmallElements(s);
 [ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+gap> t:=NumericalSemigroup("affinemap",3,1,3);;
+gap> s=t;
+true
 ]]></Example>
     </Description>
 </ManSection>

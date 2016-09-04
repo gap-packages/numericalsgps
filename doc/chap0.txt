@@ -111,11 +111,22 @@
   1 [33X[0;0YIntroduction[133X
   2 [33X[0;0YNumerical Semigroups[133X
     2.1 [33X[0;0YGenerating Numerical Semigroups[133X
-      2.1-1 NumericalSemigroup
-      2.1-2 ModularNumericalSemigroup
-      2.1-3 ProportionallyModularNumericalSemigroup
-      2.1-4 NumericalSemigroupByAffineMap
-      2.1-5 NumericalSemigroupByGenerators
+      2.1-1 NumericalSemigroupByGenerators
+      2.1-2 NumericalSemigroupBySubAdditiveFunction
+      2.1-3 NumericalSemigroupByAperyList
+      2.1-4 NumericalSemigroupBySmallElements
+      2.1-5 NumericalSemigroupByGaps
+      2.1-6 NumericalSemigroupByFundamentalGaps
+      2.1-7 NumericalSemigroupByAffineMap
+      2.1-8 ModularNumericalSemigroup
+      2.1-9 ProportionallyModularNumericalSemigroup
+      2.1-10 NumericalSemigroupByInterval
+      2.1-11 NumericalSemigroupByOpenInterval
+      2.1-12 NumericalSemigroup
+      2.1-13 ModularNumericalSemigroup
+      2.1-14 ProportionallyModularNumericalSemigroup
+      2.1-15 NumericalSemigroupByAffineMap
+      2.1-16 NumericalSemigroupByGenerators
     2.2 [33X[0;0YSome basic tests[133X
       2.2-1 IsNumericalSemigroup
       2.2-2 RepresentsSmallElementsOfNumericalSemigroup
@@ -233,6 +244,7 @@
       7.1-16 IntersectionIdealsOfNumericalSemigroup
       7.1-17 MaximalIdealOfNumericalSemigroup
       7.1-18 CanonicalIdealOfNumericalSemigroup
+      7.1-19 IsCanonicalIdealOfNumericalSemigroup
     7.2 [33X[0;0YOther functions for ideals[133X
       7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
       7.2-2 BlowUpIdealOfNumericalSemigroup
