@@ -122,11 +122,6 @@
       2.1-9 ProportionallyModularNumericalSemigroup
       2.1-10 NumericalSemigroupByInterval
       2.1-11 NumericalSemigroupByOpenInterval
-      2.1-12 NumericalSemigroup
-      2.1-13 ModularNumericalSemigroup
-      2.1-14 ProportionallyModularNumericalSemigroup
-      2.1-15 NumericalSemigroupByAffineMap
-      2.1-16 NumericalSemigroupByGenerators
     2.2 [33X[0;0YSome basic tests[133X
       2.2-1 IsNumericalSemigroup
       2.2-2 RepresentsSmallElementsOfNumericalSemigroup
@@ -337,43 +332,38 @@
       10.2-6 SemigroupOfValuesOfCurve_Local
       10.2-7 SemigroupOfValuesOfCurve_Global
   11 [33X[0;0YAffine semigroups[133X
-    11.1 [33X[0;0YUsing external packages[133X
-      11.1-1 NumSgpsUse4ti2
-      11.1-2 NumSgpsUse4ti2gap
-      11.1-3 NumSgpsUseNormalize
-      11.1-4 NumSgpsUseSingular
-      11.1-5 NumSgpsUseSingularInterface
-      11.1-6 NumSgpsUseSingularGradedModules
-    11.2 [33X[0;0YDefining affine semigroups[133X
-      11.2-1 AffineSemigroup
-      11.2-2 AsAffineSemigroup
-      11.2-3 IsAffineSemigroup
-      11.2-4 BelongsToAffineSemigroup
-      11.2-5 IsFullAffineSemigroup
-      11.2-6 HilbertBasisOfSystemOfHomogeneousEquations
-      11.2-7 HilbertBasisOfSystemOfHomogeneousInequalities
-      11.2-8 EquationsOfGroupGeneratedBy
-      11.2-9 BasisOfGroupGivenByEquations
-    11.3 [33X[0;0YGluings of affine semigroups[133X
-      11.3-1 GluingOfAffineSemigroups
-    11.4 [33X[0;0YPresentations of affine semigroups[133X
-      11.4-1 GeneratorsOfKernelCongruence
-      11.4-2 MinimalPresentationOfAffineSemigroup
-      11.4-3 BettiElementsOfAffineSemigroup
-      11.4-4 ShadedSetOfElementInAffineSemigroup
-      11.4-5 IsGenericAffineSemigroup
-      11.4-6 IsUniquelyPresentedAffineSemigroup
-      11.4-7 PrimitiveElementsOfAffineSemigroup
-    11.5 [33X[0;0YFactorizations in affine semigroups[133X
-      11.5-1 FactorizationsVectorWRTList
-      11.5-2 ElasticityOfAffineSemigroup
-      11.5-3 CatenaryDegreeOfAffineSemigroup
-      11.5-4 EqualCatenaryDegreeOfAffineSemigroup
-      11.5-5 HomogeneousCatenaryDegreeOfAffineSemigroup
-      11.5-6 MonotoneCatenaryDegreeOfAffineSemigroup
-      11.5-7 TameDegreeOfAffineSemigroup
-      11.5-8 OmegaPrimalityOfElementInAffineSemigroup
-      11.5-9 OmegaPrimalityOfAffineSemigroup
+    11.1 [33X[0;0YDefining affine semigroups[133X
+      11.1-1 AffineSemigroup
+      11.1-2 GeneratorsOfAffineSemigroup
+      11.1-3 MinimalGeneratingSystem
+      11.1-4 AsAffineSemigroup
+      11.1-5 IsAffineSemigroup
+      11.1-6 BelongsToAffineSemigroup
+      11.1-7 IsFullAffineSemigroup
+      11.1-8 HilbertBasisOfSystemOfHomogeneousEquations
+      11.1-9 HilbertBasisOfSystemOfHomogeneousInequalities
+      11.1-10 EquationsOfGroupGeneratedBy
+      11.1-11 BasisOfGroupGivenByEquations
+    11.2 [33X[0;0YGluings of affine semigroups[133X
+      11.2-1 GluingOfAffineSemigroups
+    11.3 [33X[0;0YPresentations of affine semigroups[133X
+      11.3-1 GeneratorsOfKernelCongruence
+      11.3-2 MinimalPresentationOfAffineSemigroup
+      11.3-3 BettiElementsOfAffineSemigroup
+      11.3-4 ShadedSetOfElementInAffineSemigroup
+      11.3-5 IsGenericAffineSemigroup
+      11.3-6 IsUniquelyPresentedAffineSemigroup
+      11.3-7 PrimitiveElementsOfAffineSemigroup
+    11.4 [33X[0;0YFactorizations in affine semigroups[133X
+      11.4-1 FactorizationsVectorWRTList
+      11.4-2 ElasticityOfAffineSemigroup
+      11.4-3 CatenaryDegreeOfAffineSemigroup
+      11.4-4 EqualCatenaryDegreeOfAffineSemigroup
+      11.4-5 HomogeneousCatenaryDegreeOfAffineSemigroup
+      11.4-6 MonotoneCatenaryDegreeOfAffineSemigroup
+      11.4-7 TameDegreeOfAffineSemigroup
+      11.4-8 OmegaPrimalityOfElementInAffineSemigroup
+      11.4-9 OmegaPrimalityOfAffineSemigroup
   12 [33X[0;0YGood semigroups[133X
     12.1 [33X[0;0YDefining good semigroups[133X
       12.1-1 IsGoodSemigroup
@@ -403,6 +393,14 @@
       12.4-5 BelongsToGoodIdeal
       12.4-6 SmallElementsOfGoodIdeal
       12.4-7 CanonicalIdealOfGoodSemigroup
+  13 [33X[0;0YExternal packages[133X
+    13.1 [33X[0;0YUsing external packages[133X
+      13.1-1 NumSgpsUse4ti2
+      13.1-2 NumSgpsUse4ti2gap
+      13.1-3 NumSgpsUseNormalize
+      13.1-4 NumSgpsUseSingular
+      13.1-5 NumSgpsUseSingularInterface
+      13.1-6 NumSgpsUseSingularGradedModules
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence

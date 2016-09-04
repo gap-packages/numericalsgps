@@ -300,7 +300,7 @@ be found in the monograph \cite{RGbook}. Some examples in this book have been il
 package. So the reader can also find there more examples on the usage of the
 functions implemented here. 
 
- This package was presented in \cite{JMDA}. }
+ This package was presented in \cite{JMDA}. For a survey of the features of this package, see \cite{MR3493240}. }
 
  
 \chapter{\textcolor{Chapter }{ Numerical Semigroups }}\logpage{[ 2, 0, 0 ]}
@@ -374,14 +374,22 @@ list or through its individual elements.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySubAdditiveFunction({\mdseries\slshape List})\index{NumericalSemigroupBySubAdditiveFunction@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Sub}\-\texttt{Additive}\-\texttt{Function}}
 \label{NumericalSemigroupBySubAdditiveFunction}
 }\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySubAdditiveFunction({\mdseries\slshape List})\index{NumericalSemigroupBySubAdditiveFunction@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Sub}\-\texttt{Additive}\-\texttt{Function}}
-\label{NumericalSemigroupBySubAdditiveFunction}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by subadditive function}
+\label{NumericalSemigroup:by subadditive function}
 }\hfill{\scriptsize (function)}}\\
 
 
- A periodic subadditive function with period $m$ is given through the list of images of the elements, from $1$ to $m$. The image of $m$ has to be $0$. 
+ A periodic subadditive function with period $m$ is given through the list of images of the integers from $1$ to $m$. The image of $m$ has to be $0$. 
+
+ In the second form, \texttt{String} must be \texttt{"subadditive"}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroupBySubAdditiveFunction([5,4,2,0]);|
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@t := NumericalSemigroup("subadditive",[5,4,2,0]);;     |
+  !gapprompt@gap>| !gapinput@s=t;|
+  true
+  !gapprompt@gap>| !gapinput@MinimalGenerators(s);|
+  [ 3 .. 5 ]
 \end{Verbatim}
  }
 
@@ -393,11 +401,23 @@ list or through its individual elements.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAperyList({\mdseries\slshape List})\index{NumericalSemigroupByAperyList@\texttt{NumericalSemigroupByAperyList}}
 \label{NumericalSemigroupByAperyList}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by Apery list}
+\label{NumericalSemigroup:by Apery list}
+}\hfill{\scriptsize (function)}}\\
 
 
- 
+ \texttt{List} is the Ap{\a'e}ry list. 
+
+ In the second form, \texttt{String} must be \texttt{"apery"}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,11);;|
+  !gapprompt@gap>| !gapinput@ap := AperyListOfNumericalSemigroupWRTElement(s,20);|
+  [ 0, 21, 22, 3, 24, 25, 6, 27, 28, 9, 30, 11, 12, 33, 14, 15, 36, 17, 18, 39 ]
+  ggap> t:=NumericalSemigroupByAperyList(ap);;
+  !gapprompt@gap>| !gapinput@r := NumericalSemigroup("apery",ap);;|
+  !gapprompt@gap>| !gapinput@s=t;t=r;|
+  true
+  true
 \end{Verbatim}
  }
 
@@ -409,11 +429,34 @@ list or through its individual elements.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySmallElements({\mdseries\slshape List})\index{NumericalSemigroupBySmallElements@\texttt{NumericalSemigroupBySmallElements}}
 \label{NumericalSemigroupBySmallElements}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by small elements}
+\label{NumericalSemigroup:by small elements}
+}\hfill{\scriptsize (function)}}\\
 
 
- 
+ \texttt{List} is the set of small elements, that is, the set of all elements not greater
+than the conductor. When no semigroup exists whith the given set as set of
+small elements, an error is returned. 
+
+ In the second form, \texttt{String} must be \texttt{"elements"}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,11);;|
+  !gapprompt@gap>| !gapinput@se := SmallElements(s);|
+  [ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
+  !gapprompt@gap>| !gapinput@t := NumericalSemigroupBySmallElements(se);;|
+  <gap> r := NumericalSemigroup("elements",se);;
+  !gapprompt@gap>| !gapinput@s=t;t=r;                                            |
+  true
+  true
+  !gapprompt@gap>| !gapinput@e := [ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ];    |
+  [ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ]
+  !gapprompt@gap>| !gapinput@NumericalSemigroupBySmallElements(e);|
+  Error, The argument does not represent a numerical semigroup called from
+  <function "NumericalSemigroupBySmallElements">( <arguments> )
+   called from read-eval loop at line 35 of *stdin*
+  you can 'quit;' to quit to outer loop, or
+  you can 'return;' to continue
+  !gapbrkprompt@brk>| !gapinput@|
 \end{Verbatim}
  }
 
@@ -425,11 +468,29 @@ list or through its individual elements.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGaps({\mdseries\slshape List})\index{NumericalSemigroupByGaps@\texttt{NumericalSemigroupByGaps}}
 \label{NumericalSemigroupByGaps}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by gaps}
+\label{NumericalSemigroup:by gaps}
+}\hfill{\scriptsize (function)}}\\
 
 
- 
+ \texttt{List} is the set of gaps. When no semigroup exists whith the given set as set of
+gaps, an error is returned. 
+
+ In the second form, \texttt{String} must be \texttt{"gaps"}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  
+  !gapprompt@gap>| !gapinput@g := [ 1, 2, 4, 5, 7, 8, 10, 13, 16 ];;|
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroupByGaps(g);;|
+  !gapprompt@gap>| !gapinput@t := NumericalSemigroup("gaps",g);;|
+  !gapprompt@gap>| !gapinput@s=t;|
+  true
+  !gapprompt@gap>| !gapinput@h := [ 1, 2, 5, 7, 8, 10, 13, 16 ];;   |
+  !gapprompt@gap>| !gapinput@NumericalSemigroupByGaps(h);|
+  Error, The argument does not represent the gaps of  a numerical semigroup called from
+  <function "NumericalSemigroupByGaps">( <arguments> )
+   called from read-eval loop at line 34 of *stdin*
+  you can 'quit;' to quit to outer loop, or
+  you can 'return;' to continue
+  !gapbrkprompt@brk>| !gapinput@|
 \end{Verbatim}
  }
 
@@ -441,11 +502,26 @@ list or through its individual elements.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByFundamentalGaps({\mdseries\slshape List})\index{NumericalSemigroupByFundamentalGaps@\texttt{NumericalSemigroupByFundamentalGaps}}
 \label{NumericalSemigroupByFundamentalGaps}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape String, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}!by fundamental gaps}
+\label{NumericalSemigroup:by fundamental gaps}
+}\hfill{\scriptsize (function)}}\\
 
 
- 
+ \texttt{List} is the set of fundamental gaps. When the given set contains elements (which
+will be gaps) that are not fundamental gaps, they are silently removed. 
+
+ In the second form, \texttt{String} must be \texttt{"fundamentalgaps"}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  
+  !gapprompt@gap>| !gapinput@fg := [ 11, 14, 17, 20, 23, 26, 29, 32, 35 ];;|
+  ggap> NumericalSemigroupByFundamentalGaps(fg);
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("fundamentalgaps",fg);     |
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@last=last2;|
+  true
+  !gapprompt@gap>| !gapinput@gg := [ 11, 17, 20, 22, 23, 26, 29, 32, 35 ];; #22 is not fundamental|
+  !gapprompt@gap>| !gapinput@NumericalSemigroup("fundamentalgaps",fg);     |
+  <Numerical semigroup>
 \end{Verbatim}
  }
 
@@ -587,198 +663,7 @@ list or through its individual elements.
 \end{Verbatim}
  }
 
-  
-
- To create a numerical semigroup in \textsf{GAP} the function \texttt{NumericalSemigroup} is used. 
-
-\subsection{\textcolor{Chapter }{NumericalSemigroup}}
-\logpage{[ 2, 1, 12 ]}\nobreak
-\hyperdef{L}{X86DEEBFE854B60A6}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape Representation, List})\index{NumericalSemigroup@\texttt{NumericalSemigroup}}
-\label{NumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- \texttt{Representation} 
-
- May be \texttt{"generators"}, \texttt{"interval"}, \texttt{"minimalgenerators"}, \texttt{"modular"}, \texttt{"propmodular"}, \texttt{"elements"}, \texttt{"gaps"}, \texttt{"fundamentalgaps"}, \texttt{"openinterval"}, \texttt{"subadditive"} or \texttt{"apery"} according to whether the semigroup is to be given by means of a system of
-generators, a minimal system of generators, a condition of the form $ ax \bmod\ m \le x$, a condition of the form $ ax \bmod\ m\le cx$, a set of all elements up to the conductor, the set of gaps, the set of
-fundamental gaps, a periodic subaditive function, or the Ap{\a'e}ry set. 
-
- When no string is given as first argument it is assumed that the numerical
-semigroup will be given by means of a set of generators. 
-
- \texttt{List} 
-
- When the semigroup is given through a set of generators, this set may be given
-as a list or through its individual elements. 
-
- The set of all elements up to the conductor, the set of gaps, the set of
-fundamental gaps or the Ap{\a'e}ry set are given through lists. 
-
- A periodic subadditive function with period $m$ is given through the list of images of the elements, from $1$ to $m$. The image of $m$ has to be $0$. 
-
- Numerical semigroups generated by an interval of positive integers and
-embedding dimension two numerical semigroups are known to be proportionally
-modular, and thus they are treated as such (unles the representation
-"minimalgenerators" is specified), since membership and other problems are
-solved faster for these semigroups. 
-
- 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s1 := NumericalSemigroup("generators",3,5,7);|
-  <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@s2 := NumericalSemigroup("generators",[3,5,7]);|
-  <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@s1=s2;|
-  true
-  !gapprompt@gap>| !gapinput@s := NumericalSemigroup("minimalgenerators",3,7);|
-  <Numerical semigroup with 2 generators>
-  !gapprompt@gap>| !gapinput@s := NumericalSemigroup("modular",3,5);|
-  <Modular numerical semigroup satisfying 3x mod 5 <= x >
-  !gapprompt@gap>| !gapinput@s1:=NumericalSemigroup("generators",2,5);|
-  <Numerical semigroup with 2 generators>
-  !gapprompt@gap>| !gapinput@s = s1;|
-  true
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(4,5,6);|
-  <Numerical semigroup with 3 generators>
-\end{Verbatim}
- 
-
- Once it is known that a numerical semigroup contains the element $1$, i.e. the semigroup is $\mathbb N$, the semigroup is treated as such. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@NumericalSemigroup(1);|
-  <The numerical semigroup N>
-  !gapprompt@gap>| !gapinput@NumericalSemigroupByInterval(1/3,1/2);|
-  <The numerical semigroup N>
-   
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{ModularNumericalSemigroup}}
-\logpage{[ 2, 1, 13 ]}\nobreak
-\hyperdef{L}{X87206D597873EAFF}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ModularNumericalSemigroup({\mdseries\slshape a, b})\index{ModularNumericalSemigroup@\texttt{ModularNumericalSemigroup}}
-\label{ModularNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- Given two positive integers \mbox{\texttt{\mdseries\slshape a}} and \mbox{\texttt{\mdseries\slshape b}}, this function returns a modular numerical semigroup satisfying $ax \bmod\ b \le x$. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@ModularNumericalSemigroup(3,7);|
-  <Modular numerical semigroup satisfying 3x mod 7 <= x >
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{ProportionallyModularNumericalSemigroup}}
-\logpage{[ 2, 1, 14 ]}\nobreak
-\hyperdef{L}{X879171CD7AC80BB5}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ProportionallyModularNumericalSemigroup({\mdseries\slshape a, b, c})\index{ProportionallyModularNumericalSemigroup@\texttt{Proportionally}\-\texttt{Modular}\-\texttt{Numerical}\-\texttt{Semigroup}}
-\label{ProportionallyModularNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- Given three positive integers \mbox{\texttt{\mdseries\slshape a}}, \mbox{\texttt{\mdseries\slshape b}} and \mbox{\texttt{\mdseries\slshape c}}, this function returns a proportionally modular numerical semigroup
-satisfying $ax\bmod\ b \le cx$. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@ProportionallyModularNumericalSemigroup(3,7,12);|
-  <Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
-\end{Verbatim}
- When $c=1$, the semigroup is seen as a modular numerical semigroup. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@NumericalSemigroup("propmodular",67,98,1);|
-  <Modular numerical semigroup satisfying 67x mod 98 <= x >
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{NumericalSemigroupByAffineMap}}
-\logpage{[ 2, 1, 15 ]}\nobreak
-\hyperdef{L}{X7ACD94F478992185}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAffineMap({\mdseries\slshape a, b, c})\index{NumericalSemigroupByAffineMap@\texttt{NumericalSemigroupByAffineMap}}
-\label{NumericalSemigroupByAffineMap}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroup({\mdseries\slshape string, a, b, c})\index{NumericalSemigroup@\texttt{NumericalSemigroup}}
-\label{NumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- Given three nonnegative integers \mbox{\texttt{\mdseries\slshape a}}, \mbox{\texttt{\mdseries\slshape b}} and \mbox{\texttt{\mdseries\slshape c}}, with $a,c>0$ and $\gcd(b,c)=1$, this function returns the least (with restpect to set order inclusion)
-numerical semigroup containing \mbox{\texttt{\mdseries\slshape c}} and closed under the map $x\mapsto ax+b$. The procedure is explained in \cite{Ugolini}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroupByAffineMap(3,1,3);|
-  <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@SmallElements(s);|
-  [ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
-  !gapprompt@gap>| !gapinput@t:=NumericalSemigroup("affinemap",3,1,3);;|
-  !gapprompt@gap>| !gapinput@s=t;|
-  true
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{NumericalSemigroupByGenerators}}
-\logpage{[ 2, 1, 16 ]}\nobreak
-\hyperdef{L}{X79B38AB3816BF3C5}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGenerators({\mdseries\slshape List})\index{NumericalSemigroupByGenerators@\texttt{NumericalSemigroupByGenerators}}
-\label{NumericalSemigroupByGenerators}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByMinimalGenerators({\mdseries\slshape List})\index{NumericalSemigroupByMinimalGenerators@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Minimal}\-\texttt{Generators}}
-\label{NumericalSemigroupByMinimalGenerators}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByMinimalGeneratorsNC({\mdseries\slshape List})\index{NumericalSemigroupByMinimalGeneratorsNC@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Minimal}\-\texttt{GeneratorsNC}}
-\label{NumericalSemigroupByMinimalGeneratorsNC}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByInterval({\mdseries\slshape List})\index{NumericalSemigroupByInterval@\texttt{NumericalSemigroupByInterval}}
-\label{NumericalSemigroupByInterval}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByOpenInterval({\mdseries\slshape List})\index{NumericalSemigroupByOpenInterval@\texttt{NumericalSemigroupByOpenInterval}}
-\label{NumericalSemigroupByOpenInterval}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySubAdditiveFunction({\mdseries\slshape List})\index{NumericalSemigroupBySubAdditiveFunction@\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Sub}\-\texttt{Additive}\-\texttt{Function}}
-\label{NumericalSemigroupBySubAdditiveFunction}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByAperyList({\mdseries\slshape List})\index{NumericalSemigroupByAperyList@\texttt{NumericalSemigroupByAperyList}}
-\label{NumericalSemigroupByAperyList}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupBySmallElements({\mdseries\slshape List})\index{NumericalSemigroupBySmallElements@\texttt{NumericalSemigroupBySmallElements}}
-\label{NumericalSemigroupBySmallElements}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByGaps({\mdseries\slshape List})\index{NumericalSemigroupByGaps@\texttt{NumericalSemigroupByGaps}}
-\label{NumericalSemigroupByGaps}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalSemigroupByFundamentalGaps({\mdseries\slshape List})\index{NumericalSemigroupByFundamentalGaps@\texttt{NumericalSemigroupByFundamentalGaps}}
-\label{NumericalSemigroupByFundamentalGaps}
-}\hfill{\scriptsize (function)}}\\
-
-
-The function \texttt{NumericalSemigroup} (\ref{NumericalSemigroup}) is a front-end for these functions. The argument of each of these functions is
-a list representing an entity of the type to which the function's name refers. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,11);|
-  <Numerical semigroup with 2 generators>
-  !gapprompt@gap>| !gapinput@GapsOfNumericalSemigroup(s);|
-  [ 1, 2, 4, 5, 7, 8, 10, 13, 16, 19 ]
-  !gapprompt@gap>| !gapinput@t:=NumericalSemigroupByGaps(last);|
-  <Numerical semigroup>
-  !gapprompt@gap>| !gapinput@s=t;|
-  true
-  
-  !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTElement(s,20);;|
-  !gapprompt@gap>| !gapinput@t:=NumericalSemigroupByAperyList(last);|
-  <Numerical semigroup>
-  !gapprompt@gap>| !gapinput@s=t;|
-  true
-\end{Verbatim}
- }
-
- }
+  }
 
   
 \section{\textcolor{Chapter }{Some basic tests}}\logpage{[ 2, 2, 0 ]}
@@ -4917,103 +4802,8 @@ of degrees of $K[pols]$. If an integer \mbox{\texttt{\mdseries\slshape val}} is 
 \chapter{\textcolor{Chapter }{ Affine semigroups }}\logpage{[ 11, 0, 0 ]}
 \hyperdef{L}{X7D92A1997D098A00}{}
 {
-   The use of the packages \texttt{NormalizInterface} \cite{NmzInterface} (an interface to \texttt{Normalize} \cite{Normaliz}; or in its absence \texttt{4ti2Interface}\cite{4ti2Interface}, and interface to \texttt{4ti2}\cite{4ti2}), \texttt{SingularInterface} (an interface to \texttt{Singular} \cite{Singular}; or in its absence \texttt{Singular} \cite{Singularpackage}); or in its absecnce \texttt{GradedModules} \cite{GradedModules} is highly recomended for many of the functions presented in this chapter.
-However, whenever possible a method not depending on these packages is also
-provided (though slower). The package tests if the user has downloaded any of
-the above packages, and if so puts \texttt{NumSgpsCanUsePackage} to true, where \texttt{Package} is any of the above. 
-\section{\textcolor{Chapter }{ Using external packages }}\logpage{[ 11, 1, 0 ]}
-\hyperdef{L}{X7BD18FC581F0C4D3}{}
-{
-  As mentioned above some methods are specifially implemented to take advantage
-of several external packages. The following functions can be used in case
-these packages have not been loaded prior to \texttt{numericalsgps}. 
-
-\subsection{\textcolor{Chapter }{NumSgpsUse4ti2}}
-\logpage{[ 11, 1, 1 ]}\nobreak
-\hyperdef{L}{X8736665E7CBEAB20}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUse4ti2({\mdseries\slshape })\index{NumSgpsUse4ti2@\texttt{NumSgpsUse4ti2}}
-\label{NumSgpsUse4ti2}
-}\hfill{\scriptsize (function)}}\\
-
-
- Tries to load the package \texttt{4ti2Interface}. If the package is available, then it also loads methods implemented using
-functions in this package. }
-
- 
-
-\subsection{\textcolor{Chapter }{NumSgpsUse4ti2gap}}
-\logpage{[ 11, 1, 2 ]}\nobreak
-\hyperdef{L}{X875001717A8CF032}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUse4ti2gap({\mdseries\slshape })\index{NumSgpsUse4ti2gap@\texttt{NumSgpsUse4ti2gap}}
-\label{NumSgpsUse4ti2gap}
-}\hfill{\scriptsize (function)}}\\
-
-
- Tries to load the package \texttt{4ti2gap}. If the package is available, then it also loads methods implemented using
-functions in this package. }
-
- 
-
-\subsection{\textcolor{Chapter }{NumSgpsUseNormalize}}
-\logpage{[ 11, 1, 3 ]}\nobreak
-\hyperdef{L}{X875040237A692C3C}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseNormalize({\mdseries\slshape })\index{NumSgpsUseNormalize@\texttt{NumSgpsUseNormalize}}
-\label{NumSgpsUseNormalize}
-}\hfill{\scriptsize (function)}}\\
-
-
- Tries to load the package \texttt{NormalizInterface}. If the package is available, then it also loads methods implemented using
-functions in this package. }
-
- 
-
-\subsection{\textcolor{Chapter }{NumSgpsUseSingular}}
-\logpage{[ 11, 1, 4 ]}\nobreak
-\hyperdef{L}{X7CD12ADD78089CBE}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingular({\mdseries\slshape })\index{NumSgpsUseSingular@\texttt{NumSgpsUseSingular}}
-\label{NumSgpsUseSingular}
-}\hfill{\scriptsize (function)}}\\
-
-
- Tries to load the package \texttt{singular}. If the package is available, then it also loads methods implemented using
-functions in this package. 
-
- To prevent incompatibilities, the package will not load if \texttt{SingularInterface} has been already loaded. }
-
- 
-
-\subsection{\textcolor{Chapter }{NumSgpsUseSingularInterface}}
-\logpage{[ 11, 1, 5 ]}\nobreak
-\hyperdef{L}{X7F7699A9829940C2}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingularInterface({\mdseries\slshape })\index{NumSgpsUseSingularInterface@\texttt{NumSgpsUseSingularInterface}}
-\label{NumSgpsUseSingularInterface}
-}\hfill{\scriptsize (function)}}\\
-
-
- Tries to load the package \texttt{SingularInterface}. If the package is available, then it also loads methods implemented using
-functions in this package. 
-
- To prevent incompatibilities, the package will not load if \texttt{singular} has been already loaded. }
-
- 
-
-\subsection{\textcolor{Chapter }{NumSgpsUseSingularGradedModules}}
-\logpage{[ 11, 1, 6 ]}\nobreak
-\hyperdef{L}{X7F7F2ED87E151582}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingularGradedModules({\mdseries\slshape })\index{NumSgpsUseSingularGradedModules@\texttt{NumSgpsUseSingularGradedModules}}
-\label{NumSgpsUseSingularGradedModules}
-}\hfill{\scriptsize (function)}}\\
-
-
- Tries to load the package \texttt{GradedModules}. If the package is available, then it also loads methods implemented using
-functions in this package. 
-
- It also creates a ring of rationals \texttt{NumSgpsRationals}. }
-
- }
-
- 
-\section{\textcolor{Chapter }{ Defining affine semigroups }}\logpage{[ 11, 2, 0 ]}
+   
+\section{\textcolor{Chapter }{ Defining affine semigroups }}\logpage{[ 11, 1, 0 ]}
 \hyperdef{L}{X7E39DA7780D02DF5}{}
 {
   An affine semigroup $S$ is a finitely generated cancellative monoid that is reduced (no units other
@@ -5034,7 +4824,7 @@ So for instance, the equations $x+y\equiv 0\bmod 2,\ x-2y=0$ will be represented
  To create an affine semigroup in \textsf{GAP} the function \texttt{AffineSemigroup} is used. 
 
 \subsection{\textcolor{Chapter }{AffineSemigroup}}
-\logpage{[ 11, 2, 1 ]}\nobreak
+\logpage{[ 11, 1, 1 ]}\nobreak
 \hyperdef{L}{X7AFF988F8797A1EF}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroup({\mdseries\slshape Representation, List})\index{AffineSemigroup@\texttt{AffineSemigroup}}
 \label{AffineSemigroup}
@@ -5059,8 +4849,57 @@ semigroup will be given by means of a set of generators.
 
  
 
+\subsection{\textcolor{Chapter }{GeneratorsOfAffineSemigroup}}
+\logpage{[ 11, 1, 2 ]}\nobreak
+\hyperdef{L}{X7E965976815B387D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfAffineSemigroup({\mdseries\slshape S})\index{GeneratorsOfAffineSemigroup@\texttt{GeneratorsOfAffineSemigroup}}
+\label{GeneratorsOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape S})\index{Generators@\texttt{Generators}!for affine semigroup}
+\label{Generators:for affine semigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is an affine semigroup, the output is a system of generators. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([[1,0],[0,1],[1,1]]);|
+  <Affine semigroup in 2 dimensional space, with 3 generators>
+  !gapprompt@gap>| !gapinput@Generators(a);|
+  [ [ 0, 1 ], [ 1, 0 ], [ 1, 1 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MinimalGeneratingSystem (for affine semigroup)}}
+\logpage{[ 11, 1, 3 ]}\nobreak
+\hyperdef{L}{X8164ADBD87FF5473}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape S})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}!for affine semigroup}
+\label{MinimalGeneratingSystem:for affine semigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}!for affine semigroup}
+\label{MinimalGenerators:for affine semigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S}} is an affine semigroup, the output is its system of minimal generators. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([[1,0],[0,1],[1,1]]);|
+  <Affine semigroup in 2 dimensional space, with 3 generators>
+    gap> MinimalGenerators(a);
+    [ [ 0, 1 ], [ 1, 0 ] ]
+    
+\end{Verbatim}
+ }
+
+ 
+
 \subsection{\textcolor{Chapter }{AsAffineSemigroup}}
-\logpage{[ 11, 2, 2 ]}\nobreak
+\logpage{[ 11, 1, 4 ]}\nobreak
 \hyperdef{L}{X844806D97B4781B5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsAffineSemigroup({\mdseries\slshape S})\index{AsAffineSemigroup@\texttt{AsAffineSemigroup}}
 \label{AsAffineSemigroup}
@@ -5094,7 +4933,7 @@ semigroup will be given by means of a set of generators.
  
 
 \subsection{\textcolor{Chapter }{IsAffineSemigroup}}
-\logpage{[ 11, 2, 3 ]}\nobreak
+\logpage{[ 11, 1, 5 ]}\nobreak
 \hyperdef{L}{X7A2902207BAA3936}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroup({\mdseries\slshape AS})\index{IsAffineSemigroup@\texttt{IsAffineSemigroup}}
 \label{IsAffineSemigroup}
@@ -5129,7 +4968,7 @@ semigroup.
  
 
 \subsection{\textcolor{Chapter }{BelongsToAffineSemigroup}}
-\logpage{[ 11, 2, 4 ]}\nobreak
+\logpage{[ 11, 1, 6 ]}\nobreak
 \hyperdef{L}{X851788D781A13C50}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToAffineSemigroup({\mdseries\slshape v, a})\index{BelongsToAffineSemigroup@\texttt{BelongsToAffineSemigroup}}
 \label{BelongsToAffineSemigroup}
@@ -5154,7 +4993,7 @@ inequalities.
  
 
 \subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
-\logpage{[ 11, 2, 5 ]}\nobreak
+\logpage{[ 11, 1, 7 ]}\nobreak
 \hyperdef{L}{X82FCB89B80D42205}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
 \label{IsFullAffineSemigroup}
@@ -5178,7 +5017,7 @@ further use.
  
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousEquations}}
-\logpage{[ 11, 2, 6 ]}\nobreak
+\logpage{[ 11, 1, 8 ]}\nobreak
 \hyperdef{L}{X7D4D017A79AD98E2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
 \label{HilbertBasisOfSystemOfHomogeneousEquations}
@@ -5200,7 +5039,7 @@ give an affine semigroup is by a set of homogeneous inequalities, and we can
 represent these inequalities by its coefficients. If we put them in a matrix $S$ can be defined as the set of nonnegative integer solutions to $Ax \ge 0$. 
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousInequalities}}
-\logpage{[ 11, 2, 7 ]}\nobreak
+\logpage{[ 11, 1, 9 ]}\nobreak
 \hyperdef{L}{X825B1CD37B0407A6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
 \label{HilbertBasisOfSystemOfHomogeneousInequalities}
@@ -5220,7 +5059,7 @@ nonnegative integer solutions to $Ax\ge 0$.
  
 
 \subsection{\textcolor{Chapter }{EquationsOfGroupGeneratedBy}}
-\logpage{[ 11, 2, 8 ]}\nobreak
+\logpage{[ 11, 1, 10 ]}\nobreak
 \hyperdef{L}{X8307A0597864B098}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquationsOfGroupGeneratedBy({\mdseries\slshape M})\index{EquationsOfGroupGeneratedBy@\texttt{EquationsOfGroupGeneratedBy}}
 \label{EquationsOfGroupGeneratedBy}
@@ -5238,7 +5077,7 @@ rows of \mbox{\texttt{\mdseries\slshape M}}: $Ax=0\in \mathbb Z_{n_1}\times \cdo
  
 
 \subsection{\textcolor{Chapter }{BasisOfGroupGivenByEquations}}
-\logpage{[ 11, 2, 9 ]}\nobreak
+\logpage{[ 11, 1, 11 ]}\nobreak
 \hyperdef{L}{X7A1CE5A98425CEA1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BasisOfGroupGivenByEquations({\mdseries\slshape A, m})\index{BasisOfGroupGivenByEquations@\texttt{BasisOfGroupGivenByEquations}}
 \label{BasisOfGroupGivenByEquations}
@@ -5256,7 +5095,7 @@ defining equations $Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\
  }
 
  
-\section{\textcolor{Chapter }{ Gluings of affine semigroups }}\logpage{[ 11, 3, 0 ]}
+\section{\textcolor{Chapter }{ Gluings of affine semigroups }}\logpage{[ 11, 2, 0 ]}
 \hyperdef{L}{X7F13DF9D7A4FB547}{}
 {
   Let $S_1$ and $S_2$ be two affine semigroups with the same dimension generated by $A_1$ and $A_2$, respectively. We say that the affine semigroup $S$ generated by the union of $A_1$ and $A_2$ is a gluing of $S_1$ and $S_2$ if $G(S_1)\cap G(S_2)=d\mathbb Z$ ($G(\cdot)$ stands for group spanned by) for some $d\in S_1\cap S_2$. 
@@ -5264,7 +5103,7 @@ defining equations $Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\
  The algorithm used is explained in \cite{MR1678508}. 
 
 \subsection{\textcolor{Chapter }{GluingOfAffineSemigroups}}
-\logpage{[ 11, 3, 1 ]}\nobreak
+\logpage{[ 11, 2, 1 ]}\nobreak
 \hyperdef{L}{X7FE3B3C380641DDC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GluingOfAffineSemigroups({\mdseries\slshape a1, a2})\index{GluingOfAffineSemigroups@\texttt{GluingOfAffineSemigroups}}
 \label{GluingOfAffineSemigroups}
@@ -5288,7 +5127,7 @@ gluing. Otherwise it returns fail.
  }
 
  
-\section{\textcolor{Chapter }{ Presentations of affine semigroups }}\logpage{[ 11, 4, 0 ]}
+\section{\textcolor{Chapter }{ Presentations of affine semigroups }}\logpage{[ 11, 3, 0 ]}
 \hyperdef{L}{X86A1018D7CB7BA81}{}
 {
   A minimal presentation of an affine semigoup is defined analogously as for
@@ -5297,7 +5136,7 @@ stored in a set, and thus might be arranged in a different way to the intitial
 input. 
 
 \subsection{\textcolor{Chapter }{GeneratorsOfKernelCongruence}}
-\logpage{[ 11, 4, 1 ]}\nobreak
+\logpage{[ 11, 3, 1 ]}\nobreak
 \hyperdef{L}{X7EE005267DEBC1DE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfKernelCongruence({\mdseries\slshape M})\index{GeneratorsOfKernelCongruence@\texttt{GeneratorsOfKernelCongruence}}
 \label{GeneratorsOfKernelCongruence}
@@ -5312,7 +5151,7 @@ generators of the congruence $\{(x,y)\mid xM=yM\}$.
  
 
 \subsection{\textcolor{Chapter }{MinimalPresentationOfAffineSemigroup}}
-\logpage{[ 11, 4, 2 ]}\nobreak
+\logpage{[ 11, 3, 2 ]}\nobreak
 \hyperdef{L}{X7BCA9C077F76920E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalPresentationOfAffineSemigroup({\mdseries\slshape a})\index{MinimalPresentationOfAffineSemigroup@\texttt{Minimal}\-\texttt{Presentation}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{MinimalPresentationOfAffineSemigroup}
@@ -5339,7 +5178,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
  
 
 \subsection{\textcolor{Chapter }{BettiElementsOfAffineSemigroup}}
-\logpage{[ 11, 4, 3 ]}\nobreak
+\logpage{[ 11, 3, 3 ]}\nobreak
 \hyperdef{L}{X7C20CE97840ECF8E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElementsOfAffineSemigroup({\mdseries\slshape a})\index{BettiElementsOfAffineSemigroup@\texttt{BettiElementsOfAffineSemigroup}}
 \label{BettiElementsOfAffineSemigroup}
@@ -5359,7 +5198,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
  
 
 \subsection{\textcolor{Chapter }{ShadedSetOfElementInAffineSemigroup}}
-\logpage{[ 11, 4, 4 ]}\nobreak
+\logpage{[ 11, 3, 4 ]}\nobreak
 \hyperdef{L}{X7C1B355F83A55285}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ShadedSetOfElementInAffineSemigroup({\mdseries\slshape v, a})\index{ShadedSetOfElementInAffineSemigroup@\texttt{ShadedSetOfElementInAffineSemigroup}}
 \label{ShadedSetOfElementInAffineSemigroup}
@@ -5371,7 +5210,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
  
 
 \subsection{\textcolor{Chapter }{IsGenericAffineSemigroup}}
-\logpage{[ 11, 4, 5 ]}\nobreak
+\logpage{[ 11, 3, 5 ]}\nobreak
 \hyperdef{L}{X84FF536281884DB8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericAffineSemigroup({\mdseries\slshape a})\index{IsGenericAffineSemigroup@\texttt{IsGenericAffineSemigroup}}
 \label{IsGenericAffineSemigroup}
@@ -5385,7 +5224,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
  
 
 \subsection{\textcolor{Chapter }{IsUniquelyPresentedAffineSemigroup}}
-\logpage{[ 11, 4, 6 ]}\nobreak
+\logpage{[ 11, 3, 6 ]}\nobreak
 \hyperdef{L}{X87170BBB85E9DEC8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedAffineSemigroup({\mdseries\slshape a})\index{IsUniquelyPresentedAffineSemigroup@\texttt{IsUniquelyPresentedAffineSemigroup}}
 \label{IsUniquelyPresentedAffineSemigroup}
@@ -5399,7 +5238,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
  
 
 \subsection{\textcolor{Chapter }{PrimitiveElementsOfAffineSemigroup}}
-\logpage{[ 11, 4, 7 ]}\nobreak
+\logpage{[ 11, 3, 7 ]}\nobreak
 \hyperdef{L}{X86EB7A9A8250E6DB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveElementsOfAffineSemigroup({\mdseries\slshape a})\index{PrimitiveElementsOfAffineSemigroup@\texttt{PrimitiveElementsOfAffineSemigroup}}
 \label{PrimitiveElementsOfAffineSemigroup}
@@ -5420,7 +5259,7 @@ the Lawrence lifting of \mbox{\texttt{\mdseries\slshape a}} and the other (much 
  }
 
  
-\section{\textcolor{Chapter }{ Factorizations in affine semigroups }}\logpage{[ 11, 5, 0 ]}
+\section{\textcolor{Chapter }{ Factorizations in affine semigroups }}\logpage{[ 11, 4, 0 ]}
 \hyperdef{L}{X80A934B0826E21A6}{}
 {
   The invariants presented here are defined as for numerical semigroups. 
@@ -5430,7 +5269,7 @@ stored in a set, and thus might be arranged in a different way to the intitial
 input. 
 
 \subsection{\textcolor{Chapter }{FactorizationsVectorWRTList}}
-\logpage{[ 11, 5, 1 ]}\nobreak
+\logpage{[ 11, 4, 1 ]}\nobreak
 \hyperdef{L}{X8780C7E5830B9AE2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FactorizationsVectorWRTList({\mdseries\slshape v, ls})\index{FactorizationsVectorWRTList@\texttt{FactorizationsVectorWRTList}}
 \label{FactorizationsVectorWRTList}
@@ -5452,7 +5291,7 @@ performance is much better. If \texttt{4ti2Interface} is loaded instead, then fa
  
 
 \subsection{\textcolor{Chapter }{ElasticityOfAffineSemigroup}}
-\logpage{[ 11, 5, 2 ]}\nobreak
+\logpage{[ 11, 4, 2 ]}\nobreak
 \hyperdef{L}{X7D6B4FB38376C278}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ElasticityOfAffineSemigroup({\mdseries\slshape a})\index{ElasticityOfAffineSemigroup@\texttt{ElasticityOfAffineSemigroup}}
 \label{ElasticityOfAffineSemigroup}
@@ -5473,7 +5312,7 @@ set of circutis is calculated using \cite{MR1394747}.
  
 
 \subsection{\textcolor{Chapter }{CatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 5, 3 ]}\nobreak
+\logpage{[ 11, 4, 3 ]}\nobreak
 \hyperdef{L}{X8718FF377C186106}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{CatenaryDegreeOfAffineSemigroup@\texttt{CatenaryDegreeOfAffineSemigroup}}
 \label{CatenaryDegreeOfAffineSemigroup}
@@ -5491,7 +5330,7 @@ set of circutis is calculated using \cite{MR1394747}.
  
 
 \subsection{\textcolor{Chapter }{EqualCatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 5, 4 ]}\nobreak
+\logpage{[ 11, 4, 4 ]}\nobreak
 \hyperdef{L}{X7EADD306875FCBE6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EqualCatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{EqualCatenaryDegreeOfAffineSemigroup@\texttt{Equal}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{EqualCatenaryDegreeOfAffineSemigroup}
@@ -5505,7 +5344,7 @@ This function relies on the results presented in \cite{GSOSN}. }
  
 
 \subsection{\textcolor{Chapter }{HomogeneousCatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 5, 5 ]}\nobreak
+\logpage{[ 11, 4, 5 ]}\nobreak
 \hyperdef{L}{X84FE571A7E9E1AE9}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HomogeneousCatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{HomogeneousCatenaryDegreeOfAffineSemigroup@\texttt{Homogeneous}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{HomogeneousCatenaryDegreeOfAffineSemigroup}
@@ -5519,7 +5358,7 @@ This function is based on \cite{GSOSN}. }
  
 
 \subsection{\textcolor{Chapter }{MonotoneCatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 5, 6 ]}\nobreak
+\logpage{[ 11, 4, 6 ]}\nobreak
 \hyperdef{L}{X8510C1527F2FE18E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MonotoneCatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{MonotoneCatenaryDegreeOfAffineSemigroup@\texttt{Monotone}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{MonotoneCatenaryDegreeOfAffineSemigroup}
@@ -5546,7 +5385,7 @@ This function is based on \cite{GSOSN}. }
  
 
 \subsection{\textcolor{Chapter }{TameDegreeOfAffineSemigroup}}
-\logpage{[ 11, 5, 7 ]}\nobreak
+\logpage{[ 11, 4, 7 ]}\nobreak
 \hyperdef{L}{X7B42B3B17D08FE1D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfAffineSemigroup({\mdseries\slshape a})\index{TameDegreeOfAffineSemigroup@\texttt{TameDegreeOfAffineSemigroup}}
 \label{TameDegreeOfAffineSemigroup}
@@ -5565,7 +5404,7 @@ explained in \cite{GS} is used.
  
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfElementInAffineSemigroup}}
-\logpage{[ 11, 5, 8 ]}\nobreak
+\logpage{[ 11, 4, 8 ]}\nobreak
 \hyperdef{L}{X7F32723C860EA4B2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfElementInAffineSemigroup({\mdseries\slshape v, a})\index{OmegaPrimalityOfElementInAffineSemigroup@\texttt{Omega}\-\texttt{Primality}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{OmegaPrimalityOfElementInAffineSemigroup}
@@ -5587,7 +5426,7 @@ this fact as explained in this reference).
  
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfAffineSemigroup}}
-\logpage{[ 11, 5, 9 ]}\nobreak
+\logpage{[ 11, 4, 9 ]}\nobreak
 \hyperdef{L}{X78DC427283B3C6FC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfAffineSemigroup({\mdseries\slshape a})\index{OmegaPrimalityOfAffineSemigroup@\texttt{OmegaPrimalityOfAffineSemigroup}}
 \label{OmegaPrimalityOfAffineSemigroup}
@@ -6222,6 +6061,107 @@ respect to the usual partial ordering).
             
 \end{Verbatim}
  }
+
+ }
+
+ }
+
+ 
+\chapter{\textcolor{Chapter }{ External packages }}\logpage{[ 13, 0, 0 ]}
+\hyperdef{L}{X84A2793F7A9F3E6A}{}
+{
+   The use of the packages \texttt{NormalizInterface} \cite{NmzInterface} (an interface to \texttt{Normalize} \cite{Normaliz}; or in its absence \texttt{4ti2Interface}\cite{4ti2Interface}, and interface to \texttt{4ti2}\cite{4ti2}), \texttt{SingularInterface} (an interface to \texttt{Singular} \cite{Singular}; or in its absence \texttt{Singular} \cite{Singularpackage}); or in its absecnce \texttt{GradedModules} \cite{GradedModules} is highly recomended for many of the functions presented in this chapter.
+However, whenever possible a method not depending on these packages is also
+provided (though slower). The package tests if the user has downloaded any of
+the above packages, and if so puts \texttt{NumSgpsCanUsePackage} to true, where \texttt{Package} is any of the above. 
+\section{\textcolor{Chapter }{ Using external packages }}\logpage{[ 13, 1, 0 ]}
+\hyperdef{L}{X7BD18FC581F0C4D3}{}
+{
+  As mentioned above some methods are specifially implemented to take advantage
+of several external packages. The following functions can be used in case
+these packages have not been loaded prior to \texttt{numericalsgps}. 
+
+\subsection{\textcolor{Chapter }{NumSgpsUse4ti2}}
+\logpage{[ 13, 1, 1 ]}\nobreak
+\hyperdef{L}{X8736665E7CBEAB20}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUse4ti2({\mdseries\slshape })\index{NumSgpsUse4ti2@\texttt{NumSgpsUse4ti2}}
+\label{NumSgpsUse4ti2}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{4ti2Interface}. If the package is available, then it also loads methods implemented using
+functions in this package. }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumSgpsUse4ti2gap}}
+\logpage{[ 13, 1, 2 ]}\nobreak
+\hyperdef{L}{X875001717A8CF032}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUse4ti2gap({\mdseries\slshape })\index{NumSgpsUse4ti2gap@\texttt{NumSgpsUse4ti2gap}}
+\label{NumSgpsUse4ti2gap}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{4ti2gap}. If the package is available, then it also loads methods implemented using
+functions in this package. }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumSgpsUseNormalize}}
+\logpage{[ 13, 1, 3 ]}\nobreak
+\hyperdef{L}{X875040237A692C3C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseNormalize({\mdseries\slshape })\index{NumSgpsUseNormalize@\texttt{NumSgpsUseNormalize}}
+\label{NumSgpsUseNormalize}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{NormalizInterface}. If the package is available, then it also loads methods implemented using
+functions in this package. }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumSgpsUseSingular}}
+\logpage{[ 13, 1, 4 ]}\nobreak
+\hyperdef{L}{X7CD12ADD78089CBE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingular({\mdseries\slshape })\index{NumSgpsUseSingular@\texttt{NumSgpsUseSingular}}
+\label{NumSgpsUseSingular}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{singular}. If the package is available, then it also loads methods implemented using
+functions in this package. 
+
+ To prevent incompatibilities, the package will not load if \texttt{SingularInterface} has been already loaded. }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumSgpsUseSingularInterface}}
+\logpage{[ 13, 1, 5 ]}\nobreak
+\hyperdef{L}{X7F7699A9829940C2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingularInterface({\mdseries\slshape })\index{NumSgpsUseSingularInterface@\texttt{NumSgpsUseSingularInterface}}
+\label{NumSgpsUseSingularInterface}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{SingularInterface}. If the package is available, then it also loads methods implemented using
+functions in this package. 
+
+ To prevent incompatibilities, the package will not load if \texttt{singular} has been already loaded. }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumSgpsUseSingularGradedModules}}
+\logpage{[ 13, 1, 6 ]}\nobreak
+\hyperdef{L}{X7F7F2ED87E151582}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumSgpsUseSingularGradedModules({\mdseries\slshape })\index{NumSgpsUseSingularGradedModules@\texttt{NumSgpsUseSingularGradedModules}}
+\label{NumSgpsUseSingularGradedModules}
+}\hfill{\scriptsize (function)}}\\
+
+
+ Tries to load the package \texttt{GradedModules}. If the package is available, then it also loads methods implemented using
+functions in this package. 
+
+ It also creates a ring of rationals \texttt{NumSgpsRationals}. }
 
  }
 
