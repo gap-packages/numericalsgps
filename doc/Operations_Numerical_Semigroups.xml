@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+  <Heading>Intersections, and quotients and multiples by integers</Heading>
+  <ManSection>
+    <Func Name="IntersectionOfNumericalSemigroups" Arg="S, T"/>
+    <Description>
+      <A>S</A> and <A>T</A>
+      are numerical semigroups. Computes the intersection of <A>S</A> and <A>T</A>
+      (which is a numerical semigroup).
+      <Example><![CDATA[
+      gap> S := NumericalSemigroup("modular", 5,53);
+      <Modular numerical semigroup satisfying 5x mod 53 <= x >
+      gap> T := NumericalSemigroup(2,17);
+      <Numerical semigroup with 2 generators>
+      gap> SmallElementsOfNumericalSemigroup(S);
+      [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+      gap> SmallElementsOfNumericalSemigroup(T);
+      [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
+      gap> IntersectionOfNumericalSemigroups(S,T);
+      <Numerical semigroup>
+      gap> SmallElementsOfNumericalSemigroup(last);
+      [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+      ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Name="QuotientOfNumericalSemigroup" Arg="S, n"/>
+    <Description>
+      <A>S</A> is a numerical semigroup and <A>n</A> is an integer.
+      Computes the quotient of <A>S</A> by <A>n</A>, that is, the set <M>\{ x\in {\mathbb N}\ |\  nx \in S\}</M>, which is again a numerical semigroup.
+      <C>S / n</C> may be used as a short for <C>QuotientOfNumericalSemigroup(S, n)</C>.
+      <Example><![CDATA[
+      gap> s:=NumericalSemigroup(3,29);
+      <Numerical semigroup with 2 generators>
+      gap> SmallElementsOfNumericalSemigroup(s);
+      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,
+      39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
+      gap> t:=QuotientOfNumericalSemigroup(s,7);
+      <Numerical semigroup>
+      gap> SmallElementsOfNumericalSemigroup(t);
+      [ 0, 3, 5, 6, 8 ]
+      gap> u := s / 7;
+      <Numerical semigroup>
+      gap> SmallElementsOfNumericalSemigroup(u);
+      [ 0, 3, 5, 6, 8 ]
+      ]]></Example>
+    </Description>
+  </ManSection>
+
+    <ManSection>
+    <Func Name="MultipleOfNumericalSemigroup" Arg="S, a, b"/>
+    <Description>
+      <A>S</A> is a numerical semigroup, and <A>a</A> and <A>b</A> are positive integers.
+      Computes  <M>a S\cup \{b,b+1,\to\}</M>. If <A>b</A> is smaller than <M>a c</M>, with <M>c</M> the conductor of <M>S</M>, then a warning is displayed.
+      <Example><![CDATA[
+      gap> N:=NumericalSemigroup(1);;
+      gap> s:=MultipleOfNumericalSemigroup(N,4,20);;
+      gap> SmallElements(s);
+      [ 0, 4, 8, 12, 16, 20 ]
+      ]]></Example>
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+  <Func Name="NumericalDuplication" Arg="S, E, b"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, and <A>E</A> and ideal of <A>S</A> with <M>E\subseteq S</M>, and <A>b</A> are positive odd integer in <A>S</A>.
+    Computes  <M>2S\cup (2E+b)</M>.
+    <Example><![CDATA[
+      gap> s:=NumericalSemigroup(3,5,7);
+      <Numerical semigroup with 3 generators>
+      gap> e:=6+s;
+      <Ideal of numerical semigroup>
+      gap> ndup:=NumericalDuplication(s,e,3);
+      <Numerical semigroup>
+      gap> SmallElements(ndup);
+      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
+    ]]></Example>
+  </Description>
+</ManSection>
+
+  <ManSection>
+    <Func Name="InductiveNumericalSemigroup" Arg="S, a, b"/>
+    <Description>
+      <A>S</A> is a numerical semigroup, and <A>a</A> and <A>b</A> are lists of positive integers, such that <M>b[i+1]\ge a[i]b[i]</M>.
+      Computes inductively <M>S_0=\mathbb N</M> and <M>S_{i+1}=a[i]S_i\cup \{a[i]b[i],a[i]b[i]+1,\to\}</M>, and returns <M>S_{k}</M>, with <M>k</M> the length of <A>a</A> and <A>b</A>.
+      <Example><![CDATA[
+      gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;
+      gap> SmallElements(s);
+      [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]
+      ]]></Example>
+    </Description>
+  </ManSection>
+
+
+
+</Section>

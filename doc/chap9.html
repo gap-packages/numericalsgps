@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (NumericalSgps) - Chapter 9: 
+		Nonunique invariants for factorizations in numerical semigroups
+	</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap9"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap8.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap10.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap9_mj.html">[MathJax on]</a></p>
+<p><a id="X7B6F914879CD505F" name="X7B6F914879CD505F"></a></p>
+<div class="ChapSects"><a href="chap9.html#X7B6F914879CD505F">9 <span class="Heading">
+		Nonunique invariants for factorizations in numerical semigroups
+	</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7FDB54217B15148F">9.1 <span class="Heading">
+        Factorizations in Numerical Semigroups
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8429AECF78EE7EAB">9.1-1 FactorizationsIntegerWRTList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X78C6D3BF7C7C2760">9.1-2 FactorizationsElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X813D2A3A83916A36">9.1-3 RClassesOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7D8BE22680E4A859">9.1-4 LShapesOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86D58E0084CFD425">9.1-5 DenumerantOfElementInNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X846FEE457D4EC03D">9.2 <span class="Heading">
+        Invariants based on lengths
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7D4CC092859AF81F">9.2-1 LengthsOfFactorizationsIntegerWRTList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7FDE4F94870951B1">9.2-2 LengthsOfFactorizationsElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X85C2987C7827D18D">9.2-3 ElasticityOfFactorizationsElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7FE2D6F77BE96716">9.2-4 ElasticityOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X84667349840AF1F9">9.2-5 DeltaSetOfSetOfIntegers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8384DBFE7D82A634">9.2-6 DeltaSetOfFactorizationsElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7E3ED34D78F3A8CA">9.2-7 MaximumDegreeOfElementWRTNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8105D1CB78CFEA4D">9.2-8 MaximalDenumerantOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7DFC4ED0827761C1">9.2-9 MaximalDenumerantOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8434BC107D613B74">9.2-10 MaximalDenumerantOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8145326379EF46F5">9.2-11 AdjustmentOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7F8B10C2870932B8">9.2-12 IsAdditiveNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8630DEF77A350D76">9.2-13 IsSuperSymmetricNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X84F5CA8D7B0F6C02">9.3 <span class="Heading">
+        Invariants based on distances
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7E8A56F3810F1769">9.3-1 CatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7DDB40BB84FF0042">9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86E0CAD28655839C">9.3-3 EqualCatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X845D850F7812E176">9.3-4 MonotoneCatenaryDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X812500217B183FC3">9.3-5 CatenaryDegreeOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86D5A10183C150FC">9.3-6 TameDegreeOfSetOfFactorizations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7FAF204E85D9C21B">9.3-7 CatenaryDegreeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86498DA1858BA11B">9.3-8 EqualPrimitiveElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X780E2C737FA8B2A9">9.3-9 EqualCatenaryDegreeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X842C07F77CAD3BD1">9.3-10 MonotonePrimitiveElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7E0458187956C395">9.3-11 MonotoneCatenaryDegreeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X860BDF5B85975B73">9.3-12 TameDegreeOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X8738B4F87E782ED2">9.3-13 TameDegreeOfElementInNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X78EBC6A57B8167E6">9.4 <span class="Heading">
+        Primality
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X86B0E91684B39839">9.4-1 OmegaPrimalityOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7919066C7A7265E1">9.4-2 OmegaPrimalityOfNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X86735EEA780CECDA">9.5 <span class="Heading">
+        Homogenization of Numerical Semigroups
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X856B689185C1F5D9">9.5-1 BelongsToHomogenizationOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X85D03DBB7BA3B1FB">9.5-2 FactorizationsInHomogenizationOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X857CC7FF85C05318">9.5-3 HomogeneousBettiElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X7DFFCAC87B3B632B">9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9.html#X7A54E9FD7D4CB18F">9.6 <span class="Heading">
+        Divisors, posets
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9.html#X853930E97F7F8A43">9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup</a></span>
+</div></div>
+</div>
+
+<h3>9 <span class="Heading">
+		Nonunique invariants for factorizations in numerical semigroups
+	</span></h3>
+
+<p><a id="X7FDB54217B15148F" name="X7FDB54217B15148F"></a></p>
+
+<h4>9.1 <span class="Heading">
+        Factorizations in Numerical Semigroups
+    </span></h4>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup minimally generated by <span class="SimpleMath">{m_1,...,m_n}</span>. A factorization of an element <span class="SimpleMath">s∈ S</span> is an n-tuple <span class="SimpleMath">a=(a_1,...,a_n)</span> of nonnegative integers such that <span class="SimpleMath">n=a_1 n_1+⋯+a_n m_n</span>. The lenght of <span class="SimpleMath">a</span> is <span class="SimpleMath">|a|=a_1+⋯+a_n</span>. Given two factorizations <span class="SimpleMath">a</span> and <span class="SimpleMath">b</span> of <span class="SimpleMath">n</span>, the distance between <span class="SimpleMath">a</span> and <span class="SimpleMath">b</span> is <span class="SimpleMath">d(a,b)=max { |a-gcd(a,b)|,|b-gcd(a,b)|}</span>, where <span class="SimpleMath">gcd((a_1,...,a_n),(b_1,...,b_n))=(min(a_1,b_1),...,min(a_n,b_n))</span>.</p>
+
+<p>If <span class="SimpleMath">l_1&gt;⋯ &gt; l_k</span> are the lenghts of all the factorizations of <span class="SimpleMath">s ∈ S</span>, the Delta set associated to <span class="SimpleMath">s</span> is <span class="SimpleMath">∆(s)={l_1-l_2,...,l_k-l_k-1}</span>.</p>
+
+<p>The catenary degree of an element in <span class="SimpleMath">S</span> is the least positive integer <span class="SimpleMath">c</span> such that for any two of its factorizations <span class="SimpleMath">a</span> and <span class="SimpleMath">b</span>, there exists a chain of factorizations starting in <span class="SimpleMath">a</span> and ending in <span class="SimpleMath">b</span> and so that the distance between two consecutive links is at most <span class="SimpleMath">c</span>. The catenary degree of <span class="SimpleMath">S</span> is the supremum of the catenary degrees of the elements in <span class="SimpleMath">S</span>.</p>
+
+<p>The tame degree of <span class="SimpleMath">S</span> is the least positive integer <span class="SimpleMath">t</span> for any factorization <span class="SimpleMath">a</span> of an element <span class="SimpleMath">s</span> in <span class="SimpleMath">S</span>, and any <span class="SimpleMath">i</span> such that <span class="SimpleMath">s-m_i∈ S</span>, there exists another factorization <span class="SimpleMath">b</span> of <span class="SimpleMath">s</span> so that the distance to <span class="SimpleMath">a</span> is at most <span class="SimpleMath">t</span> and <span class="SimpleMath">b_inot = 0</span>.</p>
+
+<p>The <span class="SimpleMath">ω</span>-primality of an elment <span class="SimpleMath">s</span> in <span class="SimpleMath">S</span> is the least positive integer <span class="SimpleMath">k</span> such that if <span class="SimpleMath">(∑_i∈ I s_i)-s∈ S, s_i∈ S</span>, then there exists <span class="SimpleMath">Ω⊆ I</span> with cardinality <span class="SimpleMath">k</span> such that <span class="SimpleMath">(∑_i∈ Ω s_i)-s∈ S</span>. The <span class="SimpleMath">ω</span>-primality is the maximum of the <span class="SimpleMath">ω</span>-primality of its minimal generators.</p>
+
+<p>The basic properties of these constants can be found in <a href="chapBib.html#biBGHKb">[GH06]</a>. The algorithm used to compute the catenary and tame degree is an adaptation of the algorithms appearing in <a href="chapBib.html#biBCGLPR">[CGLPR06]</a> for numerical semigroup (see <a href="chapBib.html#biBCGL">[CGD07]</a>). The computation of the elascitiy of a numerical semigroup reduces to <span class="SimpleMath">m/n</span> with <span class="SimpleMath">m</span> the multiplicity of the semigroup and <span class="SimpleMath">n</span> its largest minimal generator (see <a href="chapBib.html#biBCHM06">[CHM06]</a> or <a href="chapBib.html#biBGHKb">[GH06]</a>).</p>
+
+<p><a id="X8429AECF78EE7EAB" name="X8429AECF78EE7EAB"></a></p>
+
+<h5>9.1-1 FactorizationsIntegerWRTList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsIntegerWRTList</code>( <var class="Arg">n</var>, <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a list of integers and <var class="Arg">n</var> an integer. The output is the set of factorizations of <var class="Arg">n</var> in terms of the elements in the list <var class="Arg">ls</var>. This function uses RestrictedPartitions.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+</pre></div>
+
+<p><a id="X78C6D3BF7C7C2760" name="X78C6D3BF7C7C2760"></a></p>
+
+<h5>9.1-2 FactorizationsElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a nonnegative integer. The output is the set of factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsElementWRTNumericalSemigroup(1100,s);</span>
+[ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ], 
+  [ 0, 2, 3, 0, 0, 1 ] ]
+</pre></div>
+
+<p><a id="X813D2A3A83916A36" name="X813D2A3A83916A36"></a></p>
+
+<h5>9.1-3 RClassesOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RClassesOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The output is the set of <span class="SimpleMath">mathcal R</span>-classes of this set of factorizations as defined in Chapter 7 of <a href="chapBib.html#biBRGbook">[RG09]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,19,23);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BettiElementsOfNumericalSemigroup(s);</span>
+[ 30, 33, 42, 57, 69 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsElementWRTNumericalSemigroup(69,s);</span>
+[ [ 5, 0, 1, 0 ], [ 2, 1, 2, 0 ], [ 0, 0, 0, 3 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RClassesOfSetOfFactorizations(last);</span>
+[ [ [ 2, 1, 2, 0 ], [ 5, 0, 1, 0 ] ], [ [ 0, 0, 0, 3 ] ] ]
+</pre></div>
+
+<p><a id="X7D8BE22680E4A859" name="X7D8BE22680E4A859"></a></p>
+
+<h5>9.1-4 LShapesOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LShapesOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the number of LShapes associated to <var class="Arg">S</var>. These are ways of arranging the set of factorizations of the elements in the Apéry set of the largest generator, so that if one factorization <span class="SimpleMath">x</span> is chosen for <span class="SimpleMath">w</span> and <span class="SimpleMath">w-w'∈ S</span>, then only the factorization of <span class="SimpleMath">x'</span> of <span class="SimpleMath">w'</span> with <span class="SimpleMath">x'le</span> can be in the LShape (and if there is no such a factorization, then we have no LShape with <span class="SimpleMath">x</span> in it), see <a href="chapBib.html#biBAG-GS">[AG10]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LShapesOfNumericalSemigroup(s);</span>
+[ [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 0, 2 ], [ 2, 1 ], 
+      [ 1, 2 ], [ 2, 2 ] ], 
+  [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 3, 0 ], [ 2, 1 ], 
+      [ 4, 0 ], [ 5, 0 ] ] ]
+</pre></div>
+
+<p><a id="X86D58E0084CFD425" name="X86D58E0084CFD425"></a></p>
+
+<h5>9.1-5 DenumerantOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DenumerantOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a positive integer. The output is the number of factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,195,272,278,286);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DenumerantOfElementInNumericalSemigroup(1311,s);</span>
+6
+</pre></div>
+
+<p><a id="X846FEE457D4EC03D" name="X846FEE457D4EC03D"></a></p>
+
+<h4>9.2 <span class="Heading">
+        Invariants based on lengths
+    </span></h4>
+
+<p><a id="X7D4CC092859AF81F" name="X7D4CC092859AF81F"></a></p>
+
+<h5>9.2-1 LengthsOfFactorizationsIntegerWRTList</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LengthsOfFactorizationsIntegerWRTList</code>( <var class="Arg">n</var>, <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a list of integers and <var class="Arg">n</var> an integer. The output is the set of lengths of the factorizations of <var class="Arg">n</var> in terms of the elements in <var class="Arg">ls</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ 6, 8 ]
+</pre></div>
+
+<p><a id="X7FDE4F94870951B1" name="X7FDE4F94870951B1"></a></p>
+
+<h5>9.2-2 LengthsOfFactorizationsElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LengthsOfFactorizationsElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a nonnegative integer. The output is the set of lengths of the factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LengthsOfFactorizationsElementWRTNumericalSemigroup(1100,s);</span>
+[ 4, 6, 8, 9 ]
+</pre></div>
+
+<p><a id="X85C2987C7827D18D" name="X85C2987C7827D18D"></a></p>
+
+<h5>9.2-3 ElasticityOfFactorizationsElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElasticityOfFactorizationsElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a positive integer. The output is the maximum length divided by the minimum length of the factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ElasticityOfFactorizationsElementWRTNumericalSemigroup(1100,s);</span>
+9/4
+</pre></div>
+
+<p><a id="X7FE2D6F77BE96716" name="X7FE2D6F77BE96716"></a></p>
+
+<h5>9.2-4 ElasticityOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElasticityOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the elasticity of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ElasticityOfNumericalSemigroup(s);</span>
+286/101
+</pre></div>
+
+<p><a id="X84667349840AF1F9" name="X84667349840AF1F9"></a></p>
+
+<h5>9.2-5 DeltaSetOfSetOfIntegers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetOfSetOfIntegers</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is list of integers. The output is the Delta set of the elements in <var class="Arg">ls</var>, that is, the set of differences of consecutive elements in the list.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ 6, 8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetOfSetOfIntegers(last);</span>
+[ 2 ]
+</pre></div>
+
+<p><a id="X8384DBFE7D82A634" name="X8384DBFE7D82A634"></a></p>
+
+<h5>9.2-6 DeltaSetOfFactorizationsElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetOfFactorizationsElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a nonnegative integer. The output is the Delta set of the factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetOfFactorizationsElementWRTNumericalSemigroup(1100,s);</span>
+[ 1, 2 ]
+</pre></div>
+
+<p><a id="X7E3ED34D78F3A8CA" name="X7E3ED34D78F3A8CA"></a></p>
+
+<h5>9.2-7 MaximumDegreeOfElementWRTNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximumDegreeOfElementWRTNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a nonnegative integer. The output is the maximum length of the factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);</span>
+9
+</pre></div>
+
+<p><a id="X8105D1CB78CFEA4D" name="X8105D1CB78CFEA4D"></a></p>
+
+<h5>9.2-8 MaximalDenumerantOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalDenumerantOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a positive integer. The output is the number of factorizations of <var class="Arg">n</var> in terms of the minimal generating set of <var class="Arg">S</var> with maximal length.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalDenumerantOfElementInNumericalSemigroup(1100,s);</span>
+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalDenumerantOfElementInNumericalSemigroup(1311,s);</span>
+2
+</pre></div>
+
+<p><a id="X7DFC4ED0827761C1" name="X7DFC4ED0827761C1"></a></p>
+
+<h5>9.2-9 MaximalDenumerantOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalDenumerantOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is list of factorizations (a list of lists of nonnegative integers with the same lenght). The output is number of elements in <var class="Arg">ls</var> with maximal length.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], 
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalDenumerantOfSetOfFactorizations(last);</span>
+6
+</pre></div>
+
+<p><a id="X8434BC107D613B74" name="X8434BC107D613B74"></a></p>
+
+<h5>9.2-10 MaximalDenumerantOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalDenumerantOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the maximal denumerant of <var class="Arg">S</var>, that is, the maximum of the maximal denumerant of the elements in <var class="Arg">S</var> (see <a href="chapBib.html#biBBH">[BH13]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalDenumerantOfNumericalSemigroup(s);</span>
+4
+</pre></div>
+
+<p><a id="X8145326379EF46F5" name="X8145326379EF46F5"></a></p>
+
+<h5>9.2-11 AdjustmentOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdjustmentOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the adjustment of <var class="Arg">S</var> as defined in <a href="chapBib.html#biBBH">[BH13]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AdjustmentOfNumericalSemigroup(s);</span>
+[ 0, 12, 24, 36, 48, 60, 72, 84, 95, 96, 107, 108, 119, 120, 131, 132, 143,
+  144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185, 189, 190, 191, 192, 
+  195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228, 
+  231, 233, 237, 239, 240, 243, 245, 249, 251, 252, 255, 257, 261, 263, 264, 
+  266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299, 
+  300, 304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341, 
+  342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362, 364, 365, 366, 368, 
+  370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394, 
+  395, 396, 400, 401, 402, 406, 407, 408, 412, 413, 414, 418, 419, 420, 424, 
+  425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456, 
+  460, 465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514, 
+  519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543, 545, 549, 551, 555, 
+  561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704, 
+  710, 716, 722 ]
+</pre></div>
+
+<p><a id="X7F8B10C2870932B8" name="X7F8B10C2870932B8"></a></p>
+
+<h5>9.2-12 IsAdditiveNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAdditiveNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. Detects if <var class="Arg">S</var> is additive, that is, <span class="SimpleMath">ord(m+x)=ord(x)+1</span> for all <span class="SimpleMath">x</span> in <var class="Arg">S</var>, where <span class="SimpleMath">m</span> is the multiplicity of <var class="Arg">S</var> and <span class="SimpleMath">ord</span> stands for MaximumDegreeOfElementWRTNumericalSemigroup. For these semigroups <span class="SimpleMath">gr_m(K[[S]])</span> is Cohen-Macaulay(see <a href="chapBib.html#biBBH">[BH13]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(l);</span>
+109
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(Filtered(l,IsAdditiveNumericalSemigroup));</span>
+20
+</pre></div>
+
+<p><a id="X8630DEF77A350D76" name="X8630DEF77A350D76"></a></p>
+
+<h5>9.2-13 IsSuperSymmetricNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSuperSymmetricNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. Detects if <var class="Arg">S</var> is supersymmetric, that is, it is symmetric, additive and whenever <span class="SimpleMath">w+w'=f+m</span> (with <span class="SimpleMath">m</span> the multiplicity and <span class="SimpleMath">f</span> the Frobenius number) we have <span class="SimpleMath">ord(w+w')=ord(w)+ord(w')</span>, where <span class="SimpleMath">ord</span> stands for MaximumDegreeOfElementWRTNumericalSemigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(l);</span>
+109
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));</span>
+7
+</pre></div>
+
+<p><a id="X84F5CA8D7B0F6C02" name="X84F5CA8D7B0F6C02"></a></p>
+
+<h4>9.3 <span class="Heading">
+        Invariants based on distances
+    </span></h4>
+
+<p><a id="X7E8A56F3810F1769" name="X7E8A56F3810F1769"></a></p>
+
+<h5>9.3-1 CatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The output is the catenary degree of this set of factorizations.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfSetOfFactorizations(last);</span>
+5
+</pre></div>
+
+<p><a id="X7DDB40BB84FF0042" name="X7DDB40BB84FF0042"></a></p>
+
+<h5>9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AdjacentCatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The output is the adjacent catenary degree of this set of factorizations, that is, the supremum of the distance between to sets of factorizations with adjacet lengths. More precisely, if <span class="SimpleMath">l_1,...,l_t</span> are the lengths of the factorizations of the elements in <var class="Arg">ls</var>, and <span class="SimpleMath">Z_l_i</span> is the set of factorizations in <var class="Arg">ls</var> with length <span class="SimpleMath">l_i</span>, then the adjacent catenary degre is the maximum of the distances <span class="SimpleMath">mathrm d (Z_l_i,Z_l_i+1})</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AdjacentCatenaryDegreeOfSetOfFactorizations(last);</span>
+5
+</pre></div>
+
+<p><a id="X86E0CAD28655839C" name="X86E0CAD28655839C"></a></p>
+
+<h5>9.3-3 EqualCatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations joined by the chain must have the same length, and the elements in the chain also. Equivalently, if <span class="SimpleMath">l_1,...,l_t</span> are the lengths of the factorizations of the elements in <var class="Arg">ls</var>, and <span class="SimpleMath">Z_l_i</span> is the set of factorizations in <var class="Arg">ls</var> with length <span class="SimpleMath">l_i</span>, then the equal catenary degre is the maximum of the CatenaryDegreeOfSetOfFactorizations of <span class="SimpleMath">mathrm d (Z_l_i,Z_l_i+1})</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EqualCatenaryDegreeOfSetOfFactorizations(last);</span>
+2
+</pre></div>
+
+<p><a id="X845D850F7812E176" name="X845D850F7812E176"></a></p>
+
+<h5>9.3-4 MonotoneCatenaryDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations are joined by a chain with nondecreasing lengths. Equivalently, it is the maximum of the AdjacentCatenaryDegreeOfSetOfFactorizations and the EqualCatenaryDegreeOfSetOfFactorizations.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MonotoneCatenaryDegreeOfSetOfFactorizations(last);</span>
+5
+</pre></div>
+
+<p><a id="X812500217B183FC3" name="X812500217B183FC3"></a></p>
+
+<h5>9.3-5 CatenaryDegreeOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">n</var> is a nonnegative integer and <var class="Arg">S</var> is a numerical semigroup. The output is the catenary degree of <var class="Arg">n</var> relative to <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfElementInNumericalSemigroup(157,NumericalSemigroup(13,18));</span>
+0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfElementInNumericalSemigroup(1157,NumericalSemigroup(13,18));</span>
+18
+</pre></div>
+
+<p><a id="X86D5A10183C150FC" name="X86D5A10183C150FC"></a></p>
+
+<h5>9.3-6 TameDegreeOfSetOfFactorizations</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same lenght). The output is the tame degree of this set of factorizations.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsIntegerWRTList(100,[11,13,15,19]);</span>
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TameDegreeOfSetOfFactorizations(last);</span>
+4
+</pre></div>
+
+<p><a id="X7FAF204E85D9C21B" name="X7FAF204E85D9C21B"></a></p>
+
+<h5>9.3-7 CatenaryDegreeOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the catenary degree of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfNumericalSemigroup(s);</span>
+8
+</pre></div>
+
+<p><a id="X86498DA1858BA11B" name="X86498DA1858BA11B"></a></p>
+
+<h5>9.3-8 EqualPrimitiveElementsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualPrimitiveElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>The output is the set of elements <span class="SimpleMath">s</span> in <var class="Arg">S</var> such that there exists a minimal solution to <span class="SimpleMath">msg⋅ x-msg⋅ y = 0</span>, such that <span class="SimpleMath">x,y</span> are factorizations with the same length of <span class="SimpleMath">s</span>, and <span class="SimpleMath">msg</span> is the minimal generating system of <var class="Arg">S</var>. These elements are used to compute the equal catenary degree of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BettiElementsOfNumericalSemigroup(s);</span>
+[ 10, 12, 14 ]
+
+                        </pre></div>
+
+<p><a id="X780E2C737FA8B2A9" name="X780E2C737FA8B2A9"></a></p>
+
+<h5>9.3-9 EqualCatenaryDegreeOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the equal catenary degree of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">EqualPrimitiveElementsOfNumericalSemigroup(s);</span>
+[ 3, 5, 7, 10 ]
+</pre></div>
+
+<p><a id="X842C07F77CAD3BD1" name="X842C07F77CAD3BD1"></a></p>
+
+<h5>9.3-10 MonotonePrimitiveElementsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotonePrimitiveElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>The output is the set of elements <span class="SimpleMath">s</span> in <var class="Arg">S</var> such that there exists a minimal solution to <span class="SimpleMath">msg⋅ x-msg⋅ y = 0</span>, such that <span class="SimpleMath">x,y</span> are factorizations of <span class="SimpleMath">s</span>, with <span class="SimpleMath">|x|le |y|</span>; <span class="SimpleMath">msg</span> stands the minimal generating system of <var class="Arg">S</var>. These elements are used to compute the monotone catenary degree of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MonotonePrimitiveElementsOfNumericalSemigroup(s);</span>
+[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+
+                        </pre></div>
+
+<p><a id="X7E0458187956C395" name="X7E0458187956C395"></a></p>
+
+<h5>9.3-11 MonotoneCatenaryDegreeOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the monotone catenary degree of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,23,31,44);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfNumericalSemigroup(s);</span>
+9
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MonotoneCatenaryDegreeOfNumericalSemigroup(s);</span>
+21
+</pre></div>
+
+<p><a id="X860BDF5B85975B73" name="X860BDF5B85975B73"></a></p>
+
+<h5>9.3-12 TameDegreeOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the tame degree of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(101,113,196,272,278,286);</span>
+&lt;Numerical semigroup with 6 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TameDegreeOfNumericalSemigroup(s);</span>
+14
+</pre></div>
+
+<p><a id="X8738B4F87E782ED2" name="X8738B4F87E782ED2"></a></p>
+
+<h5>9.3-13 TameDegreeOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">n</var> is an elment of the numerical semigroup <var class="Arg">S</var>. The output is the tame degree of <var class="Arg">n</var> in <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TameDegreeOfElementInNumericalSemigroup(100,s); </span>
+5
+</pre></div>
+
+<p><a id="X78EBC6A57B8167E6" name="X78EBC6A57B8167E6"></a></p>
+
+<h4>9.4 <span class="Heading">
+        Primality
+    </span></h4>
+
+<p><a id="X86B0E91684B39839" name="X86B0E91684B39839"></a></p>
+
+<h5>9.4-1 OmegaPrimalityOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">n</var> is an elment of the numerical semigroup <var class="Arg">S</var>. The output is the <span class="SimpleMath">ω</span>-primality of <var class="Arg">n</var> in <var class="Arg">S</var> as explained in <a href="chapBib.html#biBB-GS-G">[BGG11]</a>. The current implementation is due to Chris O'Neill based on a work in progress with Pelayo and Thomas.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);        </span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OmegaPrimalityOfElementInNumericalSemigroup(100,s);</span>
+13
+</pre></div>
+
+<p><a id="X7919066C7A7265E1" name="X7919066C7A7265E1"></a></p>
+
+<h5>9.4-2 OmegaPrimalityOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the maximum of the <span class="SimpleMath">ω</span>-primalities of the minimal generators of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);        </span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OmegaPrimalityOfNumericalSemigroup(s);</span>
+5
+</pre></div>
+
+<p><a id="X86735EEA780CECDA" name="X86735EEA780CECDA"></a></p>
+
+<h4>9.5 <span class="Heading">
+        Homogenization of Numerical Semigroups
+    </span></h4>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup minimally generated by <span class="SimpleMath">{m_1,...,m_n}</span>. The homogenization of <span class="SimpleMath">S</span>, <span class="SimpleMath">S^mathrmhom</span> is the semigroup generated by <span class="SimpleMath">{(1,0),(1,m_1),..., (1,m_n)}</span>. The catenary degree of <span class="SimpleMath">S^mathrmhom</span> coincides with the homogeneous catenary degree of <span class="SimpleMath">S</span>, and it is between the catenary and the monotone catenary degree of <span class="SimpleMath">S</span>. The advantage of this catenary degree is that is less costly to compute than the monotone catenary degree, and has some nice interpretations (<a href="chapBib.html#biBGSOSN">[SO-13]</a>). This section contains the auxiliary functions needed to compute the homogeneous catenary degree.</p>
+
+<p><a id="X856B689185C1F5D9" name="X856B689185C1F5D9"></a></p>
+
+<h5>9.5-1 BelongsToHomogenizationOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToHomogenizationOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a list with two entries (a pair). The output is true if the <var class="Arg">n</var> belongs to the homogenization of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToHomogenizationOfNumericalSemigroup([10,23],s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToHomogenizationOfNumericalSemigroup([1,23],s);</span>
+false
+</pre></div>
+
+<p><a id="X85D03DBB7BA3B1FB" name="X85D03DBB7BA3B1FB"></a></p>
+
+<h5>9.5-2 FactorizationsInHomogenizationOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsInHomogenizationOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a list with two entries (a pair). The output is the set of factorizations <var class="Arg">n</var> in terms of the minimal generating system of the homogenization of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsInHomogenizationOfNumericalSemigroup([20,230],s);</span>
+[ [ 0, 0, 15, 5 ], [ 0, 2, 12, 6 ], [ 0, 4, 9, 7 ],
+  [ 0, 6, 6, 8 ], [ 0, 8, 3, 9 ], [ 0, 10, 0, 10 ],
+  [ 1, 1, 7, 11 ], [ 1, 3, 4, 12 ], [ 1, 5, 1, 13 ],
+  [ 2, 0, 2, 16 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsElementWRTNumericalSemigroup(230,s);</span>
+[ [ 23, 0, 0 ], [ 12, 10, 0 ], [ 1, 20, 0 ], [ 14, 7, 1 ],
+  [ 3, 17, 1 ], [ 16, 4, 2 ], [ 5, 14, 2 ], [ 18, 1, 3 ],
+  [ 7, 11, 3 ], [ 9, 8, 4 ], [ 11, 5, 5 ], [ 0, 15, 5 ],
+  [ 13, 2, 6 ], [ 2, 12, 6 ], [ 4, 9, 7 ], [ 6, 6, 8 ],
+  [ 8, 3, 9 ], [ 10, 0, 10 ], [ 1, 7, 11 ], [ 3, 4, 12 ],
+  [ 5, 1, 13 ], [ 0, 2, 16 ] ]
+</pre></div>
+
+<p><a id="X857CC7FF85C05318" name="X857CC7FF85C05318"></a></p>
+
+<h5>9.5-3 HomogeneousBettiElementsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousBettiElementsOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the set of Betti elements of the homogenization of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,17,19);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BettiElementsOfNumericalSemigroup(s);</span>
+[ 57, 68, 70 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HomogeneousBettiElementsOfNumericalSemigroup(s);</span>
+[ [ 5, 57 ], [ 5, 68 ], [ 6, 95 ], [ 7, 70 ], [ 9, 153 ] ]
+</pre></div>
+
+<p><a id="X7DFFCAC87B3B632B" name="X7DFFCAC87B3B632B"></a></p>
+
+<h5>9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the homogeneus catenary degree of <var class="Arg">S</var>. Observe that for a single element in the homogenization of <var class="Arg">S</var>, its catenary degree can be computed with CatenaryDegreeOfSetOfFactorizations and FactorizationsInHomogenizationOfNumericalSemigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,17,19);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CatenaryDegreeOfNumericalSemigroup(s);</span>
+7
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HomogeneousCatenaryDegreeOfNumericalSemigroup(s);</span>
+9
+</pre></div>
+
+<p><a id="X7A54E9FD7D4CB18F" name="X7A54E9FD7D4CB18F"></a></p>
+
+<h4>9.6 <span class="Heading">
+        Divisors, posets
+    </span></h4>
+
+<p>Given a numerical semigroup <span class="SimpleMath">S</span> and two integers <span class="SimpleMath">a,b</span>, we write <span class="SimpleMath">ale_S b</span> if <span class="SimpleMath">b-a∈ S</span>. We also say that <span class="SimpleMath">a</span> divides <span class="SimpleMath">b</span> (with respecto to <span class="SimpleMath">S</span>). The semigroup <span class="SimpleMath">S</span> with this binary relation is a poset.</p>
+
+<p><a id="X853930E97F7F8A43" name="X853930E97F7F8A43"></a></p>
+
+<h5>9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MoebiusFunctionAssociatedToNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an integer. As <span class="SimpleMath">(S,le_S)</span> is a poset, we can define the Möbius function associtate to it as in <a href="chapBib.html#biBCHRA">[CA13]</a>. The output is the value of the Möbius function in the integer <var class="Arg">n</var>, that is, the alternate sum of the number of chains from 0 to <var class="Arg">n</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MoebiusFunctionAssociatedToNumericalSemigroup(s,10);</span>
+2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MoebiusFunctionAssociatedToNumericalSemigroup(s,34);</span>
+25
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap8.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap10.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

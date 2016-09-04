@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+We will only cover here good semigroups of <M>\mathbb{N}^2</M>. <P/>
+
+A good semigroup <M>S</M> is a submonoid of <M>\mathbb{N}^2</M>, with the following properties. <P/>
+(G1) It is closed under infimums (minimum componentwise). <P/>
+(G2) if <M>a, b \in M</M> and <M>a_i = b_i</M> for some <M>i \in \{1, 2\}</M>, then there exists <M>c \in M</M> such that <M>c_i > a_i = b_i</M>
+and <M>c_j = \min\{a_j,b_j\}</M>, with <M>j∈\{1,2\}\setminus \{i\}</M>.<P/>
+(G3) there exists <M>C\in\mathbb{N}^n</M> such that <M>C+\mathbb{N}^n\subseteq S</M>. <P/>
+
+Value semigroups of algebroid branches are good semigroups, but there are good semigroups that are not of this form. Since good semigroups are closed under infimums, if <M>C_1</M> and <M>C_2</M> fulfill <M>C_i+\mathbb{N}^n\subseteq S</M>, then <M>C_1\wedge C_2+\mathbb{N}^n\subseteq S</M>. So there is a minimum <M>C</M> fulfilling <M>C+\mathbb{N}^n\subseteq S</M>, which is called the conductor of <M>S</M>. <P/>
+
+The contents of this chapter are described in <Cite Key="DGSM"></Cite>.
+
+<Section>
+    <Heading>
+      Defining good semigroups
+    </Heading>
+
+    <ManSection>
+      <Func Arg="S" Name="IsGoodSemigroup"></Func>
+      <Description>
+        Detects if <A>S</A> is a an object type good semigroup.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="S, E" Name="NumericalSemigroupDuplication"></Func>
+      <Description>
+        <A>S</A> is a numerical semigroup and <A>E</A> is an ideal of <A>S</A> with <M>E\subseteq S</M>.
+        The output is <M>S\bowtie E= D\cup (E\times E)\cup\{ a\wedge b\mid a\in D, b\in E\times E\},</M> where <M>D=\{(s,s)\mid s\in S\}</M>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> l:=Cartesian([1..11],[1..11]);;
+gap> Intersection(dup,l);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ],
+  [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ],
+  [ 11, 9 ], [ 11, 11 ] ]
+gap> [384938749837,349823749827] in dup;
+true
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+
+      <ManSection>
+        <Func Arg="S, E, b" Name="AmalgamationOfNumericalSemigroups"></Func>
+        <Description>
+          <A>S</A> is a numerical semigroup, <A>E</A> is an ideal of a numerical semigroup <M>T</M> with <M>E\subseteq T</M>, and <A>b</A> is an integer such that multiplication by <A>b</A> is a morphism from <A>S</A> to <M>T</M>, say <M>g</M>.
+          The output is <M>S\bowtie^g E= D\cup(g^{-1}(E)\times E)\cup \{a\wedge b\mid a\in D, b\in g^{-1}(E)\times E\},</M> where <M>D=\{(s,b s)\mid s\in S\}</M>.
+
+          <Example><![CDATA[
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4);;
+gap> e:=3+t;;
+gap> dup:=AmalgamationOfNumericalSemigroups(s,e,2);;
+gap> [2,3] in dup;
+true
+            ]]></Example>
+        </Description>
+      </ManSection>
+
+
+      <ManSection>
+        <Func Arg="S, T" Name="CartesianProductOfNumericalSemigroups"></Func>
+        <Description>
+          <A>S</A> and <A>T</A> are numerical semigroups.
+          The output is <M>S\times T</M>, which is a good semigroup.
+
+          <Example><![CDATA[
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4);;
+gap> IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));
+true
+            ]]></Example>
+        </Description>
+      </ManSection>
+
+
+      <ManSection>
+        <Func Arg="X, C" Name="GoodSemigroup"></Func>
+        <Description>
+          <A>X</A> is a list of points with nonnegative integer coordinates and <M>C</M> is a pair of nonnegative integer (a list with two elements).
+          If <M>M</M> is the affine and infimum closure of <A>X</A>, decides if it is a good semigroup, and if so, outputs it.
+
+          <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
+  [ 25, 12 ], [ 25, 16 ] ]
+gap> C:=[25,27];
+[ 25, 27 ]
+gap> GoodSemigroup(G,C);
+<Good semigroup>
+            ]]></Example>
+        </Description>
+      </ManSection>
+
+</Section>
+
+<Section>
+    <Heading>
+      Notable elements
+  </Heading>
+
+
+    <ManSection>
+      <Oper Arg="v,S" Name="BelongsToGoodSemigroup"></Oper>
+      <Oper Name="\in" Arg="v,S" Label="membership for good semigroup"/>
+      <Description>
+        <A>S</A> is a good semigroup and <A>v</A> is a pair of integers. The output is <C>true</C> if <A>v</A> is in <A>S</A>, and <C>false</C> otherwise.
+
+        Other ways to use this operation are <C>\in(v,S)</C> and <C>v in S</C>.
+        <Example><![CDATA[
+gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> s:=NumericalSemigroup(2,3);
+<Numerical semigroup with 2 generators>
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+gap> [2,2] in dup;
+true
+gap> [3,2] in dup;
+false
+      ]]></Example>
+      </Description>
+    </ManSection>
+
+  <ManSection>
+    <Func Arg="S" Name="Conductor" Label="for good semigroup"></Func>
+    <Description>
+      <A>S</A> is a good semigroup. The output is its conductor.
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> Conductor(dup);
+[ 11, 11 ]
+        ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="S" Name="SmallElementsOfGoodSemigroup"></Func>
+    <Func Arg="S" Name="SmallElements" Label="for good semigroup"></Func>
+
+    <Description>
+      <A>S</A> is a good semigroup. The output is its set of small elements, that is, the elements smaller than its conductor with respect to the usual partial ordering.
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElementsOfGoodSemigroup(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ],
+  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
+  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
+  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+        ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="X" Name="RepresentsSmallElementsOfGoodSemigroup"></Func>
+    <Description>
+      <A>X</A> is a list of points in the nonnegative orthant of the plane with integer coordinates. Determines if it represents the set of small elements of a good semigroup.
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElementsOfGoodSemigroup(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],
+  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+gap> RepresentsSmallElementsOfGoodSemigroup(last);
+true
+        ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="X" Name="GoodSemigroupBySmallElements"></Func>
+    <Description>
+      <A>X</A> is a list of points in the nonnegative orthant of the plane with integer coordinates. Determines if it represents the set of small elements of a good semigroup, and then outputs the good semigroup having <A>X</A> as set of small elements.
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElementsOfGoodSemigroup(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],
+  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+gap> G:=GoodSemigroupBySmallElements(last);
+<Good semigroup>
+gap> dup=G;
+true
+  ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+      <Attr Name="MaximalElementsOfGoodSemigroup" Arg="S"/>
+      <Description>
+       <A>S</A> is a good semigroup. The output is the set of elements <M>(x,y)</M>
+       of <A>S</A> with the following property: there is no other element <M>(x',y')</M> in <A>S</A>
+       with <M>(x,y)\le (x',y')</M> sharing a coordinate with <M>(x,y)</M>.
+      <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17]];;
+gap> g:=GoodSemigroup(G,[11,17]);;
+gap> mx:=MaximalElementsOfGoodSemigroup(g);
+[ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
+        ]]></Example>
+     </Description>
+   </ManSection>
+
+   <ManSection>
+       <Attr Name="IrreducibleMaximalElementsOfGoodSemigroup" Arg="S"/>
+       <Description>
+        <A>S</A> is a good semigroup. The output is the set of elements nonzero maximal elements that cannot be expressed as a sum of two nonzero maximal elements of the good semigroup.
+       <Example><![CDATA[
+ gap> G:=[[4,3],[7,13],[11,17]];;
+ gap> g:=GoodSemigroup(G,[11,17]);;
+ gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
+[ [ 4, 3 ], [ 7, 13 ] ]
+         ]]></Example>
+      </Description>
+    </ManSection>
+
+
+  <ManSection>
+    <Func Arg="S, T, M, C" Name="GoodSemigroupByMaximalElements"></Func>
+    <Description>
+      <A>S</A> and <A>T</A> are numerical semigroups, <A>M</A> is a list of pairs in <M>S\times T</M>. <A>C</A> is the conductor, and thus a pair of nonnegative integers.
+      The output is the set of elements of <M>S\times T</M> that are not above an element in <A>M</A>, that is, if they share a coordinate with an element in <A>M</A>, then they must be smaller or equalt to that element with respect to the usual partial ordering. The output is a good semigroup, if <A>M</A> is an correct set of maximal elements.
+
+      <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17]];;
+gap> g:=GoodSemigroup(G,[11,17]);;
+gap> sm:=SmallElements(g);;
+gap> mx:=MaximalElementsOfGoodSemigroup(g);;
+gap> s:=NumericalSemigroupBySmallElements(Set(sm,x->x[1]));;
+gap> t:=NumericalSemigroupBySmallElements(Set(sm,x->x[2]));;
+gap> Conductor(g);
+[ 11, 15 ]
+gap> gg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);
+<Good semigroup>
+gap> gg=g;
+true
+                      ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="S" Name="MinimalGoodGeneratingSystemOfGoodSemigroup"></Func>
+    <Description>
+      <A>S</A> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+        ]]></Example>
+    </Description>
+  </ManSection>
+  <ManSection>
+      <Attr Name="MinimalGenerators" Arg="S"/>
+      <Description>
+       This is just a synonym of <C> MinimalGoodGeneratingSystemOfGoodSemigroup</C> (<C>S</C>).
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> MinimalGenerators(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+        ]]></Example>
+     </Description>
+   </ManSection>
+
+</Section>
+
+
+<Section>
+    <Heading>
+      Symmetric semigroups
+  </Heading>
+
+  <ManSection>
+    <Func Arg="S" Name="IsSymmetricGoodSemigroup"></Func>
+    <Description>
+      <A>S</A> is a good semigroup. Determines if <A>S</A> is a symmetric good semigroup.
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=CanonicalIdealOfNumericalSemigroup(s);;
+gap> e:=15+e;;
+gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> IsSymmetricGoodSemigroup(dup);
+true
+        ]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Func Arg="S" Name="ArfGoodSemigroupClosure"></Func>
+    <Description>
+      <A>S</A> is a good semigroup. Determines the Arf good semigroup closure of <A>S</A>.
+
+      <Example><![CDATA[
+        gap> G:=[[3,3],[4,4],[5,4],[4,6]];
+        [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ]
+        gap> C:=[6,6];
+        [ 6, 6 ]
+        gap> S:=GoodSemigroup(G,C);
+        <Good semigroup>
+        gap> SmallElements(S);
+        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
+        gap> A:=ArfGoodSemigroupClosure(S);
+        <Good semigroup>
+        gap> SmallElements(A);
+        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
+        ]]></Example>
+    </Description>
+  </ManSection>
+
+</Section>
+
+<Section>
+    <Heading>
+      Good ideals
+    </Heading>
+
+    A relative ideal <M>I</M> of a relative good semigroup <M>M</M> is a relative good ideal if <M>I</M> fulfills conditions (G1) and (G2) of the definition of good semigroup.
+
+    <ManSection>
+      <Func Arg="X, S" Name="GoodIdeal"></Func>
+      <Description>
+        <A>X</A> is a list of points with nonnegative integer coordinates and <M>S</M> is good semigroup.
+        Decides if the closure of <M>X+S</M> under infimums is a relative good ideal of <M>S</M>, and if so, outputs it.
+
+        <Example><![CDATA[
+gap> G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
+[ 25, 12 ], [ 25, 16 ] ]
+gap> C:=[25,27];
+[ 25, 27 ]
+gap> GoodSemigroup(G,C);
+<Good semigroup>
+gap> i:=GoodIdeal([[2,3]],g);
+<Good ideal of good semigroup>
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
+      <Func Arg="I" Name="GoodGeneratingSystemOfGoodIdeal"></Func>
+      <Description>
+        <A>I</A> is a good ideal of a good semigroup. The output is a good generating system of <A>I</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
+gap> GoodGeneratingSystemOfGoodIdeal(e);
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="I" Name="AmbientGoodSemigroupOfGoodIdeal"></Func>
+      <Description>
+        If <A>I</A> is a good ideal of a good semigroup <M>M</M>, then the output is <M>M</M>. The output is a good generating system of <A>I</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> a=AmbientGoodSemigroupOfGoodIdeal(e);
+true
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="I" Name="MinimalGoodGeneratingSystemOfGoodIdeal"></Func>
+      <Description>
+        <A>I</A> is a good ideal of a good semigroup. The output is the minimal good generating system of <A>I</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
+gap> MinimalGoodGeneratingSystemOfGoodIdeal(e);
+[ [ 2, 3 ], [ 3, 2 ] ]
+]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Oper Arg="v,I" Name="BelongsToGoodIdeal"></Oper>
+      <Oper Name="\in" Arg="v,I" Label="membership for good ideal"/>
+      <Description>
+        <A>I</A> is a good ideal of a good semigroup and <A>v</A> is a pair of integers. The output is <C>true</C> if <A>v</A> is in <A>I</A>, and <C>false</C> otherwise.
+
+        Other ways to use this operation are <C>\in(v,I)</C> and <C>v in I</C>.
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2]],d);;
+gap> [1,1] in e;
+false
+gap> [2,2] in e;
+true
+]]></Example>
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
+      <Func Arg="I" Name="SmallElementsOfGoodIdeal"></Func>
+      <Func Arg="I" Name="SmallElements" Label="for good ideal"></Func>
+
+      <Description>
+        <A>I</A> is a good ideal. The output is its set of small elements, that is, the elements smaller than its conductor and larger than its minimum element (with respect to the usual partial ordering).
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2]],d);;
+gap> SmallElements(e);
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ]
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
+      <Func Arg="S" Name="CanonicalIdealOfGoodSemigroup" ></Func>
+      <Description>
+        <A>S</A> is a good semigroup. The output is the canonical ideal of <A>S</A>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> c:=CanonicalIdealOfGoodSemigroup(d);;
+gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
+[ [ 0, 0 ], [ 2, 2 ] ]
+          ]]></Example>
+      </Description>
+    </ManSection>
+
+
+
+
+</Section>
