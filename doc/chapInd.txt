@@ -55,10 +55,10 @@
   [2XCeilingOfRational[102X  A.1-3
   [2XCompleteIntersectionNumericalSemigroupsWithFrobeniusNumber[102X  6.2-3
   [2XConductor[102X (for good semigroup)  12.2-2
-  [2XConductor[102X (for Numerical Semigroups)  3.2-4
+  [2XConductor[102X (for numerical Semigroup)  3.1-13
   [2XConductor[102X (for ideal)  7.1-9
   [2XConductorOfIdealOfNumericalSemigroup[102X  7.1-8
-  [2XConductorOfNumericalSemigroup[102X  3.2-3
+  [2XConductorOfNumericalSemigroup[102X  3.1-13
   [2XCurveAssociatedToDeltaSequence[102X  10.2-4
   [2XDecomposeIntoIrreducibles[102X  6.1-6
   [2XDeltaSequencesWithFrobeniusNumber[102X  10.2-3
@@ -74,7 +74,7 @@
   [2XElasticityOfAffineSemigroup[102X  11.4-2
   [2XElasticityOfFactorizationsElementWRTNumericalSemigroup[102X  9.2-3
   [2XElasticityOfNumericalSemigroup[102X  9.2-4
-  [2XEliahouSlicesOfNumericalSemigroup[102X  3.4-4
+  [2XEliahouSlicesOfNumericalSemigroup[102X  3.2-4
   [2XEmbeddingDimensionOfNumericalSemigroup[102X  3.1-3
   [2XEqualCatenaryDegreeOfAffineSemigroup[102X  11.4-4
   [2XEqualCatenaryDegreeOfNumericalSemigroup[102X  9.3-9
@@ -89,12 +89,12 @@
   [2XFirstElementsOfNumericalSemigroup[102X  3.1-5
   [2XForcedIntegersForPseudoFrobenius[102X  5.6-1
   [2XFreeNumericalSemigroupsWithFrobeniusNumber[102X  6.2-5
-  [2XFrobeniusNumber[102X  3.2-2
-  [2XFrobeniusNumberOfNumericalSemigroup[102X  3.2-1
-  [2XFundamentalGaps[102X  3.3-5
-  [2XFundamentalGapsOfNumericalSemigroup[102X  3.3-5
-  [2XGaps[102X  3.3-1
-  [2XGapsOfNumericalSemigroup[102X  3.3-1
+  [2XFrobeniusNumber[102X (for numerical semigroup)  3.1-12
+  [2XFrobeniusNumberOfNumericalSemigroup[102X  3.1-12
+  [2XFundamentalGaps[102X  3.1-20
+  [2XFundamentalGapsOfNumericalSemigroup[102X  3.1-20
+  [2XGaps[102X  3.1-16
+  [2XGapsOfNumericalSemigroup[102X  3.1-16
   [2XGenerators[102X (for affine semigroup)  11.1-2
   [2XGenerators[102X (for numerical semigroup)  3.1-2
   [2XGenerators[102X (for ideal)  7.1-4
@@ -102,7 +102,7 @@
   [2XGeneratorsOfIdealOfNumericalSemigroup[102X  7.1-4
   [2XGeneratorsOfKernelCongruence[102X  11.3-1
   [2XGeneratorsOfNumericalSemigroup[102X  3.1-2
-  [2XGenusOfNumericalSemigroup[102X  3.3-4
+  [2XGenusOfNumericalSemigroup[102X  3.1-19
   [2XGluingOfAffineSemigroups[102X  11.2-1
   [2XGoodGeneratingSystemOfGoodIdeal[102X  12.4-2
   [2XGoodIdeal[102X  12.4-1
@@ -115,7 +115,7 @@
   [2XHilbertBasisOfSystemOfHomogeneousInequalities[102X  11.1-9
   [2XHilbertFunctionOfIdealOfNumericalSemigroup[102X  7.2-1
   [2XHilbertSeriesOfNumericalSemigroup[102X  10.1-4
-  [2XHolesOfNumericalSemigroup[102X  3.3-2
+  [2XHolesOfNumericalSemigroup[102X  3.1-17
   [2XHomogeneousBettiElementsOfNumericalSemigroup[102X  9.5-3
   [2XHomogeneousCatenaryDegreeOfAffineSemigroup[102X  11.4-5
   [2XHomogeneousCatenaryDegreeOfNumericalSemigroup[102X  9.5-4
@@ -192,7 +192,7 @@
   [2XIsUniquelyPresentedNumericalSemigroup[102X  4.2-1
   [2XKunzCoordinatesOfNumericalSemigroup[102X  3.1-10
   [2XKunzPolytope[102X  3.1-11
-  [2XLatticePathAssociatedToNumericalSemigroup[102X  3.3-3
+  [2XLatticePathAssociatedToNumericalSemigroup[102X  3.1-18
   [2XLengthsOfFactorizationsElementWRTNumericalSemigroup[102X  9.2-2
   [2XLengthsOfFactorizationsIntegerWRTList[102X  9.2-1
   [2XLipmanSemigroup[102X  7.2-5
@@ -231,7 +231,7 @@
   [2XMultiplicityOfNumericalSemigroup[102X  3.1-1
   [2XMultiplicitySequenceOfNumericalSemigroup[102X  7.2-6
   [2XNumericalDuplication[102X  5.2-4
-  [2XNumericalSemigroup[102X (by generators (default))  2.1-1
+  [2XNumericalSemigroup[102X (by generators)  2.1-1
   [2XNumericalSemigroup[102X (by (closed) interval)  2.1-10
   [2XNumericalSemigroup[102X (by open interval)  2.1-11
   [2XNumericalSemigroup[102X (by subadditive function)  2.1-2
@@ -273,9 +273,9 @@
   [2XOverSemigroupsNumericalSemigroup[102X  5.3-1
   [2XPrimitiveElementsOfAffineSemigroup[102X  11.3-7
   [2XPrimitiveElementsOfNumericalSemigroup[102X  4.1-4
-  [2XProfileOfNumericalSemigroup[102X  3.4-3
+  [2XProfileOfNumericalSemigroup[102X  3.2-3
   [2XProportionallyModularNumericalSemigroup[102X  2.1-9
-  [2XPseudoFrobeniusOfNumericalSemigroup[102X  3.2-5
+  [2XPseudoFrobeniusOfNumericalSemigroup[102X  3.1-14
   [2XQuotientOfNumericalSemigroup[102X  5.2-2
   [2XRandomListForNS[102X  B.1-2
   [2XRandomListRepresentingSubAdditiveFunction[102X  B.1-5
@@ -306,7 +306,7 @@
   [2XSmallElementsOfGoodSemigroup[102X  12.2-3
   [2XSmallElementsOfIdealOfNumericalSemigroup[102X  7.1-7
   [2XSmallElementsOfNumericalSemigroup[102X  3.1-4
-  [2XSpecialGapsOfNumericalSemigroup[102X  3.3-6
+  [2XSpecialGapsOfNumericalSemigroup[102X  3.1-21
   [2XStarClosureOfIdealOfNumericalSemigroup[102X  7.2-12
   [2XSubtractIdealsOfNumericalSemigroup[102X  7.1-13
   [2XSumIdealsOfNumericalSemigroup[102X  7.1-11
@@ -317,10 +317,10 @@
   [2XTelescopicNumericalSemigroupsWithFrobeniusNumber[102X  6.2-7
   [2XTorsionOfAssociatedGradedRingNumericalSemigroup[102X  C.1-2
   [2XTranslationOfIdealOfNumericalSemigroup[102X  7.1-15
-  [2XTruncatedWilfNumberOfNumericalSemigroup[102X  3.4-2
-  [2XTypeOfNumericalSemigroup[102X  3.2-6
+  [2XTruncatedWilfNumberOfNumericalSemigroup[102X  3.2-2
+  [2XTypeOfNumericalSemigroup[102X  3.1-15
   [2XTypeSequenceOfNumericalSemigroup[102X  C.1-11
-  [2XWilfNumberOfNumericalSemigroup[102X  3.4-1
+  [2XWilfNumberOfNumericalSemigroup[102X  3.2-1
   
   
   -------------------------------------------------------

@@ -68,7 +68,7 @@
                     Generating Numerical Semigroups
                 </span></h4>
 
-<p>Recalling some definitions from Chapter <a href="chap1.html#X7DFB63A97E67C0A1"><span class="RefLink">1</span></a>.</p>
+<p>We recall some definitions from Chapter <a href="chap1.html#X7DFB63A97E67C0A1"><span class="RefLink">1</span></a>.</p>
 
 <p>A numerical semigroup is a subset of the set <span class="SimpleMath">N</span> of nonnegative integers that is closed under addition, contains <span class="SimpleMath">0</span> and whose complement in <span class="SimpleMath">N</span> is finite.</p>
 
@@ -88,7 +88,7 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>The semigroup is given through a set of generators. This set may be given as a list or through its individual elements.</p>
+<p><code class="code">List</code> is a list of nonnegative integers with greatest common divisor equal to one. These integers may be given as a list or by a sequence of individual elements. The output is the numerical semigroup spanned by <code class="code">List</code>.</p>
 
 <p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"generators"</code>.</p>
 
@@ -120,7 +120,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupBySubAdditiveFunction</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>A periodic subadditive function with period <span class="SimpleMath">m</span> is given through the list of images of the integers from <span class="SimpleMath">1</span> to <span class="SimpleMath">m</span>. The image of <span class="SimpleMath">m</span> has to be <span class="SimpleMath">0</span>.</p>
+<p>A periodic subadditive function with period <span class="SimpleMath">m</span> is given through the list of images of the integers from <span class="SimpleMath">1</span> to <span class="SimpleMath">m</span>. The image of <span class="SimpleMath">m</span> has to be <span class="SimpleMath">0</span>. The output is the numerical semigroup determined by this subadditive function.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"subadditive"</code>.</p>
 
@@ -131,8 +131,6 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t := NumericalSemigroup("subadditive",[5,4,2,0]);;     </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s=t;</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(s);</span>
-[ 3 .. 5 ]
 </pre></div>
 
 <p><a id="X799AC8727DB61A99" name="X799AC8727DB61A99"></a></p>
@@ -141,7 +139,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByAperyList</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is the Apéry list.</p>
+<p><code class="code">List</code> is an Apéry list. The output is the numerical semigroup whose Apéry set with repect to the length of given list is <code class="code">List</code>.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"apery"</code>.</p>
 
@@ -150,7 +148,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ap := AperyListOfNumericalSemigroupWRTElement(s,20);</span>
 [ 0, 21, 22, 3, 24, 25, 6, 27, 28, 9, 30, 11, 12, 33, 14, 15, 36, 17, 18, 39 ]
-ggap&gt; t:=NumericalSemigroupByAperyList(ap);;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroupByAperyList(ap);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r := NumericalSemigroup("apery",ap);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s=t;t=r;</span>
 true
@@ -163,7 +161,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupBySmallElements</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is the set of small elements, that is, the set of all elements not greater than the conductor. When no semigroup exists whith the given set as set of small elements, an error is returned.</p>
+<p><code class="code">List</code> is the set of small elements of a numerical semigroup, that is, the set of all elements not greater than the conductor. The output is the numerical semigroup with this set of small elements. When no such semigroup exists, an error is returned.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"elements"</code>.</p>
 
@@ -194,7 +192,7 @@ you can 'return;' to continue
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGaps</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is the set of gaps. When no semigroup exists whith the given set as set of gaps, an error is returned.</p>
+<p><code class="code">List</code> is the set of gaps of a numerical semigroup. The output is the numerical semigroup with this set of gaps. When no semigroup exists whith the given set as set of gaps, an error is returned.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"gaps"</code>.</p>
 
@@ -207,7 +205,8 @@ you can 'return;' to continue
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h := [ 1, 2, 5, 7, 8, 10, 13, 16 ];;   </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupByGaps(h);</span>
-Error, The argument does not represent the gaps of  a numerical semigroup called from
+Error, The argument does not represent the gaps of a numerical semigroup called
+ from
 &lt;function "NumericalSemigroupByGaps"&gt;( &lt;arguments&gt; )
  called from read-eval loop at line 34 of *stdin*
 you can 'quit;' to quit to outer loop, or
@@ -221,7 +220,7 @@ you can 'return;' to continue
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByFundamentalGaps</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is the set of fundamental gaps. When the given set contains elements (which will be gaps) that are not fundamental gaps, they are silently removed.</p>
+<p><code class="code">List</code> is the set of fundamental gaps of a numerical semigroup. The output is the numerical semigroup determined by these gaps. When the given set contains elements (which will be gaps) that are not fundamental gaps, they are silently removed.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"fundamentalgaps"</code>.</p>
 
@@ -245,7 +244,9 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByAffineMap</code>( <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Given three nonnegative integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, with <span class="SimpleMath">a,c&gt;0</span> and <span class="SimpleMath">gcd(b,c)=1</span>, this function returns the least (with restpect to set order inclusion) numerical semigroup containing <var class="Arg">c</var> and closed under the map <span class="SimpleMath">x↦ ax+b</span>. The procedure is explained in <a href="chapBib.html#biBUgolini">[Ugo16]</a>. In the second form, <code class="code">String</code> must be <code class="code">"affinemap"</code>.</p>
+<p>Given three nonnegative integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, with <span class="SimpleMath">a,c&gt;0</span> and <span class="SimpleMath">gcd(b,c)=1</span>, this function returns the least (with restpect to set order inclusion) numerical semigroup containing <var class="Arg">c</var> and closed under the map <span class="SimpleMath">x↦ ax+b</span>. The procedure is explained in <a href="chapBib.html#biBUgolini">[Ugo16]</a>.</p>
+
+<p>In the second form, <code class="code">String</code> must be <code class="code">"affinemap"</code>.</p>
 
 
 <div class="example"><pre>
@@ -264,7 +265,9 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ModularNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Given two positive integers <var class="Arg">a</var> and <var class="Arg">b</var>, this function returns a modular numerical semigroup satisfying <span class="SimpleMath">ax mod b le x</span>. In the second form, <code class="code">String</code> must be <code class="code">"modular"</code>.</p>
+<p>Given two positive integers <var class="Arg">a</var> and <var class="Arg">b</var>, this function returns a modular numerical semigroup satisfying <span class="SimpleMath">ax mod b le x</span>.</p>
+
+<p>In the second form, <code class="code">String</code> must be <code class="code">"modular"</code>.</p>
 
 
 <div class="example"><pre>
@@ -280,7 +283,9 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProportionallyModularNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Given three positive integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, this function returns a proportionally modular numerical semigroup satisfying <span class="SimpleMath">axmod b le cx</span>. In the second form, <code class="code">String</code> must be <code class="code">"propmodular"</code>.</p>
+<p>Given three positive integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, this function returns a proportionally modular numerical semigroup satisfying <span class="SimpleMath">axmod b le cx</span>.</p>
+
+<p>In the second form, <code class="code">String</code> must be <code class="code">"propmodular"</code>.</p>
 
 
 <div class="example"><pre>
@@ -298,7 +303,7 @@ true
 &lt;Modular numerical semigroup satisfying 67x mod 98 &lt;= x &gt;
 </pre></div>
 
-<p>Numerical semigroups generated by an interval of positive integers are known to be proportionally modular, and thus they are treated as such (unles the representation "minimalgenerators" is specified), since membership and other problems can be solved efficiently for these semigroups.</p>
+<p>Numerical semigroups generated by an interval of positive integers are known to be proportionally modular, and thus they are treated as such, since membership and other problems can be solved efficiently for these semigroups.</p>
 
 <p><a id="X7D8F9D2A8173EF32" name="X7D8F9D2A8173EF32"></a></p>
 
@@ -306,9 +311,9 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByInterval</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>The semigroup is given through a set of generators. This set may be given as a list or through its individual elements.</p>
+<p>The input is a list of rational numbers defining a closed interval. The output is the semigroup of numerators of all rational numbers in this interval.</p>
 
-<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"generators"</code>.</p>
+<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"interval"</code>.</p>
 
 
 <div class="example"><pre>		
@@ -326,9 +331,9 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByOpenInterval</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>The semigroup is given through a set of generators. This set may be given as a list or through its individual elements.</p>
+<p>The input is a list of rational numbers defining a open interval. The output is the semigroup of numerators of all rational numbers in this interval.</p>
 
-<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"generators"</code>.</p>
+<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"openinterval"</code>.</p>
 
 
 <div class="example"><pre>		

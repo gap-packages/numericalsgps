@@ -486,7 +486,7 @@ InstallGlobalFunction(NumericalSemigroupByGaps, function(L)
     local i, M, K;
     K := Difference([0..L[Length(L)]+1],L);
     if not RepresentsSmallElementsOfNumericalSemigroup(K) then
-        Error("The argument does not represent the gaps of  a numerical semigroup");
+        Error("The argument does not represent the gaps of a numerical semigroup");
     fi;
 
     M:= Objectify( NumericalSemigroupsType, rec() );
