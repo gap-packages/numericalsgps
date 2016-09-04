@@ -203,6 +203,15 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
+<Chapter>
+	<Heading>
+		External packages
+	</Heading>
+
+	<#Include SYSTEM "external-packages.xml">
+
+</Chapter>
+
 
 </Body>
 
