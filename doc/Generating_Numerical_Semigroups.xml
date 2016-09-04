@@ -86,58 +86,123 @@ true
 		
 <ManSection>
  <Func Name="NumericalSemigroupBySubAdditiveFunction" Arg="List"/>
-  <Func Name="NumericalSemigroupBySubAdditiveFunction" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by subadditive function"/>
 
  <Description>
                            A periodic subadditive function with period <M>m</M> is given through the
-                        list of images of the elements, from <M>1</M> to <M>m</M>. The image of <M>m</M>
-                        has to be <M>0</M>.
+                        list of images of the integers from <M>1</M> to <M>m</M>. The image of <M>m</M> has to be <M>0</M>.
+			<P/>
+			In the second form, <C>String</C> must be <C>"subadditive"</C>.
 
         <Example><![CDATA[
-
+gap> s := NumericalSemigroupBySubAdditiveFunction([5,4,2,0]);
+<Numerical semigroup>
+gap> t := NumericalSemigroup("subadditive",[5,4,2,0]);;     
+gap> s=t;
+true
+gap> MinimalGenerators(s);
+[ 3 .. 5 ]
 ]]></Example>
     </Description>
 </ManSection>
 
 <ManSection>
  <Func Name="NumericalSemigroupByAperyList" Arg="List"/>
+ <Func Name="NumericalSemigroup" Arg="String, List" Label="by Apery list"/>
 
-    <Description>
+ <Description>
+   <C>List</C> is the Apéry list.
+			<P/>
+			In the second form, <C>String</C> must be <C>"apery"</C>.
         <Example><![CDATA[
-
+gap> s:=NumericalSemigroup(3,11);;
+gap> ap := AperyListOfNumericalSemigroupWRTElement(s,20);
+[ 0, 21, 22, 3, 24, 25, 6, 27, 28, 9, 30, 11, 12, 33, 14, 15, 36, 17, 18, 39 ]
+ggap> t:=NumericalSemigroupByAperyList(ap);;
+gap> r := NumericalSemigroup("apery",ap);;
+gap> s=t;t=r;
+true
+true
 ]]></Example>
     </Description>
 </ManSection>
 
 <ManSection>
 <Func Name="NumericalSemigroupBySmallElements" Arg="List"/>
-  
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by small elements"/>
+ 
     <Description>
-        <Example><![CDATA[
-
+   <C>List</C> is the set of small elements, that is, the set of all elements not greater than the conductor. When no semigroup exists whith the given set as set of small elements, an error is returned.
+			<P/>
+			In the second form, <C>String</C> must be <C>"elements"</C>.
+         <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,11);;
+gap> se := SmallElements(s);
+[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
+gap> t := NumericalSemigroupBySmallElements(se);;
+<gap> r := NumericalSemigroup("elements",se);;
+gap> s=t;t=r;                                            
+true
+true
+gap> e := [ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ];    
+[ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ]
+gap> NumericalSemigroupBySmallElements(e);
+Error, The argument does not represent a numerical semigroup called from
+<function "NumericalSemigroupBySmallElements">( <arguments> )
+ called from read-eval loop at line 35 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> 
 ]]></Example>
     </Description>
 </ManSection>
 
 <ManSection>
   <Func Name="NumericalSemigroupByGaps" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by gaps"/>
     <Description>
+   <C>List</C> is the set of gaps. When no semigroup exists whith the given set as set of gaps, an error is returned.
+			<P/>
+			In the second form, <C>String</C> must be <C>"gaps"</C>.
         <Example><![CDATA[
-
+gap> g := [ 1, 2, 4, 5, 7, 8, 10, 13, 16 ];;
+gap> s := NumericalSemigroupByGaps(g);;
+gap> t := NumericalSemigroup("gaps",g);;
+gap> s=t;
+true
+gap> h := [ 1, 2, 5, 7, 8, 10, 13, 16 ];;   
+gap> NumericalSemigroupByGaps(h);
+Error, The argument does not represent the gaps of  a numerical semigroup called from
+<function "NumericalSemigroupByGaps">( <arguments> )
+ called from read-eval loop at line 34 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> 
 ]]></Example>
     </Description>
 </ManSection>
 
 <ManSection>
   <Func Name="NumericalSemigroupByFundamentalGaps" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by fundamental gaps"/>
     <Description>
+   <C>List</C> is the set of fundamental gaps. When the given set contains elements (which will be gaps) that are not fundamental gaps, they are silently removed.
+			<P/>
+			In the second form, <C>String</C> must be <C>"fundamentalgaps"</C>.
         <Example><![CDATA[
-
+gap> fg := [ 11, 14, 17, 20, 23, 26, 29, 32, 35 ];;
+ggap> NumericalSemigroupByFundamentalGaps(fg);
+<Numerical semigroup>
+gap> NumericalSemigroup("fundamentalgaps",fg);     
+<Numerical semigroup>
+gap> last=last2;
+true
+gap> gg := [ 11, 17, 20, 22, 23, 26, 29, 32, 35 ];; #22 is not fundamental
+gap> NumericalSemigroup("fundamentalgaps",fg);     
+<Numerical semigroup>
 ]]></Example>
     </Description>
 </ManSection>
-
-
 
 <ManSection>
     <Func Name="NumericalSemigroupByAffineMap" Arg="a,b,c"/>
@@ -247,7 +312,7 @@ gap>
 
                </ManSection>
 
-<!-- -->
+<!--
 
 <P/>
 
@@ -408,6 +473,6 @@ true
 ]]></Example>
                     </Description>
                 </ManSection>
-
+-->
 
             </Section>
