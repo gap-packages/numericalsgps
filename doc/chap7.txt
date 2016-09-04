@@ -332,11 +332,28 @@
     [4X[25Xgap>[125X [27Xm:=MaximalIdealOfNumericalSemigroup(s);;[127X[104X
     [4X[25Xgap>[125X [27Xc:=CanonicalIdealOfNumericalSemigroup(s);[127X[104X
     [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27X(m-c)-c=m;[127X[104X
+    [4X[25Xgap>[125X [27Xc-(c-m)=m;[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27Xid:=3+s;[127X[104X
     [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27X(id-c)-c=id;[127X[104X
+    [4X[25Xgap>[125X [27Xc-(c-id)=id;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-19 IsCanonicalIdealOfNumericalSemigroup[101X
+  
+  [29X[2XIsCanonicalIdealOfNumericalSemigroup[102X( [3XE[103X ) [32X function
+  
+  [33X[0;0Y[3XE[103X  is  an  ideal  of  a  numerical  semigroup,  say  [22XS[122X. Determines if [3XE[103X is a
+  translation of the canonical ideal of [22XS[122X, or equivalently, for every ideal [22XJ[122X,
+  [22XE-(E-J)=J[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xc:=3+CanonicalIdealOfNumericalSemigroup(s);;[127X[104X
+    [4X[25Xgap>[125X [27Xc-(c-(3+s))=3+s;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsCanonicalIdealOfNumericalSemigroup(c);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
