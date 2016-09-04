@@ -131,7 +131,7 @@
       2.2-6 IsSubset
       2.2-7 BelongsToNumericalSemigroup
   3 [33X[0;0YBasic operations with numerical semigroups[133X
-    3.1 [33X[0;0YThe definitions[133X
+    3.1 [33X[0;0YInvariants[133X
       3.1-1 MultiplicityOfNumericalSemigroup
       3.1-2 GeneratorsOfNumericalSemigroup
       3.1-3 EmbeddingDimensionOfNumericalSemigroup
@@ -143,25 +143,21 @@
       3.1-9 AperyListOfNumericalSemigroupAsGraph
       3.1-10 KunzCoordinatesOfNumericalSemigroup
       3.1-11 KunzPolytope
-    3.2 [33X[0;0YFrobenius Number[133X
-      3.2-1 FrobeniusNumberOfNumericalSemigroup
-      3.2-2 FrobeniusNumber
-      3.2-3 ConductorOfNumericalSemigroup
-      3.2-4 Conductor
-      3.2-5 PseudoFrobeniusOfNumericalSemigroup
-      3.2-6 TypeOfNumericalSemigroup
-    3.3 [33X[0;0YGaps[133X
-      3.3-1 Gaps
-      3.3-2 HolesOfNumericalSemigroup
-      3.3-3 LatticePathAssociatedToNumericalSemigroup
-      3.3-4 GenusOfNumericalSemigroup
-      3.3-5 FundamentalGaps
-      3.3-6 SpecialGapsOfNumericalSemigroup
-    3.4 [33X[0;0YWilf's conjecture[133X
-      3.4-1 WilfNumberOfNumericalSemigroup
-      3.4-2 TruncatedWilfNumberOfNumericalSemigroup
-      3.4-3 ProfileOfNumericalSemigroup
-      3.4-4 EliahouSlicesOfNumericalSemigroup
+      3.1-12 FrobeniusNumberOfNumericalSemigroup
+      3.1-13 ConductorOfNumericalSemigroup
+      3.1-14 PseudoFrobeniusOfNumericalSemigroup
+      3.1-15 TypeOfNumericalSemigroup
+      3.1-16 Gaps
+      3.1-17 HolesOfNumericalSemigroup
+      3.1-18 LatticePathAssociatedToNumericalSemigroup
+      3.1-19 GenusOfNumericalSemigroup
+      3.1-20 FundamentalGaps
+      3.1-21 SpecialGapsOfNumericalSemigroup
+    3.2 [33X[0;0YWilf's conjecture[133X
+      3.2-1 WilfNumberOfNumericalSemigroup
+      3.2-2 TruncatedWilfNumberOfNumericalSemigroup
+      3.2-3 ProfileOfNumericalSemigroup
+      3.2-4 EliahouSlicesOfNumericalSemigroup
   4 [33X[0;0YPresentations of Numerical Semigroups[133X
     4.1 [33X[0;0YPresentations of Numerical Semigroups[133X
       4.1-1 MinimalPresentationOfNumericalSemigroup

@@ -2,7 +2,7 @@
   [1X3 [33X[0;0YBasic operations with numerical semigroups[133X[101X
   
   
-  [1X3.1 [33X[0;0YThe definitions[133X[101X
+  [1X3.1 [33X[0;0YInvariants[133X[101X
   
   [1X3.1-1 MultiplicityOfNumericalSemigroup[101X
   
@@ -210,18 +210,15 @@
     [4X[28X[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ][128X[104X
   [4X[32X[104X
   
+  [1X3.1-12 FrobeniusNumberOfNumericalSemigroup[101X
   
-  [1X3.2 [33X[0;0YFrobenius Number[133X[101X
+  [29X[2XFrobeniusNumberOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  [29X[2XFrobeniusNumber[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0YThe  largest nonnegative integer not belonging to a numerical semigroup [22XS[122X is
   the  [13XFrobenius  number[113X  of  [22XS[122X. If [22XS[122X is the set of nonnegative integers, then
   clearly its Frobenius number is [22X-1[122X, otherwise its Frobenius number coincides
-  with  the  maximum of the gaps (or fundamental gaps) of [22XS[122X. An integer [22Xz[122X is a
-  [13Xpseudo-Frobenius number[113X of [22XS[122X if [22Xz+S∖{0}⊆ S[122X.[133X
-  
-  [1X3.2-1 FrobeniusNumberOfNumericalSemigroup[101X
-  
-  [29X[2XFrobeniusNumberOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  with the maximum of the gaps (or fundamental gaps) of [22XS[122X.[133X
   
   [33X[0;0Y[10XNS[110X  is  a  numerical  semigroup.  It  returns the Frobenius number of [10XNS[110X. Of
   course,  the  time  consumed  to  return  a result may depend on the way the
@@ -230,31 +227,29 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
     [4X[28X4[128X[104X
-    [4X[25Xgap>[125X [27XConductor(NumericalSemigroup(3,5,7));                                   [127X[104X
-    [4X[28X5[128X[104X
+    [4X[25Xgap>[125X [27XFrobeniusNumber(NumericalSemigroup(3,5,7));                    [127X[104X
+    [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X3.2-2 FrobeniusNumber[101X
-  
-  [29X[2XFrobeniusNumber[102X( [3XNS[103X ) [32X attribute
-  
-  [33X[0;0YThis is just a synonym of [2XFrobeniusNumberOfNumericalSemigroup[102X ([14X3.2-1[114X).[133X
-  
-  [1X3.2-3 ConductorOfNumericalSemigroup[101X
+  [1X3.1-13 ConductorOfNumericalSemigroup[101X
   
   [29X[2XConductorOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  [29X[2XConductor[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0YThis is just a synonym of [10X FrobeniusNumberOfNumericalSemigroup[110X ([10XNS[110X)[22X+1[122X.[133X
   
-  [1X3.2-4 Conductor[101X
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XFrobeniusNumber(NumericalSemigroup(3,5,7));                    [127X[104X
+    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27XConductor(NumericalSemigroup(3,5,7));      [127X[104X
+    [4X[28X5[128X[104X
+  [4X[32X[104X
   
-  [29X[2XConductor[102X( [3XNS[103X ) [32X attribute
-  
-  [33X[0;0YThis is just a synonym of [10X ConductorOfNumericalSemigroup[110X ([10XNS[110X).[133X
-  
-  [1X3.2-5 PseudoFrobeniusOfNumericalSemigroup[101X
+  [1X3.1-14 PseudoFrobeniusOfNumericalSemigroup[101X
   
   [29X[2XPseudoFrobeniusOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
+  
+  [33X[0;0YAn integer [22Xz[122X is a [13Xpseudo-Frobenius number[113X of [22XS[122X if [22Xz+S∖{0}⊆ S[122X.[133X
   
   [33X[0;0Y[10XS[110X is a numerical semigroup. It returns set of pseudo-Frobenius numbers of [3XS[103X.[133X
   
@@ -265,14 +260,11 @@
     [4X[28X[ 21, 40, 41, 42 ][128X[104X
   [4X[32X[104X
   
-  [1X3.2-6 TypeOfNumericalSemigroup[101X
+  [1X3.1-15 TypeOfNumericalSemigroup[101X
   
   [29X[2XTypeOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0YStands for [10XLength(PseudoFrobeniusOfNumericalSemigroup (NS))[110X.[133X
-  
-  
-  [1X3.3 [33X[0;0YGaps[133X[101X
   
   [33X[0;0YA  [13Xgap[113X  of a numerical semigroup [22XS[122X is a nonnegative integer not belonging to
   [22XS[122X. The [13Xfundamental gaps[113X of [22XS[122X are those gaps that are maximal with respect to
@@ -281,7 +273,7 @@
   given  numerical  semigroup,  then  the  resulting  set is again a numerical
   semigroup.[133X
   
-  [1X3.3-1 Gaps[101X
+  [1X3.1-16 Gaps[101X
   
   [29X[2XGaps[102X( [3XNS[103X ) [32X attribute
   [29X[2XGapsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
@@ -295,7 +287,7 @@
     [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-2 HolesOfNumericalSemigroup[101X
+  [1X3.1-17 HolesOfNumericalSemigroup[101X
   
   [29X[2XHolesOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -311,7 +303,7 @@
     [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-3 LatticePathAssociatedToNumericalSemigroup[101X
+  [1X3.1-18 LatticePathAssociatedToNumericalSemigroup[101X
   
   [29X[2XLatticePathAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xp[103X, [3Xq[103X ) [32X attribute
   
@@ -334,13 +326,13 @@
     [4X[28X  [ 14, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-4 GenusOfNumericalSemigroup[101X
+  [1X3.1-19 GenusOfNumericalSemigroup[101X
   
   [29X[2XGenusOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0Y[10XNS[110X is a numerical semigroup. It returns the number of gaps of [10XNS[110X.[133X
   
-  [1X3.3-5 FundamentalGaps[101X
+  [1X3.1-20 FundamentalGaps[101X
   
   [29X[2XFundamentalGaps[102X( [3XS[103X ) [32X attribute
   [29X[2XFundamentalGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
@@ -361,7 +353,7 @@
     [4X[28X[ 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.3-6 SpecialGapsOfNumericalSemigroup[101X
+  [1X3.1-21 SpecialGapsOfNumericalSemigroup[101X
   
   [29X[2XSpecialGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -375,7 +367,7 @@
   [4X[32X[104X
   
   
-  [1X3.4 [33X[0;0YWilf's conjecture[133X[101X
+  [1X3.2 [33X[0;0YWilf's conjecture[133X[101X
   
   [33X[0;0YLet  [22XS[122X be a numerical semigroup, with conductor [22Xc[122X and embedding dimension [22Xe[122X.
   Denote by [22Xl[122X the cardinality of the set of elements in [22XS[122X smaller than [22Xc[122X. Wilf
@@ -383,7 +375,7 @@
   this  section  we give some functions to experiment with this conjecture, as
   defined in [Eli15].[133X
   
-  [1X3.4-1 WilfNumberOfNumericalSemigroup[101X
+  [1X3.2-1 WilfNumberOfNumericalSemigroup[101X
   
   [29X[2XWilfNumberOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -400,7 +392,7 @@
     [4X[28X      [128X[104X
   [4X[32X[104X
   
-  [1X3.4-2 TruncatedWilfNumberOfNumericalSemigroup[101X
+  [1X3.2-2 TruncatedWilfNumberOfNumericalSemigroup[101X
   
   [29X[2XTruncatedWilfNumberOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -421,7 +413,7 @@
     [4X[28X      [128X[104X
   [4X[32X[104X
   
-  [1X3.4-3 ProfileOfNumericalSemigroup[101X
+  [1X3.2-3 ProfileOfNumericalSemigroup[101X
   
   [29X[2XProfileOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -441,7 +433,7 @@
     [4X[28X      [128X[104X
   [4X[32X[104X
   
-  [1X3.4-4 EliahouSlicesOfNumericalSemigroup[101X
+  [1X3.2-4 EliahouSlicesOfNumericalSemigroup[101X
   
   [29X[2XEliahouSlicesOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
