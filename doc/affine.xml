@@ -7,11 +7,11 @@
 
     An affine semigroup <M>S</M> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<M> a s= b s</M> implies <M>a=b</M>, with <M>a,b\in \mathbb N</M> and <M>s\in S</M>).
 
-    Up to isomorphisms any affine semigroup can ve viewed as a finitely generated submonoid of <M>\mathbb N^k</M> for some positive integer <M>k</M>. Thus affine semigroups are a natural generalization of numerical semigroups.
+    Up to isomorphisms any affine semigroup can be viewed as a finitely generated submonoid of <M>\mathbb N^k</M> for some positive integer <M>k</M>. Thus affine semigroups are a natural generalization of numerical semigroups.
 
     The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually).
 
-    If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are call full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
+    If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are called full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
 <P/>
 
 To create an affine semigroup in &GAP; the function
@@ -164,8 +164,8 @@ true
   <Func Arg="ls, m" Name="HilbertBasisOfSystemOfHomogeneousEquations"></Func>
   <Description>
     <A>ls</A> is a list of lists of integers and <A>m</A> a list of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.
-    The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the sytem <M>Ax=0</M> where the <M>k</M> first equations are in the congruences modulo <A>m[i]</A>, with <M>k</M> the length of <A>m</A>. <P/>
-    If the package <C>NormalizInterface</C> has not been loaded, then Contejean-Devie algorithm is used <Cite Key="MR1283022"></Cite> instead (if this is the case, congruences are treated as in <Cite Key="R-GS"></Cite>.
+    The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the system <M>Ax=0</M> where the <M>k</M> first equations are in the congruences modulo <A>m[i]</A>, with <M>k</M> the length of <A>m</A>. <P/>
+    If the package <C>NormalizInterface</C> has not been loaded, then Contejean-Devie algorithm is used <Cite Key="MR1283022"></Cite> instead (if this is the case, congruences are treated as in <Cite Key="R-GS"></Cite>).
 
     <Example><![CDATA[
 gap> HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);
@@ -195,7 +195,7 @@ gap> HilbertBasisOfSystemOfHomogeneousInequalities([[2,-3],[0,1]]);
 <ManSection>
   <Func Arg="M" Name="EquationsOfGroupGeneratedBy"></Func>
   <Description>
-    <A>M</A> is a matrix of integers. The output is a pair <M>[A,m]</M> that reperesents the set of defining equations of the group spanned by the rows of <A>M</A>: <M>Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k</M>, with <M>m=[n_1,\ldots,n_t]</M>.
+    <A>M</A> is a matrix of integers. The output is a pair <M>[A,m]</M> that represents the set of defining equations of the group spanned by the rows of <A>M</A>: <M>Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k</M>, with <M>m=[n_1,\ldots,n_t]</M>.
 
     <Example><![CDATA[
 gap> EquationsOfGroupGeneratedBy([[1,2,0],[2,-2,2]]);
@@ -253,7 +253,7 @@ gap> Generators(last);
     Presentations of affine semigroups
   </Heading>
 
-  A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.
+  A minimal presentation of an affine semigroup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
 
   <ManSection>
     <Func Arg="M" Name="GeneratorsOfKernelCongruence"></Func>
@@ -261,7 +261,7 @@ gap> Generators(last);
       <A>M</A> is matrix with nonnegative integer coefficients.
       The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
   <P/>
-  The main differe3nce with <C>MinimalPresentationOfAffineSemigroup</C> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
+  The main difference with <C>MinimalPresentationOfAffineSemigroup</C> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
     </Description>
   </ManSection>
 
@@ -272,7 +272,7 @@ gap> Generators(last);
       <A>a</A> is an affine semigroup.
       The output is a minimal presentation for <A>a</A>.
   <P/>
-  There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<Cite Key="MR0269762"></Cite>). The fastest procedure is achived when <C>SingularInterface</C> is loaded, followed by <C>Singular</C>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of gerating binomials must be refined, and for this Rclasses are used (if <C>NormalizInterface</C> is loaded, then the factorizations are faster). The <C>4ti2</C> implementation uses <C>4ti2</C> internal Gröbner bases and factorizations are done via <C>zsolve</C>.
+  There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<Cite Key="MR0269762"></Cite>). The fastest procedure is achieved when <C>SingularInterface</C> is loaded, followed by <C>Singular</C>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of generating binomials must be refined, and for this Rclasses are used (if <C>NormalizInterface</C> is loaded, then the factorizations are faster). The <C>4ti2</C> implementation uses <C>4ti2</C> internal Gröbner bases and factorizations are done via <C>zsolve</C>.
 
       <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
@@ -303,7 +303,7 @@ gap> BettiElementsOfAffineSemigroup(a);
     <Description>
       <A>a</A> is an affine semigroup and <A>v</A> is an element in <A>a</A>.
 
-      This is a translation of <C>ShadedSetOfElementInNumericalSemigroup</C> (<Ref Chap="shadedset"/>) but for affine semigroups.
+      This is a translation to affine semigroups of <C>ShadedSetOfElementInNumericalSemigroup</C> (<Ref Chap="shadedset"/>).
 
     </Description>
   </ManSection>
@@ -333,7 +333,7 @@ gap> BettiElementsOfAffineSemigroup(a);
     <Description>
       <A>a</A> is an affine semigroup.
       The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
-<P/>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <A>a</A> and the other (much faster) using  <C>NormalizInterface</C>. Also a <C>4ti2</C> version using its Graber basis computation is provided.
+<P/>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <A>a</A> and the other (much faster) using  <C>NormalizInterface</C>. Also a <C>4ti2</C> version using its Graver basis computation is provided.
       <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> PrimitiveElementsOfAffineSemigroup(a);
@@ -352,7 +352,7 @@ gap> PrimitiveElementsOfAffineSemigroup(a);
 
   The invariants presented here are defined as for numerical semigroups.
 
-  <P/>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.
+  <P/>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
 
 
   <ManSection>
@@ -361,7 +361,7 @@ gap> PrimitiveElementsOfAffineSemigroup(a);
       <A>v</A> is a list of nonnegative integers and <A>ls</A> is a list of lists of nonnegative integers.
       The output is set of factorizations of <A>v</A> in terms of the elements of <A>ls</A>.
   <P/>
-  If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <C>NormalizInterface</C> is loaded, then a system of equations is solve with Normaliz, and the performance is much better. If <C>4ti2Interface</C> is loaded instead, then factorizations are calculated using <C>zsolve</C> command of <C>4ti2</C>.
+  If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <C>NormalizInterface</C> is loaded, then a system of equations is solved with Normaliz, and the performance is much better. If <C>4ti2Interface</C> is loaded instead, then factorizations are calculated using <C>zsolve</C> command of <C>4ti2</C>.
 
       <Example><![CDATA[
 gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
@@ -376,7 +376,7 @@ gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the elasticity of <A>a</A> (defined as for numerical semigroups).
-	    <P/> The procedure used is based on <Cite Key="PH"></Cite>, where it is shown that the elasticity can be computed by using circuits. The set of circutis is calculated using <Cite Key="MR1394747"></Cite>.
+	    <P/> The procedure used is based on <Cite Key="PH"></Cite>, where it is shown that the elasticity can be computed by using circuits. The set of circuits is calculated using <Cite Key="MR1394747"></Cite>.
 
             <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;

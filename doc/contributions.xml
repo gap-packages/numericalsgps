@@ -400,7 +400,7 @@ gap> DeltaSetOfNumericalSemigroup(s);
 
 <Section><Heading>Functions implemented by K. Stokes</Heading>
 
-In this section we document the functions implmented by K. Stokes related to patterns of ideals in numerical semigroups. The correctedness of the algorithms can be found in <Cite Key="Stokes"></Cite>.
+In this section we document the functions implemented by K. Stokes related to patterns of ideals in numerical semigroups. The correctness of the algorithms can be found in <Cite Key="Stokes"></Cite>.
 
 
 <ManSection>
@@ -445,7 +445,7 @@ true
   <Func Arg="I,T" Name="AsIdealOfNumericalSemigroup"></Func>
   <Description>
 
-    <A>I</A> is an ideal of a numerical semigroup <M>S</M>, and <A>T</A> is a numerical semgigroup. Detects if <A>I</A> is an ideal of <A>T</A> and contained in <A>T</A> (integral ideal), and if so, returns <A>I</A> as an ideal of <A>T</A>. It returns <C>fail</C> if <A>I</A> is an ideal of some semigroup but not an integral ideal of <A>t</A>.
+    <A>I</A> is an ideal of a numerical semigroup <M>S</M>, and <A>T</A> is a numerical semigroup. Detects if <A>I</A> is an ideal of <A>T</A> and contained in <A>T</A> (integral ideal), and if so, returns <A>I</A> as an ideal of <A>T</A>. It returns <C>fail</C> if <A>I</A> is an ideal of some semigroup but not an integral ideal of <A>t</A>.
 
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7,5);;
@@ -480,7 +480,7 @@ gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
 
     <A>p</A> is the list of integers that are the coefficients of a strongly admissible pattern. <A>I</A> is an ideal of a numerical semigroup.<P/>
 
-    Calculates <M>p(I)</M>. Outputs <M>p(I)</M>, represented as <C>[d,p(I)/d]</C>, where <C>d</C > is the gcd of the coefficients of <A>p</A>. All elements of <M>p(I)</M> are divisible by <M>d</M>, and <M>p(I)/d</M> is an ideal of some numerical semigroup. It is returned as the maximal ideal of the numerical semigroup <M>p(I)/d \cup \{0\}</M>. The parent numerical semigroup can later be changed with the funcion <C>AsIdealOfNumericalSemigroup</C>.
+    Calculates <M>p(I)</M>. Outputs <M>p(I)</M>, represented as <C>[d,p(I)/d]</C>, where <C>d</C > is the gcd of the coefficients of <A>p</A>. All elements of <M>p(I)</M> are divisible by <M>d</M>, and <M>p(I)/d</M> is an ideal of some numerical semigroup. It is returned as the maximal ideal of the numerical semigroup <M>p(I)/d \cup \{0\}</M>. The parent numerical semigroup can later be changed with the function <C>AsIdealOfNumericalSemigroup</C>.
 
 
      <Example><![CDATA[
