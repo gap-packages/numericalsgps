@@ -8,7 +8,7 @@
                 <P/>
                 
                 It is not difficult to prove that a semigroup is irreducible if and only if it is 
-                maximal (with respect to set inclusion) in the set of all numerical semigroup having
+                maximal (with respect to set inclusion) in the set of all numerical semigroups having
                 its same Frobenius number (see <Cite Key="RB03"></Cite>). Hence, according to 
                 <Cite Key="FGH87"></Cite> (respectively <Cite Key="BDF97"></Cite>), 
                 symmetric (respectively pseudo-symmetric) numerical semigroups are those irreducible 
@@ -82,10 +82,14 @@ false
                     <Func Arg="f" Name="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"></Func>
                     <Description>
                         <A>f</A> is an integer greater than or equal to -1. The output is an irreducible 
-                        numerical semigroup with frobenius number <A> f</A>. From the way the procedure is
+                        numerical semigroup with Frobenius number <A> f</A>. From the way the procedure is
                         implemented, the resulting semigroup has at most four generators (see <Cite Key="RGS04"></Cite>).           
                         <Example><![CDATA[
-gap> FrobeniusNumber(AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28));
+gap> s := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);
+<Numerical semigroup with 3 generators>
+gap> MinimalGenerators(s);                                       
+[ 3, 17, 31 ]
+gap> FrobeniusNumber(s);
 28
 ]]></Example>          
                     </Description>
@@ -96,7 +100,7 @@ gap> FrobeniusNumber(AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28));
                     <Func Arg="f" Name="IrreducibleNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
                         <A>f</A> is an integer greater than or equal to -1. The output is the set of all
-                        irreducible numerical semigroups with frobenius number <A>f</A>.         
+                        irreducible numerical semigroups with Frobenius number <A>f</A>.         
                         <Example><![CDATA[
 gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
 227

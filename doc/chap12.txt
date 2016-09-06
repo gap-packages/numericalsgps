@@ -49,7 +49,6 @@
     [4X[28X  [ 11, 9 ], [ 11, 11 ] ][128X[104X
     [4X[25Xgap>[125X [27X[384938749837,349823749827] in dup;[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X          [128X[104X
   [4X[32X[104X
   
   [1X12.1-3 AmalgamationOfNumericalSemigroups[101X
@@ -68,7 +67,7 @@
     [4X[25Xgap>[125X [27Xdup:=AmalgamationOfNumericalSemigroups(s,e,2);;[127X[104X
     [4X[25Xgap>[125X [27X[2,3] in dup;[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X            [128X[104X
+    [4X[28X  [128X[104X
   [4X[32X[104X
   
   [1X12.1-4 CartesianProductOfNumericalSemigroups[101X
@@ -83,7 +82,7 @@
     [4X[25Xgap>[125X [27Xt:=NumericalSemigroup(3,4);;[127X[104X
     [4X[25Xgap>[125X [27XIsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X            [128X[104X
+    [4X[28X  [128X[104X
   [4X[32X[104X
   
   [1X12.1-5 GoodSemigroup[101X
@@ -103,7 +102,7 @@
     [4X[28X[ 25, 27 ][128X[104X
     [4X[25Xgap>[125X [27XGoodSemigroup(G,C);[127X[104X
     [4X[28X<Good semigroup>[128X[104X
-    [4X[28X            [128X[104X
+    [4X[28X  [128X[104X
   [4X[32X[104X
   
   
@@ -255,7 +254,7 @@
   [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical semigroups, [3XM[103X is a list of pairs in [22XS× T[122X. [3XC[103X is the
   conductor, and thus a pair of nonnegative integers. The output is the set of
   elements  of [22XS× T[122X that are not above an element in [3XM[103X, that is, if they share
-  a  coordinate  with  an element in [3XM[103X, then they must be smaller or equalt to
+  a  coordinate  with  an  element in [3XM[103X, then they must be smaller or equal to
   that  element  with  respect  to the usual partial ordering. The output is a
   good semigroup, if [3XM[103X is an correct set of maximal elements.[133X
   
@@ -272,7 +271,7 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xgg=g;[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X                      [128X[104X
+    [4X[28X            [128X[104X
   [4X[32X[104X
   
   [1X12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
@@ -373,7 +372,6 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xi:=GoodIdeal([[2,3]],g);[127X[104X
     [4X[28X<Good ideal of good semigroup>[128X[104X
-    [4X[28X          [128X[104X
   [4X[32X[104X
   
   [1X12.4-2 GoodGeneratingSystemOfGoodIdeal[101X
@@ -390,7 +388,6 @@
     [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],d);;[127X[104X
     [4X[25Xgap>[125X [27XGoodGeneratingSystemOfGoodIdeal(e);[127X[104X
     [4X[28X[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ][128X[104X
-    [4X[28X          [128X[104X
   [4X[32X[104X
   
   [1X12.4-3 AmbientGoodSemigroupOfGoodIdeal[101X
@@ -407,7 +404,6 @@
     [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2],[2,2]],a);;[127X[104X
     [4X[25Xgap>[125X [27Xa=AmbientGoodSemigroupOfGoodIdeal(e);[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X          [128X[104X
   [4X[32X[104X
   
   [1X12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal[101X
@@ -462,7 +458,6 @@
     [4X[25Xgap>[125X [27Xe:=GoodIdeal([[2,3],[3,2]],d);;[127X[104X
     [4X[25Xgap>[125X [27XSmallElements(e);[127X[104X
     [4X[28X[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ][128X[104X
-    [4X[28X          [128X[104X
   [4X[32X[104X
   
   [1X12.4-7 CanonicalIdealOfGoodSemigroup[101X
@@ -478,6 +473,5 @@
     [4X[25Xgap>[125X [27Xc:=CanonicalIdealOfGoodSemigroup(d);;[127X[104X
     [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodIdeal(c);[127X[104X
     [4X[28X[ [ 0, 0 ], [ 2, 2 ] ][128X[104X
-    [4X[28X          [128X[104X
   [4X[32X[104X
   

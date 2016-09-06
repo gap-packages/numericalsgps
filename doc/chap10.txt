@@ -43,7 +43,7 @@
   
   [29X[2XNumericalSemigroupFromNumericalSemigroupPolynomial[102X( [3Xf[103X ) [32X function
   
-  [33X[0;0Y[3Xf[103X  is  polynomial  associated  to  a  numerical  semigroup (otherwise yields
+  [33X[0;0Y[3Xf[103X  is  a  polynomial  associated  to a numerical semigroup (otherwise yields
   error).  The  output  is  the  numerical  semigroup  [22XS[122X  such  that  [3Xf[103X equals
   [22X(1-x)H_S(x)[122X.[133X
   
@@ -60,9 +60,8 @@
   
   [29X[2XHilbertSeriesOfNumericalSemigroup[102X( [3Xs[103X, [3Xx[103X ) [32X function
   
-  [33X[0;0Y[3Xs[103X  is  a  numerical semigroups and [3Xx[103X a variable (or a value to evaluate in).
-  The  output  is  the  series [22X∑_s∈ ∖ S x^s[122X. The series is given as a rational
-  function.[133X
+  [33X[0;0Y[3Xs[103X is a numerical semigroup and [3Xx[103X a variable (or a value to evaluate in). The
+  output is the series [22X∑_s∈ S x^s[122X. The series is given as a rational function.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
@@ -104,7 +103,7 @@
   
   [33X[0;0Y[3Xp[103X  is a polynomial. Detects if [3Xp[103X is a Kronecker polynomial, that is, a monic
   polynomial  with  integer  coefficients  having  all  its  roots in the unit
-  circunference, or equivalently, a product of cyclotomic polynomials.[133X
+  circumference, or equivalently, a product of cyclotomic polynomials.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");;[127X[104X
@@ -137,8 +136,8 @@
   
   [29X[2XIsSelfReciprocalUnivariatePolynomial[102X( [3Xp[103X ) [32X function
   
-  [33X[0;0Y[3Xp[103X  is  a polynomial. Detects if [3Xp[103X is a selfreciprocal. A numerical semigroup
-  is symmetric if and only if it is selfreciprocal, [Mor14][133X
+  [33X[0;0Y[3Xp[103X  is  a  univariate polynomial. Detects if [3Xp[103X is selfreciprocal. A numerical
+  semigroup is symmetric if and only if it is selfreciprocal, [Mor14].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xl:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;[127X[104X
@@ -151,11 +150,11 @@
   
   [1X10.2 [33X[0;0YSemigroup of values of algebraic curves[133X[101X
   
-  [33X[0;0YLet  [22Xf(x,y)∈  K[x,y][122X,  with [22XK[122X an algebraically close field of characteristic
+  [33X[0;0YLet  [22Xf(x,y)∈  K[x,y][122X, with [22XK[122X an algebraically closed field of characteristic
   zero.  Let  [22Xf(x,y)=y^n+a_1(x)y^n-1+dots+a_n(x)[122X  be  a  nonzero polynomial of
   [22XK[x][y][122X.  After  possibly  a  change  of variables, we may assume that, that
   [22Xdeg_x(a_i(x))le  i-1[122X  for  all  [22Xi∈{1,...,  n}[122X.  For  [22Xg∈ K[x,y][122X that is not a
-  multiple  of [22Xf[122X, define [22Xmathrmint(f,g)=dim_ K frac K[x,y](f,g)[122X. If [22Xf[122X as a one
+  multiple  of  [22Xf[122X, define [22Xmathrmint(f,g)=dim_ K frac K[x,y](f,g)[122X. If [22Xf[122X has one
   place  at  infinity,  then the set [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X is a free
   numerical semigroup (and thus a complete intersection).[133X
   
@@ -182,9 +181,9 @@
   [29X[2XIsDeltaSequence[102X( [3Xl[103X ) [32X function
   
   [33X[0;0Y[3Xl[103X  is  a  list  of positive integers. Assume that [3Xl[103X equals [22Xa_0,a_1,dots,a_h[122X.
-  Then [3Xl[103X is a [22Xδ[122X-sequence if [22Xgcd(a_0,..., a_h)=1[122X, [22X⟨ a_0,⋯ a_s[122X is free, [22Xa_kD_k >
-  a_k+1D_k+1[122X  and  [22Xa_0>  a_1  >  D_2  >  D_3  >  ...  >  D_h+1[122X, where [22XD_1=a_0[122X,
-  [22XD_k=gcd(D_k-1,a_k-1[122X.[133X
+  Then [3Xl[103X is a [22Xδ[122X-sequence if [22Xgcd(a_0,..., a_h)=1[122X, [22X⟨ a_0,⋯, a_s⟩[122X is free, [22Xa_kD_k
+  >  a_k+1D_k+1[122X  and  [22Xa_0>  a_1  >  D_2  >  D_3  > ... > D_h+1[122X, where [22XD_1=a_0[122X,
+  [22XD_k=gcd(D_k-1,a_k-1)[122X.[133X
   
   [33X[0;0YEvery  [22Xδ[122X-sequence  generates  a numerical semigroup that is the semigroup of
   values of a plane curve with one place at infinity.[133X
@@ -231,7 +230,7 @@
   
   [33X[0;0Y[3Xf[103X  is  a  polynomial in the variables X(Rationals,1) and X(Rationals,2). The
   singular  package  is  mandatory.  Either  by  loading it prior to numerical
-  semigroups or by using [3XNumSgpsUseSingular()[103X. If $f$ is irreducible, computes
+  semigroups  or  by using [3XNumSgpsUseSingular()[103X. If [22Xf[122X is irreducible, computes
   the semigroup [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X, where [22Xmathrmint(f,g)=dim_ K (
   K[[x,y]]/(f,g))[122X. If it has two components, the output is the value semigroup
   in  two  variables, and thus a good semigroup. If there are more components,
@@ -266,7 +265,7 @@
   the  algebra  [22XK[[pols]][122X  such that the orders of the basis elements generate
   minimally  the  semigroup  of  orders of [22XK[[pols]][122X. If an integer [3Xval[103X is the
   second argument, then the output is a polynomial in [22XK[[pols]][122X with order [3Xval[103X
-  ([10Xfail[110X  if there is no such polynomioal, that is, [3Xval[103X is not in the semigroup
+  ([10Xfail[110X  if  there is no such polynomial, that is, [3Xval[103X is not in the semigroup
   of values).[133X
   
   [33X[0;0YThe method is explained in [AGM14].[133X
@@ -297,7 +296,7 @@
   the  algebra  [22XK[pols][122X  such  that the degrees of the basis elements generate
   minimally  the  semigroup  of  degrees  of [22XK[pols][122X. If an integer [3Xval[103X is the
   second  argument, then the output is a polynomial in [22XK[pols][122X with degree [3Xval[103X
-  ([10Xfail[110X  if there is no such polynomioal, that is, [3Xval[103X is not in the semigroup
+  ([10Xfail[110X  if  there is no such polynomial, that is, [3Xval[103X is not in the semigroup
   of values).[133X
   
   [33X[0;0YThe method is explained in [AGM14].[133X

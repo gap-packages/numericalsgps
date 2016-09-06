@@ -43,7 +43,7 @@ gap> Intersection(dup,l);
   [ 11, 9 ], [ 11, 11 ] ]
 gap> [384938749837,349823749827] in dup;
 true
-          ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
@@ -61,7 +61,7 @@ gap> e:=3+t;;
 gap> dup:=AmalgamationOfNumericalSemigroups(s,e,2);;
 gap> [2,3] in dup;
 true
-            ]]></Example>
+  ]]></Example>
         </Description>
       </ManSection>
 
@@ -77,7 +77,7 @@ gap> s:=NumericalSemigroup(2,3);;
 gap> t:=NumericalSemigroup(3,4);;
 gap> IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));
 true
-            ]]></Example>
+  ]]></Example>
         </Description>
       </ManSection>
 
@@ -96,7 +96,7 @@ gap> C:=[25,27];
 [ 25, 27 ]
 gap> GoodSemigroup(G,C);
 <Good semigroup>
-            ]]></Example>
+  ]]></Example>
         </Description>
       </ManSection>
 
@@ -241,7 +241,7 @@ gap> mx:=MaximalElementsOfGoodSemigroup(g);
     <Func Arg="S, T, M, C" Name="GoodSemigroupByMaximalElements"></Func>
     <Description>
       <A>S</A> and <A>T</A> are numerical semigroups, <A>M</A> is a list of pairs in <M>S\times T</M>. <A>C</A> is the conductor, and thus a pair of nonnegative integers.
-      The output is the set of elements of <M>S\times T</M> that are not above an element in <A>M</A>, that is, if they share a coordinate with an element in <A>M</A>, then they must be smaller or equalt to that element with respect to the usual partial ordering. The output is a good semigroup, if <A>M</A> is an correct set of maximal elements.
+      The output is the set of elements of <M>S\times T</M> that are not above an element in <A>M</A>, that is, if they share a coordinate with an element in <A>M</A>, then they must be smaller or equal to that element with respect to the usual partial ordering. The output is a good semigroup, if <A>M</A> is an correct set of maximal elements.
 
       <Example><![CDATA[
 gap> G:=[[4,3],[7,13],[11,17]];;
@@ -256,7 +256,7 @@ gap> gg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);
 <Good semigroup>
 gap> gg=g;
 true
-                      ]]></Example>
+            ]]></Example>
     </Description>
   </ManSection>
 
@@ -361,7 +361,7 @@ gap> GoodSemigroup(G,C);
 <Good semigroup>
 gap> i:=GoodIdeal([[2,3]],g);
 <Good ideal of good semigroup>
-          ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
@@ -378,7 +378,7 @@ gap> d:=NumericalSemigroupDuplication(s,e);;
 gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
 gap> GoodGeneratingSystemOfGoodIdeal(e);
 [ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
-          ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
@@ -394,7 +394,7 @@ gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
 gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
 gap> a=AmbientGoodSemigroupOfGoodIdeal(e);
 true
-          ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
@@ -449,7 +449,7 @@ gap> d:=NumericalSemigroupDuplication(s,e);;
 gap> e:=GoodIdeal([[2,3],[3,2]],d);;
 gap> SmallElements(e);
 [ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ]
-          ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
@@ -466,7 +466,7 @@ gap> d:=NumericalSemigroupDuplication(s,e);;
 gap> c:=CanonicalIdealOfGoodSemigroup(d);;
 gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
 [ [ 0, 0 ], [ 2, 2 ] ]
-          ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 

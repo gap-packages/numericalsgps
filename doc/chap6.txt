@@ -9,8 +9,8 @@
   
   [33X[0;0YIt  is not difficult to prove that a semigroup is irreducible if and only if
   it  is  maximal  (with respect to set inclusion) in the set of all numerical
-  semigroup having its same Frobenius number (see [RB03]). Hence, according to
-  [FGR87]  (respectively  [BDF97]),  symmetric (respectively pseudo-symmetric)
+  semigroups  having  its same Frobenius number (see [RB03]). Hence, according
+  to [FGR87] (respectively [BDF97]), symmetric (respectively pseudo-symmetric)
   numerical  semigroups  are  those  irreducible numerical semigroups with odd
   (respectively even) Frobenius number.[133X
   
@@ -77,12 +77,16 @@
   [29X[2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is an irreducible
-  numerical  semigroup with frobenius number [3X f[103X. From the way the procedure is
+  numerical  semigroup with Frobenius number [3X f[103X. From the way the procedure is
   implemented,  the  resulting  semigroup  has  at  most  four generators (see
   [RG04]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XFrobeniusNumber(AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28));[127X[104X
+    [4X[25Xgap>[125X [27Xs := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(s);                                       [127X[104X
+    [4X[28X[ 3, 17, 31 ][128X[104X
+    [4X[25Xgap>[125X [27XFrobeniusNumber(s);[127X[104X
     [4X[28X28[128X[104X
   [4X[32X[104X
   
@@ -91,7 +95,7 @@
   [29X[2XIrreducibleNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  irreducible numerical semigroups with frobenius number [3Xf[103X.[133X
+  irreducible numerical semigroups with Frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));[127X[104X

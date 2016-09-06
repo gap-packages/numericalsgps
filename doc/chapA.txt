@@ -3,7 +3,7 @@
   
   [33X[0;0YHere  we  describe  some  functions  which  are  not  specific for numerical
   semigroups  but  are  used  to  do  computations with them. As they may have
-  interest by themselves, we decribe them here.[133X
+  interest by themselves, we describe them here.[133X
   
   
   [1XA.1 [33X[0;0YBézout sequences[133X[101X
@@ -18,7 +18,7 @@
   
   [29X[2XBezoutSequence[102X( [3Xarg[103X ) [32X function
   
-  [33X[0;0Y[3Xarg[103X  consits  of two rational numbers or a list of two rational numbers. The
+  [33X[0;0Y[3Xarg[103X  consists of two rational numbers or a list of two rational numbers. The
   output  is  a  Bézout  sequence  with  ends  the two rational numbers given.
   (Warning:   rational  numbers  are  silently  transformed  into  irreducible
   fractions.)[133X
@@ -68,7 +68,7 @@
   [29X[2XRepresentsPeriodicSubAdditiveFunction[102X( [3XL[103X ) [32X function
   
   [33X[0;0Y[3XL[103X  is a list of integers. [10XRepresentsPeriodicSubAdditiveFunction[110X returns [9Xtrue[109X
-  or [9Xfalse[109X according to whether [3XL[103X represents a periodic subAdditive function [22Xf[122X
+  or [9Xfalse[109X according to whether [3XL[103X represents a periodic subadditive function [22Xf[122X
   periodic  of  period [22Xm[122X or not. To avoid defining [22Xf(0)[122X (which we assume to be
   0)  we  define  [22Xf(m)=0[122X  and  so the last element of the list must be 0. This
   technical  need is due to the fact that positions in a list must be positive
@@ -83,7 +83,7 @@
   
   [29X[2XIsListOfIntegersNS[102X( [3XL[103X ) [32X function
   
-  [33X[0;0YDetects wheter [3XL[103X is a nonempty list of integers.[133X
+  [33X[0;0YDetects whether [3XL[103X is a nonempty list of integers.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsListOfIntegersNS([1,-1,0]);[127X[104X

@@ -29,8 +29,6 @@
     [4X[28X      gap> MinimalPresentationOfNumericalSemigroup(s);[128X[104X
     [4X[28X      [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [128X[104X
     [4X[28X      [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe first element in the list means that [22X1× 3+1× 7=2× 5[122X, and the others have
@@ -54,8 +52,6 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
     [4X[28X      gap> GraphAssociatedToElementInNumericalSemigroup(10,s);[128X[104X
     [4X[28X      [ [ 3, 5, 7 ], [ [ 3, 7 ] ] ][128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   [1X4.1-3 BettiElementsOfNumericalSemigroup[101X
@@ -71,8 +67,6 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
     [4X[28X      gap> BettiElementsOfNumericalSemigroup(s);[128X[104X
     [4X[28X      [ 10, 12, 14 ][128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   [1X4.1-4 PrimitiveElementsOfNumericalSemigroup[101X
@@ -90,8 +84,6 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
     [4X[28X      gap> PrimitiveElementsOfNumericalSemigroup(s);[128X[104X
     [4X[28X      [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ][128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   [1X4.1-5 ShadedSetOfElementInNumericalSemigroup[101X
@@ -109,8 +101,6 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
     [4X[28X      gap> ShadedSetOfElementInNumericalSemigroup(10,s);[128X[104X
     [4X[28X      [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ][128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   
@@ -134,8 +124,6 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
     [4X[28X      gap> IsUniquelyPresentedNumericalSemigroup(s);[128X[104X
     [4X[28X      true[128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   [1X4.2-2 IsGenericNumericalSemigroup[101X
@@ -152,7 +140,5 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
     [4X[28X      gap> IsGenericNumericalSemigroup(s);[128X[104X
     [4X[28X      true[128X[104X
-    [4X[28X      [128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   

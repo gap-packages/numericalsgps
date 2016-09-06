@@ -93,7 +93,7 @@
         Defining affine semigroups
     </span></h4>
 
-<p>An affine semigroup <span class="SimpleMath">\(S\)</span> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<span class="SimpleMath">\( a s= b s\)</span> implies <span class="SimpleMath">\(a=b\)</span>, with <span class="SimpleMath">\(a,b\in \mathbb N\)</span> and <span class="SimpleMath">\(s\in S\)</span>). Up to isomorphisms any affine semigroup can ve viewed as a finitely generated submonoid of <span class="SimpleMath">\(\mathbb N^k\)</span> for some positive integer <span class="SimpleMath">\(k\)</span>. Thus affine semigroups are a natural generalization of numerical semigroups. The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually). If <span class="SimpleMath">\(G\)</span> is a subgroup of <span class="SimpleMath">\(\mathbb Z^k\)</span>, then <span class="SimpleMath">\(S=G\cap \mathbb N^k\)</span> is an affine semigroup (these semigroups are call full affine semigroups). As <span class="SimpleMath">\(G\)</span> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <span class="SimpleMath">\(S\)</span> by the defining equations of <span class="SimpleMath">\(G\)</span>; indeed <span class="SimpleMath">\(S\)</span> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <span class="SimpleMath">\(x+y\equiv 0\bmod 2,\ x-2y=0\)</span> will be represented as [[1,1],[1,-2]] and the moduli [2].</p>
+<p>An affine semigroup <span class="SimpleMath">\(S\)</span> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<span class="SimpleMath">\( a s= b s\)</span> implies <span class="SimpleMath">\(a=b\)</span>, with <span class="SimpleMath">\(a,b\in \mathbb N\)</span> and <span class="SimpleMath">\(s\in S\)</span>). Up to isomorphisms any affine semigroup can be viewed as a finitely generated submonoid of <span class="SimpleMath">\(\mathbb N^k\)</span> for some positive integer <span class="SimpleMath">\(k\)</span>. Thus affine semigroups are a natural generalization of numerical semigroups. The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually). If <span class="SimpleMath">\(G\)</span> is a subgroup of <span class="SimpleMath">\(\mathbb Z^k\)</span>, then <span class="SimpleMath">\(S=G\cap \mathbb N^k\)</span> is an affine semigroup (these semigroups are called full affine semigroups). As <span class="SimpleMath">\(G\)</span> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <span class="SimpleMath">\(S\)</span> by the defining equations of <span class="SimpleMath">\(G\)</span>; indeed <span class="SimpleMath">\(S\)</span> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <span class="SimpleMath">\(x+y\equiv 0\bmod 2,\ x-2y=0\)</span> will be represented as [[1,1],[1,-2]] and the moduli [2].</p>
 
 <p>To create an affine semigroup in <strong class="pkg">GAP</strong> the function <code class="code">AffineSemigroup</code> is used.</p>
 
@@ -239,9 +239,9 @@ true
 <h5>11.1-8 HilbertBasisOfSystemOfHomogeneousEquations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousEquations</code>( <var class="Arg">ls</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">ls</var> is a list of lists of integers and <var class="Arg">m</var> a list of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">\(A\)</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the sytem <span class="SimpleMath">\(Ax=0\)</span> where the <span class="SimpleMath">\(k\)</span> first equations are in the congruences modulo <var class="Arg">m[i]</var>, with <span class="SimpleMath">\(k\)</span> the length of <var class="Arg">m</var>.</p>
+<p><var class="Arg">ls</var> is a list of lists of integers and <var class="Arg">m</var> a list of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">\(A\)</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the system <span class="SimpleMath">\(Ax=0\)</span> where the <span class="SimpleMath">\(k\)</span> first equations are in the congruences modulo <var class="Arg">m[i]</var>, with <span class="SimpleMath">\(k\)</span> the length of <var class="Arg">m</var>.</p>
 
-<p>If the package <code class="code">NormalizInterface</code> has not been loaded, then Contejean-Devie algorithm is used <a href="chapBib_mj.html#biBMR1283022">[CD94]</a> instead (if this is the case, congruences are treated as in <a href="chapBib_mj.html#biBR-GS">[RG98]</a>.</p>
+<p>If the package <code class="code">NormalizInterface</code> has not been loaded, then Contejean-Devie algorithm is used <a href="chapBib_mj.html#biBMR1283022">[CD94]</a> instead (if this is the case, congruences are treated as in <a href="chapBib_mj.html#biBR-GS">[RG98]</a>).</p>
 
 
 <div class="example"><pre>
@@ -271,7 +271,7 @@ true
 <h5>11.1-10 EquationsOfGroupGeneratedBy</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquationsOfGroupGeneratedBy</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">M</var> is a matrix of integers. The output is a pair <span class="SimpleMath">\([A,m]\)</span> that reperesents the set of defining equations of the group spanned by the rows of <var class="Arg">M</var>: <span class="SimpleMath">\(Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k\)</span>, with <span class="SimpleMath">\(m=[n_1,\ldots,n_t]\)</span>.</p>
+<p><var class="Arg">M</var> is a matrix of integers. The output is a pair <span class="SimpleMath">\([A,m]\)</span> that represents the set of defining equations of the group spanned by the rows of <var class="Arg">M</var>: <span class="SimpleMath">\(Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k\)</span>, with <span class="SimpleMath">\(m=[n_1,\ldots,n_t]\)</span>.</p>
 
 
 <div class="example"><pre>
@@ -327,7 +327,7 @@ true
     Presentations of affine semigroups
   </span></h4>
 
-<p>A minimal presentation of an affine semigoup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.</p>
+<p>A minimal presentation of an affine semigroup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.</p>
 
 <p><a id="X7EE005267DEBC1DE" name="X7EE005267DEBC1DE"></a></p>
 
@@ -336,7 +336,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfKernelCongruence</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">M</var> is matrix with nonnegative integer coefficients. The output is a system of generators of the congruence <span class="SimpleMath">\(\{(x,y)\mid xM=yM\}\)</span>.</p>
 
-<p>The main differe3nce with <code class="code">MinimalPresentationOfAffineSemigroup</code> is that the matrix <var class="Arg">M</var> can have repeated columns and these are not treated as a set.</p>
+<p>The main difference with <code class="code">MinimalPresentationOfAffineSemigroup</code> is that the matrix <var class="Arg">M</var> can have repeated columns and these are not treated as a set.</p>
 
 <p><a id="X7BCA9C077F76920E" name="X7BCA9C077F76920E"></a></p>
 
@@ -345,7 +345,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is a minimal presentation for <var class="Arg">a</var>.</p>
 
-<p>There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<a href="chapBib_mj.html#biBMR0269762">[Her70]</a>). The fastest procedure is achived when <code class="code">SingularInterface</code> is loaded, followed by <code class="code">Singular</code>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of gerating binomials must be refined, and for this Rclasses are used (if <code class="code">NormalizInterface</code> is loaded, then the factorizations are faster). The <code class="code">4ti2</code> implementation uses <code class="code">4ti2</code> internal Gröbner bases and factorizations are done via <code class="code">zsolve</code>.</p>
+<p>There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<a href="chapBib_mj.html#biBMR0269762">[Her70]</a>). The fastest procedure is achieved when <code class="code">SingularInterface</code> is loaded, followed by <code class="code">Singular</code>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of generating binomials must be refined, and for this Rclasses are used (if <code class="code">NormalizInterface</code> is loaded, then the factorizations are faster). The <code class="code">4ti2</code> implementation uses <code class="code">4ti2</code> internal Gröbner bases and factorizations are done via <code class="code">zsolve</code>.</p>
 
 
 <div class="example"><pre>
@@ -377,7 +377,7 @@ true
 <h5>11.3-4 ShadedSetOfElementInAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">a</var> is an affine semigroup and <var class="Arg">v</var> is an element in <var class="Arg">a</var>. This is a translation of <code class="code">ShadedSetOfElementInNumericalSemigroup</code> (<a href="chap4_mj.html#X7C42DEB68285F2B8"><span class="RefLink">4.1-5</span></a>) but for affine semigroups.</p>
+<p><var class="Arg">a</var> is an affine semigroup and <var class="Arg">v</var> is an element in <var class="Arg">a</var>. This is a translation to affine semigroups of <code class="code">ShadedSetOfElementInNumericalSemigroup</code> (<a href="chap4_mj.html#X7C42DEB68285F2B8"><span class="RefLink">4.1-5</span></a>).</p>
 
 <p><a id="X84FF536281884DB8" name="X84FF536281884DB8"></a></p>
 
@@ -404,7 +404,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the set of primitive elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
-<p>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <var class="Arg">a</var> and the other (much faster) using <code class="code">NormalizInterface</code>. Also a <code class="code">4ti2</code> version using its Graber basis computation is provided.</p>
+<p>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <var class="Arg">a</var> and the other (much faster) using <code class="code">NormalizInterface</code>. Also a <code class="code">4ti2</code> version using its Graver basis computation is provided.</p>
 
 
 <div class="example"><pre>
@@ -421,7 +421,7 @@ true
 
 <p>The invariants presented here are defined as for numerical semigroups.</p>
 
-<p>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the intitial input.</p>
+<p>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.</p>
 
 <p><a id="X8780C7E5830B9AE2" name="X8780C7E5830B9AE2"></a></p>
 
@@ -430,7 +430,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsVectorWRTList</code>( <var class="Arg">v</var>, <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">ls</var> is a list of lists of nonnegative integers. The output is set of factorizations of <var class="Arg">v</var> in terms of the elements of <var class="Arg">ls</var>.</p>
 
-<p>If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <code class="code">NormalizInterface</code> is loaded, then a system of equations is solve with Normaliz, and the performance is much better. If <code class="code">4ti2Interface</code> is loaded instead, then factorizations are calculated using <code class="code">zsolve</code> command of <code class="code">4ti2</code>.</p>
+<p>If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <code class="code">NormalizInterface</code> is loaded, then a system of equations is solved with Normaliz, and the performance is much better. If <code class="code">4ti2Interface</code> is loaded instead, then factorizations are calculated using <code class="code">zsolve</code> command of <code class="code">4ti2</code>.</p>
 
 
 <div class="example"><pre>
@@ -445,7 +445,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElasticityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the elasticity of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
-<p>The procedure used is based on <a href="chapBib_mj.html#biBPH">[Phi10]</a>, where it is shown that the elasticity can be computed by using circuits. The set of circutis is calculated using <a href="chapBib_mj.html#biBMR1394747">[ES96]</a>.</p>
+<p>The procedure used is based on <a href="chapBib_mj.html#biBPH">[Phi10]</a>, where it is shown that the elasticity can be computed by using circuits. The set of circuits is calculated using <a href="chapBib_mj.html#biBMR1394747">[ES96]</a>.</p>
 
 
 <div class="example"><pre>

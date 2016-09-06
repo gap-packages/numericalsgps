@@ -3,7 +3,7 @@
 
 Here we describe some functions which are not specific for numerical
 semigroups but are used to do computations with them. As they may have
-interest by themselves, we decribe them here.
+interest by themselves, we describe them here.
 
 <Section><Heading>Bézout sequences</Heading>
 
@@ -17,7 +17,7 @@ The following function uses an algorithm presented in <Cite Key="Ros05"></Cite>.
  <ManSection>
 <Func Name="BezoutSequence" Arg="arg"/>
 <Description>
-<A>arg</A> consits of two rational numbers or a list of two rational
+<A>arg</A> consists of two rational numbers or a list of two rational
 numbers. The output is a Bézout sequence with ends the two rational numbers
 given.
 (Warning: rational numbers are silently transformed into irreducible
@@ -73,7 +73,7 @@ natural numbers. The function <M>f</M> is said to be <E>subadditive</E> if
 <Description>
 <A>L</A> is a list of integers. <C>RepresentsPeriodicSubAdditiveFunction</C> returns
 <K>true</K> or <K>false</K> according to whether <A>L</A> represents a
-periodic subAdditive function <M>f</M> periodic of period <M>m</M> or not.
+periodic subadditive function <M>f</M> periodic of period <M>m</M> or not.
 To avoid defining <M>f(0)</M> (which we assume to be 0) we 
 define <M>f(m)=0</M> and so the last element of the list must be 0.
 This technical need is due to the fact that positions
@@ -90,7 +90,7 @@ true
 <ManSection>
 <Func Name="IsListOfIntegersNS" Arg="L"/>
 <Description>
-Detects wheter <A>L</A> is a nonempty list of integers.
+Detects whether <A>L</A> is a nonempty list of integers.
 <Example><![CDATA[
 gap> IsListOfIntegersNS([1,-1,0]);
 true
