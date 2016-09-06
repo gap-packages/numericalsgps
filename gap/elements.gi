@@ -344,35 +344,33 @@ end);
 
 #############################################################################
 ##
-#F  GenusOfNumericalSemigroup(S)
+#A  GenusOfNumericalSemigroup(S)
 ##
 ##  Returns the number of gaps of the numerical semigroup S.
 ##
 #############################################################################
-InstallGlobalFunction(GenusOfNumericalSemigroup,
+InstallMethod(GenusOfNumericalSemigroup,
+        "Returns the genus of the numerical semigroup",
+        [IsNumericalSemigroup],10,
         function( sgp )
-	    if not IsNumericalSemigroup(sgp) then
-	        Error("The argument must be a numerical semigroup");
-	    fi;
 	return Length(GapsOfNumericalSemigroup(sgp));
 end);
 
 
 #############################################################################
 ##
-#F  WilfNumberOfNumericalSemigroup(S)
+#A  WilfNumberOfNumericalSemigroup(S)
 ##
 ##  Let c,edim and se be the conductor, embedding dimension and number of
 ##  elements smaller than c in S. Returns the edim*se-c, which was conjetured
 ##  by Wilf to be nonnegative.
 ##
 #############################################################################
-InstallGlobalFunction(WilfNumberOfNumericalSemigroup,function(s)
+InstallMethod(WilfNumberOfNumericalSemigroup,
+        "Returns the Wilf number of the numerical semigroup",
+        [IsNumericalSemigroup],10,
+         function(s)
     local se, edim, c;
-    
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup");
-    fi;
 
     edim:=EmbeddingDimensionOfNumericalSemigroup(s);
     c:=ConductorOfNumericalSemigroup(s);
@@ -382,17 +380,17 @@ end);
 
 #############################################################################
 ##
-#F  TruncatedWilfNumberOfNumericalSemigroup(S)
+#A  TruncatedWilfNumberOfNumericalSemigroup(S)
+#A  EliahouNumber
 ##
 ##  Returns W_0(S) (see [E])
 ##
 #############################################################################
-InstallGlobalFunction(TruncatedWilfNumberOfNumericalSemigroup,function(s)
+InstallMethod(TruncatedWilfNumberOfNumericalSemigroup,        
+        "Returns the Eliahou number of the numerical semigroup",
+        [IsNumericalSemigroup],10,
+function(s)
     local se, edim, c, msg, dq, smsg, r,m,q;
-    
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup");
-    fi;
     msg:=MinimalGeneratingSystem(s);
     m:=Minimum(msg);
     edim:=Length(msg);

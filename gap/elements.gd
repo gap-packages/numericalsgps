@@ -47,33 +47,37 @@ DeclareSynonymAttr( "GapsOfNumericalSemigroup", Gaps);
 
 #############################################################################
 ##
-#F  GenusOfNumericalSemigroup(S)
+#A  GenusOfNumericalSemigroup(S)
 ##
 ##  Returns the number of gaps of the numerical semigroup S.
 ##
 #############################################################################
-DeclareGlobalFunction("GenusOfNumericalSemigroup");
+DeclareAttribute( "Genus", IsNumericalSemigroup);
+DeclareSynonymAttr( "GenusOfNumericalSemigroup", Genus);
 
 #############################################################################
 ##
-#F  WilfNumberOfNumericalSemigroup(S)
+#A  WilfNumberOfNumericalSemigroup(S)
 ##
 ##  Let c,edim and se be the conductor, embedding dimension and number of
 ##  elements smaller than c in S. Returns the edim*se-c, which was conjetured
 ##  by Wilf to be nonnegative.
 ##
 #############################################################################
-DeclareGlobalFunction("WilfNumberOfNumericalSemigroup");
+DeclareAttribute( "WilfNumber", IsNumericalSemigroup);
+DeclareSynonymAttr( "WilfNumberOfNumericalSemigroup",WilfNumber);
 
 
 #############################################################################
 ##
-#F  TruncatedWilfNumberOfNumericalSemigroup(S)
+#A  TruncatedWilfNumberOfNumericalSemigroup(S)
+#A  EliahouNumber
 ##
 ##  Returns W_0(S) (see [E])
 ##
 #############################################################################
-DeclareGlobalFunction("TruncatedWilfNumberOfNumericalSemigroup");
+DeclareAttribute( "EliahouNumber", IsNumericalSemigroup);
+DeclareSynonymAttr( "TruncatedWilfNumberOfNumericalSemigroup", EliahouNumber);
 
 
 #############################################################################

@@ -282,16 +282,15 @@ end);
 
 #############################################################################
 ##
-#F  TypeOfNumericalSemigroup(S)
+#A  TypeOfNumericalSemigroup(S)
 ##
 ##  Returns the type of the numerical semigroup S.
 ##
 #############################################################################
-InstallGlobalFunction(TypeOfNumericalSemigroup,
+InstallMethod( TypeOfNumericalSemigroup,
+        "Returns the type of a numerical sgp",
+        [IsNumericalSemigroup],
         function( sgp )
-    if not IsNumericalSemigroup(sgp) then
-        Error("The argument must be a numerical semigroup");
-    fi;
     return Length(PseudoFrobeniusOfNumericalSemigroup(sgp));
 end);
 
@@ -547,18 +546,16 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
 
 #############################################################################
 ##
-#F  EmbeddingDimensionOfNumericalSemigroup(S)
+#A  EmbeddingDimensionOfNumericalSemigroup(S)
 ##
 ##  Returns the cardinality of the minimal generating system of the numerical
 ##  semigroup S.
 ##
 #############################################################################
-InstallGlobalFunction(EmbeddingDimensionOfNumericalSemigroup,
-        function( sgp )
-    if not IsNumericalSemigroup(sgp) then
-        Error("The argument must be a numerical semigroup.");
-    fi;
-
+InstallMethod(EmbeddingDimensionOfNumericalSemigroup,
+        "Returns the embedding dimension of a numerical semigroup",
+        [IsNumericalSemigroup],10,
+        function(sgp)
     return Length(MinimalGeneratingSystemOfNumericalSemigroup(sgp));
 end);
 
@@ -1064,21 +1061,19 @@ end);
 
 #############################################################################
 ##
-#F HolesOfNumericalSemigroup(s)
+#A HolesOfNumericalSemigroup(s)
 ## For a numerical semigroup, finds the set of gaps x such that F(S)-x is
 ## is also a gap
 ##
 #############################################################################
-InstallGlobalFunction(HolesOfNumericalSemigroup, function(s)
+InstallMethod(HolesOfNumericalSemigroup,
+        "Returns the embedding dimension of a numerical semigroup",
+        [IsNumericalSemigroup],10,
+function(s)
   local gs, f;
-  if not(IsNumericalSemigroup(s)) then
-    Error("The argument must be a numerical semigroup");
-  fi;
-
   gs:=GapsOfNumericalSemigroup(s);
   f:=FrobeniusNumber(s);
   return Filtered(gs, x-> not((f-x) in s));
-
 end);
 
 

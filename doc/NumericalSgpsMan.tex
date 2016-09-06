@@ -906,10 +906,13 @@ belong to \mbox{\texttt{\mdseries\slshape S}}.
 {
   
 
-\subsection{\textcolor{Chapter }{MultiplicityOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Multiplicity (for numerical semigroup)}}
 \logpage{[ 3, 1, 1 ]}\nobreak
-\hyperdef{L}{X842721EF8145C3D3}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultiplicityOfNumericalSemigroup({\mdseries\slshape NS})\index{MultiplicityOfNumericalSemigroup@\texttt{MultiplicityOfNumericalSemigroup}}
+\hyperdef{L}{X80D23F08850A8ABD}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Multiplicity({\mdseries\slshape NS})\index{Multiplicity@\texttt{Multiplicity}!for numerical semigroup}
+\label{Multiplicity:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultiplicityOfNumericalSemigroup({\mdseries\slshape NS})\index{MultiplicityOfNumericalSemigroup@\texttt{MultiplicityOfNumericalSemigroup}}
 \label{MultiplicityOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
@@ -920,6 +923,10 @@ belong to \mbox{\texttt{\mdseries\slshape S}}.
   <Modular numerical semigroup satisfying 7x mod 53 <= x >
   !gapprompt@gap>| !gapinput@MultiplicityOfNumericalSemigroup(S);|
   8
+  !gapprompt@gap>| !gapinput@NumericalSemigroup(3,5);|
+  <Numerical semigroup with 2 generators>
+  !gapprompt@gap>| !gapinput@Multiplicity(last);     |
+  3
 \end{Verbatim}
  }
 
@@ -977,16 +984,28 @@ versions, but will be removed in the future.
 
  
 
-\subsection{\textcolor{Chapter }{EmbeddingDimensionOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{EmbeddingDimension (for numerical semigroup)}}
 \logpage{[ 3, 1, 3 ]}\nobreak
-\hyperdef{L}{X87B2695083DE2A83}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EmbeddingDimensionOfNumericalSemigroup({\mdseries\slshape NS})\index{EmbeddingDimensionOfNumericalSemigroup@\texttt{Embedding}\-\texttt{Dimension}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\hyperdef{L}{X7884AE27790E687F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EmbeddingDimension({\mdseries\slshape NS})\index{EmbeddingDimension@\texttt{EmbeddingDimension}!for numerical semigroup}
+\label{EmbeddingDimension:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EmbeddingDimensionOfNumericalSemigroup({\mdseries\slshape NS})\index{EmbeddingDimensionOfNumericalSemigroup@\texttt{Embedding}\-\texttt{Dimension}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{EmbeddingDimensionOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
 
  \texttt{NS} is a numerical semigroup. It returns the cardinality of its minimal generating
-system. }
+system. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroup(3,5,7,15);|
+  <Numerical semigroup with 4 generators>
+  !gapprompt@gap>| !gapinput@EmbeddingDimension(s);|
+  3
+  !gapprompt@gap>| !gapinput@EmbeddingDimensionOfNumericalSemigroup(s);|
+  3
+\end{Verbatim}
+ }
 
  
 
@@ -1051,11 +1070,11 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyList (with respect to multiplicity)}}
+\subsection{\textcolor{Chapter }{AperyList (for numerical semigroup with respect to multiplicity)}}
 \logpage{[ 3, 1, 7 ]}\nobreak
-\hyperdef{L}{X854B00EA79C76487}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyList({\mdseries\slshape S})\index{AperyList@\texttt{AperyList}!with respect to multiplicity}
-\label{AperyList:with respect to multiplicity}
+\hyperdef{L}{X80431F487C71D67B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyList({\mdseries\slshape S})\index{AperyList@\texttt{AperyList}!for numerical semigroup with respect to multiplicity}
+\label{AperyList:for numerical semigroup with respect to multiplicity}
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroup({\mdseries\slshape S})\index{AperyListOfNumericalSemigroup@\texttt{AperyListOfNumericalSemigroup}}
 \label{AperyListOfNumericalSemigroup}
@@ -1246,7 +1265,16 @@ semigroup is given or on the knowledge already produced on the semigroup.
 }\hfill{\scriptsize (attribute)}}\\
 
 
- Stands for \texttt{Length(PseudoFrobeniusOfNumericalSemigroup (NS))}. }
+ Stands for \texttt{Length(PseudoFrobeniusOfNumericalSemigroup (NS))}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
+  <Modular numerical semigroup satisfying 5x mod 53 <= x >
+  !gapprompt@gap>| !gapinput@Type(S);|
+  4
+  !gapprompt@gap>| !gapinput@TypeOfNumericalSemigroup(S);|
+  4
+\end{Verbatim}
+ }
 
  
 
@@ -1272,10 +1300,13 @@ semigroup is given or on the knowledge already produced on the semigroup.
 
  
 
-\subsection{\textcolor{Chapter }{HolesOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Holes (for numerical semigroup)}}
 \logpage{[ 3, 1, 17 ]}\nobreak
-\hyperdef{L}{X8615DE647E27584A}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HolesOfNumericalSemigroup({\mdseries\slshape S})\index{HolesOfNumericalSemigroup@\texttt{HolesOfNumericalSemigroup}}
+\hyperdef{L}{X7CCFC5267FD27DDE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Holes({\mdseries\slshape NS})\index{Holes@\texttt{Holes}!for numerical semigroup}
+\label{Holes:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HolesOfNumericalSemigroup({\mdseries\slshape S})\index{HolesOfNumericalSemigroup@\texttt{HolesOfNumericalSemigroup}}
 \label{HolesOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
@@ -1283,7 +1314,7 @@ semigroup is given or on the knowledge already produced on the semigroup.
  \texttt{S} is a numerical semigroup. Returns the set of gaps $x$ of \texttt{S} such that $F(S)-x$ is also a gap, where $F(S)$ stands for the Frobenius number of \texttt{S}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5);;|
-  !gapprompt@gap>| !gapinput@HolesOfNumericalSemigroup(s);|
+  !gapprompt@gap>| !gapinput@Holes(s);|
   [  ]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
   !gapprompt@gap>| !gapinput@HolesOfNumericalSemigroup(s);|
@@ -1317,10 +1348,13 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
 
  
 
-\subsection{\textcolor{Chapter }{GenusOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Genus (for numerical semigroup)}}
 \logpage{[ 3, 1, 19 ]}\nobreak
-\hyperdef{L}{X7CC51E047DBB8F24}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GenusOfNumericalSemigroup({\mdseries\slshape NS})\index{GenusOfNumericalSemigroup@\texttt{GenusOfNumericalSemigroup}}
+\hyperdef{L}{X7E9C8E157C4EAAB0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Genus({\mdseries\slshape NS})\index{Genus@\texttt{Genus}!for numerical semigroup}
+\label{Genus:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GenusOfNumericalSemigroup({\mdseries\slshape NS})\index{GenusOfNumericalSemigroup@\texttt{GenusOfNumericalSemigroup}}
 \label{GenusOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
@@ -1330,6 +1364,10 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(16,17,71,72);;|
   !gapprompt@gap>| !gapinput@GenusOfNumericalSemigroup(s);|
   80
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
+  <Modular numerical semigroup satisfying 5x mod 53 <= x >
+  !gapprompt@gap>| !gapinput@Genus(S);|
+  26
 \end{Verbatim}
  }
 
@@ -1365,11 +1403,14 @@ division in ${\mathbb N}$. is a numerical semigroup. It returns the set of funda
 
  
 
-\subsection{\textcolor{Chapter }{SpecialGapsOfNumericalSemigroup (for numerical semigroup)}}
+\subsection{\textcolor{Chapter }{SpecialGaps (for numerical semigroup)}}
 \logpage{[ 3, 1, 21 ]}\nobreak
-\hyperdef{L}{X84F34C13832047A7}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpecialGapsOfNumericalSemigroup({\mdseries\slshape S})\index{SpecialGapsOfNumericalSemigroup@\texttt{SpecialGapsOfNumericalSemigroup}!for numerical semigroup}
-\label{SpecialGapsOfNumericalSemigroup:for numerical semigroup}
+\hyperdef{L}{X803D550C78717A7C}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpecialGaps({\mdseries\slshape S})\index{SpecialGaps@\texttt{SpecialGaps}!for numerical semigroup}
+\label{SpecialGaps:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpecialGapsOfNumericalSemigroup({\mdseries\slshape S})\index{SpecialGapsOfNumericalSemigroup@\texttt{SpecialGapsOfNumericalSemigroup}}
+\label{SpecialGapsOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
 
@@ -1378,6 +1419,8 @@ numerical semigroup, then the resulting set is again a numerical semigroup. \tex
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
   <Modular numerical semigroup satisfying 5x mod 53 <= x >
+  !gapprompt@gap>| !gapinput@SpecialGaps(S);|
+  [ 40, 41, 42 ]
   !gapprompt@gap>| !gapinput@SpecialGapsOfNumericalSemigroup(S);|
   [ 40, 41, 42 ]
 \end{Verbatim}
@@ -1407,16 +1450,21 @@ experiment with this conjecture, as defined in \cite{E}.
   [  ]
   !gapprompt@gap>| !gapinput@Maximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));|
   378
-        
+  !gapprompt@gap>| !gapinput@s := NumericalSemigroup(13,25,37);;|
+  !gapprompt@gap>| !gapinput@WilfNumber(s);                     |
+  96
 \end{Verbatim}
  }
 
  
 
-\subsection{\textcolor{Chapter }{TruncatedWilfNumberOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{EliahouNumber (for numerical semigroup)}}
 \logpage{[ 3, 2, 2 ]}\nobreak
-\hyperdef{L}{X87DC06717858C391}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TruncatedWilfNumberOfNumericalSemigroup({\mdseries\slshape S})\index{TruncatedWilfNumberOfNumericalSemigroup@\texttt{Truncated}\-\texttt{Wilf}\-\texttt{Number}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\hyperdef{L}{X80F9EC9A7BF4E606}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EliahouNumber({\mdseries\slshape S})\index{EliahouNumber@\texttt{EliahouNumber}!for numerical semigroup}
+\label{EliahouNumber:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TruncatedWilfNumberOfNumericalSemigroup({\mdseries\slshape S})\index{TruncatedWilfNumberOfNumericalSemigroup@\texttt{Truncated}\-\texttt{Wilf}\-\texttt{Number}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{TruncatedWilfNumberOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
@@ -1427,9 +1475,8 @@ experiment with this conjecture, as defined in \cite{E}.
   !gapprompt@gap>| !gapinput@TruncatedWilfNumberOfNumericalSemigroup(s);|
   4
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;|
-  !gapprompt@gap>| !gapinput@TruncatedWilfNumberOfNumericalSemigroup(s);|
+  !gapprompt@gap>| !gapinput@EliahouNumber(s);|
   -1
-        
 \end{Verbatim}
  }
 
@@ -1451,7 +1498,6 @@ experiment with this conjecture, as defined in \cite{E}.
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;|
   !gapprompt@gap>| !gapinput@ProfileOfNumericalSemigroup(s);|
   [ 3, 0, 0 ]
-        
 \end{Verbatim}
  }
 
