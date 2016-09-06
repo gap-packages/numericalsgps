@@ -16,12 +16,16 @@ gap> Filtered(l, s->WilfNumberOfNumericalSemigroup(s)<0);
 [  ]
 gap> Maximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));
 378
-      ]]></Example>
+gap> s := NumericalSemigroup(13,25,37);;
+gap> WilfNumber(s);                     
+96
+]]></Example>
     </Description>
   </ManSection>
 
 
   <ManSection>
+    <Attr Name="EliahouNumber" Arg="S" Label="for numerical semigroup"/>
     <Attr Name="TruncatedWilfNumberOfNumericalSemigroup" Arg="S"/>
     <Description>
       <C>S</C> 
@@ -31,9 +35,9 @@ gap> s:=NumericalSemigroup(5,7,9);;
 gap> TruncatedWilfNumberOfNumericalSemigroup(s);
 4
 gap> s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;
-gap> TruncatedWilfNumberOfNumericalSemigroup(s);
+gap> EliahouNumber(s);
 -1
-      ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 
@@ -51,7 +55,7 @@ gap> ProfileOfNumericalSemigroup(s);
 gap> s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;
 gap> ProfileOfNumericalSemigroup(s);
 [ 3, 0, 0 ]
-      ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 

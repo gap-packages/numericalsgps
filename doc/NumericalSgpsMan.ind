@@ -17,7 +17,8 @@
   \item \texttt  {ANumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}, 
 		\hyperpage{36}
   \item \texttt  {AperyList}
-    \subitem with respect to multiplicity, \hyperpage{20}
+    \subitem for numerical semigroup with respect to multiplicity, 
+		\hyperpage{20}
   \item \texttt  {Apery}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Element}, 
 		\hyperpage{51}
   \item \texttt  {AperyListOfNumericalSemigroup}, \hyperpage{20}
@@ -107,7 +108,11 @@
   \item \texttt  {Elasticity}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{59}
   \item \texttt  {ElasticityOfNumericalSemigroup}, \hyperpage{60}
-  \item \texttt  {EliahouSlicesOfNumericalSemigroup}, \hyperpage{25}
+  \item \texttt  {EliahouNumber}
+    \subitem for numerical semigroup, \hyperpage{25}
+  \item \texttt  {EliahouSlicesOfNumericalSemigroup}, \hyperpage{26}
+  \item \texttt  {EmbeddingDimension}
+    \subitem for numerical semigroup, \hyperpage{19}
   \item \texttt  {Embedding}\discretionary {-}{}{}\texttt  {Dimension}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{19}
   \item \texttt  {Equal}\discretionary {-}{}{}\texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -130,13 +135,13 @@
 		\hyperpage{67}
   \item \texttt  {FactorizationsIntegerWRTList}, \hyperpage{57}
   \item \texttt  {FactorizationsVectorWRTList}, \hyperpage{81}
-  \item \texttt  {FirstElementsOfNumericalSemigroup}, \hyperpage{19}
+  \item \texttt  {FirstElementsOfNumericalSemigroup}, \hyperpage{20}
   \item \texttt  {ForcedIntegersForPseudoFrobenius}, \hyperpage{34}
   \item \texttt  {Free}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{40}
   \item \texttt  {FrobeniusNumber}
-    \subitem for numerical semigroup, \hyperpage{21}
-  \item \texttt  {FrobeniusNumberOfNumericalSemigroup}, \hyperpage{21}
+    \subitem for numerical semigroup, \hyperpage{22}
+  \item \texttt  {FrobeniusNumberOfNumericalSemigroup}, \hyperpage{22}
   \item \texttt  {FundamentalGaps}
     \subitem for numerical semigroup, \hyperpage{24}
   \item \texttt  {FundamentalGapsOfNumericalSemigroup}, \hyperpage{24}
@@ -144,8 +149,8 @@
   \indexspace
 
   \item \texttt  {Gaps}
-    \subitem for numerical semigroup, \hyperpage{22}
-  \item \texttt  {GapsOfNumericalSemigroup}, \hyperpage{22}
+    \subitem for numerical semigroup, \hyperpage{23}
+  \item \texttt  {GapsOfNumericalSemigroup}, \hyperpage{23}
   \item \texttt  {Generators}
     \subitem for affine semigroup, \hyperpage{76}
     \subitem for ideal, \hyperpage{44}
@@ -155,7 +160,9 @@
 		\hyperpage{44}
   \item \texttt  {GeneratorsOfKernelCongruence}, \hyperpage{79}
   \item \texttt  {GeneratorsOfNumericalSemigroup}, \hyperpage{18}
-  \item \texttt  {GenusOfNumericalSemigroup}, \hyperpage{23}
+  \item \texttt  {Genus}
+    \subitem for numerical semigroup, \hyperpage{24}
+  \item \texttt  {GenusOfNumericalSemigroup}, \hyperpage{24}
   \item \texttt  {GluingOfAffineSemigroups}, \hyperpage{79}
   \item \texttt  {GoodGeneratingSystemOfGoodIdeal}, \hyperpage{90}
   \item \texttt  {GoodIdeal}, \hyperpage{90}
@@ -175,6 +182,8 @@
   \item \texttt  {Hilbert}\discretionary {-}{}{}\texttt  {Function}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{49}
   \item \texttt  {HilbertSeriesOfNumericalSemigroup}, \hyperpage{70}
+  \item \texttt  {Holes}
+    \subitem for numerical semigroup, \hyperpage{23}
   \item \texttt  {HolesOfNumericalSemigroup}, \hyperpage{23}
   \item \texttt  {Homogeneous}\discretionary {-}{}{}\texttt  {Betti}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{67}
@@ -346,6 +355,8 @@
 		\hyperpage{65}
   \item \texttt  {MultipleOfIdealOfNumericalSemigroup}, \hyperpage{46}
   \item \texttt  {MultipleOfNumericalSemigroup}, \hyperpage{32}
+  \item \texttt  {Multiplicity}
+    \subitem for numerical semigroup, \hyperpage{18}
   \item \texttt  {MultiplicityOfNumericalSemigroup}, \hyperpage{18}
   \item \texttt  {Multiplicity}\discretionary {-}{}{}\texttt  {Sequence}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{50}
@@ -412,7 +423,7 @@
   \item \texttt  {PrimitiveElementsOfAffineSemigroup}, \hyperpage{80}
   \item \texttt  {Primitive}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{28}
-  \item \texttt  {ProfileOfNumericalSemigroup}, \hyperpage{25}
+  \item \texttt  {ProfileOfNumericalSemigroup}, \hyperpage{26}
   \item \texttt  {Proportionally}\discretionary {-}{}{}\texttt  {Modular}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{13}
   \item \texttt  {PseudoFrobeniusOfNumericalSemigroup}, \hyperpage{22}
@@ -470,8 +481,9 @@
   \item \texttt  {Small}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{45}
   \item \texttt  {SmallElementsOfNumericalSemigroup}, \hyperpage{19}
-  \item \texttt  {SpecialGapsOfNumericalSemigroup}
+  \item \texttt  {SpecialGaps}
     \subitem for numerical semigroup, \hyperpage{24}
+  \item \texttt  {SpecialGapsOfNumericalSemigroup}, \hyperpage{24}
   \item \texttt  {Star}\discretionary {-}{}{}\texttt  {Closure}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{52}
   \item \texttt  {SubtractIdealsOfNumericalSemigroup}, \hyperpage{46}
@@ -492,11 +504,11 @@
 		\hyperpage{47}
   \item \texttt  {Truncated}\discretionary {-}{}{}\texttt  {Wilf}\discretionary {-}{}{}\texttt  {Number}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{25}
-  \item \texttt  {TypeOfNumericalSemigroup}, \hyperpage{22}
+  \item \texttt  {TypeOfNumericalSemigroup}, \hyperpage{23}
   \item \texttt  {TypeSequenceOfNumericalSemigroup}, \hyperpage{103}
 
   \indexspace
 
-  \item \texttt  {WilfNumberOfNumericalSemigroup}, \hyperpage{24}
+  \item \texttt  {WilfNumberOfNumericalSemigroup}, \hyperpage{25}
 
 \end{theindex}

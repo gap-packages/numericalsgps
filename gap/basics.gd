@@ -20,7 +20,8 @@
 ##  semigroup S.
 ##
 #############################################################################
-DeclareAttribute( "MultiplicityOfNumericalSemigroup", IsNumericalSemigroup);
+DeclareAttribute( "Multiplicity", IsNumericalSemigroup);
+DeclareSynonymAttr( "MultiplicityOfNumericalSemigroup", Multiplicity);
 
 
 #############################################################################
@@ -52,12 +53,13 @@ DeclareSynonymAttr("ConductorOfNumericalSemigroup", Conductor);
 
 #############################################################################
 ##
-#F  TypeOfNumericalSemigroup(S)
+#A  TypeOfNumericalSemigroup(S)
 ##
 ##  Returns the type of the numerical semigroup S.
 ##
 #############################################################################
-DeclareGlobalFunction("TypeOfNumericalSemigroup");
+DeclareAttribute("Type", IsNumericalSemigroup);
+DeclareSynonymAttr("TypeOfNumericalSemigroup", Type);
 
 #############################################################################
 ##
@@ -123,13 +125,14 @@ DeclareSynonymAttr( "MinimalGeneratingSystemOfNumericalSemigroup", MinimalGenera
 DeclareSynonym("ReducedSetOfGeneratorsOfNumericalSemigroup",MinimalGeneratingSystemOfNumericalSemigroup);
 #############################################################################
 ##
-#F  EmbeddingDimensionOfNumericalSemigroup(S)
+#A  EmbeddingDimensionOfNumericalSemigroup(S)
 ##
 ##  Returns the cardinality of the minimal generating system of the numerical
 ##  semigroup S.
 ##
 #############################################################################
-DeclareGlobalFunction("EmbeddingDimensionOfNumericalSemigroup");
+DeclareAttribute( "EmbeddingDimension",IsNumericalSemigroup);
+DeclareSynonymAttr("EmbeddingDimensionOfNumericalSemigroup",EmbeddingDimension);
 
 #############################################################################
 ##
@@ -162,7 +165,8 @@ DeclareAttribute( "PseudoFrobeniusOfNumericalSemigroup",IsNumericalSemigroup);
 ##  semigroup S.
 ##
 #############################################################################
-DeclareAttribute( "SpecialGapsOfNumericalSemigroup",IsNumericalSemigroup);
+DeclareAttribute( "SpecialGaps",IsNumericalSemigroup);
+DeclareSynonymAttr( "SpecialGapsOfNumericalSemigroup",SpecialGaps);
 
 
 #############################################################################
@@ -256,13 +260,13 @@ DeclareGlobalFunction("KunzPolytope");
 
 #############################################################################
 ##
-#F HolesOfNumericalSemigroup(s)
+#A HolesOfNumericalSemigroup(s)
 ## For a numerical semigroup, finds the set of gaps x such that F(S)-x is
 ## is also a gap
 ##
 #############################################################################
-DeclareGlobalFunction("HolesOfNumericalSemigroup");
-
+DeclareAttribute("Holes",IsNumericalSemigroup);
+DeclareSynonymAttr("HolesOfNumericalSemigroup", Holes);
 
 #############################################################################
 ##
