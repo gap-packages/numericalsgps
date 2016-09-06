@@ -26,8 +26,7 @@ gap> RemoveMinimalGeneratorFromNumericalSemigroup(7,s);
 <Numerical semigroup with 3 generators>
 gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
 [ 3, 5 ]
-]]>
-                        </Example>          
+]]></Example>          
                     </Description>
                 </ManSection>
                 
@@ -52,8 +51,7 @@ gap> SmallElementsOfNumericalSemigroup(s) =
 true                
 gap> s=s3;
 true
-]]>
-                        </Example>          
+]]></Example>          
                     </Description>
                 </ManSection>
 </Section>

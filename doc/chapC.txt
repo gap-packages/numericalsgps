@@ -335,8 +335,8 @@
   
   [1XC.3 [33X[0;0YFunctions implemented by K. Stokes[133X[101X
   
-  [33X[0;0YIn this section we document the functions implmented by K. Stokes related to
-  patterns  of  ideals  in  numerical  semigroups.  The  correctedness  of the
+  [33X[0;0YIn  this  section we document the functions implemented by K. Stokes related
+  to  patterns  of  ideals  in  numerical  semigroups.  The correctness of the
   algorithms can be found in [Sto15].[133X
   
   [1XC.3-1 IsAdmissiblePattern[101X
@@ -377,7 +377,7 @@
   
   [29X[2XAsIdealOfNumericalSemigroup[102X( [3XI[103X, [3XT[103X ) [32X function
   
-  [33X[0;0Y[3XI[103X  is  an ideal of a numerical semigroup [22XS[122X, and [3XT[103X is a numerical semgigroup.
+  [33X[0;0Y[3XI[103X  is  an  ideal of a numerical semigroup [22XS[122X, and [3XT[103X is a numerical semigroup.
   Detects  if  [3XI[103X  is an ideal of [3XT[103X and contained in [3XT[103X (integral ideal), and if
   so,  returns  [3XI[103X  as  an ideal of [3XT[103X. It returns [10Xfail[110X if [3XI[103X is an ideal of some
   semigroup but not an integral ideal of [3Xt[103X.[133X
@@ -417,7 +417,8 @@
   of  the  coefficients  of  [3Xp[103X.  All  elements of [22Xp(I)[122X are divisible by [22Xd[122X, and
   [22Xp(I)/d[122X  is  an  ideal  of  some  numerical  semigroup. It is returned as the
   maximal  ideal of the numerical semigroup [22Xp(I)/d ∪ {0}[122X. The parent numerical
-  semigroup can later be changed with the funcion [10XAsIdealOfNumericalSemigroup[110X.[133X
+  semigroup     can     later     be     changed     with     the     function
+  [10XAsIdealOfNumericalSemigroup[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X

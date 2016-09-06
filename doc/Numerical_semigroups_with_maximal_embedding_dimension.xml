@@ -16,7 +16,7 @@
                 Given a MED numerical semigroup <M>S</M>, we say that <M>M=\{m_1 &lt; \cdots&lt; m_k\}</M> is a MED system 
                 of generators if the MED closure of <M>M</M> is <M>S</M>. Moreover, <M>M</M> is a minimal MED generating 
                 system for <M>S</M> provided that every proper subset of <M>M</M> is not a MED system of generators 
-                of <M>S</M>. Minimal MED generating systems are unique, and in general are smaller that the 
+                of <M>S</M>. Minimal MED generating systems are unique, and in general are smaller than the 
                 classical minimal generating systems (see <Cite Key="RGGB03"></Cite>).
                 
                 
@@ -31,8 +31,7 @@ gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7));
 true 
 gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5)); 
 false
-]]>
-                        </Example>          
+]]></Example>          
                     </Description>
                 </ManSection>
                 
@@ -46,10 +45,9 @@ false
                         <Example><![CDATA[
 gap> MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); 
 <Numerical semigroup> 
-gap> MinimalGeneratingSystemOfNumericalSemigroup(last); 
+gap> MinimalGenerators(last); 
 [ 3, 5, 7 ]
-]]>
-                        </Example>          
+]]></Example>          
                     </Description>
                 </ManSection>
                 
@@ -63,9 +61,158 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
 gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( 
 > NumericalSemigroup(3,5,7)); 
 [ 3, 5 ]
-]]>
-                        </Example>          
+]]></Example>          
                     </Description>
                 </ManSection>
+                
+            </Section>
+
+<Section>
+                <Heading>
+                    Numerical semigroups with the Arf property and Arf closures
+                </Heading>
+                Numerical semigroups with the Arf property are a special kind of numerical semigroups with 
+                maximal embedding dimension. A numerical semigroup <M>S</M> is Arf if for every <M>x,y,z</M> in
+                <M>S</M> with <M>x\geq y\geq z</M>, one has that <M>x+y-z\in S</M>.
+                
+                <P/> 
+                The intersection of two Arf numerical semigroups is again Arf, and thus we can consider the 
+                Arf closure of a set of nonnegative integers with greatest common divisor equal to one. Analogously
+                as with MED numerical semigroups, we define Arf systems of generators and minimal Arf generating
+                system for an Arf numerical semigroup. These are also unique(see <Cite Key="RGGB04"></Cite>).
+                
+                
+                <ManSection>
+                    <Func Arg="S" Name="IsArfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns true if <A>S</A> is an Arf numerical semigroup and false otherwise. 
+                        <Example><![CDATA[
+gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); 
+true 
+gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,7,11)); 
+false 
+gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11)); 
+true
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="ArfNumericalSemigroupClosure"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns the Arf closure of <A>S</A>.
+                        <Example><![CDATA[
+gap> ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); 
+<Numerical semigroup> 
+gap> MinimalGenerators(last); 
+[ 3, 7, 8 ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="MinimalArfGeneratingSystemOfArfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is an Arf numerical semigroup.    
+                        <P/>
+                        Returns the minimal Arf generating system of <A>S</A>.
+                        <Example><![CDATA[
+gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup( 
+> NumericalSemigroup(3,7,8)); 
+[ 3, 7 ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="f" Name="ArfNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf 
+                        numerical semigroups with Frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> ArfNumericalSemigroupsWithFrobeniusNumber(10);
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
+gap> List(last,MinimalGenerators);
+[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
+  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
+  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+  [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection> 
+                
+            </Section>
+	    <Section>
+                <Heading>
+                    Saturated numerical semigroups
+                </Heading>
+                Saturated numerical semigroups with the Arf property are a special kind of numerical semigroups with 
+                maximal embedding dimension. A numerical semigroup <M>S</M> is saturated if the following condition holds: <M> s, s_1 , \ldots , s_r</M> in <M>S</M>  are such that <M>s_i \leq s</M> for all <M>i</M> in <M>\{1, \ldots , r\}</M> and <M>z_1 , \ldots , z_r</M> in <M>\mathbb Z</M> are such that <M>z_1 s_1 + \cdots + z_r s_r\geq 0</M>, then <M>s + z_1 s_1 + \cdots + z_r s_r</M> in <M>S</M>.
+                
+                <P/> 
+                The intersection of two saturated numerical semigroups is again saturated, and thus we can consider the 
+                saturated closure of a set of nonnegative integers with greatest common divisor equal to one (see <Cite Key="RGbook"></Cite>).
+                
+                
+                <ManSection>
+                    <Func Arg="S" Name="IsSaturatedNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns true if <A>S</A> is a saturated numerical semigroup and false otherwise. 
+                        <Example><![CDATA[
+gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
+true
+gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(8, 9, 12, 13, 15, 19 ));
+false
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="S" Name="SaturatedNumericalSemigroupClosure"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup.    
+                        <P/>
+                        Returns the saturated closure of <A>S</A>.
+                        <Example><![CDATA[
+gap> SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));
+<Numerical semigroup>
+gap> MinimalGenerators(last);
+[ 8 .. 15 ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                
+                <ManSection>
+                    <Func Arg="f" Name="SaturatedNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Saturated 
+                        numerical semigroups with Frobenius number <A>f</A>.         
+                        <Example><![CDATA[
+gap> SaturatedNumericalSemigroupsWithFrobeniusNumber(10);
+[ <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 4 generators>, 
+  <Numerical semigroup with 6 generators>, 
+  <Numerical semigroup with 6 generators>, 
+  <Numerical semigroup with 7 generators>, 
+  <Numerical semigroup with 8 generators>, 
+  <Numerical semigroup with 9 generators>, 
+  <Numerical semigroup with 11 generators> ]
+gap>  List(last,MinimalGenerators);
+[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
+  [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], 
+  [ 11 .. 21 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection> 
                 
             </Section>

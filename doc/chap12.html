@@ -128,7 +128,7 @@
   [ 11, 9 ], [ 11, 11 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[384938749837,349823749827] in dup;</span>
 true
-          </pre></div>
+</pre></div>
 
 <p><a id="X873FE7B37A747247" name="X873FE7B37A747247"></a></p>
 
@@ -145,7 +145,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=AmalgamationOfNumericalSemigroups(s,e,2);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[2,3] in dup;</span>
 true
-            </pre></div>
+  </pre></div>
 
 <p><a id="X855341C57F43DB72" name="X855341C57F43DB72"></a></p>
 
@@ -160,7 +160,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroup(3,4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));</span>
 true
-            </pre></div>
+  </pre></div>
 
 <p><a id="X7856241678224958" name="X7856241678224958"></a></p>
 
@@ -178,7 +178,7 @@ true
 [ 25, 27 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoodSemigroup(G,C);</span>
 &lt;Good semigroup&gt;
-            </pre></div>
+  </pre></div>
 
 <p><a id="X8431465B82643392" name="X8431465B82643392"></a></p>
 
@@ -324,7 +324,7 @@ true
 <h5>12.2-8 GoodSemigroupByMaximalElements</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GoodSemigroupByMaximalElements</code>( <var class="Arg">S</var>, <var class="Arg">T</var>, <var class="Arg">M</var>, <var class="Arg">C</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups, <var class="Arg">M</var> is a list of pairs in <span class="SimpleMath">S× T</span>. <var class="Arg">C</var> is the conductor, and thus a pair of nonnegative integers. The output is the set of elements of <span class="SimpleMath">S× T</span> that are not above an element in <var class="Arg">M</var>, that is, if they share a coordinate with an element in <var class="Arg">M</var>, then they must be smaller or equalt to that element with respect to the usual partial ordering. The output is a good semigroup, if <var class="Arg">M</var> is an correct set of maximal elements.</p>
+<p><var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups, <var class="Arg">M</var> is a list of pairs in <span class="SimpleMath">S× T</span>. <var class="Arg">C</var> is the conductor, and thus a pair of nonnegative integers. The output is the set of elements of <span class="SimpleMath">S× T</span> that are not above an element in <var class="Arg">M</var>, that is, if they share a coordinate with an element in <var class="Arg">M</var>, then they must be smaller or equal to that element with respect to the usual partial ordering. The output is a good semigroup, if <var class="Arg">M</var> is an correct set of maximal elements.</p>
 
 
 <div class="example"><pre>
@@ -340,7 +340,7 @@ true
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gg=g;</span>
 true
-                      </pre></div>
+            </pre></div>
 
 <p><a id="X82E24F8E79648AAC" name="X82E24F8E79648AAC"></a></p>
 
@@ -448,7 +448,7 @@ true
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=GoodIdeal([[2,3]],g);</span>
 &lt;Good ideal of good semigroup&gt;
-          </pre></div>
+</pre></div>
 
 <p><a id="X7E4FC6DB794992E0" name="X7E4FC6DB794992E0"></a></p>
 
@@ -465,7 +465,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoodGeneratingSystemOfGoodIdeal(e);</span>
 [ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
-          </pre></div>
+</pre></div>
 
 <p><a id="X82D384397EE5CAC4" name="X82D384397EE5CAC4"></a></p>
 
@@ -482,7 +482,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a=AmbientGoodSemigroupOfGoodIdeal(e);</span>
 true
-          </pre></div>
+</pre></div>
 
 <p><a id="X84636A127ECEDA24" name="X84636A127ECEDA24"></a></p>
 
@@ -537,7 +537,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=GoodIdeal([[2,3],[3,2]],d);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(e);</span>
 [ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ]
-          </pre></div>
+</pre></div>
 
 <p><a id="X7DA7AE32837CC1C7" name="X7DA7AE32837CC1C7"></a></p>
 
@@ -554,7 +554,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c:=CanonicalIdealOfGoodSemigroup(d);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGoodGeneratingSystemOfGoodIdeal(c);</span>
 [ [ 0, 0 ], [ 2, 2 ] ]
-          </pre></div>
+</pre></div>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap11.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap13.html">[Next Chapter]</a>&nbsp;  </div>

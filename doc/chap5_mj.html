@@ -107,8 +107,7 @@
 &lt;Numerical semigroup with 3 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfNumericalSemigroup(last);</span>
 [ 3, 5 ]
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X865EA8377D632F53" name="X865EA8377D632F53"></a></p>
 
@@ -131,8 +130,7 @@
 true                
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s=s3;</span>
 true
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X78C3BC0F85B40690" name="X78C3BC0F85B40690"></a></p>
 
@@ -151,13 +149,13 @@ true
       &lt;Modular numerical semigroup satisfying 5x mod 53 &lt;= x &gt;
       gap&gt; T := NumericalSemigroup(2,17);
       &lt;Numerical semigroup with 2 generators&gt;
-      gap&gt; SmallElementsOfNumericalSemigroup(S);
+      gap&gt; SmallElements(S);
       [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
-      gap&gt; SmallElementsOfNumericalSemigroup(T);
+      gap&gt; SmallElements(T);
       [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
       gap&gt; IntersectionOfNumericalSemigroups(S,T);
       &lt;Numerical semigroup&gt;
-      gap&gt; SmallElementsOfNumericalSemigroup(last);
+      gap&gt; SmallElements(last);
       [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
       </pre></div>
 
@@ -172,16 +170,16 @@ true
 <div class="example"><pre>
       gap&gt; s:=NumericalSemigroup(3,29);
       &lt;Numerical semigroup with 2 generators&gt;
-      gap&gt; SmallElementsOfNumericalSemigroup(s);
+      gap&gt; SmallElements(s);
       [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,
       39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ]
       gap&gt; t:=QuotientOfNumericalSemigroup(s,7);
       &lt;Numerical semigroup&gt;
-      gap&gt; SmallElementsOfNumericalSemigroup(t);
+      gap&gt; SmallElements(t);
       [ 0, 3, 5, 6, 8 ]
       gap&gt; u := s / 7;
       &lt;Numerical semigroup&gt;
-      gap&gt; SmallElementsOfNumericalSemigroup(u);
+      gap&gt; SmallElements(u);
       [ 0, 3, 5, 6, 8 ]
       </pre></div>
 
@@ -256,7 +254,7 @@ true
 [ &lt;The numerical semigroup N&gt;, &lt;Numerical semigroup with 2 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt; ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,s-&gt;MinimalGeneratingSystemOfNumericalSemigroup(s));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,s-&gt;MinimalGenerators(s));</span>
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
 </pre></div>
 
@@ -275,8 +273,7 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(NumericalSemigroupsWithFrobeniusNumber(20));</span>
 900
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X85725F5287D20CBB" name="X85725F5287D20CBB"></a></p>
 
@@ -285,7 +282,7 @@ true
                     semigroups with exactly g gaps
                 </span></h4>
 
-<p>Given a numerical semigroup of genus g, removing minimal generators, one obtains numerical semigroups of genus g+1. In order to avoid repetitions, we only remove minimal generators greater than the frobenius number of the numerical semigroup (this is accomplished with the local function sons).</p>
+<p>Given a numerical semigroup of genus g, removing minimal generators, one obtains numerical semigroups of genus g+1. In order to avoid repetitions, we only remove minimal generators greater than the Frobenius number of the numerical semigroup (this is accomplished with the local function sons).</p>
 
 <p>These procedures are described in <a href="chapBib_mj.html#biBRGGB03">[RGGB03]</a> and <a href="chapBib_mj.html#biBB-A08">[Bra08]</a>.</p>
 
@@ -311,7 +308,7 @@ true
   &lt;Numerical semigroup with 3 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt;, 
   &lt;Numerical semigroup with 2 generators&gt; ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGenerators);</span>
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
@@ -418,7 +415,7 @@ true
 <h5>5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF. When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5_mj.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigroups S such that PF(S)=PF. When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5_mj.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
 
 
 <div class="example"><pre>
@@ -430,11 +427,10 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupsWithPseudoFrobeniusNumbers(pf);</span>
 [ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
   &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);   </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGenerators);   </span>
 [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
   [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
   [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
-
 </pre></div>
 
 <p><a id="X862DBFA379D52E2C" name="X862DBFA379D52E2C"></a></p>
@@ -442,7 +438,7 @@ true
 <h5>5.6-4 ANumericalSemigroupWithPseudoFrobeniusNumbers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ANumericalSemigroupWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option The output is: A numerical semigrups S such that PF(S)=PF. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...</p>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option The output is: A numerical semigroup S such that PF(S)=PF. Returns fail if it concludes that it exists and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...</p>
 
 <p>It makes use of the function <code class="func">AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code> (<a href="chap6_mj.html#X7C8AB03F7E0B71F0"><span class="RefLink">6.1-4</span></a>), when Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2].</p>
 

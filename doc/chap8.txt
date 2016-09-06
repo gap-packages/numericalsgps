@@ -18,7 +18,7 @@
   system  of generators if the MED closure of [22XM[122X is [22XS[122X. Moreover, [22XM[122X is a minimal
   MED  generating system for [22XS[122X provided that every proper subset of [22XM[122X is not a
   MED  system  of  generators of [22XS[122X. Minimal MED generating systems are unique,
-  and  in  general  are  smaller that the classical minimal generating systems
+  and  in  general  are  smaller than the classical minimal generating systems
   (see [RGGB03]).[133X
   
   [1X8.1-1 IsMEDNumericalSemigroup[101X
@@ -34,8 +34,6 @@
     [4X[28Xtrue [128X[104X
     [4X[25Xgap>[125X [27XIsMEDNumericalSemigroup(NumericalSemigroup(3,5)); [127X[104X
     [4X[28Xfalse[128X[104X
-    [4X[28X[128X[104X
-    [4X[28X                        [128X[104X
   [4X[32X[104X
   
   [1X8.1-2 MEDNumericalSemigroupClosure[101X
@@ -49,10 +47,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XMEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); [127X[104X
     [4X[28X<Numerical semigroup> [128X[104X
-    [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfNumericalSemigroup(last); [127X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last); [127X[104X
     [4X[28X[ 3, 5, 7 ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X                        [128X[104X
   [4X[32X[104X
   
   [1X8.1-3 MinimalMEDGeneratingSystemOfMEDNumericalSemigroup[101X
@@ -67,8 +63,6 @@
     [4X[25Xgap>[125X [27XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup( [127X[104X
     [4X[25X>[125X [27XNumericalSemigroup(3,5,7)); [127X[104X
     [4X[28X[ 3, 5 ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X                        [128X[104X
   [4X[32X[104X
   
   
@@ -99,8 +93,6 @@
     [4X[28Xfalse [128X[104X
     [4X[25Xgap>[125X [27XIsMEDNumericalSemigroup(NumericalSemigroup(3,7,11)); [127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X[128X[104X
-    [4X[28X                        [128X[104X
   [4X[32X[104X
   
   [1X8.2-2 ArfNumericalSemigroupClosure[101X
@@ -114,10 +106,8 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); [127X[104X
     [4X[28X<Numerical semigroup> [128X[104X
-    [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfNumericalSemigroup(last); [127X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last); [127X[104X
     [4X[28X[ 3, 7, 8 ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X                        [128X[104X
   [4X[32X[104X
   
   [1X8.2-3 MinimalArfGeneratingSystemOfArfNumericalSemigroup[101X
@@ -126,14 +116,12 @@
   
   [33X[0;0Y[3XS[103X is an Arf numerical semigroup.[133X
   
-  [33X[0;0YReturns the minimal MED generating system of [3XS[103X.[133X
+  [33X[0;0YReturns the minimal Arf generating system of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XMinimalArfGeneratingSystemOfArfNumericalSemigroup( [127X[104X
     [4X[25X>[125X [27XNumericalSemigroup(3,7,8)); [127X[104X
     [4X[28X[ 3, 7 ][128X[104X
-    [4X[28X[128X[104X
-    [4X[28X                        [128X[104X
   [4X[32X[104X
   
   [1X8.2-4 ArfNumericalSemigroupsWithFrobeniusNumber[101X
@@ -148,7 +136,7 @@
     [4X[28X[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, [128X[104X
     [4X[28X  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, [128X[104X
     [4X[28X  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ][128X[104X
-    [4X[25Xgap>[125X [27XList(last,MinimalGeneratingSystemOfNumericalSemigroup);[127X[104X
+    [4X[25Xgap>[125X [27XList(last,MinimalGenerators);[127X[104X
     [4X[28X[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], [128X[104X
     [4X[28X  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], [128X[104X
     [4X[28X  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], [128X[104X
@@ -194,7 +182,7 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));[127X[104X
     [4X[28X<Numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfNumericalSemigroup(last);[127X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
     [4X[28X[ 8 .. 15 ][128X[104X
   [4X[32X[104X
   
@@ -215,7 +203,7 @@
     [4X[28X  <Numerical semigroup with 8 generators>, [128X[104X
     [4X[28X  <Numerical semigroup with 9 generators>, [128X[104X
     [4X[28X  <Numerical semigroup with 11 generators> ][128X[104X
-    [4X[25Xgap>[125X [27X List(last,MinimalGeneratingSystemOfNumericalSemigroup);[127X[104X
+    [4X[25Xgap>[125X [27X List(last,MinimalGenerators);[127X[104X
     [4X[28X[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], [128X[104X
     [4X[28X  [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], [128X[104X
     [4X[28X  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [128X[104X

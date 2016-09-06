@@ -95,7 +95,7 @@
   [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
   
   [33X[0;0Y[10XList[110X is an Apéry list. The output is the numerical semigroup whose Apéry set
-  with repect to the length of given list is [10XList[110X.[133X
+  with respect to the length of given list is [10XList[110X.[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"apery"[110X.[133X
   
@@ -127,7 +127,7 @@
     [4X[25Xgap>[125X [27Xse := SmallElements(s);[127X[104X
     [4X[28X[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ][128X[104X
     [4X[25Xgap>[125X [27Xt := NumericalSemigroupBySmallElements(se);;[127X[104X
-    [4X[28X<gap> r := NumericalSemigroup("elements",se);;[128X[104X
+    [4X[25Xgap>[125X [27Xr := NumericalSemigroup("elements",se);;[127X[104X
     [4X[25Xgap>[125X [27Xs=t;t=r;                                            [127X[104X
     [4X[28Xtrue[128X[104X
     [4X[28Xtrue[128X[104X
@@ -148,8 +148,8 @@
   [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
   
   [33X[0;0Y[10XList[110X  is  the  set  of  gaps  of  a  numerical  semigroup. The output is the
-  numerical  semigroup  with  this set of gaps. When no semigroup exists whith
-  the given set as set of gaps, an error is returned.[133X
+  numerical semigroup with this set of gaps. When no semigroup exists with the
+  given set as set of gaps, an error is returned.[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"gaps"[110X.[133X
   
@@ -184,7 +184,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xfg := [ 11, 14, 17, 20, 23, 26, 29, 32, 35 ];;[127X[104X
-    [4X[28Xggap> NumericalSemigroupByFundamentalGaps(fg);[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupByFundamentalGaps(fg);[127X[104X
     [4X[28X<Numerical semigroup>[128X[104X
     [4X[25Xgap>[125X [27XNumericalSemigroup("fundamentalgaps",fg);     [127X[104X
     [4X[28X<Numerical semigroup>[128X[104X

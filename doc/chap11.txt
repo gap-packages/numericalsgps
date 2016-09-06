@@ -6,7 +6,7 @@
   
   [33X[0;0YAn  affine  semigroup  [22XS[122X is a finitely generated cancellative monoid that is
   reduced  (no  units other than 0) and is torsion-free ([22Xa s= b s[122X implies [22Xa=b[122X,
-  with [22Xa,b∈ N[122X and [22Xs∈ S[122X). Up to isomorphisms any affine semigroup can ve viewed
+  with [22Xa,b∈ N[122X and [22Xs∈ S[122X). Up to isomorphisms any affine semigroup can be viewed
   as  a  finitely generated submonoid of [22XN^k[122X for some positive integer [22Xk[122X. Thus
   affine  semigroups are a natural generalization of numerical semigroups. The
   most  common  way  to  give  an affine semigroup is by any of its systems of
@@ -14,13 +14,13 @@
   unique  minimal  system  of  generators.  A  system  of  generators  can  be
   represented  as  a  list  of lists of nonnegative integers; all lists in the
   list  having the same length (a matrix actually). If [22XG[122X is a subgroup of [22XZ^k[122X,
-  then  [22XS=G∩ N^k[122X is an affine semigroup (these semigroups are call full affine
-  semigroups).  As [22XG[122X can be represented by its defining equations (homogeneous
-  and  some  of  them  possibly  in  congruences),  we  can represent [22XS[122X by the
-  defining  equations  of [22XG[122X; indeed [22XS[122X is just the set of nonnegative solutions
-  of  this  system  of  equations. We can represent the equations as a list of
-  lists  of  integers,  all  with  the same length. Every list is a row of the
-  matrix  of  coefficients  of  the  system of equations. For the equations in
+  then  [22XS=G∩  N^k[122X  is  an  affine  semigroup (these semigroups are called full
+  affine  semigroups).  As  [22XG[122X  can  be  represented  by its defining equations
+  (homogeneous  and  some of them possibly in congruences), we can represent [22XS[122X
+  by  the  defining  equations  of  [22XG[122X; indeed [22XS[122X is just the set of nonnegative
+  solutions  of  this system of equations. We can represent the equations as a
+  list  of lists of integers, all with the same length. Every list is a row of
+  the  matrix of coefficients of the system of equations. For the equations in
   congruences, if we arrange them so that they are the first ones in the list,
   we  provide  the  corresponding  moduli  in  a  list.  So  for instance, the
   equations  [22Xx+y≡ 0mod 2, x-2y=0[122X will be represented as [[1,1],[1,-2]] and the
@@ -172,12 +172,12 @@
   [33X[0;0Y[3Xls[103X  is a list of lists of integers and [3Xm[103X a list of integers. The elements of
   [3Xls[103X  represent  the  rows  of  a matrix [22XA[122X. The output is a minimal generating
   system  (Hilbert  basis)  of the set of nonnegative integer solutions of the
-  sytem  [22XAx=0[122X  where the [22Xk[122X first equations are in the congruences modulo [3Xm[i][103X,
+  system  [22XAx=0[122X where the [22Xk[122X first equations are in the congruences modulo [3Xm[i][103X,
   with [22Xk[122X the length of [3Xm[103X.[133X
   
   [33X[0;0YIf  the  package [10XNormalizInterface[110X has not been loaded, then Contejean-Devie
   algorithm  is  used  [CD94]  instead  (if  this is the case, congruences are
-  treated as in [RG98].[133X
+  treated as in [RG98]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XHilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);[127X[104X
@@ -212,7 +212,7 @@
   
   [29X[2XEquationsOfGroupGeneratedBy[102X( [3XM[103X ) [32X function
   
-  [33X[0;0Y[3XM[103X  is  a matrix of integers. The output is a pair [22X[A,m][122X that reperesents the
+  [33X[0;0Y[3XM[103X  is  a  matrix of integers. The output is a pair [22X[A,m][122X that represents the
   set  of  defining  equations  of  the  group spanned by the rows of [3XM[103X: [22XAx=0∈
   Z_n_1× ⋯ × Z_n_t× Z^k[122X, with [22Xm=[n_1,...,n_t][122X.[133X
   
@@ -265,10 +265,10 @@
   
   [1X11.3 [33X[0;0YPresentations of affine semigroups[133X[101X
   
-  [33X[0;0YA  minimal  presentation of an affine semigoup is defined analogously as for
+  [33X[0;0YA  minimal presentation of an affine semigroup is defined analogously as for
   numerical  semigroups.  The user might take into account that generators are
   stored  in  a  set,  and  thus  might  be arranged in a different way to the
-  intitial input.[133X
+  initial input.[133X
   
   [1X11.3-1 GeneratorsOfKernelCongruence[101X
   
@@ -277,7 +277,7 @@
   [33X[0;0Y[3XM[103X is matrix with nonnegative integer coefficients. The output is a system of
   generators of the congruence [22X{(x,y)∣ xM=yM}[122X.[133X
   
-  [33X[0;0YThe  main  differe3nce with [10XMinimalPresentationOfAffineSemigroup[110X is that the
+  [33X[0;0YThe  main  difference  with [10XMinimalPresentationOfAffineSemigroup[110X is that the
   matrix [3XM[103X can have repeated columns and these are not treated as a set.[133X
   
   [1X11.3-2 MinimalPresentationOfAffineSemigroup[101X
@@ -289,11 +289,11 @@
   [33X[0;0YThere  are  four  methods  implemented  for  this function, depending on the
   packages  loaded.  All of them use elimination, and Herzog's correspondence,
   computing the kernel of a ring homomorphism ([Her70]). The fastest procedure
-  is  achived  when  [10XSingularInterface[110X  is  loaded,  followed by [10XSingular[110X. The
+  is  achieved  when  [10XSingularInterface[110X  is  loaded, followed by [10XSingular[110X. The
   procedure  that  does  not  use  external packages uses internal GAP Gröbner
   basis  computations  and  thus  it  is  slower.  Also in this case, from the
-  Gröbner  basis, a minimal set of gerating binomials must be refined, and for
-  this   Rclasses   are   used  (if  [10XNormalizInterface[110X  is  loaded,  then  the
+  Gröbner  basis,  a  minimal set of generating binomials must be refined, and
+  for  this  Rclasses  are  used  (if  [10XNormalizInterface[110X  is  loaded, then the
   factorizations  are  faster).  The  [10X4ti2[110X  implementation  uses [10X4ti2[110X internal
   Gröbner bases and factorizations are done via [10Xzsolve[110X.[133X
   
@@ -324,8 +324,8 @@
   
   [29X[2XShadedSetOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function
   
-  [33X[0;0Y[3Xa[103X  is an affine semigroup and [3Xv[103X is an element in [3Xa[103X. This is a translation of
-  [10XShadedSetOfElementInNumericalSemigroup[110X ([14X4.1-5[114X) but for affine semigroups.[133X
+  [33X[0;0Y[3Xa[103X  is an affine semigroup and [3Xv[103X is an element in [3Xa[103X. This is a translation to
+  affine semigroups of [10XShadedSetOfElementInNumericalSemigroup[110X ([14X4.1-5[114X).[133X
   
   [1X11.3-5 IsGenericAffineSemigroup[101X
   
@@ -353,7 +353,7 @@
   
   [33X[0;0YThis  function  has  three implementations (methods), one using Graver basis
   via   the   Lawrence  lifting  of  [3Xa[103X  and  the  other  (much  faster)  using
-  [10XNormalizInterface[110X. Also a [10X4ti2[110X version using its Graber basis computation is
+  [10XNormalizInterface[110X. Also a [10X4ti2[110X version using its Graver basis computation is
   provided.[133X
   
   [4X[32X  Example  [32X[104X
@@ -369,7 +369,7 @@
   
   [33X[0;0YAs with presentations, the user should take into account that generators are
   stored  in  a  set,  and  thus  might  be arranged in a different way to the
-  intitial input.[133X
+  initial input.[133X
   
   [1X11.4-1 FactorizationsVectorWRTList[101X
   
@@ -381,9 +381,9 @@
   
   [33X[0;0YIf no extra package is loaded, then factorizations are computed recursively;
   and  thus slowly. If [10XNormalizInterface[110X is loaded, then a system of equations
-  is solve with Normaliz, and the performance is much better. If [10X4ti2Interface[110X
-  is  loaded  instead, then factorizations are calculated using [10Xzsolve[110X command
-  of [10X4ti2[110X.[133X
+  is   solved   with   Normaliz,  and  the  performance  is  much  better.  If
+  [10X4ti2Interface[110X  is  loaded  instead, then factorizations are calculated using
+  [10Xzsolve[110X command of [10X4ti2[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);[127X[104X
@@ -398,7 +398,7 @@
   numerical semigroups).[133X
   
   [33X[0;0YThe  procedure  used  is  based  on  [Phi10],  where  it  is  shown that the
-  elasticity  can  be  computed  by  using  circuits.  The  set of circutis is
+  elasticity  can  be  computed  by  using  circuits.  The  set of circuits is
   calculated using [ES96].[133X
   
   [4X[32X  Example  [32X[104X

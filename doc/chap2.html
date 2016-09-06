@@ -139,7 +139,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByAperyList</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is an Apéry list. The output is the numerical semigroup whose Apéry set with repect to the length of given list is <code class="code">List</code>.</p>
+<p><code class="code">List</code> is an Apéry list. The output is the numerical semigroup whose Apéry set with respect to the length of given list is <code class="code">List</code>.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"apery"</code>.</p>
 
@@ -171,7 +171,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">se := SmallElements(s);</span>
 [ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t := NumericalSemigroupBySmallElements(se);;</span>
-&lt;gap&gt; r := NumericalSemigroup("elements",se);;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r := NumericalSemigroup("elements",se);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s=t;t=r;                                            </span>
 true
 true
@@ -192,7 +192,7 @@ you can 'return;' to continue
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGaps</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is the set of gaps of a numerical semigroup. The output is the numerical semigroup with this set of gaps. When no semigroup exists whith the given set as set of gaps, an error is returned.</p>
+<p><code class="code">List</code> is the set of gaps of a numerical semigroup. The output is the numerical semigroup with this set of gaps. When no semigroup exists with the given set as set of gaps, an error is returned.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"gaps"</code>.</p>
 
@@ -227,7 +227,7 @@ you can 'return;' to continue
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">fg := [ 11, 14, 17, 20, 23, 26, 29, 32, 35 ];;</span>
-ggap&gt; NumericalSemigroupByFundamentalGaps(fg);
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroupByFundamentalGaps(fg);</span>
 &lt;Numerical semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NumericalSemigroup("fundamentalgaps",fg);     </span>
 &lt;Numerical semigroup&gt;

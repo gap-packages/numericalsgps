@@ -1,8 +1,8 @@
   
-  [1XB [33X[0;0YRandom functions[133X[101X
+  [1XB [33X[0;0Y"Random" functions[133X[101X
   
   [33X[0;0YHere  we  describe  some  functions  which  allow to create several "random"
-  objects.[133X
+  objects. We make use of the function [10XRandomList[110X.[133X
   
   
   [1XB.1 [33X[0;0YRandom functions[133X[101X
@@ -83,9 +83,9 @@
   [29X[2XNumericalSemigroupWithRandomElementsAndFrobenius[102X( [3Xn[103X, [3Xmult[103X, [3Xfrob[103X ) [32X function
   
   [33X[0;0YProduces  a "random" semigroup containing (at least) [3Xn[103X elements greater than
-  or  equal  to  [3Xmult[103X  and  less  than  [3Xfrob[103X, choosen at random. The semigroup
-  returned  has  multiplicity  choosen  at random but no smaller than [3Xmult[103X and
-  having Frobenius number choosen at random but not greater than [3Xfrob[103X. Returns
+  or  equal  to  [3Xmult[103X  and  less  than  [3Xfrob[103X,  chosen at random. The semigroup
+  returned  has  multiplicity  chosen  at  random but no smaller than [3Xmult[103X and
+  having  Frobenius number chosen at random but not greater than [3Xfrob[103X. Returns
   [22Xfail[122X if [3Xfrob[103X is greater than [3Xmult[103X.[133X
   
   [4X[32X  Example  [32X[104X

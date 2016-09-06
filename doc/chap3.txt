@@ -31,9 +31,9 @@
   [10XMinimalGeneratingSystemOfNumericalSemigroup[110X   returns  the  minimal  set  of
   generators of [10XS[110X.[133X
   
-  [33X[0;0YFrom  Version  0.980,  [10XReducedSetOfGeneratorsOfNumericalSemigroup[110X  is just a
-  synonym       of       [10XMinimalGeneratingSystemOfNumericalSemigroup[110X       and
-  [10XGeneratorsOfNumericalSemigroupNC[110X      is      just      a     synonym     of
+  [33X[0;0YFrom  Version 0.980, [10XReducedSetOfGeneratorsOfNumericalSemigroup[110X is a synonym
+  of                              [10XMinimalGeneratingSystemOfNumericalSemigroup[110X;
+  [10XGeneratorsOfNumericalSemigroupNC[110X        is        a        synonym        of
   [10XGeneratorsOfNumericalSemigroup[110X.  The  names  are kept for compatibility with
   code produced for previous versions, but will be removed in the future.[133X
   
@@ -69,10 +69,10 @@
   [33X[0;0Y[10XNS[110X  is  a  numerical  semigroup.  It  returns the cardinality of its minimal
   generating system.[133X
   
-  [1X3.1-4 SmallElementsOfNumericalSemigroup[101X
+  [1X3.1-4 SmallElements[101X
   
-  [29X[2XSmallElementsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   [29X[2XSmallElements[102X( [3XNS[103X ) [32X attribute
+  [29X[2XSmallElementsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0Y[10XNS[110X is a numerical semigroup. It returns the list of small elements of [10XNS[110X. Of
   course,  the  time  consumed  to  return  a result may depend on the way the
@@ -199,21 +199,21 @@
   
   [29X[2XKunzPolytope[102X( [3Xm[103X ) [32X function
   
-  [33X[0;0Y[3Xm[103X is a positive ingeger.[133X
+  [33X[0;0Y[3Xm[103X is a positive integer.[133X
   
-  [33X[0;0YThe  Kunz  coordinates  of  the  semigroups  with  that  multiplicity  [3Xm[103X are
-  solutions  of  a  system of inequalities [22XAxge b[122X (see [CGB02]). The output is
-  the matrix [22X(A|-b)[122X.[133X
+  [33X[0;0YThe  Kunz coordinates of the semigroups with multiplicity [3Xm[103X are solutions of
+  a  system  of  inequalities  [22XAxge  b[122X (see [CGB02]). The output is the matrix
+  [22X(A|-b)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XKunzPolytope(3);[127X[104X
     [4X[28X[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-12 FrobeniusNumberOfNumericalSemigroup[101X
+  [1X3.1-12 FrobeniusNumber[101X
   
-  [29X[2XFrobeniusNumberOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   [29X[2XFrobeniusNumber[102X( [3XNS[103X ) [32X attribute
+  [29X[2XFrobeniusNumberOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0YThe  largest nonnegative integer not belonging to a numerical semigroup [22XS[122X is
   the  [13XFrobenius  number[113X  of  [22XS[122X. If [22XS[122X is the set of nonnegative integers, then
@@ -231,16 +231,16 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X3.1-13 ConductorOfNumericalSemigroup[101X
+  [1X3.1-13 Conductor[101X
   
-  [29X[2XConductorOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   [29X[2XConductor[102X( [3XNS[103X ) [32X attribute
+  [29X[2XConductorOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
   [33X[0;0YThis is just a synonym of [10X FrobeniusNumberOfNumericalSemigroup[110X ([10XNS[110X)[22X+1[122X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XFrobeniusNumber(NumericalSemigroup(3,5,7));                    [127X[104X
-    [4X[28X4[128X[104X
+    [4X[25Xgap>[125X [27XConductorOfNumericalSemigroup(NumericalSemigroup(3,5,7));                    [127X[104X
+    [4X[28X5[128X[104X
     [4X[25Xgap>[125X [27XConductor(NumericalSemigroup(3,5,7));      [127X[104X
     [4X[28X5[128X[104X
   [4X[32X[104X
@@ -266,19 +266,13 @@
   
   [33X[0;0YStands for [10XLength(PseudoFrobeniusOfNumericalSemigroup (NS))[110X.[133X
   
-  [33X[0;0YA  [13Xgap[113X  of a numerical semigroup [22XS[122X is a nonnegative integer not belonging to
-  [22XS[122X. The [13Xfundamental gaps[113X of [22XS[122X are those gaps that are maximal with respect to
-  the  partial order induced by division in [22XN[122X. The [13Xspecial gaps[113X of a numerical
-  semigroup  [22XS[122X,  are those fundamental gaps such that if they are added to the
-  given  numerical  semigroup,  then  the  resulting  set is again a numerical
-  semigroup.[133X
-  
   [1X3.1-16 Gaps[101X
   
   [29X[2XGaps[102X( [3XNS[103X ) [32X attribute
   [29X[2XGapsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
-  [33X[0;0Y[10XNS[110X is a numerical semigroup. Both return the set of gaps of [10XNS[110X.[133X
+  [33X[0;0YA  [13Xgap[113X  of a numerical semigroup [22XS[122X is a nonnegative integer not belonging to
+  [22XS[122X. [10XNS[110X is a numerical semigroup. Both return the set of gaps of [10XNS[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XGapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
@@ -309,13 +303,13 @@
   
   [33X[0;0Y[10XS[110X is a numerical semigroup and [10Xp,q[110X are two elements in [10XS[110X.[133X
   
-  [33X[0;0YIn  this  setting [10XS[110X is an oversemigroup of [22X⟨ p,q⟩[122X, and consequently evey gap
-  of  [10XS[110X  is a gap of [22X⟨ p,q⟩[122X. If [22Xc[122X is teh conductor of [22X⟨ p,q⟩[122X, then every gap [22Xg[122X
+  [33X[0;0YIn  this setting [10XS[110X is an oversemigroup of [22X⟨ p,q⟩[122X, and consequently every gap
+  of  [10XS[110X  is a gap of [22X⟨ p,q⟩[122X. If [22Xc[122X is the conductor of [22X⟨ p,q⟩[122X, then every gap [22Xg[122X
   of  [22X⟨  p,q⟩[122X  can  be  written uniquely as [22Xg=c-1-(ap+bp)[122X for some nonnegative
   integers [22Xa,b[122X. We say that [22X(a,b)[122X are the coordinates associated to [22Xg[122X.[133X
   
   [33X[0;0YThe  output  is  a  path  in  [22XN^2[122X  such  that  coordinates  of the gaps of [22XS[122X
-  correspond  exactly  with the points in [22XN^2[122X that are between the path en the
+  correspond  exactly  with the points in [22XN^2[122X that are between the path in the
   line [22Xax+by=c-1[122X. See [KW14].[133X
   
   [4X[32X  Example  [32X[104X
@@ -332,12 +326,20 @@
   
   [33X[0;0Y[10XNS[110X is a numerical semigroup. It returns the number of gaps of [10XNS[110X.[133X
   
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(16,17,71,72);;[127X[104X
+    [4X[25Xgap>[125X [27XGenusOfNumericalSemigroup(s);[127X[104X
+    [4X[28X80[128X[104X
+  [4X[32X[104X
+  
   [1X3.1-20 FundamentalGaps[101X
   
   [29X[2XFundamentalGaps[102X( [3XS[103X ) [32X attribute
   [29X[2XFundamentalGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
-  [33X[0;0Y[10XS[110X is a numerical semigroup. It returns the set of fundamental gaps of [3XS[103X.[133X
+  [33X[0;0Y[10XS[110X  The [13Xfundamental gaps[113X of [22XS[122X are those gaps that are maximal with respect to
+  the  partial  order  induced  by division in [22XN[122X. is a numerical semigroup. It
+  returns the set of fundamental gaps of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X
@@ -357,7 +359,10 @@
   
   [29X[2XSpecialGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
-  [33X[0;0Y[10XS[110X is a numerical semigroup. It returns the special gaps of [3XS[103X.[133X
+  [33X[0;0YThe [13Xspecial gaps[113X of a numerical semigroup [22XS[122X, are those fundamental gaps such
+  that  if they are added to the given numerical semigroup, then the resulting
+  set  is  again a numerical semigroup. [10XS[110X is a numerical semigroup. It returns
+  the special gaps of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X

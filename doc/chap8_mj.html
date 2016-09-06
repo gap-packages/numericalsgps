@@ -71,7 +71,7 @@
 
 <p>If <span class="SimpleMath">\(S\)</span> is a numerical semigroup and <span class="SimpleMath">\(m\)</span> is its multiplicity (the least positive integer belonging to it), then the embedding dimension <span class="SimpleMath">\(e\)</span> of <span class="SimpleMath">\(S\)</span> (the cardinality of the minimal system of generators of <span class="SimpleMath">\(S\)</span>) is less than or equal to <span class="SimpleMath">\(m\)</span>. We say that <span class="SimpleMath">\(S\)</span> has maximal embedding dimension (MED for short) when <span class="SimpleMath">\(e=m\)</span>. The intersection of two numerical semigroups with the same multiplicity and maximal embedding dimension is again of maximal embedding dimension. Thus we define the MED closure of a non-empty subset of positive integers <span class="SimpleMath">\(M=\{m &lt; m_1 &lt; \cdots &lt; m_n &lt;\cdots\}\)</span> with <span class="SimpleMath">\(\gcd(M)=1\)</span> as the intersection of all MED numerical semigroups with multiplicity <span class="SimpleMath">\(m\)</span>.</p>
 
-<p>Given a MED numerical semigroup <span class="SimpleMath">\(S\)</span>, we say that <span class="SimpleMath">\(M=\{m_1 &lt; \cdots&lt; m_k\}\)</span> is a MED system of generators if the MED closure of <span class="SimpleMath">\(M\)</span> is <span class="SimpleMath">\(S\)</span>. Moreover, <span class="SimpleMath">\(M\)</span> is a minimal MED generating system for <span class="SimpleMath">\(S\)</span> provided that every proper subset of <span class="SimpleMath">\(M\)</span> is not a MED system of generators of <span class="SimpleMath">\(S\)</span>. Minimal MED generating systems are unique, and in general are smaller that the classical minimal generating systems (see <a href="chapBib_mj.html#biBRGGB03">[RGGB03]</a>).</p>
+<p>Given a MED numerical semigroup <span class="SimpleMath">\(S\)</span>, we say that <span class="SimpleMath">\(M=\{m_1 &lt; \cdots&lt; m_k\}\)</span> is a MED system of generators if the MED closure of <span class="SimpleMath">\(M\)</span> is <span class="SimpleMath">\(S\)</span>. Moreover, <span class="SimpleMath">\(M\)</span> is a minimal MED generating system for <span class="SimpleMath">\(S\)</span> provided that every proper subset of <span class="SimpleMath">\(M\)</span> is not a MED system of generators of <span class="SimpleMath">\(S\)</span>. Minimal MED generating systems are unique, and in general are smaller than the classical minimal generating systems (see <a href="chapBib_mj.html#biBRGGB03">[RGGB03]</a>).</p>
 
 <p><a id="X867615F8846824EB" name="X867615F8846824EB"></a></p>
 
@@ -88,8 +88,7 @@
 true 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,5)); </span>
 false
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X86C8358D8530106F" name="X86C8358D8530106F"></a></p>
 
@@ -104,10 +103,9 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); </span>
 &lt;Numerical semigroup&gt; 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfNumericalSemigroup(last); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last); </span>
 [ 3, 5, 7 ]
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X848FD3FA7DB2DD4C" name="X848FD3FA7DB2DD4C"></a></p>
 
@@ -123,8 +121,7 @@ false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroup(3,5,7)); </span>
 [ 3, 5 ]
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X82E40EFD83A4A186" name="X82E40EFD83A4A186"></a></p>
 
@@ -153,8 +150,7 @@ true
 false 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11)); </span>
 true
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X7FE10E2F85CB01A2" name="X7FE10E2F85CB01A2"></a></p>
 
@@ -169,10 +165,9 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); </span>
 &lt;Numerical semigroup&gt; 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfNumericalSemigroup(last); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last); </span>
 [ 3, 7, 8 ]
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X7C0D2F7986165DDE" name="X7C0D2F7986165DDE"></a></p>
 
@@ -181,15 +176,14 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalArfGeneratingSystemOfArfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is an Arf numerical semigroup.</p>
 
-<p>Returns the minimal MED generating system of <var class="Arg">S</var>.</p>
+<p>Returns the minimal Arf generating system of <var class="Arg">S</var>.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalArfGeneratingSystemOfArfNumericalSemigroup( </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroup(3,7,8)); </span>
 [ 3, 7 ]
-
-                        </pre></div>
+</pre></div>
 
 <p><a id="X85CD144384FD55F3" name="X85CD144384FD55F3"></a></p>
 
@@ -204,7 +198,7 @@ true
 [ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
   &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
   &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGenerators);</span>
 [ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
   [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
   [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
@@ -251,7 +245,7 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));</span>
 &lt;Numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfNumericalSemigroup(last);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last);</span>
 [ 8 .. 15 ]
 </pre></div>
 
@@ -273,7 +267,7 @@ false
   &lt;Numerical semigroup with 8 generators&gt;, 
   &lt;Numerical semigroup with 9 generators&gt;, 
   &lt;Numerical semigroup with 11 generators&gt; ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> List(last,MinimalGeneratingSystemOfNumericalSemigroup);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> List(last,MinimalGenerators);</span>
 [ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
   [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
   [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], 

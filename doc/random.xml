@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Appendix><Heading>Random functions</Heading>
+<Appendix><Heading>"Random" functions</Heading>
 
 Here we describe some functions which allow to create
-several "random" objects.
+several "random" objects. We make use of the function <C>RandomList</C>.
 
 <Section><Heading>Random functions</Heading>
 
@@ -82,7 +82,7 @@ true
         <ManSection>
             <Func Name="NumericalSemigroupWithRandomElementsAndFrobenius" Arg="n,mult,frob"></Func>
             <Description>
-Produces a "random" semigroup containing (at least) <A>n</A> elements greater than or equal to <A>mult</A> and less than <A>frob</A>, choosen at random. The semigroup returned has multiplicity choosen at random but no smaller than <A>mult</A> and having Frobenius number choosen at random but not greater than <A>frob</A>. Returns <M>fail</M> if <A>frob</A> is greater than <A>mult</A>.
+Produces a "random" semigroup containing (at least) <A>n</A> elements greater than or equal to <A>mult</A> and less than <A>frob</A>, chosen at random. The semigroup returned has multiplicity chosen at random but no smaller than <A>mult</A> and having Frobenius number chosen at random but not greater than <A>frob</A>. Returns <M>fail</M> if <A>frob</A> is greater than <A>mult</A>.
                 <Example><![CDATA[
 gap> ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);
 <Numerical semigroup with 17 generators>

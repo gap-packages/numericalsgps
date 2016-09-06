@@ -76,7 +76,7 @@
 
 <p>An irreducible numerical semigroup is a semigroup that cannot be expressed as the intersection of numerical semigroups properly containing it.</p>
 
-<p>It is not difficult to prove that a semigroup is irreducible if and only if it is maximal (with respect to set inclusion) in the set of all numerical semigroup having its same Frobenius number (see <a href="chapBib.html#biBRB03">[RB03]</a>). Hence, according to <a href="chapBib.html#biBFGH87">[FGR87]</a> (respectively <a href="chapBib.html#biBBDF97">[BDF97]</a>), symmetric (respectively pseudo-symmetric) numerical semigroups are those irreducible numerical semigroups with odd (respectively even) Frobenius number.</p>
+<p>It is not difficult to prove that a semigroup is irreducible if and only if it is maximal (with respect to set inclusion) in the set of all numerical semigroups having its same Frobenius number (see <a href="chapBib.html#biBRB03">[RB03]</a>). Hence, according to <a href="chapBib.html#biBFGH87">[FGR87]</a> (respectively <a href="chapBib.html#biBBDF97">[BDF97]</a>), symmetric (respectively pseudo-symmetric) numerical semigroups are those irreducible numerical semigroups with odd (respectively even) Frobenius number.</p>
 
 <p>In <a href="chapBib.html#biBRGGJ03">[RGGJ03]</a> it is shown that a nontrivial numerical semigroup is irreducible if and only if it has only one special gap. We use this characterization.</p>
 
@@ -134,11 +134,15 @@ false
 <h5>6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is an irreducible numerical semigroup with frobenius number <var class="Arg"> f</var>. From the way the procedure is implemented, the resulting semigroup has at most four generators (see <a href="chapBib.html#biBRGS04">[RG04]</a>).</p>
+<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is an irreducible numerical semigroup with Frobenius number <var class="Arg"> f</var>. From the way the procedure is implemented, the resulting semigroup has at most four generators (see <a href="chapBib.html#biBRGS04">[RG04]</a>).</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FrobeniusNumber(AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(s);                                       </span>
+[ 3, 17, 31 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FrobeniusNumber(s);</span>
 28
 </pre></div>
 
@@ -147,7 +151,7 @@ false
 <h5>6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all irreducible numerical semigroups with frobenius number <var class="Arg">f</var>.</p>
+<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
 
 
 <div class="example"><pre>

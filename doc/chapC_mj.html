@@ -419,7 +419,7 @@ true
 
 <h4>C.3 <span class="Heading">Functions implemented by K. Stokes</span></h4>
 
-<p>In this section we document the functions implmented by K. Stokes related to patterns of ideals in numerical semigroups. The correctedness of the algorithms can be found in <a href="chapBib_mj.html#biBStokes">[Sto15]</a>.</p>
+<p>In this section we document the functions implemented by K. Stokes related to patterns of ideals in numerical semigroups. The correctness of the algorithms can be found in <a href="chapBib_mj.html#biBStokes">[Sto15]</a>.</p>
 
 <p><a id="X865042FD7EBD15EE" name="X865042FD7EBD15EE"></a></p>
 
@@ -462,7 +462,7 @@ true
 <h5>C.3-3 AsIdealOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsIdealOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">I</var> is an ideal of a numerical semigroup <span class="SimpleMath">\(S\)</span>, and <var class="Arg">T</var> is a numerical semgigroup. Detects if <var class="Arg">I</var> is an ideal of <var class="Arg">T</var> and contained in <var class="Arg">T</var> (integral ideal), and if so, returns <var class="Arg">I</var> as an ideal of <var class="Arg">T</var>. It returns <code class="code">fail</code> if <var class="Arg">I</var> is an ideal of some semigroup but not an integral ideal of <var class="Arg">t</var>.</p>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup <span class="SimpleMath">\(S\)</span>, and <var class="Arg">T</var> is a numerical semigroup. Detects if <var class="Arg">I</var> is an ideal of <var class="Arg">T</var> and contained in <var class="Arg">T</var> (integral ideal), and if so, returns <var class="Arg">I</var> as an ideal of <var class="Arg">T</var>. It returns <code class="code">fail</code> if <var class="Arg">I</var> is an ideal of some semigroup but not an integral ideal of <var class="Arg">t</var>.</p>
 
 
 <div class="example"><pre>
@@ -494,7 +494,7 @@ fail
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ApplyPatternToIdeal</code>( <var class="Arg">p</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
 
-<p>Calculates <span class="SimpleMath">\(p(I)\)</span>. Outputs <span class="SimpleMath">\(p(I)\)</span>, represented as <code class="code">[d,p(I)/d]</code>, where <code class="code">d</code> is the gcd of the coefficients of <var class="Arg">p</var>. All elements of <span class="SimpleMath">\(p(I)\)</span> are divisible by <span class="SimpleMath">\(d\)</span>, and <span class="SimpleMath">\(p(I)/d\)</span> is an ideal of some numerical semigroup. It is returned as the maximal ideal of the numerical semigroup <span class="SimpleMath">\(p(I)/d \cup \{0\}\)</span>. The parent numerical semigroup can later be changed with the funcion <code class="code">AsIdealOfNumericalSemigroup</code>.</p>
+<p>Calculates <span class="SimpleMath">\(p(I)\)</span>. Outputs <span class="SimpleMath">\(p(I)\)</span>, represented as <code class="code">[d,p(I)/d]</code>, where <code class="code">d</code> is the gcd of the coefficients of <var class="Arg">p</var>. All elements of <span class="SimpleMath">\(p(I)\)</span> are divisible by <span class="SimpleMath">\(d\)</span>, and <span class="SimpleMath">\(p(I)/d\)</span> is an ideal of some numerical semigroup. It is returned as the maximal ideal of the numerical semigroup <span class="SimpleMath">\(p(I)/d \cup \{0\}\)</span>. The parent numerical semigroup can later be changed with the function <code class="code">AsIdealOfNumericalSemigroup</code>.</p>
 
 
 <div class="example"><pre>

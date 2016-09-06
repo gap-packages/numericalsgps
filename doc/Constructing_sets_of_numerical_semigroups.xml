@@ -25,7 +25,7 @@ gap> OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ <The numerical semigroup N>, <Numerical semigroup with 2 generators>, 
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators> ]
-gap> List(last,s->MinimalGeneratingSystemOfNumericalSemigroup(s));
+gap> List(last,s->MinimalGenerators(s));
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
 ]]></Example>          
                     </Description>
@@ -44,8 +44,7 @@ The algorithm implemented is given in <Cite Key="RGGJ04"/>.
                         <Example><![CDATA[
 gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
 900
-]]>
-                        </Example>          
+]]></Example>          
                     </Description>
                 </ManSection>
 
@@ -58,7 +57,7 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
                 </Heading>
                 Given a numerical semigroup of genus g, removing minimal generators, one 
                 obtains numerical semigroups of genus g+1. In order to avoid repetitions,
-                we only remove minimal generators greater than the frobenius number of 
+                we only remove minimal generators greater than the Frobenius number of 
                 the numerical semigroup (this is accomplished with the local function sons).
                 
                 <P/>
@@ -85,7 +84,7 @@ gap> NumericalSemigroupsWithGenus(5);
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 2 generators> ]
-gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
+gap> List(last,MinimalGenerators);
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
@@ -164,7 +163,7 @@ gap> SimpleForcedIntegersForPseudoFrobenius(fint[1],Union(fint[2],[free[1]]),pf)
                   <ManSection>
                     <Func Arg="g" Name="NumericalSemigroupsWithPseudoFrobeniusNumbers"></Func>
                     <Description>
-                        <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigrups S such that PF(S)=PF.
+                        <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigroups S such that PF(S)=PF.
 When Length(PF)=1, it makes use of the function <Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>
 <P/>
                         <Example><![CDATA[
@@ -176,11 +175,10 @@ gap> pf := [11,19,22];;
 gap> NumericalSemigroupsWithPseudoFrobeniusNumbers(pf);
 [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
   <Numerical semigroup>, <Numerical semigroup> ]
-gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);   
+gap> List(last,MinimalGenerators);   
 [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
   [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
   [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
-
 ]]></Example>          
                     </Description>
                 </ManSection>
@@ -189,7 +187,7 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
                     <Func Arg="g" Name="ANumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
                     <Description>
                         <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option
-The output is: A numerical semigrups S such that PF(S)=PF. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
+The output is: A numerical semigroup S such that PF(S)=PF. Returns fail if it concludes that it exists and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
 <P/>
 It makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>, when Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2].
 <P/>
