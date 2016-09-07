@@ -61,7 +61,7 @@ gap> e:=3+t;;
 gap> dup:=AmalgamationOfNumericalSemigroups(s,e,2);;
 gap> [2,3] in dup;
 true
-  ]]></Example>
+]]></Example>
         </Description>
       </ManSection>
 
@@ -77,7 +77,7 @@ gap> s:=NumericalSemigroup(2,3);;
 gap> t:=NumericalSemigroup(3,4);;
 gap> IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));
 true
-  ]]></Example>
+]]></Example>
         </Description>
       </ManSection>
 
@@ -96,7 +96,7 @@ gap> C:=[25,27];
 [ 25, 27 ]
 gap> GoodSemigroup(G,C);
 <Good semigroup>
-  ]]></Example>
+]]></Example>
         </Description>
       </ManSection>
 
@@ -116,21 +116,22 @@ gap> GoodSemigroup(G,C);
 
         Other ways to use this operation are <C>\in(v,S)</C> and <C>v in S</C>.
         <Example><![CDATA[
-gap> dup:=NumericalSemigroupDuplication(s,e);;
-gap> s:=NumericalSemigroup(2,3);
-<Numerical semigroup with 2 generators>
+gap> s:=NumericalSemigroup(2,3);;
 gap> e:=6+s;;
-gap> dup:=NumericalSemigroupDuplication(s,e);
+gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> BelongsToGoodSemigroup([2,2],dup);
+true
 gap> [2,2] in dup;
 true
 gap> [3,2] in dup;
 false
-      ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
   <ManSection>
     <Func Arg="S" Name="Conductor" Label="for good semigroup"></Func>
+    <Func Arg="S" Name="ConductorOfGoodSemigroup"></Func>
     <Description>
       <A>S</A> is a good semigroup. The output is its conductor.
 
@@ -141,13 +142,15 @@ gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
 gap> Conductor(dup);
 [ 11, 11 ]
-        ]]></Example>
+gap> ConductorOfGoodSemigroup(dup);
+[ 11, 11 ]
+]]></Example>
     </Description>
   </ManSection>
 
   <ManSection>
-    <Func Arg="S" Name="SmallElementsOfGoodSemigroup"></Func>
     <Func Arg="S" Name="SmallElements" Label="for good semigroup"></Func>
+    <Func Arg="S" Name="SmallElementsOfGoodSemigroup"></Func>
 
     <Description>
       <A>S</A> is a good semigroup. The output is its set of small elements, that is, the elements smaller than its conductor with respect to the usual partial ordering.
@@ -162,7 +165,7 @@ gap> SmallElementsOfGoodSemigroup(dup);
   [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
   [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
   [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
-        ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 
@@ -182,7 +185,7 @@ gap> SmallElementsOfGoodSemigroup(dup);
   [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
 gap> RepresentsSmallElementsOfGoodSemigroup(last);
 true
-        ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 
@@ -204,7 +207,7 @@ gap> G:=GoodSemigroupBySmallElements(last);
 <Good semigroup>
 gap> dup=G;
 true
-  ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 
@@ -219,7 +222,7 @@ gap> G:=[[4,3],[7,13],[11,17]];;
 gap> g:=GoodSemigroup(G,[11,17]);;
 gap> mx:=MaximalElementsOfGoodSemigroup(g);
 [ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
-        ]]></Example>
+]]></Example>
      </Description>
    </ManSection>
 
@@ -232,7 +235,7 @@ gap> mx:=MaximalElementsOfGoodSemigroup(g);
  gap> g:=GoodSemigroup(G,[11,17]);;
  gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
 [ [ 4, 3 ], [ 7, 13 ] ]
-         ]]></Example>
+]]></Example>
       </Description>
     </ManSection>
 
@@ -256,7 +259,7 @@ gap> gg:=GoodSemigroupByMaximalElements(s,t,mx,[11,15]);
 <Good semigroup>
 gap> gg=g;
 true
-            ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 
@@ -272,7 +275,7 @@ gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
 gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-        ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
   <ManSection>
@@ -286,7 +289,7 @@ gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
 gap> MinimalGenerators(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-        ]]></Example>
+]]></Example>
      </Description>
    </ManSection>
 
@@ -310,7 +313,7 @@ gap> e:=15+e;;
 gap> dup:=NumericalSemigroupDuplication(s,e);;
 gap> IsSymmetricGoodSemigroup(dup);
 true
-        ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 
@@ -332,7 +335,7 @@ true
         <Good semigroup>
         gap> SmallElements(A);
         [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
-        ]]></Example>
+]]></Example>
     </Description>
   </ManSection>
 

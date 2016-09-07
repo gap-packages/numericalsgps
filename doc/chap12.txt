@@ -67,7 +67,6 @@
     [4X[25Xgap>[125X [27Xdup:=AmalgamationOfNumericalSemigroups(s,e,2);;[127X[104X
     [4X[25Xgap>[125X [27X[2,3] in dup;[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X  [128X[104X
   [4X[32X[104X
   
   [1X12.1-4 CartesianProductOfNumericalSemigroups[101X
@@ -82,7 +81,6 @@
     [4X[25Xgap>[125X [27Xt:=NumericalSemigroup(3,4);;[127X[104X
     [4X[25Xgap>[125X [27XIsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X  [128X[104X
   [4X[32X[104X
   
   [1X12.1-5 GoodSemigroup[101X
@@ -102,7 +100,6 @@
     [4X[28X[ 25, 27 ][128X[104X
     [4X[25Xgap>[125X [27XGoodSemigroup(G,C);[127X[104X
     [4X[28X<Good semigroup>[128X[104X
-    [4X[28X  [128X[104X
   [4X[32X[104X
   
   
@@ -118,21 +115,21 @@
   and [10Xv in S[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);;[127X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(2,3);[127X[104X
-    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(2,3);;[127X[104X
     [4X[25Xgap>[125X [27Xe:=6+s;;[127X[104X
-    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);[127X[104X
+    [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);;[127X[104X
+    [4X[25Xgap>[125X [27XBelongsToGoodSemigroup([2,2],dup);[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[2,2] in dup;[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27X[3,2] in dup;[127X[104X
     [4X[28Xfalse[128X[104X
-    [4X[28X      [128X[104X
   [4X[32X[104X
   
   [1X12.2-2 Conductor[101X
   
   [29X[2XConductor[102X( [3XS[103X ) [32X function
+  [29X[2XConductorOfGoodSemigroup[102X( [3XS[103X ) [32X function
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is its conductor.[133X
   
@@ -143,13 +140,14 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XConductor(dup);[127X[104X
     [4X[28X[ 11, 11 ][128X[104X
-    [4X[28X        [128X[104X
+    [4X[25Xgap>[125X [27XConductorOfGoodSemigroup(dup);[127X[104X
+    [4X[28X[ 11, 11 ][128X[104X
   [4X[32X[104X
   
-  [1X12.2-3 SmallElementsOfGoodSemigroup[101X
+  [1X12.2-3 SmallElements[101X
   
-  [29X[2XSmallElementsOfGoodSemigroup[102X( [3XS[103X ) [32X function
   [29X[2XSmallElements[102X( [3XS[103X ) [32X function
+  [29X[2XSmallElementsOfGoodSemigroup[102X( [3XS[103X ) [32X function
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is its set of small elements, that is, the
   elements  smaller  than  its  conductor  with  respect  to the usual partial
@@ -165,7 +163,6 @@
     [4X[28X  [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],[128X[104X
     [4X[28X  [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],[128X[104X
     [4X[28X  [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   [1X12.2-4 RepresentsSmallElementsOfGoodSemigroup[101X
@@ -187,7 +184,6 @@
     [4X[28X  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ][128X[104X
     [4X[25Xgap>[125X [27XRepresentsSmallElementsOfGoodSemigroup(last);[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   [1X12.2-5 GoodSemigroupBySmallElements[101X
@@ -212,7 +208,6 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xdup=G;[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X  [128X[104X
   [4X[32X[104X
   
   [1X12.2-6 MaximalElementsOfGoodSemigroup[101X
@@ -228,7 +223,6 @@
     [4X[25Xgap>[125X [27Xg:=GoodSemigroup(G,[11,17]);;[127X[104X
     [4X[25Xgap>[125X [27Xmx:=MaximalElementsOfGoodSemigroup(g);[127X[104X
     [4X[28X[ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ][128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   [1X12.2-7 IrreducibleMaximalElementsOfGoodSemigroup[101X
@@ -244,7 +238,6 @@
     [4X[28X gap> g:=GoodSemigroup(G,[11,17]);;[128X[104X
     [4X[28X gap> IrreducibleMaximalElementsOfGoodSemigroup(g);[128X[104X
     [4X[28X[ [ 4, 3 ], [ 7, 13 ] ][128X[104X
-    [4X[28X         [128X[104X
   [4X[32X[104X
   
   [1X12.2-8 GoodSemigroupByMaximalElements[101X
@@ -271,7 +264,6 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xgg=g;[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X            [128X[104X
   [4X[32X[104X
   
   [1X12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
@@ -288,7 +280,6 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XMinimalGoodGeneratingSystemOfGoodSemigroup(dup);[127X[104X
     [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ][128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   [1X12.2-10 MinimalGenerators[101X
@@ -304,7 +295,6 @@
     [4X[28X<Good semigroup>[128X[104X
     [4X[25Xgap>[125X [27XMinimalGenerators(dup);[127X[104X
     [4X[28X[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ][128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   
@@ -323,7 +313,6 @@
     [4X[25Xgap>[125X [27Xdup:=NumericalSemigroupDuplication(s,e);;[127X[104X
     [4X[25Xgap>[125X [27XIsSymmetricGoodSemigroup(dup);[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   [1X12.3-2 ArfGoodSemigroupClosure[101X
@@ -345,7 +334,6 @@
     [4X[28X        <Good semigroup>[128X[104X
     [4X[28X        gap> SmallElements(A);[128X[104X
     [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ][128X[104X
-    [4X[28X        [128X[104X
   [4X[32X[104X
   
   

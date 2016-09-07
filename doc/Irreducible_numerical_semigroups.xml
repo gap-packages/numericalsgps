@@ -109,7 +109,7 @@ gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
                 </ManSection>
                 
                 <ManSection>
-                    <Func Arg="s" Name="DecomposeIntoIrreducibles"></Func>
+                    <Func Arg="s" Name="DecomposeIntoIrreducibles" Label="for numerical semigroup"></Func>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is a set of irreducible 
                         numerical semigroups containing it. These elements appear in a minimal

@@ -38,7 +38,7 @@
 \indexentry{IsSubsemigroupOfNumericalSemigroup@\texttt  {IsSubsemigroupOfNumericalSemigroup}|hyperpage}{16}
 \indexentry{IsSubset@\texttt  {IsSubset}|hyperpage}{16}
 \indexentry{BelongsToNumericalSemigroup@\texttt  {BelongsToNumericalSemigroup}|hyperpage}{16}
-\indexentry{in@\texttt  {\texttt  {\char 92\relax }in}!element test for numerical semigroup|hyperpage}{16}
+\indexentry{in@\texttt  {\texttt  {\char 92\relax }in}!membership test for numerical semigroup|hyperpage}{16}
 \indexentry{Multiplicity@\texttt  {Multiplicity}!for numerical semigroup|hyperpage}{18}
 \indexentry{MultiplicityOfNumericalSemigroup@\texttt  {MultiplicityOfNumericalSemigroup}|hyperpage}{18}
 \indexentry{GeneratorsOfNumericalSemigroup@\texttt  {GeneratorsOfNumericalSemigroup}|hyperpage}{18}
@@ -75,6 +75,7 @@
 \indexentry{FundamentalGapsOfNumericalSemigroup@\texttt  {FundamentalGapsOfNumericalSemigroup}|hyperpage}{24}
 \indexentry{SpecialGaps@\texttt  {SpecialGaps}!for numerical semigroup|hyperpage}{24}
 \indexentry{SpecialGapsOfNumericalSemigroup@\texttt  {SpecialGapsOfNumericalSemigroup}|hyperpage}{24}
+\indexentry{WilfNumber@\texttt  {WilfNumber}!for numerical semigroup|hyperpage}{25}
 \indexentry{WilfNumberOfNumericalSemigroup@\texttt  {WilfNumberOfNumericalSemigroup}|hyperpage}{25}
 \indexentry{EliahouNumber@\texttt  {EliahouNumber}!for numerical semigroup|hyperpage}{25}
 \indexentry{TruncatedWilfNumberOfNumericalSemigroup@\texttt  {Truncated}\discretionary {-}{}{}\texttt  {Wilf}\discretionary {-}{}{}\texttt  {Number}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{25}
@@ -96,17 +97,17 @@
 \indexentry{InductiveNumericalSemigroup@\texttt  {InductiveNumericalSemigroup}|hyperpage}{32}
 \indexentry{OverSemigroupsNumericalSemigroup@\texttt  {OverSemigroupsNumericalSemigroup}|hyperpage}{33}
 \indexentry{NumericalSemigroupsWithFrobeniusNumber@\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}|hyperpage}{33}
-\indexentry{NumericalSemigroupsWithGenus@\texttt  {NumericalSemigroupsWithGenus}|hyperpage}{34}
+\indexentry{NumericalSemigroupsWithGenus@\texttt  {NumericalSemigroupsWithGenus}|hyperpage}{33}
 \indexentry{ForcedIntegersForPseudoFrobenius@\texttt  {ForcedIntegersForPseudoFrobenius}|hyperpage}{34}
-\indexentry{SimpleForcedIntegersForPseudoFrobenius@\texttt  {Simple}\discretionary {-}{}{}\texttt  {Forced}\discretionary {-}{}{}\texttt  {Integers}\discretionary {-}{}{}\texttt  {For}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}|hyperpage}{35}
+\indexentry{SimpleForcedIntegersForPseudoFrobenius@\texttt  {Simple}\discretionary {-}{}{}\texttt  {Forced}\discretionary {-}{}{}\texttt  {Integers}\discretionary {-}{}{}\texttt  {For}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}|hyperpage}{34}
 \indexentry{NumericalSemigroupsWithPseudoFrobeniusNumbers@\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}|hyperpage}{35}
-\indexentry{ANumericalSemigroupWithPseudoFrobeniusNumbers@\texttt  {ANumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}|hyperpage}{36}
+\indexentry{ANumericalSemigroupWithPseudoFrobeniusNumbers@\texttt  {ANumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}|hyperpage}{35}
 \indexentry{IsIrreducibleNumericalSemigroup@\texttt  {IsIrreducibleNumericalSemigroup}|hyperpage}{37}
 \indexentry{IsSymmetricNumericalSemigroup@\texttt  {IsSymmetricNumericalSemigroup}|hyperpage}{38}
 \indexentry{IsPseudoSymmetricNumericalSemigroup@\texttt  {IsPseudoSymmetricNumericalSemigroup}|hyperpage}{38}
 \indexentry{AnIrreducibleNumericalSemigroupWithFrobeniusNumber@\texttt  {AnIrreducible}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}|hyperpage}{38}
 \indexentry{IrreducibleNumericalSemigroupsWithFrobeniusNumber@\texttt  {Irreducible}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}|hyperpage}{38}
-\indexentry{DecomposeIntoIrreducibles@\texttt  {DecomposeIntoIrreducibles}|hyperpage}{39}
+\indexentry{DecomposeIntoIrreducibles@\texttt  {DecomposeIntoIrreducibles}!for numerical semigroup|hyperpage}{39}
 \indexentry{AsGluingOfNumericalSemigroups@\texttt  {AsGluingOfNumericalSemigroups}|hyperpage}{39}
 \indexentry{IsACompleteIntersectionNumericalSemigroup@\texttt  {IsA}\discretionary {-}{}{}\texttt  {Complete}\discretionary {-}{}{}\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{39}
 \indexentry{CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber@\texttt  {Complete}\discretionary {-}{}{}\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}|hyperpage}{40}
@@ -120,22 +121,27 @@
 \indexentry{IsAlmostSymmetricNumericalSemigroup@\texttt  {IsAlmostSymmetricNumericalSemigroup}|hyperpage}{42}
 \indexentry{AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber@\texttt  {Almost}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}|hyperpage}{42}
 \indexentry{IdealOfNumericalSemigroup@\texttt  {IdealOfNumericalSemigroup}|hyperpage}{43}
+\indexentry{+@\texttt  {+}!for defining ideal of numerical semigroup|hyperpage}{43}
 \indexentry{IsIdealOfNumericalSemigroup@\texttt  {IsIdealOfNumericalSemigroup}|hyperpage}{43}
-\indexentry{MinimalGenerators@\texttt  {MinimalGenerators}!for ideal|hyperpage}{44}
-\indexentry{MinimalGeneratingSystem@\texttt  {MinimalGeneratingSystem}!for ideal|hyperpage}{44}
+\indexentry{MinimalGenerators@\texttt  {MinimalGenerators}!for ideal of numerical semigroup|hyperpage}{44}
+\indexentry{MinimalGeneratingSystem@\texttt  {MinimalGeneratingSystem}!for ideal of numerical semigroup|hyperpage}{44}
 \indexentry{MinimalGeneratingSystemOfIdealOfNumericalSemigroup@\texttt  {Minimal}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{44}
-\indexentry{Generators@\texttt  {Generators}!for ideal|hyperpage}{44}
+\indexentry{Generators@\texttt  {Generators}!for ideal of numerical semigroup|hyperpage}{44}
 \indexentry{GeneratorsOfIdealOfNumericalSemigroup@\texttt  {Generators}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{44}
 \indexentry{AmbientNumericalSemigroupOfIdeal@\texttt  {AmbientNumericalSemigroupOfIdeal}|hyperpage}{44}
-\indexentry{IsIntegralIdealOfNumericalSemigroup@\texttt  {IsIntegralIdealOfNumericalSemigroup}|hyperpage}{45}
+\indexentry{IsIntegralIdealOfNumericalSemigroup@\texttt  {IsIntegralIdealOfNumericalSemigroup}|hyperpage}{44}
+\indexentry{SmallElements@\texttt  {SmallElements}!for ideal of numerical semigroup|hyperpage}{45}
 \indexentry{SmallElementsOfIdealOfNumericalSemigroup@\texttt  {Small}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{45}
-\indexentry{SmallElements@\texttt  {SmallElements}!for ideal|hyperpage}{45}
-\indexentry{Conductor@\texttt  {Conductor}!for ideal|hyperpage}{45}
+\indexentry{Conductor@\texttt  {Conductor}!for ideal of numerical semigroup|hyperpage}{45}
 \indexentry{ConductorOfIdealOfNumericalSemigroup@\texttt  {Conductor}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{45}
 \indexentry{BelongsToIdealOfNumericalSemigroup@\texttt  {BelongsToIdealOfNumericalSemigroup}|hyperpage}{45}
+\indexentry{in@\texttt  {\texttt  {\char 92\relax }in}!membership test ideal of numerical semigroup|hyperpage}{45}
 \indexentry{SumIdealsOfNumericalSemigroup@\texttt  {SumIdealsOfNumericalSemigroup}|hyperpage}{46}
+\indexentry{+@\texttt  {+}!for ideals of numerical semigroup|hyperpage}{46}
 \indexentry{MultipleOfIdealOfNumericalSemigroup@\texttt  {MultipleOfIdealOfNumericalSemigroup}|hyperpage}{46}
+\indexentry{*@\texttt  {*}!for multiple of ideal of numerical semigroup|hyperpage}{46}
 \indexentry{SubtractIdealsOfNumericalSemigroup@\texttt  {SubtractIdealsOfNumericalSemigroup}|hyperpage}{46}
+\indexentry{-@\texttt  {-}!for ideals of numerical semigroup|hyperpage}{46}
 \indexentry{DifferenceOfIdealsOfNumericalSemigroup@\texttt  {Difference}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{47}
 \indexentry{TranslationOfIdealOfNumericalSemigroup@\texttt  {Translation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{47}
 \indexentry{IntersectionIdealsOfNumericalSemigroup@\texttt  {Intersection}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{48}
@@ -234,22 +240,22 @@
 \indexentry{HilbertBasisOfSystemOfHomogeneousEquations@\texttt  {Hilbert}\discretionary {-}{}{}\texttt  {Basis}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Homogeneous}\discretionary {-}{}{}\texttt  {Equations}|hyperpage}{78}
 \indexentry{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt  {Hilbert}\discretionary {-}{}{}\texttt  {Basis}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Homogeneous}\discretionary {-}{}{}\texttt  {Inequalities}|hyperpage}{78}
 \indexentry{EquationsOfGroupGeneratedBy@\texttt  {EquationsOfGroupGeneratedBy}|hyperpage}{78}
-\indexentry{BasisOfGroupGivenByEquations@\texttt  {BasisOfGroupGivenByEquations}|hyperpage}{78}
+\indexentry{BasisOfGroupGivenByEquations@\texttt  {BasisOfGroupGivenByEquations}|hyperpage}{79}
 \indexentry{GluingOfAffineSemigroups@\texttt  {GluingOfAffineSemigroups}|hyperpage}{79}
 \indexentry{GeneratorsOfKernelCongruence@\texttt  {GeneratorsOfKernelCongruence}|hyperpage}{79}
-\indexentry{MinimalPresentationOfAffineSemigroup@\texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{79}
+\indexentry{MinimalPresentationOfAffineSemigroup@\texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{80}
 \indexentry{BettiElementsOfAffineSemigroup@\texttt  {BettiElementsOfAffineSemigroup}|hyperpage}{80}
 \indexentry{ShadedSetOfElementInAffineSemigroup@\texttt  {ShadedSetOfElementInAffineSemigroup}|hyperpage}{80}
 \indexentry{IsGenericAffineSemigroup@\texttt  {IsGenericAffineSemigroup}|hyperpage}{80}
-\indexentry{IsUniquelyPresentedAffineSemigroup@\texttt  {IsUniquelyPresentedAffineSemigroup}|hyperpage}{80}
-\indexentry{PrimitiveElementsOfAffineSemigroup@\texttt  {PrimitiveElementsOfAffineSemigroup}|hyperpage}{80}
+\indexentry{IsUniquelyPresentedAffineSemigroup@\texttt  {IsUniquelyPresentedAffineSemigroup}|hyperpage}{81}
+\indexentry{PrimitiveElementsOfAffineSemigroup@\texttt  {PrimitiveElementsOfAffineSemigroup}|hyperpage}{81}
 \indexentry{FactorizationsVectorWRTList@\texttt  {FactorizationsVectorWRTList}|hyperpage}{81}
 \indexentry{ElasticityOfAffineSemigroup@\texttt  {ElasticityOfAffineSemigroup}|hyperpage}{81}
-\indexentry{CatenaryDegreeOfAffineSemigroup@\texttt  {CatenaryDegreeOfAffineSemigroup}|hyperpage}{81}
+\indexentry{CatenaryDegreeOfAffineSemigroup@\texttt  {CatenaryDegreeOfAffineSemigroup}|hyperpage}{82}
 \indexentry{EqualCatenaryDegreeOfAffineSemigroup@\texttt  {Equal}\discretionary {-}{}{}\texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{82}
 \indexentry{HomogeneousCatenaryDegreeOfAffineSemigroup@\texttt  {Homogeneous}\discretionary {-}{}{}\texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{82}
 \indexentry{MonotoneCatenaryDegreeOfAffineSemigroup@\texttt  {Monotone}\discretionary {-}{}{}\texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{82}
-\indexentry{TameDegreeOfAffineSemigroup@\texttt  {TameDegreeOfAffineSemigroup}|hyperpage}{82}
+\indexentry{TameDegreeOfAffineSemigroup@\texttt  {TameDegreeOfAffineSemigroup}|hyperpage}{83}
 \indexentry{OmegaPrimalityOfElementInAffineSemigroup@\texttt  {Omega}\discretionary {-}{}{}\texttt  {Primality}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{83}
 \indexentry{OmegaPrimalityOfAffineSemigroup@\texttt  {OmegaPrimalityOfAffineSemigroup}|hyperpage}{83}
 \indexentry{IsGoodSemigroup@\texttt  {IsGoodSemigroup}|hyperpage}{84}
@@ -260,8 +266,9 @@
 \indexentry{BelongsToGoodSemigroup@\texttt  {BelongsToGoodSemigroup}|hyperpage}{86}
 \indexentry{in@\texttt  {\texttt  {\char 92\relax }in}!membership for good semigroup|hyperpage}{86}
 \indexentry{Conductor@\texttt  {Conductor}!for good semigroup|hyperpage}{86}
-\indexentry{SmallElementsOfGoodSemigroup@\texttt  {SmallElementsOfGoodSemigroup}|hyperpage}{86}
+\indexentry{ConductorOfGoodSemigroup@\texttt  {ConductorOfGoodSemigroup}|hyperpage}{86}
 \indexentry{SmallElements@\texttt  {SmallElements}!for good semigroup|hyperpage}{86}
+\indexentry{SmallElementsOfGoodSemigroup@\texttt  {SmallElementsOfGoodSemigroup}|hyperpage}{86}
 \indexentry{RepresentsSmallElementsOfGoodSemigroup@\texttt  {Represents}\discretionary {-}{}{}\texttt  {Small}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Semigroup}|hyperpage}{87}
 \indexentry{GoodSemigroupBySmallElements@\texttt  {GoodSemigroupBySmallElements}|hyperpage}{87}
 \indexentry{MaximalElementsOfGoodSemigroup@\texttt  {MaximalElementsOfGoodSemigroup}|hyperpage}{87}
@@ -273,7 +280,7 @@
 \indexentry{ArfGoodSemigroupClosure@\texttt  {ArfGoodSemigroupClosure}|hyperpage}{89}
 \indexentry{GoodIdeal@\texttt  {GoodIdeal}|hyperpage}{90}
 \indexentry{GoodGeneratingSystemOfGoodIdeal@\texttt  {GoodGeneratingSystemOfGoodIdeal}|hyperpage}{90}
-\indexentry{AmbientGoodSemigroupOfGoodIdeal@\texttt  {AmbientGoodSemigroupOfGoodIdeal}|hyperpage}{91}
+\indexentry{AmbientGoodSemigroupOfGoodIdeal@\texttt  {AmbientGoodSemigroupOfGoodIdeal}|hyperpage}{90}
 \indexentry{MinimalGoodGeneratingSystemOfGoodIdeal@\texttt  {Minimal}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Ideal}|hyperpage}{91}
 \indexentry{BelongsToGoodIdeal@\texttt  {BelongsToGoodIdeal}|hyperpage}{91}
 \indexentry{in@\texttt  {\texttt  {\char 92\relax }in}!membership for good ideal|hyperpage}{91}

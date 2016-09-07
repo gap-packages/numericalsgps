@@ -6,6 +6,7 @@
   
 
   <ManSection>
+    <Attr Name="WilfNumber" Arg="S" Label="for numerical semigroup"/>
     <Attr Name="WilfNumberOfNumericalSemigroup" Arg="S"/>
     <Description>
       <C>S</C> 
