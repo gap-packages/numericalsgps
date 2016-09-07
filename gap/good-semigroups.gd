@@ -62,6 +62,7 @@ DeclareSynonymAttr("MinimalGoodGeneratingSystemOfGoodSemigroup",MinimalGenerator
 
 ##
 DeclareAttribute( "Conductor", IsGoodSemigroup);
+DeclareSynonymAttr("ConductorOfGoodSemigroup",Conductor);
 ###################################################
 ##
 #A SmallElements(M)

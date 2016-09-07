@@ -870,8 +870,8 @@ belong to \mbox{\texttt{\mdseries\slshape S}}.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToNumericalSemigroup({\mdseries\slshape n, S})\index{BelongsToNumericalSemigroup@\texttt{BelongsToNumericalSemigroup}}
 \label{BelongsToNumericalSemigroup}
 }\hfill{\scriptsize (operation)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape n, S})\index{in@\texttt{\texttt{\symbol{92}}in}!element test for numerical semigroup}
-\label{in:element test for numerical semigroup}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape n, S})\index{in@\texttt{\texttt{\symbol{92}}in}!membership test for numerical semigroup}
+\label{in:membership test for numerical semigroup}
 }\hfill{\scriptsize (operation)}}\\
 
 
@@ -1435,10 +1435,13 @@ numerical semigroup, then the resulting set is again a numerical semigroup. \tex
   Let $S$ be a numerical semigroup, with conductor $c$ and embedding dimension $e$. Denote by $l$ the cardinality of the set of elements in $S$ smaller than $c$. Wilf in \cite{Wilf} asked whether or not $l/c\ge 1/e$ for all numerical semigroups. In this section we give some functions to
 experiment with this conjecture, as defined in \cite{E}. 
 
-\subsection{\textcolor{Chapter }{WilfNumberOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{WilfNumber (for numerical semigroup)}}
 \logpage{[ 3, 2, 1 ]}\nobreak
-\hyperdef{L}{X808D266284F0D479}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{WilfNumberOfNumericalSemigroup({\mdseries\slshape S})\index{WilfNumberOfNumericalSemigroup@\texttt{WilfNumberOfNumericalSemigroup}}
+\hyperdef{L}{X78C2F4C77FB096F0}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{WilfNumber({\mdseries\slshape S})\index{WilfNumber@\texttt{WilfNumber}!for numerical semigroup}
+\label{WilfNumber:for numerical semigroup}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{WilfNumberOfNumericalSemigroup({\mdseries\slshape S})\index{WilfNumberOfNumericalSemigroup@\texttt{WilfNumberOfNumericalSemigroup}}
 \label{WilfNumberOfNumericalSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 
@@ -1792,7 +1795,6 @@ to a semigroup (see \cite{RGGJ03}).
         <Numerical semigroup>
         gap> SmallElements(last);
         [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
-        
 \end{Verbatim}
  }
 
@@ -1821,7 +1823,6 @@ to a semigroup (see \cite{RGGJ03}).
         <Numerical semigroup>
         gap> SmallElements(u);
         [ 0, 3, 5, 6, 8 ]
-        
 \end{Verbatim}
  }
 
@@ -1841,7 +1842,6 @@ to a semigroup (see \cite{RGGJ03}).
         gap> s:=MultipleOfNumericalSemigroup(N,4,20);;
         gap> SmallElements(s);
         [ 0, 4, 8, 12, 16, 20 ]
-        
 \end{Verbatim}
  }
 
@@ -1865,7 +1865,6 @@ to a semigroup (see \cite{RGGJ03}).
         <Numerical semigroup>
         gap> SmallElements(ndup);
         [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
-      
 \end{Verbatim}
  }
 
@@ -1884,7 +1883,6 @@ to a semigroup (see \cite{RGGJ03}).
         gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;
         gap> SmallElements(s);
         [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]
-        
 \end{Verbatim}
  }
 
@@ -1969,7 +1967,7 @@ numerical semigroup (this is accomplished with the local function sons).
 
 
  \mbox{\texttt{\mdseries\slshape g}} is a nonnegative integer. The output is the set of numerical semigroups with
-genus\mbox{\texttt{\mdseries\slshape g}}. 
+genus \mbox{\texttt{\mdseries\slshape g}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@NumericalSemigroupsWithGenus(5);|
   [ <Numerical semigroup with 6 generators>, 
@@ -2275,11 +2273,11 @@ irreducible numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\s
 
  
 
-\subsection{\textcolor{Chapter }{DecomposeIntoIrreducibles}}
+\subsection{\textcolor{Chapter }{DecomposeIntoIrreducibles (for numerical semigroup)}}
 \logpage{[ 6, 1, 6 ]}\nobreak
-\hyperdef{L}{X8227EF2B7F67E2FB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DecomposeIntoIrreducibles({\mdseries\slshape s})\index{DecomposeIntoIrreducibles@\texttt{DecomposeIntoIrreducibles}}
-\label{DecomposeIntoIrreducibles}
+\hyperdef{L}{X8753F78D7FD732E2}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DecomposeIntoIrreducibles({\mdseries\slshape s})\index{DecomposeIntoIrreducibles@\texttt{DecomposeIntoIrreducibles}!for numerical semigroup}
+\label{DecomposeIntoIrreducibles:for numerical semigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -2589,6 +2587,9 @@ more information see for instance \cite{BDF97}).
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IdealOfNumericalSemigroup({\mdseries\slshape l, S})\index{IdealOfNumericalSemigroup@\texttt{IdealOfNumericalSemigroup}}
 \label{IdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{+({\mdseries\slshape l, S})\index{+@\texttt{+}!for defining ideal of numerical semigroup}
+\label{+:for defining ideal of numerical semigroup}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape l}} a list of integers. The output is the ideal of \mbox{\texttt{\mdseries\slshape S}} generated by \mbox{\texttt{\mdseries\slshape l}}. 
@@ -2628,14 +2629,14 @@ more information see for instance \cite{BDF97}).
 
  
 
-\subsection{\textcolor{Chapter }{MinimalGenerators (for ideal)}}
+\subsection{\textcolor{Chapter }{MinimalGenerators (for ideal of numerical semigroup)}}
 \logpage{[ 7, 1, 3 ]}\nobreak
-\hyperdef{L}{X861A69A986DDBB51}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape I})\index{MinimalGenerators@\texttt{MinimalGenerators}!for ideal}
-\label{MinimalGenerators:for ideal}
+\hyperdef{L}{X85144E0F791038AE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape I})\index{MinimalGenerators@\texttt{MinimalGenerators}!for ideal of numerical semigroup}
+\label{MinimalGenerators:for ideal of numerical semigroup}
 }\hfill{\scriptsize (attribute)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape I})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}!for ideal}
-\label{MinimalGeneratingSystem:for ideal}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape I})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}!for ideal of numerical semigroup}
+\label{MinimalGeneratingSystem:for ideal of numerical semigroup}
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystemOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{MinimalGeneratingSystemOfIdealOfNumericalSemigroup@\texttt{Minimal}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalGeneratingSystemOfIdealOfNumericalSemigroup}
@@ -2657,11 +2658,11 @@ generators of \mbox{\texttt{\mdseries\slshape I}}.
 
  
 
-\subsection{\textcolor{Chapter }{Generators (for ideal)}}
+\subsection{\textcolor{Chapter }{Generators (for ideal of numerical semigroup)}}
 \logpage{[ 7, 1, 4 ]}\nobreak
-\hyperdef{L}{X85D9ADD487131900}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape I})\index{Generators@\texttt{Generators}!for ideal}
-\label{Generators:for ideal}
+\hyperdef{L}{X7A842A4385B73C63}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape I})\index{Generators@\texttt{Generators}!for ideal of numerical semigroup}
+\label{Generators:for ideal of numerical semigroup}
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{GeneratorsOfIdealOfNumericalSemigroup@\texttt{Generators}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{GeneratorsOfIdealOfNumericalSemigroup}
@@ -2671,14 +2672,12 @@ generators of \mbox{\texttt{\mdseries\slshape I}}.
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. The output is a system of generators of
 the ideal. 
 
- Remark: from Version 1.1 on, this value does not change even when a set of
+ Remark: from Version 1.0.1 on, this value does not change even when a set of
 minimal generators is computed. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@GeneratorsOfIdealOfNumericalSemigroup(I);|
   [ 3, 5, 9 ]
-  !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);|
-  [ 3 ]
   !gapprompt@gap>| !gapinput@Generators(I);|
   [ 3, 5, 9 ]
 \end{Verbatim}
@@ -2724,14 +2723,14 @@ minimal generators is computed.
 
  
 
-\subsection{\textcolor{Chapter }{SmallElementsOfIdealOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{SmallElements (for ideal of numerical semigroup)}}
 \logpage{[ 7, 1, 7 ]}\nobreak
-\hyperdef{L}{X7BDEBFCB7A1DAFC7}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElementsOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{SmallElementsOfIdealOfNumericalSemigroup@\texttt{Small}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
-\label{SmallElementsOfIdealOfNumericalSemigroup}
+\hyperdef{L}{X7811E92487110941}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape I})\index{SmallElements@\texttt{SmallElements}!for ideal of numerical semigroup}
+\label{SmallElements:for ideal of numerical semigroup}
 }\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape I})\index{SmallElements@\texttt{SmallElements}!for ideal}
-\label{SmallElements:for ideal}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElementsOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{SmallElementsOfIdealOfNumericalSemigroup@\texttt{Small}\-\texttt{Elements}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{SmallElementsOfIdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -2752,11 +2751,11 @@ plus one.
 
  
 
-\subsection{\textcolor{Chapter }{Conductor (for ideal)}}
+\subsection{\textcolor{Chapter }{Conductor (for ideal of numerical semigroup)}}
 \logpage{[ 7, 1, 8 ]}\nobreak
-\hyperdef{L}{X7C611E3A817E5041}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Conductor({\mdseries\slshape NS})\index{Conductor@\texttt{Conductor}!for ideal}
-\label{Conductor:for ideal}
+\hyperdef{L}{X7EDDC78883A98A6E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Conductor({\mdseries\slshape NS})\index{Conductor@\texttt{Conductor}!for ideal of numerical semigroup}
+\label{Conductor:for ideal of numerical semigroup}
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ConductorOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{ConductorOfIdealOfNumericalSemigroup@\texttt{Conductor}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ConductorOfIdealOfNumericalSemigroup}
@@ -2781,6 +2780,9 @@ plus one.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{BelongsToIdealOfNumericalSemigroup@\texttt{BelongsToIdealOfNumericalSemigroup}}
 \label{BelongsToIdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape n, I})\index{in@\texttt{\texttt{\symbol{92}}in}!membership test ideal of numerical semigroup}
+\label{in:membership test ideal of numerical semigroup}
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup, \mbox{\texttt{\mdseries\slshape n}} is an integer. The output is true if \mbox{\texttt{\mdseries\slshape n}} belongs to \mbox{\texttt{\mdseries\slshape I}}. 
@@ -2807,11 +2809,12 @@ plus one.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SumIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{SumIdealsOfNumericalSemigroup@\texttt{SumIdealsOfNumericalSemigroup}}
 \label{SumIdealsOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{+({\mdseries\slshape I, J})\index{+@\texttt{+}!for ideals of numerical semigroup}
+\label{+:for ideals of numerical semigroup}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I, J}} are ideals of a numerical semigroup. The output is the sum of both ideals $\{ i+j \ |\ i\in \mbox{\texttt{\mdseries\slshape I}}, j\in \mbox{\texttt{\mdseries\slshape J}}\}$. 
-
- \mbox{\texttt{\mdseries\slshape I + J}} is a synonym of this function. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@I:=[3,5,9]+NumericalSemigroup(2,11);;|
   !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);;|
@@ -2834,6 +2837,9 @@ plus one.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultipleOfIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{MultipleOfIdealOfNumericalSemigroup@\texttt{MultipleOfIdealOfNumericalSemigroup}}
 \label{MultipleOfIdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{*({\mdseries\slshape n, I})\index{*@\texttt{*}!for multiple of ideal of numerical semigroup}
+\label{*:for multiple of ideal of numerical semigroup}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup, \mbox{\texttt{\mdseries\slshape n}} is a non negative integer. The output is the ideal $\mbox{\texttt{\mdseries\slshape I}}+\cdots+\mbox{\texttt{\mdseries\slshape I}}$ (\mbox{\texttt{\mdseries\slshape n}} times). 
@@ -2854,11 +2860,14 @@ plus one.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SubtractIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{SubtractIdealsOfNumericalSemigroup@\texttt{SubtractIdealsOfNumericalSemigroup}}
 \label{SubtractIdealsOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{-({\mdseries\slshape I, J})\index{-@\texttt{-}!for ideals of numerical semigroup}
+\label{-:for ideals of numerical semigroup}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I, J}} are ideals of a numerical semigroup. The output is the ideal $\{ z\in {\mathbb Z}\ |\ z+\mbox{\texttt{\mdseries\slshape J}}\subseteq \mbox{\texttt{\mdseries\slshape I}}\}$. 
 
- $I - J$ is a synonym of this function. 
+ $I - J$ is a synonym of \texttt{SubtractIdealsOfNumericalSemigroup}. 
 
  $S-$\mbox{\texttt{\mdseries\slshape J}} is a synonym of $(0+S)-$\mbox{\texttt{\mdseries\slshape J}}, if $S$ is the ambient semigroup of \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}}. The following example appears in \cite{HS04}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
@@ -4963,6 +4972,10 @@ inequalities.
   true
   !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([1,2],a);|
   false
+  !gapprompt@gap>| !gapinput@[5,5] in a;|
+  true
+  !gapprompt@gap>| !gapinput@[1,2] in a;|
+  false
 \end{Verbatim}
  }
 
@@ -5501,7 +5514,6 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
   !gapprompt@gap>| !gapinput@dup:=AmalgamationOfNumericalSemigroups(s,e,2);;|
   !gapprompt@gap>| !gapinput@[2,3] in dup;|
   true
-    
 \end{Verbatim}
  }
 
@@ -5521,7 +5533,6 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
   !gapprompt@gap>| !gapinput@t:=NumericalSemigroup(3,4);;|
   !gapprompt@gap>| !gapinput@IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));|
   true
-    
 \end{Verbatim}
  }
 
@@ -5544,7 +5555,6 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
   [ 25, 27 ]
   !gapprompt@gap>| !gapinput@GoodSemigroup(G,C);|
   <Good semigroup>
-    
 \end{Verbatim}
  }
 
@@ -5569,16 +5579,15 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
 
  \mbox{\texttt{\mdseries\slshape S}} is a good semigroup and \mbox{\texttt{\mdseries\slshape v}} is a pair of integers. The output is \texttt{true} if \mbox{\texttt{\mdseries\slshape v}} is in \mbox{\texttt{\mdseries\slshape S}}, and \texttt{false} otherwise. Other ways to use this operation are \texttt{\texttt{\symbol{92}}in(v,S)} and \texttt{v in S}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);;|
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(2,3);|
-  <Numerical semigroup with 2 generators>
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(2,3);;|
   !gapprompt@gap>| !gapinput@e:=6+s;;|
-  !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);|
+  !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);;|
+  !gapprompt@gap>| !gapinput@BelongsToGoodSemigroup([2,2],dup);|
+  true
   !gapprompt@gap>| !gapinput@[2,2] in dup;|
   true
   !gapprompt@gap>| !gapinput@[3,2] in dup;|
   false
-        
 \end{Verbatim}
  }
 
@@ -5590,6 +5599,9 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Conductor({\mdseries\slshape S})\index{Conductor@\texttt{Conductor}!for good semigroup}
 \label{Conductor:for good semigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ConductorOfGoodSemigroup({\mdseries\slshape S})\index{ConductorOfGoodSemigroup@\texttt{ConductorOfGoodSemigroup}}
+\label{ConductorOfGoodSemigroup}
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a good semigroup. The output is its conductor. 
@@ -5600,20 +5612,21 @@ g^{-1}(E)\times E\},$ where $D=\{(s,b s)\mid s\in S\}$.
   <Good semigroup>
   !gapprompt@gap>| !gapinput@Conductor(dup);|
   [ 11, 11 ]
-          
+  !gapprompt@gap>| !gapinput@ConductorOfGoodSemigroup(dup);|
+  [ 11, 11 ]
 \end{Verbatim}
  }
 
  
 
-\subsection{\textcolor{Chapter }{SmallElementsOfGoodSemigroup}}
+\subsection{\textcolor{Chapter }{SmallElements (for good semigroup)}}
 \logpage{[ 12, 2, 3 ]}\nobreak
-\hyperdef{L}{X8213214879AC6027}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElementsOfGoodSemigroup({\mdseries\slshape S})\index{SmallElementsOfGoodSemigroup@\texttt{SmallElementsOfGoodSemigroup}}
-\label{SmallElementsOfGoodSemigroup}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape S})\index{SmallElements@\texttt{SmallElements}!for good semigroup}
+\hyperdef{L}{X836AB83682858A11}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElements({\mdseries\slshape S})\index{SmallElements@\texttt{SmallElements}!for good semigroup}
 \label{SmallElements:for good semigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SmallElementsOfGoodSemigroup({\mdseries\slshape S})\index{SmallElementsOfGoodSemigroup@\texttt{SmallElementsOfGoodSemigroup}}
+\label{SmallElementsOfGoodSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -5630,7 +5643,6 @@ ordering.
     [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
     [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
     [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
-          
 \end{Verbatim}
  }
 
@@ -5658,7 +5670,6 @@ semigroup.
     [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
   !gapprompt@gap>| !gapinput@RepresentsSmallElementsOfGoodSemigroup(last);|
   true
-          
 \end{Verbatim}
  }
 
@@ -5688,7 +5699,6 @@ semigroup, and then outputs the good semigroup having \mbox{\texttt{\mdseries\sl
   <Good semigroup>
   !gapprompt@gap>| !gapinput@dup=G;|
   true
-    
 \end{Verbatim}
  }
 
@@ -5708,7 +5718,6 @@ semigroup, and then outputs the good semigroup having \mbox{\texttt{\mdseries\sl
   !gapprompt@gap>| !gapinput@g:=GoodSemigroup(G,[11,17]);;|
   !gapprompt@gap>| !gapinput@mx:=MaximalElementsOfGoodSemigroup(g);|
   [ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
-          
 \end{Verbatim}
  }
 
@@ -5730,7 +5739,6 @@ the good semigroup.
    gap> g:=GoodSemigroup(G,[11,17]);;
    gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
   [ [ 4, 3 ], [ 7, 13 ] ]
-           
 \end{Verbatim}
  }
 
@@ -5760,7 +5768,6 @@ partial ordering. The output is a good semigroup, if \mbox{\texttt{\mdseries\sls
   <Good semigroup>
   !gapprompt@gap>| !gapinput@gg=g;|
   true
-              
 \end{Verbatim}
  }
 
@@ -5783,7 +5790,6 @@ is unique in the local case).
   <Good semigroup>
   !gapprompt@gap>| !gapinput@MinimalGoodGeneratingSystemOfGoodSemigroup(dup);|
   [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-          
 \end{Verbatim}
  }
 
@@ -5805,7 +5811,6 @@ is unique in the local case).
   <Good semigroup>
   !gapprompt@gap>| !gapinput@MinimalGenerators(dup);|
   [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-          
 \end{Verbatim}
  }
 
@@ -5833,7 +5838,6 @@ is unique in the local case).
   !gapprompt@gap>| !gapinput@dup:=NumericalSemigroupDuplication(s,e);;|
   !gapprompt@gap>| !gapinput@IsSymmetricGoodSemigroup(dup);|
   true
-          
 \end{Verbatim}
  }
 
@@ -5861,7 +5865,6 @@ is unique in the local case).
           <Good semigroup>
           gap> SmallElements(A);
           [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
-          
 \end{Verbatim}
  }
 

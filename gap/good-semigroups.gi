@@ -311,10 +311,11 @@ end);
 
 ###################################################
 ##
+#M ConductorOfGoodSemigroup(M)
 #M Conductor(M)
 ## returns the conductor of M
 ##################################################
-InstallMethod(Conductor,
+InstallMethod(ConductorOfGoodSemigroup,
         "Calculates the conductor of the semigroup",
         [IsGoodSemigroup ],50,
         function(M)

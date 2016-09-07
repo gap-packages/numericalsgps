@@ -98,7 +98,8 @@
       generators of <A>S</A>, then <M>L \in C</M> if 
       <M>n-\sum_{i\in L} m_i\in S</M> (<Cite Key="SzW"></Cite>).                        
       <P/>
-      This function is a generalization of the graph associated to <A>n</A>. 
+      This function is a generalization of the graph associated to <A>n</A>.
+      
       <Example><![CDATA[
       gap> s:=NumericalSemigroup(3,5,7);;
       gap> ShadedSetOfElementInNumericalSemigroup(10,s);

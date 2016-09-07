@@ -47,7 +47,7 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X79EBBF6D7A2C9A12">12.2-1 BelongsToGoodSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X84FA9A46790B062B">12.2-2 Conductor</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X8213214879AC6027">12.2-3 SmallElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X836AB83682858A11">12.2-3 SmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X82D40159783F0D48">12.2-4 RepresentsSmallElementsOfGoodSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7E538585815C94D0">12.2-5 GoodSemigroupBySmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X83F444E586D96723">12.2-6 MaximalElementsOfGoodSemigroup</a></span>
@@ -148,7 +148,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=AmalgamationOfNumericalSemigroups(s,e,2);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[2,3] in dup;</span>
 true
-  </pre></div>
+</pre></div>
 
 <p><a id="X855341C57F43DB72" name="X855341C57F43DB72"></a></p>
 
@@ -163,7 +163,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroup(3,4);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGoodSemigroup(CartesianProductOfNumericalSemigroups(s,t));</span>
 true
-  </pre></div>
+</pre></div>
 
 <p><a id="X7856241678224958" name="X7856241678224958"></a></p>
 
@@ -181,7 +181,7 @@ true
 [ 25, 27 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GoodSemigroup(G,C);</span>
 &lt;Good semigroup&gt;
-  </pre></div>
+</pre></div>
 
 <p><a id="X8431465B82643392" name="X8431465B82643392"></a></p>
 
@@ -199,22 +199,23 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(2,3);</span>
-&lt;Numerical semigroup with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(2,3);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e:=6+s;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToGoodSemigroup([2,2],dup);</span>
+true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[2,2] in dup;</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[3,2] in dup;</span>
 false
-      </pre></div>
+</pre></div>
 
 <p><a id="X84FA9A46790B062B" name="X84FA9A46790B062B"></a></p>
 
 <h5>12.2-2 Conductor</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Conductor</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConductorOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a good semigroup. The output is its conductor.</p>
 
 
@@ -225,14 +226,16 @@ false
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Conductor(dup);</span>
 [ 11, 11 ]
-        </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConductorOfGoodSemigroup(dup);</span>
+[ 11, 11 ]
+</pre></div>
 
-<p><a id="X8213214879AC6027" name="X8213214879AC6027"></a></p>
+<p><a id="X836AB83682858A11" name="X836AB83682858A11"></a></p>
 
-<h5>12.2-3 SmallElementsOfGoodSemigroup</h5>
+<h5>12.2-3 SmallElements</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElementsOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElementsOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a good semigroup. The output is its set of small elements, that is, the elements smaller than its conductor with respect to the usual partial ordering.</p>
 
 
@@ -246,7 +249,7 @@ false
   [ 6, 10 ], [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ],
   [ 9, 9 ], [ 9, 10 ], [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ],
   [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
-        </pre></div>
+</pre></div>
 
 <p><a id="X82D40159783F0D48" name="X82D40159783F0D48"></a></p>
 
@@ -267,7 +270,7 @@ false
   [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RepresentsSmallElementsOfGoodSemigroup(last);</span>
 true
-        </pre></div>
+</pre></div>
 
 <p><a id="X7E538585815C94D0" name="X7E538585815C94D0"></a></p>
 
@@ -290,7 +293,7 @@ true
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup=G;</span>
 true
-  </pre></div>
+</pre></div>
 
 <p><a id="X83F444E586D96723" name="X83F444E586D96723"></a></p>
 
@@ -305,7 +308,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:=GoodSemigroup(G,[11,17]);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mx:=MaximalElementsOfGoodSemigroup(g);</span>
 [ [ 0, 0 ], [ 4, 3 ], [ 7, 13 ], [ 8, 6 ] ]
-        </pre></div>
+</pre></div>
 
 <p><a id="X8503AC767A90C2BD" name="X8503AC767A90C2BD"></a></p>
 
@@ -320,7 +323,7 @@ true
  gap&gt; g:=GoodSemigroup(G,[11,17]);;
  gap&gt; IrreducibleMaximalElementsOfGoodSemigroup(g);
 [ [ 4, 3 ], [ 7, 13 ] ]
-         </pre></div>
+</pre></div>
 
 <p><a id="X78B456D27856761F" name="X78B456D27856761F"></a></p>
 
@@ -343,7 +346,7 @@ true
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gg=g;</span>
 true
-            </pre></div>
+</pre></div>
 
 <p><a id="X82E24F8E79648AAC" name="X82E24F8E79648AAC"></a></p>
 
@@ -360,7 +363,7 @@ true
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGoodGeneratingSystemOfGoodSemigroup(dup);</span>
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-        </pre></div>
+</pre></div>
 
 <p><a id="X7D861A02806D200C" name="X7D861A02806D200C"></a></p>
 
@@ -377,7 +380,7 @@ true
 &lt;Good semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(dup);</span>
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-        </pre></div>
+</pre></div>
 
 <p><a id="X812981548765092E" name="X812981548765092E"></a></p>
 
@@ -400,7 +403,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">dup:=NumericalSemigroupDuplication(s,e);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricGoodSemigroup(dup);</span>
 true
-        </pre></div>
+</pre></div>
 
 <p><a id="X7E4744C9841CFE9C" name="X7E4744C9841CFE9C"></a></p>
 
@@ -423,7 +426,7 @@ true
         &lt;Good semigroup&gt;
         gap&gt; SmallElements(A);
         [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
-        </pre></div>
+</pre></div>
 
 <p><a id="X7FA8DCAC7951F7FB" name="X7FA8DCAC7951F7FB"></a></p>
 

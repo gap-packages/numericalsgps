@@ -69,7 +69,7 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
                     <Func Arg="g" Name="NumericalSemigroupsWithGenus"></Func>
                     <Description>
                         <A>g</A> is a nonnegative integer. The output is the set of numerical semigroups
-                        with genus<A>g</A>.           
+                        with genus <A>g</A>.           
                         <Example><![CDATA[
 gap> NumericalSemigroupsWithGenus(5);
 [ <Numerical semigroup with 6 generators>, 

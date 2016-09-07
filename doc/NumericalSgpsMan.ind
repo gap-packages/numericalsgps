@@ -1,5 +1,16 @@
 \begin{theindex}
 
+  \item \texttt  {*}
+    \subitem for multiple of ideal of numerical semigroup, 
+		\hyperpage{46}
+  \item \texttt  {+}
+    \subitem for defining ideal of numerical semigroup, \hyperpage{43}
+    \subitem for ideals of numerical semigroup, \hyperpage{46}
+  \item \texttt  {-}
+    \subitem for ideals of numerical semigroup, \hyperpage{46}
+
+  \indexspace
+
   \item \texttt  {AddSpecialGapOfNumericalSemigroup}, \hyperpage{30}
   \item \texttt  {Adjacent}\discretionary {-}{}{}\texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Set}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}, 
 		\hyperpage{63}
@@ -10,12 +21,12 @@
   \item \texttt  {Almost}\discretionary {-}{}{}\texttt  {Symmetric}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{42}
   \item \texttt  {AmalgamationOfNumericalSemigroups}, \hyperpage{85}
-  \item \texttt  {AmbientGoodSemigroupOfGoodIdeal}, \hyperpage{91}
+  \item \texttt  {AmbientGoodSemigroupOfGoodIdeal}, \hyperpage{90}
   \item \texttt  {AmbientNumericalSemigroupOfIdeal}, \hyperpage{44}
   \item \texttt  {AnIrreducible}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{38}
   \item \texttt  {ANumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}, 
-		\hyperpage{36}
+		\hyperpage{35}
   \item \texttt  {AperyList}
     \subitem for numerical semigroup with respect to multiplicity, 
 		\hyperpage{20}
@@ -41,7 +52,7 @@
 
   \indexspace
 
-  \item \texttt  {BasisOfGroupGivenByEquations}, \hyperpage{78}
+  \item \texttt  {BasisOfGroupGivenByEquations}, \hyperpage{79}
   \item \texttt  {BelongsToAffineSemigroup}, \hyperpage{77}
   \item \texttt  {BelongsToGoodIdeal}, \hyperpage{91}
   \item \texttt  {BelongsToGoodSemigroup}, \hyperpage{86}
@@ -64,7 +75,7 @@
   \item \texttt  {CanonicalIdealOfNumericalSemigroup}, \hyperpage{48}
   \item \texttt  {Cartesian}\discretionary {-}{}{}\texttt  {Product}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}, 
 		\hyperpage{85}
-  \item \texttt  {CatenaryDegreeOfAffineSemigroup}, \hyperpage{81}
+  \item \texttt  {CatenaryDegreeOfAffineSemigroup}, \hyperpage{82}
   \item \texttt  {Catenary}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{64}
   \item \texttt  {CatenaryDegreeOfNumericalSemigroup}, \hyperpage{64}
@@ -74,8 +85,9 @@
 		\hyperpage{40}
   \item \texttt  {Conductor}
     \subitem for good semigroup, \hyperpage{86}
-    \subitem for ideal, \hyperpage{45}
+    \subitem for ideal of numerical semigroup, \hyperpage{45}
     \subitem for numerical Semigroup, \hyperpage{22}
+  \item \texttt  {ConductorOfGoodSemigroup}, \hyperpage{86}
   \item \texttt  {Conductor}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{45}
   \item \texttt  {ConductorOfNumericalSemigroup}, \hyperpage{22}
@@ -83,7 +95,8 @@
 
   \indexspace
 
-  \item \texttt  {DecomposeIntoIrreducibles}, \hyperpage{39}
+  \item \texttt  {DecomposeIntoIrreducibles}
+    \subitem for numerical semigroup, \hyperpage{39}
   \item \texttt  {DeltaSequencesWithFrobeniusNumber}, \hyperpage{72}
   \item \texttt  {Delta}\discretionary {-}{}{}\texttt  {Set}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {Up}\discretionary {-}{}{}\texttt  {To}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{105}
@@ -153,7 +166,7 @@
   \item \texttt  {GapsOfNumericalSemigroup}, \hyperpage{23}
   \item \texttt  {Generators}
     \subitem for affine semigroup, \hyperpage{76}
-    \subitem for ideal, \hyperpage{44}
+    \subitem for ideal of numerical semigroup, \hyperpage{44}
     \subitem for numerical semigroup, \hyperpage{18}
   \item \texttt  {GeneratorsOfAffineSemigroup}, \hyperpage{76}
   \item \texttt  {Generators}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -196,9 +209,11 @@
 
   \item \texttt  {IdealOfNumericalSemigroup}, \hyperpage{43}
   \item \texttt  {\texttt  {\char 92\relax }in}
-    \subitem element test for numerical semigroup, \hyperpage{16}
     \subitem membership for good ideal, \hyperpage{91}
     \subitem membership for good semigroup, \hyperpage{86}
+    \subitem membership test for numerical semigroup, \hyperpage{16}
+    \subitem membership test ideal of numerical semigroup, 
+		\hyperpage{45}
   \item \texttt  {InductiveNumericalSemigroup}, \hyperpage{32}
   \item \texttt  {Intersection}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{48}
@@ -246,7 +261,7 @@
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Gorenstein}, 
 		\hyperpage{101}
   \item \texttt  {IsIdealOfNumericalSemigroup}, \hyperpage{43}
-  \item \texttt  {IsIntegralIdealOfNumericalSemigroup}, \hyperpage{45}
+  \item \texttt  {IsIntegralIdealOfNumericalSemigroup}, \hyperpage{44}
   \item \texttt  {IsIrreducibleNumericalSemigroup}, \hyperpage{37}
   \item \texttt  {IsKroneckerPolynomial}, \hyperpage{70}
   \item \texttt  {IsListOfIntegersNS}, \hyperpage{96}
@@ -284,7 +299,7 @@
   \item \texttt  {IsSymmetricGoodSemigroup}, \hyperpage{89}
   \item \texttt  {IsSymmetricNumericalSemigroup}, \hyperpage{38}
   \item \texttt  {IsTelescopicNumericalSemigroup}, \hyperpage{40}
-  \item \texttt  {IsUniquelyPresentedAffineSemigroup}, \hyperpage{80}
+  \item \texttt  {IsUniquelyPresentedAffineSemigroup}, \hyperpage{81}
   \item \texttt  {IsUniquely}\discretionary {-}{}{}\texttt  {Presented}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{29}
 
@@ -322,7 +337,7 @@
 		\hyperpage{55}
   \item \texttt  {MinimalGeneratingSystem}
     \subitem for affine semigroup, \hyperpage{76}
-    \subitem for ideal, \hyperpage{44}
+    \subitem for ideal of numerical semigroup, \hyperpage{44}
     \subitem for numerical semigroup, \hyperpage{18}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{44}
@@ -330,7 +345,7 @@
 		\hyperpage{18}
   \item \texttt  {MinimalGenerators}, \hyperpage{89}
     \subitem for affine semigroup, \hyperpage{76}
-    \subitem for ideal, \hyperpage{44}
+    \subitem for ideal of numerical semigroup, \hyperpage{44}
     \subitem for numerical semigroup, \hyperpage{18}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Good}\discretionary {-}{}{}\texttt  {Ideal}, 
 		\hyperpage{91}
@@ -339,7 +354,7 @@
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {M}\discretionary {-}{}{}\texttt  {E}\discretionary {-}{}{}\texttt  {D}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {M}\discretionary {-}{}{}\texttt  {E}\discretionary {-}{}{}\texttt  {D}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{54}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Affine}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{79}
+		\hyperpage{80}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{27}
   \item \texttt  {ModularNumericalSemigroup}, \hyperpage{12}
@@ -394,7 +409,7 @@
 		\hyperpage{41}
   \item \texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Number}, 
 		\hyperpage{33}
-  \item \texttt  {NumericalSemigroupsWithGenus}, \hyperpage{34}
+  \item \texttt  {NumericalSemigroupsWithGenus}, \hyperpage{33}
   \item \texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroups}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}, 
 		\hyperpage{35}
   \item \texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Random}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {And}\discretionary {-}{}{}\texttt  {Frobenius}, 
@@ -420,7 +435,7 @@
 
   \indexspace
 
-  \item \texttt  {PrimitiveElementsOfAffineSemigroup}, \hyperpage{80}
+  \item \texttt  {PrimitiveElementsOfAffineSemigroup}, \hyperpage{81}
   \item \texttt  {Primitive}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{28}
   \item \texttt  {ProfileOfNumericalSemigroup}, \hyperpage{26}
@@ -470,11 +485,11 @@
   \item \texttt  {Shaded}\discretionary {-}{}{}\texttt  {Set}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{28}
   \item \texttt  {Simple}\discretionary {-}{}{}\texttt  {Forced}\discretionary {-}{}{}\texttt  {Integers}\discretionary {-}{}{}\texttt  {For}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}, 
-		\hyperpage{35}
+		\hyperpage{34}
   \item \texttt  {SmallElements}
     \subitem for good ideal, \hyperpage{91}
     \subitem for good semigroup, \hyperpage{86}
-    \subitem for ideal, \hyperpage{45}
+    \subitem for ideal of numerical semigroup, \hyperpage{45}
     \subitem for numerical semigroup, \hyperpage{19}
   \item \texttt  {SmallElementsOfGoodIdeal}, \hyperpage{91}
   \item \texttt  {SmallElementsOfGoodSemigroup}, \hyperpage{86}
@@ -491,7 +506,7 @@
 
   \indexspace
 
-  \item \texttt  {TameDegreeOfAffineSemigroup}, \hyperpage{82}
+  \item \texttt  {TameDegreeOfAffineSemigroup}, \hyperpage{83}
   \item \texttt  {Tame}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{66}
   \item \texttt  {TameDegreeOfNumericalSemigroup}, \hyperpage{65}
@@ -509,6 +524,8 @@
 
   \indexspace
 
+  \item \texttt  {WilfNumber}
+    \subitem for numerical semigroup, \hyperpage{25}
   \item \texttt  {WilfNumberOfNumericalSemigroup}, \hyperpage{25}
 
 \end{theindex}
