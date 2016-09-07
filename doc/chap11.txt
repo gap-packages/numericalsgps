@@ -70,17 +70,18 @@
   
   [33X[0;0YThe  output  is  the  full semigroup of nonnegative integer solutions to the
   system of homogeneous equations[133X
-  [33X[0;0Y[22Xa_11x_1+⋯+a_1nx_n≡ 0mod d_1[122X[133X
+  [33X[0;0Y[22Xa_11x_1+⋯+a_1nx_n≡ 0mod d_1,[122X[133X
   [33X[0;0Y[22X⋯[122X[133X
-  [33X[0;0Y[22Xa_k1x_1+⋯+a_knx_n≡ 0mod d_k[122X[133X
-  [33X[0;0Y[22Xa_k+1 1x_1+⋯ +a_k+1 n=0[122X[133X
+  [33X[0;0Y[22Xa_k1x_1+⋯+a_knx_n≡ 0mod d_k,[122X[133X
+  [33X[0;0Y[22Xa_k+1 1x_1+⋯ +a_k+1 n=0,[122X[133X
   [33X[0;0Y[22X⋯[122X[133X
-  [33X[0;0Y[22Xa_m1x_1+⋯+a_mnx_n=0[122X[133X
+  [33X[0;0Y[22Xa_m1x_1+⋯+a_mnx_n=0.[122X[133X
   
   [33X[0;0YIf [22Xd[122X is empty, then there will be no equations in congruences.[133X
   
-  [33X[0;0YFor  instance,  the  equations  [22Xx+y≡ 0mod 2, x-2y=0[122X will be represented as [22XA[122X
-  equal to [[1,1],[1,-2]] and the moduli [22Xd[122X equal to [2].[133X
+  [33X[0;0YAs  pointed  at  the  beginning  of  the section, the equations [22Xx+y≡ 0mod 2,
+  x-2y=0[122X  will  be  represented  as [22XA[122X equal to [[1,1],[1,-2]] and the moduli [22Xd[122X
+  equal to [2].[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"equations"[110X.[133X
   
