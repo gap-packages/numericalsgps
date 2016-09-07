@@ -303,8 +303,7 @@ gap> NumericalSemigroupByOpenInterval(7/5,5/3);
 gap> NumericalSemigroup("openinterval",[7/5,5/3]);
 <Numerical semigroup>
 gap> SmallElements(last);                         
-[ 0, 3, 6, 8 ]
-gap> 
+[ 0, 3, 6, 8 ] 
 ]]></Example>
                     </Description>
 

@@ -81,9 +81,9 @@
   not the way around in general.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
-    [4X[28X      gap> PrimitiveElementsOfNumericalSemigroup(s);[128X[104X
-    [4X[28X      [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XPrimitiveElementsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ][128X[104X
   [4X[32X[104X
   
   [1X4.1-5 ShadedSetOfElementInNumericalSemigroup[101X
@@ -98,9 +98,9 @@
   [33X[0;0YThis function is a generalization of the graph associated to [3Xn[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
-    [4X[28X      gap> ShadedSetOfElementInNumericalSemigroup(10,s);[128X[104X
-    [4X[28X      [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XShadedSetOfElementInNumericalSemigroup(10,s);[127X[104X
+    [4X[28X[ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ][128X[104X
   [4X[32X[104X
   
   
@@ -121,9 +121,9 @@
   on (see [GO10]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
-    [4X[28X      gap> IsUniquelyPresentedNumericalSemigroup(s);[128X[104X
-    [4X[28X      true[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XIsUniquelyPresentedNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   [1X4.2-2 IsGenericNumericalSemigroup[101X
@@ -137,8 +137,8 @@
   presented (see [BGG11]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
-    [4X[28X      gap> IsGenericNumericalSemigroup(s);[128X[104X
-    [4X[28X      true[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGenericNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   

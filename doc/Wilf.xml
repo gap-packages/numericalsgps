@@ -12,11 +12,11 @@
       <C>S</C> 
       is a numerical semigroup.  Let <M>c</M>, <M>e</M> and <M>l</M> be the conductor, embedding dimension and number of  elements smaller than <M>c</M> in <A>S</A>. Returns <M>e l-c</M>, which was conjetured by Wilf to be nonnegative.
       <Example><![CDATA[
-gap> l:=NumericalSemigroupsWithGenus(21);;
+gap> l:=NumericalSemigroupsWithGenus(10);;
 gap> Filtered(l, s->WilfNumberOfNumericalSemigroup(s)<0); 
 [  ]
 gap> Maximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));
-378
+70
 gap> s := NumericalSemigroup(13,25,37);;
 gap> WilfNumber(s);                     
 96
