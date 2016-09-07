@@ -47,12 +47,12 @@ gap> Length(Set([s1,s2,s3,s4,s5]));
           <P/>
           The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations
           <Br/>
-<M>a_{11}x_1+\cdots+a_{1n}x_n\equiv 0\bmod d_1 </M><Br/>
+<M>a_{11}x_1+\cdots+a_{1n}x_n\equiv 0\bmod d_1, </M><Br/>
 <M>\cdots </M><Br/>
-<M>a_{k1}x_1+\cdots+a_{kn}x_n\equiv 0\bmod d_k </M><Br/>
-<M>a_{k+1\, 1}x_1+\cdots +a_{k+1\, n}=0 </M><Br/>
+<M>a_{k1}x_1+\cdots+a_{kn}x_n\equiv 0\bmod d_k, </M><Br/>
+<M>a_{k+1\, 1}x_1+\cdots +a_{k+1\, n}=0, </M><Br/>
 <M>\cdots </M><Br/>
-<M>a_{m1}x_1+\cdots+a_{mn}x_n=0 </M><Br/>
+<M>a_{m1}x_1+\cdots+a_{mn}x_n=0. </M><Br/>
 <!--	        <Math>
           \begin{matrix}
           \quad \\
@@ -67,7 +67,7 @@ gap> Length(Set([s1,s2,s3,s4,s5]));
           <P/>
           If <M>d</M> is empty, then there will be no equations in congruences.
           <P/>
-          For instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as <M>A</M> equal to [[1,1],[1,-2]] and the moduli <M>d</M> equal to [2].
+          As pointed at the beginning of the section, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as <M>A</M> equal to [[1,1],[1,-2]] and the moduli <M>d</M> equal to [2].
 		      <P/>
 		      In the second form, <C>String</C> must be <C>"equations"</C>.
 			<Example><![CDATA[
