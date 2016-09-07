@@ -1806,6 +1806,9 @@ to a semigroup (see \cite{RGGJ03}).
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{QuotientOfNumericalSemigroup({\mdseries\slshape S, n})\index{QuotientOfNumericalSemigroup@\texttt{QuotientOfNumericalSemigroup}}
 \label{QuotientOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}/({\mdseries\slshape S, n})\index{/@\texttt{\texttt{\symbol{92}}/}!quotient of numerical semigroup}
+\label{/:quotient of numerical semigroup}
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape n}} is an integer. Computes the quotient of \mbox{\texttt{\mdseries\slshape S}} by \mbox{\texttt{\mdseries\slshape n}}, that is, the set $\{ x\in {\mathbb N}\ |\ nx \in S\}$, which is again a numerical semigroup. \texttt{S / n} may be used as a short for \texttt{QuotientOfNumericalSemigroup(S, n)}. 
@@ -2780,8 +2783,8 @@ plus one.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{BelongsToIdealOfNumericalSemigroup@\texttt{BelongsToIdealOfNumericalSemigroup}}
 \label{BelongsToIdealOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape n, I})\index{in@\texttt{\texttt{\symbol{92}}in}!membership test ideal of numerical semigroup}
-\label{in:membership test ideal of numerical semigroup}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape n, I})\index{in@\texttt{\texttt{\symbol{92}}in}!membership test in ideal of numerical semigroup}
+\label{in:membership test in ideal of numerical semigroup}
 }\hfill{\scriptsize (operation)}}\\
 
 
@@ -2914,6 +2917,9 @@ plus one.
 \hyperdef{L}{X803921F97BEDCA88}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TranslationOfIdealOfNumericalSemigroup({\mdseries\slshape k, I})\index{TranslationOfIdealOfNumericalSemigroup@\texttt{Translation}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{TranslationOfIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{+({\mdseries\slshape k, I})\index{+@\texttt{+}!translation of ideal of numerical semigroup}
+\label{+:translation of ideal of numerical semigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -3115,10 +3121,10 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
 \hyperdef{L}{X8799F0347FF0D510}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LipmanSemigroup({\mdseries\slshape S})\index{LipmanSemigroup@\texttt{LipmanSemigroup}}
 \label{LipmanSemigroup}
-}\hfill{\scriptsize (attribute)}}\\
+}\hfill{\scriptsize (function)}}\\
 
 
- This is just a synonym of \texttt{BlowUpOfNumericalSemigroup} (\ref{BlowUpOfNumericalSemigroup})(\texttt{S}). 
+ This is just a synonym of \texttt{BlowUpOfNumericalSemigroup} (\ref{BlowUpOfNumericalSemigroup}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;|
   !gapprompt@gap>| !gapinput@LipmanSemigroup(s);|
@@ -3136,7 +3142,7 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
 \hyperdef{L}{X84CE79C3832CFEE7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultiplicitySequenceOfNumericalSemigroup({\mdseries\slshape S})\index{MultiplicitySequenceOfNumericalSemigroup@\texttt{Multiplicity}\-\texttt{Sequence}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MultiplicitySequenceOfNumericalSemigroup}
-}\hfill{\scriptsize (attribute)}}\\
+}\hfill{\scriptsize (function)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is a list with the multiplicities of the
@@ -3261,7 +3267,7 @@ algorithm given in \cite{BF06}.
 }\hfill{\scriptsize (function)}}\\
 
 
- Computes the Ap{\a'e}ry table associated to the numerical semigroup \mbox{\texttt{\mdseries\slshape s}} as explained in \cite{CJZ}, that is, a list containing the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape s}} with respect to its multiplicity and the Ap{\a'e}ry lists of $kM$ (with $M$ the maximal ideal of \mbox{\texttt{\mdseries\slshape s}}) with respect to the multiplicity of \mbox{\texttt{\mdseries\slshape s}}, for $k\in\{1,\ldots,r\}$, where $r$ is the reduction number of $M$ (see ReductionNumberIdealNumericalSemigroup). 
+ Computes the Ap{\a'e}ry table associated to the numerical semigroup \mbox{\texttt{\mdseries\slshape s}} as explained in \cite{CJZ}, that is, a list containing the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape s}} with respect to its multiplicity and the Ap{\a'e}ry lists of $kM$ (with $M$ the maximal ideal of \mbox{\texttt{\mdseries\slshape s}}) with respect to the multiplicity of \mbox{\texttt{\mdseries\slshape s}}, for $k\in\{1,\ldots,r\}$, where $r$ is the reduction number of $M$ (see \texttt{ReductionNumberIdealNumericalSemigroup} (\ref{ReductionNumberIdealNumericalSemigroup})). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,11,13);;|
   !gapprompt@gap>| !gapinput@AperyTableOfNumericalSemigroup(s);|
@@ -3289,7 +3295,6 @@ algorithm given in \cite{BF06}.
   !gapprompt@gap>| !gapinput@StarClosureOfIdealOfNumericalSemigroup([0,2]+s,[[0,4]+s]);;|
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);|
   [ 0, 2, 4 ]
-  						
 \end{Verbatim}
  }
 
@@ -3321,9 +3326,7 @@ the classical minimal generating systems (see \cite{RGGB03}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
-
- Returns true if \mbox{\texttt{\mdseries\slshape S}} is a MED numerical semigroup and false otherwise. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if \mbox{\texttt{\mdseries\slshape S}} is a MED numerical semigroup and false otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7)); |
   true 
@@ -3342,9 +3345,7 @@ the classical minimal generating systems (see \cite{RGGB03}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
-
- Returns the MED closure of \mbox{\texttt{\mdseries\slshape S}}. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns the MED closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); |
   <Numerical semigroup> 
@@ -3363,9 +3364,7 @@ the classical minimal generating systems (see \cite{RGGB03}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a MED numerical semigroup. 
-
- Returns the minimal MED generating system of \mbox{\texttt{\mdseries\slshape S}}. 
+ \mbox{\texttt{\mdseries\slshape S}} is a MED numerical semigroup. Returns the minimal MED generating system of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( |
   !gapprompt@>| !gapinput@NumericalSemigroup(3,5,7)); |
@@ -3396,9 +3395,7 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
-
- Returns true if \mbox{\texttt{\mdseries\slshape S}} is an Arf numerical semigroup and false otherwise. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if \mbox{\texttt{\mdseries\slshape S}} is an Arf numerical semigroup and false otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); |
   true 
@@ -3419,9 +3416,7 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
-
- Returns the Arf closure of \mbox{\texttt{\mdseries\slshape S}}. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns the Arf closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); |
   <Numerical semigroup> 
@@ -3440,9 +3435,7 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is an Arf numerical semigroup. 
-
- Returns the minimal Arf generating system of \mbox{\texttt{\mdseries\slshape S}}. 
+ \mbox{\texttt{\mdseries\slshape S}} is an Arf numerical semigroup. Returns the minimal Arf generating system of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@MinimalArfGeneratingSystemOfArfNumericalSemigroup( |
   !gapprompt@>| !gapinput@NumericalSemigroup(3,7,8)); |
@@ -3496,9 +3489,7 @@ with greatest common divisor equal to one (see \cite{RGbook}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
-
- Returns true if \mbox{\texttt{\mdseries\slshape S}} is a saturated numerical semigroup and false otherwise. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if \mbox{\texttt{\mdseries\slshape S}} is a saturated numerical semigroup and false otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));|
   true
@@ -3517,9 +3508,7 @@ with greatest common divisor equal to one (see \cite{RGbook}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
-
- Returns the saturated closure of \mbox{\texttt{\mdseries\slshape S}}. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns the saturated closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));|
   <Numerical semigroup>
@@ -4123,10 +4112,8 @@ same length). The output is the tame degree of this set of factorizations.
  The output is the set of elements $s$ in \mbox{\texttt{\mdseries\slshape S}} such that there exists a minimal solution to $msg\cdot x-msg\cdot y = 0$, such that $x,y$ are factorizations with the same length of $s$, and $msg$ is the minimal generating system of \mbox{\texttt{\mdseries\slshape S}}. These elements are used to compute the equal catenary degree of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
-  !gapprompt@gap>| !gapinput@BettiElementsOfNumericalSemigroup(s);|
-  [ 10, 12, 14 ]
-  
-                          
+  !gapprompt@gap>| !gapinput@EqualPrimitiveElementsOfNumericalSemigroup(s);|
+  [ 3, 5, 7, 10 ]
 \end{Verbatim}
  }
 
@@ -4143,8 +4130,8 @@ same length). The output is the tame degree of this set of factorizations.
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. The output is the equal catenary degree of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
-  !gapprompt@gap>| !gapinput@EqualPrimitiveElementsOfNumericalSemigroup(s);|
-  [ 3, 5, 7, 10 ]
+  !gapprompt@gap>| !gapinput@EqualCatenaryDegreeOfNumericalSemigroup(s);|
+  2
 \end{Verbatim}
  }
 
@@ -4437,8 +4424,8 @@ to $S$ is $H_S(x)=\sum_{s\in S}x^s$ (actually it is the Hilbert function of the 
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape f}} is polynomial in one variable. The output is true if there exists a numerical
-semigroup $S$ such that \mbox{\texttt{\mdseries\slshape f}} equals $(1-x)H_S(x)$, that is, the polynomial associated to $S$ (false otherwise). 
+ \mbox{\texttt{\mdseries\slshape f}} is a polynomial in one variable. The output is true if there exists a
+numerical semigroup $S$ such that \mbox{\texttt{\mdseries\slshape f}} equals $(1-x)H_S(x)$, that is, the polynomial associated to $S$ (false otherwise). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
   !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(5,6,7,8);;|
@@ -4806,42 +4793,108 @@ equations. For the equations in congruences, if we arrange them so that they
 are the first ones in the list, we provide the corresponding moduli in a list.
 So for instance, the equations $x+y\equiv 0\bmod 2,\ x-2y=0$ will be represented as [[1,1],[1,-2]] and the moduli [2]. 
 
- To create an affine semigroup in \textsf{GAP} the function \texttt{AffineSemigroup} is used. 
+ As happens with numerical semigroups, there are different ways to specify an
+affine semigroup $S$, namely, by means of a system of generators, a system of homogeneous linear
+Diophantine equations or a system of homogeneous linear Diophantine
+inequalities, just to mention some. In this section we describe functions that
+may be used to specify, in one of these ways, an affine semigroup in \textsf{GAP}. 
 
-\subsection{\textcolor{Chapter }{AffineSemigroup}}
+\subsection{\textcolor{Chapter }{AffineSemigroupByGenerators}}
 \logpage{[ 11, 1, 1 ]}\nobreak
-\hyperdef{L}{X7AFF988F8797A1EF}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroup({\mdseries\slshape Representation, List})\index{AffineSemigroup@\texttt{AffineSemigroup}}
-\label{AffineSemigroup}
+\hyperdef{L}{X85E97E56867E5C0D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroupByGenerators({\mdseries\slshape List})\index{AffineSemigroupByGenerators@\texttt{AffineSemigroupByGenerators}}
+\label{AffineSemigroupByGenerators}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroup({\mdseries\slshape String, List})\index{AffineSemigroup@\texttt{AffineSemigroup}!by generators}
+\label{AffineSemigroup:by generators}
 }\hfill{\scriptsize (function)}}\\
 
 
- \texttt{Representation} may be \texttt{"generators"}, \texttt{"equations"} or \texttt{"inequalities"} according to whether the semigroup is to be given by means of a system of
-generators, a system of homogeneous linear Diophantine equations or a system
-of homogeneous linear Diophantine inequalities. 
+ \texttt{List} is a list of n-tuples of nonnegative integers, if the semigroup to be created
+is n-dimensional. The n-tuples may be given as a list or by a sequence of
+individual elements. The output is the affine semigroup spanned by \texttt{List}. 
 
- When no string is given as first argument it is assumed that the numerical
-semigroup will be given by means of a set of generators. 
-
- 
+ \texttt{String} does not need to be present. When it is present, it must be \texttt{"generators"} and \texttt{List} must be a list, not a sequence of individual elements. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@AffineSemigroup([1,3],[7,2],[1,5]);|
+  !gapprompt@gap>| !gapinput@s1 := AffineSemigroupByGenerators([1,3],[7,2],[1,5]);|
   <Affine semigroup in 2 dimensional space, with 3 generators>
-  !gapprompt@gap>| !gapinput@a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);|
-  <Affine semigroup>
+  !gapprompt@gap>| !gapinput@s2 := AffineSemigroupByGenerators([[1,3],[7,2],[1,5]]);;|
+  !gapprompt@gap>| !gapinput@s3 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;|
+  !gapprompt@gap>| !gapinput@s4 := AffineSemigroup([1,3],[7,2],[1,5]);;              |
+  !gapprompt@gap>| !gapinput@s5 := AffineSemigroup([[1,3],[7,2],[1,5]]);;             |
+  !gapprompt@gap>| !gapinput@Length(Set([s1,s2,s3,s4,s5]));             |
+  1
 \end{Verbatim}
  }
 
  
 
-\subsection{\textcolor{Chapter }{GeneratorsOfAffineSemigroup}}
+\subsection{\textcolor{Chapter }{AffineSemigroupByEquations}}
 \logpage{[ 11, 1, 2 ]}\nobreak
-\hyperdef{L}{X7E965976815B387D}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfAffineSemigroup({\mdseries\slshape S})\index{GeneratorsOfAffineSemigroup@\texttt{GeneratorsOfAffineSemigroup}}
-\label{GeneratorsOfAffineSemigroup}
+\hyperdef{L}{X855C8667830AEDDC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroupByEquations({\mdseries\slshape List})\index{AffineSemigroupByEquations@\texttt{AffineSemigroupByEquations}}
+\label{AffineSemigroupByEquations}
 }\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape S})\index{Generators@\texttt{Generators}!for affine semigroup}
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroup({\mdseries\slshape String, List})\index{AffineSemigroup@\texttt{AffineSemigroup}!by equations}
+\label{AffineSemigroup:by equations}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \texttt{List} represents a list of equations. We represent the equations as a list of lists
+of integers, all with the same length. Every list is a row of the matrix of
+coefficients of the system of equations. Returns the (full) affine semigroup
+defined by the system $A * X=0 \mod md $, where the rows of $A$ are the elements of \texttt{List}. 
+
+ \texttt{String} does not need to be present. When it is present, it must be \texttt{"equations"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s1 := AffineSemigroupByEquations([[[-2,1]],[3]]);            |
+  <Affine semigroup>
+  !gapprompt@gap>| !gapinput@s2 := AffineSemigroup("equations",[[[-2,1]],[3]]); |
+  <Affine semigroup>
+  !gapprompt@gap>| !gapinput@s1=s2;|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AffineSemigroupByInequalities}}
+\logpage{[ 11, 1, 3 ]}\nobreak
+\hyperdef{L}{X7846AD1081C14EF1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroupByInequalities({\mdseries\slshape List})\index{AffineSemigroupByInequalities@\texttt{AffineSemigroupByInequalities}}
+\label{AffineSemigroupByInequalities}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroup({\mdseries\slshape String, List})\index{AffineSemigroup@\texttt{AffineSemigroup}!by inequalities}
+\label{AffineSemigroup:by inequalities}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \texttt{List} represents the inequalities: recall that for the equations in congruences, if
+we arrange them so that they are the first ones in the list, we provide the
+corresponding moduli in a list. So for instance, the equations $x+y\equiv 0\bmod 2,\ x-2y=0$ will be represented as [[1,1],[1,-2]] and the moduli [2]. Returns the (full)
+affine semigroup defined by the system $List*X\ge 0$ over the nonnegative integers. 
+
+ \texttt{String} does not need to be present. When it is present, it must be \texttt{"inequalities"}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);               |
+  <Affine semigroup>
+  !gapprompt@gap>| !gapinput@a2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);|
+  <Affine semigroup>
+  !gapprompt@gap>| !gapinput@a1=a2;|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{Generators (for affine semigroup)}}
+\logpage{[ 11, 1, 4 ]}\nobreak
+\hyperdef{L}{X84FDF85D7CDEDF3E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape S})\index{Generators@\texttt{Generators}!for affine semigroup}
 \label{Generators:for affine semigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfAffineSemigroup({\mdseries\slshape S})\index{GeneratorsOfAffineSemigroup@\texttt{GeneratorsOfAffineSemigroup}}
+\label{GeneratorsOfAffineSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -4858,14 +4911,14 @@ semigroup will be given by means of a set of generators.
 
  
 
-\subsection{\textcolor{Chapter }{MinimalGeneratingSystem (for affine semigroup)}}
-\logpage{[ 11, 1, 3 ]}\nobreak
-\hyperdef{L}{X8164ADBD87FF5473}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape S})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}!for affine semigroup}
-\label{MinimalGeneratingSystem:for affine semigroup}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}!for affine semigroup}
+\subsection{\textcolor{Chapter }{MinimalGenerators (for affine semigroup)}}
+\logpage{[ 11, 1, 5 ]}\nobreak
+\hyperdef{L}{X7ED1549486C251CA}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}!for affine semigroup}
 \label{MinimalGenerators:for affine semigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGeneratingSystem({\mdseries\slshape S})\index{MinimalGeneratingSystem@\texttt{MinimalGeneratingSystem}!for affine semigroup}
+\label{MinimalGeneratingSystem:for affine semigroup}
 }\hfill{\scriptsize (function)}}\\
 
 
@@ -4884,7 +4937,7 @@ semigroup will be given by means of a set of generators.
  
 
 \subsection{\textcolor{Chapter }{AsAffineSemigroup}}
-\logpage{[ 11, 1, 4 ]}\nobreak
+\logpage{[ 11, 1, 6 ]}\nobreak
 \hyperdef{L}{X844806D97B4781B5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsAffineSemigroup({\mdseries\slshape S})\index{AsAffineSemigroup@\texttt{AsAffineSemigroup}}
 \label{AsAffineSemigroup}
@@ -4918,16 +4971,13 @@ semigroup will be given by means of a set of generators.
  
 
 \subsection{\textcolor{Chapter }{IsAffineSemigroup}}
-\logpage{[ 11, 1, 5 ]}\nobreak
+\logpage{[ 11, 1, 7 ]}\nobreak
 \hyperdef{L}{X7A2902207BAA3936}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroup({\mdseries\slshape AS})\index{IsAffineSemigroup@\texttt{IsAffineSemigroup}}
 \label{IsAffineSemigroup}
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByGenerators({\mdseries\slshape AS})\index{IsAffineSemigroupByGenerators@\texttt{IsAffineSemigroupByGenerators}}
 \label{IsAffineSemigroupByGenerators}
-}\hfill{\scriptsize (attribute)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByMinimalGenerators({\mdseries\slshape AS})\index{IsAffineSemigroupByMinimalGenerators@\texttt{IsAffine}\-\texttt{Semigroup}\-\texttt{By}\-\texttt{Minimal}\-\texttt{Generators}}
-\label{IsAffineSemigroupByMinimalGenerators}
 }\hfill{\scriptsize (attribute)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroupByEquations({\mdseries\slshape AS})\index{IsAffineSemigroupByEquations@\texttt{IsAffineSemigroupByEquations}}
 \label{IsAffineSemigroupByEquations}
@@ -4953,11 +5003,14 @@ semigroup.
  
 
 \subsection{\textcolor{Chapter }{BelongsToAffineSemigroup}}
-\logpage{[ 11, 1, 6 ]}\nobreak
+\logpage{[ 11, 1, 8 ]}\nobreak
 \hyperdef{L}{X851788D781A13C50}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToAffineSemigroup({\mdseries\slshape v, a})\index{BelongsToAffineSemigroup@\texttt{BelongsToAffineSemigroup}}
 \label{BelongsToAffineSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{\texttt{\symbol{92}}in({\mdseries\slshape v, a})\index{in@\texttt{\texttt{\symbol{92}}in}!membership test in affine semigroup}
+\label{in:membership test in affine semigroup}
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape v}} is a list of nonnegative integers and \mbox{\texttt{\mdseries\slshape a}} an affine semigroup. Returns true if the vector is in the semigroup, and false
@@ -4966,6 +5019,8 @@ otherwise.
  If the semigroup is full and its equations are known (either because the
 semigroup was defined by equations, or because the user has called \texttt{IsFullAffineSemgiroup(a)} and the output was true), then membership is performed by evaluating \mbox{\texttt{\mdseries\slshape v}} in the equations. The same holds for normal semigroups and its defining
 inequalities. 
+
+ \mbox{\texttt{\mdseries\slshape  v in a}} can be used for short. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;|
   !gapprompt@gap>| !gapinput@BelongsToAffineSemigroup([5,5],a);|
@@ -4982,7 +5037,7 @@ inequalities.
  
 
 \subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
-\logpage{[ 11, 1, 7 ]}\nobreak
+\logpage{[ 11, 1, 9 ]}\nobreak
 \hyperdef{L}{X82FCB89B80D42205}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
 \label{IsFullAffineSemigroup}
@@ -5006,7 +5061,7 @@ further use.
  
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousEquations}}
-\logpage{[ 11, 1, 8 ]}\nobreak
+\logpage{[ 11, 1, 10 ]}\nobreak
 \hyperdef{L}{X7D4D017A79AD98E2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
 \label{HilbertBasisOfSystemOfHomogeneousEquations}
@@ -5028,7 +5083,7 @@ give an affine semigroup is by a set of homogeneous inequalities, and we can
 represent these inequalities by its coefficients. If we put them in a matrix $S$ can be defined as the set of nonnegative integer solutions to $Ax \ge 0$. 
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousInequalities}}
-\logpage{[ 11, 1, 9 ]}\nobreak
+\logpage{[ 11, 1, 11 ]}\nobreak
 \hyperdef{L}{X825B1CD37B0407A6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
 \label{HilbertBasisOfSystemOfHomogeneousInequalities}
@@ -5048,7 +5103,7 @@ nonnegative integer solutions to $Ax\ge 0$.
  
 
 \subsection{\textcolor{Chapter }{EquationsOfGroupGeneratedBy}}
-\logpage{[ 11, 1, 10 ]}\nobreak
+\logpage{[ 11, 1, 12 ]}\nobreak
 \hyperdef{L}{X8307A0597864B098}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquationsOfGroupGeneratedBy({\mdseries\slshape M})\index{EquationsOfGroupGeneratedBy@\texttt{EquationsOfGroupGeneratedBy}}
 \label{EquationsOfGroupGeneratedBy}
@@ -5066,7 +5121,7 @@ of \mbox{\texttt{\mdseries\slshape M}}: $Ax=0\in \mathbb Z_{n_1}\times \cdots \t
  
 
 \subsection{\textcolor{Chapter }{BasisOfGroupGivenByEquations}}
-\logpage{[ 11, 1, 11 ]}\nobreak
+\logpage{[ 11, 1, 13 ]}\nobreak
 \hyperdef{L}{X7A1CE5A98425CEA1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BasisOfGroupGivenByEquations({\mdseries\slshape A, m})\index{BasisOfGroupGivenByEquations@\texttt{BasisOfGroupGivenByEquations}}
 \label{BasisOfGroupGivenByEquations}
@@ -5466,7 +5521,7 @@ infimums, if $C_1$ and $C_2$ fulfill $C_i+\mathbb{N}^n\subseteq S$, then $C_1\we
 }\hfill{\scriptsize (function)}}\\
 
 
- Detects if \mbox{\texttt{\mdseries\slshape S}} is a an object type good semigroup. }
+ Detects if \mbox{\texttt{\mdseries\slshape S}} is an object of type good semigroup. }
 
  
 

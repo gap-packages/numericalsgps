@@ -498,10 +498,9 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> BettiElementsOfNumericalSemigroup(s);
-[ 10, 12, 14 ]
-]]>
-                        </Example>          
+gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
+[ 3, 5, 7, 10 ]
+]]></Example>          
                         
                         
                     </Description>
@@ -517,8 +516,8 @@ gap> BettiElementsOfNumericalSemigroup(s);
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
-[ 3, 5, 7, 10 ]
+gap> EqualCatenaryDegreeOfNumericalSemigroup(s);
+2
 ]]></Example>
          </Description>
     </ManSection>

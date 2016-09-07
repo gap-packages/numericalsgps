@@ -24,7 +24,6 @@
                     <Func Arg="S" Name="IsMEDNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.    
-                        <P/>
                         Returns true if <A>S</A> is a MED numerical semigroup and false otherwise. 
                         <Example><![CDATA[
 gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7)); 
@@ -40,7 +39,6 @@ false
                     <Func Arg="S" Name="MEDNumericalSemigroupClosure"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.    
-                        <P/>
                         Returns the MED closure of <A>S</A>.
                         <Example><![CDATA[
 gap> MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); 
@@ -55,7 +53,6 @@ gap> MinimalGenerators(last);
                     <Func Arg="S" Name="MinimalMEDGeneratingSystemOfMEDNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is a MED numerical semigroup.    
-                        <P/>
                         Returns the minimal MED generating system of <A>S</A>.
                         <Example><![CDATA[
 gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( 
@@ -86,7 +83,6 @@ gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(
                     <Func Arg="S" Name="IsArfNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.    
-                        <P/>
                         Returns true if <A>S</A> is an Arf numerical semigroup and false otherwise. 
                         <Example><![CDATA[
 gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); 
@@ -103,7 +99,6 @@ true
                     <Func Arg="S" Name="ArfNumericalSemigroupClosure"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.    
-                        <P/>
                         Returns the Arf closure of <A>S</A>.
                         <Example><![CDATA[
 gap> ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); 
@@ -118,7 +113,6 @@ gap> MinimalGenerators(last);
                     <Func Arg="S" Name="MinimalArfGeneratingSystemOfArfNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is an Arf numerical semigroup.    
-                        <P/>
                         Returns the minimal Arf generating system of <A>S</A>.
                         <Example><![CDATA[
 gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup( 
@@ -164,7 +158,6 @@ gap> List(last,MinimalGenerators);
                     <Func Arg="S" Name="IsSaturatedNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.    
-                        <P/>
                         Returns true if <A>S</A> is a saturated numerical semigroup and false otherwise. 
                         <Example><![CDATA[
 gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
@@ -179,7 +172,6 @@ false
                     <Func Arg="S" Name="SaturatedNumericalSemigroupClosure"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.    
-                        <P/>
                         Returns the saturated closure of <A>S</A>.
                         <Example><![CDATA[
 gap> SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));

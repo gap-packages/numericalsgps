@@ -31,17 +31,19 @@
     </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7AFF988F8797A1EF">11.1-1 AffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7E965976815B387D">11.1-2 GeneratorsOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8164ADBD87FF5473">11.1-3 MinimalGeneratingSystem</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X844806D97B4781B5">11.1-4 AsAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7A2902207BAA3936">11.1-5 IsAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X851788D781A13C50">11.1-6 BelongsToAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X82FCB89B80D42205">11.1-7 IsFullAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7D4D017A79AD98E2">11.1-8 HilbertBasisOfSystemOfHomogeneousEquations</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X825B1CD37B0407A6">11.1-9 HilbertBasisOfSystemOfHomogeneousInequalities</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8307A0597864B098">11.1-10 EquationsOfGroupGeneratedBy</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7A1CE5A98425CEA1">11.1-11 BasisOfGroupGivenByEquations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X85E97E56867E5C0D">11.1-1 AffineSemigroupByGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X855C8667830AEDDC">11.1-2 AffineSemigroupByEquations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7846AD1081C14EF1">11.1-3 AffineSemigroupByInequalities</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X84FDF85D7CDEDF3E">11.1-4 Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7ED1549486C251CA">11.1-5 MinimalGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X844806D97B4781B5">11.1-6 AsAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7A2902207BAA3936">11.1-7 IsAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X851788D781A13C50">11.1-8 BelongsToAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X82FCB89B80D42205">11.1-9 IsFullAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7D4D017A79AD98E2">11.1-10 HilbertBasisOfSystemOfHomogeneousEquations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X825B1CD37B0407A6">11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8307A0597864B098">11.1-12 EquationsOfGroupGeneratedBy</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7A1CE5A98425CEA1">11.1-13 BasisOfGroupGivenByEquations</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X7F13DF9D7A4FB547">11.2 <span class="Heading">
     Gluings of affine semigroups
@@ -92,31 +94,76 @@
 
 <p>An affine semigroup <span class="SimpleMath">S</span> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<span class="SimpleMath">a s= b s</span> implies <span class="SimpleMath">a=b</span>, with <span class="SimpleMath">a,b∈ N</span> and <span class="SimpleMath">s∈ S</span>). Up to isomorphisms any affine semigroup can be viewed as a finitely generated submonoid of <span class="SimpleMath">N^k</span> for some positive integer <span class="SimpleMath">k</span>. Thus affine semigroups are a natural generalization of numerical semigroups. The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually). If <span class="SimpleMath">G</span> is a subgroup of <span class="SimpleMath">Z^k</span>, then <span class="SimpleMath">S=G∩ N^k</span> is an affine semigroup (these semigroups are called full affine semigroups). As <span class="SimpleMath">G</span> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <span class="SimpleMath">S</span> by the defining equations of <span class="SimpleMath">G</span>; indeed <span class="SimpleMath">S</span> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <span class="SimpleMath">x+y≡ 0mod 2, x-2y=0</span> will be represented as [[1,1],[1,-2]] and the moduli [2].</p>
 
-<p>To create an affine semigroup in <strong class="pkg">GAP</strong> the function <code class="code">AffineSemigroup</code> is used.</p>
+<p>As happens with numerical semigroups, there are different ways to specify an affine semigroup <span class="SimpleMath">S</span>, namely, by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities, just to mention some. In this section we describe functions that may be used to specify, in one of these ways, an affine semigroup in <strong class="pkg">GAP</strong>.</p>
 
-<p><a id="X7AFF988F8797A1EF" name="X7AFF988F8797A1EF"></a></p>
+<p><a id="X85E97E56867E5C0D" name="X85E97E56867E5C0D"></a></p>
 
-<h5>11.1-1 AffineSemigroup</h5>
+<h5>11.1-1 AffineSemigroupByGenerators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">Representation</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">Representation</code> may be <code class="code">"generators"</code>, <code class="code">"equations"</code> or <code class="code">"inequalities"</code> according to whether the semigroup is to be given by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><code class="code">List</code> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup spanned by <code class="code">List</code>.</p>
 
-<p>When no string is given as first argument it is assumed that the numerical semigroup will be given by means of a set of generators.</p>
+<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"generators"</code> and <code class="code">List</code> must be a list, not a sequence of individual elements.</p>
 
 
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AffineSemigroup([1,3],[7,2],[1,5]);</span>
+<div class="example"><pre>		
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := AffineSemigroupByGenerators([1,3],[7,2],[1,5]);</span>
 &lt;Affine semigroup in 2 dimensional space, with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);</span>
-&lt;Affine semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s2 := AffineSemigroupByGenerators([[1,3],[7,2],[1,5]]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s4 := AffineSemigroup([1,3],[7,2],[1,5]);;              </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s5 := AffineSemigroup([[1,3],[7,2],[1,5]]);;             </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(Set([s1,s2,s3,s4,s5]));             </span>
+1
 </pre></div>
 
-<p><a id="X7E965976815B387D" name="X7E965976815B387D"></a></p>
+<p><a id="X855C8667830AEDDC" name="X855C8667830AEDDC"></a></p>
 
-<h5>11.1-2 GeneratorsOfAffineSemigroup</h5>
+<h5>11.1-2 AffineSemigroupByEquations</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByEquations</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><code class="code">List</code> represents a list of equations. We represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. Returns the (full) affine semigroup defined by the system <span class="SimpleMath">A * X=0 mod md</span>, where the rows of <span class="SimpleMath">A</span> are the elements of <code class="code">List</code>.</p>
+
+<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"equations"</code>.</p>
+
+
+<div class="example"><pre>		
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := AffineSemigroupByEquations([[[-2,1]],[3]]);            </span>
+&lt;Affine semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s2 := AffineSemigroup("equations",[[[-2,1]],[3]]); </span>
+&lt;Affine semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1=s2;</span>
+true
+</pre></div>
+
+<p><a id="X7846AD1081C14EF1" name="X7846AD1081C14EF1"></a></p>
+
+<h5>11.1-3 AffineSemigroupByInequalities</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByInequalities</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><code class="code">List</code> represents the inequalities: recall that for the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <span class="SimpleMath">x+y≡ 0mod 2, x-2y=0</span> will be represented as [[1,1],[1,-2]] and the moduli [2]. Returns the (full) affine semigroup defined by the system <span class="SimpleMath">List*Xge 0</span> over the nonnegative integers.</p>
+
+<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"inequalities"</code>.</p>
+
+
+<div class="example"><pre>		
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);               </span>
+&lt;Affine semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);</span>
+&lt;Affine semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1=a2;</span>
+true
+</pre></div>
+
+<p><a id="X84FDF85D7CDEDF3E" name="X84FDF85D7CDEDF3E"></a></p>
+
+<h5>11.1-4 Generators</h5>
+
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is an affine semigroup, the output is a system of generators.</p>
 
 
@@ -127,12 +174,12 @@
 [ [ 0, 1 ], [ 1, 0 ], [ 1, 1 ] ]
 </pre></div>
 
-<p><a id="X8164ADBD87FF5473" name="X8164ADBD87FF5473"></a></p>
+<p><a id="X7ED1549486C251CA" name="X7ED1549486C251CA"></a></p>
 
-<h5>11.1-3 MinimalGeneratingSystem</h5>
+<h5>11.1-5 MinimalGenerators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is an affine semigroup, the output is its system of minimal generators.</p>
 
 
@@ -145,7 +192,7 @@
 
 <p><a id="X844806D97B4781B5" name="X844806D97B4781B5"></a></p>
 
-<h5>11.1-4 AsAffineSemigroup</h5>
+<h5>11.1-6 AsAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup, the output is <var class="Arg">S</var> regarded as an affine semigroup.</p>
@@ -176,11 +223,10 @@
 
 <p><a id="X7A2902207BAA3936" name="X7A2902207BAA3936"></a></p>
 
-<h5>11.1-5 IsAffineSemigroup</h5>
+<h5>11.1-7 IsAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroup</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByGenerators</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByMinimalGenerators</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByEquations</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByInequalities</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><var class="Arg">AS</var> is an affine semigroup and these attributes are available (their names should be self explanatory). They reflect what is currently known about the semigroup.</p>
@@ -197,12 +243,15 @@ true
 
 <p><a id="X851788D781A13C50" name="X851788D781A13C50"></a></p>
 
-<h5>11.1-6 BelongsToAffineSemigroup</h5>
+<h5>11.1-8 BelongsToAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \in</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">a</var> an affine semigroup. Returns true if the vector is in the semigroup, and false otherwise.</p>
 
 <p>If the semigroup is full and its equations are known (either because the semigroup was defined by equations, or because the user has called <code class="code">IsFullAffineSemgiroup(a)</code> and the output was true), then membership is performed by evaluating <var class="Arg">v</var> in the equations. The same holds for normal semigroups and its defining inequalities.</p>
+
+<p><var class="Arg"> v in a</var> can be used for short.</p>
 
 
 <div class="example"><pre>
@@ -219,7 +268,7 @@ false
 
 <p><a id="X82FCB89B80D42205" name="X82FCB89B80D42205"></a></p>
 
-<h5>11.1-7 IsFullAffineSemigroup</h5>
+<h5>11.1-9 IsFullAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFullAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">s</var> is an affine semigroup.</p>
@@ -237,7 +286,7 @@ true
 
 <p><a id="X7D4D017A79AD98E2" name="X7D4D017A79AD98E2"></a></p>
 
-<h5>11.1-8 HilbertBasisOfSystemOfHomogeneousEquations</h5>
+<h5>11.1-10 HilbertBasisOfSystemOfHomogeneousEquations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousEquations</code>( <var class="Arg">ls</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">ls</var> is a list of lists of integers and <var class="Arg">m</var> a list of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">A</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the system <span class="SimpleMath">Ax=0</span> where the <span class="SimpleMath">k</span> first equations are in the congruences modulo <var class="Arg">m[i]</var>, with <span class="SimpleMath">k</span> the length of <var class="Arg">m</var>.</p>
@@ -254,7 +303,7 @@ true
 
 <p><a id="X825B1CD37B0407A6" name="X825B1CD37B0407A6"></a></p>
 
-<h5>11.1-9 HilbertBasisOfSystemOfHomogeneousInequalities</h5>
+<h5>11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousInequalities</code>( <var class="Arg">ls</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">ls</var> is a list of lists of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">A</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions to <span class="SimpleMath">Axge 0</span>.</p>
@@ -269,7 +318,7 @@ true
 
 <p><a id="X8307A0597864B098" name="X8307A0597864B098"></a></p>
 
-<h5>11.1-10 EquationsOfGroupGeneratedBy</h5>
+<h5>11.1-12 EquationsOfGroupGeneratedBy</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquationsOfGroupGeneratedBy</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">M</var> is a matrix of integers. The output is a pair <span class="SimpleMath">[A,m]</span> that represents the set of defining equations of the group spanned by the rows of <var class="Arg">M</var>: <span class="SimpleMath">Ax=0∈ Z_n_1× ⋯ × Z_n_t× Z^k</span>, with <span class="SimpleMath">m=[n_1,...,n_t]</span>.</p>
@@ -282,7 +331,7 @@ true
 
 <p><a id="X7A1CE5A98425CEA1" name="X7A1CE5A98425CEA1"></a></p>
 
-<h5>11.1-11 BasisOfGroupGivenByEquations</h5>
+<h5>11.1-13 BasisOfGroupGivenByEquations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisOfGroupGivenByEquations</code>( <var class="Arg">A</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">A</var> is a matrix of integers and <var class="Arg">m</var> is a list of positive integers. The output is a basis for the group with defining equations <span class="SimpleMath">Ax=0∈ Z_n_1× ⋯ × Z_n_t× Z^k</span>, with <span class="SimpleMath">m=[n_1,...,n_t]</span>.</p>
