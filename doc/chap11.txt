@@ -69,9 +69,10 @@
   than or equal to the length of [22XA[122X (number of rows of [22XA[122X).[133X
   
   [33X[0;0YThe  output  is  the  full semigroup of nonnegative integer solutions to the
-  system  of  homogeneous  equations [22Xbeginarray a_11x_1+⋯+a_1nx_n≡ 0mod d_1, ⋯
-  a_k1x_1+⋯+a_knx_n≡ 0mod d_k, a_k+1 1x_1+⋯ +a_k+1 n=0, ⋯ a_m1x_1+⋯+a_mnx_n=0.
-  endarray[122X[133X
+  system of homogeneous equations[133X
+  
+  [33X[0;0Y[22Xbeginmatrix  a_11x_1+⋯+a_1nx_n≡  0mod  d_1,  ⋯  a_k1x_1+⋯+a_knx_n≡ 0mod d_k,
+  a_k+1 1x_1+⋯ +a_k+1 n=0, ⋯ a_m1x_1+⋯+a_mnx_n=0. endmatrix[122X[133X
   
   [33X[0;0YIf [22Xd[122X is empty, then there will be no equations in congruences.[133X
   
