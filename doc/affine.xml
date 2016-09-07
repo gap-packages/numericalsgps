@@ -138,6 +138,10 @@ gap> BelongsToAffineSemigroup([5,5],a);
 true
 gap> BelongsToAffineSemigroup([1,2],a);
 false
+gap> [5,5] in a;
+true
+gap> [1,2] in a;
+false
 ]]></Example>
   </Description>
 </ManSection>
