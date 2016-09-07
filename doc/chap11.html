@@ -124,17 +124,15 @@
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByEquations</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><code class="code">List</code> is a list with two components. The first represents a a matrix with integer coefficients, say <span class="SimpleMath">A=(a_ij)</span>, and so it is a list of lists of integers all with the same length. The second component is a list of positive integers, say <span class="SimpleMath">d=(d_i)</span>, which may be empty. The list <span class="SimpleMath">d</span> must be of length less than or equal to the length of <span class="SimpleMath">A</span> (number of rows of <span class="SimpleMath">A</span>).</p>
+<p><code class="code">List</code> is a list with two components. The first represents a matrix with integer coefficients, say <span class="SimpleMath">A=(a_ij)</span>, and so it is a list of lists of integers all with the same length. The second component is a list of positive integers, say <span class="SimpleMath">d=(d_i)</span>, which may be empty. The list <span class="SimpleMath">d</span> must be of length less than or equal to the length of <span class="SimpleMath">A</span> (number of rows of <span class="SimpleMath">A</span>).</p>
 
-<p>The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations</p>
-
-<p><span class="Math"> \begin{matrix} \quad \\ a_{11}x_1+\cdots+a_{1n}x_n\equiv 0\bmod d_1,\\ \cdots \\ a_{k1}x_1+\cdots+a_{kn}x_n\equiv 0\bmod d_k,\\ a_{k+1\, 1}x_1+\cdots +a_{k+1\, n}=0,\\ \cdots\\ a_{m1}x_1+\cdots+a_{mn}x_n=0. \end{matrix} </span></p>
+<p>The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations <br /> <span class="SimpleMath">a_11x_1+⋯+a_1nx_n≡ 0mod d_1</span><br /> <span class="SimpleMath">⋯</span><br /> <span class="SimpleMath">a_k1x_1+⋯+a_knx_n≡ 0mod d_k</span><br /> <span class="SimpleMath">a_k+1 1x_1+⋯ +a_k+1 n=0</span><br /> <span class="SimpleMath">⋯</span><br /> <span class="SimpleMath">a_m1x_1+⋯+a_mnx_n=0</span><br /></p>
 
 <p>If <span class="SimpleMath">d</span> is empty, then there will be no equations in congruences.</p>
 
 <p>For instance, the equations <span class="SimpleMath">x+y≡ 0mod 2, x-2y=0</span> will be represented as <span class="SimpleMath">A</span> equal to [[1,1],[1,-2]] and the moduli <span class="SimpleMath">d</span> equal to [2].</p>
 
-<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"equations"</code>.</p>
+<p>In the second form, <code class="code">String</code> must be <code class="code">"equations"</code>.</p>
 
 
 <div class="example"><pre>
@@ -156,7 +154,7 @@ true
 
 <p>Returns the (normal) affine semigroup of nonegative integer solutions of the system of inequalities <span class="SimpleMath">List× Xge 0</span>.</p>
 
-<p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"inequalities"</code>.</p>
+<p>In the second form, <code class="code">String</code> must be <code class="code">"inequalities"</code>.</p>
 
 
 <div class="example"><pre>
