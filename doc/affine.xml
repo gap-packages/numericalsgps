@@ -12,32 +12,73 @@
     The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually).
 
     If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are called full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
-<P/>
+    <P/>
 
-To create an affine semigroup in &GAP; the function
-<C>AffineSemigroup</C> is used.
-<ManSection>
-  <Func Name="AffineSemigroup" Arg="Representation, List"/>
-  <Description>
-    <C>Representation</C> may be <C>"generators"</C>, <C>"equations"</C> or <C>"inequalities"</C> according to
-    whether the semigroup is to be given by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities.
-    <P/>
-    When no string is given as first argument it is assumed that the numerical
-    semigroup will be given by means of a set of generators.
-    <P/>
-    <Example><![CDATA[
-gap> AffineSemigroup([1,3],[7,2],[1,5]);
+As happens with numerical semigroups, there are different ways to specify an affine semigroup <M>S</M>, namely, by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities, just to mention some.
+In this section we describe functions that may be used
+to specify, in one of these ways, an affine semigroup  in &GAP;.
+
+
+                <ManSection>
+                    <Func Name="AffineSemigroupByGenerators" Arg="List"/>
+                    <Func Name="AffineSemigroup" Arg="String, List" Label="by generators"/>
+                    <Description>
+		      <C>List</C> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup spanned by <C>List</C>.
+		      <P/>
+		      <C>String</C> does not need to be present. When it is present, it must be <C>"generators"</C> and <C>List</C> must be a list, not a sequence of individual elements.
+			<Example><![CDATA[		
+gap> s1 := AffineSemigroupByGenerators([1,3],[7,2],[1,5]);
 <Affine semigroup in 2 dimensional space, with 3 generators>
-gap> a2 := AffineSemigroup("equations",[[[-2,1]],[3]]);
+gap> s2 := AffineSemigroupByGenerators([[1,3],[7,2],[1,5]]);;
+gap> s3 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;
+gap> s4 := AffineSemigroup([1,3],[7,2],[1,5]);;              
+gap> s5 := AffineSemigroup([[1,3],[7,2],[1,5]]);;             
+gap> Length(Set([s1,s2,s3,s4,s5]));             
+1
+]]></Example>
+  </Description>
+</ManSection>
+                <ManSection>
+                    <Func Name="AffineSemigroupByEquations" Arg="List"/>
+                    <Func Name="AffineSemigroup" Arg="String, List" Label="by equations"/>
+                    <Description>
+		      <C>List</C> represents a list of equations. We represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations.
+		       Returns the (full) affine semigroup defined by the system <M>A * X=0 \mod md </M>, where the rows of <M>A</M> are the elements of <C>List</C>.
+		      <P/>
+		      <C>String</C> does not need to be present. When it is present, it must be <C>"equations"</C>.
+			<Example><![CDATA[		
+gap> s1 := AffineSemigroupByEquations([[[-2,1]],[3]]);            
 <Affine semigroup>
+gap> s2 := AffineSemigroup("equations",[[[-2,1]],[3]]); 
+<Affine semigroup>
+gap> s1=s2;
+true
+]]></Example>
+  </Description>
+</ManSection>
+                <ManSection>
+                    <Func Name="AffineSemigroupByInequalities" Arg="List"/>
+                    <Func Name="AffineSemigroup" Arg="String, List" Label="by inequalities"/>
+                    <Description>
+		      <C>List</C> represents the inequalities: recall that for the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
+		        Returns the (full) affine semigroup defined by the system  <M>List*X\ge 0</M> over 
+the nonnegative integers.
+		      <P/>
+		      <C>String</C> does not need to be present. When it is present, it must be <C>"inequalities"</C>.
+			<Example><![CDATA[		
+gap> a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);               
+<Affine semigroup>
+gap> a2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
+<Affine semigroup>
+gap> a1=a2;
+true
 ]]></Example>
   </Description>
 </ManSection>
 
-
 <ManSection>
-  <Func Name="GeneratorsOfAffineSemigroup" Arg="S"/>
   <Func Name="Generators" Arg="S" Label="for affine semigroup"/>
+  <Func Name="GeneratorsOfAffineSemigroup" Arg="S"/>
   <Description>
     <A>S</A> is an affine semigroup, the output is a system of generators.
     <P/>
@@ -52,8 +93,8 @@ gap> Generators(a);
 </ManSection>
 
 <ManSection>
-  <Func Name="MinimalGeneratingSystem" Arg="S" Label="for affine semigroup"/>
   <Func Name="MinimalGenerators" Arg="S" Label="for affine semigroup"/>
+  <Func Name="MinimalGeneratingSystem" Arg="S" Label="for affine semigroup"/>
   <Description>
     <A>S</A> is an affine semigroup, the output is its system of minimal generators.
     <P/>
@@ -104,7 +145,6 @@ gap> MinimalPresentationOfAffineSemigroup(a);;time;
 <ManSection>
   <Attr Name="IsAffineSemigroup" Arg="AS"/>
   <Attr Name="IsAffineSemigroupByGenerators" Arg="AS"/>
-  <Attr Name="IsAffineSemigroupByMinimalGenerators" Arg="AS"/>
   <Attr Name="IsAffineSemigroupByEquations" Arg="AS"/>
   <Attr Name="IsAffineSemigroupByInequalities" Arg="AS"/>
   <Description>
@@ -126,12 +166,15 @@ true
 
 <ManSection>
   <Func Arg="v, a" Name="BelongsToAffineSemigroup"></Func>
+                    <Oper Name="\in" Arg="v, a" Label="membership test in affine semigroup"/>
   <Description>
     <A>v</A> is a list of nonnegative integers and <A>a</A> an affine semigroup.
     Returns true if the vector is in the semigroup, and false otherwise.
 
     <P/>
     If the semigroup is full and its equations are known (either because the semigroup was defined by equations, or because the user has called <C>IsFullAffineSemgiroup(a)</C> and the output was true), then membership is performed by evaluating <A>v</A> in the equations. The same holds for normal semigroups and its defining inequalities.
+                        <P/>
+                        <A> v in a</A> can be used for short.
     <Example><![CDATA[
 gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
 gap> BelongsToAffineSemigroup([5,5],a);
