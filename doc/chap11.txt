@@ -71,8 +71,10 @@
   [33X[0;0YThe  output  is  the  full semigroup of nonnegative integer solutions to the
   system of homogeneous equations[133X
   
-  [33X[0;0Y[22Xbeginmatrix  a_11x_1+⋯+a_1nx_n≡  0mod  d_1,  ⋯  a_k1x_1+⋯+a_knx_n≡ 0mod d_k,
-  a_k+1 1x_1+⋯ +a_k+1 n=0, ⋯ a_m1x_1+⋯+a_mnx_n=0. endmatrix[122X[133X
+  [33X[0;0Y[23X  \begin{matrix}  \quad  \\  a_{11}x_1+\cdots+a_{1n}x_n\equiv  0\bmod d_1,\\
+  \cdots    \\   a_{k1}x_1+\cdots+a_{kn}x_n\equiv   0\bmod   d_k,\\   a_{k+1\,
+  1}x_1+\cdots   +a_{k+1\,   n}=0,\\   \cdots\\  a_{m1}x_1+\cdots+a_{mn}x_n=0.
+  \end{matrix} [123X[133X
   
   [33X[0;0YIf [22Xd[122X is empty, then there will be no equations in congruences.[133X
   

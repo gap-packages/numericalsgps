@@ -47,8 +47,9 @@ gap> Length(Set([s1,s2,s3,s4,s5]));
           <P/>
           The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations
           <P/>
-	        <M>
+	        <Math>
           \begin{matrix}
+          \quad \\
           a_{11}x_1+\cdots+a_{1n}x_n\equiv 0\bmod d_1,\\
           \cdots \\
           a_{k1}x_1+\cdots+a_{kn}x_n\equiv 0\bmod d_k,\\
@@ -56,7 +57,7 @@ gap> Length(Set([s1,s2,s3,s4,s5]));
           \cdots\\
           a_{m1}x_1+\cdots+a_{mn}x_n=0.
           \end{matrix}
-          </M>
+        </Math>
           <P/>
           If <M>d</M> is empty, then there will be no equations in congruences.
           <P/>
