@@ -8,7 +8,7 @@
   [2X+[102X (translation of ideal of numerical semigroup)  7.1-14
   [2X-[102X (for ideals of numerical semigroup)  7.1-12
   [2X\/[102X (quotient of numerical semigroup)  5.2-2
-  [2X\in[102X (membership test in affine semigroup)  11.1-7
+  [2X\in[102X (membership test in affine semigroup)  11.1-8
   [2X\in[102X (membership for good semigroup)  12.2-1
   [2X\in[102X (membership for good ideal)  12.4-5
   [2X\in[102X (membership test for numerical semigroup)  2.2-7
@@ -17,9 +17,11 @@
   [2XAdjacentCatenaryDegreeOfSetOfFactorizations[102X  9.3-2
   [2XAdjustmentOfNumericalSemigroup[102X  9.2-11
   [2XAffineSemigroup[102X (by generators)  11.1-1
-  [2XAffineSemigroup[102X (by inequalities)  11.1-2
+  [2XAffineSemigroup[102X (by equations)  11.1-2
+  [2XAffineSemigroup[102X (by inequalities)  11.1-3
+  [2XAffineSemigroupByEquations[102X  11.1-2
   [2XAffineSemigroupByGenerators[102X  11.1-1
-  [2XAffineSemigroupByInequalities[102X  11.1-2
+  [2XAffineSemigroupByInequalities[102X  11.1-3
   [2XAlmostSymmetricNumericalSemigroupsFromIrreducible[102X  6.3-1
   [2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumber[102X  6.3-3
   [2XAmalgamationOfNumericalSemigroups[102X  12.1-3
@@ -39,11 +41,11 @@
   [2XArfGoodSemigroupClosure[102X  12.3-2
   [2XArfNumericalSemigroupClosure[102X  8.2-2
   [2XArfNumericalSemigroupsWithFrobeniusNumber[102X  8.2-4
-  [2XAsAffineSemigroup[102X  11.1-5
+  [2XAsAffineSemigroup[102X  11.1-6
   [2XAsGluingOfNumericalSemigroups[102X  6.2-1
   [2XAsIdealOfNumericalSemigroup[102X  C.3-3
-  [2XBasisOfGroupGivenByEquations[102X  11.1-12
-  [2XBelongsToAffineSemigroup[102X  11.1-7
+  [2XBasisOfGroupGivenByEquations[102X  11.1-13
+  [2XBelongsToAffineSemigroup[102X  11.1-8
   [2XBelongsToGoodIdeal[102X  12.4-5
   [2XBelongsToGoodSemigroup[102X  12.2-1
   [2XBelongsToHomogenizationOfNumericalSemigroup[102X  9.5-1
@@ -94,7 +96,7 @@
   [2XEqualCatenaryDegreeOfNumericalSemigroup[102X  9.3-9
   [2XEqualCatenaryDegreeOfSetOfFactorizations[102X  9.3-3
   [2XEqualPrimitiveElementsOfNumericalSemigroup[102X  9.3-8
-  [2XEquationsOfGroupGeneratedBy[102X  11.1-11
+  [2XEquationsOfGroupGeneratedBy[102X  11.1-12
   [2XFactorizationsElementListWRTNumericalSemigroup[102X  C.2-2
   [2XFactorizationsElementWRTNumericalSemigroup[102X  9.1-2
   [2XFactorizationsInHomogenizationOfNumericalSemigroup[102X  9.5-2
@@ -109,10 +111,10 @@
   [2XFundamentalGapsOfNumericalSemigroup[102X  3.1-20
   [2XGaps[102X (for numerical semigroup)  3.1-16
   [2XGapsOfNumericalSemigroup[102X  3.1-16
-  [2XGenerators[102X (for affine semigroup)  11.1-3
+  [2XGenerators[102X (for affine semigroup)  11.1-4
   [2XGenerators[102X (for numerical semigroup)  3.1-2
   [2XGenerators[102X (for ideal of numerical semigroup)  7.1-4
-  [2XGeneratorsOfAffineSemigroup[102X  11.1-3
+  [2XGeneratorsOfAffineSemigroup[102X  11.1-4
   [2XGeneratorsOfIdealOfNumericalSemigroup[102X  7.1-4
   [2XGeneratorsOfKernelCongruence[102X  11.3-1
   [2XGeneratorsOfNumericalSemigroup[102X  3.1-2
@@ -126,8 +128,8 @@
   [2XGoodSemigroupBySmallElements[102X  12.2-5
   [2XGraeffePolynomial[102X  10.1-5
   [2XGraphAssociatedToElementInNumericalSemigroup[102X  4.1-2
-  [2XHilbertBasisOfSystemOfHomogeneousEquations[102X  11.1-9
-  [2XHilbertBasisOfSystemOfHomogeneousInequalities[102X  11.1-10
+  [2XHilbertBasisOfSystemOfHomogeneousEquations[102X  11.1-10
+  [2XHilbertBasisOfSystemOfHomogeneousInequalities[102X  11.1-11
   [2XHilbertFunctionOfIdealOfNumericalSemigroup[102X  7.2-1
   [2XHilbertSeriesOfNumericalSemigroup[102X  10.1-4
   [2XHoles[102X (for numerical semigroup)  3.1-17
@@ -146,10 +148,10 @@
   [2XIsAdmissiblePattern[102X  C.3-1
   [2XIsAdmittedPatternByIdeal[102X  C.3-7
   [2XIsAdmittedPatternByNumericalSemigroup[102X  C.3-8
-  [2XIsAffineSemigroup[102X  11.1-6
-  [2XIsAffineSemigroupByEquations[102X  11.1-6
-  [2XIsAffineSemigroupByGenerators[102X  11.1-6
-  [2XIsAffineSemigroupByInequalities[102X  11.1-6
+  [2XIsAffineSemigroup[102X  11.1-7
+  [2XIsAffineSemigroupByEquations[102X  11.1-7
+  [2XIsAffineSemigroupByGenerators[102X  11.1-7
+  [2XIsAffineSemigroupByInequalities[102X  11.1-7
   [2XIsAlmostSymmetricNumericalSemigroup[102X  6.3-2
   [2XIsAperyListOfNumericalSemigroup[102X  2.2-4
   [2XIsAperySetAlphaRectangular[102X  C.1-10
@@ -162,7 +164,7 @@
   [2XIsCyclotomicPolynomial[102X  10.1-6
   [2XIsDeltaSequence[102X  10.2-2
   [2XIsFreeNumericalSemigroup[102X  6.2-4
-  [2XIsFullAffineSemigroup[102X  11.1-8
+  [2XIsFullAffineSemigroup[102X  11.1-9
   [2XIsGenericAffineSemigroup[102X  11.3-5
   [2XIsGenericNumericalSemigroup[102X  4.2-2
   [2XIsGoodSemigroup[102X  12.1-1
@@ -221,12 +223,12 @@
   [2XMEDNumericalSemigroupClosure[102X  8.1-2
   [2XMicroInvariantsOfNumericalSemigroup[102X  7.2-7
   [2XMinimalArfGeneratingSystemOfArfNumericalSemigroup[102X  8.2-3
-  [2XMinimalGeneratingSystem[102X (for affine semigroup)  11.1-4
+  [2XMinimalGeneratingSystem[102X (for affine semigroup)  11.1-5
   [2XMinimalGeneratingSystem[102X (for numerical semigroup)  3.1-2
   [2XMinimalGeneratingSystem[102X (for ideal of numerical semigroup)  7.1-3
   [2XMinimalGeneratingSystemOfIdealOfNumericalSemigroup[102X  7.1-3
   [2XMinimalGeneratingSystemOfNumericalSemigroup[102X  3.1-2
-  [2XMinimalGenerators[102X (for affine semigroup)  11.1-4
+  [2XMinimalGenerators[102X (for affine semigroup)  11.1-5
   [2XMinimalGenerators[102X  12.2-10
   [2XMinimalGenerators[102X (for numerical semigroup)  3.1-2
   [2XMinimalGenerators[102X (for ideal of numerical semigroup)  7.1-3

@@ -57,7 +57,40 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1X11.1-2 AffineSemigroupByInequalities[101X
+  [1X11.1-2 AffineSemigroupByEquations[101X
+  
+  [29X[2XAffineSemigroupByEquations[102X( [3XList[103X ) [32X function
+  [29X[2XAffineSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0Y[10XList[110X  is  a  list  with two components. The first represents a a matrix with
+  integer coefficients, say [22XA=(a_ij)[122X, and so it is a list of lists of integers
+  all  with  the  same  length.  The  second  component  is a list of positive
+  integers, say [22Xd=(d_i)[122X, which may be empty. The list [22Xd[122X must be of length less
+  than or equal to the length of [22XA[122X (number of rows of [22XA[122X).[133X
+  
+  [33X[0;0YThe  output  is  the  full semigroup of nonnegative integer solutions to the
+  system  of  homogeneous  equations [22Xbeginarray a_11x_1+⋯+a_1nx_n≡ 0mod d_1, ⋯
+  a_k1x_1+⋯+a_knx_n≡ 0mod d_k, a_k+1 1x_1+⋯ +a_k+1 n=0, ⋯ a_m1x_1+⋯+a_mnx_n=0.
+  endarray[122X[133X
+  
+  [33X[0;0YIf [22Xd[122X is empty, then there will be no equations in congruences.[133X
+  
+  [33X[0;0YFor  instance,  the  equations  [22Xx+y≡ 0mod 2, x-2y=0[122X will be represented as [22XA[122X
+  equal to [[1,1],[1,-2]] and the moduli [22Xd[122X equal to [2].[133X
+  
+  [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
+  [10X"equations"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs1 := AffineSemigroupByEquations([[[-2,1]],[3]]);[127X[104X
+    [4X[28X<Affine semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xs2 := AffineSemigroup("equations",[[[1,1]],[3]]);[127X[104X
+    [4X[28X<Affine semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xs1=s2;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-3 AffineSemigroupByInequalities[101X
   
   [29X[2XAffineSemigroupByInequalities[102X( [3XList[103X ) [32X function
   [29X[2XAffineSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
@@ -80,7 +113,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-3 Generators[101X
+  [1X11.1-4 Generators[101X
   
   [29X[2XGenerators[102X( [3XS[103X ) [32X function
   [29X[2XGeneratorsOfAffineSemigroup[102X( [3XS[103X ) [32X function
@@ -94,7 +127,7 @@
     [4X[28X[ [ 0, 1 ], [ 1, 0 ], [ 1, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.1-4 MinimalGenerators[101X
+  [1X11.1-5 MinimalGenerators[101X
   
   [29X[2XMinimalGenerators[102X( [3XS[103X ) [32X function
   [29X[2XMinimalGeneratingSystem[102X( [3XS[103X ) [32X function
@@ -109,7 +142,7 @@
     [4X[28X  [128X[104X
   [4X[32X[104X
   
-  [1X11.1-5 AsAffineSemigroup[101X
+  [1X11.1-6 AsAffineSemigroup[101X
   
   [29X[2XAsAffineSemigroup[102X( [3XS[103X ) [32X function
   
@@ -137,7 +170,7 @@
     [4X[28X32[128X[104X
   [4X[32X[104X
   
-  [1X11.1-6 IsAffineSemigroup[101X
+  [1X11.1-7 IsAffineSemigroup[101X
   
   [29X[2XIsAffineSemigroup[102X( [3XAS[103X ) [32X attribute
   [29X[2XIsAffineSemigroupByGenerators[102X( [3XAS[103X ) [32X attribute
@@ -157,7 +190,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-7 BelongsToAffineSemigroup[101X
+  [1X11.1-8 BelongsToAffineSemigroup[101X
   
   [29X[2XBelongsToAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function
   [29X[2X\in[102X( [3Xv[103X, [3Xa[103X ) [32X operation
@@ -185,7 +218,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X11.1-8 IsFullAffineSemigroup[101X
+  [1X11.1-9 IsFullAffineSemigroup[101X
   
   [29X[2XIsFullAffineSemigroup[102X( [3XS[103X ) [32X function
   
@@ -204,7 +237,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-9 HilbertBasisOfSystemOfHomogeneousEquations[101X
+  [1X11.1-10 HilbertBasisOfSystemOfHomogeneousEquations[101X
   
   [29X[2XHilbertBasisOfSystemOfHomogeneousEquations[102X( [3Xls[103X, [3Xm[103X ) [32X function
   
@@ -230,7 +263,7 @@
   If  we  put  them  in  a  matrix  [22XS[122X can be defined as the set of nonnegative
   integer solutions to [22XAx ge 0[122X.[133X
   
-  [1X11.1-10 HilbertBasisOfSystemOfHomogeneousInequalities[101X
+  [1X11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities[101X
   
   [29X[2XHilbertBasisOfSystemOfHomogeneousInequalities[102X( [3Xls[103X ) [32X function
   
@@ -247,7 +280,7 @@
     [4X[28X[ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.1-11 EquationsOfGroupGeneratedBy[101X
+  [1X11.1-12 EquationsOfGroupGeneratedBy[101X
   
   [29X[2XEquationsOfGroupGeneratedBy[102X( [3XM[103X ) [32X function
   
@@ -260,7 +293,7 @@
     [4X[28X[ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.1-12 BasisOfGroupGivenByEquations[101X
+  [1X11.1-13 BasisOfGroupGivenByEquations[101X
   
   [29X[2XBasisOfGroupGivenByEquations[102X( [3XA[103X, [3Xm[103X ) [32X function
   
