@@ -80,9 +80,9 @@
       <P/>
       The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. Betti elements are primitive, but not the way around in general.
       <Example><![CDATA[
-      gap> s:=NumericalSemigroup(3,5,7);;
-      gap> PrimitiveElementsOfNumericalSemigroup(s);
-      [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> PrimitiveElementsOfNumericalSemigroup(s);
+[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
 ]]></Example>          
     </Description>
   </ManSection>
@@ -101,9 +101,9 @@
       This function is a generalization of the graph associated to <A>n</A>.
       
       <Example><![CDATA[
-      gap> s:=NumericalSemigroup(3,5,7);;
-      gap> ShadedSetOfElementInNumericalSemigroup(10,s);
-      [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> ShadedSetOfElementInNumericalSemigroup(10,s);
+[ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
 ]]></Example>          
     </Description>
   </ManSection>
@@ -121,9 +121,9 @@
       <P/>
       The output is true if <A>S</A> has uniquely presented. The implementation is based on (see <Cite Key="GS-O"></Cite>).
       <Example><![CDATA[
-      gap> s:=NumericalSemigroup(3,5,7);;
-      gap> IsUniquelyPresentedNumericalSemigroup(s);
-      true
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsUniquelyPresentedNumericalSemigroup(s);
+true
 ]]></Example>               
     </Description>
   </ManSection>
@@ -135,9 +135,9 @@
       <P/>
       The output is true if <A>S</A> has a generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented  (see <Cite Key="B-GS-G"></Cite>).
       <Example><![CDATA[
-      gap> s:=NumericalSemigroup(3,5,7);;
-      gap> IsGenericNumericalSemigroup(s);
-      true
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsGenericNumericalSemigroup(s);
+true
 ]]></Example>                                                  
     </Description>
   </ManSection>

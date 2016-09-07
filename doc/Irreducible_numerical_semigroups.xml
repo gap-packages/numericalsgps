@@ -102,8 +102,8 @@ gap> FrobeniusNumber(s);
                         <A>f</A> is an integer greater than or equal to -1. The output is the set of all
                         irreducible numerical semigroups with Frobenius number <A>f</A>.         
                         <Example><![CDATA[
-gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));
-227
+gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));
+20
 ]]></Example>          
                     </Description>
                 </ManSection>

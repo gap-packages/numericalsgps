@@ -38,13 +38,14 @@ gap> Length(Set([s1,s2,s3,s4,s5]));
 ]]></Example>
   </Description>
 </ManSection>
-                <ManSection>
+<!--                <ManSection>
                     <Func Name="AffineSemigroupByEquations" Arg="List"/>
                     <Func Name="AffineSemigroup" Arg="String, List" Label="by equations"/>
                     <Description>
 		      <C>List</C> is a list with two components. The first represents a a matrix with integer coefficients, say <M>A=(a_{ij})</M>, and so it is a list of lists of integers all with the same length. The second component is a list of positive integers, say <M>d=(d_i)</M>, which may be empty. The list <M>d</M> must be of length less than or equal to the length of <M>A</M> (number of rows of <M>A</M>).
           <P/>
-          The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations <M>\begin{array}
+          The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations
+	  <M>\begin{array}
           a_{11}x_1+\cdots+a_{1n}x_n\equiv 0\bmod d_1,\\
           \cdots \\
           a_{k1}x_1+\cdots+a_{kn}x_n\equiv 0\bmod d_k,\\
@@ -67,7 +68,7 @@ gap> s1=s2;
 true
 ]]></Example>
   </Description>
-</ManSection>
+</ManSection> -->
                 <ManSection>
                     <Func Name="AffineSemigroupByInequalities" Arg="List"/>
                     <Func Name="AffineSemigroup" Arg="String, List" Label="by inequalities"/>

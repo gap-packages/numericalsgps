@@ -42,8 +42,8 @@ gap> List(last,s->MinimalGenerators(s));
                         set of numerical semigroups with Frobenius number <A>f</A>.           
 The algorithm implemented is given in <Cite Key="RGGJ04"/>.
                         <Example><![CDATA[
-gap> Length(NumericalSemigroupsWithFrobeniusNumber(20));
-900
+gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
+200
 ]]></Example>          
                     </Description>
                 </ManSection>

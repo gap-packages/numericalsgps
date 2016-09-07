@@ -219,7 +219,7 @@ InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
 
     Info(InfoNumSgps,2,"Using that the semigroup is full.");
 
-    ls:=GeneratorsAS(a);
+    ls:=Generators(a);
     n:=Length(ls);
     one:=[List([1..n],_->1)];
     mat:=TransposedMat(Concatenation(ls,[-v]));
@@ -281,7 +281,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
             return ForAll(b-a,x-> x>=0);
         end;
 
-        ls:=GeneratorsAS(a);
+        ls:=Generators(a);
         n:=Length(ls);
         one:=[List([1..n],_->1)];
         mat:=TransposedMat(Concatenation(ls,[-v]));
@@ -388,7 +388,7 @@ end);
 #         Error("The argument must be an affine semigroup.");
 #     fi;
 
-#     gens:=GeneratorsAS(a);
+#     gens:=Generators(a);
 #     eq:=EquationsOfGroupGeneratedBy(gens);
 #     h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
 #     return ForAll(h, x->BelongsToAffineSemigroup(x,a));
@@ -425,18 +425,18 @@ end);
 #        function(S)
 #  local  basis, eq;
 
-#  if HasGeneratorsAS(S) then
-#     return GeneratorsAS(S);
+#  if HasGenerators(S) then
+#     return Generators(S);
 #   fi;
 #   # REQUERIMENTS: NormalizInterface
 #   if IsAffineSemigroupByEquations(S) then
 #       eq:=EquationsAS(S);
 #       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-#       SetGeneratorsAS(S,basis);
+#       SetGenerators(S,basis);
 #       return basis;
 #   elif IsAffineSemigroupByInequalities(S) then
 #       basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
-#       SetGeneratorsAS(S,basis);
+#       SetGenerators(S,basis);
 #       return basis;
 #   fi;
 # end);

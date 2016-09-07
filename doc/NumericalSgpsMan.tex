@@ -669,8 +669,7 @@ is the semigroup of numerators of all rational numbers in this interval.
   !gapprompt@gap>| !gapinput@NumericalSemigroup("openinterval",[7/5,5/3]);|
   <Numerical semigroup>
   !gapprompt@gap>| !gapinput@SmallElements(last);                         |
-  [ 0, 3, 6, 8 ]
-  !gapprompt@gap>| !gapinput@|
+  [ 0, 3, 6, 8 ] 
 \end{Verbatim}
  }
 
@@ -1448,11 +1447,11 @@ experiment with this conjecture, as defined in \cite{E}.
 
  \texttt{S} is a numerical semigroup. Let $c$, $e$ and $l$ be the conductor, embedding dimension and number of elements smaller than $c$ in \mbox{\texttt{\mdseries\slshape S}}. Returns $e l-c$, which was conjetured by Wilf to be nonnegative. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@l:=NumericalSemigroupsWithGenus(21);;|
+  !gapprompt@gap>| !gapinput@l:=NumericalSemigroupsWithGenus(10);;|
   !gapprompt@gap>| !gapinput@Filtered(l, s->WilfNumberOfNumericalSemigroup(s)<0); |
   [  ]
   !gapprompt@gap>| !gapinput@Maximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));|
-  378
+  70
   !gapprompt@gap>| !gapinput@s := NumericalSemigroup(13,25,37);;|
   !gapprompt@gap>| !gapinput@WilfNumber(s);                     |
   96
@@ -1621,9 +1620,9 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 
  The output is the set of elements $s$ in \mbox{\texttt{\mdseries\slshape S}} such that there exists a minimal solution to $msg\cdot x-msg\cdot y = 0$, such that $x,y$ are factorizations of $s$, and $msg$ is the minimal generating system of \mbox{\texttt{\mdseries\slshape S}}. Betti elements are primitive, but not the way around in general. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-        gap> s:=NumericalSemigroup(3,5,7);;
-        gap> PrimitiveElementsOfNumericalSemigroup(s);
-        [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@PrimitiveElementsOfNumericalSemigroup(s);|
+  [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
 \end{Verbatim}
  }
 
@@ -1644,9 +1643,9 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 
  This function is a generalization of the graph associated to \mbox{\texttt{\mdseries\slshape n}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-        gap> s:=NumericalSemigroup(3,5,7);;
-        gap> ShadedSetOfElementInNumericalSemigroup(10,s);
-        [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@ShadedSetOfElementInNumericalSemigroup(10,s);|
+  [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
 \end{Verbatim}
  }
 
@@ -1672,9 +1671,9 @@ arrangement of the components of the pairs in it).
 
  The output is true if \mbox{\texttt{\mdseries\slshape S}} has uniquely presented. The implementation is based on (see \cite{GS-O}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-        gap> s:=NumericalSemigroup(3,5,7);;
-        gap> IsUniquelyPresentedNumericalSemigroup(s);
-        true
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@IsUniquelyPresentedNumericalSemigroup(s);|
+  true
 \end{Verbatim}
  }
 
@@ -1694,9 +1693,9 @@ arrangement of the components of the pairs in it).
  The output is true if \mbox{\texttt{\mdseries\slshape S}} has a generic presentation, that is, in every minimal relation all generators
 occur. These semigroups are uniquely presented (see \cite{B-GS-G}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-        gap> s:=NumericalSemigroup(3,5,7);;
-        gap> IsGenericNumericalSemigroup(s);
-        true
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@IsGenericNumericalSemigroup(s);|
+  true
 \end{Verbatim}
  }
 
@@ -1942,8 +1941,8 @@ containing it.
  \mbox{\texttt{\mdseries\slshape f}} is an non zero integer greater than or equal to -1. The output is the set of
 numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. The algorithm implemented is given in \cite{RGGJ04}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@Length(NumericalSemigroupsWithFrobeniusNumber(20));|
-  900
+  !gapprompt@gap>| !gapinput@Length(NumericalSemigroupsWithFrobeniusNumber(15));|
+  200
 \end{Verbatim}
  }
 
@@ -2269,8 +2268,8 @@ most four generators (see \cite{RGS04}).
  \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all
 irreducible numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(39));|
-  227
+  !gapprompt@gap>| !gapinput@Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));|
+  20
 \end{Verbatim}
  }
 
@@ -4659,14 +4658,14 @@ plane curve with one place at infinity.
  \mbox{\texttt{\mdseries\slshape l}} is a $\delta$-sequence. Computes a curve in the variables X(Rationals,1) and X(Rationals,2)
 whose semigroup of values is generated by the \mbox{\texttt{\mdseries\slshape l}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");; y:=X(Rationals,"y");;|
   !gapprompt@gap>| !gapinput@CurveAssociatedToDeltaSequence([24,16,28,7]);|
-  x_2^24-8*x^2*x_2^21+28*x^4*x_2^18-56*x^6*x_2^15-4*x*x_2^20+70*x^8*x_2^12+24*x^\
-  3*x_2^17-56*x^10*x_2^9-60*x^5*x_2^14+28*x^12*x_2^6+80*x^7*x_2^11+6*x^2*x_2^16-\
-  8*x^14*x_2^3-60*x^9*x_2^8-24*x^4*x_2^13+x^16+24*x^11*x_2^5+36*x^6*x_2^10-4*x^1\
-  3*x_2^2-24*x^8*x_2^7-4*x^3*x_2^12+6*x^10*x_2^4+8*x^5*x_2^9-4*x^7*x_2^6+x^4*x_2\
-  ^8-x_2^3+x^2
+  y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
+  10*y^9-60*x^5*y^14+28*x^12*y^6+80*x^7*y^11+6*x^2*y^16-8*x^14*y^3-60*x^9*y^8-24\
+  *x^4*y^13+x^16+24*x^11*y^5+36*x^6*y^10-4*x^13*y^2-24*x^8*y^7-4*x^3*y^12+6*x^10\
+  *y^4+8*x^5*y^9-4*x^7*y^6+x^4*y^8-y^3+x^2
   !gapprompt@gap>| !gapinput@SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");|
-  [ [ 24, 16, 28, 7 ], [ x_2, x_2^3-x_1^2, x_2^6-2*x_1^2*x_2^3+x_1^4-x_1*x_2^2 ] ]
+  [ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
 \end{Verbatim}
  }
 
@@ -4820,46 +4819,17 @@ individual elements. The output is the affine semigroup spanned by \texttt{List}
   <Affine semigroup in 2 dimensional space, with 3 generators>
   !gapprompt@gap>| !gapinput@s2 := AffineSemigroupByGenerators([[1,3],[7,2],[1,5]]);;|
   !gapprompt@gap>| !gapinput@s3 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;|
-  !gapprompt@gap>| !gapinput@s4 := AffineSemigroup([1,3],[7,2],[1,5]);;              |
-  !gapprompt@gap>| !gapinput@s5 := AffineSemigroup([[1,3],[7,2],[1,5]]);;             |
-  !gapprompt@gap>| !gapinput@Length(Set([s1,s2,s3,s4,s5]));             |
+  !gapprompt@gap>| !gapinput@s4 := AffineSemigroup([1,3],[7,2],[1,5]);;|
+  !gapprompt@gap>| !gapinput@s5 := AffineSemigroup([[1,3],[7,2],[1,5]]);;|
+  !gapprompt@gap>| !gapinput@Length(Set([s1,s2,s3,s4,s5]));|
   1
 \end{Verbatim}
  }
 
- 
-
-\subsection{\textcolor{Chapter }{AffineSemigroupByEquations}}
-\logpage{[ 11, 1, 2 ]}\nobreak
-\hyperdef{L}{X855C8667830AEDDC}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroupByEquations({\mdseries\slshape List})\index{AffineSemigroupByEquations@\texttt{AffineSemigroupByEquations}}
-\label{AffineSemigroupByEquations}
-}\hfill{\scriptsize (function)}}\\
-\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroup({\mdseries\slshape String, List})\index{AffineSemigroup@\texttt{AffineSemigroup}!by equations}
-\label{AffineSemigroup:by equations}
-}\hfill{\scriptsize (function)}}\\
-
-
- \texttt{List} represents a list of equations. We represent the equations as a list of lists
-of integers, all with the same length. Every list is a row of the matrix of
-coefficients of the system of equations. Returns the (full) affine semigroup
-defined by the system $A * X=0 \mod md $, where the rows of $A$ are the elements of \texttt{List}. 
-
- \texttt{String} does not need to be present. When it is present, it must be \texttt{"equations"}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s1 := AffineSemigroupByEquations([[[-2,1]],[3]]);            |
-  <Affine semigroup>
-  !gapprompt@gap>| !gapinput@s2 := AffineSemigroup("equations",[[[-2,1]],[3]]); |
-  <Affine semigroup>
-  !gapprompt@gap>| !gapinput@s1=s2;|
-  true
-\end{Verbatim}
- }
-
- 
+  
 
 \subsection{\textcolor{Chapter }{AffineSemigroupByInequalities}}
-\logpage{[ 11, 1, 3 ]}\nobreak
+\logpage{[ 11, 1, 2 ]}\nobreak
 \hyperdef{L}{X7846AD1081C14EF1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AffineSemigroupByInequalities({\mdseries\slshape List})\index{AffineSemigroupByInequalities@\texttt{AffineSemigroupByInequalities}}
 \label{AffineSemigroupByInequalities}
@@ -4869,14 +4839,15 @@ defined by the system $A * X=0 \mod md $, where the rows of $A$ are the elements
 }\hfill{\scriptsize (function)}}\\
 
 
- \texttt{List} represents the inequalities: recall that for the equations in congruences, if
-we arrange them so that they are the first ones in the list, we provide the
-corresponding moduli in a list. So for instance, the equations $x+y\equiv 0\bmod 2,\ x-2y=0$ will be represented as [[1,1],[1,-2]] and the moduli [2]. Returns the (full)
-affine semigroup defined by the system $List*X\ge 0$ over the nonnegative integers. 
+ \texttt{List} is a list of lists (a matrix) of integers that represents a set of
+inequalities. 
+
+ Returns the (normal) affine semigroup of nonegative integer solutions of the
+system of inequalities $List\times X\ge 0$. 
 
  \texttt{String} does not need to be present. When it is present, it must be \texttt{"inequalities"}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);               |
+  !gapprompt@gap>| !gapinput@a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);|
   <Affine semigroup>
   !gapprompt@gap>| !gapinput@a2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);|
   <Affine semigroup>
@@ -4888,7 +4859,7 @@ affine semigroup defined by the system $List*X\ge 0$ over the nonnegative intege
  
 
 \subsection{\textcolor{Chapter }{Generators (for affine semigroup)}}
-\logpage{[ 11, 1, 4 ]}\nobreak
+\logpage{[ 11, 1, 3 ]}\nobreak
 \hyperdef{L}{X84FDF85D7CDEDF3E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Generators({\mdseries\slshape S})\index{Generators@\texttt{Generators}!for affine semigroup}
 \label{Generators:for affine semigroup}
@@ -4912,7 +4883,7 @@ affine semigroup defined by the system $List*X\ge 0$ over the nonnegative intege
  
 
 \subsection{\textcolor{Chapter }{MinimalGenerators (for affine semigroup)}}
-\logpage{[ 11, 1, 5 ]}\nobreak
+\logpage{[ 11, 1, 4 ]}\nobreak
 \hyperdef{L}{X7ED1549486C251CA}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalGenerators({\mdseries\slshape S})\index{MinimalGenerators@\texttt{MinimalGenerators}!for affine semigroup}
 \label{MinimalGenerators:for affine semigroup}
@@ -4937,7 +4908,7 @@ affine semigroup defined by the system $List*X\ge 0$ over the nonnegative intege
  
 
 \subsection{\textcolor{Chapter }{AsAffineSemigroup}}
-\logpage{[ 11, 1, 6 ]}\nobreak
+\logpage{[ 11, 1, 5 ]}\nobreak
 \hyperdef{L}{X844806D97B4781B5}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsAffineSemigroup({\mdseries\slshape S})\index{AsAffineSemigroup@\texttt{AsAffineSemigroup}}
 \label{AsAffineSemigroup}
@@ -4971,7 +4942,7 @@ affine semigroup defined by the system $List*X\ge 0$ over the nonnegative intege
  
 
 \subsection{\textcolor{Chapter }{IsAffineSemigroup}}
-\logpage{[ 11, 1, 7 ]}\nobreak
+\logpage{[ 11, 1, 6 ]}\nobreak
 \hyperdef{L}{X7A2902207BAA3936}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAffineSemigroup({\mdseries\slshape AS})\index{IsAffineSemigroup@\texttt{IsAffineSemigroup}}
 \label{IsAffineSemigroup}
@@ -5003,7 +4974,7 @@ semigroup.
  
 
 \subsection{\textcolor{Chapter }{BelongsToAffineSemigroup}}
-\logpage{[ 11, 1, 8 ]}\nobreak
+\logpage{[ 11, 1, 7 ]}\nobreak
 \hyperdef{L}{X851788D781A13C50}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToAffineSemigroup({\mdseries\slshape v, a})\index{BelongsToAffineSemigroup@\texttt{BelongsToAffineSemigroup}}
 \label{BelongsToAffineSemigroup}
@@ -5037,7 +5008,7 @@ inequalities.
  
 
 \subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
-\logpage{[ 11, 1, 9 ]}\nobreak
+\logpage{[ 11, 1, 8 ]}\nobreak
 \hyperdef{L}{X82FCB89B80D42205}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
 \label{IsFullAffineSemigroup}
@@ -5061,7 +5032,7 @@ further use.
  
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousEquations}}
-\logpage{[ 11, 1, 10 ]}\nobreak
+\logpage{[ 11, 1, 9 ]}\nobreak
 \hyperdef{L}{X7D4D017A79AD98E2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
 \label{HilbertBasisOfSystemOfHomogeneousEquations}
@@ -5083,7 +5054,7 @@ give an affine semigroup is by a set of homogeneous inequalities, and we can
 represent these inequalities by its coefficients. If we put them in a matrix $S$ can be defined as the set of nonnegative integer solutions to $Ax \ge 0$. 
 
 \subsection{\textcolor{Chapter }{HilbertBasisOfSystemOfHomogeneousInequalities}}
-\logpage{[ 11, 1, 11 ]}\nobreak
+\logpage{[ 11, 1, 10 ]}\nobreak
 \hyperdef{L}{X825B1CD37B0407A6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
 \label{HilbertBasisOfSystemOfHomogeneousInequalities}
@@ -5103,7 +5074,7 @@ nonnegative integer solutions to $Ax\ge 0$.
  
 
 \subsection{\textcolor{Chapter }{EquationsOfGroupGeneratedBy}}
-\logpage{[ 11, 1, 12 ]}\nobreak
+\logpage{[ 11, 1, 11 ]}\nobreak
 \hyperdef{L}{X8307A0597864B098}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EquationsOfGroupGeneratedBy({\mdseries\slshape M})\index{EquationsOfGroupGeneratedBy@\texttt{EquationsOfGroupGeneratedBy}}
 \label{EquationsOfGroupGeneratedBy}
@@ -5121,7 +5092,7 @@ of \mbox{\texttt{\mdseries\slshape M}}: $Ax=0\in \mathbb Z_{n_1}\times \cdots \t
  
 
 \subsection{\textcolor{Chapter }{BasisOfGroupGivenByEquations}}
-\logpage{[ 11, 1, 13 ]}\nobreak
+\logpage{[ 11, 1, 12 ]}\nobreak
 \hyperdef{L}{X7A1CE5A98425CEA1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BasisOfGroupGivenByEquations({\mdseries\slshape A, m})\index{BasisOfGroupGivenByEquations@\texttt{BasisOfGroupGivenByEquations}}
 \label{BasisOfGroupGivenByEquations}
