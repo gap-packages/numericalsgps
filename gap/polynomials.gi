@@ -62,9 +62,9 @@ if Set(coef)<>Set([0,1]) then
 fi;
 c:=Length(coef);
 gaps:=Filtered([0..c-1], i->coef[i+1]<>0);
-Print("gaps ", gaps,"\n");
+#Print("gaps ", gaps,"\n");
 small:=Difference([0..c],gaps);
-Print("small ",small,"\n");
+#Print("small ",small,"\n");
 
 return RepresentsSmallElementsOfNumericalSemigroup(small);
 end);
