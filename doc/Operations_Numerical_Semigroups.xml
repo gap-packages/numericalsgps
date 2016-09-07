@@ -25,7 +25,8 @@
   </ManSection>
 
   <ManSection>
-    <Func Name="QuotientOfNumericalSemigroup" Arg="S, n"/>
+    <Func Name="QuotientOfNumericalSemigroup" Arg="S, n"></Func>
+    <Oper Name="\/" Arg="S, n" Label="quotient of numerical semigroup"/>
     <Description>
       <A>S</A> is a numerical semigroup and <A>n</A> is an integer.
       Computes the quotient of <A>S</A> by <A>n</A>, that is, the set <M>\{ x\in {\mathbb N}\ |\  nx \in S\}</M>, which is again a numerical semigroup.

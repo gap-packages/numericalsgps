@@ -25,9 +25,8 @@
   
   [29X[2XIsMEDNumericalSemigroup[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns true if [3XS[103X is a MED numerical semigroup and false otherwise.[133X
+  [33X[0;0Y[3XS[103X  is  a numerical semigroup. Returns true if [3XS[103X is a MED numerical semigroup
+  and false otherwise.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsMEDNumericalSemigroup(NumericalSemigroup(3,5,7)); [127X[104X
@@ -40,9 +39,7 @@
   
   [29X[2XMEDNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns the MED closure of [3XS[103X.[133X
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the MED closure of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XMEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); [127X[104X
@@ -55,9 +52,8 @@
   
   [29X[2XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a MED numerical semigroup.[133X
-  
-  [33X[0;0YReturns the minimal MED generating system of [3XS[103X.[133X
+  [33X[0;0Y[3XS[103X is a MED numerical semigroup. Returns the minimal MED generating system of
+  [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup( [127X[104X
@@ -82,9 +78,8 @@
   
   [29X[2XIsArfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns true if [3XS[103X is an Arf numerical semigroup and false otherwise.[133X
+  [33X[0;0Y[3XS[103X  is a numerical semigroup. Returns true if [3XS[103X is an Arf numerical semigroup
+  and false otherwise.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27X IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); [127X[104X
@@ -99,9 +94,7 @@
   
   [29X[2XArfNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns the Arf closure of [3XS[103X.[133X
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the Arf closure of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); [127X[104X
@@ -114,9 +107,8 @@
   
   [29X[2XMinimalArfGeneratingSystemOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is an Arf numerical semigroup.[133X
-  
-  [33X[0;0YReturns the minimal Arf generating system of [3XS[103X.[133X
+  [33X[0;0Y[3XS[103X  is  an Arf numerical semigroup. Returns the minimal Arf generating system
+  of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XMinimalArfGeneratingSystemOfArfNumericalSemigroup( [127X[104X
@@ -160,9 +152,8 @@
   
   [29X[2XIsSaturatedNumericalSemigroup[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns true if [3XS[103X is a saturated numerical semigroup and false otherwise.[133X
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup.  Returns  true if [3XS[103X is a saturated numerical
+  semigroup and false otherwise.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));[127X[104X
@@ -175,9 +166,7 @@
   
   [29X[2XSaturatedNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns the saturated closure of [3XS[103X.[133X
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the saturated closure of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XSaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));[127X[104X

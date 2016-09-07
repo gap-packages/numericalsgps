@@ -28,7 +28,7 @@ x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
 
         <Func Arg="f" Name="IsNumericalSemigroupPolynomial"></Func>
         <Description>
-            <A>f</A> is polynomial in one variable. The output is true if there exists a numerical semigroup <M>S</M> such that <A>f</A> equals
+            <A>f</A> is a polynomial in one variable. The output is true if there exists a numerical semigroup <M>S</M> such that <A>f</A> equals
 						<M>(1-x)H_S(x)</M>, that is, the polynomial associated to <M>S</M> (false otherwise).
 
             <Example><![CDATA[
