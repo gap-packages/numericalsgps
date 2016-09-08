@@ -90,6 +90,18 @@ gap> List(genus8, s -> IsIrreducibleNumericalSemigroup(s));
   false, false, false, false, false, true, false, false, false, false, true, 
   false, false, false, false, true, false, true, false, true, false, false, 
   true, true ]
+gap> List(genus8, s -> WilfNumber(s)+EliahouNumber(s));
+[ 0, 12, 15, 24, 35, 48, 63, 80, 64, 8, 15, 18, 28, 40, 10, 12, 21, 32, 12, 
+  21, 32, 21, 32, 32, 29, 40, 4, 10, 18, 29, 48, 5, 18, 20, 6, 20, 32, 5, 6, 
+  6, 6, 4, 13, 20, 20, 0, 6, 20, 26, 8, 6, 8, 5, 12, 6, 18, 2, 6, 12, 6, 16, 
+  16, 16, 7, 0, 10, 0 ]
+  
+gap> a := AffineSemigroupByGenerators([5,3,1],[2,7,4],[3,1,5]); 
+<Affine semigroup in 3 dimensional space, with 3 generators>
+gap> MinimalPresentationOfAffineSemigroup(a);                  
+[  ]
+gap> BettiElementsOfAffineSemigroup(a);
+[  ]
 
 #############################################################################
 #############################################################################
@@ -280,7 +292,7 @@ true
 gap> 13 in S;
 true
 
-#The_definitions.xml
+##The_definitions.xml
 
 gap> S := NumericalSemigroup("modular", 7,53);
 <Modular numerical semigroup satisfying 7x mod 53 <= x >
@@ -331,20 +343,19 @@ gap> FirstElementsOfNumericalSemigroup(2,NumericalSemigroup(3,5,7));
 gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 [ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
 
-gap> S := NumericalSemigroup("modular", 5,53);
-<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+gap> AperyList(S,12);                              
+[ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
 
-gap> S := NumericalSemigroup("modular", 5,53);
-<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroup(S);
 [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
 gap> AperyList(NumericalSemigroup(5,7,11));                           
 [ 0, 11, 7, 18, 14 ]
 
-gap>  s:=NumericalSemigroup(10,13,19,27);
-<Numerical semigroup with 4 generators>
+gap>  s:=NumericalSemigroup(10,13,19,27);;
 gap> AperyListOfNumericalSemigroupWRTInteger(s,11);
 [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
 gap> Length(last);
@@ -355,6 +366,8 @@ gap> AperyListOfNumericalSemigroupWRTElement(s,10);
 [ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
 gap> Length(last);
 10
+gap> AperyList(s,10);
+[ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
 
 gap> s:=NumericalSemigroup(3,7);;
 gap> AperyListOfNumericalSemigroupWRTElement(s,10);

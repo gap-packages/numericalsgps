@@ -1050,20 +1050,25 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupWRTElement}}
+\subsection{\textcolor{Chapter }{AperyList (for numerical semigroup with respect to element)}}
 \logpage{[ 3, 1, 6 ]}\nobreak
-\hyperdef{L}{X86C699F2800F9ED0}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTElement({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
+\hyperdef{L}{X7CB24F5E84793BE1}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyList({\mdseries\slshape S, n})\index{AperyList@\texttt{AperyList}!for numerical semigroup with respect to element}
+\label{AperyList:for numerical semigroup with respect to element}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTElement({\mdseries\slshape S, n})\index{AperyListOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
 \label{AperyListOfNumericalSemigroupWRTElement}
 }\hfill{\scriptsize (operation)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is a positive element of \mbox{\texttt{\mdseries\slshape S}}. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}. It contains for every $i\in \{0,\ldots,\mbox{\texttt{\mdseries\slshape m}}-1\}$, in the $i+1$th position, the smallest element in the semigroup congruent with $i$ modulo \mbox{\texttt{\mdseries\slshape m}}. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape n}} is a positive element of \mbox{\texttt{\mdseries\slshape S}}. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape n}}. It contains for every $i\in \{0,\ldots,\mbox{\texttt{\mdseries\slshape n}}-1\}$, in the $i+1$th position, the smallest element in the semigroup congruent with $i$ modulo \mbox{\texttt{\mdseries\slshape n}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
-  <Modular numerical semigroup satisfying 5x mod 53 <= x >
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTElement(S,12);|
   [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+  !gapprompt@gap>| !gapinput@AperyList(S,12);                              |
+  [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+  g
 \end{Verbatim}
  }
 
@@ -1082,8 +1087,7 @@ semigroup is given.
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. It computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to the multiplicity of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);|
-  <Modular numerical semigroup satisfying 5x mod 53 <= x >
+  !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroup(S);|
   [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
   !gapprompt@gap>| !gapinput@AperyList(NumericalSemigroup(5,7,11));                           |
@@ -1093,20 +1097,24 @@ semigroup is given.
 
  
 
-\subsection{\textcolor{Chapter }{AperyListOfNumericalSemigroupWRTInteger}}
+\subsection{\textcolor{Chapter }{AperyList (for numerical semigroup with respect to integer)}}
 \logpage{[ 3, 1, 8 ]}\nobreak
-\hyperdef{L}{X877266A18524982E}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTInteger({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTInteger@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Integer}}
+\hyperdef{L}{X7D06B00D7C305C64}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyList({\mdseries\slshape S, n})\index{AperyList@\texttt{AperyList}!for numerical semigroup with respect to integer}
+\label{AperyList:for numerical semigroup with respect to integer}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfNumericalSemigroupWRTInteger({\mdseries\slshape S, m})\index{AperyListOfNumericalSemigroupWRTInteger@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Integer}}
 \label{AperyListOfNumericalSemigroupWRTInteger}
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is an integer. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}, that is, the set of elements $x$ in \mbox{\texttt{\mdseries\slshape S}} such that $x-$\mbox{\texttt{\mdseries\slshape m}} is not in \mbox{\texttt{\mdseries\slshape S}}. If \mbox{\texttt{\mdseries\slshape m}} is an element in \mbox{\texttt{\mdseries\slshape S}}, then the output, as sets, is the same as \mbox{\texttt{\mdseries\slshape AperyListOfNumericalSemigroupWRTInteger}}, though without side effects, in the sense that this information is no longer
-used by the package. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup and \mbox{\texttt{\mdseries\slshape m}} is an integer. Computes the Ap{\a'e}ry list of \mbox{\texttt{\mdseries\slshape S}} with respect to \mbox{\texttt{\mdseries\slshape m}}, that is, the set of elements $x$ in \mbox{\texttt{\mdseries\slshape S}} such that $x-$\mbox{\texttt{\mdseries\slshape m}} is not in \mbox{\texttt{\mdseries\slshape S}}. If \mbox{\texttt{\mdseries\slshape m}} is an element in \mbox{\texttt{\mdseries\slshape S}}, then the output of \texttt{AperyListOfNumericalSemigroupWRTInteger}, as sets, is the same as \texttt{AperyListOfNumericalSemigroupWRTElement}, though without side effects, in the sense that this information is no longer
+used by the package. The output of \texttt{AperyList} is the same as \texttt{AperyListOfNumericalSemigroupWRTElement}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(10,13,19,27);|
-  <Numerical semigroup with 4 generators>
+  !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(10,13,19,27);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTInteger(s,11);|
+  [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+  !gapprompt@gap>| !gapinput@AperyList(s,11);                              |
   [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
   !gapprompt@gap>| !gapinput@Length(last);|
   18
@@ -1116,6 +1124,8 @@ used by the package.
   [ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
   !gapprompt@gap>| !gapinput@Length(last);|
   10
+  !gapprompt@gap>| !gapinput@AperyList(s,10);|
+  [ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
 \end{Verbatim}
  }
 
