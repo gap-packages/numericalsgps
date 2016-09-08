@@ -137,19 +137,21 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 
 
                 <ManSection>
-                    <Oper Name="AperyListOfNumericalSemigroupWRTElement" Arg="S, m"/>
+                    <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to element"/>
+                    <Oper Name="AperyListOfNumericalSemigroupWRTElement" Arg="S, n"/>
                     <Description>
-                        <A>S</A> is a numerical semigroup and <A>m</A> is a positive element of
-                        <A>S</A>. Computes the Apéry list of <A>S</A> with respect to <A>m</A>. It contains for
-                        every <M>i\in \{0,\ldots,<A>m</A>-1\}</M>, in the <M>i+1</M>th position,
-                        the smallest element in the semigroup congruent with <M>i</M> modulo <A>m</A>.
+                        <A>S</A> is a numerical semigroup and <A>n</A> is a positive element of
+                        <A>S</A>. Computes the Apéry list of <A>S</A> with respect to <A>n</A>. It contains for
+                        every <M>i\in \{0,\ldots,<A>n</A>-1\}</M>, in the <M>i+1</M>th position,
+                        the smallest element in the semigroup congruent with <M>i</M> modulo <A>n</A>.
 
                         <Example><![CDATA[
-gap> S := NumericalSemigroup("modular", 5,53);
-<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
-]]></Example>
+gap> AperyList(S,12);                              
+[ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+g]]></Example>
                     </Description>
                 </ManSection>
                 <ManSection>
@@ -158,8 +160,7 @@ gap> AperyListOfNumericalSemigroupWRTElement(S,12);
                     <Description>
                         <A>S</A> is a numerical semigroup. It computes the Apéry list of <A>S</A> with respect to the multiplicity of <A>S</A>.
                         <Example><![CDATA[
-gap> S := NumericalSemigroup("modular", 5,53);
-<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroup(S);
 [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
 gap> AperyList(NumericalSemigroup(5,7,11));                           
@@ -170,19 +171,21 @@ gap> AperyList(NumericalSemigroup(5,7,11));
 
 
                 <ManSection>
+                    <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to integer"/>
                     <Func Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
                     <Description>
                         <A>S</A> is a numerical semigroup and <A>m</A> is an integer. 
-						Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the
-						set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>.
-						If <A>m</A> is an element in <A>S</A>, then the output, as sets, is the same as <A>AperyListOfNumericalSemigroupWRTInteger</A>,
-						though without side effects,
-						in the sense that this information is no longer used by the package.
+			Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the
+			set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>.
+			If <A>m</A> is an element in <A>S</A>, then the output of <C>AperyListOfNumericalSemigroupWRTInteger</C>, as sets, is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>,
+			though without side effects,
+			in the sense that this information is no longer used by the package. The output of <C>AperyList</C> is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>.
 
                         <Example><![CDATA[
-gap>  s:=NumericalSemigroup(10,13,19,27);
-<Numerical semigroup with 4 generators>
+gap>  s:=NumericalSemigroup(10,13,19,27);;
 gap> AperyListOfNumericalSemigroupWRTInteger(s,11);
+[ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+gap> AperyList(s,11);                              
 [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
 gap> Length(last);
 18
@@ -192,6 +195,8 @@ gap> AperyListOfNumericalSemigroupWRTElement(s,10);
 [ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
 gap> Length(last);
 10
+gap> AperyList(s,10);
+[ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
 ]]></Example>
                     </Description>
                 </ManSection>

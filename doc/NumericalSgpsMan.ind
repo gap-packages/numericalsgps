@@ -38,6 +38,10 @@
   \item \texttt  {ANumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {With}\discretionary {-}{}{}\texttt  {Pseudo}\discretionary {-}{}{}\texttt  {Frobenius}\discretionary {-}{}{}\texttt  {Numbers}, 
 		\hyperpage{36}
   \item \texttt  {AperyList}
+    \subitem for numerical semigroup with respect to element, 
+		\hyperpage{20}
+    \subitem for numerical semigroup with respect to integer, 
+		\hyperpage{20}
     \subitem for numerical semigroup with respect to multiplicity, 
 		\hyperpage{20}
   \item \texttt  {Apery}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Element}, 
@@ -315,12 +319,12 @@
   \indexspace
 
   \item \texttt  {KunzCoordinatesOfNumericalSemigroup}, \hyperpage{21}
-  \item \texttt  {KunzPolytope}, \hyperpage{21}
+  \item \texttt  {KunzPolytope}, \hyperpage{22}
 
   \indexspace
 
   \item \texttt  {Lattice}\discretionary {-}{}{}\texttt  {Path}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {To}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{23}
+		\hyperpage{24}
   \item \texttt  {Lengths}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{59}
   \item \texttt  {Lengths}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Factorizations}\discretionary {-}{}{}\texttt  {Integer}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {List}, 
@@ -506,8 +510,8 @@
 		\hyperpage{45}
   \item \texttt  {SmallElementsOfNumericalSemigroup}, \hyperpage{19}
   \item \texttt  {SpecialGaps}
-    \subitem for numerical semigroup, \hyperpage{24}
-  \item \texttt  {SpecialGapsOfNumericalSemigroup}, \hyperpage{24}
+    \subitem for numerical semigroup, \hyperpage{25}
+  \item \texttt  {SpecialGapsOfNumericalSemigroup}, \hyperpage{25}
   \item \texttt  {Star}\discretionary {-}{}{}\texttt  {Closure}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{52}
   \item \texttt  {SubtractIdealsOfNumericalSemigroup}, \hyperpage{46}
