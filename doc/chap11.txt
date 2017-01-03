@@ -355,7 +355,19 @@
   [33X[0;0YThe  main  difference  with [10XMinimalPresentationOfAffineSemigroup[110X is that the
   matrix [3XM[103X can have repeated columns and these are not treated as a set.[133X
   
-  [1X11.3-2 MinimalPresentationOfAffineSemigroup[101X
+  [1X11.3-2 CanonicalBasisOfKernelCongruence[101X
+  
+  [29X[2XCanonicalBasisOfKernelCongruence[102X( [3XM[103X, [3XOrd[103X ) [32X function
+  
+  [33X[0;0Y[3XM[103X  is matrix with nonnegative integer coefficients, [3XOrd[103X a term ordering. The
+  output  is a canonical bases of the congruence [22X{(x,y)∣ xM=yM}[122X (see [RG99a]).
+  This corresponds with the exponents of the Gröbner basis of the kernel ideal
+  of the morphism [22Xx_i↦ Y^m_i[122X, with [22Xm_i[122X the [22Xi[122Xth row of [22XM[122X.[133X
+  
+  [33X[0;0YAccespted  term  orderings  are  lexicographic ([3X"lex"[103X), graded lexicographic
+  ([3X"grlex"[103X) and reversed graded lexicographic ([3X"grevlex"[103X).[133X
+  
+  [1X11.3-3 MinimalPresentationOfAffineSemigroup[101X
   
   [29X[2XMinimalPresentationOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -380,7 +392,7 @@
     [4X[28X[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-3 BettiElementsOfAffineSemigroup[101X
+  [1X11.3-4 BettiElementsOfAffineSemigroup[101X
   
   [29X[2XBettiElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -395,14 +407,14 @@
     [4X[28X[ [ 2, 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-4 ShadedSetOfElementInAffineSemigroup[101X
+  [1X11.3-5 ShadedSetOfElementInAffineSemigroup[101X
   
   [29X[2XShadedSetOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function
   
   [33X[0;0Y[3Xa[103X  is an affine semigroup and [3Xv[103X is an element in [3Xa[103X. This is a translation to
   affine semigroups of [10XShadedSetOfElementInNumericalSemigroup[110X ([14X4.1-5[114X).[133X
   
-  [1X11.3-5 IsGenericAffineSemigroup[101X
+  [1X11.3-6 IsGenericAffineSemigroup[101X
   
   [29X[2XIsGenericAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -410,7 +422,7 @@
   
   [33X[0;0YThe same as [10XIsGenericNumericalSemigroup[110X ([14X4.2-2[114X) but for affine semigroups.[133X
   
-  [1X11.3-6 IsUniquelyPresentedAffineSemigroup[101X
+  [1X11.3-7 IsUniquelyPresentedAffineSemigroup[101X
   
   [29X[2XIsUniquelyPresentedAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -419,7 +431,7 @@
   [33X[0;0YThe  same  as  [10XIsUniquelyPresentedNumericalSemigroup[110X  ([14X4.2-1[114X) but for affine
   semigroups.[133X
   
-  [1X11.3-7 PrimitiveElementsOfAffineSemigroup[101X
+  [1X11.3-8 PrimitiveElementsOfAffineSemigroup[101X
   
   [29X[2XPrimitiveElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   

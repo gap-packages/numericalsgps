@@ -557,7 +557,7 @@ end);
 # nonnegative integer coefficients
 ############################################################
 InstallMethod(GeneratorsOfKernelCongruence,
-	"Computes the minimal presentation of an affine semigroup",
+  "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
 	[IsRectangularTable],1,
 	function( m )
 
@@ -605,6 +605,65 @@ InstallMethod(GeneratorsOfKernelCongruence,
                  EliminationOrdering(List([1..dim],i->X(Rationals,i+ed))));
     rgb:=Filtered(rgb,
                  q->ForAll([1..dim], i->DegreeIndeterminate(q,i+ed)=0));
+    candidates:=Set(rgb,q->bintopair(q));
+    return candidates;
+end);
+
+############################################################
+# computes a canonical basis of the kernel congruence
+# of the monoid morphism associated to the matrix m with
+# nonnegative integer coefficients wrt the term ordering
+# the kernel is the pairs (x,y) such that xm=ym
+############################################################
+InstallMethod(CanonicalBasisOfKernelCongruence,
+	"Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
+	[IsRectangularTable, IsTermOrdering],1,
+  function( m, ord )
+
+    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+          R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
+          pres,c, rclass;
+
+
+    ##computes the s degree of a monomial in the semigroup ideal
+    sdegree:=function(m)
+        local exp;
+        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
+        return exp*msg;
+    end;
+
+    bintopair:=function(p)
+        local m1,m2, d1, d2;
+        m1:=LeadingMonomialOfPolynomial(p, ord);
+        m2:=m1-p;
+        d1:=List([1..ed], i->DegreeIndeterminate(m1,i));;
+        d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
+        return [d1,d2];
+    end;
+
+    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+        Error("The argument must be a matrix of nonnegative integers.");
+    fi;
+
+    msg:=ShallowCopy(m);
+    ed:=Length(msg);
+    if ed=0 then
+        return [];
+    fi;
+    zero:=List([1..ed],_->0);
+    dim:=Length(msg[1]);
+    vars:=List([1..ed+dim],i->X(Rationals,i));
+    R:=PolynomialRing(Rationals,vars);
+    p:=List([1..ed], i->X(Rationals,i)-
+            Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
+    rgb:=ReducedGroebnerBasis( p,
+                 EliminationOrdering(List([1..dim],i->X(Rationals,i+ed))));
+    rgb:=Filtered(rgb,
+                 q->ForAll([1..dim], i->DegreeIndeterminate(q,i+ed)=0));
+		if rgb = [] then
+			return [];
+		fi;
+		rgb:=ReducedGroebnerBasis(rgb,ord);
     candidates:=Set(rgb,q->bintopair(q));
     return candidates;
 end);
@@ -1213,7 +1272,7 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
 
     if LoadPackage("singular")=true then
         ReadPackage("numericalsgps/gap/affine-extra-s.gi");
-        ReadPackage("numericalsgps/gap/polynomials-extra-s.gd");        
+        ReadPackage("numericalsgps/gap/polynomials-extra-s.gd");
         ReadPackage("numericalsgps/gap/polynomials-extra-s.gi");
         NumSgpsCanUseSingular:=true;
         if NumSgpsCanUse4ti2 then

@@ -336,6 +336,16 @@ gap> Generators(last);
     </Description>
   </ManSection>
 
+  <ManSection>
+    <Func Arg="M, Ord" Name="CanonicalBasisOfKernelCongruence"></Func>
+    <Description>
+      <A>M</A> is matrix with nonnegative integer coefficients, <A>Ord</A> a term ordering.
+      The output is a canonical bases of the congruence <M>\{(x,y)\mid xM=yM\}</M> (see <Cite Key="RGS99"></Cite>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <M>x_i\mapsto Y^{m_i}</M>, with <M>m_i</M> the <M>i</M>th row of <M>M</M>.
+  <P/>
+    Accespted term orderings are lexicographic (<A>"lex"</A>), graded lexicographic (<A>"grlex"</A>) and reversed graded lexicographic (<A>"grevlex"</A>).
+    </Description>
+  </ManSection>
+
 
   <ManSection>
     <Func Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Func>
