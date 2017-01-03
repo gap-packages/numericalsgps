@@ -83,6 +83,15 @@ DeclareOperation("BettiElementsOfAffineSemigroup",[IsAffineSemigroup]);
 ############################################################
 DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
 
+############################################################
+#O CanonicalBasisOfKernelCongruence
+# computes a canonical basis of the kernel congruence
+# of the monoid morphism associated to the matrix m with
+# nonnegative integer coefficients wrt the term ordering
+# the kernel is the pairs (x,y) such that xm=ym
+############################################################
+DeclareOperation("CanonicalBasisOfKernelCongruence",[IsRectangularTable, IsTermOrdering]);
+
 ###############################################################################
 #O MinimalPresentationOfAffineSemigroup
 # Computes a minimal presentation of the affine semigroup a

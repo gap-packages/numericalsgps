@@ -58,12 +58,13 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7EE005267DEBC1DE">11.3-1 GeneratorsOfKernelCongruence</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7BCA9C077F76920E">11.3-2 MinimalPresentationOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7C20CE97840ECF8E">11.3-3 BettiElementsOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7C1B355F83A55285">11.3-4 ShadedSetOfElementInAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X84FF536281884DB8">11.3-5 IsGenericAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X87170BBB85E9DEC8">11.3-6 IsUniquelyPresentedAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X86EB7A9A8250E6DB">11.3-7 PrimitiveElementsOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7AD2271E84F705D3">11.3-2 CanonicalBasisOfKernelCongruence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7BCA9C077F76920E">11.3-3 MinimalPresentationOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7C20CE97840ECF8E">11.3-4 BettiElementsOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7C1B355F83A55285">11.3-5 ShadedSetOfElementInAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X84FF536281884DB8">11.3-6 IsGenericAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X87170BBB85E9DEC8">11.3-7 IsUniquelyPresentedAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X86EB7A9A8250E6DB">11.3-8 PrimitiveElementsOfAffineSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X80A934B0826E21A6">11.4 <span class="Heading">
     Factorizations in affine semigroups
@@ -396,9 +397,18 @@ true
 
 <p>The main difference with <code class="code">MinimalPresentationOfAffineSemigroup</code> is that the matrix <var class="Arg">M</var> can have repeated columns and these are not treated as a set.</p>
 
+<p><a id="X7AD2271E84F705D3" name="X7AD2271E84F705D3"></a></p>
+
+<h5>11.3-2 CanonicalBasisOfKernelCongruence</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalBasisOfKernelCongruence</code>( <var class="Arg">M</var>, <var class="Arg">Ord</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">M</var> is matrix with nonnegative integer coefficients, <var class="Arg">Ord</var> a term ordering. The output is a canonical bases of the congruence <span class="SimpleMath">{(x,y)∣ xM=yM}</span> (see <a href="chapBib.html#biBRGS99">[RG99a]</a>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <span class="SimpleMath">x_i↦ Y^m_i</span>, with <span class="SimpleMath">m_i</span> the <span class="SimpleMath">i</span>th row of <span class="SimpleMath">M</span>.</p>
+
+<p>Accespted term orderings are lexicographic (<var class="Arg">"lex"</var>), graded lexicographic (<var class="Arg">"grlex"</var>) and reversed graded lexicographic (<var class="Arg">"grevlex"</var>).</p>
+
 <p><a id="X7BCA9C077F76920E" name="X7BCA9C077F76920E"></a></p>
 
-<h5>11.3-2 MinimalPresentationOfAffineSemigroup</h5>
+<h5>11.3-3 MinimalPresentationOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is a minimal presentation for <var class="Arg">a</var>.</p>
@@ -416,7 +426,7 @@ true
 
 <p><a id="X7C20CE97840ECF8E" name="X7C20CE97840ECF8E"></a></p>
 
-<h5>11.3-3 BettiElementsOfAffineSemigroup</h5>
+<h5>11.3-4 BettiElementsOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the set of Betti elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
@@ -432,14 +442,14 @@ true
 
 <p><a id="X7C1B355F83A55285" name="X7C1B355F83A55285"></a></p>
 
-<h5>11.3-4 ShadedSetOfElementInAffineSemigroup</h5>
+<h5>11.3-5 ShadedSetOfElementInAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup and <var class="Arg">v</var> is an element in <var class="Arg">a</var>. This is a translation to affine semigroups of <code class="code">ShadedSetOfElementInNumericalSemigroup</code> (<a href="chap4.html#X7C42DEB68285F2B8"><span class="RefLink">4.1-5</span></a>).</p>
 
 <p><a id="X84FF536281884DB8" name="X84FF536281884DB8"></a></p>
 
-<h5>11.3-5 IsGenericAffineSemigroup</h5>
+<h5>11.3-6 IsGenericAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup.</p>
@@ -448,7 +458,7 @@ true
 
 <p><a id="X87170BBB85E9DEC8" name="X87170BBB85E9DEC8"></a></p>
 
-<h5>11.3-6 IsUniquelyPresentedAffineSemigroup</h5>
+<h5>11.3-7 IsUniquelyPresentedAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup.</p>
@@ -457,7 +467,7 @@ true
 
 <p><a id="X86EB7A9A8250E6DB" name="X86EB7A9A8250E6DB"></a></p>
 
-<h5>11.3-7 PrimitiveElementsOfAffineSemigroup</h5>
+<h5>11.3-8 PrimitiveElementsOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the set of primitive elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
