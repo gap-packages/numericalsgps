@@ -617,7 +617,7 @@ end);
 ############################################################
 InstallMethod(CanonicalBasisOfKernelCongruence,
 	"Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
-	[IsRectangularTable, IsTermOrdering],1,
+	[IsRectangularTable, IsMonomialOrdering],1,
   function( m, ord )
 
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,

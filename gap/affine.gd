@@ -90,7 +90,7 @@ DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
 # nonnegative integer coefficients wrt the term ordering
 # the kernel is the pairs (x,y) such that xm=ym
 ############################################################
-DeclareOperation("CanonicalBasisOfKernelCongruence",[IsRectangularTable, IsTermOrdering]);
+DeclareOperation("CanonicalBasisOfKernelCongruence",[IsRectangularTable, IsMonomialOrdering]);
 
 ###############################################################################
 #O MinimalPresentationOfAffineSemigroup
