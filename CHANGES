@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Added CanonicalBasisOfKernelCongruence
 - Clarified the documentation relative to the various ways of defining numerical and affine semigroups
 - Added some abbreviations to the names of some functions ("Gaps", Holes", "AperyList"...), especially at the documentation level
 - External packages section in Affine Semigroups chapter was moved to its own chapter
