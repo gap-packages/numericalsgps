@@ -5228,7 +5228,22 @@ generators of the congruence $\{(x,y)\mid xM=yM\}$.
  \mbox{\texttt{\mdseries\slshape M}} is matrix with nonnegative integer coefficients, \mbox{\texttt{\mdseries\slshape Ord}} a term ordering. The output is a canonical bases of the congruence $\{(x,y)\mid xM=yM\}$ (see \cite{RGS99}). This corresponds with the exponents of the Gr{\"o}bner basis of the kernel
 ideal of the morphism $x_i\mapsto Y^{m_i}$, with $m_i$ the $i$th row of $M$. 
 
- Accespted term orderings are lexicographic (\mbox{\texttt{\mdseries\slshape "lex"}}), graded lexicographic (\mbox{\texttt{\mdseries\slshape "grlex"}}) and reversed graded lexicographic (\mbox{\texttt{\mdseries\slshape "grevlex"}}). }
+ Accespted term orderings are lexicographic (\texttt{MonomialLexOrdering()}), graded lexicographic (\mbox{\texttt{\mdseries\slshape MonomialGrlexOrdering()}}) and reversed graded lexicographic (\mbox{\texttt{\mdseries\slshape MonomialGrevlexOrdering()}}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@M:=[[3],[5],[7]];;|
+  !gapprompt@gap>| !gapinput@CanonicalBasisOfKernelCongruence(M,MonomialLexOrdering());|
+  [ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],
+    [ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],
+    [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+  !gapprompt@gap>| !gapinput@CanonicalBasisOfKernelCongruence(M,MonomialGrlexOrdering());|
+  [ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],
+    [ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],
+    [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+  !gapprompt@gap>| !gapinput@CanonicalBasisOfKernelCongruence(M,MonomialGrevlexOrdering());|
+  [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
+    [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+\end{Verbatim}
+ }
 
  
 

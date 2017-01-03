@@ -364,8 +364,24 @@
   This corresponds with the exponents of the Gröbner basis of the kernel ideal
   of the morphism [22Xx_i↦ Y^m_i[122X, with [22Xm_i[122X the [22Xi[122Xth row of [22XM[122X.[133X
   
-  [33X[0;0YAccespted  term  orderings  are  lexicographic ([3X"lex"[103X), graded lexicographic
-  ([3X"grlex"[103X) and reversed graded lexicographic ([3X"grevlex"[103X).[133X
+  [33X[0;0YAccespted  term  orderings are lexicographic ([10XMonomialLexOrdering()[110X), graded
+  lexicographic  ([3XMonomialGrlexOrdering()[103X)  and  reversed graded lexicographic
+  ([3XMonomialGrevlexOrdering()[103X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM:=[[3],[5],[7]];;[127X[104X
+    [4X[25Xgap>[125X [27XCanonicalBasisOfKernelCongruence(M,MonomialLexOrdering());[127X[104X
+    [4X[28X[ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],[128X[104X
+    [4X[28X  [ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],[128X[104X
+    [4X[28X  [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XCanonicalBasisOfKernelCongruence(M,MonomialGrlexOrdering());[127X[104X
+    [4X[28X[ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],[128X[104X
+    [4X[28X  [ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],[128X[104X
+    [4X[28X  [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XCanonicalBasisOfKernelCongruence(M,MonomialGrevlexOrdering());[127X[104X
+    [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
+    [4X[28X  [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+  [4X[32X[104X
   
   [1X11.3-3 MinimalPresentationOfAffineSemigroup[101X
   
