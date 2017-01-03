@@ -404,7 +404,23 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalBasisOfKernelCongruence</code>( <var class="Arg">M</var>, <var class="Arg">Ord</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">M</var> is matrix with nonnegative integer coefficients, <var class="Arg">Ord</var> a term ordering. The output is a canonical bases of the congruence <span class="SimpleMath">{(x,y)∣ xM=yM}</span> (see <a href="chapBib.html#biBRGS99">[RG99a]</a>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <span class="SimpleMath">x_i↦ Y^m_i</span>, with <span class="SimpleMath">m_i</span> the <span class="SimpleMath">i</span>th row of <span class="SimpleMath">M</span>.</p>
 
-<p>Accespted term orderings are lexicographic (<var class="Arg">"lex"</var>), graded lexicographic (<var class="Arg">"grlex"</var>) and reversed graded lexicographic (<var class="Arg">"grevlex"</var>).</p>
+<p>Accespted term orderings are lexicographic (<code class="code">MonomialLexOrdering()</code>), graded lexicographic (<var class="Arg">MonomialGrlexOrdering()</var>) and reversed graded lexicographic (<var class="Arg">MonomialGrevlexOrdering()</var>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=[[3],[5],[7]];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CanonicalBasisOfKernelCongruence(M,MonomialLexOrdering());</span>
+[ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],
+  [ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],
+  [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CanonicalBasisOfKernelCongruence(M,MonomialGrlexOrdering());</span>
+[ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],
+  [ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],
+  [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CanonicalBasisOfKernelCongruence(M,MonomialGrevlexOrdering());</span>
+[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
+  [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+</pre></div>
 
 <p><a id="X7BCA9C077F76920E" name="X7BCA9C077F76920E"></a></p>
 
