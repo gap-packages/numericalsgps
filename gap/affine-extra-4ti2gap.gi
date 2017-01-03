@@ -159,7 +159,7 @@ end);
 
 InstallOtherMethod(GeneratorsOfKernelCongruence,
         "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
-        [IsRectangularTable],6,
+        [IsRectangularTable],7,
         function(m)
     local positivenegative, gr;
 
@@ -180,6 +180,48 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
     return List(gr, x->positivenegative(x));
 end);
 
+############################################################
+# computes a canonical basis of the kernel congruence
+# of the monoid morphism associated to the matrix m with
+# nonnegative integer coefficients wrt the term ordering
+# the kernel is the pairs (x,y) such that xm=ym
+############################################################
+InstallMethod(CanonicalBasisOfKernelCongruence,
+"Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
+	[IsRectangularTable, IsTermOrdering],7,
+  function(m,ord)
+    local positivenegative, gr, nord, to;
+
+  	positivenegative:=function(p)
+  		local d1, d2;
+  		d1:=List(p, i->Maximum(i,0));
+  		d2:=List(p, i->-Minimum(0,i));
+  		return [d1,d2];
+  	end;
+
+  	if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+  		Error("The argument must be a matrix of nonnegative integer.");
+  	fi;
+
+
+  	# trick taken from the package Singular
+  	nord := Name( ord );
+  	nord := nord{[ 1 .. Position( nord, '(' ) - 1 ]};
+  	if nord = "MonomialLexOrdering"  then
+  			to := "lex";
+  	elif nord = "MonomialGrevlexOrdering"  then
+  			to := "grevlex";
+  	elif nord = "MonomialGrlexOrdering"  then
+  			to := "grlex";
+  	else
+  			Error( "the ordering ", ord, " is not yet supported\n" );
+  	fi;
+
+  	gr:=GroebnerBasis4ti2(TransposedMat(m),to);
+  	Info(InfoNumSgps,2,"4ti output:",gr);
+
+  	return Set(gr, x->positivenegative(x));
+  end);
 
 
 InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
