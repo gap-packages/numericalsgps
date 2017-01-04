@@ -483,6 +483,24 @@ gap> ElasticityOfAffineSemigroup(a);
 </ManSection>
 
 <ManSection>
+  <Func Arg="a" Name="DeltaSetOfAffineSemigroup"></Func>
+  <Description>
+    <A>a</A> is an affine semigroup.
+            The output is the Delta set of <A>a</A> (defined as for numerical semigroups). The the procedure used is explained in <Cite Key="GSONW"></Cite>.
+<Example><![CDATA[
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> DeltaSetOfAffineSemigroup(a);
+[  ]
+gap> s:=NumericalSemigroup(10,13,15,47);;
+gap> a:=AsAffineSemigroup(s);;
+gap> DeltaSetOfAffineSemigroup(a);
+[ 1, 2, 3, 5 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
   <Func Arg="a" Name="CatenaryDegreeOfAffineSemigroup"></Func>
   <Description>
     <A>a</A> is an affine semigroup.
@@ -542,7 +560,7 @@ gap> MonotoneCatenaryDegreeOfAffineSemigroup(a);
   <Func Arg="a" Name="TameDegreeOfAffineSemigroup"></Func>
   <Description>
     <A>a</A> is an affine semigroup.
-            The output is the tame degree of <A>a</A> (defined as for numerical semigroups). If <A>a</A> is given by equations (or its equations are known), then the procedure explained in <Cite Key="GS"></Cite> is used.
+            The output is the tame degree of <A>a</A> (defined as for numerical semigroups). If <A>a</A> is given by equations (or its equations are known), then the procedure explained in <Cite Key="GSONW"></Cite> is used.
 
             <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;

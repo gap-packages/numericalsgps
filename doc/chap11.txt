@@ -510,7 +510,24 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1X11.4-3 CatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-3 DeltaSetOfAffineSemigroup[101X
+  
+  [29X[2XDeltaSetOfAffineSemigroup[102X( [3Xa[103X ) [32X function
+  
+  [33X[0;0Y[3Xa[103X  is  an affine semigroup. The output is the Delta set of [3Xa[103X (defined as for
+  numerical semigroups). The the procedure used is explained in [GOW17].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetOfAffineSemigroup(a);[127X[104X
+    [4X[28X[  ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,13,15,47);;[127X[104X
+    [4X[25Xgap>[125X [27Xa:=AsAffineSemigroup(s);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetOfAffineSemigroup(a);[127X[104X
+    [4X[28X[ 1, 2, 3, 5 ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.4-4 CatenaryDegreeOfAffineSemigroup[101X
   
   [29X[2XCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -523,7 +540,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X11.4-4 EqualCatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-5 EqualCatenaryDegreeOfAffineSemigroup[101X
   
   [29X[2XEqualCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -532,7 +549,7 @@
   
   [33X[0;0YThis function relies on the results presented in [SO-13].[133X
   
-  [1X11.4-5 HomogeneousCatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-6 HomogeneousCatenaryDegreeOfAffineSemigroup[101X
   
   [29X[2XHomogeneousCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -541,7 +558,7 @@
   
   [33X[0;0YThis function is based on [SO-13].[133X
   
-  [1X11.4-6 MonotoneCatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-7 MonotoneCatenaryDegreeOfAffineSemigroup[101X
   
   [29X[2XMonotoneCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
@@ -563,13 +580,13 @@
     [4X[28X3[128X[104X
   [4X[32X[104X
   
-  [1X11.4-7 TameDegreeOfAffineSemigroup[101X
+  [1X11.4-8 TameDegreeOfAffineSemigroup[101X
   
   [29X[2XTameDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is the tame degree of [3Xa[103X (defined as for
   numerical  semigroups).  If  [3Xa[103X  is  given by equations (or its equations are
-  known), then the procedure explained in [Gar14] is used.[133X
+  known), then the procedure explained in [GOW17] is used.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
@@ -577,7 +594,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X11.4-8 OmegaPrimalityOfElementInAffineSemigroup[101X
+  [1X11.4-9 OmegaPrimalityOfElementInAffineSemigroup[101X
   
   [29X[2XOmegaPrimalityOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function
   
@@ -595,7 +612,7 @@
     [4X[28X6[128X[104X
   [4X[32X[104X
   
-  [1X11.4-9 OmegaPrimalityOfAffineSemigroup[101X
+  [1X11.4-10 OmegaPrimalityOfAffineSemigroup[101X
   
   [29X[2XOmegaPrimalityOfAffineSemigroup[102X( [3Xa[103X ) [32X function
   

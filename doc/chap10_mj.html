@@ -229,7 +229,7 @@ true
 <h5>10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">\(\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}\)</span>, where <span class="SimpleMath">\(\mathrm{int}(f,g)=\dim_{\mathbb K} (\mathbb K[x,y]/(f,g))\)</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">\(\delta\)</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib_mj.html#biBAGS14">[AG14]</a>.</p>
+<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">\(\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}\)</span>, where <span class="SimpleMath">\(\mathrm{int}(f,g)=\dim_{\mathbb K} (\mathbb K[x,y]/(f,g))\)</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">\(\delta\)</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib_mj.html#biBAGS14">[AG16]</a>.</p>
 
 
 <div class="example"><pre>
@@ -319,7 +319,7 @@ y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 
 <p>If only one argument is given, the output is the semigroup of all possible orders of <span class="SimpleMath">\(K[[pols]]\)</span> provided that <span class="SimpleMath">\(K[[x]]/K[[pols]]\)</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">\(K[[pols]]\)</span> such that the orders of the basis elements generate minimally the semigroup of orders of <span class="SimpleMath">\(K[[pols]]\)</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">\(K[[pols]]\)</span> with order <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomial, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
 
-<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGM14]</a>.</p>
+<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGM17]</a>.</p>
 
 
 <div class="example"><pre>
@@ -343,7 +343,7 @@ x^20
 
 <p>If only one argument is given, the output is the semigroup of all possible degrees of <span class="SimpleMath">\(K[pols]\)</span> provided that <span class="SimpleMath">\(K[x]/K[pols]\)</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">\(K[pols]\)</span> such that the degrees of the basis elements generate minimally the semigroup of degrees of <span class="SimpleMath">\(K[pols]\)</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">\(K[pols]\)</span> with degree <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomial, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
 
-<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGM14]</a>.</p>
+<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGM17]</a>.</p>
 
 
 <div class="example"><pre>
