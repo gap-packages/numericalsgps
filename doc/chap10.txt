@@ -167,7 +167,7 @@
   [22Xmathrmint(f,g)=dim_  K  (  K[x,y]/(f,g))[122X.  The algorithm checks if [3Xf[103X has one
   place  at infinity. If the extra argument "all" is given, then the output is
   the  [22Xδ[122X-sequence  and  approximate  roots  of  [3Xf[103X.  The method is explained in
-  [AG14].[133X
+  [AG16].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=X(Rationals,"x");; y:=X(Rationals,"y");;[127X[104X
@@ -268,7 +268,7 @@
   ([10Xfail[110X  if  there is no such polynomial, that is, [3Xval[103X is not in the semigroup
   of values).[133X
   
-  [33X[0;0YThe method is explained in [AGM14].[133X
+  [33X[0;0YThe method is explained in [AGM17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
@@ -299,7 +299,7 @@
   ([10Xfail[110X  if  there is no such polynomial, that is, [3Xval[103X is not in the semigroup
   of values).[133X
   
-  [33X[0;0YThe method is explained in [AGM14].[133X
+  [33X[0;0YThe method is explained in [AGM17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X

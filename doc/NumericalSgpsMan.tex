@@ -5408,8 +5408,30 @@ set of circuits is calculated using \cite{MR1394747}.
 
  
 
-\subsection{\textcolor{Chapter }{CatenaryDegreeOfAffineSemigroup}}
+\subsection{\textcolor{Chapter }{DeltaSetOfAffineSemigroup}}
 \logpage{[ 11, 4, 3 ]}\nobreak
+\hyperdef{L}{X828CC22884953757}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DeltaSetOfAffineSemigroup({\mdseries\slshape a})\index{DeltaSetOfAffineSemigroup@\texttt{DeltaSetOfAffineSemigroup}}
+\label{DeltaSetOfAffineSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the Delta set of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). The the procedure used is explained in \cite{GSONW}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
+  !gapprompt@gap>| !gapinput@DeltaSetOfAffineSemigroup(a);|
+  [  ]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(10,13,15,47);;|
+  !gapprompt@gap>| !gapinput@a:=AsAffineSemigroup(s);;|
+  !gapprompt@gap>| !gapinput@DeltaSetOfAffineSemigroup(a);|
+  [ 1, 2, 3, 5 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{CatenaryDegreeOfAffineSemigroup}}
+\logpage{[ 11, 4, 4 ]}\nobreak
 \hyperdef{L}{X8718FF377C186106}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{CatenaryDegreeOfAffineSemigroup@\texttt{CatenaryDegreeOfAffineSemigroup}}
 \label{CatenaryDegreeOfAffineSemigroup}
@@ -5427,7 +5449,7 @@ set of circuits is calculated using \cite{MR1394747}.
  
 
 \subsection{\textcolor{Chapter }{EqualCatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 4, 4 ]}\nobreak
+\logpage{[ 11, 4, 5 ]}\nobreak
 \hyperdef{L}{X7EADD306875FCBE6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{EqualCatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{EqualCatenaryDegreeOfAffineSemigroup@\texttt{Equal}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{EqualCatenaryDegreeOfAffineSemigroup}
@@ -5441,7 +5463,7 @@ This function relies on the results presented in \cite{GSOSN}. }
  
 
 \subsection{\textcolor{Chapter }{HomogeneousCatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 4, 5 ]}\nobreak
+\logpage{[ 11, 4, 6 ]}\nobreak
 \hyperdef{L}{X84FE571A7E9E1AE9}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HomogeneousCatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{HomogeneousCatenaryDegreeOfAffineSemigroup@\texttt{Homogeneous}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{HomogeneousCatenaryDegreeOfAffineSemigroup}
@@ -5455,7 +5477,7 @@ This function is based on \cite{GSOSN}. }
  
 
 \subsection{\textcolor{Chapter }{MonotoneCatenaryDegreeOfAffineSemigroup}}
-\logpage{[ 11, 4, 6 ]}\nobreak
+\logpage{[ 11, 4, 7 ]}\nobreak
 \hyperdef{L}{X8510C1527F2FE18E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MonotoneCatenaryDegreeOfAffineSemigroup({\mdseries\slshape a})\index{MonotoneCatenaryDegreeOfAffineSemigroup@\texttt{Monotone}\-\texttt{Catenary}\-\texttt{Degree}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{MonotoneCatenaryDegreeOfAffineSemigroup}
@@ -5482,7 +5504,7 @@ This function is based on \cite{GSOSN}. }
  
 
 \subsection{\textcolor{Chapter }{TameDegreeOfAffineSemigroup}}
-\logpage{[ 11, 4, 7 ]}\nobreak
+\logpage{[ 11, 4, 8 ]}\nobreak
 \hyperdef{L}{X7B42B3B17D08FE1D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfAffineSemigroup({\mdseries\slshape a})\index{TameDegreeOfAffineSemigroup@\texttt{TameDegreeOfAffineSemigroup}}
 \label{TameDegreeOfAffineSemigroup}
@@ -5490,7 +5512,7 @@ This function is based on \cite{GSOSN}. }
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the tame degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). If \mbox{\texttt{\mdseries\slshape a}} is given by equations (or its equations are known), then the procedure
-explained in \cite{GS} is used. 
+explained in \cite{GSONW} is used. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@a:=AffineSemigroup([2,0],[0,2],[1,1]);;|
   !gapprompt@gap>| !gapinput@TameDegreeOfAffineSemigroup(a);|
@@ -5501,7 +5523,7 @@ explained in \cite{GS} is used.
  
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfElementInAffineSemigroup}}
-\logpage{[ 11, 4, 8 ]}\nobreak
+\logpage{[ 11, 4, 9 ]}\nobreak
 \hyperdef{L}{X7F32723C860EA4B2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfElementInAffineSemigroup({\mdseries\slshape v, a})\index{OmegaPrimalityOfElementInAffineSemigroup@\texttt{Omega}\-\texttt{Primality}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{OmegaPrimalityOfElementInAffineSemigroup}
@@ -5523,7 +5545,7 @@ this fact as explained in this reference).
  
 
 \subsection{\textcolor{Chapter }{OmegaPrimalityOfAffineSemigroup}}
-\logpage{[ 11, 4, 9 ]}\nobreak
+\logpage{[ 11, 4, 10 ]}\nobreak
 \hyperdef{L}{X78DC427283B3C6FC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfAffineSemigroup({\mdseries\slshape a})\index{OmegaPrimalityOfAffineSemigroup@\texttt{OmegaPrimalityOfAffineSemigroup}}
 \label{OmegaPrimalityOfAffineSemigroup}

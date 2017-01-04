@@ -13,15 +13,15 @@ A.~Assi and P.~A. Garc\'{\i}a-S\'anchez.
 \newblock {\em Applicable Algebra in Engineering, Communication and Computing},
   2013.
 
-\bibitem[AGS14]{AGS14}
+\bibitem[AGS16]{AGS14}
 A.~Assi and P.~A. Garc\'{\i}a-S\'anchez.
-\newblock On curves with one place at infinity.
-\newblock {\em arXiv}, 1407.0490, 2014.
+\newblock Algorithms for curves with one place at infinity.
+\newblock {\em Journal of Symbolic Computation}, 74:475--492, 2016.
 
-\bibitem[AGSM14]{AGSM14}
+\bibitem[AGSM17]{AGSM14}
 A.~Assi, P.~A. Garc\'{\i}a-S\'anchez, and V.~Micale.
 \newblock Bases of subalgebras of k[[x]] and k[x].
-\newblock {\em arXiv}, 1412.4089, 2014.
+\newblock {\em Journal of Symbolic Computation}, 79:4--22, 2017.
 
 \bibitem[BA08]{B-A08}
 M.~Bras-Amor\'os.
@@ -179,10 +179,10 @@ M.~D'Anna, P.~A. Garc{\'{\i}}a-S{\'a}nchez, and E.~Micale.
 \newblock Good semigroups.
 \newblock {\em preprint}, 2016.
 
-\bibitem[DGSRP15]{DGSRP15}
+\bibitem[DGSRP16]{DGSRP15}
 M.~Delgado, P.~A. Garc{\'{\i}}a-S{\'a}nchez, and A.~M. Robles-P{\'e}rez.
 \newblock Numerical semigroups with a given set of pseudo-frobenius numbers.
-\newblock {\em ArXiv e-prints}, May 2015.
+\newblock {\em LMS J. Comput. Math.}, 19:186--205, 2016.
 
 \bibitem[DMS11]{DA-M-S}
 M.~D'Anna, V.~Micale, and A.~Sammartano.
@@ -226,11 +226,11 @@ R.~Fr\"oberg, C.~Gottlieb, and H\"aggkvist R.
 \newblock On numerical semigroups.
 \newblock {\em Semigroup Forum}, 35(1):63--83, 1987.
 
-\bibitem[GGMFVT14]{GG-MF-VT}
+\bibitem[GGMFVT15]{GG-MF-VT}
 J.~I. Garc\'{\i}a-Garc\'{\i}a, M.~A. Moreno-Fr\'{\i}as, and
   A.~Vigneron-Tenorio.
 \newblock Computation of delta sets of numerical monoids.
-\newblock {\em arxiv:1406.0280}, 2014.
+\newblock {\em Monatsh. Math.}, 178:457--472, 2015.
 
 \bibitem[GHK06]{GHKb}
 A.~Geroldinger and F.~Halter-Koch.
@@ -243,11 +243,6 @@ S~Gutsche, M.~Horn, and C.~S\"oger.
 \newblock Normalizinterface for gap.
 \newblock \url{https://github.com/fingolfin/NormalizInterface}, 2014.
 
-\bibitem[GS14]{GS}
-P.~A. Garc\'{\i}a-S\'anchez.
-\newblock A new approach for the computation of the tame degree.
-\newblock {\em arxiv:1504.02998}, 2014.
-
 \bibitem[GSO10]{GS-O}
 P.~A. Garc\'{\i}a-S\'anchez and I.~Ojeda.
 \newblock Uniquely presented finitely generated commutative monoids.
@@ -257,6 +252,11 @@ P.~A. Garc\'{\i}a-S\'anchez and I.~Ojeda.
 P.~A. Garc{\'{\i}}a~S{\'a}nchez, I.~Ojeda, and A.~S{\'a}nchez-R.-Navarro.
 \newblock Factorization invariants in half-factorial affine semigroups.
 \newblock {\em Internat. J. Algebra Comput.}, 23(1):111--122, 2013.
+
+\bibitem[GSOW17]{GSONW}
+P.~A. Garc\'{\i}a-S\'anchez, C.~O'Neill, and G.~Webb.
+\newblock On the computation of factorization invariants for affine semigroups.
+\newblock {\em arxiv:1504.02998}, 2017.
 
 \bibitem[Gut]{4ti2Interface}
 S.~Gutsche.

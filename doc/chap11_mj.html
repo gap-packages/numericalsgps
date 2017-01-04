@@ -76,13 +76,14 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8780C7E5830B9AE2">11.4-1 FactorizationsVectorWRTList</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7D6B4FB38376C278">11.4-2 ElasticityOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8718FF377C186106">11.4-3 CatenaryDegreeOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7EADD306875FCBE6">11.4-4 EqualCatenaryDegreeOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X84FE571A7E9E1AE9">11.4-5 HomogeneousCatenaryDegreeOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8510C1527F2FE18E">11.4-6 MonotoneCatenaryDegreeOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7B42B3B17D08FE1D">11.4-7 TameDegreeOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7F32723C860EA4B2">11.4-8 OmegaPrimalityOfElementInAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X78DC427283B3C6FC">11.4-9 OmegaPrimalityOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X828CC22884953757">11.4-3 DeltaSetOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8718FF377C186106">11.4-4 CatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7EADD306875FCBE6">11.4-5 EqualCatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X84FE571A7E9E1AE9">11.4-6 HomogeneousCatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8510C1527F2FE18E">11.4-7 MonotoneCatenaryDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7B42B3B17D08FE1D">11.4-8 TameDegreeOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7F32723C860EA4B2">11.4-9 OmegaPrimalityOfElementInAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X78DC427283B3C6FC">11.4-10 OmegaPrimalityOfAffineSemigroup</a></span>
 </div></div>
 </div>
 
@@ -541,9 +542,27 @@ true
 1
 </pre></div>
 
+<p><a id="X828CC22884953757" name="X828CC22884953757"></a></p>
+
+<h5>11.4-3 DeltaSetOfAffineSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the Delta set of <var class="Arg">a</var> (defined as for numerical semigroups). The the procedure used is explained in <a href="chapBib_mj.html#biBGSONW">[GOW17]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AffineSemigroup([2,0],[0,2],[1,1]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetOfAffineSemigroup(a);</span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,13,15,47);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a:=AsAffineSemigroup(s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetOfAffineSemigroup(a);</span>
+[ 1, 2, 3, 5 ]
+</pre></div>
+
 <p><a id="X8718FF377C186106" name="X8718FF377C186106"></a></p>
 
-<h5>11.4-3 CatenaryDegreeOfAffineSemigroup</h5>
+<h5>11.4-4 CatenaryDegreeOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
@@ -557,7 +576,7 @@ true
 
 <p><a id="X7EADD306875FCBE6" name="X7EADD306875FCBE6"></a></p>
 
-<h5>11.4-4 EqualCatenaryDegreeOfAffineSemigroup</h5>
+<h5>11.4-5 EqualCatenaryDegreeOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the equal catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
@@ -566,7 +585,7 @@ true
 
 <p><a id="X84FE571A7E9E1AE9" name="X84FE571A7E9E1AE9"></a></p>
 
-<h5>11.4-5 HomogeneousCatenaryDegreeOfAffineSemigroup</h5>
+<h5>11.4-6 HomogeneousCatenaryDegreeOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the homogeneous catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
@@ -575,7 +594,7 @@ true
 
 <p><a id="X8510C1527F2FE18E" name="X8510C1527F2FE18E"></a></p>
 
-<h5>11.4-6 MonotoneCatenaryDegreeOfAffineSemigroup</h5>
+<h5>11.4-7 MonotoneCatenaryDegreeOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the monotone catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups), computed as explained in <a href="chapBib_mj.html#biBPH">[Phi10]</a>.</p>
@@ -598,10 +617,10 @@ true
 
 <p><a id="X7B42B3B17D08FE1D" name="X7B42B3B17D08FE1D"></a></p>
 
-<h5>11.4-7 TameDegreeOfAffineSemigroup</h5>
+<h5>11.4-8 TameDegreeOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">a</var> is an affine semigroup. The output is the tame degree of <var class="Arg">a</var> (defined as for numerical semigroups). If <var class="Arg">a</var> is given by equations (or its equations are known), then the procedure explained in <a href="chapBib_mj.html#biBGS">[Gar14]</a> is used.</p>
+<p><var class="Arg">a</var> is an affine semigroup. The output is the tame degree of <var class="Arg">a</var> (defined as for numerical semigroups). If <var class="Arg">a</var> is given by equations (or its equations are known), then the procedure explained in <a href="chapBib_mj.html#biBGSONW">[GOW17]</a> is used.</p>
 
 
 <div class="example"><pre>
@@ -612,7 +631,7 @@ true
 
 <p><a id="X7F32723C860EA4B2" name="X7F32723C860EA4B2"></a></p>
 
-<h5>11.4-8 OmegaPrimalityOfElementInAffineSemigroup</h5>
+<h5>11.4-9 OmegaPrimalityOfElementInAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">a</var> is an affine semigroup. The output is the omega primality of <var class="Arg">a</var> (defined as for numerical semigroups). Returns 0 if the element is not in the semigroup.</p>
@@ -628,7 +647,7 @@ true
 
 <p><a id="X78DC427283B3C6FC" name="X78DC427283B3C6FC"></a></p>
 
-<h5>11.4-9 OmegaPrimalityOfAffineSemigroup</h5>
+<h5>11.4-10 OmegaPrimalityOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the omega primality of <var class="Arg">a</var> (defined as for numerical semigroups).</p>

@@ -794,6 +794,31 @@ InstallGlobalFunction(ShadedSetOfElementInAffineSemigroup, function(x,a)
     return Filtered(Combinations(msg), c-> (x-Sum(c)) in a);
 end);
 
+###############################################################################
+#F DeltaSetOfAffineSemigroup
+# Computes the Delta set of the affine semigroup a
+# uses the algorithm presented in [GSONW]
+###########################################################################
+InstallGlobalFunction(DeltaSetOfAffineSemigroup,
+  function(a)
+
+    local p, msg, candidates, zero, hgens, m;
+
+    if not(IsAffineSemigroup(a)) then
+      Error("The argument must be an affine semigroup");
+    fi;
+
+    m:=GeneratorsOfAffineSemigroup(a);
+
+    if Length(m)=0 then
+      return [];
+    fi;
+    zero:=List([1..Length(m[1])],_->0);
+    msg:=List(Union(m,[zero]), x->Concatenation([1],x));
+    candidates:=Set(CanonicalBasisOfKernelCongruence(msg, MonomialLexOrdering()), l->l[1][1]);
+    RemoveSet(candidates,0);
+    return candidates;
+  end);
 
 
 ######################################################################
