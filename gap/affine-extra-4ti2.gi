@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W  affine-extra-4ti2.gi            
+#W  affine-extra-4ti2.gi
 #W                          Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro Garcia-Sanchez <pedro@ugr.es>
 ##
@@ -8,13 +8,13 @@
 #############################################################################
 InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
         "Computes the set of primitive elements of an affine semigroup",
-        [IsAffineSemigroup],4, 
+        [IsAffineSemigroup],4,
         function(a)
     local dir, filename, exec, filestream, matrix,
 				 facs, mat, trunc, ls;
-    
+
     ls:=GeneratorsOfAffineSemigroup(a);
-    
+
     dir := DirectoryTemporary();
     filename := Filename( dir, "gap_4ti2_temp_matrix" );
 
@@ -39,13 +39,13 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         [IsMatrix,IsHomogeneousList],4,
         function(ls,md)
     local  homogeneous, withCongruences;
-    
+
     homogeneous:= function(l)
         local  dir, filename, exec, filestream, matrix,mat,sign;
 
         Info(InfoNumSgps,2,"Using 4ti2 for Hilbert.");
 
-        if not(IsRectangularTable(l)) then 
+        if not(IsRectangularTable(l)) then
             Error("The argument must be a matrix.");
         fi;
         if not(IsInt(l[1][1])) then
@@ -65,12 +65,12 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         while IO_ReadLine( filestream.stdout ) <> "" do od;
         matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zhom" ) );
         return matrix;
-        
-    end; 
+
+    end;
 
   withCongruences:=function(ls,md)
       local l,n,m,diag,dim,d, hil, zero, leq;
-      
+
       leq:= function(v1,v2)
           local v;
           v:=v2-v1;
@@ -88,7 +88,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
       n:=Length(ls);
       dim:=Length(ls[1]);
       m:=Length(md);
-      if m>n then 
+      if m>n then
           Error("There are more modulus than equations.");
       fi;
 
@@ -112,7 +112,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
       return withCongruences(ls,md);
 
   fi;
-    
+
 end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
@@ -123,7 +123,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
 
     Info(InfoNumSgps,2,"Using 4ti2 for Hilbert.");
 
-    if not(IsRectangularTable(l)) then 
+    if not(IsRectangularTable(l)) then
         Error("The argument must be a matrix.");
     fi;
     if not(IsInt(l[1][1])) then
@@ -145,8 +145,8 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
     while IO_ReadLine( filestream.stdout ) <> "" do od;
     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zhom" ) );
     return matrix;
-    
-end); 
+
+end);
 
 
 InstallOtherMethod(FactorizationsVectorWRTList,
@@ -156,11 +156,11 @@ InstallOtherMethod(FactorizationsVectorWRTList,
     local  dir, filename, exec, filestream, matrix,mat,rhs,sign;
 
     Info(InfoNumSgps,2,"Using 4ti2 for factorizations.");
-    
+
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
-    
+
     if not(IsInt(l[1][1])) then
         Error("The matrix must be of integers.");
     fi;
@@ -180,8 +180,77 @@ InstallOtherMethod(FactorizationsVectorWRTList,
     while IO_ReadLine( filestream.stdout ) <> "" do od;
     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zinhom" ) );
     return matrix;
-    
-end); 
+
+end);
+
+
+InstallOtherMethod(GeneratorsOfKernelCongruence,
+        "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
+        [IsRectangularTable],7,
+        function(m)
+    local positivenegative, gr;
+
+    positivenegative:=function(p)
+        local d1, d2;
+        d1:=List(p, i->Maximum(i,0));
+        d2:=List(p, i->-Minimum(0,i));
+        return [d1,d2];
+    end;
+
+    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+        Error("The argument must be a matrix of nonnegative integer.");
+    fi;
+
+    gr:=4ti2Interface_groebner_matrix(m);
+    Info(InfoNumSgps,2,"4ti output:",gr);
+
+    return List(gr, x->positivenegative(x));
+end);
+
+
+############################################################
+# computes a canonical basis of the kernel congruence
+# of the monoid morphism associated to the matrix m with
+# nonnegative integer coefficients wrt the term ordering
+# the kernel is the pairs (x,y) such that xm=ym
+############################################################
+InstallMethod(CanonicalBasisOfKernelCongruence,
+"Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
+	[IsRectangularTable, IsMonomialOrdering],7,
+  function(m,ord)
+    local positivenegative, gr, nord, to,dim,ones;
+
+  	positivenegative:=function(p)
+  		local d1, d2;
+  		d1:=List(p, i->Maximum(i,0));
+  		d2:=List(p, i->-Minimum(0,i));
+  		return [d1,d2];
+  	end;
+
+  	if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+  		Error("The argument must be a matrix of nonnegative integer.");
+  	fi;
+
+    dim:= Length(m);
+    ones:=List([1..dim],_->1);
+  	# trick taken from the package Singular
+  	nord := Name( ord );
+  	nord := nord{[ 1 .. Position( nord, '(' ) - 1 ]};
+  	if nord = "MonomialLexOrdering"  then
+  			to := IdentityMat(dim);
+  	elif nord = "MonomialGrevlexOrdering"  then
+  			to := Concatenation([ones],Reversed(IdentityMat(dim))){[1..dim]};
+  	elif nord = "MonomialGrlexOrdering"  then
+  			to := Concatenation([ones],IdentityMat(dim)){[1..dim]};
+  	else
+  			Error( "the ordering ", ord, " is not yet supported\n" );
+  	fi;
+
+  	gr:=4ti2Interface_groebner_matrix(m,to);
+  	Info(InfoNumSgps,2,"4ti output:",gr);
+
+  	return Set(gr, x->positivenegative(x));
+  end);
 
 
 InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
@@ -189,10 +258,10 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         [IsAffineSemigroup],3,
         function(a)
     local gens, positive, gr, candidates, pres, rclass,exps, c;
-    
+
     positive:=function(x)
         local p,i;
-        
+
         p:=[];
         for i in [1..Length(x)] do
             p[i]:=Maximum(x[i],0);
@@ -203,12 +272,12 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     if not(IsAffineSemigroup(a)) then
         Error("The argument must be an affine semigroup.");
     fi;
-    
+
     gens:=GeneratorsOfAffineSemigroup(a);
-    
+
     gr:=4ti2Interface_groebner_matrix(gens);
     Info(InfoNumSgps,2,"4ti output:",gr);
-    
+
     candidates:=Set(gr,q->positive(q));
     candidates:=Set(candidates,c->c*gens);
     Info(InfoNumSgps,2, "Candidates to Betti elements",candidates);
@@ -217,13 +286,13 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         exps:=FactorizationsVectorWRTList(c,gens);
         rclass:=RClassesOfSetOfFactorizations(exps);
         if Length(rclass)>1 then
-            pres:=Concatenation(pres,List([2..Length(rclass)], 
+            pres:=Concatenation(pres,List([2..Length(rclass)],
                           i->[rclass[1][1],rclass[i][1]]));
         fi;
     od;
     return pres;
-    
-    
+
+
 end);
 
 
@@ -236,23 +305,23 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
         [IsHomogeneousList,IsAffineSemigroup],4,
         function(v,a)
     local  ls, n, mat,extfact,par,tot,le;
-    
+
     le:=function(a,b)  #ordinary partial order
     	return ForAll(b-a,x-> x>=0);
     end;
-    
+
     if not(IsAffineSemigroup(a)) then
         Error("The second argument must be an affine semigroup");
     fi;
-        
+
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
-    
+
     if not(ForAll(v, x-> x>=0)) then
-        Error("The first argument must be a list of on nonnegative integers.");		
+        Error("The first argument must be a list of on nonnegative integers.");
     fi;
-	
+
     ls:=GeneratorsOfAffineSemigroup(a);
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
@@ -260,17 +329,17 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
     if not(IsRectangularTable(mat)) then
         Error("The first argument has not the dimension of the second.");
     fi;
-    
+
     extfact:=FactorizationsVectorWRTList(v,Concatenation(ls,-ls));
-    
+
     par:=Set(extfact, f->f{[1..n]});
     tot:=Filtered(par, f-> Filtered(par, g-> le(g,f))=[f]);
     Info(InfoNumSgps,2,"Minimals of v+ls =",tot);
-    if tot=[] then 
-        return 0;      
+    if tot=[] then
+        return 0;
     fi;
-    
+
     return Maximum(Set(tot, Sum));
 
-    
+
 end);
