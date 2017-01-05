@@ -35,7 +35,7 @@ end);
 
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
-        "Computes a Hilbert basiss of a systemd of linear Diophantine equations, some eventually in congruences.",
+        "Computes a Hilbert basiss of a system of linear Diophantine equations, some eventually in congruences.",
         [IsMatrix,IsHomogeneousList],4,
         function(ls,md)
     local  homogeneous, withCongruences;
@@ -239,7 +239,7 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   	if nord = "MonomialLexOrdering"  then
   			to := List([1..dim],_->0);
         to[1]:=1;
-        Info(InfoNumSgps,1,"Warning using block ordering that discriminates the first variable wrt to the rest (4ti2Interface).");
+        Info(InfoNumSgps,1,"Warning using block ordering that discriminates the first variable wrt to the rest (4ti2Interface current release).");
   	elif nord = "MonomialGrevlexOrdering"  then
       to :=ones;
   	else
