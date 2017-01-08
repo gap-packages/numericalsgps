@@ -2,6 +2,8 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Added GraverBasis
+- New implementation of catenary degree (using Kruskal algorithm)
 - Updated references
 - Added DeltaSetOfAffineSemigroup
 - Added CanonicalBasisOfKernelCongruence

@@ -231,6 +231,37 @@ InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
     return Maximum(Set(par, Sum));
 end);
 
+############################################################
+# computes the Graver basis of matrix with integer entries
+############################################################
+InstallMethod(GraverBasis,
+        "Computes the Graver basis of the matrix",
+        [IsRectangularTable],8,
+function(a)
+    #normaliz implementation
+    local n, mat, cone, facs;
+
+    if not(IsRectangularTable(a)) then
+      Error("The argument must be a matrix.");
+    fi;
+
+    if not(IsInt(a[1][1])) then
+      Error("The entries of the matrix must be integers.");
+    fi;
+
+    Info(InfoNumSgps,2,"Using normaliz for Graver.");
+
+    n:=Length(a[1]);
+    mat:=TransposedMat(Concatenation(TransposedMat(a),TransposedMat(-a)));
+    cone:=NmzCone(["equations",mat]);
+    NmzCompute(cone,"DualMode");
+    facs:=Set(NmzHilbertBasis(cone), f->f{[1..n]}-f{[n+1..2*n]});
+
+    return facs;
+
+  end);
+
+
 ######################################################################
 # Computes the set of primitive elements of an affine semigroup, that
 # is, the set of elements whose factorizations are involved in the

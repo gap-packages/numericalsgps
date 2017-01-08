@@ -668,6 +668,43 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
     return candidates;
 end);
 
+############################################################
+# computes the Graver basis of matrix with integer entries
+############################################################
+InstallMethod(GraverBasis,
+        "Computes the Graver basis of the matrix",
+        [IsRectangularTable],1,
+function(a)
+  #PLAIN implementation
+	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
+
+    if not(IsRectangularTable(a)) then
+      Error("The argument must be a matrix.");
+    fi;
+
+    if not(IsInt(a[1][1])) then
+      Error("The entries of the matrix must be integers.");
+    fi;
+    Info(InfoNumSgps,1,"Using Lawrence lifting for computing Graver Basis. Please, consider using singular, NormalizInterface, 4ti2Interface or 4ti2gap.");
+    mgs:=TransposedMat(a);
+    ed:=Length(mgs);
+    dim:=Length(mgs[1]);
+    #lft:=LawrenceLiftingOfAffineSemigroup(a);
+    #prlft:=MinimalPresentationOfAffineSemigroup(lft);
+    id:=IdentityMat(ed);
+    zero:=List([1..ed],_->0);
+    zeroes:=List([1..dim],_->zero);
+
+    msg:=TransposedMat(mgs);
+    aid:=TransposedMat(Concatenation(msg,id));
+    zeroid:=TransposedMat(Concatenation(zeroes,id));
+
+    lft:=(Concatenation(aid,zeroid));
+    prlft:=GeneratorsOfKernelCongruence(lft);
+    Info(InfoNumSgps,2,"The kernel congruence is ", prlft);
+
+    return Set(Union(prlft), p->p{[1..ed]}-p{[ed+1..ed+ed]});
+end);
 
 ############################################################
 # computes a minimal presentation of a

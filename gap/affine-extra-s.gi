@@ -135,6 +135,47 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   end);
 
 
+############################################################
+# computes the Graver basis of matrix with integer entries
+############################################################
+InstallMethod(GraverBasis,
+        "Computes the Graver basis of the matrix",
+        [IsRectangularTable],4,
+function(a)
+          #singular implementation
+  local graver, T, R, bintopair, ed, c;
+
+  bintopair:=function(pp)
+      local m1,m2, d1, d2, p;
+      p:=pp/LeadingCoefficientOfPolynomial(pp,MonomialLexOrdering());
+      m1:=LeadingMonomialOfPolynomial(p, MonomialLexOrdering());
+      m2:=m1-p;
+      d1:=List([1..ed], i->DegreeIndeterminate(m1,i));;
+      d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
+      return [d1,d2];
+  end;
+
+  if not(IsRectangularTable(a)) then
+    Error("The argument must be a matrix.");
+  fi;
+
+  if not(IsInt(a[1][1])) then
+    Error("The entries of the matrix must be integers.");
+  fi;
+
+  ed:=Length(a[1]);
+  T:=SingularBaseRing;
+	R:=PolynomialRing(Rationals,ed);
+	SingularSetBaseRing(R);
+	SingularLibrary("sing4ti2");
+	c:=SingularInterface("graver4ti2",[a],"ideal");
+	graver:=List(GeneratorsOfTwoSidedIdeal(c), x-> bintopair(x));
+  graver:=List(graver,x->x[1]-x[2]);
+	SingularSetBaseRing( T );
+  return Union(graver,-graver);
+end);
+
+
 ######################################################################
 # Computes a minimal presentation of the affine semigroup a
 ######################################################################
