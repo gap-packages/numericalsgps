@@ -253,6 +253,32 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   end);
 
 
+  ############################################################
+  # computes the Graver basis of matrix with integer entries
+  ############################################################
+  InstallMethod(GraverBasis,
+          "Computes the Graver basis of the matrix",
+          [IsRectangularTable],7,
+function(a)
+  #4ti2Interface implementation
+  local gr;
+
+
+  if not(IsRectangularTable(a)) then
+    Error("The argument must be a matrix.");
+  fi;
+
+  if not(IsInt(a[1][1])) then
+    Error("The entries of the matrix must be integers.");
+  fi;
+
+  Info(InfoNumSgps,2,"Using 4ti2Interface for Graver.");
+
+  gr:=4ti2Interface_graver_equalities_in_positive_orthant(a);
+  return Union(gr,-gr);
+end);
+
+
 InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         "Computes a minimimal presentation of the affine semigroup",
         [IsAffineSemigroup],3,

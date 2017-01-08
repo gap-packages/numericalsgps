@@ -92,6 +92,12 @@ DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
 ############################################################
 DeclareOperation("CanonicalBasisOfKernelCongruence",[IsRectangularTable, IsMonomialOrdering]);
 
+############################################################
+# computes the Graver basis of matrix with integer entries
+############################################################
+DeclareOperation("GraverBasis",[IsRectangularTable]);
+
+
 ###############################################################################
 #O MinimalPresentationOfAffineSemigroup
 # Computes a minimal presentation of the affine semigroup a
