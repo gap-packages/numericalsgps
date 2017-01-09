@@ -558,10 +558,10 @@ InstallGlobalFunction(IsFreeNumericalSemigroup,function(s)
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-    ## if the semigroup is no symmetric, then it not free
-    if not IsSymmetricNumericalSemigroup(s) then
-        return false;
-    fi;
+    ## if the semigroup is no symmetric, then it not free (deprecated)
+    #if not IsSymmetricNumericalSemigroup(s) then
+    #    return false;
+    #fi;
 
     gluing:=function(l1,l2) #this function checks if for  a couple of
         #	lists of integers, the numerical semigroup
