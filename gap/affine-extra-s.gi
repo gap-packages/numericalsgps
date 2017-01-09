@@ -257,3 +257,132 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     SingularSetBaseRing(Rtmp);
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
 end);
+
+
+##########################################################################
+# Computes the Hilbert basis of the system A X=0 mod md, where the rows
+# of A are the elements of ls.
+# md can be empty of have some modulus, if the length of md is smaller than
+# the lengths of the elements of ls, then the rest of equations are considered
+# to be homogeneous linear Diophantine equations
+# REQUERIMENTS: Singular with the library normaliz
+##########################################################################
+InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",
+        [IsMatrix,IsHomogeneousList],3,
+        function(ls,md)
+    local matcong, hb, ncong, ncoord, nequ, matfree, T, R;
+
+    Info(InfoNumSgps,2,"Using singular with normaliz.lib to find the Hilbert basis.");
+
+    if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
+        Error("The arguments must be homogeneous lists.");
+    fi;
+
+    if not(ForAll(ls,IsListOfIntegersNS)) then
+        Error("The first argument must be a list of lists of integers.");
+    fi;
+
+    ncong:=Length(md);
+
+    if ncong>0 and not(IsListOfIntegersNS(md)) then
+        Error("The second argument must be a lists of integers.");
+    fi;
+
+    if not(ForAll(md,x->x>0)) then
+        Error("The second argument must be a list of positive integers");
+    fi;
+
+    nequ:=Length(ls);
+    ncoord:=Length(ls[1]);
+    matcong:=[];
+    matfree:=[];
+
+    if ncoord=0 then
+        return [];
+    fi;
+
+    if ncong>0 and not(IsListOfIntegersNS(md)) then
+        Error("The second argument must be either an empty list or a list of integers");
+    fi;
+
+    if ncong>nequ then
+        Error("More mudulus than equations");
+    fi;
+
+    T:=SingularBaseRing;
+    R:=PolynomialRing(Rationals,1);
+    SingularSetBaseRing(R);
+    SingularLibrary("normaliz");
+
+    if nequ>ncong and ncong>0 then
+        matcong:=ls{[1..ncong]};
+        matcong:=TransposedMat(
+                         Concatenation(TransposedMat(matcong),[md]));
+        matfree:=ls{[ncong+1..nequ]};
+        hb:=SingularInterface("normaliz",[matfree,5,matcong,6],"matrix");
+        #NmzCone(["congruences",matcong,"equations",matfree]);
+    fi;
+
+    if nequ=ncong then
+        matcong:=TransposedMat(Concatenation(
+                         TransposedMat(ls),[md]));
+        hb:=SingularInterface("normaliz",[matcong,6],"matrix");
+        #NmzCone(["congruences",matcong]);
+    fi;
+    if ncong=0 then
+        matfree:=ls;
+        hb:=SingularInterface("normaliz",[matfree,5],"matrix");
+        #NmzCone(["equations",matfree]);
+    fi;
+
+    #NmzCompute(cone,"DualMode");
+    SingularSetBaseRing(T);
+    return Set(hb);#NmzHilbertBasis(cone);
+end);
+
+##########################################################################
+# Computes the Hilbert basis of the system ls*X>=0 over the nonnegative
+# integers
+# REQUERIMENTS: Singular with the library normaliz
+##########################################################################
+InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
+        "Computes the Hilbert basis of a system of inequalities",
+        [IsMatrix],3,
+        function(ls)
+    local hb,  ncoord, R, T;
+
+    Info(InfoNumSgps,2,"Using singular with normaliz.lib to find the Hilbert basis.");
+
+    if not(IsHomogeneousList(ls)) then
+        Error("The argument must be a homogeneous lists.");
+    fi;
+
+    if not(ForAll(ls,IsListOfIntegersNS)) then
+        Error("The argument must be a list of lists of integers.");
+    fi;
+
+    if not(Length(Set(ls, Length))=1) then
+        Error("The first argument must be a list of lists all with the same length.");
+    fi;
+
+    ncoord:=Length(ls[1]);
+
+    if ncoord=0 then
+        return [];
+    fi;
+
+    T:=SingularBaseRing;
+    R:=PolynomialRing(Rationals,1);
+    SingularSetBaseRing(R);
+    SingularLibrary("normaliz");
+
+    hb:=SingularInterface("normaliz",[ls,4],"matrix");
+    #NmzCone(["inequalities",ls,"signs",[List([1..ncoord],_->1)]]);
+    #NmzCompute(cone,"DualMode");
+
+    SingularSetBaseRing(T);
+
+    return Set(hb);
+    #NmzHilbertBasis(cone);
+end);
