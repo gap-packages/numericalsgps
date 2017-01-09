@@ -2,6 +2,8 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- HilbertBasis* and PrimitiveElements* now available with singular (through 4ti2 and normaliz libraries)
+- Improved IsFreeNumericalSemigroup
 - Added GraverBasis
 - New implementation of catenary degree (using Kruskal algorithm)
 - Updated references
