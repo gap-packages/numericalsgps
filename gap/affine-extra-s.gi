@@ -135,6 +135,28 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   end);
 
 
+  InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
+          "Computes the set of primitive elements of an affine semigroup",
+          [IsAffineSemigroup],4,
+          function(a)
+      local  matrix, facs, mat, trunc, ls;
+
+      ls:=GeneratorsOfAffineSemigroup(a);
+
+      Info(InfoNumSgps,2,"Using singular 4ti2 interface for Graver.");
+
+      mat:=TransposedMat(ls);
+      matrix := GraverBasis(mat);
+
+      trunc:=function(ls)
+          return List(ls, y->Maximum(y,0));
+      end;
+
+      matrix:=Set(matrix,trunc);
+      return Union(Set(matrix, x->x*ls),ls);
+  end);
+
+
 ############################################################
 # computes the Graver basis of matrix with integer entries
 ############################################################
