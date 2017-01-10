@@ -103,13 +103,13 @@ false
 
 <h5>6.1-2 IsSymmetricNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is symmetric, false otherwise.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));      </span>
-true            
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));</span>
+true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricNumericalSemigroup(NumericalSemigroup(10,11,23));</span>
 false
 </pre></div>
@@ -140,7 +140,7 @@ false
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);</span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(s);                                       </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(s);</span>
 [ 3, 17, 31 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FrobeniusNumber(s);</span>
 28
@@ -169,7 +169,7 @@ false
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));</span>
-[ &lt;Numerical semigroup with 3 generators&gt;, 
+[ &lt;Numerical semigroup with 3 generators&gt;,
   &lt;Numerical semigroup with 4 generators&gt; ]
 </pre></div>
 
