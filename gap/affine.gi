@@ -446,7 +446,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     return Filtered(hil, y->Filtered(hil,x->leq(x,y))=[y]);
   end;
   ## end of local functions ...
-
+  Info(InfoNumSgps,1,"Using contejeanDevieAlgorithm for Hilbert Basis. Please, consider using NormalizInterface, 4ti2Interface or 4ti2gap.");
   #ls := arg[1][1];
   #md := arg[1][2];
   if md = [] then
