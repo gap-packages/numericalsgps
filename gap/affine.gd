@@ -93,6 +93,7 @@ DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
 DeclareOperation("CanonicalBasisOfKernelCongruence",[IsRectangularTable, IsMonomialOrdering]);
 
 ############################################################
+#O GraverBasis
 # computes the Graver basis of matrix with integer entries
 ############################################################
 DeclareOperation("GraverBasis",[IsRectangularTable]);
