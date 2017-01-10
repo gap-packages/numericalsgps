@@ -924,7 +924,7 @@ belong to \mbox{\texttt{\mdseries\slshape S}}.
   8
   !gapprompt@gap>| !gapinput@NumericalSemigroup(3,5);|
   <Numerical semigroup with 2 generators>
-  !gapprompt@gap>| !gapinput@Multiplicity(last);     |
+  !gapprompt@gap>| !gapinput@Multiplicity(last);|
   3
 \end{Verbatim}
  }
@@ -976,7 +976,7 @@ versions, but will be removed in the future.
   false
   !gapprompt@gap>| !gapinput@MinimalGenerators(s);|
   [ 3, 5, 7 ]
-  !gapprompt@gap>| !gapinput@Generators(s);       |
+  !gapprompt@gap>| !gapinput@Generators(s);|
   [ 3, 5, 7, 15 ]
 \end{Verbatim}
   }
@@ -1066,7 +1066,7 @@ semigroup is given.
   !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTElement(S,12);|
   [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
-  !gapprompt@gap>| !gapinput@AperyList(S,12);                              |
+  !gapprompt@gap>| !gapinput@AperyList(S,12);|
   [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
   g
 \end{Verbatim}
@@ -1090,7 +1090,7 @@ semigroup is given.
   !gapprompt@gap>| !gapinput@S := NumericalSemigroup("modular", 5,53);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroup(S);|
   [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
-  !gapprompt@gap>| !gapinput@AperyList(NumericalSemigroup(5,7,11));                           |
+  !gapprompt@gap>| !gapinput@AperyList(NumericalSemigroup(5,7,11));|
   [ 0, 11, 7, 18, 14 ]
 \end{Verbatim}
  }
@@ -1114,7 +1114,7 @@ used by the package. The output of \texttt{AperyList} is the same as \texttt{Ape
   !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(10,13,19,27);;|
   !gapprompt@gap>| !gapinput@AperyListOfNumericalSemigroupWRTInteger(s,11);|
   [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
-  !gapprompt@gap>| !gapinput@AperyList(s,11);                              |
+  !gapprompt@gap>| !gapinput@AperyList(s,11);|
   [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
   !gapprompt@gap>| !gapinput@Length(last);|
   18
@@ -1216,7 +1216,7 @@ semigroup is given or on the knowledge already produced on the semigroup.
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));|
   4
-  !gapprompt@gap>| !gapinput@FrobeniusNumber(NumericalSemigroup(3,5,7));                    |
+  !gapprompt@gap>| !gapinput@FrobeniusNumber(NumericalSemigroup(3,5,7));|
   4
 \end{Verbatim}
  }
@@ -1236,9 +1236,9 @@ semigroup is given or on the knowledge already produced on the semigroup.
 
  This is just a synonym of \texttt{ FrobeniusNumberOfNumericalSemigroup} (\texttt{NS})$+1$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@ConductorOfNumericalSemigroup(NumericalSemigroup(3,5,7));                    |
+  !gapprompt@gap>| !gapinput@ConductorOfNumericalSemigroup(NumericalSemigroup(3,5,7));|
   5
-  !gapprompt@gap>| !gapinput@Conductor(NumericalSemigroup(3,5,7));      |
+  !gapprompt@gap>| !gapinput@Conductor(NumericalSemigroup(3,5,7));|
   5
 \end{Verbatim}
  }
@@ -1309,8 +1309,28 @@ semigroup is given or on the knowledge already produced on the semigroup.
 
  
 
-\subsection{\textcolor{Chapter }{Holes (for numerical semigroup)}}
+\subsection{\textcolor{Chapter }{DesertsOfNumericalSemigroup}}
 \logpage{[ 3, 1, 17 ]}\nobreak
+\hyperdef{L}{X7F40E13983152E1E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DesertsOfNumericalSemigroup({\mdseries\slshape NS})\index{DesertsOfNumericalSemigroup@\texttt{DesertsOfNumericalSemigroup}}
+\label{DesertsOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape NS}} is a numerical semigroup. The output is the list with the runs of gaps of \mbox{\texttt{\mdseries\slshape NS}}. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@DesertsOfNumericalSemigroup(s);|
+  [ [ 1, 2 ], [ 4 ] ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{Holes (for numerical semigroup)}}
+\logpage{[ 3, 1, 18 ]}\nobreak
 \hyperdef{L}{X7CCFC5267FD27DDE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Holes({\mdseries\slshape NS})\index{Holes@\texttt{Holes}!for numerical semigroup}
 \label{Holes:for numerical semigroup}
@@ -1334,7 +1354,7 @@ semigroup is given or on the knowledge already produced on the semigroup.
  
 
 \subsection{\textcolor{Chapter }{LatticePathAssociatedToNumericalSemigroup}}
-\logpage{[ 3, 1, 18 ]}\nobreak
+\logpage{[ 3, 1, 19 ]}\nobreak
 \hyperdef{L}{X794E615F85C2AAB0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LatticePathAssociatedToNumericalSemigroup({\mdseries\slshape S, p, q})\index{LatticePathAssociatedToNumericalSemigroup@\texttt{Lattice}\-\texttt{Path}\-\texttt{Associated}\-\texttt{To}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{LatticePathAssociatedToNumericalSemigroup}
@@ -1358,7 +1378,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{Genus (for numerical semigroup)}}
-\logpage{[ 3, 1, 19 ]}\nobreak
+\logpage{[ 3, 1, 20 ]}\nobreak
 \hyperdef{L}{X7E9C8E157C4EAAB0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Genus({\mdseries\slshape NS})\index{Genus@\texttt{Genus}!for numerical semigroup}
 \label{Genus:for numerical semigroup}
@@ -1383,7 +1403,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{FundamentalGaps (for numerical semigroup)}}
-\logpage{[ 3, 1, 20 ]}\nobreak
+\logpage{[ 3, 1, 21 ]}\nobreak
 \hyperdef{L}{X7EC438CC7BF539D0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FundamentalGaps({\mdseries\slshape S})\index{FundamentalGaps@\texttt{FundamentalGaps}!for numerical semigroup}
 \label{FundamentalGaps:for numerical semigroup}
@@ -1413,7 +1433,7 @@ division in ${\mathbb N}$. is a numerical semigroup. It returns the set of funda
  
 
 \subsection{\textcolor{Chapter }{SpecialGaps (for numerical semigroup)}}
-\logpage{[ 3, 1, 21 ]}\nobreak
+\logpage{[ 3, 1, 22 ]}\nobreak
 \hyperdef{L}{X803D550C78717A7C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpecialGaps({\mdseries\slshape S})\index{SpecialGaps@\texttt{SpecialGaps}!for numerical semigroup}
 \label{SpecialGaps:for numerical semigroup}
