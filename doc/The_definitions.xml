@@ -21,7 +21,7 @@ gap> MultiplicityOfNumericalSemigroup(S);
 8
 gap> NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>
-gap> Multiplicity(last);     
+gap> Multiplicity(last);
 3
 ]]></Example>
                     </Description>
@@ -73,7 +73,7 @@ gap> HasMinimalGenerators(s);
 false
 gap> MinimalGenerators(s);
 [ 3, 5, 7 ]
-gap> Generators(s);       
+gap> Generators(s);
 [ 3, 5, 7, 15 ]
 ]]></Example>
 <!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
@@ -149,7 +149,7 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
-gap> AperyList(S,12);                              
+gap> AperyList(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
 g]]></Example>
                     </Description>
@@ -163,7 +163,7 @@ g]]></Example>
 gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroup(S);
 [ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
-gap> AperyList(NumericalSemigroup(5,7,11));                           
+gap> AperyList(NumericalSemigroup(5,7,11));
 [ 0, 11, 7, 18, 14 ]
 ]]></Example>
                     </Description>
@@ -174,7 +174,7 @@ gap> AperyList(NumericalSemigroup(5,7,11));
                     <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to integer"/>
                     <Func Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
                     <Description>
-                        <A>S</A> is a numerical semigroup and <A>m</A> is an integer. 
+                        <A>S</A> is a numerical semigroup and <A>m</A> is an integer.
 			Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the
 			set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>.
 			If <A>m</A> is an element in <A>S</A>, then the output of <C>AperyListOfNumericalSemigroupWRTInteger</C>, as sets, is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>,
@@ -185,7 +185,7 @@ gap> AperyList(NumericalSemigroup(5,7,11));
 gap>  s:=NumericalSemigroup(10,13,19,27);;
 gap> AperyListOfNumericalSemigroupWRTInteger(s,11);
 [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
-gap> AperyList(s,11);                              
+gap> AperyList(s,11);
 [ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
 gap> Length(last);
 18
@@ -262,13 +262,13 @@ gap> KunzPolytope(3);
                     <Attr Name="FrobeniusNumber" Arg="NS" Label="for numerical semigroup"/>
                     <Attr Name="FrobeniusNumberOfNumericalSemigroup" Arg="NS"/>
                     <Description>
-         The largest nonnegative integer not belonging to a numerical semigroup 
-<M>S</M> is the <E>Frobenius number</E> of <M>S</M>. If <M>S</M> is the set of 
-nonnegative integers, then clearly its Frobenius number is <M>-1</M>, 
-otherwise its Frobenius number coincides with the maximum of the gaps (or 
+         The largest nonnegative integer not belonging to a numerical semigroup
+<M>S</M> is the <E>Frobenius number</E> of <M>S</M>. If <M>S</M> is the set of
+nonnegative integers, then clearly its Frobenius number is <M>-1</M>,
+otherwise its Frobenius number coincides with the maximum of the gaps (or
 fundamental gaps) of <M>S</M>.
-                      <P/>		      
-                        <C>NS</C> 
+                      <P/>
+                        <C>NS</C>
                         is a numerical semigroup. It returns the Frobenius number of <C>NS</C>.
  Of
                         course, the time consumed to return a result may depend on the way the
@@ -276,33 +276,33 @@ fundamental gaps) of <M>S</M>.
                         <Example><![CDATA[
 gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 4
-gap> FrobeniusNumber(NumericalSemigroup(3,5,7));                    
+gap> FrobeniusNumber(NumericalSemigroup(3,5,7));
 4
 ]]></Example>
                     </Description>
                 </ManSection>
-                                
+
                 <ManSection>
                     <Attr Name="Conductor" Arg="NS" Label="for numerical Semigroup"/>
                     <Attr Name="ConductorOfNumericalSemigroup" Arg="NS"/>
                     <Description>
                         This is just a synonym of <C> FrobeniusNumberOfNumericalSemigroup</C> (<C>NS</C>)<M>+1</M>.
                         <Example><![CDATA[
-gap> ConductorOfNumericalSemigroup(NumericalSemigroup(3,5,7));                    
+gap> ConductorOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 5
-gap> Conductor(NumericalSemigroup(3,5,7));      
+gap> Conductor(NumericalSemigroup(3,5,7));
 5
 ]]></Example>
                     </Description>
                 </ManSection>
-                
+
                 <ManSection>
                     <Attr Name="PseudoFrobeniusOfNumericalSemigroup" Arg="S"/>
                     <Description>
-		       An integer <M>z</M> is a <E>pseudo-Frobenius 
+		       An integer <M>z</M> is a <E>pseudo-Frobenius
 number</E> of <M>S</M> if <M>z+S\setminus\{0\}\subseteq S</M>.
 		    <P/>
-                        <C>S</C> 
+                        <C>S</C>
                         is a numerical semigroup. It returns set of pseudo-Frobenius numbers of <A>S</A>.
                         <Example><![CDATA[
 gap> S := NumericalSemigroup("modular", 5,53);
@@ -345,6 +345,21 @@ gap> Gaps(NumericalSemigroup(5,7,11));
 ]]></Example>
                     </Description>
                 </ManSection>
+
+  <ManSection>
+    <Func Arg="NS" Name="DesertsOfNumericalSemigroup"></Func>
+    <Description>
+      <A>NS</A> is a numerical semigroup.
+      The output is the list with the runs of gaps of <A>NS</A>.
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> DesertsOfNumericalSemigroup(s);
+[ [ 1, 2 ], [ 4 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
 
 
                 <ManSection>

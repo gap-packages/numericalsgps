@@ -5,9 +5,9 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#Y  Copyright 2005 by Manuel Delgado, 
+#Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
-#Y  We adopt the copyright regulations of GAP as detailed in the 
+#Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ##
 #############################################################################
@@ -44,6 +44,17 @@ DeclareSynonymAttr( "SmallElementsOfNumericalSemigroup", SmallElements);
 #############################################################################
 #DeclareAttribute( "Gaps", IsNumericalSemigroup);
 DeclareSynonymAttr( "GapsOfNumericalSemigroup", Gaps);
+
+
+#############################################################################
+##
+#F  DesertsOfNumericalSemigroup(S)
+##
+##  Returns the lists of runs of gaps of the numerical semigroup S
+##
+#############################################################################
+DeclareGlobalFunction("DesertsOfNumericalSemigroup");
+
 
 #############################################################################
 ##
@@ -93,9 +104,9 @@ DeclareGlobalFunction("ProfileOfNumericalSemigroup");
 ##
 #F  EliahouSlicesOfNumericalSemigroup(S)
 ##
-##  Returns a list of lists of integers, each list is the set of elements in 
+##  Returns a list of lists of integers, each list is the set of elements in
 ##  S belonging to [jm-r, (j+1)m-r[ where m is the mulitiplicity of S,
-##  and j in [1..q-1]; with q,r such that c=qm-r, c the conductor of S 
+##  and j in [1..q-1]; with q,r such that c=qm-r, c the conductor of S
 ##  (see [E])
 ##
 #############################################################################
@@ -103,16 +114,16 @@ DeclareGlobalFunction("EliahouSlicesOfNumericalSemigroup");
 
 
 #########################################################
-## 
+##
 #F LatticePathAssociatedToNumericalSemigroup(s,p,q)
 ##
 ## s is a numerical semigroup, and p,q are elements in s
-## Then s is an oversemigroup of <p,q> and all its gaps 
+## Then s is an oversemigroup of <p,q> and all its gaps
 ## are gaps of <p,q>. If c is the conductor of <p,q>,
-## every gap g in <p,q> is expressed uniquely as 
+## every gap g in <p,q> is expressed uniquely as
 ## g=c-1-(ap+bq) for some nonnegative integers a and b,
 ## whence g has associated coordinates (a,b)
-## The output is the path in N^2 such that every point 
+## The output is the path in N^2 such that every point
 ## in N^2 corresponding to a gap of <p,q> above the path
 ## correspond to gaps of s (see [K-W])
 #########################################################
