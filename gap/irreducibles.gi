@@ -358,7 +358,10 @@ end);
 ##  Checks whether or not s is a symmetric numerical semigroup.
 ##
 #############################################################################
-InstallGlobalFunction(IsSymmetricNumericalSemigroup, function(s)
+InstallMethod(IsSymmetricNumericalSemigroup,
+  "Tests wheter the semigroup is symmetric",
+  [IsNumericalSemigroup],1,
+  function(s)
     local sg;
 
     if(not(IsNumericalSemigroup(s))) then
@@ -535,8 +538,8 @@ InstallGlobalFunction(IsACompleteIntersectionNumericalSemigroup,function(s)
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-    ## if the semigroup is no symmetric, then it not a complete intersection
-    if not IsSymmetricNumericalSemigroup(s) then
+    ## if the semigroup is not symmetric, then it not a complete intersection
+    if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;
     fi;
 
@@ -558,10 +561,9 @@ InstallGlobalFunction(IsFreeNumericalSemigroup,function(s)
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-    ## if the semigroup is no symmetric, then it not free (deprecated)
-    #if not IsSymmetricNumericalSemigroup(s) then
-    #    return false;
-    #fi;
+    ## if the semigroup is not symmetric, then it not free (deprecated)
+    if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
+        return false;
 
     gluing:=function(l1,l2) #this function checks if for  a couple of
         #	lists of integers, the numerical semigroup
@@ -609,10 +611,9 @@ InstallGlobalFunction(IsTelescopicNumericalSemigroup,function(s)
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-    ## if the semigroup is no symmetric, then it not telescopic
-    if not IsSymmetricNumericalSemigroup(s) then
+    ## if the semigroup is not symmetric, then it not telescopic
+    if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;
-    fi;
 
     gluing:=function(l1,l2) #this function checks if for  a couple of
         #	lists of integers, the numerical semigroup
@@ -659,10 +660,9 @@ InstallGlobalFunction(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingul
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-    ## if the semigroup is no symmetric, then it not planar
-    if not IsSymmetricNumericalSemigroup(s) then
+    ## if the semigroup is not symmetric, then it not planar
+    if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;
-    fi;
 
     gluing:=function(l1,l2) #this function checks if for  a couple of
         #	lists of integers, the numerical semigroup

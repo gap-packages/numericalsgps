@@ -2231,13 +2231,13 @@ using Algorithm 26 in \cite{RGGJ03}.
 \hyperdef{L}{X7BCDAFE3791A3C48}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSymmetricNumericalSemigroup({\mdseries\slshape s})\index{IsSymmetricNumericalSemigroup@\texttt{IsSymmetricNumericalSemigroup}}
 \label{IsSymmetricNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape s}} is a numerical semigroup. The output is true if \mbox{\texttt{\mdseries\slshape s}} is symmetric, false otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@IsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));      |
-  true            
+  !gapprompt@gap>| !gapinput@IsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));|
+  true
   !gapprompt@gap>| !gapinput@IsSymmetricNumericalSemigroup(NumericalSemigroup(10,11,23));|
   false
 \end{Verbatim}
@@ -2278,7 +2278,7 @@ most four generators (see \cite{RGS04}).
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@s := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);|
   <Numerical semigroup with 3 generators>
-  !gapprompt@gap>| !gapinput@MinimalGenerators(s);                                       |
+  !gapprompt@gap>| !gapinput@MinimalGenerators(s);|
   [ 3, 17, 31 ]
   !gapprompt@gap>| !gapinput@FrobeniusNumber(s);|
   28
@@ -2317,7 +2317,7 @@ irreducible numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\s
 semigroups containing it. These elements appear in a minimal decomposition of \mbox{\texttt{\mdseries\slshape s}} as intersection into irreducibles. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));|
-  [ <Numerical semigroup with 3 generators>, 
+  [ <Numerical semigroup with 3 generators>,
     <Numerical semigroup with 4 generators> ]
 \end{Verbatim}
  }
@@ -5365,7 +5365,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 \hyperdef{L}{X87170BBB85E9DEC8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedAffineSemigroup({\mdseries\slshape a})\index{IsUniquelyPresentedAffineSemigroup@\texttt{IsUniquelyPresentedAffineSemigroup}}
 \label{IsUniquelyPresentedAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. 

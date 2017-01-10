@@ -431,7 +431,7 @@ gap> BettiElementsOfAffineSemigroup(a);
   </ManSection>
 
   <ManSection>
-    <Func Arg="a" Name="IsUniquelyPresentedAffineSemigroup"></Func>
+    <Prop Arg="a" Name="IsUniquelyPresentedAffineSemigroup"></Prop>
     <Description>
       <A>a</A> is an affine semigroup.
       <P/>

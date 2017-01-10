@@ -46,14 +46,14 @@
   
   [1X6.1-2 IsSymmetricNumericalSemigroup[101X
   
-  [29X[2XIsSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  [29X[2XIsSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup.  The output is true if [3Xs[103X is symmetric, false
   otherwise.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));      [127X[104X
-    [4X[28Xtrue            [128X[104X
+    [4X[25Xgap>[125X [27XIsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsSymmetricNumericalSemigroup(NumericalSemigroup(10,11,23));[127X[104X
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
@@ -84,7 +84,7 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27XMinimalGenerators(s);                                       [127X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(s);[127X[104X
     [4X[28X[ 3, 17, 31 ][128X[104X
     [4X[25Xgap>[125X [27XFrobeniusNumber(s);[127X[104X
     [4X[28X28[128X[104X
@@ -112,7 +112,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XDecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));[127X[104X
-    [4X[28X[ <Numerical semigroup with 3 generators>, [128X[104X
+    [4X[28X[ <Numerical semigroup with 3 generators>,[128X[104X
     [4X[28X  <Numerical semigroup with 4 generators> ][128X[104X
   [4X[32X[104X
   
