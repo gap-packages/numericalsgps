@@ -346,6 +346,15 @@ InstallGlobalFunction(IsIrreducibleNumericalSemigroup, function(s)
     if(not(IsNumericalSemigroup(s))) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
+
+    if HasIsSymmetricNumericalSemigroup(s) and (IsSymmetricNumericalSemigroup(s)) then
+        return true;
+    fi;
+
+    if HasIsPseudoSymmetricNumericalSemigroup(s) and (IsPseudoSymmetricNumericalSemigroup(s)) then
+        return true;
+    fi;
+
     return Length(GapsOfNumericalSemigroup(s))<=(FrobeniusNumberOfNumericalSemigroup(s)+2)/2;
 end);
 
