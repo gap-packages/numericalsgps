@@ -50,7 +50,7 @@ false
 
 
                 <ManSection>
-                    <Prop Arg="s" Name="IsSymmetric"></Prop>
+                    <!--<Prop Arg="s" Name="IsSymmetric"></Prop>-->
                     <Prop Arg="s" Name="IsSymmetricNumericalSemigroup"></Prop>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is symmetric,
