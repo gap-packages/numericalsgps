@@ -104,12 +104,12 @@ DeclareProperty("IsSymmetricNumericalSemigroup", IsNumericalSemigroup);
 
 #############################################################################
 ##
-#F  IsPseudoSymmetricNumericalSemigroup(s)
+#P  IsPseudoSymmetricNumericalSemigroup(s)
 ##
 ##  Checks whether or not s is a pseudosymmetric numerical semigroup.
 ##
 #############################################################################
-DeclareGlobalFunction("IsPseudoSymmetricNumericalSemigroup");
+DeclareProperty("IsPseudoSymmetricNumericalSemigroup", IsNumericalSemigroup);
 
 #####################################################################
 ##                        Almost-symmetric numerical semigroups

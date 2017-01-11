@@ -378,18 +378,20 @@ end);
 
 #############################################################################
 ##
-#F  IsPseudoSymmetricNumericalSemigroup(s)
+#P  IsPseudoSymmetricNumericalSemigroup(s)
 ##
 ##  Checks whether or not s is a pseudosymmetric numerical semigroup.
 ##
 #############################################################################
-InstallGlobalFunction(IsPseudoSymmetricNumericalSemigroup,function(s)
+InstallMethod(IsPseudoSymmetricNumericalSemigroup,
+  "Tests wheter the semigroup is pseudosymmetric",
+  [IsNumericalSemigroup],1,function(s)
     local sg;
 
     if(not(IsNumericalSemigroup(s))) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
-    return Length(GapsOfNumericalSemigroup(s))=(FrobeniusNumberOfNumericalSemigroup(s)+2)/2;
+    return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+2)/2;
 end);
 
 
