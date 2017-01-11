@@ -36,6 +36,7 @@ ReadPackage( "numericalsgps", "gap/pseudoFrobenius.gi" );
 ReadPackage( "numericalsgps", "gap/contributions.gi" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gi" );
 ReadPackage( "numericalsgps", "gap/polynomials.gi" );
+ReadPackage( "numericalsgps", "gap/other-families-ns.gi" );
 ##
 ## Good semigroups N^2
 ##
