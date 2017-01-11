@@ -65,7 +65,7 @@ false
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="s" Name="IsPseudoSymmetricNumericalSemigroup"></Func>
+                    <Prop Arg="s" Name="IsPseudoSymmetricNumericalSemigroup"></Prop>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is pseudo-symmetric,
                         false otherwise.
