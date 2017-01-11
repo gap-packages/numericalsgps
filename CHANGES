@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Added IsOrdinaryNumericalSemigroup and IsAcuteNumericalSemigroup
 - IsSymmetricNumericalSemigroup is now a property, the same for IsPseudoSymmetricNumericalSemigroup
 - Added DesertsOfNumericalSemigroup
 - HilbertBasis* and PrimitiveElements* now available with singular (through 4ti2 and normaliz libraries)
