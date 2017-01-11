@@ -99,7 +99,7 @@ DeclareGlobalFunction("IsIrreducibleNumericalSemigroup");
 ##
 #############################################################################
 DeclareProperty("IsSymmetricNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonymAttr("IsSymmetric",IsSymmetricNumericalSemigroup);
+#DeclareSynonymAttr("IsSymmetric",IsSymmetricNumericalSemigroup);
 
 
 #############################################################################
