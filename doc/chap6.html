@@ -33,7 +33,7 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87D62468791EDE8A">6.1-1 IsIrreducibleNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7BCDAFE3791A3C48">6.1-2 IsSymmetricNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X84125DC485D48A88">6.1-3 IsPseudoSymmetricNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X865547637DD2C603">6.1-3 IsPseudoSymmetric</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7C8AB03F7E0B71F0">6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X78345A267ADEFBAB">6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8753F78D7FD732E2">6.1-6 DecomposeIntoIrreducibles</a></span>
@@ -44,11 +44,11 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X848FCB49851D19B8">6.2-1 AsGluingOfNumericalSemigroups</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86BE7CD17E99BE23">6.2-2 IsACompleteIntersectionNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7A0DF10F85F32194">6.2-2 IsCompleteIntersection</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86350BCE7D047599">6.2-3 CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X78FF54BF79F19AB3">6.2-4 IsFreeNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7CD2A77778432E7B">6.2-4 IsFree</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86B4BA6A79F734A8">6.2-5 FreeNumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7807E8998663F8C0">6.2-6 IsTelescopicNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X830D0E0F7B8C6284">6.2-6 IsTelescopic</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X84475353846384E8">6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X847CD0EF8452F771">6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X85BD8C3680F22594">6.2-9 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</a></span>
@@ -59,7 +59,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7A81F31479DB5DF2">6.3-1 AlmostSymmetricNumericalSemigroupsFromIrreducible</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7CF201F185943C30">6.3-2 IsAlmostSymmetricNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X84C44C7A7D9270BB">6.3-2 IsAlmostSymmetric</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7B0DF2FE7D00A9E0">6.3-3 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</a></span>
 </div></div>
 </div>
@@ -88,7 +88,7 @@
 
 <h5>6.1-1 IsIrreducibleNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is irreducible, false otherwise.</p>
 
 
@@ -114,10 +114,11 @@ true
 false
 </pre></div>
 
-<p><a id="X84125DC485D48A88" name="X84125DC485D48A88"></a></p>
+<p><a id="X865547637DD2C603" name="X865547637DD2C603"></a></p>
 
-<h5>6.1-3 IsPseudoSymmetricNumericalSemigroup</h5>
+<h5>6.1-3 IsPseudoSymmetric</h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPseudoSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPseudoSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is pseudo-symmetric, false otherwise.</p>
 
@@ -190,32 +191,33 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup( 10, 15, 16 );                   </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup( 10, 15, 16 );</span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsGluingOfNumericalSemigroups(s);     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsGluingOfNumericalSemigroups(s);</span>
 [ [ [ 10, 15 ], [ 16 ] ], [ [ 10, 16 ], [ 15 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );</span>
 &lt;Numerical semigroup with 8 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsGluingOfNumericalSemigroups(s);                        </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsGluingOfNumericalSemigroups(s);</span>
 [  ]
 </pre></div>
 
-<p><a id="X86BE7CD17E99BE23" name="X86BE7CD17E99BE23"></a></p>
+<p><a id="X7A0DF10F85F32194" name="X7A0DF10F85F32194"></a></p>
 
-<h5>6.2-2 IsACompleteIntersectionNumericalSemigroup</h5>
+<h5>6.2-2 IsCompleteIntersection</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsACompleteIntersectionNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompleteIntersection</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsACompleteIntersectionNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is a complete intersection, that is, the cardinality of a (any) minimal presentation equals its embedding dimension minus one.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup( 10, 15, 16 );       </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup( 10, 15, 16 );</span>
 &lt;Numerical semigroup with 3 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsACompleteIntersectionNumericalSemigroup(s);</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );</span>
 &lt;Numerical semigroup with 8 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsACompleteIntersectionNumericalSemigroup(s);            </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsACompleteIntersectionNumericalSemigroup(s);</span>
 false
 </pre></div>
 
@@ -232,11 +234,12 @@ false
 34
 </pre></div>
 
-<p><a id="X78FF54BF79F19AB3" name="X78FF54BF79F19AB3"></a></p>
+<p><a id="X7CD2A77778432E7B" name="X7CD2A77778432E7B"></a></p>
 
-<h5>6.2-4 IsFreeNumericalSemigroup</h5>
+<h5>6.2-4 IsFree</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFreeNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFree</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFreeNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is free in the sense of <a href="chapBib.html#biBBC77">[BC77]</a>: it is either <span class="SimpleMath">N</span> or the gluing of a copy of <span class="SimpleMath">N</span> with a free numerical semigroup.</p>
 
 
@@ -260,11 +263,12 @@ false
 33
 </pre></div>
 
-<p><a id="X7807E8998663F8C0" name="X7807E8998663F8C0"></a></p>
+<p><a id="X830D0E0F7B8C6284" name="X830D0E0F7B8C6284"></a></p>
 
-<h5>6.2-6 IsTelescopicNumericalSemigroup</h5>
+<h5>6.2-6 IsTelescopic</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopic</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is telescopic in the sense of <a href="chapBib.html#biBKP95">[KP95]</a>: it is either <span class="SimpleMath">N</span> or the gluing of <span class="SimpleMath">⟨ n_e⟩</span> and <span class="SimpleMath">s'=⟨ n_1/d,..., n_e-1/d⟩</span>, and <span class="SimpleMath">s'</span> is again a telescopic numerical semigroup, where <span class="SimpleMath">n_1 &lt; ⋯ &lt; n_e</span> are the minimal generators of <var class="Arg">s</var>.</p>
 
 
@@ -292,7 +296,7 @@ true
 
 <h5>6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is associated to an irreducible planar curve singularity (<a href="chapBib.html#biBZ86">[Zar86]</a>). These semigroups are telescopic.</p>
 
 
@@ -300,7 +304,7 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns := NumericalSemigroup(4,11,14);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);</span>
 false
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns := NumericalSemigroup(4,11,19);;                                 </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns := NumericalSemigroup(4,11,19);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);</span>
 true
 </pre></div>
@@ -314,9 +318,9 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(                                                                         </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(</span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">(57));                                                                           </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">(57));</span>
 7
 </pre></div>
 
@@ -339,17 +343,18 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns := NumericalSemigroup(5,8,9,11);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AlmostSymmetricNumericalSemigroupsFromIrreducible(ns);</span>
-[ &lt;Numerical semigroup with 4 generators&gt;, 
-  &lt;Numerical semigroup with 5 generators&gt;, 
+[ &lt;Numerical semigroup with 4 generators&gt;,
+  &lt;Numerical semigroup with 5 generators&gt;,
   &lt;Numerical semigroup with 5 generators&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGeneratingSystemOfNumericalSemigroup);</span>
 [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
 </pre></div>
 
-<p><a id="X7CF201F185943C30" name="X7CF201F185943C30"></a></p>
+<p><a id="X84C44C7A7D9270BB" name="X84C44C7A7D9270BB"></a></p>
 
-<h5>6.3-2 IsAlmostSymmetricNumericalSemigroup</h5>
+<h5>6.3-2 IsAlmostSymmetric</h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAlmostSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAlmostSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is almost symmetric.</p>
 

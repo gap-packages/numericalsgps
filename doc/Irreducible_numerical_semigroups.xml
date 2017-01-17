@@ -35,7 +35,7 @@
 
 
                 <ManSection>
-                    <Func Arg="s" Name="IsIrreducibleNumericalSemigroup"></Func>
+                    <Prop Arg="s" Name="IsIrreducibleNumericalSemigroup"></Prop>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is irreducible,
                         false otherwise.
@@ -65,6 +65,7 @@ false
                 </ManSection>
 
                 <ManSection>
+                  <Prop Arg="s" Name="IsPseudoSymmetric"></Prop>
                     <Prop Arg="s" Name="IsPseudoSymmetricNumericalSemigroup"></Prop>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is pseudo-symmetric,

@@ -83,12 +83,13 @@ DeclareGlobalFunction("DecomposeIntoIrreducibles");
 
 #############################################################################
 ##
-#F  IsIrreducibleNumericalSemigroup(s)
+#P  IsIrreducibleNumericalSemigroup(s)
 ##
 ##  Checks whether or not s is an irreducible numerical semigroup.
 ##
 #############################################################################
 DeclareProperty("IsIrreducibleNumericalSemigroup", IsNumericalSemigroup);
+#DeclareSynonymAttr("IsIrreducible",IsIrreducibleNumericalSemigroup);
 
 
 #############################################################################
@@ -110,6 +111,7 @@ DeclareProperty("IsSymmetricNumericalSemigroup", IsNumericalSemigroup);
 ##
 #############################################################################
 DeclareProperty("IsPseudoSymmetricNumericalSemigroup", IsNumericalSemigroup);
+DeclareSynonymAttr("IsPseudoSymmetric",IsPseudoSymmetricNumericalSemigroup);
 
 #####################################################################
 ##                        Almost-symmetric numerical semigroups
@@ -118,13 +120,14 @@ DeclareProperty("IsPseudoSymmetricNumericalSemigroup", IsNumericalSemigroup);
 #   semigroups from almost irreducible numerical semigroups, Comm. Algebra.
 #####################################################################
 ##
-#F IsAlmostSymmetricNumericalSemigroup(arg)
+#P IsAlmostSymmetricNumericalSemigroup(arg)
 ##
 ## The argument is a numerical semigroup. The output is True or False depending
 ## on if the semigroup is almost symmetric or not, see [BF97]
 ##
 #####################################################################
 DeclareProperty("IsAlmostSymmetricNumericalSemigroup", IsNumericalSemigroup);
+DeclareSynonymAttr("IsAlmostSymmetric",IsAlmostSymmetricNumericalSemigroup);
 
 
 #####################################################################
@@ -162,44 +165,49 @@ DeclareGlobalFunction("AsGluingOfNumericalSemigroups");
 
 #############################################################################
 ##
-#F IsACompleteIntersectionNumericalSemigroup
+#P IsACompleteIntersectionNumericalSemigroup
 ##
 ##returns true if the numerical semigroup is a complete intersection,
 ## that is, the cardinality of a (any) minimal presentation equals
 ## its embedding dimension minus one
 ##
 #############################################################################
-DeclareGlobalFunction("IsACompleteIntersectionNumericalSemigroup");
+DeclareProperty("IsACompleteIntersectionNumericalSemigroup",IsNumericalSemigroup);
+DeclareSynonymAttr("IsCompleteIntersection",IsACompleteIntersectionNumericalSemigroup);
+
 
 #############################################################################
 ##
-#F IsFreeNumericalSemigroup
+#P IsFreeNumericalSemigroup
 ##
 # # returns true if the numerical semigroup is a free semigroup, in the sense of
 # # Bertin and Carbonne [BC77]
 ##
 #############################################################################
-DeclareGlobalFunction("IsFreeNumericalSemigroup");
+DeclareProperty("IsFreeNumericalSemigroup",IsNumericalSemigroup);
+DeclareSynonymAttr("IsFree",IsFreeNumericalSemigroup);
 
 #############################################################################
 ##
-#F IsTelescopicNumericalSemigroup
+#P IsTelescopicNumericalSemigroup
 ##
 # # returns true if the numerical semigroup is telescopic [KP95],
 ##  that is, free for the ordering n_1<...<n_e, with n_i the minimal generators
 ##
 #############################################################################
-DeclareGlobalFunction("IsTelescopicNumericalSemigroup");
+DeclareProperty("IsTelescopicNumericalSemigroup",IsNumericalSemigroup);
+DeclareSynonymAttr("IsTelescopic",IsTelescopicNumericalSemigroup);
 
 #############################################################################
 ##
-#F IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+#P IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
 ##
 ## returns true if the numerical semigroup is a telescopic numerical semigroup,
 ##  and in addition for all i, d_i n_i < d_{i+1}n_{i+1}, con d_i=gcd{n_j | j<i} [Z86]
 ##
 #############################################################################
-DeclareGlobalFunction("IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity");
+DeclareProperty("IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity",
+IsNumericalSemigroup);
 
 #############################################################################
 ##

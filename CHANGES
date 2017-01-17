@@ -4,7 +4,7 @@
 1.0.1->1.1.0
 - Intersection is now shorthand for IntersectionOfNumericalSemigroups and IntersectionIdealsOfNumericalSemigroup
 - Added IsOrdinaryNumericalSemigroup and IsAcuteNumericalSemigroup
-- IsSymmetricNumericalSemigroup is now a property, the same for IsPseudoSymmetricNumericalSemigroup
+- IsSymmetricNumericalSemigroup is now a property, the same for IsPseudoSymmetricNumericalSemigroup, IsIrreducibleNumericalSemigroup and IsAlmostSymmetricNumericalSemigroup
 - Added DesertsOfNumericalSemigroup
 - HilbertBasis* and PrimitiveElements* now available with singular (through 4ti2 and normaliz libraries)
 - Improved IsFreeNumericalSemigroup
