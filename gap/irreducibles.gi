@@ -342,7 +342,9 @@ end);
 ##  Checks whether or not s is an irreducible numerical semigroup.
 ##
 #############################################################################
-InstallGlobalFunction(IsIrreducibleNumericalSemigroup, function(s)
+InstallMethod(IsIrreducibleNumericalSemigroup,
+  "Tests whether the semigroup is irreducible", [IsNumericalSemigroup],1,
+  function(s)
     if(not(IsNumericalSemigroup(s))) then
         Error("The argument must be a numerical semigroup.\n");
     fi;
@@ -383,7 +385,7 @@ InstallMethod(IsSymmetricNumericalSemigroup,
     return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+1)/2;
 end);
 
-
+InstallTrueMethod(IsIrreducibleNumericalSemigroup, IsSymmetricNumericalSemigroup);
 
 #############################################################################
 ##
@@ -403,6 +405,8 @@ InstallMethod(IsPseudoSymmetricNumericalSemigroup,
     return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+2)/2;
 end);
 
+InstallTrueMethod(IsIrreducibleNumericalSemigroup, IsPseudoSymmetricNumericalSemigroup);
+
 
 #####################################################################
 ##                        Almost-symmetric numerical semigroups
@@ -417,7 +421,10 @@ end);
 ## on if the semigroup is almost symmetric or not, see [BF97]
 ##
 #####################################################################
-InstallGlobalFunction(IsAlmostSymmetricNumericalSemigroup,function(s)
+InstallMethod(IsAlmostSymmetricNumericalSemigroup,
+  "Tests whether the semigroup is almost symmetric",
+  [IsNumericalSemigroup],1,
+  function(s)
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
@@ -425,6 +432,8 @@ InstallGlobalFunction(IsAlmostSymmetricNumericalSemigroup,function(s)
 
     return 2*GenusOfNumericalSemigroup(s)=FrobeniusNumber(s)+TypeOfNumericalSemigroup(s);
 end);
+
+InstallTrueMethod(IsAlmostSymmetricNumericalSemigroup, IsIrreducibleNumericalSemigroup);
 
 
 #####################################################################
