@@ -35,28 +35,32 @@ InstallMethod(IsAcuteNumericalSemigroup,
     return Length(ds[nds])<=Length(ds[nds-1]);
   end);
 
-  #############################################################################
-  ##
-  #P  IsOrdinaryNumericalSemigroup(s)
-  ##
-  ##  Checks whether or not the nuemrical semigroup s is acute.
-  ##
-  #############################################################################
-  InstallMethod(IsOrdinaryNumericalSemigroup,
-    "Tests wheter the semigroup is ordinary",
-    [IsNumericalSemigroup],1,
-    function(s)
-      local ds, nds;
+InstallTrueMethod(IsAcuteNumericalSemigroup, IsIrreducibleNumericalSemigroup);
 
-      if not(IsNumericalSemigroup(s)) then
-        Error("The argument must be a numerical semigroup");
-      fi;
+#############################################################################
+##
+#P  IsOrdinaryNumericalSemigroup(s)
+##
+##  Checks whether or not the nuemrical semigroup s is acute.
+##
+#############################################################################
+InstallMethod(IsOrdinaryNumericalSemigroup,
+  "Tests wheter the semigroup is ordinary",
+  [IsNumericalSemigroup],1,
+  function(s)
+  local ds, nds;
 
-      if HasMultiplicity(s) and HasConductor(s) then
-        return Multiplicity(s)=Conductor(s);
-      fi;
-      ds:=DesertsOfNumericalSemigroup(s);
-      nds:=Length(ds);
+  if not(IsNumericalSemigroup(s)) then
+    Error("The argument must be a numerical semigroup");
+  fi;
 
-      return nds<=1;
-    end);
+  if HasMultiplicity(s) and HasConductor(s) then
+    return Multiplicity(s)=Conductor(s);
+  fi;
+  ds:=DesertsOfNumericalSemigroup(s);
+  nds:=Length(ds);
+
+  return nds<=1;
+end);
+
+InstallTrueMethod(IsAcuteNumericalSemigroup, IsOrdinaryNumericalSemigroup);
