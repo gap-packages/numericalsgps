@@ -88,7 +88,7 @@ DeclareGlobalFunction("DecomposeIntoIrreducibles");
 ##  Checks whether or not s is an irreducible numerical semigroup.
 ##
 #############################################################################
-DeclareGlobalFunction("IsIrreducibleNumericalSemigroup");
+DeclareProperty("IsIrreducibleNumericalSemigroup", IsNumericalSemigroup);
 
 
 #############################################################################
@@ -124,7 +124,7 @@ DeclareProperty("IsPseudoSymmetricNumericalSemigroup", IsNumericalSemigroup);
 ## on if the semigroup is almost symmetric or not, see [BF97]
 ##
 #####################################################################
-DeclareGlobalFunction("IsAlmostSymmetricNumericalSemigroup");
+DeclareProperty("IsAlmostSymmetricNumericalSemigroup", IsNumericalSemigroup);
 
 
 #####################################################################
