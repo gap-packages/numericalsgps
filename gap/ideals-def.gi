@@ -203,7 +203,7 @@ InstallMethod(GeneratorsOfIdealOfNumericalSemigroup,
     if HasMinimalGenerators(I) then
        return (MinimalGenerators(I));
     fi;
-    return(Generators(I));   
+    return(Generators(I));
 end);
 
 
@@ -292,7 +292,7 @@ end);
 ##  Returns the conductor of I, the largest element in SmallElements(I)
 ##
 #############################################################################
-InstallMethod(Conductor, 
+InstallMethod(Conductor,
         "Returns the conductor of I, the largest element in SmallElements(I)",
         [IsIdealOfNumericalSemigroup ],
         function(I)
@@ -361,7 +361,7 @@ InstallMethod(MinimalGeneratingSystemOfIdealOfNumericalSemigroup,
 #    Setter(Generators)(I,mingens); #does not work
     return mingens;
   end);
-  
+
 #############################################################################
 ##
 #F SumIdealsOfNumericalSemigroup(I,J)
@@ -401,7 +401,7 @@ end);
 ## returns the ideal I - J
 #############################################################################
 InstallGlobalFunction(SubtractIdealsOfNumericalSemigroup, function(I, J)
-    local   s,  g,  mult,  gI,  gJ,  i,  j,  l,  l2,  maxgap,  maxl,  mingen,  
+    local   s,  g,  mult,  gI,  gJ,  i,  j,  l,  l2,  maxgap,  maxl,  mingen,
             ideal;
 
     if not (IsIdealOfNumericalSemigroup(I) and IsIdealOfNumericalSemigroup(J))
@@ -412,7 +412,7 @@ InstallGlobalFunction(SubtractIdealsOfNumericalSemigroup, function(I, J)
     s := AmbientNumericalSemigroupOfIdeal(I);
     g := FrobeniusNumberOfNumericalSemigroup(s);
     mult:= MultiplicityOfNumericalSemigroup(s);
-    
+
     gI := GeneratorsOfIdealOfNumericalSemigroup(I);
     gJ := GeneratorsOfIdealOfNumericalSemigroup(J);
 
@@ -439,7 +439,7 @@ InstallGlobalFunction(SubtractIdealsOfNumericalSemigroup, function(I, J)
     ideal := mingen + s;
 
     Setter(SmallElementsOfIdealOfNumericalSemigroup)(ideal,l);
-    
+
     Setter(MinimalGeneratingSystemOfIdealOfNumericalSemigroup)(ideal,mingen);
 
     return ideal;
@@ -713,7 +713,7 @@ end);
 ##
 #F  IsCanonicalIdealOfNumericalSemigroup(e)
 ##
-##  Detects if the ideal e is a translation of the canonical ideal of its 
+##  Detects if the ideal e is a translation of the canonical ideal of its
 ##  ambient semigroup
 ##
 #############################################################################
@@ -809,6 +809,10 @@ end);
 ##  intersection of the ideals <I> and <J>.
 ##
 #############################################################################
+InstallOtherMethod(Intersection2, [IsIdealOfNumericalSemigroup, IsIdealOfNumericalSemigroup], function(I,J)
+  return IntersectionIdealsOfNumericalSemigroup(I,J);
+end);
+
 InstallGlobalFunction(IntersectionIdealsOfNumericalSemigroup, function(I, J)
     local l,i,j,max,mult,l1,l2;
 
@@ -819,7 +823,7 @@ InstallGlobalFunction(IntersectionIdealsOfNumericalSemigroup, function(I, J)
     fi;
 
     mult:=MultiplicityOfNumericalSemigroup(AmbientNumericalSemigroupOfIdeal(I));
-    
+
     l1:=SmallElementsOfIdealOfNumericalSemigroup(I);
     l2:=SmallElementsOfIdealOfNumericalSemigroup(J);
     i:=Maximum(l1);
@@ -828,7 +832,7 @@ InstallGlobalFunction(IntersectionIdealsOfNumericalSemigroup, function(I, J)
     l1:=Concatenation(l1,[(i+1)..max]);
     l2:=Concatenation(l2,[(j+1)..max]);
     l := Concatenation(Intersection(l1,l2),[(max+1)..(max+mult)]);
-   
+
     return(IdealOfNumericalSemigroup(l,AmbientNumericalSemigroupOfIdeal(I)));
 
 end);
@@ -840,8 +844,8 @@ end);
 ##
 ##  Computes the sets of elements x of I such that x-n not in I,
 ##  where n is supposed to be in the ambient semigroup of I.
-##  The element in the i-th position of the output list (starting in 0) 
-##  is congruent with i modulo n 
+##  The element in the i-th position of the output list (starting in 0)
+##  is congruent with i modulo n
 ########################################################################
 InstallGlobalFunction(AperyListOfIdealOfNumericalSemigroupWRTElement,function(ideal,n)
 	local msg, apambient, s, ap, cand, i;
@@ -852,7 +856,7 @@ InstallGlobalFunction(AperyListOfIdealOfNumericalSemigroupWRTElement,function(id
 	ap:=ShallowCopy(apambient);
 
 	cand:=Set(Cartesian(msg,apambient), p->p[1]+p[2]);
-	
+
 	for i in [0..n-1] do
 		ap[i+1]:=Minimum(Filtered(cand, w-> w mod n=i));
 	od;
@@ -863,12 +867,12 @@ end);
 ##
 #F AperyTableOfNumericalSemigroup(S)
 ##
-##  Computes the Apéry table associated to S as 
+##  Computes the Apéry table associated to S as
 ## explained in [CJZ],
-##  that is, a list containing the Apéry list of S with respect to 
-## its multiplicity and the Apéry lists of kM (with M the maximal 
+##  that is, a list containing the Apéry list of S with respect to
+## its multiplicity and the Apéry lists of kM (with M the maximal
 ##  ideal of S) with respect to the multiplicity of S, for k=1..r,
-##  where r is the reduction number of M 
+##  where r is the reduction number of M
 ##  (see ReductionNumberIdealNumericalSemigroup).
 ########################################################################
 InstallGlobalFunction(AperyTableOfNumericalSemigroup,function(S)
@@ -878,16 +882,16 @@ InstallGlobalFunction(AperyTableOfNumericalSemigroup,function(S)
 	m:=MultiplicityOfNumericalSemigroup(S);
 	table:=[AperyListOfNumericalSemigroupWRTElement(S,m)];
 	r:=ReductionNumberIdealNumericalSemigroup(M);
-	for k in [1..r] do 
+	for k in [1..r] do
 		Append(table,[AperyListOfIdealOfNumericalSemigroupWRTElement(k*M,m)]);
 	od;
-	return table;	
+	return table;
 end);
 
 ########################################################################
-## 
+##
 #F StarClosureOfIdealOfNumericalSemigroup(i,is)
-##  i is an ideal and is is a set of ideals (all from the same 
+##  i is an ideal and is is a set of ideals (all from the same
 ##	numerical semigroup). The output is i^{*_is}, where
 ## *_is is the star operation generated by is
 ## The implementation uses Section 3 of
@@ -905,5 +909,5 @@ InstallGlobalFunction(StarClosureOfIdealOfNumericalSemigroup, function(i,is)
 	od;
 
 	return j;
-	
+
 end);
