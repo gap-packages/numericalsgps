@@ -40,8 +40,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X851069107CACF98E">5.2-1 Intersection</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83CCE63C82F34C25">5.2-2 QuotientOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7BE8DD6884DE693F">5.2-3 MultipleOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7F395079839BBE9D">5.2-4 NumericalDuplication</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7DCEC67A82130CD8">5.2-5 InductiveNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X825AC0F07E010B07">5.2-4 Difference</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7F395079839BBE9D">5.2-5 NumericalDuplication</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7DCEC67A82130CD8">5.2-6 InductiveNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X867D9A9A87CEB869">5.3 <span class="Heading">
                     Constructing the set of all numerical semigroups containing a given numerical semigroup
@@ -197,9 +198,29 @@ true
       [ 0, 4, 8, 12, 16, 20 ]
 </pre></div>
 
+<p><a id="X825AC0F07E010B07" name="X825AC0F07E010B07"></a></p>
+
+<h5>5.2-4 Difference</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Difference</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferenceOfNumericalSemigroups</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S, T</var> are numerical semigroups. The output is the set <span class="SimpleMath"><var class="Arg">S</var>∖ <var class="Arg">T</var></span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns1 := NumericalSemigroup(5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns2 := NumericalSemigroup(7,11,12);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ns1,ns2);                </span>
+[ 5, 10, 15, 17, 20, 27 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ns2,ns1);                </span>
+[ 11, 18, 23 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferenceOfNumericalSemigroups(ns2,ns1);</span>
+[ 11, 18, 23 ]
+</pre></div>
+
 <p><a id="X7F395079839BBE9D" name="X7F395079839BBE9D"></a></p>
 
-<h5>5.2-4 NumericalDuplication</h5>
+<h5>5.2-5 NumericalDuplication</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalDuplication</code>( <var class="Arg">S</var>, <var class="Arg">E</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">E</var> and ideal of <var class="Arg">S</var> with <span class="SimpleMath">E⊆ S</span>, and <var class="Arg">b</var> are positive odd integer in <var class="Arg">S</var>. Computes <span class="SimpleMath">2S∪ (2E+b)</span>.</p>
@@ -218,7 +239,7 @@ true
 
 <p><a id="X7DCEC67A82130CD8" name="X7DCEC67A82130CD8"></a></p>
 
-<h5>5.2-5 InductiveNumericalSemigroup</h5>
+<h5>5.2-6 InductiveNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InductiveNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">a</var> and <var class="Arg">b</var> are lists of positive integers, such that <span class="SimpleMath">b[i+1]ge a[i]b[i]</span>. Computes inductively <span class="SimpleMath">S_0= N</span> and <span class="SimpleMath">S_i+1=a[i]S_i∪ {a[i]b[i],a[i]b[i]+1,-&gt;}</span>, and returns <span class="SimpleMath">S_k</span>, with <span class="SimpleMath">k</span> the length of <var class="Arg">a</var> and <var class="Arg">b</var>.</p>

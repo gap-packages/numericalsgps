@@ -116,7 +116,25 @@
     [4X[28X      [ 0, 4, 8, 12, 16, 20 ][128X[104X
   [4X[32X[104X
   
-  [1X5.2-4 NumericalDuplication[101X
+  [1X5.2-4 Difference[101X
+  
+  [29X[2XDifference[102X( [3XS[103X, [3XT[103X ) [32X operation
+  [29X[2XDifferenceOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  
+  [33X[0;0Y[3XS, T[103X are numerical semigroups. The output is the set [22X[3XS[103X∖ [3XT[103X[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xns1 := NumericalSemigroup(5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xns2 := NumericalSemigroup(7,11,12);;[127X[104X
+    [4X[25Xgap>[125X [27XDifference(ns1,ns2);                [127X[104X
+    [4X[28X[ 5, 10, 15, 17, 20, 27 ][128X[104X
+    [4X[25Xgap>[125X [27XDifference(ns2,ns1);                [127X[104X
+    [4X[28X[ 11, 18, 23 ][128X[104X
+    [4X[25Xgap>[125X [27XDifferenceOfNumericalSemigroups(ns2,ns1);[127X[104X
+    [4X[28X[ 11, 18, 23 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-5 NumericalDuplication[101X
   
   [29X[2XNumericalDuplication[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function
   
@@ -134,7 +152,7 @@
     [4X[28X      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ][128X[104X
   [4X[32X[104X
   
-  [1X5.2-5 InductiveNumericalSemigroup[101X
+  [1X5.2-6 InductiveNumericalSemigroup[101X
   
   [29X[2XInductiveNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function
   

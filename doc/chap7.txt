@@ -236,7 +236,7 @@
   
   [1X7.1-13 Difference[101X
   
-  [29X[2XDifference[102X( [3XS[103X, [3XT[103X ) [32X operation
+  [29X[2XDifference[102X( [3XI[103X, [3XJ[103X ) [32X operation
   [29X[2XDifferenceOfIdealsOfNumericalSemigroup[102X( [3XI[103X, [3XJ[103X ) [32X function
   
   [33X[0;0Y[3XI,  J[103X  are  ideals  of  a numerical semigroup. [3XJ[103X must be contained in [3XI[103X. The
@@ -250,8 +250,16 @@
     [4X[28X<Ideal of numerical semigroup>[128X[104X
     [4X[25Xgap>[125X [27XI-I;[127X[104X
     [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27XDifferenceOfIdealsOfNumericalSemigroup(last2,last);[127X[104X
+    [4X[25Xgap>[125X [27Xii := 2*I-2*I;[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xi := I-I;     [127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27X DifferenceOfIdealsOfNumericalSemigroup(last2,last);[127X[104X
     [4X[28X[ 26, 27, 37, 38 ][128X[104X
+    [4X[25Xgap>[125X [27XDifference(ii,i);[127X[104X
+    [4X[28X[ 26, 27, 37, 38 ][128X[104X
+    [4X[25Xgap>[125X [27XDifference(i,ii);[127X[104X
+    [4X[28X[  ][128X[104X
   [4X[32X[104X
   
   [1X7.1-14 TranslationOfIdealOfNumericalSemigroup[101X

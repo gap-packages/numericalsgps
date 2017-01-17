@@ -62,8 +62,27 @@
       [ 0, 4, 8, 12, 16, 20 ]
 ]]></Example>
     </Description>
+    
   </ManSection>
+                <ManSection>
+                    <Oper Name="Difference" Arg="S, T"/>
+                    <Func Arg="S, T" Name="DifferenceOfNumericalSemigroups"></Func>
+                    <Description>
+                        <A>S, T</A> are numerical semigroups.
+                        The output is the set <M><A>S</A>\setminus <A>T</A></M>.
 
+                        <Example><![CDATA[
+gap> ns1 := NumericalSemigroup(5,7);;
+gap> ns2 := NumericalSemigroup(7,11,12);;
+gap> Difference(ns1,ns2);                
+[ 5, 10, 15, 17, 20, 27 ]
+gap> Difference(ns2,ns1);                
+[ 11, 18, 23 ]
+gap> DifferenceOfNumericalSemigroups(ns2,ns1);
+[ 11, 18, 23 ]
+]]></Example>
+                    </Description>
+                </ManSection>
 
   <ManSection>
   <Func Name="NumericalDuplication" Arg="S, E, b"/>

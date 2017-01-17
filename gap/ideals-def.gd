@@ -131,7 +131,7 @@ DeclareGlobalFunction("BelongsToIdealOfNumericalSemigroup");
 ##
 #F DifferenceOfdealsOfNumericalSemigroup(I,J)
 ##
-## returns the set difference I\J (J must be contained in I)
+## returns the set difference I\J
 #############################################################################
 DeclareGlobalFunction("DifferenceOfIdealsOfNumericalSemigroup");
 

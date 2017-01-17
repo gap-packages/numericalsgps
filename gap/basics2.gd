@@ -25,6 +25,14 @@ DeclareOperation( "IsSubsemigroupOfNumericalSemigroup",[IsNumericalSemigroup,IsN
 ########
 #DeclareOperation( "IsSubset",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
+#############################################################################
+##
+#F DifferenceOfNumericalSemigroups(S,T)
+##
+## returns the set difference S\T 
+#############################################################################
+DeclareGlobalFunction("DifferenceOfNumericalSemigroups");
+
 
 #############################################################################
 ##
