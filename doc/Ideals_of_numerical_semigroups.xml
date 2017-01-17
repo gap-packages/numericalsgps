@@ -312,7 +312,8 @@ true
 									</Description>
                 </ManSection>
 
-<ManSection>
+                <ManSection>
+                    <Oper Name="Intersection" Arg="S, T"/>
                     <Func Arg="I, J" Name="IntersectionIdealsOfNumericalSemigroup"></Func>
                     <Description>
 Given two ideals <A>I</A> and <A>J</A> of a numerical semigroup <A>S</A>

@@ -2,6 +2,7 @@
 <Section>
   <Heading>Intersections, and quotients and multiples by integers</Heading>
   <ManSection>
+    <Oper Name="Intersection" Arg="S, T"/>
     <Func Name="IntersectionOfNumericalSemigroups" Arg="S, T"/>
     <Description>
       <A>S</A> and <A>T</A>
