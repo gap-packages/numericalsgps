@@ -32,7 +32,7 @@
   
   [1X6.1-1 IsIrreducibleNumericalSemigroup[101X
   
-  [29X[2XIsIrreducibleNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  [29X[2XIsIrreducibleNumericalSemigroup[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X  is  a  numerical semigroup. The output is true if [3Xs[103X is irreducible, false
   otherwise.[133X
@@ -58,8 +58,9 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X6.1-3 IsPseudoSymmetricNumericalSemigroup[101X
+  [1X6.1-3 IsPseudoSymmetric[101X
   
+  [29X[2XIsPseudoSymmetric[102X( [3Xs[103X ) [32X property
   [29X[2XIsPseudoSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup. The output is true if [3Xs[103X is pseudo-symmetric,
@@ -141,32 +142,33 @@
   [22Xgcd(A_1)gcd(A_2)[122X[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );                   [127X[104X
+    [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27XAsGluingOfNumericalSemigroups(s);     [127X[104X
+    [4X[25Xgap>[125X [27XAsGluingOfNumericalSemigroups(s);[127X[104X
     [4X[28X[ [ [ 10, 15 ], [ 16 ] ], [ [ 10, 16 ], [ 15 ] ] ][128X[104X
     [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );[127X[104X
     [4X[28X<Numerical semigroup with 8 generators>[128X[104X
-    [4X[25Xgap>[125X [27XAsGluingOfNumericalSemigroups(s);                        [127X[104X
+    [4X[25Xgap>[125X [27XAsGluingOfNumericalSemigroups(s);[127X[104X
     [4X[28X[  ][128X[104X
   [4X[32X[104X
   
-  [1X6.2-2 IsACompleteIntersectionNumericalSemigroup[101X
+  [1X6.2-2 IsCompleteIntersection[101X
   
-  [29X[2XIsACompleteIntersectionNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  [29X[2XIsCompleteIntersection[102X( [3Xs[103X ) [32X property
+  [29X[2XIsACompleteIntersectionNumericalSemigroup[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
   a  complete  intersection,  that  is,  the  cardinality  of  a (any) minimal
   presentation equals its embedding dimension minus one.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );       [127X[104X
+    [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
     [4X[25Xgap>[125X [27XIsACompleteIntersectionNumericalSemigroup(s);[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );[127X[104X
     [4X[28X<Numerical semigroup with 8 generators>[128X[104X
-    [4X[25Xgap>[125X [27XIsACompleteIntersectionNumericalSemigroup(s);            [127X[104X
+    [4X[25Xgap>[125X [27XIsACompleteIntersectionNumericalSemigroup(s);[127X[104X
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
@@ -182,9 +184,10 @@
     [4X[28X34[128X[104X
   [4X[32X[104X
   
-  [1X6.2-4 IsFreeNumericalSemigroup[101X
+  [1X6.2-4 IsFree[101X
   
-  [29X[2XIsFreeNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  [29X[2XIsFree[102X( [3Xs[103X ) [32X property
+  [29X[2XIsFreeNumericalSemigroup[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
   free  in  the  sense  of [BC77]: it is either [22XN[122X or the gluing of a copy of [22XN[122X
@@ -209,9 +212,10 @@
     [4X[28X33[128X[104X
   [4X[32X[104X
   
-  [1X6.2-6 IsTelescopicNumericalSemigroup[101X
+  [1X6.2-6 IsTelescopic[101X
   
-  [29X[2XIsTelescopicNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  [29X[2XIsTelescopic[102X( [3Xs[103X ) [32X property
+  [29X[2XIsTelescopicNumericalSemigroup[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
   telescopic  in  the  sense of [KP95]: it is either [22XN[122X or the gluing of [22X⟨ n_e⟩[122X
@@ -239,7 +243,7 @@
   
   [1X6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity[101X
   
-  [29X[2XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity[102X( [3Xs[103X ) [32X function
+  [29X[2XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity[102X( [3Xs[103X ) [32X property
   
   [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
   associated  to  an  irreducible  planar  curve  singularity ([Zar86]). These
@@ -249,7 +253,7 @@
     [4X[25Xgap>[125X [27Xns := NumericalSemigroup(4,11,14);;[127X[104X
     [4X[25Xgap>[125X [27XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);[127X[104X
     [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(4,11,19);;                                 [127X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(4,11,19);;[127X[104X
     [4X[25Xgap>[125X [27XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
@@ -263,9 +267,9 @@
   with frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XLength(                                                                         [127X[104X
+    [4X[25Xgap>[125X [27XLength([127X[104X
     [4X[25X>[125X [27XNumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber[127X[104X
-    [4X[25X>[125X [27X(57));                                                                           [127X[104X
+    [4X[25X>[125X [27X(57));[127X[104X
     [4X[28X7[128X[104X
   [4X[32X[104X
   
@@ -290,15 +294,16 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xns := NumericalSemigroup(5,8,9,11);;[127X[104X
     [4X[25Xgap>[125X [27XAlmostSymmetricNumericalSemigroupsFromIrreducible(ns);[127X[104X
-    [4X[28X[ <Numerical semigroup with 4 generators>, [128X[104X
-    [4X[28X  <Numerical semigroup with 5 generators>, [128X[104X
+    [4X[28X[ <Numerical semigroup with 4 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 5 generators>,[128X[104X
     [4X[28X  <Numerical semigroup with 5 generators> ][128X[104X
     [4X[25Xgap>[125X [27XList(last,MinimalGeneratingSystemOfNumericalSemigroup);[127X[104X
     [4X[28X[ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ][128X[104X
   [4X[32X[104X
   
-  [1X6.3-2 IsAlmostSymmetricNumericalSemigroup[101X
+  [1X6.3-2 IsAlmostSymmetric[101X
   
+  [29X[2XIsAlmostSymmetric[102X( [3Xs[103X ) [32X function
   [29X[2XIsAlmostSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X function
   
   [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
