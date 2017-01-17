@@ -337,7 +337,7 @@ end);
 
 #############################################################################
 ##
-#F  IsIrreducibleNumericalSemigroup(s)
+#P  IsIrreducibleNumericalSemigroup(s)
 ##
 ##  Checks whether or not s is an irreducible numerical semigroup.
 ##
@@ -415,7 +415,7 @@ InstallTrueMethod(IsIrreducibleNumericalSemigroup, IsPseudoSymmetricNumericalSem
 #   semigroups from almost irreducible numerical semigroups, Comm. Algebra.
 #####################################################################
 ##
-#F IsAlmostSymmetricNumericalSemigroup(arg)
+#P IsAlmostSymmetricNumericalSemigroup(arg)
 ##
 ## The argument is a numerical semigroup. The output is True or False depending
 ## on if the semigroup is almost symmetric or not, see [BF97]
@@ -550,14 +550,17 @@ end);
 
 #############################################################################
 ##
-#F IsACompleteIntersectionNumericalSemigroup
+#P IsACompleteIntersectionNumericalSemigroup
 ##
 ##returns true if the numerical semigroup is a complete intersection,
 ## that is, the cardinality of a (any) minimal presentation equals
 ## its embedding dimension minus one
 ##
 #############################################################################
-InstallGlobalFunction(IsACompleteIntersectionNumericalSemigroup,function(s)
+InstallMethod(IsACompleteIntersectionNumericalSemigroup,
+  "Tests if the semigroup is a complete intersection",
+  [IsNumericalSemigroup],1,
+  function(s)
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
@@ -571,15 +574,19 @@ InstallGlobalFunction(IsACompleteIntersectionNumericalSemigroup,function(s)
 
 end);
 
+InstallTrueMethod(IsSymmetricNumericalSemigroup, IsACompleteIntersectionNumericalSemigroup);
+
 #############################################################################
 ##
-#F IsFreeNumericalSemigroup
+#P IsFreeNumericalSemigroup
 ##
 # # returns true if the numerical semigroup is a free semigroup, in the sense of
 # # Bertin and Carbonne [BC77]
 ##
 #############################################################################
-InstallGlobalFunction(IsFreeNumericalSemigroup,function(s)
+InstallMethod(IsFreeNumericalSemigroup,
+  "Tests if the semigroup is free", [IsNumericalSemigroup],1,
+  function(s)
     local gluing, msg;
 
     if not IsNumericalSemigroup(s) then
@@ -621,15 +628,20 @@ InstallGlobalFunction(IsFreeNumericalSemigroup,function(s)
                   IsFreeNumericalSemigroup(NumericalSemigroup(Difference(msg,[m])/Gcd(Difference(msg,[m])))));
 end);
 
+InstallTrueMethod(IsACompleteIntersectionNumericalSemigroup, IsFreeNumericalSemigroup);
+
+
 #############################################################################
 ##
-#F IsTelescopicNumericalSemigroup
+#P IsTelescopicNumericalSemigroup
 ##
 ## returns true if the numerical semigroup is telescopic [KP95],
 ##  that is, free for the ordering n_1<...<n_e, with n_i the minimal generators
 ##
 #############################################################################
-InstallGlobalFunction(IsTelescopicNumericalSemigroup,function(s)
+InstallMethod(IsTelescopicNumericalSemigroup,
+  "Tests if the semigroup is telescopic", [IsNumericalSemigroup],1,
+  function(s)
     local gluing, msg, max;
 
     if not IsNumericalSemigroup(s) then
@@ -670,15 +682,20 @@ InstallGlobalFunction(IsTelescopicNumericalSemigroup,function(s)
 
 end);
 
+InstallTrueMethod(IsFreeNumericalSemigroup, IsTelescopicNumericalSemigroup);
+
 #############################################################################
 ##
-#F IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+#P IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
 ##
 ## returns true if the numerical semigroup is a telescopic numerical semigroup,
 ##  and in addition for all i, d_i n_i < d_{i+1}n_{i+1}, con d_i=gcd{n_j | j<i} [Z86]
 ##
 #############################################################################
-InstallGlobalFunction(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity,function(s)
+InstallMethod(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity,
+  "Tests if the semigroup is the semigroup associated to an irreducible planar curve singularity",
+  [IsNumericalSemigroup],1,
+  function(s)
     local gluing, msg, max, di, dip1, rest, maxrest;
 
     if not IsNumericalSemigroup(s) then
@@ -723,6 +740,8 @@ InstallGlobalFunction(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingul
            IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity( NumericalSemigroup(rest/Gcd(rest)) );
 
 end);
+
+InstallTrueMethod(IsTelescopicNumericalSemigroup, IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity);
 
 #############################################################################
 ##
