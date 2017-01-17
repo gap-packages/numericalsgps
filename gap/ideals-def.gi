@@ -469,18 +469,20 @@ end);
 ##
 #F DifferenceOfdealsOfNumericalSemigroup(I,J)
 ##
-## returns the set difference I\J (J must be contained in I)
+## returns the set difference I\J #(J must be contained in I)-no more required, from version 1.1 on 
 #############################################################################
-InstallOtherMethod(Difference, [IsIdealOfNumericalSemigroup, IsIntegralIdealOfNumericalSemigroup], function(I, J),
+InstallOtherMethod(Difference, [IsIdealOfNumericalSemigroup, IsIdealOfNumericalSemigroup], function(I, J)
   return DifferenceOfIdealsOfNumericalSemigroup(I,J);
 end);
+
 InstallGlobalFunction(DifferenceOfIdealsOfNumericalSemigroup, function(I, J)
     local   sI,  sJ,  MI,  MJ,  M,  SI,  SJ;
 
     if not (IsIdealOfNumericalSemigroup(I) and IsIdealOfNumericalSemigroup(J))
-       or not AmbientNumericalSemigroupOfIdeal(I)
-       = AmbientNumericalSemigroupOfIdeal(J) then
-        Error("The arguments must be ideals of the same numerical semigroup.");
+#       or not AmbientNumericalSemigroupOfIdeal(I) = AmbientNumericalSemigroupOfIdeal(J) 
+       then
+#        Error("The arguments must be ideals of the same numerical semigroup.");
+        Error("The arguments must be ideals of some numerical semigroup.");
     fi;
     sI := SmallElementsOfIdealOfNumericalSemigroup(I);
     sJ := SmallElementsOfIdealOfNumericalSemigroup(J);
@@ -489,9 +491,9 @@ InstallGlobalFunction(DifferenceOfIdealsOfNumericalSemigroup, function(I, J)
     M := Maximum(MI,MJ);
     SI := Union(sI,[MI..M]);
     SJ := Union(sJ,[MJ..M]);
-    if not IsSubset(SI,SJ) then
-        Error("The second ideal must be contained in the first");
-    fi;
+    # if not IsSubset(SI,SJ) then
+    #     Error("The second ideal must be contained in the first");
+    # fi;
     return Difference(SI,SJ);
 end);
 
