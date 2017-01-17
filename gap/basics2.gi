@@ -65,6 +65,9 @@ end);
 ##  semigroups S and T.
 ##
 #############################################################################
+InstallOtherMethod(Intersection2, [IsNumericalSemigroup, IsNumericalSemigroup], function(S,T)
+  return IntersectionOfNumericalSemigroups(S,T);
+end);
 InstallGlobalFunction(IntersectionOfNumericalSemigroups, function(S,T)
     local   gs,  gt,  R,  D,  g;
 
