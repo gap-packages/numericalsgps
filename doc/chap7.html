@@ -319,7 +319,7 @@ true
 
 <h5>7.1-13 Difference</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Difference</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Difference</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferenceOfIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">I, J</var> are ideals of a numerical semigroup. <var class="Arg">J</var> must be contained in <var class="Arg">I</var>. The output is the set <span class="SimpleMath"><var class="Arg">I</var>∖ <var class="Arg">J</var></span>.</p>
 
@@ -332,8 +332,16 @@ true
 &lt;Ideal of numerical semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I-I;</span>
 &lt;Ideal of numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferenceOfIdealsOfNumericalSemigroup(last2,last);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ii := 2*I-2*I;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := I-I;     </span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> DifferenceOfIdealsOfNumericalSemigroup(last2,last);</span>
 [ 26, 27, 37, 38 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ii,i);</span>
+[ 26, 27, 37, 38 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(i,ii);</span>
+[  ]
 </pre></div>
 
 <p><a id="X803921F97BEDCA88" name="X803921F97BEDCA88"></a></p>

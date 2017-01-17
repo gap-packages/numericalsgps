@@ -59,6 +59,31 @@ end);
 ######
 #############################################################################
 ##
+#F DifferenceOfOfNumericalSemigroups(S,T)
+##
+## returns the set difference S\T  
+#############################################################################
+InstallOtherMethod(Difference, [IsNumericalSemigroup, IsNumericalSemigroup], function(S, T)
+  return DifferenceOfNumericalSemigroups(S,T);
+end);
+
+InstallGlobalFunction(DifferenceOfNumericalSemigroups, function(S, T)
+  local  sS, sT, MS, MT, M, SS, ST;
+
+  if not (IsNumericalSemigroup(S) and IsNumericalSemigroup(T)) then
+     Error("The arguments must be numerical semigroups.");
+  fi;
+  sS := SmallElementsOfNumericalSemigroup(S);
+  sT := SmallElementsOfNumericalSemigroup(T);
+  MS := Maximum(sS);
+  MT := Maximum(sT);
+  M := Maximum(MS,MT);
+  SS := Union(sS,[MS..M]);
+  ST := Union(sT,[MT..M]);
+  return Difference(SS,ST);
+end);
+#############################################################################
+##
 #F  IntersectionOfNumericalSemigroups(S,T)
 ##
 ##  Returns the intersection of the numerical
@@ -67,7 +92,8 @@ end);
 #############################################################################
 InstallOtherMethod(Intersection2, [IsNumericalSemigroup, IsNumericalSemigroup], function(S,T)
   return IntersectionOfNumericalSemigroups(S,T);
-);
+end);
+
 InstallGlobalFunction(IntersectionOfNumericalSemigroups, function(S,T)
     local   gs,  gt,  R,  D,  g;
 

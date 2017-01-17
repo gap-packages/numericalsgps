@@ -570,6 +570,15 @@ gap> s:=MultipleOfNumericalSemigroup(N,4,20);;
 gap> SmallElements(s);
 [ 0, 4, 8, 12, 16, 20 ]
 
+gap> ns1 := NumericalSemigroup(5,7);;
+gap> ns2 := NumericalSemigroup(7,11,12);;
+gap> Difference(ns1,ns2);                
+[ 5, 10, 15, 17, 20, 27 ]
+gap> Difference(ns2,ns1);                
+[ 11, 18, 23 ]
+gap> DifferenceOfNumericalSemigroups(ns2,ns1);
+[ 11, 18, 23 ]
+
 gap> s:=NumericalSemigroup(3,5,7);
 <Numerical semigroup with 3 generators>
 gap> e:=6+s;
@@ -836,8 +845,16 @@ gap> 2*I-2*I;
 <Ideal of numerical semigroup>
 gap> I-I;
 <Ideal of numerical semigroup>
-gap> DifferenceOfIdealsOfNumericalSemigroup(last2,last);
+gap> ii := 2*I-2*I;
+<Ideal of numerical semigroup>
+gap> i := I-I;     
+<Ideal of numerical semigroup>
+gap>  DifferenceOfIdealsOfNumericalSemigroup(last2,last);
 [ 26, 27, 37, 38 ]
+gap> Difference(ii,i);
+[ 26, 27, 37, 38 ]
+gap> Difference(i,ii);
+[  ]
 
 gap> s:=NumericalSemigroup(13,23);;
 gap> l:=List([1..6], _ -> Random([8..34]));;

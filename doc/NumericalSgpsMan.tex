@@ -1882,8 +1882,34 @@ to a semigroup (see \cite{RGGJ03}).
 
  
 
-\subsection{\textcolor{Chapter }{NumericalDuplication}}
+\subsection{\textcolor{Chapter }{Difference}}
 \logpage{[ 5, 2, 4 ]}\nobreak
+\hyperdef{L}{X825AC0F07E010B07}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Difference({\mdseries\slshape S, T})\index{Difference@\texttt{Difference}}
+\label{Difference}
+}\hfill{\scriptsize (operation)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DifferenceOfNumericalSemigroups({\mdseries\slshape S, T})\index{DifferenceOfNumericalSemigroups@\texttt{DifferenceOfNumericalSemigroups}}
+\label{DifferenceOfNumericalSemigroups}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape S, T}} are numerical semigroups. The output is the set $\mbox{\texttt{\mdseries\slshape S}}\setminus \mbox{\texttt{\mdseries\slshape T}}$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ns1 := NumericalSemigroup(5,7);;|
+  !gapprompt@gap>| !gapinput@ns2 := NumericalSemigroup(7,11,12);;|
+  !gapprompt@gap>| !gapinput@Difference(ns1,ns2);                |
+  [ 5, 10, 15, 17, 20, 27 ]
+  !gapprompt@gap>| !gapinput@Difference(ns2,ns1);                |
+  [ 11, 18, 23 ]
+  !gapprompt@gap>| !gapinput@DifferenceOfNumericalSemigroups(ns2,ns1);|
+  [ 11, 18, 23 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{NumericalDuplication}}
+\logpage{[ 5, 2, 5 ]}\nobreak
 \hyperdef{L}{X7F395079839BBE9D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{NumericalDuplication({\mdseries\slshape S, E, b})\index{NumericalDuplication@\texttt{NumericalDuplication}}
 \label{NumericalDuplication}
@@ -1906,7 +1932,7 @@ to a semigroup (see \cite{RGGJ03}).
  
 
 \subsection{\textcolor{Chapter }{InductiveNumericalSemigroup}}
-\logpage{[ 5, 2, 5 ]}\nobreak
+\logpage{[ 5, 2, 6 ]}\nobreak
 \hyperdef{L}{X7DCEC67A82130CD8}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{InductiveNumericalSemigroup({\mdseries\slshape S, a, b})\index{InductiveNumericalSemigroup@\texttt{InductiveNumericalSemigroup}}
 \label{InductiveNumericalSemigroup}
@@ -2923,7 +2949,7 @@ plus one.
 \subsection{\textcolor{Chapter }{Difference}}
 \logpage{[ 7, 1, 13 ]}\nobreak
 \hyperdef{L}{X825AC0F07E010B07}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Difference({\mdseries\slshape S, T})\index{Difference@\texttt{Difference}}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Difference({\mdseries\slshape I, J})\index{Difference@\texttt{Difference}}
 \label{Difference}
 }\hfill{\scriptsize (operation)}}\\
 \noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{DifferenceOfIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{DifferenceOfIdealsOfNumericalSemigroup@\texttt{Difference}\-\texttt{Of}\-\texttt{Ideals}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
@@ -2940,8 +2966,16 @@ plus one.
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@I-I;|
   <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@DifferenceOfIdealsOfNumericalSemigroup(last2,last);|
+  !gapprompt@gap>| !gapinput@ii := 2*I-2*I;|
+  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@i := I-I;     |
+  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@ DifferenceOfIdealsOfNumericalSemigroup(last2,last);|
   [ 26, 27, 37, 38 ]
+  !gapprompt@gap>| !gapinput@Difference(ii,i);|
+  [ 26, 27, 37, 38 ]
+  !gapprompt@gap>| !gapinput@Difference(i,ii);|
+  [  ]
 \end{Verbatim}
  }
 
