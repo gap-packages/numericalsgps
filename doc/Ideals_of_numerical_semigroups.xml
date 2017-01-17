@@ -266,6 +266,7 @@ gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I+II);
 
 
                 <ManSection>
+                    <Oper Name="Difference" Arg="S, T"/>
                     <Func Arg="I, J" Name="DifferenceOfIdealsOfNumericalSemigroup"></Func>
                     <Description>
                         <A>I, J</A> are ideals of a numerical semigroup. <A>J</A> must be contained in <A>I</A>.

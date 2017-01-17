@@ -471,6 +471,9 @@ end);
 ##
 ## returns the set difference I\J (J must be contained in I)
 #############################################################################
+InstallOtherMethod(Difference, [IsIdealOfNumericalSemigroup, IsIntegralIdealOfNumericalSemigroup], function(I, J),
+  return DifferenceOfIdealsOfNumericalSemigroup(I,J);
+end);
 InstallGlobalFunction(DifferenceOfIdealsOfNumericalSemigroup, function(I, J)
     local   sI,  sJ,  MI,  MJ,  M,  SI,  SJ;
 
