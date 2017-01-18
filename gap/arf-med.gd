@@ -128,7 +128,8 @@ DeclareGlobalFunction("SaturatedNumericalSemigroupClosure");
 ##
 #####################################################################
 DeclareProperty("IsSaturatedNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonymAttr("IsSaturated",IsSaturatedNumericalSemigroup);
+#DeclareSynonymAttr("IsSaturated",IsSaturatedNumericalSemigroup);
+DeclareProperty("IsSaturated", IsNumericalSemigroup);
 
 #####################################################################
 ##
