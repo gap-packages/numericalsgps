@@ -261,6 +261,7 @@
   \item \texttt  {IsAperySetAlphaRectangular}, \hyperpage{106}
   \item \texttt  {IsAperySetBetaRectangular}, \hyperpage{106}
   \item \texttt  {IsAperySetGammaRectangular}, \hyperpage{106}
+  \item \texttt  {IsArf}, \hyperpage{56}
   \item \texttt  {IsArfNumericalSemigroup}, \hyperpage{56}
   \item \texttt  {IsBezoutSequence}, \hyperpage{99}
   \item \texttt  {IsCanonical}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -288,6 +289,7 @@
   \item \texttt  {IsIrreducibleNumericalSemigroup}, \hyperpage{38}
   \item \texttt  {IsKroneckerPolynomial}, \hyperpage{72}
   \item \texttt  {IsListOfIntegersNS}, \hyperpage{100}
+  \item \texttt  {IsMED}, \hyperpage{55}
   \item \texttt  {IsMEDNumericalSemigroup}, \hyperpage{55}
   \item \texttt  {IsModularNumericalSemigroup}, \hyperpage{14}
   \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{52}
@@ -313,6 +315,7 @@
   \item \texttt  {IsPseudoSymmetric}, \hyperpage{39}
   \item \texttt  {IsPseudoSymmetricNumericalSemigroup}, \hyperpage{39}
   \item \texttt  {IsPureNumericalSemigroup}, \hyperpage{105}
+  \item \texttt  {IsSaturated}, \hyperpage{57}
   \item \texttt  {IsSaturatedNumericalSemigroup}, \hyperpage{57}
   \item \texttt  {IsSelf}\discretionary {-}{}{}\texttt  {Reciprocal}\discretionary {-}{}{}\texttt  {Univariate}\discretionary {-}{}{}\texttt  {Polynomial}, 
 		\hyperpage{73}

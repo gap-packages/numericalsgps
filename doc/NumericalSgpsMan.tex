@@ -3405,19 +3405,22 @@ define the MED closure of a non-empty subset of positive integers $M=\{m < m_1 <
  Given a MED numerical semigroup $S$, we say that $M=\{m_1 < \cdots< m_k\}$ is a MED system of generators if the MED closure of $M$ is $S$. Moreover, $M$ is a minimal MED generating system for $S$ provided that every proper subset of $M$ is not a MED system of generators of $S$. Minimal MED generating systems are unique, and in general are smaller than
 the classical minimal generating systems (see \cite{RGGB03}). 
 
-\subsection{\textcolor{Chapter }{IsMEDNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsMED}}
 \logpage{[ 8, 1, 1 ]}\nobreak
-\hyperdef{L}{X867615F8846824EB}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMEDNumericalSemigroup({\mdseries\slshape S})\index{IsMEDNumericalSemigroup@\texttt{IsMEDNumericalSemigroup}}
+\hyperdef{L}{X783A0BE786C6BBBE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMED({\mdseries\slshape S})\index{IsMED@\texttt{IsMED}}
+\label{IsMED}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMEDNumericalSemigroup({\mdseries\slshape S})\index{IsMEDNumericalSemigroup@\texttt{IsMEDNumericalSemigroup}}
 \label{IsMEDNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if \mbox{\texttt{\mdseries\slshape S}} is a MED numerical semigroup and false otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7)); |
-  true 
-  !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,5)); |
+  !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7));|
+  true
+  !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,5));|
   false
 \end{Verbatim}
  }
@@ -3434,9 +3437,9 @@ the classical minimal generating systems (see \cite{RGGB03}).
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns the MED closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); |
-  <Numerical semigroup> 
-  !gapprompt@gap>| !gapinput@MinimalGenerators(last); |
+  !gapprompt@gap>| !gapinput@MEDNumericalSemigroupClosure(NumericalSemigroup(3,5));|
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@MinimalGenerators(last);|
   [ 3, 5, 7 ]
 \end{Verbatim}
  }
@@ -3453,8 +3456,8 @@ the classical minimal generating systems (see \cite{RGGB03}).
 
  \mbox{\texttt{\mdseries\slshape S}} is a MED numerical semigroup. Returns the minimal MED generating system of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( |
-  !gapprompt@>| !gapinput@NumericalSemigroup(3,5,7)); |
+  !gapprompt@gap>| !gapinput@MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(|
+  !gapprompt@>| !gapinput@NumericalSemigroup(3,5,7));|
   [ 3, 5 ]
 \end{Verbatim}
  }
@@ -3474,21 +3477,24 @@ divisor equal to one. Analogously as with MED numerical semigroups, we define
 Arf systems of generators and minimal Arf generating system for an Arf
 numerical semigroup. These are also unique(see \cite{RGGB04}). 
 
-\subsection{\textcolor{Chapter }{IsArfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsArf}}
 \logpage{[ 8, 2, 1 ]}\nobreak
-\hyperdef{L}{X8255C5907F8968B9}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsArfNumericalSemigroup({\mdseries\slshape S})\index{IsArfNumericalSemigroup@\texttt{IsArfNumericalSemigroup}}
+\hyperdef{L}{X86137A2A7D27F7EC}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsArf({\mdseries\slshape S})\index{IsArf@\texttt{IsArf}}
+\label{IsArf}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsArfNumericalSemigroup({\mdseries\slshape S})\index{IsArfNumericalSemigroup@\texttt{IsArfNumericalSemigroup}}
 \label{IsArfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if \mbox{\texttt{\mdseries\slshape S}} is an Arf numerical semigroup and false otherwise. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@ IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); |
-  true 
-  !gapprompt@gap>| !gapinput@ IsArfNumericalSemigroup(NumericalSemigroup(3,7,11)); |
-  false 
-  !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11)); |
+  !gapprompt@gap>| !gapinput@ IsArfNumericalSemigroup(NumericalSemigroup(3,5,7));|
+  true
+  !gapprompt@gap>| !gapinput@ IsArfNumericalSemigroup(NumericalSemigroup(3,7,11));|
+  false
+  !gapprompt@gap>| !gapinput@IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11));|
   true
 \end{Verbatim}
  }
@@ -3505,9 +3511,9 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns the Arf closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); |
-  <Numerical semigroup> 
-  !gapprompt@gap>| !gapinput@MinimalGenerators(last); |
+  !gapprompt@gap>| !gapinput@ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11));|
+  <Numerical semigroup>
+  !gapprompt@gap>| !gapinput@MinimalGenerators(last);|
   [ 3, 7, 8 ]
 \end{Verbatim}
  }
@@ -3524,8 +3530,8 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 
  \mbox{\texttt{\mdseries\slshape S}} is an Arf numerical semigroup. Returns the minimal Arf generating system of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@MinimalArfGeneratingSystemOfArfNumericalSemigroup( |
-  !gapprompt@>| !gapinput@NumericalSemigroup(3,7,8)); |
+  !gapprompt@gap>| !gapinput@MinimalArfGeneratingSystemOfArfNumericalSemigroup(|
+  !gapprompt@>| !gapinput@NumericalSemigroup(3,7,8));|
   [ 3, 7 ]
 \end{Verbatim}
  }
@@ -3544,13 +3550,13 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ArfNumericalSemigroupsWithFrobeniusNumber(10);|
-  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-    <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
+    <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
     <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
   !gapprompt@gap>| !gapinput@List(last,MinimalGenerators);|
-  [ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
-    [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
-    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+  [ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ],
+    [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ],
+    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ],
     [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
 \end{Verbatim}
  }
@@ -3568,12 +3574,15 @@ numerical semigroups with maximal embedding dimension. A numerical semigroup $S$
 thus we can consider the saturated closure of a set of nonnegative integers
 with greatest common divisor equal to one (see \cite{RGbook}). 
 
-\subsection{\textcolor{Chapter }{IsSaturatedNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsSaturated}}
 \logpage{[ 8, 3, 1 ]}\nobreak
-\hyperdef{L}{X7C5D0FFA85044DF7}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSaturatedNumericalSemigroup({\mdseries\slshape S})\index{IsSaturatedNumericalSemigroup@\texttt{IsSaturatedNumericalSemigroup}}
+\hyperdef{L}{X81CCD9A88127E549}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSaturated({\mdseries\slshape S})\index{IsSaturated@\texttt{IsSaturated}}
+\label{IsSaturated}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsSaturatedNumericalSemigroup({\mdseries\slshape S})\index{IsSaturatedNumericalSemigroup@\texttt{IsSaturatedNumericalSemigroup}}
 \label{IsSaturatedNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if \mbox{\texttt{\mdseries\slshape S}} is a saturated numerical semigroup and false otherwise. 
@@ -3618,18 +3627,18 @@ with greatest common divisor equal to one (see \cite{RGbook}).
 Saturated numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@SaturatedNumericalSemigroupsWithFrobeniusNumber(10);|
-  [ <Numerical semigroup with 3 generators>, 
-    <Numerical semigroup with 4 generators>, 
-    <Numerical semigroup with 6 generators>, 
-    <Numerical semigroup with 6 generators>, 
-    <Numerical semigroup with 7 generators>, 
-    <Numerical semigroup with 8 generators>, 
-    <Numerical semigroup with 9 generators>, 
+  [ <Numerical semigroup with 3 generators>,
+    <Numerical semigroup with 4 generators>,
+    <Numerical semigroup with 6 generators>,
+    <Numerical semigroup with 6 generators>,
+    <Numerical semigroup with 7 generators>,
+    <Numerical semigroup with 8 generators>,
+    <Numerical semigroup with 9 generators>,
     <Numerical semigroup with 11 generators> ]
   !gapprompt@gap>| !gapinput@ List(last,MinimalGenerators);|
-  [ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
-    [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
-    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], 
+  [ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ],
+    [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ],
+    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ],
     [ 11 .. 21 ] ]
 \end{Verbatim}
  }
