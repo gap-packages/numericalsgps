@@ -397,6 +397,11 @@ InstallMethod(IsSaturatedNumericalSemigroup,
 
 end);
 
+InstallMethod(IsSaturated,
+  "Tests if a Numerical Semigroup is a saturated semigroup",
+  [IsNumericalSemigroup],IsSaturatedNumericalSemigroup);
+#solution by Sebastian Gutsche to
+
 InstallTrueMethod(IsArfNumericalSemigroup, IsSaturatedNumericalSemigroup);
 
 #####################################################################
