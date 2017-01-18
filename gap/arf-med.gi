@@ -7,7 +7,7 @@
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
-#Y  We adopt the copyright regulations of GAP as detailed in the 
+#Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ##
 #############################################################################
@@ -23,9 +23,9 @@
 ##
 ## The argument may be a numerical semigroup or a list of relatively prime
 ## positive integers
-## The output is the Arf-closure of arg (the smallest Arf-semigroup 
+## The output is the Arf-closure of arg (the smallest Arf-semigroup
 ## containing arg)
-## 
+##
 #####################################################################
 InstallGlobalFunction(ArfNumericalSemigroupClosure, function(arg)
     local   set,  min,  A,  i,  MIN,  small;
@@ -41,13 +41,13 @@ InstallGlobalFunction(ArfNumericalSemigroupClosure, function(arg)
             Error("The greatest common divisor is not 1");
         fi;
         set := arg[1];
-    else 
+    else
         if  Gcd(arg) <> 1 then
             Error("The greatest common divisor is not 1");
         fi;
         set := arg;
     fi;
-    set := Set(set);    
+    set := Set(set);
     min := Minimum(set);
     if min <= 0 then
         Error("The elements of the list must be positive integers");
@@ -70,11 +70,11 @@ end);
 
 #####################################################################
 ##
-#A IsArfNumericalSemigroup(s)
+#P IsArfNumericalSemigroup(s)
 ##
 ## The argument s is a numerical semigroup
 ## returns true if s is an Arf-semigroup and false otherwise
-## 
+##
 #####################################################################
 InstallMethod(IsArfNumericalSemigroup,
         "Tests if a Numerical Semigroup is an Arf-semigroup",
@@ -86,15 +86,16 @@ InstallMethod(IsArfNumericalSemigroup,
     return (s = ArfNumericalSemigroupClosure(s));
 end);
 
-
+InstallTrueMethod(IsMEDNumericalSemigroup,IsArfNumericalSemigroup);
+InstallTrueMethod(IsAcuteNumericalSemigroup,IsArfNumericalSemigroup);
 
 #####################################################################
 ##
 #A MinimalArfGeneratingSystemOfArfNumericalSemigroup(s)
 ##
 ## The argument s is an Arf numerical semigroup
-## returns the minimal Arf-generating system of s. 
-## 
+## returns the minimal Arf-generating system of s.
+##
 #############################################################################
 InstallMethod(MinimalArfGeneratingSystemOfArfNumericalSemigroup,
         "Returns the minimal Arf-generating system of an Arf-semigroup",
@@ -129,7 +130,7 @@ end);
 #F ArfNumericalSemigroupsWithFrobeniusNumber(f)
 ##
 ## The argument f is an integer
-## Returns the set of Arf numerical semigroups with Frobenius number f 
+## Returns the set of Arf numerical semigroups with Frobenius number f
 ## as explained in the preprint
 ##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
 #############################################################################
@@ -139,14 +140,14 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
     if(not(IsInt(f))) then
 		Error("The argument must be an integer.\n");
     fi;
-	
+
 	if f=0 or f<-1 then
 		return [];
 	fi;
-	if f=-1 then 
+	if f=-1 then
 		return [NumericalSemigroup(1)];
 	fi;
-	#transforms a partition list of an element to the set of sums 
+	#transforms a partition list of an element to the set of sums
 	# which will correspond with the set of small elements of the semigroup
 	par2sem:=function(l)
 		local n, sm, i;
@@ -185,11 +186,11 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
 
 	# computes all Arf sequences with sumset equal n+1 (the conductor)
 	# and translate them to small elements in the semigroup
-	# to this end we compute  all partitions inspired in 
-	# Algorithm 3.1 of Jerome Kelleher, Barry O'Sullivan, Generating All Partitions: A 
+	# to this end we compute  all partitions inspired in
+	# Algorithm 3.1 of Jerome Kelleher, Barry O'Sullivan, Generating All Partitions: A
 	# Comparison Of Two Encodings  arXiv:0909.2331
 	arfsequences:=function(n)
-		local x,y,k, a, ra, l; 
+		local x,y,k, a, ra, l;
 
 		l:=Set([]);
 		k:=2; a:=[0,n+1];
@@ -208,14 +209,14 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
 			od;
 			a[k]:=x+y;
 			ra:=Reversed(a{[1..k]});
-			if testArfSeq(ra) then 
+			if testArfSeq(ra) then
 				Add(l,par2sem(ra));
 			fi;
 		od;
-	
+
 		return l;
 	end;
-	
+
 	return List(arfsequences(f),NumericalSemigroupBySmallElementsNC);
 end);
 
@@ -229,7 +230,7 @@ end);
 ##
 ## The argument s is a numerical semigroup
 ## returns true if s is a MED-semigroup and false otherwise
-## 
+##
 #####################################################################
 InstallMethod(IsMEDNumericalSemigroup,
         "Tests if a numerical semigroup is a MED-semigroup",
@@ -248,9 +249,9 @@ end);
 ##
 ## The argument may be a numerical semigroup or a list of relatively prime
 ## positive integers
-## The output is the MED-closure of arg (the smallest MED-semigroup 
+## The output is the MED-closure of arg (the smallest MED-semigroup
 ## containing arg)
-## 
+##
 #####################################################################
 InstallGlobalFunction(MEDNumericalSemigroupClosure, function(arg)
     local   set,  min,  A,  small;
@@ -266,7 +267,7 @@ InstallGlobalFunction(MEDNumericalSemigroupClosure, function(arg)
             Error("The greatest common divisor is not 1");
         fi;
         set := arg[1];
-    else 
+    else
         if  Gcd(arg) <> 1 then
             Error("The greatest common divisor is not 1");
         fi;
@@ -280,7 +281,7 @@ InstallGlobalFunction(MEDNumericalSemigroupClosure, function(arg)
 
     A := set - min;
     A[1] := min;
-    small := Union([0], min + 
+    small := Union([0], min +
                    SmallElementsOfNumericalSemigroup(NumericalSemigroup(A)));
     return NumericalSemigroupBySmallElements(small);
 end);
@@ -290,8 +291,8 @@ end);
 #A MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(s)
 ##
 ## The argument s is a MED numerical semigroup
-## returns the minimal MED-generating system of s. 
-## 
+## returns the minimal MED-generating system of s.
+##
 #############################################################################
 InstallMethod(MinimalMEDGeneratingSystemOfMEDNumericalSemigroup,
         "Returns the minimal MED-generating system of a MED numerical semigroup",
@@ -323,16 +324,16 @@ end);
 
 #####################################################################
 ##                        Saturated
-## See [book] 
+## See [book]
 #####################################################################
 ##
 #F SaturatedfNumericalSemigroupClosure(arg)
 ##
 ## The argument may be a numerical semigroup or a list of relatively prime
 ## positive integers
-## The output is the saturated-closure of arg (the smallest saturated-semigroup 
+## The output is the saturated-closure of arg (the smallest saturated-semigroup
 ## containing arg)
-## 
+##
 #####################################################################
 InstallGlobalFunction(SaturatedNumericalSemigroupClosure, function(arg)
     local   set,  gen,  min,  ne,  edim,  dis,  small,  i,  kjs;
@@ -348,13 +349,13 @@ InstallGlobalFunction(SaturatedNumericalSemigroupClosure, function(arg)
             Error("The greatest common divisor is not 1");
         fi;
         set := arg[1];
-    else 
+    else
         if  Gcd(arg) <> 1 then
             Error("The greatest common divisor is not 1");
         fi;
         set := arg;
     fi;
-    gen := Set(set);    
+    gen := Set(set);
     min := gen[1];
     ne := Maximum(gen);
     if not IsPosInt(min) then
@@ -379,11 +380,11 @@ end);
 
 #####################################################################
 ##
-#A IsSaturatedNumericalSemigroup(s)
+#P IsSaturatedNumericalSemigroup(s)
 ##
 ## The argument s is a numerical semigroup
 ## returns true if s is a saturated-semigroup and false otherwise
-## 
+##
 #####################################################################
 InstallMethod(IsSaturatedNumericalSemigroup,
         "Tests if a Numerical Semigroup is a saturated semigroup",
@@ -393,9 +394,11 @@ InstallMethod(IsSaturatedNumericalSemigroup,
         Error("The argument must be a numerical semigroup");
     fi;
     return (s = SaturatedNumericalSemigroupClosure(s));
-    
+
 end);
- 
+
+InstallTrueMethod(IsArfNumericalSemigroup, IsSaturatedNumericalSemigroup);
+
 #####################################################################
 ##
 #F SaturatedNumericalSemigroupsWithFrobeniusNumber(f)
@@ -411,16 +414,16 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 	if(not(IsInt(f))) then
 		Error("The argument must be an integer.\n");
     fi;
-	
+
 	if f=0 or f<-1 then
 		return [];
 	fi;
-	if f=-1 then 
+	if f=-1 then
 		return [NumericalSemigroup(1)];
 	fi;
 
 	#returns the set nonnegative integer of solutions x
-	# with l.x=c; l is a (saturated) sequence 
+	# with l.x=c; l is a (saturated) sequence
 	# l[i+1]|l[i], l[i+1]<>l[i], l[Length(l)]=1
 	satpart:=function(l,c)
 		local sols, len, i, j, sol, next, cand;
@@ -443,8 +446,8 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 			next[len]:=sol{[j+1..len]}*l{[j+1..len]}-l[j];
 			sol:=next;#sol:=ShallowCopy(next);
 			Add(sols, sol);
-		od; 	
-	
+		od;
+
 	end;
 
 	#returns saturated semigroups associated to a saturaded sequence
@@ -457,17 +460,17 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 		sum:=Sum(d);
 		len:=Length(d);
 
-		if (f+1>=sum) and (Gcd(f+1,d[len-1])=1) and (((f+1) mod d[len-1])<>1) then 
+		if (f+1>=sum) and (Gcd(f+1,d[len-1])=1) and (((f+1) mod d[len-1])<>1) then
 			ok:=true;
 			c:=f+1-sum;
 		fi;
-	
-		if (f+2>=sum) and (((f+2) mod d[len-1])=1) then 
+
+		if (f+2>=sum) and (((f+2) mod d[len-1])=1) then
 			ok:=true;
 			c:=f+2-sum;
 		fi;
 
-		if not(ok) then 
+		if not(ok) then
 			return [];
 		fi;
 		ones:=[];
@@ -475,7 +478,7 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 
 		l:=satpart(d,c);
 		l:=l+ones;
-		l:=Filtered(l, t-> ForAll([1..len-1], i-> Gcd(d[i]/d[i+1],t[i+1])=1));	
+		l:=Filtered(l, t-> ForAll([1..len-1], i-> Gcd(d[i]/d[i+1],t[i+1])=1));
 		return l;
 
 	end;
@@ -487,14 +490,14 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 		cand:=Filtered([2..f], x-> Gcd(f+1,x)=1 and f mod x<> 0);
 		A:=List(cand, x-> [x,1]);
 		tot:=A;
-	
+
 		while (A<>[]) do
 			AA:=[];
 			for d in A do
 				for x in [2..Int((f+1-Sum(d))/d[1])] do
 					dd:=ShallowCopy(d);
 					dd[1]:=x*d[1];
-					dd{[2..Length(d)+1]}:=d;	
+					dd{[2..Length(d)+1]}:=d;
 					Add(AA, dd);
 				od;
 			od;
@@ -502,7 +505,7 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 			tot:=Union(tot,A);
 		od;
 
-		return tot; 
+		return tot;
 
 	end;
 
@@ -513,14 +516,14 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 		cand:=Difference(DivisorsInt(f+1),[1]);
 		A:=List(cand, x-> [x,1]);
 		tot:=A;
-	
+
 		while (A<>[]) do
 			AA:=[];
 			for d in A do
 				for x in [2..Int((f+2-Sum(d))/d[1])] do
 					dd:=ShallowCopy(d);
 					dd[1]:=x*d[1];
-					dd{[2..Length(d)+1]}:=d;	
+					dd{[2..Length(d)+1]}:=d;
 					Add(AA, dd);
 				od;
 			od;
@@ -528,25 +531,23 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 			tot:=Union(tot,A);
 		od;
 
-		return tot; 
+		return tot;
 
 	end;
-	#main 
+	#main
 	L:=Union(alg23(f),alg24(f));
 	C:=[];
-	for l in L do 
+	for l in L do
 		Ll:=listsatseq(l,f);
-		for t in Ll do 
+		for t in Ll do
 			satsystem:=[];
 			satsystem[1]:=l[1];
 			for i in [2..Length(l)] do
 				satsystem[i]:=l{[1..i]}*t{[1..i]};
-			od;			
+			od;
 			Add(C,satsystem);
-		od;		
+		od;
 	od;
 
 	return Set(C, SaturatedNumericalSemigroupClosure);
 end);
-
-

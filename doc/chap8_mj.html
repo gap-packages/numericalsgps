@@ -34,7 +34,7 @@
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X867615F8846824EB">8.1-1 IsMEDNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X783A0BE786C6BBBE">8.1-1 IsMED</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X86C8358D8530106F">8.1-2 MEDNumericalSemigroupClosure</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X848FD3FA7DB2DD4C">8.1-3 MinimalMEDGeneratingSystemOfMEDNumericalSemigroup</a></span>
 </div></div>
@@ -43,7 +43,7 @@
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X8255C5907F8968B9">8.2-1 IsArfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X86137A2A7D27F7EC">8.2-1 IsArf</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7FE10E2F85CB01A2">8.2-2 ArfNumericalSemigroupClosure</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7C0D2F7986165DDE">8.2-3 MinimalArfGeneratingSystemOfArfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X85CD144384FD55F3">8.2-4 ArfNumericalSemigroupsWithFrobeniusNumber</a></span>
@@ -53,7 +53,7 @@
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7C5D0FFA85044DF7">8.3-1 IsSaturatedNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X81CCD9A88127E549">8.3-1 IsSaturated</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X8752A66B7E500645">8.3-2 SaturatedNumericalSemigroupClosure</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7CC07D997880E298">8.3-3 SaturatedNumericalSemigroupsWithFrobeniusNumber</a></span>
 </div></div>
@@ -73,18 +73,19 @@
 
 <p>Given a MED numerical semigroup <span class="SimpleMath">\(S\)</span>, we say that <span class="SimpleMath">\(M=\{m_1 &lt; \cdots&lt; m_k\}\)</span> is a MED system of generators if the MED closure of <span class="SimpleMath">\(M\)</span> is <span class="SimpleMath">\(S\)</span>. Moreover, <span class="SimpleMath">\(M\)</span> is a minimal MED generating system for <span class="SimpleMath">\(S\)</span> provided that every proper subset of <span class="SimpleMath">\(M\)</span> is not a MED system of generators of <span class="SimpleMath">\(S\)</span>. Minimal MED generating systems are unique, and in general are smaller than the classical minimal generating systems (see <a href="chapBib_mj.html#biBRGGB03">[RGGB03]</a>).</p>
 
-<p><a id="X867615F8846824EB" name="X867615F8846824EB"></a></p>
+<p><a id="X783A0BE786C6BBBE" name="X783A0BE786C6BBBE"></a></p>
 
-<h5>8.1-1 IsMEDNumericalSemigroup</h5>
+<h5>8.1-1 IsMED</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMEDNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMED</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMEDNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Returns true if <var class="Arg">S</var> is a MED numerical semigroup and false otherwise.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7)); </span>
-true 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,5)); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,5));</span>
 false
 </pre></div>
 
@@ -97,9 +98,9 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)); </span>
-&lt;Numerical semigroup&gt; 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MEDNumericalSemigroupClosure(NumericalSemigroup(3,5));</span>
+&lt;Numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last);</span>
 [ 3, 5, 7 ]
 </pre></div>
 
@@ -112,8 +113,8 @@ false
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalMEDGeneratingSystemOfMEDNumericalSemigroup( </span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroup(3,5,7)); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroup(3,5,7));</span>
 [ 3, 5 ]
 </pre></div>
 
@@ -127,20 +128,21 @@ false
 
 <p>The intersection of two Arf numerical semigroups is again Arf, and thus we can consider the Arf closure of a set of nonnegative integers with greatest common divisor equal to one. Analogously as with MED numerical semigroups, we define Arf systems of generators and minimal Arf generating system for an Arf numerical semigroup. These are also unique(see <a href="chapBib_mj.html#biBRGGB04">[RGGB04]</a>).</p>
 
-<p><a id="X8255C5907F8968B9" name="X8255C5907F8968B9"></a></p>
+<p><a id="X86137A2A7D27F7EC" name="X86137A2A7D27F7EC"></a></p>
 
-<h5>8.2-1 IsArfNumericalSemigroup</h5>
+<h5>8.2-1 IsArf</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsArfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsArf</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsArfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Returns true if <var class="Arg">S</var> is an Arf numerical semigroup and false otherwise.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> IsArfNumericalSemigroup(NumericalSemigroup(3,5,7)); </span>
-true 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> IsArfNumericalSemigroup(NumericalSemigroup(3,7,11)); </span>
-false 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11)); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> IsArfNumericalSemigroup(NumericalSemigroup(3,5,7));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> IsArfNumericalSemigroup(NumericalSemigroup(3,7,11));</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11));</span>
 true
 </pre></div>
 
@@ -153,9 +155,9 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11)); </span>
-&lt;Numerical semigroup&gt; 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11));</span>
+&lt;Numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last);</span>
 [ 3, 7, 8 ]
 </pre></div>
 
@@ -168,8 +170,8 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalArfGeneratingSystemOfArfNumericalSemigroup( </span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroup(3,7,8)); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalArfGeneratingSystemOfArfNumericalSemigroup(</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroup(3,7,8));</span>
 [ 3, 7 ]
 </pre></div>
 
@@ -183,13 +185,13 @@ true
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ArfNumericalSemigroupsWithFrobeniusNumber(10);</span>
-[ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
-  &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, 
+[ &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;,
+  &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;,
   &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt;, &lt;Numerical semigroup&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGenerators);</span>
-[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
-  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
-  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
+[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ],
+  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ],
+  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ],
   [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
 </pre></div>
 
@@ -203,11 +205,12 @@ true
 
 <p>The intersection of two saturated numerical semigroups is again saturated, and thus we can consider the saturated closure of a set of nonnegative integers with greatest common divisor equal to one (see <a href="chapBib_mj.html#biBRGbook">[RG09]</a>).</p>
 
-<p><a id="X7C5D0FFA85044DF7" name="X7C5D0FFA85044DF7"></a></p>
+<p><a id="X81CCD9A88127E549" name="X81CCD9A88127E549"></a></p>
 
-<h5>8.3-1 IsSaturatedNumericalSemigroup</h5>
+<h5>8.3-1 IsSaturated</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSaturatedNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSaturated</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSaturatedNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Returns true if <var class="Arg">S</var> is a saturated numerical semigroup and false otherwise.</p>
 
 
@@ -243,18 +246,18 @@ false
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SaturatedNumericalSemigroupsWithFrobeniusNumber(10);</span>
-[ &lt;Numerical semigroup with 3 generators&gt;, 
-  &lt;Numerical semigroup with 4 generators&gt;, 
-  &lt;Numerical semigroup with 6 generators&gt;, 
-  &lt;Numerical semigroup with 6 generators&gt;, 
-  &lt;Numerical semigroup with 7 generators&gt;, 
-  &lt;Numerical semigroup with 8 generators&gt;, 
-  &lt;Numerical semigroup with 9 generators&gt;, 
+[ &lt;Numerical semigroup with 3 generators&gt;,
+  &lt;Numerical semigroup with 4 generators&gt;,
+  &lt;Numerical semigroup with 6 generators&gt;,
+  &lt;Numerical semigroup with 6 generators&gt;,
+  &lt;Numerical semigroup with 7 generators&gt;,
+  &lt;Numerical semigroup with 8 generators&gt;,
+  &lt;Numerical semigroup with 9 generators&gt;,
   &lt;Numerical semigroup with 11 generators&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> List(last,MinimalGenerators);</span>
-[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
-  [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
-  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], 
+[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ],
+  [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ],
+  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ],
   [ 11 .. 21 ] ]
 </pre></div>
 

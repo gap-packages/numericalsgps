@@ -7,7 +7,7 @@
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro Garcia-Sanchez and Jose Joao Morais
-#Y  We adopt the copyright regulations of GAP as detailed in the 
+#Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ##
 #############################################################################
@@ -23,9 +23,9 @@
 ##
 ## The argument may be a numerical semigroup or a list of relatively prime
 ## positive integers
-## The output is the Arf-closure of arg (the smallest Arf-semigroup 
+## The output is the Arf-closure of arg (the smallest Arf-semigroup
 ## containing arg)
-## 
+##
 #####################################################################
 DeclareGlobalFunction("ArfNumericalSemigroupClosure");
 
@@ -33,14 +33,14 @@ DeclareGlobalFunction("ArfNumericalSemigroupClosure");
 
 #####################################################################
 ##
-#A IsArfNumericalSemigroup(s)
+#P IsArfNumericalSemigroup(s)
 ##
 ## The argument s is a numerical semigroup
 ## returns true if s is an Arf-semigroup and false otherwise
-## 
+##
 #####################################################################
-DeclareAttribute("IsArfNumericalSemigroup", IsNumericalSemigroup);
-
+DeclareProperty("IsArfNumericalSemigroup", IsNumericalSemigroup);
+DeclareSynonymAttr("IsArf",IsArfNumericalSemigroup);
 
 
 #####################################################################
@@ -48,8 +48,8 @@ DeclareAttribute("IsArfNumericalSemigroup", IsNumericalSemigroup);
 #A MinimalArfGeneratingSystemOfArfNumericalSemigroup(s)
 ##
 ## The argument s is an Arf numerical semigroup
-## returns the minimal Arf-generating system of s. 
-## 
+## returns the minimal Arf-generating system of s.
+##
 #############################################################################
 DeclareAttribute("MinimalArfGeneratingSystemOfArfNumericalSemigroup", IsNumericalSemigroup);
 
@@ -59,7 +59,7 @@ DeclareAttribute("MinimalArfGeneratingSystemOfArfNumericalSemigroup", IsNumerica
 #F ArfNumericalSemigroupsWithFrobeniusNumber(f)
 ##
 ## The argument f is an integer
-## Returns the set of Arf numerical semigroups with Frobenius number f 
+## Returns the set of Arf numerical semigroups with Frobenius number f
 ## as explained in the preprint
 ##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
 #############################################################################
@@ -70,14 +70,14 @@ DeclareGlobalFunction("ArfNumericalSemigroupsWithFrobeniusNumber");
 ## See [RGGB03]
 #####################################################################
 ##
-#A IsMEDNumericalSemigroup(s)
+#P IsMEDNumericalSemigroup(s)
 ##
 ## The argument s is a numerical semigroup
 ## returns true if s is a MED-semigroup and false otherwise
-## 
+##
 #####################################################################
-DeclareAttribute("IsMEDNumericalSemigroup", IsNumericalSemigroup);
-
+DeclareProperty("IsMEDNumericalSemigroup", IsNumericalSemigroup);
+DeclareSynonymAttr("IsMED",IsMEDNumericalSemigroup);
 
 
 #####################################################################
@@ -86,9 +86,9 @@ DeclareAttribute("IsMEDNumericalSemigroup", IsNumericalSemigroup);
 ##
 ## The argument may be a numerical semigroup or a list of relatively prime
 ## positive integers
-## The output is the MED-closure of arg (the smallest MED-semigroup 
+## The output is the MED-closure of arg (the smallest MED-semigroup
 ## containing arg)
-## 
+##
 #####################################################################
 DeclareGlobalFunction("MEDNumericalSemigroupClosure");
 
@@ -99,35 +99,36 @@ DeclareGlobalFunction("MEDNumericalSemigroupClosure");
 #A MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(s)
 ##
 ## The argument s is a MED numerical semigroup
-## returns the minimal MED-generating system of s. 
-## 
+## returns the minimal MED-generating system of s.
+##
 #############################################################################
 DeclareAttribute("MinimalMEDGeneratingSystemOfMEDNumericalSemigroup", IsNumericalSemigroup);
 
 #####################################################################
 ##                        Saturated
-## See [book] 
+## See [book]
 #####################################################################
 ##
 #F SaturatedfNumericalSemigroupClosure(arg)
 ##
 ## The argument may be a numerical semigroup or a list of relatively prime
 ## positive integers
-## The output is the saturated-closure of arg (the smallest saturated-semigroup 
+## The output is the saturated-closure of arg (the smallest saturated-semigroup
 ## containing arg)
-## 
+##
 #####################################################################
 DeclareGlobalFunction("SaturatedNumericalSemigroupClosure");
 
 #####################################################################
 ##
-#A IsSaturatedNumericalSemigroup(s)
+#P IsSaturatedNumericalSemigroup(s)
 ##
 ## The argument s is a numerical semigroup
 ## returns true if s is a saturated-semigroup and false otherwise
-## 
+##
 #####################################################################
-DeclareAttribute("IsSaturatedNumericalSemigroup", IsNumericalSemigroup);
+DeclareProperty("IsSaturatedNumericalSemigroup", IsNumericalSemigroup);
+DeclareSynonymAttr("IsSaturated",IsSaturatedNumericalSemigroup);
 
 #####################################################################
 ##
