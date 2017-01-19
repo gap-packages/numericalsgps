@@ -39,8 +39,8 @@ DeclareGlobalFunction("ArfNumericalSemigroupClosure");
 ## returns true if s is an Arf-semigroup and false otherwise
 ##
 #####################################################################
-DeclareProperty("IsArfNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonymAttr("IsArf",IsArfNumericalSemigroup);
+DeclareProperty("IsArf", IsNumericalSemigroup);
+DeclareSynonymAttr("IsArfNumericalSemigroup",IsArf);
 
 
 #####################################################################
@@ -76,8 +76,8 @@ DeclareGlobalFunction("ArfNumericalSemigroupsWithFrobeniusNumber");
 ## returns true if s is a MED-semigroup and false otherwise
 ##
 #####################################################################
-DeclareProperty("IsMEDNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonymAttr("IsMED",IsMEDNumericalSemigroup);
+DeclareProperty("IsMED", IsNumericalSemigroup);
+DeclareSynonymAttr("IsMEDNumericalSemigroup",IsMED);
 
 
 #####################################################################
@@ -127,9 +127,11 @@ DeclareGlobalFunction("SaturatedNumericalSemigroupClosure");
 ## returns true if s is a saturated-semigroup and false otherwise
 ##
 #####################################################################
-DeclareProperty("IsSaturatedNumericalSemigroup", IsNumericalSemigroup);
-#DeclareSynonymAttr("IsSaturated",IsSaturatedNumericalSemigroup);
 DeclareProperty("IsSaturated", IsNumericalSemigroup);
+DeclareSynonymAttr("IsSaturatedNumericalSemigroup",IsSaturated);
+#DeclareProperty("IsSaturated", IsNumericalSemigroup);
+#REPORT CRISP for this collission; we shold be able to use synonyms here
+
 
 #####################################################################
 ##

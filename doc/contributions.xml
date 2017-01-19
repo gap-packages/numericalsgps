@@ -5,7 +5,7 @@
 <Section><Heading>Functions implemented by A. Sammartano</Heading>
 
 <ManSection>
-                    <Func Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupBuchsbaum"></Func>
+                    <Prop Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupBuchsbaum"></Prop>
                     <Description>
 
                         <A>S</A> is a numerical semigroup.
