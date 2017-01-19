@@ -89,7 +89,8 @@ DeclareGlobalFunction("DecomposeIntoIrreducibles");
 ##
 #############################################################################
 DeclareProperty("IsIrreducibleNumericalSemigroup", IsNumericalSemigroup);
-#DeclareSynonymAttr("IsIrreducible",IsIrreducibleNumericalSemigroup);
+DeclareOperation("IsIrreducible",[IsIrreducibleNumericalSemigroup]);
+#REPORT CRISP for this collission; we shold be able to use synonyms here
 
 
 #############################################################################
@@ -100,7 +101,8 @@ DeclareProperty("IsIrreducibleNumericalSemigroup", IsNumericalSemigroup);
 ##
 #############################################################################
 DeclareProperty("IsSymmetricNumericalSemigroup", IsNumericalSemigroup);
-#DeclareSynonymAttr("IsSymmetric",IsSymmetricNumericalSemigroup);
+DeclareAttribute("IsSymmetric",IsNumericalSemigroup);
+#REPORT laguna for this collission; we shold be able to use synonyms here
 
 
 #############################################################################
@@ -110,8 +112,8 @@ DeclareProperty("IsSymmetricNumericalSemigroup", IsNumericalSemigroup);
 ##  Checks whether or not s is a pseudosymmetric numerical semigroup.
 ##
 #############################################################################
-DeclareProperty("IsPseudoSymmetricNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonymAttr("IsPseudoSymmetric",IsPseudoSymmetricNumericalSemigroup);
+DeclareProperty("IsPseudoSymmetric", IsNumericalSemigroup);
+DeclareSynonymAttr("IsPseudoSymmetricNumericalSemigroup",IsPseudoSymmetric);
 
 #####################################################################
 ##                        Almost-symmetric numerical semigroups
@@ -126,8 +128,8 @@ DeclareSynonymAttr("IsPseudoSymmetric",IsPseudoSymmetricNumericalSemigroup);
 ## on if the semigroup is almost symmetric or not, see [BF97]
 ##
 #####################################################################
-DeclareProperty("IsAlmostSymmetricNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonymAttr("IsAlmostSymmetric",IsAlmostSymmetricNumericalSemigroup);
+DeclareProperty("IsAlmostSymmetric", IsNumericalSemigroup);
+DeclareSynonymAttr("IsAlmostSymmetricNumericalSemigroup",IsAlmostSymmetric);
 
 
 #####################################################################
@@ -172,8 +174,8 @@ DeclareGlobalFunction("AsGluingOfNumericalSemigroups");
 ## its embedding dimension minus one
 ##
 #############################################################################
-DeclareProperty("IsACompleteIntersectionNumericalSemigroup",IsNumericalSemigroup);
-DeclareSynonymAttr("IsCompleteIntersection",IsACompleteIntersectionNumericalSemigroup);
+DeclareProperty("IsCompleteIntersection",IsNumericalSemigroup);
+DeclareSynonymAttr("IsACompleteIntersectionNumericalSemigroup",IsCompleteIntersection);
 
 
 #############################################################################
@@ -184,8 +186,8 @@ DeclareSynonymAttr("IsCompleteIntersection",IsACompleteIntersectionNumericalSemi
 # # Bertin and Carbonne [BC77]
 ##
 #############################################################################
-DeclareProperty("IsFreeNumericalSemigroup",IsNumericalSemigroup);
-DeclareSynonymAttr("IsFree",IsFreeNumericalSemigroup);
+DeclareProperty("IsFree",IsNumericalSemigroup);
+DeclareSynonymAttr("IsFreeNumericalSemigroup",IsFree);
 
 #############################################################################
 ##
@@ -195,8 +197,8 @@ DeclareSynonymAttr("IsFree",IsFreeNumericalSemigroup);
 ##  that is, free for the ordering n_1<...<n_e, with n_i the minimal generators
 ##
 #############################################################################
-DeclareProperty("IsTelescopicNumericalSemigroup",IsNumericalSemigroup);
-DeclareSynonymAttr("IsTelescopic",IsTelescopicNumericalSemigroup);
+DeclareProperty("IsTelescopic",IsNumericalSemigroup);
+DeclareSynonymAttr("IsTelescopicNumericalSemigroup",IsTelescopic);
 
 #############################################################################
 ##

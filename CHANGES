@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Now synonyms are the long names and the originals are short (thanks for the suggestion Sebastian Gutsche)
 - Intersection is now shorthand for IntersectionOfNumericalSemigroups and IntersectionIdealsOfNumericalSemigroup
 - Added IsOrdinaryNumericalSemigroup and IsAcuteNumericalSemigroup
 - IsSymmetricNumericalSemigroup is now a property, the same for IsPseudoSymmetricNumericalSemigroup, IsIrreducibleNumericalSemigroup and IsAlmostSymmetricNumericalSemigroup, and others related to complete intersections; synonyms added

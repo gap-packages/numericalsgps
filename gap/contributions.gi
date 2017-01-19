@@ -1,26 +1,28 @@
 #############################################################################
 ##
-#W  contributions.gi          
+#W  contributions.gi
 ##
 ##
-#Y  The functions in this file have been implemented by researchers that do 
-#Y  not appear as authors of the package. References to its usage should be 
+#Y  The functions in this file have been implemented by researchers that do
+#Y  not appear as authors of the package. References to its usage should be
 #Y made as suggested in the manual
-#Y  
+#Y
 #Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ################################################################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupBuchsbaum(S)
+#P  IsGradedAssociatedRingNumericalSemigroupBuchsbaum(S)
 ##
 ##  Test for the Buchsbaum property of the associated graded ring of a numerical semigroup ring
-##  Based on D'Anna, M., Mezzasalma, M. and Micale, V. "On the Buchsbaumness of the Associated Graded Ring 
+##  Based on D'Anna, M., Mezzasalma, M. and Micale, V. "On the Buchsbaumness of the Associated Graded Ring
 ##  of a One-Dimensional Local Ring", Communications in Algebra, 37: 5, 1594 — 1603
 ##
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupBuchsbaum, function(S)
+InstallMethod(IsGradedAssociatedRingNumericalSemigroupBuchsbaum,
+	"Tests if the graded associated ring of the semigroup is Buchsbaum",[IsNumericalSemigroup],1,
+	function(S)
 	local M,h,r,T,m,D,Max,A1,A2,A3,A4,B1,B2,B3,B4;
 	r:=ReductionNumberIdealNumericalSemigroup(MaximalIdealOfNumericalSemigroup(S));
 	if r<=3 then
@@ -31,10 +33,10 @@ InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupBuchsbaum, functio
 	m:=MultiplicityOfNumericalSemigroup(S);
 	for h in [1..r-2] do
 		D:= DifferenceOfIdealsOfNumericalSemigroup(h*M,(h+1)*M);
-		A1:= (h+1)*m + T; 
+		A1:= (h+1)*m + T;
 		B1:= (h+2)*M - M;
 		A2:= SmallElementsOfIdealOfNumericalSemigroup(A1);
-		B2:= SmallElementsOfIdealOfNumericalSemigroup(B1);		
+		B2:= SmallElementsOfIdealOfNumericalSemigroup(B1);
 		Max:= Maximum(Maximum(A2), Maximum(B2), Maximum(D));
 		A3:= Union(A2,[Maximum(A2)..Max]);
 		B3:= Union(B2,[Maximum(B2)..Max]);
@@ -52,7 +54,7 @@ end);
 #F  IsMpureNumericalSemigroup(S)
 ##
 ##  Test for the M-Purity of the numerical semigroup S
-##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated 
+##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated
 ##  Graded Rings", Comm. Algebra 38 (2010), 2092--2128.
 ##
 ##  Implemented by Alessio Sammartano
@@ -68,7 +70,7 @@ InstallGlobalFunction(IsMpureNumericalSemigroup,function(S)
 	b:=List(AperyListOfNumericalSemigroupWRTElement(S,m),
 	   w->MaximumDegreeOfElementWRTNumericalSemigroup(w,S));
 	Maximal:=[];
-	Maximal[1]:=false;	
+	Maximal[1]:=false;
 	for i in [2..m] do
 		Maximal[i]:=true;
 	od;
@@ -97,7 +99,7 @@ end);
 #F  IsPureNumericalSemigroup(S)
 ##
 ##  Test for the purity of the numerical semigroup S
-##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated 
+##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated
 ##  Graded Rings", Comm. Algebra 38 (2010), 2092--2128.
 ##
 ##  Implemented by Alessio Sammartano
@@ -121,7 +123,7 @@ end);
 ##
 ##  Test for the Gorenstein property of the associated graded ring of a numerical semigroup ring
 ##  Based on D'Anna, M., Micale, V. and Sammartano, A. "On the Associated Ring of a Semigroup Ring", J. Commut. Algebra Volume 3, Number 2 (2011), 147-168.
-## 
+##
 ##
 ##  Implemented by Alessio Sammartano
 ##
@@ -140,7 +142,7 @@ end);
 ##
 ##  Test for the Complete Intersection property of the associated graded ring of a numerical semigroup ring k[[S]]
 ##  Based on "When the associated graded ring of a semigroup ring is Complete Intersection"
-## 
+##
 ##
 ##  Implemented by Alessio Sammartano
 ##
@@ -151,7 +153,7 @@ InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupCI,function(S)
 	fi;
 	return false;
 end);
-      
+
 ##############################################################################################################
 ##
 #F  IsAperySetGammaRectangular
@@ -167,7 +169,7 @@ InstallGlobalFunction(IsAperySetGammaRectangular,function(S)
 	local g, ni,  i, j, c,b, LL, G, G1;
 	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
 	ni:=Length(g);
-	if ni <= 2 then 
+	if ni <= 2 then
 		return true;
 	fi;
 	c:=[];
@@ -177,11 +179,11 @@ InstallGlobalFunction(IsAperySetGammaRectangular,function(S)
 			c[i]:=c[i]+1;
 			if BelongsToNumericalSemigroup(c[i]*g[i+1]-g[1],S) then
 				break;
-			fi;			
+			fi;
 			G:=GraphAssociatedToElementInNumericalSemigroup(c[i]*g[i+1],S);
 			G1:=Difference(G[1],[g[i+1]]);
-			LL:=List(G1, n-> MaximumDegreeOfElementWRTNumericalSemigroup(c[i]*g[i+1] - n,S));		
-			if Length(LL) >0 and Maximum(LL)>= c[i]-1 then 
+			LL:=List(G1, n-> MaximumDegreeOfElementWRTNumericalSemigroup(c[i]*g[i+1] - n,S));
+			if Length(LL) >0 and Maximum(LL)>= c[i]-1 then
 				break;
 			fi;
 		until false;
@@ -206,7 +208,7 @@ InstallGlobalFunction(IsAperySetBetaRectangular,function(S)
 	local g, ni, m, i, b;
 	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
 	ni:=Length(g);
-	if ni <= 2 then 
+	if ni <= 2 then
 		return true;
 	fi;
 	m:=g[1];
@@ -240,7 +242,7 @@ InstallGlobalFunction(IsAperySetAlphaRectangular,function(S)
 	local g, ni, m, i, a;
 	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
 	ni:=Length(g);
-	if ni <= 2 then 
+	if ni <= 2 then
 		return true;
 	fi;
 	m:=g[1];
@@ -273,10 +275,10 @@ end);
 InstallGlobalFunction(TypeSequenceOfNumericalSemigroup,function(S)
 	local Ga,Sma,n,g,i,j,L,l,t,h;
 	Ga:=GapsOfNumericalSemigroup(S);
-	Sma:=SmallElementsOfNumericalSemigroup(S);	
+	Sma:=SmallElementsOfNumericalSemigroup(S);
 	n:=Length(Sma)-1;
 	g:=Length(Ga);
-	L:=[];	
+	L:=[];
 	for j in [1..g]  do
 		i:=n+1;
 		while BelongsToNumericalSemigroup(Ga[j]+Sma[i],S) do
@@ -286,7 +288,7 @@ InstallGlobalFunction(TypeSequenceOfNumericalSemigroup,function(S)
 	od;
 	t:=[];
 	for h in [1..n] do
-		t[h]:=0; 
+		t[h]:=0;
 	od;
 	for l in L do
 		t[l]:=t[l]+1;
@@ -298,9 +300,9 @@ end);
 ##########################################################
 ##
 #F TorsionOfAssociatedGradedRingNumericalSemigroup(S)
-## This function returns the set of elements in the numerical 
-## semigroup S corresponding to a K-basis of the torsion 
-## submodule of the associated graded ring of the numerical 
+## This function returns the set of elements in the numerical
+## semigroup S corresponding to a K-basis of the torsion
+## submodule of the associated graded ring of the numerical
 ## semigroup ring K[[S]]. It uses the Apery table
 ## as explained in [Benitez, Jafari, Zarzuela; Semigroup Forum, 2013]
 ##
@@ -324,7 +326,7 @@ InstallGlobalFunction(TorsionOfAssociatedGradedRingNumericalSemigroup,
             fi;
             j:=j-1;
         od;
-        if truelanding then 
+        if truelanding then
             q:=(AT[j][i]-w)/m;
             for l in [0..q-1] do
                 Append(torsion,[w+m*l]);
@@ -332,15 +334,15 @@ InstallGlobalFunction(TorsionOfAssociatedGradedRingNumericalSemigroup,
         fi;
     od;
     return torsion;
-end);			
+end);
 
 
 #################################################################################
 ##
 #F BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup(S)
-## This function returns the smallest non-negative integer k for which the 
-## associated graded ring G of a given numerical semigroup ring is k-Buchsbaum, 
-## that is, the least k for which the torsion submodule of G is annihilated by 
+## This function returns the smallest non-negative integer k for which the
+## associated graded ring G of a given numerical semigroup ring is k-Buchsbaum,
+## that is, the least k for which the torsion submodule of G is annihilated by
 ## the k-th power of the homogeneous maximal ideal of G.
 ##
 ##  Implemented by A. Sammartano
@@ -348,8 +350,8 @@ end);
 InstallGlobalFunction(BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup,
         function(S)
     local T, M, n, D, H, s, c, j, tbr;
-    T:=TorsionOfAssociatedGradedRingNumericalSemigroup(S);	
-    if Length(T)=0 then 
+    T:=TorsionOfAssociatedGradedRingNumericalSemigroup(S);
+    if Length(T)=0 then
         return 0;
     fi;
     M:=MaximalIdealOfNumericalSemigroup(S);
@@ -366,11 +368,11 @@ InstallGlobalFunction(BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup,
                 j:=j+1;
             od;
             if j=H+1 then
-                Append(tbr,[s]); 
+                Append(tbr,[s]);
             fi;
         od;
         T:=Set(T);
-        for s in tbr do 
+        for s in tbr do
             RemoveSet(T,s);
         od;
         T:=List(T);
@@ -387,49 +389,49 @@ end);
 ##
 #F  OmegaPrimalityOfElementListInNumericalSemigroup(l,s)
 ##
-##  Computes the omega primality of a list of elmenents l in S, 
-##  Implemented by Chris O'Neill.  
+##  Computes the omega primality of a list of elmenents l in S,
+##  Implemented by Chris O'Neill.
 ##
 #############################################################################
 InstallGlobalFunction(OmegaPrimalityOfElementListInNumericalSemigroup,function(l,s)
     local frob, msg, values, bullets, omegas, n, i, j, b, w, toadd, omegaval, bl, bli, getbullets, setbullets, getomega, setomega;
-    
+
     # Form of a bullet: (v,l)
     # v - value of bullet expression
     # l - sum of the components
-    
+
     if not IsNumericalSemigroup(s) then
         Error("The second argument must be a numerical semigroup");
     fi;
-    if not IsListOfIntegersNS(l) then 
+    if not IsListOfIntegersNS(l) then
         Error("The first argument must be a list of integers");
     fi;
-    
-    
+
+
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
     frob:=FrobeniusNumberOfNumericalSemigroup(s);
-    
+
     values := [-frob .. Maximum(l)];
     bullets := List(values, x->[]);
     omegas := List(values, x->0);
-    
+
     getbullets:=function(n)  #add base case
         if 0-n in s then
             return [0];
         fi;
         return bullets[n+frob+1];
     end;
-    
+
     getomega:=function(n)
         if n < -frob then
             return 0;
         fi;
         return omegas[n+frob+1];
     end;
-    
+
     for n in values do
         bl := [];
-        
+
         for i in [1..Length(msg)] do
             bli:=getbullets(n - msg[i]);
             for j in [1..Length(bli)] do
@@ -439,7 +441,7 @@ InstallGlobalFunction(OmegaPrimalityOfElementListInNumericalSemigroup,function(l
                     if w <> 0 then
                         b:=b+(n-msg[i]);
                     fi;
-                    
+
                     if not(b-1-n in s) then
                         b:=b+msg[i];
                         w:=w+1;
@@ -452,20 +454,20 @@ InstallGlobalFunction(OmegaPrimalityOfElementListInNumericalSemigroup,function(l
                 fi;
             od;
         od;
-        
+
         bullets[n+frob+1]:=bl;
         if n-msg[Length(msg)]+frob+1 > 0 then
             bullets[n-msg[Length(msg)]+frob+1]:=[];
         fi;
-        
+
         omegas[n+frob+1]:=Maximum(bl);
-        
+
         # for garbage collection
         # GASMAN("coillect");
     od;
-    
+
     return List(l,x->getomega(x));
-    
+
 end);
 
 
@@ -473,26 +475,26 @@ end);
 ##
 #F  FactorizationsElementListWRTNumericalSemigroup(l,s)
 ##
-##  Computes the factorizations of a list of elmenents l in S, 
+##  Computes the factorizations of a list of elmenents l in S,
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
 InstallGlobalFunction(FactorizationsElementListWRTNumericalSemigroup,function(l,s)
 	local msg, factorizations, n, i, f, facts, toadd;
-	
+
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	factorizations:=[];
-	
+
 	for n in [1 .. Maximum(l)] do
 		factorizations[n]:=[];
-		
+
 		for i in [1 .. Length(msg)] do
 			if n-msg[i] >= 0 then
 				facts:=[List(msg,x->0)];
 				if n-msg[i] > 0 then
 					facts:=factorizations[n-msg[i]];
 				fi;
-				
+
 				for f in facts do
 					toadd:=List(f);
 					toadd[i]:=toadd[i]+1;
@@ -500,15 +502,15 @@ InstallGlobalFunction(FactorizationsElementListWRTNumericalSemigroup,function(l,
 				od;
 			fi;
 		od;
-		
+
 		factorizations[n]:=Set(factorizations[n]);
-		
+
 		# allow garbage collection
 		#if n > Maximum(msg) then
 		#	factorizations[n-Maximum(msg)]:=[];
 		#fi;
 	od;
-	
+
 	return List(l,x->factorizations[x]);
 end);
 
@@ -516,30 +518,30 @@ end);
 ##
 #F  DeltaSetPeriodicityBoundForNumericalSemigroup(s)
 ##
-##  Returns a bound on the start of periodic behavior for the delta sets of elements of S.  
+##  Returns a bound on the start of periodic behavior for the delta sets of elements of S.
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
 InstallGlobalFunction(DeltaSetPeriodicityBoundForNumericalSemigroup,function(s)
 	local msg, d, l, i, g, S, Sp;
-	
+
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	d:=Gcd(DeltaSetOfSetOfIntegers(msg));
 	#d:=Gcd(List(BettiElementsOfNumericalSemigroup(s),x->Minimum(LengthsOfFactorizationsElementWRTNumericalSemigroup(x,s))));
 	l:=Length(msg);
 	S:=[];
 	Sp:=[];
-	
+
 	if l <= 2 then
 		return Product(msg);
 	fi;
-	
+
 	for i in [2 .. l-1] do
 		g:=Gcd([msg[i]-msg[1],msg[1]-msg[l],msg[l]-msg[i]]);
 		S[i]:=CeilingOfRational(-(msg[2]*(msg[1]*d*g + (l-2)*(msg[1]-msg[i])*(msg[1]-msg[l])))/((msg[1]-msg[2])*g));
 		Sp[i]:=CeilingOfRational((msg[l-1]*((l-2)*(msg[1]-msg[l])*(msg[l]-msg[i]) - d*msg[l]*g))/((msg[l-1]-msg[l])*g));
 	od;
-	
+
 	return Maximum(Union(S,Sp));
 end);
 
@@ -548,36 +550,36 @@ end);
 ##
 #F  DeltaSetPeriodicityStartForNumericalSemigroup(n,s)
 ##
-##  Returns the exact start of periodicity for the delta sets of elements of S.  
+##  Returns the exact start of periodicity for the delta sets of elements of S.
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
 InstallGlobalFunction(DeltaSetPeriodicityStartForNumericalSemigroup,function(s)
 	local msg, period, lengths, m, n, lens, deltas, delta, diss;
-	
+
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	period:=Lcm(msg[1],msg[Length(msg)]);
 	n:=DeltaSetPeriodicityBoundForNumericalSemigroup(s);
-	
+
 	lengths:=List([1 .. msg[Length(msg)]],x->[]);
 	lengths[1]:=[0];
 	deltas:=List([1 .. period],x->[]);
 	delta:=[];
 	diss:=1;
-	
+
 	for m in [1 .. n+period+1] do
 		lens:=Union(List([1 .. Length(msg)],i->List(lengths[Int((m-msg[i]) mod msg[Length(msg)])+1],l->l+1)));
-		if Length(lens) > 1 then 
+		if Length(lens) > 1 then
 			delta:=DeltaSetOfSetOfIntegers(lens);
 			if delta <> deltas[Int(m mod period)+1] then
 				diss:=m-period;
 			fi;
 		fi;
-		
+
 		lengths[Int(m mod msg[Length(msg)])+1]:=lens;
 		deltas[Int(m mod period)+1]:=delta;
 	od;
-	
+
 	return diss;
 end);
 
@@ -587,18 +589,18 @@ end);
 ##
 #F  DeltaSetListUpToElementWRTNumericalSemigroup(n,s)
 ##
-##  Computes the delta sets of the elements of S up to and including n.  
+##  Computes the delta sets of the elements of S up to and including n.
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
 InstallGlobalFunction(DeltaSetListUpToElementWRTNumericalSemigroup,function(n,s)
 	local msg, lengths, deltas, m, lens;
-	
+
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	lengths:=List([1 .. msg[Length(msg)]],x->[]);
 	lengths[1]:=[0];
 	deltas:=List([1 .. n],x->[]);
-	
+
 	for m in [1 .. n] do
 		lens:=Union(List([1 .. Length(msg)],i->List(lengths[Int((m-msg[i]) mod msg[Length(msg)])+1],l->l+1)));
 		if Length(lens) > 0 then
@@ -606,7 +608,7 @@ InstallGlobalFunction(DeltaSetListUpToElementWRTNumericalSemigroup,function(n,s)
 		fi;
 		lengths[Int(m mod msg[Length(msg)])+1]:=lens;
 	od;
-	
+
 	return deltas;
 end);
 
@@ -615,19 +617,19 @@ end);
 ##
 #F  DeltaSetUnionUpToElementWRTNumericalSemigroup(n,s)
 ##
-##  Computes the union of the delta sets of the elements of S up to and including n, 
-##  using a ring buffer to conserve memory.  
+##  Computes the union of the delta sets of the elements of S up to and including n,
+##  using a ring buffer to conserve memory.
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
 InstallGlobalFunction(DeltaSetUnionUpToElementWRTNumericalSemigroup,function(n,s)
 	local msg, lengths, delta, m, lens;
-	
+
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	lengths:=List([1 .. msg[Length(msg)]],x->[]);
 	lengths[1]:=[0];
 	delta:=[];
-	
+
 	for m in [1 .. n] do
 		lens:=Union(List([1 .. Length(msg)],i->List(lengths[Int((m-msg[i]) mod msg[Length(msg)])+1],l->l+1)));
 		if Length(lens) > 0 then
@@ -635,7 +637,7 @@ InstallGlobalFunction(DeltaSetUnionUpToElementWRTNumericalSemigroup,function(n,s
 		fi;
 		lengths[Int(m mod msg[Length(msg)])+1]:=lens;
 	od;
-	
+
 	return delta;
 end);
 
@@ -643,13 +645,13 @@ end);
 ##
 #F  DeltaSetOfNumericalSemigroup(s)
 ##
-##  Computes the union of the delta sets of the elements of S up to the bound given in [TODO], 
+##  Computes the union of the delta sets of the elements of S up to the bound given in [TODO],
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
 InstallGlobalFunction(DeltaSetOfNumericalSemigroup,function(s)
 	local msg;
-	
+
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
 	return DeltaSetUnionUpToElementWRTNumericalSemigroup(DeltaSetPeriodicityBoundForNumericalSemigroup(s)+msg[Length(msg)]-1,s);
 end);
@@ -660,10 +662,10 @@ end);
 #F  IsAdmissiblePattern(p)
 ##
 ##  p is the list of integers that are the coefficients of a pattern
-##  returns true or false depending if p is admissible or not  
+##  returns true or false depending if p is admissible or not
 ##  see cite [BA-GS]
 ##
-##  Implemented with Klara Stokes 
+##  Implemented with Klara Stokes
 ##
 #############################################################################
 InstallGlobalFunction("IsAdmissiblePattern",function(p)
@@ -674,7 +676,7 @@ InstallGlobalFunction("IsAdmissiblePattern",function(p)
      fi;
 
      len:=Length(p);
-     
+
      return ForAll([1..len], i->Sum(p{[1..i]})>=0);
 end);
 
@@ -684,7 +686,7 @@ end);
 #F  IsStronglyAdmissiblePattern(p)
 ##
 ##  p is the list of integers that are the coefficients of a pattern
-##  returns true or false depending if p is strongly admissible or not  
+##  returns true or false depending if p is strongly admissible or not
 ##  see cite [BA-GS]
 ##
 #############################################################################
@@ -711,8 +713,8 @@ end);
 #############################################################################
 ##
 #F  AsIdealOfNumericalSemigroup(I,T)
-##  For an ideal I of a numerical semigroup S, and a numerical semigroup T, 
-##  detects if I is an ideal of T, and if so, returns I as an ideal of T 
+##  For an ideal I of a numerical semigroup S, and a numerical semigroup T,
+##  detects if I is an ideal of T, and if so, returns I as an ideal of T
 ##  (otherwise it returns fail)
 ##
 ##  Implented with Klara Stokes  (see [Stokes])
@@ -744,11 +746,11 @@ end);
 #############################################################################
 ##
 #F  BoundForConductorOfImageOfPattern(p, C)
-##  Takes an admissible pattern p and calculates an upper bound of the 
-##  smallest element K in p(I) such that all integers larger than K is 
-##  contained in p(I), where I is an ideal of a numerical semigroup. 
-##  Instead of taking I as parameter, the function takes C, which is assumed 
-##  to be the smallest element in I such that all integers larger than C is 
+##  Takes an admissible pattern p and calculates an upper bound of the
+##  smallest element K in p(I) such that all integers larger than K is
+##  contained in p(I), where I is an ideal of a numerical semigroup.
+##  Instead of taking I as parameter, the function takes C, which is assumed
+##  to be the smallest element in I such that all integers larger than C is
 ##  contained in I.
 ##
 ##  Implemented by Klara Stokes (see [Stokes])
@@ -776,10 +778,10 @@ end);
 #############################################################################
 ##
 #F ApplyPatternToIdeal(p,I)
-## Takes a strongly  admissible pattern p and calculates p(I), where I is 
-## an ideal of a numerical semigroup 
+## Takes a strongly  admissible pattern p and calculates p(I), where I is
+## an ideal of a numerical semigroup
 ##
-## Implemented by Klara Stokes (see [Stokes]) 
+## Implemented by Klara Stokes (see [Stokes])
 ##
 #############################################################################
 InstallGlobalFunction("ApplyPatternToIdeal",function(p,I)
@@ -839,10 +841,10 @@ end);
 #############################################################################
 ##
 #F ApplyPatternToNumericalSemigroup(p,S)
-## Takes a strongly  admissible pattern p and calculates p(S), where S is 
-## a numerical semigroup 
+## Takes a strongly  admissible pattern p and calculates p(S), where S is
+## a numerical semigroup
 ##
-## Implemented by Klara Stokes (see [Stokes]) 
+## Implemented by Klara Stokes (see [Stokes])
 ##
 #############################################################################
 InstallGlobalFunction("ApplyPatternToNumericalSemigroup",function(p,S)
@@ -859,9 +861,9 @@ InstallGlobalFunction("ApplyPatternToNumericalSemigroup",function(p,S)
 #############################################################################
 ##
 #F  IsAdmittedPatternByIdeal(p,I,J)
-## 
-##  Takes astrongly admissible pattern p and tests whether p(I) is 
-##  contained in J, for I and J ideals of numerical semigroups 
+##
+##  Takes astrongly admissible pattern p and tests whether p(I) is
+##  contained in J, for I and J ideals of numerical semigroups
 ##  (not necessarily the same one)
 ##
 ##  Implemented by Klara Stokes  (see [Stokes])
@@ -921,11 +923,11 @@ end);
 #############################################################################
 ##
 #F  IsAdmittedPatternByNumericalSemigroup(p,S,T)
-##  Takes a strongly  admissible pattern p and tests whether p(S) is 
+##  Takes a strongly  admissible pattern p and tests whether p(S) is
 ##  contained in T, for S and T numerical semigroups.
 ##
 ##  Implemented by Klara Stokes  (see [Stokes])
-##  
+##
 #############################################################################
 InstallGlobalFunction("IsAdmittedPatternByNumericalSemigroup",function(p,S,T)
      if not IsNumericalSemigroup(S) then
