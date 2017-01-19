@@ -361,6 +361,11 @@ InstallMethod(IsIrreducibleNumericalSemigroup,
 end);
 
 
+InstallMethod(IsIrreducible,
+"Tests wheter the semigroup is symmetric",
+[IsNumericalSemigroup], IsIrreducibleNumericalSemigroup
+);
+
 
 #############################################################################
 ##
@@ -385,6 +390,11 @@ InstallMethod(IsSymmetricNumericalSemigroup,
     return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+1)/2;
 end);
 
+InstallMethod(IsSymmetric,
+"Tests wheter the semigroup is symmetric",
+[IsNumericalSemigroup], IsSymmetricNumericalSemigroup
+);
+
 InstallTrueMethod(IsIrreducibleNumericalSemigroup, IsSymmetricNumericalSemigroup);
 
 #############################################################################
@@ -404,6 +414,8 @@ InstallMethod(IsPseudoSymmetricNumericalSemigroup,
     fi;
     return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+2)/2;
 end);
+
+
 
 InstallTrueMethod(IsIrreducibleNumericalSemigroup, IsPseudoSymmetricNumericalSemigroup);
 
