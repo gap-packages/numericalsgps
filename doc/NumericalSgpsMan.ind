@@ -155,7 +155,7 @@
 		\hyperpage{65}
   \item \texttt  {Equal}\discretionary {-}{}{}\texttt  {Primitive}\discretionary {-}{}{}\texttt  {Elements}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{66}
-  \item \texttt  {EquationsOfGroupGeneratedBy}, \hyperpage{81}
+  \item \texttt  {EquationsOfGroupGeneratedBy}, \hyperpage{82}
 
   \indexspace
 
@@ -258,12 +258,13 @@
   \item \texttt  {IsAlmostSymmetric}, \hyperpage{43}
   \item \texttt  {IsAlmostSymmetricNumericalSemigroup}, \hyperpage{43}
   \item \texttt  {IsAperyListOfNumericalSemigroup}, \hyperpage{15}
-  \item \texttt  {IsAperySetAlphaRectangular}, \hyperpage{106}
+  \item \texttt  {IsAperySetAlphaRectangular}, \hyperpage{107}
   \item \texttt  {IsAperySetBetaRectangular}, \hyperpage{106}
   \item \texttt  {IsAperySetGammaRectangular}, \hyperpage{106}
   \item \texttt  {IsArf}, \hyperpage{56}
   \item \texttt  {IsArfNumericalSemigroup}, \hyperpage{56}
   \item \texttt  {IsBezoutSequence}, \hyperpage{99}
+  \item \texttt  {IsCanonicalIdeal}, \hyperpage{50}
   \item \texttt  {IsCanonical}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{50}
   \item \texttt  {IsCompleteIntersection}, \hyperpage{40}
@@ -272,7 +273,9 @@
   \item \texttt  {IsDeltaSequence}, \hyperpage{74}
   \item \texttt  {IsFree}, \hyperpage{41}
   \item \texttt  {IsFreeNumericalSemigroup}, \hyperpage{41}
+  \item \texttt  {IsFull}, \hyperpage{81}
   \item \texttt  {IsFullAffineSemigroup}, \hyperpage{81}
+  \item \texttt  {IsGeneric}, \hyperpage{30}, \hyperpage{84}
   \item \texttt  {IsGenericAffineSemigroup}, \hyperpage{84}
   \item \texttt  {IsGenericNumericalSemigroup}, \hyperpage{30}
   \item \texttt  {IsGoodSemigroup}, \hyperpage{88}
@@ -285,6 +288,7 @@
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Gorenstein}, 
 		\hyperpage{105}
   \item \texttt  {IsIdealOfNumericalSemigroup}, \hyperpage{44}
+  \item \texttt  {IsIntegral}, \hyperpage{45}
   \item \texttt  {IsIntegralIdealOfNumericalSemigroup}, \hyperpage{45}
   \item \texttt  {IsIrreducibleNumericalSemigroup}, \hyperpage{38}
   \item \texttt  {IsKroneckerPolynomial}, \hyperpage{72}
@@ -293,6 +297,7 @@
   \item \texttt  {IsMEDNumericalSemigroup}, \hyperpage{55}
   \item \texttt  {IsModularNumericalSemigroup}, \hyperpage{14}
   \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{52}
+  \item \texttt  {IsMpure}, \hyperpage{105}
   \item \texttt  {IsMpureNumericalSemigroup}, \hyperpage{105}
   \item \texttt  {IsNumericalSemigroup}, \hyperpage{14}
   \item \texttt  {IsNumerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Irreducible}\discretionary {-}{}{}\texttt  {Planar}\discretionary {-}{}{}\texttt  {Curve}\discretionary {-}{}{}\texttt  {Singularity}, 
@@ -314,6 +319,7 @@
 		\hyperpage{14}
   \item \texttt  {IsPseudoSymmetric}, \hyperpage{39}
   \item \texttt  {IsPseudoSymmetricNumericalSemigroup}, \hyperpage{39}
+  \item \texttt  {IsPure}, \hyperpage{105}
   \item \texttt  {IsPureNumericalSemigroup}, \hyperpage{105}
   \item \texttt  {IsSaturated}, \hyperpage{57}
   \item \texttt  {IsSaturatedNumericalSemigroup}, \hyperpage{57}
@@ -327,6 +333,7 @@
   \item \texttt  {IsSymmetricNumericalSemigroup}, \hyperpage{39}
   \item \texttt  {IsTelescopic}, \hyperpage{41}
   \item \texttt  {IsTelescopicNumericalSemigroup}, \hyperpage{41}
+  \item \texttt  {IsUniquelyPresented}, \hyperpage{30}
   \item \texttt  {IsUniquelyPresentedAffineSemigroup}, \hyperpage{84}
   \item \texttt  {IsUniquely}\discretionary {-}{}{}\texttt  {Presented}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{30}

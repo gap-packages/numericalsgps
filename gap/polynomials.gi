@@ -220,15 +220,20 @@ end);
 
 ###########################################
 ##
-#F IsCyclotomicNumericalSemigroup(s)
+#P IsCyclotomicNumericalSemigroup(s)
 ## Checks if the polynomial fo s is Kronecker
 ###########################################
-InstallGlobalFunction(IsCyclotomicNumericalSemigroup,function(s)
+InstallMethod(IsCyclotomicNumericalSemigroup,
+	"Detects if the polinomial semigroup of the semigroup is Kronecker",
+	[IsNumericalSemigroup],
+	function(s)
 	local x, f;
 	x:=X(Rationals,"x");
 	f:=NumericalSemigroupPolynomial(s,x);
 	return IsKroneckerPolynomial(f);# ForAll(Factors(f),IsCyclotomicPolynomial);
 end);
+
+InstallTrueMethod(IsCyclotomicNumericalSemigroup, IsACompleteIntersectionNumericalSemigroup);
 
 #####################################################
 ##

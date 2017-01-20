@@ -124,7 +124,8 @@ DeclareProperty("IsUniquelyPresentedAffineSemigroup", IsAffineSemigroup);
 ##  presented véase B-GS-G.
 ##
 #############################################################################
-DeclareProperty("IsGenericAffineSemigroup", IsAffineSemigroup);
+DeclareProperty("IsGeneric", IsAffineSemigroup);
+DeclareSynonymAttr("IsGenericAffineSemigroup", IsGeneric);
 
 #############################################################################
 ##

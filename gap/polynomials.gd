@@ -68,10 +68,10 @@ DeclareGlobalFunction("IsKroneckerPolynomial");
 
 ###########################################
 ##
-#F IsCyclotomicNumericalSemigroup(s)
+#P IsCyclotomicNumericalSemigroup(s)
 ## Checks if the polynomial fo s is Kronecker
 ###########################################
-DeclareGlobalFunction("IsCyclotomicNumericalSemigroup");
+DeclareProperty("IsCyclotomicNumericalSemigroup",IsNumericalSemigroup);
 
 #####################################################
 ##

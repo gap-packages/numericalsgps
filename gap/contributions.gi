@@ -51,7 +51,7 @@ end);
 
 ##############################################################################################################
 ##
-#F  IsMpureNumericalSemigroup(S)
+#P  IsMpureNumericalSemigroup(S)
 ##
 ##  Test for the M-Purity of the numerical semigroup S
 ##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated
@@ -60,7 +60,9 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsMpureNumericalSemigroup,function(S)
+InstallMethod(IsMpureNumericalSemigroup,
+	"Determines if the semigroup is M-pure", [IsNumericalSemigroup],
+	function(S)
 	local m, v, w, b, i, j, Maximal;
 	m:=MultiplicityOfNumericalSemigroup(S);
 	if m=1 then
@@ -96,7 +98,7 @@ end);
 
 ##############################################################################################################
 ##
-#F  IsPureNumericalSemigroup(S)
+#P  IsPureNumericalSemigroup(S)
 ##
 ##  Test for the purity of the numerical semigroup S
 ##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated
@@ -105,7 +107,9 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsPureNumericalSemigroup,function(S)
+InstallMethod(IsPureNumericalSemigroup,
+	"Tests for purity", [IsNumericalSemigroup],
+	function(S)
 	local m, T, b;
 	m:=MultiplicityOfNumericalSemigroup(S);
 	T:=PseudoFrobeniusOfNumericalSemigroup(S)+m;
@@ -119,7 +123,7 @@ end);
 
 ##############################################################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupGorenstein(S)
+#P  IsGradedAssociatedRingNumericalSemigroupGorenstein(S)
 ##
 ##  Test for the Gorenstein property of the associated graded ring of a numerical semigroup ring
 ##  Based on D'Anna, M., Micale, V. and Sammartano, A. "On the Associated Ring of a Semigroup Ring", J. Commut. Algebra Volume 3, Number 2 (2011), 147-168.
@@ -128,17 +132,18 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupGorenstein,function(S)
+InstallMethod(IsGradedAssociatedRingNumericalSemigroupGorenstein,
+	"Test for the Gorenstein property of the associated graded ring of a numerical semigroup ring", [IsNumericalSemigroup],
+	function(S)
 	if IsSymmetricNumericalSemigroup(S) and IsMpureNumericalSemigroup(S) and IsGradedAssociatedRingNumericalSemigroupBuchsbaum(S) then
 		return true;
 	fi;
 	return false;
 end);
-##############################################################################################################
-## the functions below first appeared in version 0.98
+
 ##############################################################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupCI
+#P  IsGradedAssociatedRingNumericalSemigroupCI
 ##
 ##  Test for the Complete Intersection property of the associated graded ring of a numerical semigroup ring k[[S]]
 ##  Based on "When the associated graded ring of a semigroup ring is Complete Intersection"
@@ -147,7 +152,10 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupCI,function(S)
+InstallMethod(IsGradedAssociatedRingNumericalSemigroupCI,
+	"Test for the Complete Intersection property of the associated graded ring of a numerical semigroup ring",
+	[IsNumericalSemigroup],
+	function(S)
 	if IsGradedAssociatedRingNumericalSemigroupCM(S) and IsAperySetGammaRectangular(S) then
 		return true;
 	fi;
@@ -156,7 +164,7 @@ end);
 
 ##############################################################################################################
 ##
-#F  IsAperySetGammaRectangular
+#P  IsAperySetGammaRectangular
 ##
 ##  Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup
 ##  Based on "Classes Of Complete Intersection Numerical Semigroups"
@@ -165,7 +173,9 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsAperySetGammaRectangular,function(S)
+InstallMethod(IsAperySetGammaRectangular,
+	"Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup", [IsNumericalSemigroup],
+	function(S)
 	local g, ni,  i, j, c,b, LL, G, G1;
 	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
 	ni:=Length(g);
@@ -195,7 +205,7 @@ InstallGlobalFunction(IsAperySetGammaRectangular,function(S)
 end);
 ##############################################################################################################
 ##
-#F  IsAperySetBetaRectangular
+#P  IsAperySetBetaRectangular
 ##
 ##  Test for the Beta-Rectangularity of the Apéry Set of a numerical semigroup
 ##  Based on "Classes Of Complete Intersection Numerical Semigroups"
@@ -204,7 +214,9 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsAperySetBetaRectangular,function(S)
+InstallMethod(IsAperySetBetaRectangular,
+	"Test for the Beta-Rectangularity of the Apéry Set of the numerical semigroup", [IsNumericalSemigroup],
+	function(S)
 	local g, ni, m, i, b;
 	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
 	ni:=Length(g);
@@ -227,9 +239,10 @@ InstallGlobalFunction(IsAperySetBetaRectangular,function(S)
 	fi;
 	return false;
 end);
+
 ##############################################################################################################
 ##
-#F  IsAperySetAlphaRectangular
+#P  IsAperySetAlphaRectangular
 ##
 ##  Test for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup
 ##  Based on "Classes Of Complete Intersection Numerical Semigroups"
@@ -238,7 +251,9 @@ end);
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-InstallGlobalFunction(IsAperySetAlphaRectangular,function(S)
+InstallMethod(IsAperySetAlphaRectangular,
+	"Test for the Alpha-Rectangularity of the Apéry Set of the numerical semigroup", [IsNumericalSemigroup],
+	function(S)
 	local g, ni, m, i, a;
 	g:=MinimalGeneratingSystemOfNumericalSemigroup(S);
 	ni:=Length(g);
@@ -261,6 +276,49 @@ InstallGlobalFunction(IsAperySetAlphaRectangular,function(S)
 	fi;
 	return false;
 end);
+
+#####
+# Filter implications
+#
+#IsGradedAssociatedRingNumericalSemigroupCI
+#	=> IsGradedAssociatedRingNumericalSemigroupGorenstein
+#	=> IsGradedAssociatedRingNumericalSemigroupCM
+#	=> IsGradedAssociatedRingNumericalSemigroupBuchsbaum
+InstallTrueMethod(IsGradedAssociatedRingNumericalSemigroupGorenstein,IsGradedAssociatedRingNumericalSemigroupCI);
+InstallTrueMethod(IsGradedAssociatedRingNumericalSemigroupCM,IsGradedAssociatedRingNumericalSemigroupGorenstein);
+InstallTrueMethod(IsGradedAssociatedRingNumericalSemigroupBuchsbaum,IsGradedAssociatedRingNumericalSemigroupCM);
+
+#IsGradedAssociatedRingNumericalSemigroupGorenstein
+#	=> IsMpureNumericalSemigroup
+#	=> IsPureNumericalSemigroup
+InstallTrueMethod(IsMpureNumericalSemigroup,IsGradedAssociatedRingNumericalSemigroupGorenstein);
+InstallTrueMethod(IsPureNumericalSemigroup,IsMpureNumericalSemigroup);
+
+#IsGradedAssociatedRingNumericalSemigroupCI
+#	=> IsAperySetGammaRectangular
+InstallTrueMethod(IsAperySetGammaRectangular,IsGradedAssociatedRingNumericalSemigroupCI);
+
+#IsGradedAssociatedRingNumericalSemigroupGorenstein
+#	=> IsSymmetricNumericalSemigroup
+InstallTrueMethod(IsSymmetricNumericalSemigroup, IsGradedAssociatedRingNumericalSemigroupGorenstein);
+
+#IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+#	=> IsAperySetAlphaRectangular
+#	=> IsAperySetBetaRectangular
+#	=> IsAperySetGammaRectangular
+#	=> IsFreeNumericalSemigroup
+InstallTrueMethod(IsAperySetAlphaRectangular,IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity);
+InstallTrueMethod(IsAperySetBetaRectangular,IsAperySetAlphaRectangular);
+InstallTrueMethod(IsAperySetGammaRectangular,IsAperySetBetaRectangular);
+InstallTrueMethod(IsFreeNumericalSemigroup,IsAperySetGammaRectangular);
+
+#IsTelescopicNumericalSemigroup
+# => IsAperySetBetaRectangular
+#####
+InstallTrueMethod(IsAperySetBetaRectangular,IsTelescopicNumericalSemigroup);
+
+
+
 ##############################################################################################################
 ##
 #F  TypeSequenceOfNumericalSemigroup

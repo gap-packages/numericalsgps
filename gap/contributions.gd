@@ -13,7 +13,7 @@
 ########################################################################################################################
 ###################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupBuchsbaum(S)
+#P  IsGradedAssociatedRingNumericalSemigroupBuchsbaum(S)
 ##
 ##  Test for the Buchsbaum property of the associated graded ring of a numerical semigroup ring
 ##  Based on D'Anna, M., Mezzasalma, M. and Micale, V. "On the Buchsbaumness of the Associated Graded Ring
@@ -26,7 +26,7 @@ DeclareProperty("IsGradedAssociatedRingNumericalSemigroupBuchsbaum", IsNumerical
 
 ##############################################################################################################
 ##
-#F  IsMpureNumericalSemigroup(S)
+#P  IsMpureNumericalSemigroup(S)
 ##
 ##  Test for the M-Purity of the numerical semigroup S
 ##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated
@@ -35,11 +35,12 @@ DeclareProperty("IsGradedAssociatedRingNumericalSemigroupBuchsbaum", IsNumerical
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsMpureNumericalSemigroup");
+DeclareProperty("ISMPure",IsNumericalSemigroup);
+DeclareSynonymAttr("IsMpureNumericalSemigroup",ISMPure);
 
 ##############################################################################################################
 ##
-#F  IsPureNumericalSemigroup(S)
+#P  IsPureNumericalSemigroup(S)
 ##
 ##  Test for the purity of the numerical semigroup S
 ##  Based on L. Bryant, "Goto Numbers of a Numerical Semigroup Ring and the Gorensteiness of Associated
@@ -48,11 +49,12 @@ DeclareGlobalFunction("IsMpureNumericalSemigroup");
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsPureNumericalSemigroup");
+DeclareProperty("IsPure",IsNumericalSemigroup);
+DeclareSynonymAttr("IsPureNumericalSemigroup",IsPure);
 
 ##############################################################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupGorenstein(S)
+#P  IsGradedAssociatedRingNumericalSemigroupGorenstein(S)
 ##
 ##  Test for the Gorenstein property of the associated graded ring of a numerical semigroup ring
 ##  Based on D'Anna, M., Micale, V. and Sammartano, A. "On the Associated Ring of a Semigroup Ring",
@@ -61,12 +63,11 @@ DeclareGlobalFunction("IsPureNumericalSemigroup");
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupGorenstein");
-##############################################################################################################
-## the functions below first appeared in version 0.98
+DeclareProperty("IsGradedAssociatedRingNumericalSemigroupGorenstein",IsNumericalSemigroup);
+
 ##############################################################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupCI
+#P  IsGradedAssociatedRingNumericalSemigroupCI
 ##
 ##  Test for the Complete Intersection property of the associated graded ring of a numerical semigroup ring k[[S]]
 ##  Based on "When the associated graded ring of a semigroup ring is Complete Intersection"
@@ -75,10 +76,11 @@ DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupGorenstein");
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupCI");
+DeclareProperty("IsGradedAssociatedRingNumericalSemigroupCI",IsNumericalSemigroup);
+
 ##############################################################################################################
 ##
-#F  IsAperySetGammaRectangular
+#P  IsAperySetGammaRectangular
 ##
 ##  Test for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup
 ##  Based on "Classes Of Complete Intersection Numerical Semigroups"
@@ -87,10 +89,11 @@ DeclareGlobalFunction("IsGradedAssociatedRingNumericalSemigroupCI");
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsAperySetGammaRectangular");
+DeclareProperty("IsAperySetGammaRectangular",IsNumericalSemigroup);
+
 ##############################################################################################################
 ##
-#F  IsAperySetBetaRectangular
+#P  IsAperySetBetaRectangular
 ##
 ##  Test for the Beta-Rectangularity of the Apéry Set of a numerical semigroup
 ##  Based on "Classes Of Complete Intersection Numerical Semigroups"
@@ -99,7 +102,8 @@ DeclareGlobalFunction("IsAperySetGammaRectangular");
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsAperySetBetaRectangular");
+DeclareProperty("IsAperySetBetaRectangular", IsNumericalSemigroup);
+
 ##############################################################################################################
 ##
 #F  IsAperySetAlphaRectangular
@@ -111,7 +115,8 @@ DeclareGlobalFunction("IsAperySetBetaRectangular");
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareGlobalFunction("IsAperySetAlphaRectangular");
+DeclareProperty("IsAperySetAlphaRectangular", IsNumericalSemigroup);
+
 ##############################################################################################################
 ##
 #F  TypeSequenceOfNumericalSemigroup
@@ -124,6 +129,7 @@ DeclareGlobalFunction("IsAperySetAlphaRectangular");
 ##
 ##############################################################################################################
 DeclareGlobalFunction("TypeSequenceOfNumericalSemigroup");
+
 ##########################################################
 ##
 #F TorsionOfAssociatedGradedRingNumericalSemigroup(S)
@@ -136,6 +142,7 @@ DeclareGlobalFunction("TypeSequenceOfNumericalSemigroup");
 ## Implemented by A. Sammartano
 ###########################################################
 DeclareGlobalFunction("TorsionOfAssociatedGradedRingNumericalSemigroup");
+
 #################################################################################
 ##
 #F BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup(S)
@@ -168,7 +175,6 @@ DeclareGlobalFunction("OmegaPrimalityOfElementListInNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("FactorizationsElementListWRTNumericalSemigroup");
-
 
 #############################################################################
 ##

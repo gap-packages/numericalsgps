@@ -100,9 +100,10 @@
     [4X[28X<Numerical semigroup with 2 generators>[128X[104X
   [4X[32X[104X
   
-  [1X7.1-6 IsIntegralIdealOfNumericalSemigroup[101X
+  [1X7.1-6 IsIntegral[101X
   
-  [29X[2XIsIntegralIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function
+  [29X[2XIsIntegral[102X( [3XI[103X ) [32X property
+  [29X[2XIsIntegralIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X property
   
   [33X[0;0Y[3XI[103X is an ideal of a numerical semigroup, say [22XS[122X. Detects if [22XI⊆ S[122X.[133X
   
@@ -252,7 +253,7 @@
     [4X[28X<Ideal of numerical semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xii := 2*I-2*I;[127X[104X
     [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27Xi := I-I;     [127X[104X
+    [4X[25Xgap>[125X [27Xi := I-I;[127X[104X
     [4X[28X<Ideal of numerical semigroup>[128X[104X
     [4X[25Xgap>[125X [27X DifferenceOfIdealsOfNumericalSemigroup(last2,last);[127X[104X
     [4X[28X[ 26, 27, 37, 38 ][128X[104X
@@ -333,9 +334,10 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-18 IsCanonicalIdealOfNumericalSemigroup[101X
+  [1X7.1-18 IsCanonicalIdeal[101X
   
-  [29X[2XIsCanonicalIdealOfNumericalSemigroup[102X( [3XE[103X ) [32X function
+  [29X[2XIsCanonicalIdeal[102X( [3XE[103X ) [32X property
+  [29X[2XIsCanonicalIdealOfNumericalSemigroup[102X( [3XE[103X ) [32X property
   
   [33X[0;0Y[3XE[103X  is  an  ideal  of  a  numerical  semigroup,  say  [22XS[122X. Determines if [3XE[103X is a
   translation of the canonical ideal of [22XS[122X, or equivalently, for every ideal [22XJ[122X,
@@ -468,7 +470,7 @@
   
   [1X7.2-8 IsGradedAssociatedRingNumericalSemigroupCM[101X
   
-  [29X[2XIsGradedAssociatedRingNumericalSemigroupCM[102X( [3XS[103X ) [32X function
+  [29X[2XIsGradedAssociatedRingNumericalSemigroupCM[102X( [3XS[103X ) [32X property
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup. Returns true if the graded ring associated to
   [22XK[[[3XS[103X]][122X   is   Cohen-Macaulay,   and   false  otherwise.  This  test  is  the
@@ -499,7 +501,7 @@
   
   [1X7.2-9 IsMonomialNumericalSemigroup[101X
   
-  [29X[2XIsMonomialNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [29X[2XIsMonomialNumericalSemigroup[102X( [3XS[103X ) [32X property
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. Tests whether [3XS[103X a monomial numerical semigroup.[133X
   
