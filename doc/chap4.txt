@@ -27,7 +27,7 @@
     [4X[28X      gap> s:=NumericalSemigroup(3,5,7);[128X[104X
     [4X[28X      <Numerical semigroup with 3 generators>[128X[104X
     [4X[28X      gap> MinimalPresentationOfNumericalSemigroup(s);[128X[104X
-    [4X[28X      [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [128X[104X
+    [4X[28X      [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
     [4X[28X      [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
   [4X[32X[104X
   
@@ -111,9 +111,10 @@
   is, there is essentially a unique minimal presentation (up to arrangement of
   the components of the pairs in it).[133X
   
-  [1X4.2-1 IsUniquelyPresentedNumericalSemigroup[101X
+  [1X4.2-1 IsUniquelyPresented[101X
   
-  [29X[2XIsUniquelyPresentedNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [29X[2XIsUniquelyPresented[102X( [3XS[103X ) [32X property
+  [29X[2XIsUniquelyPresentedNumericalSemigroup[102X( [3XS[103X ) [32X property
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
@@ -126,9 +127,10 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X4.2-2 IsGenericNumericalSemigroup[101X
+  [1X4.2-2 IsGeneric[101X
   
-  [29X[2XIsGenericNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [29X[2XIsGeneric[102X( [3XS[103X ) [32X property
+  [29X[2XIsGenericNumericalSemigroup[102X( [3XS[103X ) [32X property
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   

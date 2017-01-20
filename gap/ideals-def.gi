@@ -235,12 +235,14 @@ end);
 
 #############################################################################
 ##
-#F  IsIntegralIdealOfNumericalSemigroup(i)
+#P  IsIntegralIdealOfNumericalSemigroup(i)
 ##
 ##  Detects if the ideal i is contained in its ambient semigroup
 ##
 #############################################################################
-InstallGlobalFunction("IsIntegralIdealOfNumericalSemigroup",function(I)
+InstallMethod(IsIntegralIdealOfNumericalSemigroup,
+  "Test it the ideal is integral", [IsIdealOfNumericalSemigroup],
+  function(I)
      local s;
 
      s:=AmbientNumericalSemigroupOfIdeal(I);
@@ -469,7 +471,7 @@ end);
 ##
 #F DifferenceOfdealsOfNumericalSemigroup(I,J)
 ##
-## returns the set difference I\J #(J must be contained in I)-no more required, from version 1.1 on 
+## returns the set difference I\J #(J must be contained in I)-no more required, from version 1.1 on
 #############################################################################
 InstallOtherMethod(Difference, [IsIdealOfNumericalSemigroup, IsIdealOfNumericalSemigroup], function(I, J)
   return DifferenceOfIdealsOfNumericalSemigroup(I,J);
@@ -479,7 +481,7 @@ InstallGlobalFunction(DifferenceOfIdealsOfNumericalSemigroup, function(I, J)
     local   sI,  sJ,  MI,  MJ,  M,  SI,  SJ;
 
     if not (IsIdealOfNumericalSemigroup(I) and IsIdealOfNumericalSemigroup(J))
-#       or not AmbientNumericalSemigroupOfIdeal(I) = AmbientNumericalSemigroupOfIdeal(J) 
+#       or not AmbientNumericalSemigroupOfIdeal(I) = AmbientNumericalSemigroupOfIdeal(J)
        then
 #        Error("The arguments must be ideals of the same numerical semigroup.");
         Error("The arguments must be ideals of some numerical semigroup.");
@@ -548,11 +550,13 @@ end);
 
 #############################################################################
 ##
-#F IsMonomialNumericalSemigroup
+#P IsMonomialNumericalSemigroup
 ## Tests if a numerical semigroup is a monomial semigroup ring
 ##
 #############################################################################
-InstallGlobalFunction(IsMonomialNumericalSemigroup, function(s)
+InstallMethod(IsMonomialNumericalSemigroup,
+  "Detects if the semigroup ring of the semigroup is monomial",[IsNumericalSemigroup],
+  function(s)
     local l,c,gen,gaps;
 
     gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
@@ -672,14 +676,17 @@ end);
 
 #############################################################################
 ##
-#F  IsGradedAssociatedRingNumericalSemigroupCM(s)
+#P  IsGradedAssociatedRingNumericalSemigroupCM(s)
 ##
 ##  Returns true if the associated graded ring of
 ##  the semigroup ring algebra k[[s]] is Cohen-Macaulay.
 ##  This function implements the algorithm given in [BF06].
 ##
 #############################################################################
-InstallGlobalFunction(IsGradedAssociatedRingNumericalSemigroupCM, function(s)
+InstallMethod(IsGradedAssociatedRingNumericalSemigroupCM,
+  "Tests for Cohen-Macaulayness of graded ring associated to the numerical semigroup",
+  [IsNumericalSemigroup],
+  function(s)
     local ai,bi,e,m;
 
     if not IsNumericalSemigroup(s) then
@@ -716,13 +723,15 @@ end);
 
 #############################################################################
 ##
-#F  IsCanonicalIdealOfNumericalSemigroup(e)
+#P  IsCanonicalIdealOfNumericalSemigroup(e)
 ##
 ##  Detects if the ideal e is a translation of the canonical ideal of its
 ##  ambient semigroup
 ##
 #############################################################################
-InstallGlobalFunction(IsCanonicalIdealOfNumericalSemigroup, function(i)
+InstallMethod(IsCanonicalIdealOfNumericalSemigroup,
+  "Detects if the ideal is canonical", [IsIdealOfNumericalSemigroup],
+  function(i)
 
   local c, mc, me;
 

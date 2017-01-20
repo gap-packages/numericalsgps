@@ -1588,7 +1588,7 @@ deduced from the ones given in the output.
         gap> s:=NumericalSemigroup(3,5,7);
         <Numerical semigroup with 3 generators>
         gap> MinimalPresentationOfNumericalSemigroup(s);
-        [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ], 
+        [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
         [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
 \end{Verbatim}
  The first element in the list means that $ 1\times 3+1\times 7=2\times 5 $, and the others have similar meanings. }
@@ -1688,13 +1688,16 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
   A numerical semigroup $S$ is uniquely presented if for any two minimal presentations $\sigma$ and $\tau$ and any $(a,b)\in \sigma$, either $(a,b)\in \tau$ or $(b,a)\in \tau$, that is, there is essentially a unique minimal presentation (up to
 arrangement of the components of the pairs in it). 
 
-\subsection{\textcolor{Chapter }{IsUniquelyPresentedNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsUniquelyPresented}}
 \logpage{[ 4, 2, 1 ]}\nobreak
 \label{UniqPre}
-\hyperdef{L}{X87A72C497E37760D}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedNumericalSemigroup({\mdseries\slshape S})\index{IsUniquelyPresentedNumericalSemigroup@\texttt{IsUniquely}\-\texttt{Presented}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\hyperdef{L}{X81A441947F661C18}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresented({\mdseries\slshape S})\index{IsUniquelyPresented@\texttt{IsUniquelyPresented}}
+\label{IsUniquelyPresented}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsUniquelyPresentedNumericalSemigroup({\mdseries\slshape S})\index{IsUniquelyPresentedNumericalSemigroup@\texttt{IsUniquely}\-\texttt{Presented}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{IsUniquelyPresentedNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
@@ -1709,13 +1712,16 @@ arrangement of the components of the pairs in it).
 
  
 
-\subsection{\textcolor{Chapter }{IsGenericNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsGeneric}}
 \logpage{[ 4, 2, 2 ]}\nobreak
 \label{Generic}
-\hyperdef{L}{X7955C87C80F41CFE}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericNumericalSemigroup({\mdseries\slshape S})\index{IsGenericNumericalSemigroup@\texttt{IsGenericNumericalSemigroup}}
+\hyperdef{L}{X8133C6678149A003}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGeneric({\mdseries\slshape S})\index{IsGeneric@\texttt{IsGeneric}}
+\label{IsGeneric}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericNumericalSemigroup({\mdseries\slshape S})\index{IsGenericNumericalSemigroup@\texttt{IsGenericNumericalSemigroup}}
 \label{IsGenericNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
@@ -2779,12 +2785,15 @@ minimal generators is computed.
 
  
 
-\subsection{\textcolor{Chapter }{IsIntegralIdealOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsIntegral}}
 \logpage{[ 7, 1, 6 ]}\nobreak
-\hyperdef{L}{X814D5DF27E63204E}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsIntegralIdealOfNumericalSemigroup({\mdseries\slshape I})\index{IsIntegralIdealOfNumericalSemigroup@\texttt{IsIntegralIdealOfNumericalSemigroup}}
+\hyperdef{L}{X7EDE6C287CD5FE3D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsIntegral({\mdseries\slshape I})\index{IsIntegral@\texttt{IsIntegral}}
+\label{IsIntegral}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsIntegralIdealOfNumericalSemigroup({\mdseries\slshape I})\index{IsIntegralIdealOfNumericalSemigroup@\texttt{IsIntegralIdealOfNumericalSemigroup}}
 \label{IsIntegralIdealOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup, say $S$. Detects if $I\subseteq S$. 
@@ -2983,7 +2992,7 @@ plus one.
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@ii := 2*I-2*I;|
   <Ideal of numerical semigroup>
-  !gapprompt@gap>| !gapinput@i := I-I;     |
+  !gapprompt@gap>| !gapinput@i := I-I;|
   <Ideal of numerical semigroup>
   !gapprompt@gap>| !gapinput@ DifferenceOfIdealsOfNumericalSemigroup(last2,last);|
   [ 26, 27, 37, 38 ]
@@ -3090,12 +3099,15 @@ plus one.
 
  
 
-\subsection{\textcolor{Chapter }{IsCanonicalIdealOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsCanonicalIdeal}}
 \logpage{[ 7, 1, 18 ]}\nobreak
-\hyperdef{L}{X7CD2E69B84F1DAAF}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCanonicalIdealOfNumericalSemigroup({\mdseries\slshape E})\index{IsCanonicalIdealOfNumericalSemigroup@\texttt{IsCanonical}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\hyperdef{L}{X7D15FA4C843A13B7}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCanonicalIdeal({\mdseries\slshape E})\index{IsCanonicalIdeal@\texttt{IsCanonicalIdeal}}
+\label{IsCanonicalIdeal}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCanonicalIdealOfNumericalSemigroup({\mdseries\slshape E})\index{IsCanonicalIdealOfNumericalSemigroup@\texttt{IsCanonical}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{IsCanonicalIdealOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape E}} is an ideal of a numerical semigroup, say $S$. Determines if \mbox{\texttt{\mdseries\slshape E}} is a translation of the canonical ideal of $S$, or equivalently, for every ideal $J$, $E-(E-J)=J$. 
@@ -3273,7 +3285,7 @@ sequence $S\subseteq L(S)\subseteq \cdots \subseteq \mathbb{N}$, where $L(\cdot)
 \hyperdef{L}{X7876199778D6B320}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGradedAssociatedRingNumericalSemigroupCM({\mdseries\slshape S})\index{IsGradedAssociatedRingNumericalSemigroupCM@\texttt{IsGraded}\-\texttt{Associated}\-\texttt{Ring}\-\texttt{Numerical}\-\texttt{SemigroupCM}}
 \label{IsGradedAssociatedRingNumericalSemigroupCM}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Returns true if the graded ring associated to $K[[\mbox{\texttt{\mdseries\slshape S}}]]$ is Cohen-Macaulay, and false otherwise. This test is the implementation of the
@@ -3309,7 +3321,7 @@ algorithm given in \cite{BF06}.
 \hyperdef{L}{X7A04B8887F493733}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMonomialNumericalSemigroup({\mdseries\slshape S})\index{IsMonomialNumericalSemigroup@\texttt{IsMonomialNumericalSemigroup}}
 \label{IsMonomialNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. Tests whether \mbox{\texttt{\mdseries\slshape S}} a monomial numerical semigroup. 
@@ -5146,12 +5158,15 @@ inequalities.
 
  
 
-\subsection{\textcolor{Chapter }{IsFullAffineSemigroup}}
+\subsection{\textcolor{Chapter }{IsFull}}
 \logpage{[ 11, 1, 9 ]}\nobreak
-\hyperdef{L}{X82FCB89B80D42205}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
+\hyperdef{L}{X8607B621833FAECB}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFull({\mdseries\slshape S})\index{IsFull@\texttt{IsFull}}
+\label{IsFull}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsFullAffineSemigroup({\mdseries\slshape S})\index{IsFullAffineSemigroup@\texttt{IsFullAffineSemigroup}}
 \label{IsFullAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape s}} is an affine semigroup.
@@ -5413,12 +5428,15 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 
  
 
-\subsection{\textcolor{Chapter }{IsGenericAffineSemigroup}}
+\subsection{\textcolor{Chapter }{IsGeneric}}
 \logpage{[ 11, 3, 7 ]}\nobreak
-\hyperdef{L}{X84FF536281884DB8}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericAffineSemigroup({\mdseries\slshape a})\index{IsGenericAffineSemigroup@\texttt{IsGenericAffineSemigroup}}
+\hyperdef{L}{X8133C6678149A003}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGeneric({\mdseries\slshape a})\index{IsGeneric@\texttt{IsGeneric}}
+\label{IsGeneric}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGenericAffineSemigroup({\mdseries\slshape a})\index{IsGenericAffineSemigroup@\texttt{IsGenericAffineSemigroup}}
 \label{IsGenericAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. 
@@ -6654,7 +6672,7 @@ but no smaller than \mbox{\texttt{\mdseries\slshape mult}} and having Frobenius 
 \hyperdef{L}{X782D557583CEDD04}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGradedAssociatedRingNumericalSemigroupBuchsbaum({\mdseries\slshape S})\index{IsGradedAssociatedRingNumericalSemigroupBuchsbaum@\texttt{IsGraded}\-\texttt{Associated}\-\texttt{Ring}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{Buchsbaum}}
 \label{IsGradedAssociatedRingNumericalSemigroupBuchsbaum}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
@@ -6713,12 +6731,15 @@ semigroup ring $\mathbb{K}[\![S]\!]$. It uses the Apery table as explained in \c
 
  
 
-\subsection{\textcolor{Chapter }{IsMpureNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsMpure}}
 \logpage{[ "C", 1, 4 ]}\nobreak
-\hyperdef{L}{X87A47D22814E0DA8}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMpureNumericalSemigroup({\mdseries\slshape S})\index{IsMpureNumericalSemigroup@\texttt{IsMpureNumericalSemigroup}}
+\hyperdef{L}{X8400FB5D81EFB5FE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMpure({\mdseries\slshape S})\index{IsMpure@\texttt{IsMpure}}
+\label{IsMpure}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMpureNumericalSemigroup({\mdseries\slshape S})\index{IsMpureNumericalSemigroup@\texttt{IsMpureNumericalSemigroup}}
 \label{IsMpureNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
@@ -6736,12 +6757,15 @@ semigroup ring $\mathbb{K}[\![S]\!]$. It uses the Apery table as explained in \c
 
  
 
-\subsection{\textcolor{Chapter }{IsPureNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{IsPure}}
 \logpage{[ "C", 1, 5 ]}\nobreak
-\hyperdef{L}{X83C96D0D7C8A507D}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsPureNumericalSemigroup({\mdseries\slshape S})\index{IsPureNumericalSemigroup@\texttt{IsPureNumericalSemigroup}}
+\hyperdef{L}{X7B894ED27D38E4B5}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsPure({\mdseries\slshape S})\index{IsPure@\texttt{IsPure}}
+\label{IsPure}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsPureNumericalSemigroup({\mdseries\slshape S})\index{IsPureNumericalSemigroup@\texttt{IsPureNumericalSemigroup}}
 \label{IsPureNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (property)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 

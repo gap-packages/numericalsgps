@@ -39,7 +39,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X85144E0F791038AE">7.1-3 MinimalGenerators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7A842A4385B73C63">7.1-4 Generators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X81E445518529C175">7.1-5 AmbientNumericalSemigroupOfIdeal</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X814D5DF27E63204E">7.1-6 IsIntegralIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7EDE6C287CD5FE3D">7.1-6 IsIntegral</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7811E92487110941">7.1-7 SmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7EDDC78883A98A6E">7.1-8 Conductor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X87508E7A7CFB0B20">7.1-9 BelongsToIdealOfNumericalSemigroup</a></span>
@@ -51,7 +51,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X851069107CACF98E">7.1-15 Intersection</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X829EACA378BE3665">7.1-16 MaximalIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X835890A078F5D6DC">7.1-17 CanonicalIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7CD2E69B84F1DAAF">7.1-18 IsCanonicalIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7D15FA4C843A13B7">7.1-18 IsCanonicalIdeal</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X81DC1C0284968537">7.2 <span class="Heading">
                     Other functions for ideals
@@ -178,11 +178,12 @@ false
 &lt;Numerical semigroup with 2 generators&gt;
 </pre></div>
 
-<p><a id="X814D5DF27E63204E" name="X814D5DF27E63204E"></a></p>
+<p><a id="X7EDE6C287CD5FE3D" name="X7EDE6C287CD5FE3D"></a></p>
 
-<h5>7.1-6 IsIntegralIdealOfNumericalSemigroup</h5>
+<h5>7.1-6 IsIntegral</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIntegralIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIntegral</code>( <var class="Arg">I</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIntegralIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup, say <span class="SimpleMath">\(S\)</span>. Detects if <span class="SimpleMath">\(I\subseteq S\)</span>.</p>
 
 
@@ -337,7 +338,7 @@ true
 &lt;Ideal of numerical semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ii := 2*I-2*I;</span>
 &lt;Ideal of numerical semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := I-I;     </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := I-I;</span>
 &lt;Ideal of numerical semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> DifferenceOfIdealsOfNumericalSemigroup(last2,last);</span>
 [ 26, 27, 37, 38 ]
@@ -421,11 +422,12 @@ true
 true
 </pre></div>
 
-<p><a id="X7CD2E69B84F1DAAF" name="X7CD2E69B84F1DAAF"></a></p>
+<p><a id="X7D15FA4C843A13B7" name="X7D15FA4C843A13B7"></a></p>
 
-<h5>7.1-18 IsCanonicalIdealOfNumericalSemigroup</h5>
+<h5>7.1-18 IsCanonicalIdeal</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">E</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdeal</code>( <var class="Arg">E</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">E</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">E</var> is an ideal of a numerical semigroup, say <span class="SimpleMath">\(S\)</span>. Determines if <var class="Arg">E</var> is a translation of the canonical ideal of <span class="SimpleMath">\(S\)</span>, or equivalently, for every ideal <span class="SimpleMath">\(J\)</span>, <span class="SimpleMath">\(E-(E-J)=J\)</span>.</p>
 
 
@@ -566,7 +568,7 @@ true
 
 <h5>7.2-8 IsGradedAssociatedRingNumericalSemigroupCM</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGradedAssociatedRingNumericalSemigroupCM</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGradedAssociatedRingNumericalSemigroupCM</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Returns true if the graded ring associated to <span class="SimpleMath">\(K[[\textit{S}]]\)</span> is Cohen-Macaulay, and false otherwise. This test is the implementation of the algorithm given in <a href="chapBib_mj.html#biBBF06">[BF06]</a>.</p>
 
 
@@ -597,7 +599,7 @@ true
 
 <h5>7.2-9 IsMonomialNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMonomialNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMonomialNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Tests whether <var class="Arg">S</var> a monomial numerical semigroup.</p>
 
 <p>Let <span class="SimpleMath">\(R\)</span> a Noetherian ring such that <span class="SimpleMath">\(K \subseteq R \subseteq K[[t]]\)</span>, <span class="SimpleMath">\(K\)</span> is a field of characteristic zero, the algebraic closure of <span class="SimpleMath">\(R\)</span> is <span class="SimpleMath">\(K[[t]]\)</span>, and the conductor <span class="SimpleMath">\((R : K[[t]])\)</span> is not zero. If <span class="SimpleMath">\(v : K((t))\to {\mathbb Z}\)</span> is the natural valuation for <span class="SimpleMath">\(K((t))\)</span>, then <span class="SimpleMath">\(v(R)\)</span> is a numerical semigroup.</p>

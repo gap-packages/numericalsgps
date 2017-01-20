@@ -116,7 +116,8 @@ gap> AmbientNumericalSemigroupOfIdeal(I);
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="I" Name="IsIntegralIdealOfNumericalSemigroup"></Func>
+                    <Prop Arg="I" Name="IsIntegral"></Prop>
+                    <Prop Arg="I" Name="IsIntegralIdealOfNumericalSemigroup"></Prop>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup, say <M>S</M>.
                         Detects if  <M>I\subseteq S</M>.
@@ -282,7 +283,7 @@ gap> I-I;
 <Ideal of numerical semigroup>
 gap> ii := 2*I-2*I;
 <Ideal of numerical semigroup>
-gap> i := I-I;     
+gap> i := I-I;
 <Ideal of numerical semigroup>
 gap>  DifferenceOfIdealsOfNumericalSemigroup(last2,last);
 [ 26, 27, 37, 38 ]
@@ -375,7 +376,8 @@ true
                 </ManSection>
 
 <ManSection>
-  <Func Arg="E" Name="IsCanonicalIdealOfNumericalSemigroup"></Func>
+  <Prop Arg="E" Name="IsCanonicalIdeal"></Prop>
+  <Prop Arg="E" Name="IsCanonicalIdealOfNumericalSemigroup"></Prop>
   <Description>
     <A>E</A> is an ideal of a numerical semigroup, say <M>S</M>. Determines if <A>E</A> is a translation of the canonical ideal of <M>S</M>, or equivalently, for every ideal <M>J</M>, <M>E-(E-J)=J</M>.
 
@@ -527,7 +529,7 @@ true
 
 
 <ManSection>
-                    <Func Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupCM"></Func>
+                    <Prop Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupCM"></Prop>
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
@@ -568,7 +570,7 @@ gap> List(AperyListOfNumericalSemigroupWRTElement(s,4),
                 </Heading>
 
                 <ManSection>
-                    <Func Arg="S" Name="IsMonomialNumericalSemigroup"></Func>
+                    <Prop Arg="S" Name="IsMonomialNumericalSemigroup"></Prop>
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         Tests whether <A>S</A> a monomial numerical semigroup.

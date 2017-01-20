@@ -39,7 +39,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X844806D97B4781B5">11.1-6 AsAffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7A2902207BAA3936">11.1-7 IsAffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X851788D781A13C50">11.1-8 BelongsToAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X82FCB89B80D42205">11.1-9 IsFullAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8607B621833FAECB">11.1-9 IsFull</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7D4D017A79AD98E2">11.1-10 HilbertBasisOfSystemOfHomogeneousEquations</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X825B1CD37B0407A6">11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8307A0597864B098">11.1-12 EquationsOfGroupGeneratedBy</a></span>
@@ -63,7 +63,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7BCA9C077F76920E">11.3-4 MinimalPresentationOfAffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7C20CE97840ECF8E">11.3-5 BettiElementsOfAffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7C1B355F83A55285">11.3-6 ShadedSetOfElementInAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X84FF536281884DB8">11.3-7 IsGenericAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8133C6678149A003">11.3-7 IsGeneric</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X87170BBB85E9DEC8">11.3-8 IsUniquelyPresentedAffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X86EB7A9A8250E6DB">11.3-9 PrimitiveElementsOfAffineSemigroup</a></span>
 </div></div>
@@ -277,11 +277,12 @@ true
 false
 </pre></div>
 
-<p><a id="X82FCB89B80D42205" name="X82FCB89B80D42205"></a></p>
+<p><a id="X8607B621833FAECB" name="X8607B621833FAECB"></a></p>
 
-<h5>11.1-9 IsFullAffineSemigroup</h5>
+<h5>11.1-9 IsFull</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFullAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFull</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFullAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is an affine semigroup.</p>
 
 <p>Returns true if the semigroup is full, false otherwise. The semigroup is full if whenever <span class="SimpleMath">a,b∈ S</span> and <span class="SimpleMath">b-a∈ N^k</span>, then <span class="SimpleMath">a-b∈ S</span>, where <span class="SimpleMath">k</span> is the dimension of <span class="SimpleMath">S</span>.</p>
@@ -481,14 +482,15 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup and <var class="Arg">v</var> is an element in <var class="Arg">a</var>. This is a translation to affine semigroups of <code class="code">ShadedSetOfElementInNumericalSemigroup</code> (<a href="chap4.html#X7C42DEB68285F2B8"><span class="RefLink">4.1-5</span></a>).</p>
 
-<p><a id="X84FF536281884DB8" name="X84FF536281884DB8"></a></p>
+<p><a id="X8133C6678149A003" name="X8133C6678149A003"></a></p>
 
-<h5>11.3-7 IsGenericAffineSemigroup</h5>
+<h5>11.3-7 IsGeneric</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneric</code>( <var class="Arg">a</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup.</p>
 
-<p>The same as <code class="code">IsGenericNumericalSemigroup</code> (<a href="chap4.html#X7955C87C80F41CFE"><span class="RefLink">4.2-2</span></a>) but for affine semigroups.</p>
+<p>The same as <code class="code">IsGenericNumericalSemigroup</code> (<a href="chap4.html#X8133C6678149A003"><span class="RefLink">4.2-2</span></a>) but for affine semigroups.</p>
 
 <p><a id="X87170BBB85E9DEC8" name="X87170BBB85E9DEC8"></a></p>
 
@@ -497,7 +499,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup.</p>
 
-<p>The same as <code class="code">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4.html#X87A72C497E37760D"><span class="RefLink">4.2-1</span></a>) but for affine semigroups.</p>
+<p>The same as <code class="code">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4.html#X81A441947F661C18"><span class="RefLink">4.2-1</span></a>) but for affine semigroups.</p>
 
 <p><a id="X86EB7A9A8250E6DB" name="X86EB7A9A8250E6DB"></a></p>
 

@@ -57,8 +57,8 @@
 \contentsline {subsection}{\numberline {4.1.4}\leavevmode {\color {Chapter }PrimitiveElementsOfNumericalSemigroup}}{29}{subsection.4.1.4}
 \contentsline {subsection}{\numberline {4.1.5}\leavevmode {\color {Chapter }ShadedSetOfElementInNumericalSemigroup}}{29}{subsection.4.1.5}
 \contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }Uniquely Presented Numerical Semigroups}}{29}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }IsUniquelyPresentedNumericalSemigroup}}{30}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsGenericNumericalSemigroup}}{30}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }IsUniquelyPresented}}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsGeneric}}{30}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter } Constructing numerical semigroups from others }}{31}{chapter.5}
 \contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter } Adding and removing elements of a numerical semigroup }}{31}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }RemoveMinimalGeneratorFromNumericalSemigroup}}{31}{subsection.5.1.1}
@@ -110,7 +110,7 @@
 \contentsline {subsection}{\numberline {7.1.3}\leavevmode {\color {Chapter }MinimalGenerators (for ideal of numerical semigroup)}}{45}{subsection.7.1.3}
 \contentsline {subsection}{\numberline {7.1.4}\leavevmode {\color {Chapter }Generators (for ideal of numerical semigroup)}}{45}{subsection.7.1.4}
 \contentsline {subsection}{\numberline {7.1.5}\leavevmode {\color {Chapter }AmbientNumericalSemigroupOfIdeal}}{45}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}\leavevmode {\color {Chapter }IsIntegralIdealOfNumericalSemigroup}}{45}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.6}\leavevmode {\color {Chapter }IsIntegral}}{45}{subsection.7.1.6}
 \contentsline {subsection}{\numberline {7.1.7}\leavevmode {\color {Chapter }SmallElements (for ideal of numerical semigroup)}}{46}{subsection.7.1.7}
 \contentsline {subsection}{\numberline {7.1.8}\leavevmode {\color {Chapter }Conductor (for ideal of numerical semigroup)}}{46}{subsection.7.1.8}
 \contentsline {subsection}{\numberline {7.1.9}\leavevmode {\color {Chapter }BelongsToIdealOfNumericalSemigroup}}{46}{subsection.7.1.9}
@@ -122,7 +122,7 @@
 \contentsline {subsection}{\numberline {7.1.15}\leavevmode {\color {Chapter }Intersection}}{49}{subsection.7.1.15}
 \contentsline {subsection}{\numberline {7.1.16}\leavevmode {\color {Chapter }MaximalIdealOfNumericalSemigroup}}{49}{subsection.7.1.16}
 \contentsline {subsection}{\numberline {7.1.17}\leavevmode {\color {Chapter }CanonicalIdealOfNumericalSemigroup}}{49}{subsection.7.1.17}
-\contentsline {subsection}{\numberline {7.1.18}\leavevmode {\color {Chapter }IsCanonicalIdealOfNumericalSemigroup}}{50}{subsection.7.1.18}
+\contentsline {subsection}{\numberline {7.1.18}\leavevmode {\color {Chapter }IsCanonicalIdeal}}{50}{subsection.7.1.18}
 \contentsline {section}{\numberline {7.2}\leavevmode {\color {Chapter } Other functions for ideals }}{50}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1}\leavevmode {\color {Chapter }HilbertFunctionOfIdealOfNumericalSemigroup}}{50}{subsection.7.2.1}
 \contentsline {subsection}{\numberline {7.2.2}\leavevmode {\color {Chapter }BlowUpIdealOfNumericalSemigroup}}{50}{subsection.7.2.2}
@@ -224,10 +224,10 @@
 \contentsline {subsection}{\numberline {11.1.6}\leavevmode {\color {Chapter }AsAffineSemigroup}}{79}{subsection.11.1.6}
 \contentsline {subsection}{\numberline {11.1.7}\leavevmode {\color {Chapter }IsAffineSemigroup}}{80}{subsection.11.1.7}
 \contentsline {subsection}{\numberline {11.1.8}\leavevmode {\color {Chapter }BelongsToAffineSemigroup}}{80}{subsection.11.1.8}
-\contentsline {subsection}{\numberline {11.1.9}\leavevmode {\color {Chapter }IsFullAffineSemigroup}}{81}{subsection.11.1.9}
+\contentsline {subsection}{\numberline {11.1.9}\leavevmode {\color {Chapter }IsFull}}{81}{subsection.11.1.9}
 \contentsline {subsection}{\numberline {11.1.10}\leavevmode {\color {Chapter }HilbertBasisOfSystemOfHomogeneousEquations}}{81}{subsection.11.1.10}
 \contentsline {subsection}{\numberline {11.1.11}\leavevmode {\color {Chapter }HilbertBasisOfSystemOfHomogeneousInequalities}}{81}{subsection.11.1.11}
-\contentsline {subsection}{\numberline {11.1.12}\leavevmode {\color {Chapter }EquationsOfGroupGeneratedBy}}{81}{subsection.11.1.12}
+\contentsline {subsection}{\numberline {11.1.12}\leavevmode {\color {Chapter }EquationsOfGroupGeneratedBy}}{82}{subsection.11.1.12}
 \contentsline {subsection}{\numberline {11.1.13}\leavevmode {\color {Chapter }BasisOfGroupGivenByEquations}}{82}{subsection.11.1.13}
 \contentsline {section}{\numberline {11.2}\leavevmode {\color {Chapter } Gluings of affine semigroups }}{82}{section.11.2}
 \contentsline {subsection}{\numberline {11.2.1}\leavevmode {\color {Chapter }GluingOfAffineSemigroups}}{82}{subsection.11.2.1}
@@ -238,7 +238,7 @@
 \contentsline {subsection}{\numberline {11.3.4}\leavevmode {\color {Chapter }MinimalPresentationOfAffineSemigroup}}{83}{subsection.11.3.4}
 \contentsline {subsection}{\numberline {11.3.5}\leavevmode {\color {Chapter }BettiElementsOfAffineSemigroup}}{84}{subsection.11.3.5}
 \contentsline {subsection}{\numberline {11.3.6}\leavevmode {\color {Chapter }ShadedSetOfElementInAffineSemigroup}}{84}{subsection.11.3.6}
-\contentsline {subsection}{\numberline {11.3.7}\leavevmode {\color {Chapter }IsGenericAffineSemigroup}}{84}{subsection.11.3.7}
+\contentsline {subsection}{\numberline {11.3.7}\leavevmode {\color {Chapter }IsGeneric}}{84}{subsection.11.3.7}
 \contentsline {subsection}{\numberline {11.3.8}\leavevmode {\color {Chapter }IsUniquelyPresentedAffineSemigroup}}{84}{subsection.11.3.8}
 \contentsline {subsection}{\numberline {11.3.9}\leavevmode {\color {Chapter }PrimitiveElementsOfAffineSemigroup}}{85}{subsection.11.3.9}
 \contentsline {section}{\numberline {11.4}\leavevmode {\color {Chapter } Factorizations in affine semigroups }}{85}{section.11.4}
@@ -310,13 +310,13 @@
 \contentsline {subsection}{\numberline {C.1.1}\leavevmode {\color {Chapter }IsGradedAssociatedRingNumericalSemigroupBuchsbaum}}{104}{subsection.C.1.1}
 \contentsline {subsection}{\numberline {C.1.2}\leavevmode {\color {Chapter }TorsionOfAssociatedGradedRingNumericalSemigroup}}{104}{subsection.C.1.2}
 \contentsline {subsection}{\numberline {C.1.3}\leavevmode {\color {Chapter }BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup}}{104}{subsection.C.1.3}
-\contentsline {subsection}{\numberline {C.1.4}\leavevmode {\color {Chapter }IsMpureNumericalSemigroup}}{105}{subsection.C.1.4}
-\contentsline {subsection}{\numberline {C.1.5}\leavevmode {\color {Chapter }IsPureNumericalSemigroup}}{105}{subsection.C.1.5}
+\contentsline {subsection}{\numberline {C.1.4}\leavevmode {\color {Chapter }IsMpure}}{105}{subsection.C.1.4}
+\contentsline {subsection}{\numberline {C.1.5}\leavevmode {\color {Chapter }IsPure}}{105}{subsection.C.1.5}
 \contentsline {subsection}{\numberline {C.1.6}\leavevmode {\color {Chapter }IsGradedAssociatedRingNumericalSemigroupGorenstein}}{105}{subsection.C.1.6}
 \contentsline {subsection}{\numberline {C.1.7}\leavevmode {\color {Chapter }IsGradedAssociatedRingNumericalSemigroupCI}}{106}{subsection.C.1.7}
 \contentsline {subsection}{\numberline {C.1.8}\leavevmode {\color {Chapter }IsAperySetGammaRectangular}}{106}{subsection.C.1.8}
 \contentsline {subsection}{\numberline {C.1.9}\leavevmode {\color {Chapter }IsAperySetBetaRectangular}}{106}{subsection.C.1.9}
-\contentsline {subsection}{\numberline {C.1.10}\leavevmode {\color {Chapter }IsAperySetAlphaRectangular}}{106}{subsection.C.1.10}
+\contentsline {subsection}{\numberline {C.1.10}\leavevmode {\color {Chapter }IsAperySetAlphaRectangular}}{107}{subsection.C.1.10}
 \contentsline {subsection}{\numberline {C.1.11}\leavevmode {\color {Chapter }TypeSequenceOfNumericalSemigroup}}{107}{subsection.C.1.11}
 \contentsline {section}{\numberline {C.2}\leavevmode {\color {Chapter }Functions implemented by C. O'Neill}}{107}{section.C.2}
 \contentsline {subsection}{\numberline {C.2.1}\leavevmode {\color {Chapter }OmegaPrimalityOfElementListInNumericalSemigroup}}{107}{subsection.C.2.1}
