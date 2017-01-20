@@ -214,7 +214,8 @@ false
 </ManSection>
 
 <ManSection>
-  <Func Arg="S" Name="IsFullAffineSemigroup"></Func>
+  <Prop Arg="S" Name="IsFull"></Prop>
+  <Prop Arg="S" Name="IsFullAffineSemigroup"></Prop>
   <Description>
     <A>s</A> is an affine semigroup.<P/>
 
@@ -422,7 +423,8 @@ gap> BettiElementsOfAffineSemigroup(a);
 
 
   <ManSection>
-    <Func Arg="a" Name="IsGenericAffineSemigroup"></Func>
+    <Prop Arg="a" Name="IsGeneric"></Prop>
+    <Prop Arg="a" Name="IsGenericAffineSemigroup"></Prop>
     <Description>
       <A>a</A> is an affine semigroup.
       <P/>

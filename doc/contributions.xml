@@ -62,7 +62,8 @@ true
 </ManSection>
 
 <ManSection>
-                    <Func Arg="S" Name="IsMpureNumericalSemigroup"></Func>
+                    <Prop Arg="S" Name="IsMpure"></Prop>
+                    <Prop Arg="S" Name="IsMpureNumericalSemigroup"></Prop>
                     <Description>
 
                         <A>S</A> is a numerical semigroup.
@@ -86,7 +87,8 @@ true
 
 
 <ManSection>
-                    <Func Arg="S" Name="IsPureNumericalSemigroup"></Func>
+                    <Prop Arg="S" Name="IsPure"></Prop>
+                    <Prop Arg="S" Name="IsPureNumericalSemigroup"></Prop>
                     <Description>
 
                         <A>S</A> is a numerical semigroup.

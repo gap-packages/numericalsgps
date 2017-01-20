@@ -103,7 +103,7 @@ DeclareSynonymAttr( "IsAffineSemigroupByEquations", HasEquations);
 ##
 #F  AffineSemigroupByInequalities(ls)
 ##
-##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over the nonnegative 
+##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over the nonnegative
 ## integers
 ##
 #############################################################################
@@ -118,7 +118,7 @@ DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalities);
 #F  AffineSemigroup(arg)
 ##
 ##  This function's first argument may be one of:
-##  "generators", "minimalgenerators", 
+##  "generators", "minimalgenerators",
 ## : equations...
 ##
 ##  The following arguments must conform to the arguments of
@@ -139,7 +139,8 @@ DeclareGlobalFunction( "AffineSemigroup" );
 ##  Tests if the affine semigroup S has the property of being full.
 ##
 #############################################################################
-DeclareProperty( "IsFullAffineSemigroup", IsAffineSemigroup);
+DeclareProperty( "IsFull", IsAffineSemigroup);
+DeclareSynonymAttr("IsFullAffineSemigroup",IsFull);
 
 #############################################################################
 ##
@@ -149,4 +150,3 @@ DeclareProperty( "IsFullAffineSemigroup", IsAffineSemigroup);
 ##
 #############################################################################
 DeclareGlobalFunction("AsAffineSemigroup");
-  

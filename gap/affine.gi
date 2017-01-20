@@ -808,6 +808,8 @@ InstallMethod(IsGenericAffineSemigroup,
     return ForAll(mp,p->Product(p[1]+p[2])<>0);
 end);
 
+InstallTrueMethod(IsUniquelyPresentedAffineSemigroup, IsGenericAffineSemigroup);
+
 #############################################################################
 ##
 #F ShadedSetOfElementInAffineSemigroup(x,a)
