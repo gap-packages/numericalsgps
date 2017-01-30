@@ -222,6 +222,207 @@ end);
 
 
 #####################################################################
+##
+#F ArfNumericalSemigroupsWithGenusUpTo(g)
+##
+## Returns the set of Arf numerical semigroups with genus less than
+## or equal to g, as explained in
+## -Rosales et al., Arf numerical semigroups with given genus and
+##  Frobenius number
+#############################################################################
+InstallGlobalFunction(ArfNumericalSemigroupsWithGenusUpTo,function(g)
+	local par2sem, testArfSeq, arfsequences;
+
+	#transforms a partition list of an element to the set of sums
+	# which will correspond with the set of small elements of the semigroup
+	par2sem:=function(l)
+            local rl, n,sm, i;
+
+            n:=Length(l);
+            rl:=Reversed(l);
+            sm:=[0];
+            for i in [1..n] do;
+                Add(sm,Sum(rl{[1..i]}));
+            od;
+
+            return sm;
+
+	end;
+
+	# computes all Arf sequences with sumset equal n+g with n the length of the sequence
+	arfsequences:=function(n)
+            local l, k, lk, lkm1,bound,cand,s;
+
+            l:=[List([2..g+1], x-> [x])];
+            for k in [2..g] do
+                lk:=[];
+                lkm1:=l[Length(l)];
+                for s in lkm1 do
+                    bound:=g+k-Sum(s);
+                    cand:=Intersection(Union(Difference(par2sem(s),[0]), [Sum(s)..bound]),[s[Length(s)]..bound]);
+
+                    lk:=Concatenation(lk,List(cand,x->Concatenation(s,[x])));
+                od;
+
+                if lk<>[] then
+                    l:=Concatenation(l,[lk]);
+                fi;
+            od;
+            l:=Concatenation([[[1]]],l);
+
+
+            return l;
+	end;
+
+	if not(IsInt(g)) then
+		Error("The argument must be an integer");
+	fi;
+	if g<0 then
+		return [];
+	fi;
+	if g=0 then
+		return [NumericalSemigroup(1)];
+	fi;
+	return List(List(Union(arfsequences(g)), par2sem),NumericalSemigroupBySmallElementsNC);
+end);
+
+
+#####################################################################
+##
+#F ArfNumericalSemigroupsWithFrobeniusNumberUpTo(f)
+##
+## Returns the set of Arf numerical semigroups with Frobenius number
+## less than or equal to f, as explained in
+##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+#############################################################################
+InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumberUpTo,function(f)
+	local par2sem, testArfSeq, arfsequences;
+
+	#transforms a partition list of an element to the set of sums
+	# which will correspond with the set of small elements of the semigroup
+	par2sem:=function(l)
+            local rl, n,sm, i;
+
+            n:=Length(l);
+            rl:=Reversed(l);
+            sm:=[0];
+            for i in [1..n] do;
+                Add(sm,Sum(rl{[1..i]}));
+            od;
+
+            return sm;
+
+	end;
+
+	# computes all Arf sequences with sumset equal f+1
+	arfsequences:=function(n)
+            local l, k, lk, lkm1,bound,cand,s;
+
+            l:=[List([2..f+1], x-> [x])];
+            for k in [2..Int((f+1)/2)] do
+                lk:=[];
+                lkm1:=l[Length(l)];
+                for s in lkm1 do
+                    bound:=f+1-Sum(s);
+                    cand:=Intersection(Union(Difference(par2sem(s),[0]), [Sum(s)..bound]),[s[Length(s)]..bound]);
+                    lk:=Concatenation(lk,List(cand,x->Concatenation(s,[x])));
+                od;
+
+                if lk<>[] then
+                    l:=Concatenation(l,[lk]);
+                fi;
+            od;
+            l:=Concatenation([[[1]]],l);
+
+            return l;
+	end;
+
+	if not(IsInt(f)) then
+		Error("The argument must be an integer");
+	fi;
+	if (f<-1) then
+		return [];
+	fi;
+	if f<=0 then
+		return [NumericalSemigroup(1)];
+	fi;
+
+	return List(List(Concatenation(arfsequences(f)), par2sem),NumericalSemigroupBySmallElementsNC);
+end);
+
+#####################################################################
+##
+#F ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(g,f)
+##
+## Returns the set of Arf numerical semigroups with genus g and
+## Frobenius number f, as explained in
+##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+#############################################################################
+InstallGlobalFunction(ArfNumericalSemigroupsWithGenusAndFrobeniusNumber,function(g,f)
+	local par2sem, testArfSeq, arfsequences, n;
+
+	#transforms a partition list of an element to the set of sums
+	# which will correspond with the set of small elements of the semigroup
+	par2sem:=function(l)
+            local rl, n,sm, i;
+
+            n:=Length(l);
+            rl:=Reversed(l);
+            sm:=[0];
+            for i in [1..n] do;
+                Add(sm,Sum(rl{[1..i]}));
+            od;
+
+            return sm;
+
+	end;
+
+	# computes all Arf sequences with sumset equal f+1
+	arfsequences:=function(n)
+            local l, k, lk, lkm1,bound,cand,s;
+
+            l:=[List([2..Int(f+1)], x-> [x])];
+            for k in [2..n] do
+                lk:=[];
+                lkm1:=l[Length(l)];
+                for s in lkm1 do
+                    bound:=Int((f+1-Sum(s))/(n-(k-1)));
+                    cand:=Intersection(Union(Difference(par2sem(s),[0]), [Sum(s)..bound]),[s[Length(s)]..bound]);
+                    lk:=Concatenation(lk,List(cand,x->Concatenation(s,[x])));
+                od;
+
+                if lk<>[] then
+                    l:=Concatenation(l,[lk]);
+                fi;
+            od;
+            l:=Filtered(l[n], x->Sum(x)=f+1);
+
+            return l;
+	end;
+
+	if not(IsInt(g)) or not(IsInt(f)) then
+		Error("The arguments must be an integers");
+	fi;
+
+	if g<0 then
+		return [];
+	fi;
+
+	if g=0 and f=-1 then
+		return [NumericalSemigroup(1)];
+	fi;
+
+	if not(g<=f and f<=2*g-1) then
+		return [];
+	fi;
+
+	n:=f+1-g;
+
+	return List(List(arfsequences(n), par2sem),NumericalSemigroupBySmallElementsNC);
+end);
+
+
+#####################################################################
 ##                        MED
 ## See [RGGB03]
 #####################################################################
