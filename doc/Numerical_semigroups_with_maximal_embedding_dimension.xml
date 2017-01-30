@@ -143,6 +143,47 @@ gap> List(last,MinimalGenerators);
                     </Description>
                 </ManSection>
 
+                <ManSection>
+                    <Func Arg="f" Name="ArfNumericalSemigroupsWithFrobeniusNumberUpTo"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf
+                        numerical semigroups with Frobenius number less than or equal to <A>f</A>. The algorithm is explained in <Cite Key="arf-frob-gen"></Cite>.
+                        <Example><![CDATA[
+gap> Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));
+46
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="g" Name="ArfNumericalSemigroupsWithGenusUpTo"></Func>
+                    <Description>
+                        <A>g</A> is a nonnegative integer. The output is the set of all Arf
+                        numerical semigroups with genus less than or equal to <A>g</A>. The algorithm is explained in <Cite Key="arf-frob-gen"></Cite>.
+                        <Example><![CDATA[
+gap> Length(ArfNumericalSemigroupsWithGenusUpTo(10));
+86
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="g,f" Name="ArfNumericalSemigroupsWithGenusAndFrobeniusNumber"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1, and <A>g</A> is a nonnegative integer. The output is the set of all Arf
+                        numerical semigroups with genus <A>g</A> and Frobenius number <A>f</A>. The algorithm is explained in <Cite Key="arf-frob-gen"></Cite>.
+                        <Example><![CDATA[
+gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(10,13);
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
+  <Numerical semigroup>, <Numerical semigroup> ]
+gap> List(last,MinimalGenerators);
+[ [ 8, 10, 12, 14, 15, 17, 19, 21 ], [ 6, 10, 14, 15, 17, 19 ],
+  [ 5, 12, 14, 16, 18 ], [ 6, 9, 14, 16, 17, 19 ], [ 4, 14, 15, 17 ] ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
             </Section>
 	    <Section>
                 <Heading>
