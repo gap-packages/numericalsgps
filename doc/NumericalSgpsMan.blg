@@ -7,47 +7,59 @@ Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and,
 while executing---line 1185 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
+while executing---line 1185 of file alpha.bst
+Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
+while executing---line 1250 of file alpha.bst
+Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
+while executing---line 1250 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1250 of file alpha.bst
-You've used 76 entries,
+You've used 77 entries,
             2543 wiz_defined-function locations,
-            1053 strings with 15321 characters,
-and the built_in function-call counts, 30647 in all, are:
-= -- 3148
-> -- 1481
-< -- 24
-+ -- 511
-- -- 499
-* -- 2305
-:= -- 5104
-add.period$ -- 233
-call.type$ -- 76
-change.case$ -- 473
-chr.to.int$ -- 74
-cite$ -- 76
-duplicate$ -- 1085
-empty$ -- 2176
-format.name$ -- 589
-if$ -- 6140
+            1059 strings with 15470 characters,
+and the built_in function-call counts, 31082 in all, are:
+= -- 3193
+> -- 1489
+< -- 25
++ -- 513
+- -- 501
+* -- 2339
+:= -- 5170
+add.period$ -- 236
+call.type$ -- 77
+change.case$ -- 478
+chr.to.int$ -- 75
+cite$ -- 77
+duplicate$ -- 1100
+empty$ -- 2216
+format.name$ -- 592
+if$ -- 6231
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 74
-newline$ -- 386
-num.names$ -- 228
-pop$ -- 359
+missing$ -- 75
+newline$ -- 391
+num.names$ -- 231
+pop$ -- 361
 preamble$ -- 1
-purify$ -- 554
+purify$ -- 560
 quote$ -- 0
-skip$ -- 936
+skip$ -- 948
 stack$ -- 0
-substring$ -- 1997
-swap$ -- 104
-text.length$ -- 24
+substring$ -- 2058
+swap$ -- 105
+text.length$ -- 25
 text.prefix$ -- 16
 top$ -- 0
-type$ -- 588
+type$ -- 596
 warning$ -- 0
-while$ -- 319
-width$ -- 82
-write$ -- 982
-(There were 3 error messages)
+while$ -- 322
+width$ -- 83
+write$ -- 995
+(There were 9 error messages)

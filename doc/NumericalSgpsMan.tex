@@ -3573,6 +3573,64 @@ numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}.
 \end{Verbatim}
  }
 
+ 
+
+\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}}
+\logpage{[ 8, 2, 5 ]}\nobreak
+\hyperdef{L}{X7E308CCF87448182}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo({\mdseries\slshape f})\index{ArfNumericalSemigroupsWithFrobeniusNumberUpTo@\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Frobenius}\-\texttt{Number}\-\texttt{UpTo}}
+\label{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all Arf
+numerical semigroups with Frobenius number less than or equal to \mbox{\texttt{\mdseries\slshape f}}. The algorithm is explained in \cite{arf-frob-gen}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));|
+  46
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithGenusUpTo}}
+\logpage{[ 8, 2, 6 ]}\nobreak
+\hyperdef{L}{X80EB35C17C83694D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithGenusUpTo({\mdseries\slshape g})\index{ArfNumericalSemigroupsWithGenusUpTo@\texttt{ArfNumericalSemigroupsWithGenusUpTo}}
+\label{ArfNumericalSemigroupsWithGenusUpTo}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape g}} is a nonnegative integer. The output is the set of all Arf numerical
+semigroups with genus less than or equal to \mbox{\texttt{\mdseries\slshape g}}. The algorithm is explained in \cite{arf-frob-gen}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(ArfNumericalSemigroupsWithGenusUpTo(10));|
+  86
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber}}
+\logpage{[ 8, 2, 7 ]}\nobreak
+\hyperdef{L}{X7EE73B2F813F7E85}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber({\mdseries\slshape g, f})\index{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber@\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Genus}\-\texttt{And}\-\texttt{Frobenius}\-\texttt{Number}}
+\label{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1, and \mbox{\texttt{\mdseries\slshape g}} is a nonnegative integer. The output is the set of all Arf numerical
+semigroups with genus \mbox{\texttt{\mdseries\slshape g}} and Frobenius number \mbox{\texttt{\mdseries\slshape f}}. The algorithm is explained in \cite{arf-frob-gen}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(10,13);|
+  [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
+    <Numerical semigroup>, <Numerical semigroup> ]
+  !gapprompt@gap>| !gapinput@List(last,MinimalGenerators);|
+  [ [ 8, 10, 12, 14, 15, 17, 19, 21 ], [ 6, 10, 14, 15, 17, 19 ],
+    [ 5, 12, 14, 16, 18 ], [ 6, 9, 14, 16, 17, 19 ], [ 4, 14, 15, 17 ] ]
+\end{Verbatim}
+ }
+
  }
 
  
