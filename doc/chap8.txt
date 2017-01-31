@@ -123,7 +123,8 @@
   [29X[2XArfNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  Arf numerical semigroups with Frobenius number [3Xf[103X.[133X
+  Arf  numerical  semigroups  with  Frobenius number [3Xf[103X. The current version of
+  this algorithm is due to G. Zito.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XArfNumericalSemigroupsWithFrobeniusNumber(10);[127X[104X
@@ -143,27 +144,40 @@
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
   Arf  numerical semigroups with Frobenius number less than or equal to [3Xf[103X. The
-  algorithm is explained in [GPAHBA17].[133X
+  current version of this algorithm is due to G. Zito.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));[127X[104X
     [4X[28X46[128X[104X
   [4X[32X[104X
   
-  [1X8.2-6 ArfNumericalSemigroupsWithGenusUpTo[101X
+  [1X8.2-6 ArfNumericalSemigroupsWithGenus[101X
+  
+  [29X[2XArfNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function
+  
+  [33X[0;0Y[3Xg[103X  is  a  nonnegative  integer.  The  output is the set of all Arf numerical
+  semigroups  with equal to [3Xg[103X. The current version of this algorithm is due to
+  G. Zito.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(ArfNumericalSemigroupsWithGenus(10));[127X[104X
+    [4X[28X21[128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-7 ArfNumericalSemigroupsWithGenusUpTo[101X
   
   [29X[2XArfNumericalSemigroupsWithGenusUpTo[102X( [3Xg[103X ) [32X function
   
   [33X[0;0Y[3Xg[103X  is  a  nonnegative  integer.  The  output is the set of all Arf numerical
-  semigroups with genus less than or equal to [3Xg[103X. The algorithm is explained in
-  [GPAHBA17].[133X
+  semigroups  with  genus less than or equal to [3Xg[103X. The current version of this
+  algorithm is due to G. Zito.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(ArfNumericalSemigroupsWithGenusUpTo(10));[127X[104X
     [4X[28X86[128X[104X
   [4X[32X[104X
   
-  [1X8.2-7 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber[101X
+  [1X8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber[101X
   
   [29X[2XArfNumericalSemigroupsWithGenusAndFrobeniusNumber[102X( [3Xg[103X, [3Xf[103X ) [32X function
   

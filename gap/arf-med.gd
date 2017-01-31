@@ -71,10 +71,18 @@ DeclareGlobalFunction("ArfNumericalSemigroupsWithFrobeniusNumber");
 #F ArfNumericalSemigroupsWithFrobeniusNumberUpTo(f)
 ##
 ## Returns the set of Arf numerical semigroups with Frobenius number
-## less than or equal to f, as explained in
-##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+## New version by Giuseppe Zito (U Catania)
 #############################################################################
 DeclareGlobalFunction("ArfNumericalSemigroupsWithFrobeniusNumberUpTo");
+
+#####################################################################
+##
+#F ArfNumericalSemigroupsWithGenus(g)
+##
+## Returns the set of Arf numerical semigroups with genus g,
+## This version is due to Giuseppe Zito
+#############################################################################
+DeclareGlobalFunction("ArfNumericalSemigroupsWithGenus");
 
 
 #####################################################################
