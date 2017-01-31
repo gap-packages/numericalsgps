@@ -129,6 +129,8 @@ gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup(
                     <Description>
                         <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf
                         numerical semigroups with Frobenius number <A>f</A>.
+                        The current version of this algorithm is due to G. Zito.
+
                         <Example><![CDATA[
 gap> ArfNumericalSemigroupsWithFrobeniusNumber(10);
 [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
@@ -147,7 +149,8 @@ gap> List(last,MinimalGenerators);
                     <Func Arg="f" Name="ArfNumericalSemigroupsWithFrobeniusNumberUpTo"></Func>
                     <Description>
                         <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf
-                        numerical semigroups with Frobenius number less than or equal to <A>f</A>. The algorithm is explained in <Cite Key="arf-frob-gen"></Cite>.
+                        numerical semigroups with Frobenius number less than or equal to <A>f</A>.
+                        The current version of this algorithm is due to G. Zito.
                         <Example><![CDATA[
 gap> Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));
 46
@@ -156,10 +159,24 @@ gap> Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));
                 </ManSection>
 
                 <ManSection>
+                    <Func Arg="g" Name="ArfNumericalSemigroupsWithGenus"></Func>
+                    <Description>
+                      <A>g</A> is a nonnegative integer. The output is the set of all Arf
+                      numerical semigroups with equal to <A>g</A>.
+                      The current version of this algorithm is due to G. Zito.
+<Example><![CDATA[
+gap> Length(ArfNumericalSemigroupsWithGenus(10));
+21
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
                     <Func Arg="g" Name="ArfNumericalSemigroupsWithGenusUpTo"></Func>
                     <Description>
                         <A>g</A> is a nonnegative integer. The output is the set of all Arf
-                        numerical semigroups with genus less than or equal to <A>g</A>. The algorithm is explained in <Cite Key="arf-frob-gen"></Cite>.
+                        numerical semigroups with genus less than or equal to <A>g</A>.
+                        The current version of this algorithm is due to G. Zito.
                         <Example><![CDATA[
 gap> Length(ArfNumericalSemigroupsWithGenusUpTo(10));
 86

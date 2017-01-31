@@ -133,93 +133,124 @@ end);
 ## Returns the set of Arf numerical semigroups with Frobenius number f
 ## as explained in the preprint
 ##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+## This version is due to Giuseppe Zito
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
-	local par2sem, testArfSeq, arfsequences;
+  local n, T, Cond, i,j,k, inarf, filt;
 
-    if(not(IsInt(f))) then
-		Error("The argument must be an integer.\n");
-    fi;
+  # tests whether x is in the Arf semigroup with multiplicity
+  # sequence j
+  inarf:=function(x,j)
+      local l;
+      if x>Sum(j) then
+        return true;
+      fi;
+      if x=0 then
+        return true;
+      fi;
+      if x<j[1] then
+        return false;
+      fi;
+      l:=List([1..Length(j)], i-> Sum(j{[1..i]}));
+      return x in l;
+  end;
 
-	if f=0 or f<-1 then
-		return [];
-	fi;
-	if f=-1 then
-		return [NumericalSemigroup(1)];
-	fi;
-	#transforms a partition list of an element to the set of sums
-	# which will correspond with the set of small elements of the semigroup
-	par2sem:=function(l)
-		local n, sm, i;
+  if(not(IsInt(f))) then
+    Error("The argument must be an integer");
+  fi;
 
-		sm:=[0];
-		n:=0;
-		for i in l do;
-			n:=n+i;
-			Add(sm,n);
-		od;
+  n:=f+1;
+  if (n<0) or (n=1) then
+    return [];
+  fi;
 
-		return sm;
+  if n=0 then
+    return [NumericalSemigroup(1)];
+  fi;
 
-	end;
+  Cond:=List([[n]]);
+  T:=[];
+  for i in [2..n-2] do
+    T[i]:=[[i]];
+  od;
 
-	#this function tests if a partition l is an Arf sequence
-	testArfSeq:=function(l)
-		local i, lt, pl, size;
+  for i in [2..n-2] do
+    for j in T[i] do
+      if inarf(n-i,j) then
+          Add(Cond, Concatenation([n-i],j));
+      fi;
+      filt:= Filtered([j[1]..Int((n-i)/2)], x->inarf(x,j));
+      for k in filt do
+        Add(T[i+k],Concatenation([k],j));
+      od;
+    od;
 
-		if 1 in l then
-			return false;
-		fi;
-
-		size:=Length(l);
-
-		for i in [1..Length(l)-1] do
-			lt:=l{[i+1..size]};
-			pl:=par2sem(lt);
-			#Print(l[i]," ",pl,"\n");
-			if (l[i]<Maximum(pl)) and not(l[i] in pl) then
-				return false;
-			fi;
-		od;
-		return true;
-	end;
-
-	# computes all Arf sequences with sumset equal n+1 (the conductor)
-	# and translate them to small elements in the semigroup
-	# to this end we compute  all partitions inspired in
-	# Algorithm 3.1 of Jerome Kelleher, Barry O'Sullivan, Generating All Partitions: A
-	# Comparison Of Two Encodings  arXiv:0909.2331
-	arfsequences:=function(n)
-		local x,y,k, a, ra, l;
-
-		l:=Set([]);
-		k:=2; a:=[0,n+1];
-		while k<>1 do
-			y:=a[k]-1;
-			k:=k-1;
-			x:=a[k]+1;
-			if x=1 then  #to avoid ones
-				x:=2;
-				y:=y-1;
-			fi;
-			while (x<=y)  do
-				a[k]:=x;
-				y:=y-x;
-				k:=k+1;
-			od;
-			a[k]:=x+y;
-			ra:=Reversed(a{[1..k]});
-			if testArfSeq(ra) then
-				Add(l,par2sem(ra));
-			fi;
-		od;
-
-		return l;
-	end;
-
-	return List(arfsequences(f),NumericalSemigroupBySmallElementsNC);
+  od;
+  return List(Cond, j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
 end);
 
+#####################################################################
+##
+#F ArfNumericalSemigroupsWithGenus(g)
+##
+## Returns the set of Arf numerical semigroups with genus g,
+## This version is due to Giuseppe Zito
+#############################################################################
+InstallGlobalFunction(ArfNumericalSemigroupsWithGenus, function(g)
+  local n, T, Gen, i,j,k, inarf, filt;
+
+  # tests whether x is in the Arf semigroup with multiplicity
+  # sequence j
+  inarf:=function(x,j)
+      local l;
+      if x>Sum(j) then
+        return true;
+      fi;
+      if x=0 then
+        return true;
+      fi;
+      if x<j[1] then
+        return false;
+      fi;
+
+      l:=List([1..Length(j)], i-> Sum(j{[1..i]}));
+      return x in l;
+  end;
+
+  n:=g;
+
+  if(not(IsInt(g))) then
+    Error("The argument must be an integer");
+  fi;
+
+  if (g<0) then
+    return [];
+  fi;
+
+  if n=0 then
+    return [NumericalSemigroup(1)];
+  fi;
+
+  Gen:=List([[n+1]]);
+  T:=[];
+  for i in [1..n-1] do
+    T[i]:=[[i+1]];
+  od;
+
+  for i in [1..n-1] do
+    for j in T[i] do
+      if inarf(n-i+1,j) then
+          Add(Gen, Concatenation([n-i+1],j));
+      fi;
+      filt:= Filtered([j[1]..Int((n-i+2)/2)], x->inarf(x,j));
+      for k in filt do
+        Add(T[i+k-1],Concatenation([k],j));
+      od;
+    od;
+
+  od;
+  return List(Gen, j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+end);
 
 #####################################################################
 ##
@@ -229,61 +260,59 @@ end);
 ## or equal to g, as explained in
 ## -Rosales et al., Arf numerical semigroups with given genus and
 ##  Frobenius number
+## New version by Giuseppe Zito (U Catania)
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithGenusUpTo,function(g)
-	local par2sem, testArfSeq, arfsequences;
+  local n, T, i,j,k, inarf, filt;
 
-	#transforms a partition list of an element to the set of sums
-	# which will correspond with the set of small elements of the semigroup
-	par2sem:=function(l)
-            local rl, n,sm, i;
+  # tests whether x is in the Arf semigroup with multiplicity
+  # sequence j
+  inarf:=function(x,j)
+      local l;
+      if x>Sum(j) then
+        return true;
+      fi;
+      if x=0 then
+        return true;
+      fi;
+      if x<j[1] then
+        return false;
+      fi;
 
-            n:=Length(l);
-            rl:=Reversed(l);
-            sm:=[0];
-            for i in [1..n] do;
-                Add(sm,Sum(rl{[1..i]}));
-            od;
+      l:=List([1..Length(j)], i-> Sum(j{[1..i]}));
+      return x in l;
+  end;
 
-            return sm;
+  n:=g;
 
-	end;
+  if(not(IsInt(g))) then
+    Error("The argument must be an integer");
+  fi;
 
-	# computes all Arf sequences with sumset equal n+g with n the length of the sequence
-	arfsequences:=function(n)
-            local l, k, lk, lkm1,bound,cand,s;
+  if (g<0) then
+    return [];
+  fi;
 
-            l:=[List([2..g+1], x-> [x])];
-            for k in [2..g] do
-                lk:=[];
-                lkm1:=l[Length(l)];
-                for s in lkm1 do
-                    bound:=g+k-Sum(s);
-                    cand:=Intersection(Union(Difference(par2sem(s),[0]), [Sum(s)..bound]),[s[Length(s)]..bound]);
+  if n=0 then
+    return [NumericalSemigroup(1)];
+  fi;
 
-                    lk:=Concatenation(lk,List(cand,x->Concatenation(s,[x])));
-                od;
+  T:=[];
+  for i in [1..n] do
+    T[i]:=[[i+1]];
+  od;
+  T[n+1]:=[[1]];
 
-                if lk<>[] then
-                    l:=Concatenation(l,[lk]);
-                fi;
-            od;
-            l:=Concatenation([[[1]]],l);
+  for i in [1..n-1] do
+    for j in T[i] do
+      filt:= Filtered([j[1]..n-i+1], x->inarf(x,j));
+      for k in filt do
+        Add(T[i+k-1],Concatenation([k],j));
+      od;
+    od;
 
-
-            return l;
-	end;
-
-	if not(IsInt(g)) then
-		Error("The argument must be an integer");
-	fi;
-	if g<0 then
-		return [];
-	fi;
-	if g=0 then
-		return [NumericalSemigroup(1)];
-	fi;
-	return List(List(Union(arfsequences(g)), par2sem),NumericalSemigroupBySmallElementsNC);
+  od;
+  return List(Union(T),j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
 end);
 
 
@@ -294,60 +323,57 @@ end);
 ## Returns the set of Arf numerical semigroups with Frobenius number
 ## less than or equal to f, as explained in
 ##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
+## New version by Giuseppe Zito (U Catania)
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumberUpTo,function(f)
-	local par2sem, testArfSeq, arfsequences;
+  local n, T, i,j,k, inarf, filt;
 
-	#transforms a partition list of an element to the set of sums
-	# which will correspond with the set of small elements of the semigroup
-	par2sem:=function(l)
-            local rl, n,sm, i;
 
-            n:=Length(l);
-            rl:=Reversed(l);
-            sm:=[0];
-            for i in [1..n] do;
-                Add(sm,Sum(rl{[1..i]}));
-            od;
+  # tests whether x is in the Arf semigroup with multiplicity
+  # sequence j
+  inarf:=function(x,j)
+      local l;
+      if x>Sum(j) then
+        return true;
+      fi;
+      if x=0 then
+        return true;
+      fi;
+      if x<j[1] then
+        return false;
+      fi;
+      l:=List([1..Length(j)], i-> Sum(j{[1..i]}));
+      return x in l;
+  end;
 
-            return sm;
+  if(not(IsInt(f))) then
+    Error("The argument must be an integer");
+  fi;
 
-	end;
+  n:=f+1;
+  if (n<0) or (n=1) then
+    return [];
+  fi;
 
-	# computes all Arf sequences with sumset equal f+1
-	arfsequences:=function(n)
-            local l, k, lk, lkm1,bound,cand,s;
+  if n=0 then
+    return [NumericalSemigroup(1)];
+  fi;
 
-            l:=[List([2..f+1], x-> [x])];
-            for k in [2..Int((f+1)/2)] do
-                lk:=[];
-                lkm1:=l[Length(l)];
-                for s in lkm1 do
-                    bound:=f+1-Sum(s);
-                    cand:=Intersection(Union(Difference(par2sem(s),[0]), [Sum(s)..bound]),[s[Length(s)]..bound]);
-                    lk:=Concatenation(lk,List(cand,x->Concatenation(s,[x])));
-                od;
+  T:=[];
+  for i in [1..n] do
+    T[i]:=[[i]];
+  od;
 
-                if lk<>[] then
-                    l:=Concatenation(l,[lk]);
-                fi;
-            od;
-            l:=Concatenation([[[1]]],l);
+  for i in [2..n-2] do
+    for j in T[i] do
+      filt:= Filtered([j[1]..n-i], x->inarf(x,j));
+      for k in filt do
+        Add(T[i+k],Concatenation([k],j));
+      od;
+    od;
 
-            return l;
-	end;
-
-	if not(IsInt(f)) then
-		Error("The argument must be an integer");
-	fi;
-	if (f<-1) then
-		return [];
-	fi;
-	if f<=0 then
-		return [NumericalSemigroup(1)];
-	fi;
-
-	return List(List(Concatenation(arfsequences(f)), par2sem),NumericalSemigroupBySmallElementsNC);
+  od;
+  return List(Union(T),j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
 end);
 
 #####################################################################
