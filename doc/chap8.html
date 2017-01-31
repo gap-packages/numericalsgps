@@ -45,8 +45,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7C0D2F7986165DDE">8.2-3 MinimalArfGeneratingSystemOfArfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X85CD144384FD55F3">8.2-4 ArfNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7E308CCF87448182">8.2-5 ArfNumericalSemigroupsWithFrobeniusNumberUpTo</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X80EB35C17C83694D">8.2-6 ArfNumericalSemigroupsWithGenusUpTo</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7EE73B2F813F7E85">8.2-7 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X80A13F7C81463AE5">8.2-6 ArfNumericalSemigroupsWithGenus</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X80EB35C17C83694D">8.2-7 ArfNumericalSemigroupsWithGenusUpTo</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7EE73B2F813F7E85">8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap8.html#X7E6D857179E5BF1B">8.3 <span class="Heading">
                     Saturated numerical semigroups
@@ -180,7 +181,7 @@ true
 <h5>8.2-4 ArfNumericalSemigroupsWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all Arf numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
+<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all Arf numerical semigroups with Frobenius number <var class="Arg">f</var>. The current version of this algorithm is due to G. Zito.</p>
 
 
 <div class="example"><pre>
@@ -200,7 +201,7 @@ true
 <h5>8.2-5 ArfNumericalSemigroupsWithFrobeniusNumberUpTo</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfNumericalSemigroupsWithFrobeniusNumberUpTo</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all Arf numerical semigroups with Frobenius number less than or equal to <var class="Arg">f</var>. The algorithm is explained in <a href="chapBib.html#biBarf-frob-gen">[GPAHBA17]</a>.</p>
+<p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all Arf numerical semigroups with Frobenius number less than or equal to <var class="Arg">f</var>. The current version of this algorithm is due to G. Zito.</p>
 
 
 <div class="example"><pre>
@@ -208,12 +209,25 @@ true
 46
 </pre></div>
 
+<p><a id="X80A13F7C81463AE5" name="X80A13F7C81463AE5"></a></p>
+
+<h5>8.2-6 ArfNumericalSemigroupsWithGenus</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfNumericalSemigroupsWithGenus</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">g</var> is a nonnegative integer. The output is the set of all Arf numerical semigroups with equal to <var class="Arg">g</var>. The current version of this algorithm is due to G. Zito.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(ArfNumericalSemigroupsWithGenus(10));</span>
+21
+</pre></div>
+
 <p><a id="X80EB35C17C83694D" name="X80EB35C17C83694D"></a></p>
 
-<h5>8.2-6 ArfNumericalSemigroupsWithGenusUpTo</h5>
+<h5>8.2-7 ArfNumericalSemigroupsWithGenusUpTo</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfNumericalSemigroupsWithGenusUpTo</code>( <var class="Arg">g</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">g</var> is a nonnegative integer. The output is the set of all Arf numerical semigroups with genus less than or equal to <var class="Arg">g</var>. The algorithm is explained in <a href="chapBib.html#biBarf-frob-gen">[GPAHBA17]</a>.</p>
+<p><var class="Arg">g</var> is a nonnegative integer. The output is the set of all Arf numerical semigroups with genus less than or equal to <var class="Arg">g</var>. The current version of this algorithm is due to G. Zito.</p>
 
 
 <div class="example"><pre>
@@ -223,7 +237,7 @@ true
 
 <p><a id="X7EE73B2F813F7E85" name="X7EE73B2F813F7E85"></a></p>
 
-<h5>8.2-7 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</h5>
+<h5>8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</code>( <var class="Arg">g</var>, <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1, and <var class="Arg">g</var> is a nonnegative integer. The output is the set of all Arf numerical semigroups with genus <var class="Arg">g</var> and Frobenius number <var class="Arg">f</var>. The algorithm is explained in <a href="chapBib.html#biBarf-frob-gen">[GPAHBA17]</a>.</p>

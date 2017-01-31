@@ -3559,7 +3559,7 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 
 
  \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all Arf
-numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
+numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. The current version of this algorithm is due to G. Zito. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ArfNumericalSemigroupsWithFrobeniusNumber(10);|
   [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
@@ -3584,7 +3584,7 @@ numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}.
 
 
  \mbox{\texttt{\mdseries\slshape f}} is an integer greater than or equal to -1. The output is the set of all Arf
-numerical semigroups with Frobenius number less than or equal to \mbox{\texttt{\mdseries\slshape f}}. The algorithm is explained in \cite{arf-frob-gen}. 
+numerical semigroups with Frobenius number less than or equal to \mbox{\texttt{\mdseries\slshape f}}. The current version of this algorithm is due to G. Zito. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));|
   46
@@ -3593,8 +3593,26 @@ numerical semigroups with Frobenius number less than or equal to \mbox{\texttt{\
 
  
 
-\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithGenusUpTo}}
+\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithGenus}}
 \logpage{[ 8, 2, 6 ]}\nobreak
+\hyperdef{L}{X80A13F7C81463AE5}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithGenus({\mdseries\slshape g})\index{ArfNumericalSemigroupsWithGenus@\texttt{ArfNumericalSemigroupsWithGenus}}
+\label{ArfNumericalSemigroupsWithGenus}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape g}} is a nonnegative integer. The output is the set of all Arf numerical
+semigroups with equal to \mbox{\texttt{\mdseries\slshape g}}. The current version of this algorithm is due to G. Zito. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@Length(ArfNumericalSemigroupsWithGenus(10));|
+  21
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithGenusUpTo}}
+\logpage{[ 8, 2, 7 ]}\nobreak
 \hyperdef{L}{X80EB35C17C83694D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithGenusUpTo({\mdseries\slshape g})\index{ArfNumericalSemigroupsWithGenusUpTo@\texttt{ArfNumericalSemigroupsWithGenusUpTo}}
 \label{ArfNumericalSemigroupsWithGenusUpTo}
@@ -3602,7 +3620,7 @@ numerical semigroups with Frobenius number less than or equal to \mbox{\texttt{\
 
 
  \mbox{\texttt{\mdseries\slshape g}} is a nonnegative integer. The output is the set of all Arf numerical
-semigroups with genus less than or equal to \mbox{\texttt{\mdseries\slshape g}}. The algorithm is explained in \cite{arf-frob-gen}. 
+semigroups with genus less than or equal to \mbox{\texttt{\mdseries\slshape g}}. The current version of this algorithm is due to G. Zito. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@Length(ArfNumericalSemigroupsWithGenusUpTo(10));|
   86
@@ -3612,7 +3630,7 @@ semigroups with genus less than or equal to \mbox{\texttt{\mdseries\slshape g}}.
  
 
 \subsection{\textcolor{Chapter }{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber}}
-\logpage{[ 8, 2, 7 ]}\nobreak
+\logpage{[ 8, 2, 8 ]}\nobreak
 \hyperdef{L}{X7EE73B2F813F7E85}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber({\mdseries\slshape g, f})\index{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber@\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroups}\-\texttt{With}\-\texttt{Genus}\-\texttt{And}\-\texttt{Frobenius}\-\texttt{Number}}
 \label{ArfNumericalSemigroupsWithGenusAndFrobeniusNumber}
@@ -7346,6 +7364,12 @@ pattern. \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape
 semigroup using Gr{\"o}bner basis calculations. These methods will be used if
 4ti2 is loaded (either 4ti2Interface or 4ti2gap). A faster algorithm is
 employed provided that singular is loaded. }
+
+ 
+\section{\textcolor{Chapter }{Functions implemented by G. Zito}}\logpage{[ "C", 5, 0 ]}
+\hyperdef{L}{X7FAE71B27B0E3889}{}
+{
+ Giuseppe gave the algorithms for the current version fucntions \texttt{ArfNumericalSemigroupsWithFrobeniusNumber}, \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}, \texttt{ArfNumericalSemigroupsWithGenus} and \texttt{ArfNumericalSemigroupsWithGenusUpTo}. }
 
  }
 
