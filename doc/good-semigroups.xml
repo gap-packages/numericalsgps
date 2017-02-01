@@ -323,18 +323,18 @@ true
       <A>S</A> is a good semigroup. Determines the Arf good semigroup closure of <A>S</A>.
 
       <Example><![CDATA[
-        gap> G:=[[3,3],[4,4],[5,4],[4,6]];
-        [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ]
-        gap> C:=[6,6];
-        [ 6, 6 ]
-        gap> S:=GoodSemigroup(G,C);
-        <Good semigroup>
-        gap> SmallElements(S);
-        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
-        gap> A:=ArfGoodSemigroupClosure(S);
-        <Good semigroup>
-        gap> SmallElements(A);
-        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
+gap> G:=[[3,3],[4,4],[5,4],[4,6]];
+[ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ]
+gap> C:=[6,6];
+[ 6, 6 ]
+gap> S:=GoodSemigroup(G,C);
+<Good semigroup>
+gap> SmallElements(S);
+[ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
+gap> A:=ArfGoodSemigroupClosure(S);
+<Good semigroup>
+gap> SmallElements(A);
+[ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
 ]]></Example>
     </Description>
   </ManSection>
