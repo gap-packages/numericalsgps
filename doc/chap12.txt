@@ -322,18 +322,18 @@
   [33X[0;0Y[3XS[103X is a good semigroup. Determines the Arf good semigroup closure of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X        gap> G:=[[3,3],[4,4],[5,4],[4,6]];[128X[104X
-    [4X[28X        [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ][128X[104X
-    [4X[28X        gap> C:=[6,6];[128X[104X
-    [4X[28X        [ 6, 6 ][128X[104X
-    [4X[28X        gap> S:=GoodSemigroup(G,C);[128X[104X
-    [4X[28X        <Good semigroup>[128X[104X
-    [4X[28X        gap> SmallElements(S);[128X[104X
-    [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ][128X[104X
-    [4X[28X        gap> A:=ArfGoodSemigroupClosure(S);[128X[104X
-    [4X[28X        <Good semigroup>[128X[104X
-    [4X[28X        gap> SmallElements(A);[128X[104X
-    [4X[28X        [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ][128X[104X
+    [4X[25Xgap>[125X [27XG:=[[3,3],[4,4],[5,4],[4,6]];[127X[104X
+    [4X[28X[ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ][128X[104X
+    [4X[25Xgap>[125X [27XC:=[6,6];[127X[104X
+    [4X[28X[ 6, 6 ][128X[104X
+    [4X[25Xgap>[125X [27XS:=GoodSemigroup(G,C);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(S);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ][128X[104X
+    [4X[25Xgap>[125X [27XA:=ArfGoodSemigroupClosure(S);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(A);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ][128X[104X
   [4X[32X[104X
   
   

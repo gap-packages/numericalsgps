@@ -3532,10 +3532,13 @@ numerical semigroup. These are also unique(see \cite{RGGB04}).
 
  
 
-\subsection{\textcolor{Chapter }{MinimalArfGeneratingSystemOfArfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{ArfCharactersOfArfNumericalSemigroup}}
 \logpage{[ 8, 2, 3 ]}\nobreak
-\hyperdef{L}{X7C0D2F7986165DDE}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalArfGeneratingSystemOfArfNumericalSemigroup({\mdseries\slshape S})\index{MinimalArfGeneratingSystemOfArfNumericalSemigroup@\texttt{Minimal}\-\texttt{Arf}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\hyperdef{L}{X83C242468796950D}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ArfCharactersOfArfNumericalSemigroup({\mdseries\slshape S})\index{ArfCharactersOfArfNumericalSemigroup@\texttt{Arf}\-\texttt{Characters}\-\texttt{Of}\-\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{ArfCharactersOfArfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalArfGeneratingSystemOfArfNumericalSemigroup({\mdseries\slshape S})\index{MinimalArfGeneratingSystemOfArfNumericalSemigroup@\texttt{Minimal}\-\texttt{Arf}\-\texttt{Generating}\-\texttt{System}\-\texttt{Of}\-\texttt{Arf}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MinimalArfGeneratingSystemOfArfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
 
@@ -6184,18 +6187,18 @@ is unique in the local case).
 
  \mbox{\texttt{\mdseries\slshape S}} is a good semigroup. Determines the Arf good semigroup closure of \mbox{\texttt{\mdseries\slshape S}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-          gap> G:=[[3,3],[4,4],[5,4],[4,6]];
-          [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ]
-          gap> C:=[6,6];
-          [ 6, 6 ]
-          gap> S:=GoodSemigroup(G,C);
-          <Good semigroup>
-          gap> SmallElements(S);
-          [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
-          gap> A:=ArfGoodSemigroupClosure(S);
-          <Good semigroup>
-          gap> SmallElements(A);
-          [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
+  !gapprompt@gap>| !gapinput@G:=[[3,3],[4,4],[5,4],[4,6]];|
+  [ [ 3, 3 ], [ 4, 4 ], [ 5, 4 ], [ 4, 6 ] ]
+  !gapprompt@gap>| !gapinput@C:=[6,6];|
+  [ 6, 6 ]
+  !gapprompt@gap>| !gapinput@S:=GoodSemigroup(G,C);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@SmallElements(S);|
+  [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
+  !gapprompt@gap>| !gapinput@A:=ArfGoodSemigroupClosure(S);|
+  <Good semigroup>
+  !gapprompt@gap>| !gapinput@SmallElements(A);|
+  [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
 \end{Verbatim}
  }
 
@@ -7369,7 +7372,7 @@ employed provided that singular is loaded. }
 \section{\textcolor{Chapter }{Functions implemented by G. Zito}}\logpage{[ "C", 5, 0 ]}
 \hyperdef{L}{X7FAE71B27B0E3889}{}
 {
- Giuseppe gave the algorithms for the current version fucntions \texttt{ArfNumericalSemigroupsWithFrobeniusNumber}, \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}, \texttt{ArfNumericalSemigroupsWithGenus} and \texttt{ArfNumericalSemigroupsWithGenusUpTo}. }
+ Giuseppe gave the algorithms for the current version fucntions \texttt{ArfNumericalSemigroupsWithFrobeniusNumber}, \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}, \texttt{ArfNumericalSemigroupsWithGenus} and \texttt{ArfNumericalSemigroupsWithGenusUpTo}, \texttt{ArfCharactersOfArfNumericalSemigroup}. }
 
  }
 

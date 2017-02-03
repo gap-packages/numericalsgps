@@ -68,6 +68,7 @@ InstallGlobalFunction(ArfNumericalSemigroupClosure, function(arg)
     od;
 end);
 
+
 #####################################################################
 ##
 #P IsArfNumericalSemigroup(s)
@@ -95,34 +96,50 @@ InstallTrueMethod(IsAcuteNumericalSemigroup,IsArfNumericalSemigroup);
 ##
 ## The argument s is an Arf numerical semigroup
 ## returns the minimal Arf-generating system of s.
-##
+## Implemented with G. Zito
 #############################################################################
 InstallMethod(MinimalArfGeneratingSystemOfArfNumericalSemigroup,
-        "Returns the minimal Arf-generating system of an Arf-semigroup",
-        [IsNumericalSemigroup],
-        function(s)
-    local   gen,  len,  ngen;
+  "Returns the minimal Arf-generating system of an Arf-semigroup",
+  [IsNumericalSemigroup],
+  function(s)
+    local char,  ms,  inarf,i,j,  m, r, b;
 
-    if not IsArfNumericalSemigroup(s) then
-        Error("s must be an Arf numerical semigroup");
-    fi;
-    gen := MinimalGeneratingSystemOfNumericalSemigroup(s);
-
-    len := Length(gen);
-    if len = 2 then
-        return gen;
-    fi;
-
-    while len >= 2 do
-        ngen  := Difference(gen, [gen[len]]);
-        if Gcd(ngen) = 1 and s = ArfNumericalSemigroupClosure(ngen) then
-            gen := ngen;
-            len := len - 1;
-        else
-            len := len -1;
+    # tests whether x is in the Arf semigroup with multiplicity
+    # sequence j
+    inarf:=function(x,j)
+        local l;
+        if x>Sum(j) then
+          return true;
         fi;
+        if x=0 then
+          return true;
+        fi;
+        if x<j[1] then
+          return false;
+        fi;
+        l:=List([1..Length(j)], i-> Sum(j{[1..i]}));
+        return x in l;
+    end;
+
+
+    if not(IsArfNumericalSemigroup(s)) then
+      Error("The argument must be an Arf numerical semigroup");
+    fi;
+
+    ms:=Concatenation(MultiplicitySequenceOfNumericalSemigroup(s),[1]);
+    r:=List(ms,_->0);
+    for i in [1..Length(ms)] do
+      b:=First([i+1..Length(ms)], j->ms[i]=Sum(ms{[i+1..j]}));
+      if b=fail then
+        b:=Length(ms);
+      fi;
+      for j in [i+1..b] do
+        r[j]:=r[j]+1;
+      od;
     od;
-    return gen;
+    i:=Filtered([1..Length(ms)-1], j->r[j]<r[j+1]);
+    return List(i, j->Sum(ms{[1..j]}));
+
 end);
 
 #####################################################################
