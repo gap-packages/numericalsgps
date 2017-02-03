@@ -116,7 +116,11 @@ gap> MinimalGenerators(last);
                     <Func Arg="S" Name="MinimalArfGeneratingSystemOfArfNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is an Arf numerical semigroup.
+
                         Returns the minimal Arf generating system of <A>S</A>.
+
+                        The current version of this algorithm is due to G. Zito.
+
                         <Example><![CDATA[
 gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup(
 > NumericalSemigroup(3,7,8));
