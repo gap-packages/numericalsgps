@@ -30,7 +30,6 @@
 DeclareGlobalFunction("ArfNumericalSemigroupClosure");
 
 
-
 #####################################################################
 ##
 #P IsArfNumericalSemigroup(s)
@@ -52,7 +51,7 @@ DeclareSynonymAttr("IsArfNumericalSemigroup",IsArf);
 ##
 #############################################################################
 DeclareAttribute("MinimalArfGeneratingSystemOfArfNumericalSemigroup", IsNumericalSemigroup);
-
+DeclareSynonymAttr("ArfCharactersOfArfNumericalSemigroup",MinimalArfGeneratingSystemOfArfNumericalSemigroup);
 
 #####################################################################
 ##

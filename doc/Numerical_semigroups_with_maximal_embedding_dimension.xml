@@ -112,6 +112,7 @@ gap> MinimalGenerators(last);
                 </ManSection>
 
                 <ManSection>
+                  <Func Arg="S" Name="ArfCharactersOfArfNumericalSemigroup"></Func>
                     <Func Arg="S" Name="MinimalArfGeneratingSystemOfArfNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is an Arf numerical semigroup.
