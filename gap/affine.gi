@@ -1339,6 +1339,7 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
         ReadPackage("numericalsgps/gap/polynomials-extra-s.gd");
         ReadPackage("numericalsgps/gap/polynomials-extra-s.gi");
         NumSgpsCanUseSingular:=true;
+        GBASIS:= SINGULARGBASIS;
         if NumSgpsCanUse4ti2 then
           ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
         fi;
