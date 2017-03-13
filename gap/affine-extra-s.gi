@@ -129,7 +129,7 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   	SingularSetBaseRing(R);
   	SetTermOrdering(R,ord);
   	ie:=Ideal(R,gens);
-  	gens:=GroebnerBasis(ie);
+  	gens:=GroebnerBasis(ie, ord);
   	SingularSetBaseRing(Rtmp);
   	return Set([1..Length(gens)],i->bintopair(gens[i]));
   end);

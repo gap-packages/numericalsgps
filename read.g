@@ -79,6 +79,7 @@ else
         ReadPackage( "numericalsgps", "gap/polynomials-extra-s.gd" );
         ReadPackage( "numericalsgps", "gap/polynomials-extra-s.gi" );
         Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
+        GBASIS:= SINGULARGBASIS;
         if NumSgpsCanUse4ti2 then
           ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
         fi;
