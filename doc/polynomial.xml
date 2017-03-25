@@ -116,6 +116,7 @@ true
             <A>p</A> is a polynomial.
             Detects if  <A>p</A> is a Kronecker polynomial, that is, a monic polynomial with integer coefficients having all its roots in the unit circumference, or equivalently, a product of cyclotomic polynomials.
 
+						The current implementation has been done with A. Herrera-Poyatos, following <Cite Key="BD-cyclotomic"></Cite>.
             <Example><![CDATA[
 gap> x:=X(Rationals,"x");;
 gap>  s:=NumericalSemigroup(3,5,7);;
@@ -155,6 +156,7 @@ true
             <A>p</A> is a univariate polynomial.
             Detects if  <A>p</A> is selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <Cite Key="M"></Cite>.
 
+						The current implementation is due to A. Herrera-Poyatos.
             <Example><![CDATA[
 gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;
 gap> x:=X(Rationals,"x");;
