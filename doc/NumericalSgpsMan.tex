@@ -4713,7 +4713,8 @@ The output is the numerical semigroup $S$ such that \mbox{\texttt{\mdseries\slsh
 
  \mbox{\texttt{\mdseries\slshape p}} is a polynomial. Detects if \mbox{\texttt{\mdseries\slshape p}} is a Kronecker polynomial, that is, a monic polynomial with integer
 coefficients having all its roots in the unit circumference, or equivalently,
-a product of cyclotomic polynomials. 
+a product of cyclotomic polynomials. The current implementation has been done
+with A. Herrera-Poyatos, following \cite{BD-cyclotomic}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
   !gapprompt@gap>| !gapinput@ s:=NumericalSemigroup(3,5,7);;|
@@ -4758,7 +4759,7 @@ a product of cyclotomic polynomials.
 
 
  \mbox{\texttt{\mdseries\slshape p}} is a univariate polynomial. Detects if \mbox{\texttt{\mdseries\slshape p}} is selfreciprocal. A numerical semigroup is symmetric if and only if it is
-selfreciprocal, \cite{M}. 
+selfreciprocal, \cite{M}. The current implementation is due to A. Herrera-Poyatos. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(13);;|
   !gapprompt@gap>| !gapinput@x:=X(Rationals,"x");;|
@@ -7373,6 +7374,12 @@ employed provided that singular is loaded. }
 \hyperdef{L}{X7FAE71B27B0E3889}{}
 {
  Giuseppe gave the algorithms for the current version fucntions \texttt{ArfNumericalSemigroupsWithFrobeniusNumber}, \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}, \texttt{ArfNumericalSemigroupsWithGenus} and \texttt{ArfNumericalSemigroupsWithGenusUpTo}, \texttt{ArfCharactersOfArfNumericalSemigroup}. }
+
+ 
+\section{\textcolor{Chapter }{Functions implemented by A. Herrera-Poyatos}}\logpage{[ "C", 6, 0 ]}
+\hyperdef{L}{X85067C3383705D0B}{}
+{
+ Andr{\a'e}s Herrera-Poyatos gave new implementations of \texttt{IsSelfReciprocalUnivariatePolynomial} and \texttt{IsKroneckerPolynomial} }
 
  }
 

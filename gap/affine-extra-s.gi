@@ -10,6 +10,11 @@
 #    LoadPackage("singular");
 #fi;
 
+# we will always use Gröbner by Singular package which is faster
+
+GBASIS:= SINGULARGBASIS;
+
+
 ############################################################
 # computes a set of generators of the kernel congruence
 # of the monoid morphism associated to the matrix m with
