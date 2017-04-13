@@ -1903,9 +1903,9 @@ to a semigroup (see \cite{RGGJ03}).
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
   !gapprompt@gap>| !gapinput@ns1 := NumericalSemigroup(5,7);;|
   !gapprompt@gap>| !gapinput@ns2 := NumericalSemigroup(7,11,12);;|
-  !gapprompt@gap>| !gapinput@Difference(ns1,ns2);                |
+  !gapprompt@gap>| !gapinput@Difference(ns1,ns2);|
   [ 5, 10, 15, 17, 20, 27 ]
-  !gapprompt@gap>| !gapinput@Difference(ns2,ns1);                |
+  !gapprompt@gap>| !gapinput@Difference(ns2,ns1);|
   [ 11, 18, 23 ]
   !gapprompt@gap>| !gapinput@DifferenceOfNumericalSemigroups(ns2,ns1);|
   [ 11, 18, 23 ]
@@ -1922,7 +1922,7 @@ to a semigroup (see \cite{RGGJ03}).
 }\hfill{\scriptsize (function)}}\\
 
 
- \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, and \mbox{\texttt{\mdseries\slshape E}} and ideal of \mbox{\texttt{\mdseries\slshape S}} with $E\subseteq S$, and \mbox{\texttt{\mdseries\slshape b}} are positive odd integer in \mbox{\texttt{\mdseries\slshape S}}. Computes $2S\cup (2E+b)$. 
+ \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup, and \mbox{\texttt{\mdseries\slshape E}} and ideal of \mbox{\texttt{\mdseries\slshape S}} with $E\subseteq S$, and \mbox{\texttt{\mdseries\slshape b}} is a positive odd integer, so that $2S\cup (2E+b)$ is a numerical semigroup (this extends slightly the original definition where \mbox{\texttt{\mdseries\slshape b}} was imposed to be in \mbox{\texttt{\mdseries\slshape S}}, \cite{duplication}). Computes $2S\cup (2E+b)$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
         gap> s:=NumericalSemigroup(3,5,7);
         <Numerical semigroup with 3 generators>

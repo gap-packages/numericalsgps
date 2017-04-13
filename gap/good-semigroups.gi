@@ -22,9 +22,13 @@ InstallGlobalFunction(NumericalDuplication, function(S,E,b)
       Error("The third argument must be an integer");
     fi;
 
-    if not(b in S) then
-      Error("The third argument must belong to the first argument");
+    if not(b mod 2=1) then
+      Error("The third argument must be an odd integer");
     fi;
+
+    # if not(b in S) then
+    #   Error("The third argument must belong to the first argument");
+    # fi;
 
     mgsE:=MinimalGeneratingSystem(E);
     if not(ForAll(mgsE, x -> x in S)) then
@@ -36,6 +40,9 @@ InstallGlobalFunction(NumericalDuplication, function(S,E,b)
     smallS:=SmallElements(doubS);
     smallE:=SmallElements(E);
     small:=Union(smallS,2*smallE+b);
+    if not(RepresentsSmallElementsOfNumericalSemigroup(small)) then
+      Error("The third argument does not define a numerical semigroup");
+    fi;
     return NumericalSemigroupBySmallElements(small);
 
 end);

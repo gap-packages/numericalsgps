@@ -56,24 +56,24 @@ egers\033[133X\033[101X", "5.2", [ 5, 2, 0 ], 52, 32,
   [ 
       "\033[1X\033[33X\033[0;-2YConstructing the set of all numerical semigroups \
 containing a given numerical semigroup\033[133X\033[101X", "5.3", 
-      [ 5, 3, 0 ], 169, 34, 
+      [ 5, 3, 0 ], 171, 34, 
       "constructing the set of all numerical semigroups containing a given num\
 erical semigroup", "X867D9A9A87CEB869" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YConstructing the set of numerical semigroup with \
-given Frobenius number\033[133X\033[101X", "5.4", [ 5, 4, 0 ], 198, 34, 
+given Frobenius number\033[133X\033[101X", "5.4", [ 5, 4, 0 ], 200, 34, 
       "constructing the set of numerical semigroup with given frobenius number\
 ", "X7F40052D7B0EC8ED" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YConstructing the set of numerical semigroups with\
  genus g, that is, numerical semigroups with exactly g gaps\033[133X\033[101X"
-        , "5.5", [ 5, 5, 0 ], 214, 35, 
+        , "5.5", [ 5, 5, 0 ], 216, 35, 
       "constructing the set of numerical semigroups with genus g that is numer\
 ical semigroups with exactly g gaps", "X85725F5287D20CBB" ], 
   [ 
       "\033[1X\033[33X\033[0;-2YConstructing the set of numerical semigroups with\
  a given set of pseudo-Frobenius numbers\033[133X\033[101X", "5.6", 
-      [ 5, 6, 0 ], 252, 35, 
+      [ 5, 6, 0 ], 254, 35, 
       "constructing the set of numerical semigroups with a given set of pseudo\
 -frobenius numbers", "X8265233586477CC7" ], 
   [ 
@@ -519,25 +519,25 @@ icity)", "3.1-7", [ 3, 1, 7 ], 136, 20,
       119, 33, "differenceofnumericalsemigroups", "X825AC0F07E010B07" ], 
   [ "\033[2XNumericalDuplication\033[102X", "5.2-5", [ 5, 2, 5 ], 137, 33, 
       "numericalduplication", "X7F395079839BBE9D" ], 
-  [ "\033[2XInductiveNumericalSemigroup\033[102X", "5.2-6", [ 5, 2, 6 ], 155, 
+  [ "\033[2XInductiveNumericalSemigroup\033[102X", "5.2-6", [ 5, 2, 6 ], 157, 
       34, "inductivenumericalsemigroup", "X7DCEC67A82130CD8" ], 
   [ "\033[2XOverSemigroupsNumericalSemigroup\033[102X", "5.3-1", [ 5, 3, 1 ], 
-      182, 34, "oversemigroupsnumericalsemigroup", "X7EEA97AB85FE078C" ], 
+      184, 34, "oversemigroupsnumericalsemigroup", "X7EEA97AB85FE078C" ], 
   [ "\033[2XNumericalSemigroupsWithFrobeniusNumber\033[102X", "5.4-1", 
-      [ 5, 4, 1 ], 201, 34, "numericalsemigroupswithfrobeniusnumber", 
+      [ 5, 4, 1 ], 203, 34, "numericalsemigroupswithfrobeniusnumber", 
       "X87369D567AA6DBA0" ], 
   [ "\033[2XNumericalSemigroupsWithGenus\033[102X", "5.5-1", [ 5, 5, 1 ], 
-      225, 35, "numericalsemigroupswithgenus", "X86970F6A868DEA95" ], 
+      227, 35, "numericalsemigroupswithgenus", "X86970F6A868DEA95" ], 
   [ "\033[2XForcedIntegersForPseudoFrobenius\033[102X", "5.6-1", [ 5, 6, 1 ], 
-      260, 35, "forcedintegersforpseudofrobenius", "X874B252180BD7EB4" ], 
+      262, 35, "forcedintegersforpseudofrobenius", "X874B252180BD7EB4" ], 
   [ "\033[2XSimpleForcedIntegersForPseudoFrobenius\033[102X", "5.6-2", 
-      [ 5, 6, 2 ], 287, 36, "simpleforcedintegersforpseudofrobenius", 
+      [ 5, 6, 2 ], 289, 36, "simpleforcedintegersforpseudofrobenius", 
       "X87AAFFF9814E9BD2" ], 
   [ "\033[2XNumericalSemigroupsWithPseudoFrobeniusNumbers\033[102X", "5.6-3", 
-      [ 5, 6, 3 ], 321, 36, "numericalsemigroupswithpseudofrobeniusnumbers", 
+      [ 5, 6, 3 ], 323, 36, "numericalsemigroupswithpseudofrobeniusnumbers", 
       "X7D6775A57B800892" ], 
   [ "\033[2XANumericalSemigroupWithPseudoFrobeniusNumbers\033[102X", "5.6-4", 
-      [ 5, 6, 4 ], 345, 37, "anumericalsemigroupwithpseudofrobeniusnumbers", 
+      [ 5, 6, 4 ], 347, 37, "anumericalsemigroupwithpseudofrobeniusnumbers", 
       "X862DBFA379D52E2C" ], 
   [ "\033[2XIsIrreducibleNumericalSemigroup\033[102X", "6.1-1", [ 6, 1, 1 ], 
       33, 38, "isirreduciblenumericalsemigroup", "X87D62468791EDE8A" ], 

@@ -210,9 +210,9 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns1 := NumericalSemigroup(5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ns2 := NumericalSemigroup(7,11,12);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ns1,ns2);                </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ns1,ns2);</span>
 [ 5, 10, 15, 17, 20, 27 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ns2,ns1);                </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ns2,ns1);</span>
 [ 11, 18, 23 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DifferenceOfNumericalSemigroups(ns2,ns1);</span>
 [ 11, 18, 23 ]
@@ -223,7 +223,7 @@ true
 <h5>5.2-5 NumericalDuplication</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalDuplication</code>( <var class="Arg">S</var>, <var class="Arg">E</var>, <var class="Arg">b</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">E</var> and ideal of <var class="Arg">S</var> with <span class="SimpleMath">E⊆ S</span>, and <var class="Arg">b</var> are positive odd integer in <var class="Arg">S</var>. Computes <span class="SimpleMath">2S∪ (2E+b)</span>.</p>
+<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">E</var> and ideal of <var class="Arg">S</var> with <span class="SimpleMath">E⊆ S</span>, and <var class="Arg">b</var> is a positive odd integer, so that <span class="SimpleMath">2S∪ (2E+b)</span> is a numerical semigroup (this extends slightly the original definition where <var class="Arg">b</var> was imposed to be in <var class="Arg">S</var>, <a href="chapBib.html#biBduplication">[DS13]</a>). Computes <span class="SimpleMath">2S∪ (2E+b)</span>.</p>
 
 
 <div class="example"><pre>
