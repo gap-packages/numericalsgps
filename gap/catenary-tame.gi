@@ -1190,16 +1190,18 @@ end);
 ## returns the denumerant
 ########################################
 InstallGlobalFunction(DenumerantOfElementInNumericalSemigroup, function(x,s)
+    local gen;
 
     if not IsNumericalSemigroup(s) then
         Error("The second argument must be a numerical semigroup.\n");
     fi;
 
+
     if not ( x in s ) then
 		return 0;
     fi;
-
-	return Length(FactorizationsElementWRTNumericalSemigroup(x,s));
+    gen:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+	  return NrRestrictedPartitions(x,gen);
 end);
 
 ####################################################################
