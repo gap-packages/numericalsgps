@@ -12,7 +12,7 @@
 ## returns 2S\cup(2E+b)
 ####################################################
 InstallGlobalFunction(NumericalDuplication, function(S,E,b)
-    local smallS, doubS, smallE, f, small, mgsE;
+    local smallS, doubS, smallE, f, small, mgsE, mgsS;
 
     if not(IsNumericalSemigroup(S)) or not(IsIdealOfNumericalSemigroup(E)) then
       Error("The first argument must be a numerical semigroup, and the second an ideal");
@@ -31,9 +31,17 @@ InstallGlobalFunction(NumericalDuplication, function(S,E,b)
     # fi;
 
     mgsE:=MinimalGeneratingSystem(E);
-    if not(ForAll(mgsE, x -> x in S)) then
-      Error("The second argument must be a integral ideal of the first");
+    # if not(ForAll(mgsE, x -> x in S)) then
+    #   Error("The second argument must be a integral ideal of the first");
+    # fi;
+
+    mgsS:=MinimalGenerators(S);
+
+    if not(ForAll(Cartesian(mgsE,mgsE), p->Sum(p)+b in S)) then
+      Error("The arguments do not define a semigroup (E+E+b is not included in S)");
     fi;
+
+    return NumericalSemigroup(Union(2*mgsS, 2*mgsE+b));
 
     f:=2*Conductor(E)+b;
     doubS:=MultipleOfNumericalSemigroup(S,2,f);

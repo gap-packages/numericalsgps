@@ -88,7 +88,7 @@ gap> DifferenceOfNumericalSemigroups(ns2,ns1);
   <Func Name="NumericalDuplication" Arg="S, E, b"/>
   <Description>
     <A>S</A> is a numerical semigroup, and <A>E</A> and ideal of <A>S</A> with <M>E\subseteq S</M>, and <A>b</A> is a positive odd integer, so that <M>2S\cup (2E+b)</M> is a numerical semigroup
-    (this extends slightly the original definition where <A>b</A> was imposed to be in <A>S</A>, <Cite Key="duplication"></Cite>). 
+    (this extends slightly the original definition where <A>b</A> was imposed to be in <A>S</A>, <Cite Key="duplication"></Cite>; now the condition imposed is <M>E+E+b\subseteq S</M>). 
 
     Computes  <M>2S\cup (2E+b)</M>.
     <Example><![CDATA[
