@@ -507,6 +507,41 @@ gap> SmallElementsOfNumericalSemigroup(last);
 </Description>
 </ManSection>
 
+
+                <ManSection>
+                    <Func Arg="I" Name="RatliffRushNumberOfIdealOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup.
+                        The output is the least integer
+                        such that  <M>(n+1)<A>I</A>-n<A>I</A></M> is the Ratliff-Rush closure of <A>I</A>.
+
+                        <Example><![CDATA[
+gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
+gap> RatliffRushNumberOfIdealOfNumericalSemigroup(I);
+1
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Arg="I" Name="RatliffRushClosureOfIdealOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup.
+                        The output is the Ratliff-Rush closure of <A>I</A>:  <M>\bigcup_{n\in \mathbb{N}}(n+1)<A>I</A>-n<A>I</A></M> (see <Cite Key="DA-G-H"></Cite>).
+
+                        <Example><![CDATA[
+gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
+gap> RatliffRushClosureOfIdealOfNumericalSemigroup(I);
+<Ideal of numerical semigroup>
+gap> MinimalGenerators(last);
+[ 0, 2, 4 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+
 <ManSection>
     <Func Name="MultiplicitySequenceOfNumericalSemigroup" Arg="S"/>
     <Description>

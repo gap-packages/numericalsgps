@@ -299,6 +299,24 @@ DeclareSynonymAttr("IsCanonicalIdealOfNumericalSemigroup", IsCanonicalIdeal);
 #############################################################################
 DeclareGlobalFunction("ReductionNumberIdealNumericalSemigroup");
 
+#############################################################################
+##
+#F  RatliffRushClosureOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the the union of all (n+1)I-nI with n nonnegative integers
+##
+#############################################################################
+DeclareGlobalFunction("RatliffRushClosureOfIdealOfNumericalSemigroup");
+
+#############################################################################
+##
+#F  RatliffRushNumberOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the least nonnegative integer such that
+##  (n+1)I-nI is the Ratliff-Rush closure of I, see [DA-G-H].
+##
+#############################################################################
+DeclareGlobalFunction("RatliffRushNumberOfIdealOfNumericalSemigroup");
 
 #############################################################################
 ##
