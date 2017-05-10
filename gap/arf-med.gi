@@ -641,7 +641,7 @@ InstallMethod(IsSaturatedNumericalSemigroup,
 
 end);
 
-InstallMethod(IsSaturated,
+InstallOtherMethod(IsSaturated,
   "Tests if a Numerical Semigroup is a saturated semigroup",
   [IsNumericalSemigroup],IsSaturatedNumericalSemigroup);
 #solution by Sebastian Gutsche to
