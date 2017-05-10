@@ -202,6 +202,9 @@ InstallGlobalFunction(IrreducibleNumericalSemigroupsWithFrobeniusNumber, functio
         irr:=Union(irr,lsons);
         B:=Union(B,lsons);
     od;
+    for s in irr do
+      Setter(IsIrreducibleNumericalSemigroup)(s,true);
+    od;
     return irr;
 end);
 
@@ -260,7 +263,7 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(DecomposeIntoIrreducibles, function(s)
-    local   sg,  caux,  I,  C,  B,  pair,  i,  I2,  j,  l;
+    local   sg,  caux,  I,  C,  B,  pair,  i,  I2,  j,  l, dec, sd;
 
     #sg contains the special gaps of s
     #B auxiliar ser used to construct C and I
@@ -331,7 +334,8 @@ InstallGlobalFunction(DecomposeIntoIrreducibles, function(s)
         I := I2;
         Unbind(I2);
     od;
-    return(List(I, x -> x[1]));
+    dec:=List(I, x -> x[1]);
+    return dec;
 end);
 
 
