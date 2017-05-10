@@ -20,7 +20,7 @@
 InstallGlobalFunction(GoodIdeal, function(l,S)
   local  I, sm, sms, c, cs, min, le, inf, x, conG2, cn;
       if not (IsGoodSemigroup(S) and IsHomogeneousList(l)) then
-        Error("The arguments of IdealOfNumericalSemigroup must be a numerical semigroup and a nonempty list of integers.");
+        Error("The arguments of GoodIdeal must be a good semigroup and a nonempty list of vectors.");
     fi;
     if not(ForAll(l, x->IsList(x) and ForAll(x,IsInt))) then
       Error("The first argument must be a list of pairs of integers");
