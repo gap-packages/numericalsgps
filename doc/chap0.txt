@@ -227,29 +227,32 @@
       7.1-6 IsIntegral
       7.1-7 SmallElements
       7.1-8 Conductor
-      7.1-9 BelongsToIdealOfNumericalSemigroup
-      7.1-10 SumIdealsOfNumericalSemigroup
-      7.1-11 MultipleOfIdealOfNumericalSemigroup
-      7.1-12 SubtractIdealsOfNumericalSemigroup
-      7.1-13 Difference
-      7.1-14 TranslationOfIdealOfNumericalSemigroup
-      7.1-15 Intersection
-      7.1-16 MaximalIdealOfNumericalSemigroup
-      7.1-17 CanonicalIdealOfNumericalSemigroup
-      7.1-18 IsCanonicalIdeal
+      7.1-9 Minimum
+      7.1-10 BelongsToIdealOfNumericalSemigroup
+      7.1-11 SumIdealsOfNumericalSemigroup
+      7.1-12 MultipleOfIdealOfNumericalSemigroup
+      7.1-13 SubtractIdealsOfNumericalSemigroup
+      7.1-14 Difference
+      7.1-15 TranslationOfIdealOfNumericalSemigroup
+      7.1-16 Intersection
+      7.1-17 MaximalIdealOfNumericalSemigroup
+      7.1-18 CanonicalIdealOfNumericalSemigroup
+      7.1-19 IsCanonicalIdeal
     7.2 [33X[0;0YOther functions for ideals[133X
       7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
       7.2-2 BlowUpIdealOfNumericalSemigroup
       7.2-3 ReductionNumberIdealNumericalSemigroup
       7.2-4 BlowUpOfNumericalSemigroup
       7.2-5 LipmanSemigroup
-      7.2-6 MultiplicitySequenceOfNumericalSemigroup
-      7.2-7 MicroInvariantsOfNumericalSemigroup
-      7.2-8 IsGradedAssociatedRingNumericalSemigroupCM
-      7.2-9 IsMonomialNumericalSemigroup
-      7.2-10 AperyListOfIdealOfNumericalSemigroupWRTElement
-      7.2-11 AperyTableOfNumericalSemigroup
-      7.2-12 StarClosureOfIdealOfNumericalSemigroup
+      7.2-6 RatliffRushNumberOfIdealOfNumericalSemigroup
+      7.2-7 RatliffRushClosureOfIdealOfNumericalSemigroup
+      7.2-8 MultiplicitySequenceOfNumericalSemigroup
+      7.2-9 MicroInvariantsOfNumericalSemigroup
+      7.2-10 IsGradedAssociatedRingNumericalSemigroupCM
+      7.2-11 IsMonomialNumericalSemigroup
+      7.2-12 AperyListOfIdealOfNumericalSemigroupWRTElement
+      7.2-13 AperyTableOfNumericalSemigroup
+      7.2-14 StarClosureOfIdealOfNumericalSemigroup
   8 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
     8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
       8.1-1 IsMED

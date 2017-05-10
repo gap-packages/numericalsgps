@@ -20,6 +20,7 @@ end);
 #######################################################################
 InstallGlobalFunction(NumSgpsTest,
         function()
+  SetInfoLevel(InfoNumSgps, 0);
   Test(Concatenation(PackageInfo("numericalsgps")[1]!.
           InstallationPath, "/tst/testall.tst"),rec(compareFunction:="uptowhitespace"));
 end);
