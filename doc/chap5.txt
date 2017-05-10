@@ -149,7 +149,7 @@
     [4X[28X      gap> e:=6+s;[128X[104X
     [4X[28X      <Ideal of numerical semigroup>[128X[104X
     [4X[28X      gap> ndup:=NumericalDuplication(s,e,3);[128X[104X
-    [4X[28X      <Numerical semigroup>[128X[104X
+    [4X[28X      <Numerical semigroup with 4 generators>[128X[104X
     [4X[28X      gap> SmallElements(ndup);[128X[104X
     [4X[28X      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ][128X[104X
   [4X[32X[104X

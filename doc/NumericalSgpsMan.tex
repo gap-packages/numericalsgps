@@ -1929,7 +1929,7 @@ to a semigroup (see \cite{RGGJ03}).
         gap> e:=6+s;
         <Ideal of numerical semigroup>
         gap> ndup:=NumericalDuplication(s,e,3);
-        <Numerical semigroup>
+        <Numerical semigroup with 4 generators>
         gap> SmallElements(ndup);
         [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
 \end{Verbatim}
@@ -2859,8 +2859,26 @@ plus one.
 
  
 
-\subsection{\textcolor{Chapter }{BelongsToIdealOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{Minimum (minimum of ideal of numerical semigroup)}}
 \logpage{[ 7, 1, 9 ]}\nobreak
+\hyperdef{L}{X821919B47D3D191A}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Minimum({\mdseries\slshape I})\index{Minimum@\texttt{Minimum}!minimum of ideal of numerical semigroup}
+\label{Minimum:minimum of ideal of numerical semigroup}
+}\hfill{\scriptsize (operation)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. The output is the minimum of \mbox{\texttt{\mdseries\slshape I}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@J:=[2,11]+NumericalSemigroup(2,11);;|
+  !gapprompt@gap>| !gapinput@Minimum(J);|
+  2
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{BelongsToIdealOfNumericalSemigroup}}
+\logpage{[ 7, 1, 10 ]}\nobreak
 \hyperdef{L}{X87508E7A7CFB0B20}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BelongsToIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{BelongsToIdealOfNumericalSemigroup@\texttt{BelongsToIdealOfNumericalSemigroup}}
 \label{BelongsToIdealOfNumericalSemigroup}
@@ -2889,7 +2907,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{SumIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 10 ]}\nobreak
+\logpage{[ 7, 1, 11 ]}\nobreak
 \hyperdef{L}{X7B39610D7AD5A654}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SumIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{SumIdealsOfNumericalSemigroup@\texttt{SumIdealsOfNumericalSemigroup}}
 \label{SumIdealsOfNumericalSemigroup}
@@ -2917,7 +2935,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{MultipleOfIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 11 ]}\nobreak
+\logpage{[ 7, 1, 12 ]}\nobreak
 \hyperdef{L}{X857FE5C57EE98F5E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultipleOfIdealOfNumericalSemigroup({\mdseries\slshape n, I})\index{MultipleOfIdealOfNumericalSemigroup@\texttt{MultipleOfIdealOfNumericalSemigroup}}
 \label{MultipleOfIdealOfNumericalSemigroup}
@@ -2940,7 +2958,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{SubtractIdealsOfNumericalSemigroup}}
-\logpage{[ 7, 1, 12 ]}\nobreak
+\logpage{[ 7, 1, 13 ]}\nobreak
 \hyperdef{L}{X78743CE2845B5860}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SubtractIdealsOfNumericalSemigroup({\mdseries\slshape I, J})\index{SubtractIdealsOfNumericalSemigroup@\texttt{SubtractIdealsOfNumericalSemigroup}}
 \label{SubtractIdealsOfNumericalSemigroup}
@@ -2971,7 +2989,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{Difference}}
-\logpage{[ 7, 1, 13 ]}\nobreak
+\logpage{[ 7, 1, 14 ]}\nobreak
 \hyperdef{L}{X825AC0F07E010B07}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Difference({\mdseries\slshape I, J})\index{Difference@\texttt{Difference}}
 \label{Difference}
@@ -3006,7 +3024,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{TranslationOfIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 14 ]}\nobreak
+\logpage{[ 7, 1, 15 ]}\nobreak
 \hyperdef{L}{X803921F97BEDCA88}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TranslationOfIdealOfNumericalSemigroup({\mdseries\slshape k, I})\index{TranslationOfIdealOfNumericalSemigroup@\texttt{Translation}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{TranslationOfIdealOfNumericalSemigroup}
@@ -3036,7 +3054,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{Intersection}}
-\logpage{[ 7, 1, 15 ]}\nobreak
+\logpage{[ 7, 1, 16 ]}\nobreak
 \hyperdef{L}{X851069107CACF98E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Intersection({\mdseries\slshape S, T})\index{Intersection@\texttt{Intersection}}
 \label{Intersection}
@@ -3058,7 +3076,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{MaximalIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 16 ]}\nobreak
+\logpage{[ 7, 1, 17 ]}\nobreak
 \hyperdef{L}{X829EACA378BE3665}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MaximalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{MaximalIdealOfNumericalSemigroup@\texttt{MaximalIdealOfNumericalSemigroup}}
 \label{MaximalIdealOfNumericalSemigroup}
@@ -3075,7 +3093,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{CanonicalIdealOfNumericalSemigroup}}
-\logpage{[ 7, 1, 17 ]}\nobreak
+\logpage{[ 7, 1, 18 ]}\nobreak
 \hyperdef{L}{X835890A078F5D6DC}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CanonicalIdealOfNumericalSemigroup({\mdseries\slshape S})\index{CanonicalIdealOfNumericalSemigroup@\texttt{CanonicalIdealOfNumericalSemigroup}}
 \label{CanonicalIdealOfNumericalSemigroup}
@@ -3100,7 +3118,7 @@ plus one.
  
 
 \subsection{\textcolor{Chapter }{IsCanonicalIdeal}}
-\logpage{[ 7, 1, 18 ]}\nobreak
+\logpage{[ 7, 1, 19 ]}\nobreak
 \hyperdef{L}{X7D15FA4C843A13B7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsCanonicalIdeal({\mdseries\slshape E})\index{IsCanonicalIdeal@\texttt{IsCanonicalIdeal}}
 \label{IsCanonicalIdeal}
@@ -3236,8 +3254,48 @@ numerical semigroup $\bigcup_{n\geq 0} n\mbox{\texttt{\mdseries\slshape M}}-n\mb
 
  
 
-\subsection{\textcolor{Chapter }{MultiplicitySequenceOfNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{RatliffRushNumberOfIdealOfNumericalSemigroup}}
 \logpage{[ 7, 2, 6 ]}\nobreak
+\hyperdef{L}{X78E6D3C186ADBC75}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RatliffRushNumberOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{RatliffRushNumberOfIdealOfNumericalSemigroup@\texttt{Ratliff}\-\texttt{Rush}\-\texttt{Number}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{RatliffRushNumberOfIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. The output is the least integer such
+that $(n+1)\mbox{\texttt{\mdseries\slshape I}}-n\mbox{\texttt{\mdseries\slshape I}}$ is the Ratliff-Rush closure of \mbox{\texttt{\mdseries\slshape I}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@I:=[0,2]+NumericalSemigroup(6,9,11);;|
+  !gapprompt@gap>| !gapinput@RatliffRushNumberOfIdealOfNumericalSemigroup(I);|
+  1
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{RatliffRushClosureOfIdealOfNumericalSemigroup}}
+\logpage{[ 7, 2, 7 ]}\nobreak
+\hyperdef{L}{X83447F927F6ED581}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{RatliffRushClosureOfIdealOfNumericalSemigroup({\mdseries\slshape I})\index{RatliffRushClosureOfIdealOfNumericalSemigroup@\texttt{Ratliff}\-\texttt{Rush}\-\texttt{Closure}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{RatliffRushClosureOfIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. The output is the Ratliff-Rush closure
+of \mbox{\texttt{\mdseries\slshape I}}: $\bigcup_{n\in \mathbb{N}}(n+1)\mbox{\texttt{\mdseries\slshape I}}-n\mbox{\texttt{\mdseries\slshape I}}$ (see \cite{DA-G-H}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@I:=[0,2]+NumericalSemigroup(6,9,11);;|
+  !gapprompt@gap>| !gapinput@RatliffRushClosureOfIdealOfNumericalSemigroup(I);|
+  <Ideal of numerical semigroup>
+  !gapprompt@gap>| !gapinput@MinimalGenerators(last);|
+  [ 0, 2, 4 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{MultiplicitySequenceOfNumericalSemigroup}}
+\logpage{[ 7, 2, 8 ]}\nobreak
 \hyperdef{L}{X84CE79C3832CFEE7}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MultiplicitySequenceOfNumericalSemigroup({\mdseries\slshape S})\index{MultiplicitySequenceOfNumericalSemigroup@\texttt{Multiplicity}\-\texttt{Sequence}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{MultiplicitySequenceOfNumericalSemigroup}
@@ -3257,7 +3315,7 @@ sequence $S\subseteq L(S)\subseteq \cdots \subseteq \mathbb{N}$, where $L(\cdot)
  
 
 \subsection{\textcolor{Chapter }{MicroInvariantsOfNumericalSemigroup}}
-\logpage{[ 7, 2, 7 ]}\nobreak
+\logpage{[ 7, 2, 9 ]}\nobreak
 \hyperdef{L}{X7B29CDA7783FC0D2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MicroInvariantsOfNumericalSemigroup({\mdseries\slshape S})\index{MicroInvariantsOfNumericalSemigroup@\texttt{MicroInvariantsOfNumericalSemigroup}}
 \label{MicroInvariantsOfNumericalSemigroup}
@@ -3281,7 +3339,7 @@ sequence $S\subseteq L(S)\subseteq \cdots \subseteq \mathbb{N}$, where $L(\cdot)
  
 
 \subsection{\textcolor{Chapter }{IsGradedAssociatedRingNumericalSemigroupCM}}
-\logpage{[ 7, 2, 8 ]}\nobreak
+\logpage{[ 7, 2, 10 ]}\nobreak
 \hyperdef{L}{X7876199778D6B320}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsGradedAssociatedRingNumericalSemigroupCM({\mdseries\slshape S})\index{IsGradedAssociatedRingNumericalSemigroupCM@\texttt{IsGraded}\-\texttt{Associated}\-\texttt{Ring}\-\texttt{Numerical}\-\texttt{SemigroupCM}}
 \label{IsGradedAssociatedRingNumericalSemigroupCM}
@@ -3317,7 +3375,7 @@ algorithm given in \cite{BF06}.
   
 
 \subsection{\textcolor{Chapter }{IsMonomialNumericalSemigroup}}
-\logpage{[ 7, 2, 9 ]}\nobreak
+\logpage{[ 7, 2, 11 ]}\nobreak
 \hyperdef{L}{X7A04B8887F493733}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMonomialNumericalSemigroup({\mdseries\slshape S})\index{IsMonomialNumericalSemigroup@\texttt{IsMonomialNumericalSemigroup}}
 \label{IsMonomialNumericalSemigroup}
@@ -3340,7 +3398,7 @@ algorithm given in \cite{BF06}.
   
 
 \subsection{\textcolor{Chapter }{AperyListOfIdealOfNumericalSemigroupWRTElement}}
-\logpage{[ 7, 2, 10 ]}\nobreak
+\logpage{[ 7, 2, 12 ]}\nobreak
 \hyperdef{L}{X7D14AA4D7EE12369}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyListOfIdealOfNumericalSemigroupWRTElement({\mdseries\slshape I, n})\index{AperyListOfIdealOfNumericalSemigroupWRTElement@\texttt{Apery}\-\texttt{List}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}\-\texttt{W}\-\texttt{R}\-\texttt{T}\-\texttt{Element}}
 \label{AperyListOfIdealOfNumericalSemigroupWRTElement}
@@ -3359,7 +3417,7 @@ algorithm given in \cite{BF06}.
  
 
 \subsection{\textcolor{Chapter }{AperyTableOfNumericalSemigroup}}
-\logpage{[ 7, 2, 11 ]}\nobreak
+\logpage{[ 7, 2, 13 ]}\nobreak
 \hyperdef{L}{X8693990B8479E7E1}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AperyTableOfNumericalSemigroup({\mdseries\slshape s})\index{AperyTableOfNumericalSemigroup@\texttt{AperyTableOfNumericalSemigroup}}
 \label{AperyTableOfNumericalSemigroup}
@@ -3381,7 +3439,7 @@ algorithm given in \cite{BF06}.
  
 
 \subsection{\textcolor{Chapter }{StarClosureOfIdealOfNumericalSemigroup}}
-\logpage{[ 7, 2, 12 ]}\nobreak
+\logpage{[ 7, 2, 14 ]}\nobreak
 \hyperdef{L}{X7A16238D7EDB2AB3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{StarClosureOfIdealOfNumericalSemigroup({\mdseries\slshape i, is})\index{StarClosureOfIdealOfNumericalSemigroup@\texttt{Star}\-\texttt{Closure}\-\texttt{Of}\-\texttt{Ideal}\-\texttt{Of}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{StarClosureOfIdealOfNumericalSemigroup}
@@ -3568,11 +3626,11 @@ numerical semigroups with Frobenius number \mbox{\texttt{\mdseries\slshape f}}. 
   [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
     <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
     <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
-  !gapprompt@gap>| !gapinput@List(last,MinimalGenerators);|
-  [ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ],
-    [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ],
-    [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ],
-    [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
+  !gapprompt@gap>| !gapinput@Set(last,MinimalGenerators); |
+  [ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
+    [ 6, 11, 13, 14, 15, 16 ], [ 7, 9, 11, 12, 13, 15, 17 ], 
+    [ 7, 11, 12, 13, 15, 16, 17 ], [ 8, 11, 12, 13, 14, 15, 17, 18 ], 
+    [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 11 .. 21 ] ]
 \end{Verbatim}
  }
 
@@ -6226,7 +6284,7 @@ is unique in the local case).
   [ 25, 12 ], [ 25, 16 ] ]
   !gapprompt@gap>| !gapinput@C:=[25,27];|
   [ 25, 27 ]
-  !gapprompt@gap>| !gapinput@GoodSemigroup(G,C);|
+  !gapprompt@gap>| !gapinput@g := GoodSemigroup(G,C);|
   <Good semigroup>
   !gapprompt@gap>| !gapinput@i:=GoodIdeal([[2,3]],g);|
   <Good ideal of good semigroup>

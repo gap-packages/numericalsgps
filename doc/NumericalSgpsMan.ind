@@ -9,7 +9,7 @@
     \subitem translation of ideal of numerical semigroup, 
 		\hyperpage{48}
   \item \texttt  {-}
-    \subitem for ideals of numerical semigroup, \hyperpage{47}
+    \subitem for ideals of numerical semigroup, \hyperpage{48}
   \item \texttt  {\texttt  {\char 92\relax }/}
     \subitem quotient of numerical semigroup, \hyperpage{32}
 
@@ -53,7 +53,7 @@
 		\hyperpage{20}
   \item \texttt  {Apery}\discretionary {-}{}{}\texttt  {List}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Integer}, 
 		\hyperpage{20}
-  \item \texttt  {AperyTableOfNumericalSemigroup}, \hyperpage{53}
+  \item \texttt  {AperyTableOfNumericalSemigroup}, \hyperpage{54}
   \item \texttt  {ApplyPatternToIdeal}, \hyperpage{112}
   \item \texttt  {ApplyPatternToNumericalSemigroup}, \hyperpage{112}
   \item \texttt  {Arf}\discretionary {-}{}{}\texttt  {Characters}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Arf}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -80,7 +80,7 @@
   \item \texttt  {BelongsToGoodSemigroup}, \hyperpage{91}
   \item \texttt  {Belongs}\discretionary {-}{}{}\texttt  {To}\discretionary {-}{}{}\texttt  {Homogenization}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{70}
-  \item \texttt  {BelongsToIdealOfNumericalSemigroup}, \hyperpage{46}
+  \item \texttt  {BelongsToIdealOfNumericalSemigroup}, \hyperpage{47}
   \item \texttt  {BelongsToNumericalSemigroup}, \hyperpage{16}
   \item \texttt  {BettiElementsOfAffineSemigroup}, \hyperpage{85}
   \item \texttt  {BettiElementsOfNumericalSemigroup}, \hyperpage{29}
@@ -242,7 +242,7 @@
     \subitem membership test for numerical semigroup, \hyperpage{16}
     \subitem membership test in affine semigroup, \hyperpage{81}
     \subitem membership test in ideal of numerical semigroup, 
-		\hyperpage{46}
+		\hyperpage{47}
   \item \texttt  {InductiveNumericalSemigroup}, \hyperpage{34}
   \item \texttt  {Intersection}, \hyperpage{32}, \hyperpage{49}
   \item \texttt  {Intersection}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
@@ -292,7 +292,7 @@
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {SemigroupCI}, 
 		\hyperpage{107}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {SemigroupCM}, 
-		\hyperpage{52}
+		\hyperpage{53}
   \item \texttt  {IsGraded}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {Ring}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}\discretionary {-}{}{}\texttt  {Gorenstein}, 
 		\hyperpage{106}
   \item \texttt  {IsIdealOfNumericalSemigroup}, \hyperpage{44}
@@ -304,7 +304,7 @@
   \item \texttt  {IsMED}, \hyperpage{55}
   \item \texttt  {IsMEDNumericalSemigroup}, \hyperpage{55}
   \item \texttt  {IsModularNumericalSemigroup}, \hyperpage{14}
-  \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{52}
+  \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{53}
   \item \texttt  {IsMpure}, \hyperpage{106}
   \item \texttt  {IsMpureNumericalSemigroup}, \hyperpage{106}
   \item \texttt  {IsNumericalSemigroup}, \hyperpage{14}
@@ -375,7 +375,7 @@
   \item \texttt  {Maximum}\discretionary {-}{}{}\texttt  {Degree}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {W}\discretionary {-}{}{}\texttt  {R}\discretionary {-}{}{}\texttt  {T}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{63}
   \item \texttt  {MEDNumericalSemigroupClosure}, \hyperpage{55}
-  \item \texttt  {MicroInvariantsOfNumericalSemigroup}, \hyperpage{51}
+  \item \texttt  {MicroInvariantsOfNumericalSemigroup}, \hyperpage{52}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Arf}\discretionary {-}{}{}\texttt  {Generating}\discretionary {-}{}{}\texttt  {System}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Arf}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{57}
   \item \texttt  {MinimalGeneratingSystem}
@@ -400,6 +400,8 @@
 		\hyperpage{84}
   \item \texttt  {Minimal}\discretionary {-}{}{}\texttt  {Presentation}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{28}
+  \item \texttt  {Minimum}
+    \subitem minimum of ideal of numerical semigroup, \hyperpage{46}
   \item \texttt  {ModularNumericalSemigroup}, \hyperpage{12}
   \item \texttt  {Moebius}\discretionary {-}{}{}\texttt  {Function}\discretionary {-}{}{}\texttt  {Associated}\discretionary {-}{}{}\texttt  {To}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{71}
@@ -417,7 +419,7 @@
     \subitem for numerical semigroup, \hyperpage{18}
   \item \texttt  {MultiplicityOfNumericalSemigroup}, \hyperpage{18}
   \item \texttt  {Multiplicity}\discretionary {-}{}{}\texttt  {Sequence}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{51}
+		\hyperpage{52}
 
   \indexspace
 
@@ -499,9 +501,13 @@
   \item \texttt  {RandomNumericalSemigroup}, \hyperpage{102}
   \item \texttt  {Random}\discretionary {-}{}{}\texttt  {Proportionally}\discretionary {-}{}{}\texttt  {Modular}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{103}
+  \item \texttt  {Ratliff}\discretionary {-}{}{}\texttt  {Rush}\discretionary {-}{}{}\texttt  {Closure}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
+		\hyperpage{52}
+  \item \texttt  {Ratliff}\discretionary {-}{}{}\texttt  {Rush}\discretionary {-}{}{}\texttt  {Number}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
+		\hyperpage{51}
   \item \texttt  {RClassesOfSetOfFactorizations}, \hyperpage{61}
   \item \texttt  {Reduction}\discretionary {-}{}{}\texttt  {Number}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{50}
+		\hyperpage{51}
   \item \texttt  {Remove}\discretionary {-}{}{}\texttt  {Minimal}\discretionary {-}{}{}\texttt  {Generator}\discretionary {-}{}{}\texttt  {From}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{31}
   \item \texttt  {RepresentsGapsOfNumericalSemigroup}, \hyperpage{15}
@@ -543,8 +549,8 @@
     \subitem for numerical semigroup, \hyperpage{25}
   \item \texttt  {SpecialGapsOfNumericalSemigroup}, \hyperpage{25}
   \item \texttt  {Star}\discretionary {-}{}{}\texttt  {Closure}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideal}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
-		\hyperpage{53}
-  \item \texttt  {SubtractIdealsOfNumericalSemigroup}, \hyperpage{47}
+		\hyperpage{54}
+  \item \texttt  {SubtractIdealsOfNumericalSemigroup}, \hyperpage{48}
   \item \texttt  {SumIdealsOfNumericalSemigroup}, \hyperpage{47}
 
   \indexspace

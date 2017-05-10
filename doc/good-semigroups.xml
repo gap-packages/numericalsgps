@@ -360,7 +360,7 @@ gap> G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];
 [ 25, 12 ], [ 25, 16 ] ]
 gap> C:=[25,27];
 [ 25, 27 ]
-gap> GoodSemigroup(G,C);
+gap> g := GoodSemigroup(G,C);
 <Good semigroup>
 gap> i:=GoodIdeal([[2,3]],g);
 <Good ideal of good semigroup>

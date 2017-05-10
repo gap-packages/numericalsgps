@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: NumericalSgpsMan.aux
 The style file: alpha.bst
 Database file #1: NumericalSgpsMan.bib
@@ -21,45 +21,45 @@ Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., 
 while executing---line 1250 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1250 of file alpha.bst
-You've used 78 entries,
+You've used 79 entries,
             2543 wiz_defined-function locations,
-            1063 strings with 15568 characters,
-and the built_in function-call counts, 31498 in all, are:
-= -- 3237
-> -- 1508
+            1069 strings with 15692 characters,
+and the built_in function-call counts, 31952 in all, are:
+= -- 3284
+> -- 1533
 < -- 25
-+ -- 520
-- -- 507
-* -- 2372
-:= -- 5238
-add.period$ -- 239
-call.type$ -- 78
-change.case$ -- 484
-chr.to.int$ -- 76
-cite$ -- 78
-duplicate$ -- 1114
-empty$ -- 2246
-format.name$ -- 599
-if$ -- 6314
++ -- 529
+- -- 516
+* -- 2411
+:= -- 5314
+add.period$ -- 242
+call.type$ -- 79
+change.case$ -- 491
+chr.to.int$ -- 77
+cite$ -- 79
+duplicate$ -- 1128
+empty$ -- 2276
+format.name$ -- 609
+if$ -- 6403
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 76
-newline$ -- 396
-num.names$ -- 234
-pop$ -- 364
+missing$ -- 77
+newline$ -- 401
+num.names$ -- 237
+pop$ -- 368
 preamble$ -- 1
-purify$ -- 567
+purify$ -- 575
 quote$ -- 0
-skip$ -- 961
+skip$ -- 973
 stack$ -- 0
-substring$ -- 2091
-swap$ -- 106
+substring$ -- 2123
+swap$ -- 107
 text.length$ -- 25
 text.prefix$ -- 16
 top$ -- 0
-type$ -- 604
+type$ -- 612
 warning$ -- 0
-while$ -- 327
-width$ -- 84
-write$ -- 1008
+while$ -- 332
+width$ -- 85
+write$ -- 1021
 (There were 9 error messages)
