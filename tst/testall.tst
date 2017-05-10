@@ -16,7 +16,7 @@
 ##  subsequent STOP_TEST call.
 ##
 ##  The argument of STOP_TEST may be an arbitrary identifier string.
-## 
+##
 gap> START_TEST("NumericalSgps package: testall.tst");
 
 # Note that you may use comments in the test file
@@ -584,7 +584,7 @@ gap> s:=NumericalSemigroup(3,5,7);
 gap> e:=6+s;
 <Ideal of numerical semigroup>
 gap> ndup:=NumericalDuplication(s,e,3);
-<Numerical semigroup>
+<Numerical semigroup with 4 generators>
 gap> SmallElements(ndup);
 [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
 
@@ -802,6 +802,10 @@ gap> ConductorOfIdealOfNumericalSemigroup(10+s);
 15
 gap> Conductor(10+s);
 15
+
+gap> J:=[2,11]+NumericalSemigroup(2,11);;
+gap> Minimum(J);
+2
 
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> BelongsToIdealOfNumericalSemigroup(9,J);
@@ -1024,11 +1028,11 @@ gap> ArfNumericalSemigroupsWithFrobeniusNumber(10);
 [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
   <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
   <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
-gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
-[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ], 
-  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ], 
-  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ], 
-  [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
+gap> Set(last,MinimalGenerators); 
+[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
+  [ 6, 11, 13, 14, 15, 16 ], [ 7, 9, 11, 12, 13, 15, 17 ], 
+  [ 7, 11, 12, 13, 15, 16, 17 ], [ 8, 11, 12, 13, 14, 15, 17, 18 ], 
+  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 11 .. 21 ] ]
 
 gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
 true
@@ -1527,6 +1531,7 @@ gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> OmegaPrimalityOfAffineSemigroup(a);
 2
 
+
 ##good-semigroups.xml
 
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -1612,6 +1617,19 @@ gap> SmallElementsOfGoodSemigroup(dup);
 gap> RepresentsSmallElementsOfGoodSemigroup(last);
 true
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=6+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);
+<Good semigroup>
+gap> SmallElementsOfGoodSemigroup(dup);
+[ [ 0, 0 ], [ 3, 3 ], [ 5, 5 ], [ 6, 6 ], [ 6, 7 ], [ 6, 8 ], [ 6, 9 ], [ 6, 10 ],
+  [ 6, 11 ], [ 7, 6 ], [ 7, 7 ], [ 8, 6 ], [ 8, 8 ], [ 9, 6 ], [ 9, 9 ], [ 9, 10 ],
+  [ 9, 11 ], [ 10, 6 ], [ 10, 9 ], [ 10, 10 ], [ 11, 6 ], [ 11, 9 ], [ 11, 11 ] ]
+gap> G:=GoodSemigroupBySmallElements(last);
+<Good semigroup>
+gap> dup=G;
+true
+
 gap> G:=[[4,3],[7,13],[11,17]];;
 gap> g:=GoodSemigroup(G,[11,17]);;
 gap> mx:=MaximalElementsOfGoodSemigroup(g);
@@ -1669,7 +1687,65 @@ gap> A:=ArfGoodSemigroupClosure(S);
 gap> SmallElements(A);
 [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
 
+#Good ideals
+
+gap> G:=[[4,3],[7,13],[11,17],[14,27],[15,27],[16,20],[25,12],[25,16]];
+[ [ 4, 3 ], [ 7, 13 ], [ 11, 17 ], [ 14, 27 ], [ 15, 27 ], [ 16, 20 ],
+[ 25, 12 ], [ 25, 16 ] ]
+gap> C:=[25,27];
+[ 25, 27 ]
+gap> g := GoodSemigroup(G,C);
+<Good semigroup>
+gap> i:=GoodIdeal([[2,3]],g);
+<Good ideal of good semigroup>
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
+gap> GoodGeneratingSystemOfGoodIdeal(e);
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> a:=AmalgamationOfNumericalSemigroups(s,e,5);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],a);;
+gap> a=AmbientGoodSemigroupOfGoodIdeal(e);
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2],[2,2]],d);;
+gap> MinimalGoodGeneratingSystemOfGoodIdeal(e);
+[ [ 2, 3 ], [ 3, 2 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2]],d);;
+gap> [1,1] in e;
+false
+gap> [2,2] in e;
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> e:=GoodIdeal([[2,3],[3,2]],d);;
+gap> SmallElements(e);
+[ [ 2, 2 ], [ 2, 3 ], [ 3, 2 ], [ 5, 5 ], [ 5, 6 ], [ 6, 5 ], [ 7, 7 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> e:=10+s;;
+gap> d:=NumericalSemigroupDuplication(s,e);;
+gap> c:=CanonicalIdealOfGoodSemigroup(d);;
+gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
+[ [ 0, 0 ], [ 2, 2 ] ]
+
 ##generalstuff.xml
+
+
 
 gap> BezoutSequence(4/5,53/27);
 [ 4/5, 1, 3/2, 5/3, 7/4, 9/5, 11/6, 13/7, 15/8, 17/9, 19/10, 21/11, 23/12,

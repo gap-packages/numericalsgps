@@ -97,7 +97,7 @@ gap> DifferenceOfNumericalSemigroups(ns2,ns1);
       gap> e:=6+s;
       <Ideal of numerical semigroup>
       gap> ndup:=NumericalDuplication(s,e,3);
-      <Numerical semigroup>
+      <Numerical semigroup with 4 generators>
       gap> SmallElements(ndup);
       [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
 ]]></Example>

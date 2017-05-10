@@ -141,11 +141,11 @@ gap> ArfNumericalSemigroupsWithFrobeniusNumber(10);
 [ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
   <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
   <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ]
-gap> List(last,MinimalGenerators);
-[ [ 7, 9, 11, 12, 13, 15, 17 ], [ 3, 11, 13 ], [ 6, 9, 11, 13, 14, 16 ],
-  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 4, 11, 13, 14 ],
-  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 7, 11, 12, 13, 15, 16, 17 ],
-  [ 6, 11, 13, 14, 15, 16 ], [ 11 .. 21 ] ]
+gap> Set(last,MinimalGenerators); 
+[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ], 
+  [ 6, 11, 13, 14, 15, 16 ], [ 7, 9, 11, 12, 13, 15, 17 ], 
+  [ 7, 11, 12, 13, 15, 16, 17 ], [ 8, 11, 12, 13, 14, 15, 17, 18 ], 
+  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 11 .. 21 ] ]
 ]]></Example>
                     </Description>
                 </ManSection>
