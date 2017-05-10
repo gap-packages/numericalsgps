@@ -171,6 +171,21 @@ gap> Conductor(10+s);
                 </ManSection>
 
                 <ManSection>
+                    <Oper Name="Minimum" Arg="I" Label="minimum of ideal of numerical semigroup"/>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup.
+                        The output is the minimum of <A>I</A>.
+
+                        <Example><![CDATA[
+gap> J:=[2,11]+NumericalSemigroup(2,11);;
+gap> Minimum(J);
+2
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
                     <Func Arg="n, I" Name="BelongsToIdealOfNumericalSemigroup"></Func>
                     <Oper Name="\in" Arg="n, I" Label="membership test in ideal of numerical semigroup"/>
                     <Description>

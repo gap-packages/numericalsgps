@@ -925,3 +925,17 @@ InstallGlobalFunction(StarClosureOfIdealOfNumericalSemigroup, function(i,is)
 	return j;
 
 end);
+
+########################################################################
+## The minimum of an ideal
+##
+
+InstallOtherMethod( MinimumList,
+"minimum of an ideal",
+[IsIdealOfNumericalSemigroup],
+function( I )
+  if HasSmallElements(I) then
+    return Minimum(SmallElements(I));
+  fi;
+  return Minimum(Generators(I));
+end);
