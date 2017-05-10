@@ -630,7 +630,7 @@ end);
 ## returns true if s is a saturated-semigroup and false otherwise
 ##
 #####################################################################
-InstallMethod(IsSaturatedNumericalSemigroup,
+InstallMethod(IsSaturated,
         "Tests if a Numerical Semigroup is a saturated semigroup",
         [IsNumericalSemigroup],
         function(s)
@@ -641,9 +641,9 @@ InstallMethod(IsSaturatedNumericalSemigroup,
 
 end);
 
-InstallOtherMethod(IsSaturated,
-  "Tests if a Numerical Semigroup is a saturated semigroup",
-  [IsNumericalSemigroup],IsSaturatedNumericalSemigroup);
+# InstallMethod(IsSaturated,
+#   "Tests if a Numerical Semigroup is a saturated semigroup",
+#   [IsNumericalSemigroup],IsSaturatedNumericalSemigroup);
 #solution by Sebastian Gutsche to
 
 InstallTrueMethod(IsArfNumericalSemigroup, IsSaturatedNumericalSemigroup);
