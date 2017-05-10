@@ -61,7 +61,7 @@ end);
 ##
 #F DifferenceOfOfNumericalSemigroups(S,T)
 ##
-## returns the set difference S\T  
+## returns the set difference S\T
 #############################################################################
 InstallOtherMethod(Difference, [IsNumericalSemigroup, IsNumericalSemigroup], function(S, T)
   return DifferenceOfNumericalSemigroups(S,T);
