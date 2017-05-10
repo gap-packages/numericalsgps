@@ -169,9 +169,9 @@ DeclareGlobalFunction("SaturatedNumericalSemigroupClosure");
 ##
 #####################################################################
 #DeclareProperty("IsSaturatedNumericalSemigroup", IsNumericalSemigroup);
+DeclareProperty("IsSaturated", IsNumericalSemigroup);
 DeclareSynonymAttr("IsSaturatedNumericalSemigroup",IsSaturated);
 #DeclareOperation("IsSaturated",[IsSaturatedNumericalSemigroup]);
-DeclareProperty("IsSaturated", IsNumericalSemigroup);
 #REPORT CRISP for this collission; we shold be able to use synonyms here
 
 
