@@ -779,6 +779,54 @@ end);
 
 #############################################################################
 ##
+#F  RatliffRushClosureOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the the union of all (n+1)I-nI with n nonnegative integers
+##
+#############################################################################
+InstallGlobalFunction(RatliffRushClosureOfIdealOfNumericalSemigroup,
+function(I)
+
+  local r,S;
+
+  if not IsIdealOfNumericalSemigroup(I) then
+      Error("The argument must be an ideal.");
+  fi;
+
+  r:=ReductionNumberIdealNumericalSemigroup(I);
+  return (r+1)*I-r*I;
+end);
+
+#############################################################################
+##
+#F  RatliffRushNumberOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the least nonnegative integer such that
+##  (n+1)I-nI is the Ratliff-Rush closure of I, see [DA-G-H].
+##
+#############################################################################
+InstallGlobalFunction(RatliffRushNumberOfIdealOfNumericalSemigroup,
+function(I)
+
+  local n, J, Jn, rrc;
+
+  if not IsIdealOfNumericalSemigroup(I) then
+      Error("The argument must be an ideal.");
+  fi;
+
+  rrc:=RatliffRushClosureOfIdealOfNumericalSemigroup(I);
+  J:=I-0*I;
+  n:=0;
+  while rrc<>(n+1)*I-n*I do
+    n:=n+1;
+  od;
+
+  return n;
+end);
+
+
+#############################################################################
+##
 #F  TranslationOfIdealOfNumericalSemigroup(k,I)
 ##
 ##  Given an ideal <I> of a numerical semigroup S and an integer <k>
