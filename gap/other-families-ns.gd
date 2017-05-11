@@ -15,7 +15,7 @@
 ##
 #############################################################################
 DeclareProperty("IsAcuteNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonym("IsAcute", IsAcuteNumericalSemigroup);
+DeclareSynonymAttr("IsAcute", IsAcuteNumericalSemigroup);
 #############################################################################
 ##
 #P  IsOrdinaryNumericalSemigroup(s)
@@ -24,4 +24,4 @@ DeclareSynonym("IsAcute", IsAcuteNumericalSemigroup);
 ##
 #############################################################################
 DeclareProperty("IsOrdinaryNumericalSemigroup", IsNumericalSemigroup);
-DeclareSynonym("IsOrdinary",IsOrdinaryNumericalSemigroup);
+DeclareSynonymAttr("IsOrdinary",IsOrdinaryNumericalSemigroup);
