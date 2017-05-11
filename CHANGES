@@ -2,9 +2,15 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Added RatliffRushNumberOfIdealOfNumericalSemigroup, AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup, RatliffRushClosureOfIdealOfNumericalSemigroup
+- Now NumericalDuplication is more flexible (the third argument does not have to be in the semigroup, Alessio Borzi and Francesco Strazzanti)
+- DenumerantOfElementInNumericalSemigroup now uses NrRestrictedPartitions
+- Changes when the user wants to use the "singular" package
+- Faster functions for Arf semigroups with given Frobenius or genus and Arf Characters (G. Zito)
+- Added new implementations for IsSelfReciprocalPolynomial and IsKroneckerPolynomial (Andrés Herrera)
 - Now synonyms are the long names and the originals are short (thanks for the suggestion Sebastian Gutsche)
 - Intersection is now shorthand for IntersectionOfNumericalSemigroups and IntersectionIdealsOfNumericalSemigroup
-- Added IsOrdinaryNumericalSemigroup and IsAcuteNumericalSemigroup
+- Added IsOrdinaryNumericalSemigroup and IsAcuteNumericalSemigroup (and synonyms IsOrdinary and IsAcute)
 - IsSymmetricNumericalSemigroup is now a property, the same for IsPseudoSymmetricNumericalSemigroup, IsIrreducibleNumericalSemigroup and IsAlmostSymmetricNumericalSemigroup, and others related to complete intersections; synonyms added
 - Added DesertsOfNumericalSemigroup
 - HilbertBasis* and PrimitiveElements* now available with singular (through 4ti2 and normaliz libraries)
