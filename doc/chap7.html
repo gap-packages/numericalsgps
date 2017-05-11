@@ -51,14 +51,14 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X835890A078F5D6DC">7.1-18 CanonicalIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D15FA4C843A13B7">7.1-19 IsCanonicalIdeal</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X81DC1C0284968537">7.2 <span class="Heading">
-                    Other functions for ideals
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X81CD9B12807EEA85">7.2 <span class="Heading">
+                    Blow ups and closures
                 </span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X82156F18807B00BF">7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7C00A86F83024003">7.2-2 BlowUpIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X82C2BF5E840C815D">7.2-3 ReductionNumberIdealNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7FAABCBF8299B12F">7.2-3 ReductionNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X84B5121C7EEECB30">7.2-4 BlowUpOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8799F0347FF0D510">7.2-5 LipmanSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78E6D3C186ADBC75">7.2-6 RatliffRushNumberOfIdealOfNumericalSemigroup</a></span>
@@ -71,6 +71,20 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D14AA4D7EE12369">7.2-13 AperyListOfIdealOfNumericalSemigroupWRTElement</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8693990B8479E7E1">7.2-14 AperyTableOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7A16238D7EDB2AB3">7.2-15 StarClosureOfIdealOfNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X78F124CC82E7B585">7.3 <span class="Heading">
+                    Patterns for ideals
+                </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X865042FD7EBD15EE">7.3-1 IsAdmissiblePattern</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7ED8306681407D0F">7.3-2 IsStronglyAdmissiblePattern</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X799542C57E4E0D5E">7.3-3 AsIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7F13F7CB7FBCF006">7.3-4 BoundForConductorOfImageOfPattern</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7F4E597278AF31C8">7.3-5 ApplyPatternToIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7CFDFF6D7B9B595B">7.3-6 ApplyPatternToNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7F9232047F85C4D8">7.3-7 IsAdmittedPatternByIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X827BB22083390CB9">7.3-8 IsAdmittedPatternByNumericalSemigroup</a></span>
 </div></div>
 </div>
 
@@ -457,10 +471,10 @@ true
 true
 </pre></div>
 
-<p><a id="X81DC1C0284968537" name="X81DC1C0284968537"></a></p>
+<p><a id="X81CD9B12807EEA85" name="X81CD9B12807EEA85"></a></p>
 
 <h4>7.2 <span class="Heading">
-                    Other functions for ideals
+                    Blow ups and closures
                 </span></h4>
 
 <p><a id="X82156F18807B00BF" name="X82156F18807B00BF"></a></p>
@@ -492,11 +506,12 @@ true
 [ 0, 2, 4, 6, 8 ]
 </pre></div>
 
-<p><a id="X82C2BF5E840C815D" name="X82C2BF5E840C815D"></a></p>
+<p><a id="X7FAABCBF8299B12F" name="X7FAABCBF8299B12F"></a></p>
 
-<h5>7.2-3 ReductionNumberIdealNumericalSemigroup</h5>
+<h5>7.2-3 ReductionNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReductionNumberIdealNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReductionNumber</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReductionNumberIdealNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the least integer such that <span class="SimpleMath">n <var class="Arg">I</var> + i=(n+1)<var class="Arg">I</var></span>, where <span class="SimpleMath">i=min(<var class="Arg">I</var>)</span>.</p>
 
 
@@ -696,7 +711,7 @@ false
 <h5>7.2-14 AperyTableOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyTableOfNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<p>Computes the Apéry table associated to the numerical semigroup <var class="Arg">s</var> as explained in <a href="chapBib.html#biBCJZ">[BJA13]</a>, that is, a list containing the Apéry list of <var class="Arg">s</var> with respect to its multiplicity and the Apéry lists of <span class="SimpleMath">kM</span> (with <span class="SimpleMath">M</span> the maximal ideal of <var class="Arg">s</var>) with respect to the multiplicity of <var class="Arg">s</var>, for <span class="SimpleMath">k∈{1,...,r}</span>, where <span class="SimpleMath">r</span> is the reduction number of <span class="SimpleMath">M</span> (see <code class="func">ReductionNumberIdealNumericalSemigroup</code> (<a href="chap7.html#X82C2BF5E840C815D"><span class="RefLink">7.2-3</span></a>)).</p>
+<p>Computes the Apéry table associated to the numerical semigroup <var class="Arg">s</var> as explained in <a href="chapBib.html#biBCJZ">[BJA13]</a>, that is, a list containing the Apéry list of <var class="Arg">s</var> with respect to its multiplicity and the Apéry lists of <span class="SimpleMath">kM</span> (with <span class="SimpleMath">M</span> the maximal ideal of <var class="Arg">s</var>) with respect to the multiplicity of <var class="Arg">s</var>, for <span class="SimpleMath">k∈{1,...,r}</span>, where <span class="SimpleMath">r</span> is the reduction number of <span class="SimpleMath">M</span> (see <code class="func">ReductionNumberIdealNumericalSemigroup</code> (<a href="chap7.html#X7FAABCBF8299B12F"><span class="RefLink">7.2-3</span></a>)).</p>
 
 
 <div class="example"><pre>
@@ -723,6 +738,151 @@ false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);</span>
 [ 0, 2, 4 ]
 </pre></div>
+
+<p><a id="X78F124CC82E7B585" name="X78F124CC82E7B585"></a></p>
+
+<h4>7.3 <span class="Heading">
+                    Patterns for ideals
+                </span></h4>
+
+<p>In this section we document the functions implemented by K. Stokes related to patterns of ideals in numerical semigroups. The correctness of the algorithms can be found in <a href="chapBib.html#biBStokes">[Sto15]</a>.</p>
+
+<p><a id="X865042FD7EBD15EE" name="X865042FD7EBD15EE"></a></p>
+
+<h5>7.3-1 IsAdmissiblePattern</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAdmissiblePattern</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a pattern.</p>
+
+<p>Returns true or false depending if the pattern is admissible or not (see <a href="chapBib.html#biBBA-GS">[BG06]</a>).</p>
+
+
+<div class="example"><pre>
+                gap&gt; IsAdmissiblePattern([1,1,-1]);
+                true
+                gap&gt; IsAdmissiblePattern([1,-2]);
+                false
+                </pre></div>
+
+<p><a id="X7ED8306681407D0F" name="X7ED8306681407D0F"></a></p>
+
+<h5>7.3-2 IsStronglyAdmissiblePattern</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsStronglyAdmissiblePattern</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a pattern.</p>
+
+<p>Returns true or false depending if the pattern is strongly admissible or not (see <a href="chapBib.html#biBBA-GS">[BG06]</a>).</p>
+
+
+<div class="example"><pre>
+                gap&gt; IsAdmissiblePattern([1,-1]);
+                true
+                gap&gt; IsStronglyAdmissiblePattern([1,-1]);
+                false
+                gap&gt; IsStronglyAdmissiblePattern([1,1,-1]);
+                true
+                </pre></div>
+
+<p><a id="X799542C57E4E0D5E" name="X799542C57E4E0D5E"></a></p>
+
+<h5>7.3-3 AsIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsIdealOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup <span class="SimpleMath">S</span>, and <var class="Arg">T</var> is a numerical semigroup. Detects if <var class="Arg">I</var> is an ideal of <var class="Arg">T</var> and contained in <var class="Arg">T</var> (integral ideal), and if so, returns <var class="Arg">I</var> as an ideal of <var class="Arg">T</var>. It returns <code class="code">fail</code> if <var class="Arg">I</var> is an ideal of some semigroup but not an integral ideal of <var class="Arg">t</var>.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(3,7,5);;
+                gap&gt; t:=NumericalSemigroup(10,11,14);;
+                gap&gt; AsIdealOfNumericalSemigroup(10+s,t);
+                fail
+                gap&gt; AsIdealOfNumericalSemigroup(100+s,t);
+                &lt;Ideal of numerical semigroup&gt;
+                </pre></div>
+
+<p><a id="X7F13F7CB7FBCF006" name="X7F13F7CB7FBCF006"></a></p>
+
+<h5>7.3-4 BoundForConductorOfImageOfPattern</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoundForConductorOfImageOfPattern</code>( <var class="Arg">p</var>, <var class="Arg">C</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of an admissible pattern. <var class="Arg">C</var> is a positive integer. Calculates an upper bound of the smallest element <span class="SimpleMath">K</span> in <span class="SimpleMath">p(I)</span> such that all integers larger than <span class="SimpleMath">K</span> are contained in <span class="SimpleMath">p(I)</span>, where <span class="SimpleMath">I</span> is an ideal of a numerical semigroup. Instead of taking <span class="SimpleMath">I</span> as parameter, the function takes <span class="SimpleMath">C</span>, which is assumed to be the conductor of <span class="SimpleMath">I</span>.</p>
+
+
+<div class="example"><pre>
+                gap&gt; BoundForConductorOfImageOfPattern([1,1,-1],10);
+                10
+                </pre></div>
+
+<p><a id="X7F4E597278AF31C8" name="X7F4E597278AF31C8"></a></p>
+
+<h5>7.3-5 ApplyPatternToIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ApplyPatternToIdeal</code>( <var class="Arg">p</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">I</var> is an ideal of a numerical semigroup.</p>
+
+<p>Calculates <span class="SimpleMath">p(I)</span>. Outputs <span class="SimpleMath">p(I)</span>, represented as <code class="code">[d,p(I)/d]</code>, where <code class="code">d</code> is the gcd of the coefficients of <var class="Arg">p</var>. All elements of <span class="SimpleMath">p(I)</span> are divisible by <span class="SimpleMath">d</span>, and <span class="SimpleMath">p(I)/d</span> is an ideal of some numerical semigroup. It is returned as the maximal ideal of the numerical semigroup <span class="SimpleMath">p(I)/d ∪ {0}</span>. The parent numerical semigroup can later be changed with the function <code class="code">AsIdealOfNumericalSemigroup</code>.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(3,7,5);;
+                gap&gt; i:=10+s;;
+                gap&gt; ApplyPatternToIdeal([1,1,-1],i);
+                [ 1, &lt;Ideal of numerical semigroup&gt; ]
+                </pre></div>
+
+<p><a id="X7CFDFF6D7B9B595B" name="X7CFDFF6D7B9B595B"></a></p>
+
+<h5>7.3-6 ApplyPatternToNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ApplyPatternToNumericalSemigroup</code>( <var class="Arg">p</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Outputs <code class="code">ApplyPatternToIdeal(p,0+S)</code>.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(3,7,5);;
+                gap&gt; ApplyPatternToNumericalSemigroup([1,1,-1],s);
+                [ 1, &lt;Ideal of numerical semigroup&gt; ]
+                gap&gt; SmallElements(last[2]);
+                [ 0, 3, 5 ]
+                </pre></div>
+
+<p><a id="X7F9232047F85C4D8" name="X7F9232047F85C4D8"></a></p>
+
+<h5>7.3-7 IsAdmittedPatternByIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAdmittedPatternByIdeal</code>( <var class="Arg">p</var>, <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">I</var> and <var class="Arg">J</var> are ideals of certain numerical semigroups.</p>
+
+<p>Tests whether or not <span class="SimpleMath">p(I)</span> is contained in <var class="Arg">J</var>.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(3,7,5);;
+                gap&gt; i:=[3,5]+s;;
+                gap&gt; IsAdmittedPatternByIdeal([1,1,-1],i,i);
+                false
+                gap&gt; IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
+                true
+                </pre></div>
+
+<p><a id="X827BB22083390CB9" name="X827BB22083390CB9"></a></p>
+
+<h5>7.3-8 IsAdmittedPatternByNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAdmittedPatternByNumericalSemigroup</code>( <var class="Arg">p</var>, <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">p</var> is the list of integers that are the coefficients of a strongly admissible pattern. <var class="Arg">S</var> and <var class="Arg">T</var> are numerical semigroups.</p>
+
+<p>Tests whether or not <span class="SimpleMath">p(S)</span> is contained in <var class="Arg">T</var>.</p>
+
+
+<div class="example"><pre>
+                gap&gt; IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
+                true
+                gap&gt; IsArfNumericalSemigroup(s);
+                true
+                </pre></div>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap6.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap8.html">[Next Chapter]</a>&nbsp;  </div>

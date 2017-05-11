@@ -3195,8 +3195,8 @@ plus one.
  }
 
  
-\section{\textcolor{Chapter }{ Other functions for ideals }}\logpage{[ 7, 2, 0 ]}
-\hyperdef{L}{X81DC1C0284968537}{}
+\section{\textcolor{Chapter }{ Blow ups and closures }}\logpage{[ 7, 2, 0 ]}
+\hyperdef{L}{X81CD9B12807EEA85}{}
 {
   
 
@@ -3238,12 +3238,15 @@ the set $\mbox{\texttt{\mdseries\slshape n}}\mbox{\texttt{\mdseries\slshape I}}\
 
  
 
-\subsection{\textcolor{Chapter }{ReductionNumberIdealNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{ReductionNumber (for ideals of numerical semigroups)}}
 \logpage{[ 7, 2, 3 ]}\nobreak
-\hyperdef{L}{X82C2BF5E840C815D}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ReductionNumberIdealNumericalSemigroup({\mdseries\slshape I})\index{ReductionNumberIdealNumericalSemigroup@\texttt{Reduction}\-\texttt{Number}\-\texttt{Ideal}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\hyperdef{L}{X7FAABCBF8299B12F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ReductionNumber({\mdseries\slshape I})\index{ReductionNumber@\texttt{ReductionNumber}!for ideals of numerical semigroups}
+\label{ReductionNumber:for ideals of numerical semigroups}
+}\hfill{\scriptsize (attribute)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ReductionNumberIdealNumericalSemigroup({\mdseries\slshape I})\index{ReductionNumberIdealNumericalSemigroup@\texttt{Reduction}\-\texttt{Number}\-\texttt{Ideal}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{ReductionNumberIdealNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (attribute)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup. The output is the least integer such
@@ -3523,6 +3526,198 @@ algorithm given in \cite{BF06}.
   !gapprompt@gap>| !gapinput@StarClosureOfIdealOfNumericalSemigroup([0,2]+s,[[0,4]+s]);;|
   !gapprompt@gap>| !gapinput@MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);|
   [ 0, 2, 4 ]
+\end{Verbatim}
+ }
+
+ }
+
+ 
+\section{\textcolor{Chapter }{ Patterns for ideals }}\label{sec:PatternsIdeals}
+\logpage{[ 7, 3, 0 ]}
+\hyperdef{L}{X78F124CC82E7B585}{}
+{
+  In this section we document the functions implemented by K. Stokes related to
+patterns of ideals in numerical semigroups. The correctness of the algorithms
+can be found in \cite{Stokes}. 
+
+\subsection{\textcolor{Chapter }{IsAdmissiblePattern}}
+\logpage{[ 7, 3, 1 ]}\nobreak
+\hyperdef{L}{X865042FD7EBD15EE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAdmissiblePattern({\mdseries\slshape p})\index{IsAdmissiblePattern@\texttt{IsAdmissiblePattern}}
+\label{IsAdmissiblePattern}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a pattern. 
+
+ Returns true or false depending if the pattern is admissible or not (see \cite{BA-GS}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> IsAdmissiblePattern([1,1,-1]);
+                  true
+                  gap> IsAdmissiblePattern([1,-2]);
+                  false
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsStronglyAdmissiblePattern}}
+\logpage{[ 7, 3, 2 ]}\nobreak
+\hyperdef{L}{X7ED8306681407D0F}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsStronglyAdmissiblePattern({\mdseries\slshape p})\index{IsStronglyAdmissiblePattern@\texttt{IsStronglyAdmissiblePattern}}
+\label{IsStronglyAdmissiblePattern}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a pattern. 
+
+ Returns true or false depending if the pattern is strongly admissible or not
+(see \cite{BA-GS}). 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> IsAdmissiblePattern([1,-1]);
+                  true
+                  gap> IsStronglyAdmissiblePattern([1,-1]);
+                  false
+                  gap> IsStronglyAdmissiblePattern([1,1,-1]);
+                  true
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{AsIdealOfNumericalSemigroup}}
+\logpage{[ 7, 3, 3 ]}\nobreak
+\hyperdef{L}{X799542C57E4E0D5E}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsIdealOfNumericalSemigroup({\mdseries\slshape I, T})\index{AsIdealOfNumericalSemigroup@\texttt{AsIdealOfNumericalSemigroup}}
+\label{AsIdealOfNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup $S$, and \mbox{\texttt{\mdseries\slshape T}} is a numerical semigroup. Detects if \mbox{\texttt{\mdseries\slshape I}} is an ideal of \mbox{\texttt{\mdseries\slshape T}} and contained in \mbox{\texttt{\mdseries\slshape T}} (integral ideal), and if so, returns \mbox{\texttt{\mdseries\slshape I}} as an ideal of \mbox{\texttt{\mdseries\slshape T}}. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape I}} is an ideal of some semigroup but not an integral ideal of \mbox{\texttt{\mdseries\slshape t}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> s:=NumericalSemigroup(3,7,5);;
+                  gap> t:=NumericalSemigroup(10,11,14);;
+                  gap> AsIdealOfNumericalSemigroup(10+s,t);
+                  fail
+                  gap> AsIdealOfNumericalSemigroup(100+s,t);
+                  <Ideal of numerical semigroup>
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{BoundForConductorOfImageOfPattern}}
+\logpage{[ 7, 3, 4 ]}\nobreak
+\hyperdef{L}{X7F13F7CB7FBCF006}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BoundForConductorOfImageOfPattern({\mdseries\slshape p, C})\index{BoundForConductorOfImageOfPattern@\texttt{BoundForConductorOfImageOfPattern}}
+\label{BoundForConductorOfImageOfPattern}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of an admissible pattern. \mbox{\texttt{\mdseries\slshape C}} is a positive integer. Calculates an upper bound of the smallest element $K$ in $p(I)$ such that all integers larger than $K$ are contained in $p(I)$, where $I$ is an ideal of a numerical semigroup. Instead of taking $I$ as parameter, the function takes $C$, which is assumed to be the conductor of $I$. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
+                  10
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ApplyPatternToIdeal}}
+\logpage{[ 7, 3, 5 ]}\nobreak
+\hyperdef{L}{X7F4E597278AF31C8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ApplyPatternToIdeal({\mdseries\slshape p, I})\index{ApplyPatternToIdeal@\texttt{ApplyPatternToIdeal}}
+\label{ApplyPatternToIdeal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
+pattern. \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup.
+
+ Calculates $p(I)$. Outputs $p(I)$, represented as \texttt{[d,p(I)/d]}, where \texttt{d} is the gcd of the coefficients of \mbox{\texttt{\mdseries\slshape p}}. All elements of $p(I)$ are divisible by $d$, and $p(I)/d$ is an ideal of some numerical semigroup. It is returned as the maximal ideal
+of the numerical semigroup $p(I)/d \cup \{0\}$. The parent numerical semigroup can later be changed with the function \texttt{AsIdealOfNumericalSemigroup}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> s:=NumericalSemigroup(3,7,5);;
+                  gap> i:=10+s;;
+                  gap> ApplyPatternToIdeal([1,1,-1],i);
+                  [ 1, <Ideal of numerical semigroup> ]
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{ApplyPatternToNumericalSemigroup}}
+\logpage{[ 7, 3, 6 ]}\nobreak
+\hyperdef{L}{X7CFDFF6D7B9B595B}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ApplyPatternToNumericalSemigroup({\mdseries\slshape p, S})\index{ApplyPatternToNumericalSemigroup@\texttt{ApplyPatternToNumericalSemigroup}}
+\label{ApplyPatternToNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
+pattern. \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup.
+
+ Outputs \texttt{ApplyPatternToIdeal(p,0+S)}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> s:=NumericalSemigroup(3,7,5);;
+                  gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
+                  [ 1, <Ideal of numerical semigroup> ]
+                  gap> SmallElements(last[2]);
+                  [ 0, 3, 5 ]
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsAdmittedPatternByIdeal}}
+\logpage{[ 7, 3, 7 ]}\nobreak
+\hyperdef{L}{X7F9232047F85C4D8}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAdmittedPatternByIdeal({\mdseries\slshape p, I, J})\index{IsAdmittedPatternByIdeal@\texttt{IsAdmittedPatternByIdeal}}
+\label{IsAdmittedPatternByIdeal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
+pattern. \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} are ideals of certain numerical semigroups.
+
+ Tests whether or not $p(I)$ is contained in \mbox{\texttt{\mdseries\slshape J}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> s:=NumericalSemigroup(3,7,5);;
+                  gap> i:=[3,5]+s;;
+                  gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);
+                  false
+                  gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
+                  true
+                  
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsAdmittedPatternByNumericalSemigroup}}
+\logpage{[ 7, 3, 8 ]}\nobreak
+\hyperdef{L}{X827BB22083390CB9}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAdmittedPatternByNumericalSemigroup({\mdseries\slshape p, S, T})\index{IsAdmittedPatternByNumericalSemigroup@\texttt{IsAdmitted}\-\texttt{Pattern}\-\texttt{By}\-\texttt{Numerical}\-\texttt{Semigroup}}
+\label{IsAdmittedPatternByNumericalSemigroup}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
+pattern. \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} are numerical semigroups.
+
+ Tests whether or not $p(S)$ is contained in \mbox{\texttt{\mdseries\slshape T}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+                  gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
+                  true
+                  gap> IsArfNumericalSemigroup(s);
+                  true
+                  
 \end{Verbatim}
  }
 
@@ -7310,184 +7505,8 @@ elements in \mbox{\texttt{\mdseries\slshape S}}.
 \section{\textcolor{Chapter }{Functions implemented by K. Stokes}}\logpage{[ "C", 3, 0 ]}
 \hyperdef{L}{X7F4C9F8A7F7CDBC8}{}
 {
- In this section we document the functions implemented by K. Stokes related to
-patterns of ideals in numerical semigroups. The correctness of the algorithms
-can be found in \cite{Stokes}. 
-
-\subsection{\textcolor{Chapter }{IsAdmissiblePattern}}
-\logpage{[ "C", 3, 1 ]}\nobreak
-\hyperdef{L}{X865042FD7EBD15EE}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAdmissiblePattern({\mdseries\slshape p})\index{IsAdmissiblePattern@\texttt{IsAdmissiblePattern}}
-\label{IsAdmissiblePattern}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a pattern. 
-
- Returns true or false depending if the pattern is admissible or not (see \cite{BA-GS}). 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@IsAdmissiblePattern([1,1,-1]);|
-  true
-  !gapprompt@gap>| !gapinput@IsAdmissiblePattern([1,-2]);|
-  false
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{IsStronglyAdmissiblePattern}}
-\logpage{[ "C", 3, 2 ]}\nobreak
-\hyperdef{L}{X7ED8306681407D0F}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsStronglyAdmissiblePattern({\mdseries\slshape p})\index{IsStronglyAdmissiblePattern@\texttt{IsStronglyAdmissiblePattern}}
-\label{IsStronglyAdmissiblePattern}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a pattern. 
-
- Returns true or false depending if the pattern is strongly admissible or not
-(see \cite{BA-GS}). 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@IsAdmissiblePattern([1,-1]);|
-  true
-  !gapprompt@gap>| !gapinput@IsStronglyAdmissiblePattern([1,-1]);|
-  false
-  !gapprompt@gap>| !gapinput@IsStronglyAdmissiblePattern([1,1,-1]);|
-  true
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{AsIdealOfNumericalSemigroup}}
-\logpage{[ "C", 3, 3 ]}\nobreak
-\hyperdef{L}{X799542C57E4E0D5E}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{AsIdealOfNumericalSemigroup({\mdseries\slshape I, T})\index{AsIdealOfNumericalSemigroup@\texttt{AsIdealOfNumericalSemigroup}}
-\label{AsIdealOfNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup $S$, and \mbox{\texttt{\mdseries\slshape T}} is a numerical semigroup. Detects if \mbox{\texttt{\mdseries\slshape I}} is an ideal of \mbox{\texttt{\mdseries\slshape T}} and contained in \mbox{\texttt{\mdseries\slshape T}} (integral ideal), and if so, returns \mbox{\texttt{\mdseries\slshape I}} as an ideal of \mbox{\texttt{\mdseries\slshape T}}. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape I}} is an ideal of some semigroup but not an integral ideal of \mbox{\texttt{\mdseries\slshape t}}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
-  !gapprompt@gap>| !gapinput@t:=NumericalSemigroup(10,11,14);;|
-  !gapprompt@gap>| !gapinput@AsIdealOfNumericalSemigroup(10+s,t);|
-  fail
-  !gapprompt@gap>| !gapinput@AsIdealOfNumericalSemigroup(100+s,t);|
-  <Ideal of numerical semigroup>
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{BoundForConductorOfImageOfPattern}}
-\logpage{[ "C", 3, 4 ]}\nobreak
-\hyperdef{L}{X7F13F7CB7FBCF006}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BoundForConductorOfImageOfPattern({\mdseries\slshape p, C})\index{BoundForConductorOfImageOfPattern@\texttt{BoundForConductorOfImageOfPattern}}
-\label{BoundForConductorOfImageOfPattern}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of an admissible pattern. \mbox{\texttt{\mdseries\slshape C}} is a positive integer. Calculates an upper bound of the smallest element $K$ in $p(I)$ such that all integers larger than $K$ are contained in $p(I)$, where $I$ is an ideal of a numerical semigroup. Instead of taking $I$ as parameter, the function takes $C$, which is assumed to be the conductor of $I$. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@BoundForConductorOfImageOfPattern([1,1,-1],10);|
-  10
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{ApplyPatternToIdeal}}
-\logpage{[ "C", 3, 5 ]}\nobreak
-\hyperdef{L}{X7F4E597278AF31C8}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ApplyPatternToIdeal({\mdseries\slshape p, I})\index{ApplyPatternToIdeal@\texttt{ApplyPatternToIdeal}}
-\label{ApplyPatternToIdeal}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
-pattern. \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup.
-
- Calculates $p(I)$. Outputs $p(I)$, represented as \texttt{[d,p(I)/d]}, where \texttt{d} is the gcd of the coefficients of \mbox{\texttt{\mdseries\slshape p}}. All elements of $p(I)$ are divisible by $d$, and $p(I)/d$ is an ideal of some numerical semigroup. It is returned as the maximal ideal
-of the numerical semigroup $p(I)/d \cup \{0\}$. The parent numerical semigroup can later be changed with the function \texttt{AsIdealOfNumericalSemigroup}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
-  !gapprompt@gap>| !gapinput@i:=10+s;;|
-  !gapprompt@gap>| !gapinput@ApplyPatternToIdeal([1,1,-1],i);|
-  [ 1, <Ideal of numerical semigroup> ]
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{ApplyPatternToNumericalSemigroup}}
-\logpage{[ "C", 3, 6 ]}\nobreak
-\hyperdef{L}{X7CFDFF6D7B9B595B}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ApplyPatternToNumericalSemigroup({\mdseries\slshape p, S})\index{ApplyPatternToNumericalSemigroup@\texttt{ApplyPatternToNumericalSemigroup}}
-\label{ApplyPatternToNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
-pattern. \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup.
-
- Outputs \texttt{ApplyPatternToIdeal(p,0+S)}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
-  !gapprompt@gap>| !gapinput@ApplyPatternToNumericalSemigroup([1,1,-1],s);|
-  [ 1, <Ideal of numerical semigroup> ]
-  !gapprompt@gap>| !gapinput@SmallElements(last[2]);|
-  [ 0, 3, 5 ]
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{IsAdmittedPatternByIdeal}}
-\logpage{[ "C", 3, 7 ]}\nobreak
-\hyperdef{L}{X7F9232047F85C4D8}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAdmittedPatternByIdeal({\mdseries\slshape p, I, J})\index{IsAdmittedPatternByIdeal@\texttt{IsAdmittedPatternByIdeal}}
-\label{IsAdmittedPatternByIdeal}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
-pattern. \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape J}} are ideals of certain numerical semigroups.
-
- Tests whether or not $p(I)$ is contained in \mbox{\texttt{\mdseries\slshape J}}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
-  !gapprompt@gap>| !gapinput@i:=[3,5]+s;;|
-  !gapprompt@gap>| !gapinput@IsAdmittedPatternByIdeal([1,1,-1],i,i);|
-  false
-  !gapprompt@gap>| !gapinput@IsAdmittedPatternByIdeal([1,1,-1],i,0+s);|
-  true
-\end{Verbatim}
- }
-
- 
-
-\subsection{\textcolor{Chapter }{IsAdmittedPatternByNumericalSemigroup}}
-\logpage{[ "C", 3, 8 ]}\nobreak
-\hyperdef{L}{X827BB22083390CB9}{}
-{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAdmittedPatternByNumericalSemigroup({\mdseries\slshape p, S, T})\index{IsAdmittedPatternByNumericalSemigroup@\texttt{IsAdmitted}\-\texttt{Pattern}\-\texttt{By}\-\texttt{Numerical}\-\texttt{Semigroup}}
-\label{IsAdmittedPatternByNumericalSemigroup}
-}\hfill{\scriptsize (function)}}\\
-
-
- \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of a strongly admissible
-pattern. \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape T}} are numerical semigroups.
-
- Tests whether or not $p(S)$ is contained in \mbox{\texttt{\mdseries\slshape T}}. 
-\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-  !gapprompt@gap>| !gapinput@IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);|
-  true
-  !gapprompt@gap>| !gapinput@IsArfNumericalSemigroup(s);|
-  true
-\end{Verbatim}
- }
-
- }
+ Klara Stokes helped with the implementation of functions related to patterns
+for ideals of numerical semigroups \ref{sec:PatternsIdeals}. }
 
  
 \section{\textcolor{Chapter }{Functions implemented by I. Ojeda and C. J. Moreno {\a'A}vila}}\logpage{[ "C", 4, 0 ]}
@@ -7502,13 +7521,27 @@ employed provided that singular is loaded. }
 \section{\textcolor{Chapter }{Functions implemented by G. Zito}}\logpage{[ "C", 5, 0 ]}
 \hyperdef{L}{X7FAE71B27B0E3889}{}
 {
- Giuseppe gave the algorithms for the current version fucntions \texttt{ArfNumericalSemigroupsWithFrobeniusNumber} (\ref{ArfNumericalSemigroupsWithFrobeniusNumber}), \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo} (\ref{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}), \texttt{ArfNumericalSemigroupsWithGenus} (\ref{ArfNumericalSemigroupsWithGenus}) and \texttt{ArfNumericalSemigroupsWithGenusUpTo} (\ref{ArfNumericalSemigroupsWithGenusUpTo}), \texttt{ArfCharactersOfArfNumericalSemigroup} (\ref{ArfCharactersOfArfNumericalSemigroup}). }
+ Giuseppe gave the algorithms for the current version functions 
+
+ \texttt{ArfNumericalSemigroupsWithFrobeniusNumber} (\ref{ArfNumericalSemigroupsWithFrobeniusNumber}), 
+
+ \texttt{ArfNumericalSemigroupsWithFrobeniusNumberUpTo} (\ref{ArfNumericalSemigroupsWithFrobeniusNumberUpTo}), 
+
+ \texttt{ArfNumericalSemigroupsWithGenus} (\ref{ArfNumericalSemigroupsWithGenus}), 
+
+ \texttt{ArfNumericalSemigroupsWithGenusUpTo} (\ref{ArfNumericalSemigroupsWithGenusUpTo}), 
+
+ \texttt{ArfCharactersOfArfNumericalSemigroup} (\ref{ArfCharactersOfArfNumericalSemigroup}). }
 
  
 \section{\textcolor{Chapter }{Functions implemented by A. Herrera-Poyatos}}\logpage{[ "C", 6, 0 ]}
 \hyperdef{L}{X85067C3383705D0B}{}
 {
- Andr{\a'e}s Herrera-Poyatos gave new implementations of \texttt{IsSelfReciprocalUnivariatePolynomial} (\ref{IsSelfReciprocalUnivariatePolynomial}) and \texttt{IsKroneckerPolynomial} (\ref{IsKroneckerPolynomial}) }
+ Andr{\a'e}s Herrera-Poyatos gave new implementations of 
+
+ \texttt{IsSelfReciprocalUnivariatePolynomial} (\ref{IsSelfReciprocalUnivariatePolynomial}) and 
+
+ \texttt{IsKroneckerPolynomial} (\ref{IsKroneckerPolynomial}). }
 
  }
 
