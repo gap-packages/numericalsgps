@@ -241,10 +241,10 @@
       7.1-17 MaximalIdealOfNumericalSemigroup
       7.1-18 CanonicalIdealOfNumericalSemigroup
       7.1-19 IsCanonicalIdeal
-    7.2 [33X[0;0YOther functions for ideals[133X
+    7.2 [33X[0;0YBlow ups and closures[133X
       7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
       7.2-2 BlowUpIdealOfNumericalSemigroup
-      7.2-3 ReductionNumberIdealNumericalSemigroup
+      7.2-3 ReductionNumber
       7.2-4 BlowUpOfNumericalSemigroup
       7.2-5 LipmanSemigroup
       7.2-6 RatliffRushNumberOfIdealOfNumericalSemigroup
@@ -257,6 +257,15 @@
       7.2-13 AperyListOfIdealOfNumericalSemigroupWRTElement
       7.2-14 AperyTableOfNumericalSemigroup
       7.2-15 StarClosureOfIdealOfNumericalSemigroup
+    7.3 [33X[0;0YPatterns for ideals[133X
+      7.3-1 IsAdmissiblePattern
+      7.3-2 IsStronglyAdmissiblePattern
+      7.3-3 AsIdealOfNumericalSemigroup
+      7.3-4 BoundForConductorOfImageOfPattern
+      7.3-5 ApplyPatternToIdeal
+      7.3-6 ApplyPatternToNumericalSemigroup
+      7.3-7 IsAdmittedPatternByIdeal
+      7.3-8 IsAdmittedPatternByNumericalSemigroup
   8 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
     8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
       8.1-1 IsMED
@@ -452,14 +461,6 @@
       C.2-6 DeltaSetUnionUpToElementWRTNumericalSemigroup
       C.2-7 DeltaSetOfNumericalSemigroup
     C.3 [33X[0;0YFunctions implemented by K. Stokes[133X
-      C.3-1 IsAdmissiblePattern
-      C.3-2 IsStronglyAdmissiblePattern
-      C.3-3 AsIdealOfNumericalSemigroup
-      C.3-4 BoundForConductorOfImageOfPattern
-      C.3-5 ApplyPatternToIdeal
-      C.3-6 ApplyPatternToNumericalSemigroup
-      C.3-7 IsAdmittedPatternByIdeal
-      C.3-8 IsAdmittedPatternByNumericalSemigroup
     C.4 [33X[0;0YFunctions implemented by I. Ojeda and C. J. Moreno Ávila[133X
     C.5 [33X[0;0YFunctions implemented by G. Zito[133X
     C.6 [33X[0;0YFunctions implemented by A. Herrera-Poyatos[133X

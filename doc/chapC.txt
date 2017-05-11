@@ -337,148 +337,8 @@
   
   [1XC.3 [33X[0;0YFunctions implemented by K. Stokes[133X[101X
   
-  [33X[0;0YIn  this  section we document the functions implemented by K. Stokes related
-  to  patterns  of  ideals  in  numerical  semigroups.  The correctness of the
-  algorithms can be found in [Sto15].[133X
-  
-  [1XC.3-1 IsAdmissiblePattern[101X
-  
-  [29X[2XIsAdmissiblePattern[102X( [3Xp[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a pattern.[133X
-  
-  [33X[0;0YReturns  true  or  false  depending if the pattern is admissible or not (see
-  [BG06]).[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,1,-1]);[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,-2]);[127X[104X
-    [4X[28Xfalse[128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-2 IsStronglyAdmissiblePattern[101X
-  
-  [29X[2XIsStronglyAdmissiblePattern[102X( [3Xp[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a pattern.[133X
-  
-  [33X[0;0YReturns true or false depending if the pattern is strongly admissible or not
-  (see [BG06]).[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,-1]);[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27XIsStronglyAdmissiblePattern([1,-1]);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XIsStronglyAdmissiblePattern([1,1,-1]);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-3 AsIdealOfNumericalSemigroup[101X
-  
-  [29X[2XAsIdealOfNumericalSemigroup[102X( [3XI[103X, [3XT[103X ) [32X function
-  
-  [33X[0;0Y[3XI[103X  is  an  ideal of a numerical semigroup [22XS[122X, and [3XT[103X is a numerical semigroup.
-  Detects  if  [3XI[103X  is an ideal of [3XT[103X and contained in [3XT[103X (integral ideal), and if
-  so,  returns  [3XI[103X  as  an ideal of [3XT[103X. It returns [10Xfail[110X if [3XI[103X is an ideal of some
-  semigroup but not an integral ideal of [3Xt[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
-    [4X[25Xgap>[125X [27Xt:=NumericalSemigroup(10,11,14);;[127X[104X
-    [4X[25Xgap>[125X [27XAsIdealOfNumericalSemigroup(10+s,t);[127X[104X
-    [4X[28Xfail[128X[104X
-    [4X[25Xgap>[125X [27XAsIdealOfNumericalSemigroup(100+s,t);[127X[104X
-    [4X[28X<Ideal of numerical semigroup>[128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-4 BoundForConductorOfImageOfPattern[101X
-  
-  [29X[2XBoundForConductorOfImageOfPattern[102X( [3Xp[103X, [3XC[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X  is  the  list  of  integers  that  are  the coefficients of an admissible
-  pattern.  [3XC[103X is a positive integer. Calculates an upper bound of the smallest
-  element  [22XK[122X  in  [22Xp(I)[122X  such  that all integers larger than [22XK[122X are contained in
-  [22Xp(I)[122X,  where  [22XI[122X is an ideal of a numerical semigroup. Instead of taking [22XI[122X as
-  parameter, the function takes [22XC[122X, which is assumed to be the conductor of [22XI[122X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XBoundForConductorOfImageOfPattern([1,1,-1],10);[127X[104X
-    [4X[28X10[128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-5 ApplyPatternToIdeal[101X
-  
-  [29X[2XApplyPatternToIdeal[102X( [3Xp[103X, [3XI[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a strongly admissible
-  pattern. [3XI[103X is an ideal of a numerical semigroup.[133X
-  
-  [33X[0;0YCalculates [22Xp(I)[122X. Outputs [22Xp(I)[122X, represented as [10X[d,p(I)/d][110X, where [10Xd[110X is the gcd
-  of  the  coefficients  of  [3Xp[103X.  All  elements of [22Xp(I)[122X are divisible by [22Xd[122X, and
-  [22Xp(I)/d[122X  is  an  ideal  of  some  numerical  semigroup. It is returned as the
-  maximal  ideal of the numerical semigroup [22Xp(I)/d ∪ {0}[122X. The parent numerical
-  semigroup     can     later     be     changed     with     the     function
-  [10XAsIdealOfNumericalSemigroup[110X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
-    [4X[25Xgap>[125X [27Xi:=10+s;;[127X[104X
-    [4X[25Xgap>[125X [27XApplyPatternToIdeal([1,1,-1],i);[127X[104X
-    [4X[28X[ 1, <Ideal of numerical semigroup> ][128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-6 ApplyPatternToNumericalSemigroup[101X
-  
-  [29X[2XApplyPatternToNumericalSemigroup[102X( [3Xp[103X, [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a strongly admissible
-  pattern. [3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YOutputs [10XApplyPatternToIdeal(p,0+S)[110X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
-    [4X[25Xgap>[125X [27XApplyPatternToNumericalSemigroup([1,1,-1],s);[127X[104X
-    [4X[28X[ 1, <Ideal of numerical semigroup> ][128X[104X
-    [4X[25Xgap>[125X [27XSmallElements(last[2]);[127X[104X
-    [4X[28X[ 0, 3, 5 ][128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-7 IsAdmittedPatternByIdeal[101X
-  
-  [29X[2XIsAdmittedPatternByIdeal[102X( [3Xp[103X, [3XI[103X, [3XJ[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a strongly admissible
-  pattern. [3XI[103X and [3XJ[103X are ideals of certain numerical semigroups.[133X
-  
-  [33X[0;0YTests whether or not [22Xp(I)[122X is contained in [3XJ[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
-    [4X[25Xgap>[125X [27Xi:=[3,5]+s;;[127X[104X
-    [4X[25Xgap>[125X [27XIsAdmittedPatternByIdeal([1,1,-1],i,i);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XIsAdmittedPatternByIdeal([1,1,-1],i,0+s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.3-8 IsAdmittedPatternByNumericalSemigroup[101X
-  
-  [29X[2XIsAdmittedPatternByNumericalSemigroup[102X( [3Xp[103X, [3XS[103X, [3XT[103X ) [32X function
-  
-  [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a strongly admissible
-  pattern. [3XS[103X and [3XT[103X are numerical semigroups.[133X
-  
-  [33X[0;0YTests whether or not [22Xp(S)[122X is contained in [3XT[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);[127X[104X
-    [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27XIsArfNumericalSemigroup(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
+  [33X[0;0YKlara Stokes helped with the implementation of functions related to patterns
+  for ideals of numerical semigroups [14X7.3[114X.[133X
   
   
   [1XC.4 [33X[0;0YFunctions implemented by I. Ojeda and C. J. Moreno Ávila[133X[101X
@@ -492,17 +352,24 @@
   
   [1XC.5 [33X[0;0YFunctions implemented by G. Zito[133X[101X
   
-  [33X[0;0YGiuseppe   gave   the   algorithms   for   the   current  version  fucntions
-  [2XArfNumericalSemigroupsWithFrobeniusNumber[102X                           ([14X8.2-4[114X),
-  [2XArfNumericalSemigroupsWithFrobeniusNumberUpTo[102X                       ([14X8.2-5[114X),
-  [2XArfNumericalSemigroupsWithGenus[102X                  ([14X8.2-6[114X)                 and
-  [2XArfNumericalSemigroupsWithGenusUpTo[102X                                 ([14X8.2-7[114X),
-  [2XArfCharactersOfArfNumericalSemigroup[102X ([14X8.2-3[114X).[133X
+  [33X[0;0YGiuseppe gave the algorithms for the current version functions[133X
+  
+  [33X[0;0Y[2XArfNumericalSemigroupsWithFrobeniusNumber[102X ([14X8.2-4[114X),[133X
+  
+  [33X[0;0Y[2XArfNumericalSemigroupsWithFrobeniusNumberUpTo[102X ([14X8.2-5[114X),[133X
+  
+  [33X[0;0Y[2XArfNumericalSemigroupsWithGenus[102X ([14X8.2-6[114X),[133X
+  
+  [33X[0;0Y[2XArfNumericalSemigroupsWithGenusUpTo[102X ([14X8.2-7[114X),[133X
+  
+  [33X[0;0Y[2XArfCharactersOfArfNumericalSemigroup[102X ([14X8.2-3[114X).[133X
   
   
   [1XC.6 [33X[0;0YFunctions implemented by A. Herrera-Poyatos[133X[101X
   
-  [33X[0;0YAndrés       Herrera-Poyatos      gave      new      implementations      of
-  [2XIsSelfReciprocalUnivariatePolynomial[102X   ([14X10.1-9[114X)   and  [2XIsKroneckerPolynomial[102X
-  ([14X10.1-7[114X)[133X
+  [33X[0;0YAndrés Herrera-Poyatos gave new implementations of[133X
+  
+  [33X[0;0Y[2XIsSelfReciprocalUnivariatePolynomial[102X ([14X10.1-9[114X) and[133X
+  
+  [33X[0;0Y[2XIsKroneckerPolynomial[102X ([14X10.1-7[114X).[133X
   
