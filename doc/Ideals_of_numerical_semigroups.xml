@@ -449,7 +449,8 @@ gap> SmallElementsOfIdealOfNumericalSemigroup(last);
 
 
                 <ManSection>
-                    <Func Arg="I" Name="ReductionNumberIdealNumericalSemigroup"></Func>
+                    <Attr Arg="I" Name="ReductionNumber" Label="for ideals of numerical semigroups"></Attr>
+                    <Attr Arg="I" Name="ReductionNumberIdealNumericalSemigroup"></Attr>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
                         The output is the least integer
