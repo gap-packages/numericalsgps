@@ -48,11 +48,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X82AD9C1281FB1F58">3.1-15 TypeOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X8688B1837E4BC079">3.1-16 Gaps</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7F40E13983152E1E">3.1-17 DesertsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7CCFC5267FD27DDE">3.1-18 Holes</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X794E615F85C2AAB0">3.1-19 LatticePathAssociatedToNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7E9C8E157C4EAAB0">3.1-20 Genus</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7EC438CC7BF539D0">3.1-21 FundamentalGaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X803D550C78717A7C">3.1-22 SpecialGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X807FADB687F4AE69">3.1-18 IsOrdinaryNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X86E0E4A47890F388">3.1-19 IsAcuteNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7CCFC5267FD27DDE">3.1-20 Holes</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X794E615F85C2AAB0">3.1-21 LatticePathAssociatedToNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7E9C8E157C4EAAB0">3.1-22 Genus</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X7EC438CC7BF539D0">3.1-23 FundamentalGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3.html#X803D550C78717A7C">3.1-24 SpecialGaps</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3.html#X7EE22CA979CCAAB9">3.2 <span class="Heading">Wilf's conjecture</span></a>
 </span>
@@ -393,9 +395,39 @@ g</pre></div>
 [ [ 1, 2 ], [ 4 ] ]
 </pre></div>
 
+<p><a id="X807FADB687F4AE69" name="X807FADB687F4AE69"></a></p>
+
+<h5>3.1-18 IsOrdinaryNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOrdinaryNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsOrdinary</code>( <var class="Arg">NS</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p><var class="Arg">NS</var> is a numerical semigroup. Dectects if the semigroup is ordinary, that is, with less than two deserts.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsOrdinary(s);</span>
+false
+</pre></div>
+
+<p><a id="X86E0E4A47890F388" name="X86E0E4A47890F388"></a></p>
+
+<h5>3.1-19 IsAcuteNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAcuteNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAcute</code>( <var class="Arg">NS</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p><var class="Arg">NS</var> is a numerical semigroup. Dectects if the semigroup is acute, that is, it is either ordinary or its last desert (the one with the Frobenius number) has less elements than the preceding one (<a href="chapBib.html#biBBr-acute">[Bra04]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAcute(s);</span>
+true
+</pre></div>
+
 <p><a id="X7CCFC5267FD27DDE" name="X7CCFC5267FD27DDE"></a></p>
 
-<h5>3.1-18 Holes</h5>
+<h5>3.1-20 Holes</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Holes</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HolesOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
@@ -413,7 +445,7 @@ g</pre></div>
 
 <p><a id="X794E615F85C2AAB0" name="X794E615F85C2AAB0"></a></p>
 
-<h5>3.1-19 LatticePathAssociatedToNumericalSemigroup</h5>
+<h5>3.1-21 LatticePathAssociatedToNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LatticePathAssociatedToNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">p</var>, <var class="Arg">q</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p><code class="code">S</code> is a numerical semigroup and <code class="code">p,q</code> are two elements in <code class="code">S</code>.</p>
@@ -433,7 +465,7 @@ g</pre></div>
 
 <p><a id="X7E9C8E157C4EAAB0" name="X7E9C8E157C4EAAB0"></a></p>
 
-<h5>3.1-20 Genus</h5>
+<h5>3.1-22 Genus</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Genus</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GenusOfNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
@@ -452,7 +484,7 @@ g</pre></div>
 
 <p><a id="X7EC438CC7BF539D0" name="X7EC438CC7BF539D0"></a></p>
 
-<h5>3.1-21 FundamentalGaps</h5>
+<h5>3.1-23 FundamentalGaps</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FundamentalGaps</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FundamentalGapsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
@@ -475,7 +507,7 @@ g</pre></div>
 
 <p><a id="X803D550C78717A7C" name="X803D550C78717A7C"></a></p>
 
-<h5>3.1-22 SpecialGaps</h5>
+<h5>3.1-24 SpecialGaps</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpecialGaps</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SpecialGapsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
