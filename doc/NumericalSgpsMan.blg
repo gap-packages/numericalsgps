@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: NumericalSgpsMan.aux
 The style file: alpha.bst
 Database file #1: NumericalSgpsMan.bib
@@ -21,45 +21,45 @@ Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., 
 while executing---line 1250 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1250 of file alpha.bst
-You've used 79 entries,
+You've used 80 entries,
             2543 wiz_defined-function locations,
-            1069 strings with 15692 characters,
-and the built_in function-call counts, 31952 in all, are:
-= -- 3284
-> -- 1533
-< -- 25
-+ -- 529
-- -- 516
-* -- 2411
-:= -- 5314
-add.period$ -- 242
-call.type$ -- 79
-change.case$ -- 491
-chr.to.int$ -- 77
-cite$ -- 79
-duplicate$ -- 1128
-empty$ -- 2276
-format.name$ -- 609
-if$ -- 6403
+            1074 strings with 15830 characters,
+and the built_in function-call counts, 32324 in all, are:
+= -- 3324
+> -- 1541
+< -- 26
++ -- 531
+- -- 518
+* -- 2440
+:= -- 5372
+add.period$ -- 245
+call.type$ -- 80
+change.case$ -- 496
+chr.to.int$ -- 78
+cite$ -- 80
+duplicate$ -- 1143
+empty$ -- 2308
+format.name$ -- 612
+if$ -- 6479
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 77
-newline$ -- 401
-num.names$ -- 237
-pop$ -- 368
+missing$ -- 78
+newline$ -- 406
+num.names$ -- 240
+pop$ -- 370
 preamble$ -- 1
-purify$ -- 575
+purify$ -- 581
 quote$ -- 0
-skip$ -- 973
+skip$ -- 985
 stack$ -- 0
-substring$ -- 2123
-swap$ -- 107
-text.length$ -- 25
+substring$ -- 2161
+swap$ -- 108
+text.length$ -- 26
 text.prefix$ -- 16
 top$ -- 0
-type$ -- 612
+type$ -- 620
 warning$ -- 0
-while$ -- 332
-width$ -- 85
-write$ -- 1021
+while$ -- 336
+width$ -- 86
+write$ -- 1034
 (There were 9 error messages)

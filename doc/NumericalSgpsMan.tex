@@ -130,8 +130,9 @@ Operacional "Ci{\^e}ncia, Tecnologia, Inova{\c c}{\~a}o") and POSI (Programa
 Operacional Sociedade da Informa{\c c}{\~a}o), with national and European
 Community structural funds and a sabbatical grant of FCT. 
 
- The second author was supported by the projects MTM2004-01446, FQM-343, and
-FEDER founds. 
+ The second author was supported by the projects MTM2004-01446, MTM2007-62346
+and MTM2010-15595, the Junta de Andaluc{\a'\i}a group FQM-343, and FEDER
+founds. 
 
  The third author acknowledges financial support of FCT and the POCTI program
 through a scholarship given by \emph{Centro de Matem{\a'a}tica da Universidade do Porto}. 
@@ -158,8 +159,9 @@ PTDC/MAT/65481/2006 and also by the \emph{Centro de Matem{\a'a}tica da Universid
 COMPETE and by the Portuguese Government through the FCT - Funda{\c c}{\~a}o
 para a Ci{\^e}ncia e a Tecnologia under the project PEst-C/MAT/UI0144/2011. 
 
- The second author was/is supported by the projects MTM2007-62346 and
-MTM2010-15595. 
+ The second author was/is supported by the project MTM2014-55367-P, which is
+funded by Ministerio de Econom{\a'\i}a y Competitividad and the Fondo Europeo
+de Desarrollo Regional FEDER. 
 
  Both authors want to acknowledge partial support by CMUP (UID/MAT/00144/2013),
 which is funded by FCT (Portugal) with national (MEC) and European structural
@@ -1329,8 +1331,57 @@ semigroup is given or on the knowledge already produced on the semigroup.
 
  
 
-\subsection{\textcolor{Chapter }{Holes (for numerical semigroup)}}
+\subsection{\textcolor{Chapter }{IsOrdinaryNumericalSemigroup}}
 \logpage{[ 3, 1, 18 ]}\nobreak
+\hyperdef{L}{X807FADB687F4AE69}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsOrdinaryNumericalSemigroup({\mdseries\slshape NS})\index{IsOrdinaryNumericalSemigroup@\texttt{IsOrdinaryNumericalSemigroup}}
+\label{IsOrdinaryNumericalSemigroup}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsOrdinary({\mdseries\slshape NS})\index{IsOrdinary@\texttt{IsOrdinary}!for numerical semigroups}
+\label{IsOrdinary:for numerical semigroups}
+}\hfill{\scriptsize (property)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape NS}} is a numerical semigroup. Dectects if the semigroup is ordinary, that is, with
+less than two deserts. 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@IsOrdinary(s);|
+  false
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsAcuteNumericalSemigroup}}
+\logpage{[ 3, 1, 19 ]}\nobreak
+\hyperdef{L}{X86E0E4A47890F388}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAcuteNumericalSemigroup({\mdseries\slshape NS})\index{IsAcuteNumericalSemigroup@\texttt{IsAcuteNumericalSemigroup}}
+\label{IsAcuteNumericalSemigroup}
+}\hfill{\scriptsize (property)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsAcute({\mdseries\slshape NS})\index{IsAcute@\texttt{IsAcute}!for numerical semigroups}
+\label{IsAcute:for numerical semigroups}
+}\hfill{\scriptsize (property)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape NS}} is a numerical semigroup. Dectects if the semigroup is acute, that is, it is
+either ordinary or its last desert (the one with the Frobenius number) has
+less elements than the preceding one (\cite{Br-acute}). 
+
+ 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,5,7);;|
+  !gapprompt@gap>| !gapinput@IsAcute(s);|
+  true
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{Holes (for numerical semigroup)}}
+\logpage{[ 3, 1, 20 ]}\nobreak
 \hyperdef{L}{X7CCFC5267FD27DDE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Holes({\mdseries\slshape NS})\index{Holes@\texttt{Holes}!for numerical semigroup}
 \label{Holes:for numerical semigroup}
@@ -1354,7 +1405,7 @@ semigroup is given or on the knowledge already produced on the semigroup.
  
 
 \subsection{\textcolor{Chapter }{LatticePathAssociatedToNumericalSemigroup}}
-\logpage{[ 3, 1, 19 ]}\nobreak
+\logpage{[ 3, 1, 21 ]}\nobreak
 \hyperdef{L}{X794E615F85C2AAB0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{LatticePathAssociatedToNumericalSemigroup({\mdseries\slshape S, p, q})\index{LatticePathAssociatedToNumericalSemigroup@\texttt{Lattice}\-\texttt{Path}\-\texttt{Associated}\-\texttt{To}\-\texttt{Numerical}\-\texttt{Semigroup}}
 \label{LatticePathAssociatedToNumericalSemigroup}
@@ -1378,7 +1429,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{Genus (for numerical semigroup)}}
-\logpage{[ 3, 1, 20 ]}\nobreak
+\logpage{[ 3, 1, 22 ]}\nobreak
 \hyperdef{L}{X7E9C8E157C4EAAB0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{Genus({\mdseries\slshape NS})\index{Genus@\texttt{Genus}!for numerical semigroup}
 \label{Genus:for numerical semigroup}
@@ -1403,7 +1454,7 @@ In this setting \texttt{S} is an oversemigroup of $\langle p,q\rangle$, and cons
  
 
 \subsection{\textcolor{Chapter }{FundamentalGaps (for numerical semigroup)}}
-\logpage{[ 3, 1, 21 ]}\nobreak
+\logpage{[ 3, 1, 23 ]}\nobreak
 \hyperdef{L}{X7EC438CC7BF539D0}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FundamentalGaps({\mdseries\slshape S})\index{FundamentalGaps@\texttt{FundamentalGaps}!for numerical semigroup}
 \label{FundamentalGaps:for numerical semigroup}
@@ -1433,7 +1484,7 @@ division in ${\mathbb N}$. is a numerical semigroup. It returns the set of funda
  
 
 \subsection{\textcolor{Chapter }{SpecialGaps (for numerical semigroup)}}
-\logpage{[ 3, 1, 22 ]}\nobreak
+\logpage{[ 3, 1, 24 ]}\nobreak
 \hyperdef{L}{X803D550C78717A7C}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{SpecialGaps({\mdseries\slshape S})\index{SpecialGaps@\texttt{SpecialGaps}!for numerical semigroup}
 \label{SpecialGaps:for numerical semigroup}
