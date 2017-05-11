@@ -824,6 +824,33 @@ function(I)
   return n;
 end);
 
+#############################################################################
+##
+#F  AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the least nonnegative integer n such that
+##  mI equals the Ratliff-Rush closure of mI for all m>=n,  see [DA-G-H].
+##
+#############################################################################
+InstallGlobalFunction(AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup,
+function(I)
+
+  local r, nI, n;
+
+  if not IsIdealOfNumericalSemigroup(I) then
+      Error("The argument must be an ideal.");
+  fi;
+
+  r:=ReductionNumberIdealNumericalSemigroup(I);
+  n:=r;
+  while n>0 do
+    nI:=n*I;
+    if nI<>RatliffRushClosureOfIdealOfNumericalSemigroup(nI) then
+      return n+1;
+    fi;
+    n:=n-1;
+  od;
+end);
 
 #############################################################################
 ##

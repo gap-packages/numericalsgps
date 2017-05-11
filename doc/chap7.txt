@@ -476,7 +476,20 @@
     [4X[28X[ 0, 2, 4 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-8 MultiplicitySequenceOfNumericalSemigroup[101X
+  [1X7.2-8 AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup[101X
+  
+  [29X[2XAsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function
+  
+  [33X[0;0Y[3XI[103X  is an ideal of a numerical semigroup. The output is the least [22Xn[122X such that
+  the Ratliff-Rush closure of [22Xm[3XI[103X[122X equals [22Xm[3XI[103X[122X for all [22Xmge n[122X(see [DGH01]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XI:=[0,2]+NumericalSemigroup(6,9,11);;[127X[104X
+    [4X[25Xgap>[125X [27XAsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);[127X[104X
+    [4X[28X2[128X[104X
+  [4X[32X[104X
+  
+  [1X7.2-9 MultiplicitySequenceOfNumericalSemigroup[101X
   
   [29X[2XMultiplicitySequenceOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -490,7 +503,7 @@
     [4X[28X[ 3, 2, 1 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-9 MicroInvariantsOfNumericalSemigroup[101X
+  [1X7.2-10 MicroInvariantsOfNumericalSemigroup[101X
   
   [29X[2XMicroInvariantsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -510,7 +523,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.2-10 IsGradedAssociatedRingNumericalSemigroupCM[101X
+  [1X7.2-11 IsGradedAssociatedRingNumericalSemigroupCM[101X
   
   [29X[2XIsGradedAssociatedRingNumericalSemigroupCM[102X( [3XS[103X ) [32X property
   
@@ -541,7 +554,7 @@
     [4X[28X[ 0, 2, 1, 1 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-11 IsMonomialNumericalSemigroup[101X
+  [1X7.2-12 IsMonomialNumericalSemigroup[101X
   
   [29X[2XIsMonomialNumericalSemigroup[102X( [3XS[103X ) [32X property
   
@@ -565,7 +578,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X7.2-12 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
+  [1X7.2-13 AperyListOfIdealOfNumericalSemigroupWRTElement[101X
   
   [29X[2XAperyListOfIdealOfNumericalSemigroupWRTElement[102X( [3XI[103X, [3Xn[103X ) [32X function
   
@@ -581,7 +594,7 @@
     [4X[28X[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-13 AperyTableOfNumericalSemigroup[101X
+  [1X7.2-14 AperyTableOfNumericalSemigroup[101X
   
   [29X[2XAperyTableOfNumericalSemigroup[102X( [3Xs[103X ) [32X function
   
@@ -602,7 +615,7 @@
     [4X[28X  [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ][128X[104X
   [4X[32X[104X
   
-  [1X7.2-14 StarClosureOfIdealOfNumericalSemigroup[101X
+  [1X7.2-15 StarClosureOfIdealOfNumericalSemigroup[101X
   
   [29X[2XStarClosureOfIdealOfNumericalSemigroup[102X( [3Xi[103X, [3Xis[103X ) [32X function
   
