@@ -542,6 +542,19 @@ gap> MinimalGenerators(last);
                     </Description>
                 </ManSection>
 
+                <ManSection>
+                    <Func Arg="I" Name="AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup.
+                        The output is the least <M>n</M> such that the Ratliff-Rush closure of <M>m<A>I</A></M> equals <M>m<A>I</A></M> for all <M>m\ge n</M>(see <Cite Key="DA-G-H"></Cite>).
+
+                        <Example><![CDATA[
+gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
+gap> AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);
+2
+]]></Example>
+                    </Description>
+                </ManSection>
 
 
 <ManSection>

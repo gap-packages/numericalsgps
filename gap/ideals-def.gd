@@ -320,6 +320,17 @@ DeclareGlobalFunction("RatliffRushNumberOfIdealOfNumericalSemigroup");
 
 #############################################################################
 ##
+#F  AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the least nonnegative integer n such that
+##  mI equals the Ratliff-Rush closure of mI for all m>=n,  see [DA-G-H].
+##
+#############################################################################
+DeclareGlobalFunction("AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup");
+
+
+#############################################################################
+##
 #F  TranslationOfIdealOfNumericalSemigroup(k,I)
 ##
 ##  Given an ideal <I> of a numerical semigroup S and an integer <k>
