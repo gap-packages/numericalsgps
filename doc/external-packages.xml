@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+The use of the packages <C>NormalizInterface</C> <Cite Key="NmzInterface"></Cite> (an interface to <C>Normalize</C> <Cite Key="Normaliz"></Cite>; or in its absence <C>4ti2Interface</C><Cite Key="4ti2Interface"></Cite>, and interface to <C>4ti2</C><Cite Key="4ti2"></Cite>), <C>SingularInterface</C> (an interface to <C>Singular</C> <Cite Key="Singular"></Cite>; or in its absence <C>Singular</C> <Cite Key="Singularpackage"></Cite>); or in its absence <C>GradedModules</C> <Cite Key="GradedModules"></Cite> is highly recommended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower).
+
+The package tests if the user has downloaded any of the above packages, and if so puts <C>NumSgpsCanUsePackage</C> to true, where <C>Package</C> is any of the above.
+
+<Section>
+    <Heading>
+        Using external packages
+    </Heading>
+    As mentioned above some methods are specifically implemented to take advantage of several external packages. The following functions can be used in case these packages have not been loaded prior to <C>numericalsgps</C>.
+
+
+    <ManSection>
+      <Func Name="NumSgpsUse4ti2" Arg=""/>
+      <Description>
+	Tries to load the package <C>4ti2Interface</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUse4ti2gap" Arg=""/>
+      <Description>
+	Tries to load the package <C>4ti2gap</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUseNormalize" Arg=""/>
+      <Description>
+	Tries to load the package <C>NormalizInterface</C>. If the package is available, then it also loads methods implemented using functions in this package.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingular" Arg=""/>
+      <Description>
+	Tries to load the package <C>singular</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> To prevent incompatibilities, the package will not load if <C>SingularInterface</C> has been already loaded.
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingularInterface" Arg=""/>
+      <Description>
+	Tries to load the package <C>SingularInterface</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> To prevent incompatibilities, the package will not load if <C>singular</C> has been already loaded.
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
+      <Func Name="NumSgpsUseSingularGradedModules" Arg=""/>
+      <Description>
+	Tries to load the package <C>GradedModules</C>. If the package is available, then it also loads methods implemented using functions in this package.
+	<P/> It also creates a ring of rationals <C>NumSgpsRationals</C>.
+      </Description>
+    </ManSection>
+
+</Section>

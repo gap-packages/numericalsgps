@@ -1,0 +1,98 @@
+  
+  [1XA [33X[0;0YGeneralities[133X[101X
+  
+  [33X[0;0YHere  we  describe  some  functions  which  are  not  specific for numerical
+  semigroups  but  are  used  to  do  computations with them. As they may have
+  interest by themselves, we describe them here.[133X
+  
+  
+  [1XA.1 [33X[0;0YBézout sequences[133X[101X
+  
+  [33X[0;0YA  sequence  of positive rational numbers [22Xa_1/b_1 < ⋯ < a_n/b_n[122X with [22Xa_i,b_i[122X
+  positive  integers is a [13XBézout sequence[113X if [22Xa_i+1b_i - a_i b_i+1=1[122X for all [22Xi∈
+  {1,...,n-1}[122X.[133X
+  
+  [33X[0;0YThe following function uses an algorithm presented in [BR09].[133X
+  
+  [1XA.1-1 BezoutSequence[101X
+  
+  [29X[2XBezoutSequence[102X( [3Xarg[103X ) [32X function
+  
+  [33X[0;0Y[3Xarg[103X  consists of two rational numbers or a list of two rational numbers. The
+  output  is  a  Bézout  sequence  with  ends  the two rational numbers given.
+  (Warning:   rational  numbers  are  silently  transformed  into  irreducible
+  fractions.)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XBezoutSequence(4/5,53/27);[127X[104X
+    [4X[28X[ 4/5, 1, 3/2, 5/3, 7/4, 9/5, 11/6, 13/7, 15/8, 17/9, 19/10, 21/11, 23/12,[128X[104X
+    [4X[28X  25/13, 27/14, 29/15, 31/16, 33/17, 35/18, 37/19, 39/20, 41/21, 43/22,[128X[104X
+    [4X[28X  45/23, 47/24, 49/25, 51/26, 53/27 ][128X[104X
+  [4X[32X[104X
+  
+  [1XA.1-2 IsBezoutSequence[101X
+  
+  [29X[2XIsBezoutSequence[102X( [3XL[103X ) [32X function
+  
+  [33X[0;0Y[3XL[103X  is  a  list  of  rational numbers. [10XIsBezoutSequence[110X returns [9Xtrue[109X or [9Xfalse[109X
+  according to whether [3XL[103X is a Bézout sequence or not.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsBezoutSequence([ 4/5, 1, 3/2, 5/3, 7/4, 9/5, 11/6]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsBezoutSequence([ 4/5, 1, 3/2, 5/3, 7/4, 9/5, 11/3]);[127X[104X
+    [4X[28XTake the 6 and the 7 elements of the sequence[128X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1XA.1-3 CeilingOfRational[101X
+  
+  [29X[2XCeilingOfRational[102X( [3Xr[103X ) [32X function
+  
+  [33X[0;0YReturns the smallest integer greater than or equal to the rational [3Xr[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XCeilingOfRational(3/5);[127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  
+  [1XA.2 [33X[0;0YPeriodic subadditive functions[133X[101X
+  
+  [33X[0;0YA  periodic  function  [22Xf[122X  of period [22Xm[122X from the set [22XN[122X of natural numbers into
+  itself  may be specified through a list of [22Xm[122X natural numbers. The function [22Xf[122X
+  is said to be [13Xsubadditive[113X if [22Xf(i+j)≤ f(i)+f(j)[122X and [22Xf(0)=0[122X.[133X
+  
+  [1XA.2-1 RepresentsPeriodicSubAdditiveFunction[101X
+  
+  [29X[2XRepresentsPeriodicSubAdditiveFunction[102X( [3XL[103X ) [32X function
+  
+  [33X[0;0Y[3XL[103X  is a list of integers. [10XRepresentsPeriodicSubAdditiveFunction[110X returns [9Xtrue[109X
+  or [9Xfalse[109X according to whether [3XL[103X represents a periodic subadditive function [22Xf[122X
+  periodic  of  period [22Xm[122X or not. To avoid defining [22Xf(0)[122X (which we assume to be
+  0)  we  define  [22Xf(m)=0[122X  and  so the last element of the list must be 0. This
+  technical  need is due to the fact that positions in a list must be positive
+  (not a 0).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRepresentsPeriodicSubAdditiveFunction([1,2,3,4,0]);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1XA.2-2 IsListOfIntegersNS[101X
+  
+  [29X[2XIsListOfIntegersNS[102X( [3XL[103X ) [32X function
+  
+  [33X[0;0YDetects whether [3XL[103X is a nonempty list of integers.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsListOfIntegersNS([1,-1,0]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsListOfIntegersNS(2);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsListOfIntegersNS([[2],3]);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsListOfIntegersNS([]);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  

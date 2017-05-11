@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+  <Heading>Wilf's conjecture</Heading>
+  
+  Let <M>S</M> be a numerical semigroup, with conductor <M>c</M> and embedding dimension <M>e</M>. Denote by <M>l</M> the cardinality of the set of elements in  <M>S</M> smaller than <M>c</M>. Wilf in <Cite Key="Wilf"></Cite> asked whether or not <M>l/c\ge 1/e</M> for all numerical semigroups. In this section we give some functions to experiment with this conjecture, as defined in <Cite Key="E"></Cite>.
+  
+
+  <ManSection>
+    <Attr Name="WilfNumber" Arg="S" Label="for numerical semigroup"/>
+    <Attr Name="WilfNumberOfNumericalSemigroup" Arg="S"/>
+    <Description>
+      <C>S</C> 
+      is a numerical semigroup.  Let <M>c</M>, <M>e</M> and <M>l</M> be the conductor, embedding dimension and number of  elements smaller than <M>c</M> in <A>S</A>. Returns <M>e l-c</M>, which was conjetured by Wilf to be nonnegative.
+      <Example><![CDATA[
+gap> l:=NumericalSemigroupsWithGenus(10);;
+gap> Filtered(l, s->WilfNumberOfNumericalSemigroup(s)<0); 
+[  ]
+gap> Maximum(Set(l, s->WilfNumberOfNumericalSemigroup(s)));
+70
+gap> s := NumericalSemigroup(13,25,37);;
+gap> WilfNumber(s);                     
+96
+]]></Example>
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+    <Attr Name="EliahouNumber" Arg="S" Label="for numerical semigroup"/>
+    <Attr Name="TruncatedWilfNumberOfNumericalSemigroup" Arg="S"/>
+    <Description>
+      <C>S</C> 
+      is a numerical semigroup.  Let <M>c</M>, <M>m</M>, <M>s</M> and <M>l</M> be the conductor, multiplicity, number of generators smaller than <M>c</M>, and number of  elements smaller than <M>c</M> in <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and negative remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>. Returns <M>s l-qd_q+r</M>, where <M>d_q</M> corresponds with the number of integers in <M>[c,c+m[</M> that are not minimal generators of <A>S</A>.
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> TruncatedWilfNumberOfNumericalSemigroup(s);
+4
+gap> s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;
+gap> EliahouNumber(s);
+-1
+]]></Example>
+    </Description>
+  </ManSection>
+
+
+
+  <ManSection>
+    <Attr Name="ProfileOfNumericalSemigroup" Arg="S"/>
+    <Description>
+      <C>S</C> 
+      is a numerical semigroup.  Let <M>c</M> and <M>m</M> be the conductor and  multiplicity of <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and nonpositive remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>.  Returns a list of lists of integers, each list is the cardinality of <M> S \cap [jm-r, (j+1)m-r[</M> with <M> j</M> in [1..q-1].
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> ProfileOfNumericalSemigroup(s);
+[ 2, 1 ]
+gap> s:=NumericalSemigroupWithGivenElementsAndFrobenius([14,22,23],55);;
+gap> ProfileOfNumericalSemigroup(s);
+[ 3, 0, 0 ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Attr Name="EliahouSlicesOfNumericalSemigroup" Arg="S"/>
+    <Description>
+      <C>S</C> 
+      is a numerical semigroup.  Let <M>c</M> and <M>m</M> be the conductor and  multiplicity of <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and negative remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>.  Returns a list of lists of integers, each list is the set <M> S \cap [jm-r, (j+1)m-r[</M> with <M> j</M> in [1..q]. So this is a partition of the set of small elements of <A>S</A> (without <M>0</M>).
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,9);;                                     
+gap> EliahouSlicesOfNumericalSemigroup(s);
+[ [ 5, 7 ], [ 9, 10, 12 ] ]
+gap> SmallElements(s);
+[ 0, 5, 7, 9, 10, 12, 14 ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+  
+</Section>

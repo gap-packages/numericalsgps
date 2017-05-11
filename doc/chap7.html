@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (NumericalSgps) - Chapter 7: 
+                Ideals of numerical semigroups
+            </title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap7"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap6.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap8.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap7_mj.html">[MathJax on]</a></p>
+<p><a id="X83C2F0CF825B3869" name="X83C2F0CF825B3869"></a></p>
+<div class="ChapSects"><a href="chap7.html#X83C2F0CF825B3869">7 <span class="Heading">
+                Ideals of numerical semigroups
+            </span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X84B6453A8015B40B">7.1 <span class="Heading">
+                    Definitions and basic operations
+                </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78E5F44E81485C17">7.1-1 IdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X85BD6FAD7EA3B5DD">7.1-2 IsIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X85144E0F791038AE">7.1-3 MinimalGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7A842A4385B73C63">7.1-4 Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X81E445518529C175">7.1-5 AmbientNumericalSemigroupOfIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7EDE6C287CD5FE3D">7.1-6 IsIntegral</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7811E92487110941">7.1-7 SmallElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7EDDC78883A98A6E">7.1-8 Conductor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X821919B47D3D191A">7.1-9 Minimum</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X87508E7A7CFB0B20">7.1-10 BelongsToIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7B39610D7AD5A654">7.1-11 SumIdealsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X857FE5C57EE98F5E">7.1-12 MultipleOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78743CE2845B5860">7.1-13 SubtractIdealsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X825AC0F07E010B07">7.1-14 Difference</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X803921F97BEDCA88">7.1-15 TranslationOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X851069107CACF98E">7.1-16 Intersection</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X829EACA378BE3665">7.1-17 MaximalIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X835890A078F5D6DC">7.1-18 CanonicalIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D15FA4C843A13B7">7.1-19 IsCanonicalIdeal</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7.html#X81DC1C0284968537">7.2 <span class="Heading">
+                    Other functions for ideals
+                </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X82156F18807B00BF">7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7C00A86F83024003">7.2-2 BlowUpIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X82C2BF5E840C815D">7.2-3 ReductionNumberIdealNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X84B5121C7EEECB30">7.2-4 BlowUpOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8799F0347FF0D510">7.2-5 LipmanSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X78E6D3C186ADBC75">7.2-6 RatliffRushNumberOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X83447F927F6ED581">7.2-7 RatliffRushClosureOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7EF442BE842B6B25">7.2-8 AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X84CE79C3832CFEE7">7.2-9 MultiplicitySequenceOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7B29CDA7783FC0D2">7.2-10 MicroInvariantsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7876199778D6B320">7.2-11 IsGradedAssociatedRingNumericalSemigroupCM</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7A04B8887F493733">7.2-12 IsMonomialNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7D14AA4D7EE12369">7.2-13 AperyListOfIdealOfNumericalSemigroupWRTElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X8693990B8479E7E1">7.2-14 AperyTableOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7.html#X7A16238D7EDB2AB3">7.2-15 StarClosureOfIdealOfNumericalSemigroup</a></span>
+</div></div>
+</div>
+
+<h3>7 <span class="Heading">
+                Ideals of numerical semigroups
+            </span></h3>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup. A set <span class="SimpleMath">I</span> of integers is an <em>ideal relative</em> to a numerical semigroup <span class="SimpleMath">S</span> provided that <span class="SimpleMath">I+S⊆ I</span> and that there exists <span class="SimpleMath">d∈ S</span> such that <span class="SimpleMath">d+I⊆ S</span>.</p>
+
+<p>If <span class="SimpleMath">{i_1,...,i_k}</span> is a subset of <span class="SimpleMath">Z</span>, then the set <span class="SimpleMath">I={i_1,...,i_k}+S=⋃_n=1^k i_n+S</span> is an ideal relative to <span class="SimpleMath">S</span>, and <span class="SimpleMath">{i_1,..., i_k}</span> is a system of generators of <span class="SimpleMath">I</span>. A system of generators <span class="SimpleMath">M</span> is minimal if no proper subset of <span class="SimpleMath">M</span> generates the same ideal. Usually, ideals are specified by means of its generators and the ambient numerical semigroup to which they are ideals (for more information see for instance <a href="chapBib.html#biBBDF97">[BDF97]</a>).</p>
+
+<p><a id="X84B6453A8015B40B" name="X84B6453A8015B40B"></a></p>
+
+<h4>7.1 <span class="Heading">
+                    Definitions and basic operations
+                </span></h4>
+
+<p><a id="X78E5F44E81485C17" name="X78E5F44E81485C17"></a></p>
+
+<h5>7.1-1 IdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IdealOfNumericalSemigroup</code>( <var class="Arg">l</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; +</code>( <var class="Arg">l</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">l</var> a list of integers. The output is the ideal of <var class="Arg">S</var> generated by <var class="Arg">l</var>.</p>
+
+<p>There are several shortcuts for this function, as shown in the example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IdealOfNumericalSemigroup([3,5],NumericalSemigroup(9,11));</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[3,5]+NumericalSemigroup(9,11);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">last=last2;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">3+NumericalSemigroup(5,9);</span>
+&lt;Ideal of numerical semigroup&gt;
+</pre></div>
+
+<p><a id="X85BD6FAD7EA3B5DD" name="X85BD6FAD7EA3B5DD"></a></p>
+
+<h5>7.1-2 IsIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIdealOfNumericalSemigroup</code>( <var class="Arg">Obj</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Tests if the object <var class="Arg">Obj</var> is an ideal of a numerical semigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[1..7]+NumericalSemigroup(7,19);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIdealOfNumericalSemigroup(I);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIdealOfNumericalSemigroup(2);</span>
+false
+</pre></div>
+
+<p><a id="X85144E0F791038AE" name="X85144E0F791038AE"></a></p>
+
+<h5>7.1-3 MinimalGenerators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystemOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the minimal system of generators of <var class="Arg">I</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);</span>
+[ 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystem(I);</span>
+[ 3 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators([3,5]+NumericalSemigroup(2,11));</span>
+[ 3 ]
+</pre></div>
+
+<p><a id="X7A842A4385B73C63" name="X7A842A4385B73C63"></a></p>
+
+<h5>7.1-4 Generators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is a system of generators of the ideal.</p>
+
+<p>Remark: from Version 1.0.1 on, this value does not change even when a set of minimal generators is computed.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfIdealOfNumericalSemigroup(I);</span>
+[ 3, 5, 9 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(I);</span>
+[ 3, 5, 9 ]
+</pre></div>
+
+<p><a id="X81E445518529C175" name="X81E445518529C175"></a></p>
+
+<h5>7.1-5 AmbientNumericalSemigroupOfIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientNumericalSemigroupOfIdeal</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup, say <span class="SimpleMath">S</span>. The output is <span class="SimpleMath">S</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AmbientNumericalSemigroupOfIdeal(I);</span>
+&lt;Numerical semigroup with 2 generators&gt;
+</pre></div>
+
+<p><a id="X7EDE6C287CD5FE3D" name="X7EDE6C287CD5FE3D"></a></p>
+
+<h5>7.1-6 IsIntegral</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIntegral</code>( <var class="Arg">I</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIntegralIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup, say <span class="SimpleMath">S</span>. Detects if <span class="SimpleMath">I⊆ S</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIntegralIdealOfNumericalSemigroup(4+s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIntegralIdealOfNumericalSemigroup(10+s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIntegral(10+s);</span>
+true
+</pre></div>
+
+<p><a id="X7811E92487110941" name="X7811E92487110941"></a></p>
+
+<h5>7.1-7 SmallElements</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElements</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallElementsOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is a list with the elements in <var class="Arg">I</var> that are less than or equal to the greatest integer not belonging to the ideal plus one.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfIdealOfNumericalSemigroup(I);</span>
+[ 3, 5, 7, 9, 11, 13 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(I) = SmallElementsOfIdealOfNumericalSemigroup(I);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J:=[2,11]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfIdealOfNumericalSemigroup(J);</span>
+[ 2, 4, 6, 8, 10 ]
+</pre></div>
+
+<p><a id="X7EDDC78883A98A6E" name="X7EDDC78883A98A6E"></a></p>
+
+<h5>7.1-8 Conductor</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Conductor</code>( <var class="Arg">NS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ConductorOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the largest element in <var class="Arg">SmallElements(I)</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ConductorOfIdealOfNumericalSemigroup(10+s);</span>
+15
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Conductor(10+s);</span>
+15
+</pre></div>
+
+<p><a id="X821919B47D3D191A" name="X821919B47D3D191A"></a></p>
+
+<h5>7.1-9 Minimum</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Minimum</code>( <var class="Arg">I</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the minimum of <var class="Arg">I</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J:=[2,11]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Minimum(J);</span>
+2
+</pre></div>
+
+<p><a id="X87508E7A7CFB0B20" name="X87508E7A7CFB0B20"></a></p>
+
+<h5>7.1-10 BelongsToIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToIdealOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \in</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup, <var class="Arg">n</var> is an integer. The output is true if <var class="Arg">n</var> belongs to <var class="Arg">I</var>.</p>
+
+<p><var class="Arg"> n in I</var> can be used for short.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J:=[2,11]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToIdealOfNumericalSemigroup(9,J);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">9 in J;</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BelongsToIdealOfNumericalSemigroup(10,J);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">10 in J;</span>
+true
+</pre></div>
+
+<p><a id="X7B39610D7AD5A654" name="X7B39610D7AD5A654"></a></p>
+
+<h5>7.1-11 SumIdealsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SumIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; +</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I, J</var> are ideals of a numerical semigroup. The output is the sum of both ideals <span class="SimpleMath">{ i+j | i∈ <var class="Arg">I</var>, j∈ <var class="Arg">J</var>}</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[3,5,9]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J:=[2,11]+NumericalSemigroup(2,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I+J;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);</span>
+[ 5, 14 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SumIdealsOfNumericalSemigroup(I,J);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);</span>
+[ 5, 14 ]
+</pre></div>
+
+<p><a id="X857FE5C57EE98F5E" name="X857FE5C57EE98F5E"></a></p>
+
+<h5>7.1-12 MultipleOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MultipleOfIdealOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; *</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup, <var class="Arg">n</var> is a non negative integer. The output is the ideal <span class="SimpleMath"><var class="Arg">I</var>+⋯+<var class="Arg">I</var></span> (<var class="Arg">n</var> times).</p>
+
+<p><var class="Arg"> n * I</var> can be used for short.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,1]+NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(2*I);</span>
+[ 0, 1, 2 ]
+</pre></div>
+
+<p><a id="X78743CE2845B5860" name="X78743CE2845B5860"></a></p>
+
+<h5>7.1-13 SubtractIdealsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubtractIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; -</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I, J</var> are ideals of a numerical semigroup. The output is the ideal <span class="SimpleMath">{ z∈ Z | z+<var class="Arg">J</var>⊆ <var class="Arg">I</var>}</span>.</p>
+
+<p><span class="SimpleMath">I - J</span> is a synonym of <code class="code">SubtractIdealsOfNumericalSemigroup</code>.</p>
+
+<p><span class="SimpleMath">S-</span><var class="Arg">J</var> is a synonym of <span class="SimpleMath">(0+S)-</span><var class="Arg">J</var>, if <span class="SimpleMath">S</span> is the ambient semigroup of <var class="Arg">I</var> and <var class="Arg">J</var>. The following example appears in <a href="chapBib.html#biBHS04">[HS04]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=NumericalSemigroup(14, 15, 20, 21, 25);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,1]+S;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">II:=S-I;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);</span>
+[ 0, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(II);</span>
+[ 14, 20 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I+II);</span>
+[ 14, 15, 20, 21 ]
+</pre></div>
+
+<p><a id="X825AC0F07E010B07" name="X825AC0F07E010B07"></a></p>
+
+<h5>7.1-14 Difference</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Difference</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferenceOfIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I, J</var> are ideals of a numerical semigroup. <var class="Arg">J</var> must be contained in <var class="Arg">I</var>. The output is the set <span class="SimpleMath"><var class="Arg">I</var>∖ <var class="Arg">J</var></span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:=NumericalSemigroup(14, 15, 20, 21, 25);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,1]+S;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">2*I-2*I;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I-I;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ii := 2*I-2*I;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i := I-I;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> DifferenceOfIdealsOfNumericalSemigroup(last2,last);</span>
+[ 26, 27, 37, 38 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(ii,i);</span>
+[ 26, 27, 37, 38 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Difference(i,ii);</span>
+[  ]
+</pre></div>
+
+<p><a id="X803921F97BEDCA88" name="X803921F97BEDCA88"></a></p>
+
+<h5>7.1-15 TranslationOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TranslationOfIdealOfNumericalSemigroup</code>( <var class="Arg">k</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; +</code>( <var class="Arg">k</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given an ideal <var class="Arg">I</var> of a numerical semigroup S and an integer <var class="Arg">k</var> returns an ideal of the numerical semigroup S generated by <span class="SimpleMath">{i_1+k,...,i_n+k}</span> where <span class="SimpleMath">{i_1,...,i_n}</span> is the system of generators of <var class="Arg">I</var>.</p>
+
+<p>As a synonym to <code class="code">TranslationOfIdealOfNumericalSemigroup(k, I)</code> the expression <code class="code">k + I</code> may be used.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(13,23);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=List([1..6], _ -&gt; Random([8..34]));</span>
+[ 22, 29, 34, 25, 10, 12 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=IdealOfNumericalSemigroup(l, s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">It:=TranslationOfIdealOfNumericalSemigroup(7,I);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">It2:=7+I;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">It2=It;</span>
+true
+</pre></div>
+
+<p><a id="X851069107CACF98E" name="X851069107CACF98E"></a></p>
+
+<h5>7.1-16 Intersection</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Intersection</code>( <var class="Arg">S</var>, <var class="Arg">T</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntersectionIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Given two ideals <var class="Arg">I</var> and <var class="Arg">J</var> of a numerical semigroup <var class="Arg">S</var> returns the ideal of the numerical semigroup <var class="Arg">S</var> which is the intersection of the ideals <var class="Arg">I</var> and <var class="Arg">J</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=IdealOfNumericalSemigroup([75,89],s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">j:=IdealOfNumericalSemigroup([115,289],s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IntersectionIdealsOfNumericalSemigroup(i,j);</span>
+&lt;Ideal of numerical semigroup&gt;
+</pre></div>
+
+<p><a id="X829EACA378BE3665" name="X829EACA378BE3665"></a></p>
+
+<h5>7.1-17 MaximalIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalIdealOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the maximal ideal of the numerical semigroup <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));</span>
+&lt;Ideal of numerical semigroup&gt;
+</pre></div>
+
+<p><a id="X835890A078F5D6DC" name="X835890A078F5D6DC"></a></p>
+
+<h5>7.1-18 CanonicalIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. Computes a canonical ideal of <var class="Arg">S</var> (<a href="chapBib.html#biBBF06">[BF06]</a>): <span class="SimpleMath">{ x ∈ Z | g-x not ∈ S}</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:=MaximalIdealOfNumericalSemigroup(s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c:=CanonicalIdealOfNumericalSemigroup(s);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c-(c-m)=m;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">id:=3+s;</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c-(c-id)=id;</span>
+true
+</pre></div>
+
+<p><a id="X7D15FA4C843A13B7" name="X7D15FA4C843A13B7"></a></p>
+
+<h5>7.1-19 IsCanonicalIdeal</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdeal</code>( <var class="Arg">E</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">E</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p><var class="Arg">E</var> is an ideal of a numerical semigroup, say <span class="SimpleMath">S</span>. Determines if <var class="Arg">E</var> is a translation of the canonical ideal of <span class="SimpleMath">S</span>, or equivalently, for every ideal <span class="SimpleMath">J</span>, <span class="SimpleMath">E-(E-J)=J</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c:=3+CanonicalIdealOfNumericalSemigroup(s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c-(c-(3+s))=3+s;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCanonicalIdealOfNumericalSemigroup(c);</span>
+true
+</pre></div>
+
+<p><a id="X81DC1C0284968537" name="X81DC1C0284968537"></a></p>
+
+<h4>7.2 <span class="Heading">
+                    Other functions for ideals
+                </span></h4>
+
+<p><a id="X82156F18807B00BF" name="X82156F18807B00BF"></a></p>
+
+<h5>7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertFunctionOfIdealOfNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup, <var class="Arg">n</var> is a non negative integer. <var class="Arg">I</var> must be contained in its ambient semigroup. The output is the cardinality of the set <span class="SimpleMath"><var class="Arg">n</var><var class="Arg">I</var>∖ (<var class="Arg">n</var>+1)<var class="Arg">I</var></span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[6,9,11]+NumericalSemigroup(6,9,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List([1..7],n-&gt;HilbertFunctionOfIdealOfNumericalSemigroup(n,I));</span>
+[ 3, 5, 6, 6, 6, 6, 6 ]
+</pre></div>
+
+<p><a id="X7C00A86F83024003" name="X7C00A86F83024003"></a></p>
+
+<h5>7.2-2 BlowUpIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlowUpIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the ideal <span class="SimpleMath">⋃_n≥ 0 n<var class="Arg">I</var>-n<var class="Arg">I</var></span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,2]+NumericalSemigroup(6,9,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BlowUpIdealOfNumericalSemigroup(I);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfIdealOfNumericalSemigroup(last);</span>
+[ 0, 2, 4, 6, 8 ]
+</pre></div>
+
+<p><a id="X82C2BF5E840C815D" name="X82C2BF5E840C815D"></a></p>
+
+<h5>7.2-3 ReductionNumberIdealNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ReductionNumberIdealNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the least integer such that <span class="SimpleMath">n <var class="Arg">I</var> + i=(n+1)<var class="Arg">I</var></span>, where <span class="SimpleMath">i=min(<var class="Arg">I</var>)</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,2]+NumericalSemigroup(6,9,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReductionNumberIdealNumericalSemigroup(I);</span>
+2
+</pre></div>
+
+<p><a id="X84B5121C7EEECB30" name="X84B5121C7EEECB30"></a></p>
+
+<h5>7.2-4 BlowUpOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BlowUpOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. If <var class="Arg">M</var> is the maximal ideal of the numerical semigroup, then the output is the numerical semigroup <span class="SimpleMath">⋃_n≥ 0 n<var class="Arg">M</var>-n<var class="Arg">M</var></span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BlowUpOfNumericalSemigroup(s);</span>
+&lt;Numerical semigroup with 10 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(last);</span>
+[ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,
+  40, 41, 42, 44 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:=MaximalIdealOfNumericalSemigroup(s);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BlowUpIdealOfNumericalSemigroup(m);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfIdealOfNumericalSemigroup(last);</span>
+[ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,
+  40, 41, 42, 44 ]
+</pre></div>
+
+<p><a id="X8799F0347FF0D510" name="X8799F0347FF0D510"></a></p>
+
+<h5>7.2-5 LipmanSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LipmanSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>This is just a synonym of <code class="func">BlowUpOfNumericalSemigroup</code> (<a href="chap7.html#X84B5121C7EEECB30"><span class="RefLink">7.2-4</span></a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LipmanSemigroup(s);</span>
+&lt;Numerical semigroup with 10 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElementsOfNumericalSemigroup(last);</span>
+[ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,
+  40, 41, 42, 44 ]
+</pre></div>
+
+<p><a id="X78E6D3C186ADBC75" name="X78E6D3C186ADBC75"></a></p>
+
+<h5>7.2-6 RatliffRushNumberOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RatliffRushNumberOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the least integer such that <span class="SimpleMath">(n+1)<var class="Arg">I</var>-n<var class="Arg">I</var></span> is the Ratliff-Rush closure of <var class="Arg">I</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,2]+NumericalSemigroup(6,9,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RatliffRushNumberOfIdealOfNumericalSemigroup(I);</span>
+1
+</pre></div>
+
+<p><a id="X83447F927F6ED581" name="X83447F927F6ED581"></a></p>
+
+<h5>7.2-7 RatliffRushClosureOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RatliffRushClosureOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the Ratliff-Rush closure of <var class="Arg">I</var>: <span class="SimpleMath">⋃_n∈ N}(n+1)<var class="Arg">I</var>-n<var class="Arg">I</var></span> (see <a href="chapBib.html#biBDA-G-H">[DGH01]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,2]+NumericalSemigroup(6,9,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RatliffRushClosureOfIdealOfNumericalSemigroup(I);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(last);</span>
+[ 0, 2, 4 ]
+</pre></div>
+
+<p><a id="X7EF442BE842B6B25" name="X7EF442BE842B6B25"></a></p>
+
+<h5>7.2-8 AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup</code>( <var class="Arg">I</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal of a numerical semigroup. The output is the least <span class="SimpleMath">n</span> such that the Ratliff-Rush closure of <span class="SimpleMath">m<var class="Arg">I</var></span> equals <span class="SimpleMath">m<var class="Arg">I</var></span> for all <span class="SimpleMath">mge n</span>(see <a href="chapBib.html#biBDA-G-H">[DGH01]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=[0,2]+NumericalSemigroup(6,9,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);</span>
+2
+</pre></div>
+
+<p><a id="X84CE79C3832CFEE7" name="X84CE79C3832CFEE7"></a></p>
+
+<h5>7.2-9 MultiplicitySequenceOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MultiplicitySequenceOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is a list with the multiplicities of the sequence <span class="SimpleMath">S⊆ L(S)⊆ ⋯ ⊆ N</span>, where <span class="SimpleMath">L(⋅)</span> means <code class="func">LipmanSemigroup</code> (<a href="chap7.html#X8799F0347FF0D510"><span class="RefLink">7.2-5</span></a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5);</span>
+&lt;Numerical semigroup with 2 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MultiplicitySequenceOfNumericalSemigroup(s);</span>
+[ 3, 2, 1 ]
+</pre></div>
+
+<p><a id="X7B29CDA7783FC0D2" name="X7B29CDA7783FC0D2"></a></p>
+
+<h5>7.2-10 MicroInvariantsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MicroInvariantsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Returns the microinvariants of the numerical semigroup <var class="Arg">S</var> defined in <a href="chapBib.html#biBE01">[Eli01]</a>. For their computation we have used the formula given in <a href="chapBib.html#biBBF06">[BF06]</a>. The Apéry set of <var class="Arg">S</var> and its blow up are involved in this computation.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">bu:=BlowUpOfNumericalSemigroup(s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ap:=AperyListOfNumericalSemigroupWRTElement(s,30);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">apbu:=AperyListOfNumericalSemigroupWRTElement(bu,30);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">(ap-apbu)/30;</span>
+[ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
+  5, 4, 3, 3, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MicroInvariantsOfNumericalSemigroup(s)=last;</span>
+true
+</pre></div>
+
+<p><a id="X7876199778D6B320" name="X7876199778D6B320"></a></p>
+
+<h5>7.2-11 IsGradedAssociatedRingNumericalSemigroupCM</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGradedAssociatedRingNumericalSemigroupCM</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. Returns true if the graded ring associated to <span class="SimpleMath">K[[<var class="Arg">S</var>]]</span> is Cohen-Macaulay, and false otherwise. This test is the implementation of the algorithm given in <a href="chapBib.html#biBBF06">[BF06]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGradedAssociatedRingNumericalSemigroupCM(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MicroInvariantsOfNumericalSemigroup(s);</span>
+[ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
+  5, 4, 3, 3, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(AperyListOfNumericalSemigroupWRTElement(s,30),</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">w-&gt;MaximumDegreeOfElementWRTNumericalSemigroup (w,s));</span>
+[ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,
+  5, 4, 3, 1, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">last=last2;</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGradedAssociatedRingNumericalSemigroupCM(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MicroInvariantsOfNumericalSemigroup(s);</span>
+[ 0, 2, 1, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(AperyListOfNumericalSemigroupWRTElement(s,4),</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">w-&gt;MaximumDegreeOfElementWRTNumericalSemigroup(w,s));</span>
+[ 0, 2, 1, 1 ]
+</pre></div>
+
+<p><a id="X7A04B8887F493733" name="X7A04B8887F493733"></a></p>
+
+<h5>7.2-12 IsMonomialNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMonomialNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. Tests whether <var class="Arg">S</var> a monomial numerical semigroup.</p>
+
+<p>Let <span class="SimpleMath">R</span> a Noetherian ring such that <span class="SimpleMath">K ⊆ R ⊆ K[[t]]</span>, <span class="SimpleMath">K</span> is a field of characteristic zero, the algebraic closure of <span class="SimpleMath">R</span> is <span class="SimpleMath">K[[t]]</span>, and the conductor <span class="SimpleMath">(R : K[[t]])</span> is not zero. If <span class="SimpleMath">v : K((t))-&gt; Z</span> is the natural valuation for <span class="SimpleMath">K((t))</span>, then <span class="SimpleMath">v(R)</span> is a numerical semigroup.</p>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup minimally generated by <span class="SimpleMath">{n_1,...,n_e}</span>. The semigroup ring associated to <span class="SimpleMath">S</span> is <span class="SimpleMath">K[[S]]=K[[t^n_1,...,t^n_e]]</span>. A ring is called a semigroup ring if it is of the form <span class="SimpleMath">K[[S]]</span>, for some numerical semigroup <span class="SimpleMath">S</span>. We say that <span class="SimpleMath">S</span> is a monomial numerical semigroup if for any <span class="SimpleMath">R</span> as above with <span class="SimpleMath">v(R)=S</span>, <span class="SimpleMath">R</span> is a semigroup ring. See <a href="chapBib.html#biBVMic02">[Mic02]</a> for details.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,7));</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));</span>
+false
+</pre></div>
+
+<p><a id="X7D14AA4D7EE12369" name="X7D14AA4D7EE12369"></a></p>
+
+<h5>7.2-13 AperyListOfIdealOfNumericalSemigroupWRTElement</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyListOfIdealOfNumericalSemigroupWRTElement</code>( <var class="Arg">I</var>, <var class="Arg">n</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">I</var> is an ideal and <var class="Arg">n</var> is an integer. Computes the set of elements <span class="SimpleMath">x</span> of <var class="Arg">I</var> such that <span class="SimpleMath">x-</span><var class="Arg">n</var> is not in the ideal <var class="Arg">I</var>, where <var class="Arg">n</var> is supposed to be in the ambient semigroup of <var class="Arg">I</var>. The element in the <span class="SimpleMath">i</span>th position of the output list (starting in 0) is congruent with <span class="SimpleMath">i</span> modulo <var class="Arg">n</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=[12,14]+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);</span>
+[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ]
+</pre></div>
+
+<p><a id="X8693990B8479E7E1" name="X8693990B8479E7E1"></a></p>
+
+<h5>7.2-14 AperyTableOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperyTableOfNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Computes the Apéry table associated to the numerical semigroup <var class="Arg">s</var> as explained in <a href="chapBib.html#biBCJZ">[BJA13]</a>, that is, a list containing the Apéry list of <var class="Arg">s</var> with respect to its multiplicity and the Apéry lists of <span class="SimpleMath">kM</span> (with <span class="SimpleMath">M</span> the maximal ideal of <var class="Arg">s</var>) with respect to the multiplicity of <var class="Arg">s</var>, for <span class="SimpleMath">k∈{1,...,r}</span>, where <span class="SimpleMath">r</span> is the reduction number of <span class="SimpleMath">M</span> (see <code class="func">ReductionNumberIdealNumericalSemigroup</code> (<a href="chap7.html#X82C2BF5E840C815D"><span class="RefLink">7.2-3</span></a>)).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AperyTableOfNumericalSemigroup(s);</span>
+[ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ],
+  [ 10, 11, 22, 13, 24, 35, 26, 37, 48, 39 ],
+  [ 20, 21, 22, 23, 24, 35, 26, 37, 48, 39 ],
+  [ 30, 31, 32, 33, 34, 35, 36, 37, 48, 39 ],
+  [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ]
+</pre></div>
+
+<p><a id="X7A16238D7EDB2AB3" name="X7A16238D7EDB2AB3"></a></p>
+
+<h5>7.2-15 StarClosureOfIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; StarClosureOfIdealOfNumericalSemigroup</code>( <var class="Arg">i</var>, <var class="Arg">is</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">i</var> is an ideal and <var class="Arg">is</var> is a set of ideals (all from the same numerical semigroup<span class="SimpleMath">s</span>). The output is <span class="SimpleMath">i^*_is</span>, where <span class="SimpleMath">*_is</span> is the star operation generated by <var class="Arg">is</var>: <span class="SimpleMath">(s-(s-i))⋂_k∈ is (k-(k-i))</span>. The implementation uses Section 3 of <a href="chapBib.html#biBMR3354072">[Spi15]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">StarClosureOfIdealOfNumericalSemigroup([0,2]+s,[[0,4]+s]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);</span>
+[ 0, 2, 4 ]
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap6.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap8.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

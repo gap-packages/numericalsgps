@@ -1,0 +1,64 @@
+gap> s:=NumericalSemigroup(3,7);
+<Modular numerical semigroup satisfying 7x mod 21 <= x >
+
+gap> SmallElementsOfNumericalSemigroup(s);
+[ 0, 3, 6, 7, 9, 10, 12 ]
+
+gap> FrobeniusNumber(s);
+11
+
+gap> IsModularNumericalSemigroup(s);
+true
+
+gap> Display(s);
+[ [ 0 ], [ 3 ], [ 6, 7 ], [ 9, 10 ], [ 12, "->" ] ]
+
+gap> Print(s);
+ModularNumericalSemigroup( [ 7, 21 ] )
+
+gap> s;
+<Modular numerical semigroup satisfying 5x mod 14 <= x >
+
+gap> AperyListOfNumericalSemigroupWRTElement(s,30);
+[ 0, 31, 32, 3, 34, 35, 6, 7, 38, 9, 10, 41, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 24, 25, 26, 27, 28, 29 ]
+
+gap> t:=NumericalSemigroupByAperyList(last);
+<Numerical semigroup>
+
+gap> GeneratorsOfNumericalSemigroup(t);
+[ 3, 7 ]
+
+gap> s=t;
+true
+
+gap> QuotientOfNumericalSemigroup(s,31);
+<Numerical semigroup with 1 generators>
+
+gap> GeneratorsOfNumericalSemigroup(last);
+[ 1 ]
+
+gap> MinimalPresentationOfNumericalSemigroup(s);
+[ [ [ 7, 0 ], [ 0, 3 ] ] ]
+
+gap> FactorizationsElementWRTNumericalSemigroup(200,s);
+[ [ 6, 26 ], [ 13, 23 ], [ 20, 20 ], [ 27, 17 ], [ 34, 14 ], [ 41, 11 ], 
+  [ 48, 8 ], [ 55, 5 ], [ 62, 2 ] ]
+
+gap> OmegaPrimalityOfNumericalSemigroup(s);
+7
+
+gap> 3+s;
+<Ideal of numerical semigroup>
+
+gap> SmallElementsOfIdealOfNumericalSemigroup(last);
+[ 3, 6, 9, 10, 12, 13, 15 ]
+
+gap> u:=NumericalSemigroup(11,35,79,83);
+<Numerical semigroup with 4 generators>
+
+gap> GeneratorsOfNumericalSemigroup(u);
+[ 11, 35, 79, 83 ]
+
+gap> MinimalGeneratingSystemOfNumericalSemigroup(u);
+[ 11, 35, 83 ]

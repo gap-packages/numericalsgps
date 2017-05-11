@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Adding and removing elements of a numerical semigroup
+                </Heading>
+                
+                In this section we show how to construct new numerical semigroups from a given
+                numerical semigroup. Two dual operations are presented. The first one removes
+                a minimal generator from a numerical semigroup. The second adds a special gap
+                to a semigroup (see <Cite Key="RGGJ03"></Cite>).
+                <ManSection>
+                    <Func Arg="n, S" Name="RemoveMinimalGeneratorFromNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>n</A> is one if its minimal
+                        generators.
+                        <P/>
+                        
+                        The output is the numerical semigroup <M> <A>S</A> \setminus\{<A>n</A>\} </M> 
+                        (see <Cite Key="RGGJ03"></Cite>; <M>S\setminus\{n\}</M> is a numerical
+                        semigroup if and only if <M>n</M> is a minimal generator of <M>S</M>).
+                        
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> RemoveMinimalGeneratorFromNumericalSemigroup(7,s);
+<Numerical semigroup with 3 generators>
+gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
+[ 3, 5 ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="g, S" Name="AddSpecialGapOfNumericalSemigroup"></Func>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>g</A> is a special gap of <A>S</A>
+                        
+                        <P/>
+                        
+                        The output is the numerical semigroup <M> <A>S</A> \cup\{<A>g</A>\} </M> 
+                        (see <Cite Key="RGGJ03"></Cite>, where it is explained why this set is a 
+                        numerical semigroup).            
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> s2:=RemoveMinimalGeneratorFromNumericalSemigroup(5,s);
+<Numerical semigroup with 3 generators>
+gap> s3:=AddSpecialGapOfNumericalSemigroup(5,s2);
+<Numerical semigroup>
+gap> SmallElementsOfNumericalSemigroup(s) =
+> SmallElementsOfNumericalSemigroup(s3);
+true                
+gap> s=s3;
+true
+]]></Example>          
+                    </Description>
+                </ManSection>
+</Section>
+

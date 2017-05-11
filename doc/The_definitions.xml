@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Section>
+                <Heading>
+                    Invariants
+                </Heading>
+
+
+
+
+
+                <ManSection>
+                    <Attr Name="Multiplicity" Arg="NS" Label="for numerical semigroup"/>
+                    <Attr Name="MultiplicityOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <A>NS</A> is a numerical semigroup. Returns the multiplicity of <A>NS</A>, which is the smallest positive integer belonging to <A>NS</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 7,53);
+<Modular numerical semigroup satisfying 7x mod 53 <= x >
+gap> MultiplicityOfNumericalSemigroup(S);
+8
+gap> NumericalSemigroup(3,5);
+<Numerical semigroup with 2 generators>
+gap> Multiplicity(last);
+3
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Attr Name="GeneratorsOfNumericalSemigroup" Arg="S"/>
+		    <Attr Name="Generators" Arg="S" Label="for numerical semigroup"/>
+<Attr Name="MinimalGeneratingSystemOfNumericalSemigroup" Arg="S"/>
+<Attr Name="MinimalGeneratingSystem" Arg="S" Label="for numerical semigroup"/>
+<Attr Name="MinimalGenerators" Arg="S" Label="for numerical semigroup"/>               <Description>
+                        <A>S</A>
+                        is a numerical semigroup.
+                        <C>GeneratorsOfNumericalSemigroup</C>
+                        returns a set of generators of <C>S</C>, which may
+                        not be minimal.
+
+                 <!--       <C>GeneratorsOfNumericalSemigroupNC</C>
+                        returns the set of generators recorded in <C>S!.generators</C>, which may
+                        not be minimal
+                        <C>ReducedSetOfGeneratorsOfNumericalSemigroupNC</C>
+                        Returns a set with possibly fewer generators than those recorded in <C>S!.generators</C>. It changes <C>S!.generators</C> to the set returned.
+The function has 1 to 3 arguments. One of them a numerical semigroup. Then an argument is a boolean (<E>true</E> means that all the elements not belonging to the Apery set with respect to the multiplicity are removed; the default is "false") and another argument is a positive integer <M>n</M> (meaning that generators that can be written as the sum of <M>n</M> or less generators are removed; the default is "2"). The boolean or the integer may not be present. If a minimal generating set for <M>S</M> is known or no generating set is known, then the minimal generating system is returned.-->
+
+
+                        <C>MinimalGeneratingSystemOfNumericalSemigroup</C>
+                        returns the minimal set of generators of <C>S</C>.
+<P/>
+From Version 0.980, <C>ReducedSetOfGeneratorsOfNumericalSemigroup</C> is a synonym of <C>MinimalGeneratingSystemOfNumericalSemigroup</C>; <C>GeneratorsOfNumericalSemigroupNC</C> is a synonym of <C>GeneratorsOfNumericalSemigroup</C>. The names are kept for compatibility with code produced for previous versions, but will be removed in the future.
+
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> GeneratorsOfNumericalSemigroup(S);
+[ 11, 12, 13, 32, 53 ]
+gap> S := NumericalSemigroup(3, 5, 53);
+<Numerical semigroup with 3 generators>
+gap> GeneratorsOfNumericalSemigroup(S);
+[ 3, 5, 53 ]
+gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
+[ 3, 5 ]
+gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
+true
+gap> s := NumericalSemigroup(3,5,7,15);
+<Numerical semigroup with 4 generators>
+gap> HasGenerators(s);
+true
+gap> HasMinimalGenerators(s);
+false
+gap> MinimalGenerators(s);
+[ 3, 5, 7 ]
+gap> Generators(s);
+[ 3, 5, 7, 15 ]
+]]></Example>
+<!--gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25));
+[ 5, 7, 9, 25 ]
+gap> ReducedSetOfGeneratorsOfNumericalSemigroup(true,NumericalSemigroup(5,7,9,10,25,28));
+[ 5, 7, 9, 28 ]
+gap> ReducedSetOfGeneratorsOfNumericalSemigroup(NumericalSemigroup(5,7,9,10,25,28),3);
+[ 5, 7, 9 ]-->
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Attr Name="EmbeddingDimension" Arg="NS" Label="for numerical semigroup"/>
+                    <Attr Name="EmbeddingDimensionOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the cardinality of its minimal generating system.
+                        <Example><![CDATA[
+gap> s := NumericalSemigroup(3,5,7,15);
+<Numerical semigroup with 4 generators>
+gap> EmbeddingDimension(s);
+3
+gap> EmbeddingDimensionOfNumericalSemigroup(s);
+3
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+
+                <ManSection>
+                    <Attr Name="SmallElements" Arg="NS" Label="for numerical semigroup"/>
+                    <Attr Name="SmallElementsOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the list of small elements of <C>NS</C>. Of course, the time consumed to return a result may depend on the way the semigroup is given.
+                        <Example><![CDATA[
+gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+[ 0, 3, 5 ]
+gap> SmallElements(NumericalSemigroup(3,5,7));
+[ 0, 3, 5 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+				<ManSection>
+					<Func Name="FirstElementsOfNumericalSemigroup" Arg="n, NS"></Func>
+					<Description>
+						<C>NS</C> is a numerical semigroup. It returns the list with the
+						first <A>n</A> elements of <C>NS</C>.
+						<Example><![CDATA[
+gap> FirstElementsOfNumericalSemigroup(2,NumericalSemigroup(3,5,7));
+[ 0, 3 ]
+gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
+[ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
+]]></Example>
+					</Description>
+</ManSection>
+
+
+                <ManSection>
+                    <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to element"/>
+                    <Oper Name="AperyListOfNumericalSemigroupWRTElement" Arg="S, n"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>n</A> is a positive element of
+                        <A>S</A>. Computes the Apéry list of <A>S</A> with respect to <A>n</A>. It contains for
+                        every <M>i\in \{0,\ldots,<A>n</A>-1\}</M>, in the <M>i+1</M>th position,
+                        the smallest element in the semigroup congruent with <M>i</M> modulo <A>n</A>.
+
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);;
+gap> AperyListOfNumericalSemigroupWRTElement(S,12);
+[ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+gap> AperyList(S,12);
+[ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
+g]]></Example>
+                    </Description>
+                </ManSection>
+                <ManSection>
+                    <Attr Name="AperyList" Arg="S" Label="for numerical semigroup with respect to multiplicity"/>
+                    <Attr Name="AperyListOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup. It computes the Apéry list of <A>S</A> with respect to the multiplicity of <A>S</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);;
+gap> AperyListOfNumericalSemigroup(S);
+[ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ]
+gap> AperyList(NumericalSemigroup(5,7,11));
+[ 0, 11, 7, 18, 14 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to integer"/>
+                    <Func Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
+                    <Description>
+                        <A>S</A> is a numerical semigroup and <A>m</A> is an integer.
+			Computes the Apéry list of <A>S</A> with respect to <A>m</A>, that is, the
+			set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>.
+			If <A>m</A> is an element in <A>S</A>, then the output of <C>AperyListOfNumericalSemigroupWRTInteger</C>, as sets, is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>,
+			though without side effects,
+			in the sense that this information is no longer used by the package. The output of <C>AperyList</C> is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>.
+
+                        <Example><![CDATA[
+gap>  s:=NumericalSemigroup(10,13,19,27);;
+gap> AperyListOfNumericalSemigroupWRTInteger(s,11);
+[ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+gap> AperyList(s,11);
+[ 0, 10, 13, 19, 20, 23, 26, 27, 29, 32, 33, 36, 39, 42, 45, 46, 52, 55 ]
+gap> Length(last);
+18
+gap> AperyListOfNumericalSemigroupWRTInteger(s,10);
+[ 0, 13, 19, 26, 27, 32, 38, 45, 51, 54 ]
+gap> AperyListOfNumericalSemigroupWRTElement(s,10);
+[ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
+gap> Length(last);
+10
+gap> AperyList(s,10);
+[ 0, 51, 32, 13, 54, 45, 26, 27, 38, 19 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+<ManSection>
+                    <Func Name="AperyListOfNumericalSemigroupAsGraph" Arg="ap"/>
+                    <Description>
+                        <A>ap</A> is the Apéry list of a numerical semigroup.
+This function returns the adjacency list of the graph <M>(ap, E)</M> where the edge <M>u -> v</M> is
+in <M>E</M> iff <M>v - u</M> is in <M>ap</M>.
+The 0 is ignored.
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7);;
+gap> AperyListOfNumericalSemigroupWRTElement(s,10);
+[ 0, 21, 12, 3, 14, 15, 6, 7, 18, 9 ]
+gap> AperyListOfNumericalSemigroupAsGraph(last);
+[ ,, [ 3, 6, 9, 12, 15, 18, 21 ],,, [ 6, 9, 12, 15, 18, 21 ],
+[ 7, 14, 21 ],, [ 9, 12, 15, 18, 21 ],,, [ 12, 15, 18, 21 ],,
+[ 14, 21 ], [ 15, 18, 21 ],,, [ 18, 21 ],,, [ 21 ] ]
+]]></Example>
+
+                    </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Name="KunzCoordinatesOfNumericalSemigroup" Arg="S,m"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The second argument is optional, and if missing it is assumed to be the multiplicity of <A>S</A>.
+
+  <P/>
+  Then the Apéry set of <A>m</A> in <A>S</A> has the form <M>[0,k_1m+1,...,k_{m-1}m+m-1]</M>, and the output is the <M>(m-1)</M>-uple <M>[k_1,k_2,...,k_{m-1}]</M>
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> KunzCoordinatesOfNumericalSemigroup(s);
+[ 2, 1 ]
+gap> KunzCoordinatesOfNumericalSemigroup(s,5);
+[ 1, 1, 0, 1 ]
+]]></Example>
+
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="KunzPolytope" Arg="m"/>
+  <Description>
+    <A>m</A> is a positive integer.
+
+  <P/>
+  The Kunz coordinates of the semigroups with multiplicity <A>m</A> are solutions of a system of inequalities <M>Ax\ge b</M> (see <Cite Key="R-GS-GG-B"></Cite>). The output is the matrix <M>(A|-b)</M>.
+<Example><![CDATA[
+gap> KunzPolytope(3);
+[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ]
+]]></Example>
+
+  </Description>
+</ManSection>
+                <ManSection>
+                    <Attr Name="FrobeniusNumber" Arg="NS" Label="for numerical semigroup"/>
+                    <Attr Name="FrobeniusNumberOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+         The largest nonnegative integer not belonging to a numerical semigroup
+<M>S</M> is the <E>Frobenius number</E> of <M>S</M>. If <M>S</M> is the set of
+nonnegative integers, then clearly its Frobenius number is <M>-1</M>,
+otherwise its Frobenius number coincides with the maximum of the gaps (or
+fundamental gaps) of <M>S</M>.
+                      <P/>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the Frobenius number of <C>NS</C>.
+ Of
+                        course, the time consumed to return a result may depend on the way the
+                        semigroup is given or on the knowledge already produced on the semigroup.
+                        <Example><![CDATA[
+gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+4
+gap> FrobeniusNumber(NumericalSemigroup(3,5,7));
+4
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Attr Name="Conductor" Arg="NS" Label="for numerical Semigroup"/>
+                    <Attr Name="ConductorOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        This is just a synonym of <C> FrobeniusNumberOfNumericalSemigroup</C> (<C>NS</C>)<M>+1</M>.
+                        <Example><![CDATA[
+gap> ConductorOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+5
+gap> Conductor(NumericalSemigroup(3,5,7));
+5
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Attr Name="PseudoFrobeniusOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+		       An integer <M>z</M> is a <E>pseudo-Frobenius
+number</E> of <M>S</M> if <M>z+S\setminus\{0\}\subseteq S</M>.
+		    <P/>
+                        <C>S</C>
+                        is a numerical semigroup. It returns set of pseudo-Frobenius numbers of <A>S</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> PseudoFrobeniusOfNumericalSemigroup(S);
+[ 21, 40, 41, 42 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Attr Name="TypeOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                      Stands for <C>Length(PseudoFrobeniusOfNumericalSemigroup (NS))</C>.
+		      <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> Type(S);
+4
+gap> TypeOfNumericalSemigroup(S);
+4
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Attr Name="Gaps" Arg="NS" Label="for numerical semigroup" />
+                    <Attr Name="GapsOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                A <E>gap</E> of a numerical semigroup <M>S</M> is a nonnegative integer not belonging to
+<M>S</M>.
+                        <C>NS</C>
+                        is a numerical semigroup. Both return the set of gaps of <C>NS</C>.
+                        <Example><![CDATA[
+gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
+[ 1, 2, 4 ]
+gap> Gaps(NumericalSemigroup(5,7,11));
+[ 1, 2, 3, 4, 6, 8, 9, 13 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+  <ManSection>
+    <Func Arg="NS" Name="DesertsOfNumericalSemigroup"></Func>
+    <Description>
+      <A>NS</A> is a numerical semigroup.
+      The output is the list with the runs of gaps of <A>NS</A>.
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> DesertsOfNumericalSemigroup(s);
+[ [ 1, 2 ], [ 4 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Prop Arg="NS" Name="IsOrdinaryNumericalSemigroup"></Prop>
+    <Prop Arg="NS" Name="IsOrdinary" Label="for numerical semigroups"></Prop>
+    <Description>
+      <A>NS</A> is a numerical semigroup.
+      Dectects if the semigroup is ordinary, that is, with less than two deserts.
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsOrdinary(s);
+false
+]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Prop Arg="NS" Name="IsAcuteNumericalSemigroup"></Prop>
+    <Prop Arg="NS" Name="IsAcute" Label="for numerical semigroups"></Prop>
+    <Description>
+      <A>NS</A> is a numerical semigroup.
+      Dectects if the semigroup is acute, that is, it is either ordinary or its last desert (the one with the Frobenius number) has less elements than the preceding one (<Cite Key="Br-acute"></Cite>).
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsAcute(s);
+true
+]]></Example>
+    </Description>
+  </ManSection>
+
+                <ManSection>
+                    <Attr Name="Holes" Arg="NS" Label="for numerical semigroup" />
+                    <Attr Name="HolesOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <C>S</C>
+                        is a numerical semigroup. Returns the set of gaps <M>x</M> of <C>S</C> such that <M>F(S)-x</M> is also a gap, where <M>F(S)</M> stands for the Frobenius number of <C>S</C>.
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5);;
+gap> Holes(s);
+[  ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> HolesOfNumericalSemigroup(s);
+[ 2 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+		<ManSection>
+		  <Attr Name="LatticePathAssociatedToNumericalSemigroup" Arg="S,p,q"/>
+		    <Description>
+		      <C>S</C> is a numerical semigroup and <C>p,q</C> are two elements in <C>S</C>.
+		      <P/>In this setting <C>S</C> is an oversemigroup of <M>\langle p,q\rangle</M>, and consequently every gap of <C>S</C> is a gap of <M>\langle p,q\rangle</M>. If <M>c</M> is the conductor of <M>\langle p,q\rangle</M>, then every gap <M>g</M> of <M>\langle p,q\rangle</M> can be written uniquely as <M>g=c-1-(ap+bp)</M> for some nonnegative integers <M>a,b</M>. We say that <M>(a,b)</M> are the coordinates associated to <M>g</M>.
+
+		      <P/> The output is a path in <M>\mathbb{N}^2</M> such that coordinates of the gaps of <M>S</M> correspond exactly with the points in <M>\mathbb{N}^2</M> that are between the path in the line <M>ax+by=c-1</M>. See <Cite Key="K-W"></Cite>.
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(16,17,71,72);;
+gap> LatticePathAssociatedToNumericalSemigroup(s,16,17);
+[ [ 0, 14 ], [ 1, 13 ], [ 2, 12 ], [ 3, 11 ], [ 4, 10 ], [ 5, 9 ], [ 6, 8 ],
+  [ 7, 7 ], [ 8, 6 ], [ 9, 5 ], [ 10, 4 ], [ 11, 3 ], [ 12, 2 ], [ 13, 1 ],
+  [ 14, 0 ] ]
+]]></Example>
+
+		    </Description>
+		</ManSection>
+
+                <ManSection>
+                    <Attr Name="Genus" Arg="NS" Label="for numerical semigroup"/>
+                    <Attr Name="GenusOfNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the number of  gaps of <C>NS</C>.
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(16,17,71,72);;
+gap> GenusOfNumericalSemigroup(s);
+80
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> Genus(S);
+26
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Attr Name="FundamentalGaps" Arg="S" Label="for numerical semigroup"/>
+                    <Attr Name="FundamentalGapsOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+                        <C>S</C>
+The <E>fundamental gaps</E> of <M>S</M> are those gaps that are maximal with respect to the partial order induced by
+division in <M>{\mathbb N}</M>.
+                        is a numerical semigroup. It returns the set of fundamental gaps of <A>S</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> FundamentalGapsOfNumericalSemigroup(S);
+[ 16, 17, 18, 19, 27, 28, 29, 30, 31, 40, 41, 42 ]
+gap> GapsOfNumericalSemigroup(S);
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21, 27, 28, 29,
+  30, 31, 40, 41, 42 ]
+gap> Gaps(NumericalSemigroup(5,7,11));
+[ 1, 2, 3, 4, 6, 8, 9, 13 ]
+gap> FundamentalGaps(NumericalSemigroup(5,7,11));
+[ 6, 8, 9, 13 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Attr Name="SpecialGaps" Arg="S" Label="for numerical semigroup"/>
+                    <Attr Name="SpecialGapsOfNumericalSemigroup" Arg="S"/>
+                    <Description>
+The <E>special gaps</E> of a numerical semigroup <M>S</M>, are
+those fundamental gaps such that if they are added to the given numerical semigroup,
+then the resulting set is again a numerical semigroup.
+                        <C>S</C>
+                        is a numerical semigroup. It returns the special gaps of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> SpecialGaps(S);
+[ 40, 41, 42 ]
+gap> SpecialGapsOfNumericalSemigroup(S);
+[ 40, 41, 42 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+</Section>

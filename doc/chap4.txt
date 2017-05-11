@@ -1,0 +1,146 @@
+  
+  [1X4 [33X[0;0YPresentations of Numerical Semigroups[133X[101X
+  
+  [33X[0;0YIn  this  chapter  we  explain  how  to  compute a minimal presentation of a
+  numerical semigroup. There are three functions involved in this process.[133X
+  
+  
+  [1X4.1 [33X[0;0YPresentations of Numerical Semigroups[133X[101X
+  
+  [1X4.1-1 MinimalPresentationOfNumericalSemigroup[101X
+  
+  [29X[2XMinimalPresentationOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup. The output is a list of lists with two elements.
+  Each  list  of  two  elements  represents  a  relation  between  the minimal
+  generators  of the numerical semigroup. If [22X{ {x_1,y_1},...,{x_k,y_k}}[122X is the
+  output  and  [22X{m_1,...,m_n}[122X  is  the  minimal  system  of  generators  of the
+  numerical  semigroup,  then  [22X{x_i,y_i}={{a_i_1,...,a_i_n},{b_i_1,...,b_i_n}}[122X
+  and [22Xa_i_1m_1+⋯+a_i_nm_n= b_i_1m_1+ ⋯ +b_i_nm_n.[122X[133X
+  
+  [33X[0;0YAny  other  relation  among  the  minimal generators of the semigroup can be
+  deduced from the ones given in the output.[133X
+  
+  [33X[0;0YThe algorithm implemented is described in [Ros96a] (see also [RG99a]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);[128X[104X
+    [4X[28X      <Numerical semigroup with 3 generators>[128X[104X
+    [4X[28X      gap> MinimalPresentationOfNumericalSemigroup(s);[128X[104X
+    [4X[28X      [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
+    [4X[28X      [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe first element in the list means that [22X1× 3+1× 7=2× 5[122X, and the others have
+  similar meanings.[133X
+  
+  [1X4.1-2 GraphAssociatedToElementInNumericalSemigroup[101X
+  
+  [29X[2XGraphAssociatedToElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xn[103X is an element in [3XS[103X.[133X
+  
+  [33X[0;0YThe  output  is a pair. If [22X{m_1,...,m_n}[122X is the set of minimal generators of
+  [3XS[103X,  then  the first component is the set of vertices of the graph associated
+  to  [3Xn[103X  in [3XS[103X, that is, the set [22X{ m_i | n-m_i∈ S}[122X, and the second component is
+  the set of edges of this graph, that is, [22X{ {m_i,m_j} | n-(m_i+m_j)∈ S}.[122X[133X
+  
+  [33X[0;0YThis  function  is  used  to compute a minimal presentation of the numerical
+  semigroup [3XS[103X, as explained in [Ros96a].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
+    [4X[28X      gap> GraphAssociatedToElementInNumericalSemigroup(10,s);[128X[104X
+    [4X[28X      [ [ 3, 5, 7 ], [ [ 3, 7 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 BettiElementsOfNumericalSemigroup[101X
+  
+  [29X[2XBettiElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThe  output  is  the  set  of  elements  in  [3XS[103X  whose  associated  graph  is
+  nonconnected [GO10].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
+    [4X[28X      gap> BettiElementsOfNumericalSemigroup(s);[128X[104X
+    [4X[28X      [ 10, 12, 14 ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-4 PrimitiveElementsOfNumericalSemigroup[101X
+  
+  [29X[2XPrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThe  output  is  the set of elements [22Xs[122X in [3XS[103X such that there exists a minimal
+  solution  to  [22Xmsg⋅  x-msg⋅ y = 0[122X, such that [22Xx,y[122X are factorizations of [22Xs[122X, and
+  [22Xmsg[122X is the minimal generating system of [3XS[103X. Betti elements are primitive, but
+  not the way around in general.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XPrimitiveElementsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-5 ShadedSetOfElementInNumericalSemigroup[101X
+  
+  [29X[2XShadedSetOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xn[103X is an element in [3XS[103X.[133X
+  
+  [33X[0;0YThe output is a simplicial complex [22XC[122X. If [22X{m_1,...,m_n}[122X is the set of minimal
+  generators of [3XS[103X, then [22XL ∈ C[122X if [22Xn-∑_i∈ L m_i∈ S[122X ([SW86]).[133X
+  
+  [33X[0;0YThis function is a generalization of the graph associated to [3Xn[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XShadedSetOfElementInNumericalSemigroup(10,s);[127X[104X
+    [4X[28X[ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X[101X
+  
+  [33X[0;0YA  numerical  semigroup  [22XS[122X  is  uniquely  presented  if  for any two minimal
+  presentations  [22Xσ[122X  and  [22Xτ[122X and any [22X(a,b)∈ σ[122X, either [22X(a,b)∈ τ[122X or [22X(b,a)∈ τ[122X, that
+  is, there is essentially a unique minimal presentation (up to arrangement of
+  the components of the pairs in it).[133X
+  
+  [1X4.2-1 IsUniquelyPresented[101X
+  
+  [29X[2XIsUniquelyPresented[102X( [3XS[103X ) [32X property
+  [29X[2XIsUniquelyPresentedNumericalSemigroup[102X( [3XS[103X ) [32X property
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThe  output is true if [3XS[103X has uniquely presented. The implementation is based
+  on (see [GO10]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XIsUniquelyPresentedNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-2 IsGeneric[101X
+  
+  [29X[2XIsGeneric[102X( [3XS[103X ) [32X property
+  [29X[2XIsGenericNumericalSemigroup[102X( [3XS[103X ) [32X property
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YThe  output  is  true  if  [3XS[103X  has  a generic presentation, that is, in every
+  minimal  relation  all  generators  occur.  These  semigroups  are  uniquely
+  presented (see [BGG11]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGenericNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  

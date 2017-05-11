@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>
+                    Generating Numerical Semigroups
+                </Heading>
+We recall some definitions from Chapter <Ref Chap="Intro"/>.
+<P/>
+A numerical semigroup
+is a subset of the set <M> {\mathbb N} </M> of nonnegative integers
+that is closed under addition, contains <M>0</M> and whose complement in <M> {\mathbb N} </M> is
+finite.
+
+
+<P/>
+
+We refer to the elements in a numerical
+semigroup that are less than or equal to
+the conductor as <E>small elements</E> of
+the semigroup.
+
+<P/>
+
+A <E>gap</E> of a numerical semigroup <M>S</M> is a nonnegative integer not belonging to
+<M>S</M>.
+The <E>fundamental gaps</E> of <M>S</M> are those gaps that are maximal with respect to the partial order induced by
+division in <M>{\mathbb N}</M>.
+
+<P/>
+
+Given a numerical semigroup <M>S</M> and a nonzero element <M>s</M> in it, one
+can consider for every integer <M>i</M> ranging from <M>0</M> to <M>s-1</M>,
+the smallest element in <M>S</M> congruent with <M>i</M> modulo <M>s</M>, say
+<M>w(i)</M> (this element exists since the complement of <M>S</M> in
+<M>{\mathbb N}</M> is finite). Clearly <M>w(0)=0</M>. The set <M>{\rm
+Ap}(S,s)=\{ w(0),w(1),\ldots, w(s-1)\}</M> is called the <E>Apéry set</E> of
+<M>S</M> with respect to <M>s</M>.
+
+<P/>
+
+Let <M>a,b,c,d</M> be positive integers such that <M>a/b &lt; c/d</M>, and let <M>I=[a/b,c/d]</M>.
+Then the set <M>{\rm S}(I)={\mathbb N}\cap \bigcup_{n\geq 0} n I</M> is a numerical semigroup.
+This class of numerical semigroups coincides with that of sets of solutions to equations of the
+form <M> A x \bmod\ B \leq C x</M> with <M> A,B,C</M> positive integers. A numerical semigroup in
+this class is said to be <E>proportionally modular</E>.
+If <M>C = 1</M>, then it is said to be <E>modular</E>.
+
+<P/>
+
+There are different ways to specify a numerical semigroup <M>S</M>,
+namely, by its generators; by its gaps, its fundamental or special gaps
+by its Apéry set, just to name some.
+In this section we describe functions that may be used
+to specify, in one of these ways, a numerical semigroup  in &GAP;.
+
+                <ManSection>
+                    <Func Name="NumericalSemigroupByGenerators" Arg="List"/>
+                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by generators"/>
+                    <Description>
+		      <C>List</C> is a list of nonnegative integers with greatest common divisor equal to one. These integers may be given as a list or by a sequence of individual elements. The output is the numerical semigroup spanned by <C>List</C>.
+		      <P/>
+		      <C>String</C> does not need to be present. When it is present, it must be <C>"generators"</C>.
+			<Example><![CDATA[		
+gap> s1 := NumericalSemigroupByGenerators(3,5,7);             
+<Numerical semigroup with 3 generators>
+gap> s2 := NumericalSemigroupByGenerators([3,5,7]);
+<Numerical semigroup with 3 generators>
+gap> s3 := NumericalSemigroup("generators",3,5,7); 
+<Numerical semigroup with 3 generators>
+gap> s4 := NumericalSemigroup("generators",[3,5,7]);
+<Numerical semigroup with 3 generators>
+gap> s5 := NumericalSemigroup(3,5,7);               
+<Numerical semigroup with 3 generators>
+gap> s6 := NumericalSemigroup([3,5,7]);
+<Numerical semigroup with 3 generators>
+gap> s1=s2;s2=s3;s3=s4;s4=s5;s5=s6;
+true
+true
+true
+true
+true
+]]></Example>
+    </Description>
+		</ManSection>
+		
+<ManSection>
+ <Func Name="NumericalSemigroupBySubAdditiveFunction" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by subadditive function"/>
+
+ <Description>
+                           A periodic subadditive function with period <M>m</M> is given through the
+                        list of images of the integers from <M>1</M> to <M>m</M>. The image of <M>m</M> has to be <M>0</M>. The output is the numerical semigroup determined by this subadditive function.
+			<P/>
+			In the second form, <C>String</C> must be <C>"subadditive"</C>.
+
+        <Example><![CDATA[
+gap> s := NumericalSemigroupBySubAdditiveFunction([5,4,2,0]);
+<Numerical semigroup>
+gap> t := NumericalSemigroup("subadditive",[5,4,2,0]);;     
+gap> s=t;
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+ <Func Name="NumericalSemigroupByAperyList" Arg="List"/>
+ <Func Name="NumericalSemigroup" Arg="String, List" Label="by Apery list"/>
+
+ <Description>
+   <C>List</C> is an Apéry list. The output is the numerical semigroup whose Apéry set with respect to the length of given list  is <C>List</C>.
+			<P/>
+			In the second form, <C>String</C> must be <C>"apery"</C>.
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,11);;
+gap> ap := AperyListOfNumericalSemigroupWRTElement(s,20);
+[ 0, 21, 22, 3, 24, 25, 6, 27, 28, 9, 30, 11, 12, 33, 14, 15, 36, 17, 18, 39 ]
+gap> t:=NumericalSemigroupByAperyList(ap);;
+gap> r := NumericalSemigroup("apery",ap);;
+gap> s=t;t=r;
+true
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+<Func Name="NumericalSemigroupBySmallElements" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by small elements"/>
+ 
+    <Description>
+      <C>List</C> is the set of small elements of a numerical semigroup, that is, the set of all elements not greater than the conductor. The output is the numerical semigroup with this set of small elements.
+      When no such semigroup exists, an error is returned.
+			<P/>
+			In the second form, <C>String</C> must be <C>"elements"</C>.
+         <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,11);;
+gap> se := SmallElements(s);
+[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
+gap> t := NumericalSemigroupBySmallElements(se);;
+gap> r := NumericalSemigroup("elements",se);;
+gap> s=t;t=r;                                            
+true
+true
+gap> e := [ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ];    
+[ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ]
+gap> NumericalSemigroupBySmallElements(e);
+Error, The argument does not represent a numerical semigroup called from
+<function "NumericalSemigroupBySmallElements">( <arguments> )
+ called from read-eval loop at line 35 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> 
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="NumericalSemigroupByGaps" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by gaps"/>
+    <Description>
+   <C>List</C> is the set of gaps of a numerical semigroup. The output is the numerical semigroup with this set of gaps. When no semigroup exists with the given set as set of gaps, an error is returned.
+			<P/>
+			In the second form, <C>String</C> must be <C>"gaps"</C>.
+        <Example><![CDATA[
+gap> g := [ 1, 2, 4, 5, 7, 8, 10, 13, 16 ];;
+gap> s := NumericalSemigroupByGaps(g);;
+gap> t := NumericalSemigroup("gaps",g);;
+gap> s=t;
+true
+gap> h := [ 1, 2, 5, 7, 8, 10, 13, 16 ];;   
+gap> NumericalSemigroupByGaps(h);
+Error, The argument does not represent the gaps of a numerical semigroup called
+ from
+<function "NumericalSemigroupByGaps">( <arguments> )
+ called from read-eval loop at line 34 of *stdin*
+you can 'quit;' to quit to outer loop, or
+you can 'return;' to continue
+brk> 
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Func Name="NumericalSemigroupByFundamentalGaps" Arg="List"/>
+  <Func Name="NumericalSemigroup" Arg="String, List" Label="by fundamental gaps"/>
+    <Description>
+   <C>List</C> is the set of fundamental gaps of a numerical semigroup. The output is the numerical semigroup determined by these gaps. When the given set contains elements (which will be gaps) that are not fundamental gaps, they are silently removed.
+			<P/>
+			In the second form, <C>String</C> must be <C>"fundamentalgaps"</C>.
+        <Example><![CDATA[
+gap> fg := [ 11, 14, 17, 20, 23, 26, 29, 32, 35 ];;
+gap> NumericalSemigroupByFundamentalGaps(fg);
+<Numerical semigroup>
+gap> NumericalSemigroup("fundamentalgaps",fg);     
+<Numerical semigroup>
+gap> last=last2;
+true
+gap> gg := [ 11, 17, 20, 22, 23, 26, 29, 32, 35 ];; #22 is not fundamental
+gap> NumericalSemigroup("fundamentalgaps",fg);     
+<Numerical semigroup>
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+    <Func Name="NumericalSemigroupByAffineMap" Arg="a,b,c"/>
+    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by affine map"/>
+    <Description>
+        Given three nonnegative integers <A>a</A>, <A>b</A> and <A>c</A>, with <M>a,c>0</M> and <M>\gcd(b,c)=1</M>,
+        this function returns the least (with restpect to set order inclusion) numerical semigroup containing <A>c</A> and closed under the map <M>x\mapsto ax+b</M>. The procedure is explained in <Cite Key="Ugolini"></Cite>.
+	<P/>
+			In the second form, <C>String</C> must be <C>"affinemap"</C>.
+        <Example><![CDATA[
+gap> s:=NumericalSemigroupByAffineMap(3,1,3);
+<Numerical semigroup with 3 generators>
+gap> SmallElements(s);
+[ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ]
+gap> t:=NumericalSemigroup("affinemap",3,1,3);;
+gap> s=t;
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+                <ManSection>
+                    <Func Name="ModularNumericalSemigroup" Arg="a,b"/>
+                    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by modular condition"/>
+                    <Description>
+                        Given two positive integers <A>a</A> and <A>b</A>,
+                        this function returns a modular numerical semigroup
+                        satisfying <M>ax \bmod\ b \le x</M>.
+	<P/>
+			In the second form, <C>String</C> must be <C>"modular"</C>.
+                        <Example><![CDATA[
+gap> ModularNumericalSemigroup(3,7);
+<Modular numerical semigroup satisfying 3x mod 7 <= x >
+gap> NumericalSemigroup("modular",3,7);  
+<Modular numerical semigroup satisfying 3x mod 7 <= x >
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Func Name="ProportionallyModularNumericalSemigroup" Arg="a,b,c"/>
+                    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by proportionally modular condition"/>
+                    <Description>
+                        Given three positive integers <A>a</A>, <A>b</A> and <A>c</A>,
+                        this function returns a proportionally modular numerical semigroup
+                        satisfying <M>ax\bmod\ b \le cx</M>.
+	<P/>
+			In the second form, <C>String</C> must be <C>"propmodular"</C>.
+                        <Example><![CDATA[
+gap> ProportionallyModularNumericalSemigroup(3,7,12);
+<Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
+gap> NumericalSemigroup("propmodular",3,7,12);
+<Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >
+]]></Example>
+When <M>c=1</M>, the semigroup is seen as a modular numerical semigroup.
+<Example><![CDATA[
+gap> NumericalSemigroup("propmodular",67,98,1);
+<Modular numerical semigroup satisfying 67x mod 98 <= x >
+]]></Example>
+                    </Description>
+                </ManSection>
+			<P/>
+			Numerical semigroups generated by an interval of positive integers are
+			known to be proportionally modular, and thus they are treated as such, since membership
+			and other problems can be solved efficiently for these semigroups.
+			<P/>
+
+                <ManSection>
+
+                    <Func Name="NumericalSemigroupByInterval" Arg="List"/>
+                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by (closed) interval"/>
+                    <Description>
+		      The input is a list of rational numbers defining a closed interval. The output is the semigroup of numerators of all rational numbers in this interval.
+		      <P/>
+		       <C>String</C> does not need to be present. When it is present, it must be <C>"interval"</C>.
+			<Example><![CDATA[		
+gap> NumericalSemigroupByInterval(7/5,5/3);
+<Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >
+gap> NumericalSemigroup("interval",[7/5,5/3]);
+<Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >
+gap> SmallElements(last);
+[ 0, 3, 5 ]
+]]></Example>
+                    </Description>
+
+               </ManSection>
+
+                <ManSection>
+
+                    <Func Name="NumericalSemigroupByOpenInterval" Arg="List"/>
+                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by open interval"/>
+                    <Description>
+		      The input is a list of rational numbers defining a open interval. The output is the semigroup of numerators of all rational numbers in this interval.
+		      <P/>
+		       <C>String</C> does not need to be present. When it is present, it must be <C>"openinterval"</C>.
+			<Example><![CDATA[		
+gap> NumericalSemigroupByOpenInterval(7/5,5/3);
+<Numerical semigroup>
+gap> NumericalSemigroup("openinterval",[7/5,5/3]);
+<Numerical semigroup>
+gap> SmallElements(last);                         
+[ 0, 3, 6, 8 ] 
+]]></Example>
+                    </Description>
+
+               </ManSection>
+
+            </Section>
+

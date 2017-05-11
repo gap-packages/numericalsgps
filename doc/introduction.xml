@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <Chapter Label="Intro">
+    <Heading>
+      Introduction
+    </Heading>
+
+A <E>numerical semigroup</E> is a subset of the set <M> {\mathbb N} </M> of nonnegative integers 
+that is closed under addition, contains <M>0</M> and whose complement in <M> {\mathbb N} </M> is 
+finite. The smallest positive integer belonging to a numerical semigroup is its 
+<E>multiplicity</E>.
+
+<P/>
+
+Let <M>S</M> be a numerical semigroup and <M>A</M> be a subset of <M>S</M>. We 
+say that <M>A</M> is a <E>system of generators</E> of <M>S</M> if <M>S=\{ k_1 
+a_1+\cdots+ k_n a_n\ |\  n,k_1,\ldots,k_n\in{\mathbb N}, a_1,\ldots,a_n\in 
+A\}</M>. The set <M>A</M> is a <E>minimal system of generators</E> of <M>S</M> 
+if no proper subset of <M>A</M> is a system of generators of <M>S</M>.
+
+<P/>
+
+Every numerical semigroup has a unique minimal system of generators. This is a data that 
+can be used in order to uniquely define a numerical semigroup. Observe that since the complement 
+of a numerical semigroup in the set of nonnegative integers is finite, this implies that the 
+greatest common divisor of the elements of a numerical semigroup is 1, and the same condition 
+must be fulfilled by its minimal system of generators (or by any of its systems of generators).
+
+<P/>
+
+Given a numerical semigroup <M>S</M> and a nonzero element <M>s</M> in it, one 
+can consider for every integer <M>i</M> ranging from <M>0</M> to <M>s-1</M>, 
+the smallest element in <M>S</M> congruent with <M>i</M> modulo <M>s</M>, say 
+<M>w(i)</M> (this element exists since the complement of <M>S</M> in 
+<M>{\mathbb N}</M> is finite). Clearly <M>w(0)=0</M>. The set <M>{\rm 
+Ap}(S,s)=\{ w(0),w(1),\ldots, w(s-1)\}</M> is called the <Label Name="zl1" /><E>Apéry set</E> of 
+<M>S</M> with respect to <M>s</M>. Note that a nonnegative integer <M>x</M> 
+congruent with <M>i</M> modulo <M>s</M> belongs to <M>S</M> if and only if 
+<M>w(i)\leq x</M>. Thus the pair <M>(s,{\rm Ap}(S,s))</M> fully determines the 
+numerical semigroup <M>S</M> (and can be used to easily solve the membership 
+problem to <M>S</M>). This set is in fact one of the most powerfull tools 
+known for numerical semigroups, and it is used almost everywhere in the 
+computation of components and invariants associated to a numerical semigroup. 
+Usually the element <M>s</M> is taken to be the multiplicity, since in this 
+way the resulting Apéry set is the smallest possible.
+
+<P/>
+
+A <Label Name="xx1" /><E>gap</E> of a numerical semigroup <M>S</M> is a nonnegative integer not belonging to 
+<M>S</M>. The set of gaps of <M>S</M> is usually denoted by <M>{\rm H}(S)</M>, and clearly 
+determines uniquely <M>S</M>. Note that if <M>x</M> is a gap of <M>S</M>, then so are all the 
+nonnegative integers dividing it. Thus in order to describe <M>S</M> we do not need to 
+know all its gaps, but only those that are maximal with respect to the partial order induced by 
+division in <M>{\mathbb N}</M>. These gaps are called <Label Name="lab1" /><E>fundamental gaps</E>. 
+
+<P/>
+
+The largest nonnegative integer not belonging to a numerical semigroup 
+<M>S</M> is the <E>Frobenius number</E> of <M>S</M>. If <M>S</M> is the set of 
+nonnegative integers, then clearly its Frobenius number is <M>-1</M>, 
+otherwise its Frobenius number coincides with the maximum of the gaps (or 
+fundamental gaps) of <M>S</M>. The Frobenius number plus one is known as the <E>conductor</E> of the semigroup.
+In this package we refer to the elements in the 
+semigroup that are less than or equal to the conductor as <Label Name="zlab1" /><E>small 
+elements</E> of the semigroup. Observe that from the definition, if <M>S</M> 
+is a numerical semigroup with Frobenius number <M>f</M>, then <M>f+{\mathbb 
+N}\setminus\{0\}\subseteq S</M>. An integer <M>z</M> is a <Label Name="lab2" /><E>pseudo-Frobenius 
+number</E> of <M>S</M> if <M>z+S\setminus\{0\}\subseteq S</M>. Thus the 
+Frobenius number of <M>S</M> is one of its pseudo-Frobenius numbers. The 
+<E>type</E> of a numerical semigroup is the cardinality of the set of its 
+pseudo-Frobenius numbers.
+
+<P/>
+
+The number of numerical semigroups having a given Frobenius number is finite. 
+The elements in this set of numerical semigroups that are maximal with respect 
+to set inclusion are precisely those numerical semigroups that cannot be 
+expressed as intersection of two other numerical semigroups containing them 
+properly, and thus they are known as <E>irreducible</E> numerical semigroups. 
+Clearly, every numerical semigroup is the intersection of (finitely many) 
+irreducible numerical semigroups. 
+
+<P/>
+
+A numerical semigroup <M>S</M> with Frobenius number <M>f</M> is 
+<E>symmetric</E> if for every integer <M>x</M>, either <M>x\in S</M> or 
+<M>f-x\in S</M>. The set of irreducible numerical semigroups with odd 
+Frobenius number coincides with the set of symmetric numerical semigroups. The 
+numerical semigroup <M>S</M> is <E>pseudo-symmetric</E> if <M>f</M> is even 
+and  for every integer <M>x</M> not equal to <M>f/2</M> either <M>x\in S</M> 
+or <M>f-x\in S</M>. The set of irreducible numerical semigroups with even 
+Frobenius number is precisely the set of pseudo-symmetric numerical 
+semigroups. These two classes of numerical semigroups have been widely studied 
+in the literature due to their nice applications in Algebraic Geometry. This 
+is probably one of the main reasons that made people turn their attention on 
+numerical semigroups again in the last decades. Symmetric numerical semigroups 
+can be also characterized as those with type one, and pseudo-symmetric 
+numerical semigroups are those numerical semigroups with type two and such 
+that its pseudo-Frobenius numbers are its Frobenius number and its Frobenius 
+number divided by two.
+
+<P/>
+
+Another class of numerical semigroups that catched the attention of researchers working on 
+Algebraic Geometry and Commutative Ring Theory is the class of numerical semigroups with  maximal 
+embedding dimension. The <E>embedding dimension</E> of a numerical semigroup is the cardinality 
+of its minimal system of generators. It can be shown that the embedding dimension is at most the 
+multiplicity of the numerical semigroup. Thus <E>maximal embedding dimension</E> numerical 
+semigroups are those numerical semigroups for which their embedding dimension and multiplicity 
+coincide. These numerical semigroups have nice maximal properties, not only (of course) related 
+to their embedding dimension, but also by means of their presentations. Among maximal embedding 
+dimension there are two classes of numerical semigroups that have been studied due to the 
+connections with the equivalence of algebroid branches. A numerical semigroup <M>S</M> is Arf if 
+for every <M>x\geq y\geq z\in S</M>, then <M>x+y-z\in S</M>; and it is  <E>saturated</E> if the 
+following condition holds: if <M>s,s_1,\ldots,s_r\in S</M> are such that <M>s_i\leq s</M> for all 
+<M>i\in \{1,\ldots,r\}</M> and <M>z_1,\ldots,z_r\in {\mathbb Z}</M> are such that 
+<M>z_1s_1+\cdots+z_rs_r\geq 0</M>, then <M>s+z_1s_1+\cdots +z_rs_r\in S</M>.
+
+<P/>
+
+If we look carefully inside the set of fundamental gaps of a numerical semigroup, we see that 
+there are some fulfilling the condition that if they are added to the given numerical semigroup, 
+then the resulting set is again a numerical semigroup. These elements are called <Label Name="lab3" /><E>special 
+gaps</E> of the numerical semigroup. A numerical semigroup other than the set of nonnegative 
+integers is irreducible if and only if it has only a special gap.
+
+<P/>
+
+The inverse operation to the one described in the above paragraph is that of removing an element 
+of a numerical semigroup. If we want the resulting set to be a numerical semigroup, then the only 
+thing we can remove is a minimal generator.
+
+<P/>
+
+Let <M>a,b,c,d</M> be positive integers such that <M>a/b &lt; c/d</M>, and let <M>I=[a/b,c/d]</M>. 
+Then the set <M>{\rm S}(I)={\mathbb N}\cap \bigcup_{n\geq 0} n I</M> is a numerical semigroup. 
+This class of numerical semigroups coincides with that of sets of solutions to equations of the 
+form <M> A x \ mod\ B \leq C x</M> with <M> A,B,C</M> positive integers. A numerical semigroup in 
+this class is said to be <Label Name="llab1" /><E>proportionally modular</E>. 
+ 
+<P/>
+ 
+A sequence of positive rational numbers <M> a_1/b_1 &lt; \cdots &lt; 
+a_n/b_n</M> with <M>a_i,b_i</M> positive integers is a <E>Bézout sequence</E> 
+if <M> a_{i+1}b_i - a_i b_{i+1}=1</M> for all <M>i\in \{1,\ldots,n-1\}</M>. If 
+<M> a/b=a_1/b_1 &lt; \cdots &lt; a_n/b_n =c/d</M>, then <M>{\rm 
+S}([a/b,c/d])=\langle a_1,\ldots,a_n\rangle</M>. Bézout sequences are not only 
+interesting for this fact, they have shown to be a major tool in the study of 
+proportionally modular numerical semigroups.
+
+<P/>
+
+If <M>S</M> is a numerical semigroup and <M>k</M> is a positive integer, then 
+the set <M>S/k=\{ x\in {\mathbb N} \ |\  kx\in S\}</M> is a numerical semigroup, 
+known as the <E>quotient</E> <M>S</M> by <M>k</M>.
+
+<P/>
+
+Let <M>m</M> be a positive integer. A <Label Name="llab2" /><E>subadditive</E> function with period <M>m</M> is a map 
+<M>f:{\mathbb N}\to {\mathbb N}</M> such that <M> f(0)=0</M>, <M>f(x+y)\leq f(x)+f(y)</M> and 
+<M>f(x+m)=f(x)</M>. If <M>f</M> is a subadditive function with period <M>m</M>, then the set 
+<M>{\rm M}_f=\{ x\in {\mathbb N}\ |\  f(x)\leq x\}</M> is a numerical semigroup. Moreover, every 
+numerical semigroup is of this form. Thus a numerical semigroup can be given by a subadditive 
+function with a given period. If <M>S</M> is a numerical semigroup and <M>s\in S, s\not=0</M>, 
+and <M>{\rm Ap}(S,s)=\{ w(0),w(1),\ldots, w(s-1)\}</M>, then <M>f(x)=w(x \ mod\ s)</M> is a 
+subadditive function with period <M>s</M> such that <M>{\rm M}_f=S</M>.
+
+<P/>
+
+Let <M>S</M> be a numerical semigroup generated by <M>\{n_1,\ldots,n_k\}</M>. Then we can define 
+the following morphism (called sometimes the factorization morphism) by <M>\varphi: {\mathbb N}^k 
+\to S,\ \varphi(a_1,\ldots,a_k)=a_1n_1+\cdots+a_kn_k</M>. If <M>\sigma</M> is the kernel 
+congruence of <M>\varphi</M> (that is, <M>a\sigma b</M> if <M>\varphi(a)=\varphi(b)</M>), then 
+<M>S</M> is isomorphic to <M>{\mathbb N}^k/\sigma</M>. A <E>presentation</E> for <M>S</M> is a 
+system of generators (as a congruence) of <M>\sigma</M>. If <M>\{n_1,\ldots,n_p\}</M> is a 
+minimal system of generators, then a <E>minimal presentation</E> is a presentation such that none 
+of its proper subsets is a presentation. Minimal presentations of numerical semigroups coincide 
+with  presentations with minimal cardinality, though in general these two concepts are not the 
+same for an arbitrary commutative semigroup.
+
+<P/>
+
+A set <M>I</M> of integers is an <E>ideal relative to a numerical semigroup</E> <M>S</M> provided 
+that <M>I+S\subseteq I</M> and that there exists <M>d\in S</M> such that <M>d+I\subseteq S</M>. 
+If <M>I\subseteq S</M>, we simply say that <M>I</M> is an <E>ideal</E> of <M>S</M>. If <M>I</M> 
+and <M>J</M> are relative ideals of <M>S</M>, then so is <M>I-J=\{z\in {\mathbb Z}\ |\  
+z+J\subseteq I\}</M>, and it is tightly related to the operation ":" of ideals in a commutative 
+ring. 
+
+<P/>
+
+In this package we have implemented the functions needed to deal with the elements exposed in 
+this introduction.
+<P/>
+
+Many of the algorithms, and the necessary background to understand them, can be found in the monograph <Cite Key="RGbook"></Cite>. Some examples in this book have been illustrated with the help of this package. So the reader can also find there more examples on the usage of the functions implemented here. 
+
+<P/>
+This package was presented in  <Cite Key="JMDA"></Cite>. For a survey of the features of this package, see <Cite Key="MR3493240"></Cite>.
+</Chapter>

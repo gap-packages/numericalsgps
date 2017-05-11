@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appendix><Heading>"Random" functions</Heading>
+
+Here we describe some functions which allow to create
+several "random" objects. We make use of the function <C>RandomList</C>.
+
+<Section><Heading>Random functions</Heading>
+
+<ManSection>
+            <Func Name="RandomNumericalSemigroup" Arg="n,a[,b]"></Func>
+            <Description>
+                Returns a ``random" numerical semigroup with no more than <A>n</A> generators in [1..<A>a</A>] (or in [<A>a</A>..<A>b</A>], if <A>b</A> is present).
+                <Example><![CDATA[
+gap> RandomNumericalSemigroup(3,9);
+<Numerical semigroup with 3 generators>
+gap> RandomNumericalSemigroup(3,9,55);
+<Numerical semigroup with 3 generators>
+]]></Example>
+            </Description>
+        </ManSection>
+
+
+        <ManSection>
+            <Func Name="RandomListForNS" Arg="n,a,b"></Func>
+            <Description>
+Returns a set of length not greater than <A>n</A> of random integers in <A>[a..b]</A>
+whose GCD is 1.
+It is used to create "random" numerical semigroups.
+                <Example><![CDATA[
+gap> RandomListForNS(13,1,79);
+[ 22, 26, 29, 31, 34, 46, 53, 61, 62, 73, 76 ]
+]]></Example>
+            </Description>
+        </ManSection>
+
+
+
+        <ManSection>
+            <Func Name="RandomModularNumericalSemigroup" Arg="k[,m]"></Func>
+            <Description>
+                Returns a ``random" modular numerical semigroup <M>S(a,b)</M> with <M> a \le k </M> (see <Ref Label="llab1" />) and multiplicity at least <M>m</M>, were <M>m</M> is the second argument, which may not be present..
+                <Example><![CDATA[
+gap> RandomModularNumericalSemigroup(9);
+<Modular numerical semigroup satisfying 5x mod 6 <= x >
+gap> RandomModularNumericalSemigroup(10,25);
+<Modular numerical semigroup satisfying 4x mod 157 <= x >
+]]></Example>
+            </Description>
+        </ManSection>
+
+
+        <ManSection>
+            <Func Name="RandomProportionallyModularNumericalSemigroup" Arg="k[,m]"></Func>
+            <Description>
+                Returns a ``random" proportionally modular numerical semigroup <M>S(a,b,c)</M> with <M> a \le k </M> (see <Ref Label="llab1" />) and multiplicity at least <M>m</M>, were <M>m</M> is the second argument, which may not be present.
+                <Example><![CDATA[
+gap> RandomProportionallyModularNumericalSemigroup(9);
+<Proportionally modular numerical semigroup satisfying 2x mod 3 <= 2x >
+gap> RandomProportionallyModularNumericalSemigroup(10,25);
+<Proportionally modular numerical semigroup satisfying 6x mod 681 <= 2x >
+]]></Example>
+            </Description>
+        </ManSection>
+
+        <ManSection>
+            <Func Name="RandomListRepresentingSubAdditiveFunction" Arg="m, a"></Func>
+            <Description>
+                Produces a ``random" list representing a subadditive function (see <Ref Label="llab2" />) which is periodic
+with period <A>m</A> (or less). When possible, the images are in <A>[a..20*a]</A>.
+(Otherwise, the list of possible images is enlarged.)
+
+
+                <Example><![CDATA[
+gap> RandomListRepresentingSubAdditiveFunction(7,9);
+[ 173, 114, 67, 0 ]
+gap> RepresentsPeriodicSubAdditiveFunction(last);
+true
+]]></Example>
+            </Description>
+        </ManSection>
+
+        <ManSection>
+            <Func Name="NumericalSemigroupWithRandomElementsAndFrobenius" Arg="n,mult,frob"></Func>
+            <Description>
+Produces a "random" semigroup containing (at least) <A>n</A> elements greater than or equal to <A>mult</A> and less than <A>frob</A>, chosen at random. The semigroup returned has multiplicity chosen at random but no smaller than <A>mult</A> and having Frobenius number chosen at random but not greater than <A>frob</A>. Returns <M>fail</M> if <A>frob</A> is greater than <A>mult</A>.
+                <Example><![CDATA[
+gap> ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);
+<Numerical semigroup with 17 generators>
+gap> MinimalGeneratingSystem(ns);
+[ 12, 13, 19, 27, 47 ]
+gap> SmallElements(ns);
+[ 0, 12, 13, 19, 24, 25, 26, 27, 31, 32, 36, 37, 38, 39, 40, 43 ]
+gap> ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9); 
+#I  The third argument must not be smaller than the second
+fail
+gap> ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);
+<Proportionally modular numerical semigroup satisfying 20x mod 200 <= 10x >
+gap> MinimalGeneratingSystem(ns3);                                    
+[ 10 .. 19 ]
+gap> SmallElements(ns3);                                              
+[ 0, 10 ]
+]]></Example>
+            </Description>
+        </ManSection>
+</Section>
+
+</Appendix>

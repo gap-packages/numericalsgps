@@ -1,0 +1,374 @@
+  
+  [1X5 [33X[0;0YConstructing numerical semigroups from others[133X[101X
+  
+  
+  [1X5.1 [33X[0;0YAdding and removing elements of a numerical semigroup[133X[101X
+  
+  [33X[0;0YIn  this  section  we  show how to construct new numerical semigroups from a
+  given  numerical semigroup. Two dual operations are presented. The first one
+  removes  a  minimal  generator from a numerical semigroup. The second adds a
+  special gap to a semigroup (see [RGGJ03]).[133X
+  
+  [1X5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup[101X
+  
+  [29X[2XRemoveMinimalGeneratorFromNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xn[103X is one if its minimal generators.[133X
+  
+  [33X[0;0YThe  output  is  the  numerical  semigroup  [22X[3XS[103X ∖{[3Xn[103X}[122X (see [RGGJ03]; [22XS∖{n}[122X is a
+  numerical semigroup if and only if [22Xn[122X is a minimal generator of [22XS[122X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XRemoveMinimalGeneratorFromNumericalSemigroup(7,s);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGeneratingSystemOfNumericalSemigroup(last);[127X[104X
+    [4X[28X[ 3, 5 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.1-2 AddSpecialGapOfNumericalSemigroup[101X
+  
+  [29X[2XAddSpecialGapOfNumericalSemigroup[102X( [3Xg[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xg[103X is a special gap of [3XS[103X[133X
+  
+  [33X[0;0YThe  output  is  the  numerical  semigroup [22X[3XS[103X ∪{[3Xg[103X}[122X (see [RGGJ03], where it is
+  explained why this set is a numerical semigroup).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xs2:=RemoveMinimalGeneratorFromNumericalSemigroup(5,s);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs3:=AddSpecialGapOfNumericalSemigroup(5,s2);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfNumericalSemigroup(s) =[127X[104X
+    [4X[25X>[125X [27XSmallElementsOfNumericalSemigroup(s3);[127X[104X
+    [4X[28Xtrue                [128X[104X
+    [4X[25Xgap>[125X [27Xs=s3;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.2 [33X[0;0YIntersections, and quotients and multiples by integers[133X[101X
+  
+  [1X5.2-1 Intersection[101X
+  
+  [29X[2XIntersection[102X( [3XS[103X, [3XT[103X ) [32X operation
+  [29X[2XIntersectionOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical  semigroups.  Computes the intersection of [3XS[103X and [3XT[103X
+  (which is a numerical semigroup).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> S := NumericalSemigroup("modular", 5,53);[128X[104X
+    [4X[28X      <Modular numerical semigroup satisfying 5x mod 53 <= x >[128X[104X
+    [4X[28X      gap> T := NumericalSemigroup(2,17);[128X[104X
+    [4X[28X      <Numerical semigroup with 2 generators>[128X[104X
+    [4X[28X      gap> SmallElements(S);[128X[104X
+    [4X[28X      [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
+    [4X[28X      gap> SmallElements(T);[128X[104X
+    [4X[28X      [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ][128X[104X
+    [4X[28X      gap> IntersectionOfNumericalSemigroups(S,T);[128X[104X
+    [4X[28X      <Numerical semigroup>[128X[104X
+    [4X[28X      gap> SmallElements(last);[128X[104X
+    [4X[28X      [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-2 QuotientOfNumericalSemigroup[101X
+  
+  [29X[2XQuotientOfNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function
+  [29X[2X\/[102X( [3XS[103X, [3Xn[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X  is  a numerical semigroup and [3Xn[103X is an integer. Computes the quotient of [3XS[103X
+  by  [3Xn[103X,  that  is,  the  set  [22X{  x∈  N  | nx ∈ S}[122X, which is again a numerical
+  semigroup.  [10XS / n[110X may be used as a short for [10XQuotientOfNumericalSemigroup(S,
+  n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> s:=NumericalSemigroup(3,29);[128X[104X
+    [4X[28X      <Numerical semigroup with 2 generators>[128X[104X
+    [4X[28X      gap> SmallElements(s);[128X[104X
+    [4X[28X      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,[128X[104X
+    [4X[28X      39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ][128X[104X
+    [4X[28X      gap> t:=QuotientOfNumericalSemigroup(s,7);[128X[104X
+    [4X[28X      <Numerical semigroup>[128X[104X
+    [4X[28X      gap> SmallElements(t);[128X[104X
+    [4X[28X      [ 0, 3, 5, 6, 8 ][128X[104X
+    [4X[28X      gap> u := s / 7;[128X[104X
+    [4X[28X      <Numerical semigroup>[128X[104X
+    [4X[28X      gap> SmallElements(u);[128X[104X
+    [4X[28X      [ 0, 3, 5, 6, 8 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-3 MultipleOfNumericalSemigroup[101X
+  
+  [29X[2XMultipleOfNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, and [3Xa[103X and [3Xb[103X are positive integers. Computes [22Xa S∪
+  {b,b+1,->}[122X.  If  [3Xb[103X  is  smaller  than [22Xa c[122X, with [22Xc[122X the conductor of [22XS[122X, then a
+  warning is displayed.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> N:=NumericalSemigroup(1);;[128X[104X
+    [4X[28X      gap> s:=MultipleOfNumericalSemigroup(N,4,20);;[128X[104X
+    [4X[28X      gap> SmallElements(s);[128X[104X
+    [4X[28X      [ 0, 4, 8, 12, 16, 20 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-4 Difference[101X
+  
+  [29X[2XDifference[102X( [3XS[103X, [3XT[103X ) [32X operation
+  [29X[2XDifferenceOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  
+  [33X[0;0Y[3XS, T[103X are numerical semigroups. The output is the set [22X[3XS[103X∖ [3XT[103X[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xns1 := NumericalSemigroup(5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xns2 := NumericalSemigroup(7,11,12);;[127X[104X
+    [4X[25Xgap>[125X [27XDifference(ns1,ns2);[127X[104X
+    [4X[28X[ 5, 10, 15, 17, 20, 27 ][128X[104X
+    [4X[25Xgap>[125X [27XDifference(ns2,ns1);[127X[104X
+    [4X[28X[ 11, 18, 23 ][128X[104X
+    [4X[25Xgap>[125X [27XDifferenceOfNumericalSemigroups(ns2,ns1);[127X[104X
+    [4X[28X[ 11, 18, 23 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-5 NumericalDuplication[101X
+  
+  [29X[2XNumericalDuplication[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup,  and  [3XE[103X and ideal of [3XS[103X with [22XE⊆ S[122X, and [3Xb[103X is a
+  positive  odd  integer,  so  that  [22X2S∪ (2E+b)[122X is a numerical semigroup (this
+  extends  slightly  the  original  definition where [3Xb[103X was imposed to be in [3XS[103X,
+  [DS13]; now the condition imposed is [22XE+E+b⊆ S[122X). Computes [22X2S∪ (2E+b)[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);[128X[104X
+    [4X[28X      <Numerical semigroup with 3 generators>[128X[104X
+    [4X[28X      gap> e:=6+s;[128X[104X
+    [4X[28X      <Ideal of numerical semigroup>[128X[104X
+    [4X[28X      gap> ndup:=NumericalDuplication(s,e,3);[128X[104X
+    [4X[28X      <Numerical semigroup with 4 generators>[128X[104X
+    [4X[28X      gap> SmallElements(ndup);[128X[104X
+    [4X[28X      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.2-6 InductiveNumericalSemigroup[101X
+  
+  [29X[2XInductiveNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, and [3Xa[103X and [3Xb[103X are lists of positive integers, such
+  that  [22Xb[i+1]ge  a[i]b[i][122X.  Computes  inductively  [22XS_0=  N[122X and [22XS_i+1=a[i]S_i∪
+  {a[i]b[i],a[i]b[i]+1,->}[122X, and returns [22XS_k[122X, with [22Xk[122X the length of [3Xa[103X and [3Xb[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X      gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;[128X[104X
+    [4X[28X      gap> SmallElements(s);[128X[104X
+    [4X[28X      [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.3  [33X[0;0YConstructing  the  set  of  all numerical semigroups containing a given[101X
+  [1Xnumerical semigroup[133X[101X
+  
+  [33X[0;0YIn  order  to  construct  the set of numerical semigroups containing a fixed
+  numerical  semigroup [22XS[122X, one first constructs its unitary extensions, that is
+  to  say,  the  sets  [22XS∪{g}[122X  that  are numerical semigroups with [22Xg[122X a positive
+  integer. This is achieved by constructing the special gaps of the semigroup,
+  and  then adding each of them to the numerical semigroup. Then we repeat the
+  process for each of this new numerical semigroups until we reach [22XN[122X.[133X
+  
+  [33X[0;0YThese procedures are described in [RGGJ03].[133X
+  
+  [1X5.3-1 OverSemigroupsNumericalSemigroup[101X
+  
+  [29X[2XOverSemigroupsNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  
+  [33X[0;0Y[3Xs[103X  is  a  numerical semigroup. The output is the set of numerical semigroups
+  containing it.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XOverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
+    [4X[28X[ <The numerical semigroup N>, <Numerical semigroup with 2 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 3 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 3 generators> ][128X[104X
+    [4X[25Xgap>[125X [27XList(last,s->MinimalGenerators(s));[127X[104X
+    [4X[28X[ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.4 [33X[0;0YConstructing the set of numerical semigroup with given Frobenius number[133X[101X
+  
+  [1X5.4-1 NumericalSemigroupsWithFrobeniusNumber[101X
+  
+  [29X[2XNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is an non zero integer greater than or equal to -1. The output is the set
+  of  numerical  semigroups with Frobenius number [3Xf[103X. The algorithm implemented
+  is given in [RGGM04].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(NumericalSemigroupsWithFrobeniusNumber(15));[127X[104X
+    [4X[28X200[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.5  [33X[0;0YConstructing  the  set  of  numerical semigroups with genus g, that is,[101X
+  [1Xnumerical semigroups with exactly g gaps[133X[101X
+  
+  [33X[0;0YGiven  a  numerical  semigroup  of genus g, removing minimal generators, one
+  obtains numerical semigroups of genus g+1. In order to avoid repetitions, we
+  only  remove  minimal  generators  greater  than the Frobenius number of the
+  numerical semigroup (this is accomplished with the local function sons).[133X
+  
+  [33X[0;0YThese procedures are described in [RGGB03] and [Bra08].[133X
+  
+  [1X5.5-1 NumericalSemigroupsWithGenus[101X
+  
+  [29X[2XNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function
+  
+  [33X[0;0Y[3Xg[103X  is  a  nonnegative integer. The output is the set of numerical semigroups
+  with genus [3Xg[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupsWithGenus(5);[127X[104X
+    [4X[28X[ <Numerical semigroup with 6 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 5 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 5 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 5 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 5 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 4 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 4 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 4 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 4 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 3 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 3 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 2 generators> ][128X[104X
+    [4X[25Xgap>[125X [27XList(last,MinimalGenerators);[127X[104X
+    [4X[28X[ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], [128X[104X
+    [4X[28X  [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], [128X[104X
+    [4X[28X  [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X5.6  [33X[0;0YConstructing  the  set  of  numerical  semigroups  with  a given set of[101X
+  [1Xpseudo-Frobenius numbers[133X[101X
+  
+  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-14[114X).[133X
+  
+  [33X[0;0YThese procedures are described in [DGR16].[133X
+  
+  [1X5.6-1 ForcedIntegersForPseudoFrobenius[101X
+  
+  [29X[2XForcedIntegersForPseudoFrobenius[102X( [3XPF[103X ) [32X function
+  
+  [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
+  The output is:[133X
+  
+  [30X    [33X[0;6Yin case there exists a numerical semigroup [22XS[122X such that [22XPF(S)=PF[122X:[133X
+  
+        [30X    [33X[0;12Ya list [22X[forced_gaps,forced_elts][122X such that:[133X
+  
+              [30X    [33X[0;18Y[22Xforced_gaps[122X  is  contained  in  [22XN  -  S[122X  for any numerical
+                    semigroup S such that [22XPF(S)={g_1,...,g_n}[122X[133X
+  
+              [30X    [33X[0;18Yforced_elts  is contained in [22XS[122X for any numerical semigroup
+                    [22XS[122X such that [22XPF(S)={g_1,...,g_n}[122X[133X
+  
+  [30X    [33X[0;6Y"fail" in case it is found some condition that fails.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xpf := [ 58, 64, 75 ];[127X[104X
+    [4X[28X[ 58, 64, 75 ][128X[104X
+    [4X[25Xgap>[125X [27XForcedIntegersForPseudoFrobenius(pf);                              [127X[104X
+    [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 11, 15, 16, 17, 25, 29, 32, 58, 64, 75 ], [128X[104X
+    [4X[28X  [ 0, 59, 60, 67, 68, 69, 70, 71, 72, 73, 74, 76 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.6-2 SimpleForcedIntegersForPseudoFrobenius[101X
+  
+  [29X[2XSimpleForcedIntegersForPseudoFrobenius[102X( [3Xfg[103X, [3Xfe[103X, [3XPF[103X ) [32X function
+  
+  [33X[0;0YIs just a quicker version of [2XForcedIntegersForPseudoFrobenius[102X ([14X5.6-1[114X)[133X
+  
+  [33X[0;0Y[3Xfg[103X  is a list of integers that we require to be gaps of the semigroup; [3Xfe[103X is
+  a  list of integers that we require to be elements of the semigroup; [3XPF[103X is a
+  list of positive integers. The output is:[133X
+  
+  [30X    [33X[0;6Yin case there exists a numerical semigroup [22XS[122X such that [22XPF(S)=PF[122X:[133X
+  
+        [30X    [33X[0;12Ya list [22X[forced_gaps,forced_elts][122X such that:[133X
+  
+              [30X    [33X[0;18Y[22Xforced_gaps[122X  is  contained  in  [22XN  -  S[122X  for any numerical
+                    semigroup S such that [22XPF(S)={g_1,...,g_n}[122X[133X
+  
+              [30X    [33X[0;18Yforced_elts  is contained in [22XS[122X for any numerical semigroup
+                    [22XS[122X such that [22XPF(S)={g_1,...,g_n}[122X[133X
+  
+  [30X    [33X[0;6Y"fail" in case it is found some condition that fails.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xpf := [ 15, 20, 27, 35 ];;                                               [127X[104X
+    [4X[25Xgap>[125X [27Xfint := ForcedIntegersForPseudoFrobenius(pf); [127X[104X
+    [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 16, 20, 27, 35 ], [128X[104X
+    [4X[28X  [ 0, 19, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ][128X[104X
+    [4X[25Xgap>[125X [27Xfree := Difference([1..Maximum(pf)],Union(fint));[127X[104X
+    [4X[28X[ 11, 13, 14, 17, 18, 21, 22, 24 ][128X[104X
+    [4X[25Xgap>[125X [27XSimpleForcedIntegersForPseudoFrobenius(fint[1],Union(fint[2],[free[1]]),pf);[127X[104X
+    [4X[28X[ [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 20, 24, 27, 35 ], [128X[104X
+    [4X[28X  [ 0, 11, 19, 22, 23, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers[101X
+  
+  [29X[2XNumericalSemigroupsWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function
+  
+  [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
+  The  output  is:  a  list of numerical semigroups S such that PF(S)=PF. When
+  Length(PF)=1,       it       makes       use       of      the      function
+  [2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-1[114X)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xpf := [ 58, 64, 75 ];[127X[104X
+    [4X[28X[ 58, 64, 75 ][128X[104X
+    [4X[25Xgap>[125X [27XLength(NumericalSemigroupsWithPseudoFrobeniusNumbers(pf));[127X[104X
+    [4X[28X561[128X[104X
+    [4X[25Xgap>[125X [27Xpf := [11,19,22];;[127X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupsWithPseudoFrobeniusNumbers(pf);[127X[104X
+    [4X[28X[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, [128X[104X
+    [4X[28X  <Numerical semigroup>, <Numerical semigroup> ][128X[104X
+    [4X[25Xgap>[125X [27XList(last,MinimalGenerators);   [127X[104X
+    [4X[28X[ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], [128X[104X
+    [4X[28X  [ 10, 13, 14, 15, 16, 17, 18, 21 ], [128X[104X
+    [4X[28X  [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X5.6-4 ANumericalSemigroupWithPseudoFrobeniusNumbers[101X
+  
+  [29X[2XANumericalSemigroupWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function
+  
+  [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
+  Alternatively,  a  record  with fields "pseudo_frobenius" and "max_attempts"
+  option  The  output  is: A numerical semigroup S such that PF(S)=PF. Returns
+  fail    if   it   concludes   that   it   exists   and   suggests   to   use
+  NumericalSemigroupsWithPseudoFrobeniusNumbers   if   it   is   not  able  to
+  conclude...[133X
+  
+  [33X[0;0YIt           makes           use           of          the          function
+  [2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X       ([14X6.1-4[114X),       when
+  Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xpf := [ 83, 169, 173, 214, 259 ];;                     [127X[104X
+    [4X[25Xgap>[125X [27XANumericalSemigroupWithPseudoFrobeniusNumbers(pf);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xgen := MinimalGeneratingSystem(last);[127X[104X
+    [4X[28X[ 38, 57, 64, 72, 79, 98, 99, 106, 118, 120, 124, 132, 134, 146, 147, 154, [128X[104X
+    [4X[28X  165, 168, 179 ][128X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(gen);       [127X[104X
+    [4X[28X<Numerical semigroup with 19 generators>[128X[104X
+    [4X[25Xgap>[125X [27XPseudoFrobeniusOfNumericalSemigroup(ns);[127X[104X
+    [4X[28X[ 83, 169, 173, 214, 259 ][128X[104X
+  [4X[32X[104X
+  

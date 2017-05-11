@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+                <Heading>Some basic tests</Heading>
+                This section describes some basic tests on numerical semigroups. The first described tests refer to what the semigroup is currently known to be (not necessarily the way it was created).
+Then are presented functions to test if a given list represents
+the small elements, gaps or the Apéry set (see <Ref Label="zlab1" />) of a numerical semigroup; to test if an integer belongs to a numerical semigroup
+and if a numerical semigroup is a subsemigroup of another one.
+
+                <ManSection>
+                    <Attr Name="IsNumericalSemigroup" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByGenerators" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByMinimalGenerators" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByInterval" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByOpenInterval" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupBySubAdditiveFunction" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByAperyList" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupBySmallElements" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByGaps" Arg="NS"/>
+                    <Attr Name="IsNumericalSemigroupByFundamentalGaps" Arg="NS"/>
+                    <Attr Name="IsProportionallyModularNumericalSemigroup" Arg="NS"/>
+                    <Attr Name="IsModularNumericalSemigroup" Arg="NS"/>
+                    <Description>
+                        <A>NS</A> is a numerical semigroup and these attributes are available
+                        (their names should be self explanatory).
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7);
+<Numerical semigroup with 2 generators>
+gap> AperyListOfNumericalSemigroupWRTElement(s,30);;
+gap> t:=NumericalSemigroupByAperyList(last);
+<Numerical semigroup>
+gap> IsNumericalSemigroupByGenerators(s);
+true
+gap> IsNumericalSemigroupByGenerators(t);
+false
+gap> IsNumericalSemigroupByAperyList(s);
+false
+gap> IsNumericalSemigroupByAperyList(t);
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+                
+                
+                <ManSection>
+                    <Attr Name="RepresentsSmallElementsOfNumericalSemigroup" Arg="L"/>
+                    <Description>
+                        Tests if the list <A>L</A> (which has to be a set) may represent the ``small" elements of a numerical semigroup.
+                        <Example><![CDATA[
+gap> L:=[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ];
+[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
+gap> RepresentsSmallElementsOfNumericalSemigroup(L);
+true
+gap> L:=[ 6, 9, 11, 12, 14, 15, 17, 18, 20 ];
+[ 6, 9, 11, 12, 14, 15, 17, 18, 20 ]
+gap> RepresentsSmallElementsOfNumericalSemigroup(L);
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+                
+                
+                
+                <ManSection>
+                    <Attr Name="RepresentsGapsOfNumericalSemigroup" Arg="L"/>
+                    <Description>
+                        Tests if the list <A>L</A>  may represent the gaps
+                        (see <Ref Label="xx1" />)   of a numerical semigroup.
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7);
+<Numerical semigroup with 2 generators>
+gap> L:=GapsOfNumericalSemigroup(s);
+[ 1, 2, 4, 5, 8, 11 ]
+gap> RepresentsGapsOfNumericalSemigroup(L);
+true
+gap> L:=Set(List([1..21],i->RandomList([1..50])));
+[ 2, 6, 7, 8, 10, 12, 14, 19, 24, 28, 31, 35, 42, 50 ]
+gap> RepresentsGapsOfNumericalSemigroup(L);
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+<Func Name="IsAperyListOfNumericalSemigroup" Arg="L"/>
+<Description>
+Tests whether a list <A>L</A> of integers may represent the Apéry list of a
+numerical semigroup. It returns <K>true</K> when the periodic function
+represented by <A>L</A> is subadditive 
+(see <Ref Func="RepresentsPeriodicSubAdditiveFunction" />)
+and the remainder of the division of
+<C>L[i]</C> by the length of <A>L</A> is <C>i</C> and returns <K>false</K>
+otherwise (the criterium used is the one explained in <Cite Key="R96"></Cite>). 
+<Example><![CDATA[
+gap> IsAperyListOfNumericalSemigroup([0,21,7,28,14]);
+true
+]]></Example>
+</Description>
+</ManSection>
+                
+                <ManSection>
+                    <Func Name="IsSubsemigroupOfNumericalSemigroup" Arg="S, T"/>
+                    <Description>
+                        <A>S</A> and <A>T</A> 
+                        are numerical semigroups. Tests whether <A>T</A> is contained in <A>S</A>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> T:=NumericalSemigroup(2,3);
+<Numerical semigroup with 2 generators>
+gap> IsSubsemigroupOfNumericalSemigroup(T,S);
+true
+gap> IsSubsemigroupOfNumericalSemigroup(S,T);
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+                <ManSection>
+                    <Attr Name="IsSubset" Arg="S, T"/>
+                    <Description>
+<A>S</A> is a numerical semigroup. <A>T</A> can be a numerical semigroup, in which case the function is just a synonym of <Ref Func="IsSubsemigroupOfNumericalSemigroup" />, or a list of integers, in which case tests whether all elements of the list belong to <A>S</A>.
+<Example><![CDATA[
+gap> ns1 := NumericalSemigroup(5,7);;
+gap> ns2 := NumericalSemigroup(5,7,11);;
+gap> IsSubset(ns1,ns2);
+false
+gap> IsSubset(ns2,[5,15]);
+true
+gap> IsSubset(ns1,[5,11]);
+false
+gap> IsSubset(ns2,ns1);   
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+                 
+                
+                <ManSection>
+                    <Oper Name="BelongsToNumericalSemigroup" Arg="n,S"/>
+                    <Oper Name="\in" Arg="n,S" Label="membership test for numerical semigroup"/>
+                    <Description>
+                        <A>n</A> is an integer and <A>S</A> is a numerical semigroup. Tests whether
+                        <A>n</A> belongs to <A>S</A>. <C>\in(n,S)</C> calls the infix variant <C>n in S</C>, and both can be seen as a short for <C>BelongsToNumericalSemigroup(n,S)</C>.
+                        <Example><![CDATA[
+gap> S := NumericalSemigroup("modular", 5,53);
+<Modular numerical semigroup satisfying 5x mod 53 <= x >
+gap> BelongsToNumericalSemigroup(15,S);
+false
+gap> 15 in S;
+false
+gap> SmallElementsOfNumericalSemigroup(S);
+[ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+gap> BelongsToNumericalSemigroup(13,S);
+true
+gap> 13 in S;
+true
+]]></Example>
+                    </Description>
+                </ManSection>
+            </Section>
