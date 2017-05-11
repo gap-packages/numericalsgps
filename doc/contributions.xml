@@ -562,12 +562,12 @@ Ignacio and Carlos Jesús implemented the algorithms given in <Cite Key="Roune">
 
 
 <Section><Heading>Functions implemented by G. Zito</Heading>
-  Giuseppe gave the algorithms for the current version fucntions <C>ArfNumericalSemigroupsWithFrobeniusNumber</C>, <C>ArfNumericalSemigroupsWithFrobeniusNumberUpTo</C>, <C>ArfNumericalSemigroupsWithGenus</C> and <C>ArfNumericalSemigroupsWithGenusUpTo</C>, <C>ArfCharactersOfArfNumericalSemigroup</C>.
+  Giuseppe gave the algorithms for the current version fucntions <Ref Func="ArfNumericalSemigroupsWithFrobeniusNumber"/>, <Ref Func="ArfNumericalSemigroupsWithFrobeniusNumberUpTo"/>, <Ref Func="ArfNumericalSemigroupsWithGenus"/> and <Ref Func="ArfNumericalSemigroupsWithGenusUpTo"/>, <Ref Func="ArfCharactersOfArfNumericalSemigroup"/>.
 
 </Section>
 
 
 <Section><Heading>Functions implemented by A. Herrera-Poyatos</Heading>
-  Andrés Herrera-Poyatos gave new implementations of <C>IsSelfReciprocalUnivariatePolynomial</C> and <C>IsKroneckerPolynomial</C>
+  Andrés Herrera-Poyatos gave new implementations of <Ref Func="IsSelfReciprocalUnivariatePolynomial"/> and <Ref Func="IsKroneckerPolynomial"/>
 </Section>
 </Appendix>

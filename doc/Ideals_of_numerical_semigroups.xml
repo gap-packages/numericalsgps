@@ -128,6 +128,8 @@ gap> IsIntegralIdealOfNumericalSemigroup(4+s);
 false
 gap> IsIntegralIdealOfNumericalSemigroup(10+s);
 true
+gap> IsIntegral(10+s);
+true
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -550,7 +552,8 @@ gap> MinimalGenerators(last);
 gap> s:=NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>
 gap> MultiplicitySequenceOfNumericalSemigroup(s);
-[ 3, 2, 1 ]]]></Example>
+[ 3, 2, 1 ]
+]]></Example>
 </Description>
 </ManSection>
 
