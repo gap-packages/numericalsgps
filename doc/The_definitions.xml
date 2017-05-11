@@ -361,6 +361,37 @@ gap> DesertsOfNumericalSemigroup(s);
     </Description>
   </ManSection>
 
+  <ManSection>
+    <Prop Arg="NS" Name="IsOrdinaryNumericalSemigroup"></Prop>
+    <Prop Arg="NS" Name="IsOrdinary" Label="for numerical semigroups"></Prop>
+    <Description>
+      <A>NS</A> is a numerical semigroup.
+      Dectects if the semigroup is ordinary, that is, with less than two deserts.
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsOrdinary(s);
+false
+]]></Example>
+    </Description>
+  </ManSection>
+
+  <ManSection>
+    <Prop Arg="NS" Name="IsAcuteNumericalSemigroup"></Prop>
+    <Prop Arg="NS" Name="IsAcute" Label="for numerical semigroups"></Prop>
+    <Description>
+      <A>NS</A> is a numerical semigroup.
+      Dectects if the semigroup is acute, that is, it is either ordinary or its last desert (the one with the Frobenius number) has less elements than the preceding one (<Cite Key="Br-acute"></Cite>).
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsAcute(s);
+true
+]]></Example>
+    </Description>
+  </ManSection>
 
                 <ManSection>
                     <Attr Name="Holes" Arg="NS" Label="for numerical semigroup" />
