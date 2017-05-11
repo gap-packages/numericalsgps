@@ -787,6 +787,8 @@ gap> IsIntegralIdealOfNumericalSemigroup(4+s);
 false
 gap> IsIntegralIdealOfNumericalSemigroup(10+s);
 true
+gap> IsIntegral(10+s);
+true
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> SmallElementsOfIdealOfNumericalSemigroup(I);
@@ -870,12 +872,13 @@ gap> It2:=7+I;
 gap> It2=It;
 true
 
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> c:=3+CanonicalIdealOfNumericalSemigroup(s);;
-gap> c-(c-(3+s))=3+s;
-true
-gap> IsCanonicalIdealOfNumericalSemigroup(c);
-true
+gap> i:=IdealOfNumericalSemigroup([75,89],s);;
+gap> j:=IdealOfNumericalSemigroup([115,289],s);;
+gap> IntersectionIdealsOfNumericalSemigroup(i,j);
+<Ideal of numerical semigroup>
+
+gap> MaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));
+<Ideal of numerical semigroup>
 
 gap> s:=NumericalSemigroup(4,6,11);;
 gap> m:=MaximalIdealOfNumericalSemigroup(s);;
@@ -888,13 +891,12 @@ gap> id:=3+s;
 gap> c-(c-id)=id;
 true
 
-gap> i:=IdealOfNumericalSemigroup([75,89],s);;
-gap> j:=IdealOfNumericalSemigroup([115,289],s);;
-gap> IntersectionIdealsOfNumericalSemigroup(i,j);
-<Ideal of numerical semigroup>
-
-gap> MaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));
-<Ideal of numerical semigroup>
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> c:=3+CanonicalIdealOfNumericalSemigroup(s);;
+gap> c-(c-(3+s))=3+s;
+true
+gap> IsCanonicalIdealOfNumericalSemigroup(c);
+true
 
 gap> I:=[6,9,11]+NumericalSemigroup(6,9,11);;
 gap> List([1..7],n->HilbertFunctionOfIdealOfNumericalSemigroup(n,I));
@@ -933,6 +935,16 @@ gap> SmallElementsOfNumericalSemigroup(last);
 [ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,
   40, 41, 42, 44 ]
  
+gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
+gap> RatliffRushNumberOfIdealOfNumericalSemigroup(I);
+1
+
+gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
+gap> RatliffRushClosureOfIdealOfNumericalSemigroup(I);
+<Ideal of numerical semigroup>
+gap> MinimalGenerators(last);
+[ 0, 2, 4 ]
+
 gap> s:=NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>
 gap> MultiplicitySequenceOfNumericalSemigroup(s);
@@ -1033,6 +1045,22 @@ gap> Set(last,MinimalGenerators);
   [ 6, 11, 13, 14, 15, 16 ], [ 7, 9, 11, 12, 13, 15, 17 ], 
   [ 7, 11, 12, 13, 15, 16, 17 ], [ 8, 11, 12, 13, 14, 15, 17, 18 ], 
   [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 11 .. 21 ] ]
+
+gap> Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));
+46
+
+gap> Length(ArfNumericalSemigroupsWithGenus(10));
+21
+
+gap> Length(ArfNumericalSemigroupsWithGenusUpTo(10));
+86
+
+gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(10,13);
+[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,
+  <Numerical semigroup>, <Numerical semigroup> ]
+gap> List(last,MinimalGenerators);
+[ [ 8, 10, 12, 14, 15, 17, 19, 21 ], [ 6, 10, 14, 15, 17, 19 ],
+  [ 5, 12, 14, 16, 18 ], [ 6, 9, 14, 16, 17, 19 ], [ 4, 14, 15, 17 ] ]
 
 gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
 true
@@ -1339,6 +1367,8 @@ gap> x:=X(Rationals,"x");;
 gap> ForAll(l, s->
 > IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));
 true
+
+# Semigroup of values of algebraic curves
 
 gap> x:=X(Rationals,"x");; y:=X(Rationals,"y");;
 gap> f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;
@@ -1883,7 +1913,7 @@ gap> s:=NumericalSemigroup(5,7,11);;
 gap> DeltaSetOfNumericalSemigroup(s);
 [ 2 ]
 
-##Functions implemented by Klara Stokes
+#Functions implemented by Klara Stokes
 
 gap> IsAdmissiblePattern([1,1,-1]);
 true
@@ -1903,6 +1933,9 @@ gap> AsIdealOfNumericalSemigroup(10+s,t);
 fail
 gap> AsIdealOfNumericalSemigroup(100+s,t);
 <Ideal of numerical semigroup>
+
+gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
+10
 
 gap> s:=NumericalSemigroup(3,7,5);;
 gap> i:=10+s;;
