@@ -302,7 +302,8 @@ gap> MinimalGenerators(dup);
   </Heading>
 
   <ManSection>
-    <Func Arg="S" Name="IsSymmetricGoodSemigroup"></Func>
+    <Attr Arg="S" Name="IsSymmetricGoodSemigroup"></Attr>
+    <Attr Arg="S" Name="IsSymmetric" Label="for good semigroups"></Attr>
     <Description>
       <A>S</A> is a good semigroup. Determines if <A>S</A> is a symmetric good semigroup.
 
