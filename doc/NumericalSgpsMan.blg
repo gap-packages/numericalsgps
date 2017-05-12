@@ -7,59 +7,47 @@ Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and,
 while executing---line 1185 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1185 of file alpha.bst
-Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
-while executing---line 1185 of file alpha.bst
-Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
-while executing---line 1185 of file alpha.bst
-Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
-while executing---line 1185 of file alpha.bst
-Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
-while executing---line 1185 of file alpha.bst
-Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
-while executing---line 1250 of file alpha.bst
-Too many commas in name 1 of "Garc{\'{\i}}a-S{\'a}nchez, P. A., Heredia, B. A., H. I. Karakas" for entry arf-frob-gen
-while executing---line 1250 of file alpha.bst
 Too many commas in name 2 of "Rosales,J. C. and Garc\'{\i}a-S\'anchez,P. A. and, Garc\'{\i}a-Garc\'{\i}a, J. I. and Branco, M. B." for entry R-GS-GG-B
 while executing---line 1250 of file alpha.bst
 You've used 80 entries,
             2543 wiz_defined-function locations,
-            1074 strings with 15830 characters,
-and the built_in function-call counts, 32324 in all, are:
-= -- 3324
-> -- 1541
-< -- 26
-+ -- 531
-- -- 518
-* -- 2440
-:= -- 5372
+            1074 strings with 15856 characters,
+and the built_in function-call counts, 32464 in all, are:
+= -- 3336
+> -- 1564
+< -- 25
++ -- 541
+- -- 528
+* -- 2457
+:= -- 5400
 add.period$ -- 245
 call.type$ -- 80
-change.case$ -- 496
+change.case$ -- 499
 chr.to.int$ -- 78
 cite$ -- 80
-duplicate$ -- 1143
+duplicate$ -- 1142
 empty$ -- 2308
-format.name$ -- 612
-if$ -- 6479
+format.name$ -- 622
+if$ -- 6502
 int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 78
 newline$ -- 406
 num.names$ -- 240
-pop$ -- 370
+pop$ -- 373
 preamble$ -- 1
-purify$ -- 581
+purify$ -- 584
 quote$ -- 0
 skip$ -- 985
 stack$ -- 0
 substring$ -- 2161
 swap$ -- 108
-text.length$ -- 26
+text.length$ -- 25
 text.prefix$ -- 16
 top$ -- 0
 type$ -- 620
 warning$ -- 0
-while$ -- 336
+while$ -- 337
 width$ -- 86
 write$ -- 1034
-(There were 9 error messages)
+(There were 3 error messages)
