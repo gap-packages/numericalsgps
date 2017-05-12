@@ -291,13 +291,14 @@ DeclareSynonymAttr("IsCanonicalIdealOfNumericalSemigroup", IsCanonicalIdeal);
 
 #############################################################################
 ##
-#F  ReductionNumberIdealNumericalSemigroup(I)
+#A  ReductionNumberIdealNumericalSemigroup(I)
 ##
 ##  Returns the least nonnegative integer such that
 ##  nI-nI=(n+1)I-(n+1)I, see [B06].
 ##
 #############################################################################
-DeclareGlobalFunction("ReductionNumberIdealNumericalSemigroup");
+DeclareAttribute("ReductionNumber",IsIdealOfNumericalSemigroup);
+DeclareSynonymAttr("ReductionNumberIdealNumericalSemigroup",ReductionNumber);
 
 #############################################################################
 ##
