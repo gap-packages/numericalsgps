@@ -273,6 +273,66 @@
     [4X[28X7[128X[104X
   [4X[32X[104X
   
+  [1X6.2-10 IsAperySetGammaRectangular[101X
+  
+  [29X[2XIsAperySetGammaRectangular[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YTest  for  the  [22Xγ[122X-rectangularity  of the Apéry Set of a numerical semigroup.
+  This test is the implementation of the algorithm given in [DMS14]. Numerical
+  Semigroups with this property are free and thus complete intersections.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[128X[104X
+    [4X[28X                gap> IsAperySetGammaRectangular(s);[128X[104X
+    [4X[28X                false[128X[104X
+    [4X[28X                gap> s:=NumericalSemigroup(4,6,11);;[128X[104X
+    [4X[28X                gap> IsAperySetGammaRectangular(s);[128X[104X
+    [4X[28X                true[128X[104X
+    [4X[28X                [128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-11 IsAperySetBetaRectangular[101X
+  
+  [29X[2XIsAperySetBetaRectangular[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YTest  for  the  [22Xβ[122X-rectangularity  of the Apéry Set of a numerical semigroup.
+  This  test  is  the  implementation  of  the  algorithm  given  in  [DMS14];
+  [22Xβ[122X-rectangularity implies [22Xγ[122X-rectangularity.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[128X[104X
+    [4X[28X                gap> IsAperySetBetaRectangular(s);[128X[104X
+    [4X[28X                false[128X[104X
+    [4X[28X                gap> s:=NumericalSemigroup(4,6,11);;[128X[104X
+    [4X[28X                gap> IsAperySetBetaRectangular(s);[128X[104X
+    [4X[28X                true[128X[104X
+    [4X[28X                [128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-12 IsAperySetAlphaRectangular[101X
+  
+  [29X[2XIsAperySetAlphaRectangular[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YTest  for  the  [22Xα[122X-rectangularity  of the Apéry Set of a numerical semigroup.
+  This  test  is  the  implementation  of  the  algorithm  given  in  [DMS14];
+  [22Xα[122X-rectangularity implies [22Xβ[122X-rectangularity.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[128X[104X
+    [4X[28X                gap> IsAperySetAlphaRectangular(s);[128X[104X
+    [4X[28X                false[128X[104X
+    [4X[28X                gap> s:=NumericalSemigroup(4,6,11);;[128X[104X
+    [4X[28X                gap> IsAperySetAlphaRectangular(s);[128X[104X
+    [4X[28X                true[128X[104X
+    [4X[28X                [128X[104X
+  [4X[32X[104X
+  
   
   [1X6.3 [33X[0;0YAlmost-symmetric numerical semigroups[133X[101X
   

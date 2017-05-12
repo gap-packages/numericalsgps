@@ -4,335 +4,50 @@
   
   [1XC.1 [33X[0;0YFunctions implemented by A. Sammartano[133X[101X
   
-  [1XC.1-1 IsGradedAssociatedRingNumericalSemigroupBuchsbaum[101X
+  [33X[0;0YA. Sammartano implemented the following functions.[133X
   
-  [29X[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X( [3XS[103X ) [32X property
+  [33X[0;0Y[2XIsAperySetGammaRectangular[102X ([14X6.2-10[114X),[133X
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  [33X[0;0Y[2XIsAperySetBetaRectangular[102X ([14X6.2-11[114X),[133X
   
-  [33X[0;0YReturns true if the graded ring associated to [22XK[[[3XS[103X]][122X is Buchsbaum, and false
-  otherwise.  This  test  is  the  implementation  of  the  algorithm given in
-  [DMV09].[133X
+  [33X[0;0Y[2XIsAperySetAlphaRectangular[102X ([14X6.2-12[114X),[133X
   
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
+  [33X[0;0Y[2XTypeSequenceOfNumericalSemigroup[102X ([14X7.1-20[114X),[133X
   
-  [1XC.1-2 TorsionOfAssociatedGradedRingNumericalSemigroup[101X
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X ([14X7.4-2[114X),[133X
   
-  [29X[2XTorsionOfAssociatedGradedRingNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X ([14X7.4-2[114X),[133X
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  [33X[0;0Y[2XTorsionOfAssociatedGradedRingNumericalSemigroup[102X ([14X7.4-3[114X),[133X
   
-  [33X[0;0YThis  function  returns  the  set  of  elements in the numerical semigroup [3XS[103X
-  corresponding to a [22XK[122X-basis of the torsion submodule of the associated graded
-  ring  of  the  numerical  semigroup  ring [22XK[[S]][122X. It uses the Apery table as
-  explained in [BJA13].[133X
+  [33X[0;0Y[2XBuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup[102X ([14X7.4-4[114X),[133X
   
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XTorsionOfAssociatedGradedRingNumericalSemigroup(s);[127X[104X
-    [4X[28X[ 181, 153, 157, 193, 169, 148 ][128X[104X
-  [4X[32X[104X
+  [33X[0;0Y[2XIsMpureNumericalSemigroup[102X ([14X7.4-5[114X),[133X
   
-  [1XC.1-3 BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup[101X
+  [33X[0;0Y[2XIsPureNumericalSemigroup[102X ([14X7.4-6[114X),[133X
   
-  [29X[2XBuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupGorenstein[102X ([14X7.4-7[114X),[133X
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YThis  function  returns  the  smallest  non-negative integer [22Xk[122X for which the
-  associated graded ring [22XG[122X of a given numerical semigroup ring is [22Xk[122X-Buchsbaum,
-  that  is, the least [22Xk[122X for which the torsion submodule of [22XG[122X is annihilated by
-  the [22Xk[122X-th power of the homogeneous maximal ideal of [22XG[122X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XBuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup(s);[127X[104X
-    [4X[28X1[128X[104X
-    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-4 IsMpure[101X
-  
-  [29X[2XIsMpure[102X( [3XS[103X ) [32X property
-  [29X[2XIsMpureNumericalSemigroup[102X( [3XS[103X ) [32X property
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YTest  for the M-Purity of the numerical semigroup S [3XS[103X. This test is based on
-  [Bry10].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsMpureNumericalSemigroup(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsMpureNumericalSemigroup(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-5 IsPure[101X
-  
-  [29X[2XIsPure[102X( [3XS[103X ) [32X property
-  [29X[2XIsPureNumericalSemigroup[102X( [3XS[103X ) [32X property
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YTest  for  the  purity of the numerical semigroup S [3XS[103X. This test is based on
-  [Bry10].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsPureNumericalSemigroup(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsPureNumericalSemigroup(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-6 IsGradedAssociatedRingNumericalSemigroupGorenstein[101X
-  
-  [29X[2XIsGradedAssociatedRingNumericalSemigroupGorenstein[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns  true  if  the  graded  ring associated to [22XK[[[3XS[103X]][122X is Gorenstein, and
-  false  otherwise.  This test is the implementation of the algorithm given in
-  [DMS11].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupGorenstein(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupGorenstein(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-7 IsGradedAssociatedRingNumericalSemigroupCI[101X
-  
-  [29X[2XIsGradedAssociatedRingNumericalSemigroupCI[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YReturns  true if the Complete Intersection property of the associated graded
-  ring  of  a  numerical  semigroup  ring  associated  to  [22XK[[[3XS[103X]][122X,  and  false
-  otherwise.  This  test  is  the  implementation  of  the  algorithm given in
-  [DMS13].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupCI(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupCI(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-8 IsAperySetGammaRectangular[101X
-  
-  [29X[2XIsAperySetGammaRectangular[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YTest for the Gamma-Rectangularity of the Apéry Set of a numerical semigroup.
-  This test is the implementation of the algorithm given in [DMS14].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsAperySetGammaRectangular(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsAperySetGammaRectangular(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-9 IsAperySetBetaRectangular[101X
-  
-  [29X[2XIsAperySetBetaRectangular[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YTest  for the Beta-Rectangularity of the Apéry Set of a numerical semigroup.
-  This test is the implementation of the algorithm given in [DMS14].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsAperySetBetaRectangular(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsAperySetBetaRectangular(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-10 IsAperySetAlphaRectangular[101X
-  
-  [29X[2XIsAperySetAlphaRectangular[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YTest for the Alpha-Rectangularity of the Apéry Set of a numerical semigroup.
-  This test is the implementation of the algorithm given in [DMS14].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XIsAperySetAlphaRectangular(s);[127X[104X
-    [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XIsAperySetAlphaRectangular(s);[127X[104X
-    [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1XC.1-11 TypeSequenceOfNumericalSemigroup[101X
-  
-  [29X[2XTypeSequenceOfNumericalSemigroup[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YComputes  the  type  sequence  of  a  numerical  semigroup. This test is the
-  implementation of the algorithm given in [BDF97].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
-    [4X[25Xgap>[125X [27XTypeSequenceOfNumericalSemigroup(s);[127X[104X
-    [4X[28X[ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1,[128X[104X
-    [4X[28X  1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,[128X[104X
-    [4X[28X  1, 1, 1 ][128X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
-    [4X[25Xgap>[125X [27XTypeSequenceOfNumericalSemigroup(s);[127X[104X
-    [4X[28X[ 1, 1, 1, 1, 1, 1, 1 ][128X[104X
-  [4X[32X[104X
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupCI[102X ([14X7.4-8[114X).[133X
   
   
   [1XC.2 [33X[0;0YFunctions implemented by C. O'Neill[133X[101X
   
-  [33X[0;0YThis  section  includes  the implementations of some procedures described in
-  [BOP14].[133X
+  [33X[0;0YC. O'Neill implemented the following functions described in [BOP14]:[133X
   
-  [1XC.2-1 OmegaPrimalityOfElementListInNumericalSemigroup[101X
+  [33X[0;0Y[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X ([14X9.4-2[114X),[133X
   
-  [29X[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
+  [33X[0;0Y[2XFactorizationsElementListWRTNumericalSemigroup[102X ([14X9.1-3[114X),[133X
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xl[103X a list of elements of [3XS[103X.[133X
+  [33X[0;0Y[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X ([14X9.2-7[114X),[133X
   
-  [33X[0;0YComputes the omega-values of all the elements in [3Xl[103X.[133X
+  [33X[0;0Y[2XDeltaSetPeriodicityStartForNumericalSemigroup[102X ([14X9.2-8[114X),[133X
   
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);;[127X[104X
-    [4X[25Xgap>[125X [27Xl:=FirstElementsOfNumericalSemigroup(100,s);;[127X[104X
-    [4X[25Xgap>[125X [27XList(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;[127X[104X
-    [4X[28X[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
-    [4X[28X  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
-    [4X[28X  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
-    [4X[28X  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
-    [4X[28X  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
-    [4X[28X218[128X[104X
-    [4X[25Xgap>[125X [27XOmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;[127X[104X
-    [4X[28X[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
-    [4X[28X  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
-    [4X[28X  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
-    [4X[28X  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
-    [4X[28X  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
-    [4X[28X10[128X[104X
-  [4X[32X[104X
+  [33X[0;0Y[2XDeltaSetListUpToElementWRTNumericalSemigroup[102X ([14X9.2-9[114X),[133X
   
-  [1XC.2-2 FactorizationsElementListWRTNumericalSemigroup[101X
+  [33X[0;0Y[2XDeltaSetUnionUpToElementWRTNumericalSemigroup[102X ([14X9.2-10[114X),[133X
   
-  [29X[2XFactorizationsElementListWRTNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xl[103X a list of elements of [3XS[103X.[133X
-  
-  [33X[0;0YComputes the factorizations of all the elements in [3Xl[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);[127X[104X
-    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27XFactorizationsElementListWRTNumericalSemigroup([100,101,103],s);[127X[104X
-    [4X[28X[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],[128X[104X
-    [4X[28X  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],[128X[104X
-    [4X[28X  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ][128X[104X
-    [4X[28X[128X[104X
-  [4X[32X[104X
-  
-  [1XC.2-3 DeltaSetPeriodicityBoundForNumericalSemigroup[101X
-  
-  [29X[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YComputes  the  bound  were  the  periodicity  starts  for  Delta sets of the
-  elements in [3XS[103X; see [GMV15].[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
-    [4X[25Xgap>[125X [27XDeltaSetPeriodicityBoundForNumericalSemigroup(s);[127X[104X
-    [4X[28X60[128X[104X
-  [4X[32X[104X
-  
-  [1XC.2-4 DeltaSetPeriodicityStartForNumericalSemigroup[101X
-  
-  [29X[2XDeltaSetPeriodicityStartForNumericalSemigroup[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YComputes  the  element  were  the  periodicity  starts for Delta sets of the
-  elements in [3XS[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
-    [4X[25Xgap>[125X [27XDeltaSetPeriodicityStartForNumericalSemigroup(s);[127X[104X
-    [4X[28X21[128X[104X
-  [4X[32X[104X
-  
-  [1XC.2-5 DeltaSetListUpToElementWRTNumericalSemigroup[101X
-  
-  [29X[2XDeltaSetListUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
-  
-  [33X[0;0YComputes  the  Delta  sets  of  the  integers up to (and including) [3Xn[103X, if an
-  integer is not in [3XS[103X, the corresponding Delta set is empty.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
-    [4X[25Xgap>[125X [27XDeltaSetListUpToElementWRTNumericalSemigroup(31,s);[127X[104X
-    [4X[28X[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],[128X[104X
-    [4X[28X  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],[128X[104X
-    [4X[28X  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ][128X[104X
-  [4X[32X[104X
-  
-  [1XC.2-6 DeltaSetUnionUpToElementWRTNumericalSemigroup[101X
-  
-  [29X[2XDeltaSetUnionUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
-  
-  [33X[0;0YComputes  the  union  of  the  delta  sets  of  the  elements of [3XS[103X up to and
-  including [3Xn[103X, using a ring buffer to conserve memory.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
-    [4X[25Xgap>[125X [27XDeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);[127X[104X
-    [4X[28X[ 2 ][128X[104X
-  [4X[32X[104X
-  
-  [1XC.2-7 DeltaSetOfNumericalSemigroup[101X
-  
-  [29X[2XDeltaSetOfNumericalSemigroup[102X( [3XS[103X ) [32X function
-  
-  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
-  
-  [33X[0;0YComputes the Delta set of [3XS[103X.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
-    [4X[25Xgap>[125X [27XDeltaSetOfNumericalSemigroup(s);[127X[104X
-    [4X[28X[ 2 ][128X[104X
-  [4X[32X[104X
+  [33X[0;0Y[2XDeltaSetOfNumericalSemigroup[102X ([14X9.2-11[114X).[133X
   
   
   [1XC.3 [33X[0;0YFunctions implemented by K. Stokes[133X[101X
