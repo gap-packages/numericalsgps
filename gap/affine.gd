@@ -105,6 +105,7 @@ DeclareOperation("GraverBasis",[IsRectangularTable]);
 # Computes a minimal presentation of the affine semigroup a
 ###########################################################################
 DeclareOperation("MinimalPresentationOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareOperation("MinimalPresentation",[IsAffineSemigroup]);
 
 #############################################################################
 ##

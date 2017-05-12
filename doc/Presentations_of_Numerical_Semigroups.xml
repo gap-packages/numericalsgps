@@ -5,6 +5,7 @@
   <ManSection>
 
     <Func Arg="S" Name="MinimalPresentationOfNumericalSemigroup"></Func>
+    <Oper Arg="S" Name="MinimalPresentation" Label="for numerical semigroups"></Oper>
     <Description>
       <A>S</A> is a numerical semigroup.
 
