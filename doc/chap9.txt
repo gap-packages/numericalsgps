@@ -47,7 +47,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFactorizationsIntegerWRTList(100,[11,13,15,19]);[127X[104X
-    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [128X[104X
+    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],[128X[104X
     [4X[28X  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ][128X[104X
   [4X[32X[104X
   
@@ -62,11 +62,30 @@
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(101,113,196,272,278,286);[127X[104X
     [4X[28X<Numerical semigroup with 6 generators>[128X[104X
     [4X[25Xgap>[125X [27XFactorizationsElementWRTNumericalSemigroup(1100,s);[127X[104X
-    [4X[28X[ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ], [128X[104X
+    [4X[28X[ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ],[128X[104X
     [4X[28X  [ 0, 2, 3, 0, 0, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X9.1-3 RClassesOfSetOfFactorizations[101X
+  [1X9.1-3 FactorizationsElementListWRTNumericalSemigroup[101X
+  
+  [29X[2XFactorizationsElementListWRTNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xl[103X a list of elements of [3XS[103X.[133X
+  
+  [33X[0;0YComputes the factorizations of all the elements in [3Xl[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(10,11,13);[128X[104X
+    [4X[28X    <Numerical semigroup with 3 generators>[128X[104X
+    [4X[28X    gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);[128X[104X
+    [4X[28X    [ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],[128X[104X
+    [4X[28X      [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],[128X[104X
+    [4X[28X      [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ][128X[104X
+    [4X[28X[128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.1-4 RClassesOfSetOfFactorizations[101X
   
   [29X[2XRClassesOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
   
@@ -84,7 +103,7 @@
     [4X[28X[ [ [ 2, 1, 2, 0 ], [ 5, 0, 1, 0 ] ], [ [ 0, 0, 0, 3 ] ] ][128X[104X
   [4X[32X[104X
   
-  [1X9.1-4 LShapesOfNumericalSemigroup[101X
+  [1X9.1-5 LShapesOfNumericalSemigroup[101X
   
   [29X[2XLShapesOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -98,13 +117,13 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
     [4X[25Xgap>[125X [27XLShapesOfNumericalSemigroup(s);[127X[104X
-    [4X[28X[ [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 0, 2 ], [ 2, 1 ], [128X[104X
-    [4X[28X      [ 1, 2 ], [ 2, 2 ] ], [128X[104X
-    [4X[28X  [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 3, 0 ], [ 2, 1 ], [128X[104X
+    [4X[28X[ [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 0, 2 ], [ 2, 1 ],[128X[104X
+    [4X[28X      [ 1, 2 ], [ 2, 2 ] ],[128X[104X
+    [4X[28X  [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 3, 0 ], [ 2, 1 ],[128X[104X
     [4X[28X      [ 4, 0 ], [ 5, 0 ] ] ][128X[104X
   [4X[32X[104X
   
-  [1X9.1-5 DenumerantOfElementInNumericalSemigroup[101X
+  [1X9.1-6 DenumerantOfElementInNumericalSemigroup[101X
   
   [29X[2XDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   
@@ -204,7 +223,88 @@
     [4X[28X[ 1, 2 ][128X[104X
   [4X[32X[104X
   
-  [1X9.2-7 MaximumDegreeOfElementWRTNumericalSemigroup[101X
+  [1X9.2-7 DeltaSetPeriodicityBoundForNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YComputes  the  bound  were  the  periodicity  starts  for  Delta sets of the
+  elements in [3XS[103X; see [GMV15].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
+    [4X[28X    gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);[128X[104X
+    [4X[28X    60[128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-8 DeltaSetPeriodicityStartForNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetPeriodicityStartForNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YComputes  the  element  were  the  periodicity  starts for Delta sets of the
+  elements in [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
+    [4X[28X    gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);[128X[104X
+    [4X[28X    21[128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-9 DeltaSetListUpToElementWRTNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetListUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
+  
+  [33X[0;0YComputes  the  Delta  sets  of  the  integers up to (and including) [3Xn[103X, if an
+  integer is not in [3XS[103X, the corresponding Delta set is empty.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
+    [4X[28X    gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);[128X[104X
+    [4X[28X    [ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],[128X[104X
+    [4X[28X      [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],[128X[104X
+    [4X[28X      [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ][128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-10 DeltaSetUnionUpToElementWRTNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetUnionUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
+  
+  [33X[0;0YComputes  the  union  of  the  delta  sets  of  the  elements of [3XS[103X up to and
+  including [3Xn[103X, using a ring buffer to conserve memory.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
+    [4X[28X    gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);[128X[104X
+    [4X[28X    [ 2 ][128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-11 DeltaSetOfNumericalSemigroup[101X
+  
+  [29X[2XDeltaSetOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YComputes the Delta set of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
+    [4X[28X    gap> DeltaSetOfNumericalSemigroup(s);[128X[104X
+    [4X[28X    [ 2 ][128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-12 MaximumDegreeOfElementWRTNumericalSemigroup[101X
   
   [29X[2XMaximumDegreeOfElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   
@@ -219,7 +319,7 @@
     [4X[28X9[128X[104X
   [4X[32X[104X
   
-  [1X9.2-8 MaximalDenumerantOfElementInNumericalSemigroup[101X
+  [1X9.2-13 MaximalDenumerantOfElementInNumericalSemigroup[101X
   
   [29X[2XMaximalDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   
@@ -235,7 +335,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X9.2-9 MaximalDenumerantOfSetOfFactorizations[101X
+  [1X9.2-14 MaximalDenumerantOfSetOfFactorizations[101X
   
   [29X[2XMaximalDenumerantOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
   
@@ -245,13 +345,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFactorizationsIntegerWRTList(100,[11,13,15,19]);[127X[104X
-    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], [128X[104X
+    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],[128X[104X
     [4X[28X  [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ][128X[104X
     [4X[25Xgap>[125X [27XMaximalDenumerantOfSetOfFactorizations(last);[127X[104X
     [4X[28X6[128X[104X
   [4X[32X[104X
   
-  [1X9.2-10 MaximalDenumerantOfNumericalSemigroup[101X
+  [1X9.2-15 MaximalDenumerantOfNumericalSemigroup[101X
   
   [29X[2XMaximalDenumerantOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -264,7 +364,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X9.2-11 AdjustmentOfNumericalSemigroup[101X
+  [1X9.2-16 AdjustmentOfNumericalSemigroup[101X
   
   [29X[2XAdjustmentOfNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -275,22 +375,22 @@
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(101,113,196,272,278,286);;[127X[104X
     [4X[25Xgap>[125X [27XAdjustmentOfNumericalSemigroup(s);[127X[104X
     [4X[28X[ 0, 12, 24, 36, 48, 60, 72, 84, 95, 96, 107, 108, 119, 120, 131, 132, 143,[128X[104X
-    [4X[28X  144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185, 189, 190, 191, 192, [128X[104X
-    [4X[28X  195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228, [128X[104X
-    [4X[28X  231, 233, 237, 239, 240, 243, 245, 249, 251, 252, 255, 257, 261, 263, 264, [128X[104X
-    [4X[28X  266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299, [128X[104X
-    [4X[28X  300, 304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341, [128X[104X
-    [4X[28X  342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362, 364, 365, 366, 368, [128X[104X
-    [4X[28X  370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394, [128X[104X
-    [4X[28X  395, 396, 400, 401, 402, 406, 407, 408, 412, 413, 414, 418, 419, 420, 424, [128X[104X
-    [4X[28X  425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456, [128X[104X
-    [4X[28X  460, 465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514, [128X[104X
-    [4X[28X  519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543, 545, 549, 551, 555, [128X[104X
-    [4X[28X  561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704, [128X[104X
+    [4X[28X  144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185, 189, 190, 191, 192,[128X[104X
+    [4X[28X  195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228,[128X[104X
+    [4X[28X  231, 233, 237, 239, 240, 243, 245, 249, 251, 252, 255, 257, 261, 263, 264,[128X[104X
+    [4X[28X  266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299,[128X[104X
+    [4X[28X  300, 304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341,[128X[104X
+    [4X[28X  342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362, 364, 365, 366, 368,[128X[104X
+    [4X[28X  370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394,[128X[104X
+    [4X[28X  395, 396, 400, 401, 402, 406, 407, 408, 412, 413, 414, 418, 419, 420, 424,[128X[104X
+    [4X[28X  425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456,[128X[104X
+    [4X[28X  460, 465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514,[128X[104X
+    [4X[28X  519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543, 545, 549, 551, 555,[128X[104X
+    [4X[28X  561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704,[128X[104X
     [4X[28X  710, 716, 722 ][128X[104X
   [4X[32X[104X
   
-  [1X9.2-12 IsAdditiveNumericalSemigroup[101X
+  [1X9.2-17 IsAdditiveNumericalSemigroup[101X
   
   [29X[2XIsAdditiveNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -307,7 +407,7 @@
     [4X[28X20[128X[104X
   [4X[32X[104X
   
-  [1X9.2-13 IsSuperSymmetricNumericalSemigroup[101X
+  [1X9.2-18 IsSuperSymmetricNumericalSemigroup[101X
   
   [29X[2XIsSuperSymmetricNumericalSemigroup[102X( [3XS[103X ) [32X function
   
@@ -337,7 +437,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFactorizationsIntegerWRTList(100,[11,13,15,19]);[127X[104X
-    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [128X[104X
+    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],[128X[104X
     [4X[28X  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ][128X[104X
     [4X[25Xgap>[125X [27XCatenaryDegreeOfSetOfFactorizations(last);[127X[104X
     [4X[28X5[128X[104X
@@ -424,7 +524,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XFactorizationsIntegerWRTList(100,[11,13,15,19]);[127X[104X
-    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [128X[104X
+    [4X[28X[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],[128X[104X
     [4X[28X  [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ][128X[104X
     [4X[25Xgap>[125X [27XTameDegreeOfSetOfFactorizations(last);[127X[104X
     [4X[28X4[128X[104X
@@ -526,7 +626,7 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27XTameDegreeOfElementInNumericalSemigroup(100,s); [127X[104X
+    [4X[25Xgap>[125X [27XTameDegreeOfElementInNumericalSemigroup(100,s);[127X[104X
     [4X[28X5[128X[104X
   [4X[32X[104X
   
@@ -542,13 +642,41 @@
   Chris O'Neill based on a work in progress with Pelayo and Thomas.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);        [127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
     [4X[25Xgap>[125X [27XOmegaPrimalityOfElementInNumericalSemigroup(100,s);[127X[104X
     [4X[28X13[128X[104X
   [4X[32X[104X
   
-  [1X9.4-2 OmegaPrimalityOfNumericalSemigroup[101X
+  [1X9.4-2 OmegaPrimalityOfElementListInNumericalSemigroup[101X
+  
+  [29X[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xl[103X a list of elements of [3XS[103X.[133X
+  
+  [33X[0;0YComputes the omega-values of all the elements in [3Xl[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    gap> s:=NumericalSemigroup(10,11,13);;[128X[104X
+    [4X[28X    gap> l:=FirstElementsOfNumericalSemigroup(100,s);;[128X[104X
+    [4X[28X    gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;[128X[104X
+    [4X[28X    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
+    [4X[28X      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
+    [4X[28X      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
+    [4X[28X      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
+    [4X[28X      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
+    [4X[28X    218[128X[104X
+    [4X[28X    gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;[128X[104X
+    [4X[28X    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
+    [4X[28X      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
+    [4X[28X      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
+    [4X[28X      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
+    [4X[28X      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
+    [4X[28X    10[128X[104X
+    [4X[28X    [128X[104X
+  [4X[32X[104X
+  
+  [1X9.4-3 OmegaPrimalityOfNumericalSemigroup[101X
   
   [29X[2XOmegaPrimalityOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
   
@@ -556,7 +684,7 @@
   of the minimal generators of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);        [127X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
     [4X[25Xgap>[125X [27XOmegaPrimalityOfNumericalSemigroup(s);[127X[104X
     [4X[28X5[128X[104X

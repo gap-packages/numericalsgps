@@ -52,6 +52,9 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X84475353846384E8">6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X847CD0EF8452F771">6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X85BD8C3680F22594">6.2-9 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X80CAA1FA7F6FF4FD">6.2-10 IsAperySetGammaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7E6E262C7C421635">6.2-11 IsAperySetBetaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86F52FB67F76D2CB">6.2-12 IsAperySetAlphaRectangular</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7998FF857F70C9A2">6.3 <span class="Heading">
                     Almost-symmetric numerical semigroups
@@ -323,6 +326,63 @@ true
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">(57));</span>
 7
 </pre></div>
+
+<p><a id="X80CAA1FA7F6FF4FD" name="X80CAA1FA7F6FF4FD"></a></p>
+
+<h5>6.2-10 IsAperySetGammaRectangular</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetGammaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Test for the <span class="SimpleMath">γ</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib.html#biBDAMSClasses">[DMS14]</a>. Numerical Semigroups with this property are free and thus complete intersections.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+                gap&gt; IsAperySetGammaRectangular(s);
+                false
+                gap&gt; s:=NumericalSemigroup(4,6,11);;
+                gap&gt; IsAperySetGammaRectangular(s);
+                true
+                </pre></div>
+
+<p><a id="X7E6E262C7C421635" name="X7E6E262C7C421635"></a></p>
+
+<h5>6.2-11 IsAperySetBetaRectangular</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetBetaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Test for the <span class="SimpleMath">β</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib.html#biBDAMSClasses">[DMS14]</a>; <span class="SimpleMath">β</span>-rectangularity implies <span class="SimpleMath">γ</span>-rectangularity.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+                gap&gt; IsAperySetBetaRectangular(s);
+                false
+                gap&gt; s:=NumericalSemigroup(4,6,11);;
+                gap&gt; IsAperySetBetaRectangular(s);
+                true
+                </pre></div>
+
+<p><a id="X86F52FB67F76D2CB" name="X86F52FB67F76D2CB"></a></p>
+
+<h5>6.2-12 IsAperySetAlphaRectangular</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetAlphaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup.</p>
+
+<p>Test for the <span class="SimpleMath">α</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib.html#biBDAMSClasses">[DMS14]</a>; <span class="SimpleMath">α</span>-rectangularity implies <span class="SimpleMath">β</span>-rectangularity.</p>
+
+
+<div class="example"><pre>
+                gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+                gap&gt; IsAperySetAlphaRectangular(s);
+                false
+                gap&gt; s:=NumericalSemigroup(4,6,11);;
+                gap&gt; IsAperySetAlphaRectangular(s);
+                true
+                </pre></div>
 
 <p><a id="X7998FF857F70C9A2" name="X7998FF857F70C9A2"></a></p>
 
