@@ -28,7 +28,7 @@
 ##
 #####################################################################
 DeclareGlobalFunction("ArfNumericalSemigroupClosure");
-
+DeclareOperation("ArfClosure",[IsNumericalSemigroup]);
 
 #####################################################################
 ##

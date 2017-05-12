@@ -654,6 +654,12 @@ InstallGlobalFunction(ArfGoodSemigroupClosure,function(s)
   return GoodSemigroupBySmallElements(sma);
 end);
 
+InstallMethod(ArfClosure,
+"Computes the Arf closure of a good semigroup",
+[IsGoodSemigroup],
+  ArfGoodSemigroupClosure
+);
+
 ###############################################################
 ##
 #F MaximalElementsOfGoodSemigroup(M)
