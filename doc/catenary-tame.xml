@@ -20,7 +20,7 @@
         The catenary degree of an element in <M>S</M> is the least positive integer <M>c</M> such that for any two
         of its factorizations <M>a</M> and <M>b</M>, there exists a chain of
         factorizations starting in <M>a</M> and ending in <M>b</M> and so that the distance between
-        two consecutive links is at most <M>c</M>. The catenary degree of <M>S</M> is the supremum of the 
+        two consecutive links is at most <M>c</M>. The catenary degree of <M>S</M> is the supremum of the
         catenary degrees of the elements in <M>S</M>.
 
         <P/>
@@ -30,10 +30,10 @@
         the distance to <M>a</M> is at most <M>t</M> and <M>b_i\not = 0</M>.
 
 	<P/>
-	The <M>\omega</M>-primality of an element <M>s</M> in <M>S</M> is the least positive integer <M>k</M> such that if 
-	<M>(\sum_{i\in I} s_i)-s\in S, s_i\in S</M>, then there exists <M>\Omega\subseteq I</M> with cardinality <M>k</M> such that 
+	The <M>\omega</M>-primality of an element <M>s</M> in <M>S</M> is the least positive integer <M>k</M> such that if
+	<M>(\sum_{i\in I} s_i)-s\in S, s_i\in S</M>, then there exists <M>\Omega\subseteq I</M> with cardinality <M>k</M> such that
 	<M>(\sum_{i\in \Omega} s_i)-s\in S</M>. The <M>\omega</M>-primality of <M>S</M> is the maximum of the <M>\omega</M>-primality of its minimal
-	generators. 
+	generators.
 
         <P/>
         The basic properties of these constants can be found in <Cite Key="GHKb"></Cite>.
@@ -53,7 +53,7 @@
 
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
-[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],
   [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
 ]]></Example>
          </Description>
@@ -72,10 +72,31 @@ gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);
 <Numerical semigroup with 6 generators>
 gap> FactorizationsElementWRTNumericalSemigroup(1100,s);
-[ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ], 
+[ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ],
   [ 0, 2, 3, 0, 0, 1 ] ]
 ]]></Example>
          </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="l,S" Name="FactorizationsElementListWRTNumericalSemigroup"></Func>
+      <Description>
+
+        <A>S</A> is a numerical semigroup and <A>l</A> a list of elements of <A>S</A>.
+        <P/>
+
+        Computes the factorizations of all the elements in <A>l</A>.
+
+        <Example><![CDATA[
+    gap> s:=NumericalSemigroup(10,11,13);
+    <Numerical semigroup with 3 generators>
+    gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
+    [ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
+      [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
+      [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
+
+    ]]></Example>
+      </Description>
     </ManSection>
 
 
@@ -109,9 +130,9 @@ gap> RClassesOfSetOfFactorizations(last);
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> LShapesOfNumericalSemigroup(s);
-[ [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 0, 2 ], [ 2, 1 ], 
-      [ 1, 2 ], [ 2, 2 ] ], 
-  [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 3, 0 ], [ 2, 1 ], 
+[ [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 0, 2 ], [ 2, 1 ],
+      [ 1, 2 ], [ 2, 2 ] ],
+  [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 2, 0 ], [ 1, 1 ], [ 3, 0 ], [ 2, 1 ],
       [ 4, 0 ], [ 5, 0 ] ] ]
 ]]></Example>
          </Description>
@@ -135,7 +156,7 @@ gap> DenumerantOfElementInNumericalSemigroup(1311,s);
     </ManSection>
 
 
- 
+
 </Section>
 
 <Section>
@@ -247,6 +268,96 @@ gap> DeltaSetOfFactorizationsElementWRTNumericalSemigroup(1100,s);
     </ManSection>
 
     <ManSection>
+      <Func Arg="S" Name="DeltaSetPeriodicityBoundForNumericalSemigroup"></Func>
+      <Description>
+
+        <A>S</A> is a numerical semigroup.
+        <P/>
+
+        Computes the bound were the periodicity starts for Delta sets of the elements in <A>S</A>; see <Cite Key="GG-MF-VT"></Cite>.
+
+        <Example><![CDATA[
+    gap> s:=NumericalSemigroup(5,7,11);;
+    gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
+    60
+    ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="S" Name="DeltaSetPeriodicityStartForNumericalSemigroup"></Func>
+      <Description>
+
+        <A>S</A> is a numerical semigroup.
+        <P/>
+
+        Computes the element were the periodicity starts for Delta sets of the elements in <A>S</A>.
+
+        <Example><![CDATA[
+    gap> s:=NumericalSemigroup(5,7,11);;
+    gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
+    21
+    ]]></Example>
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
+      <Func Arg="n, S" Name="DeltaSetListUpToElementWRTNumericalSemigroup"></Func>
+      <Description>
+
+        <A>S</A> is a numerical semigroup, <A>n</A> a nonnegative integer.
+        <P/>
+
+        Computes the Delta sets of the integers up to (and including) <A>n</A>, if an integer is not in <A>S</A>, the corresponding Delta set is empty.
+
+        <Example><![CDATA[
+    gap> s:=NumericalSemigroup(5,7,11);;
+    gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
+    [ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],
+      [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],
+      [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+    ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="n, S" Name="DeltaSetUnionUpToElementWRTNumericalSemigroup"></Func>
+      <Description>
+
+        <A>S</A> is a numerical semigroup, <A>n</A> a nonnegative integer.
+        <P/>
+
+
+        Computes the union of the delta sets of the elements of <A>S</A> up to and including <A>n</A>, using a ring buffer to conserve memory.
+
+        <Example><![CDATA[
+    gap> s:=NumericalSemigroup(5,7,11);;
+    gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
+    [ 2 ]
+    ]]></Example>
+      </Description>
+    </ManSection>
+
+    <ManSection>
+      <Func Arg="S" Name="DeltaSetOfNumericalSemigroup"></Func>
+      <Description>
+
+        <A>S</A> is a numerical semigroup.
+        <P/>
+
+        Computes the Delta set of <A>S</A>.
+
+        <Example><![CDATA[
+    gap> s:=NumericalSemigroup(5,7,11);;
+    gap> DeltaSetOfNumericalSemigroup(s);
+    [ 2 ]
+    ]]></Example>
+      </Description>
+    </ManSection>
+
+
+    <ManSection>
 
         <Func Arg="n, S" Name="MaximumDegreeOfElementWRTNumericalSemigroup"></Func>
         <Description>
@@ -291,7 +402,7 @@ gap> MaximalDenumerantOfElementInNumericalSemigroup(1311,s);
 
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
-[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ], 
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
   [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
 gap> MaximalDenumerantOfSetOfFactorizations(last);
 6
@@ -304,7 +415,7 @@ gap> MaximalDenumerantOfSetOfFactorizations(last);
         <Func Arg="S" Name="MaximalDenumerantOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
-            The output is the maximal denumerant of <A>S</A>, that is, the maximum of the maximal denumerant of the elements in <A>S</A> (see <Cite Key="BH"></Cite>). 
+            The output is the maximal denumerant of <A>S</A>, that is, the maximum of the maximal denumerant of the elements in <A>S</A> (see <Cite Key="BH"></Cite>).
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);;
@@ -319,24 +430,24 @@ gap> MaximalDenumerantOfNumericalSemigroup(s);
         <Func Arg="S" Name="AdjustmentOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
-            The output is the adjustment of <A>S</A> as defined in <Cite Key="BH"></Cite>. 
+            The output is the adjustment of <A>S</A> as defined in <Cite Key="BH"></Cite>.
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);;
 gap> AdjustmentOfNumericalSemigroup(s);
 [ 0, 12, 24, 36, 48, 60, 72, 84, 95, 96, 107, 108, 119, 120, 131, 132, 143,
-  144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185, 189, 190, 191, 192, 
-  195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228, 
-  231, 233, 237, 239, 240, 243, 245, 249, 251, 252, 255, 257, 261, 263, 264, 
-  266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299, 
-  300, 304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341, 
-  342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362, 364, 365, 366, 368, 
-  370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394, 
-  395, 396, 400, 401, 402, 406, 407, 408, 412, 413, 414, 418, 419, 420, 424, 
-  425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456, 
-  460, 465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514, 
-  519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543, 545, 549, 551, 555, 
-  561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704, 
+  144, 155, 156, 167, 168, 171, 177, 179, 180, 183, 185, 189, 190, 191, 192,
+  195, 197, 201, 203, 204, 207, 209, 213, 215, 216, 219, 221, 225, 227, 228,
+  231, 233, 237, 239, 240, 243, 245, 249, 251, 252, 255, 257, 261, 263, 264,
+  266, 267, 269, 273, 275, 276, 279, 280, 281, 285, 287, 288, 292, 293, 299,
+  300, 304, 305, 311, 312, 316, 317, 323, 324, 328, 329, 335, 336, 340, 341,
+  342, 347, 348, 352, 353, 354, 356, 359, 360, 361, 362, 364, 365, 366, 368,
+  370, 371, 372, 374, 376, 377, 378, 380, 382, 383, 384, 388, 389, 390, 394,
+  395, 396, 400, 401, 402, 406, 407, 408, 412, 413, 414, 418, 419, 420, 424,
+  425, 426, 430, 431, 432, 436, 437, 438, 442, 444, 448, 450, 451, 454, 456,
+  460, 465, 466, 472, 477, 478, 484, 489, 490, 496, 501, 502, 508, 513, 514,
+  519, 520, 525, 526, 527, 531, 532, 533, 537, 539, 543, 545, 549, 551, 555,
+  561, 567, 573, 579, 585, 591, 597, 603, 609, 615, 621, 622, 627, 698, 704,
   710, 716, 722 ]
 ]]></Example>
          </Description>
@@ -345,7 +456,7 @@ gap> AdjustmentOfNumericalSemigroup(s);
    <ManSection>
         <Func Arg="S" Name="IsAdditiveNumericalSemigroup"></Func>
         <Description>
-            <A>S</A> is a numerical semigroup. Detects if <A>S</A> is additive, that is, <M>ord(m+x)=ord(x)+1</M> for all <M>x</M> in <A>S</A>, where <M>m</M> is the multiplicity of <A>S</A> and <M>ord</M> stands for MaximumDegreeOfElementWRTNumericalSemigroup. For these semigroups <M>gr_m(K[[S]])</M> is  Cohen-Macaulay(see <Cite Key="BH"></Cite>). 
+            <A>S</A> is a numerical semigroup. Detects if <A>S</A> is additive, that is, <M>ord(m+x)=ord(x)+1</M> for all <M>x</M> in <A>S</A>, where <M>m</M> is the multiplicity of <A>S</A> and <M>ord</M> stands for MaximumDegreeOfElementWRTNumericalSemigroup. For these semigroups <M>gr_m(K[[S]])</M> is  Cohen-Macaulay(see <Cite Key="BH"></Cite>).
 
             <Example><![CDATA[
 gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
@@ -389,7 +500,7 @@ gap> Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));
 
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
-[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],
   [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
 gap> CatenaryDegreeOfSetOfFactorizations(last);
 5
@@ -400,7 +511,7 @@ gap> CatenaryDegreeOfSetOfFactorizations(last);
     <ManSection>
         <Func Arg="ls" Name="AdjacentCatenaryDegreeOfSetOfFactorizations"></Func>
         <Description>
-            <A>ls</A> is a set of factorizations. 
+            <A>ls</A> is a set of factorizations.
             The output is the adjacent catenary degree of this set of factorizations, that is, the supremum of the distance between to sets of factorizations with adjacent lengths. More precisely, if <M>l_1,\ldots,l_t</M> are the lengths of the factorizations of the elements in <A>ls</A>, and <M>Z_{l_i}</M> is the set of factorizations in <A>ls</A> with length <M>l_i</M>, then the adjacent catenary degree is the maximum of the distances <M>\mathrm d (Z_{l_i},Z_{l_{i+1}})</M>.
 
             <Example><![CDATA[
@@ -463,14 +574,14 @@ gap> CatenaryDegreeOfElementInNumericalSemigroup(1157,NumericalSemigroup(13,18))
         <Description>
             <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same length).
             The output is the tame degree of this set of factorizations.
-           
+
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
-[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], 
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],
   [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
 gap> TameDegreeOfSetOfFactorizations(last);
 4
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
@@ -494,15 +605,15 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         <P/>
-                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations with the same length of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. These elements are used to compute the equal catenary degree of <A>S</A>. 
+                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations with the same length of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. These elements are used to compute the equal catenary degree of <A>S</A>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10 ]
-]]></Example>          
-                        
-                        
+]]></Example>
+
+
                     </Description>
                 </ManSection>
 
@@ -512,7 +623,7 @@ gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
         <Func Arg="S" Name="EqualCatenaryDegreeOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
-            The output is the equal catenary degree of <A>S</A>. 
+            The output is the equal catenary degree of <A>S</A>.
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -527,15 +638,15 @@ gap> EqualCatenaryDegreeOfNumericalSemigroup(s);
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         <P/>
-                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, with <M>|x|\le |y|</M>; <M>msg</M> stands the minimal generating system of <A>S</A>. These elements are used to compute the monotone catenary degree of <A>S</A>. 
+                        The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, with <M>|x|\le |y|</M>; <M>msg</M> stands the minimal generating system of <A>S</A>. These elements are used to compute the monotone catenary degree of <A>S</A>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> MonotonePrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
-]]></Example>          
-                        
-                        
+]]></Example>
+
+
                     </Description>
                 </ManSection>
 
@@ -545,7 +656,7 @@ gap> MonotonePrimitiveElementsOfNumericalSemigroup(s);
         <Func Arg="S" Name="MonotoneCatenaryDegreeOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
-            The output is the monotone catenary degree of <A>S</A>. 
+            The output is the monotone catenary degree of <A>S</A>.
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,23,31,44);;
@@ -581,13 +692,13 @@ gap> TameDegreeOfNumericalSemigroup(s);
 	    <A>n</A> is an element of the numerical semigroup <A>S</A>.
 
             The output is the tame degree of <A>n</A> in <A>S</A>.
-           
+
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);
 <Numerical semigroup with 3 generators>
-gap> TameDegreeOfElementInNumericalSemigroup(100,s); 
+gap> TameDegreeOfElementInNumericalSemigroup(100,s);
 5
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
@@ -604,15 +715,46 @@ gap> TameDegreeOfElementInNumericalSemigroup(100,s);
 	    <A>n</A> is an element of the numerical semigroup <A>S</A>.
 
             The output is the <M>\omega</M>-primality of <A>n</A> in <A>S</A> as explained in <Cite Key="B-GS-G"></Cite>. The current implementation is due to Chris O'Neill based on a work in progress with Pelayo and Thomas.
-           
+
             <Example><![CDATA[
-gap> s:=NumericalSemigroup(10,11,13);        
+gap> s:=NumericalSemigroup(10,11,13);
 <Numerical semigroup with 3 generators>
 gap> OmegaPrimalityOfElementInNumericalSemigroup(100,s);
 13
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
+
+    <ManSection>
+                        <Func Arg="l,S" Name="OmegaPrimalityOfElementListInNumericalSemigroup"></Func>
+                        <Description>
+
+                            <A>S</A> is a numerical semigroup and <A>l</A> a list of elements of <A>S</A>.
+                            <P/>
+
+                             Computes the omega-values of all the elements in <A>l</A>.
+
+                            <Example><![CDATA[
+    gap> s:=NumericalSemigroup(10,11,13);;
+    gap> l:=FirstElementsOfNumericalSemigroup(100,s);;
+    gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;
+    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
+      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
+      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
+      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
+      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+    218
+    gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
+    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
+      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
+      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
+      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
+      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+    10
+    ]]></Example>
+                        </Description>
+                    </ManSection>
+
 
     <ManSection>
         <Func Arg="n, S" Name="OmegaPrimalityOfNumericalSemigroup"></Func>
@@ -620,13 +762,13 @@ gap> OmegaPrimalityOfElementInNumericalSemigroup(100,s);
 	    <A>S</A> is a numerical semigroup.
 
             The output is the maximum of the <M>\omega</M>-primalities of the minimal generators of  <A>S</A>.
-           
+
             <Example><![CDATA[
-gap> s:=NumericalSemigroup(10,11,13);        
+gap> s:=NumericalSemigroup(10,11,13);
 <Numerical semigroup with 3 generators>
 gap> OmegaPrimalityOfNumericalSemigroup(s);
 5
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
@@ -646,14 +788,14 @@ gap> OmegaPrimalityOfNumericalSemigroup(s);
 	    <A>S</A> is a numerical semigroup and <A>n</A> a list with two entries (a pair).
 
             The output is true if the <A>n</A> belongs to the homogenization of <A>S</A>.
-           
+
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);;
 gap> BelongsToHomogenizationOfNumericalSemigroup([10,23],s);
 true
 gap> BelongsToHomogenizationOfNumericalSemigroup([1,23],s);
 false
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
@@ -664,7 +806,7 @@ false
 	    <A>S</A> is a numerical semigroup and <A>n</A> a list with two entries (a pair).
 
             The output is the set of factorizations <A>n</A> in terms of the minimal generating system of the homogenization of <A>S</A>.
-           
+
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);;
 gap> FactorizationsInHomogenizationOfNumericalSemigroup([20,230],s);
@@ -679,7 +821,7 @@ gap> FactorizationsElementWRTNumericalSemigroup(230,s);
   [ 13, 2, 6 ], [ 2, 12, 6 ], [ 4, 9, 7 ], [ 6, 6, 8 ],
   [ 8, 3, 9 ], [ 10, 0, 10 ], [ 1, 7, 11 ], [ 3, 4, 12 ],
   [ 5, 1, 13 ], [ 0, 2, 16 ] ]
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
@@ -689,14 +831,14 @@ gap> FactorizationsElementWRTNumericalSemigroup(230,s);
 	    <A>S</A> is a numerical semigroup.
 
             The output is the set of Betti elements of the homogenization of <A>S</A>.
-           
+
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,17,19);;
 gap> BettiElementsOfNumericalSemigroup(s);
 [ 57, 68, 70 ]
 gap> HomogeneousBettiElementsOfNumericalSemigroup(s);
 [ [ 5, 57 ], [ 5, 68 ], [ 6, 95 ], [ 7, 70 ], [ 9, 153 ] ]
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
@@ -706,17 +848,17 @@ gap> HomogeneousBettiElementsOfNumericalSemigroup(s);
 	    <A>S</A> is a numerical semigroup.
 
             The output is the homogeneous catenary degree of <A>S</A>. Observe that for a single element in the homogenization of <A>S</A>, its catenary degree can be computed with CatenaryDegreeOfSetOfFactorizations and FactorizationsInHomogenizationOfNumericalSemigroup.
-           
+
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,17,19);;
 gap> CatenaryDegreeOfNumericalSemigroup(s);
 7
 gap> HomogeneousCatenaryDegreeOfNumericalSemigroup(s);
 9
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
-    
+
 </Section>
 
 <Section>
@@ -732,16 +874,16 @@ gap> HomogeneousCatenaryDegreeOfNumericalSemigroup(s);
 	    <A>S</A> is a numerical semigroup and <A>n</A> is an integer.
 
            As <M>(S,\le_S)</M> is a poset, we can define the Möbius function associated to it as in <Cite Key="CHRA"></Cite>. The output is the value of the Möbius function in the integer <A>n</A>, that is, the alternate sum of the number of chains from 0 to <A>n</A>.
-           
+
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,10);
 2
 gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
 25
-]]></Example>          
+]]></Example>
         </Description>
     </ManSection>
 
-	
+
 </Section>

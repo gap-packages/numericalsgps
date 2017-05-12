@@ -147,4 +147,72 @@ gap> Length(
                     </Description>
                 </ManSection>
 
+
+                <ManSection>
+                                    <Func Arg="S" Name="IsAperySetGammaRectangular"></Func>
+                                    <Description>
+
+                                        <A>S</A> is a numerical semigroup.
+                                        <P/>
+
+                                        Test for the <M>\gamma</M>-rectangularity of the Apéry Set of a numerical semigroup.
+                                        This test is the implementation of the algorithm given in
+                                        <Cite Key="DAMSClasses"></Cite>. Numerical Semigroups with this property are free and thus complete intersections.
+
+
+                                        <Example><![CDATA[
+                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+                gap> IsAperySetGammaRectangular(s);
+                false
+                gap> s:=NumericalSemigroup(4,6,11);;
+                gap> IsAperySetGammaRectangular(s);
+                true
+                ]]></Example>
+                                    </Description>
+                                </ManSection>
+                <ManSection>
+                                    <Func Arg="S" Name="IsAperySetBetaRectangular"></Func>
+                                    <Description>
+
+                                        <A>S</A> is a numerical semigroup.
+                                        <P/>
+
+                                        Test for the <M>\beta</M>-rectangularity of the Apéry Set of a numerical semigroup.
+                                        This test is the implementation of the algorithm given in
+                                        <Cite Key="DAMSClasses"></Cite>; <M>\beta</M>-rectangularity implies <M>\gamma</M>-rectangularity.
+
+
+                                        <Example><![CDATA[
+                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+                gap> IsAperySetBetaRectangular(s);
+                false
+                gap> s:=NumericalSemigroup(4,6,11);;
+                gap> IsAperySetBetaRectangular(s);
+                true
+                ]]></Example>
+                                    </Description>
+                                </ManSection>
+                <ManSection>
+                                    <Func Arg="S" Name="IsAperySetAlphaRectangular"></Func>
+                                    <Description>
+
+                                        <A>S</A> is a numerical semigroup.
+                                        <P/>
+
+                                        Test for the <M>\alpha</M>-rectangularity of the Apéry Set of a numerical semigroup.
+                                        This test is the implementation of the algorithm given in
+                                        <Cite Key="DAMSClasses"></Cite>; <M>\alpha</M>-rectangularity implies <M>\beta</M>-rectangularity.
+
+
+                                        <Example><![CDATA[
+                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+                gap> IsAperySetAlphaRectangular(s);
+                false
+                gap> s:=NumericalSemigroup(4,6,11);;
+                gap> IsAperySetAlphaRectangular(s);
+                true
+                ]]></Example>
+                                    </Description>
+                </ManSection>
+
 </Section>
