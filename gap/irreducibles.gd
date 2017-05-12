@@ -100,8 +100,8 @@ DeclareOperation("IsIrreducible",[IsIrreducibleNumericalSemigroup]);
 ##  Checks whether or not s is a symmetric numerical semigroup.
 ##
 #############################################################################
-DeclareProperty("IsSymmetricNumericalSemigroup", IsNumericalSemigroup);
 DeclareAttribute("IsSymmetric",IsNumericalSemigroup);
+DeclareSynonymAttr("IsSymmetricNumericalSemigroup", IsSymmetric);
 #REPORT laguna for this collission; we shold be able to use synonyms here
 
 
