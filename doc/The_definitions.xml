@@ -258,10 +258,28 @@ gap> KunzPolytope(3);
 
   </Description>
 </ManSection>
-                <ManSection>
-                    <Attr Name="FrobeniusNumber" Arg="NS" Label="for numerical semigroup"/>
-                    <Attr Name="FrobeniusNumberOfNumericalSemigroup" Arg="NS"/>
-                    <Description>
+
+<ManSection>
+  <Func Name="CocycleOfNumericalSemigroupWRTElement" Arg="S,m"/>
+  <Description>
+    <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The output is the matrix <M>h(i,j)=(w(i)+w(j)-w((i+j)\mod m))/m</M>,
+    where <M>w(i)</M> is the smallest element in <A>S</A> congruent with <M>i</M> modulo <M>m</M> (and thus it is in the Apéry set of <M>m</M>), <Cite Key="arf-frob-gen"></Cite>.
+
+  <P/>
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> CocycleOfNumericalSemigroupWRTElement(s,3);
+[ [ 0, 0, 0 ], [ 0, 3, 4 ], [ 0, 4, 1 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="FrobeniusNumber" Arg="NS" Label="for numerical semigroup"/>
+  <Attr Name="FrobeniusNumberOfNumericalSemigroup" Arg="NS"/>
+  <Description>
          The largest nonnegative integer not belonging to a numerical semigroup
 <M>S</M> is the <E>Frobenius number</E> of <M>S</M>. If <M>S</M> is the set of
 nonnegative integers, then clearly its Frobenius number is <M>-1</M>,
@@ -279,8 +297,8 @@ gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 gap> FrobeniusNumber(NumericalSemigroup(3,5,7));
 4
 ]]></Example>
-                    </Description>
-                </ManSection>
+  </Description>
+</ManSection>
 
                 <ManSection>
                     <Attr Name="Conductor" Arg="NS" Label="for numerical Semigroup"/>
