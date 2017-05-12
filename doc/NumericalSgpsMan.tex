@@ -1695,6 +1695,9 @@ semigroup \mbox{\texttt{\mdseries\slshape S}}, as explained in \cite{Ros96}.
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElementsOfNumericalSemigroup({\mdseries\slshape S})\index{BettiElementsOfNumericalSemigroup@\texttt{BettiElementsOfNumericalSemigroup}}
 \label{BettiElementsOfNumericalSemigroup}
 }\hfill{\scriptsize (function)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElements({\mdseries\slshape S})\index{BettiElements@\texttt{BettiElements}!of numerical semigroup}
+\label{BettiElements:of numerical semigroup}
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup. 
@@ -6062,7 +6065,7 @@ further use.
 \hyperdef{L}{X7D4D017A79AD98E2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousEquations({\mdseries\slshape ls, m})\index{HilbertBasisOfSystemOfHomogeneousEquations@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Equations}}
 \label{HilbertBasisOfSystemOfHomogeneousEquations}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of integers and \mbox{\texttt{\mdseries\slshape m}} a list of integers. The elements of \mbox{\texttt{\mdseries\slshape ls}} represent the rows of a matrix $A$. The output is a minimal generating system (Hilbert basis) of the set of
@@ -6084,7 +6087,7 @@ represent these inequalities by its coefficients. If we put them in a matrix $S$
 \hyperdef{L}{X825B1CD37B0407A6}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{HilbertBasisOfSystemOfHomogeneousInequalities({\mdseries\slshape ls})\index{HilbertBasisOfSystemOfHomogeneousInequalities@\texttt{Hilbert}\-\texttt{Basis}\-\texttt{Of}\-\texttt{System}\-\texttt{Of}\-\texttt{Homogeneous}\-\texttt{Inequalities}}
 \label{HilbertBasisOfSystemOfHomogeneousInequalities}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of integers. The elements of \mbox{\texttt{\mdseries\slshape ls}} represent the rows of a matrix $A$. The output is a minimal generating system (Hilbert basis) of the set of
@@ -6181,7 +6184,7 @@ input.
 \hyperdef{L}{X7EE005267DEBC1DE}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsOfKernelCongruence({\mdseries\slshape M})\index{GeneratorsOfKernelCongruence@\texttt{GeneratorsOfKernelCongruence}}
 \label{GeneratorsOfKernelCongruence}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape M}} is matrix with nonnegative integer coefficients. The output is a system of
@@ -6196,7 +6199,7 @@ generators of the congruence $\{(x,y)\mid xM=yM\}$.
 \hyperdef{L}{X7AD2271E84F705D3}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{CanonicalBasisOfKernelCongruence({\mdseries\slshape M, Ord})\index{CanonicalBasisOfKernelCongruence@\texttt{CanonicalBasisOfKernelCongruence}}
 \label{CanonicalBasisOfKernelCongruence}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape M}} is matrix with nonnegative integer coefficients, \mbox{\texttt{\mdseries\slshape Ord}} a term ordering. The output is a canonical bases of the congruence $\{(x,y)\mid xM=yM\}$ (see \cite{RGS99}). This corresponds with the exponents of the Gr{\"o}bner basis of the kernel
@@ -6226,7 +6229,7 @@ ideal of the morphism $x_i\mapsto Y^{m_i}$, with $m_i$ the $i$th row of $M$.
 \hyperdef{L}{X7C3546477E07A1EA}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GraverBasis({\mdseries\slshape M})\index{GraverBasis@\texttt{GraverBasis}}
 \label{GraverBasis}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape M}} is matrix with integer coefficients. The output is a Graver basis for \mbox{\texttt{\mdseries\slshape M}}. 
@@ -6246,7 +6249,7 @@ ideal of the morphism $x_i\mapsto Y^{m_i}$, with $m_i$ the $i$th row of $M$.
 \hyperdef{L}{X7BCA9C077F76920E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{MinimalPresentationOfAffineSemigroup({\mdseries\slshape a})\index{MinimalPresentationOfAffineSemigroup@\texttt{Minimal}\-\texttt{Presentation}\-\texttt{Of}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{MinimalPresentationOfAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is a minimal presentation for \mbox{\texttt{\mdseries\slshape a}}. 
@@ -6273,7 +6276,10 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 \hyperdef{L}{X7C20CE97840ECF8E}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElementsOfAffineSemigroup({\mdseries\slshape a})\index{BettiElementsOfAffineSemigroup@\texttt{BettiElementsOfAffineSemigroup}}
 \label{BettiElementsOfAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
+\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{BettiElements({\mdseries\slshape a})\index{BettiElements@\texttt{BettiElements}!of affine semigroup}
+\label{BettiElements:of affine semigroup}
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the set of Betti elements of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
@@ -6336,7 +6342,7 @@ and for this Rclasses are used (if \texttt{NormalizInterface} is loaded, then th
 \hyperdef{L}{X86EB7A9A8250E6DB}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{PrimitiveElementsOfAffineSemigroup({\mdseries\slshape a})\index{PrimitiveElementsOfAffineSemigroup@\texttt{PrimitiveElementsOfAffineSemigroup}}
 \label{PrimitiveElementsOfAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the set of primitive elements of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
@@ -6367,7 +6373,7 @@ input.
 \hyperdef{L}{X8780C7E5830B9AE2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{FactorizationsVectorWRTList({\mdseries\slshape v, ls})\index{FactorizationsVectorWRTList@\texttt{FactorizationsVectorWRTList}}
 \label{FactorizationsVectorWRTList}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape v}} is a list of nonnegative integers and \mbox{\texttt{\mdseries\slshape ls}} is a list of lists of nonnegative integers. The output is set of
@@ -6389,7 +6395,7 @@ performance is much better. If \texttt{4ti2Interface} is loaded instead, then fa
 \hyperdef{L}{X7D6B4FB38376C278}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{ElasticityOfAffineSemigroup({\mdseries\slshape a})\index{ElasticityOfAffineSemigroup@\texttt{ElasticityOfAffineSemigroup}}
 \label{ElasticityOfAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the elasticity of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). 
@@ -6505,7 +6511,7 @@ This function is based on \cite{GSOSN}. }
 \hyperdef{L}{X7B42B3B17D08FE1D}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{TameDegreeOfAffineSemigroup({\mdseries\slshape a})\index{TameDegreeOfAffineSemigroup@\texttt{TameDegreeOfAffineSemigroup}}
 \label{TameDegreeOfAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the tame degree of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). If \mbox{\texttt{\mdseries\slshape a}} is given by equations (or its equations are known), then the procedure
@@ -6524,7 +6530,7 @@ explained in \cite{GSONW} is used.
 \hyperdef{L}{X7F32723C860EA4B2}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{OmegaPrimalityOfElementInAffineSemigroup({\mdseries\slshape v, a})\index{OmegaPrimalityOfElementInAffineSemigroup@\texttt{Omega}\-\texttt{Primality}\-\texttt{Of}\-\texttt{Element}\-\texttt{In}\-\texttt{Affine}\-\texttt{Semigroup}}
 \label{OmegaPrimalityOfElementInAffineSemigroup}
-}\hfill{\scriptsize (function)}}\\
+}\hfill{\scriptsize (operation)}}\\
 
 
  \mbox{\texttt{\mdseries\slshape v}} is a list of nonnegative integers and \mbox{\texttt{\mdseries\slshape a}} is an affine semigroup. The output is the omega primality of \mbox{\texttt{\mdseries\slshape a}} (defined as for numerical semigroups). Returns 0 if the element is not in the

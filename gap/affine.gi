@@ -747,7 +747,7 @@ end);
 ###################################################################
 # Betti elements of the affine semigroup a
 ###################################################################
-InstallMethod(BettiElementsOfAffineSemigroup,
+InstallMethod(BettiElements,
 	"Computes the Betti elements of an affine semigroup",
 	[IsAffineSemigroup],1,
 	function(a)

@@ -194,6 +194,12 @@ InstallGlobalFunction(BettiElementsOfNumericalSemigroup, function(s)
                                 # choose n with nonconnected graphs
 end);
 
+InstallMethod(BettiElements,
+"Computes the Betti elements of the numerical semigroup",
+[IsNumericalSemigroup],
+BettiElementsOfNumericalSemigroup
+);
+
 #############################################################################
 ##
 #P  IsUniquelyPresentedNumericalSemigroup(s)
