@@ -53,8 +53,8 @@ false
 
                 <ManSection>
                     <!--<Prop Arg="s" Name="IsSymmetric"></Prop>-->
-                    <Prop Arg="s" Name="IsSymmetricNumericalSemigroup"></Prop>
-                    <Prop Arg="s" Name="IsSymmetric" Label="for numerical semigroups"></Prop>
+                    <Attr Arg="s" Name="IsSymmetricNumericalSemigroup"></Attr>
+                    <Attr Arg="s" Name="IsSymmetric" Label="for numerical semigroups"></Attr>
 
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is symmetric,

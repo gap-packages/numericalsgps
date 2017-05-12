@@ -381,6 +381,7 @@ gap> gr:=GraverBasis([[3,5,7]]);
 
   <ManSection>
     <Oper Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Oper>
+    <Oper Arg="a" Name="MinimalPresentation" Label="for affine semigroup"></Oper>
     <Description>
       <A>a</A> is an affine semigroup.
       The output is a minimal presentation for <A>a</A>.

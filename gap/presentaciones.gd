@@ -60,6 +60,7 @@ DeclareGlobalFunction("GraphAssociatedToElementInNumericalSemigroup");
 ##  {\bf 6} (1996), no. 4, 441--455.
 #############################################################################
 DeclareGlobalFunction("MinimalPresentationOfNumericalSemigroup");
+DeclareOperation("MinimalPresentation",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
