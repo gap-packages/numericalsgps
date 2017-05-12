@@ -233,7 +233,22 @@
     [4X[28X[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-12 FrobeniusNumber[101X
+  [1X3.1-12 CocycleOfNumericalSemigroupWRTElement[101X
+  
+  [29X[2XCocycleOfNumericalSemigroupWRTElement[102X( [3XS[103X, [3Xm[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a numerical semigroup, and [3Xm[103X is a nonzero element of [3XS[103X. The output is
+  the  matrix  [22Xh(i,j)=(w(i)+w(j)-w((i+j)mod  m))/m[122X, where [22Xw(i)[122X is the smallest
+  element  in  [3XS[103X congruent with [22Xi[122X modulo [22Xm[122X (and thus it is in the Apéry set of
+  [22Xm[122X), [GHKR17].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XCocycleOfNumericalSemigroupWRTElement(s,3);[127X[104X
+    [4X[28X[ [ 0, 0, 0 ], [ 0, 3, 4 ], [ 0, 4, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-13 FrobeniusNumber[101X
   
   [29X[2XFrobeniusNumber[102X( [3XNS[103X ) [32X attribute
   [29X[2XFrobeniusNumberOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
@@ -254,7 +269,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X3.1-13 Conductor[101X
+  [1X3.1-14 Conductor[101X
   
   [29X[2XConductor[102X( [3XNS[103X ) [32X attribute
   [29X[2XConductorOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
@@ -268,7 +283,7 @@
     [4X[28X5[128X[104X
   [4X[32X[104X
   
-  [1X3.1-14 PseudoFrobeniusOfNumericalSemigroup[101X
+  [1X3.1-15 PseudoFrobeniusOfNumericalSemigroup[101X
   
   [29X[2XPseudoFrobeniusOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
   
@@ -283,7 +298,7 @@
     [4X[28X[ 21, 40, 41, 42 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-15 TypeOfNumericalSemigroup[101X
+  [1X3.1-16 TypeOfNumericalSemigroup[101X
   
   [29X[2XTypeOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
   
@@ -298,7 +313,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X3.1-16 Gaps[101X
+  [1X3.1-17 Gaps[101X
   
   [29X[2XGaps[102X( [3XNS[103X ) [32X attribute
   [29X[2XGapsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
@@ -313,7 +328,7 @@
     [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-17 DesertsOfNumericalSemigroup[101X
+  [1X3.1-18 DesertsOfNumericalSemigroup[101X
   
   [29X[2XDesertsOfNumericalSemigroup[102X( [3XNS[103X ) [32X function
   
@@ -326,7 +341,7 @@
     [4X[28X[ [ 1, 2 ], [ 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-18 IsOrdinaryNumericalSemigroup[101X
+  [1X3.1-19 IsOrdinaryNumericalSemigroup[101X
   
   [29X[2XIsOrdinaryNumericalSemigroup[102X( [3XNS[103X ) [32X property
   [29X[2XIsOrdinary[102X( [3XNS[103X ) [32X property
@@ -340,7 +355,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X3.1-19 IsAcuteNumericalSemigroup[101X
+  [1X3.1-20 IsAcuteNumericalSemigroup[101X
   
   [29X[2XIsAcuteNumericalSemigroup[102X( [3XNS[103X ) [32X property
   [29X[2XIsAcute[102X( [3XNS[103X ) [32X property
@@ -355,7 +370,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X3.1-20 Holes[101X
+  [1X3.1-21 Holes[101X
   
   [29X[2XHoles[102X( [3XNS[103X ) [32X attribute
   [29X[2XHolesOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
@@ -372,7 +387,7 @@
     [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-21 LatticePathAssociatedToNumericalSemigroup[101X
+  [1X3.1-22 LatticePathAssociatedToNumericalSemigroup[101X
   
   [29X[2XLatticePathAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xp[103X, [3Xq[103X ) [32X attribute
   
@@ -395,7 +410,7 @@
     [4X[28X  [ 14, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-22 Genus[101X
+  [1X3.1-23 Genus[101X
   
   [29X[2XGenus[102X( [3XNS[103X ) [32X attribute
   [29X[2XGenusOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
@@ -412,7 +427,7 @@
     [4X[28X26[128X[104X
   [4X[32X[104X
   
-  [1X3.1-23 FundamentalGaps[101X
+  [1X3.1-24 FundamentalGaps[101X
   
   [29X[2XFundamentalGaps[102X( [3XS[103X ) [32X attribute
   [29X[2XFundamentalGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
@@ -435,7 +450,7 @@
     [4X[28X[ 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-24 SpecialGaps[101X
+  [1X3.1-25 SpecialGaps[101X
   
   [29X[2XSpecialGaps[102X( [3XS[103X ) [32X attribute
   [29X[2XSpecialGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute
