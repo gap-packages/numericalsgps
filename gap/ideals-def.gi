@@ -759,7 +759,10 @@ end);
 ##  nI-nI=(n+1)I-(n+1)I, see [B06].
 ##
 #############################################################################
-InstallGlobalFunction(ReductionNumberIdealNumericalSemigroup, function(I)
+InstallMethod(ReductionNumber,
+"Computes the reduction number of the ideal",
+[IsIdealOfNumericalSemigroup],
+function(I)
 
     local n, S, i;
     if not IsIdealOfNumericalSemigroup(I) then
