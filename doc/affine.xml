@@ -233,7 +233,7 @@ true
 
 <ManSection>
 
-  <Func Arg="ls, m" Name="HilbertBasisOfSystemOfHomogeneousEquations"></Func>
+  <Oper Arg="ls, m" Name="HilbertBasisOfSystemOfHomogeneousEquations"></Oper>
   <Description>
     <A>ls</A> is a list of lists of integers and <A>m</A> a list of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.
     The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the system <M>Ax=0</M> where the <M>k</M> first equations are in the congruences modulo <A>m[i]</A>, with <M>k</M> the length of <A>m</A>. <P/>
@@ -249,7 +249,7 @@ gap> HilbertBasisOfSystemOfHomogeneousEquations([[1,0,1],[0,1,-1]],[2]);
 If <M>C</M> is a pointed cone (a cone in <M>\mathbb Q^k</M> not containing lines and <M>0\in C</M>), then <M>S=C\cap \mathbb N^k</M> is an affine semigroup (known as normal affine semigroup). So another way to give an affine semigroup is by a set of homogeneous inequalities, and we can represent these inequalities by its coefficients. If we put them in a matrix <M>S</M> can be defined as the set of nonnegative integer solutions to <M>Ax \ge 0</M>.
 
 <ManSection>
-  <Func Arg="ls" Name="HilbertBasisOfSystemOfHomogeneousInequalities"></Func>
+  <Oper Arg="ls" Name="HilbertBasisOfSystemOfHomogeneousInequalities"></Oper>
   <Description>
     <A>ls</A> is a list of lists of integers. The elements of <A>ls</A> represent the rows of a matrix <M>A</M>.
             The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions to  <M>Ax\ge 0</M>.
@@ -328,7 +328,7 @@ gap> Generators(last);
   A minimal presentation of an affine semigroup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
 
   <ManSection>
-    <Func Arg="M" Name="GeneratorsOfKernelCongruence"></Func>
+    <Oper Arg="M" Name="GeneratorsOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients.
       The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
@@ -338,7 +338,7 @@ gap> Generators(last);
   </ManSection>
 
   <ManSection>
-    <Func Arg="M, Ord" Name="CanonicalBasisOfKernelCongruence"></Func>
+    <Oper Arg="M, Ord" Name="CanonicalBasisOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients, <A>Ord</A> a term ordering.
       The output is a canonical bases of the congruence <M>\{(x,y)\mid xM=yM\}</M> (see <Cite Key="RGS99"></Cite>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <M>x_i\mapsto Y^{m_i}</M>, with <M>m_i</M> the <M>i</M>th row of <M>M</M>.
@@ -363,7 +363,7 @@ gap> CanonicalBasisOfKernelCongruence(M,MonomialGrevlexOrdering());
   </ManSection>
 
   <ManSection>
-    <Func Arg="M" Name="GraverBasis"></Func>
+    <Oper Arg="M" Name="GraverBasis"></Oper>
     <Description>
       <A>M</A> is matrix with  integer coefficients.
       The output is a Graver basis for <A>M</A>.
@@ -380,7 +380,7 @@ gap> gr:=GraverBasis([[3,5,7]]);
 
 
   <ManSection>
-    <Func Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Func>
+    <Oper Arg="a" Name="MinimalPresentationOfAffineSemigroup"></Oper>
     <Description>
       <A>a</A> is an affine semigroup.
       The output is a minimal presentation for <A>a</A>.
@@ -398,7 +398,8 @@ gap> GeneratorsOfAffineSemigroup(a);
   </ManSection>
 
   <ManSection>
-    <Func Arg="a" Name="BettiElementsOfAffineSemigroup"></Func>
+    <Oper Arg="a" Name="BettiElementsOfAffineSemigroup"></Oper>
+    <Oper Arg="a" Name="BettiElements" Label="of affine semigroup"></Oper>
     <Description>
       <A>a</A> is an affine semigroup.
       The output is the set of Betti elements of <A>a</A> (defined as for numerical semigroups).
@@ -443,7 +444,7 @@ gap> BettiElementsOfAffineSemigroup(a);
 
 
   <ManSection>
-    <Func Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Func>
+    <Oper Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Oper>
     <Description>
       <A>a</A> is an affine semigroup.
       The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
@@ -470,7 +471,7 @@ gap> PrimitiveElementsOfAffineSemigroup(a);
 
 
   <ManSection>
-    <Func Arg="v, ls" Name="FactorizationsVectorWRTList"></Func>
+    <Oper Arg="v, ls" Name="FactorizationsVectorWRTList"></Oper>
     <Description>
       <A>v</A> is a list of nonnegative integers and <A>ls</A> is a list of lists of nonnegative integers.
       The output is set of factorizations of <A>v</A> in terms of the elements of <A>ls</A>.
@@ -486,7 +487,7 @@ gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
 
 
 <ManSection>
-  <Func Arg="a" Name="ElasticityOfAffineSemigroup"></Func>
+  <Oper Arg="a" Name="ElasticityOfAffineSemigroup"></Oper>
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the elasticity of <A>a</A> (defined as for numerical semigroups).
@@ -575,7 +576,7 @@ gap> MonotoneCatenaryDegreeOfAffineSemigroup(a);
 
 
 <ManSection>
-  <Func Arg="a" Name="TameDegreeOfAffineSemigroup"></Func>
+  <Oper Arg="a" Name="TameDegreeOfAffineSemigroup"></Oper>
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the tame degree of <A>a</A> (defined as for numerical semigroups). If <A>a</A> is given by equations (or its equations are known), then the procedure explained in <Cite Key="GSONW"></Cite> is used.
@@ -590,7 +591,7 @@ gap> TameDegreeOfAffineSemigroup(a);
 
 
 <ManSection>
-  <Func Arg="v,a" Name="OmegaPrimalityOfElementInAffineSemigroup"></Func>
+  <Oper Arg="v,a" Name="OmegaPrimalityOfElementInAffineSemigroup"></Oper>
   <Description>
     <A>v</A> is a list of nonnegative integers and <A>a</A> is an affine semigroup.
             The output is the omega primality of <A>a</A> (defined as for numerical semigroups). Returns 0 if the element is not in the semigroup.

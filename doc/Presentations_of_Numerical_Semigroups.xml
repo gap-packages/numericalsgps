@@ -61,6 +61,7 @@
 
   <ManSection>
     <Func Arg="S" Name="BettiElementsOfNumericalSemigroup"></Func>
+    <Oper Arg="S" Name="BettiElements" Label="of numerical semigroup"></Oper>
     <Description>
       <A>S</A> is a numerical semigroup.
       <P/>
