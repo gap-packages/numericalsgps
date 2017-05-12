@@ -68,7 +68,11 @@ InstallGlobalFunction(ArfNumericalSemigroupClosure, function(arg)
     od;
 end);
 
-
+InstallMethod(ArfClosure,
+"Computes the Arf closure of a numerical semigroup",
+[IsNumericalSemigroup],
+  ArfNumericalSemigroupClosure
+);
 #####################################################################
 ##
 #P IsArfNumericalSemigroup(s)
@@ -637,7 +641,7 @@ InstallMethod(IsSaturated,
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup");
     fi;
-    return (s = SaturatedNumericalSemigroupClosure(s));    
+    return (s = SaturatedNumericalSemigroupClosure(s));
 end);
 
 # InstallMethod(IsSaturated,
