@@ -132,6 +132,12 @@ InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
 
 end);
 
+InstallMethod(MinimalPresentation,
+"Computes a minimal presentation of the numerical semigroup",
+[IsNumericalSemigroup],
+MinimalPresentationOfNumericalSemigroup
+);
+
 #############################################################################
 ##
 #F  BettiElementsOfNumericalSemigroup(s)

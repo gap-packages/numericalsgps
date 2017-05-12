@@ -744,6 +744,12 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
     return pres;
 end);
 
+InstallMethod(MinimalPresentation,
+"Computes the minimal presentation of an affine semigroup",
+[IsAffineSemigroup],
+MinimalPresentationOfAffineSemigroup
+);
+
 ###################################################################
 # Betti elements of the affine semigroup a
 ###################################################################
