@@ -75,7 +75,7 @@ DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
 # Computes the Betti elements of the affine semigroup a
 ###########################################################################
 DeclareOperation("BettiElements",[IsAffineSemigroup]);
-DeclareSynonym("BettiElementsOfAffineSemigroup",BettiElements)
+DeclareSynonym("BettiElementsOfAffineSemigroup",BettiElements);
 
 ############################################################
 #O GeneratorsOfKernelCongruence

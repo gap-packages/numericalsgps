@@ -311,6 +311,8 @@
   \item \texttt  {IsIdealOfNumericalSemigroup}, \hyperpage{46}
   \item \texttt  {IsIntegral}, \hyperpage{47}
   \item \texttt  {IsIntegralIdealOfNumericalSemigroup}, \hyperpage{47}
+  \item \texttt  {IsIrreducible}
+    \subitem for numerical semigroups, \hyperpage{39}
   \item \texttt  {IsIrreducibleNumericalSemigroup}, \hyperpage{39}
   \item \texttt  {IsKroneckerPolynomial}, \hyperpage{82}
   \item \texttt  {IsListOfIntegersNS}, \hyperpage{110}
@@ -341,7 +343,8 @@
   \item \texttt  {IsOrdinaryNumericalSemigroup}, \hyperpage{25}
   \item \texttt  {IsProportionally}\discretionary {-}{}{}\texttt  {Modular}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{15}
-  \item \texttt  {IsPseudoSymmetric}, \hyperpage{40}
+  \item \texttt  {IsPseudoSymmetric}
+    \subitem for numerical semigroups, \hyperpage{40}
   \item \texttt  {IsPseudoSymmetricNumericalSemigroup}, \hyperpage{40}
   \item \texttt  {IsPure}, \hyperpage{60}
   \item \texttt  {IsPureNumericalSemigroup}, \hyperpage{60}
@@ -353,6 +356,8 @@
   \item \texttt  {IsSubsemigroupOfNumericalSemigroup}, \hyperpage{17}
   \item \texttt  {IsSubset}, \hyperpage{17}
   \item \texttt  {IsSuperSymmetricNumericalSemigroup}, \hyperpage{74}
+  \item \texttt  {IsSymmetric}
+    \subitem for numerical semigroups, \hyperpage{40}
   \item \texttt  {IsSymmetricGoodSemigroup}, \hyperpage{103}
   \item \texttt  {IsSymmetricNumericalSemigroup}, \hyperpage{40}
   \item \texttt  {IsTelescopic}, \hyperpage{42}
