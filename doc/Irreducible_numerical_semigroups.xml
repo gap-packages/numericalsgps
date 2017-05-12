@@ -36,6 +36,8 @@
 
                 <ManSection>
                     <Prop Arg="s" Name="IsIrreducibleNumericalSemigroup"></Prop>
+                    <Prop Arg="s" Name="IsIrreducible" Label="for numerical semigroups"></Prop>
+
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is irreducible,
                         false otherwise.
@@ -52,11 +54,13 @@ false
                 <ManSection>
                     <!--<Prop Arg="s" Name="IsSymmetric"></Prop>-->
                     <Prop Arg="s" Name="IsSymmetricNumericalSemigroup"></Prop>
+                    <Prop Arg="s" Name="IsSymmetric" Label="for numerical semigroups"></Prop>
+
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is symmetric,
                         false otherwise.
                         <Example><![CDATA[
-gap> IsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));
+gap> IsSymmetric(NumericalSemigroup(10,23));
 true
 gap> IsSymmetricNumericalSemigroup(NumericalSemigroup(10,11,23));
 false
@@ -65,7 +69,7 @@ false
                 </ManSection>
 
                 <ManSection>
-                  <Prop Arg="s" Name="IsPseudoSymmetric"></Prop>
+                  <Prop Arg="s" Name="IsPseudoSymmetric" Label="for numerical semigroups"></Prop>
                     <Prop Arg="s" Name="IsPseudoSymmetricNumericalSemigroup"></Prop>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is pseudo-symmetric,

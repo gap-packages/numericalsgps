@@ -33,7 +33,7 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87D62468791EDE8A">6.1-1 IsIrreducibleNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7BCDAFE3791A3C48">6.1-2 IsSymmetricNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X865547637DD2C603">6.1-3 IsPseudoSymmetric</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7EA0D85085C4B607">6.1-3 IsPseudoSymmetric</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7C8AB03F7E0B71F0">6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X78345A267ADEFBAB">6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8753F78D7FD732E2">6.1-6 DecomposeIntoIrreducibles</a></span>
@@ -92,6 +92,7 @@
 <h5>6.1-1 IsIrreducibleNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is irreducible, false otherwise.</p>
 
 
@@ -107,17 +108,18 @@ false
 <h5>6.1-2 IsSymmetricNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is symmetric, false otherwise.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricNumericalSemigroup(NumericalSemigroup(10,23));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetric(NumericalSemigroup(10,23));</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSymmetricNumericalSemigroup(NumericalSemigroup(10,11,23));</span>
 false
 </pre></div>
 
-<p><a id="X865547637DD2C603" name="X865547637DD2C603"></a></p>
+<p><a id="X7EA0D85085C4B607" name="X7EA0D85085C4B607"></a></p>
 
 <h5>6.1-3 IsPseudoSymmetric</h5>
 
