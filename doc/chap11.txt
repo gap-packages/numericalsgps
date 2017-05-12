@@ -243,7 +243,7 @@
   
   [1X11.1-10 HilbertBasisOfSystemOfHomogeneousEquations[101X
   
-  [29X[2XHilbertBasisOfSystemOfHomogeneousEquations[102X( [3Xls[103X, [3Xm[103X ) [32X function
+  [29X[2XHilbertBasisOfSystemOfHomogeneousEquations[102X( [3Xls[103X, [3Xm[103X ) [32X operation
   
   [33X[0;0Y[3Xls[103X  is a list of lists of integers and [3Xm[103X a list of integers. The elements of
   [3Xls[103X  represent  the  rows  of  a matrix [22XA[122X. The output is a minimal generating
@@ -269,7 +269,7 @@
   
   [1X11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities[101X
   
-  [29X[2XHilbertBasisOfSystemOfHomogeneousInequalities[102X( [3Xls[103X ) [32X function
+  [29X[2XHilbertBasisOfSystemOfHomogeneousInequalities[102X( [3Xls[103X ) [32X operation
   
   [33X[0;0Y[3Xls[103X  is a list of lists of integers. The elements of [3Xls[103X represent the rows of
   a matrix [22XA[122X. The output is a minimal generating system (Hilbert basis) of the
@@ -348,7 +348,7 @@
   
   [1X11.3-1 GeneratorsOfKernelCongruence[101X
   
-  [29X[2XGeneratorsOfKernelCongruence[102X( [3XM[103X ) [32X function
+  [29X[2XGeneratorsOfKernelCongruence[102X( [3XM[103X ) [32X operation
   
   [33X[0;0Y[3XM[103X is matrix with nonnegative integer coefficients. The output is a system of
   generators of the congruence [22X{(x,y)∣ xM=yM}[122X.[133X
@@ -358,7 +358,7 @@
   
   [1X11.3-2 CanonicalBasisOfKernelCongruence[101X
   
-  [29X[2XCanonicalBasisOfKernelCongruence[102X( [3XM[103X, [3XOrd[103X ) [32X function
+  [29X[2XCanonicalBasisOfKernelCongruence[102X( [3XM[103X, [3XOrd[103X ) [32X operation
   
   [33X[0;0Y[3XM[103X  is matrix with nonnegative integer coefficients, [3XOrd[103X a term ordering. The
   output  is a canonical bases of the congruence [22X{(x,y)∣ xM=yM}[122X (see [RG99a]).
@@ -386,7 +386,7 @@
   
   [1X11.3-3 GraverBasis[101X
   
-  [29X[2XGraverBasis[102X( [3XM[103X ) [32X function
+  [29X[2XGraverBasis[102X( [3XM[103X ) [32X operation
   
   [33X[0;0Y[3XM[103X is matrix with integer coefficients. The output is a Graver basis for [3XM[103X.[133X
   
@@ -400,7 +400,7 @@
   
   [1X11.3-4 MinimalPresentationOfAffineSemigroup[101X
   
-  [29X[2XMinimalPresentationOfAffineSemigroup[102X( [3Xa[103X ) [32X function
+  [29X[2XMinimalPresentationOfAffineSemigroup[102X( [3Xa[103X ) [32X operation
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is a minimal presentation for [3Xa[103X.[133X
   
@@ -425,7 +425,8 @@
   
   [1X11.3-5 BettiElementsOfAffineSemigroup[101X
   
-  [29X[2XBettiElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X function
+  [29X[2XBettiElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation
+  [29X[2XBettiElements[102X( [3Xa[103X ) [32X operation
   
   [33X[0;0Y[3Xa[103X  is  an  affine  semigroup.  The  output is the set of Betti elements of [3Xa[103X
   (defined as for numerical semigroups).[133X
@@ -465,7 +466,7 @@
   
   [1X11.3-9 PrimitiveElementsOfAffineSemigroup[101X
   
-  [29X[2XPrimitiveElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X function
+  [29X[2XPrimitiveElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation
   
   [33X[0;0Y[3Xa[103X  is  an affine semigroup. The output is the set of primitive elements of [3Xa[103X
   (defined as for numerical semigroups).[133X
@@ -492,7 +493,7 @@
   
   [1X11.4-1 FactorizationsVectorWRTList[101X
   
-  [29X[2XFactorizationsVectorWRTList[102X( [3Xv[103X, [3Xls[103X ) [32X function
+  [29X[2XFactorizationsVectorWRTList[102X( [3Xv[103X, [3Xls[103X ) [32X operation
   
   [33X[0;0Y[3Xv[103X is a list of nonnegative integers and [3Xls[103X is a list of lists of nonnegative
   integers.  The output is set of factorizations of [3Xv[103X in terms of the elements
@@ -511,7 +512,7 @@
   
   [1X11.4-2 ElasticityOfAffineSemigroup[101X
   
-  [29X[2XElasticityOfAffineSemigroup[102X( [3Xa[103X ) [32X function
+  [29X[2XElasticityOfAffineSemigroup[102X( [3Xa[103X ) [32X operation
   
   [33X[0;0Y[3Xa[103X  is an affine semigroup. The output is the elasticity of [3Xa[103X (defined as for
   numerical semigroups).[133X
@@ -598,7 +599,7 @@
   
   [1X11.4-8 TameDegreeOfAffineSemigroup[101X
   
-  [29X[2XTameDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function
+  [29X[2XTameDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X operation
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is the tame degree of [3Xa[103X (defined as for
   numerical  semigroups).  If  [3Xa[103X  is  given by equations (or its equations are
@@ -612,7 +613,7 @@
   
   [1X11.4-9 OmegaPrimalityOfElementInAffineSemigroup[101X
   
-  [29X[2XOmegaPrimalityOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function
+  [29X[2XOmegaPrimalityOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X operation
   
   [33X[0;0Y[3Xv[103X is a list of nonnegative integers and [3Xa[103X is an affine semigroup. The output
   is the omega primality of [3Xa[103X (defined as for numerical semigroups). Returns 0

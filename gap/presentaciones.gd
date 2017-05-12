@@ -71,6 +71,7 @@ DeclareGlobalFunction("MinimalPresentationOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("BettiElementsOfNumericalSemigroup");
+DeclareOperation("BettiElements", [IsNumericalSemigroup]);
 
 #############################################################################
 ##
