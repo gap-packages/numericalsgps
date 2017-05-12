@@ -95,7 +95,7 @@ DeclareOperation("IsIrreducible",[IsIrreducibleNumericalSemigroup]);
 
 #############################################################################
 ##
-#P  IsSymmetricNumericalSemigroup(s)
+#A  IsSymmetricNumericalSemigroup(s)
 ##
 ##  Checks whether or not s is a symmetric numerical semigroup.
 ##

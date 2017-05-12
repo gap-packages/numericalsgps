@@ -418,10 +418,12 @@ end);
 
 ###############################################################
 ##
-#F IsSymmetricGoodSemigroup(M)
+#A IsSymmetric(M)
 ## Determines if M is symmetric
 ###############################################################
-InstallGlobalFunction(IsSymmetricGoodSemigroup, function(M)
+InstallMethod(IsSymmetric,
+"Determines if the good semigroup is symmetric",
+[IsGoodSemigroup], function(M)
   local sm, w1, w2, b1,b2, c;
   c:=Conductor(M);
   sm:=SmallElementsOfGoodSemigroup(M);
