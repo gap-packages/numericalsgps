@@ -141,6 +141,7 @@ DeclareGlobalFunction("GoodSemigroupBySmallElements");
 ## Constructs Arf good semigroup closure of M
 ###############################################################
 DeclareGlobalFunction("ArfGoodSemigroupClosure");
+DeclareOperation("ArfClosure", [IsGoodSemigroup]);
 
 ###############################################################
 ##

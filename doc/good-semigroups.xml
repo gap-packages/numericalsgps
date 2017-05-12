@@ -319,6 +319,7 @@ true
 
   <ManSection>
     <Func Arg="S" Name="ArfGoodSemigroupClosure"></Func>
+    <Oper Arg="S" Name="ArfClosure" Label="of good semigroup"></Oper>
     <Description>
       <A>S</A> is a good semigroup. Determines the Arf good semigroup closure of <A>S</A>.
 
