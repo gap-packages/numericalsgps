@@ -263,7 +263,7 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(DecomposeIntoIrreducibles, function(s)
-    local   sg,  caux,  I,  C,  B,  pair,  i,  I2,  j,  l, dec, sd;
+    local   sg,  caux,  I,  C,  B,  pair,  i,  I2,  j,  l, dec, si;
 
     #sg contains the special gaps of s
     #B auxiliar ser used to construct C and I
@@ -277,11 +277,13 @@ InstallGlobalFunction(DecomposeIntoIrreducibles, function(s)
     fi;
 
     if(s=NumericalSemigroup(1)) then
+        Setter(IsIrreducibleNumericalSemigroup)(s,true);
         return [s];
     fi;
 
     sg:=SpecialGapsOfNumericalSemigroup(s);
     if (Length(sg)=1) then
+        Setter(IsIrreducibleNumericalSemigroup)(s,true);
         return [s];
     fi;
 
@@ -321,7 +323,11 @@ InstallGlobalFunction(DecomposeIntoIrreducibles, function(s)
         od;
 
         if(pair=fail) then
-            return List(I,i->i[1]);
+            dec:=List(I, x -> x[1]);
+            for si in dec do
+              Setter(IsIrreducibleNumericalSemigroup)(si,true);
+            od;
+            return dec;
         fi;
 
         I2 := [];
@@ -335,6 +341,9 @@ InstallGlobalFunction(DecomposeIntoIrreducibles, function(s)
         Unbind(I2);
     od;
     dec:=List(I, x -> x[1]);
+    for si in dec do
+      Setter(IsIrreducibleNumericalSemigroup)(si,true);
+    od;
     return dec;
 end);
 
@@ -463,7 +472,7 @@ InstallTrueMethod(IsAlmostSymmetricNumericalSemigroup, IsIrreducibleNumericalSem
 #####################################################################
 
 InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducible,function(s)
-    local msg, pow, conditionb, f,cand, small;
+    local msg, pow, conditionb, f,cand, small, sa;
 
     if not IsNumericalSemigroup(s) then
         Error("The argument must be a numerical semigroup.\n");
@@ -488,8 +497,11 @@ InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducible,function
     msg:=Filtered(MinimalGeneratingSystemOfNumericalSemigroup(s), x-> (f/2<x) and (x<f));
     pow:=Combinations(msg);
     cand:=Filtered(pow, conditionb);
-
-    return Set(cand,l->NumericalSemigroupBySmallElementsNC(Difference(small,l)));
+    cand:=Set(cand,l->NumericalSemigroupBySmallElementsNC(Difference(small,l)));
+    for sa in cand do
+      Setter(IsAlmostSymmetricNumericalSemigroup)(sa,true);
+    od;
+    return cand;
 end);
 
 #####################################################################
@@ -821,6 +833,7 @@ InstallGlobalFunction(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingula
     out:=[];
     for i in pcs(f) do
         s:=NumericalSemigroup(i);
+        Setter(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity)(s,true);
         Add(out,s);
     od;
     return out;
@@ -874,6 +887,7 @@ InstallGlobalFunction(TelescopicNumericalSemigroupsWithFrobeniusNumber,function(
     out:=[];
     for i in tel(f) do
         s:=NumericalSemigroup(i);
+        Setter(IsTelescopicNumericalSemigroup)(s,true);
         Add(out,s);
     od;
     return out;
@@ -927,6 +941,7 @@ InstallGlobalFunction(FreeNumericalSemigroupsWithFrobeniusNumber,function(f)
     out:=[];
     for i in free(f) do
         s:=NumericalSemigroup(i);
+        Setter(IsFreeNumericalSemigroup)(s,true);
         Add(out,s);
     od;
     return out;
@@ -1000,6 +1015,7 @@ InstallGlobalFunction(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber
     out:=[];
     for i in ci(f) do
         s:=NumericalSemigroup(i);
+        Setter(IsACompleteIntersectionNumericalSemigroup)(s,true);
         Add(out,s);
     od;
     return out;
