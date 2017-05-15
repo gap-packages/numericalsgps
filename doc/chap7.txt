@@ -617,11 +617,10 @@
   [BG06]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> IsAdmissiblePattern([1,1,-1]);[128X[104X
-    [4X[28X                true[128X[104X
-    [4X[28X                gap> IsAdmissiblePattern([1,-2]);[128X[104X
-    [4X[28X                false[128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,1,-1]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,-2]);[127X[104X
+    [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
   [1X7.3-2 IsStronglyAdmissiblePattern[101X
@@ -634,13 +633,12 @@
   (see [BG06]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> IsAdmissiblePattern([1,-1]);[128X[104X
-    [4X[28X                true[128X[104X
-    [4X[28X                gap> IsStronglyAdmissiblePattern([1,-1]);[128X[104X
-    [4X[28X                false[128X[104X
-    [4X[28X                gap> IsStronglyAdmissiblePattern([1,1,-1]);[128X[104X
-    [4X[28X                true[128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,-1]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsStronglyAdmissiblePattern([1,-1]);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsStronglyAdmissiblePattern([1,1,-1]);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   [1X7.3-3 AsIdealOfNumericalSemigroup[101X
@@ -653,13 +651,12 @@
   semigroup but not an integral ideal of [3Xt[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> s:=NumericalSemigroup(3,7,5);;[128X[104X
-    [4X[28X                gap> t:=NumericalSemigroup(10,11,14);;[128X[104X
-    [4X[28X                gap> AsIdealOfNumericalSemigroup(10+s,t);[128X[104X
-    [4X[28X                fail[128X[104X
-    [4X[28X                gap> AsIdealOfNumericalSemigroup(100+s,t);[128X[104X
-    [4X[28X                <Ideal of numerical semigroup>[128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroup(10,11,14);;[127X[104X
+    [4X[25Xgap>[125X [27XAsIdealOfNumericalSemigroup(10+s,t);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[25Xgap>[125X [27XAsIdealOfNumericalSemigroup(100+s,t);[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
   [4X[32X[104X
   
   [1X7.3-4 BoundForConductorOfImageOfPattern[101X
@@ -673,9 +670,8 @@
   parameter, the function takes [22XC[122X, which is assumed to be the conductor of [22XI[122X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> BoundForConductorOfImageOfPattern([1,1,-1],10);[128X[104X
-    [4X[28X                10[128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27XBoundForConductorOfImageOfPattern([1,1,-1],10);[127X[104X
+    [4X[28X10[128X[104X
   [4X[32X[104X
   
   [1X7.3-5 ApplyPatternToIdeal[101X
@@ -693,11 +689,10 @@
   [10XAsIdealOfNumericalSemigroup[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> s:=NumericalSemigroup(3,7,5);;[128X[104X
-    [4X[28X                gap> i:=10+s;;[128X[104X
-    [4X[28X                gap> ApplyPatternToIdeal([1,1,-1],i);[128X[104X
-    [4X[28X                [ 1, <Ideal of numerical semigroup> ][128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xi:=10+s;;[127X[104X
+    [4X[25Xgap>[125X [27XApplyPatternToIdeal([1,1,-1],i);[127X[104X
+    [4X[28X[ 1, <Ideal of numerical semigroup> ][128X[104X
   [4X[32X[104X
   
   [1X7.3-6 ApplyPatternToNumericalSemigroup[101X
@@ -710,12 +705,11 @@
   [33X[0;0YOutputs [10XApplyPatternToIdeal(p,0+S)[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> s:=NumericalSemigroup(3,7,5);;[128X[104X
-    [4X[28X                gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);[128X[104X
-    [4X[28X                [ 1, <Ideal of numerical semigroup> ][128X[104X
-    [4X[28X                gap> SmallElements(last[2]);[128X[104X
-    [4X[28X                [ 0, 3, 5 ][128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
+    [4X[25Xgap>[125X [27XApplyPatternToNumericalSemigroup([1,1,-1],s);[127X[104X
+    [4X[28X[ 1, <Ideal of numerical semigroup> ][128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(last[2]);[127X[104X
+    [4X[28X[ 0, 3, 5 ][128X[104X
   [4X[32X[104X
   
   [1X7.3-7 IsAdmittedPatternByIdeal[101X
@@ -728,13 +722,12 @@
   [33X[0;0YTests whether or not [22Xp(I)[122X is contained in [3XJ[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> s:=NumericalSemigroup(3,7,5);;[128X[104X
-    [4X[28X                gap> i:=[3,5]+s;;[128X[104X
-    [4X[28X                gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);[128X[104X
-    [4X[28X                false[128X[104X
-    [4X[28X                gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);[128X[104X
-    [4X[28X                true[128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,5);;[127X[104X
+    [4X[25Xgap>[125X [27Xi:=[3,5]+s;;[127X[104X
+    [4X[25Xgap>[125X [27XIsAdmittedPatternByIdeal([1,1,-1],i,i);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsAdmittedPatternByIdeal([1,1,-1],i,0+s);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   [1X7.3-8 IsAdmittedPatternByNumericalSemigroup[101X
@@ -747,11 +740,10 @@
   [33X[0;0YTests whether or not [22Xp(S)[122X is contained in [3XT[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X                gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);[128X[104X
-    [4X[28X                true[128X[104X
-    [4X[28X                gap> IsArfNumericalSemigroup(s);[128X[104X
-    [4X[28X                true[128X[104X
-    [4X[28X                [128X[104X
+    [4X[25Xgap>[125X [27XIsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsArfNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   

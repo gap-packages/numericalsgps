@@ -75,8 +75,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7A16238D7EDB2AB3">7.2-13 StarClosureOfIdealOfNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X78F124CC82E7B585">7.3 <span class="Heading">
-                    Patterns for ideals
-                </span></a>
+    Patterns for ideals
+</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X865042FD7EBD15EE">7.3-1 IsAdmissiblePattern</a></span>
@@ -729,8 +729,8 @@ true
 <p><a id="X78F124CC82E7B585" name="X78F124CC82E7B585"></a></p>
 
 <h4>7.3 <span class="Heading">
-                    Patterns for ideals
-                </span></h4>
+    Patterns for ideals
+</span></h4>
 
 <p>In this section we document the functions implemented by K. Stokes related to patterns of ideals in numerical semigroups. The correctness of the algorithms can be found in <a href="chapBib_mj.html#biBStokes">[Sto15]</a>.</p>
 
@@ -745,11 +745,11 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; IsAdmissiblePattern([1,1,-1]);
-                true
-                gap&gt; IsAdmissiblePattern([1,-2]);
-                false
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdmissiblePattern([1,1,-1]);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdmissiblePattern([1,-2]);</span>
+false
+</pre></div>
 
 <p><a id="X7ED8306681407D0F" name="X7ED8306681407D0F"></a></p>
 
@@ -762,13 +762,13 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; IsAdmissiblePattern([1,-1]);
-                true
-                gap&gt; IsStronglyAdmissiblePattern([1,-1]);
-                false
-                gap&gt; IsStronglyAdmissiblePattern([1,1,-1]);
-                true
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdmissiblePattern([1,-1]);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsStronglyAdmissiblePattern([1,-1]);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsStronglyAdmissiblePattern([1,1,-1]);</span>
+true
+</pre></div>
 
 <p><a id="X799542C57E4E0D5E" name="X799542C57E4E0D5E"></a></p>
 
@@ -779,13 +779,13 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(3,7,5);;
-                gap&gt; t:=NumericalSemigroup(10,11,14);;
-                gap&gt; AsIdealOfNumericalSemigroup(10+s,t);
-                fail
-                gap&gt; AsIdealOfNumericalSemigroup(100+s,t);
-                &lt;Ideal of numerical semigroup&gt;
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=NumericalSemigroup(10,11,14);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsIdealOfNumericalSemigroup(10+s,t);</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AsIdealOfNumericalSemigroup(100+s,t);</span>
+&lt;Ideal of numerical semigroup&gt;
+</pre></div>
 
 <p><a id="X7F13F7CB7FBCF006" name="X7F13F7CB7FBCF006"></a></p>
 
@@ -796,9 +796,9 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; BoundForConductorOfImageOfPattern([1,1,-1],10);
-                10
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BoundForConductorOfImageOfPattern([1,1,-1],10);</span>
+10
+</pre></div>
 
 <p><a id="X7F4E597278AF31C8" name="X7F4E597278AF31C8"></a></p>
 
@@ -811,11 +811,11 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(3,7,5);;
-                gap&gt; i:=10+s;;
-                gap&gt; ApplyPatternToIdeal([1,1,-1],i);
-                [ 1, &lt;Ideal of numerical semigroup&gt; ]
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=10+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ApplyPatternToIdeal([1,1,-1],i);</span>
+[ 1, &lt;Ideal of numerical semigroup&gt; ]
+</pre></div>
 
 <p><a id="X7CFDFF6D7B9B595B" name="X7CFDFF6D7B9B595B"></a></p>
 
@@ -828,12 +828,12 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(3,7,5);;
-                gap&gt; ApplyPatternToNumericalSemigroup([1,1,-1],s);
-                [ 1, &lt;Ideal of numerical semigroup&gt; ]
-                gap&gt; SmallElements(last[2]);
-                [ 0, 3, 5 ]
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ApplyPatternToNumericalSemigroup([1,1,-1],s);</span>
+[ 1, &lt;Ideal of numerical semigroup&gt; ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(last[2]);</span>
+[ 0, 3, 5 ]
+</pre></div>
 
 <p><a id="X7F9232047F85C4D8" name="X7F9232047F85C4D8"></a></p>
 
@@ -846,13 +846,13 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(3,7,5);;
-                gap&gt; i:=[3,5]+s;;
-                gap&gt; IsAdmittedPatternByIdeal([1,1,-1],i,i);
-                false
-                gap&gt; IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
-                true
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i:=[3,5]+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdmittedPatternByIdeal([1,1,-1],i,i);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdmittedPatternByIdeal([1,1,-1],i,0+s);</span>
+true
+</pre></div>
 
 <p><a id="X827BB22083390CB9" name="X827BB22083390CB9"></a></p>
 
@@ -865,11 +865,11 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
-                true
-                gap&gt; IsArfNumericalSemigroup(s);
-                true
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsArfNumericalSemigroup(s);</span>
+true
+</pre></div>
 
 <p><a id="X79C6CE8D7EF1632D" name="X79C6CE8D7EF1632D"></a></p>
 
