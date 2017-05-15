@@ -28,7 +28,7 @@
 ##
 #####################################################################
 InstallGlobalFunction(ArfNumericalSemigroupClosure, function(arg)
-    local   set,  min,  A,  i,  MIN,  small;
+    local   set,  min,  A,  i,  MIN,  small, ac;
 
     if Length(arg) = 1 and IsNumericalSemigroup(arg[1]) then
         if HasMinimalGeneratingSystemOfNumericalSemigroup(arg[1]) then
@@ -59,7 +59,9 @@ InstallGlobalFunction(ArfNumericalSemigroupClosure, function(arg)
         if (1 in A[i]) then
             MIN := List(A, x -> Minimum(x));
             small := List([0..Length(MIN)], i -> Sum(MIN{[1..i]}));
-            return NumericalSemigroupBySmallElements(small);
+            ac:=NumericalSemigroupBySmallElements(small);
+            Setter(IsArfNumericalSemigroup)(ac,true);
+            return ac;
         fi;
 
         A[i+1] := Union([min],Difference(Set(A[i], x -> x-min),[0]));
@@ -73,6 +75,7 @@ InstallMethod(ArfClosure,
 [IsNumericalSemigroup],
   ArfNumericalSemigroupClosure
 );
+
 #####################################################################
 ##
 #P IsArfNumericalSemigroup(s)
@@ -157,7 +160,7 @@ end);
 ## This version is due to Giuseppe Zito
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
-  local n, T, Cond, i,j,k, inarf, filt;
+  local n, T, Cond, i,j,k, inarf, filt, al, s;
 
   # tests whether x is in the Arf semigroup with multiplicity
   # sequence j
@@ -186,7 +189,9 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
   fi;
 
   if n=0 then
-    return [NumericalSemigroup(1)];
+    s:=NumericalSemigroup(1);
+    Setter(IsArfNumericalSemigroup)(s,true);
+    return [s];
   fi;
 
   Cond:=List([[n]]);
@@ -207,7 +212,11 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumber, function(f)
     od;
 
   od;
-  return List(Cond, j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  al := List(Cond, j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  for s in al do
+    Setter(IsArfNumericalSemigroup)(s,true);
+  od;
+  return al;
 end);
 
 #####################################################################
@@ -218,7 +227,7 @@ end);
 ## This version is due to Giuseppe Zito
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithGenus, function(g)
-  local n, T, Gen, i,j,k, inarf, filt;
+  local n, T, Gen, i,j,k, inarf, filt, al, s;
 
   # tests whether x is in the Arf semigroup with multiplicity
   # sequence j
@@ -249,7 +258,9 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithGenus, function(g)
   fi;
 
   if n=0 then
-    return [NumericalSemigroup(1)];
+    s:=NumericalSemigroup(1);
+    Setter(IsArfNumericalSemigroup)(s,true);
+    return [s];
   fi;
 
   Gen:=List([[n+1]]);
@@ -270,7 +281,11 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithGenus, function(g)
     od;
 
   od;
-  return List(Gen, j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  al := List(Gen, j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  for s in al do
+    Setter(IsArfNumericalSemigroup)(s,true);
+  od;
+  return al;
 end);
 
 #####################################################################
@@ -284,7 +299,7 @@ end);
 ## New version by Giuseppe Zito (U Catania)
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithGenusUpTo,function(g)
-  local n, T, i,j,k, inarf, filt;
+  local n, T, i,j,k, inarf, filt, al, s;
 
   # tests whether x is in the Arf semigroup with multiplicity
   # sequence j
@@ -315,7 +330,9 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithGenusUpTo,function(g)
   fi;
 
   if n=0 then
-    return [NumericalSemigroup(1)];
+    s:=NumericalSemigroup(1);
+    Setter(IsArfNumericalSemigroup)(s,true);
+    return [s];
   fi;
 
   T:=[];
@@ -333,7 +350,12 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithGenusUpTo,function(g)
     od;
 
   od;
-  return List(Union(T),j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  al :=List(Union(T),j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  for s in al do
+    Setter(IsArfNumericalSemigroup)(s,true);
+  od;
+
+  return al;
 end);
 
 
@@ -347,7 +369,7 @@ end);
 ## New version by Giuseppe Zito (U Catania)
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumberUpTo,function(f)
-  local n, T, i,j,k, inarf, filt;
+  local n, T, i,j,k, inarf, filt, al, s;
 
 
   # tests whether x is in the Arf semigroup with multiplicity
@@ -377,7 +399,9 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumberUpTo,function(f)
   fi;
 
   if n=0 then
-    return [NumericalSemigroup(1)];
+    s:=NumericalSemigroup(1);
+    Setter(IsArfNumericalSemigroup)(s,true);
+    return [s];
   fi;
 
   T:=[];
@@ -394,7 +418,11 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithFrobeniusNumberUpTo,function(f)
     od;
 
   od;
-  return List(Union(T),j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  al:=List(Union(T),j-> NumericalSemigroupBySmallElementsNC(Concatenation([0],List([1..Length(j)], i-> Sum(j{[1..i]})))));
+  for s in al do
+    Setter(IsArfNumericalSemigroup)(s,true);
+  od;
+  return al;
 end);
 
 #####################################################################
@@ -406,7 +434,7 @@ end);
 ##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
 #############################################################################
 InstallGlobalFunction(ArfNumericalSemigroupsWithGenusAndFrobeniusNumber,function(g,f)
-	local par2sem, testArfSeq, arfsequences, n;
+	local par2sem, testArfSeq, arfsequences, n, al, s;
 
 	#transforms a partition list of an element to the set of sums
 	# which will correspond with the set of small elements of the semigroup
@@ -456,7 +484,9 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithGenusAndFrobeniusNumber,function
 	fi;
 
 	if g=0 and f=-1 then
-		return [NumericalSemigroup(1)];
+    s:=NumericalSemigroup(1);
+    Setter(IsArfNumericalSemigroup)(s,true);
+    return [s];
 	fi;
 
 	if not(g<=f and f<=2*g-1) then
@@ -465,7 +495,12 @@ InstallGlobalFunction(ArfNumericalSemigroupsWithGenusAndFrobeniusNumber,function
 
 	n:=f+1-g;
 
-	return List(List(arfsequences(n), par2sem),NumericalSemigroupBySmallElementsNC);
+	al:=List(List(arfsequences(n), par2sem),NumericalSemigroupBySmallElementsNC);
+  for s in al do
+    Setter(IsArfNumericalSemigroup)(s,true);
+  od;
+  return al;
+
 end);
 
 
@@ -502,7 +537,7 @@ end);
 ##
 #####################################################################
 InstallGlobalFunction(MEDNumericalSemigroupClosure, function(arg)
-    local   set,  min,  A,  small;
+    local   set,  min,  A,  small, s;
 
     if Length(arg) = 1 and IsNumericalSemigroup(arg[1]) then
         if HasMinimalGeneratingSystemOfNumericalSemigroup(arg[1]) then
@@ -531,8 +566,16 @@ InstallGlobalFunction(MEDNumericalSemigroupClosure, function(arg)
     A[1] := min;
     small := Union([0], min +
                    SmallElementsOfNumericalSemigroup(NumericalSemigroup(A)));
-    return NumericalSemigroupBySmallElements(small);
+    s:= NumericalSemigroupBySmallElements(small);
+    Setter(IsMEDNumericalSemigroup)(s,true);
+    return s;
 end);
+
+InstallMethod(MEDClosure,
+"Computes the MED closure of a numerical semigroup",
+[IsNumericalSemigroup],
+  MEDNumericalSemigroupClosure
+);
 
 #####################################################################
 ##
@@ -584,7 +627,7 @@ end);
 ##
 #####################################################################
 InstallGlobalFunction(SaturatedNumericalSemigroupClosure, function(arg)
-    local   set,  gen,  min,  ne,  edim,  dis,  small,  i,  kjs;
+    local   set,  gen,  min,  ne,  edim,  dis,  small,  i,  kjs, s;
 
     if Length(arg) = 1 and IsNumericalSemigroup(arg[1]) then
         if HasMinimalGeneratingSystemOfNumericalSemigroup(arg[1]) then
@@ -623,8 +666,17 @@ InstallGlobalFunction(SaturatedNumericalSemigroupClosure, function(arg)
             kjs := kjs+1;
         od;
     od;
-    return NumericalSemigroupBySmallElements(Union(small,[ne]));
+    s:=NumericalSemigroupBySmallElements(Union(small,[ne]));
+    Setter(IsSaturatedNumericalSemigroup)(s,true);
+    return s;
 end);
+
+InstallMethod(SaturatedClosure,
+"Computes the Saturated closure of a numerical semigroup",
+[IsNumericalSemigroup],
+  SaturatedNumericalSemigroupClosure
+);
+
 
 #####################################################################
 ##
@@ -661,7 +713,7 @@ InstallTrueMethod(IsArfNumericalSemigroup, IsSaturatedNumericalSemigroup);
 ##    Rosales et al., Arf numerical semigroups with given genus and Frobenius number
 #############################################################################
 InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f)
-	local alg23, alg24, satpart, listsatseq, L, C, Ll, l, t, satsystem, i;
+	local alg23, alg24, satpart, listsatseq, L, C, Ll, l, t, satsystem, i, ls, s;
 
 	if(not(IsInt(f))) then
 		Error("The argument must be an integer.\n");
@@ -671,7 +723,9 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 		return [];
 	fi;
 	if f=-1 then
-		return [NumericalSemigroup(1)];
+    s:=NumericalSemigroup(1);
+    Setter(IsSaturatedNumericalSemigroup)(s,true);
+    return [s];
 	fi;
 
 	#returns the set nonnegative integer of solutions x
@@ -800,6 +854,9 @@ InstallGlobalFunction(SaturatedNumericalSemigroupsWithFrobeniusNumber,function(f
 			Add(C,satsystem);
 		od;
 	od;
-
-	return Set(C, SaturatedNumericalSemigroupClosure);
+  ls:=Set(C, SaturatedNumericalSemigroupClosure);
+  for s in ls do
+    Setter(IsSaturatedNumericalSemigroup)(s,true);
+  od;
+  return ls;
 end);
