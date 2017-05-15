@@ -3628,11 +3628,10 @@ can be found in \cite{Stokes}.
 
  Returns true or false depending if the pattern is admissible or not (see \cite{BA-GS}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> IsAdmissiblePattern([1,1,-1]);
-                  true
-                  gap> IsAdmissiblePattern([1,-2]);
-                  false
-                  
+  !gapprompt@gap>| !gapinput@IsAdmissiblePattern([1,1,-1]);|
+  true
+  !gapprompt@gap>| !gapinput@IsAdmissiblePattern([1,-2]);|
+  false
 \end{Verbatim}
  }
 
@@ -3651,13 +3650,12 @@ can be found in \cite{Stokes}.
  Returns true or false depending if the pattern is strongly admissible or not
 (see \cite{BA-GS}). 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> IsAdmissiblePattern([1,-1]);
-                  true
-                  gap> IsStronglyAdmissiblePattern([1,-1]);
-                  false
-                  gap> IsStronglyAdmissiblePattern([1,1,-1]);
-                  true
-                  
+  !gapprompt@gap>| !gapinput@IsAdmissiblePattern([1,-1]);|
+  true
+  !gapprompt@gap>| !gapinput@IsStronglyAdmissiblePattern([1,-1]);|
+  false
+  !gapprompt@gap>| !gapinput@IsStronglyAdmissiblePattern([1,1,-1]);|
+  true
 \end{Verbatim}
  }
 
@@ -3673,13 +3671,12 @@ can be found in \cite{Stokes}.
 
  \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigroup $S$, and \mbox{\texttt{\mdseries\slshape T}} is a numerical semigroup. Detects if \mbox{\texttt{\mdseries\slshape I}} is an ideal of \mbox{\texttt{\mdseries\slshape T}} and contained in \mbox{\texttt{\mdseries\slshape T}} (integral ideal), and if so, returns \mbox{\texttt{\mdseries\slshape I}} as an ideal of \mbox{\texttt{\mdseries\slshape T}}. It returns \texttt{fail} if \mbox{\texttt{\mdseries\slshape I}} is an ideal of some semigroup but not an integral ideal of \mbox{\texttt{\mdseries\slshape t}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> s:=NumericalSemigroup(3,7,5);;
-                  gap> t:=NumericalSemigroup(10,11,14);;
-                  gap> AsIdealOfNumericalSemigroup(10+s,t);
-                  fail
-                  gap> AsIdealOfNumericalSemigroup(100+s,t);
-                  <Ideal of numerical semigroup>
-                  
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
+  !gapprompt@gap>| !gapinput@t:=NumericalSemigroup(10,11,14);;|
+  !gapprompt@gap>| !gapinput@AsIdealOfNumericalSemigroup(10+s,t);|
+  fail
+  !gapprompt@gap>| !gapinput@AsIdealOfNumericalSemigroup(100+s,t);|
+  <Ideal of numerical semigroup>
 \end{Verbatim}
  }
 
@@ -3695,9 +3692,8 @@ can be found in \cite{Stokes}.
 
  \mbox{\texttt{\mdseries\slshape p}} is the list of integers that are the coefficients of an admissible pattern. \mbox{\texttt{\mdseries\slshape C}} is a positive integer. Calculates an upper bound of the smallest element $K$ in $p(I)$ such that all integers larger than $K$ are contained in $p(I)$, where $I$ is an ideal of a numerical semigroup. Instead of taking $I$ as parameter, the function takes $C$, which is assumed to be the conductor of $I$. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
-                  10
-                  
+  !gapprompt@gap>| !gapinput@BoundForConductorOfImageOfPattern([1,1,-1],10);|
+  10
 \end{Verbatim}
  }
 
@@ -3717,11 +3713,10 @@ pattern. \mbox{\texttt{\mdseries\slshape I}} is an ideal of a numerical semigrou
  Calculates $p(I)$. Outputs $p(I)$, represented as \texttt{[d,p(I)/d]}, where \texttt{d} is the gcd of the coefficients of \mbox{\texttt{\mdseries\slshape p}}. All elements of $p(I)$ are divisible by $d$, and $p(I)/d$ is an ideal of some numerical semigroup. It is returned as the maximal ideal
 of the numerical semigroup $p(I)/d \cup \{0\}$. The parent numerical semigroup can later be changed with the function \texttt{AsIdealOfNumericalSemigroup}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> s:=NumericalSemigroup(3,7,5);;
-                  gap> i:=10+s;;
-                  gap> ApplyPatternToIdeal([1,1,-1],i);
-                  [ 1, <Ideal of numerical semigroup> ]
-                  
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
+  !gapprompt@gap>| !gapinput@i:=10+s;;|
+  !gapprompt@gap>| !gapinput@ApplyPatternToIdeal([1,1,-1],i);|
+  [ 1, <Ideal of numerical semigroup> ]
 \end{Verbatim}
  }
 
@@ -3740,12 +3735,11 @@ pattern. \mbox{\texttt{\mdseries\slshape S}} is a numerical semigroup.
 
  Outputs \texttt{ApplyPatternToIdeal(p,0+S)}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> s:=NumericalSemigroup(3,7,5);;
-                  gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
-                  [ 1, <Ideal of numerical semigroup> ]
-                  gap> SmallElements(last[2]);
-                  [ 0, 3, 5 ]
-                  
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
+  !gapprompt@gap>| !gapinput@ApplyPatternToNumericalSemigroup([1,1,-1],s);|
+  [ 1, <Ideal of numerical semigroup> ]
+  !gapprompt@gap>| !gapinput@SmallElements(last[2]);|
+  [ 0, 3, 5 ]
 \end{Verbatim}
  }
 
@@ -3764,13 +3758,12 @@ pattern. \mbox{\texttt{\mdseries\slshape I}} and \mbox{\texttt{\mdseries\slshape
 
  Tests whether or not $p(I)$ is contained in \mbox{\texttt{\mdseries\slshape J}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> s:=NumericalSemigroup(3,7,5);;
-                  gap> i:=[3,5]+s;;
-                  gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);
-                  false
-                  gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
-                  true
-                  
+  !gapprompt@gap>| !gapinput@s:=NumericalSemigroup(3,7,5);;|
+  !gapprompt@gap>| !gapinput@i:=[3,5]+s;;|
+  !gapprompt@gap>| !gapinput@IsAdmittedPatternByIdeal([1,1,-1],i,i);|
+  false
+  !gapprompt@gap>| !gapinput@IsAdmittedPatternByIdeal([1,1,-1],i,0+s);|
+  true
 \end{Verbatim}
  }
 
@@ -3789,11 +3782,10 @@ pattern. \mbox{\texttt{\mdseries\slshape S}} and \mbox{\texttt{\mdseries\slshape
 
  Tests whether or not $p(S)$ is contained in \mbox{\texttt{\mdseries\slshape T}}. 
 \begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
-                  gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
-                  true
-                  gap> IsArfNumericalSemigroup(s);
-                  true
-                  
+  !gapprompt@gap>| !gapinput@IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);|
+  true
+  !gapprompt@gap>| !gapinput@IsArfNumericalSemigroup(s);|
+  true
 \end{Verbatim}
  }
 

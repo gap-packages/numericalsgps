@@ -37,7 +37,7 @@ false
 
 
                 <ManSection>
-                    <Func Arg="S" Name="MEDNumericalSemigroupClosure"></Func>
+                  <Func Arg="S" Name="MEDNumericalSemigroupClosure"></Func>
                     <Oper Arg="S" Name="MEDClosure" Label="for numerical semigroups"></Oper>
                     <Description>
                         <A>S</A> is a numerical semigroup.
