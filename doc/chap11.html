@@ -446,6 +446,7 @@ true
 <h5>11.3-4 MinimalPresentationOfAffineSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentation</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is a minimal presentation for <var class="Arg">a</var>.</p>
 
 <p>There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<a href="chapBib.html#biBMR0269762">[Her70]</a>). The fastest procedure is achieved when <code class="code">SingularInterface</code> is loaded, followed by <code class="code">Singular</code>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of generating binomials must be refined, and for this Rclasses are used (if <code class="code">NormalizInterface</code> is loaded, then the factorizations are faster). The <code class="code">4ti2</code> implementation uses <code class="code">4ti2</code> internal Gröbner bases and factorizations are done via <code class="code">zsolve</code>.</p>
