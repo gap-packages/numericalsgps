@@ -39,6 +39,7 @@
   [1X8.1-2 MEDNumericalSemigroupClosure[101X
   
   [29X[2XMEDNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
+  [29X[2XMEDClosure[102X( [3XS[103X ) [32X operation
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the MED closure of [3XS[103X.[133X
   
@@ -227,6 +228,7 @@
   [1X8.3-2 SaturatedNumericalSemigroupClosure[101X
   
   [29X[2XSaturatedNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
+  [29X[2XSaturatedClosure[102X( [3XS[103X ) [32X operation
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the saturated closure of [3XS[103X.[133X
   

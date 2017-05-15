@@ -132,8 +132,7 @@ DeclareSynonymAttr("IsMEDNumericalSemigroup",IsMED);
 ##
 #####################################################################
 DeclareGlobalFunction("MEDNumericalSemigroupClosure");
-
-
+DeclareOperation("MEDClosure",[IsNumericalSemigroup]);
 
 #####################################################################
 ##
@@ -159,6 +158,7 @@ DeclareAttribute("MinimalMEDGeneratingSystemOfMEDNumericalSemigroup", IsNumerica
 ##
 #####################################################################
 DeclareGlobalFunction("SaturatedNumericalSemigroupClosure");
+DeclareOperation("SaturatedClosure",[IsNumericalSemigroup]);
 
 #####################################################################
 ##
