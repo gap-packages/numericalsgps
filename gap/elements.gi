@@ -35,7 +35,8 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
   local  G, K;
   G := Gaps(sgp);
   K := Difference([0..G[Length(G)]+1],G);
-
+  SetSmallElements(sgp,K);
+  
   return SmallElements(sgp);
 end);
 
