@@ -284,7 +284,7 @@ gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I+II);
 
 
                 <ManSection>
-                    <Oper Name="Difference" Arg="I, J"/>
+                    <Oper Name="Difference" Arg="I, J" Label="for ideals of numerical semigroups"/>
                     <Func Arg="I, J" Name="DifferenceOfIdealsOfNumericalSemigroup"></Func>
                     <Description>
                         <A>I, J</A> are ideals of a numerical semigroup. <A>J</A> must be contained in <A>I</A>.
@@ -340,7 +340,7 @@ true
                 </ManSection>
 
                 <ManSection>
-                    <Oper Name="Intersection" Arg="S, T"/>
+                    <Oper Name="Intersection" Arg="I, J" Label="for ideals of numerical semigroups"/>
                     <Func Arg="I, J" Name="IntersectionIdealsOfNumericalSemigroup"></Func>
                     <Description>
 Given two ideals <A>I</A> and <A>J</A> of a numerical semigroup <A>S</A>

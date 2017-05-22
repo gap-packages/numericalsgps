@@ -61,16 +61,16 @@
 \contentsline {subsection}{\numberline {4.1.5}\leavevmode {\color {Chapter }ShadedSetOfElementInNumericalSemigroup}}{30}{subsection.4.1.5}
 \contentsline {section}{\numberline {4.2}\leavevmode {\color {Chapter }Uniquely Presented Numerical Semigroups}}{31}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}\leavevmode {\color {Chapter }IsUniquelyPresented}}{31}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsGeneric}}{31}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}\leavevmode {\color {Chapter }IsGeneric (for numerical semigroups)}}{31}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}\leavevmode {\color {Chapter } Constructing numerical semigroups from others }}{32}{chapter.5}
 \contentsline {section}{\numberline {5.1}\leavevmode {\color {Chapter } Adding and removing elements of a numerical semigroup }}{32}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}\leavevmode {\color {Chapter }RemoveMinimalGeneratorFromNumericalSemigroup}}{32}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}\leavevmode {\color {Chapter }AddSpecialGapOfNumericalSemigroup}}{32}{subsection.5.1.2}
 \contentsline {section}{\numberline {5.2}\leavevmode {\color {Chapter }Intersections, and quotients and multiples by integers}}{33}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }Intersection}}{33}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}\leavevmode {\color {Chapter }Intersection (for numerical semigroups)}}{33}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}\leavevmode {\color {Chapter }QuotientOfNumericalSemigroup}}{33}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}\leavevmode {\color {Chapter }MultipleOfNumericalSemigroup}}{34}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}\leavevmode {\color {Chapter }Difference}}{34}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}\leavevmode {\color {Chapter }Difference (for numerical semigroups)}}{34}{subsection.5.2.4}
 \contentsline {subsection}{\numberline {5.2.5}\leavevmode {\color {Chapter }NumericalDuplication}}{34}{subsection.5.2.5}
 \contentsline {subsection}{\numberline {5.2.6}\leavevmode {\color {Chapter }InductiveNumericalSemigroup}}{35}{subsection.5.2.6}
 \contentsline {section}{\numberline {5.3}\leavevmode {\color {Chapter } Constructing the set of all numerical semigroups containing a given numerical semigroup }}{35}{section.5.3}
@@ -124,9 +124,9 @@
 \contentsline {subsection}{\numberline {7.1.11}\leavevmode {\color {Chapter }SumIdealsOfNumericalSemigroup}}{49}{subsection.7.1.11}
 \contentsline {subsection}{\numberline {7.1.12}\leavevmode {\color {Chapter }MultipleOfIdealOfNumericalSemigroup}}{49}{subsection.7.1.12}
 \contentsline {subsection}{\numberline {7.1.13}\leavevmode {\color {Chapter }SubtractIdealsOfNumericalSemigroup}}{50}{subsection.7.1.13}
-\contentsline {subsection}{\numberline {7.1.14}\leavevmode {\color {Chapter }Difference}}{50}{subsection.7.1.14}
+\contentsline {subsection}{\numberline {7.1.14}\leavevmode {\color {Chapter }Difference (for ideals of numerical semigroups)}}{50}{subsection.7.1.14}
 \contentsline {subsection}{\numberline {7.1.15}\leavevmode {\color {Chapter }TranslationOfIdealOfNumericalSemigroup}}{50}{subsection.7.1.15}
-\contentsline {subsection}{\numberline {7.1.16}\leavevmode {\color {Chapter }Intersection}}{51}{subsection.7.1.16}
+\contentsline {subsection}{\numberline {7.1.16}\leavevmode {\color {Chapter }Intersection (for ideals of numerical semigroups)}}{51}{subsection.7.1.16}
 \contentsline {subsection}{\numberline {7.1.17}\leavevmode {\color {Chapter }MaximalIdealOfNumericalSemigroup}}{51}{subsection.7.1.17}
 \contentsline {subsection}{\numberline {7.1.18}\leavevmode {\color {Chapter }CanonicalIdealOfNumericalSemigroup}}{51}{subsection.7.1.18}
 \contentsline {subsection}{\numberline {7.1.19}\leavevmode {\color {Chapter }IsCanonicalIdeal}}{52}{subsection.7.1.19}
@@ -277,7 +277,7 @@
 \contentsline {subsection}{\numberline {11.3.4}\leavevmode {\color {Chapter }MinimalPresentationOfAffineSemigroup}}{93}{subsection.11.3.4}
 \contentsline {subsection}{\numberline {11.3.5}\leavevmode {\color {Chapter }BettiElementsOfAffineSemigroup}}{94}{subsection.11.3.5}
 \contentsline {subsection}{\numberline {11.3.6}\leavevmode {\color {Chapter }ShadedSetOfElementInAffineSemigroup}}{94}{subsection.11.3.6}
-\contentsline {subsection}{\numberline {11.3.7}\leavevmode {\color {Chapter }IsGeneric}}{94}{subsection.11.3.7}
+\contentsline {subsection}{\numberline {11.3.7}\leavevmode {\color {Chapter }IsGeneric (for affine semigroups)}}{94}{subsection.11.3.7}
 \contentsline {subsection}{\numberline {11.3.8}\leavevmode {\color {Chapter }IsUniquelyPresentedAffineSemigroup}}{94}{subsection.11.3.8}
 \contentsline {subsection}{\numberline {11.3.9}\leavevmode {\color {Chapter }PrimitiveElementsOfAffineSemigroup}}{95}{subsection.11.3.9}
 \contentsline {section}{\numberline {11.4}\leavevmode {\color {Chapter } Factorizations in affine semigroups }}{95}{section.11.4}
@@ -349,7 +349,8 @@
 \contentsline {section}{\numberline {C.2}\leavevmode {\color {Chapter }Functions implemented by C. O'Neill}}{114}{section.C.2}
 \contentsline {section}{\numberline {C.3}\leavevmode {\color {Chapter }Functions implemented by K. Stokes}}{114}{section.C.3}
 \contentsline {section}{\numberline {C.4}\leavevmode {\color {Chapter }Functions implemented by I. Ojeda and C. J. Moreno {\'A}vila}}{115}{section.C.4}
-\contentsline {section}{\numberline {C.5}\leavevmode {\color {Chapter }Functions implemented by G. Zito}}{115}{section.C.5}
-\contentsline {section}{\numberline {C.6}\leavevmode {\color {Chapter }Functions implemented by A. Herrera-Poyatos}}{115}{section.C.6}
+\contentsline {section}{\numberline {C.5}\leavevmode {\color {Chapter }Functions implemented by A. S{\'a}nchez-R. Navarro}}{115}{section.C.5}
+\contentsline {section}{\numberline {C.6}\leavevmode {\color {Chapter }Functions implemented by G. Zito}}{115}{section.C.6}
+\contentsline {section}{\numberline {C.7}\leavevmode {\color {Chapter }Functions implemented by A. Herrera-Poyatos}}{115}{section.C.7}
 \contentsline {chapter}{References}{121}{appendix*.5}
 \contentsline {chapter}{Index}{122}{section*.6}

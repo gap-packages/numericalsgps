@@ -262,7 +262,7 @@ gap> KunzPolytope(3);
 <ManSection>
   <Func Name="CocycleOfNumericalSemigroupWRTElement" Arg="S,m"/>
   <Description>
-    <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The output is the matrix <M>h(i,j)=(w(i)+w(j)-w((i+j)\mod m))/m</M>,
+    <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The output is the matrix <M>h(i,j)=(w(i)+w(j)-w((i+j)\bmod m))/m</M>,
     where <M>w(i)</M> is the smallest element in <A>S</A> congruent with <M>i</M> modulo <M>m</M> (and thus it is in the Apéry set of <M>m</M>), <Cite Key="arf-frob-gen"></Cite>.
 
   <P/>

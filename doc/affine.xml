@@ -425,7 +425,7 @@ gap> BettiElementsOfAffineSemigroup(a);
 
 
   <ManSection>
-    <Prop Arg="a" Name="IsGeneric"></Prop>
+    <Prop Arg="a" Name="IsGeneric" Label="for affine semigroups"></Prop>
     <Prop Arg="a" Name="IsGenericAffineSemigroup"></Prop>
     <Description>
       <A>a</A> is an affine semigroup.
