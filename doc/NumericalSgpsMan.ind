@@ -147,7 +147,9 @@
   \item \texttt  {Denumerant}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Element}\discretionary {-}{}{}\texttt  {In}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{69}
   \item \texttt  {DesertsOfNumericalSemigroup}, \hyperpage{25}
-  \item \texttt  {Difference}, \hyperpage{34}, \hyperpage{50}
+  \item \texttt  {Difference}
+    \subitem for ideals of numerical semigroups, \hyperpage{50}
+    \subitem for numerical semigroups, \hyperpage{34}
   \item \texttt  {Difference}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{50}
   \item \texttt  {DifferenceOfNumericalSemigroups}, \hyperpage{34}
@@ -254,7 +256,9 @@
     \subitem membership test in ideal of numerical semigroup, 
 		\hyperpage{49}
   \item \texttt  {InductiveNumericalSemigroup}, \hyperpage{35}
-  \item \texttt  {Intersection}, \hyperpage{33}, \hyperpage{51}
+  \item \texttt  {Intersection}
+    \subitem for ideals of numerical semigroups, \hyperpage{51}
+    \subitem for numerical semigroups, \hyperpage{33}
   \item \texttt  {Intersection}\discretionary {-}{}{}\texttt  {Ideals}\discretionary {-}{}{}\texttt  {Of}\discretionary {-}{}{}\texttt  {Numerical}\discretionary {-}{}{}\texttt  {Semigroup}, 
 		\hyperpage{51}
   \item \texttt  {IntersectionOfNumericalSemigroups}, \hyperpage{33}
@@ -296,7 +300,9 @@
   \item \texttt  {IsFreeNumericalSemigroup}, \hyperpage{42}
   \item \texttt  {IsFull}, \hyperpage{91}
   \item \texttt  {IsFullAffineSemigroup}, \hyperpage{91}
-  \item \texttt  {IsGeneric}, \hyperpage{31}, \hyperpage{94}
+  \item \texttt  {IsGeneric}
+    \subitem for affine semigroups, \hyperpage{94}
+    \subitem for numerical semigroups, \hyperpage{31}
   \item \texttt  {IsGenericAffineSemigroup}, \hyperpage{94}
   \item \texttt  {IsGenericNumericalSemigroup}, \hyperpage{31}
   \item \texttt  {IsGoodSemigroup}, \hyperpage{98}

@@ -132,7 +132,7 @@ true
   </ManSection>
 
   <ManSection Label="Generic">
-    <Prop Arg="S" Name="IsGeneric"></Prop>
+    <Prop Arg="S" Name="IsGeneric" Label="for numerical semigroups"></Prop>
     <Prop Arg="S" Name="IsGenericNumericalSemigroup"></Prop>
     <Description>
       <A>S</A> is a numerical semigroup.

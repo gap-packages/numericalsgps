@@ -2,7 +2,7 @@
 <Section>
   <Heading>Intersections, and quotients and multiples by integers</Heading>
   <ManSection>
-    <Oper Name="Intersection" Arg="S, T"/>
+    <Oper Name="Intersection" Arg="S, T" Label="for numerical semigroups"/>
     <Func Name="IntersectionOfNumericalSemigroups" Arg="S, T"/>
     <Description>
       <A>S</A> and <A>T</A>
@@ -65,7 +65,7 @@
 
   </ManSection>
                 <ManSection>
-                    <Oper Name="Difference" Arg="S, T"/>
+                    <Oper Name="Difference" Arg="S, T" Label="for numerical semigroups"/>
                     <Func Arg="S, T" Name="DifferenceOfNumericalSemigroups"></Func>
                     <Description>
                         <A>S, T</A> are numerical semigroups.
