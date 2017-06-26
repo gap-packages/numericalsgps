@@ -175,27 +175,33 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(RepresentsSmallElementsOfNumericalSemigroup, function(L)
-    local L0, n, m, sum ,p;
+  local  L0, sum, max, n, m;
 
-    if not IsListOfIntegersNS(L) then
-        return false; #Error("The argument must be a nonempty list of integers");
-    fi;
+  if not IsListOfIntegersNS(L) or Minimum(L)<0 then
+    return false; #Error("The argument must be a nonempty list of positive integers");
+  fi;
 
-	if Minimum(L)<0 then
-		return false;
-	fi;
+  if not Set(L) = L or not 0 in L then
+    return false;
+  fi;
 
-    if not Set(L) = L or not 0 in L then
-        return false;
-    fi;
-    L0 := Difference(L,[0]);
-    sum := [];
-    for n in L0 do
-        for m in L0 do
-            AddSet(sum,m+n);
-        od;
+  L0 := Difference(L,[0]);
+  sum := [];
+  max := Maximum(L);
+
+  for n in L0 do
+    for m in L0 do
+      p := m+n;
+      if p < max then 
+        if not p in L then
+          return false;
+        fi;
+      else
+        break;
+      fi;       
     od;
-    return ForAll(sum, p-> (p in L) or (p > L0[Length(L0)]));
+  od;
+  return true;
 end);
 
 

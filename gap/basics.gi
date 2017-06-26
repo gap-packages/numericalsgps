@@ -356,88 +356,70 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
         true,
         [IsNumericalSemigroup],0,
         function(S)
-    local   sumNS,  Elm,  g,  T,  generators,  m,  aux,  i,  gen,  ss;
+  local  sumNS, Elm, c, m, max, T, mingen, generators, aux, i, g, gen, ss;
 
-    #####################################################
-    # Computes the sum of subsets of numerical semigroups
-    # WARNING: the arguments have to be non empty sets, not just lists
-    sumNS := function(S,T)
-        local   R,  mm,  s,  t;
+  #####################################################
+  # Let A and B be *sets* (not just lists) of positive elements of the numerical semigroup S
+  # returns the elements of A+B not greater than max
 
-        R := [];
-        mm := Maximum(Maximum(S),Maximum(T));
-        for s in S do
-            for t in T do
-                if s+t > mm then
-                    break;
-                else
-                    AddSet(R,s+t);
-                fi;
-            od;
-        od;
-        return R;
-    end;
-    ##
+  sumNS := function(A,B,max)
+    local   R, a,  b;
 
-    if HasMinimalGenerators(S) then
-      return MinimalGenerators(S);
-    elif HasFrobeniusNumberOfNumericalSemigroup(S) then
-        Elm := SmallElementsOfNumericalSemigroup(S);
-        if Elm = [0] then
-            SetMinimalGenerators(S, [1]);
-            return MinimalGenerators(S);
-        fi;
-
-        g := FrobeniusNumberOfNumericalSemigroup(S);
-        T:=Union(Elm{[2..Length(Elm)]},[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]]);
-        SetMinimalGenerators(S, Difference(T,sumNS(T,T)));
-        return MinimalGenerators(S);
-
-    elif HasGenerators(S) then
-        # Note that the minimal generators are precisely those generators that are irreducible.
-        # The fact that minimal generators are incongruent modulo the multiplicity is used (for small multiplicities, since for big ones the reduction is slow and may not bring any advantages)
-
-        generators := Generators(S);
-        m := Minimum(generators); # the multiplicity
-
-        if m = 1 then
-            SetMinimalGenerators(S, [1]);
-            return MinimalGenerators(S);
-        elif m = 2 then
-            SetMinimalGenerators(S, [2,First(generators, g -> g mod 2 = 1)]);
-            return MinimalGenerators(S);
-        elif m < LogInt(Length(generators),2)^4 then
-            aux := [m];
-            for i in [1..m-1] do
-                g := First(generators, g -> g mod m = i);
-                if g <> fail then
-                    Append(aux,[g]);
-                fi;
-            od;
-            gen := Set(aux);
+    R := [];
+    for a in A do
+      for b in B do
+        if a+b > max then
+          break;
         else
-            gen := ShallowCopy(generators);
+          AddSet(R,a+b);
         fi;
-
-        ss := sumNS(gen,gen);
-        while ss <> [] do
-            gen :=  Difference(gen,ss);
-            ss := sumNS(ss,gen);
-        od;
-        SetMinimalGenerators(S, gen);
-        return MinimalGenerators(S);
-
-    else
-        Elm := SmallElementsOfNumericalSemigroup(S);
-        if Elm = [0] then
-            SetMinimalGenerators(S, [1]);
-            return MinimalGenerators(S);
-        fi;
-        g := FrobeniusNumberOfNumericalSemigroup(S);
-        T:=Union(Elm{[2..Length(Elm)]},[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]]);
-        return MinimalGeneratingSystemOfNumericalSemigroup(NumericalSemigroup(T));
+      od;
+    od;
+    return R;
+  end;
+  ##
+  
+  if HasMinimalGenerators(S) then
+    return MinimalGenerators(S);
+  fi;
+  ##
+  if HasGeneratorsOfNumericalSemigroup(S) then
+    generators := Generators(S);
+    m := Minimum(generators); # the multiplicity
+    if m = 1 then #the semigroup is the whole N
+      SetMinimalGenerators(S, [1]);
+      return MinimalGenerators(S);
+    elif m = 2 then
+      SetMinimalGenerators(S, [2,First(generators, g -> g mod 2 = 1)]);
+      return MinimalGenerators(S);
     fi;
-  end);
+    # A naive reduction that takes into account that the minimal generators are incongruent modulo the multiplicity. This reduction is slow and proves only to be useful for small multiplicities.
+    if m < LogInt(Length(generators),2)^4 then
+      aux := [m];
+      for i in [1..m-1] do
+        g := First(generators, g -> g mod m = i);
+        if g <> fail then
+          Append(aux,[g]);
+        fi;
+      od;
+      gen := Set(aux);
+    else
+      gen := ShallowCopy(generators);
+    fi;
+    # now remove the generators that are not irreducible (i.e. may be written as the sum of others)
+    ss := sumNS(gen,gen,Maximum(gen)); # non irreducible elements that are the sum of two generators
+    while ss <> [] do
+      gen :=  Difference(gen,ss);
+      ss := sumNS(ss,gen,Maximum(gen));# non irreducible elements that are the sum of three, four, etc generators
+    od;
+    mingen := gen; # now gen is the set of irreducible elements
+    SetMinimalGenerators(S,mingen);
+    return mingen;
+  fi;
+  ## When nor a set of generators nor the small elements are known, the small elements are computed and the function is called again (now that the system has enlarged its knowledge on S)
+  Elm := SmallElementsOfNumericalSemigroup(S);
+  return MinimalGeneratingSystemOfNumericalSemigroup(NumericalSemigroup(Union(Elm,[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]-1])));
+end);
 
 #############################################################################
 ##
