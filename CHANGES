@@ -2,6 +2,8 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Cleaning the code of MinimalGeneratingSystemOfNumericalSemigroup (Alfredo Sánchez-R. Navarro pointed out that the code was hard to understand) and making it faster
+- Cleaning the code of RepresentsSmallElementsOfNumericalSemigroup and making it faster
 - Added RatliffRushNumberOfIdealOfNumericalSemigroup, AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup, RatliffRushClosureOfIdealOfNumericalSemigroup
 - Now NumericalDuplication is more flexible (the third argument does not have to be in the semigroup, Alessio Borzi and Francesco Strazzanti)
 - DenumerantOfElementInNumericalSemigroup now uses NrRestrictedPartitions
