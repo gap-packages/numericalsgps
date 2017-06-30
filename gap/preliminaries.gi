@@ -24,71 +24,70 @@
 ##
 #############################################################################
 InstallGlobalFunction(BezoutSequence, function(arg)
-    local   r,  s,  a1,  b1,  a2,  b2,  bz,  AD,  BD,  i,  AC,  BC,  z,  A,  
-            B;
+  local  r, s, a1, b1, a2, b2, bz, AD, BD, i, AC, BC, z, A, B;
 
-    if IsList(arg[1]) then
-        r := arg[1][1];
-        s := arg[1][2];
+  if IsList(arg[1]) then
+    r := arg[1][1];
+    s := arg[1][2];
+  else
+    r := arg[1];
+    s := arg[2];
+  fi;
+  if not (IsRat(r) and IsRat(s) and r<s) then
+    Error("The arguments r<s of BezoutSequence must be rationals");
+  fi;
+  a1 := NumeratorRat(r);
+  b1 := DenominatorRat(r);
+  a2 := NumeratorRat(s);
+  b2 := DenominatorRat(s);
+
+  if a1<b1 or a2<b2 then
+    bz := BezoutSequence(r+1,s+1);
+    return List(bz, x->x-1);
+  fi;
+
+  ################# The Decreasing sequence############
+  AD := [a1];
+  BD := [b1];
+  i := 1;
+  while BD[i] <> 1 do
+    AD[i+1] := 1/BD[i] mod AD[i];
+    BD[i+1] := -1/AD[i] mod BD[i];
+    i:= i+1;
+  od;
+  ################# The increasing sequence############
+  AC := [a2];
+  BC := [b2];
+  i := 1;
+  while AC[i] <> 1 do
+    if BC[i] <> 1 then
+      AC[i+1] := -1/BC[i] mod AC[i];
+      BC[i+1] := 1/AC[i] mod BC[i];
+      i:= i+1;
+    elif BC[i] = 1 then
+      AC[i+1] := AC[i]-1;
+      BC[i+1] := 1;
+      i:= i+1;
+    fi;
+  od;
+
+  ################# The construction...###################
+  z := [];
+  A := Concatenation(AD,Reversed(AC));
+  B := Concatenation(BD,Reversed(BC));
+  for i in [1..Length(AD)] do
+    Add(z,A[i]/B[i]);
+  od;
+  for i in [Length(AD)+1..Length(A)] do
+    if not A[i]/B[i] in z then
+      Add(z,A[i]/B[i]);
     else
-        r := arg[1];
-        s := arg[2];
-    fi;
-    if not (IsRat(r) and IsRat(s) and r<s) then
-        Error("The arguments r<s of BezoutSequence must be rationals");
-    fi;
-    a1 := NumeratorRat(r);
-    b1 := DenominatorRat(r);
-    a2 := NumeratorRat(s);
-    b2 := DenominatorRat(s);
-
-    if a1<b1 or a2<b2 then
-        bz := BezoutSequence(r+1,s+1);
-        return List(bz, x->x-1);
+      z := z{[1..Position(z,A[i]/B[i])]};
     fi;
 
-    ################# The Decreasing sequence############
-    AD := [a1];
-    BD := [b1];
-    i := 1;
-    while BD[i] <> 1 do
-        AD[i+1] := 1/BD[i] mod AD[i];
-        BD[i+1] := -1/AD[i] mod BD[i];
-        i:= i+1;
-    od;
-    ################# The increasing sequence############
-    AC := [a2];
-    BC := [b2];
-    i := 1;
-    while AC[i] <> 1 do
-        if BC[i] <> 1 then
-            AC[i+1] := -1/BC[i] mod AC[i];
-            BC[i+1] := 1/AC[i] mod BC[i];
-            i:= i+1;
-        elif BC[i] = 1 then
-            AC[i+1] := AC[i]-1;
-            BC[i+1] := 1;
-            i:= i+1;
-        fi;
-    od;
+  od;
 
-    ################# The construction...###################
-    z := [];
-    A := Concatenation(AD,Reversed(AC));
-    B := Concatenation(BD,Reversed(BC));
-    for i in [1..Length(AD)] do
-        Add(z,A[i]/B[i]);
-    od;
-    for i in [Length(AD)+1..Length(A)] do
-        if not A[i]/B[i] in z then
-            Add(z,A[i]/B[i]);
-        else
-            z := z{[1..Position(z,A[i]/B[i])]};
-        fi;
-
-    od;
-
-    return z;
+  return z;
 end);
 
 
@@ -101,23 +100,23 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsBezoutSequence, function(L)
-    local i;
+  local  i;
 
-    if not (IsList(L) and ForAll(L, x -> IsRat(x))) then
-        return false; # Error("The argument must be a list of rational numbers");
+  if not (IsList(L) and ForAll(L, x -> IsRat(x))) then
+    return false; # Error("The argument must be a list of rational numbers");
+  fi;
+
+  if L=[] or Minimum(L)<0 then
+    return false;
+  fi;
+  for i in [1..Length(L)-1] do
+    if NumeratorRat(L[i+1])*DenominatorRat(L[i])-
+       NumeratorRat(L[i])*DenominatorRat(L[i+1]) <> 1 then
+      Print("Take the ",i," and the ",i+1," elements of the sequence","\n");
+      return false;
     fi;
-
-	if L=[] or Minimum(L)<0 then
-		return false;
-	fi;
-    for i in [1..Length(L)-1] do
-        if NumeratorRat(L[i+1])*DenominatorRat(L[i])-
-           NumeratorRat(L[i])*DenominatorRat(L[i+1]) <> 1 then
-            Print("Take the ",i," and the ",i+1," elements of the sequence","\n");
-            return false;
-        fi;
-    od;
-    return true;
+  od;
+  return true;
 end);
 
 
@@ -133,34 +132,34 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(RepresentsPeriodicSubAdditiveFunction, function(L)
-    local i, j, k, m;
+  local  m, i, j, k;
 
-    if not IsListOfIntegersNS(L) then
-        return false; #Error("The argument must be a non empty list of integers");
-    fi;
+  if not IsListOfIntegersNS(L) then
+    return false; #Error("The argument must be a non empty list of integers");
+  fi;
 
-    m := Length(L);
-    if not L[m] = 0 then
+  m := Length(L);
+  if not L[m] = 0 then
+    return false;
+  fi;
+
+  if Minimum(L)<0 then
+    return false;
+  fi;
+
+  for i in [1..m] do
+    for j in [1..m] do
+      k := (i+j) mod m;
+      if k = 0 then
+        k := m;
+      fi;
+
+      if L[k] > L[i] + L[j] then
         return false;
-    fi;
-
-	if Minimum(L)<0 then
-		return false;
-	fi;
-
-    for i in [1..m] do
-        for j in [1..m] do
-            k := (i+j) mod m;
-            if k = 0 then
-                k := m;
-            fi;
-
-            if L[k] > L[i] + L[j] then
-                return false;
-            fi;
-        od;
+      fi;
     od;
-    return true;
+  od;
+  return true;
 end);
 
 
@@ -175,7 +174,7 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(RepresentsSmallElementsOfNumericalSemigroup, function(L)
-  local  L0, sum, max, n, m;
+  local  L0, sum, max, n, m, p;
 
   if not IsListOfIntegersNS(L) or Minimum(L)<0 then
     return false; #Error("The argument must be a nonempty list of positive integers");
@@ -205,8 +204,6 @@ InstallGlobalFunction(RepresentsSmallElementsOfNumericalSemigroup, function(L)
 end);
 
 
-
-
 #############################################################################
 ##
 #F  CeilingOfRational(R)
@@ -215,20 +212,21 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(CeilingOfRational, function(R)
-    local r,s;
-    if not IsRat(R) then
-        Error("R must be  rational");
-    fi;
-    r := NumeratorRat(R);
-    s := DenominatorRat(R);
+  local  r, s;
 
-    if IsInt(R) then
-        return R;
-    elif R < 0 then
-        return Int(R);
-    else
-        return Int(R) + 1;
-    fi;
+  if not IsRat(R) then
+    Error("R must be  rational");
+  fi;
+  r := NumeratorRat(R);
+  s := DenominatorRat(R);
+
+  if IsInt(R) then
+    return R;
+  elif R < 0 then
+    return Int(R);
+  else
+    return Int(R) + 1;
+  fi;
 end);
 
 #############################################################################
@@ -239,18 +237,18 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsListOfIntegersNS, function(list)
-	if not(IsList(list)) then 
-		return false;
-	fi;
-	
-	if list <> [] then
-		if IsInt(list[1]) then
-			if IsHomogeneousList(list) then
-				return true;
-			fi;
-		fi;
-	fi;
-	return false;
+  if not(IsList(list)) then 
+    return false;
+  fi;
+
+  if list <> [] then
+    if IsInt(list[1]) then
+      if IsHomogeneousList(list) then
+        return true;
+      fi;
+    fi;
+  fi;
+  return false;
 end);
 
 #############################################################################
@@ -261,50 +259,50 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsAperyListOfNumericalSemigroup, function(L)
-    local   m,  firstToLastPosition,  K,  i,  j,  k;
+  local  m, firstToLastPosition, K, i, j, k;
 
-    #if not (IsList(L) and ForAll(L, i -> IsInt(i))) then
-	if not(IsListOfIntegersNS(L)) then
-        return false; #Error("The argument of IsAperyListOfNumericalSemigroup must be a nonempty list of integers\n");
+  #if not (IsList(L) and ForAll(L, i -> IsInt(i))) then
+  if not(IsListOfIntegersNS(L)) then
+    return false; #Error("The argument of IsAperyListOfNumericalSemigroup must be a nonempty list of integers\n");
+  fi;
+
+  if Minimum(L)<0 then
+    return false;
+  fi;
+
+  m := Length(L);
+
+  #####################################################################
+  # Moves the first element of a list to the end of the list
+  firstToLastPosition := function(L)
+    local mL;
+    if Length(L) = 1 or Length(L) = 0 then
+      mL := L;
+    else
+      mL :=  L{[2..Length(L)]};
+      Add(mL,L[1]);
     fi;
+    return mL;
+  end;
+  ## end of local function ##
+  K := List(L, i-> i mod m);
+  if K <> [0.. m-1] then
+    return false;
+  fi;
+  #	K := firstToLastPosition(Set(L));
+  K := firstToLastPosition(L);
+  for i in [1..m] do
+    for j in [1..m] do
+      k := (i+j) mod m;
+      if k = 0 then
+        k := m;
+      fi;
 
-	if Minimum(L)<0 then
-		return false;
-	fi;
-
-    m := Length(L);
-
-    #####################################################################
-    # Moves the first element of a list to the end of the list
-    firstToLastPosition := function(L)
-        local mL;
-        if Length(L) = 1 or Length(L) = 0 then
-            mL := L;
-        else
-            mL :=  L{[2..Length(L)]};
-            Add(mL,L[1]);
-        fi;
-        return mL;
-    end;
-    ## end of local function ##
-    K := List(L, i-> i mod m);
-    if K <> [0.. m-1] then
+      if K[k] > K[i] + K[j] then
         return false;
-    fi;
-    #	K := firstToLastPosition(Set(L));
-    K := firstToLastPosition(L);
-    for i in [1..m] do
-        for j in [1..m] do
-            k := (i+j) mod m;
-            if k = 0 then
-                k := m;
-            fi;
-
-            if K[k] > K[i] + K[j] then
-                return false;
-            fi;
-        od;
+      fi;
     od;
-    return true;
+  od;
+  return true;
 end);
 
