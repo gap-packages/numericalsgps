@@ -421,7 +421,7 @@ end);
 #A IsSymmetric(M)
 ## Determines if M is symmetric
 ###############################################################
-InstallMethod(IsSymmetric,
+InstallMethod(IsSymmetricGoodSemigroup,
 "Determines if the good semigroup is symmetric",
 [IsGoodSemigroup], function(M)
   local sm, w1, w2, b1,b2, c;
@@ -433,6 +433,11 @@ InstallMethod(IsSymmetric,
   b2:=Length(Filtered(sm, x-> x[2]=c[2] and x[1]<c[1]));
   return Sum(c)=w1+w2+b1+b2-2;
 end);
+
+InstallMethod(IsSymmetric,
+"Tests wheter the semigroup is symmetric",
+[IsGoodSemigroup], IsSymmetricGoodSemigroup
+);
 
 
 ###################################################
