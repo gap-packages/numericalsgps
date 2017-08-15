@@ -2,6 +2,8 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.0.1->1.1.0
+- Added GeneratorsKhalerDifferentials
+- Added ModuleGenerators_Global (computes a basis an ideal of a polynomial algebra in one variable)
 - Cleaning the code of MinimalGeneratingSystemOfNumericalSemigroup (Alfredo Sánchez-R. Navarro pointed out that the code was hard to understand) and making it faster
 - Cleaning the code of RepresentsSmallElementsOfNumericalSemigroup and making it faster
 - Added RatliffRushNumberOfIdealOfNumericalSemigroup, AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup, RatliffRushClosureOfIdealOfNumericalSemigroup
@@ -15,7 +17,7 @@
 - Added IsOrdinaryNumericalSemigroup and IsAcuteNumericalSemigroup (and synonyms IsOrdinary and IsAcute)
 - IsSymmetricNumericalSemigroup is now a property, the same for IsPseudoSymmetricNumericalSemigroup, IsIrreducibleNumericalSemigroup and IsAlmostSymmetricNumericalSemigroup, and others related to complete intersections; synonyms added
 - Added DesertsOfNumericalSemigroup
-- HilbertBasis* and PrimitiveElements* now available with singular (through 4ti2 and normaliz libraries)
+- HilbertBasis* and PrimitiveElements* now available with singular (through 4ti2 and normaliz libraries) (to be removed in the future?)
 - Improved IsFreeNumericalSemigroup
 - Added GraverBasis
 - New implementation of catenary degree (using Kruskal algorithm)
