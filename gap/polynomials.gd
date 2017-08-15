@@ -152,3 +152,14 @@ DeclareGlobalFunction("SemigroupOfValuesOfCurve_Global");
 ## Implementation based in [AGSM14]
 ###########################################################
 DeclareGlobalFunction("SemigroupOfValuesOfCurve_Local");
+
+##################################################################
+##
+#F GeneratorsModule_Global(A,M)
+##
+## A and M are lists of polynomials in the same variable
+## Computes a basis of the ideal MK[A], that is, a set F such that
+## deg(F) generates the ideal deg(MK[A]) of deg(K[A]), where deg
+## stands for degree
+##################################################################
+DeclareGlobalFunction("GeneratorsModule_Global");

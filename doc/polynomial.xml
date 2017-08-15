@@ -316,6 +316,26 @@ fail
     </ManSection>
 
 
+		<ManSection>
+        <Func Arg="A,M" Name="GeneratorsModule_Global"></Func>
+        <Description>
+					<A>A</A> and <A>M</A> are lists of polynomials in the same variable. The output is
+				 	a basis of the ideal <M>M K[A]</M>, that is, a set <M>F</M> such that
+					<M>deg(F)</M> generates the ideal <M>deg(M K[A])</M> of <M>deg(K[A])</M>, where <M>deg</M>
+					stands for degree.
+
+					The method is explained in <Cite Key="A-A-GS"></Cite>.
+
+            <Example><![CDATA[
+gap> t:=Indeterminate(Rationals,"t");;
+gap> A:=[t^6+t,t^4];;
+gap> M:=[t^3,t^4];;
+gap> GeneratorsModule_Global(A,M);
+[ t^3, t^4, t^5, t^6 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
 
 		                <ManSection>
 		                    <Prop Arg="S" Name="IsMonomialNumericalSemigroup"></Prop>
