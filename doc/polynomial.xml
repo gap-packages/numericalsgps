@@ -337,6 +337,21 @@ gap> GeneratorsModule_Global(A,M);
     </ManSection>
 
 
+		<ManSection>
+        <Func Arg="A,M" Name="GeneratorsKhalerDifferentials"></Func>
+        <Description>
+					<A>A</A> is a list of polynomials in the same variable. The output is
+				 	<A>GeneratorsModule_Global(A,M)</A>, with <A>M</A> the set of derivatives of the elements in <A>A</A>.
+
+            <Example><![CDATA[
+gap> t:=Indeterminate(Rationals,"t");;
+gap> GeneratorsKhalerDifferentials([t^3,t^4]);
+[ t^2, t^3 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
+
 		                <ManSection>
 		                    <Prop Arg="S" Name="IsMonomialNumericalSemigroup"></Prop>
 		                    <Description>

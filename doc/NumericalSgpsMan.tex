@@ -5754,8 +5754,26 @@ ideal $M K[A]$, that is, a set $F$ such that $deg(F)$ generates the ideal $deg(M
 
  
 
-\subsection{\textcolor{Chapter }{IsMonomialNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{GeneratorsKhalerDifferentials}}
 \logpage{[ 10, 2, 9 ]}\nobreak
+\hyperdef{L}{X7AF6683486C7DF25}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsKhalerDifferentials({\mdseries\slshape A, M})\index{GeneratorsKhalerDifferentials@\texttt{GeneratorsKhalerDifferentials}}
+\label{GeneratorsKhalerDifferentials}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape A}} is a list of polynomials in the same variable. The output is \mbox{\texttt{\mdseries\slshape GeneratorsModule{\textunderscore}Global(A,M)}}, with \mbox{\texttt{\mdseries\slshape M}} the set of derivatives of the elements in \mbox{\texttt{\mdseries\slshape A}}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@t:=Indeterminate(Rationals,"t");;|
+  !gapprompt@gap>| !gapinput@GeneratorsKhalerDifferentials([t^3,t^4]);|
+  [ t^2, t^3 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsMonomialNumericalSemigroup}}
+\logpage{[ 10, 2, 10 ]}\nobreak
 \hyperdef{L}{X7A04B8887F493733}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMonomialNumericalSemigroup({\mdseries\slshape S})\index{IsMonomialNumericalSemigroup@\texttt{IsMonomialNumericalSemigroup}}
 \label{IsMonomialNumericalSemigroup}

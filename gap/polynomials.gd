@@ -163,3 +163,12 @@ DeclareGlobalFunction("SemigroupOfValuesOfCurve_Local");
 ## stands for degree
 ##################################################################
 DeclareGlobalFunction("GeneratorsModule_Global");
+
+##################################################################
+##
+#F GeneratorsKhalerDifferentials(A)
+##
+## A synonym for GeneratorsModule_Global(A,M), with M the set of
+## derivatives of the elements in A
+##################################################################
+DeclareGlobalFunction("GeneratorsKhalerDifferentials");

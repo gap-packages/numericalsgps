@@ -207,6 +207,7 @@
     \subitem for affine semigroup, \hyperpage{90}
     \subitem for ideal of numerical semigroup, \hyperpage{47}
     \subitem for numerical semigroup, \hyperpage{19}
+  \item \texttt  {GeneratorsKhalerDifferentials}, \hyperpage{86}
   \item \texttt  {Generators}\discretionary {-}{}{}\texttt  {Module{\textunderscore }}\discretionary {-}{}{}\texttt  {Global}, 
 		\hyperpage{86}
   \item \texttt  {GeneratorsOfAffineSemigroup}, \hyperpage{90}
@@ -327,7 +328,7 @@
   \item \texttt  {IsMED}, \hyperpage{62}
   \item \texttt  {IsMEDNumericalSemigroup}, \hyperpage{62}
   \item \texttt  {IsModularNumericalSemigroup}, \hyperpage{15}
-  \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{86}
+  \item \texttt  {IsMonomialNumericalSemigroup}, \hyperpage{87}
   \item \texttt  {IsMpure}, \hyperpage{60}
   \item \texttt  {IsMpureNumericalSemigroup}, \hyperpage{60}
   \item \texttt  {IsNumericalSemigroup}, \hyperpage{15}

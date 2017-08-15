@@ -1188,7 +1188,7 @@ if not(IsHomogeneousList(M)) then
 fi;
 
 if not(ForAll(Union(Al,M), IsUnivariatePolynomial)) then
-		Error("The arguments must be a lists of polynomials.");
+		Error("The arguments must be lists of polynomials.");
 fi;
 if Length(Set(Union(Al,M), IndeterminateOfLaurentPolynomial))<>1 then
 		Error("The arguments must be lists of polynomials in the same variable; constants not allowed nor the empty list.");
@@ -1264,4 +1264,33 @@ A:=SemigroupOfValuesOfCurve_Global(Al,"basis");#List(A, DegreeOfLaurentPolynomia
 		fi;
 	od;
 	return gM;
+end);
+
+##################################################################
+##
+#F GeneratorsKhalerDifferentials(A)
+##
+## A synonym for GeneratorsModule_Global(A,M), with M the set of
+## derivatives of the elements in A
+##################################################################
+InstallGlobalFunction(GeneratorsKhalerDifferentials, function(A)
+	local M, t;
+
+	if not(IsHomogeneousList(A)) then
+			Error("The argument must be a list of polynomials.");
+	fi;
+
+
+	if not(ForAll(A, IsUnivariatePolynomial)) then
+			Error("The argument must be list of polynomials.");
+	fi;
+	if Length(Set(A, IndeterminateOfLaurentPolynomial))<>1 then
+			Error("The argument must be a list of polynomials in the same variable; constants not allowed nor the empty list.");
+	fi;
+
+	t:=IndeterminateNumberOfLaurentPolynomial(A[1]);
+
+
+	M:=List(A,p->Derivative(p,t));
+	return GeneratorsModule_Global(A,M);
 end);
