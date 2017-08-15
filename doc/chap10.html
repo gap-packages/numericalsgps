@@ -53,7 +53,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7E2C3E9A7DE7A078">10.2-5 SemigroupOfValuesOfPlaneCurve</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7F88774F7812D30E">10.2-6 SemigroupOfValuesOfCurve_Local</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X8597259279D1E793">10.2-7 SemigroupOfValuesOfCurve_Global</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7A04B8887F493733">10.2-8 IsMonomialNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7EE8528484642CEE">10.2-8 GeneratorsModule_Global</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10.html#X7A04B8887F493733">10.2-9 IsMonomialNumericalSemigroup</a></span>
 </div></div>
 </div>
 
@@ -358,9 +359,25 @@ x^12
 fail
 </pre></div>
 
+<p><a id="X7EE8528484642CEE" name="X7EE8528484642CEE"></a></p>
+
+<h5>10.2-8 GeneratorsModule_Global</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsModule_Global</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">A</var> and <var class="Arg">M</var> are lists of polynomials in the same variable. The output is a basis of the ideal <span class="SimpleMath">M K[A]</span>, that is, a set <span class="SimpleMath">F</span> such that <span class="SimpleMath">deg(F)</span> generates the ideal <span class="SimpleMath">deg(M K[A])</span> of <span class="SimpleMath">deg(K[A])</span>, where <span class="SimpleMath">deg</span> stands for degree. The method is explained in <a href="chapBib.html#biBA-A-GS">[AAG17]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t:=Indeterminate(Rationals,"t");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A:=[t^6+t,t^4];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M:=[t^3,t^4];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsModule_Global(A,M);</span>
+[ t^3, t^4, t^5, t^6 ]
+</pre></div>
+
 <p><a id="X7A04B8887F493733" name="X7A04B8887F493733"></a></p>
 
-<h5>10.2-8 IsMonomialNumericalSemigroup</h5>
+<h5>10.2-9 IsMonomialNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMonomialNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Tests whether <var class="Arg">S</var> a monomial numerical semigroup.</p>

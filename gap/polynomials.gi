@@ -1107,3 +1107,161 @@ InstallGlobalFunction(SemigroupOfValuesOfCurve_Global, function(arg)
     od;
     return fail;
 end);
+
+
+##################################################################
+##
+#F GeneratorsModule_Global(A,M)
+##
+## A and M are lists of polynomials in the same variable
+## Computes a basis of the ideal MK[A], that is, a set F such that
+## deg(F) generates the ideal deg(MK[A]) of deg(K[A]), where deg
+## stands for degree
+##################################################################
+InstallGlobalFunction(GeneratorsModule_Global, function(Al,M)
+
+local S, gens, gM, a, b, da, db, i, j, rs, rd, rel, fcta, fctb, C, pair, reduction, n, reduce,  A, R, ker, t;
+
+R:=function(a,b,s)
+	local i, mg;
+	i:=IntersectionIdealsOfNumericalSemigroup(a+s,b+s);
+	mg:=MinimalGenerators(i);
+	return List(mg, m->[m-a,m-b]);
+end;
+
+ker:=function(I)
+	local mg, s, r, i, j, n;
+	s:=AmbientNumericalSemigroupOfIdeal(I);
+	mg:=MinimalGenerators(I);
+	r:=[];
+	n:=Length(mg);
+	for i in [1..n] do
+		for j in [i+1..n] do
+			r:=Union(r,R(mg[i],mg[j],s));
+		od;
+	od;
+	return r;
+end;
+
+# improve to reducing all terms, not only the leading term
+reduce:=function(A,M,f)
+	local gens,geni,cand,d, fact, c, r, s,a, ds, cs, csa;
+	gens:=List(A, DegreeOfLaurentPolynomial);
+	s:=NumericalSemigroup(gens);
+	geni:=List(M,DegreeOfLaurentPolynomial);
+	if IsZero(f) then
+		return f;
+	fi;
+	r:=f;
+	cs:=CoefficientsOfUnivariatePolynomial(r);
+	ds:=Filtered([1..Length(cs)],i->not(IsZero(cs[i])))-1;
+	c:=First([1..Length(geni)], i->ForAny(ds, d->d-geni[i] in s));
+	if c<>fail then
+		d:=First(ds,x->x-geni[c] in s);
+	fi;
+	while c<>fail do
+		fact:=FactorizationsIntegerWRTList(d-geni[c],gens);
+		a:=M[c]*Product(List([1..Length(gens)],i->A[i]^fact[1][i]));
+		csa:=CoefficientsOfUnivariatePolynomial(a);
+		r:=csa[Length(csa)]*r-cs[d+1]*a;#r-cs[d+1]*a/csa[Length(csa)];
+		#Info(InfoNumSgps,2,"New reduction ",r," degree ",d," coeff ",cs[d+1]);
+		if IsZero(r) then
+			return r;
+		fi;
+		cs:=CoefficientsOfUnivariatePolynomial(r);
+		ds:=Filtered([1..Length(cs)],i->not(IsZero(cs[i])))-1;
+		c:=First([1..Length(geni)], i->ForAny(ds, d->d-geni[i] in s));
+		if c<>fail then
+			d:=First(ds,x->x-geni[c] in s);
+		fi;
+	od;
+
+	return r/cs[Length(cs)];
+end;
+
+if not(IsHomogeneousList(Al)) then
+		Error("The first argument must be a list of polynomials.");
+fi;
+
+if not(IsHomogeneousList(M)) then
+		Error("The second argument must be a list of polynomials.");
+fi;
+
+if not(ForAll(Union(Al,M), IsUnivariatePolynomial)) then
+		Error("The arguments must be a lists of polynomials.");
+fi;
+if Length(Set(Union(Al,M), IndeterminateOfLaurentPolynomial))<>1 then
+		Error("The arguments must be lists of polynomials in the same variable; constants not allowed nor the empty list.");
+fi;
+
+t:=IndeterminateNumberOfLaurentPolynomial(Al[1]);
+
+
+A:=SemigroupOfValuesOfCurve_Global(Al,"basis");#List(A, DegreeOfLaurentPolynomial);
+	gens:=List(A, DegreeOfLaurentPolynomial);
+	S:=NumericalSemigroup(gens);
+	n:=Length(A);
+
+	gM:=ShallowCopy(M);
+	C:=[];
+	for i in [1..Length(gM)] do
+		for j in [i+1..Length(gM)] do
+			Add(C,[gM[i],gM[j]]);
+		od;
+	od;
+	while C<>[] do
+		pair:=Remove(C,1);
+		a:=pair[1];
+		b:=pair[2];
+		da:=DegreeOfLaurentPolynomial(a);
+		db:=DegreeOfLaurentPolynomial(b);
+		rs:=R(da,db,S);
+		reduction:=true;
+		for rel in rs do
+			fcta:=FactorizationsIntegerWRTList(rel[1],gens)[1];
+			fctb:=FactorizationsIntegerWRTList(rel[2],gens)[1];
+			#rd:=reduce(A,gM,a*Product(List(fcta, e->t^e))-b*Product(List(fctb, e->t^e)));
+			rd:=reduce(A,gM,a*Product(List([1..n], i->A[i]^fcta[i]))-b*Product(List([1..n], i->A[i]^fctb[i])));
+			if not(IsZero(rd)) then
+					Info(InfoNumSgps,2,"new generator ",rd," of degreee ",DegreeIndeterminate(rd,t));
+					C:=Union(C,List(gM, x->[x,rd]));
+					Add(gM,rd);
+					reduction:=false;
+			fi;
+		od;
+		while not reduction do
+			#Info(InfoNumSgps,2,"Reducing...");
+			reduction:=true;
+			a:=First(gM, x->x<>reduce(A,Difference(gM,[x]),x));
+			if a<>fail then
+				rd:=reduce(A,Difference(gM,[a]),a);
+				if IsZero(rd) then
+					gM:=Difference(gM,[a]);
+					Info(InfoNumSgps,2,"Removing redundant generator: ",a);
+				else
+					gM:=Union(Difference(gM,[a]),[rd]);
+					Info(InfoNumSgps,2,"Replacing ",a," by ",rd);
+				fi;
+				reduction:=false;
+			fi;
+		od;
+	od;
+	Info(InfoNumSgps,2,"Reducing...");
+	reduction:=false;
+	while not reduction do
+		reduction:=true;
+		a:=First(gM, x->x<>reduce(A,Difference(gM,[x]),x));
+		if a<>fail then
+			rd:=reduce(A,Difference(gM,[a]),a);
+			if IsZero(rd) then
+				gM:=Difference(gM,[a]);
+				Info(InfoNumSgps,2,"Removing redundant:",a);
+			else
+				gM:=Union(Difference(gM,[a]),[rd]);
+				Info(InfoNumSgps,2,"Replacing ",a," by ",rd);
+			fi;
+			reduction:=false;
+		fi;
+	od;
+	return gM;
+end);

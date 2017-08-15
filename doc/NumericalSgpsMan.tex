@@ -5733,8 +5733,29 @@ of degrees of $K[pols]$. If an integer \mbox{\texttt{\mdseries\slshape val}} is 
 
  
 
-\subsection{\textcolor{Chapter }{IsMonomialNumericalSemigroup}}
+\subsection{\textcolor{Chapter }{GeneratorsModule{\textunderscore}Global}}
 \logpage{[ 10, 2, 8 ]}\nobreak
+\hyperdef{L}{X7EE8528484642CEE}{}
+{\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{GeneratorsModule{\textunderscore}Global({\mdseries\slshape A, M})\index{GeneratorsModuleGlobal@\texttt{Generators}\-\texttt{Module{\textunderscore}}\-\texttt{Global}}
+\label{GeneratorsModuleGlobal}
+}\hfill{\scriptsize (function)}}\\
+
+
+ \mbox{\texttt{\mdseries\slshape A}} and \mbox{\texttt{\mdseries\slshape M}} are lists of polynomials in the same variable. The output is a basis of the
+ideal $M K[A]$, that is, a set $F$ such that $deg(F)$ generates the ideal $deg(M K[A])$ of $deg(K[A])$, where $deg$ stands for degree. The method is explained in \cite{A-A-GS}. 
+\begin{Verbatim}[commandchars=!@|,fontsize=\small,frame=single,label=Example]
+  !gapprompt@gap>| !gapinput@t:=Indeterminate(Rationals,"t");;|
+  !gapprompt@gap>| !gapinput@A:=[t^6+t,t^4];;|
+  !gapprompt@gap>| !gapinput@M:=[t^3,t^4];;|
+  !gapprompt@gap>| !gapinput@GeneratorsModule_Global(A,M);|
+  [ t^3, t^4, t^5, t^6 ]
+\end{Verbatim}
+ }
+
+ 
+
+\subsection{\textcolor{Chapter }{IsMonomialNumericalSemigroup}}
+\logpage{[ 10, 2, 9 ]}\nobreak
 \hyperdef{L}{X7A04B8887F493733}{}
 {\noindent\textcolor{FuncColor}{$\triangleright$\ \ \texttt{IsMonomialNumericalSemigroup({\mdseries\slshape S})\index{IsMonomialNumericalSemigroup@\texttt{IsMonomialNumericalSemigroup}}
 \label{IsMonomialNumericalSemigroup}

@@ -318,7 +318,24 @@
     [4X[28Xfail[128X[104X
   [4X[32X[104X
   
-  [1X10.2-8 IsMonomialNumericalSemigroup[101X
+  [1X10.2-8 GeneratorsModule_Global[101X
+  
+  [29X[2XGeneratorsModule_Global[102X( [3XA[103X, [3XM[103X ) [32X function
+  
+  [33X[0;0Y[3XA[103X and [3XM[103X are lists of polynomials in the same variable. The output is a basis
+  of  the  ideal [22XM K[A][122X, that is, a set [22XF[122X such that [22Xdeg(F)[122X generates the ideal
+  [22Xdeg(M  K[A])[122X  of  [22Xdeg(K[A])[122X,  where  [22Xdeg[122X  stands  for  degree. The method is
+  explained in [AAG17].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xt:=Indeterminate(Rationals,"t");;[127X[104X
+    [4X[25Xgap>[125X [27XA:=[t^6+t,t^4];;[127X[104X
+    [4X[25Xgap>[125X [27XM:=[t^3,t^4];;[127X[104X
+    [4X[25Xgap>[125X [27XGeneratorsModule_Global(A,M);[127X[104X
+    [4X[28X[ t^3, t^4, t^5, t^6 ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.2-9 IsMonomialNumericalSemigroup[101X
   
   [29X[2XIsMonomialNumericalSemigroup[102X( [3XS[103X ) [32X property
   
