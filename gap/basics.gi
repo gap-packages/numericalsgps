@@ -378,7 +378,7 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
     return R;
   end;
   ##
-  
+
   if HasMinimalGenerators(S) then
     return MinimalGenerators(S);
   fi;
@@ -728,7 +728,7 @@ InstallMethod( BelongsToNumericalSemigroup,
         true,
         [IsInt,IsNumericalSemigroup and HasGenerators],
         function(n,S)
-    local gen, ss, sumNS;
+    local gen, ss, sumNS, ed, belongs;
     #####################################################
     # Computes the sum of subsets of numerical semigroups
     sumNS := function(S,T)
@@ -762,11 +762,40 @@ InstallMethod( BelongsToNumericalSemigroup,
 	if n in ss then
 		return true;
 	fi;
-    if n < Minimum(ss) then
-        return false;
-    else
-        TryNextMethod();
+
+  ed:=Length(gen);
+  # some konwn bounds for Frobenius number can be used
+  # Selmer's, Erdos-Graham, Schur
+  if n>Minimum([2*gen[ed]*Int(gen[1]/ed)-gen[1], 2*gen[ed-1]*Int(gen[ed]/ed)-gen[ed], (gen[1]-1)*(gen[ed]-1)-1] ) then
+    return true;
+  fi;
+
+  if n < Minimum(ss) then
+      return false;
+  fi;
+
+  ##########################
+  # the desperate method
+  belongs:=function(x,gen)
+    if gen=[] then
+            return false;
     fi;
+
+    if x=0 then
+            return true;
+    fi;
+
+    if x<0 then
+            return false;
+    fi;
+
+    return belongs(x-gen[1],gen) or belongs(x,gen{[2..Length(gen)]});
+  end;
+
+  return belongs(n,gen);
+
+  #TryNextMethod();
+
 end);
 
 InstallMethod( BelongsToNumericalSemigroup,
@@ -849,9 +878,9 @@ InstallOtherMethod( AperyList,
         true,
         [IsNumericalSemigroup, IsInt],
         function(S,n)
-    if n in S then 
+    if n in S then
         return(AperyListOfNumericalSemigroupWRTElement(S,n));
-    fi;        
+    fi;
     return(AperyListOfNumericalSemigroupWRTInteger(S,n));
 end);
 
@@ -1063,7 +1092,7 @@ end);
 ##
 #F  CocycleOfNumericalSemigroupWRTElement(S,n)
 ##
-##  Returns the cocycle of the numerical semigroup S with respect to 
+##  Returns the cocycle of the numerical semigroup S with respect to
 ##  the positive integer n (an element in S)
 ##
 #############################################################################
