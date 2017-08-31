@@ -989,7 +989,7 @@ InstallGlobalFunction(FirstElementsOfNumericalSemigroup, function(n,s)
         return se{[1..n]};
     fi;
 
-    max:=Maximum(se);
+    max:=se[l];
 
     return Concatenation( se, [max+1..(max+n-l)]);
 end);
