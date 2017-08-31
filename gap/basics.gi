@@ -651,14 +651,14 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasSmallElements],100,
+        [IsInt,IsNumericalSemigroup and HasSmallElements],10,
         function(n,S)
     local s;
     if n=0 then
         return true;
     fi;
     s := SmallElements(S);
-    return (n in s) or (n >= Maximum(s));
+    return (n in s) or (n >= s[Length(s)]);
 end);
 
 InstallMethod( BelongsToNumericalSemigroup,
@@ -711,7 +711,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasProportionallyModularConditionNS],
+        [IsInt,IsNumericalSemigroup and HasProportionallyModularConditionNS],20,
         function(n,S)
     local a,b,c;
     if n=0 then
