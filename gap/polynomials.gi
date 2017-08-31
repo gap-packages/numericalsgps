@@ -1268,12 +1268,12 @@ end);
 
 ##################################################################
 ##
-#F GeneratorsKhalerDifferentials(A)
+#F GeneratorsKahlerDifferentials(A)
 ##
 ## A synonym for GeneratorsModule_Global(A,M), with M the set of
 ## derivatives of the elements in A
 ##################################################################
-InstallGlobalFunction(GeneratorsKhalerDifferentials, function(A)
+InstallGlobalFunction(GeneratorsKahlerDifferentials, function(A)
 	local M, t;
 
 	if not(IsHomogeneousList(A)) then
