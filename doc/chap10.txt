@@ -335,9 +335,9 @@
     [4X[28X[ t^3, t^4, t^5, t^6 ][128X[104X
   [4X[32X[104X
   
-  [1X10.2-9 GeneratorsKhalerDifferentials[101X
+  [1X10.2-9 GeneratorsKahlerDifferentials[101X
   
-  [29X[2XGeneratorsKhalerDifferentials[102X( [3XA[103X, [3XM[103X ) [32X function
+  [29X[2XGeneratorsKahlerDifferentials[102X( [3XA[103X, [3XM[103X ) [32X function
   
   [33X[0;0Y[3XA[103X   is   a  list  of  polynomials  in  the  same  variable.  The  output  is
   [3XGeneratorsModule_Global(A,M)[103X,  with [3XM[103X the set of derivatives of the elements
@@ -345,7 +345,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xt:=Indeterminate(Rationals,"t");;[127X[104X
-    [4X[25Xgap>[125X [27XGeneratorsKhalerDifferentials([t^3,t^4]);[127X[104X
+    [4X[25Xgap>[125X [27XGeneratorsKahlerDifferentials([t^3,t^4]);[127X[104X
     [4X[28X[ t^2, t^3 ][128X[104X
   [4X[32X[104X
   
