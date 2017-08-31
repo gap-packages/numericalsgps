@@ -36,7 +36,7 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
   G := Gaps(sgp);
   K := Difference([0..G[Length(G)]+1],G);
   SetSmallElements(sgp,K);
-  
+
   return SmallElements(sgp);
 end);
 
@@ -63,7 +63,7 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     local ap, m, x;
     ap := AperyList(sgp);
     m := Length(ap);
-    SetSmallElements(sgp, Filtered([0..FrobeniusNumber(sgp)+1], x -> x mod m = 0 or ap[x mod m + 1] <= x));
+    SetSmallElements(sgp, Set(Filtered([0..FrobeniusNumber(sgp)+1], x -> x mod m = 0 or ap[x mod m + 1] <= x)));
     return SmallElements(sgp);
   end);
 

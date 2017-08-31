@@ -44,8 +44,8 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
     if 1 in L then
         SetMinimalGenerators(M,[1]);
         SetModularConditionNS(M,[1,2]);
-        SetGaps(M,[]);
-        SetSmallElements(M,[0]);
+        SetGaps(M,Set([]));
+        SetSmallElements(M,Set([0]));
     elif Length(L) = 2 then # a non-trivial numerical semigroup has at least 2 generators
         SetMinimalGenerators(M, L);
         a := L[1];
@@ -61,15 +61,17 @@ InstallGlobalFunction(NumericalSemigroupByGenerators, function(arg)
         a := L[1];
         b := L[Length(L)]-a;
         fr := CeilingOfRational((a-1)/b)*a-1;
-        small := [0];
-        i := 1;
-        while i*(a+b) < fr+1 do
-            Append(small,[i*a..i*(a+b)]);
-            i := i+1;
-        od;
-        Append(small,[fr+1]);
-
-        SetSmallElements(M,small);
+        # removed the computation for small elements
+        # this should be put in a separate method
+        # small := [0];
+        # i := 1;
+        # while i*(a+b) < fr+1 do
+        #     Append(small,[i*a..i*(a+b)]);
+        #     i := i+1;
+        # od;
+        # Append(small,[fr+1]);
+        #
+        # SetSmallElements(M,small);
 
         SetFrobeniusNumber(M,fr);
 
@@ -278,7 +280,7 @@ InstallGlobalFunction(ProportionallyModularNumericalSemigroup, function(a,b,c)
 
     m := CeilingOfRational(b/a);
     if a <> c and b/(a-c) > 2*m -1 then #the semigroup is a halfline
-        SetSmallElementsOfNumericalSemigroup(M,[0,m]);
+        SetSmallElementsOfNumericalSemigroup(M,Set([0,m]));
         SetFrobeniusNumberOfNumericalSemigroup(M,m-1);
 #        SetMinimalGeneratorsNS(M, [m,2*m-1]); # bug pointed out by Ilya Frolov (fixed from version 1.0.1)
         SetMinimalGenerators(M, [m..2*m-1]);
@@ -340,7 +342,7 @@ InstallGlobalFunction(NumericalSemigroupByInterval, function(arg)
 
     m := CeilingOfRational(r);
     if s > 2*m -1 then #the semigroup is a halfline
-        SetSmallElements(M,[0,m]);
+        SetSmallElements(M,Set([0,m]));
         SetFrobeniusNumberOfNumericalSemigroup(M,m-1);
         SetMinimalGenerators(M, [m,2*m-1]);
     fi;
