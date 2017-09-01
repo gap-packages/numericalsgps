@@ -54,7 +54,7 @@ Date := "01/09/2017",
 ##  <#/GAPDoc>
 
 PackageWWWHome :=
-  Concatenation( "http://www.fc.up.pt/cmup/mdelgado/",
+  Concatenation( "http://gap-packages.github.io/",
       LowercaseString( ~.PackageName ), "/" ),
 
 ##  URL of the archive(s) of the current package release, but *without*
