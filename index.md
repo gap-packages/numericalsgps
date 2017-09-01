@@ -8,7 +8,6 @@ layout: default
 
 The current version of this package is version {{site.data.package.version}}.
 For more information, please refer to [the package manual]({{site.data.package.doc-html}}).
-There is also a [README](README.html) file.
 
 ## Dependencies
 
@@ -51,13 +50,10 @@ For bug reports, feature requests and suggestions, please use the
 {% endif %}
 
 
-The GAP 4 package `NumericalSgps` to compute with Numerical Semigroups
-======================================================================
-
 Introduction
 ------------
 
-This is release 1.0 of  the package `NumericalSgps`.
+This is a dev of  the package `NumericalSgps`.
 
 The features of this package include
 
@@ -66,19 +62,6 @@ The features of this package include
 - perform several operations on numerical semigroups and ideals, namely: intersection, quotient by an integer, decompose into irreducible semigroups, add a special gap, ...;
 -computing and testing membership to relevant families of numerical semigroups.
 
-There is a manual in the sub-directory 'doc' written using the GAP package
-gapdoc which describes the available functions in detail. The dvi, pdf, html
-versions of the manual are also available there.
-
-If you have used this package, please let us know by sending
-us an email.  If you  have found important features missing or if there is a
-bug, we would appreciate it very much if you send us an email.
-
-The current maintainers of the package are:
-
-Manuel Delgado			<mdelgado@fc.up.pt>
-
-Pedro A. García-Sánchez		<pedro@ugr.es>
 
 Contents
 --------
@@ -106,9 +89,6 @@ just have to start GAP and type
 
 -----
 
-For updates between releases of GAP itself check the package web page
-
-	https://bitbucket.org/gap-system/numericalsgps
 
 Unpacking
 ---------
