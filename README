@@ -80,16 +80,16 @@ directory /usr/local/lib/gap4r7/pkg/.
 Installation
 ------------
 
-Copy the folder 'numericalsgp' to your pkg gap folder (for instance /usr/local/lib/gap4r7/pkg). 
+Copy the folder 'numericalsgp' to your pkg gap folder (for instance /usr/local/lib/gap4r7/pkg).
 You can also place it somewhere else and then use the command `SetPackagePath`:
 
-	SetPackagePath("numericalsgps","whereveryouwant/numericalsgps"); 
+	SetPackagePath("numericalsgps","whereveryouwant/numericalsgps");
 
 or add this line to your `gaprc`.
 
 In order to check the installation, launch `gap`:
 
-	gap 
+	gap
 
 Then try the following
 ```gap
@@ -99,7 +99,7 @@ gap>
 ```
 Good luck!
 
-You can also add the line 
+You can also add the line
 ```gap
 LoadPackage( "numericalsgps" );
 ```
