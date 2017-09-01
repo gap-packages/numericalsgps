@@ -55,7 +55,7 @@ just have to start GAP and type
 
 For updates between releases of GAP itself check the package web page
 
-	https://bitbucket.org/gap-system/numericalsgps
+	https://github.com/gap-packages/numericalsgps
 
 Unpacking
 ---------
