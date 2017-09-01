@@ -728,7 +728,7 @@ InstallMethod( BelongsToNumericalSemigroup,
         true,
         [IsInt,IsNumericalSemigroup and HasGenerators],
         function(n,S)
-    local gen, ss, sumNS, ed, belongs;
+    local gen, ss, sumNS, ed, belongs, maxgen, mingen;
     #####################################################
     # Computes the sum of subsets of numerical semigroups
     sumNS := function(S,T)
@@ -755,20 +755,26 @@ InstallMethod( BelongsToNumericalSemigroup,
     fi;
     if HasMinimalGenerators(S) then
         gen := MinimalGenerators(S);
+        ed:=Length(gen);
+        # some konwn bounds for Frobenius number can be used
+        # Selmer's, Erdos-Graham, Schur
+        if n>Minimum([2*gen[ed]*Int(gen[1]/ed)-gen[1], 2*gen[ed-1]*Int(gen[ed]/ed)-gen[ed], (gen[1]-1)*(gen[ed]-1)-1] ) then
+          return true;
+        fi;
     else
         gen := Generators(S);
+        maxgen:=Maximum(gen);
+        mingen:=Minimum(gen);
+        # Schur's bound
+        if n> (mingen-1)*(maxgen-1)  then
+          return true;
+        fi;
     fi;
     ss := sumNS(gen,gen);
 	if n in ss then
 		return true;
 	fi;
 
-  ed:=Length(gen);
-  # some konwn bounds for Frobenius number can be used
-  # Selmer's, Erdos-Graham, Schur
-  if n>Minimum([2*gen[ed]*Int(gen[1]/ed)-gen[1], 2*gen[ed-1]*Int(gen[ed]/ed)-gen[ed], (gen[1]-1)*(gen[ed]-1)-1] ) then
-    return true;
-  fi;
 
   if n < Minimum(ss) then
       return false;
