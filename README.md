@@ -1,4 +1,4 @@
-The GAP 4 package `NumericalSgps' to compute with Numerical Semigroups
+The GAP 4 package `NumericalSgps` to compute with Numerical Semigroups
 ======================================================================
 
 Introduction
@@ -8,17 +8,10 @@ This is release 1.0 of  the package `NumericalSgps`.
 
 The features of this package include
 
-	- defining numerical semigroups;
-	- computing several properties of numerical semigroups,
-	   namely: multiplicity, Frobenius number,
-           (minimal) system of generators,
-           Apéry set, gaps, fundamental gaps, etc.;
-	- perform several operations on numerical semigroups and ideals,
-	   namely: intersection, quotient by an integer,
-	   decompose into irreducible semigroups, add a
-	   special gap, ...;
-	-computing and testing membership to relevant families 
-	  of numerical semigroups.
+- defining numerical semigroups;
+- computing several properties of numerical semigroups, namely: multiplicity, Frobenius number, (minimal) system of generators, Apéry set, gaps, fundamental gaps, etc.;
+- perform several operations on numerical semigroups and ideals, namely: intersection, quotient by an integer, decompose into irreducible semigroups, add a special gap, ...;
+-computing and testing membership to relevant families of numerical semigroups.
 
 There is a manual in the sub-directory 'doc' written using the GAP package
 gapdoc which describes the available functions in detail. The dvi, pdf, html
@@ -62,7 +55,7 @@ just have to start GAP and type
 
 For updates between releases of GAP itself check the package web page
 
-	https://bitbucket.org/gap-system/numericalsgps
+	https://github.com/gap-packages/numericalsgps
 
 Unpacking
 ---------
@@ -107,10 +100,9 @@ gap>
 Good luck!
 
 You can also add the line 
-
-	LoadPackage( "numericalsgps" );
-
+```gap
+LoadPackage( "numericalsgps" );
+```
 to your `gaprc` file.
-----------
 
 In other systems, there are equivalent ways to do the same.
