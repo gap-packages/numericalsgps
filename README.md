@@ -107,10 +107,9 @@ gap>
 Good luck!
 
 You can also add the line 
-
-	LoadPackage( "numericalsgps" );
-
+```gap
+LoadPackage( "numericalsgps" );
+```
 to your `gaprc` file.
-----------
 
 In other systems, there are equivalent ways to do the same.
