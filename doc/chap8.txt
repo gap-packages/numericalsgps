@@ -1,0 +1,265 @@
+  
+  [1X8 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X[101X
+  
+  
+  [1X8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X[101X
+  
+  [33X[0;0YIf  [22XS[122X is a numerical semigroup and [22Xm[122X is its multiplicity (the least positive
+  integer  belonging  to  it),  then  the  embedding  dimension  [22Xe[122X  of  [22XS[122X (the
+  cardinality  of the minimal system of generators of [22XS[122X) is less than or equal
+  to  [22Xm[122X.  We  say  that [22XS[122X has maximal embedding dimension (MED for short) when
+  [22Xe=m[122X. The intersection of two numerical semigroups with the same multiplicity
+  and  maximal  embedding  dimension  is again of maximal embedding dimension.
+  Thus  we  define  the MED closure of a non-empty subset of positive integers
+  [22XM={m  <  m_1  <  ⋯  <  m_n  <⋯}[122X with [22Xgcd(M)=1[122X as the intersection of all MED
+  numerical semigroups with multiplicity [22Xm[122X.[133X
+  
+  [33X[0;0YGiven  a  MED  numerical  semigroup [22XS[122X, we say that [22XM={m_1 < ⋯< m_k}[122X is a MED
+  system  of generators if the MED closure of [22XM[122X is [22XS[122X. Moreover, [22XM[122X is a minimal
+  MED  generating system for [22XS[122X provided that every proper subset of [22XM[122X is not a
+  MED  system  of  generators of [22XS[122X. Minimal MED generating systems are unique,
+  and  in  general  are  smaller than the classical minimal generating systems
+  (see [RGSGGB03]).[133X
+  
+  [1X8.1-1 IsMED[101X
+  
+  [29X[2XIsMED[102X( [3XS[103X ) [32X property
+  [29X[2XIsMEDNumericalSemigroup[102X( [3XS[103X ) [32X property
+  
+  [33X[0;0Y[3XS[103X  is  a numerical semigroup. Returns true if [3XS[103X is a MED numerical semigroup
+  and false otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsMEDNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsMEDNumericalSemigroup(NumericalSemigroup(3,5));[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X8.1-2 MEDNumericalSemigroupClosure[101X
+  
+  [29X[2XMEDNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
+  [29X[2XMEDClosure[102X( [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the MED closure of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMEDNumericalSemigroupClosure(NumericalSemigroup(3,5));[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
+    [4X[28X[ 3, 5, 7 ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.1-3 MinimalMEDGeneratingSystemOfMEDNumericalSemigroup[101X
+  
+  [29X[2XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X is a MED numerical semigroup. Returns the minimal MED generating system of
+  [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup([127X[104X
+    [4X[25X>[125X [27XNumericalSemigroup(3,5,7));[127X[104X
+    [4X[28X[ 3, 5 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X8.2 [33X[0;0YNumerical semigroups with the Arf property and Arf closures[133X[101X
+  
+  [33X[0;0YNumerical  semigroups  with the Arf property are a special kind of numerical
+  semigroups  with maximal embedding dimension. A numerical semigroup [22XS[122X is Arf
+  if for every [22Xx,y,z[122X in [22XS[122X with [22Xx≥ y≥ z[122X, one has that [22Xx+y-z∈ S[122X.[133X
+  
+  [33X[0;0YThe  intersection  of two Arf numerical semigroups is again Arf, and thus we
+  can  consider the Arf closure of a set of nonnegative integers with greatest
+  common  divisor  equal to one. Analogously as with MED numerical semigroups,
+  we define Arf systems of generators and minimal Arf generating system for an
+  Arf numerical semigroup. These are also unique(see [RGSGGB04]).[133X
+  
+  [1X8.2-1 IsArf[101X
+  
+  [29X[2XIsArf[102X( [3XS[103X ) [32X property
+  [29X[2XIsArfNumericalSemigroup[102X( [3XS[103X ) [32X property
+  
+  [33X[0;0Y[3XS[103X  is a numerical semigroup. Returns true if [3XS[103X is an Arf numerical semigroup
+  and false otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27X IsArfNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X IsArfNumericalSemigroup(NumericalSemigroup(3,7,11));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsMEDNumericalSemigroup(NumericalSemigroup(3,7,11));[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-2 ArfNumericalSemigroupClosure[101X
+  
+  [29X[2XArfNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
+  [29X[2XArfClosure[102X( [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the Arf closure of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11));[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
+    [4X[28X[ 3, 7, 8 ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-3 ArfCharactersOfArfNumericalSemigroup[101X
+  
+  [29X[2XArfCharactersOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [29X[2XMinimalArfGeneratingSystemOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  an Arf numerical semigroup. Returns the minimal Arf generating system
+  of [3XS[103X. The current version of this algorithm is due to G. Zito.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMinimalArfGeneratingSystemOfArfNumericalSemigroup([127X[104X
+    [4X[25X>[125X [27XNumericalSemigroup(3,7,8));[127X[104X
+    [4X[28X[ 3, 7 ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-4 ArfNumericalSemigroupsWithFrobeniusNumber[101X
+  
+  [29X[2XArfNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
+  Arf  numerical  semigroups  with  Frobenius number [3Xf[103X. The current version of
+  this algorithm is due to G. Zito.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XArfNumericalSemigroupsWithFrobeniusNumber(10);[127X[104X
+    [4X[28X[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,[128X[104X
+    [4X[28X  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,[128X[104X
+    [4X[28X  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup> ][128X[104X
+    [4X[25Xgap>[125X [27XSet(last,MinimalGenerators);[127X[104X
+    [4X[28X[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ],[128X[104X
+    [4X[28X  [ 6, 11, 13, 14, 15, 16 ], [ 7, 9, 11, 12, 13, 15, 17 ],[128X[104X
+    [4X[28X  [ 7, 11, 12, 13, 15, 16, 17 ], [ 8, 11, 12, 13, 14, 15, 17, 18 ],[128X[104X
+    [4X[28X  [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ], [ 11 .. 21 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-5 ArfNumericalSemigroupsWithFrobeniusNumberUpTo[101X
+  
+  [29X[2XArfNumericalSemigroupsWithFrobeniusNumberUpTo[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
+  Arf  numerical semigroups with Frobenius number less than or equal to [3Xf[103X. The
+  current version of this algorithm is due to G. Zito.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));[127X[104X
+    [4X[28X46[128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-6 ArfNumericalSemigroupsWithGenus[101X
+  
+  [29X[2XArfNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function
+  
+  [33X[0;0Y[3Xg[103X  is  a  nonnegative  integer.  The  output is the set of all Arf numerical
+  semigroups  with equal to [3Xg[103X. The current version of this algorithm is due to
+  G. Zito.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(ArfNumericalSemigroupsWithGenus(10));[127X[104X
+    [4X[28X21[128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-7 ArfNumericalSemigroupsWithGenusUpTo[101X
+  
+  [29X[2XArfNumericalSemigroupsWithGenusUpTo[102X( [3Xg[103X ) [32X function
+  
+  [33X[0;0Y[3Xg[103X  is  a  nonnegative  integer.  The  output is the set of all Arf numerical
+  semigroups  with  genus less than or equal to [3Xg[103X. The current version of this
+  algorithm is due to G. Zito.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(ArfNumericalSemigroupsWithGenusUpTo(10));[127X[104X
+    [4X[28X86[128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber[101X
+  
+  [29X[2XArfNumericalSemigroupsWithGenusAndFrobeniusNumber[102X( [3Xg[103X, [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X is an integer greater than or equal to -1, and [3Xg[103X is a nonnegative integer.
+  The  output  is  the  set  of  all Arf numerical semigroups with genus [3Xg[103X and
+  Frobenius number [3Xf[103X. The algorithm is explained in [GSHKR17].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XArfNumericalSemigroupsWithGenusAndFrobeniusNumber(10,13);[127X[104X
+    [4X[28X[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>,[128X[104X
+    [4X[28X  <Numerical semigroup>, <Numerical semigroup> ][128X[104X
+    [4X[25Xgap>[125X [27XList(last,MinimalGenerators);[127X[104X
+    [4X[28X[ [ 8, 10, 12, 14, 15, 17, 19, 21 ], [ 6, 10, 14, 15, 17, 19 ],[128X[104X
+    [4X[28X  [ 5, 12, 14, 16, 18 ], [ 6, 9, 14, 16, 17, 19 ], [ 4, 14, 15, 17 ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X8.3 [33X[0;0YSaturated numerical semigroups[133X[101X
+  
+  [33X[0;0YSaturated  numerical  semigroups with the Arf property are a special kind of
+  numerical semigroups with maximal embedding dimension. A numerical semigroup
+  [22XS[122X is saturated if the following condition holds: [22Xs, s_1 , ... , s_r[122X in [22XS[122X are
+  such  that  [22Xs_i  ≤  s[122X for all [22Xi[122X in [22X{1, ... , r}[122X and [22Xz_1 , ... , z_r[122X in [22XZ[122X are
+  such that [22Xz_1 s_1 + ⋯ + z_r s_r≥ 0[122X, then [22Xs + z_1 s_1 + ⋯ + z_r s_r[122X in [22XS[122X.[133X
+  
+  [33X[0;0YThe  intersection  of two saturated numerical semigroups is again saturated,
+  and  thus  we  can  consider  the  saturated closure of a set of nonnegative
+  integers with greatest common divisor equal to one (see [RGS09]).[133X
+  
+  [1X8.3-1 IsSaturated[101X
+  
+  [29X[2XIsSaturated[102X( [3XS[103X ) [32X property
+  [29X[2XIsSaturatedNumericalSemigroup[102X( [3XS[103X ) [32X property
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup.  Returns  true if [3XS[103X is a saturated numerical
+  semigroup and false otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsSaturatedNumericalSemigroup(NumericalSemigroup(8, 9, 12, 13, 15, 19 ));[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X8.3-2 SaturatedNumericalSemigroupClosure[101X
+  
+  [29X[2XSaturatedNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
+  [29X[2XSaturatedClosure[102X( [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the saturated closure of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
+    [4X[28X[ 8 .. 15 ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.3-3 SaturatedNumericalSemigroupsWithFrobeniusNumber[101X
+  
+  [29X[2XSaturatedNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  
+  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
+  Saturated numerical semigroups with Frobenius number [3Xf[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSaturatedNumericalSemigroupsWithFrobeniusNumber(10);[127X[104X
+    [4X[28X[ <Numerical semigroup with 3 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 4 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 6 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 6 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 7 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 8 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 9 generators>,[128X[104X
+    [4X[28X  <Numerical semigroup with 11 generators> ][128X[104X
+    [4X[25Xgap>[125X [27X List(last,MinimalGenerators);[127X[104X
+    [4X[28X[ [ 3, 11, 13 ], [ 4, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ],[128X[104X
+    [4X[28X  [ 6, 11, 13, 14, 15, 16 ], [ 7, 11, 12, 13, 15, 16, 17 ],[128X[104X
+    [4X[28X  [ 8, 11, 12, 13, 14, 15, 17, 18 ], [ 9, 11, 12, 13, 14, 15, 16, 17, 19 ],[128X[104X
+    [4X[28X  [ 11 .. 21 ] ][128X[104X
+  [4X[32X[104X
+  

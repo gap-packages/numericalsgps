@@ -1,0 +1,161 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YA  [13Xnumerical semigroup[113X is a subset of the set [22XN[122X of nonnegative integers that
+  is  closed  under  addition, contains [22X0[122X and whose complement in [22XN[122X is finite.
+  The  smallest  positive  integer  belonging  to a numerical semigroup is its
+  [13Xmultiplicity[113X.[133X
+  
+  [33X[0;0YLet  [22XS[122X  be  a numerical semigroup and [22XA[122X be a subset of [22XS[122X. We say that [22XA[122X is a
+  [13Xsystem  of  generators[113X  of  [22XS[122X  if [22XS={ k_1 a_1+⋯+ k_n a_n | n,k_1,...,k_n∈ N,
+  a_1,...,a_n∈  A}[122X.  The  set  [22XA[122X  is a [13Xminimal system of generators[113X of [22XS[122X if no
+  proper subset of [22XA[122X is a system of generators of [22XS[122X.[133X
+  
+  [33X[0;0YEvery numerical semigroup has a unique minimal system of generators. This is
+  a  data  that can be used in order to uniquely define a numerical semigroup.
+  Observe  that  since  the  complement of a numerical semigroup in the set of
+  nonnegative  integers  is  finite,  this  implies  that  the greatest common
+  divisor  of  the  elements  of  a  numerical  semigroup  is  1, and the same
+  condition  must  be fulfilled by its minimal system of generators (or by any
+  of its systems of generators).[133X
+  
+  [33X[0;0YGiven  a  numerical  semigroup  [22XS[122X  and  a  nonzero  element [22Xs[122X in it, one can
+  consider  for every integer [22Xi[122X ranging from [22X0[122X to [22Xs-1[122X, the smallest element in
+  [22XS[122X  congruent  with  [22Xi[122X  modulo  [22Xs[122X,  say  [22Xw(i)[122X  (this element exists since the
+  complement  of  [22XS[122X  in  [22XN[122X  is  finite).  Clearly  [22Xw(0)=0[122X.  The  set [22XAp(S,s)={
+  w(0),w(1),...,  w(s-1)}[122X is called the [13XApéry set[113X of [22XS[122X with respect to [22Xs[122X. Note
+  that  a  nonnegative integer [22Xx[122X congruent with [22Xi[122X modulo [22Xs[122X belongs to [22XS[122X if and
+  only  if  [22Xw(i)≤ x[122X. Thus the pair [22X(s, Ap(S,s))[122X fully determines the numerical
+  semigroup  [22XS[122X  (and can be used to easily solve the membership problem to [22XS[122X).
+  This  set  is  in  fact  one of the most powerfull tools known for numerical
+  semigroups,  and  it  is  used  almost  everywhere  in  the  computation  of
+  components  and  invariants associated to a numerical semigroup. Usually the
+  element  [22Xs[122X  is taken to be the multiplicity, since in this way the resulting
+  Apéry set is the smallest possible.[133X
+  
+  [33X[0;0YA  [13Xgap[113X  of a numerical semigroup [22XS[122X is a nonnegative integer not belonging to
+  [22XS[122X.  The  set of gaps of [22XS[122X is usually denoted by [22XH(S)[122X, and clearly determines
+  uniquely  [22XS[122X.  Note  that if [22Xx[122X is a gap of [22XS[122X, then so are all the nonnegative
+  integers dividing it. Thus in order to describe [22XS[122X we do not need to know all
+  its  gaps, but only those that are maximal with respect to the partial order
+  induced by division in [22XN[122X. These gaps are called [13Xfundamental gaps[113X.[133X
+  
+  [33X[0;0YThe  largest nonnegative integer not belonging to a numerical semigroup [22XS[122X is
+  the  [13XFrobenius  number[113X  of  [22XS[122X. If [22XS[122X is the set of nonnegative integers, then
+  clearly its Frobenius number is [22X-1[122X, otherwise its Frobenius number coincides
+  with  the  maximum  of  the  gaps  (or fundamental gaps) of [22XS[122X. The Frobenius
+  number  plus one is known as the [13Xconductor[113X of the semigroup. In this package
+  we refer to the elements in the semigroup that are less than or equal to the
+  conductor  as  [13Xsmall  elements[113X  of  the  semigroup.  Observe  that  from the
+  definition,  if  [22XS[122X is a numerical semigroup with Frobenius number [22Xf[122X, then [22Xf+
+  N∖{0}⊆ S[122X. An integer [22Xz[122X is a [13Xpseudo-Frobenius number[113X of [22XS[122X if [22Xz+S∖{0}⊆ S[122X. Thus
+  the  Frobenius  number of [22XS[122X is one of its pseudo-Frobenius numbers. The [13Xtype[113X
+  of   a   numerical   semigroup   is  the  cardinality  of  the  set  of  its
+  pseudo-Frobenius numbers.[133X
+  
+  [33X[0;0YThe  number  of  numerical  semigroups  having  a  given Frobenius number is
+  finite.  The  elements  in this set of numerical semigroups that are maximal
+  with  respect to set inclusion are precisely those numerical semigroups that
+  cannot  be  expressed  as  intersection  of  two  other numerical semigroups
+  containing  them  properly, and thus they are known as [13Xirreducible[113X numerical
+  semigroups.  Clearly,  every  numerical  semigroup  is  the  intersection of
+  (finitely many) irreducible numerical semigroups.[133X
+  
+  [33X[0;0YA  numerical  semigroup  [22XS[122X with Frobenius number [22Xf[122X is [13Xsymmetric[113X if for every
+  integer  [22Xx[122X,  either  [22Xx∈  S[122X  or  [22Xf-x∈  S[122X.  The  set  of irreducible numerical
+  semigroups  with  odd  Frobenius  number coincides with the set of symmetric
+  numerical  semigroups. The numerical semigroup [22XS[122X is [13Xpseudo-symmetric[113X if [22Xf[122X is
+  even and for every integer [22Xx[122X not equal to [22Xf/2[122X either [22Xx∈ S[122X or [22Xf-x∈ S[122X. The set
+  of  irreducible numerical semigroups with even Frobenius number is precisely
+  the  set  of  pseudo-symmetric  numerical  semigroups.  These two classes of
+  numerical semigroups have been widely studied in the literature due to their
+  nice  applications  in  Algebraic Geometry. This is probably one of the main
+  reasons  that made people turn their attention on numerical semigroups again
+  in   the   last   decades.   Symmetric  numerical  semigroups  can  be  also
+  characterized  as  those  with  type  one,  and  pseudo-symmetric  numerical
+  semigroups  are  those  numerical semigroups with type two and such that its
+  pseudo-Frobenius  numbers  are its Frobenius number and its Frobenius number
+  divided by two.[133X
+  
+  [33X[0;0YAnother  class  of  numerical  semigroups  that  catched  the  attention  of
+  researchers working on Algebraic Geometry and Commutative Ring Theory is the
+  class   of  numerical  semigroups  with  maximal  embedding  dimension.  The
+  [13Xembedding  dimension[113X  of  a  numerical  semigroup  is the cardinality of its
+  minimal  system  of generators. It can be shown that the embedding dimension
+  is  at  most  the  multiplicity  of  the  numerical  semigroup. Thus [13Xmaximal
+  embedding  dimension[113X numerical semigroups are those numerical semigroups for
+  which  their  embedding dimension and multiplicity coincide. These numerical
+  semigroups  have  nice  maximal  properties, not only (of course) related to
+  their  embedding  dimension, but also by means of their presentations. Among
+  maximal  embedding  dimension  there are two classes of numerical semigroups
+  that  have  been  studied  due  to  the  connections with the equivalence of
+  algebroid  branches. A numerical semigroup [22XS[122X is Arf if for every [22Xx≥ y≥ z∈ S[122X,
+  then  [22Xx+y-z∈  S[122X;  and  it  is [13Xsaturated[113X if the following condition holds: if
+  [22Xs,s_1,...,s_r∈  S[122X are such that [22Xs_i≤ s[122X for all [22Xi∈ {1,...,r}[122X and [22Xz_1,...,z_r∈
+  Z[122X are such that [22Xz_1s_1+⋯+z_rs_r≥ 0[122X, then [22Xs+z_1s_1+⋯ +z_rs_r∈ S[122X.[133X
+  
+  [33X[0;0YIf  we  look  carefully  inside  the  set of fundamental gaps of a numerical
+  semigroup,  we see that there are some fulfilling the condition that if they
+  are  added to the given numerical semigroup, then the resulting set is again
+  a  numerical  semigroup.  These  elements  are  called  [13Xspecial  gaps[113X of the
+  numerical semigroup. A numerical semigroup other than the set of nonnegative
+  integers is irreducible if and only if it has only a special gap.[133X
+  
+  [33X[0;0YThe inverse operation to the one described in the above paragraph is that of
+  removing  an  element of a numerical semigroup. If we want the resulting set
+  to  be a numerical semigroup, then the only thing we can remove is a minimal
+  generator.[133X
+  
+  [33X[0;0YLet  [22Xa,b,c,d[122X  be positive integers such that [22Xa/b < c/d[122X, and let [22XI=[a/b,c/d][122X.
+  Then  the  set  [22XS(I)=  N∩ ⋃_n≥ 0 n I[122X is a numerical semigroup. This class of
+  numerical  semigroups  coincides with that of sets of solutions to equations
+  of  the  form  [22XA  x  mod  B  ≤ C x[122X with [22XA,B,C[122X positive integers. A numerical
+  semigroup in this class is said to be [13Xproportionally modular[113X.[133X
+  
+  [33X[0;0YA  sequence  of positive rational numbers [22Xa_1/b_1 < ⋯ < a_n/b_n[122X with [22Xa_i,b_i[122X
+  positive  integers is a [13XBézout sequence[113X if [22Xa_i+1b_i - a_i b_i+1=1[122X for all [22Xi∈
+  {1,...,n-1}[122X.  If  [22Xa/b=a_1/b_1  <  ⋯  <  a_n/b_n  =c/d[122X,  then  [22XS([a/b,c/d])=⟨
+  a_1,...,a_n⟩[122X.  Bézout sequences are not only interesting for this fact, they
+  have  shown  to  be  a  major  tool  in  the study of proportionally modular
+  numerical semigroups.[133X
+  
+  [33X[0;0YIf  [22XS[122X  is  a  numerical  semigroup and [22Xk[122X is a positive integer, then the set
+  [22XS/k={ x∈ N | kx∈ S}[122X is a numerical semigroup, known as the [13Xquotient[113X [22XS[122X by [22Xk[122X.[133X
+  
+  [33X[0;0YLet  [22Xm[122X  be a positive integer. A [13Xsubadditive[113X function with period [22Xm[122X is a map
+  [22Xf:  N->  N[122X  such  that  [22Xf(0)=0[122X, [22Xf(x+y)≤ f(x)+f(y)[122X and [22Xf(x+m)=f(x)[122X. If [22Xf[122X is a
+  subadditive  function with period [22Xm[122X, then the set [22XM_f={ x∈ N | f(x)≤ x}[122X is a
+  numerical  semigroup.  Moreover,  every numerical semigroup is of this form.
+  Thus  a  numerical  semigroup  can be given by a subadditive function with a
+  given  period. If [22XS[122X is a numerical semigroup and [22Xs∈ S, snot=0[122X, and [22XAp(S,s)={
+  w(0),w(1),...,  w(s-1)}[122X, then [22Xf(x)=w(x mod s)[122X is a subadditive function with
+  period [22Xs[122X such that [22XM_f=S[122X.[133X
+  
+  [33X[0;0YLet  [22XS[122X  be  a  numerical  semigroup  generated by [22X{n_1,...,n_k}[122X. Then we can
+  define  the following morphism (called sometimes the factorization morphism)
+  by  [22Xφ:  N^k  ->  S,  φ(a_1,...,a_k)=a_1n_1+⋯+a_kn_k[122X.  If  [22Xσ[122X  is  the  kernel
+  congruence of [22Xφ[122X (that is, [22Xaσ b[122X if [22Xφ(a)=φ(b)[122X), then [22XS[122X is isomorphic to [22XN^k/σ[122X.
+  A  [13Xpresentation[113X  for  [22XS[122X is a system of generators (as a congruence) of [22Xσ[122X. If
+  [22X{n_1,...,n_p}[122X is a minimal system of generators, then a [13Xminimal presentation[113X
+  is  a  presentation  such that none of its proper subsets is a presentation.
+  Minimal  presentations  of  numerical semigroups coincide with presentations
+  with  minimal  cardinality, though in general these two concepts are not the
+  same for an arbitrary commutative semigroup.[133X
+  
+  [33X[0;0YA set [22XI[122X of integers is an [13Xideal relative to a numerical semigroup[113X [22XS[122X provided
+  that  [22XI+S⊆ I[122X and that there exists [22Xd∈ S[122X such that [22Xd+I⊆ S[122X. If [22XI⊆ S[122X, we simply
+  say that [22XI[122X is an [13Xideal[113X of [22XS[122X. If [22XI[122X and [22XJ[122X are relative ideals of [22XS[122X, then so is
+  [22XI-J={z∈  Z  |  z+J⊆  I}[122X,  and  it is tightly related to the operation ":" of
+  ideals in a commutative ring.[133X
+  
+  [33X[0;0YIn  this  package  we have implemented the functions needed to deal with the
+  elements exposed in this introduction.[133X
+  
+  [33X[0;0YMany of the algorithms, and the necessary background to understand them, can
+  be  found  in  the  monograph  [RGS09]. Some examples in this book have been
+  illustrated with the help of this package. So the reader can also find there
+  more examples on the usage of the functions implemented here.[133X
+  
+  [33X[0;0YThis package was presented in [DGSM06]. For a survey of the features of this
+  package, see [DGS16].[133X
+  

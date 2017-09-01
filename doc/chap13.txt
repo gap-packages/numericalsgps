@@ -1,0 +1,70 @@
+  
+  [1X13 [33X[0;0YExternal packages[133X[101X
+  
+  [33X[0;0YThe use of the packages [10XNormalizInterface[110X [GHS14] (an interface to [10XNormalize[110X
+  [BIRC14];  or in its absence [10X4ti2Interface[110X[Gut], and interface to [10X4ti2[110X[tt]),
+  [10XSingularInterface[110X  (an  interface  to  [10XSingular[110X  [DGPS12]; or in its absence
+  [10XSingular[110X  [CdG12]);  or  in  its  absence  [10XGradedModules[110X  [BGJ+14] is highly
+  recommended  for  many  of the functions presented in this chapter. However,
+  whenever  possible a method not depending on these packages is also provided
+  (though  slower).  The  package  tests if the user has downloaded any of the
+  above  packages,  and if so puts [10XNumSgpsCanUsePackage[110X to true, where [10XPackage[110X
+  is any of the above.[133X
+  
+  
+  [1X13.1 [33X[0;0YUsing external packages[133X[101X
+  
+  [33X[0;0YAs  mentioned  above  some  methods  are  specifically  implemented  to take
+  advantage  of several external packages. The following functions can be used
+  in case these packages have not been loaded prior to [10Xnumericalsgps[110X.[133X
+  
+  [1X13.1-1 NumSgpsUse4ti2[101X
+  
+  [29X[2XNumSgpsUse4ti2[102X(  ) [32X function
+  
+  [33X[0;0YTries  to  load the package [10X4ti2Interface[110X. If the package is available, then
+  it also loads methods implemented using functions in this package.[133X
+  
+  [1X13.1-2 NumSgpsUse4ti2gap[101X
+  
+  [29X[2XNumSgpsUse4ti2gap[102X(  ) [32X function
+  
+  [33X[0;0YTries to load the package [10X4ti2gap[110X. If the package is available, then it also
+  loads methods implemented using functions in this package.[133X
+  
+  [1X13.1-3 NumSgpsUseNormalize[101X
+  
+  [29X[2XNumSgpsUseNormalize[102X(  ) [32X function
+  
+  [33X[0;0YTries  to  load  the package [10XNormalizInterface[110X. If the package is available,
+  then it also loads methods implemented using functions in this package.[133X
+  
+  [1X13.1-4 NumSgpsUseSingular[101X
+  
+  [29X[2XNumSgpsUseSingular[102X(  ) [32X function
+  
+  [33X[0;0YTries  to  load  the  package [10Xsingular[110X. If the package is available, then it
+  also loads methods implemented using functions in this package.[133X
+  
+  [33X[0;0YTo prevent incompatibilities, the package will not load if [10XSingularInterface[110X
+  has been already loaded.[133X
+  
+  [1X13.1-5 NumSgpsUseSingularInterface[101X
+  
+  [29X[2XNumSgpsUseSingularInterface[102X(  ) [32X function
+  
+  [33X[0;0YTries  to  load  the package [10XSingularInterface[110X. If the package is available,
+  then it also loads methods implemented using functions in this package.[133X
+  
+  [33X[0;0YTo prevent incompatibilities, the package will not load if [10Xsingular[110X has been
+  already loaded.[133X
+  
+  [1X13.1-6 NumSgpsUseSingularGradedModules[101X
+  
+  [29X[2XNumSgpsUseSingularGradedModules[102X(  ) [32X function
+  
+  [33X[0;0YTries  to  load the package [10XGradedModules[110X. If the package is available, then
+  it also loads methods implemented using functions in this package.[133X
+  
+  [33X[0;0YIt also creates a ring of rationals [10XNumSgpsRationals[110X.[133X
+  

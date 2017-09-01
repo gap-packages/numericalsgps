@@ -1,0 +1,466 @@
+  
+  [1X2 [33X[0;0YNumerical Semigroups[133X[101X
+  
+  [33X[0;0YThis chapter describes how to create numerical semigroups in [5XGAP[105X and perform
+  some basic tests.[133X
+  
+  
+  [1X2.1 [33X[0;0YGenerating Numerical Semigroups[133X[101X
+  
+  [33X[0;0YWe recall some definitions from Chapter [14X1[114X.[133X
+  
+  [33X[0;0YA  numerical semigroup is a subset of the set [22XN[122X of nonnegative integers that
+  is closed under addition, contains [22X0[122X and whose complement in [22XN[122X is finite.[133X
+  
+  [33X[0;0YWe  refer  to  the  elements  in a numerical semigroup that are less than or
+  equal to the conductor as [13Xsmall elements[113X of the semigroup.[133X
+  
+  [33X[0;0YA  [13Xgap[113X  of a numerical semigroup [22XS[122X is a nonnegative integer not belonging to
+  [22XS[122X. The [13Xfundamental gaps[113X of [22XS[122X are those gaps that are maximal with respect to
+  the partial order induced by division in [22XN[122X.[133X
+  
+  [33X[0;0YGiven  a  numerical  semigroup  [22XS[122X  and  a  nonzero  element [22Xs[122X in it, one can
+  consider  for every integer [22Xi[122X ranging from [22X0[122X to [22Xs-1[122X, the smallest element in
+  [22XS[122X  congruent  with  [22Xi[122X  modulo  [22Xs[122X,  say  [22Xw(i)[122X  (this element exists since the
+  complement  of  [22XS[122X  in  [22XN[122X  is  finite).  Clearly  [22Xw(0)=0[122X.  The  set [22XAp(S,s)={
+  w(0),w(1),..., w(s-1)}[122X is called the [13XApéry set[113X of [22XS[122X with respect to [22Xs[122X.[133X
+  
+  [33X[0;0YLet  [22Xa,b,c,d[122X  be positive integers such that [22Xa/b < c/d[122X, and let [22XI=[a/b,c/d][122X.
+  Then  the  set  [22XS(I)=  N∩ ⋃_n≥ 0 n I[122X is a numerical semigroup. This class of
+  numerical  semigroups  coincides with that of sets of solutions to equations
+  of  the  form  [22XA  x  mod  B  ≤ C x[122X with [22XA,B,C[122X positive integers. A numerical
+  semigroup in this class is said to be [13Xproportionally modular[113X. If [22XC = 1[122X, then
+  it is said to be [13Xmodular[113X.[133X
+  
+  [33X[0;0YThere  are different ways to specify a numerical semigroup [22XS[122X, namely, by its
+  generators;  by  its gaps, its fundamental or special gaps by its Apéry set,
+  just to name some. In this section we describe functions that may be used to
+  specify, in one of these ways, a numerical semigroup in [5XGAP[105X.[133X
+  
+  [1X2.1-1 NumericalSemigroupByGenerators[101X
+  
+  [29X[2XNumericalSemigroupByGenerators[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0Y[10XList[110X is a list of nonnegative integers with greatest common divisor equal to
+  one.  These  integers  may be given as a list or by a sequence of individual
+  elements. The output is the numerical semigroup spanned by [10XList[110X.[133X
+  
+  [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
+  [10X"generators"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs1 := NumericalSemigroupByGenerators(3,5,7);             [127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs2 := NumericalSemigroupByGenerators([3,5,7]);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs3 := NumericalSemigroup("generators",3,5,7); [127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs4 := NumericalSemigroup("generators",[3,5,7]);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs5 := NumericalSemigroup(3,5,7);               [127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs6 := NumericalSemigroup([3,5,7]);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xs1=s2;s2=s3;s3=s4;s4=s5;s5=s6;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-2 NumericalSemigroupBySubAdditiveFunction[101X
+  
+  [29X[2XNumericalSemigroupBySubAdditiveFunction[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0YA  periodic  subadditive function with period [22Xm[122X is given through the list of
+  images  of  the integers from [22X1[122X to [22Xm[122X. The image of [22Xm[122X has to be [22X0[122X. The output
+  is the numerical semigroup determined by this subadditive function.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"subadditive"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs := NumericalSemigroupBySubAdditiveFunction([5,4,2,0]);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xt := NumericalSemigroup("subadditive",[5,4,2,0]);;     [127X[104X
+    [4X[25Xgap>[125X [27Xs=t;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-3 NumericalSemigroupByAperyList[101X
+  
+  [29X[2XNumericalSemigroupByAperyList[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0Y[10XList[110X is an Apéry list. The output is the numerical semigroup whose Apéry set
+  with respect to the length of given list is [10XList[110X.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"apery"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,11);;[127X[104X
+    [4X[25Xgap>[125X [27Xap := AperyListOfNumericalSemigroupWRTElement(s,20);[127X[104X
+    [4X[28X[ 0, 21, 22, 3, 24, 25, 6, 27, 28, 9, 30, 11, 12, 33, 14, 15, 36, 17, 18, 39 ][128X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroupByAperyList(ap);;[127X[104X
+    [4X[25Xgap>[125X [27Xr := NumericalSemigroup("apery",ap);;[127X[104X
+    [4X[25Xgap>[125X [27Xs=t;t=r;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-4 NumericalSemigroupBySmallElements[101X
+  
+  [29X[2XNumericalSemigroupBySmallElements[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0Y[10XList[110X is the set of small elements of a numerical semigroup, that is, the set
+  of  all elements not greater than the conductor. The output is the numerical
+  semigroup with this set of small elements. When no such semigroup exists, an
+  error is returned.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"elements"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,11);;[127X[104X
+    [4X[25Xgap>[125X [27Xse := SmallElements(s);[127X[104X
+    [4X[28X[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ][128X[104X
+    [4X[25Xgap>[125X [27Xt := NumericalSemigroupBySmallElements(se);;[127X[104X
+    [4X[25Xgap>[125X [27Xr := NumericalSemigroup("elements",se);;[127X[104X
+    [4X[25Xgap>[125X [27Xs=t;t=r;                                            [127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xe := [ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ];    [127X[104X
+    [4X[28X[ 0, 3, 6, 9, 11, 14, 15, 17, 18, 20 ][128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupBySmallElements(e);[127X[104X
+    [4X[28XError, The argument does not represent a numerical semigroup called from[128X[104X
+    [4X[28X<function "NumericalSemigroupBySmallElements">( <arguments> )[128X[104X
+    [4X[28X called from read-eval loop at line 35 of *stdin*[128X[104X
+    [4X[28Xyou can 'quit;' to quit to outer loop, or[128X[104X
+    [4X[28Xyou can 'return;' to continue[128X[104X
+    [4X[26Xbrk>[126X [27X[127X[104X
+  [4X[32X[104X
+  
+  [1X2.1-5 NumericalSemigroupByGaps[101X
+  
+  [29X[2XNumericalSemigroupByGaps[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0Y[10XList[110X  is  the  set  of  gaps  of  a  numerical  semigroup. The output is the
+  numerical semigroup with this set of gaps. When no semigroup exists with the
+  given set as set of gaps, an error is returned.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"gaps"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xg := [ 1, 2, 4, 5, 7, 8, 10, 13, 16 ];;[127X[104X
+    [4X[25Xgap>[125X [27Xs := NumericalSemigroupByGaps(g);;[127X[104X
+    [4X[25Xgap>[125X [27Xt := NumericalSemigroup("gaps",g);;[127X[104X
+    [4X[25Xgap>[125X [27Xs=t;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xh := [ 1, 2, 5, 7, 8, 10, 13, 16 ];;   [127X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupByGaps(h);[127X[104X
+    [4X[28XError, The argument does not represent the gaps of a numerical semigroup called[128X[104X
+    [4X[28X from[128X[104X
+    [4X[28X<function "NumericalSemigroupByGaps">( <arguments> )[128X[104X
+    [4X[28X called from read-eval loop at line 34 of *stdin*[128X[104X
+    [4X[28Xyou can 'quit;' to quit to outer loop, or[128X[104X
+    [4X[28Xyou can 'return;' to continue[128X[104X
+    [4X[26Xbrk>[126X [27X[127X[104X
+  [4X[32X[104X
+  
+  [1X2.1-6 NumericalSemigroupByFundamentalGaps[101X
+  
+  [29X[2XNumericalSemigroupByFundamentalGaps[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0Y[10XList[110X  is the set of fundamental gaps of a numerical semigroup. The output is
+  the  numerical  semigroup  determined  by  these  gaps.  When  the given set
+  contains  elements  (which will be gaps) that are not fundamental gaps, they
+  are silently removed.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"fundamentalgaps"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xfg := [ 11, 14, 17, 20, 23, 26, 29, 32, 35 ];;[127X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupByFundamentalGaps(fg);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("fundamentalgaps",fg);     [127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xlast=last2;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xgg := [ 11, 17, 20, 22, 23, 26, 29, 32, 35 ];; #22 is not fundamental[127X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("fundamentalgaps",fg);     [127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-7 NumericalSemigroupByAffineMap[101X
+  
+  [29X[2XNumericalSemigroupByAffineMap[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0YGiven three nonnegative integers [3Xa[103X, [3Xb[103X and [3Xc[103X, with [22Xa,c>0[122X and [22Xgcd(b,c)=1[122X, this
+  function  returns the least (with restpect to set order inclusion) numerical
+  semigroup  containing  [3Xc[103X  and closed under the map [22Xx↦ ax+b[122X. The procedure is
+  explained in [Ugo16].[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"affinemap"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupByAffineMap(3,1,3);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(s);[127X[104X
+    [4X[28X[ 0, 3, 6, 9, 10, 12, 13, 15, 16, 18 ][128X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroup("affinemap",3,1,3);;[127X[104X
+    [4X[25Xgap>[125X [27Xs=t;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-8 ModularNumericalSemigroup[101X
+  
+  [29X[2XModularNumericalSemigroup[102X( [3Xa[103X, [3Xb[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0YGiven  two  positive  integers  [3Xa[103X  and  [3Xb[103X,  this  function returns a modular
+  numerical semigroup satisfying [22Xax mod b le x[122X.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"modular"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XModularNumericalSemigroup(3,7);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 3x mod 7 <= x >[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("modular",3,7);  [127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 3x mod 7 <= x >[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-9 ProportionallyModularNumericalSemigroup[101X
+  
+  [29X[2XProportionallyModularNumericalSemigroup[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  
+  [33X[0;0YGiven  three  positive  integers  [3Xa[103X,  [3Xb[103X  and  [3Xc[103X,  this  function  returns  a
+  proportionally modular numerical semigroup satisfying [22Xaxmod b le cx[122X.[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"propmodular"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XProportionallyModularNumericalSemigroup(3,7,12);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("propmodular",3,7,12);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 3x mod 7 <= 12x >[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YWhen [22Xc=1[122X, the semigroup is seen as a modular numerical semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("propmodular",67,98,1);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 67x mod 98 <= x >[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNumerical semigroups generated by an interval of positive integers are known
+  to  be  proportionally  modular,  and  thus  they are treated as such, since
+  membership   and   other  problems  can  be  solved  efficiently  for  these
+  semigroups.[133X
+  
+  [1X2.1-10 NumericalSemigroupByInterval[101X
+  
+  [29X[2XNumericalSemigroupByInterval[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0YThe  input  is  a  list  of rational numbers defining a closed interval. The
+  output  is  the  semigroup  of  numerators  of  all rational numbers in this
+  interval.[133X
+  
+  [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
+  [10X"interval"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupByInterval(7/5,5/3);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("interval",[7/5,5/3]);[127X[104X
+    [4X[28X<Proportionally modular numerical semigroup satisfying 25x mod 35 <= 4x >[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(last);[127X[104X
+    [4X[28X[ 0, 3, 5 ][128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-11 NumericalSemigroupByOpenInterval[101X
+  
+  [29X[2XNumericalSemigroupByOpenInterval[102X( [3XList[103X ) [32X function
+  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  
+  [33X[0;0YThe input is a list of rational numbers defining a open interval. The output
+  is the semigroup of numerators of all rational numbers in this interval.[133X
+  
+  [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
+  [10X"openinterval"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroupByOpenInterval(7/5,5/3);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XNumericalSemigroup("openinterval",[7/5,5/3]);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(last);                         [127X[104X
+    [4X[28X[ 0, 3, 6, 8 ] [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2 [33X[0;0YSome basic tests[133X[101X
+  
+  [33X[0;0YThis  section  describes some basic tests on numerical semigroups. The first
+  described  tests  refer  to what the semigroup is currently known to be (not
+  necessarily the way it was created). Then are presented functions to test if
+  a  given  list represents the small elements, gaps or the Apéry set (see [14X1.[114X)
+  of  a  numerical  semigroup;  to  test  if an integer belongs to a numerical
+  semigroup and if a numerical semigroup is a subsemigroup of another one.[133X
+  
+  [1X2.2-1 IsNumericalSemigroup[101X
+  
+  [29X[2XIsNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByGenerators[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByMinimalGenerators[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByInterval[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByOpenInterval[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupBySubAdditiveFunction[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByAperyList[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupBySmallElements[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByGaps[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsNumericalSemigroupByFundamentalGaps[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsProportionallyModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  [29X[2XIsModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  
+  [33X[0;0Y[3XNS[103X  is a numerical semigroup and these attributes are available (their names
+  should be self explanatory).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XAperyListOfNumericalSemigroupWRTElement(s,30);;[127X[104X
+    [4X[25Xgap>[125X [27Xt:=NumericalSemigroupByAperyList(last);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupByGenerators(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupByGenerators(t);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupByAperyList(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsNumericalSemigroupByAperyList(t);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-2 RepresentsSmallElementsOfNumericalSemigroup[101X
+  
+  [29X[2XRepresentsSmallElementsOfNumericalSemigroup[102X( [3XL[103X ) [32X attribute
+  
+  [33X[0;0YTests  if  the  list  [3XL[103X  (which  has to be a set) may represent the ``small"
+  elements of a numerical semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XL:=[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ];[127X[104X
+    [4X[28X[ 0, 3, 6, 9, 11, 12, 14, 15, 17, 18, 20 ][128X[104X
+    [4X[25Xgap>[125X [27XRepresentsSmallElementsOfNumericalSemigroup(L);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XL:=[ 6, 9, 11, 12, 14, 15, 17, 18, 20 ];[127X[104X
+    [4X[28X[ 6, 9, 11, 12, 14, 15, 17, 18, 20 ][128X[104X
+    [4X[25Xgap>[125X [27XRepresentsSmallElementsOfNumericalSemigroup(L);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-3 RepresentsGapsOfNumericalSemigroup[101X
+  
+  [29X[2XRepresentsGapsOfNumericalSemigroup[102X( [3XL[103X ) [32X attribute
+  
+  [33X[0;0YTests  if  the  list  [3XL[103X  may  represent  the  gaps  (see  [14X1.[114X) of a numerical
+  semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XL:=GapsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 1, 2, 4, 5, 8, 11 ][128X[104X
+    [4X[25Xgap>[125X [27XRepresentsGapsOfNumericalSemigroup(L);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XL:=Set(List([1..21],i->RandomList([1..50])));[127X[104X
+    [4X[28X[ 2, 6, 7, 8, 10, 12, 14, 19, 24, 28, 31, 35, 42, 50 ][128X[104X
+    [4X[25Xgap>[125X [27XRepresentsGapsOfNumericalSemigroup(L);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-4 IsAperyListOfNumericalSemigroup[101X
+  
+  [29X[2XIsAperyListOfNumericalSemigroup[102X( [3XL[103X ) [32X function
+  
+  [33X[0;0YTests  whether  a  list  [3XL[103X  of  integers  may  represent the Apéry list of a
+  numerical  semigroup. It returns [9Xtrue[109X when the periodic function represented
+  by  [3XL[103X is subadditive (see [2XRepresentsPeriodicSubAdditiveFunction[102X ([14XA.2-1[114X)) and
+  the  remainder  of  the division of [10XL[i][110X by the length of [3XL[103X is [10Xi[110X and returns
+  [9Xfalse[109X otherwise (the criterium used is the one explained in [Ros96b]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsAperyListOfNumericalSemigroup([0,21,7,28,14]);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-5 IsSubsemigroupOfNumericalSemigroup[101X
+  
+  [29X[2XIsSubsemigroupOfNumericalSemigroup[102X( [3XS[103X, [3XT[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X and [3XT[103X are numerical semigroups. Tests whether [3XT[103X is contained in [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 5x mod 53 <= x >[128X[104X
+    [4X[25Xgap>[125X [27XT:=NumericalSemigroup(2,3);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsSubsemigroupOfNumericalSemigroup(T,S);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsSubsemigroupOfNumericalSemigroup(S,T);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-6 IsSubset[101X
+  
+  [29X[2XIsSubset[102X( [3XS[103X, [3XT[103X ) [32X attribute
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical semigroup. [3XT[103X can be a numerical semigroup, in which case
+  the   function  is  just  a  synonym  of  [2XIsSubsemigroupOfNumericalSemigroup[102X
+  ([14X2.2-5[114X),  or a list of integers, in which case tests whether all elements of
+  the list belong to [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xns1 := NumericalSemigroup(5,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xns2 := NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XIsSubset(ns1,ns2);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsSubset(ns2,[5,15]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsSubset(ns1,[5,11]);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsSubset(ns2,ns1);   [127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-7 BelongsToNumericalSemigroup[101X
+  
+  [29X[2XBelongsToNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  [29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  
+  [33X[0;0Y[3Xn[103X  is  an integer and [3XS[103X is a numerical semigroup. Tests whether [3Xn[103X belongs to
+  [3XS[103X.  [10X\in(n,S)[110X calls the infix variant [10Xn in S[110X, and both can be seen as a short
+  for [10XBelongsToNumericalSemigroup(n,S)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 5x mod 53 <= x >[128X[104X
+    [4X[25Xgap>[125X [27XBelongsToNumericalSemigroup(15,S);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27X15 in S;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XSmallElementsOfNumericalSemigroup(S);[127X[104X
+    [4X[28X[ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
+    [4X[25Xgap>[125X [27XBelongsToNumericalSemigroup(13,S);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X13 in S;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
