@@ -1,17 +1,4 @@
 #######################################################################
-InstallGlobalFunction(NumSgpsMakeDoc,
-        function()
-  MakeGAPDocDoc(Concatenation(PackageInfo("numericalsgps")[1]!.
-          InstallationPath, "/doc"), "NumericalSgps.xml",
-          [], "NumericalSgps",     "MathJax");;
-end);
-#######################################################################
-InstallGlobalFunction(NumSgpsCopyHTMLStyleFiles,
-        function()
-  CopyHTMLStyleFiles(Concatenation(PackageInfo("numericalsgps")[1]!.
-          InstallationPath, "/doc"));
-end);
-#######################################################################
 InstallGlobalFunction(NumSgpsInfo, 
         function(n)
   SetInfoLevel(InfoNumSgps, n);
