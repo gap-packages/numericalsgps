@@ -38,14 +38,14 @@ Subtitle := "A package for numerical semigroups",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-#Version := "1.0.1",
-Version := "1.0.1 dev",
+Version := "1.0.1",
+#Version := "1.0.1 dev",
 
 ##  Release date of the current version in dd/mm/yyyy format.
-#
-Date := "01/09/2017",
-
-##  Optional: if the package manual uses GAPDoc, you may duplicate the
+# 
+Date := "05/06/2015",
+        
+##  Optional: if the package manual uses GAPDoc, you may duplicate the 
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
@@ -65,7 +65,7 @@ PackageWWWHome :=
 ##  directory containing the package (in our "example" probably:
 ##  example/init.g, ...    or  example-1.3/init.g, ...  )
 #
-ArchiveURL := Concatenation( ~.PackageWWWHome, "numericalsgps-", ~.Version ),
+ArchiveURL := "https://github.com/gap-packages/numericalsgps/releases/download/v1.0.1/numericalsgps-1.0.1",
 
 ##  All provided formats as list of file extensions, separated by white
 ##  space or commas.
