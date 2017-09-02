@@ -61,31 +61,12 @@ The features of this package include
 -computing and testing membership to relevant families of numerical semigroups.
 
 
-Contents
---------
-With this version you should have obtained the following files and
-directories:
-
-| File/directory | Description |
-|:-----|:------|
-|README |   this file|
-|EXAMPLES|	some examples|
-|CHANGES|	changelog|
-|doc  |	the manual|
-|gap  |the GAP code|
-|init.g| the file that initializes this package|
-|read.g |         		the file that reads in the package|
-|PackageInfo.g	| information file for automatic processing|
-|version	|the version number|
-
 Usage
 -----
 The package is distributed with the main GAP archive. In order to use it you
 just have to start GAP and type
 
       LoadPackage( "numericalsgps" );
-
------
 
 
 Unpacking
