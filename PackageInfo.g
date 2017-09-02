@@ -248,7 +248,7 @@ rec(
 
 rec(
   LastName      := "Zito",
-  FirstNames    := "Guiseppe",
+  FirstNames    := "Giuseppe",
   IsAuthor      := false,
   IsMaintainer  := false,
   PostalAddress := "Università degli Studi di Catania"
