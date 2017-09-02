@@ -2,7 +2,7 @@
 InstallGlobalFunction(NumSgpsMakeDoc,
         function()
   MakeGAPDocDoc(Concatenation(PackageInfo("numericalsgps")[1]!.
-          InstallationPath, "/doc"), "NumericalSgpsMan.xml",
+          InstallationPath, "/doc"), "NumericalSgps.xml",
           [], "NumericalSgps",     "MathJax");;
 end);
 #######################################################################
