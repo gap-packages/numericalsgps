@@ -183,6 +183,14 @@ Persons := [
 # provide such a record for each author and/or maintainer ...
 
 rec(
+  LastName      := "Heredia",
+  FirstNames    := "Benjamín Alarcón",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  PostalAddress := "No address known"
+),
+
+rec(
   LastName      := "Herrera-Poyatos",
   FirstNames    := "Andrés",
   IsAuthor      := false,
