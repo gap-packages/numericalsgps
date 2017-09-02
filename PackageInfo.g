@@ -182,6 +182,7 @@ Persons := [
   ),
 # provide such a record for each author and/or maintainer ...
 
+
 rec(
   LastName      := "Heredia",
   FirstNames    := "Benjamín Alarcón",
@@ -198,6 +199,13 @@ rec(
   WWWHome       := "https://github.com/andreshp"
 ),
 
+rec(
+  LastName      := "Moreno Ávila",
+  FirstNames    := "Carlos Jesús",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  PostalAddress := "No address known"
+),
 
 rec(
   LastName      := "Ojeda",
