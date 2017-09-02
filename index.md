@@ -53,8 +53,6 @@ For bug reports, feature requests and suggestions, please use the
 Introduction
 ------------
 
-This is a dev of  the package `NumericalSgps`.
-
 The features of this package include
 
 - defining numerical semigroups;
