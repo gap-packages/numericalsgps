@@ -1130,7 +1130,7 @@ end);
 #############################################################################
 InstallMethod(RthElementOfNumericalSemigroup,
         [IsNumericalSemigroup,IsInt],
-        function(S,n)
+        function(S,r)
   local   selts,  n;
 
   selts := SmallElementsOfNumericalSemigroup( S );
@@ -1143,9 +1143,9 @@ InstallMethod(RthElementOfNumericalSemigroup,
 end);
 #########
 InstallMethod(RthElementOfNumericalSemigroup,
-        [IsNumericalSemigroup,IsInt],
-        function(S,n)
-  return(RthElementOfNumericalSemigroup(S,n));
+        [IsInt,IsNumericalSemigroup],
+        function(r,S)
+  return(RthElementOfNumericalSemigroup(S,r));
 end);
 #############################################################################
 ##
@@ -1168,6 +1168,6 @@ end);
 ########
 InstallMethod(DivisorsOfElementInNumericalSemigroup,
         [IsInt,IsNumericalSemigroup],
-        function(n,s)
+        function(n,S)
   return(DivisorsOfElementInNumericalSemigroup(S,n));
 end);
