@@ -277,4 +277,24 @@ DeclareSynonymAttr("HolesOfNumericalSemigroup", Holes);
 ##
 #############################################################################
 DeclareGlobalFunction("CocycleOfNumericalSemigroupWRTElement");
+#############################################################################
+#############################################################################
 
+#############################################################################
+##
+#O RthElementOfNumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer r, returns the r-th element of S
+#############################################################################
+DeclareOperation("RthElementOfNumericalSemigroup",[IsNumericalSemigroup,IsInt]);
+DeclareOperation("RthElementOfNumericalSemigroup",[IsInt,IsNumericalSemigroup]);
+
+#############################################################################
+##
+#O DivisorsOfElementInNumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer n, returns a list L of integers such that 
+# x in L if and only if n - x belongs to S, that is, it returns S\cap(n-S)
+# These elements are called divisors of n
+##
+#############################################################################
+DeclareOperation("DivisorsOfElementInNumericalSemigroup",[IsNumericalSemigroup,IsInt]);
+DeclareOperation("DivisorsOfElementInNumericalSemigroup",[IsInt,IsNumericalSemigroup]);

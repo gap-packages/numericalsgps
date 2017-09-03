@@ -1122,3 +1122,52 @@ InstallGlobalFunction(CocycleOfNumericalSemigroupWRTElement,function(S,s)
   od;
   return b;
 end);
+
+#############################################################################
+##
+#O RthElementOfNumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer r, returns the r-th element of S
+#############################################################################
+InstallMethod(RthElementOfNumericalSemigroup,
+        [IsNumericalSemigroup,IsInt],
+        function(S,n)
+  local   selts,  n;
+
+  selts := SmallElementsOfNumericalSemigroup( S );
+  n := Length(selts);
+  if r <= Length(selts) then 
+    return selts[r];
+  else
+    return selts[n] + r - n;
+  fi;
+end);
+#########
+InstallMethod(RthElementOfNumericalSemigroup,
+        [IsNumericalSemigroup,IsInt],
+        function(S,n)
+  return(RthElementOfNumericalSemigroup(S,n));
+end);
+#############################################################################
+##
+#O DivisorsOfElementInNumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer n, returns a list L of integers such that 
+# x in L if and only if n - x belongs to S, that is, it returns S\cap(n-S)
+# These elements are called divisors of n
+##
+#############################################################################
+InstallMethod(DivisorsOfElementInNumericalSemigroup,
+        [IsNumericalSemigroup,IsInt],
+        function(S,n)
+  local   elts;
+
+  #the first n elements of S not greater than n
+  elts := FirstElementsOfNumericalSemigroup(n, S );
+
+  return(Intersection(n - elts,elts));
+end);
+########
+InstallMethod(DivisorsOfElementInNumericalSemigroup,
+        [IsInt,IsNumericalSemigroup],
+        function(n,s)
+  return(DivisorsOfElementInNumericalSemigroup(S,n));
+end);
