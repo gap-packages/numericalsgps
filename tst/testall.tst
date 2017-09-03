@@ -343,6 +343,16 @@ gap> FirstElementsOfNumericalSemigroup(2,NumericalSemigroup(3,5,7));
 gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 [ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
 
+gap> S := NumericalSemigroup(7,8,17);;
+gap> RthElementOfNumericalSemigroup(S,53);
+68
+
+gap> S := NumericalSemigroup(7,8,17);;
+gap> DivisorsOfElementInNumericalSemigroup(50,S);    
+[ 0, 7, 8, 14, 15, 16, 17, 21, 22, 25, 28, 29, 33, 34, 35, 36, 42, 43, 50 ]
+gap> DivisorsOfElementInNumericalSemigroup(S,50); 
+[ 0, 7, 8, 14, 15, 16, 17, 21, 22, 25, 28, 29, 33, 34, 35, 36, 42, 43, 50 ]
+
 gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
@@ -1310,6 +1320,16 @@ gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,10);
 2
 gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
 25
+
+gap> S := NumericalSemigroup(7,9,17);;     
+gap> FengRaoDistance(S,6,100);        
+86
+
+gap> S := NumericalSemigroup(7,8,17);;
+gap> FengRaoNumber(S,209);                   
+224
+gap> FengRaoNumber(209,S); 
+224
 
 ##polynomial.xml
 
