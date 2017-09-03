@@ -1486,3 +1486,191 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfNumericalSemigroup,function(s)
     return Maximum(Set(prim, n-> MonotoneCatenaryDegreeOfSetOfFactorizations(
                    FactorizationsIntegerWRTList(n,msg))));
 end);
+#####################################################################
+##
+#O FengRaoDistance(NS,r,m)
+##
+# Computes the r-th Feng-Rao distance of the element m in the numerical semigroup NS
+# function originally implemented by Benjamin Heredia
+##
+
+#####################################################################
+InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigroup",   
+        [IsNumericalSemigroup,IsPosInt,IsPosInt],
+ function(s,r,m)
+  local  conductor, multiplicity, final, elementsUpToFinal, divisorsOfMany2, 
+         addOne2, posiblesOfLen2;
+
+  conductor := ConductorOfNumericalSemigroup(s);
+  multiplicity := MultiplicityOfNumericalSemigroup(s);
+  final := Maximum([m+multiplicity-1,conductor+multiplicity-1]);
+  #  elementsUpToFinal := FirstElementsOfNumericalSemigroup(final,s);
+  elementsUpToFinal := Intersection([0..final],FirstElementsOfNumericalSemigroup(final+r,s));
+  #local functions
+  # This function gives the set of divisors of several elements
+  divisorsOfMany2 := function(lst)
+    return Union(List(lst, x -> DivisorsOfElementInNumericalSemigroup(s,x)));
+  end;
+  # addOne(s,m,lst) gives back X(m;lst) as in the notes. That is the set used
+  # to compute the X^r(m) from X^{r-1}(m).
+  addOne2 := function(lst)
+    local  prec, pos1, pos2;
+    if IsEmpty(lst) then
+      return Intersection([m..final],elementsUpToFinal);
+    else
+      prec := Reversed(lst)[1];
+      if (prec<final) then
+        pos1 := Intersection([prec+1..final],elementsUpToFinal);
+      else
+        pos1 := [];
+      fi;
+      #      pos2 := Filtered(List(lst, x -> x+multiplicity), y -> y>prec);      
+      pos2 := Filtered(lst+multiplicity, y -> y>prec);
+      return Union(pos1,pos2);
+    fi;
+  end;
+
+  # This functions gives back X^r(m) recursively.
+  posiblesOfLen2 := function(r)
+    local lst, tot;
+    if r = 1 then
+      return List(addOne2([]), x -> [x]);
+    else
+      lst := posiblesOfLen2(r-1);
+      tot := List(lst,x -> List(addOne2(x),y -> Concatenation(x,[y])));
+      return Union(tot);
+    fi;
+  end;
+  # end of local functions
+  # And here it is the Feng-Rao distance
+
+  return Minimum(List(posiblesOfLen2(r), d -> Length(divisorsOfMany2(d))));
+end);
+
+###########################################################################
+##
+#O FengRaoNumber(NS,r)
+#O FengRaoNumber(r,NS)
+# returns the r-Feng Rao number of a numerical semigroup NS
+#####################################################################
+InstallMethod(FengRaoNumber,"Feng-Rao number for a numerical semigroup",
+        [IsNumericalSemigroup,IsPosInt],
+  function(NS,r)
+  local  fr, m, gens, a, ne, dm, fe, aux, span, 
+         generators_for_lists_for_Feng_Rao, LIST, RES, numbers, M, divs;
+
+
+  fr := FrobeniusNumberOfNumericalSemigroup(NS);
+  m := 2*fr+1;
+  
+  gens := MinimalGeneratingSystemOfNumericalSemigroup(NS);
+  a := MultiplicityOfNumericalSemigroup(NS);
+  ne := gens[Length(gens)];
+  dm := DivisorsOfElementInNumericalSemigroup(NS,m);
+  fe := Union(SmallElementsOfNumericalSemigroup( NS ),[fr+1..m+1+ne]);
+
+  ###########################################################################
+  ##################### local functions
+  ###########################################################################
+  ## computes, see remarks in [DelgadoFarranGarcia-SanchezLlena2013MC], the union of the divisors of the elements in the configuration that are not divisors of m
+  aux := function(configuration)
+    local    u,  i;
+
+    u := [];
+    for i in [2..Length(configuration)] do
+      u := Union(u,(m-configuration[i])+fe);
+    od;
+    return Difference(u,fe);
+  end;
+
+  span := function(conf)
+    local   u,  i;
+
+    u := [];
+    for i in [1..Length(conf)] do
+      u := Union(u,DivisorsOfElementInNumericalSemigroup(NS,conf[i]));
+    od;
+    return Difference(Filtered(u,n->n>0),dm);
+  end;
+  #################################################################
+  #This function computes configurations of length r, starting in m and satisfying the property FR, among which the r-Feng Rao number of the numerical sgp NS can be computed
+  # Besides the property FR, it uses also the fact that two configurations of the same length satisfying the property FR and having the same shadow (intersection with [m..m+ne-1] (the "ground")) have the same number of divisors
+  #
+
+  generators_for_lists_for_Feng_Rao:=function()
+    local   rho2,  fr,  gens,  el,  elts,  elts0,  ne,  span2,  salida,  i,  
+            salidan,  x,  min,  mj,  Dmj_aux,  divs,  divlist;
+
+    rho2 := MultiplicityOfNumericalSemigroup(NS);
+    fr := FrobeniusNumberOfNumericalSemigroup(NS);
+    gens := MinimalGeneratingSystemOfNumericalSemigroup(NS);
+    el := FirstElementsOfNumericalSemigroup(r,NS);
+    elts := el{[2..r]};
+    elts0 := Union([0],elts);
+    elts := Intersection(elts,gens); # as the configuration is computed recursively, it suffices to work with generators
+
+    ne := gens[Length(gens)];
+
+    #####################
+    ## computes the union of the divisors of the elements in conf that are greater than m
+    span2 := function(conf)
+      local   fe,  u,  i;
+
+      u := [];
+      for i in [1..Length(conf)] do
+        u := Union(u,Filtered(conf[i]-elts0,n -> n>=m));
+      od;
+      return u;
+    end;
+
+
+    if r=0 then 
+      return [[]]; 
+    fi;
+    salida := [[m]];
+    for i in [2..r] do
+      salidan := [];
+      for x in salida do
+        min := Minimum(x[Length(x)]+rho2,m+el[i]);
+        divlist := span2(x);
+
+        for mj in [x[Length(x)]+1..min] do 
+          Dmj_aux := Set(mj - elts);#strict divisors of mj among which are those greater than m 
+          divs := Intersection(Dmj_aux,[m..mj-rho2]);
+
+          if IsSubset(divlist, divs) then
+            Append(salidan,[Difference(Union(x,[mj]),divs)]);
+
+            if mj > m + ne then #This ensures that the configurations constructed have different shadows
+              break;
+            fi;
+          fi;
+        od;  
+      od;
+      salida := salidan;
+    od;     
+    return salida;
+  end;
+  ###########################################################################
+  ##################### end of local functions
+  ###########################################################################
+
+  LIST := generators_for_lists_for_Feng_Rao();
+  Info(InfoNumSgps,3, "The possible configurations have been computed: ",Length(LIST),"\n");
+
+  RES := [];
+  numbers := [];
+
+  for M in LIST do
+    divs := span(M);
+    AddSet(numbers,Length(divs));
+  od;
+  return numbers[1];
+end);
+#################################################
+#####################################################################
+InstallMethod(FengRaoNumber,"Feng-Rao number for a numerical semigroup",
+        [IsPosInt,IsNumericalSemigroup],
+  function(r,NS)
+  return FengRaoNumber(NS,r);
+end);

@@ -424,4 +424,27 @@ DeclareGlobalFunction("MonotoneCatenaryDegreeOfNumericalSemigroup");
 
 
 
+###########################################################################
+#####################################################################
+##
+#O FengRaoDistance(NS,r,m)
+##
+#Computes the r-th Feng-Rao distance of the element m in the numerical semigroup NS
+#function originally implemented by Benjamin Heredia
+#Based on the paper...
+##
+#####################################################################
+DeclareOperation("FengRaoDistance",[IsNumericalSemigroup,IsPosInt,IsPosInt]);
 
+###########################################################################
+###########################################################################
+##
+#O FengRaoNumber(NS,r)
+#O FengRaoNumber(r,NS)
+# returns the r-Feng Rao number of a numerical semigroup NS
+########
+# based on [DelgadoFarranGarcia-SanchezLlena2013MC]
+#################################################
+#####################################################################
+DeclareOperation("FengRaoNumber",[IsNumericalSemigroup,IsPosInt]);
+DeclareOperation("FengRaoNumber",[IsPosInt,IsNumericalSemigroup]);
