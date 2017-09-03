@@ -887,3 +887,45 @@ gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
 
 
 </Section>
+
+<Section>
+    <Heading>
+        Feng-Rao distances and numbers 
+    </Heading>
+
+	Given a numerical semigroup <M>S</M> ...
+
+    <ManSection>
+        <Func Arg="S,r" Name="FengRaoDistance"></Func>
+        <Description>
+	    <A>S</A> is a numerical semigroup, <A>r</A> and <A>m</A> integers.
+
+           The output is the <A>r</A>-th Feng-Rao distance of the element <A>m</A> in the numerical semigroup <A>S</A>.
+
+            <Example><![CDATA[
+gap> S := NumericalSemigroup(7,9,17);;     
+gap> FengRaoDistance(S,6,100);        
+86
+]]></Example>
+        </Description>
+    </ManSection>
+
+    <ManSection>
+        <Oper Arg="S,r" Name="FengRaoNumber"/>
+        <Description>
+	    <A>S</A> is a numerical semigroup and <A>r</A> is an integer.
+
+           The output is the <A>r</A>-th Feng-Rao number of the numerical semigroup <A>S</A>.
+
+            <Example><![CDATA[
+gap> S := NumericalSemigroup(7,8,17);;
+gap> FengRaoNumber(S,209);                   
+224
+gap> FengRaoNumber(209,S); 
+224
+]]></Example>
+        </Description>
+    </ManSection>
+
+
+</Section>
