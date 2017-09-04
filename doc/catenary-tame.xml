@@ -866,7 +866,9 @@ gap> HomogeneousCatenaryDegreeOfNumericalSemigroup(s);
         Divisors, posets
     </Heading>
 
-	Given a numerical semigroup <M>S</M> and two integers <M>a,b</M>, we write <M>a\le_S b</M> if <M>b-a\in S</M>. We also say that <M>a</M> divides <M>b</M> (with respect to <M>S</M>). The semigroup <M>S</M> with this binary relation is a poset.
+	Given a numerical semigroup <M>S</M> and two integers <M>a,b</M>, we write <M>a\le_S b</M> if <M>b-a\in S</M>. We also say that <M>a</M> divides <M>b</M> (with respect to <M>S</M>). The semigroup <M>S</M> with this binary relation is a poset.<P/>
+
+  The set of divisors of <M>n</M> in <M>S</M> will be denoted by <M>\mathrm{D}_S(n)</M>.  If we are given <M>n_1,\ldots,n_r\in S</M>, the set of the divisors of these elements is <M>\mathrm{D}(n_1,\ldots, n_r)= \bigcup_{i=1}^r \mathrm{D}(n_i)</M>.
 
     <ManSection>
         <Func Arg="S,n" Name="MoebiusFunctionAssociatedToNumericalSemigroup"></Func>
@@ -886,14 +888,34 @@ gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
     </ManSection>
 
 
+    <ManSection>
+        <Oper Arg="S,n" Name="DivisorsOfElementInNumericalSemigroup"/>
+        <Description>
+	    <A>S</A> is a numerical semigroup and <A>n</A> is an integer. The arguments can also be given as <A>n, S</A>.
+
+      The output is the set of divisors of <A>n</A> in <A>S</A>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DivisorsOfElementInNumericalSemigroup(s,20);
+[ 0, 5, 10, 15, 20 ]
+gap> DivisorsOfElementInNumericalSemigroup(20,s);
+[ 0, 5, 10, 15, 20 ]
+              ]]></Example>
+        </Description>
+    </ManSection>
+
+
 </Section>
 
 <Section>
     <Heading>
-        Feng-Rao distances and numbers 
+        Feng-Rao distances and numbers
     </Heading>
 
-	Given a numerical semigroup <M>S</M> ...
+	Let <M>S</M> be a numerical semigroup and let <M>n\in S</M>.  The Feng-Rao distance of <M>n</M> is then defined as <M>\delta_S(n)=\min\{ \#\mathrm{D}(x)\mid n\le x,\ x\in S\}</M>.<P/>
+
+  The <M>r</M>th generalized distance is <M>\delta_S^r(n)=\{ \#\mathrm{D}(n_1,\ldots,n_r) \mid n\le n_1 &lt; \cdots &lt; n_r,\ n_i\in S\}</M>.
 
     <ManSection>
         <Func Arg="S,r" Name="FengRaoDistance"></Func>
@@ -903,8 +925,8 @@ gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
            The output is the <A>r</A>-th Feng-Rao distance of the element <A>m</A> in the numerical semigroup <A>S</A>.
 
             <Example><![CDATA[
-gap> S := NumericalSemigroup(7,9,17);;     
-gap> FengRaoDistance(S,6,100);        
+gap> S := NumericalSemigroup(7,9,17);;
+gap> FengRaoDistance(S,6,100);
 86
 ]]></Example>
         </Description>
@@ -919,9 +941,9 @@ gap> FengRaoDistance(S,6,100);
 
             <Example><![CDATA[
 gap> S := NumericalSemigroup(7,8,17);;
-gap> FengRaoNumber(S,209);                   
+gap> FengRaoNumber(S,209);
 224
-gap> FengRaoNumber(209,S); 
+gap> FengRaoNumber(209,S);
 224
 ]]></Example>
         </Description>
