@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Appendix><Heading>Contributions</Heading>
 
+Sebastian Gutsche helped in the implementation of inference of properties from already known properties. Max Horn adapted the definition of the objects numerical and affine semigroups; the behave like lists of integers or lists of lists of integers (affine case), and one can intersect numerical semigroups with lists of integers, or affine semigroup with cartesian products of lists of integers. 
 
 <Section><Heading>Functions implemented by A. Sammartano</Heading>
 

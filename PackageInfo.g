@@ -56,17 +56,26 @@ rec(
   FirstNames    := "Benjamín Alarcón",
   IsAuthor      := false,
   IsMaintainer  := false,
-  PostalAddress := "No address known"
+  WWWHome := "https://github.com/baheredia"
 ),
 
 
 rec(
-  LastName      := "Heredia",
-  FirstNames    := "Benjamín Alarcón",
+  LastName      := "García-García",
+  FirstNames    := "Juan Ignacio",
   IsAuthor      := false,
   IsMaintainer  := false,
   WWWHome := "https://directorio.uca.es/cau/directorio.do?persona=11122"
 ),
+
+rec(
+  LastName      := "Gutsche",
+  FirstNames    := "Sebastian",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  WWWHome := "http://wwwb.math.rwth-aachen.de/~gutsche/"
+),
+
 
 rec(
   LastName      := "Herrera-Poyatos",
@@ -75,6 +84,15 @@ rec(
   IsMaintainer  := false,
   WWWHome       := "https://github.com/andreshp"
 ),
+
+rec(
+  LastName      := "Horn",
+  FirstNames    := "Max",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  WWWHome       := "http://www.quendi.de/en/math.html"
+),
+
 
 rec(
   LastName      := "Moreno Ávila",
