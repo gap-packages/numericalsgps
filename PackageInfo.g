@@ -59,6 +59,15 @@ rec(
   PostalAddress := "No address known"
 ),
 
+
+rec(
+  LastName      := "Heredia",
+  FirstNames    := "Benjamín Alarcón",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  WWWHome := "https://directorio.uca.es/cau/directorio.do?persona=11122"
+),
+
 rec(
   LastName      := "Herrera-Poyatos",
   FirstNames    := "Andrés",
