@@ -213,13 +213,13 @@ IsNumericalSemigroup);
 
 #############################################################################
 ##
-#F NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
+#F NumericalSemigroupsPlanarSingularityWithFrobeniusNumber
 ##
 ## returns the set of numerical semigroups associated to irreducible
 ## planar curves with Frobenius number given, as explained in [AGS13]
 ##
 #############################################################################
-DeclareGlobalFunction("NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber");
+DeclareGlobalFunction("NumericalSemigroupsPlanarSingularityWithFrobeniusNumber");
 
 #############################################################################
 ##

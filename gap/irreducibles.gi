@@ -773,13 +773,13 @@ InstallTrueMethod(IsTelescopicNumericalSemigroup, IsNumericalSemigroupAssociated
 
 #############################################################################
 ##
-#F NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
+#F NumericalSemigroupsPlanarSingularityWithFrobeniusNumber
 ##
 ## returns the set of numerical semigroups associated to irreducible
 ## planar curves with Frobenius number given, as explained in [AGS13]
 ##
 #############################################################################
-InstallGlobalFunction(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber, function(f)
+InstallGlobalFunction(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber, function(f)
 
     local pcs, out, i, s;
 
