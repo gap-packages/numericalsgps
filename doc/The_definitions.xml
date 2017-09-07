@@ -147,20 +147,6 @@ gap> RthElementOfNumericalSemigroup(S,53);
 					</Description>
 </ManSection>
 
-<!--				<ManSection>
-					<Oper Arg="S,r"  Name="DivisorsOfElementInNumericalSemigroup"/>
-					<Description>
-						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns a list <C>L</C> of integers such that <M>x \in L</M> if and only if <M>r - x</M> belongs to <A>S</A>, that is, it returns <M>S\cap(n-S)</M>
-						<Example><![CDATA[
-gap> S := NumericalSemigroup(7,8,17);;
-gap> DivisorsOfElementInNumericalSemigroup(50,S);
-[ 0, 7, 8, 14, 15, 16, 17, 21, 22, 25, 28, 29, 33, 34, 35, 36, 42, 43, 50 ]
-gap> DivisorsOfElementInNumericalSemigroup(S,50);
-[ 0, 7, 8, 14, 15, 16, 17, 21, 22, 25, 28, 29, 33, 34, 35, 36, 42, 43, 50 ]
-]]></Example>
-					</Description>
-</ManSection> -->
-
 
                 <ManSection>
                     <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to element"/>
@@ -177,7 +163,7 @@ gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
 gap> AperyList(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
-g]]></Example>
+]]></Example>
                     </Description>
                 </ManSection>
                 <ManSection>

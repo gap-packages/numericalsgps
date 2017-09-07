@@ -231,9 +231,9 @@ gap> mx:=MaximalElementsOfGoodSemigroup(g);
        <Description>
         <A>S</A> is a good semigroup. The output is the set of elements nonzero maximal elements that cannot be expressed as a sum of two nonzero maximal elements of the good semigroup.
        <Example><![CDATA[
- gap> G:=[[4,3],[7,13],[11,17]];;
- gap> g:=GoodSemigroup(G,[11,17]);;
- gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
+gap> G:=[[4,3],[7,13],[11,17]];;
+gap> g:=GoodSemigroup(G,[11,17]);;
+gap> IrreducibleMaximalElementsOfGoodSemigroup(g);
 [ [ 4, 3 ], [ 7, 13 ] ]
 ]]></Example>
       </Description>

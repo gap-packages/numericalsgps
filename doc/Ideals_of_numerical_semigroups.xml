@@ -860,26 +860,26 @@ true
                           <Cite Key="BF06"></Cite>.
 
                           <Example><![CDATA[
-  gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-  gap> IsGradedAssociatedRingNumericalSemigroupCM(s);
-  false
-  gap> MicroInvariantsOfNumericalSemigroup(s);
-  [ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
-    5, 4, 3, 3, 2 ]
-  gap> List(AperyListOfNumericalSemigroupWRTElement(s,30),
-  > w->MaximumDegreeOfElementWRTNumericalSemigroup (w,s));
-  [ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,
-    5, 4, 3, 1, 2 ]
-  gap> last=last2;
-  false
-  gap> s:=NumericalSemigroup(4,6,11);;
-  gap> IsGradedAssociatedRingNumericalSemigroupCM(s);
-  true
-  gap> MicroInvariantsOfNumericalSemigroup(s);
-  [ 0, 2, 1, 1 ]
-  gap> List(AperyListOfNumericalSemigroupWRTElement(s,4),
-  > w->MaximumDegreeOfElementWRTNumericalSemigroup(w,s));
-  [ 0, 2, 1, 1 ]
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsGradedAssociatedRingNumericalSemigroupCM(s);
+false
+gap> MicroInvariantsOfNumericalSemigroup(s);
+[ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
+  5, 4, 3, 3, 2 ]
+gap> List(AperyListOfNumericalSemigroupWRTElement(s,30),
+> w->MaximumDegreeOfElementWRTNumericalSemigroup (w,s));
+[ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,
+  5, 4, 3, 1, 2 ]
+gap> last=last2;
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsGradedAssociatedRingNumericalSemigroupCM(s);
+true
+gap> MicroInvariantsOfNumericalSemigroup(s);
+[ 0, 2, 1, 1 ]
+gap> List(AperyListOfNumericalSemigroupWRTElement(s,4),
+> w->MaximumDegreeOfElementWRTNumericalSemigroup(w,s));
+[ 0, 2, 1, 1 ]
   ]]></Example>
                       </Description>
                   </ManSection>

@@ -134,14 +134,12 @@ true
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="f" Name="NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber"></Func>
+                  <Func Arg="f" Name="NumericalSemigroupsPlanarSingularityWithFrobeniusNumber"></Func>
                     <Description>
                         <A>f</A> is an integer greater than or equal to -1. The output is the set of all
                         numerical semigroups associated to irreducible planar curves singularities with frobenius number <A>f</A>.
                         <Example><![CDATA[
-gap> Length(
-> NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
-> (57));
+gap> Length(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber(57));
 7
 ]]></Example>
                     </Description>
@@ -161,12 +159,12 @@ gap> Length(
 
 
                                         <Example><![CDATA[
-                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-                gap> IsAperySetGammaRectangular(s);
-                false
-                gap> s:=NumericalSemigroup(4,6,11);;
-                gap> IsAperySetGammaRectangular(s);
-                true
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetGammaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetGammaRectangular(s);
+true
                 ]]></Example>
                                     </Description>
                                 </ManSection>
@@ -183,12 +181,12 @@ gap> Length(
 
 
                                         <Example><![CDATA[
-                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-                gap> IsAperySetBetaRectangular(s);
-                false
-                gap> s:=NumericalSemigroup(4,6,11);;
-                gap> IsAperySetBetaRectangular(s);
-                true
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetBetaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetBetaRectangular(s);
+true
                 ]]></Example>
                                     </Description>
                                 </ManSection>
@@ -205,13 +203,13 @@ gap> Length(
 
 
                                         <Example><![CDATA[
-                gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-                gap> IsAperySetAlphaRectangular(s);
-                false
-                gap> s:=NumericalSemigroup(4,6,11);;
-                gap> IsAperySetAlphaRectangular(s);
-                true
-                ]]></Example>
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetAlphaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetAlphaRectangular(s);
+true
+]]></Example>
                                     </Description>
                 </ManSection>
 

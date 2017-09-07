@@ -370,11 +370,11 @@ gap> GeneratorsKahlerDifferentials([t^3,t^4]);
 		                <M>R</M> as above with <M>v(R)=S</M>, <M>R</M> is a semigroup ring. See <Cite Key="VMic02"></Cite> for details.
 
 		                       <Example><![CDATA[
-		gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,7));
-		true
-		gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));
-		false
-		]]></Example>
+gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,7));
+true
+gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));
+false
+]]></Example>
 		                     </Description>
 		                </ManSection>
 
