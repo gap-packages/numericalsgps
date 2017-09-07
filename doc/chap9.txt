@@ -75,13 +75,12 @@
   [33X[0;0YComputes the factorizations of all the elements in [3Xl[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(10,11,13);[128X[104X
-    [4X[28X    <Numerical semigroup with 3 generators>[128X[104X
-    [4X[28X    gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);[128X[104X
-    [4X[28X    [ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],[128X[104X
-    [4X[28X      [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],[128X[104X
-    [4X[28X      [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ][128X[104X
-    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XFactorizationsElementListWRTNumericalSemigroup([100,101,103],s);[127X[104X
+    [4X[28X[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],[128X[104X
+    [4X[28X  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],[128X[104X
+    [4X[28X  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ][128X[104X
     [4X[28X    [128X[104X
   [4X[32X[104X
   
@@ -233,9 +232,9 @@
   elements in [3XS[103X; see [GGMFVT15].[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
-    [4X[28X    gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);[128X[104X
-    [4X[28X    60[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetPeriodicityBoundForNumericalSemigroup(s);[127X[104X
+    [4X[28X60[128X[104X
     [4X[28X    [128X[104X
   [4X[32X[104X
   
@@ -249,9 +248,9 @@
   elements in [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
-    [4X[28X    gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);[128X[104X
-    [4X[28X    21[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetPeriodicityStartForNumericalSemigroup(s);[127X[104X
+    [4X[28X21[128X[104X
     [4X[28X    [128X[104X
   [4X[32X[104X
   
@@ -265,11 +264,11 @@
   integer is not in [3XS[103X, the corresponding Delta set is empty.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
-    [4X[28X    gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);[128X[104X
-    [4X[28X    [ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],[128X[104X
-    [4X[28X      [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],[128X[104X
-    [4X[28X      [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetListUpToElementWRTNumericalSemigroup(31,s);[127X[104X
+    [4X[28X[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],[128X[104X
+    [4X[28X  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],[128X[104X
+    [4X[28X  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ][128X[104X
     [4X[28X    [128X[104X
   [4X[32X[104X
   
@@ -283,9 +282,9 @@
   including [3Xn[103X, using a ring buffer to conserve memory.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
-    [4X[28X    gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);[128X[104X
-    [4X[28X    [ 2 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);[127X[104X
+    [4X[28X[ 2 ][128X[104X
     [4X[28X    [128X[104X
   [4X[32X[104X
   
@@ -298,9 +297,9 @@
   [33X[0;0YComputes the Delta set of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(5,7,11);;[128X[104X
-    [4X[28X    gap> DeltaSetOfNumericalSemigroup(s);[128X[104X
-    [4X[28X    [ 2 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSetOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 2 ][128X[104X
     [4X[28X    [128X[104X
   [4X[32X[104X
   
@@ -657,23 +656,22 @@
   [33X[0;0YComputes the omega-values of all the elements in [3Xl[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X    gap> s:=NumericalSemigroup(10,11,13);;[128X[104X
-    [4X[28X    gap> l:=FirstElementsOfNumericalSemigroup(100,s);;[128X[104X
-    [4X[28X    gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;[128X[104X
-    [4X[28X    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
-    [4X[28X      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
-    [4X[28X      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
-    [4X[28X      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
-    [4X[28X      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
-    [4X[28X    218[128X[104X
-    [4X[28X    gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;[128X[104X
-    [4X[28X    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
-    [4X[28X      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
-    [4X[28X      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
-    [4X[28X      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
-    [4X[28X      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
-    [4X[28X    10[128X[104X
-    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,13);;[127X[104X
+    [4X[25Xgap>[125X [27Xl:=FirstElementsOfNumericalSemigroup(100,s);;[127X[104X
+    [4X[25Xgap>[125X [27XList(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;[127X[104X
+    [4X[28X[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
+    [4X[28X  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
+    [4X[28X  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
+    [4X[28X  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
+    [4X[28X  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
+    [4X[28X218[128X[104X
+    [4X[25Xgap>[125X [27XOmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;[127X[104X
+    [4X[28X[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,[128X[104X
+    [4X[28X  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,[128X[104X
+    [4X[28X  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,[128X[104X
+    [4X[28X  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,[128X[104X
+    [4X[28X  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ][128X[104X
+    [4X[28X10[128X[104X
   [4X[32X[104X
   
   [1X9.4-3 OmegaPrimalityOfNumericalSemigroup[101X
@@ -780,6 +778,10 @@
   S[122X.  We  also  say that [22Xa[122X divides [22Xb[122X (with respect to [22XS[122X). The semigroup [22XS[122X with
   this binary relation is a poset.[133X
   
+  [33X[0;0YThe  set  of  divisors  of [22Xn[122X in [22XS[122X will be denoted by [22XmathrmD_S(n)[122X. If we are
+  given  [22Xn_1,...,n_r∈  S[122X,  the  set  of  the  divisors  of  these  elements is
+  [22XmathrmD(n_1,..., n_r)= ⋃_i=1^r mathrmD(n_i)[122X.[133X
+  
   [1X9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup[101X
   
   [29X[2XMoebiusFunctionAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function
@@ -795,5 +797,58 @@
     [4X[28X2[128X[104X
     [4X[25Xgap>[125X [27XMoebiusFunctionAssociatedToNumericalSemigroup(s,34);[127X[104X
     [4X[28X25[128X[104X
+  [4X[32X[104X
+  
+  [1X9.6-2 DivisorsOfElementInNumericalSemigroup[101X
+  
+  [29X[2XDivisorsOfElementInNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X is an integer. The arguments can also be
+  given as [3Xn, S[103X. The output is the set of divisors of [3Xn[103X in [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XDivisorsOfElementInNumericalSemigroup(s,20);[127X[104X
+    [4X[28X[ 0, 5, 10, 15, 20 ][128X[104X
+    [4X[25Xgap>[125X [27XDivisorsOfElementInNumericalSemigroup(20,s);[127X[104X
+    [4X[28X[ 0, 5, 10, 15, 20 ][128X[104X
+    [4X[28X              [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X9.7 [33X[0;0YFeng-Rao distances and numbers[133X[101X
+  
+  [33X[0;0YLet  [22XS[122X  be a numerical semigroup and let [22Xn∈ S[122X. The Feng-Rao distance of [22Xn[122X is
+  then defined as [22Xδ_S(n)=min{ #mathrmD(x)∣ nle x, x∈ S}[122X.[133X
+  
+  [33X[0;0YThe [22Xr[122Xth generalized distance is [22Xδ_S^r(n)={ #mathrmD(n_1,...,n_r) ∣ nle n_1 <
+  ⋯ < n_r, n_i∈ S}[122X.[133X
+  
+  [1X9.7-1 FengRaoDistance[101X
+  
+  [29X[2XFengRaoDistance[102X( [3XS[103X, [3Xr[103X ) [32X function
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup,  [3Xr[103X  and  [3Xm[103X  integers. The output is the [3Xr[103X-th
+  Feng-Rao distance of the element [3Xm[103X in the numerical semigroup [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS := NumericalSemigroup(7,9,17);;[127X[104X
+    [4X[25Xgap>[125X [27XFengRaoDistance(S,6,100);[127X[104X
+    [4X[28X86[128X[104X
+  [4X[32X[104X
+  
+  [1X9.7-2 FengRaoNumber[101X
+  
+  [29X[2XFengRaoNumber[102X( [3XS[103X, [3Xr[103X ) [32X operation
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xr[103X is an integer. The output is the [3Xr[103X-th
+  Feng-Rao number of the numerical semigroup [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS := NumericalSemigroup(7,8,17);;[127X[104X
+    [4X[25Xgap>[125X [27XFengRaoNumber(S,209);[127X[104X
+    [4X[28X224[128X[104X
+    [4X[25Xgap>[125X [27XFengRaoNumber(209,S);[127X[104X
+    [4X[28X224[128X[104X
   [4X[32X[104X
   

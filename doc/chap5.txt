@@ -61,18 +61,18 @@
   (which is a numerical semigroup).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> S := NumericalSemigroup("modular", 5,53);[128X[104X
-    [4X[28X      <Modular numerical semigroup satisfying 5x mod 53 <= x >[128X[104X
-    [4X[28X      gap> T := NumericalSemigroup(2,17);[128X[104X
-    [4X[28X      <Numerical semigroup with 2 generators>[128X[104X
-    [4X[28X      gap> SmallElements(S);[128X[104X
-    [4X[28X      [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
-    [4X[28X      gap> SmallElements(T);[128X[104X
-    [4X[28X      [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ][128X[104X
-    [4X[28X      gap> IntersectionOfNumericalSemigroups(S,T);[128X[104X
-    [4X[28X      <Numerical semigroup>[128X[104X
-    [4X[28X      gap> SmallElements(last);[128X[104X
-    [4X[28X      [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
+    [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X
+    [4X[28X<Modular numerical semigroup satisfying 5x mod 53 <= x >[128X[104X
+    [4X[25Xgap>[125X [27XT := NumericalSemigroup(2,17);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(S);[127X[104X
+    [4X[28X[ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(T);[127X[104X
+    [4X[28X[ 0, 2, 4, 6, 8, 10, 12, 14, 16 ][128X[104X
+    [4X[25Xgap>[125X [27XIntersectionOfNumericalSemigroups(S,T);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(last);[127X[104X
+    [4X[28X[ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ][128X[104X
   [4X[32X[104X
   
   [1X5.2-2 QuotientOfNumericalSemigroup[101X
@@ -86,19 +86,19 @@
   n)[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,29);[128X[104X
-    [4X[28X      <Numerical semigroup with 2 generators>[128X[104X
-    [4X[28X      gap> SmallElements(s);[128X[104X
-    [4X[28X      [ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,[128X[104X
-    [4X[28X      39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ][128X[104X
-    [4X[28X      gap> t:=QuotientOfNumericalSemigroup(s,7);[128X[104X
-    [4X[28X      <Numerical semigroup>[128X[104X
-    [4X[28X      gap> SmallElements(t);[128X[104X
-    [4X[28X      [ 0, 3, 5, 6, 8 ][128X[104X
-    [4X[28X      gap> u := s / 7;[128X[104X
-    [4X[28X      <Numerical semigroup>[128X[104X
-    [4X[28X      gap> SmallElements(u);[128X[104X
-    [4X[28X      [ 0, 3, 5, 6, 8 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,29);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(s);[127X[104X
+    [4X[28X[ 0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 30, 32, 33, 35, 36, 38,[128X[104X
+    [4X[28X39, 41, 42, 44, 45, 47, 48, 50, 51, 53, 54, 56 ][128X[104X
+    [4X[25Xgap>[125X [27Xt:=QuotientOfNumericalSemigroup(s,7);[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(t);[127X[104X
+    [4X[28X[ 0, 3, 5, 6, 8 ][128X[104X
+    [4X[25Xgap>[125X [27Xu := s / 7;[127X[104X
+    [4X[28X<Numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(u);[127X[104X
+    [4X[28X[ 0, 3, 5, 6, 8 ][128X[104X
   [4X[32X[104X
   
   [1X5.2-3 MultipleOfNumericalSemigroup[101X
@@ -110,10 +110,10 @@
   warning is displayed.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> N:=NumericalSemigroup(1);;[128X[104X
-    [4X[28X      gap> s:=MultipleOfNumericalSemigroup(N,4,20);;[128X[104X
-    [4X[28X      gap> SmallElements(s);[128X[104X
-    [4X[28X      [ 0, 4, 8, 12, 16, 20 ][128X[104X
+    [4X[25Xgap>[125X [27XN:=NumericalSemigroup(1);;[127X[104X
+    [4X[25Xgap>[125X [27Xs:=MultipleOfNumericalSemigroup(N,4,20);;[127X[104X
+    [4X[25Xgap>[125X [27XSmallElements(s);[127X[104X
+    [4X[28X[ 0, 4, 8, 12, 16, 20 ][128X[104X
   [4X[32X[104X
   
   [1X5.2-4 Difference[101X
@@ -144,14 +144,14 @@
   [DS13]; now the condition imposed is [22XE+E+b⊆ S[122X). Computes [22X2S∪ (2E+b)[122X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);[128X[104X
-    [4X[28X      <Numerical semigroup with 3 generators>[128X[104X
-    [4X[28X      gap> e:=6+s;[128X[104X
-    [4X[28X      <Ideal of numerical semigroup>[128X[104X
-    [4X[28X      gap> ndup:=NumericalDuplication(s,e,3);[128X[104X
-    [4X[28X      <Numerical semigroup with 4 generators>[128X[104X
-    [4X[28X      gap> SmallElements(ndup);[128X[104X
-    [4X[28X      [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xe:=6+s;[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xndup:=NumericalDuplication(s,e,3);[127X[104X
+    [4X[28X<Numerical semigroup with 4 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(ndup);[127X[104X
+    [4X[28X[ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ][128X[104X
   [4X[32X[104X
   
   [1X5.2-6 InductiveNumericalSemigroup[101X
@@ -163,9 +163,9 @@
   {a[i]b[i],a[i]b[i]+1,->}[122X, and returns [22XS_k[122X, with [22Xk[122X the length of [3Xa[103X and [3Xb[103X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;[128X[104X
-    [4X[28X      gap> SmallElements(s);[128X[104X
-    [4X[28X      [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=InductiveNumericalSemigroup([4,2],[5,23]);;[127X[104X
+    [4X[25Xgap>[125X [27XSmallElements(s);[127X[104X
+    [4X[28X[ 0, 8, 16, 24, 32, 40, 42, 44, 46 ][128X[104X
   [4X[32X[104X
   
   
@@ -255,7 +255,7 @@
   [1X5.6  [33X[0;0YConstructing  the  set  of  numerical  semigroups  with  a given set of[101X
   [1Xpseudo-Frobenius numbers[133X[101X
   
-  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-15[114X).[133X
+  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-16[114X).[133X
   
   [33X[0;0YThese procedures are described in [DGSRP16].[133X
   

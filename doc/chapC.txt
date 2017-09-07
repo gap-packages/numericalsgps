@@ -1,6 +1,13 @@
   
   [1XC [33X[0;0YContributions[133X[101X
   
+  [33X[0;0YSebastian  Gutsche  helped  in the implementation of inference of properties
+  from  already  known  properties.  Max  Horn  adapted  the definition of the
+  objects  numerical  and affine semigroups; the behave like lists of integers
+  or lists of lists of integers (affine case), and one can intersect numerical
+  semigroups  with  lists  of  integers,  or  affine  semigroup with cartesian
+  products of lists of integers.[133X
+  
   
   [1XC.1 [33X[0;0YFunctions implemented by A. Sammartano[133X[101X
   
@@ -125,4 +132,18 @@
   [33X[0;0Y[2XIsSelfReciprocalUnivariatePolynomial[102X ([14X10.1-9[114X) and[133X
   
   [33X[0;0Y[2XIsKroneckerPolynomial[102X ([14X10.1-7[114X).[133X
+  
+  
+  [1XC.8 [33X[0;0YFunctions implemented by Benjamin Heredia[133X[101X
+  
+  [33X[0;0YBenjamin Heredia implemented a preliminary version of[133X
+  
+  [33X[0;0Y[2XFengRaoDistance[102X ([14X9.7-1[114X).[133X
+  
+  
+  [1XC.9 [33X[0;0YFunctions implemented by Juan Ignacio García-García[133X[101X
+  
+  [33X[0;0YJuan Ignacio implemented a preliminary version of[133X
+  
+  [33X[0;0Y[2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-1[114X).[133X
   

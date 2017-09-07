@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                               Version 1.0.1 dev
+                                 Version 1.1.0
   
   
                                  Manuel Delgado
@@ -52,10 +52,11 @@
   [33X[0;0YThe authors wish to thank J. I. García-García and Alfredo Sánchez-R. Navarro
   for  many  helpful  discussions  and  for  helping  in  the  programming  of
   preliminary  versions  of  some  functions,  and  also  to  C.  O'Neill,  A.
-  Sammartano   and  K.  Stokes  for  their  contributions  (see  Contributions
-  Chapter).  We  are  also in debt with S. Gutsche, M. Horn, H. Schönemann, C.
-  Söeger  and  M. Barakat for their fruitful advices concerning 4ti2Interface,
-  SingularInterface, Singular, Normaliz, NormalizInterface and GradedModules.[133X
+  Sammartano,  I.  Ojeda, C. M. Moreno Ávila, A. Herrera-Poyatos and K. Stokes
+  for  their  contributions  (see  Contributions Chapter). We are also in debt
+  with  S. Gutsche, M. Horn, H. Schönemann, C. Söeger and M. Barakat for their
+  fruitful  advices  concerning  4ti2Interface,  SingularInterface,  Singular,
+  Normaliz, NormalizInterface and GradedModules.[133X
   
   [33X[0;0YThe  first  and second authors warmly thank María Burgos for her support and
   help.[133X
@@ -73,10 +74,14 @@
   funded  by  Ministerio de Economía y Competitividad and the Fondo Europeo de
   Desarrollo Regional FEDER.[133X
   
-  [33X[0;0YBoth    authors    want    to    acknowledge   partial   support   by   CMUP
+  [33X[0;0YBoth   maintainers   want   to   acknowledge   partial   support   by   CMUP
   (UID/MAT/00144/2013),  which is funded by FCT (Portugal) with national (MEC)
   and  European  structural  funds  through  the  programs  FEDER,  under  the
   partnership agreement PT2020.[133X
+  
+  [33X[0;0YBoth maintainers are also supported by the project MTM2014-55367-P, which is
+  funded  by  Ministerio  de  Economía  y  Competitividad and Fondo Europeo de
+  Desarrollo Regional FEDER.[133X
   
   [33X[0;0YThe  maintainers  want  to  thank the organizers of [10XGAPDays[110X in their several
   editions.[133X
@@ -138,26 +143,27 @@
       3.1-3 EmbeddingDimension
       3.1-4 SmallElements
       3.1-5 FirstElementsOfNumericalSemigroup
-      3.1-6 AperyList
+      3.1-6 RthElementOfNumericalSemigroup
       3.1-7 AperyList
       3.1-8 AperyList
-      3.1-9 AperyListOfNumericalSemigroupAsGraph
-      3.1-10 KunzCoordinatesOfNumericalSemigroup
-      3.1-11 KunzPolytope
-      3.1-12 CocycleOfNumericalSemigroupWRTElement
-      3.1-13 FrobeniusNumber
-      3.1-14 Conductor
-      3.1-15 PseudoFrobeniusOfNumericalSemigroup
-      3.1-16 TypeOfNumericalSemigroup
-      3.1-17 Gaps
-      3.1-18 DesertsOfNumericalSemigroup
-      3.1-19 IsOrdinaryNumericalSemigroup
-      3.1-20 IsAcuteNumericalSemigroup
-      3.1-21 Holes
-      3.1-22 LatticePathAssociatedToNumericalSemigroup
-      3.1-23 Genus
-      3.1-24 FundamentalGaps
-      3.1-25 SpecialGaps
+      3.1-9 AperyList
+      3.1-10 AperyListOfNumericalSemigroupAsGraph
+      3.1-11 KunzCoordinatesOfNumericalSemigroup
+      3.1-12 KunzPolytope
+      3.1-13 CocycleOfNumericalSemigroupWRTElement
+      3.1-14 FrobeniusNumber
+      3.1-15 Conductor
+      3.1-16 PseudoFrobeniusOfNumericalSemigroup
+      3.1-17 TypeOfNumericalSemigroup
+      3.1-18 Gaps
+      3.1-19 DesertsOfNumericalSemigroup
+      3.1-20 IsOrdinaryNumericalSemigroup
+      3.1-21 IsAcuteNumericalSemigroup
+      3.1-22 Holes
+      3.1-23 LatticePathAssociatedToNumericalSemigroup
+      3.1-24 Genus
+      3.1-25 FundamentalGaps
+      3.1-26 SpecialGaps
     3.2 [33X[0;0YWilf's conjecture[133X
       3.2-1 WilfNumber
       3.2-2 EliahouNumber
@@ -216,7 +222,7 @@
       6.2-6 IsTelescopic
       6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber
       6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
-      6.2-9 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
+      6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber
       6.2-10 IsAperySetGammaRectangular
       6.2-11 IsAperySetBetaRectangular
       6.2-12 IsAperySetAlphaRectangular
@@ -348,6 +354,10 @@
       9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup
     9.6 [33X[0;0YDivisors, posets[133X
       9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup
+      9.6-2 DivisorsOfElementInNumericalSemigroup
+    9.7 [33X[0;0YFeng-Rao distances and numbers[133X
+      9.7-1 FengRaoDistance
+      9.7-2 FengRaoNumber
   10 [33X[0;0YPolynomials and numerical semigroups[133X
     10.1 [33X[0;0YGenerating functions or Hilbert series[133X
       10.1-1 NumericalSemigroupPolynomial
@@ -469,6 +479,8 @@
     C.5 [33X[0;0YFunctions implemented by A. Sánchez-R. Navarro[133X
     C.6 [33X[0;0YFunctions implemented by G. Zito[133X
     C.7 [33X[0;0YFunctions implemented by A. Herrera-Poyatos[133X
+    C.8 [33X[0;0YFunctions implemented by Benjamin Heredia[133X
+    C.9 [33X[0;0YFunctions implemented by Juan Ignacio García-García[133X
   
   
   [32X

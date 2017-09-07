@@ -883,26 +883,26 @@ true
 
 
 <div class="example"><pre>
-  gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-  gap&gt; IsGradedAssociatedRingNumericalSemigroupCM(s);
-  false
-  gap&gt; MicroInvariantsOfNumericalSemigroup(s);
-  [ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
-    5, 4, 3, 3, 2 ]
-  gap&gt; List(AperyListOfNumericalSemigroupWRTElement(s,30),
-  &gt; w-&gt;MaximumDegreeOfElementWRTNumericalSemigroup (w,s));
-  [ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,
-    5, 4, 3, 1, 2 ]
-  gap&gt; last=last2;
-  false
-  gap&gt; s:=NumericalSemigroup(4,6,11);;
-  gap&gt; IsGradedAssociatedRingNumericalSemigroupCM(s);
-  true
-  gap&gt; MicroInvariantsOfNumericalSemigroup(s);
-  [ 0, 2, 1, 1 ]
-  gap&gt; List(AperyListOfNumericalSemigroupWRTElement(s,4),
-  &gt; w-&gt;MaximumDegreeOfElementWRTNumericalSemigroup(w,s));
-  [ 0, 2, 1, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGradedAssociatedRingNumericalSemigroupCM(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MicroInvariantsOfNumericalSemigroup(s);</span>
+[ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
+  5, 4, 3, 3, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(AperyListOfNumericalSemigroupWRTElement(s,30),</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">w-&gt;MaximumDegreeOfElementWRTNumericalSemigroup (w,s));</span>
+[ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,
+  5, 4, 3, 1, 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">last=last2;</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGradedAssociatedRingNumericalSemigroupCM(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MicroInvariantsOfNumericalSemigroup(s);</span>
+[ 0, 2, 1, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(AperyListOfNumericalSemigroupWRTElement(s,4),</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">w-&gt;MaximumDegreeOfElementWRTNumericalSemigroup(w,s));</span>
+[ 0, 2, 1, 1 ]
   </pre></div>
 
 <p><a id="X782D557583CEDD04" name="X782D557583CEDD04"></a></p>

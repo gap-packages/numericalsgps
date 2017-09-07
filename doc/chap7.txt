@@ -762,26 +762,26 @@
   implementation of the algorithm given in [BF06].[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X  gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[128X[104X
-    [4X[28X  gap> IsGradedAssociatedRingNumericalSemigroupCM(s);[128X[104X
-    [4X[28X  false[128X[104X
-    [4X[28X  gap> MicroInvariantsOfNumericalSemigroup(s);[128X[104X
-    [4X[28X  [ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,[128X[104X
-    [4X[28X    5, 4, 3, 3, 2 ][128X[104X
-    [4X[28X  gap> List(AperyListOfNumericalSemigroupWRTElement(s,30),[128X[104X
-    [4X[28X  > w->MaximumDegreeOfElementWRTNumericalSemigroup (w,s));[128X[104X
-    [4X[28X  [ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,[128X[104X
-    [4X[28X    5, 4, 3, 1, 2 ][128X[104X
-    [4X[28X  gap> last=last2;[128X[104X
-    [4X[28X  false[128X[104X
-    [4X[28X  gap> s:=NumericalSemigroup(4,6,11);;[128X[104X
-    [4X[28X  gap> IsGradedAssociatedRingNumericalSemigroupCM(s);[128X[104X
-    [4X[28X  true[128X[104X
-    [4X[28X  gap> MicroInvariantsOfNumericalSemigroup(s);[128X[104X
-    [4X[28X  [ 0, 2, 1, 1 ][128X[104X
-    [4X[28X  gap> List(AperyListOfNumericalSemigroupWRTElement(s,4),[128X[104X
-    [4X[28X  > w->MaximumDegreeOfElementWRTNumericalSemigroup(w,s));[128X[104X
-    [4X[28X  [ 0, 2, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupCM(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XMicroInvariantsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,[128X[104X
+    [4X[28X  5, 4, 3, 3, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XList(AperyListOfNumericalSemigroupWRTElement(s,30),[127X[104X
+    [4X[25X>[125X [27Xw->MaximumDegreeOfElementWRTNumericalSemigroup (w,s));[127X[104X
+    [4X[28X[ 0, 1, 4, 1, 2, 1, 3, 1, 4, 3, 2, 3, 1, 1, 4, 3, 3, 1, 4, 1, 4, 3, 2, 4, 2,[128X[104X
+    [4X[28X  5, 4, 3, 1, 2 ][128X[104X
+    [4X[25Xgap>[125X [27Xlast=last2;[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGradedAssociatedRingNumericalSemigroupCM(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XMicroInvariantsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 0, 2, 1, 1 ][128X[104X
+    [4X[25Xgap>[125X [27XList(AperyListOfNumericalSemigroupWRTElement(s,4),[127X[104X
+    [4X[25X>[125X [27Xw->MaximumDegreeOfElementWRTNumericalSemigroup(w,s));[127X[104X
+    [4X[28X[ 0, 2, 1, 1 ][128X[104X
     [4X[28X  [128X[104X
   [4X[32X[104X
   

@@ -1,6 +1,6 @@
 name: NumericalSgps
-version: 1.0.1
-date: 05/06/2015
+version: 1.1.0
+date: 07/09/2017
 description: |
     A package for numerical semigroups
 
@@ -19,11 +19,15 @@ maintainers:
 
 contributors:
     - name: Benjamín Alarcón Heredia
-    - name: Juan Ignacio García García
+      url: https://github.com/baheredia
+    - name: Juan Ignacio García-García
+      url: https://directorio.uca.es/cau/directorio.do?persona=11122
     - name: Sebastian Gutsche
+      url: http://wwwb.math.rwth-aachen.de/~gutsche/
     - name: Andrés Herrera-Poyatos
       url: https://github.com/andreshp
     - name: Max Horn
+      url: http://www.quendi.de/en/math.html
     - name: Carlos Jesús Moreno Ávila
     - name: Ignacio Ojeda
       url: http://matematicas.unex.es/~ojedamc
@@ -44,13 +48,13 @@ suggested-pkgs:
       version: "1.2"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
 
-www: http://gap-packages.github.io/numericalsgps/
+www: https://gap-packages.github.io/numericalsgps
 readme: README
-packageinfo: http://gap-packages.github.io/numericalsgps/PackageInfo.g
+packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.0.1/numericalsgps-1.0.1.tar.gz
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.1.0/NumericalSgps-1.1.0.tar.gz
 
 abstract: |
     The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.

@@ -25,11 +25,11 @@
   [33X[0;0YThe algorithm implemented is described in [Ros96a] (see also [RGS99b]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);[128X[104X
-    [4X[28X      <Numerical semigroup with 3 generators>[128X[104X
-    [4X[28X      gap> MinimalPresentationOfNumericalSemigroup(s);[128X[104X
-    [4X[28X      [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
-    [4X[28X      [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);[127X[104X
+    [4X[28X<Numerical semigroup with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalPresentationOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
+    [4X[28X[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe first element in the list means that [22X1× 3+1× 7=2× 5[122X, and the others have
@@ -50,9 +50,9 @@
   semigroup [3XS[103X, as explained in [Ros96a].[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
-    [4X[28X      gap> GraphAssociatedToElementInNumericalSemigroup(10,s);[128X[104X
-    [4X[28X      [ [ 3, 5, 7 ], [ [ 3, 7 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XGraphAssociatedToElementInNumericalSemigroup(10,s);[127X[104X
+    [4X[28X[ [ 3, 5, 7 ], [ [ 3, 7 ] ] ][128X[104X
   [4X[32X[104X
   
   [1X4.1-3 BettiElementsOfNumericalSemigroup[101X
@@ -66,9 +66,9 @@
   nonconnected [GSO10].[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X      gap> s:=NumericalSemigroup(3,5,7);;[128X[104X
-    [4X[28X      gap> BettiElementsOfNumericalSemigroup(s);[128X[104X
-    [4X[28X      [ 10, 12, 14 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XBettiElementsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ 10, 12, 14 ][128X[104X
   [4X[32X[104X
   
   [1X4.1-4 PrimitiveElementsOfNumericalSemigroup[101X

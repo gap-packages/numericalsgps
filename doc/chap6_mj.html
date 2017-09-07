@@ -54,7 +54,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X830D0E0F7B8C6284">6.2-6 IsTelescopic</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84475353846384E8">6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X847CD0EF8452F771">6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85BD8C3680F22594">6.2-9 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8784D11578C912F2">6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80CAA1FA7F6FF4FD">6.2-10 IsAperySetGammaRectangular</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E6E262C7C421635">6.2-11 IsAperySetBetaRectangular</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86F52FB67F76D2CB">6.2-12 IsAperySetAlphaRectangular</a></span>
@@ -317,18 +317,16 @@ false
 true
 </pre></div>
 
-<p><a id="X85BD8C3680F22594" name="X85BD8C3680F22594"></a></p>
+<p><a id="X8784D11578C912F2" name="X8784D11578C912F2"></a></p>
 
-<h5>6.2-9 NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</h5>
+<h5>6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all numerical semigroups associated to irreducible planar curves singularities with frobenius number <var class="Arg">f</var>.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber</span>
-<span class="GAPprompt">&gt;</span> <span class="GAPinput">(57));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber(57));</span>
 7
 </pre></div>
 
@@ -343,12 +341,12 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-                gap&gt; IsAperySetGammaRectangular(s);
-                false
-                gap&gt; s:=NumericalSemigroup(4,6,11);;
-                gap&gt; IsAperySetGammaRectangular(s);
-                true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAperySetGammaRectangular(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAperySetGammaRectangular(s);</span>
+true
                 </pre></div>
 
 <p><a id="X7E6E262C7C421635" name="X7E6E262C7C421635"></a></p>
@@ -362,12 +360,12 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-                gap&gt; IsAperySetBetaRectangular(s);
-                false
-                gap&gt; s:=NumericalSemigroup(4,6,11);;
-                gap&gt; IsAperySetBetaRectangular(s);
-                true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAperySetBetaRectangular(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAperySetBetaRectangular(s);</span>
+true
                 </pre></div>
 
 <p><a id="X86F52FB67F76D2CB" name="X86F52FB67F76D2CB"></a></p>
@@ -381,13 +379,13 @@ true
 
 
 <div class="example"><pre>
-                gap&gt; s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-                gap&gt; IsAperySetAlphaRectangular(s);
-                false
-                gap&gt; s:=NumericalSemigroup(4,6,11);;
-                gap&gt; IsAperySetAlphaRectangular(s);
-                true
-                </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAperySetAlphaRectangular(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAperySetAlphaRectangular(s);</span>
+true
+</pre></div>
 
 <p><a id="X7998FF857F70C9A2" name="X7998FF857F70C9A2"></a></p>
 

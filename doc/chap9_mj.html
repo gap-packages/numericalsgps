@@ -109,6 +109,15 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X853930E97F7F8A43">9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X8771F39A7C7E031E">9.6-2 DivisorsOfElementInNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9_mj.html#X82D8A59083FCDF46">9.7 <span class="Heading">
+        Feng-Rao distances and numbers
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X7939BCE08655B62D">9.7-1 FengRaoDistance</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X83F9F4C67D4535EF">9.7-2 FengRaoNumber</a></span>
 </div></div>
 </div>
 
@@ -175,13 +184,12 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(10,11,13);
-    &lt;Numerical semigroup with 3 generators&gt;
-    gap&gt; FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
-    [ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
-      [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
-      [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
-
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);</span>
+&lt;Numerical semigroup with 3 generators&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);</span>
+[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
+  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
+  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
     </pre></div>
 
 <p><a id="X813D2A3A83916A36" name="X813D2A3A83916A36"></a></p>
@@ -338,9 +346,9 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(5,7,11);;
-    gap&gt; DeltaSetPeriodicityBoundForNumericalSemigroup(s);
-    60
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetPeriodicityBoundForNumericalSemigroup(s);</span>
+60
     </pre></div>
 
 <p><a id="X8123FC0E83ADEE45" name="X8123FC0E83ADEE45"></a></p>
@@ -354,9 +362,9 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(5,7,11);;
-    gap&gt; DeltaSetPeriodicityStartForNumericalSemigroup(s);
-    21
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetPeriodicityStartForNumericalSemigroup(s);</span>
+21
     </pre></div>
 
 <p><a id="X80B5DF908246BEB1" name="X80B5DF908246BEB1"></a></p>
@@ -370,11 +378,11 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(5,7,11);;
-    gap&gt; DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
-    [ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],
-      [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],
-      [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetListUpToElementWRTNumericalSemigroup(31,s);</span>
+[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ],
+  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ],
+  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
     </pre></div>
 
 <p><a id="X85C6973E81583E8B" name="X85C6973E81583E8B"></a></p>
@@ -388,9 +396,9 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(5,7,11);;
-    gap&gt; DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
-    [ 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);</span>
+[ 2 ]
     </pre></div>
 
 <p><a id="X8325EBE17ED95740" name="X8325EBE17ED95740"></a></p>
@@ -404,9 +412,9 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(5,7,11);;
-    gap&gt; DeltaSetOfNumericalSemigroup(s);
-    [ 2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DeltaSetOfNumericalSemigroup(s);</span>
+[ 2 ]
     </pre></div>
 
 <p><a id="X7E3ED34D78F3A8CA" name="X7E3ED34D78F3A8CA"></a></p>
@@ -769,23 +777,23 @@
 
 
 <div class="example"><pre>
-    gap&gt; s:=NumericalSemigroup(10,11,13);;
-    gap&gt; l:=FirstElementsOfNumericalSemigroup(100,s);;
-    gap&gt; List(l,x-&gt;OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;
-    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
-      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
-      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
-      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
-      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
-    218
-    gap&gt; OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
-    [ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
-      8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
-      10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
-      12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
-      14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
-    10
-    </pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,13);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=FirstElementsOfNumericalSemigroup(100,s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(l,x-&gt;OmegaPrimalityOfElementInNumericalSemigroup(x,s)); time;</span>
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
+  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+218
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;</span>
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8,
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10,
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12,
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14,
+  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+10
+</pre></div>
 
 <p><a id="X7919066C7A7265E1" name="X7919066C7A7265E1"></a></p>
 
@@ -890,6 +898,8 @@ false
 
 <p>Given a numerical semigroup <span class="SimpleMath">\(S\)</span> and two integers <span class="SimpleMath">\(a,b\)</span>, we write <span class="SimpleMath">\(a\le_S b\)</span> if <span class="SimpleMath">\(b-a\in S\)</span>. We also say that <span class="SimpleMath">\(a\)</span> divides <span class="SimpleMath">\(b\)</span> (with respect to <span class="SimpleMath">\(S\)</span>). The semigroup <span class="SimpleMath">\(S\)</span> with this binary relation is a poset.</p>
 
+<p>The set of divisors of <span class="SimpleMath">\(n\)</span> in <span class="SimpleMath">\(S\)</span> will be denoted by <span class="SimpleMath">\(\mathrm{D}_S(n)\)</span>. If we are given <span class="SimpleMath">\(n_1,\ldots,n_r\in S\)</span>, the set of the divisors of these elements is <span class="SimpleMath">\(\mathrm{D}(n_1,\ldots, n_r)= \bigcup_{i=1}^r \mathrm{D}(n_i)\)</span>.</p>
+
 <p><a id="X853930E97F7F8A43" name="X853930E97F7F8A43"></a></p>
 
 <h5>9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup</h5>
@@ -904,6 +914,62 @@ false
 2
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MoebiusFunctionAssociatedToNumericalSemigroup(s,34);</span>
 25
+</pre></div>
+
+<p><a id="X8771F39A7C7E031E" name="X8771F39A7C7E031E"></a></p>
+
+<h5>9.6-2 DivisorsOfElementInNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DivisorsOfElementInNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">n</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an integer. The arguments can also be given as <var class="Arg">n, S</var>. The output is the set of divisors of <var class="Arg">n</var> in <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(5,7,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DivisorsOfElementInNumericalSemigroup(s,20);</span>
+[ 0, 5, 10, 15, 20 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DivisorsOfElementInNumericalSemigroup(20,s);</span>
+[ 0, 5, 10, 15, 20 ]
+              </pre></div>
+
+<p><a id="X82D8A59083FCDF46" name="X82D8A59083FCDF46"></a></p>
+
+<h4>9.7 <span class="Heading">
+        Feng-Rao distances and numbers
+    </span></h4>
+
+<p>Let <span class="SimpleMath">\(S\)</span> be a numerical semigroup and let <span class="SimpleMath">\(n\in S\)</span>. The Feng-Rao distance of <span class="SimpleMath">\(n\)</span> is then defined as <span class="SimpleMath">\(\delta_S(n)=\min\{ \#\mathrm{D}(x)\mid n\le x,\ x\in S\}\)</span>.</p>
+
+<p>The <span class="SimpleMath">\(r\)</span>th generalized distance is <span class="SimpleMath">\(\delta_S^r(n)=\{ \#\mathrm{D}(n_1,\ldots,n_r) \mid n\le n_1 &lt; \cdots &lt; n_r,\ n_i\in S\}\)</span>.</p>
+
+<p><a id="X7939BCE08655B62D" name="X7939BCE08655B62D"></a></p>
+
+<h5>9.7-1 FengRaoDistance</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FengRaoDistance</code>( <var class="Arg">S</var>, <var class="Arg">r</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup, <var class="Arg">r</var> and <var class="Arg">m</var> integers. The output is the <var class="Arg">r</var>-th Feng-Rao distance of the element <var class="Arg">m</var> in the numerical semigroup <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := NumericalSemigroup(7,9,17);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FengRaoDistance(S,6,100);</span>
+86
+</pre></div>
+
+<p><a id="X83F9F4C67D4535EF" name="X83F9F4C67D4535EF"></a></p>
+
+<h5>9.7-2 FengRaoNumber</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FengRaoNumber</code>( <var class="Arg">S</var>, <var class="Arg">r</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">r</var> is an integer. The output is the <var class="Arg">r</var>-th Feng-Rao number of the numerical semigroup <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := NumericalSemigroup(7,8,17);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FengRaoNumber(S,209);</span>
+224
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FengRaoNumber(209,S);</span>
+224
 </pre></div>
 
 

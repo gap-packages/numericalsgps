@@ -234,9 +234,9 @@
   of the good semigroup.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[28X gap> G:=[[4,3],[7,13],[11,17]];;[128X[104X
-    [4X[28X gap> g:=GoodSemigroup(G,[11,17]);;[128X[104X
-    [4X[28X gap> IrreducibleMaximalElementsOfGoodSemigroup(g);[128X[104X
+    [4X[25Xgap>[125X [27XG:=[[4,3],[7,13],[11,17]];;[127X[104X
+    [4X[25Xgap>[125X [27Xg:=GoodSemigroup(G,[11,17]);;[127X[104X
+    [4X[25Xgap>[125X [27XIrreducibleMaximalElementsOfGoodSemigroup(g);[127X[104X
     [4X[28X[ [ 4, 3 ], [ 7, 13 ] ][128X[104X
   [4X[32X[104X
   
