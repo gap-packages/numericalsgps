@@ -443,7 +443,7 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     hil:=Difference(List(contejeanDevieAlgorithm(l), x->x{[1..dim]}),[zero]);
     return hil;
 
-    return Filtered(hil, y->Filtered(hil,x->leq(x,y))=[y]);
+    #return Filtered(hil, y->Filtered(hil,x->leq(x,y))=[y]);
   end;
   ## end of local functions ...
   Info(InfoNumSgps,1,"Using contejeanDevieAlgorithm for Hilbert Basis. Please, consider using NormalizInterface, 4ti2Interface or 4ti2gap.");
