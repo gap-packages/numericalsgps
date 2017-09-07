@@ -103,6 +103,22 @@ gap> MinimalPresentationOfAffineSemigroup(a);
 gap> BettiElementsOfAffineSemigroup(a);
 [  ]
 
+gap> pf := [ 83, 169, 173, 214, 259 ];;                                      
+gap> ns := ANumericalSemigroupWithPseudoFrobeniusNumbers(pf);;
+gap> PseudoFrobeniusOfNumericalSemigroup(ns) = pf;
+true
+
+gap> s:=NumericalSemigroup(4,5,7);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 3, 0 ], [ 2, 0, 1 ] ], [ [ 1, 2, 0 ], [ 0, 0, 2 ] ], 
+  [ [ 3, 0, 0 ], [ 0, 1, 1 ] ] ]
+gap> a:=AsAffineSemigroup(s);;
+gap> MinimalPresentation(a);
+[ [ [ 3, 0, 0 ], [ 0, 1, 1 ] ], [ [ 1, 2, 0 ], [ 0, 0, 2 ] ], 
+  [ [ 2, 0, 1 ], [ 0, 3, 0 ] ] ]
+gap> CatenaryDegreeOfAffineSemigroup(a)=CatenaryDegreeOfNumericalSemigroup(s);
+true
+
 #############################################################################
 #############################################################################
 # Examples from the manual
@@ -347,12 +363,6 @@ gap> S := NumericalSemigroup(7,8,17);;
 gap> RthElementOfNumericalSemigroup(S,53);
 68
 
-gap> S := NumericalSemigroup(7,8,17);;
-gap> DivisorsOfElementInNumericalSemigroup(50,S);    
-[ 0, 7, 8, 14, 15, 16, 17, 21, 22, 25, 28, 29, 33, 34, 35, 36, 42, 43, 50 ]
-gap> DivisorsOfElementInNumericalSemigroup(S,50); 
-[ 0, 7, 8, 14, 15, 16, 17, 21, 22, 25, 28, 29, 33, 34, 35, 36, 42, 43, 50 ]
-
 gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
 [ 0, 13, 26, 39, 52, 53, 54, 43, 32, 33, 22, 11 ]
@@ -397,6 +407,10 @@ gap> KunzCoordinatesOfNumericalSemigroup(s,5);
 gap> KunzPolytope(3);
 [ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ]
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> CocycleOfNumericalSemigroupWRTElement(s,3);
+[ [ 0, 0, 0 ], [ 0, 3, 4 ], [ 0, 4, 1 ] ]
+
 gap> FrobeniusNumberOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 4
 gap> FrobeniusNumber(NumericalSemigroup(3,5,7));                    
@@ -424,6 +438,18 @@ gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 gap> Gaps(NumericalSemigroup(5,7,11));
 [ 1, 2, 3, 4, 6, 8, 9, 13 ]
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> DesertsOfNumericalSemigroup(s);
+[ [ 1, 2 ], [ 4 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsOrdinary(s);
+false
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsAcute(s);
+true
+
 gap> s:=NumericalSemigroup(3,5);;
 gap> Holes(s);
 [  ]
@@ -444,6 +470,7 @@ gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> Genus(S);
 26
+
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
 gap> FundamentalGapsOfNumericalSemigroup(S);
@@ -735,8 +762,29 @@ gap> ns := NumericalSemigroup(4,11,19);;
 gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);
 true
 
-gap> Length(NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber(57));
+gap> Length(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber(57));
 7
+
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetGammaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetGammaRectangular(s);
+true
+
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetBetaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetBetaRectangular(s);
+true
+
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsAperySetAlphaRectangular(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsAperySetAlphaRectangular(s);
+true
 
 ##Almost_symmetric.xml
 
@@ -908,6 +956,15 @@ true
 gap> IsCanonicalIdealOfNumericalSemigroup(c);
 true
 
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> TypeSequenceOfNumericalSemigroup(s);
+[ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1, 
+  1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 
+  1, 1, 1 ]
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> TypeSequenceOfNumericalSemigroup(s);
+[ 1, 1, 1, 1, 1, 1, 1 ]
+
 gap> I:=[6,9,11]+NumericalSemigroup(6,9,11);;
 gap> List([1..7],n->HilbertFunctionOfIdealOfNumericalSemigroup(n,I));
 [ 3, 5, 6, 6, 6, 6, 6 ]
@@ -955,6 +1012,10 @@ gap> RatliffRushClosureOfIdealOfNumericalSemigroup(I);
 gap> MinimalGenerators(last);
 [ 0, 2, 4 ]
 
+gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
+gap> AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);
+2
+
 gap> s:=NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>
 gap> MultiplicitySequenceOfNumericalSemigroup(s);
@@ -968,6 +1029,69 @@ gap> (ap-apbu)/30;
 [ 0, 4, 4, 3, 2, 1, 3, 4, 4, 3, 2, 3, 1, 4, 4, 3, 3, 1, 4, 4, 4, 3, 2, 4, 2,
   5, 4, 3, 3, 2 ]
 gap> MicroInvariantsOfNumericalSemigroup(s)=last;
+true
+
+gap> s:=NumericalSemigroup(10,11,13);;
+gap> i:=[12,14]+s;;
+gap> AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);
+[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ]
+
+gap> s:=NumericalSemigroup(10,11,13);;
+gap> AperyTableOfNumericalSemigroup(s);
+[ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], 
+  [ 10, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], 
+  [ 20, 21, 22, 23, 24, 35, 26, 37, 48, 39 ], 
+  [ 30, 31, 32, 33, 34, 35, 36, 37, 48, 39 ], 
+  [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> StarClosureOfIdealOfNumericalSemigroup([0,2]+s,[[0,4]+s]);;
+gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);
+[ 0, 2, 4 ]
+
+gap> IsAdmissiblePattern([1,1,-1]);
+true
+gap> IsAdmissiblePattern([1,-2]);
+false
+
+gap> IsAdmissiblePattern([1,-1]);
+true
+gap> IsStronglyAdmissiblePattern([1,-1]);
+false
+gap> IsStronglyAdmissiblePattern([1,1,-1]);
+true
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> t:=NumericalSemigroup(10,11,14);;                                             
+gap> AsIdealOfNumericalSemigroup(10+s,t);
+fail
+gap> AsIdealOfNumericalSemigroup(100+s,t);
+<Ideal of numerical semigroup>
+
+gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
+10
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> i:=10+s;;
+gap> ApplyPatternToIdeal([1,1,-1],i);
+[ 1, <Ideal of numerical semigroup> ]
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
+[ 1, <Ideal of numerical semigroup> ]
+gap> SmallElements(last[2]);
+[ 0, 3, 5 ]
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> i:=[3,5]+s;;
+gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);
+false
+gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
+true
+
+gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
+true
+gap> IsArfNumericalSemigroup(s);
 true
 
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
@@ -991,28 +1115,47 @@ gap> List(AperyListOfNumericalSemigroupWRTElement(s,4),
 > w->MaximumDegreeOfElementWRTNumericalSemigroup(w,s));
 [ 0, 2, 1, 1 ]
 
-gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,7));
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
 true
-gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));
+
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> TorsionOfAssociatedGradedRingNumericalSemigroup(s);
+[ 181, 153, 157, 193, 169, 148 ]
+
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup(s);
+1
+gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
+true
+
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsMpureNumericalSemigroup(s);                                       
 false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsMpureNumericalSemigroup(s); 
+true
 
-gap> s:=NumericalSemigroup(10,11,13);;
-gap> i:=[12,14]+s;;
-gap> AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);
-[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ]
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsPureNumericalSemigroup(s);                                       
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsPureNumericalSemigroup(s); 
+true
 
-gap> s:=NumericalSemigroup(10,11,13);;
-gap> AperyTableOfNumericalSemigroup(s);
-[ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], 
-  [ 10, 11, 22, 13, 24, 35, 26, 37, 48, 39 ], 
-  [ 20, 21, 22, 23, 24, 35, 26, 37, 48, 39 ], 
-  [ 30, 31, 32, 33, 34, 35, 36, 37, 48, 39 ], 
-  [ 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 ] ]
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
+true
 
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> StarClosureOfIdealOfNumericalSemigroup([0,2]+s,[[0,4]+s]);;
-gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);
-[ 0, 2, 4 ]
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
+true
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
@@ -1109,8 +1252,12 @@ gap> FactorizationsElementWRTNumericalSemigroup(1100,s);
 [ [ 0, 8, 1, 0, 0, 0 ], [ 0, 0, 0, 2, 2, 0 ], [ 5, 1, 1, 0, 0, 1 ], 
   [ 0, 2, 3, 0, 0, 1 ] ]
 
-gap> LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);
-[ 6, 8 ]
+gap> s:=NumericalSemigroup(10,11,13);
+<Numerical semigroup with 3 generators>
+gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
+[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
+  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
+  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
 
 gap> s:=NumericalSemigroup(10,11,19,23);;
 gap> BettiElementsOfNumericalSemigroup(s);
@@ -1159,6 +1306,28 @@ gap> s:=NumericalSemigroup(101,113,196,272,278,286);
 gap> DeltaSetOfFactorizationsElementWRTNumericalSemigroup(1100,s);
 [ 1, 2 ]
 
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
+60
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
+21
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
+[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
+  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
+  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
+[ 2 ]
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DeltaSetOfNumericalSemigroup(s);
+[ 2 ]
+
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);
 <Numerical semigroup with 6 generators>
 gap> MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);
@@ -1169,6 +1338,12 @@ gap> MaximalDenumerantOfElementInNumericalSemigroup(1100,s);
 1
 gap> MaximalDenumerantOfElementInNumericalSemigroup(1311,s);
 2
+
+gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
+[ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ], [ 5, 2, 0, 1 ],
+[ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
+gap> MaximalDenumerantOfSetOfFactorizations(last);
+6
 
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);;
 gap> MaximalDenumerantOfNumericalSemigroup(s);
@@ -1280,6 +1455,21 @@ gap> s:=NumericalSemigroup(10,11,13);
 gap> OmegaPrimalityOfElementInNumericalSemigroup(100,s);
 13
 
+gap> s:=NumericalSemigroup(10,11,13);;
+gap> l:=FirstElementsOfNumericalSemigroup(100,s);;
+gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s));
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);
+[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
+  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
+  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
+  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
+  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
+
 gap> s:=NumericalSemigroup(10,11,13);        
 <Numerical semigroup with 3 generators>
 gap> OmegaPrimalityOfNumericalSemigroup(s);
@@ -1320,6 +1510,12 @@ gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,10);
 2
 gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
 25
+
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> DivisorsOfElementInNumericalSemigroup(s,20);
+[ 0, 5, 10, 15, 20 ]
+gap> DivisorsOfElementInNumericalSemigroup(20,s);
+[ 0, 5, 10, 15, 20 ]
 
 gap> S := NumericalSemigroup(7,9,17);;     
 gap> FengRaoDistance(S,6,100);        
@@ -1447,6 +1643,21 @@ x^12
 gap> SemigroupOfValuesOfCurve_Global([x^4,x^6+x^7,x^13],6);
 fail
 
+gap> t:=Indeterminate(Rationals,"t");;
+gap> A:=[t^6+t,t^4];;
+gap> M:=[t^3,t^4];;
+gap> GeneratorsModule_Global(A,M);
+[ t^3, t^4, t^5, t^6 ]
+
+gap> t:=Indeterminate(Rationals,"t");;
+gap> GeneratorsKahlerDifferentials([t^3,t^4]);
+[ t^2, t^3 ]
+
+gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,7));
+true
+gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));
+false
+
 ##affine.xml
 
 gap> s1 := AffineSemigroupByGenerators([1,3],[7,2],[1,5]);
@@ -1531,6 +1742,25 @@ gap> GluingOfAffineSemigroups(a1,a2);
 gap> Generators(last);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 
+gap> M:=[[3],[5],[7]];;
+gap> CanonicalBasisOfKernelCongruence(M,MonomialLexOrdering());
+[ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],
+[ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],
+[ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+gap> CanonicalBasisOfKernelCongruence(M,MonomialGrlexOrdering());
+[ [ [ 0, 7, 0 ], [ 0, 0, 5 ] ], [ [ 1, 0, 1 ], [ 0, 2, 0 ] ],
+[ [ 1, 5, 0 ], [ 0, 0, 4 ] ], [ [ 2, 3, 0 ], [ 0, 0, 3 ] ],
+[ [ 3, 1, 0 ], [ 0, 0, 2 ] ], [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+gap> CanonicalBasisOfKernelCongruence(M,MonomialGrevlexOrdering());
+[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
+[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+
+gap> gr:=GraverBasis([[3,5,7]]);
+[ [ -7, 0, 3 ], [ -5, 3, 0 ], [ -4, 1, 1 ], [ -3, -1, 2 ], [ -2, -3, 3 ],
+[ -1, -5, 4 ], [ -1, 2, -1 ], [ 0, -7, 5 ], [ 0, 0, 0 ], [ 0, 7, -5 ],
+[ 1, -2, 1 ], [ 1, 5, -4 ], [ 2, 3, -3 ], [ 3, 1, -2 ], [ 4, -1, -1 ],
+[ 5, -3, 0 ], [ 7, 0, -3 ] ]
+
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> MinimalPresentationOfAffineSemigroup(a);
 [ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
@@ -1551,6 +1781,14 @@ gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> ElasticityOfAffineSemigroup(a);
 1
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
+gap> DeltaSetOfAffineSemigroup(a);
+[  ]
+gap> s:=NumericalSemigroup(10,13,15,47);;
+gap> a:=AsAffineSemigroup(s);;
+gap> DeltaSetOfAffineSemigroup(a);
+[ 1, 2, 3, 5 ]
 
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> CatenaryDegreeOfAffineSemigroup(a);
@@ -1580,7 +1818,6 @@ gap> OmegaPrimalityOfElementInAffineSemigroup([5,5],a);
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> OmegaPrimalityOfAffineSemigroup(a);
 2
-
 
 ##good-semigroups.xml
 
@@ -1824,162 +2061,20 @@ gap> IsListOfIntegersNS([]);
 false
 
 ##random.xml
-##contributions.xml
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsGradedAssociatedRingNumericalSemigroupBuchsbaum(s);
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsMpureNumericalSemigroup(s);                                       
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsMpureNumericalSemigroup(s); 
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsPureNumericalSemigroup(s);                                       
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsPureNumericalSemigroup(s); 
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsAperySetGammaRectangular(s);
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsAperySetGammaRectangular(s);
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsAperySetBetaRectangular(s);
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsAperySetBetaRectangular(s);
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> IsAperySetAlphaRectangular(s);
-false
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> IsAperySetAlphaRectangular(s);
-true
-
-gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
-gap> TypeSequenceOfNumericalSemigroup(s);
-[ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1, 
-  1, 1, 2, 2, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 
-  1, 1, 1 ]
-gap> s:=NumericalSemigroup(4,6,11);;
-gap> TypeSequenceOfNumericalSemigroup(s);
-[ 1, 1, 1, 1, 1, 1, 1 ]
-
-##Functions implemented by C. O'Neill
-gap> s:=NumericalSemigroup(10,11,13);;
-gap> l:=FirstElementsOfNumericalSemigroup(100,s);;
-gap> List(l,x->OmegaPrimalityOfElementInNumericalSemigroup(x,s));
-[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
-  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
-  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
-  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
-  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
-gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);
-[ 0, 4, 5, 5, 4, 6, 7, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7, 8, 7, 8, 9, 8, 8, 8, 
-  8, 8, 8, 8, 9, 9, 10, 9, 9, 9, 9, 9, 9, 9, 9, 10, 11, 10, 10, 10, 10, 10, 
-  10, 10, 10, 11, 12, 11, 11, 11, 11, 11, 11, 11, 11, 12, 13, 12, 12, 12, 12, 
-  12, 12, 12, 12, 13, 14, 13, 13, 13, 13, 13, 13, 13, 13, 14, 15, 14, 14, 14, 
-  14, 14, 14, 14, 14, 15, 16, 15, 15, 15, 15, 15, 15, 15, 15 ]
-
-gap> s:=NumericalSemigroup(10,11,13);
-<Numerical semigroup with 3 generators>
-gap> FactorizationsElementListWRTNumericalSemigroup([100,101,103],s);
-[ [ [ 0, 2, 6 ], [ 1, 7, 1 ], [ 3, 4, 2 ], [ 5, 1, 3 ], [ 10, 0, 0 ] ],
-  [ [ 0, 8, 1 ], [ 1, 0, 7 ], [ 2, 5, 2 ], [ 4, 2, 3 ], [ 9, 1, 0 ] ],
-  [ [ 0, 7, 2 ], [ 2, 4, 3 ], [ 4, 1, 4 ], [ 7, 3, 0 ], [ 9, 0, 1 ] ] ]
-
-gap> s:=NumericalSemigroup(5,7,11);;
-gap> DeltaSetPeriodicityBoundForNumericalSemigroup(s);
-60
-
-gap> s:=NumericalSemigroup(5,7,11);;
-gap> DeltaSetPeriodicityStartForNumericalSemigroup(s);
-21
-
-gap> s:=NumericalSemigroup(5,7,11);;
-gap> DeltaSetListUpToElementWRTNumericalSemigroup(31,s);
-[ [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], 
-  [  ], [  ], [  ], [  ], [  ], [  ], [  ], [  ], [ 2 ], [  ], [  ], [ 2 ], [  ], 
-  [ 2 ], [  ], [ 2 ], [ 2 ], [  ] ]
-
-gap> s:=NumericalSemigroup(5,7,11);;
-gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
-[ 2 ]
-
-gap> s:=NumericalSemigroup(5,7,11);;
-gap> DeltaSetOfNumericalSemigroup(s);
-[ 2 ]
-
-#Functions implemented by Klara Stokes
-
-gap> IsAdmissiblePattern([1,1,-1]);
-true
-gap> IsAdmissiblePattern([1,-2]);
-false
-
-gap> IsAdmissiblePattern([1,-1]);
-true
-gap> IsStronglyAdmissiblePattern([1,-1]);
-false
-gap> IsStronglyAdmissiblePattern([1,1,-1]);
-true
-
-gap> s:=NumericalSemigroup(3,7,5);;
-gap> t:=NumericalSemigroup(10,11,14);;                                             
-gap> AsIdealOfNumericalSemigroup(10+s,t);
-fail
-gap> AsIdealOfNumericalSemigroup(100+s,t);
-<Ideal of numerical semigroup>
-
-gap> BoundForConductorOfImageOfPattern([1,1,-1],10);
-10
-
-gap> s:=NumericalSemigroup(3,7,5);;
-gap> i:=10+s;;
-gap> ApplyPatternToIdeal([1,1,-1],i);
-[ 1, <Ideal of numerical semigroup> ]
-
-gap> s:=NumericalSemigroup(3,7,5);;
-gap> ApplyPatternToNumericalSemigroup([1,1,-1],s);
-[ 1, <Ideal of numerical semigroup> ]
-gap> SmallElements(last[2]);
-[ 0, 3, 5 ]
-
-gap> s:=NumericalSemigroup(3,7,5);;
-gap> i:=[3,5]+s;;
-gap> IsAdmittedPatternByIdeal([1,1,-1],i,i);
-false
-gap> IsAdmittedPatternByIdeal([1,1,-1],i,0+s);
-true
-
-gap> IsAdmittedPatternByNumericalSemigroup([1,1,-1],s,s);
-true
-gap> IsArfNumericalSemigroup(s);
-true
-
+RandomNumericalSemigroup(3,9,55);;
+RandomListForNS(13,1,79);;
+RandomModularNumericalSemigroup(9);;
+RandomModularNumericalSemigroup(10,25);;
+RandomProportionallyModularNumericalSemigroup(9);;
+RandomProportionallyModularNumericalSemigroup(10,25);;
+RandomListRepresentingSubAdditiveFunction(7,9);;
+RepresentsPeriodicSubAdditiveFunction(last);
+ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);;
+MinimalGeneratingSystem(ns);;
+SmallElements(ns);;
+ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9);;
+ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);;
+MinimalGeneratingSystem(ns3);;
 
 gap> STOP_TEST( "testall.tst", 10000 );
 ## The first argument of STOP_TEST should be the name of the test file.
