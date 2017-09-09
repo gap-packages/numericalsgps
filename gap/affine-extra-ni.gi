@@ -257,7 +257,7 @@ function(a)
     NmzCompute(cone,"DualMode");
     facs:=Set(NmzHilbertBasis(cone), f->f{[1..n]}-f{[n+1..2*n]});
 
-    return facs;
+    return Difference(facs,[List([1..n],_->0)]);
 
   end);
 
