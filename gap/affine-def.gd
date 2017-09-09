@@ -109,8 +109,12 @@ DeclareSynonymAttr( "IsAffineSemigroupByEquations", HasEquations);
 #############################################################################
 DeclareGlobalFunction( "AffineSemigroupByInequalities" );
 #A
-DeclareAttribute( "Inequalities", IsAffineSemigroup);
-DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalities);
+# collission with MatricesForHomalg
+#DeclareAttribute( "Inequalities", IsAffineSemigroup);
+#DeclareSynonymAttr( "IsAffineSemigroupByInequalities", HasInequalities);
+DeclareAttribute( "AffineSemigroupInequalities", IsAffineSemigroup);
+DeclareSynonymAttr( "HasInequalities", HasAffineSemigroupInequalities);
+DeclareOperation("Inequalities", [IsAffineSemigroup and HasInequalities]);
 
 
 #############################################################################

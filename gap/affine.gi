@@ -205,7 +205,7 @@ InstallMethod(BelongsToAffineSemigroup,
         Error("The first argument must be an affine semigroup.");
     fi;
 
-    equ:=Inequalities(a);
+    equ:=AffineSemigroupInequalities(a);
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
@@ -702,7 +702,7 @@ function(a)
     lft:=(Concatenation(aid,zeroid));
     prlft:=GeneratorsOfKernelCongruence(lft);
     Info(InfoNumSgps,2,"The kernel congruence is ", prlft);
-
+    prlft:=Filtered(prlft, p->p[1]<>p[2]);
     return Set(Union(prlft), p->p{[1..ed]}-p{[ed+1..ed+ed]});
 end);
 

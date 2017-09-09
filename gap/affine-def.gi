@@ -16,21 +16,21 @@
 #############################################################################
 InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
   local  gens, M;
-  
-    
+
+
   if Length(arg) = 1 then
     gens := Set(arg[1]);
   else
     gens := Set(arg);
   fi;
-  
+
   if not IsMatrix(gens) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
   elif not ForAll(gens, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
   fi;
   M:= Objectify( AffineSemigroupsType, rec());
-  
+
   SetGenerators(M,gens);
   SetDimension(M,Length(gens[1]));
 
@@ -45,29 +45,29 @@ end);
 ##  If a set of generators has already been computed, this
 ##  is the set returned.
 ############################################################################
-InstallMethod(Generators, 
+InstallMethod(Generators,
          "Computes a set of generators of the affine semigroup",
-         [IsAffineSemigroup],1,        
+         [IsAffineSemigroup],1,
         function(S)
   local  basis, eq;
 
   if HasGenerators(S) then
-      return Generators(S);  
+      return Generators(S);
   fi;
   if HasMinimalGenerators(S) then
       return MinimalGenerators(S);
   fi;
-  
+
   if HasEquations(S) then
       eq:=Equations(S);
       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
       SetMinimalGenerators(S,basis);
-      return MinimalGenerators(S);  
+      return MinimalGenerators(S);
   elif HasInequalities(S) then
-      basis := HilbertBasisOfSystemOfHomogeneousInequalities(Inequalities(S));
+      basis := HilbertBasisOfSystemOfHomogeneousInequalities(AffineSemigroupInequalities(S));
       SetMinimalGenerators(S,basis);
-      return MinimalGenerators(S);  
-  fi;     
+      return MinimalGenerators(S);
+  fi;
 end);
 
 #############################################################################
@@ -78,33 +78,45 @@ end);
 ##  If a set of generators has already been computed, this
 ##  is the set returned.
 ############################################################################
-InstallMethod(MinimalGenerators, 
+InstallMethod(MinimalGenerators,
          "Computes the set of minimal generators of the affine semigroup",
-         [IsAffineSemigroup],1,        
+         [IsAffineSemigroup],1,
         function(S)
   local  basis, eq, gen;
 
   if HasMinimalGenerators(S) then
       return MinimalGenerators(S);
   fi;
-  
+
   if HasEquations(S) then
       eq:=Equations(S);
       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
       SetMinimalGenerators(S,basis);
-      return MinimalGenerators(S);  
+      return MinimalGenerators(S);
   elif HasInequalities(S) then
-      basis := HilbertBasisOfSystemOfHomogeneousInequalities(Inequalities(S));
+      basis := HilbertBasisOfSystemOfHomogeneousInequalities(AffineSemigroupInequalities(S));
       SetMinimalGenerators(S,basis);
-      return MinimalGenerators(S);  
-  fi;     
+      return MinimalGenerators(S);
+  fi;
   gen:=Generators(S);
   basis:=Filtered(gen, y->ForAll(Difference(gen,[y]),x->not((y-x) in S)));
   SetMinimalGenerators(S,basis);
   return MinimalGenerators(S);
-  
+
 end);
 
+#############################################################################
+##
+#O  Inequalities(S)
+##
+##  If S is defined by inequalities, it returns them.
+############################################################################
+InstallMethod(Inequalities,
+         "Computes the set of equations of S, if S is a affine semigroup",
+         [IsAffineSemigroup and HasInequalities],1,
+        function(S)
+          return AffineSemigroupInequalities(S);
+end);
 #############################################################################
 ## Full ffine semigroups
 #############################################################################
@@ -130,11 +142,11 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
     Error("The arguments must be homogeneous lists.");
   fi;
 
-  if not(ForAll(ls,IsListOfIntegersNS)) then 
+  if not(ForAll(ls,IsListOfIntegersNS)) then
     Error("The first argument must be a list of lists of integers.");
   fi;
 
-  if not(md = [] or IsListOfIntegersNS(md)) then 
+  if not(md = [] or IsListOfIntegersNS(md)) then
     Error("The second argument must be a lists of integers.");
   fi;
 
@@ -149,7 +161,7 @@ InstallGlobalFunction(AffineSemigroupByEquations, function(arg)
   M:= Objectify( AffineSemigroupsType, rec());
   SetEquations(M,[ls,md]);
   SetDimension(M,Length(ls[1]));
-  
+
 #  Setter(IsAffineSemigroupByEquations)(M,true);
 #  Setter(IsFullAffineSemigroup)(M,true);
   return M;
@@ -159,7 +171,7 @@ end);
 ##
 #F  AffineSemigroupByInequalities(ls)
 ##
-##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over 
+##  Returns the (full) affine semigroup defined by the system  ls*X>=0 over
 ##  the nonnegative integers
 ##
 #############################################################################
@@ -178,7 +190,7 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
 
   M:= Objectify( AffineSemigroupsType, rec());
 
-  SetInequalities(M,ls);
+  SetAffineSemigroupInequalities(M,ls);
   SetDimension(M,Length(ls[1]));
  # Setter(IsAffineSemigroupByEquations)(M,true);
  # Setter(IsFullAffineSemigroup)(M,true);
@@ -204,7 +216,7 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(AffineSemigroup, function(arg)
-  
+
   if IsString(arg[1]) then
     if arg[1] = "generators" then
       return AffineSemigroupByGenerators(Filtered(arg, x -> not IsString(x))[1]);
@@ -282,7 +294,7 @@ end);
 ##
 ##  Tests if the affine semigroup S has the property of being full.
 ##
-# Detects if the affine semigroup is full: the nonnegative 
+# Detects if the affine semigroup is full: the nonnegative
 # of the the group spanned by it coincides with the semigroup
 # itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
 # then a-b\in S
@@ -293,13 +305,13 @@ end);
          function( S )
    local  gens, eq, h, dim;
 
-   if HasEquations(S) then 
+   if HasEquations(S) then
      return true;
    fi;
 
 
    gens := GeneratorsOfAffineSemigroup(S);
-   if gens=[] then 
+   if gens=[] then
        return true;
    fi;
    dim:=Length(gens[1]);
@@ -314,12 +326,12 @@ end);
     #Setter(IsAffineSemigroupByEquations)(S,true);
     #Setter(IsFullAffineSemigroup)(S,true);
     return true;
-  fi; 
+  fi;
   return false;
-  
+
 end);
 
- 
+
 #############################################################################
  ##
  #M  PrintObj(S)
@@ -411,7 +423,7 @@ InstallMethod( Display,
 
  ####################################################
  ####################################################
- 
+
 
  ############################################################################
  ##
@@ -423,53 +435,53 @@ InstallMethod( Display,
           IsAffineSemigroup and IsAffineSemigroupRep],
          function(x, y )
    local  genx, geny;
-   
+
    if Dimension(x) <> Dimension(y) then
      return false;
    fi;
-   
+
    if  HasEquations(x) and HasEquations(y) and
        Equations(x) = Equations(y) then
      return true;
 
    elif HasInequalities(x) and HasInequalities(y) and
-     Inequalities(x) = Inequalities(y) then
+     AffineSemigroupInequalities(x) = AffineSemigroupInequalities(y) then
      return true;
 
    elif HasGenerators(x) and HasGenerators(y) and
      Generators(x) = Generators(y) then
      return  true;
 
-   elif HasGenerators(x) and HasGenerators(y) and not(EquationsOfGroupGeneratedBy(Generators(x))=EquationsOfGroupGeneratedBy(Generators(y))) then 
+   elif HasGenerators(x) and HasGenerators(y) and not(EquationsOfGroupGeneratedBy(Generators(x))=EquationsOfGroupGeneratedBy(Generators(y))) then
      return false;
    fi;
    genx:=GeneratorsOfAffineSemigroup(x);
    geny:=GeneratorsOfAffineSemigroup(y);
-   return ForAll(genx, g-> g in y) and 
+   return ForAll(genx, g-> g in y) and
           ForAll(geny, g-> g in x);
  end);
- 
- ## x < y returns true if:  (dimension(x)<dimension(y)) or (x is (strictly) contained in y) or (genx < geny), where genS is the *current* set of generators of S...   
+
+ ## x < y returns true if:  (dimension(x)<dimension(y)) or (x is (strictly) contained in y) or (genx < geny), where genS is the *current* set of generators of S...
  InstallMethod( \<,
          "for two affine semigroups",
          [IsAffineSemigroup,IsAffineSemigroup],
          function(x, y )
    local  genx, geny;
-   
+
    if Dimension(x) < Dimension(y) then
      return true;
    fi;
-   
+
    genx:=GeneratorsOfAffineSemigroup(x);
    geny:=GeneratorsOfAffineSemigroup(y);
    if ForAll(genx, g-> g in y) and not ForAll(geny, g-> g in x) then
      return true;
    fi;
-   
+
    return genx < geny;
 end );
-    
-    
+
+
 #############################################################################
 ##
 #F AsAffineSemigroup(S)
@@ -479,13 +491,12 @@ end );
 #############################################################################
 InstallGlobalFunction(AsAffineSemigroup, function(s)
     local msg;
-    
+
     if not(IsNumericalSemigroup(s)) then
         Error("The argument must be a numerical semigroup");
     fi;
-    
-    msg:=MinimalGeneratingSystem(s);
-    return AffineSemigroup(List(msg, x->[x]));    
-    
-end);
 
+    msg:=MinimalGeneratingSystem(s);
+    return AffineSemigroup(List(msg, x->[x]));
+
+end);
