@@ -2053,28 +2053,32 @@ true
 
 gap> IsListOfIntegersNS([1,-1,0]);
 true
+
 gap> IsListOfIntegersNS(2);
 false
+
 gap> IsListOfIntegersNS([[2],3]);
 false
+
 gap> IsListOfIntegersNS([]);
 false
 
 ##random.xml
-RandomNumericalSemigroup(3,9,55);;
-RandomListForNS(13,1,79);;
-RandomModularNumericalSemigroup(9);;
-RandomModularNumericalSemigroup(10,25);;
-RandomProportionallyModularNumericalSemigroup(9);;
-RandomProportionallyModularNumericalSemigroup(10,25);;
-RandomListRepresentingSubAdditiveFunction(7,9);;
-RepresentsPeriodicSubAdditiveFunction(last);
-ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);;
-MinimalGeneratingSystem(ns);;
-SmallElements(ns);;
-ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9);;
-ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);;
-MinimalGeneratingSystem(ns3);;
+
+# RandomNumericalSemigroup(3,9,55);;
+# RandomListForNS(13,1,79);;
+# RandomModularNumericalSemigroup(9);;
+# RandomModularNumericalSemigroup(10,25);;
+# RandomProportionallyModularNumericalSemigroup(9);;
+# RandomProportionallyModularNumericalSemigroup(10,25);;
+# RandomListRepresentingSubAdditiveFunction(7,9);;
+# RepresentsPeriodicSubAdditiveFunction(last);
+# ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);;
+# MinimalGeneratingSystem(ns);;
+# SmallElements(ns);;
+# ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9);;
+# ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);;
+# MinimalGeneratingSystem(ns3);;
 
 gap> STOP_TEST( "testall.tst", 10000 );
 ## The first argument of STOP_TEST should be the name of the test file.
