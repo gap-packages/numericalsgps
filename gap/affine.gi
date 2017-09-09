@@ -685,7 +685,7 @@ function(a)
     if not(IsInt(a[1][1])) then
       Error("The entries of the matrix must be integers.");
     fi;
-    Info(InfoNumSgps,1,"Using Lawrence lifting for computing Graver Basis. Please, consider using singular, NormalizInterface, 4ti2Interface or 4ti2gap.");
+    Info(InfoNumSgps,1,"Using Lawrence lifting for computing Graver Basis. Please, consider using NormalizInterface, 4ti2Interface or 4ti2gap.");
     mgs:=TransposedMat(a);
     ed:=Length(mgs);
     dim:=Length(mgs[1]);
