@@ -1,7 +1,22 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+1.1.0->1.1.1
+- Inequalities was used in MatricesForHomalg as an operation, and so we turned it an operation; the corresponding attribute is AffineSemigroupInequalities
+- removed all methods in singular using SingularLibrary (this was producing unexpected issues if the required software for the singular libraries was not well installed)
+- Removed [0,..,0] from GraverBasis in some methods (and thus in the testify)
+- Fixed issue with GeneratorsOfKernelCongruence and MinimalPresentationOfAffineSemigroup when it was empty (singular method)
+
 1.0.1->1.1.0
+- Added FengRao numbers and distances
+- Added rth element of a numerical semigroup and divisors of an elemenet
+- Moved to GitHub
+- Now PackageInfo gathers collaborators: authors that are neither authors nor mantainers
+- Minor corrections in the manual
+- Improved membership method for numericalsemigroups for the case generators are known; bounds for the conductor are now used
+- GeneratorsKhalerDifferentials -> GeneratorsKahlerDifferentials
+- SmallElements now return small elements as a set (better performance for membership, maxima and minima)
+- *gapdays in Siegen*
 - Added GeneratorsKhalerDifferentials
 - Added ModuleGenerators_Global (computes a basis an ideal of a polynomial algebra in one variable)
 - Cleaning the code of MinimalGeneratingSystemOfNumericalSemigroup (Alfredo Sánchez-R. Navarro pointed out that the code was hard to understand) and making it faster
