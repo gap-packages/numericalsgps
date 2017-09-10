@@ -138,10 +138,10 @@
   
   [29X[2XNumericalDuplication[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function
   
-  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup,  and  [3XE[103X and ideal of [3XS[103X with [22XE⊆ S[122X, and [3Xb[103X is a
-  positive  odd  integer,  so  that  [22X2S∪ (2E+b)[122X is a numerical semigroup (this
-  extends  slightly  the  original  definition where [3Xb[103X was imposed to be in [3XS[103X,
-  [DS13]; now the condition imposed is [22XE+E+b⊆ S[122X). Computes [22X2S∪ (2E+b)[122X.[133X
+  [33X[0;0Y[3XS[103X  is  a  numerical semigroup, and [3XE[103X and ideal of [3XS[103X, and [3Xb[103X is a positive odd
+  integer,  so that [22X2S∪ (2E+b)[122X is a numerical semigroup (this extends slightly
+  the  original  definition  where  [3Xb[103X  was imposed to be in [3XS[103X, [DS13]; now the
+  condition imposed is [22XE+E+b⊆ S[122X). Computes [22X2S∪ (2E+b)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);[127X[104X
