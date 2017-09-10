@@ -145,6 +145,14 @@ rec(
 ),
 
 rec(
+  LastName      := "Francesco",
+  FirstNames    := "Strazzanti",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  WWWHome       := "https://sites.google.com/site/francescostrazzanti"
+),
+
+rec(
   LastName      := "Zito",
   FirstNames    := "Giuseppe",
   IsAuthor      := false,
