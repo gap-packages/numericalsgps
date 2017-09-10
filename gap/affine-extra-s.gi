@@ -73,6 +73,9 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
     SingularSetBaseRing(R);
     ie:=Ideal(R,gens);
     mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
+    if Zero(R) in mingen then
+      return [];
+    fi;
     SingularSetBaseRing(Rtmp);
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
 end);
