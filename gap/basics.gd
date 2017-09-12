@@ -58,8 +58,11 @@ DeclareSynonymAttr("ConductorOfNumericalSemigroup", Conductor);
 ##  Returns the type of the numerical semigroup S.
 ##
 #############################################################################
-DeclareAttribute("Type", IsNumericalSemigroup);
-DeclareSynonymAttr("TypeOfNumericalSemigroup", Type);
+#class with FinInG
+#DeclareAttribute("Type", IsNumericalSemigroup);
+#DeclareSynonymAttr("TypeOfNumericalSemigroup", Type);
+DeclareAttribute("TypeOfNumericalSemigroup", IsNumericalSemigroup);
+DeclareOperation("Type",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -272,7 +275,7 @@ DeclareSynonymAttr("HolesOfNumericalSemigroup", Holes);
 ##
 #F  CocycleOfNumericalSemigroupWRTElement(S,n)
 ##
-##  Returns the cocycle of the numerical semigroup S with respect to 
+##  Returns the cocycle of the numerical semigroup S with respect to
 ##  the positive integer n (an element in S)
 ##
 #############################################################################
@@ -291,7 +294,7 @@ DeclareOperation("RthElementOfNumericalSemigroup",[IsInt,IsNumericalSemigroup]);
 #############################################################################
 ##
 #O DivisorsOfElementInNumericalSemigroup(S,n)
-# Given a numerical semigroup S and an integer n, returns a list L of integers such that 
+# Given a numerical semigroup S and an integer n, returns a list L of integers such that
 # x in L if and only if n - x belongs to S, that is, it returns S\cap(n-S)
 # These elements are called divisors of n
 ##

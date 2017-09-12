@@ -294,6 +294,13 @@ InstallMethod( TypeOfNumericalSemigroup,
     return Length(PseudoFrobeniusOfNumericalSemigroup(sgp));
 end);
 
+InstallMethod(Type,
+        "Returns the type of a numerical sgp",
+        [IsNumericalSemigroup],
+        function( sgp )
+    return TypeOfNumericalSemigroup(sgp);
+end);
+
 #############################################################################
 ##
 #A  Generators(S)
@@ -1135,7 +1142,7 @@ InstallMethod(RthElementOfNumericalSemigroup,
 
   selts := SmallElementsOfNumericalSemigroup( S );
   n := Length(selts);
-  if r <= Length(selts) then 
+  if r <= Length(selts) then
     return selts[r];
   else
     return selts[n] + r - n;
@@ -1150,7 +1157,7 @@ end);
 #############################################################################
 ##
 #O DivisorsOfElementInNumericalSemigroup(S,n)
-# Given a numerical semigroup S and an integer n, returns a list L of integers such that 
+# Given a numerical semigroup S and an integer n, returns a list L of integers such that
 # x in L if and only if n - x belongs to S, that is, it returns S\cap(n-S)
 # These elements are called divisors of n
 ##
