@@ -1,6 +1,6 @@
 name: NumericalSgps
-version: 1.1.1
-date: 10/09/2017
+version: 1.1.2
+date: 12/09/2017
 description: |
     A package for numerical semigroups
 
@@ -56,7 +56,7 @@ packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.1.1/NumericalSgps-1.1.1.tar.gz
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.1.2/NumericalSgps-1.1.2.tar.gz
 
 abstract: |
     The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.
