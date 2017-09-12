@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.1.0->1.1.1
+- Type is now an operation (clash with FinIng), and TypeOfNumericalSemigroup remains an attribute
 - Inequalities was used in MatricesForHomalg as an operation, and so we turned it an operation; the corresponding attribute is AffineSemigroupInequalities
 - removed all methods in singular using SingularLibrary (this was producing unexpected issues if the required software for the singular libraries was not well installed)
 - Removed [0,..,0] from GraverBasis in some methods (and thus in the testify)
