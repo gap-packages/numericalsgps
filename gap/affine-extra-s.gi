@@ -12,7 +12,7 @@
 
 # we will always use Gröbner by Singular package which is faster
 
-GBASIS:= SINGULARGBASIS;
+#GBASIS:= SINGULARGBASIS;
 
 
 ############################################################
@@ -25,7 +25,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         [IsRectangularTable],6,
         function(m)
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-		Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
+		Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens, GBASIStmp;
 
 
     Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
@@ -61,6 +61,8 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
     vars:=List([1..ed+dim],i->X(Rationals,i));
     R:=PolynomialRing(Rationals,vars);
     Rtmp:=SingularBaseRing;
+    GBASIStmp:=GBASIS;
+    GBASIS:=SINGULARGBASIS;
     SetTermOrdering(R,"dp");
     SingularSetBaseRing(R);
     p:=List([1..ed], i->X(Rationals,i)-Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
@@ -73,10 +75,11 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
     SingularSetBaseRing(R);
     ie:=Ideal(R,gens);
     mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
+    SingularSetBaseRing(Rtmp);
+    GBASIS:=GBASIStmp;
     if Zero(R) in mingen then
       return [];
     fi;
-    SingularSetBaseRing(Rtmp);
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
 end);
 
@@ -91,7 +94,7 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
 	[IsRectangularTable, IsMonomialOrdering],6,
   function(m,ord)
   	local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-  	Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
+  	Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens, GBASIStmp;
 
 
   	Info(InfoNumSgps,2,"Using singular to compute kernels.");
@@ -127,6 +130,8 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   	vars:=List([1..ed+dim],i->X(Rationals,i));
   	R:=PolynomialRing(Rationals,vars);
   	Rtmp:=SingularBaseRing;
+    GBASIStmp:=GBASIS;
+    GBASIS:=SINGULARGBASIS;
   	SingularSetBaseRing(R);
   	p:=List([1..ed], i->X(Rationals,i)-Product(List([1..dim], j->X(Rationals,j+ed)^msg[i][j])));
   	id:=Ideal(R,p);
@@ -139,30 +144,34 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   	ie:=Ideal(R,gens);
   	gens:=GroebnerBasis(ie, ord);
   	SingularSetBaseRing(Rtmp);
+    GBASIS:=GBASIStmp;
   	return Set([1..Length(gens)],i->bintopair(gens[i]));
   end);
 
 
-  InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
-          "Computes the set of primitive elements of an affine semigroup",
-          [IsAffineSemigroup],4,
-          function(a)
-      local  matrix, facs, mat, trunc, ls;
-
-      ls:=GeneratorsOfAffineSemigroup(a);
-
-      Info(InfoNumSgps,2,"Using singular 4ti2 interface for Graver.");
-
-      mat:=TransposedMat(ls);
-      matrix := GraverBasis(mat);
-
-      trunc:=function(ls)
-          return List(ls, y->Maximum(y,0));
-      end;
-
-      matrix:=Set(matrix,trunc);
-      return Union(Set(matrix, x->x*ls),ls);
-  end);
+  # InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
+  #         "Computes the set of primitive elements of an affine semigroup",
+  #         [IsAffineSemigroup],4,
+  #         function(a)
+  #     local  matrix, facs, mat, trunc, ls, GBASIStmp;
+  #
+  #     ls:=GeneratorsOfAffineSemigroup(a);
+  #
+  #     Info(InfoNumSgps,2,"Using singular 4ti2 interface for Graver.");
+  #
+  #     mat:=TransposedMat(ls);
+  #     GBASIStmp:=GBASIS;
+  #     GBASIS:=SINGULARGBASIS;
+  #     matrix := GraverBasis(mat);
+  #     GBASIS:=GBASIStmp;
+  #
+  #     trunc:=function(ls)
+  #         return List(ls, y->Maximum(y,0));
+  #     end;
+  #
+  #     matrix:=Set(matrix,trunc);
+  #     return Union(Set(matrix, x->x*ls),ls);
+  # end);
 
 
 ############################################################
@@ -214,7 +223,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
 	[IsAffineSemigroup],2,
         function(a)
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
-		Rtmp,R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens;
+		Rtmp,R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens, GBASIStmp;
 
 
     Info(InfoNumSgps,2,"Using singular to compute minimal presentations.");
@@ -249,6 +258,8 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     dim:=Length(msg[1]);
     vars:=List([1..ed+dim],i->X(Rationals,i));
     Rtmp:=SingularBaseRing;
+    GBASIStmp:=GBASIS;
+    GBASIS:=SINGULARGBASIS;
     R:=PolynomialRing(Rationals,vars);
     SetTermOrdering(R,"dp");
     SingularSetBaseRing(R);
@@ -262,10 +273,11 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
     SingularSetBaseRing(R);
     ie:=Ideal(R,gens);
     mingen:=GeneratorsOfIdeal(SingularInterface("minbase",[ie],"ideal"));
+    SingularSetBaseRing(Rtmp);
+    GBASIS:=GBASIStmp;
     if Zero(R) in mingen then
       return [];
     fi;
-    SingularSetBaseRing(Rtmp);
     return Set([1..Length(mingen)],i->bintopair(mingen[i]));
 end);
 

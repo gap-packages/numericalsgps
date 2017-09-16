@@ -22,7 +22,7 @@
 #################################################################
 InstallGlobalFunction(SemigroupOfValuesOfPlaneCurve,
   function(f)
-  local l,x,y,R,T, gens, wgens, w1, w2, c, inf;
+  local l,x,y,R,T, gens, wgens, w1, w2, c, inf, GBASIStmp, Rtmp;
 
   inf:=function(u,v)
       return [Minimum(u[1],v[1]),Minimum(u[2],v[2])];
@@ -39,6 +39,9 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurve,
 
   T:=SingularBaseRing;
   SingularLibrary("alexpoly.lib");
+  Rtmp:=SingularBaseRing;
+  GBASIStmp:=GBASIS;
+  GBASIS:=SINGULARGBASIS;
   SingularSetBaseRing( R );
   x:=R.1;;
   y:=R.2;;
@@ -48,6 +51,8 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurve,
   wgens:=l[2];
   c:=l[3];
   if IsInt(gens[1]) then #numerical semigroup
+    SingularSetBaseRing(Rtmp);
+    GBASIS:=GBASIStmp;
     return NumericalSemigroup(gens);
   fi;
 
@@ -65,7 +70,11 @@ InstallGlobalFunction(SemigroupOfValuesOfPlaneCurve,
     gens:=Union(gens,List([w2[2]..c[2]], i->[w2[1],i]));
     Info(InfoNumSgps,2,"Generators ", gens);
     Info(InfoNumSgps,2,"Conductor ", c);
+    SingularSetBaseRing(Rtmp);
+    GBASIS:=GBASIStmp;
     return GoodSemigroup(gens,c);
   fi;
+  SingularSetBaseRing(Rtmp);
+  GBASIS:=GBASIStmp;
   return l;
 end);
