@@ -19,6 +19,11 @@
 ##
 gap> START_TEST("NumericalSgps package: testall.tst");
 
+## Set info level to 0 as suggested by Alexander Konovalov
+
+gap> INFO_NSGPS:=InfoLevel(InfoNumSgps);;
+gap> SetInfoLevel( InfoNumSgps, 0);
+
 # Note that you may use comments in the test file
 # and also separate parts of the test by empty lines
 
@@ -2079,6 +2084,9 @@ false
 # ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9);;
 # ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);;
 # MinimalGeneratingSystem(ns3);;
+
+## get info level to the original state
+gap> SetInfoLevel( InfoNumSgps, INFO_NSGPS);
 
 gap> STOP_TEST( "testall.tst", 10000 );
 ## The first argument of STOP_TEST should be the name of the test file.
