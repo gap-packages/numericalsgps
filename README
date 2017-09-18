@@ -4,9 +4,7 @@ The GAP 4 package `NumericalSgps` to compute with Numerical Semigroups
 Introduction
 ------------
 
-This is release 1.0 of  the package `NumericalSgps`.
-
-The features of this package include
+The features of the package `NumericalSgps` include
 
 - defining numerical semigroups;
 - computing several properties of numerical semigroups, namely: multiplicity, Frobenius number, (minimal) system of generators, Apéry set, gaps, fundamental gaps, etc.;
@@ -14,7 +12,7 @@ The features of this package include
 -computing and testing membership to relevant families of numerical semigroups.
 
 There is a manual in the sub-directory 'doc' written using the GAP package
-gapdoc which describes the available functions in detail. The dvi, pdf, html
+gapdoc which describes the available functions in detail. The pdf, html
 versions of the manual are also available there.
 
 If you have used this package, please let us know by sending
@@ -55,7 +53,7 @@ just have to start GAP and type
 
 For updates between releases of GAP itself check the package web page
 
-	https://bitbucket.org/gap-system/numericalsgps
+	https://github.com/gap-packages/numericalsgps
 
 Unpacking
 ---------
@@ -75,21 +73,21 @@ or, if tar on your system does not understand the option z, by
 
 which will in each case unpack the code into a directory 'numericalsgps'
 in the current directory. We assume that the current directory is the
-directory /usr/local/lib/gap4r7/pkg/.
+directory /usr/local/lib/gap4r8/pkg/.
 
 Installation
 ------------
 
-Copy the folder 'numericalsgp' to your pkg gap folder (for instance /usr/local/lib/gap4r7/pkg).
+Copy the folder 'numericalsgp' to your pkg gap folder (for instance /usr/local/lib/gap4r8/pkg). 
 You can also place it somewhere else and then use the command `SetPackagePath`:
 
-	SetPackagePath("numericalsgps","whereveryouwant/numericalsgps");
+	SetPackagePath("numericalsgps","whereveryouwant/numericalsgps"); 
 
 or add this line to your `gaprc`.
 
 In order to check the installation, launch `gap`:
 
-	gap
+	gap 
 
 Then try the following
 ```gap
@@ -99,7 +97,7 @@ gap>
 ```
 Good luck!
 
-You can also add the line
+You can also add the line 
 ```gap
 LoadPackage( "numericalsgps" );
 ```
