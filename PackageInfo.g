@@ -7,10 +7,10 @@ SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.1.2",
-Date := "12/09/2017",
-# Version := "1.1.2 dev",
-# Date := "> 12/09/2017",
+Version := "1.1.3",
+Date := "18/09/2017",
+# Version := "1.1.3 dev",
+# Date := "> 18/09/2017",
 
 ##  Information about authors and maintainers.
 Persons := [
@@ -198,7 +198,7 @@ PackageDoc := rec(
 Dependencies := rec(
   GAP := "4.7",
   NeededOtherPackages := [],
-  SuggestedOtherPackages := [["GAPDoc", "1.2"]],
+  SuggestedOtherPackages := [["GAPDoc", "1.2"],["Singular","12.04.28"],["SingularInterface","0.7.2"],["GradedModules","2017.05.10"],["NormalizInterface","0.9.8"]],
   ExternalConditions := []
 
 ),
