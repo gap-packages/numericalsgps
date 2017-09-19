@@ -5,7 +5,7 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
-#H  @(#)$Id: read.g,v 1.1.3 $
+#H  @(#)$Id: read.g,v 1.1.4 $
 ##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro A. Garcia-Sanchez and Jose Joao Morais

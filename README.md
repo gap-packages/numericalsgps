@@ -4,7 +4,7 @@ The GAP 4 package `NumericalSgps` to compute with Numerical Semigroups
 Introduction
 ------------
 
-This is release 1.1.3 of  the package `NumericalSgps`.
+This is release 1.1.4 of  the package `NumericalSgps`.
 
 The features of this package include
 
