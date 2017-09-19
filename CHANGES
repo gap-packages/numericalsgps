@@ -1,6 +1,9 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+1.1.3->1.1.4
+- Removed SuggestedOtherPackages (some are incompatible, and other require special installation that might produce errors for unexperienced users)
+
 1.1.2->1.1.3
 - GBASIS is not set while loading singular; it is set inside functions calling Gröbner basis for methods using singular.
 1.1.1->1.1.2
