@@ -1558,7 +1558,7 @@ gap> s:=NumericalSemigroup(5,7,9);;
 gap> HilbertSeriesOfNumericalSemigroup(s,x);
 (x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1)/(-x+1)
 
-gap> x:=X(Rationals,"x");;
+gap> x:=Indeterminate(Rationals,1);; SetName(x,"x");
 gap> GraeffePolynomial(x^2-1);
 x^2-2*x+1
 
@@ -1590,8 +1590,8 @@ gap> ForAll(l, s->
 true
 
 # Semigroup of values of algebraic curves
-
-gap> x:=X(Rationals,"x");; y:=X(Rationals,"y");;
+gap> x:=Indeterminate(Rationals,1);; SetName(x,"x");
+gap> y:=Indeterminate(Rationals,2);; SetName(y,"y");
 gap> f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;
 gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all");
 [ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
@@ -1603,7 +1603,6 @@ gap> DeltaSequencesWithFrobeniusNumber(21);
 [ [ 8, 6, 11 ], [ 10, 4, 15 ], [ 12, 8, 6, 11 ], [ 14, 4, 11 ],
   [ 15, 10, 4 ], [ 23, 2 ] ]
 
-gap> x:=X(Rationals,"x");; y:=X(Rationals,"y");;
 gap> CurveAssociatedToDeltaSequence([24,16,28,7]);
 y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 10*y^9-60*x^5*y^14+28*x^12*y^6+80*x^7*y^11+6*x^2*y^16-8*x^14*y^3-60*x^9*y^8-24\
