@@ -144,7 +144,7 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=Indeterminate(Rationals,1);; SetName(x,"x");</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraeffePolynomial(x^2-1);</span>
 x^2-2*x+1
 </pre></div>
@@ -233,7 +233,8 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");; y:=X(Rationals,"y");;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=Indeterminate(Rationals,1);; SetName(x,"x");</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y:=Indeterminate(Rationals,2);; SetName(y,"y");</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f,"all");</span>
 [ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
@@ -277,7 +278,6 @@ true
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x:=X(Rationals,"x");; y:=X(Rationals,"y");;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CurveAssociatedToDeltaSequence([24,16,28,7]);</span>
 y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 10*y^9-60*x^5*y^14+28*x^12*y^6+80*x^7*y^11+6*x^2*y^16-8*x^14*y^3-60*x^9*y^8-24\
