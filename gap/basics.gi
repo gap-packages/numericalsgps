@@ -423,8 +423,11 @@ InstallMethod( MinimalGeneratingSystemOfNumericalSemigroup,
     SetMinimalGenerators(S,mingen);
     return mingen;
   fi;
-  ## When nor a set of generators nor the small elements are known, the small elements are computed and the function is called again (now that the system has enlarged its knowledge on S)
+  ## When nor a set of generators nor the small elements are known, the small elements are computed and, in case S is not N, the function is called again (now that the system has enlarged its knowledge on S)
   Elm := SmallElementsOfNumericalSemigroup(S);
+  if Elm = [0] then #if S = N, the single minimal generator is 1.
+    return [1];
+  fi;
   return MinimalGeneratingSystemOfNumericalSemigroup(NumericalSemigroup(Union(Elm,[Elm[Length(Elm)]..Elm[Length(Elm)]+Elm[2]-1])));
 end);
 
