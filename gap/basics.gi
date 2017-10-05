@@ -148,8 +148,8 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
         [IsNumericalSemigroup],
         function(S)
-    local   set,  len,  min_mult_n3_in_n1n2,  gens,  n,  C,  gg,  n1,  n2,
-            n3,  c1,  c2,  c3,  delta,  d,  gn,  og,  newgens;
+  local  set, len, min_mult_n3_in_n1n2, gens, n, C, gg, c, n1, n2, n3, c1, 
+         c2, c3, delta, d, gn, og, newgens;
 
     if not (HasMinimalGenerators(S) or HasGenerators(S)) then
         set := SmallElementsOfNumericalSemigroup(S);
@@ -176,8 +176,18 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
     ##############################################################
     gens := MinimalGeneratingSystemOfNumericalSemigroup(S);
     n := Length(gens);
-    C := Combinations(gens,n-1);
-    gg := First(C,c -> Gcd(c)<>1);
+#    C := Combinations(gens,n-1);
+#    gg := First(C,c -> Gcd(c)<>1);
+    C := IteratorOfCombinations(gens,n-1);
+    gg := fail;
+    
+    for c in C do
+      if Gcd(c)<>1 then
+        gg := c;
+      break;
+      fi;
+    od;    
+    
     ## for the case of three coprime generators we use an algorithms due to Rosales & Vasco
     if gg = fail then ## Rosales&Vasco
         if n = 3 then
