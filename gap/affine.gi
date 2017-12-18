@@ -366,7 +366,7 @@ end);
 #  set of minimal generators of the affine semigroup of nonnegative soultions of this equation
 ##############################################################################################
 InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
-        "Computes the Hilbert basis of a system of linear Diophantine equations, some evetually in congruences.",[IsMatrix,IsHomogeneousList],1,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some evetually in congruences.",[IsRectangularTable,IsHomogeneousList],1,
   function(ls,md)
   local  contejeanDevieAlgorithm, contejeanDevieAlgorithmWithCongruences, leq;
 
@@ -388,9 +388,9 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     solutions:=[];
     explored:=[];
 
-    if not(IsRectangularTable(l)) then
-      Error("The argument must be a matrix.");
-    fi;
+    #if not(IsRectangularTable(l)) then
+    #  Error("The argument must be a matrix.");
+    #fi;
     if not(IsInt(l[1][1])) then
       Error("The matrix must be of integers.");
     fi;
@@ -420,9 +420,9 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
   contejeanDevieAlgorithmWithCongruences:=function(ls,md)
     local l,n,m,diag,dim,d, hil, zero;
 
-    if not(IsRectangularTable(ls)) then
-      Error("The first argument must be a matrix.");
-    fi;
+    #if not(IsRectangularTable(ls)) then
+    #  Error("The first argument must be a matrix.");
+    #fi;
 
     if not(IsListOfIntegersNS(md)) or ForAny(md, x->not(IsPosInt(x))) then
       Error("The second argument must be a list of positive integers.");
@@ -464,12 +464,12 @@ end);
 #
 InstallMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes the Hilbert basis of a set of inequalities",
-        [IsMatrix],1,
+        [IsRectangularTable],1,
         function(ls)
     local mat, neq, dim, id, hil,zero ;
-    if not(IsRectangularTable(ls)) then
-      Error("The argument must be a matrix.");
-    fi;
+    #if not(IsRectangularTable(ls)) then
+    #  Error("The argument must be a matrix.");
+    #fi;
     if not(IsInt(ls[1][1])) then
       Error("The matrix must be of integers.");
     fi;
@@ -494,7 +494,7 @@ end);
 ########################################################################
 InstallMethod(FactorizationsVectorWRTList,
         "Computes the set of factorizations of the first argument in terms of the elements of the second",
-        [IsHomogeneousList, IsMatrix],1,
+        [IsHomogeneousList, IsRectangularTable],1,
         function(v,ls)
     local len, e1, opt1, opt2, i, mat, dim;
     # REQUERIMENTS: NormalizInterface

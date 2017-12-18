@@ -20,15 +20,16 @@
 # REQUERIMENTS: NormalizInterface
 ##########################################################################
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
-        "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",[IsMatrix,IsHomogeneousList],5,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",
+        [IsRectangularTable,IsHomogeneousList],5,
         function(ls,md)
     local matcong, cone, ncong, ncoord, nequ, matfree;
 
     Info(InfoNumSgps,2,"Using normaliz to find the Hilbert basis.");
 
-    if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
-        Error("The arguments must be homogeneous lists.");
-    fi;
+    #if not(IsHomogeneousList(ls)) or not(IsHomogeneousList(md)) then
+    #    Error("The arguments must be homogeneous lists.");
+    #fi;
 
     if not(ForAll(ls,IsListOfIntegersNS)) then
         Error("The first argument must be a list of lists of integers.");
@@ -91,23 +92,23 @@ end);
 ##########################################################################
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes the Hilbert basis of a system of inequalities",
-        [IsMatrix],5,
+        [IsRectangularTable],5,
         function(ls)
     local cone,  ncoord;
 
     Info(InfoNumSgps,2,"Using normaliz to find the Hilbert basis.");
 
-    if not(IsHomogeneousList(ls)) then
-        Error("The argument must be a homogeneous lists.");
-    fi;
+    #if not(IsHomogeneousList(ls)) then
+    #    Error("The argument must be a homogeneous lists.");
+    #fi;
 
     if not(ForAll(ls,IsListOfIntegersNS)) then
         Error("The argument must be a list of lists of integers.");
     fi;
 
-    if not(Length(Set(ls, Length))=1) then
-        Error("The first argument must be a list of lists all with the same length.");
-    fi;
+    #if not(Length(Set(ls, Length))=1) then
+    #    Error("The first argument must be a list of lists all with the same length.");
+    #fi;
 
     ncoord:=Length(ls[1]);
 
@@ -132,7 +133,7 @@ end);
 ########################################################################
 InstallOtherMethod(FactorizationsVectorWRTList,
         "Computes the set of factorizations of the first argument in terms of the elements of the second",
-        [IsHomogeneousList, IsMatrix],5,
+        [IsHomogeneousList, IsRectangularTable],5,
         function(v,ls)
     local mat, cone, n, facs;
    	Info(InfoNumSgps,2,"Using NormalizInterface to compute minimal factorization.");

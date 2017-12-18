@@ -68,7 +68,7 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 # returns only the minimal solutions of the above system of equations
 # If not using nomaliz: then the above can cause an infinite loop
 ########################################################################
-DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
+DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsRectangularTable]);
 
 ###############################################################################
 #O BettiElementsOfAffineSemigroup
@@ -182,7 +182,7 @@ DeclareGlobalFunction("MonotoneCatenaryDegreeOfAffineSemigroup",[IsAffineSemigro
 # the lengths of the elements of ls, then the rest of equations are considered
 # to be homogeneous linear Diophantine equations
 ##########################################################################
-DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsMatrix,IsHomogeneousList]);
+DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsRectangularTable,IsHomogeneousList]);
 
 #############################################################################
 ##
@@ -191,7 +191,7 @@ DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsMatrix,IsHomoge
 # Computes the Hilbert basis of the system ls*X>=0 over the nonnegative
 # integers
 ##########################################################################
-DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsMatrix]);
+DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsRectangularTable]);
 
 ###############################################################################
 ##

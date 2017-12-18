@@ -30,7 +30,7 @@ end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         "Computes a Hilbert basis of a systemd of linear Diophantine equations, some eventually in congruences.",
-        [IsMatrix,IsHomogeneousList],6,
+        [IsRectangularTable,IsHomogeneousList],6,
         function(ls,md)
     local  homogeneous, withCongruences;
 
@@ -39,9 +39,9 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
 
         Info(InfoNumSgps,2,"Using 4ti2gap for Hilbert.");
 
-        if not(IsRectangularTable(l)) then
-            Error("The argument must be a matrix.");
-        fi;
+        #if not(IsRectangularTable(l)) then
+        #    Error("The argument must be a matrix.");
+        #fi;
         if not(IsInt(l[1][1])) then
             Error("The matrix must be of integers.");
         fi;
@@ -64,9 +64,9 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
           return (First(v,n->n<0)=fail);
       end;
 
-      if not(IsRectangularTable(ls)) then
-          Error("The first argument must be a matrix.");
-      fi;
+      #if not(IsRectangularTable(ls)) then
+      #    Error("The first argument must be a matrix.");
+      #fi;
 
       if not(IsListOfIntegersNS(md)) or ForAny(md, x->not(IsPosInt(x))) then
           Error("The second argument must be a list of positive integers.");
@@ -104,15 +104,15 @@ end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes a Hilbert basis of l*x>=0, x>=0",
-        [IsMatrix],6,
+        [IsRectangularTable],6,
         function(l)
     local  problem, matrix,mat,sign,rel;
 
     Info(InfoNumSgps,2,"Using 4ti2gap for Hilbert.");
 
-    if not(IsRectangularTable(l)) then
-        Error("The argument must be a matrix.");
-    fi;
+    #if not(IsRectangularTable(l)) then
+    #    Error("The argument must be a matrix.");
+    #fi;
     if not(IsInt(l[1][1])) then
         Error("The matrix must be of integers.");
     fi;
@@ -129,7 +129,7 @@ end);
 
 InstallOtherMethod(FactorizationsVectorWRTList,
         "Computes the factorizations of v in terms of the elments in ls",
-        [IsHomogeneousList,IsMatrix],6,
+        [IsHomogeneousList,IsRectangularTable],6,
         function(v,l)
     local  matrix,mat,rhs,sign,problem, n;
 

@@ -36,7 +36,7 @@ end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         "Computes a Hilbert basiss of a system of linear Diophantine equations, some eventually in congruences.",
-        [IsMatrix,IsHomogeneousList],4,
+        [IsRectangularTable,IsHomogeneousList],4,
         function(ls,md)
     local  homogeneous, withCongruences;
 
@@ -45,9 +45,9 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
 
         Info(InfoNumSgps,2,"Using 4ti2 for Hilbert.");
 
-        if not(IsRectangularTable(l)) then
-            Error("The argument must be a matrix.");
-        fi;
+        #if not(IsRectangularTable(l)) then
+        #    Error("The argument must be a matrix.");
+        #fi;
         if not(IsInt(l[1][1])) then
             Error("The matrix must be of integers.");
         fi;
@@ -77,9 +77,9 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
           return (First(v,n->n<0)=fail);
       end;
 
-      if not(IsRectangularTable(ls)) then
-          Error("The first argument must be a matrix.");
-      fi;
+      #if not(IsRectangularTable(ls)) then
+      #    Error("The first argument must be a matrix.");
+      #fi;
 
       if not(IsListOfIntegersNS(md)) or ForAny(md, x->not(IsPosInt(x))) then
           Error("The second argument must be a list of positive integers.");
@@ -117,15 +117,15 @@ end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes a Hilbert basis of l*x>=0, x>=0",
-        [IsMatrix],4,
+        [IsRectangularTable],4,
         function(l)
     local  dir, filename, exec, filestream, matrix,mat,sign,rel;
 
     Info(InfoNumSgps,2,"Using 4ti2 for Hilbert.");
 
-    if not(IsRectangularTable(l)) then
-        Error("The argument must be a matrix.");
-    fi;
+    #if not(IsRectangularTable(l)) then
+    #    Error("The argument must be a matrix.");
+    #fi;
     if not(IsInt(l[1][1])) then
         Error("The matrix must be of integers.");
     fi;
@@ -151,7 +151,7 @@ end);
 
 InstallOtherMethod(FactorizationsVectorWRTList,
         "Computes the factorizations of v in terms of the elments in ls",
-        [IsHomogeneousList,IsMatrix],4,
+        [IsHomogeneousList,IsRectangularTable],4,
         function(v,l)
     local  dir, filename, exec, filestream, matrix,mat,rhs,sign;
 

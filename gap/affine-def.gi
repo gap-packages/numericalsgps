@@ -24,7 +24,7 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
     gens := Set(arg);
   fi;
 
-  if not IsMatrix(gens) then
+  if not IsRectangularTable(gens) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
   elif not ForAll(gens, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
@@ -184,7 +184,7 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
     ls := Set(arg);
   fi;
 
-  if not IsMatrix(ls) then
+  if not IsRectangularTable(ls) then
     Error("The arguments must be lists of integers with the same length, or a list of such lists");
   fi;
 

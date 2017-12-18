@@ -149,7 +149,7 @@ InstallGlobalFunction(RepresentsSmallElementsOfGoodSemigroup, function(X)
         return [Minimum(x[1],y[1]), Minimum(x[2],y[2])];
     end;
 
-    if not(IsMatrix(X)) and ForAll(X, x->Length(x)=2) then
+    if not(IsRectangularTable(X)) and ForAll(X, x->Length(x)=2) then
       Error("The argument must be a list of pairs of positive integers");
     fi;
 
@@ -203,12 +203,12 @@ end);
 InstallGlobalFunction(GoodSemigroup, function(Gn,C)
     local M, p1, p2, c, CC, sm, SemiRing_NS, gen, inf, G;
 
-    if not(IsMatrix(Gn)) and ForAll(Gn, x->IsList(x) and Length(x)=2) then
-      Error("The argument must be a list of pairs of positive integers");
+    if not(IsRectangularTable(Gn)) and ForAll(Gn, x->IsList(x) and Length(x)=2) then
+      Error("The first argument must be a list of pairs of positive integers");
     fi;
 
     if not(ForAll(Gn, x->IsInt(x[1]) and IsInt(x[2]) and x[1]>=0 and x[2]>=0)) then
-      Error("The argument must be a list of pairs of positive integers");
+      Error("The first argument must be a list of pairs of positive integers");
     fi;
 
     if not(IsList(C)) and Length(C)=2 then
@@ -572,7 +572,7 @@ end);
 ###############################################################
 InstallGlobalFunction(GoodSemigroupBySmallElements, function(X)
   local M, C, c, sm;
-  if not(IsMatrix(X)) and ForAll(X, x->Length(x)=2) then
+  if not(IsRectangularTable(X)) and ForAll(X, x->Length(x)=2) then
     Error("The argument must be a list of pairs of positive integers");
   fi;
 
