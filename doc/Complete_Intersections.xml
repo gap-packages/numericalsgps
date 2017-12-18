@@ -37,6 +37,9 @@ gap> AsGluingOfNumericalSemigroups(s);
                     <Prop Arg="s" Name="IsACompleteIntersectionNumericalSemigroup"></Prop>
                     <Description>
                         <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is a complete intersection, that is, the cardinality of a (any) minimal presentation equals its embedding dimension minus one.
+
+                        <P/>
+                        This filter implies <Ref Func="IsSymmetricNumericalSemigroup"/> and <Ref Func="IsCyclotomicNumericalSemigroup"/>.
                         <Example><![CDATA[
 gap> s := NumericalSemigroup( 10, 15, 16 );
 <Numerical semigroup with 3 generators>
@@ -68,6 +71,9 @@ gap> Length(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(57));
                     <Description>
                         <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is free in the sense of <Cite Key="BC77"></Cite>:
 						it is either <M>\mathbb N</M> or the gluing of a copy of  <M>\mathbb N</M> with a free numerical semigroup.
+
+                        <P/>
+                        This filter implies <Ref Func="IsACompleteIntersectionNumericalSemigroup"/>.
                         <Example><![CDATA[
 gap> IsFreeNumericalSemigroup(NumericalSemigroup(10,15,16));
 true
@@ -96,6 +102,9 @@ gap> Length(FreeNumericalSemigroupsWithFrobeniusNumber(57));
                         <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is telescopic in the sense of <Cite Key="KP95"></Cite>:
 						it is either <M>\mathbb N</M> or the gluing of   <M>\langle n_e\rangle</M> and <M>s'=\langle n_1/d,\ldots, n_{e-1}/d\rangle</M>,
 						and <M>s'</M> is again a telescopic numerical semigroup, where <M>n_1 &lt; \cdots &lt; n_e </M> are the minimal generators of <A>s</A>.
+
+                        <P/>
+                        This filter implies <Ref Func="IsAperySetBetaRectangular"/> and <Ref Func="IsFreeNumericalSemigroup"/>.
                         <Example><![CDATA[
 gap> IsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));
 false
@@ -122,6 +131,9 @@ gap> Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));
                     <Description>
                         <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is associated to an irreducible planar curve singularity
 						(<Cite Key="Z86"></Cite>). These semigroups are telescopic.
+
+                        <P/>
+                        This filter implies <Ref Func="IsAperySetAlphaRectangular"/> and <Ref Func="IsTelescopicNumericalSemigroup"/>.
                         <Example><![CDATA[
 gap> ns := NumericalSemigroup(4,11,14);;
 gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);
@@ -157,6 +169,8 @@ gap> Length(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber(57));
                                         This test is the implementation of the algorithm given in
                                         <Cite Key="DAMSClasses"></Cite>. Numerical Semigroups with this property are free and thus complete intersections.
 
+                                        <P/>
+                                        This filter implies <Ref Func="IsFreeNumericalSemigroup"/>.
 
                                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
@@ -179,7 +193,8 @@ true
                                         This test is the implementation of the algorithm given in
                                         <Cite Key="DAMSClasses"></Cite>; <M>\beta</M>-rectangularity implies <M>\gamma</M>-rectangularity.
 
-
+                                        <P/>
+                                        This filter implies <Ref Func="IsAperySetGammaRectangular"/>.
                                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsAperySetBetaRectangular(s);
@@ -200,7 +215,8 @@ true
                                         Test for the <M>\alpha</M>-rectangularity of the Apéry Set of a numerical semigroup.
                                         This test is the implementation of the algorithm given in
                                         <Cite Key="DAMSClasses"></Cite>; <M>\alpha</M>-rectangularity implies <M>\beta</M>-rectangularity.
-
+                                    <P/>
+                                    This filter implies <Ref Func="IsAperySetBetaRectangular"/>.
 
                                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;

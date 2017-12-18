@@ -398,7 +398,7 @@ gap> DesertsOfNumericalSemigroup(s);
       <A>NS</A> is a numerical semigroup.
       Dectects if the semigroup is ordinary, that is, with less than two deserts.
   <P/>
-
+    This filter implies <Ref Func="IsAcuteNumericalSemigroup"/>.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsOrdinary(s);

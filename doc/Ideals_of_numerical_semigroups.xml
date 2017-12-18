@@ -859,6 +859,8 @@ true
                           This test is the implementation of the algorithm given in
                           <Cite Key="BF06"></Cite>.
 
+                        <P/>
+                        This filter implies <Ref Func="IsGradedAssociatedRingNumericalSemigroupBuchsbaum"/>.
                           <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsGradedAssociatedRingNumericalSemigroupCM(s);
@@ -953,6 +955,9 @@ true
 			This test is based on
                         <Cite Key="Br"></Cite>.
 
+            <P/>
+            This filter implies <Ref Func="IsPureNumericalSemigroup"/>.
+
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsMpureNumericalSemigroup(s);
@@ -999,7 +1004,8 @@ true
                         This test is the implementation of the algorithm given in
                         <Cite Key="DA-M-S"></Cite>.
 
-
+                        <P/>
+                        This filter implies <Ref Func="IsGradedAssociatedRingNumericalSemigroupCM"/>, <Ref Func="IsMpureNumericalSemigroup"/>, and <Ref Func="IsSymmetricNumericalSemigroup"/>.
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
@@ -1024,6 +1030,8 @@ true
                         This test is the implementation of the algorithm given in
                         <Cite Key="DAMSwhen"></Cite>.
 
+                        <P/>
+                        This filter implies <Ref Func="IsGradedAssociatedRingNumericalSemigroupGorenstein"/> and <Ref Func="IsAperySetGammaRectangular"/>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;

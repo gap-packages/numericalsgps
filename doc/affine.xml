@@ -430,7 +430,9 @@ gap> BettiElementsOfAffineSemigroup(a);
     <Description>
       <A>a</A> is an affine semigroup.
       <P/>
-      The same as <C>IsGenericNumericalSemigroup</C> (<Ref Chap="Generic"/>) but for affine semigroups.
+      The same as <C>IsGenericNumericalSemigroup</C> (<Ref Chap="Generic"/>) but for affine semigroups. 
+      <P/>
+      This property implies <Ref Func="IsUniquelyPresentedAffineSemigroup"/>. 
     </Description>
   </ManSection>
 

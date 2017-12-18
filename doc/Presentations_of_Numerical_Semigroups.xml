@@ -138,6 +138,9 @@ true
       <A>S</A> is a numerical semigroup.
       <P/>
       The output is true if <A>S</A> has a generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented  (see <Cite Key="B-GS-G"></Cite>).
+
+      <P/>
+      This filter implies <Ref Func="IsUniquelyPresentedNumericalSemigroup"/>.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsGenericNumericalSemigroup(s);

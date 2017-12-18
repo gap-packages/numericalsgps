@@ -87,6 +87,9 @@ gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         Returns true if <A>S</A> is an Arf numerical semigroup and false otherwise.
+                        <P/>
+                        This property implies <Ref Func="IsMED"/> and <Ref Func="IsAcuteNumericalSemigroup"/>. 
+
                         <Example><![CDATA[
 gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,5,7));
 true
@@ -227,6 +230,9 @@ gap> List(last,MinimalGenerators);
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         Returns true if <A>S</A> is a saturated numerical semigroup and false otherwise.
+                        <P/>
+                        This property implies <Ref Func="IsArf"/>. 
+
                         <Example><![CDATA[
 gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
 true
