@@ -1,6 +1,12 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+1.1.5->1.1.6
+
+- List and sublist access for numerical semigroups
+- Iterator for numerical semigroup
+- NextElementOfNumericalSemigroup, NumberElement_NumericalSemigroup and ElementNumber_NumericalSemigroup
+
 1.1.4->1.1.5
 - Fixed an issue related to the names of indeterminates that caused problems in the test file
 
