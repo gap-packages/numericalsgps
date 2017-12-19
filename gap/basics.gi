@@ -1191,3 +1191,58 @@ InstallMethod(DivisorsOfElementInNumericalSemigroup,
         function(n,S)
   return(DivisorsOfElementInNumericalSemigroup(S,n));
 end);
+
+
+#############################################################################
+##
+#F ElementNumber_NumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer n, returns the nth element of S
+#############################################################################
+InstallGlobalFunction(ElementNumber_NumericalSemigroup, 
+    function(s,n)
+        return RthElementOfNumericalSemigroup(s,n);
+    end
+);
+
+
+#############################################################################
+##
+#F NumberElement_NumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer n, returns the position of 
+# n in S
+#############################################################################
+InstallGlobalFunction(NumberElement_NumericalSemigroup,
+    function(s,n)
+        local f, nse;
+        if not(n in s) then 
+            return(fail);
+        fi;
+        f:=FrobeniusNumber(s);
+        if n<f then 
+            return Position(SmallElements(s),n);
+        fi;
+        nse:=Length(SmallElements(s));
+        return nse+n-f-1;
+    end
+);
+
+
+##################################################################################
+##
+#O Iterator(s)
+## Iterator for numerical semigroups
+##################################################################################
+InstallMethod(Iterator, "Iterator for numerical semigroups", [IsNumericalSemigroup], 
+    function(sem)
+    local iter;
+
+    iter:=IteratorByFunctions(rec( 
+        pos := -1,  
+        s := sem,
+        IsDoneIterator := ReturnFalse, 
+        NextIterator := function(iter) local n; n:=First([iter!.pos+1..iter!.pos+Multiplicity(iter!.s)+1], x->x in iter!.s); iter!.pos:=n; return n; end, 
+        ShallowCopy := iter -> rec( s := iter!.s,  pos := iter!.pos )
+        ));
+    return iter;
+    end
+);

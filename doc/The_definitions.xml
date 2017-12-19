@@ -135,6 +135,7 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 					</Description>
 </ManSection>
 
+
 				<ManSection>
 					<Oper Arg="S,r"  Name="RthElementOfNumericalSemigroup"/>
 					<Description>
@@ -147,6 +148,49 @@ gap> RthElementOfNumericalSemigroup(S,53);
 					</Description>
 </ManSection>
 
+				<ManSection>
+					<Func Arg="S,r"  Name="ElementNumber_NumericalSemigroup"/>
+					<Description>
+						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the <A>r</A>-th element of <A>S</A>.
+						<Example><![CDATA[
+gap> S := NumericalSemigroup(7,8,17);;
+gap> ElementNumber_NumericalSemigroup(S,53);
+68
+]]></Example>
+					</Description>
+</ManSection>
+
+				<ManSection>
+					<Func Arg="S,r"  Name="NumberElement_NumericalSemigroup"/>
+					<Description>
+						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the position of <A>r</A> in <A>S</A> (and <C>fail</C> if the integer is not in the semigroup).
+						<Example><![CDATA[
+gap> S := NumericalSemigroup(7,8,17);;
+gap> NumberElement_NumericalSemigroup(S,68);
+53
+]]></Example>
+					</Description>
+</ManSection>
+
+
+
+				<ManSection>
+					<Oper Arg="S"  Name="Iterator" Label="for numerical semigroups"/>
+					<Description>
+						 <A>S</A> is a numerical semigroup. It returns an iterator over <A>S</A>.
+						<Example><![CDATA[
+gap> S := NumericalSemigroup(7,8,17);;
+gap> iter:=Iterator(S);
+<iterator>
+gap> NextIterator(iter);
+0
+gap> NextIterator(iter);
+7
+gap> NextIterator(iter);
+8
+]]></Example>
+					</Description>
+</ManSection>
 
                 <ManSection>
                     <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to element"/>
@@ -166,6 +210,7 @@ gap> AperyList(S,12);
 ]]></Example>
                     </Description>
                 </ManSection>
+
                 <ManSection>
                     <Attr Name="AperyList" Arg="S" Label="for numerical semigroup with respect to multiplicity"/>
                     <Attr Name="AperyListOfNumericalSemigroup" Arg="S"/>

@@ -301,3 +301,19 @@ DeclareOperation("RthElementOfNumericalSemigroup",[IsInt,IsNumericalSemigroup]);
 #############################################################################
 DeclareOperation("DivisorsOfElementInNumericalSemigroup",[IsNumericalSemigroup,IsInt]);
 DeclareOperation("DivisorsOfElementInNumericalSemigroup",[IsInt,IsNumericalSemigroup]);
+
+
+#############################################################################
+##
+#F ElementNumber_NumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer n, returns the nth element of S
+#############################################################################
+DeclareGlobalFunction("ElementNumber_NumericalSemigroup");
+
+#############################################################################
+##
+#F NumberElement_NumericalSemigroup(S,n)
+# Given a numerical semigroup S and an integer n, returns the position of 
+# n in S
+#############################################################################
+DeclareGlobalFunction("NumberElement_NumericalSemigroup");
