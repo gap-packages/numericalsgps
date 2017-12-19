@@ -291,6 +291,18 @@ DeclareGlobalFunction("CocycleOfNumericalSemigroupWRTElement");
 DeclareOperation("RthElementOfNumericalSemigroup",[IsNumericalSemigroup,IsInt]);
 DeclareOperation("RthElementOfNumericalSemigroup",[IsInt,IsNumericalSemigroup]);
 
+
+
+#############################################################################
+##
+#O NextElementOfNumericalSemigroup(S,n)
+## Given a numerical semigroup S and an integer r, returns the least integer
+## greater than r belonging to S
+#############################################################################
+DeclareOperation("NextElementOfNumericalSemigroup",[IsNumericalSemigroup,IsInt]);
+DeclareOperation("NextElementOfNumericalSemigroup",[IsInt,IsNumericalSemigroup]);
+
+
 #############################################################################
 ##
 #O DivisorsOfElementInNumericalSemigroup(S,n)

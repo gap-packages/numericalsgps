@@ -1167,6 +1167,24 @@ InstallMethod(RthElementOfNumericalSemigroup,
         function(r,S)
   return(RthElementOfNumericalSemigroup(S,r));
 end);
+
+#############################################################################
+##
+#O NextElementOfNumericalSemigroup(S,n)
+## Given a numerical semigroup S and an integer r, returns the least integer
+## greater than r belonging to S
+#############################################################################
+InstallMethod(NextElementOfNumericalSemigroup,
+        [IsNumericalSemigroup,IsInt],
+        function(S,r)
+            return First([r+1..r+Multiplicity(S)+1], x->x in S);
+end);
+#########
+InstallMethod(NextElementOfNumericalSemigroup,
+        [IsInt,IsNumericalSemigroup],
+        function(r,S)
+  return(NextElementOfNumericalSemigroup(S,r));
+end);
 #############################################################################
 ##
 #O DivisorsOfElementInNumericalSemigroup(S,n)

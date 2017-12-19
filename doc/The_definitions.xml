@@ -148,6 +148,25 @@ gap> RthElementOfNumericalSemigroup(S,53);
 					</Description>
 </ManSection>
 
+
+				<ManSection>
+					<Oper Arg="S,r"  Name="NextElementOfNumericalSemigroup"/>
+					<Description>
+						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the returns the 
+                         least integer greater than <A>r</A> belonging to <A>S</A>.
+						<Example><![CDATA[
+gap> S := NumericalSemigroup(7,8,17);;
+gap> NextElementOfNumericalSemigroup(S,9);
+14
+gap> NextElementOfNumericalSemigroup(16,S);
+17
+gap> NextElementOfNumericalSemigroup(S,FrobeniusNumber(S))=Conductor(S);
+true
+]]></Example>
+					</Description>
+</ManSection>
+
+
 				<ManSection>
 					<Func Arg="S,r"  Name="ElementNumber_NumericalSemigroup"/>
 					<Description>
