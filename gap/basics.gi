@@ -1152,6 +1152,9 @@ InstallMethod(RthElementOfNumericalSemigroup,
         [IsNumericalSemigroup,IsInt],
         function(S,r)
   local   selts,  n;
+  if r<=0 then
+    Error("The index must be a positive integer");
+  fi;
 
   selts := SmallElementsOfNumericalSemigroup( S );
   n := Length(selts);
@@ -1262,5 +1265,30 @@ InstallMethod(Iterator, "Iterator for numerical semigroups", [IsNumericalSemigro
         ShallowCopy := iter -> rec( s := iter!.s,  pos := iter!.pos )
         ));
     return iter;
+    end
+);
+
+##################################################################################
+##
+#O S[n]
+## The nth element of S
+##################################################################################
+
+InstallOtherMethod(\[\], [IsNumericalSemigroup,IsInt],
+    function(s,n)
+        return ElementNumber_NumericalSemigroup(s,n);
+    end
+);
+
+##################################################################################
+##
+#O S{ls}
+## [S[n] :  n in ls]
+##################################################################################
+
+
+InstallOtherMethod(\{\}, [IsNumericalSemigroup,IsList],
+    function(s,l)
+        return List(l,n->s[n]);
     end
 );
