@@ -237,11 +237,14 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   	nord := Name( ord );
   	nord := nord{[ 1 .. Position( nord, '(' ) - 1 ]};
   	if nord = "MonomialLexOrdering"  then
-  			to := List([1..dim],_->0);
-        to[1]:=1;
-        Info(InfoNumSgps,1,"Warning using block ordering that discriminates the first variable wrt to the rest (4ti2Interface current release).");
+  		#to := List([1..dim],_->0);
+        #to[1]:=1;
+        #Info(InfoNumSgps,1,"Warning using block ordering that discriminates the first variable wrt to the rest (4ti2Interface current release).");
+        to:=IdentityMat(dim);
   	elif nord = "MonomialGrevlexOrdering"  then
-      to :=ones;
+      to :=Concatenation([ones],Reversed(-IdentityMat(dim)){[1..dim-1]});
+    elif nord = "MonomialGrlexOrdering" then 
+      to :=Concatenation([ones],IdentityMat(dim){[1..dim-1]}); 
   	else
   			Error( "the ordering ", ord, " is not yet supported in 4ti2Interface." );
   	fi;
