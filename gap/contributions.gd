@@ -160,7 +160,7 @@ DeclareGlobalFunction("BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup")
 ##
 #F  OmegaPrimalityOfElementListInNumericalSemigroup(l,s)
 ##
-##  Computes the omega primality of a list of elmenents l in S,
+##  Computes the omega primality of a list of elements l in S,
 ##  Implemented by Chris O'Neill.
 ##
 #############################################################################
@@ -170,7 +170,7 @@ DeclareGlobalFunction("OmegaPrimalityOfElementListInNumericalSemigroup");
 ##
 #F  FactorizationsElementListWRTNumericalSemigroup(l,s)
 ##
-##  Computes the factorizations of a list of elmenents l in S,
+##  Computes the factorizations of a list of elements l in S,
 ##  Implemented by Chris O'Neill
 ##
 #############################################################################
