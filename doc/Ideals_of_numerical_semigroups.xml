@@ -212,6 +212,28 @@ true
                 </ManSection>
 
 
+				<ManSection>
+					<Oper Arg="I"  Name="Iterator" Label="for ideals of numerical semigroups"/>
+					<Description>
+						 <A>I</A> is an ideal of a numerical semigroup. It returns an iterator over <A>I</A>.
+						<Example><![CDATA[
+gap> s:=NumericalSemigroup(4,10,11);;
+gap> i:=[2,3]+s;;
+gap> iter:=Iterator(i);
+<iterator>
+gap> NextIterator(iter);
+2
+gap> NextIterator(iter);
+3
+gap> NextIterator(iter);
+6
+gap> SmallElements(i);
+[ 2, 3, 6, 7, 10 ]
+]]></Example>
+					</Description>
+</ManSection>
+
+
                 <ManSection>
                     <Func Arg="I, J" Name="SumIdealsOfNumericalSemigroup"></Func>
                     <Func Arg="I, J" Name="+" Label="for ideals of numerical semigroup"></Func>
