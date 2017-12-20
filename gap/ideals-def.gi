@@ -1017,3 +1017,34 @@ function( I )
   fi;
   return Minimum(Generators(I));
 end);
+
+
+##################################################################################
+##
+#O Iterator(I)
+## Iterator for ideals of numerical semigroups
+##################################################################################
+InstallMethod(Iterator, 
+    "Iterator for numerical semigroups", 
+    [IsIdealOfNumericalSemigroup], 
+    function(ideal)
+    local iter;
+
+    iter:=IteratorByFunctions(rec( 
+        pos := -1,  
+        i := ideal,
+        IsDoneIterator := ReturnFalse, 
+        NextIterator := function(iter) 
+                            local n, m;
+                            m:=Multiplicity(AmbientNumericalSemigroupOfIdeal(iter!.i));
+                            n:=First([iter!.pos+1..iter!.pos+m+1], 
+                            x->x in iter!.i); 
+                            iter!.pos:=n; 
+                            return n; 
+                        end, 
+        ShallowCopy := iter -> rec( i := iter!.i,  pos := iter!.pos )
+        ));
+    return iter;
+    end
+);
+
