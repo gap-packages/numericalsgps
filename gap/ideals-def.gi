@@ -1048,3 +1048,49 @@ InstallMethod(Iterator,
     end
 );
 
+
+#############################################################################
+##
+#F ElementNumber_IdealOfNumericalSemigroup(S,n)
+# Given an ideal I of a numerical semigroup and an integer n, returns 
+# the nth element of I
+#############################################################################
+InstallGlobalFunction(ElementNumber_IdealOfNumericalSemigroup,
+        [IsIdealOfNumericalSemigroup,IsInt],
+        function(I,r)
+  local   selts,  n;
+  if r<=0 then
+    Error("The index must be a positive integer");
+  fi;
+
+  selts := SmallElementsOfIdealOfNumericalSemigroup( I );
+  n := Length(selts);
+  if r <= Length(selts) then
+    return selts[r];
+  else
+    return selts[n] + r - n;
+  fi;
+end);
+
+
+#############################################################################
+##
+#F NumberElement_IdealOfNumericalSemigroup(S,n)
+# Given an ideal of a numerical semigroup I and an integer n, returns the 
+# position of n in I
+#############################################################################
+InstallGlobalFunction(NumberElement_IdealOfNumericalSemigroup,
+    function(i,n)
+        local c, nse;
+        if not(n in i) then 
+            return(fail);
+        fi;
+        c:=Conductor(i);
+        if n<=c then 
+            return Position(SmallElements(i),n);
+        fi;
+        nse:=Length(SmallElements(i));
+        return nse+n-c;
+    end
+);
+

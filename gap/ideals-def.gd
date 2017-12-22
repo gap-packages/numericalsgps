@@ -206,6 +206,25 @@ DeclareSynonymAttr( "SmallElementsOfIdealOfNumericalSemigroup", SmallElements);
 DeclareAttribute("Conductor", IsIdealOfNumericalSemigroup);
 DeclareSynonymAttr("ConductorOfIdealOfNumericalSemigroup", Conductor);
 
+
+#############################################################################
+##
+#F ElementNumber_IdealOfNumericalSemigroup(S,n)
+# Given an ideal I of a numerical semigroup and an integer n, returns 
+# the nth element of I
+#############################################################################
+DeclareGlobalFunction("ElementNumber_IdealOfNumericalSemigroup");
+
+#############################################################################
+##
+#F NumberElement_IdealOfNumericalSemigroup(S,n)
+# Given an ideal of a numerical semigroup I and an integer n, returns the 
+# position of n in I
+#############################################################################
+DeclareGlobalFunction("NumberElement_IdealOfNumericalSemigroup");
+
+
+
 #############################################################################
 ##
 #F  MaximalIdealOfNumericalSemigroup(S)

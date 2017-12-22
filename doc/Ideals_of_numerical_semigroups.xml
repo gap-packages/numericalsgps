@@ -212,6 +212,35 @@ true
                 </ManSection>
 
 
+
+				<ManSection>
+					<Func Arg="I,r"  Name="ElementNumber_IdealOfNumericalSemigroup"/>
+					<Description>
+						 <A>I</A> is an ideal of a numerical semigroup and <A>r</A> is an integer. 
+                         It returns the <A>r</A>-th element of <A>I</A>.
+						<Example><![CDATA[
+gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
+gap> ElementNumber_IdealOfNumericalSemigroup(I,10);
+19
+]]></Example>
+					</Description>
+</ManSection>
+
+				<ManSection>
+					<Func Arg="I,r"  Name="NumberElement_IdealOfNumericalSemigroup"/>
+					<Description>
+						 <A>I</A> is an ideal of a numerical semigroup and <A>r</A> is an integer. 
+                         It returns the position of <A>r</A> in <A>I</A> (and <C>fail</C> if the integer is not in the ideal).
+						<Example><![CDATA[
+gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
+gap> NumberElement_IdealOfNumericalSemigroup(I,19);
+10
+]]></Example>
+					</Description>
+</ManSection>
+
+
+
 				<ManSection>
 					<Oper Arg="I"  Name="Iterator" Label="for ideals of numerical semigroups"/>
 					<Description>
@@ -232,7 +261,6 @@ gap> SmallElements(i);
 ]]></Example>
 					</Description>
 </ManSection>
-
 
                 <ManSection>
                     <Func Arg="I, J" Name="SumIdealsOfNumericalSemigroup"></Func>
