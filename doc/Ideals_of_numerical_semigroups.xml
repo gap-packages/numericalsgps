@@ -240,6 +240,33 @@ gap> NumberElement_IdealOfNumericalSemigroup(I,19);
 </ManSection>
 
 
+				<ManSection>
+					<Oper Arg="I,r"  Name="\[ \]" Label="for ideals of numerical semigroups"/>
+					<Description>
+						 <A>I</A> is an ideal of a numerical semigroup and <A>r</A> is an integer. 
+                         It returns the <A>r</A>-th element of <A>I</A>.
+						<Example><![CDATA[
+gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
+gap> I[10];
+19
+]]></Example>
+					</Description>
+</ManSection>
+
+
+				<ManSection>
+					<Oper Arg="S,ls"  Name="\{ \}" Label="for ideals of numerical semigroups"/>
+					<Description>
+						 <A>I</A> is an ideal of a numerical semigroup and <A>ls</A> is a list of integers. 
+                         It returns the list <A>[I[r] : r in ls]</A>.
+						<Example><![CDATA[
+gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
+gap> I{[10..13]};
+[ 19, 20, 21, 22 ]
+]]></Example>
+					</Description>
+</ManSection>
+
 
 				<ManSection>
 					<Oper Arg="I"  Name="Iterator" Label="for ideals of numerical semigroups"/>

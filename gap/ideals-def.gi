@@ -1094,3 +1094,27 @@ InstallGlobalFunction(NumberElement_IdealOfNumericalSemigroup,
     end
 );
 
+##################################################################################
+##
+#O I[n]
+## The nth element of I
+##################################################################################
+
+InstallOtherMethod(\[\], [IsIdealOfNumericalSemigroup,IsInt],
+    function(i,n)
+        return ElementNumber_IdealOfNumericalSemigroup(i,n);
+    end
+);
+
+##################################################################################
+##
+#O I{ls}
+## [I[n] :  n in ls]
+##################################################################################
+
+
+InstallOtherMethod(\{\}, [IsIdealOfNumericalSemigroup,IsList],
+    function(i,l)
+        return List(l,n->i[n]);
+    end
+);

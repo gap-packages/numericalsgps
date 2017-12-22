@@ -150,7 +150,7 @@ gap> RthElementOfNumericalSemigroup(S,53);
 
 
 				<ManSection>
-					<Oper Arg="S,r"  Name="\[ \]"/>
+					<Oper Arg="S,r"  Name="\[ \]" Label="for numerical semigroups"/>
 					<Description>
 						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the <A>r</A>-th element of <A>S</A>.
 						<Example><![CDATA[
@@ -163,7 +163,7 @@ gap> S[53];
 
 
 				<ManSection>
-					<Oper Arg="S,ls"  Name="\{ \}"/>
+					<Oper Arg="S,ls"  Name="\{ \}" Label="for numerical semigroups"/>
 					<Description>
 						 <A>S</A> is a numerical semigroup and <A>ls</A> is a list of integers. It returns the list <A>[S[r] : r in ls]</A>.
 						<Example><![CDATA[
