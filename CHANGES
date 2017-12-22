@@ -3,8 +3,9 @@
                    ----------------------------------------
 1.1.5->1.1.6
 
-- List and sublist access for numerical semigroups
-- Iterator for numerical semigroup
+- NumberElement_IdealOfNumericalSemigroup and ElementNumber_IdealOfNumericalSemigroup
+- List and sublist access for numerical semigroups and ideals of numerical semigroups, \[\] and \{\}
+- Iterator for numerical semigroup and ideals of numerical semigroups
 - NextElementOfNumericalSemigroup, NumberElement_NumericalSemigroup and ElementNumber_NumericalSemigroup
 
 1.1.4->1.1.5
