@@ -68,7 +68,7 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 # returns only the minimal solutions of the above system of equations
 # If not using nomaliz: then the above can cause an infinite loop
 ########################################################################
-DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsRectangularTable]);
+DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
 
 ###############################################################################
 #O BettiElementsOfAffineSemigroup

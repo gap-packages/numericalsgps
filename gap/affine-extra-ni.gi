@@ -133,7 +133,7 @@ end);
 ########################################################################
 InstallOtherMethod(FactorizationsVectorWRTList,
         "Computes the set of factorizations of the first argument in terms of the elements of the second",
-        [IsHomogeneousList, IsRectangularTable],5,
+        [IsHomogeneousList, IsMatrix],5,
         function(v,ls)
     local mat, cone, n, facs;
    	Info(InfoNumSgps,2,"Using NormalizInterface to compute minimal factorization.");

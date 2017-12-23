@@ -494,7 +494,7 @@ end);
 ########################################################################
 InstallMethod(FactorizationsVectorWRTList,
         "Computes the set of factorizations of the first argument in terms of the elements of the second",
-        [IsHomogeneousList, IsRectangularTable],1,
+        [IsHomogeneousList, IsMatrix],1,
         function(v,ls)
     local len, e1, opt1, opt2, i, mat, dim;
     # REQUERIMENTS: NormalizInterface

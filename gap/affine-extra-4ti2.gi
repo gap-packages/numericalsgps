@@ -151,7 +151,7 @@ end);
 
 InstallOtherMethod(FactorizationsVectorWRTList,
         "Computes the factorizations of v in terms of the elments in ls",
-        [IsHomogeneousList,IsRectangularTable],4,
+        [IsHomogeneousList,IsMatrix],4,
         function(v,l)
     local  dir, filename, exec, filestream, matrix,mat,rhs,sign;
 
