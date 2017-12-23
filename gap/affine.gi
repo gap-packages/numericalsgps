@@ -1340,6 +1340,10 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
         return fail;
     fi;
 
+    if NumSgpsCanUseSingular then
+        return true;
+    fi;
+    
     if LoadPackage("singular")=true then
         ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
         ReadPackage("numericalsgps", "gap/polynomials-extra-s.gd");
