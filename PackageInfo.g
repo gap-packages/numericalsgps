@@ -216,7 +216,7 @@ BannerString := Concatenation(
   "For help, type: ?NumericalSgps: \n",
   "----------------------------------------------------------------\n" ),
 
-TestFile := "tst/testall.tst",
+TestFile := "tst/testall.g",
 
 Keywords := ["Numerical Semigroups", "Affine semigroups", "Good semigroups"],
 
