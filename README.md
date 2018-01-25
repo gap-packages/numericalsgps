@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/gap-packages/numericalsgps.svg?branch=master)](https://travis-ci.org/gap-packages/numericalsgps)
+[![Code Coverage](https://codecov.io/github/gap-packages/numericalsgps/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/numericalsgps)
+
 The GAP 4 package `NumericalSgps` to compute with Numerical Semigroups
 ======================================================================
 
