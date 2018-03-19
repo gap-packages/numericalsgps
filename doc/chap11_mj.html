@@ -106,8 +106,8 @@
 
 <h5>11.1-1 AffineSemigroupByGenerators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">List</code> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup spanned by <code class="code">List</code>.</p>
 
 <p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"generators"</code> and <code class="code">List</code> must be a list, not a sequence of individual elements.</p>
@@ -128,8 +128,8 @@
 
 <h5>11.1-2 AffineSemigroupByEquations</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByEquations</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByEquations</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">List</code> is a list with two components. The first represents a matrix with integer coefficients, say <span class="SimpleMath">\(A=(a_{ij})\)</span>, and so it is a list of lists of integers all with the same length. The second component is a list of positive integers, say <span class="SimpleMath">\(d=(d_i)\)</span>, which may be empty. The list <span class="SimpleMath">\(d\)</span> must be of length less than or equal to the length of <span class="SimpleMath">\(A\)</span> (number of rows of <span class="SimpleMath">\(A\)</span>).</p>
 
 <p>The output is the full semigroup of nonnegative integer solutions to the system of homogeneous equations <br /> <span class="SimpleMath">\(a_{11}x_1+\cdots+a_{1n}x_n\equiv 0\bmod d_1, \)</span><br /> <span class="SimpleMath">\(\cdots \)</span><br /> <span class="SimpleMath">\(a_{k1}x_1+\cdots+a_{kn}x_n\equiv 0\bmod d_k, \)</span><br /> <span class="SimpleMath">\(a_{k+1\, 1}x_1+\cdots +a_{k+1\, n}=0, \)</span><br /> <span class="SimpleMath">\(\cdots \)</span><br /> <span class="SimpleMath">\(a_{m1}x_1+\cdots+a_{mn}x_n=0. \)</span><br /></p>
@@ -154,8 +154,8 @@ true
 
 <h5>11.1-3 AffineSemigroupByInequalities</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByInequalities</code>( <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByInequalities</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">List</code> is a list of lists (a matrix) of integers that represents a set of inequalities.</p>
 
 <p>Returns the (normal) affine semigroup of nonegative integer solutions of the system of inequalities <span class="SimpleMath">\(List\times X\ge 0\)</span>.</p>
@@ -176,8 +176,8 @@ true
 
 <h5>11.1-4 Generators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is an affine semigroup, the output is a system of generators.</p>
 
 
@@ -192,8 +192,8 @@ true
 
 <h5>11.1-5 MinimalGenerators</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGenerators</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalGeneratingSystem</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is an affine semigroup, the output is its system of minimal generators.</p>
 
 
@@ -208,7 +208,7 @@ true
 
 <h5>11.1-6 AsAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup, the output is <var class="Arg">S</var> regarded as an affine semigroup.</p>
 
 
@@ -239,10 +239,10 @@ true
 
 <h5>11.1-7 IsAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroup</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByGenerators</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByEquations</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByInequalities</code>( <var class="Arg">AS</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroup</code>( <var class="Arg">AS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByGenerators</code>( <var class="Arg">AS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByEquations</code>( <var class="Arg">AS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAffineSemigroupByInequalities</code>( <var class="Arg">AS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p><var class="Arg">AS</var> is an affine semigroup and these attributes are available (their names should be self explanatory). They reflect what is currently known about the semigroup.</p>
 
 
@@ -259,8 +259,8 @@ true
 
 <h5>11.1-8 BelongsToAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \in</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BelongsToAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \in</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">a</var> an affine semigroup. Returns true if the vector is in the semigroup, and false otherwise.</p>
 
 <p>If the semigroup is full and its equations are known (either because the semigroup was defined by equations, or because the user has called <code class="code">IsFullAffineSemgiroup(a)</code> and the output was true), then membership is performed by evaluating <var class="Arg">v</var> in the equations. The same holds for normal semigroups and its defining inequalities.</p>
@@ -284,8 +284,8 @@ false
 
 <h5>11.1-9 IsFull</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFull</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFullAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFull</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFullAffineSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is an affine semigroup.</p>
 
 <p>Returns true if the semigroup is full, false otherwise. The semigroup is full if whenever <span class="SimpleMath">\(a,b\in S\)</span> and <span class="SimpleMath">\(b-a\in \mathbb N^k\)</span>, then <span class="SimpleMath">\(a-b\in S\)</span>, where <span class="SimpleMath">\(k\)</span> is the dimension of <span class="SimpleMath">\(S\)</span>.</p>
@@ -303,7 +303,7 @@ true
 
 <h5>11.1-10 HilbertBasisOfSystemOfHomogeneousEquations</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousEquations</code>( <var class="Arg">ls</var>, <var class="Arg">m</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousEquations</code>( <var class="Arg">ls</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">ls</var> is a list of lists of integers and <var class="Arg">m</var> a list of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">\(A\)</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions of the system <span class="SimpleMath">\(Ax=0\)</span> where the <span class="SimpleMath">\(k\)</span> first equations are in the congruences modulo <var class="Arg">m[i]</var>, with <span class="SimpleMath">\(k\)</span> the length of <var class="Arg">m</var>.</p>
 
 <p>If the package <code class="code">NormalizInterface</code> has not been loaded, then Contejean-Devie algorithm is used <a href="chapBib_mj.html#biBMR1283022">[CD94]</a> instead (if this is the case, congruences are treated as in <a href="chapBib_mj.html#biBR-GS">[RGS98]</a>).</p>
@@ -320,7 +320,7 @@ true
 
 <h5>11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousInequalities</code>( <var class="Arg">ls</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertBasisOfSystemOfHomogeneousInequalities</code>( <var class="Arg">ls</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">ls</var> is a list of lists of integers. The elements of <var class="Arg">ls</var> represent the rows of a matrix <span class="SimpleMath">\(A\)</span>. The output is a minimal generating system (Hilbert basis) of the set of nonnegative integer solutions to <span class="SimpleMath">\(Ax\ge 0\)</span>.</p>
 
 <p>If the package <code class="code">NormalizInterface</code> has not been loaded, then Contejean-Devie algorithm is used <a href="chapBib_mj.html#biBMR1283022">[CD94]</a> instead (the use of slack variables is described in <a href="chapBib_mj.html#biBR-GS-GG-B">[CAGGB02]</a>).</p>
@@ -335,7 +335,7 @@ true
 
 <h5>11.1-12 EquationsOfGroupGeneratedBy</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquationsOfGroupGeneratedBy</code>( <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EquationsOfGroupGeneratedBy</code>( <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">M</var> is a matrix of integers. The output is a pair <span class="SimpleMath">\([A,m]\)</span> that represents the set of defining equations of the group spanned by the rows of <var class="Arg">M</var>: <span class="SimpleMath">\(Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k\)</span>, with <span class="SimpleMath">\(m=[n_1,\ldots,n_t]\)</span>.</p>
 
 
@@ -348,7 +348,7 @@ true
 
 <h5>11.1-13 BasisOfGroupGivenByEquations</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisOfGroupGivenByEquations</code>( <var class="Arg">A</var>, <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisOfGroupGivenByEquations</code>( <var class="Arg">A</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">A</var> is a matrix of integers and <var class="Arg">m</var> is a list of positive integers. The output is a basis for the group with defining equations <span class="SimpleMath">\(Ax=0\in \mathbb Z_{n_1}\times \cdots \times \mathbb Z_{n_t}\times \mathbb Z^k\)</span>, with <span class="SimpleMath">\(m=[n_1,\ldots,n_t]\)</span>.</p>
 
 
@@ -371,7 +371,7 @@ true
 
 <h5>11.2-1 GluingOfAffineSemigroups</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GluingOfAffineSemigroups</code>( <var class="Arg">a1</var>, <var class="Arg">a2</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GluingOfAffineSemigroups</code>( <var class="Arg">a1</var>, <var class="Arg">a2</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a1, a2</var> are affine semigroups. Determines if they can be glued, and if so, returns the gluing. Otherwise it returns fail.</p>
 
 
@@ -398,7 +398,7 @@ true
 
 <h5>11.3-1 GeneratorsOfKernelCongruence</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfKernelCongruence</code>( <var class="Arg">M</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfKernelCongruence</code>( <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">M</var> is matrix with nonnegative integer coefficients. The output is a system of generators of the congruence <span class="SimpleMath">\(\{(x,y)\mid xM=yM\}\)</span>.</p>
 
 <p>The main difference with <code class="code">MinimalPresentationOfAffineSemigroup</code> is that the matrix <var class="Arg">M</var> can have repeated columns and these are not treated as a set.</p>
@@ -407,7 +407,7 @@ true
 
 <h5>11.3-2 CanonicalBasisOfKernelCongruence</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalBasisOfKernelCongruence</code>( <var class="Arg">M</var>, <var class="Arg">Ord</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalBasisOfKernelCongruence</code>( <var class="Arg">M</var>, <var class="Arg">Ord</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">M</var> is matrix with nonnegative integer coefficients, <var class="Arg">Ord</var> a term ordering. The output is a canonical bases of the congruence <span class="SimpleMath">\(\{(x,y)\mid xM=yM\}\)</span> (see <a href="chapBib_mj.html#biBRGS99">[RGS99b]</a>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <span class="SimpleMath">\(x_i\mapsto Y^{m_i}\)</span>, with <span class="SimpleMath">\(m_i\)</span> the <span class="SimpleMath">\(i\)</span>th row of <span class="SimpleMath">\(M\)</span>.</p>
 
 <p>Accepted term orderings are lexicographic (<code class="code">MonomialLexOrdering()</code>), graded lexicographic (<var class="Arg">MonomialGrlexOrdering()</var>) and reversed graded lexicographic (<var class="Arg">MonomialGrevlexOrdering()</var>).</p>
@@ -432,7 +432,7 @@ true
 
 <h5>11.3-3 GraverBasis</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraverBasis</code>( <var class="Arg">M</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraverBasis</code>( <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">M</var> is matrix with integer coefficients. The output is a Graver basis for <var class="Arg">M</var>.</p>
 
 
@@ -448,8 +448,8 @@ true
 
 <h5>11.3-4 MinimalPresentationOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentation</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentation</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is a minimal presentation for <var class="Arg">a</var>.</p>
 
 <p>There are four methods implemented for this function, depending on the packages loaded. All of them use elimination, and Herzog's correspondence, computing the kernel of a ring homomorphism (<a href="chapBib_mj.html#biBMR0269762">[Her70]</a>). The fastest procedure is achieved when <code class="code">SingularInterface</code> is loaded, followed by <code class="code">Singular</code>. The procedure that does not use external packages uses internal GAP Gröbner basis computations and thus it is slower. Also in this case, from the Gröbner basis, a minimal set of generating binomials must be refined, and for this Rclasses are used (if <code class="code">NormalizInterface</code> is loaded, then the factorizations are faster). The <code class="code">4ti2</code> implementation uses <code class="code">4ti2</code> internal Gröbner bases and factorizations are done via <code class="code">zsolve</code>.</p>
@@ -467,8 +467,8 @@ true
 
 <h5>11.3-5 BettiElementsOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElements</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElements</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the set of Betti elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 <p>This function relies on the computation of a minimal presentation.</p>
@@ -484,24 +484,26 @@ true
 
 <h5>11.3-6 ShadedSetOfElementInAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup and <var class="Arg">v</var> is an element in <var class="Arg">a</var>. This is a translation to affine semigroups of <code class="code">ShadedSetOfElementInNumericalSemigroup</code> (<a href="chap4_mj.html#X7C42DEB68285F2B8"><span class="RefLink">4.1-5</span></a>).</p>
 
 <p><a id="X81CA53DA8216DC82" name="X81CA53DA8216DC82"></a></p>
 
 <h5>11.3-7 IsGeneric</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneric</code>( <var class="Arg">a</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneric</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup.</p>
 
 <p>The same as <code class="code">IsGenericNumericalSemigroup</code> (<a href="chap4_mj.html#X79C010537C838154"><span class="RefLink">4.2-2</span></a>) but for affine semigroups.</p>
+
+<p>This property implies <code class="func">IsUniquelyPresentedAffineSemigroup</code> (<a href="chap11_mj.html#X87170BBB85E9DEC8"><span class="RefLink">11.3-8</span></a>).</p>
 
 <p><a id="X87170BBB85E9DEC8" name="X87170BBB85E9DEC8"></a></p>
 
 <h5>11.3-8 IsUniquelyPresentedAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup.</p>
 
 <p>The same as <code class="code">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4_mj.html#X81A441947F661C18"><span class="RefLink">4.2-1</span></a>) but for affine semigroups.</p>
@@ -510,7 +512,7 @@ true
 
 <h5>11.3-9 PrimitiveElementsOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the set of primitive elements of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 <p>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <var class="Arg">a</var> and the other (much faster) using <code class="code">NormalizInterface</code>. Also a <code class="code">4ti2</code> version using its Graver basis computation is provided.</p>
@@ -536,7 +538,7 @@ true
 
 <h5>11.4-1 FactorizationsVectorWRTList</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsVectorWRTList</code>( <var class="Arg">v</var>, <var class="Arg">ls</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsVectorWRTList</code>( <var class="Arg">v</var>, <var class="Arg">ls</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">ls</var> is a list of lists of nonnegative integers. The output is set of factorizations of <var class="Arg">v</var> in terms of the elements of <var class="Arg">ls</var>.</p>
 
 <p>If no extra package is loaded, then factorizations are computed recursively; and thus slowly. If <code class="code">NormalizInterface</code> is loaded, then a system of equations is solved with Normaliz, and the performance is much better. If <code class="code">4ti2Interface</code> is loaded instead, then factorizations are calculated using <code class="code">zsolve</code> command of <code class="code">4ti2</code>.</p>
@@ -551,7 +553,7 @@ true
 
 <h5>11.4-2 ElasticityOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElasticityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElasticityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the elasticity of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 <p>The procedure used is based on <a href="chapBib_mj.html#biBPH">[Phi10]</a>, where it is shown that the elasticity can be computed by using circuits. The set of circuits is calculated using <a href="chapBib_mj.html#biBMR1394747">[ES96]</a>.</p>
@@ -567,7 +569,7 @@ true
 
 <h5>11.4-3 DeltaSetOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the Delta set of <var class="Arg">a</var> (defined as for numerical semigroups). The the procedure used is explained in <a href="chapBib_mj.html#biBGSONW">[GSOW17]</a>.</p>
 
 
@@ -585,7 +587,7 @@ true
 
 <h5>11.4-4 CatenaryDegreeOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 
@@ -599,7 +601,7 @@ true
 
 <h5>11.4-5 EqualCatenaryDegreeOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; EqualCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the equal catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 <p>This function relies on the results presented in <a href="chapBib_mj.html#biBGSOSN">[GSOSRN13]</a>.</p>
@@ -608,7 +610,7 @@ true
 
 <h5>11.4-6 HomogeneousCatenaryDegreeOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomogeneousCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the homogeneous catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 <p>This function is based on <a href="chapBib_mj.html#biBGSOSN">[GSOSRN13]</a>.</p>
@@ -617,7 +619,7 @@ true
 
 <h5>11.4-7 MonotoneCatenaryDegreeOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonotoneCatenaryDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the monotone catenary degree of <var class="Arg">a</var> (defined as for numerical semigroups), computed as explained in <a href="chapBib_mj.html#biBPH">[Phi10]</a>.</p>
 
 
@@ -640,7 +642,7 @@ true
 
 <h5>11.4-8 TameDegreeOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TameDegreeOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the tame degree of <var class="Arg">a</var> (defined as for numerical semigroups). If <var class="Arg">a</var> is given by equations (or its equations are known), then the procedure explained in <a href="chapBib_mj.html#biBGSONW">[GSOW17]</a> is used.</p>
 
 
@@ -654,7 +656,7 @@ true
 
 <h5>11.4-9 OmegaPrimalityOfElementInAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementInAffineSemigroup</code>( <var class="Arg">v</var>, <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">v</var> is a list of nonnegative integers and <var class="Arg">a</var> is an affine semigroup. The output is the omega primality of <var class="Arg">a</var> (defined as for numerical semigroups). Returns 0 if the element is not in the semigroup.</p>
 
 <p>The implementation of this procedure is performed as explained in <a href="chapBib_mj.html#biBB-GS-G">[BGSG11]</a> (also, if the semigroup has defining equations, then it takes advantage of this fact as explained in this reference).</p>
@@ -670,7 +672,7 @@ true
 
 <h5>11.4-10 OmegaPrimalityOfAffineSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfAffineSemigroup</code>( <var class="Arg">a</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">a</var> is an affine semigroup. The output is the omega primality of <var class="Arg">a</var> (defined as for numerical semigroups).</p>
 
 

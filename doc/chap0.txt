@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.1.5
+                                 Version 1.1.7
   
   
                                  Manuel Delgado
@@ -144,26 +144,32 @@
       3.1-4 SmallElements
       3.1-5 FirstElementsOfNumericalSemigroup
       3.1-6 RthElementOfNumericalSemigroup
-      3.1-7 AperyList
-      3.1-8 AperyList
-      3.1-9 AperyList
-      3.1-10 AperyListOfNumericalSemigroupAsGraph
-      3.1-11 KunzCoordinatesOfNumericalSemigroup
-      3.1-12 KunzPolytope
-      3.1-13 CocycleOfNumericalSemigroupWRTElement
-      3.1-14 FrobeniusNumber
-      3.1-15 Conductor
-      3.1-16 PseudoFrobeniusOfNumericalSemigroup
-      3.1-17 TypeOfNumericalSemigroup
-      3.1-18 Gaps
-      3.1-19 DesertsOfNumericalSemigroup
-      3.1-20 IsOrdinaryNumericalSemigroup
-      3.1-21 IsAcuteNumericalSemigroup
-      3.1-22 Holes
-      3.1-23 LatticePathAssociatedToNumericalSemigroup
-      3.1-24 Genus
-      3.1-25 FundamentalGaps
-      3.1-26 SpecialGaps
+      3.1-7 \[ \]
+      3.1-8 \{ \}
+      3.1-9 NextElementOfNumericalSemigroup
+      3.1-10 ElementNumber_NumericalSemigroup
+      3.1-11 NumberElement_NumericalSemigroup
+      3.1-12 Iterator
+      3.1-13 AperyList
+      3.1-14 AperyList
+      3.1-15 AperyList
+      3.1-16 AperyListOfNumericalSemigroupAsGraph
+      3.1-17 KunzCoordinatesOfNumericalSemigroup
+      3.1-18 KunzPolytope
+      3.1-19 CocycleOfNumericalSemigroupWRTElement
+      3.1-20 FrobeniusNumber
+      3.1-21 Conductor
+      3.1-22 PseudoFrobeniusOfNumericalSemigroup
+      3.1-23 TypeOfNumericalSemigroup
+      3.1-24 Gaps
+      3.1-25 DesertsOfNumericalSemigroup
+      3.1-26 IsOrdinaryNumericalSemigroup
+      3.1-27 IsAcuteNumericalSemigroup
+      3.1-28 Holes
+      3.1-29 LatticePathAssociatedToNumericalSemigroup
+      3.1-30 Genus
+      3.1-31 FundamentalGaps
+      3.1-32 SpecialGaps
     3.2 [33X[0;0YWilf's conjecture[133X
       3.2-1 WilfNumber
       3.2-2 EliahouNumber
@@ -242,16 +248,21 @@
       7.1-8 Conductor
       7.1-9 Minimum
       7.1-10 BelongsToIdealOfNumericalSemigroup
-      7.1-11 SumIdealsOfNumericalSemigroup
-      7.1-12 MultipleOfIdealOfNumericalSemigroup
-      7.1-13 SubtractIdealsOfNumericalSemigroup
-      7.1-14 Difference
-      7.1-15 TranslationOfIdealOfNumericalSemigroup
-      7.1-16 Intersection
-      7.1-17 MaximalIdealOfNumericalSemigroup
-      7.1-18 CanonicalIdealOfNumericalSemigroup
-      7.1-19 IsCanonicalIdeal
-      7.1-20 TypeSequenceOfNumericalSemigroup
+      7.1-11 ElementNumber_IdealOfNumericalSemigroup
+      7.1-12 NumberElement_IdealOfNumericalSemigroup
+      7.1-13 \[ \]
+      7.1-14 \{ \}
+      7.1-15 Iterator
+      7.1-16 SumIdealsOfNumericalSemigroup
+      7.1-17 MultipleOfIdealOfNumericalSemigroup
+      7.1-18 SubtractIdealsOfNumericalSemigroup
+      7.1-19 Difference
+      7.1-20 TranslationOfIdealOfNumericalSemigroup
+      7.1-21 Intersection
+      7.1-22 MaximalIdealOfNumericalSemigroup
+      7.1-23 CanonicalIdealOfNumericalSemigroup
+      7.1-24 IsCanonicalIdeal
+      7.1-25 TypeSequenceOfNumericalSemigroup
     7.2 [33X[0;0YBlow ups and closures[133X
       7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
       7.2-2 BlowUpIdealOfNumericalSemigroup

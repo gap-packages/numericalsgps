@@ -16,7 +16,7 @@
   
   [1XA.1-1 BezoutSequence[101X
   
-  [29X[2XBezoutSequence[102X( [3Xarg[103X ) [32X function
+  [33X[1;0Y[29X[2XBezoutSequence[102X( [3Xarg[103X ) [32X function[133X
   
   [33X[0;0Y[3Xarg[103X  consists of two rational numbers or a list of two rational numbers. The
   output  is  a  Bézout  sequence  with  ends  the two rational numbers given.
@@ -32,7 +32,7 @@
   
   [1XA.1-2 IsBezoutSequence[101X
   
-  [29X[2XIsBezoutSequence[102X( [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XIsBezoutSequence[102X( [3XL[103X ) [32X function[133X
   
   [33X[0;0Y[3XL[103X  is  a  list  of  rational numbers. [10XIsBezoutSequence[110X returns [9Xtrue[109X or [9Xfalse[109X
   according to whether [3XL[103X is a Bézout sequence or not.[133X
@@ -47,7 +47,7 @@
   
   [1XA.1-3 CeilingOfRational[101X
   
-  [29X[2XCeilingOfRational[102X( [3Xr[103X ) [32X function
+  [33X[1;0Y[29X[2XCeilingOfRational[102X( [3Xr[103X ) [32X function[133X
   
   [33X[0;0YReturns the smallest integer greater than or equal to the rational [3Xr[103X.[133X
   
@@ -65,7 +65,7 @@
   
   [1XA.2-1 RepresentsPeriodicSubAdditiveFunction[101X
   
-  [29X[2XRepresentsPeriodicSubAdditiveFunction[102X( [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XRepresentsPeriodicSubAdditiveFunction[102X( [3XL[103X ) [32X function[133X
   
   [33X[0;0Y[3XL[103X  is a list of integers. [10XRepresentsPeriodicSubAdditiveFunction[110X returns [9Xtrue[109X
   or [9Xfalse[109X according to whether [3XL[103X represents a periodic subadditive function [22Xf[122X
@@ -81,7 +81,7 @@
   
   [1XA.2-2 IsListOfIntegersNS[101X
   
-  [29X[2XIsListOfIntegersNS[102X( [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XIsListOfIntegersNS[102X( [3XL[103X ) [32X function[133X
   
   [33X[0;0YDetects whether [3XL[103X is a nonempty list of integers.[133X
   

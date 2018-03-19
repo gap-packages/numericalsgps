@@ -57,8 +57,8 @@
 
 <h5>4.1-1 MinimalPresentationOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentation</code>( <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentationOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalPresentation</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. The output is a list of lists with two elements. Each list of two elements represents a relation between the minimal generators of the numerical semigroup. If <span class="SimpleMath">{ {x_1,y_1},...,{x_k,y_k}}</span> is the output and <span class="SimpleMath">{m_1,...,m_n}</span> is the minimal system of generators of the numerical semigroup, then <span class="SimpleMath">{x_i,y_i}={{a_i_1,...,a_i_n},{b_i_1,...,b_i_n}}</span> and <span class="SimpleMath">a_i_1m_1+⋯+a_i_nm_n= b_i_1m_1+ ⋯ +b_i_nm_n.</span></p>
 
 <p>Any other relation among the minimal generators of the semigroup can be deduced from the ones given in the output.</p>
@@ -80,7 +80,7 @@
 
 <h5>4.1-2 GraphAssociatedToElementInNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphAssociatedToElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphAssociatedToElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an element in <var class="Arg">S</var>.</p>
 
 <p>The output is a pair. If <span class="SimpleMath">{m_1,...,m_n}</span> is the set of minimal generators of <var class="Arg">S</var>, then the first component is the set of vertices of the graph associated to <var class="Arg">n</var> in <var class="Arg">S</var>, that is, the set <span class="SimpleMath">{ m_i | n-m_i∈ S}</span>, and the second component is the set of edges of this graph, that is, <span class="SimpleMath">{ {m_i,m_j} | n-(m_i+m_j)∈ S}.</span></p>
@@ -98,8 +98,8 @@
 
 <h5>4.1-3 BettiElementsOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElements</code>( <var class="Arg">S</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BettiElements</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>The output is the set of elements in <var class="Arg">S</var> whose associated graph is nonconnected <a href="chapBib.html#biBGS-O">[GSO10]</a>.</p>
@@ -115,7 +115,7 @@
 
 <h5>4.1-4 PrimitiveElementsOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrimitiveElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>The output is the set of elements <span class="SimpleMath">s</span> in <var class="Arg">S</var> such that there exists a minimal solution to <span class="SimpleMath">msg⋅ x-msg⋅ y = 0</span>, such that <span class="SimpleMath">x,y</span> are factorizations of <span class="SimpleMath">s</span>, and <span class="SimpleMath">msg</span> is the minimal generating system of <var class="Arg">S</var>. Betti elements are primitive, but not the way around in general.</p>
@@ -131,7 +131,7 @@
 
 <h5>4.1-5 ShadedSetOfElementInNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an element in <var class="Arg">S</var>.</p>
 
 <p>The output is a simplicial complex <span class="SimpleMath">C</span>. If <span class="SimpleMath">{m_1,...,m_n}</span> is the set of minimal generators of <var class="Arg">S</var>, then <span class="SimpleMath">L ∈ C</span> if <span class="SimpleMath">n-∑_i∈ L m_i∈ S</span> (<a href="chapBib.html#biBSzW">[SW86]</a>).</p>
@@ -155,8 +155,8 @@
 
 <h5>4.2-1 IsUniquelyPresented</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresented</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresented</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>The output is true if <var class="Arg">S</var> has uniquely presented. The implementation is based on (see <a href="chapBib.html#biBGS-O">[GSO10]</a>).</p>
@@ -172,11 +172,13 @@ true
 
 <h5>4.2-2 IsGeneric</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneric</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneric</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>The output is true if <var class="Arg">S</var> has a generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented (see <a href="chapBib.html#biBB-GS-G">[BGSG11]</a>).</p>
+
+<p>This filter implies <code class="func">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4.html#X81A441947F661C18"><span class="RefLink">4.2-1</span></a>).</p>
 
 
 <div class="example"><pre>

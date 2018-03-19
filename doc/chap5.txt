@@ -11,7 +11,7 @@
   
   [1X5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup[101X
   
-  [29X[2XRemoveMinimalGeneratorFromNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XRemoveMinimalGeneratorFromNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xn[103X is one if its minimal generators.[133X
   
@@ -29,7 +29,7 @@
   
   [1X5.1-2 AddSpecialGapOfNumericalSemigroup[101X
   
-  [29X[2XAddSpecialGapOfNumericalSemigroup[102X( [3Xg[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XAddSpecialGapOfNumericalSemigroup[102X( [3Xg[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xg[103X is a special gap of [3XS[103X[133X
   
@@ -54,8 +54,8 @@
   
   [1X5.2-1 Intersection[101X
   
-  [29X[2XIntersection[102X( [3XS[103X, [3XT[103X ) [32X operation
-  [29X[2XIntersectionOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  [33X[1;0Y[29X[2XIntersection[102X( [3XS[103X, [3XT[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIntersectionOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical  semigroups.  Computes the intersection of [3XS[103X and [3XT[103X
   (which is a numerical semigroup).[133X
@@ -77,8 +77,8 @@
   
   [1X5.2-2 QuotientOfNumericalSemigroup[101X
   
-  [29X[2XQuotientOfNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function
-  [29X[2X\/[102X( [3XS[103X, [3Xn[103X ) [32X operation
+  [33X[1;0Y[29X[2XQuotientOfNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2X\/[102X( [3XS[103X, [3Xn[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup and [3Xn[103X is an integer. Computes the quotient of [3XS[103X
   by  [3Xn[103X,  that  is,  the  set  [22X{  x∈  N  | nx ∈ S}[122X, which is again a numerical
@@ -103,7 +103,7 @@
   
   [1X5.2-3 MultipleOfNumericalSemigroup[101X
   
-  [29X[2XMultipleOfNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XMultipleOfNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup, and [3Xa[103X and [3Xb[103X are positive integers. Computes [22Xa S∪
   {b,b+1,->}[122X.  If  [3Xb[103X  is  smaller  than [22Xa c[122X, with [22Xc[122X the conductor of [22XS[122X, then a
@@ -118,8 +118,8 @@
   
   [1X5.2-4 Difference[101X
   
-  [29X[2XDifference[102X( [3XS[103X, [3XT[103X ) [32X operation
-  [29X[2XDifferenceOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  [33X[1;0Y[29X[2XDifference[102X( [3XS[103X, [3XT[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDifferenceOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function[133X
   
   [33X[0;0Y[3XS, T[103X are numerical semigroups. The output is the set [22X[3XS[103X∖ [3XT[103X[122X.[133X
   
@@ -136,7 +136,7 @@
   
   [1X5.2-5 NumericalDuplication[101X
   
-  [29X[2XNumericalDuplication[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalDuplication[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup, and [3XE[103X and ideal of [3XS[103X, and [3Xb[103X is a positive odd
   integer,  so that [22X2S∪ (2E+b)[122X is a numerical semigroup (this extends slightly
@@ -156,7 +156,7 @@
   
   [1X5.2-6 InductiveNumericalSemigroup[101X
   
-  [29X[2XInductiveNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XInductiveNumericalSemigroup[102X( [3XS[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup, and [3Xa[103X and [3Xb[103X are lists of positive integers, such
   that  [22Xb[i+1]ge  a[i]b[i][122X.  Computes  inductively  [22XS_0=  N[122X and [22XS_i+1=a[i]S_i∪
@@ -183,7 +183,7 @@
   
   [1X5.3-1 OverSemigroupsNumericalSemigroup[101X
   
-  [29X[2XOverSemigroupsNumericalSemigroup[102X( [3Xs[103X ) [32X function
+  [33X[1;0Y[29X[2XOverSemigroupsNumericalSemigroup[102X( [3Xs[103X ) [32X function[133X
   
   [33X[0;0Y[3Xs[103X  is  a  numerical semigroup. The output is the set of numerical semigroups
   containing it.[133X
@@ -202,7 +202,7 @@
   
   [1X5.4-1 NumericalSemigroupsWithFrobeniusNumber[101X
   
-  [29X[2XNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X  is an non zero integer greater than or equal to -1. The output is the set
   of  numerical  semigroups with Frobenius number [3Xf[103X. The algorithm implemented
@@ -226,7 +226,7 @@
   
   [1X5.5-1 NumericalSemigroupsWithGenus[101X
   
-  [29X[2XNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function[133X
   
   [33X[0;0Y[3Xg[103X  is  a  nonnegative integer. The output is the set of numerical semigroups
   with genus [3Xg[103X.[133X
@@ -255,13 +255,13 @@
   [1X5.6  [33X[0;0YConstructing  the  set  of  numerical  semigroups  with  a given set of[101X
   [1Xpseudo-Frobenius numbers[133X[101X
   
-  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-16[114X).[133X
+  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-22[114X).[133X
   
   [33X[0;0YThese procedures are described in [DGSRP16].[133X
   
   [1X5.6-1 ForcedIntegersForPseudoFrobenius[101X
   
-  [29X[2XForcedIntegersForPseudoFrobenius[102X( [3XPF[103X ) [32X function
+  [33X[1;0Y[29X[2XForcedIntegersForPseudoFrobenius[102X( [3XPF[103X ) [32X function[133X
   
   [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
   The output is:[133X
@@ -288,7 +288,7 @@
   
   [1X5.6-2 SimpleForcedIntegersForPseudoFrobenius[101X
   
-  [29X[2XSimpleForcedIntegersForPseudoFrobenius[102X( [3Xfg[103X, [3Xfe[103X, [3XPF[103X ) [32X function
+  [33X[1;0Y[29X[2XSimpleForcedIntegersForPseudoFrobenius[102X( [3Xfg[103X, [3Xfe[103X, [3XPF[103X ) [32X function[133X
   
   [33X[0;0YIs just a quicker version of [2XForcedIntegersForPseudoFrobenius[102X ([14X5.6-1[114X)[133X
   
@@ -322,7 +322,7 @@
   
   [1X5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers[101X
   
-  [29X[2XNumericalSemigroupsWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupsWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function[133X
   
   [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
   The  output  is:  a  list of numerical semigroups S such that PF(S)=PF. When
@@ -346,7 +346,7 @@
   
   [1X5.6-4 ANumericalSemigroupWithPseudoFrobeniusNumbers[101X
   
-  [29X[2XANumericalSemigroupWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function
+  [33X[1;0Y[29X[2XANumericalSemigroupWithPseudoFrobeniusNumbers[102X( [3Xg[103X ) [32X function[133X
   
   [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
   Alternatively,  a  record  with fields "pseudo_frobenius" and "max_attempts"

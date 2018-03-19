@@ -39,7 +39,7 @@
   
   [1X9.1-1 FactorizationsIntegerWRTList[101X
   
-  [29X[2XFactorizationsIntegerWRTList[102X( [3Xn[103X, [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XFactorizationsIntegerWRTList[102X( [3Xn[103X, [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is  a  list  of  integers  and  [3Xn[103X  an  integer. The output is the set of
   factorizations  of  [3Xn[103X in terms of the elements in the list [3Xls[103X. This function
@@ -53,7 +53,7 @@
   
   [1X9.1-2 FactorizationsElementWRTNumericalSemigroup[101X
   
-  [29X[2XFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X a nonnegative integer. The output is the
   set of factorizations of [3Xn[103X in terms of the minimal generating set of [3XS[103X.[133X
@@ -68,7 +68,7 @@
   
   [1X9.1-3 FactorizationsElementListWRTNumericalSemigroup[101X
   
-  [29X[2XFactorizationsElementListWRTNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XFactorizationsElementListWRTNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xl[103X a list of elements of [3XS[103X.[133X
   
@@ -86,7 +86,7 @@
   
   [1X9.1-4 RClassesOfSetOfFactorizations[101X
   
-  [29X[2XRClassesOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XRClassesOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is a set of factorizations (a list of lists of nonnegative integers with
   the  same length). The output is the set of [22Xmathcal R[122X-classes of this set of
@@ -104,7 +104,7 @@
   
   [1X9.1-5 LShapesOfNumericalSemigroup[101X
   
-  [29X[2XLShapesOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XLShapesOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. The output is the number of LShapes associated
   to  [3XS[103X. These are ways of arranging the set of factorizations of the elements
@@ -124,7 +124,7 @@
   
   [1X9.1-6 DenumerantOfElementInNumericalSemigroup[101X
   
-  [29X[2XDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a positive integer. The output is the
   number of factorizations of [3Xn[103X in terms of the minimal generating set of [3XS[103X.[133X
@@ -140,7 +140,7 @@
   
   [1X9.2-1 LengthsOfFactorizationsIntegerWRTList[101X
   
-  [29X[2XLengthsOfFactorizationsIntegerWRTList[102X( [3Xn[103X, [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XLengthsOfFactorizationsIntegerWRTList[102X( [3Xn[103X, [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is a list of integers and [3Xn[103X an integer. The output is the set of lengths
   of the factorizations of [3Xn[103X in terms of the elements in [3Xls[103X.[133X
@@ -152,7 +152,7 @@
   
   [1X9.2-2 LengthsOfFactorizationsElementWRTNumericalSemigroup[101X
   
-  [29X[2XLengthsOfFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XLengthsOfFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X a nonnegative integer. The output is the
   set of lengths of the factorizations of [3Xn[103X in terms of the minimal generating
@@ -167,7 +167,7 @@
   
   [1X9.2-3 ElasticityOfFactorizationsElementWRTNumericalSemigroup[101X
   
-  [29X[2XElasticityOfFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XElasticityOfFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a positive integer. The output is the
   maximum  length  divided by the minimum length of the factorizations of [3Xn[103X in
@@ -182,7 +182,7 @@
   
   [1X9.2-4 ElasticityOfNumericalSemigroup[101X
   
-  [29X[2XElasticityOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XElasticityOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. The output is the elasticity of [3XS[103X.[133X
   
@@ -195,7 +195,7 @@
   
   [1X9.2-5 DeltaSetOfSetOfIntegers[101X
   
-  [29X[2XDeltaSetOfSetOfIntegers[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetOfSetOfIntegers[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is  list of integers. The output is the Delta set of the elements in [3Xls[103X,
   that is, the set of differences of consecutive elements in the list.[133X
@@ -209,7 +209,7 @@
   
   [1X9.2-6 DeltaSetOfFactorizationsElementWRTNumericalSemigroup[101X
   
-  [29X[2XDeltaSetOfFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetOfFactorizationsElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X a nonnegative integer. The output is the
   Delta  set of the factorizations of [3Xn[103X in terms of the minimal generating set
@@ -224,7 +224,7 @@
   
   [1X9.2-7 DeltaSetPeriodicityBoundForNumericalSemigroup[101X
   
-  [29X[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
@@ -240,7 +240,7 @@
   
   [1X9.2-8 DeltaSetPeriodicityStartForNumericalSemigroup[101X
   
-  [29X[2XDeltaSetPeriodicityStartForNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetPeriodicityStartForNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
@@ -256,7 +256,7 @@
   
   [1X9.2-9 DeltaSetListUpToElementWRTNumericalSemigroup[101X
   
-  [29X[2XDeltaSetListUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetListUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
   
@@ -274,7 +274,7 @@
   
   [1X9.2-10 DeltaSetUnionUpToElementWRTNumericalSemigroup[101X
   
-  [29X[2XDeltaSetUnionUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetUnionUpToElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup, [3Xn[103X a nonnegative integer.[133X
   
@@ -290,7 +290,7 @@
   
   [1X9.2-11 DeltaSetOfNumericalSemigroup[101X
   
-  [29X[2XDeltaSetOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XDeltaSetOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
@@ -305,7 +305,7 @@
   
   [1X9.2-12 MaximumDegreeOfElementWRTNumericalSemigroup[101X
   
-  [29X[2XMaximumDegreeOfElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMaximumDegreeOfElementWRTNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X a nonnegative integer. The output is the
   maximum length of the factorizations of [3Xn[103X in terms of the minimal generating
@@ -320,7 +320,7 @@
   
   [1X9.2-13 MaximalDenumerantOfElementInNumericalSemigroup[101X
   
-  [29X[2XMaximalDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMaximalDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a positive integer. The output is the
   number  of  factorizations  of [3Xn[103X in terms of the minimal generating set of [3XS[103X
@@ -336,7 +336,7 @@
   
   [1X9.2-14 MaximalDenumerantOfSetOfFactorizations[101X
   
-  [29X[2XMaximalDenumerantOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XMaximalDenumerantOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is  list of factorizations (a list of lists of nonnegative integers with
   the  same  length).  The  output  is  number  of elements in [3Xls[103X with maximal
@@ -352,7 +352,7 @@
   
   [1X9.2-15 MaximalDenumerantOfNumericalSemigroup[101X
   
-  [29X[2XMaximalDenumerantOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMaximalDenumerantOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is a numerical semigroup. The output is the maximal denumerant of [3XS[103X, that
   is, the maximum of the maximal denumerant of the elements in [3XS[103X (see [BH13]).[133X
@@ -365,7 +365,7 @@
   
   [1X9.2-16 AdjustmentOfNumericalSemigroup[101X
   
-  [29X[2XAdjustmentOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XAdjustmentOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is a numerical semigroup. The output is the adjustment of [3XS[103X as defined in
   [BH13].[133X
@@ -391,7 +391,7 @@
   
   [1X9.2-17 IsAdditiveNumericalSemigroup[101X
   
-  [29X[2XIsAdditiveNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XIsAdditiveNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X   is   a   numerical  semigroup.  Detects  if  [3XS[103X  is  additive,  that  is,
   [22Xord(m+x)=ord(x)+1[122X  for  all [22Xx[122X in [3XS[103X, where [22Xm[122X is the multiplicity of [3XS[103X and [22Xord[122X
@@ -408,7 +408,7 @@
   
   [1X9.2-18 IsSuperSymmetricNumericalSemigroup[101X
   
-  [29X[2XIsSuperSymmetricNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XIsSuperSymmetricNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. Detects if [3XS[103X is supersymmetric, that is, it is
   symmetric, additive and whenever [22Xw+w'=f+m[122X (with [22Xm[122X the multiplicity and [22Xf[122X the
@@ -428,7 +428,7 @@
   
   [1X9.3-1 CatenaryDegreeOfSetOfFactorizations[101X
   
-  [29X[2XCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is a set of factorizations (a list of lists of nonnegative integers with
   the  same  length).  The  output  is  the  catenary  degree  of  this set of
@@ -444,7 +444,7 @@
   
   [1X9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations[101X
   
-  [29X[2XAdjacentCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XAdjacentCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X is a set of factorizations. The output is the adjacent catenary degree of
   this set of factorizations, that is, the supremum of the distance between to
@@ -463,7 +463,7 @@
   
   [1X9.3-3 EqualCatenaryDegreeOfSetOfFactorizations[101X
   
-  [29X[2XEqualCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XEqualCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X      is      a     set     of     factorizations.     The     same     as
   CatenaryDegreeOfSetOfFactorizations,  but  now  the factorizations joined by
@@ -483,7 +483,7 @@
   
   [1X9.3-4 MonotoneCatenaryDegreeOfSetOfFactorizations[101X
   
-  [29X[2XMonotoneCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XMonotoneCatenaryDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X      is      a     set     of     factorizations.     The     same     as
   CatenaryDegreeOfSetOfFactorizations,  but  now the factorizations are joined
@@ -501,7 +501,7 @@
   
   [1X9.3-5 CatenaryDegreeOfElementInNumericalSemigroup[101X
   
-  [29X[2XCatenaryDegreeOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XCatenaryDegreeOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3Xn[103X is a nonnegative integer and [3XS[103X is a numerical semigroup. The output is the
   catenary degree of [3Xn[103X relative to [3XS[103X.[133X
@@ -515,7 +515,7 @@
   
   [1X9.3-6 TameDegreeOfSetOfFactorizations[101X
   
-  [29X[2XTameDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function
+  [33X[1;0Y[29X[2XTameDegreeOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
   [33X[0;0Y[3Xls[103X  is a set of factorizations (a list of lists of nonnegative integers with
   the   same   length).  The  output  is  the  tame  degree  of  this  set  of
@@ -531,7 +531,7 @@
   
   [1X9.3-7 CatenaryDegreeOfNumericalSemigroup[101X
   
-  [29X[2XCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. The output is the catenary degree of [3XS[103X.[133X
   
@@ -544,7 +544,7 @@
   
   [1X9.3-8 EqualPrimitiveElementsOfNumericalSemigroup[101X
   
-  [29X[2XEqualPrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XEqualPrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
@@ -561,7 +561,7 @@
   
   [1X9.3-9 EqualCatenaryDegreeOfNumericalSemigroup[101X
   
-  [29X[2XEqualCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XEqualCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. The output is the equal catenary degree of [3XS[103X.[133X
   
@@ -573,7 +573,7 @@
   
   [1X9.3-10 MonotonePrimitiveElementsOfNumericalSemigroup[101X
   
-  [29X[2XMonotonePrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMonotonePrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
@@ -590,7 +590,7 @@
   
   [1X9.3-11 MonotoneCatenaryDegreeOfNumericalSemigroup[101X
   
-  [29X[2XMonotoneCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMonotoneCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. The output is the monotone catenary degree of [3XS[103X.[133X
   
@@ -604,7 +604,7 @@
   
   [1X9.3-12 TameDegreeOfNumericalSemigroup[101X
   
-  [29X[2XTameDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XTameDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. The output is the tame degree of [3XS[103X.[133X
   
@@ -617,7 +617,7 @@
   
   [1X9.3-13 TameDegreeOfElementInNumericalSemigroup[101X
   
-  [29X[2XTameDegreeOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XTameDegreeOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3Xn[103X  is an element of the numerical semigroup [3XS[103X. The output is the tame degree
   of [3Xn[103X in [3XS[103X.[133X
@@ -634,7 +634,7 @@
   
   [1X9.4-1 OmegaPrimalityOfElementInNumericalSemigroup[101X
   
-  [29X[2XOmegaPrimalityOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XOmegaPrimalityOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3Xn[103X  is an element of the numerical semigroup [3XS[103X. The output is the [22Xω[122X-primality
   of  [3Xn[103X  in  [3XS[103X  as explained in [BGSG11]. The current implementation is due to
@@ -649,7 +649,7 @@
   
   [1X9.4-2 OmegaPrimalityOfElementListInNumericalSemigroup[101X
   
-  [29X[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X( [3Xl[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xl[103X a list of elements of [3XS[103X.[133X
   
@@ -676,7 +676,7 @@
   
   [1X9.4-3 OmegaPrimalityOfNumericalSemigroup[101X
   
-  [29X[2XOmegaPrimalityOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XOmegaPrimalityOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. The output is the maximum of the [22Xω[122X-primalities
   of the minimal generators of [3XS[103X.[133X
@@ -702,7 +702,7 @@
   
   [1X9.5-1 BelongsToHomogenizationOfNumericalSemigroup[101X
   
-  [29X[2XBelongsToHomogenizationOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XBelongsToHomogenizationOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a list with two entries (a pair). The
   output is true if the [3Xn[103X belongs to the homogenization of [3XS[103X.[133X
@@ -717,7 +717,7 @@
   
   [1X9.5-2 FactorizationsInHomogenizationOfNumericalSemigroup[101X
   
-  [29X[2XFactorizationsInHomogenizationOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XFactorizationsInHomogenizationOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xn[103X a list with two entries (a pair). The
   output  is  the  set  of factorizations [3Xn[103X in terms of the minimal generating
@@ -741,7 +741,7 @@
   
   [1X9.5-3 HomogeneousBettiElementsOfNumericalSemigroup[101X
   
-  [29X[2XHomogeneousBettiElementsOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XHomogeneousBettiElementsOfNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. The output is the set of Betti elements of the
   homogenization of [3XS[103X.[133X
@@ -756,7 +756,7 @@
   
   [1X9.5-4 HomogeneousCatenaryDegreeOfNumericalSemigroup[101X
   
-  [29X[2XHomogeneousCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XHomogeneousCatenaryDegreeOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. The output is the homogeneous catenary degree of
   [3XS[103X.  Observe  that  for  a  single  element  in  the homogenization of [3XS[103X, its
@@ -784,7 +784,7 @@
   
   [1X9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup[101X
   
-  [29X[2XMoebiusFunctionAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function
+  [33X[1;0Y[29X[2XMoebiusFunctionAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup and [3Xn[103X is an integer. As [22X(S,le_S)[122X is a poset, we
   can define the Möbius function associated to it as in [CRA13]. The output is
@@ -801,7 +801,7 @@
   
   [1X9.6-2 DivisorsOfElementInNumericalSemigroup[101X
   
-  [29X[2XDivisorsOfElementInNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X operation
+  [33X[1;0Y[29X[2XDivisorsOfElementInNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X is an integer. The arguments can also be
   given as [3Xn, S[103X. The output is the set of divisors of [3Xn[103X in [3XS[103X.[133X
@@ -826,7 +826,7 @@
   
   [1X9.7-1 FengRaoDistance[101X
   
-  [29X[2XFengRaoDistance[102X( [3XS[103X, [3Xr[103X ) [32X function
+  [33X[1;0Y[29X[2XFengRaoDistance[102X( [3XS[103X, [3Xr[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup,  [3Xr[103X  and  [3Xm[103X  integers. The output is the [3Xr[103X-th
   Feng-Rao distance of the element [3Xm[103X in the numerical semigroup [3XS[103X.[133X
@@ -839,7 +839,7 @@
   
   [1X9.7-2 FengRaoNumber[101X
   
-  [29X[2XFengRaoNumber[102X( [3XS[103X, [3Xr[103X ) [32X operation
+  [33X[1;0Y[29X[2XFengRaoNumber[102X( [3XS[103X, [3Xr[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xr[103X is an integer. The output is the [3Xr[103X-th
   Feng-Rao number of the numerical semigroup [3XS[103X.[133X

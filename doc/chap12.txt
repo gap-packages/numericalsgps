@@ -25,13 +25,13 @@
   
   [1X12.1-1 IsGoodSemigroup[101X
   
-  [29X[2XIsGoodSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XIsGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0YDetects if [3XS[103X is an object of type good semigroup.[133X
   
   [1X12.1-2 NumericalSemigroupDuplication[101X
   
-  [29X[2XNumericalSemigroupDuplication[102X( [3XS[103X, [3XE[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupDuplication[102X( [3XS[103X, [3XE[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup and [3XE[103X is an ideal of [3XS[103X with [22XE⊆ S[122X. The output is
   [22XS⋈ E= D∪ (E× E)∪{ a∧ b∣ a∈ D, b∈ E× E},[122X where [22XD={(s,s)∣ s∈ S}[122X.[133X
@@ -53,7 +53,7 @@
   
   [1X12.1-3 AmalgamationOfNumericalSemigroups[101X
   
-  [29X[2XAmalgamationOfNumericalSemigroups[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XAmalgamationOfNumericalSemigroups[102X( [3XS[103X, [3XE[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup, [3XE[103X is an ideal of a numerical semigroup [22XT[122X with [22XE⊆
   T[122X, and [3Xb[103X is an integer such that multiplication by [3Xb[103X is a morphism from [3XS[103X to
@@ -71,7 +71,7 @@
   
   [1X12.1-4 CartesianProductOfNumericalSemigroups[101X
   
-  [29X[2XCartesianProductOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function
+  [33X[1;0Y[29X[2XCartesianProductOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical  semigroups.  The  output is [22XS× T[122X, which is a good
   semigroup.[133X
@@ -85,7 +85,7 @@
   
   [1X12.1-5 GoodSemigroup[101X
   
-  [29X[2XGoodSemigroup[102X( [3XX[103X, [3XC[103X ) [32X function
+  [33X[1;0Y[29X[2XGoodSemigroup[102X( [3XX[103X, [3XC[103X ) [32X function[133X
   
   [33X[0;0Y[3XX[103X  is  a list of points with nonnegative integer coordinates and [22XC[122X is a pair
   of  nonnegative  integer  (a list with two elements). If [22XM[122X is the affine and
@@ -107,8 +107,8 @@
   
   [1X12.2-1 BelongsToGoodSemigroup[101X
   
-  [29X[2XBelongsToGoodSemigroup[102X( [3Xv[103X, [3XS[103X ) [32X operation
-  [29X[2X\in[102X( [3Xv[103X, [3XS[103X ) [32X operation
+  [33X[1;0Y[29X[2XBelongsToGoodSemigroup[102X( [3Xv[103X, [3XS[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2X\in[102X( [3Xv[103X, [3XS[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X  is  a good semigroup and [3Xv[103X is a pair of integers. The output is [10Xtrue[110X if [3Xv[103X
   is  in [3XS[103X, and [10Xfalse[110X otherwise. Other ways to use this operation are [10X\in(v,S)[110X
@@ -128,8 +128,8 @@
   
   [1X12.2-2 Conductor[101X
   
-  [29X[2XConductor[102X( [3XS[103X ) [32X function
-  [29X[2XConductorOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XConductor[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XConductorOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is its conductor.[133X
   
@@ -146,8 +146,8 @@
   
   [1X12.2-3 SmallElements[101X
   
-  [29X[2XSmallElements[102X( [3XS[103X ) [32X function
-  [29X[2XSmallElementsOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XSmallElements[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XSmallElementsOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is its set of small elements, that is, the
   elements  smaller  than  its  conductor  with  respect  to the usual partial
@@ -167,7 +167,7 @@
   
   [1X12.2-4 RepresentsSmallElementsOfGoodSemigroup[101X
   
-  [29X[2XRepresentsSmallElementsOfGoodSemigroup[102X( [3XX[103X ) [32X function
+  [33X[1;0Y[29X[2XRepresentsSmallElementsOfGoodSemigroup[102X( [3XX[103X ) [32X function[133X
   
   [33X[0;0Y[3XX[103X  is  a list of points in the nonnegative orthant of the plane with integer
   coordinates. Determines if it represents the set of small elements of a good
@@ -188,7 +188,7 @@
   
   [1X12.2-5 GoodSemigroupBySmallElements[101X
   
-  [29X[2XGoodSemigroupBySmallElements[102X( [3XX[103X ) [32X function
+  [33X[1;0Y[29X[2XGoodSemigroupBySmallElements[102X( [3XX[103X ) [32X function[133X
   
   [33X[0;0Y[3XX[103X  is  a list of points in the nonnegative orthant of the plane with integer
   coordinates. Determines if it represents the set of small elements of a good
@@ -212,7 +212,7 @@
   
   [1X12.2-6 MaximalElementsOfGoodSemigroup[101X
   
-  [29X[2XMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute
+  [33X[1;0Y[29X[2XMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is the set of elements [22X(x,y)[122X of [3XS[103X with the
   following  property:  there  is  no  other element [22X(x',y')[122X in [3XS[103X with [22X(x,y)le
@@ -227,7 +227,7 @@
   
   [1X12.2-7 IrreducibleMaximalElementsOfGoodSemigroup[101X
   
-  [29X[2XIrreducibleMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute
+  [33X[1;0Y[29X[2XIrreducibleMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XS[103X  is  a  good  semigroup. The output is the set of elements nonzero maximal
   elements  that  cannot be expressed as a sum of two nonzero maximal elements
@@ -242,7 +242,7 @@
   
   [1X12.2-8 GoodSemigroupByMaximalElements[101X
   
-  [29X[2XGoodSemigroupByMaximalElements[102X( [3XS[103X, [3XT[103X, [3XM[103X, [3XC[103X ) [32X function
+  [33X[1;0Y[29X[2XGoodSemigroupByMaximalElements[102X( [3XS[103X, [3XT[103X, [3XM[103X, [3XC[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  and  [3XT[103X  are  numerical semigroups, [3XM[103X is a list of pairs in [22XS× T[122X. [3XC[103X is the
   conductor, and thus a pair of nonnegative integers. The output is the set of
@@ -268,7 +268,7 @@
   
   [1X12.2-9 MinimalGoodGeneratingSystemOfGoodSemigroup[101X
   
-  [29X[2XMinimalGoodGeneratingSystemOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMinimalGoodGeneratingSystemOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  good  semigroup.  The output is its minimal good generating system
   (which is unique in the local case).[133X
@@ -284,7 +284,7 @@
   
   [1X12.2-10 MinimalGenerators[101X
   
-  [29X[2XMinimalGenerators[102X( [3XS[103X ) [32X attribute
+  [33X[1;0Y[29X[2XMinimalGenerators[102X( [3XS[103X ) [32X attribute[133X
   
   [33X[0;0YThis is just a synonym of [10X MinimalGoodGeneratingSystemOfGoodSemigroup[110X ([10XS[110X).[133X
   
@@ -302,8 +302,8 @@
   
   [1X12.3-1 IsSymmetricGoodSemigroup[101X
   
-  [29X[2XIsSymmetricGoodSemigroup[102X( [3XS[103X ) [32X attribute
-  [29X[2XIsSymmetric[102X( [3XS[103X ) [32X attribute
+  [33X[1;0Y[29X[2XIsSymmetricGoodSemigroup[102X( [3XS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsSymmetric[102X( [3XS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. Determines if [3XS[103X is a symmetric good semigroup.[133X
   
@@ -318,8 +318,8 @@
   
   [1X12.3-2 ArfGoodSemigroupClosure[101X
   
-  [29X[2XArfGoodSemigroupClosure[102X( [3XS[103X ) [32X function
-  [29X[2XArfClosure[102X( [3XS[103X ) [32X operation
+  [33X[1;0Y[29X[2XArfGoodSemigroupClosure[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XArfClosure[102X( [3XS[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. Determines the Arf good semigroup closure of [3XS[103X.[133X
   
@@ -346,7 +346,7 @@
   
   [1X12.4-1 GoodIdeal[101X
   
-  [29X[2XGoodIdeal[102X( [3XX[103X, [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XGoodIdeal[102X( [3XX[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XX[103X  is  a  list  of points with nonnegative integer coordinates and [22XS[122X is good
   semigroup.  Decides  if the closure of [22XX+S[122X under infimums is a relative good
@@ -366,7 +366,7 @@
   
   [1X12.4-2 GoodGeneratingSystemOfGoodIdeal[101X
   
-  [29X[2XGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function
+  [33X[1;0Y[29X[2XGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function[133X
   
   [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup. The output is a good generating
   system of [3XI[103X.[133X
@@ -382,7 +382,7 @@
   
   [1X12.4-3 AmbientGoodSemigroupOfGoodIdeal[101X
   
-  [29X[2XAmbientGoodSemigroupOfGoodIdeal[102X( [3XI[103X ) [32X function
+  [33X[1;0Y[29X[2XAmbientGoodSemigroupOfGoodIdeal[102X( [3XI[103X ) [32X function[133X
   
   [33X[0;0YIf [3XI[103X is a good ideal of a good semigroup [22XM[122X, then the output is [22XM[122X. The output
   is a good generating system of [3XI[103X.[133X
@@ -398,7 +398,7 @@
   
   [1X12.4-4 MinimalGoodGeneratingSystemOfGoodIdeal[101X
   
-  [29X[2XMinimalGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function
+  [33X[1;0Y[29X[2XMinimalGoodGeneratingSystemOfGoodIdeal[102X( [3XI[103X ) [32X function[133X
   
   [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a  good semigroup. The output is the minimal good
   generating system of [3XI[103X.[133X
@@ -414,8 +414,8 @@
   
   [1X12.4-5 BelongsToGoodIdeal[101X
   
-  [29X[2XBelongsToGoodIdeal[102X( [3Xv[103X, [3XI[103X ) [32X operation
-  [29X[2X\in[102X( [3Xv[103X, [3XI[103X ) [32X operation
+  [33X[1;0Y[29X[2XBelongsToGoodIdeal[102X( [3Xv[103X, [3XI[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2X\in[102X( [3Xv[103X, [3XI[103X ) [32X operation[133X
   
   [33X[0;0Y[3XI[103X  is  a  good  ideal  of  a good semigroup and [3Xv[103X is a pair of integers. The
   output  is  [10Xtrue[110X  if  [3Xv[103X is in [3XI[103X, and [10Xfalse[110X otherwise. Other ways to use this
@@ -434,8 +434,8 @@
   
   [1X12.4-6 SmallElementsOfGoodIdeal[101X
   
-  [29X[2XSmallElementsOfGoodIdeal[102X( [3XI[103X ) [32X function
-  [29X[2XSmallElements[102X( [3XI[103X ) [32X function
+  [33X[1;0Y[29X[2XSmallElementsOfGoodIdeal[102X( [3XI[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XSmallElements[102X( [3XI[103X ) [32X function[133X
   
   [33X[0;0Y[3XI[103X  is  a  good  ideal. The output is its set of small elements, that is, the
   elements  smaller  than  its  conductor  and larger than its minimum element
@@ -452,7 +452,7 @@
   
   [1X12.4-7 CanonicalIdealOfGoodSemigroup[101X
   
-  [29X[2XCanonicalIdealOfGoodSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XCanonicalIdealOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is the canonical ideal of [3XS[103X.[133X
   

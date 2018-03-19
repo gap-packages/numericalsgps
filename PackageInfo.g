@@ -7,10 +7,10 @@ SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.1.5",
-Date := "25/09/2017",
-# Version := "1.1.5 dev",
-# Date := "> 25/09/2017",
+Version := "1.1.7",
+Date := "19/03/2018",
+# Version := "1.1.7 dev",
+# Date := "> 19/03/2017",
 
 ##  Information about authors and maintainers.
 Persons := [
@@ -216,7 +216,7 @@ BannerString := Concatenation(
   "For help, type: ?NumericalSgps: \n",
   "----------------------------------------------------------------\n" ),
 
-TestFile := "tst/testall.tst",
+TestFile := "tst/testall.g",
 
 Keywords := ["Numerical Semigroups", "Affine semigroups", "Good semigroups"],
 

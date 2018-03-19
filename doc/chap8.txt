@@ -23,8 +23,8 @@
   
   [1X8.1-1 IsMED[101X
   
-  [29X[2XIsMED[102X( [3XS[103X ) [32X property
-  [29X[2XIsMEDNumericalSemigroup[102X( [3XS[103X ) [32X property
+  [33X[1;0Y[29X[2XIsMED[102X( [3XS[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsMEDNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. Returns true if [3XS[103X is a MED numerical semigroup
   and false otherwise.[133X
@@ -38,8 +38,8 @@
   
   [1X8.1-2 MEDNumericalSemigroupClosure[101X
   
-  [29X[2XMEDNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
-  [29X[2XMEDClosure[102X( [3XS[103X ) [32X operation
+  [33X[1;0Y[29X[2XMEDNumericalSemigroupClosure[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XMEDClosure[102X( [3XS[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the MED closure of [3XS[103X.[133X
   
@@ -52,7 +52,7 @@
   
   [1X8.1-3 MinimalMEDGeneratingSystemOfMEDNumericalSemigroup[101X
   
-  [29X[2XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XMinimalMEDGeneratingSystemOfMEDNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a MED numerical semigroup. Returns the minimal MED generating system of
   [3XS[103X.[133X
@@ -78,11 +78,13 @@
   
   [1X8.2-1 IsArf[101X
   
-  [29X[2XIsArf[102X( [3XS[103X ) [32X property
-  [29X[2XIsArfNumericalSemigroup[102X( [3XS[103X ) [32X property
+  [33X[1;0Y[29X[2XIsArf[102X( [3XS[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsArfNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
   
   [33X[0;0Y[3XS[103X  is a numerical semigroup. Returns true if [3XS[103X is an Arf numerical semigroup
   and false otherwise.[133X
+  
+  [33X[0;0YThis property implies [2XIsMED[102X ([14X8.1-1[114X) and [2XIsAcuteNumericalSemigroup[102X ([14X3.1-27[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27X IsArfNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
@@ -95,8 +97,8 @@
   
   [1X8.2-2 ArfNumericalSemigroupClosure[101X
   
-  [29X[2XArfNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
-  [29X[2XArfClosure[102X( [3XS[103X ) [32X operation
+  [33X[1;0Y[29X[2XArfNumericalSemigroupClosure[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XArfClosure[102X( [3XS[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the Arf closure of [3XS[103X.[133X
   
@@ -109,8 +111,8 @@
   
   [1X8.2-3 ArfCharactersOfArfNumericalSemigroup[101X
   
-  [29X[2XArfCharactersOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function
-  [29X[2XMinimalArfGeneratingSystemOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function
+  [33X[1;0Y[29X[2XArfCharactersOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XMinimalArfGeneratingSystemOfArfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  an Arf numerical semigroup. Returns the minimal Arf generating system
   of [3XS[103X. The current version of this algorithm is due to G. Zito.[133X
@@ -123,7 +125,7 @@
   
   [1X8.2-4 ArfNumericalSemigroupsWithFrobeniusNumber[101X
   
-  [29X[2XArfNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  [33X[1;0Y[29X[2XArfNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
   Arf  numerical  semigroups  with  Frobenius number [3Xf[103X. The current version of
@@ -143,7 +145,7 @@
   
   [1X8.2-5 ArfNumericalSemigroupsWithFrobeniusNumberUpTo[101X
   
-  [29X[2XArfNumericalSemigroupsWithFrobeniusNumberUpTo[102X( [3Xf[103X ) [32X function
+  [33X[1;0Y[29X[2XArfNumericalSemigroupsWithFrobeniusNumberUpTo[102X( [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
   Arf  numerical semigroups with Frobenius number less than or equal to [3Xf[103X. The
@@ -156,7 +158,7 @@
   
   [1X8.2-6 ArfNumericalSemigroupsWithGenus[101X
   
-  [29X[2XArfNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function
+  [33X[1;0Y[29X[2XArfNumericalSemigroupsWithGenus[102X( [3Xg[103X ) [32X function[133X
   
   [33X[0;0Y[3Xg[103X  is  a  nonnegative  integer.  The  output is the set of all Arf numerical
   semigroups  with equal to [3Xg[103X. The current version of this algorithm is due to
@@ -169,7 +171,7 @@
   
   [1X8.2-7 ArfNumericalSemigroupsWithGenusUpTo[101X
   
-  [29X[2XArfNumericalSemigroupsWithGenusUpTo[102X( [3Xg[103X ) [32X function
+  [33X[1;0Y[29X[2XArfNumericalSemigroupsWithGenusUpTo[102X( [3Xg[103X ) [32X function[133X
   
   [33X[0;0Y[3Xg[103X  is  a  nonnegative  integer.  The  output is the set of all Arf numerical
   semigroups  with  genus less than or equal to [3Xg[103X. The current version of this
@@ -182,7 +184,7 @@
   
   [1X8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber[101X
   
-  [29X[2XArfNumericalSemigroupsWithGenusAndFrobeniusNumber[102X( [3Xg[103X, [3Xf[103X ) [32X function
+  [33X[1;0Y[29X[2XArfNumericalSemigroupsWithGenusAndFrobeniusNumber[102X( [3Xg[103X, [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X is an integer greater than or equal to -1, and [3Xg[103X is a nonnegative integer.
   The  output  is  the  set  of  all Arf numerical semigroups with genus [3Xg[103X and
@@ -212,11 +214,13 @@
   
   [1X8.3-1 IsSaturated[101X
   
-  [29X[2XIsSaturated[102X( [3XS[103X ) [32X property
-  [29X[2XIsSaturatedNumericalSemigroup[102X( [3XS[103X ) [32X property
+  [33X[1;0Y[29X[2XIsSaturated[102X( [3XS[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsSaturatedNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup.  Returns  true if [3XS[103X is a saturated numerical
   semigroup and false otherwise.[133X
+  
+  [33X[0;0YThis property implies [2XIsArf[102X ([14X8.2-1[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));[127X[104X
@@ -227,8 +231,8 @@
   
   [1X8.3-2 SaturatedNumericalSemigroupClosure[101X
   
-  [29X[2XSaturatedNumericalSemigroupClosure[102X( [3XS[103X ) [32X function
-  [29X[2XSaturatedClosure[102X( [3XS[103X ) [32X operation
+  [33X[1;0Y[29X[2XSaturatedNumericalSemigroupClosure[102X( [3XS[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XSaturatedClosure[102X( [3XS[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup. Returns the saturated closure of [3XS[103X.[133X
   
@@ -241,7 +245,7 @@
   
   [1X8.3-3 SaturatedNumericalSemigroupsWithFrobeniusNumber[101X
   
-  [29X[2XSaturatedNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function
+  [33X[1;0Y[29X[2XSaturatedNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
   Saturated numerical semigroups with Frobenius number [3Xf[103X.[133X

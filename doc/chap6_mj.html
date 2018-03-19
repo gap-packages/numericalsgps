@@ -94,9 +94,11 @@
 
 <h5>6.1-1 IsIrreducibleNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is irreducible, false otherwise.</p>
+
+<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6_mj.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-2</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3_mj.html#X86E0E4A47890F388"><span class="RefLink">3.1-27</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -110,9 +112,11 @@ false
 
 <h5>6.1-2 IsSymmetricNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is symmetric, false otherwise.</p>
+
+<p>This filter implies <code class="func">IsIrreducibleNumericalSemigroup</code> (<a href="chap6_mj.html#X87D62468791EDE8A"><span class="RefLink">6.1-1</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -126,9 +130,11 @@ false
 
 <h5>6.1-3 IsPseudoSymmetric</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPseudoSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPseudoSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPseudoSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsPseudoSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if <var class="Arg">s</var> is pseudo-symmetric, false otherwise.</p>
+
+<p>This filter implies <code class="func">IsIrreducibleNumericalSemigroup</code> (<a href="chap6_mj.html#X87D62468791EDE8A"><span class="RefLink">6.1-1</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -142,7 +148,7 @@ false
 
 <h5>6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is an irreducible numerical semigroup with Frobenius number <var class="Arg"> f</var>. From the way the procedure is implemented, the resulting semigroup has at most four generators (see <a href="chapBib_mj.html#biBRGS04">[RGS04]</a>).</p>
 
 
@@ -159,7 +165,7 @@ false
 
 <h5>6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
 
 
@@ -172,7 +178,7 @@ false
 
 <h5>6.1-6 DecomposeIntoIrreducibles</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecomposeIntoIrreducibles</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecomposeIntoIrreducibles</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is a set of irreducible numerical semigroups containing it. These elements appear in a minimal decomposition of <var class="Arg">s</var> as intersection into irreducibles.</p>
 
 
@@ -194,7 +200,7 @@ false
 
 <h5>6.2-1 AsGluingOfNumericalSemigroups</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsGluingOfNumericalSemigroups</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AsGluingOfNumericalSemigroups</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. Returns all partitions <span class="SimpleMath">\(\{A_1,A_2\}\)</span> of the minimal generating set of <var class="Arg">s</var> such that <var class="Arg">s</var> is a gluing of <span class="SimpleMath">\(\langle A_1\rangle\)</span> and <span class="SimpleMath">\(\langle A_2\rangle\)</span> by <span class="SimpleMath">\(gcd(A_1)gcd(A_2)\)</span></p>
 
 
@@ -213,9 +219,11 @@ false
 
 <h5>6.2-2 IsCompleteIntersection</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompleteIntersection</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsACompleteIntersectionNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCompleteIntersection</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsACompleteIntersectionNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is a complete intersection, that is, the cardinality of a (any) minimal presentation equals its embedding dimension minus one.</p>
+
+<p>This filter implies <code class="func">IsSymmetricNumericalSemigroup</code> (<a href="chap6_mj.html#X7BCDAFE3791A3C48"><span class="RefLink">6.1-2</span></a>) and <code class="func">IsCyclotomicNumericalSemigroup</code> (<a href="chap10_mj.html#X8366BB727C496D31"><span class="RefLink">10.1-8</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -233,7 +241,7 @@ false
 
 <h5>6.2-3 CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all complete intersection numerical semigroups with frobenius number <var class="Arg">f</var>.</p>
 
 
@@ -246,9 +254,11 @@ false
 
 <h5>6.2-4 IsFree</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFree</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFreeNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFree</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFreeNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is free in the sense of <a href="chapBib_mj.html#biBBC77">[BC77]</a>: it is either <span class="SimpleMath">\(\mathbb N\)</span> or the gluing of a copy of <span class="SimpleMath">\(\mathbb N\)</span> with a free numerical semigroup.</p>
+
+<p>This filter implies <code class="func">IsACompleteIntersectionNumericalSemigroup</code> (<a href="chap6_mj.html#X7A0DF10F85F32194"><span class="RefLink">6.2-2</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -262,7 +272,7 @@ false
 
 <h5>6.2-5 FreeNumericalSemigroupsWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FreeNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FreeNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all free numerical semigroups with frobenius number <var class="Arg">f</var>.</p>
 
 
@@ -275,9 +285,11 @@ false
 
 <h5>6.2-6 IsTelescopic</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopic</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopic</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is telescopic in the sense of <a href="chapBib_mj.html#biBKP95">[KP95]</a>: it is either <span class="SimpleMath">\(\mathbb N\)</span> or the gluing of <span class="SimpleMath">\(\langle n_e\rangle\)</span> and <span class="SimpleMath">\(s'=\langle n_1/d,\ldots, n_{e-1}/d\rangle\)</span>, and <span class="SimpleMath">\(s'\)</span> is again a telescopic numerical semigroup, where <span class="SimpleMath">\(n_1 &lt; \cdots &lt; n_e \)</span> are the minimal generators of <var class="Arg">s</var>.</p>
+
+<p>This filter implies <code class="func">IsAperySetBetaRectangular</code> (<a href="chap6_mj.html#X7E6E262C7C421635"><span class="RefLink">6.2-11</span></a>) and <code class="func">IsFreeNumericalSemigroup</code> (<a href="chap6_mj.html#X7CD2A77778432E7B"><span class="RefLink">6.2-4</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -291,7 +303,7 @@ true
 
 <h5>6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TelescopicNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TelescopicNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all telescopic numerical semigroups with frobenius number <var class="Arg">f</var>.</p>
 
 
@@ -304,8 +316,10 @@ true
 
 <h5>6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</code>( <var class="Arg">s</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is associated to an irreducible planar curve singularity (<a href="chapBib_mj.html#biBZ86">[Zar86]</a>). These semigroups are telescopic.</p>
+
+<p>This filter implies <code class="func">IsAperySetAlphaRectangular</code> (<a href="chap6_mj.html#X86F52FB67F76D2CB"><span class="RefLink">6.2-12</span></a>) and <code class="func">IsTelescopicNumericalSemigroup</code> (<a href="chap6_mj.html#X830D0E0F7B8C6284"><span class="RefLink">6.2-6</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -321,7 +335,7 @@ true
 
 <h5>6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all numerical semigroups associated to irreducible planar curves singularities with frobenius number <var class="Arg">f</var>.</p>
 
 
@@ -334,10 +348,12 @@ true
 
 <h5>6.2-10 IsAperySetGammaRectangular</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetGammaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetGammaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>Test for the <span class="SimpleMath">\(\gamma\)</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib_mj.html#biBDAMSClasses">[DMS14]</a>. Numerical Semigroups with this property are free and thus complete intersections.</p>
+
+<p>This filter implies <code class="func">IsFreeNumericalSemigroup</code> (<a href="chap6_mj.html#X7CD2A77778432E7B"><span class="RefLink">6.2-4</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -353,10 +369,12 @@ true
 
 <h5>6.2-11 IsAperySetBetaRectangular</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetBetaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetBetaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>Test for the <span class="SimpleMath">\(\beta\)</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib_mj.html#biBDAMSClasses">[DMS14]</a>; <span class="SimpleMath">\(\beta\)</span>-rectangularity implies <span class="SimpleMath">\(\gamma\)</span>-rectangularity.</p>
+
+<p>This filter implies <code class="func">IsAperySetGammaRectangular</code> (<a href="chap6_mj.html#X80CAA1FA7F6FF4FD"><span class="RefLink">6.2-10</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -372,10 +390,12 @@ true
 
 <h5>6.2-12 IsAperySetAlphaRectangular</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetAlphaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetAlphaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>Test for the <span class="SimpleMath">\(\alpha\)</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib_mj.html#biBDAMSClasses">[DMS14]</a>; <span class="SimpleMath">\(\alpha\)</span>-rectangularity implies <span class="SimpleMath">\(\beta\)</span>-rectangularity.</p>
+
+<p>This filter implies <code class="func">IsAperySetBetaRectangular</code> (<a href="chap6_mj.html#X7E6E262C7C421635"><span class="RefLink">6.2-11</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -399,7 +419,7 @@ true
 
 <h5>6.3-1 AlmostSymmetricNumericalSemigroupsFromIrreducible</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AlmostSymmetricNumericalSemigroupsFromIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AlmostSymmetricNumericalSemigroupsFromIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is an irreducible numerical semigroup. The output is the set of almost-symetric numerical semigroups that can be constructed from <var class="Arg">s</var> by removing some of its generators as explained in <a href="chapBib_mj.html#biBMR3169635">[RGS14]</a>).</p>
 
 
@@ -417,8 +437,8 @@ true
 
 <h5>6.3-2 IsAlmostSymmetric</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAlmostSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAlmostSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAlmostSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAlmostSymmetricNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is almost symmetric.</p>
 
 
@@ -431,7 +451,7 @@ true
 
 <h5>6.3-3 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer greater than or equal to -1. The output is the set of all almost symmetric numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
 
 

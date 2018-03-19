@@ -75,7 +75,7 @@
 
 <h5>10.1-1 NumericalSemigroupPolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupPolynomial</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupPolynomial</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroups and <var class="Arg">x</var> a variable (or a value to evaluate in). The output is the polynomial <span class="SimpleMath">1+(x-1)∑_s∈ N∖ S x^s</span>, which equals <span class="SimpleMath">(1-x)H_S(x)</span>.</p>
 
 
@@ -90,7 +90,7 @@ x^14-x^13+x^12-x^11+x^9-x^8+x^7-x^6+x^5-x+1
 
 <h5>10.1-2 IsNumericalSemigroupPolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupPolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupPolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is a polynomial in one variable. The output is true if there exists a numerical semigroup <span class="SimpleMath">S</span> such that <var class="Arg">f</var> equals <span class="SimpleMath">(1-x)H_S(x)</span>, that is, the polynomial associated to <span class="SimpleMath">S</span> (false otherwise).</p>
 
 
@@ -107,7 +107,7 @@ true
 
 <h5>10.1-3 NumericalSemigroupFromNumericalSemigroupPolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupFromNumericalSemigroupPolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupFromNumericalSemigroupPolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is a polynomial associated to a numerical semigroup (otherwise yields error). The output is the numerical semigroup <span class="SimpleMath">S</span> such that <var class="Arg">f</var> equals <span class="SimpleMath">(1-x)H_S(x)</span>.</p>
 
 
@@ -124,7 +124,7 @@ true
 
 <h5>10.1-4 HilbertSeriesOfNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertSeriesOfNumericalSemigroup</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HilbertSeriesOfNumericalSemigroup</code>( <var class="Arg">s</var>, <var class="Arg">x</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup and <var class="Arg">x</var> a variable (or a value to evaluate in). The output is the series <span class="SimpleMath">∑_s∈ S x^s</span>. The series is given as a rational function.</p>
 
 
@@ -139,7 +139,7 @@ true
 
 <h5>10.1-5 GraeffePolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraeffePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraeffePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Computes the Graeffe polynomial of <var class="Arg">p</var>. Needed to test if <var class="Arg">p</var> is a cyclotomic polynomial (see <a href="chapBib.html#biBBD-cyclotomic">[BD89]</a>).</p>
 
 
@@ -153,7 +153,7 @@ x^2-2*x+1
 
 <h5>10.1-6 IsCyclotomicPolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a cyclotomic polynomial using the procedure given in <a href="chapBib.html#biBBD-cyclotomic">[BD89]</a>.</p>
 
 
@@ -168,7 +168,7 @@ true
 
 <h5>10.1-7 IsKroneckerPolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsKroneckerPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsKroneckerPolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">p</var> is a polynomial. Detects if <var class="Arg">p</var> is a Kronecker polynomial, that is, a monic polynomial with integer coefficients having all its roots in the unit circumference, or equivalently, a product of cyclotomic polynomials. The current implementation has been done with A. Herrera-Poyatos, following <a href="chapBib.html#biBBD-cyclotomic">[BD89]</a>.</p>
 
 
@@ -190,7 +190,7 @@ true
 
 <h5>10.1-8 IsCyclotomicNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCyclotomicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. Detects if the polynomial associated to <var class="Arg">s</var> is a Kronecker polynomial.</p>
 
 
@@ -204,7 +204,7 @@ true
 
 <h5>10.1-9 IsSelfReciprocalUnivariatePolynomial</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSelfReciprocalUnivariatePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSelfReciprocalUnivariatePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">p</var> is a univariate polynomial. Detects if <var class="Arg">p</var> is selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <a href="chapBib.html#biBM">[Mor14]</a>. The current implementation is due to A. Herrera-Poyatos.</p>
 
 
@@ -228,7 +228,7 @@ true
 
 <h5>10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span>, where <span class="SimpleMath">mathrmint(f,g)=dim_ K ( K[x,y]/(f,g))</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">δ</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib.html#biBAGS14">[AGS16]</a>.</p>
 
 
@@ -244,7 +244,7 @@ true
 
 <h5>10.2-2 IsDeltaSequence</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDeltaSequence</code>( <var class="Arg">l</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDeltaSequence</code>( <var class="Arg">l</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">l</var> is a list of positive integers. Assume that <var class="Arg">l</var> equals <span class="SimpleMath">a_0,a_1,dots,a_h</span>. Then <var class="Arg">l</var> is a <span class="SimpleMath">δ</span>-sequence if <span class="SimpleMath">gcd(a_0,..., a_h)=1</span>, <span class="SimpleMath">⟨ a_0,⋯, a_s⟩</span> is free, <span class="SimpleMath">a_kD_k &gt; a_k+1D_k+1</span> and <span class="SimpleMath">a_0&gt; a_1 &gt; D_2 &gt; D_3 &gt; ... &gt; D_h+1</span>, where <span class="SimpleMath">D_1=a_0</span>, <span class="SimpleMath">D_k=gcd(D_k-1,a_k-1)</span>.</p>
 
 <p>Every <span class="SimpleMath">δ</span>-sequence generates a numerical semigroup that is the semigroup of values of a plane curve with one place at infinity.</p>
@@ -259,7 +259,7 @@ true
 
 <h5>10.2-3 DeltaSequencesWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSequencesWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSequencesWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is a positive integer. Computes the set of all <span class="SimpleMath">δ</span>-sequences generating numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
 
 
@@ -273,7 +273,7 @@ true
 
 <h5>10.2-4 CurveAssociatedToDeltaSequence</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CurveAssociatedToDeltaSequence</code>( <var class="Arg">l</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CurveAssociatedToDeltaSequence</code>( <var class="Arg">l</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">l</var> is a <span class="SimpleMath">δ</span>-sequence. Computes a curve in the variables X(Rationals,1) and X(Rationals,2) whose semigroup of values is generated by the <var class="Arg">l</var>.</p>
 
 
@@ -291,7 +291,7 @@ y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 
 <h5>10.2-5 SemigroupOfValuesOfPlaneCurve</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurve</code>( <var class="Arg">f</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurve</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). The singular package is mandatory. Either by loading it prior to numerical semigroups or by using <var class="Arg">NumSgpsUseSingular()</var>. If <span class="SimpleMath">f</span> is irreducible, computes the semigroup <span class="SimpleMath">{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}</span>, where <span class="SimpleMath">mathrmint(f,g)=dim_ K ( K[[x,y]]/(f,g))</span>. If it has two components, the output is the value semigroup in two variables, and thus a good semigroup. If there are more components, then the output is that of <var class="Arg">semigroup</var> in the alexpoly singular library.</p>
 
 
@@ -314,7 +314,7 @@ y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 
 <h5>10.2-6 SemigroupOfValuesOfCurve_Local</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Local</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Local</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>The function admits one or two parameters. In any case, the first is a list of polynomials <var class="Arg">pols</var>. And the second can be the string <var class="Arg">"basis"</var> or an integer <var class="Arg">val</var>.</p>
 
 <p>If only one argument is given, the output is the semigroup of all possible orders of <span class="SimpleMath">K[[pols]]</span> provided that <span class="SimpleMath">K[[x]]/K[[pols]]</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">K[[pols]]</span> such that the orders of the basis elements generate minimally the semigroup of orders of <span class="SimpleMath">K[[pols]]</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">K[[pols]]</span> with order <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomial, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
@@ -338,7 +338,7 @@ x^20
 
 <h5>10.2-7 SemigroupOfValuesOfCurve_Global</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Global</code>( <var class="Arg">arg</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfCurve_Global</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p>The function admits one or two parameters. In any case, the first is a list of polynomials <var class="Arg">pols</var>. And the second can be the string <var class="Arg">"basis"</var> or an integer <var class="Arg">val</var>.</p>
 
 <p>If only one argument is given, the output is the semigroup of all possible degrees of <span class="SimpleMath">K[pols]</span> provided that <span class="SimpleMath">K[x]/K[pols]</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">K[pols]</span> such that the degrees of the basis elements generate minimally the semigroup of degrees of <span class="SimpleMath">K[pols]</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">K[pols]</span> with degree <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomial, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
@@ -364,7 +364,7 @@ fail
 
 <h5>10.2-8 GeneratorsModule_Global</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsModule_Global</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsModule_Global</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">A</var> and <var class="Arg">M</var> are lists of polynomials in the same variable. The output is a basis of the ideal <span class="SimpleMath">M K[A]</span>, that is, a set <span class="SimpleMath">F</span> such that <span class="SimpleMath">deg(F)</span> generates the ideal <span class="SimpleMath">deg(M K[A])</span> of <span class="SimpleMath">deg(K[A])</span>, where <span class="SimpleMath">deg</span> stands for degree. The method is explained in <a href="chapBib.html#biBA-A-GS">[AAGS17]</a>.</p>
 
 
@@ -380,7 +380,7 @@ fail
 
 <h5>10.2-9 GeneratorsKahlerDifferentials</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsKahlerDifferentials</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsKahlerDifferentials</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">A</var> is a list of polynomials in the same variable. The output is <var class="Arg">GeneratorsModule_Global(A,M)</var>, with <var class="Arg">M</var> the set of derivatives of the elements in <var class="Arg">A</var>.</p>
 
 
@@ -394,7 +394,7 @@ fail
 
 <h5>10.2-10 IsMonomialNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMonomialNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMonomialNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup. Tests whether <var class="Arg">S</var> a monomial numerical semigroup.</p>
 
 <p>Let <span class="SimpleMath">R</span> a Noetherian ring such that <span class="SimpleMath">K ⊆ R ⊆ K[[t]]</span>, <span class="SimpleMath">K</span> is a field of characteristic zero, the algebraic closure of <span class="SimpleMath">R</span> is <span class="SimpleMath">K[[t]]</span>, and the conductor <span class="SimpleMath">(R : K[[t]])</span> is not zero. If <span class="SimpleMath">v : K((t))-&gt; Z</span> is the natural valuation for <span class="SimpleMath">K((t))</span>, then <span class="SimpleMath">v(R)</span> is a numerical semigroup.</p>

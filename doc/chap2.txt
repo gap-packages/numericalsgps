@@ -39,8 +39,8 @@
   
   [1X2.1-1 NumericalSemigroupByGenerators[101X
   
-  [29X[2XNumericalSemigroupByGenerators[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByGenerators[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X is a list of nonnegative integers with greatest common divisor equal to
   one.  These  integers  may be given as a list or by a sequence of individual
@@ -72,8 +72,8 @@
   
   [1X2.1-2 NumericalSemigroupBySubAdditiveFunction[101X
   
-  [29X[2XNumericalSemigroupBySubAdditiveFunction[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupBySubAdditiveFunction[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0YA  periodic  subadditive function with period [22Xm[122X is given through the list of
   images  of  the integers from [22X1[122X to [22Xm[122X. The image of [22Xm[122X has to be [22X0[122X. The output
@@ -91,8 +91,8 @@
   
   [1X2.1-3 NumericalSemigroupByAperyList[101X
   
-  [29X[2XNumericalSemigroupByAperyList[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByAperyList[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X is an Apéry list. The output is the numerical semigroup whose Apéry set
   with respect to the length of given list is [10XList[110X.[133X
@@ -112,8 +112,8 @@
   
   [1X2.1-4 NumericalSemigroupBySmallElements[101X
   
-  [29X[2XNumericalSemigroupBySmallElements[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupBySmallElements[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X is the set of small elements of a numerical semigroup, that is, the set
   of  all elements not greater than the conductor. The output is the numerical
@@ -144,8 +144,8 @@
   
   [1X2.1-5 NumericalSemigroupByGaps[101X
   
-  [29X[2XNumericalSemigroupByGaps[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByGaps[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X  is  the  set  of  gaps  of  a  numerical  semigroup. The output is the
   numerical semigroup with this set of gaps. When no semigroup exists with the
@@ -172,8 +172,8 @@
   
   [1X2.1-6 NumericalSemigroupByFundamentalGaps[101X
   
-  [29X[2XNumericalSemigroupByFundamentalGaps[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByFundamentalGaps[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X  is the set of fundamental gaps of a numerical semigroup. The output is
   the  numerical  semigroup  determined  by  these  gaps.  When  the given set
@@ -197,8 +197,8 @@
   
   [1X2.1-7 NumericalSemigroupByAffineMap[101X
   
-  [29X[2XNumericalSemigroupByAffineMap[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByAffineMap[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0YGiven three nonnegative integers [3Xa[103X, [3Xb[103X and [3Xc[103X, with [22Xa,c>0[122X and [22Xgcd(b,c)=1[122X, this
   function  returns the least (with restpect to set order inclusion) numerical
@@ -219,8 +219,8 @@
   
   [1X2.1-8 ModularNumericalSemigroup[101X
   
-  [29X[2XModularNumericalSemigroup[102X( [3Xa[103X, [3Xb[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XModularNumericalSemigroup[102X( [3Xa[103X, [3Xb[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0YGiven  two  positive  integers  [3Xa[103X  and  [3Xb[103X,  this  function returns a modular
   numerical semigroup satisfying [22Xax mod b le x[122X.[133X
@@ -236,8 +236,8 @@
   
   [1X2.1-9 ProportionallyModularNumericalSemigroup[101X
   
-  [29X[2XProportionallyModularNumericalSemigroup[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function
+  [33X[1;0Y[29X[2XProportionallyModularNumericalSemigroup[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0YGiven  three  positive  integers  [3Xa[103X,  [3Xb[103X  and  [3Xc[103X,  this  function  returns  a
   proportionally modular numerical semigroup satisfying [22Xaxmod b le cx[122X.[133X
@@ -265,8 +265,8 @@
   
   [1X2.1-10 NumericalSemigroupByInterval[101X
   
-  [29X[2XNumericalSemigroupByInterval[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByInterval[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0YThe  input  is  a  list  of rational numbers defining a closed interval. The
   output  is  the  semigroup  of  numerators  of  all rational numbers in this
@@ -286,8 +286,8 @@
   
   [1X2.1-11 NumericalSemigroupByOpenInterval[101X
   
-  [29X[2XNumericalSemigroupByOpenInterval[102X( [3XList[103X ) [32X function
-  [29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function
+  [33X[1;0Y[29X[2XNumericalSemigroupByOpenInterval[102X( [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0YThe input is a list of rational numbers defining a open interval. The output
   is the semigroup of numerators of all rational numbers in this interval.[133X
@@ -316,18 +316,18 @@
   
   [1X2.2-1 IsNumericalSemigroup[101X
   
-  [29X[2XIsNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByGenerators[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByMinimalGenerators[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByInterval[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByOpenInterval[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupBySubAdditiveFunction[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByAperyList[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupBySmallElements[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByGaps[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsNumericalSemigroupByFundamentalGaps[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsProportionallyModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
-  [29X[2XIsModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute
+  [33X[1;0Y[29X[2XIsNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByGenerators[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByMinimalGenerators[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByInterval[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByOpenInterval[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupBySubAdditiveFunction[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByAperyList[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupBySmallElements[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByGaps[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsNumericalSemigroupByFundamentalGaps[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsProportionallyModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XNS[103X  is a numerical semigroup and these attributes are available (their names
   should be self explanatory).[133X
@@ -350,7 +350,7 @@
   
   [1X2.2-2 RepresentsSmallElementsOfNumericalSemigroup[101X
   
-  [29X[2XRepresentsSmallElementsOfNumericalSemigroup[102X( [3XL[103X ) [32X attribute
+  [33X[1;0Y[29X[2XRepresentsSmallElementsOfNumericalSemigroup[102X( [3XL[103X ) [32X attribute[133X
   
   [33X[0;0YTests  if  the  list  [3XL[103X  (which  has to be a set) may represent the ``small"
   elements of a numerical semigroup.[133X
@@ -368,7 +368,7 @@
   
   [1X2.2-3 RepresentsGapsOfNumericalSemigroup[101X
   
-  [29X[2XRepresentsGapsOfNumericalSemigroup[102X( [3XL[103X ) [32X attribute
+  [33X[1;0Y[29X[2XRepresentsGapsOfNumericalSemigroup[102X( [3XL[103X ) [32X attribute[133X
   
   [33X[0;0YTests  if  the  list  [3XL[103X  may  represent  the  gaps  (see  [14X1.[114X) of a numerical
   semigroup.[133X
@@ -388,7 +388,7 @@
   
   [1X2.2-4 IsAperyListOfNumericalSemigroup[101X
   
-  [29X[2XIsAperyListOfNumericalSemigroup[102X( [3XL[103X ) [32X function
+  [33X[1;0Y[29X[2XIsAperyListOfNumericalSemigroup[102X( [3XL[103X ) [32X function[133X
   
   [33X[0;0YTests  whether  a  list  [3XL[103X  of  integers  may  represent the Apéry list of a
   numerical  semigroup. It returns [9Xtrue[109X when the periodic function represented
@@ -403,7 +403,7 @@
   
   [1X2.2-5 IsSubsemigroupOfNumericalSemigroup[101X
   
-  [29X[2XIsSubsemigroupOfNumericalSemigroup[102X( [3XS[103X, [3XT[103X ) [32X function
+  [33X[1;0Y[29X[2XIsSubsemigroupOfNumericalSemigroup[102X( [3XS[103X, [3XT[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X and [3XT[103X are numerical semigroups. Tests whether [3XT[103X is contained in [3XS[103X.[133X
   
@@ -420,7 +420,7 @@
   
   [1X2.2-6 IsSubset[101X
   
-  [29X[2XIsSubset[102X( [3XS[103X, [3XT[103X ) [32X attribute
+  [33X[1;0Y[29X[2XIsSubset[102X( [3XS[103X, [3XT[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup. [3XT[103X can be a numerical semigroup, in which case
   the   function  is  just  a  synonym  of  [2XIsSubsemigroupOfNumericalSemigroup[102X
@@ -442,8 +442,8 @@
   
   [1X2.2-7 BelongsToNumericalSemigroup[101X
   
-  [29X[2XBelongsToNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X operation
-  [29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation
+  [33X[1;0Y[29X[2XBelongsToNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2X\in[102X( [3Xn[103X, [3XS[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xn[103X  is  an integer and [3XS[103X is a numerical semigroup. Tests whether [3Xn[103X belongs to
   [3XS[103X.  [10X\in(n,S)[110X calls the infix variant [10Xn in S[110X, and both can be seen as a short
