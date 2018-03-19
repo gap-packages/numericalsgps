@@ -1,8 +1,10 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
-1.1.5->1.1.6
+1.1.6->1.1.7
+- some technical improvments related to automatic tests
 
+1.1.5->1.1.6
 - NumberElement_IdealOfNumericalSemigroup and ElementNumber_IdealOfNumericalSemigroup
 - List and sublist access for numerical semigroups and ideals of numerical semigroups, \[\] and \{\}
 - Iterator for numerical semigroup and ideals of numerical semigroups
