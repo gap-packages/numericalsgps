@@ -48,6 +48,14 @@ ReadPackage( "numericalsgps", "gap/good-ideals.gi");
 SetInfoLevel(InfoNumSgps,1);
 ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
+##
+## dot
+##
+ReadPackage( "numericalsgps", "gap/dot.gi" );
+##
+## optinal packages
+##
+
 if NumSgpsCanUseNI then
     ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
     Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");

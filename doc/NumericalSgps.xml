@@ -207,12 +207,20 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
+<Chapter Label="ch:dot">
+	<Heading>
+		Dot functions
+	</Heading>
+
+<#Include SYSTEM "dot.xml">
+</Chapter>
 
 </Body>
 
 <#Include SYSTEM "generalstuff.xml">
 
 <#Include SYSTEM "random.xml">
+
 
 <#Include SYSTEM "contributions.xml">
 

@@ -53,6 +53,16 @@ NumSgpsCanUseGradedModules:=false;
 
 ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
+
+##
+## dot
+##
+ReadPackage( "numericalsgps", "gap/dot.gd" );
+
+##
+## optinal packages
+##
+
 if IsPackageMarkedForLoading("NormalizInterface","0.0") then
 	NumSgpsCanUseNI:=true;
 fi;
