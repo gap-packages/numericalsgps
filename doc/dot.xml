@@ -113,7 +113,7 @@ digraph  NSGraph{rankdir = TB; edge[dir=back];
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> Print(DotOverSemigroupsNumericalSemigroup(s));
 digraph  NSGraph{rankdir = TB; edge[dir=back];
-1 [label="〈 1 〉", style=filled];
+1 [label="⟨ 1 〉", style=filled];
 2 [label="〈 2, 3 〉", style=filled];
 3 [label="〈 2, 5 〉", style=filled];
 4 [label="〈 2, 7 〉", style=filled];
@@ -225,7 +225,28 @@ graph  NSGraph{
 gap> SetDotNSEngine("circo");
 true
 ]]></Example>
+
+Here is an example with the defauld dot engine 
+      <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[height=4cm]{img/fact-dot.pdf}
+        \end{center}
+      </Alt>
+      <Alt Only="HTML">
+        &#60;br&#62;&#60;center&#62;&#60;img src=&#34;img/fact-dot.jpg&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      </Alt>
+
+And one with circo engine 
+      <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[height=4cm]{img/fact-circo.pdf}
+        \end{center}
+      </Alt>
+      <Alt Only="HTML">
+        &#60;br&#62;&#60;center&#62;&#60;img src=&#34;img/fact-circo.jpg&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      </Alt>
   </Description>
+
 </ManSection>
 
 
