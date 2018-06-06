@@ -101,6 +101,17 @@ digraph  NSGraph{rankdir = TB; edge[dir=back];
 11 -> 12;
 }
 ]]></Example>
+
+      <Alt Only="LaTeX">
+        \begin{center}
+        \includegraphics[height=4cm]{img/tree-dot.pdf}
+        \end{center}
+      </Alt>
+      <Alt Only="HTML">
+        &#60;br&#62;&#60;center&#62;&#60;img src=&#34;img/tree-dot.jpg&#34;&#62;&#60;/center&#62;&#60;br&#62;
+      </Alt>
+
+
   </Description>
 </ManSection>
 
