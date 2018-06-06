@@ -2034,6 +2034,137 @@ gap> c:=CanonicalIdealOfGoodSemigroup(d);;
 gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
 [ [ 0, 0 ], [ 2, 2 ] ]
 
+##dot.xml
+gap> br:=BinaryRelationByElements(Domain([1,2]), [Tuple([1,2])]);
+<general mapping: <object> -> <object> >
+gap> Print(DotBinaryRelation(br));
+digraph  NSGraph{rankdir = TB; edge[dir=back];
+1 [label="1"];
+2 [label="2"];
+2 -> 1;
+}
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> HasseDiagramOfNumericalSemigroup(s,[1,2,3]);
+<general mapping: <object> -> <object> >
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> HasseDiagramOfBettiElementsOfNumericalSemigroup(s);
+<general mapping: <object> -> <object> >
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> HasseDiagramOfAperyListOfNumericalSemigroup(s);
+<general mapping: <object> -> <object> >
+gap> HasseDiagramOfAperyListOfNumericalSemigroup(s,10);
+<general mapping: <object> -> <object> >
+
+#gap> s:=NumericalSemigroup(4,6,9);;
+#gap> Print(DotTreeOfGluingsOfNumericalSemigroup(s));
+#digraph  NSGraph{rankdir = TB; 
+#0 [label="〈 4, 6, 9 〉"]; 
+#0 [label="〈 4, 6, 9 〉", style=filled]; 
+#1 [label="〈 4 〉 + 〈 6, 9 〉" , shape=box]; 
+#2 [label="〈 1 〉", style=filled]; 
+#3 [label="〈 2, 3 〉", style=filled]; 
+#4 [label="〈 2 〉 + 〈 3 〉" , shape=box]; 
+#5 [label="〈 1 〉", style=filled]; 
+#6 [label="〈 1 〉", style=filled]; 
+#7 [label="〈 4, 6 〉 + 〈 9 〉" , shape=box]; 
+#8 [label="〈 2, 3 〉", style=filled]; 
+#10 [label="〈 2 〉 + 〈 3 〉" , shape=box]; 
+#11 [label="〈 1 〉", style=filled]; 
+#12 [label="〈 1 〉", style=filled]; 
+#9 [label="〈 1 〉", style=filled]; 
+#0 -> 1; 
+#1 -> 2; 
+#1 -> 3; 
+#3 -> 4; 
+#4 -> 5; 
+#4 -> 6; 
+#0 -> 7; 
+#7 -> 8; 
+#7 -> 9; 
+#8 -> 10; 
+#10 -> 11; 
+#10 -> 12; 
+#}
+#
+#gap> s:=NumericalSemigroup(4,6,9);;
+#gap> Print(DotOverSemigroupsNumericalSemigroup(s));
+#digraph  NSGraph{rankdir = TB; edge[dir=back];
+#1 [label="〈 1 〉", style=filled];
+#2 [label="〈 2, 3 〉", style=filled];
+#3 [label="〈 2, 5 〉", style=filled];
+#4 [label="〈 2, 7 〉", style=filled];
+#5 [label="〈 2, 9 〉", style=filled];
+#6 [label="〈 3, 4, 5 〉", style=filled];
+#7 [label="〈 3, 4 〉", style=filled];
+#8 [label="〈 4, 5, 6, 7 〉"];
+#9 [label="〈 4, 5, 6 〉", style=filled];
+#10 [label="〈 4, 6, 7, 9 〉"];
+#11 [label="〈 4, 6, 9, 11 〉"];
+#12 [label="〈 4, 6, 9 〉", style=filled];
+#1 -> 2;
+#2 -> 3;
+#2 -> 6;
+#3 -> 4;
+#3 -> 8;
+#4 -> 5;
+#4 -> 10;
+#5 -> 11;
+#6 -> 7;
+#6 -> 8;
+#7 -> 10;
+#8 -> 9;
+#8 -> 10;
+#9 -> 11;
+#10 -> 11;
+#11 -> 12;
+#}
+
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> Print(DotRosalesGraph(15,s));
+graph  NSGraph{
+1 [label="6"];
+2 [label="9"];
+2 -- 1;
+}
+
+gap> f:=FactorizationsIntegerWRTList(20,[3,5,7]);
+[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ]
+gap> Print(DotFactorizationGraph(f));
+graph  NSGraph{
+1 [label=" (5, 1, 0)"];
+2 [label=" (0, 4, 0)"];
+3 [label=" (1, 2, 1)"];
+4 [label=" (2, 0, 2)"];
+2 -- 3[label="2", color="red"];
+3 -- 4[label="2", color="red"];
+1 -- 3[label="4", color="red"];
+1 -- 4[label="4" ];
+2 -- 4[label="4" ];
+1 -- 2[label="5" ];
+}
+
+gap> f:=FactorizationsIntegerWRTList(20,[3,5,7]);
+[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ]
+gap> Print(DotEliahouGraph(f));
+graph  NSGraph{
+1 [label=" (5, 1, 0)"];
+2 [label=" (0, 4, 0)"];
+3 [label=" (1, 2, 1)"];
+4 [label=" (2, 0, 2)"];
+2 -- 3[label="2" ];
+3 -- 4[label="2" ];
+1 -- 3[label="4" ];
+1 -- 4[label="4" ];
+1 -- 2[label="5" ];
+}
+
+gap> SetDotNSEngine("circo");
+true
+
+
 ##generalstuff.xml
 
 
