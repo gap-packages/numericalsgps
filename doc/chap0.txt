@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.1.7
+                                 Version 1.1.8
   
   
                                  Manuel Delgado
@@ -466,6 +466,19 @@
       13.1-4 NumSgpsUseSingular
       13.1-5 NumSgpsUseSingularInterface
       13.1-6 NumSgpsUseSingularGradedModules
+  14 [33X[0;0YDot functions[133X
+    14.1 [33X[0;0YDot functions[133X
+      14.1-1 DotBinaryRelation
+      14.1-2 HasseDiagramOfNumericalSemigroup
+      14.1-3 HasseDiagramOfBettiElementsOfNumericalSemigroup
+      14.1-4 HasseDiagramOfAperyListOfNumericalSemigroup
+      14.1-5 DotTreeOfGluingsOfNumericalSemigroup
+      14.1-6 DotOverSemigroupsNumericalSemigroup
+      14.1-7 DotRosalesGraph
+      14.1-8 DotFactorizationGraph
+      14.1-9 DotEliahouGraph
+      14.1-10 SetDotNSEngine
+      14.1-11 DotSplash
   A [33X[0;0YGeneralities[133X
     A.1 [33X[0;0YBézout sequences[133X
       A.1-1 BezoutSequence

@@ -1,0 +1,254 @@
+  
+  [1X14 [33X[0;0YDot functions[133X[101X
+  
+  
+  [1X14.1 [33X[0;0YDot functions[133X[101X
+  
+  [33X[0;0YWe  provide  several  functions to translate graphs, Hasse diagrams or trees
+  related  to  numerical  and  affine semigroups to the dot language. This can
+  either  be  used with graphviz or any javascript library that interprets dot
+  language. We give the alternative to use [10XDotSplash[110X that uses viz.js.[133X
+  
+  [1X14.1-1 DotBinaryRelation[101X
+  
+  [33X[1;0Y[29X[2XDotBinaryRelation[102X( [3Xbr[103X ) [32X function[133X
+  
+  [33X[0;0Y[10Xbr[110X  is  a binary relation. Returns a GraphViz dot that represents the binary
+  relation [10Xbr[110X. The set of vertices of the resulting graph is the source of [10Xbr[110X.
+  Edges join those elements which are related with respect to [10Xbr[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xbr:=BinaryRelationByElements(Domain([1,2]), [Tuple([1,2])]);[127X[104X
+    [4X[28X<general mapping: <object> -> <object> >[128X[104X
+    [4X[25Xgap>[125X [27XPrint(DotBinaryRelation(br));[127X[104X
+    [4X[28Xdigraph  NSGraph{rankdir = TB; edge[dir=back];[128X[104X
+    [4X[28X1 [label="1"];[128X[104X
+    [4X[28X2 [label="2"];[128X[104X
+    [4X[28X2 -> 1;[128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-2 HasseDiagramOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XHasseDiagramOfNumericalSemigroup[102X( [3XS[103X, [3XA[103X ) [32X function[133X
+  
+  [33X[0;0Y[10XS[110X  is  a  numerical  semigroup  and [10XA[110X is a set of integers. Returns a binary
+  relation  which  is  the  Hasse  diagram  of  [10XA[110X with respect to the ordering
+  [22Xapreceq b[122X if [22Xb - a[122X in [10XS[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XHasseDiagramOfNumericalSemigroup(s,[1,2,3]);[127X[104X
+    [4X[28X<general mapping: <object> -> <object> >[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-3 HasseDiagramOfBettiElementsOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XHasseDiagramOfBettiElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[10XS[110X          is         a         numerical         semigroup.         Applies
+  [2XHasseDiagramOfBettiElementsOfNumericalSemigroup[102X  with  arguments  [10XS[110X  and its
+  Betti elements.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XHasseDiagramOfBettiElementsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X<general mapping: <object> -> <object> >[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-4 HasseDiagramOfAperyListOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XHasseDiagramOfAperyListOfNumericalSemigroup[102X( [3XS[103X[, [3Xn[103X] ) [32X function[133X
+  
+  [33X[0;0Y[10XS[110X  is a numerical semigroup, [10Xn[110X is an integer (optional, if not provided, the
+  multiplicity   of   the   semigroup   is   taken   as  its  value).  Applies
+  [2XHasseDiagramOfBettiElementsOfNumericalSemigroup[102X  ([14X14.1-3[114X)  with  arguments [10XS[110X
+  and the Apéry set of [10XS[110X with respect to [10Xn[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XHasseDiagramOfAperyListOfNumericalSemigroup(s);[127X[104X
+    [4X[28X<general mapping: <object> -> <object> >[128X[104X
+    [4X[25Xgap>[125X [27XHasseDiagramOfAperyListOfNumericalSemigroup(s,10);[127X[104X
+    [4X[28X<general mapping: <object> -> <object> >[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-5 DotTreeOfGluingsOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XDotTreeOfGluingsOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[10XS[110X is a numerical semigroup. It outputs a tree (in dot) representing the many
+  ways  [10XS[110X  can  be  decomposed  as  a gluing of numerical semigroups (and goes
+  recursively in the factors).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XPrint(DotOverSemigroupsNumericalSemigroup(s));[127X[104X
+    [4X[28Xdigraph  NSGraph{rankdir = TB; [128X[104X
+    [4X[28X0 [label="〈 4, 6, 9 〉"]; [128X[104X
+    [4X[28X0 [label="〈 4, 6, 9 〉", style=filled]; [128X[104X
+    [4X[28X1 [label="〈 4 〉 + 〈 6, 9 〉" , shape=box]; [128X[104X
+    [4X[28X2 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X3 [label="〈 2, 3 〉", style=filled]; [128X[104X
+    [4X[28X4 [label="〈 2 〉 + 〈 3 〉" , shape=box]; [128X[104X
+    [4X[28X5 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X6 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X7 [label="〈 4, 6 〉 + 〈 9 〉" , shape=box]; [128X[104X
+    [4X[28X8 [label="〈 2, 3 〉", style=filled]; [128X[104X
+    [4X[28X10 [label="〈 2 〉 + 〈 3 〉" , shape=box]; [128X[104X
+    [4X[28X11 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X12 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X9 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X0 -> 1; [128X[104X
+    [4X[28X1 -> 2; [128X[104X
+    [4X[28X1 -> 3; [128X[104X
+    [4X[28X3 -> 4; [128X[104X
+    [4X[28X4 -> 5; [128X[104X
+    [4X[28X4 -> 6; [128X[104X
+    [4X[28X0 -> 7; [128X[104X
+    [4X[28X7 -> 8; [128X[104X
+    [4X[28X7 -> 9; [128X[104X
+    [4X[28X8 -> 10; [128X[104X
+    [4X[28X10 -> 11; [128X[104X
+    [4X[28X10 -> 12; [128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-6 DotOverSemigroupsNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XDotOverSemigroupsNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[10XS[110X  is  a  numerical  semigroup.  It  outputs  the  Hasse diagram (in dot) of
+  oversemigroups of [10XS[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XPrint(DotOverSemigroupsNumericalSemigroup(s));[127X[104X
+    [4X[28Xdigraph  NSGraph{rankdir = TB; edge[dir=back];[128X[104X
+    [4X[28X1 [label="〈 1 〉", style=filled];[128X[104X
+    [4X[28X2 [label="〈 2, 3 〉", style=filled];[128X[104X
+    [4X[28X3 [label="〈 2, 5 〉", style=filled];[128X[104X
+    [4X[28X4 [label="〈 2, 7 〉", style=filled];[128X[104X
+    [4X[28X5 [label="〈 2, 9 〉", style=filled];[128X[104X
+    [4X[28X6 [label="〈 3, 4, 5 〉", style=filled];[128X[104X
+    [4X[28X7 [label="〈 3, 4 〉", style=filled];[128X[104X
+    [4X[28X8 [label="〈 4, 5, 6, 7 〉"];[128X[104X
+    [4X[28X9 [label="〈 4, 5, 6 〉", style=filled];[128X[104X
+    [4X[28X10 [label="〈 4, 6, 7, 9 〉"];[128X[104X
+    [4X[28X11 [label="〈 4, 6, 9, 11 〉"];[128X[104X
+    [4X[28X12 [label="〈 4, 6, 9 〉", style=filled];[128X[104X
+    [4X[28X1 -> 2;[128X[104X
+    [4X[28X2 -> 3;[128X[104X
+    [4X[28X2 -> 6;[128X[104X
+    [4X[28X3 -> 4;[128X[104X
+    [4X[28X3 -> 8;[128X[104X
+    [4X[28X4 -> 5;[128X[104X
+    [4X[28X4 -> 10;[128X[104X
+    [4X[28X5 -> 11;[128X[104X
+    [4X[28X6 -> 7;[128X[104X
+    [4X[28X6 -> 8;[128X[104X
+    [4X[28X7 -> 10;[128X[104X
+    [4X[28X8 -> 9;[128X[104X
+    [4X[28X8 -> 10;[128X[104X
+    [4X[28X9 -> 11;[128X[104X
+    [4X[28X10 -> 11;[128X[104X
+    [4X[28X11 -> 12;[128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-7 DotRosalesGraph[101X
+  
+  [33X[1;0Y[29X[2XDotRosalesGraph[102X( [3Xn[103X, [3XS[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDotRosalesGraph[102X( [3Xn[103X, [3XS[103X ) [32X operation[133X
+  
+  [33X[0;0Y[10XS[110X  is  either  numerical or an affine semigroup and [10Xn[110X is an element in [10XS[110X. It
+  outputs      the     graph     associated     to     [10Xn[110X     in     [10XS[110X     (see
+  [2XGraphAssociatedToElementInNumericalSemigroup[102X ([14X4.1-2[114X)).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XPrint(DotRosalesGraph(15,s));[127X[104X
+    [4X[28Xgraph  NSGraph{[128X[104X
+    [4X[28X1 [label="6"];[128X[104X
+    [4X[28X2 [label="9"];[128X[104X
+    [4X[28X2 -- 1;[128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-8 DotFactorizationGraph[101X
+  
+  [33X[1;0Y[29X[2XDotFactorizationGraph[102X( [3Xf[103X ) [32X operation[133X
+  
+  [33X[0;0Y[10Xf[110X  is  a set of factorizations. Returns the graph (in dot) of factorizations
+  associated  to  [10Xf[110X:  a  complete  graph whose vertices are the elements of [10Xf[110X.
+  Edges  are  labelled  with  distances  between  the nodes they join. Kruskal
+  algorithm  is  used  to  draw in red a spanning tree with minimal distances.
+  Thus the catenary degree is reached in the edges of the tree.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf:=FactorizationsIntegerWRTList(20,[3,5,7]);[127X[104X
+    [4X[28X[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ][128X[104X
+    [4X[25Xgap>[125X [27XPrint(DotFactorizationGraph(f));[127X[104X
+    [4X[28Xgraph  NSGraph{[128X[104X
+    [4X[28X1 [label=" (5, 1, 0)"];[128X[104X
+    [4X[28X2 [label=" (0, 4, 0)"];[128X[104X
+    [4X[28X3 [label=" (1, 2, 1)"];[128X[104X
+    [4X[28X4 [label=" (2, 0, 2)"];[128X[104X
+    [4X[28X2 -- 3[label="2", color="red"];[128X[104X
+    [4X[28X3 -- 4[label="2", color="red"];[128X[104X
+    [4X[28X1 -- 3[label="4", color="red"];[128X[104X
+    [4X[28X1 -- 4[label="4" ];[128X[104X
+    [4X[28X2 -- 4[label="4" ];[128X[104X
+    [4X[28X1 -- 2[label="5" ];[128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-9 DotEliahouGraph[101X
+  
+  [33X[1;0Y[29X[2XDotEliahouGraph[102X( [3Xf[103X ) [32X operation[133X
+  
+  [33X[0;0Y[10Xf[110X  is  a  set  of  factorizations.  Returns  the  Eliahou  graph (in dot) of
+  factorizations  associated  to [10Xf[110X: a graph whose vertices are the elements of
+  [10Xf[110X,  and  there  is an edge between two vertices if they have common support.
+  Edges are labelled with distances between nodes they join.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xf:=FactorizationsIntegerWRTList(20,[3,5,7]);[127X[104X
+    [4X[28X[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ][128X[104X
+    [4X[25Xgap>[125X [27XPrint(DotEliahouGraph(f));[127X[104X
+    [4X[28Xgraph  NSGraph{[128X[104X
+    [4X[28X1 [label=" (5, 1, 0)"];[128X[104X
+    [4X[28X2 [label=" (0, 4, 0)"];[128X[104X
+    [4X[28X3 [label=" (1, 2, 1)"];[128X[104X
+    [4X[28X4 [label=" (2, 0, 2)"];[128X[104X
+    [4X[28X2 -- 3[label="2" ];[128X[104X
+    [4X[28X3 -- 4[label="2" ];[128X[104X
+    [4X[28X1 -- 3[label="4" ];[128X[104X
+    [4X[28X1 -- 4[label="4" ];[128X[104X
+    [4X[28X1 -- 2[label="5" ];[128X[104X
+    [4X[28X}[128X[104X
+  [4X[32X[104X
+  
+  [1X14.1-10 SetDotNSEngine[101X
+  
+  [33X[1;0Y[29X[2XSetDotNSEngine[102X( [3Xengine[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function sets the value of [10XDotNSEngine[110X to [10Xengine[110X, which must be any of
+  the following "circo","dot","fdp","neato","osage","twopi". This tells viz.js
+  which graphviz engine to use.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetDotNSEngine("circo");[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YHere is an example with the default dot engine And one with circo engine[133X
+  
+  [1X14.1-11 DotSplash[101X
+  
+  [33X[1;0Y[29X[2XDotSplash[102X( [[3Xdots[103X] ) [32X function[133X
+  
+  [33X[0;0YLaunches  a  browser and visualizes the dots diagrams provided as arguments.
+  It  outputs  the html page displayed as a string, and prints the location of
+  the temporary file that contains it.[133X
+  
