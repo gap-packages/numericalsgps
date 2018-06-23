@@ -27,6 +27,24 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
                     </Description>
                 </ManSection>
 
+
+                <ManSection>
+                    <Func Arg="s, t" Name="AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType"></Func>
+                    <Description>
+                        <A>s</A> is an irreducible numerical semigroup and <A>t</A> is a positive integer.  The output is the set of almost-symetric numerical semigroups with type <A>t</A> that can be constructed
+						from <A>s</A> by removing some of its generators as explained in <Cite Key="BOR18"></Cite>).
+                        <Example><![CDATA[
+gap> ns := NumericalSemigroup(5,8,9,11);;
+gap> AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(ns,4);
+[ <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators> ]
+gap> List(last,MinimalGenerators);
+[ [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
                 <ManSection>
                   <Func Arg="s" Name="IsAlmostSymmetric"></Func>
                     <Func Arg="s" Name="IsAlmostSymmetricNumericalSemigroup"></Func>
@@ -52,4 +70,18 @@ gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(12));
 ]]></Example>
                     </Description>
                 </ManSection>
+
+                <ManSection>
+                    <Func Arg="f, t" Name="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType"></Func>
+                    <Description>
+                        <A>f</A> is an integer greater than or equal to -1, and <A>t</A> is a positive integer. The output is the set of all almost symmetric
+                        numerical semigroups with Frobenius number <A>f</A> and type <A>t</A>.
+                        <Example><![CDATA[
+gap> Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(12,4)); 
+5
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
 </Section>

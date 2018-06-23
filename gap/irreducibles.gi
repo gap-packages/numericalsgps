@@ -506,6 +506,88 @@ end);
 
 #####################################################################
 ##
+#F AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(s,t)
+##
+## The arguments are an irreducible numerical semigroup and a 
+## positive integer t. The output is the set of
+## almost-symmetric numerical semigroups obtained from s, as 
+## explained in [BOR18], with tye t.
+##
+#####################################################################
+InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType,function(s,t)
+    local msg, pow, conditionb, f,cand, small, sa;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The first argument must be a numerical semigroup.\n");
+    fi;
+
+    if not IsIrreducibleNumericalSemigroup(s) then
+        Error("The first argument must be an irreducible numerical semigroup.\n");
+    fi;
+
+    if not(IsInt(t)) then
+      Error("The second argument must be an integer");
+    fi;
+    if t<1 then
+      Error("The second argument must be an integer greater than or equal to one");
+    fi;
+
+    #implements Condition (c) in Proposition 4 of [BOR18]
+    conditionb:=function(l)
+        local cart;
+        cart:=Filtered(Cartesian(l,l),p->p[1]<=p[2]);
+        return ForAll(cart, p-> (p[1]+p[2]-f in l) or not(p[1]+p[2]-f in s));
+    end;
+
+    f:=FrobeniusNumber(s);
+    small:=SmallElementsOfNumericalSemigroup(s);
+
+    if IsOddInt(f+t) then 
+      return Set([]);
+    fi;
+
+    #chooses minimal generators between f/2 and f, and then tests Condition (b)
+    msg:=Filtered(MinimalGeneratingSystemOfNumericalSemigroup(s), x-> (f/2<x) and (x<f));
+    pow:=Combinations(msg,CeilingOfRational(t/2)-1);
+    cand:=Filtered(pow, conditionb);
+    cand:=Set(cand,l->NumericalSemigroupBySmallElementsNC(Difference(small,l)));
+    for sa in cand do
+      Setter(IsAlmostSymmetricNumericalSemigroup)(sa,true);
+    od;
+    return cand;
+end);
+
+#####################################################################
+##
+#F AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(f,t)
+##
+## The arguments are two positive integers. The output is the set of
+## almost-symmetric numerical semigroups obtained with type t and 
+## Frobenius number f.
+##
+#####################################################################
+InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType,function(f,t)
+
+    if(not(IsInt(f))) then
+        Error("The argument must be an integer.\n");
+    fi;
+
+
+    if f<-1 or f =0 then
+        return []; #Error(f," is not a valid Frobenius number.\n");
+    fi;
+
+    if f=-1 then
+        return [NumericalSemigroup(1)];
+    fi;
+
+    return Union(Set(IrreducibleNumericalSemigroupsWithFrobeniusNumber(f),s->AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(s,t)));
+
+end);
+
+
+#####################################################################
+##
 #F AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(f)
 ##
 ## The argument is an integer. The output is the set of all almost-symmetric

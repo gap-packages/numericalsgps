@@ -146,6 +146,32 @@ DeclareGlobalFunction("AlmostSymmetricNumericalSemigroupsFromIrreducible");
 
 #####################################################################
 ##
+#F AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(s,t)
+##
+## The arguments are an irreducible numerical semigroup and a 
+## positive integer t. The output is the set of
+## almost-symmetric numerical semigroups obtained from s, as 
+## explained in [BOR18], with type t. 
+##
+#####################################################################
+
+DeclareGlobalFunction("AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType");
+
+#####################################################################
+##
+#F AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(f,t)
+##
+## The arguments are two positive integers. The output is the set of
+## almost-symmetric numerical semigroups obtained with type t and 
+## Frobenius number f.
+##
+#####################################################################
+
+DeclareGlobalFunction("AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType");
+
+
+#####################################################################
+##
 #F AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(f)
 ##
 ## The argument is an integer. The output is the set of all almost-symmetric
