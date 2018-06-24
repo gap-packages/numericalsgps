@@ -1,6 +1,10 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+1.1.8 dev
+- functions AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType and AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType by Ignacio Ojeda
+- NumericalSemigroupByGaps([]) now returns N (it produced an error before)
+
 1.1.7->1.1.8
 - functions to translate graphs related to numerical and affine semigroups to the dot language
 
