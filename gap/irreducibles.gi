@@ -588,29 +588,83 @@ end);
 
 #####################################################################
 ##
-#F AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(f)
+#F AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(f,[ts])
 ##
-## The argument is an integer. The output is the set of all almost-symmetric
-## numerical semigroups with Frobenius number f ([RGS13])
-##
+## The arguments integers. The output is the set of all almost-symmetric
+## numerical semigroups with Frobenius number f, and if ts is specified
+## these semigroups have at least type ts [BOR18]. 
+## 
 #####################################################################
-InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber,function(f)
+InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber,function(F,ts...)
+  local L,sg,PF,Ga,N,auxiliar,auxiliar2, mt, outlist;
 
-    if(not(IsInt(f))) then
-        Error("The argument must be an integer.\n");
+  if not(IsInt(F)) then
+    Error("The first argument must be an integer");
+  fi;
+
+  if F<-1 or F=0 then
+    return [];
+  fi;
+
+  if Length(ts)>1 then
+    Error("The number of arguments must be one (Frobenius number) or two (Frobenius number and lower bound for type)");
+  fi;
+
+  if Length(ts)=1 then
+    if not(IsInt(ts[1])) then
+      Error("The second argument must be an integer");
     fi;
-
-
-    if f<-1 or f =0 then
-        return []; #Error(f," is not a valid Frobenius number.\n");
+    if ts[1]<1 then
+      Error("The second argument must be an integer greater than or equal to one");
     fi;
-
-    if f=-1 then
-        return [NumericalSemigroup(1)];
+    mt:=ts[1];
+    if IsOddInt(F+mt) then 
+      mt:=mt+1;
     fi;
+  else # no ts specified
+    mt:=1;
+  fi;
 
-    return Union(Set(IrreducibleNumericalSemigroupsWithFrobeniusNumber(f),
-                   AlmostSymmetricNumericalSemigroupsFromIrreducible));
+
+  if F < 3 then
+    return Filtered([NumericalSemigroupByGaps([1 .. F])], s->Type(s)>=mt);
+  fi;
+
+  L:=[[[F+1 .. 2*F+1],[1 .. F],[1 .. F]]];
+ 
+  sg:=Union([F-1],[F+1 .. 2*F+1]);
+  PF:=Difference([1 .. F],[F-1,1]);
+  Ga:=Difference([1 .. F],[F-1]);
+  Append(L,[[sg,PF,Ga]]);
+
+  if F < 5 then
+    return Filtered(List(L, t->NumericalSemigroupByGaps(t[3])), s->Type(s)>=mt);
+  fi;
+
+  auxiliar := function(sg,PF,Ga)
+    local L,m,t,i,sg1,PF1,Ga1;
+    L := []; m:=sg[1]; t:=Length(PF); F:=PF[t];
+    for i in [t-1 .. m-1] do
+      sg1:=Union([i],sg);
+      PF1:=Difference(PF,[i,F-i]);
+      Ga1:=Difference(Ga,[i]);
+      if IsSubset(Ga1,Filtered(Ga1-i,j->(j>0))) and (Intersection(PF1+i, Ga1) = [ ]) then
+        Append(L,[[sg1,PF1,Ga1]]);
+      fi;
+    od;
+    return L;
+  end;
+
+  N:=[[sg,PF,Ga]];
+  repeat
+    N:=Concatenation(List(N, t->CallFuncList(auxiliar,t)));
+    Append(L,N);
+  until Length(N[1][2]) < mt+2;
+  outlist:= List(L, t->NumericalSemigroupByGaps(t[3]));
+  for sg in outlist do
+      Setter(IsAlmostSymmetricNumericalSemigroup)(sg,true);
+  od;
+  return outlist;
 end);
 
 

@@ -58,15 +58,17 @@ true
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="f" Name="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Func Arg="f, [ts]" Name="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all almost symmetric
-                        numerical semigroups with Frobenius number <A>f</A>.
+                        <A>f</A> is an integer, and so is <A>ts</A>. The output is the set of all almost symmetric
+                        numerical semigroups with Frobenius number <A>f</A>, and type greater than or equal to <A>ts</A>. If <A>ts</A> is not specified, then it is considered to be equal to one, and so the output is the set of all almost symmetric numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12));
 15
 gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(12));
 2
+gap> List(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12,4),Type);
+[ 12, 10, 8, 8, 6, 6, 6, 6, 4, 4, 4, 4, 4 ]
 ]]></Example>
                     </Description>
                 </ManSection>
