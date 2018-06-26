@@ -800,6 +800,13 @@ gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(NumericalSemigroup(5,8,9,
 gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
 
+gap> ns := NumericalSemigroup(5,8,9,11);;
+gap> AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(ns,4);
+[ <Numerical semigroup with 5 generators>, 
+  <Numerical semigroup with 5 generators> ]
+gap> List(last,MinimalGenerators);
+[ [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ]
+
 gap> IsAlmostSymmetricNumericalSemigroup(NumericalSemigroup(5,8,11,14,17));
 true
 
@@ -807,6 +814,11 @@ gap> Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12));
 15
 gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(12));
 2
+gap> List(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12,4),Type);
+[ 12, 10, 8, 8, 6, 6, 6, 6, 4, 4, 4, 4, 4 ]
+
+gap> Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(12,4)); 
+5
 
 ##Ideals_of_numerical_semigroups.xml
 
