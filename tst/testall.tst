@@ -693,6 +693,8 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ],
   [ 10, 13, 14, 15, 16, 17, 18, 21 ],
   [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
+gap> Set(last2,PseudoFrobeniusOfNumericalSemigroup);    
+[ [ 11, 19, 22 ] ]
 
 ##Irreducible_numerical_semigroups.xml
 

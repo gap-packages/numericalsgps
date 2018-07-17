@@ -161,7 +161,7 @@ gap> SimpleForcedIntegersForPseudoFrobenius(fint[1],Union(fint[2],[free[1]]),pf)
                 </ManSection>
                              
                   <ManSection>
-                    <Func Arg="g" Name="NumericalSemigroupsWithPseudoFrobeniusNumbers"></Func>
+                    <Func Arg="PF" Name="NumericalSemigroupsWithPseudoFrobeniusNumbers"></Func>
                     <Description>
                         <A>PF</A> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigroups S such that PF(S)=PF.
 When Length(PF)=1, it makes use of the function <Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>
@@ -179,12 +179,14 @@ gap> List(last,MinimalGenerators);
 [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
   [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
   [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
-]]></Example>          
+gap> Set(last2,PseudoFrobeniusOfNumericalSemigroup);    
+[ [ 11, 19, 22 ] ]
+g]]></Example>          
                     </Description>
                 </ManSection>
 
                    <ManSection>
-                    <Func Arg="g" Name="ANumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
+                    <Func Arg="PF" Name="ANumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
                     <Description>
                         <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option
 The output is: A numerical semigroup S such that PF(S)=PF. Returns fail if it concludes that it exists and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
