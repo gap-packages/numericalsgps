@@ -244,6 +244,9 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius, function(arg)
   frob := Maximum(PF);
   ##
   if type = 1 then 
+    if IsEvenInt(frob) then # frob/2 is also a pseudo-Frobenius number, thus the type can not be 1.
+      return [];
+    fi;
     return [DivisorsInt(frob),[0,frob+1]];
   fi;
 
@@ -307,6 +310,9 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
   type := Length(PF);
   frob := Maximum(PF);
   if type = 1 then
+    if IsEvenInt(PF[1]) then # PF[1]/2 is also a pseudo-Frobenius number, thus the type can not be 1.
+      return [];
+    fi;
     Info(InfoTipo,2, "As the type is 1, the function IrreducibleNumericalSemigroupsWithFrobeniusNumber will be used");    
     return IrreducibleNumericalSemigroupsWithFrobeniusNumber(frob);
   elif type = 2 and 2*PF[1] = PF[2] then
