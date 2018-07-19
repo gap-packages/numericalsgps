@@ -12,7 +12,7 @@
 ## ouput: a list of numerical semigrups S such that PF(S)=PF
 #################################################################
 ##
-## Info classes have been created
+## Info classes have been created. It may be used by typing: SetInfoLevel(InfoTipo,2);
 ##
 DeclareInfoClass("InfoTipo");
 #################################################################
@@ -81,26 +81,26 @@ end);
 #################################################################
 InstallGlobalFunction(FurtherForcedElementsForPseudoFrobenius, function(f_gaps,f_elts,PF)
   local  frob, ef_elts, x, filt, candidates, m, bf_elts, nf_elts, closure, 
-         conflicts;
+         elts, pf_plus_elements, conflicts;
   
   frob := Maximum(PF);     
   ###exclusion
   ef_elts := [];
- #( => )
+ #( Lemma 10 )
   for x in f_gaps do
     filt := Filtered(PF, f -> not((f-x in f_gaps) or (f-x < 0)));
     if Length(filt) = 1 then
       AddSet(ef_elts, filt[1]-x);
     fi;
   od;
-  #( <= )
+  #( Lemma 11 )
   candidates := Difference([1..frob-1],Union(f_elts,ef_elts,PF));
   for x in candidates do 
     if Filtered(Difference(PF-x,f_gaps),IsPosInt) = [] then
       AddSet(ef_elts, x);
     fi;
   od;
-  ###big elements
+  ###big elements (Lemma 12)
   m := First(Integers,n-> IsPosInt(n) and not(n in f_gaps)); #least integer that is not a forced gap
   bf_elts := Difference(frob - [1..m-1], PF);
   ### test
@@ -108,7 +108,13 @@ InstallGlobalFunction(FurtherForcedElementsForPseudoFrobenius, function(f_gaps,f
   closure := NumericalSemigroupWithGivenElementsAndFrobenius(nf_elts,frob);
   nf_elts := SmallElementsOfNumericalSemigroup(closure);
   nf_elts := Union(nf_elts,[Maximum(nf_elts)..frob+1]);
-  
+  #############
+  ##added due to an observation of Ignacio Ojeda
+  elts := Difference(nf_elts,[0,frob+1]);
+  #From the definition: the sum of a pseudo-Frobenius with an element is an element
+  pf_plus_elements := Intersection(Union(List(PF,f->f+elts)),[0..frob+1]);
+  nf_elts := Union(nf_elts,pf_plus_elements);
+  ##############
   conflicts := Intersection(f_gaps,nf_elts);
   if conflicts = [] then
     return nf_elts;
@@ -255,6 +261,10 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius, function(arg)
   if f_ints = fail then
     return fail;
   elif IsRange(Union(f_ints)) then
+    #a test (motivated by a problem found by Ojeda)
+    if PseudoFrobeniusOfNumericalSemigroup(NumericalSemigroupByGaps(f_ints[1])) <> PF then
+      Error("There is a problem in ForcedIntegersForPseudoFrobenius. Please communicate the input to the numericalsgps package authors");
+    fi;    
     return f_ints;
   fi;
   n_ad := NonAdmissibleForPseudoFrobenius(f_ints[1],f_ints[2],PF);  
