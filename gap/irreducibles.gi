@@ -625,17 +625,25 @@ InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber,func
     mt:=1;
   fi;
 
-
   if F < 3 then
     return Filtered([NumericalSemigroupByGaps([1 .. F])], s->Type(s)>=mt);
   fi;
 
   L:=[[[F+1 .. 2*F+1],[1 .. F],[1 .. F]]];
+  
+  if mt >= F-1 then 
+    return [NumericalSemigroupByGaps(L[1][3])];
+  fi;
  
   sg:=Union([F-1],[F+1 .. 2*F+1]);
   PF:=Difference([1 .. F],[F-1,1]);
   Ga:=Difference([1 .. F],[F-1]);
   Append(L,[[sg,PF,Ga]]);
+
+  if mt >= F-3 then 
+    outlist:= List(L, t->NumericalSemigroupByGaps(t[3]));
+    return outlist;
+  fi;
 
   if F < 5 then
     return Filtered(List(L, t->NumericalSemigroupByGaps(t[3])), s->Type(s)>=mt);
