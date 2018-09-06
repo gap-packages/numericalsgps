@@ -2049,7 +2049,7 @@ gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
 [ [ 0, 0 ], [ 2, 2 ] ]
 
 ##dot.xml
-gap> br:=BinaryRelationByElements(Domain([1,2]), [Tuple([1,2])]);
+gap> br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);
 <general mapping: <object> -> <object> >
 gap> Print(DotBinaryRelation(br));
 digraph  NSGraph{rankdir = TB; edge[dir=back];

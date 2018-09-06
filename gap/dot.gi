@@ -138,7 +138,7 @@ InstallGlobalFunction(HasseDiagramOfNumericalSemigroup, function(s, A)
   D := Domain(Set(A));
   rel := Tuples(D, 2);
   rel := Filtered(rel, p -> p[2] - p[1] in s);
-  rel := List(rel, p -> Tuple([p[1], p[2]]));  
+  rel := List(rel, p -> DirectProductElement([p[1], p[2]]));  
   rel := BinaryRelationByElements(D, rel);  
   return HasseDiagramBinaryRelation(rel);  
 end);
