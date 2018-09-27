@@ -8,18 +8,10 @@ addons:
   apt_packages:
     - libgmp-dev
     - libreadline-dev
-    - libgmp-dev:i386
-    - libreadline-dev:i386
-    - gcc-multilib
-    - g++-multilib
 
 matrix:
   include:
-    - env: CFLAGS="-O2" CC=clang CXX=clang++
-      compiler: clang
     - env: CFLAGS="-O2"
-      compiler: gcc
-    - env: ABI=32
 
 branches:
   only:

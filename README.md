@@ -1,8 +1,11 @@
 [![Build Status](https://travis-ci.org/gap-packages/numericalsgps.svg?branch=master)](https://travis-ci.org/gap-packages/numericalsgps)
 [![Code Coverage](https://codecov.io/github/gap-packages/numericalsgps/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/numericalsgps)
 
-The GAP 4 package `NumericalSgps` to compute with Numerical Semigroups
-======================================================================
+NumericalSgps
+=============
+
+`NumericalSgps` is a GAP package for computing with Numerical Semigroups.
+
 
 Introduction
 ------------
@@ -16,7 +19,7 @@ The features of this package include
 - perform several operations on numerical semigroups and ideals, namely: intersection, quotient by an integer, decompose into irreducible semigroups, add a special gap, ...;
 -computing and testing membership to relevant families of numerical semigroups.
 
-There is a manual in the sub-directory 'doc' written using the GAP package
+There is a manual in the sub-directory `doc` written using the GAP package
 gapdoc which describes the available functions in detail. The pdf, html
 versions of the manual are also available there.
 
