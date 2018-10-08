@@ -55,6 +55,10 @@ ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
 
 ##
+## obsolet
+##
+ReadPackage( "numericalsgps", "gap/obsolet.gd" );
+##
 ## dot
 ##
 ReadPackage( "numericalsgps", "gap/dot.gd" );

@@ -49,11 +49,15 @@ SetInfoLevel(InfoNumSgps,1);
 ReadPackage( "numericalsgps", "gap/affine-def.gi" );
 ReadPackage( "numericalsgps", "gap/affine.gi" );
 ##
+## obsolet
+##
+ReadPackage( "numericalsgps", "gap/obsolet.gi" );
+##
 ## dot
 ##
 ReadPackage( "numericalsgps", "gap/dot.gi" );
 ##
-## optinal packages
+## optional packages
 ##
 
 if NumSgpsCanUseNI then

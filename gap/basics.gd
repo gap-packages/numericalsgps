@@ -78,19 +78,6 @@ DeclareOperation("Type",[IsNumericalSemigroup]);
 DeclareSynonymAttr( "GeneratorsOfNumericalSemigroup", Generators);
 #DeclareGlobalFunction( "GeneratorsOfNumericalSemigroup");
 
-
-#############################################################################
-##
-#F  GeneratorsOfNumericalSemigroupNC(S)
-##
-##  Returns a set of generators of the numerical
-##  semigroup S.
-##
-#####From version 0.980 is just a synonym of the check version of the function
-#############################################################################
-DeclareSynonym( "GeneratorsOfNumericalSemigroupNC","GeneratorsOfNumericalSemigroup");
-
-
 #############################################################################
 ##
 #A  MinimalGenerators(S)

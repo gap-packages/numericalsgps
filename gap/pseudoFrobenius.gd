@@ -65,6 +65,3 @@ DeclareGlobalFunction("NumericalSemigroupsWithPseudoFrobeniusNumbers");
 ##
 ###########################################################################
 DeclareGlobalFunction("ANumericalSemigroupWithPseudoFrobeniusNumbers");
-## the name "RandomNumericalSemigroupWithPseudoFrobeniusNumbers" should be removed in a further version...
-DeclareSynonym("RandomNumericalSemigroupWithPseudoFrobeniusNumbers",ANumericalSemigroupWithPseudoFrobeniusNumbers);
-        

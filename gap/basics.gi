@@ -337,28 +337,6 @@ InstallMethod( GeneratorsOfNumericalSemigroup,
     return(MinimalGeneratingSystemOfNumericalSemigroup(S));
 end);
 
-
-
-#############################################################################
-##
-#F  GeneratorsOfNumericalSemigroupNC(S)
-##
-##  Returns a set of generators of the numerical
-##  semigroup S.
-##
-#############################################################################
-# InstallGlobalFunction( GeneratorsOfNumericalSemigroupNC, function(S)
-#     if not IsNumericalSemigroup(S) then
-#         Error("The argument must be a numerical semigroup");
-#     fi;
-#     if HasGenerators(S) then
-#         return(Generators(S));
-#     fi;
-#     return(MinimalGeneratingSystemOfNumericalSemigroup(S));
-# end);
-
-
-
 #############################################################################
 ##
 #A  MinimalGeneratingSystem(S)
