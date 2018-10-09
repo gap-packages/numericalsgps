@@ -7,7 +7,7 @@
                 semigroup <M>S</M>, one first constructs its unitary extensions, that is to say, the
                 sets <M>S\cup\{g\}</M> that are numerical semigroups with <M>g</M> a positive integer.
                 This is achieved by constructing the special gaps of the semigroup, and then adding each
-                of them to the numerical semigroup. Then we repeat the process for each of this new 
+                of them to the numerical semigroup. Then we repeat the process for each of these new 
                 numerical semigroups until we reach <M> {\mathbb N} </M>.
                 
                 <P/>
@@ -52,10 +52,9 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
 
 <Section>
                 <Heading>
-                    Constructing the set of numerical semigroups with genus g, that is, numerical 
-                    semigroups with exactly g gaps
+                    Constructing the set of numerical semigroups with genus g
                 </Heading>
-                Given a numerical semigroup of genus g, removing minimal generators, one 
+                Given a numerical semigroup of genus g (that is, with exactly g gaps), removing minimal generators, one 
                 obtains numerical semigroups of genus g+1. In order to avoid repetitions,
                 we only remove minimal generators greater than the Frobenius number of 
                 the numerical semigroup (this is accomplished with the local function sons).
@@ -188,10 +187,10 @@ g]]></Example>
                    <ManSection>
                     <Func Arg="PF" Name="ANumericalSemigroupWithPseudoFrobeniusNumbers"></Func>
                     <Description>
-                        <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option
-The output is: A numerical semigroup S such that PF(S)=PF. Returns fail if it concludes that it exists and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
+                        <A>PF</A> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" may be given.
+The output is: A numerical semigroup S such that <M>PF(S)=PF</M>. Returns fail if it concludes that it does not exist and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
 <P/>
-It makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>, when Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2].
+When <M>Length(PF)=1</M> or <M>Length(PF)=2</M> and <M>2*PF[1] = PF[2]</M>, it makes use of the function <Ref Func="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"/>.
 <P/>
                         <Example><![CDATA[
 gap> pf := [ 83, 169, 173, 214, 259 ];;                     

@@ -122,7 +122,7 @@ gap> ShadedSetOfElementInNumericalSemigroup(10,s);
     <Description>
       <A>S</A> is a numerical semigroup.
       <P/>
-      The output is true if <A>S</A> has uniquely presented. The implementation is based on (see <Cite Key="GS-O"></Cite>).
+      The output is true if <A>S</A> has uniquely presented. The implementation is based on <Cite Key="GS-O"></Cite>.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsUniquelyPresentedNumericalSemigroup(s);

@@ -105,10 +105,10 @@ gap> SmallElements(ndup);
 </ManSection>
 
   <ManSection>
-    <Func Name="InductiveNumericalSemigroup" Arg="S, a, b"/>
+    <Func Name="InductiveNumericalSemigroup" Arg="a, b"/>
     <Description>
-      <A>S</A> is a numerical semigroup, and <A>a</A> and <A>b</A> are lists of positive integers, such that <M>b[i+1]\ge a[i]b[i]</M>.
-      Computes inductively <M>S_0=\mathbb N</M> and <M>S_{i+1}=a[i]S_i\cup \{a[i]b[i],a[i]b[i]+1,\to\}</M>, and returns <M>S_{k}</M>, with <M>k</M> the length of <A>a</A> and <A>b</A>.
+      <A>a</A> and <A>b</A> are lists of positive integers, with <M>k</M> the length of <A>a</A> and <A>b</A>, and such that <M>b[i+1]\ge a[i]b[i]</M> (<M>0\le i\le k-1</M>).
+      Computes inductively <M>S_0=\mathbb N</M> and <M>S_{i+1}=a[i]S_i\cup \{a[i]b[i],a[i]b[i]+1,\to\}</M>, and returns <M>S_{k}</M>.
       <Example><![CDATA[
 gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;
 gap> SmallElements(s);

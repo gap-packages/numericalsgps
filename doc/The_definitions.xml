@@ -423,7 +423,7 @@ gap> Conductor(NumericalSemigroup(3,5,7));
 number</E> of <M>S</M> if <M>z+S\setminus\{0\}\subseteq S</M>.
 		    <P/>
                         <C>S</C>
-                        is a numerical semigroup. It returns set of pseudo-Frobenius numbers of <A>S</A>.
+                        is a numerical semigroup. It returns the set of pseudo-Frobenius numbers of <A>S</A>.
                         <Example><![CDATA[
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
@@ -533,7 +533,7 @@ gap> HolesOfNumericalSemigroup(s);
 		<ManSection>
 		  <Attr Name="LatticePathAssociatedToNumericalSemigroup" Arg="S,p,q"/>
 		    <Description>
-		      <C>S</C> is a numerical semigroup and <C>p,q</C> are two elements in <C>S</C>.
+		      <C>S</C> is a numerical semigroup and <C>p,q</C> are two coprime elements in <C>S</C>.
 		      <P/>In this setting <C>S</C> is an oversemigroup of <M>\langle p,q\rangle</M>, and consequently every gap of <C>S</C> is a gap of <M>\langle p,q\rangle</M>. If <M>c</M> is the conductor of <M>\langle p,q\rangle</M>, then every gap <M>g</M> of <M>\langle p,q\rangle</M> can be written uniquely as <M>g=c-1-(ap+bp)</M> for some nonnegative integers <M>a,b</M>. We say that <M>(a,b)</M> are the coordinates associated to <M>g</M>.
 
 		      <P/> The output is a path in <M>\mathbb{N}^2</M> such that coordinates of the gaps of <M>S</M> correspond exactly with the points in <M>\mathbb{N}^2</M> that are between the path in the line <M>ax+by=c-1</M>. See <Cite Key="K-W"></Cite>.
@@ -574,7 +574,7 @@ gap> Genus(S);
                         <C>S</C>
 The <E>fundamental gaps</E> of <M>S</M> are those gaps that are maximal with respect to the partial order induced by
 division in <M>{\mathbb N}</M>.
-                        is a numerical semigroup. It returns the set of fundamental gaps of <A>S</A>.
+                        It returns the set of fundamental gaps of <A>S</A>.
                         <Example><![CDATA[
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
@@ -596,7 +596,7 @@ gap> FundamentalGaps(NumericalSemigroup(5,7,11));
                     <Attr Name="SpecialGaps" Arg="S" Label="for numerical semigroup"/>
                     <Attr Name="SpecialGapsOfNumericalSemigroup" Arg="S"/>
                     <Description>
-The <E>special gaps</E> of a numerical semigroup <M>S</M>, are
+The <E>special gaps</E> of a numerical semigroup <M>S</M> are
 those fundamental gaps such that if they are added to the given numerical semigroup,
 then the resulting set is again a numerical semigroup.
                         <C>S</C>

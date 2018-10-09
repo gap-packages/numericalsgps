@@ -13,8 +13,8 @@
                 <ManSection>
                     <Func Arg="s" Name="AlmostSymmetricNumericalSemigroupsFromIrreducible"></Func>
                     <Description>
-                        <A>s</A> is an irreducible numerical semigroup.  The output is the set of almost-symetric numerical semigroups that can be constructed
-						from <A>s</A> by removing some of its generators as explained in <Cite Key="MR3169635"></Cite>).
+                        <A>s</A> is an irreducible numerical semigroup.  The output is the set of almost-symmetric numerical semigroups that can be constructed
+						from <A>s</A> by removing some of its generators (as explained in <Cite Key="MR3169635"></Cite>).
                         <Example><![CDATA[
 gap> ns := NumericalSemigroup(5,8,9,11);;
 gap> AlmostSymmetricNumericalSemigroupsFromIrreducible(ns);
@@ -31,8 +31,8 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
                 <ManSection>
                     <Func Arg="s, t" Name="AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType"></Func>
                     <Description>
-                        <A>s</A> is an irreducible numerical semigroup and <A>t</A> is a positive integer.  The output is the set of almost-symetric numerical semigroups with type <A>t</A> that can be constructed
-						from <A>s</A> by removing some of its generators as explained in <Cite Key="BOR18"></Cite>).
+                        <A>s</A> is an irreducible numerical semigroup and <A>t</A> is a positive integer.  The output is the set of almost-symmetric numerical semigroups with type <A>t</A> that can be constructed
+						from <A>s</A> by removing some of its generators (as explained in <Cite Key="BOR18"></Cite>).
                         <Example><![CDATA[
 gap> ns := NumericalSemigroup(5,8,9,11);;
 gap> AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(ns,4);

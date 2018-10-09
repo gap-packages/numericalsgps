@@ -33,7 +33,7 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(last);
                 <ManSection>
                     <Func Arg="g, S" Name="AddSpecialGapOfNumericalSemigroup"></Func>
                     <Description>
-                        <A>S</A> is a numerical semigroup and <A>g</A> is a special gap of <A>S</A>
+                        <A>S</A> is a numerical semigroup and <A>g</A> is a special gap of <A>S</A>.
                         
                         <P/>
                         

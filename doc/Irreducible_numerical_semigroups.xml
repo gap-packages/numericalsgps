@@ -19,11 +19,10 @@
                 only if it has only one special gap. We use this characterization.
                 <P/>
 
-                In this section we show how to construct the set of all numerical semigroups with a
-                given Frobenius number. In old versions of the package, we first constructed an irreducible numerical semigroup with
+                In old versions of the package, we first constructed an irreducible numerical semigroup with
                 the given Frobenius number (as explained in <Cite Key="RGS04"></Cite>), and then
-                we constructed the rest from it. That is why we separated both functions.
-				The present version uses a faster procedure presented in <Cite Key="BR13"></Cite>.
+                we constructed the rest from it. 
+		The present version uses a faster procedure presented in <Cite Key="BR13"></Cite>.
                 <P/>
 
                 Every numerical semigroup can be expressed as an intersection of irreducible
@@ -101,8 +100,8 @@ false
                 <ManSection>
                     <Func Arg="f" Name="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is an irreducible
-                        numerical semigroup with Frobenius number <A> f</A>. From the way the procedure is
+                        <A>f</A> is an integer greater than or equal to -1. When <M>f=0</M>, the output is <M>fail</M>. Otherwise, the output is an irreducible
+                        numerical semigroup with Frobenius number <A>f</A>. From the way the procedure is
                         implemented, the resulting semigroup has at most four generators (see <Cite Key="RGS04"></Cite>).
                         <Example><![CDATA[
 gap> s := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);

@@ -30,7 +30,7 @@ gap> WilfNumber(s);
     <Attr Name="TruncatedWilfNumberOfNumericalSemigroup" Arg="S"/>
     <Description>
       <C>S</C> 
-      is a numerical semigroup.  Let <M>c</M>, <M>m</M>, <M>s</M> and <M>l</M> be the conductor, multiplicity, number of generators smaller than <M>c</M>, and number of  elements smaller than <M>c</M> in <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and negative remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>. Returns <M>s l-qd_q+r</M>, where <M>d_q</M> corresponds with the number of integers in <M>[c,c+m[</M> that are not minimal generators of <A>S</A>.
+      is a numerical semigroup.  Let <M>c</M>, <M>m</M>, <M>s</M> and <M>l</M> be the conductor, multiplicity, number of generators smaller than <M>c</M>, and number of  elements smaller than <M>c</M> in <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and nonpositive remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>. Returns <M>s l-qd_q+r</M>, where <M>d_q</M> corresponds with the number of integers in <M>[c,c+m[</M> that are not minimal generators of <A>S</A>.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,9);;
 gap> TruncatedWilfNumberOfNumericalSemigroup(s);
@@ -64,7 +64,7 @@ gap> ProfileOfNumericalSemigroup(s);
     <Attr Name="EliahouSlicesOfNumericalSemigroup" Arg="S"/>
     <Description>
       <C>S</C> 
-      is a numerical semigroup.  Let <M>c</M> and <M>m</M> be the conductor and  multiplicity of <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and negative remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>.  Returns a list of lists of integers, each list is the set <M> S \cap [jm-r, (j+1)m-r[</M> with <M> j</M> in [1..q]. So this is a partition of the set of small elements of <A>S</A> (without <M>0</M>).
+      is a numerical semigroup.  Let <M>c</M> and <M>m</M> be the conductor and  multiplicity of <A>S</A>, respectively. Let <M>q</M> and <M>r</M> be the quotient and nonpositive remainder of the division of <M>c</M> by <M>m</M>, that is, <M>c=qm-r</M>.  Returns a list of lists of integers, each list is the set <M> S \cap [jm-r, (j+1)m-r[</M> with <M> j</M> in [1..q]. So this is a partition of the set of small elements of <A>S</A> (without <M>0</M> and <M>c</M>).
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,9);;                                     
 gap> EliahouSlicesOfNumericalSemigroup(s);
