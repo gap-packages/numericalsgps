@@ -311,9 +311,9 @@ InstallGlobalFunction(NumericalSemigroupsWithPseudoFrobeniusNumbers, function(ar
          freeElementsTree_recursive, semigroups, fg, fe;
 
   ## arguments
-  if Length(arg) = 1 then
+  if Length(arg) = 1 and IsList(arg[1]) then
     PF := Set(arg[1]);   
-  elif Length(arg) > 1 then 
+  else
     PF := Set(arg);
   fi;
   ##
@@ -428,7 +428,7 @@ end);
 # Alternativelly
 #  * a record with fields "pseudo_frobenius" and "max_attempts" option
 ##
-## ouput: A numerical semigrups S such that PF(S)=PF. Returns fail if it conludes that it exists and suggets to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
+## ouput: A numerical semigrups S such that PF(S)=PF. Returns fail if it conludes that it does not exist and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...
 ## When Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2], it makes use of the function AnIrreducibleNumericalSemigroupWithFrobeniusNumber
 #################################################################
 InstallGlobalFunction(ANumericalSemigroupWithPseudoFrobeniusNumbers, function(arg)

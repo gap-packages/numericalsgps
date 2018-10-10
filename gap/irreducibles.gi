@@ -118,7 +118,7 @@ InstallGlobalFunction(AnIrreducibleNumericalSemigroupWithFrobeniusNumber, functi
     fi;
 
     if(f=0 or f<-1) then
-        Print(f," is not a suitable integer.\n");
+#        Print(f," is not a suitable integer.\n");
         return fail;
     fi;
     if(f mod 2<>0) then
@@ -529,7 +529,7 @@ InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenT
       Error("The second argument must be an integer");
     fi;
     if t<1 then
-      Error("The second argument must be an integer greater than or equal to one");
+      return []; #Error("The second argument must be an integer greater than or equal to one");
     fi;
 
     #implements Condition (c) in Proposition 4 of [BOR18]
@@ -568,8 +568,8 @@ end);
 #####################################################################
 InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType,function(f,t)
 
-    if(not(IsInt(f))) then
-        Error("The argument must be an integer.\n");
+    if(not(IsInt(f)) or not(IsInt(t))) then
+        Error("The arguments must be integers.\n");
     fi;
 
 
