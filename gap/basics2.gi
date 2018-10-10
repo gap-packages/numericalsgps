@@ -156,10 +156,10 @@ end);
 InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
     local fg, fundamentalGapsRepresentingNSGenerator;
 
-    if(not(IsInt(g)) or g<-1) then
+    if(not(IsInt(g))) then
         Error("the argument must be an integer.\n");
     fi;
-    if(g=0) then
+    if(g=0 or g<-1) then
         return [];
     fi;
     if(g=-1) then

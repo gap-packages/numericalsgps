@@ -211,7 +211,7 @@ true
     <ManSection>
         <Func Arg="f" Name="DeltaSequencesWithFrobeniusNumber"></Func>
         <Description>
-            <A>f</A> is a positive integer.
+            <A>f</A> is an integer.
 			Computes the set of all <M>\delta</M>-sequences generating numerical semigroups with Frobenius number <A>f</A>.
 
             <Example><![CDATA[

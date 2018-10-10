@@ -38,7 +38,7 @@ gap> List(last,s->MinimalGenerators(s));
                 <ManSection>
                     <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an non zero integer greater than or equal to -1. The output is the 
+                        <A>f</A> is an integer. The output is the 
                         set of numerical semigroups with Frobenius number <A>f</A>.           
 The algorithm implemented is given in <Cite Key="RGGJ04"/>.
                         <Example><![CDATA[

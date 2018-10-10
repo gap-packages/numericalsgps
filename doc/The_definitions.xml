@@ -536,7 +536,7 @@ gap> HolesOfNumericalSemigroup(s);
 		      <C>S</C> is a numerical semigroup and <C>p,q</C> are two coprime elements in <C>S</C>.
 		      <P/>In this setting <C>S</C> is an oversemigroup of <M>\langle p,q\rangle</M>, and consequently every gap of <C>S</C> is a gap of <M>\langle p,q\rangle</M>. If <M>c</M> is the conductor of <M>\langle p,q\rangle</M>, then every gap <M>g</M> of <M>\langle p,q\rangle</M> can be written uniquely as <M>g=c-1-(ap+bp)</M> for some nonnegative integers <M>a,b</M>. We say that <M>(a,b)</M> are the coordinates associated to <M>g</M>.
 
-		      <P/> The output is a path in <M>\mathbb{N}^2</M> such that coordinates of the gaps of <M>S</M> correspond exactly with the points in <M>\mathbb{N}^2</M> that are between the path in the line <M>ax+by=c-1</M>. See <Cite Key="K-W"></Cite>.
+		      <P/> The output is a path in <M>\mathbb{N}^2</M> such that the coordinates of the gaps of <M>S</M> correspond exactly with the points in <M>\mathbb{N}^2</M> that are between the path and the line <M>ax+by=c-1</M>. See <Cite Key="K-W"></Cite>.
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(16,17,71,72);;
 gap> LatticePathAssociatedToNumericalSemigroup(s,16,17);

@@ -38,8 +38,8 @@
                     <Prop Arg="s" Name="IsIrreducible" Label="for numerical semigroups"></Prop>
 
                     <Description>
-                        <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is irreducible,
-                        false otherwise.
+                        <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is irreducible,
+                        <C>false</C> otherwise.
 
 
                         <P/>
@@ -61,8 +61,8 @@ false
                     <Attr Arg="s" Name="IsSymmetric" Label="for numerical semigroups"></Attr>
 
                     <Description>
-                        <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is symmetric,
-                        false otherwise.
+                        <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is symmetric,
+                        <C>false</C> otherwise.
 
 
                         <P/>
@@ -81,8 +81,8 @@ false
                   <Prop Arg="s" Name="IsPseudoSymmetric" Label="for numerical semigroups"></Prop>
                     <Prop Arg="s" Name="IsPseudoSymmetricNumericalSemigroup"></Prop>
                     <Description>
-                        <A>s</A> is a numerical semigroup. The output is true if <A>s</A> is pseudo-symmetric,
-                        false otherwise.
+                        <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is pseudo-symmetric,
+                        <C>false</C> otherwise.
 
                         <P/>
                         This filter implies <Ref Func="IsIrreducibleNumericalSemigroup"/>.
@@ -100,7 +100,7 @@ false
                 <ManSection>
                     <Func Arg="f" Name="AnIrreducibleNumericalSemigroupWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. When <M>f=0</M>, the output is <M>fail</M>. Otherwise, the output is an irreducible
+                        <A>f</A> is an integer. When <M>f=0</M> or <M>f\le -2</M>, the output is <C>fail</C>. Otherwise, the output is an irreducible
                         numerical semigroup with Frobenius number <A>f</A>. From the way the procedure is
                         implemented, the resulting semigroup has at most four generators (see <Cite Key="RGS04"></Cite>).
                         <Example><![CDATA[
@@ -118,7 +118,7 @@ gap> FrobeniusNumber(s);
                 <ManSection>
                     <Func Arg="f" Name="IrreducibleNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        <A>f</A> is an integer. The output is the set of all
                         irreducible numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));

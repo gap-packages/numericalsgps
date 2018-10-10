@@ -137,7 +137,7 @@ gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup(
                 <ManSection>
                     <Func Arg="f" Name="ArfNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf
+                        <A>f</A> is an integer. The output is the set of all Arf
                         numerical semigroups with Frobenius number <A>f</A>.
                         The current version of this algorithm is due to G. Zito.
 
@@ -158,7 +158,7 @@ gap> Set(last,MinimalGenerators);
                 <ManSection>
                     <Func Arg="f" Name="ArfNumericalSemigroupsWithFrobeniusNumberUpTo"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Arf
+                        <A>f</A> is an integer. The output is the set of all Arf
                         numerical semigroups with Frobenius number less than or equal to <A>f</A>.
                         The current version of this algorithm is due to G. Zito.
                         <Example><![CDATA[
@@ -197,7 +197,7 @@ gap> Length(ArfNumericalSemigroupsWithGenusUpTo(10));
                 <ManSection>
                     <Func Arg="g,f" Name="ArfNumericalSemigroupsWithGenusAndFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1, and <A>g</A> is a nonnegative integer. The output is the set of all Arf
+                        <A>f</A> and <A>g</A> are integers. The output is the set of all Arf
                         numerical semigroups with genus <A>g</A> and Frobenius number <A>f</A>. The algorithm is explained in <Cite Key="arf-frob-gen"></Cite>.
                         <Example><![CDATA[
 gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(10,13);
@@ -261,7 +261,7 @@ gap> MinimalGenerators(last);
                 <ManSection>
                     <Func Arg="f" Name="SaturatedNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all Saturated
+                        <A>f</A> is an integer. The output is the set of all Saturated
                         numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> SaturatedNumericalSemigroupsWithFrobeniusNumber(10);

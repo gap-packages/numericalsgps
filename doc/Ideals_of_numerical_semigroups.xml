@@ -192,7 +192,7 @@ gap> Minimum(J);
                     <Oper Name="\in" Arg="n, I" Label="membership test in ideal of numerical semigroup"/>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup, <A>n</A> is an integer.
-                        The output is true if <A>n</A> belongs to <A>I</A>.
+                        The output is <C>true</C> if <A>n</A> belongs to <A>I</A>.
 
                         <P/>
                         <A> n in I</A> can be used for short.
@@ -778,7 +778,7 @@ In this section we document the functions implemented by K. Stokes related to pa
 
     <A>p</A> is the list of integers that are the coefficients of a pattern. <P/>
 
-    Returns true or false depending if the pattern is admissible or not  (see <Cite Key="BA-GS"></Cite>).
+    Returns <C>true</C> or <C>false</C> depending if the pattern is admissible or not  (see <Cite Key="BA-GS"></Cite>).
 
     <Example><![CDATA[
 gap> IsAdmissiblePattern([1,1,-1]);
@@ -796,7 +796,7 @@ false
 
     <A>p</A> is the list of integers that are the coefficients of a pattern. <P/>
 
-    Returns true or false depending if the pattern is strongly admissible or not  (see <Cite Key="BA-GS"></Cite>).
+    Returns <C>true</C> or <C>false</C> depending if the pattern is strongly admissible or not  (see <Cite Key="BA-GS"></Cite>).
 
     <Example><![CDATA[
 gap> IsAdmissiblePattern([1,-1]);
@@ -931,8 +931,8 @@ true
                       <Prop Arg="S" Name="IsGradedAssociatedRingNumericalSemigroupCM"></Prop>
                       <Description>
                           <A>S</A> is a numerical semigroup.
-                          Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
-                          is Cohen-Macaulay, and false otherwise.
+                          Returns <C>true</C> if the graded ring associated to <M>K[[<A>S</A>]]</M>
+                          is Cohen-Macaulay, and <C>false</C> otherwise.
                           This test is the implementation of the algorithm given in
                           <Cite Key="BF06"></Cite>.
 
@@ -970,8 +970,8 @@ gap> List(AperyListOfNumericalSemigroupWRTElement(s,4),
                         <A>S</A> is a numerical semigroup.
                         <P/>
 
-                        Returns true if the graded ring associated to <M>K[\![<A>S</A>]\!]</M>
-                        is Buchsbaum, and false otherwise.
+                        Returns <C>true</C> if the graded ring associated to <M>K[\![<A>S</A>]\!]</M>
+                        is Buchsbaum, and <C>false</C> otherwise.
                         This test is the implementation of the algorithm given in <Cite Key="DA-M-M"></Cite>.
 
 
@@ -1076,8 +1076,8 @@ true
                         <A>S</A> is a numerical semigroup.
                         <P/>
 
-                        Returns true if the graded ring associated to <M>K[[<A>S</A>]]</M>
-                        is Gorenstein, and false otherwise.
+                        Returns <C>true</C> if the graded ring associated to <M>K[[<A>S</A>]]</M>
+                        is Gorenstein, and <C>false</C> otherwise.
                         This test is the implementation of the algorithm given in
                         <Cite Key="DA-M-S"></Cite>.
 
@@ -1103,7 +1103,7 @@ true
                         <A>S</A> is a numerical semigroup.
                         <P/>
 
-                        Returns true if the Complete Intersection property of the associated graded ring of a numerical semigroup ring associated to <M>K[[<A>S</A>]]</M>, and false otherwise.
+                        Returns <C>true</C> if the Complete Intersection property of the associated graded ring of a numerical semigroup ring associated to <M>K[[<A>S</A>]]</M>, and <C>false</C> otherwise.
                         This test is the implementation of the algorithm given in
                         <Cite Key="DAMSwhen"></Cite>.
 

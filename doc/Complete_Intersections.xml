@@ -56,7 +56,7 @@ false
                 <ManSection>
                     <Func Arg="f" Name="CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        <A>f</A> is an integer. The output is the set of all
                         complete intersection numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> Length(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(57));
@@ -86,7 +86,7 @@ false
                 <ManSection>
                     <Func Arg="f" Name="FreeNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        <A>f</A> is an integer. The output is the set of all
                         free numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> Length(FreeNumericalSemigroupsWithFrobeniusNumber(57));
@@ -117,7 +117,7 @@ true
                 <ManSection>
                     <Func Arg="f" Name="TelescopicNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        <A>f</A> is an integer. The output is the set of all
                         telescopic numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));
@@ -148,7 +148,7 @@ true
                 <ManSection>
                   <Func Arg="f" Name="NumericalSemigroupsPlanarSingularityWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer greater than or equal to -1. The output is the set of all
+                        <A>f</A> is an integer. The output is the set of all
                         numerical semigroups associated to irreducible planar curves singularities with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> Length(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber(57));
