@@ -461,8 +461,8 @@ InstallGlobalFunction(OmegaPrimalityOfElementListInNumericalSemigroup,function(l
     if not IsNumericalSemigroup(s) then
         Error("The second argument must be a numerical semigroup");
     fi;
-    if not IsListOfIntegersNS(l) then
-        Error("The first argument must be a list of integers");
+    if not ForAll(l, e -> e in s) then
+        Error("The first argument must be a list of elements of the second");
     fi;
 
 

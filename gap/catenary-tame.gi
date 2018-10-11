@@ -600,6 +600,13 @@ end);
 ##  OmegaPrimalityOfElemtListInNumericalSemgiroup
 #############################################################################
 InstallGlobalFunction(OmegaPrimalityOfElementInNumericalSemigroup, function(n,s)
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup");
+    fi;
+    if not (n in s) then
+        Error("The first argument must be an element of the second");
+    fi;
+  
     return OmegaPrimalityOfElementListInNumericalSemigroup([n],s)[1];
 
 end);
