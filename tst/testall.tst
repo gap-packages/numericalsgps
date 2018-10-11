@@ -543,7 +543,7 @@ gap> BettiElementsOfNumericalSemigroup(s);
 [ 10, 12, 14 ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> PrimitiveElementsOfNumericalSemigroup(s);
+gap> DegreesOfPrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -1439,7 +1439,7 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
 
 # to slow without normaliz or 4ti2
 #gap> s:=NumericalSemigroup(3,5,7);;
-#gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
+#gap> DegreesOfEqualPrimitiveElementsOfNumericalSemigroup(s);
 #[ 3, 5, 7, 10 ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -1448,7 +1448,7 @@ gap> EqualCatenaryDegreeOfNumericalSemigroup(s);
 
 # to slow without normaliz or 4ti2
 # gap> s:=NumericalSemigroup(3,5,7);;
-# gap> MonotonePrimitiveElementsOfNumericalSemigroup(s);
+# gap> DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s);
 # [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
 
 # to slow without normaliz or 4ti2
@@ -1790,7 +1790,7 @@ gap> BettiElementsOfAffineSemigroup(a);
 [ [ 2, 2 ] ]
 
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
-gap> PrimitiveElementsOfAffineSemigroup(a);
+gap> DegreesOfPrimitiveElementsOfAffineSemigroup(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
 
 gap> Set(FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]));
