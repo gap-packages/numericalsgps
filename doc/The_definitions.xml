@@ -137,19 +137,6 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 
 
 				<ManSection>
-					<Oper Arg="S,r"  Name="RthElementOfNumericalSemigroup"/>
-					<Description>
-						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the <A>r</A>-th element of <A>S</A>.
-						<Example><![CDATA[
-gap> S := NumericalSemigroup(7,8,17);;
-gap> RthElementOfNumericalSemigroup(S,53);
-68
-]]></Example>
-					</Description>
-</ManSection>
-
-
-				<ManSection>
 					<Oper Arg="S,r"  Name="\[ \]" Label="for numerical semigroups"/>
 					<Description>
 						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the <A>r</A>-th element of <A>S</A>.
@@ -194,16 +181,31 @@ true
 
 
 				<ManSection>
-					<Func Arg="S,r"  Name="ElementNumber_NumericalSemigroup"/>
+				  <Func Arg="S,r"  Name="ElementNumber_NumericalSemigroup"/>
 					<Description>
-						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. It returns the <A>r</A>-th element of <A>S</A>.
+						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. Both functions (which are like synonyms) return the <A>r</A>-th element of <A>S</A>.
 						<Example><![CDATA[
 gap> S := NumericalSemigroup(7,8,17);;
 gap> ElementNumber_NumericalSemigroup(S,53);
 68
+gap> RthElementOfNumericalSemigroup(S,53);
+68
 ]]></Example>
 					</Description>
 </ManSection>
+
+				<ManSection>
+					<Oper Arg="S,r"  Name="RthElementOfNumericalSemigroup"/>
+					<Description>
+					  This operation works as a synonym of <Ref Func="ElementNumber_NumericalSemigroup"/>.
+						<Example><![CDATA[
+gap> S := NumericalSemigroup(7,8,17);;
+gap> RthElementOfNumericalSemigroup(S,53);
+68
+]]></Example>
+					</Description>
+</ManSection>
+
 
 				<ManSection>
 					<Func Arg="S,r"  Name="NumberElement_NumericalSemigroup"/>

@@ -6,7 +6,7 @@
                 If <M>S</M> is a numerical semigroup and <M>m</M> is its multiplicity (the least
                 positive integer belonging to it), then the embedding dimension <M>e</M> of <M>S</M> (the
                 cardinality of the minimal system of generators of <M>S</M>) is less than or equal
-                to <M>m</M>. We say that <M>S</M> has maximal embedding dimension (MED for short) when <M>e=m</M>.
+                to <M>m</M>. We say that <M>S</M> has <E>maximal embedding dimension</E> (MED for short) when <M>e=m</M>.
                 The intersection of two numerical semigroups with the same multiplicity and maximal embedding
                 dimension is again of maximal embedding dimension. Thus we define the MED closure of a non-empty subset
                 of positive integers <M>M=\{m &lt; m_1 &lt; \cdots &lt; m_n &lt;\cdots\}</M> with <M>\gcd(M)=1</M>
@@ -70,15 +70,16 @@ gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(
                 <Heading>
                     Numerical semigroups with the Arf property and Arf closures
                 </Heading>
-                Numerical semigroups with the Arf property are a special kind of numerical semigroups with
-                maximal embedding dimension. A numerical semigroup <M>S</M> is Arf if for every <M>x,y,z</M> in
-                <M>S</M> with <M>x\geq y\geq z</M>, one has that <M>x+y-z\in S</M>.
+               A numerical semigroup <M>S</M> is <E>Arf</E> if for every <M>x,y,z</M> in
+               <M>S</M> with <M>x\geq y\geq z</M>, one has that <M>x+y-z\in S</M>.
+	       Numerical semigroups with the Arf property are a special kind of numerical semigroups with
+                maximal embedding dimension. 
 
                 <P/>
                 The intersection of two Arf numerical semigroups is again Arf, and thus we can consider the
                 Arf closure of a set of nonnegative integers with greatest common divisor equal to one. Analogously
                 as with MED numerical semigroups, we define Arf systems of generators and minimal Arf generating
-                system for an Arf numerical semigroup. These are also unique(see <Cite Key="RGGB04"></Cite>).
+                system for an Arf numerical semigroup. These are also unique (see <Cite Key="RGGB04"></Cite>).
 
 
                 <ManSection>
@@ -172,7 +173,7 @@ gap> Length(ArfNumericalSemigroupsWithFrobeniusNumberUpTo(10));
                     <Func Arg="g" Name="ArfNumericalSemigroupsWithGenus"></Func>
                     <Description>
                       <A>g</A> is a nonnegative integer. The output is the set of all Arf
-                      numerical semigroups with equal to <A>g</A>.
+                      numerical semigroups with genus equal to <A>g</A>.
                       The current version of this algorithm is due to G. Zito.
 <Example><![CDATA[
 gap> Length(ArfNumericalSemigroupsWithGenus(10));
@@ -216,9 +217,10 @@ gap> List(last,MinimalGenerators);
                 <Heading>
                     Saturated numerical semigroups
                 </Heading>
-                Saturated numerical semigroups with the Arf property are a special kind of numerical semigroups with
-                maximal embedding dimension. A numerical semigroup <M>S</M> is saturated if the following condition holds: <M> s, s_1 , \ldots , s_r</M> in <M>S</M>  are such that <M>s_i \leq s</M> for all <M>i</M> in <M>\{1, \ldots , r\}</M> and <M>z_1 , \ldots , z_r</M> in <M>\mathbb Z</M> are such that <M>z_1 s_1 + \cdots + z_r s_r\geq 0</M>, then <M>s + z_1 s_1 + \cdots + z_r s_r</M> in <M>S</M>.
+		A numerical semigroup <M>S</M> is <E>saturated</E> if the following condition holds: <M> s, s_1 , \ldots , s_r</M> in <M>S</M>  are such that <M>s_i \leq s</M> for all <M>i</M> in <M>\{1, \ldots , r\}</M> and <M>z_1 , \ldots , z_r</M> in <M>\mathbb Z</M> are such that <M>z_1 s_1 + \cdots + z_r s_r\geq 0</M>, then <M>s + z_1 s_1 + \cdots + z_r s_r</M> in <M>S</M>.
 
+                Saturated numerical semigroups are a special kind of numerical semigroups with
+                maximal embedding dimension. 
                 <P/>
                 The intersection of two saturated numerical semigroups is again saturated, and thus we can consider the
                 saturated closure of a set of nonnegative integers with greatest common divisor equal to one (see <Cite Key="RGbook"></Cite>).
@@ -229,7 +231,7 @@ gap> List(last,MinimalGenerators);
                     <Prop Arg="S" Name="IsSaturatedNumericalSemigroup"></Prop>
                     <Description>
                         <A>S</A> is a numerical semigroup.
-                        Returns true if <A>S</A> is a saturated numerical semigroup and false otherwise.
+                        Returns <C>true</C> if <A>S</A> is a saturated numerical semigroup and <C>false</C> otherwise.
                         <P/>
                         This property implies <Ref Func="IsArf"/>. 
 
@@ -261,7 +263,7 @@ gap> MinimalGenerators(last);
                 <ManSection>
                     <Func Arg="f" Name="SaturatedNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
-                        <A>f</A> is an integer. The output is the set of all Saturated
+                        <A>f</A> is an integer. The output is the set of all saturated
                         numerical semigroups with Frobenius number <A>f</A>.
                         <Example><![CDATA[
 gap> SaturatedNumericalSemigroupsWithFrobeniusNumber(10);
