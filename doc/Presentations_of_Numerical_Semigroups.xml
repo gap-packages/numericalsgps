@@ -76,14 +76,14 @@ gap> BettiElementsOfNumericalSemigroup(s);
   </ManSection>
 
   <ManSection>
-    <Func Arg="S" Name="PrimitiveElementsOfNumericalSemigroup"></Func>
+    <Func Arg="S" Name="DegreesOfPrimitiveElementsOfNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup.
       <P/>
       The output is the set of elements <M>s</M> in <A>S</A> such that  there exists a minimal  solution to <M>msg\cdot x-msg\cdot y = 0</M>,  such that <M>x,y</M> are factorizations of <M>s</M>, and <M>msg</M> is the minimal generating system of <A>S</A>. Betti elements are primitive, but not the way around in general.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> PrimitiveElementsOfNumericalSemigroup(s);
+gap> DegreesOfPrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
 ]]></Example>
     </Description>
