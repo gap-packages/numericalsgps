@@ -598,7 +598,7 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
     </ManSection>
 
                 <ManSection>
-                    <Func Arg="S" Name="EqualPrimitiveElementsOfNumericalSemigroup"></Func>
+                    <Func Arg="S" Name="DegreesOffEqualPrimitiveElementsOfNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         <P/>
@@ -606,7 +606,7 @@ gap> CatenaryDegreeOfNumericalSemigroup(s);
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> EqualPrimitiveElementsOfNumericalSemigroup(s);
+gap> DegreesOfEqualPrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10 ]
 ]]></Example>
 
@@ -631,7 +631,7 @@ gap> EqualCatenaryDegreeOfNumericalSemigroup(s);
     </ManSection>
 
                 <ManSection>
-                    <Func Arg="S" Name="MonotonePrimitiveElementsOfNumericalSemigroup"></Func>
+                    <Func Arg="S" Name="DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         <P/>
@@ -639,7 +639,7 @@ gap> EqualCatenaryDegreeOfNumericalSemigroup(s);
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> MonotonePrimitiveElementsOfNumericalSemigroup(s);
+gap> DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]
 ]]></Example>
 

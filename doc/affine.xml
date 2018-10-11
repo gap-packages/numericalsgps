@@ -447,14 +447,14 @@ gap> BettiElementsOfAffineSemigroup(a);
 
 
   <ManSection>
-    <Oper Arg="a" Name="PrimitiveElementsOfAffineSemigroup"></Oper>
+    <Oper Arg="a" Name="DegreesOfPrimitiveElementsOfAffineSemigroup"></Oper>
     <Description>
       <A>a</A> is an affine semigroup.
       The output is the set of primitive elements of <A>a</A> (defined as for numerical semigroups).
 <P/>This function has three implementations (methods), one using Graver basis via the Lawrence lifting of <A>a</A> and the other (much faster) using  <C>NormalizInterface</C>. Also a <C>4ti2</C> version using its Graver basis computation is provided.
       <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
-gap> PrimitiveElementsOfAffineSemigroup(a);
+gap> DegreesOfPrimitiveElementsOfAffineSemigroup(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ]
 ]]></Example>
     </Description>
