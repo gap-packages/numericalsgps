@@ -967,7 +967,7 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfAffineSemigroup,
     Add(lsh,one);
 
     ah:=AffineSemigroup(lsh);
-    primeq:=PrimitiveElementsOfAffineSemigroup(ah);
+    primeq:=DegreesOfPrimitiveElementsOfAffineSemigroup(ah);
     primeq:=Set(primeq, x->x{[1..dim]});
 
     return Maximum(Set(primeq, x->MonotoneCatenaryDegreeOfSetOfFactorizations(
@@ -1192,9 +1192,9 @@ InstallGlobalFunction(LawrenceLiftingOfAffineSemigroup,function(a)
 end);
 
 #####################################################
-# primitiveElements with Lawrence lifting
+# Degrees of primitive elements with Lawrence lifting
 #####################################################
-InstallMethod(PrimitiveElementsOfAffineSemigroup,
+InstallMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
         "Computes the set of primitive elements of an affine semigroup",
         [IsAffineSemigroup],1,
         function(a)
@@ -1241,7 +1241,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
   ls:=GeneratorsOfAffineSemigroup(a);
 
   Info(InfoNumSgps,2,"Computing primitive elements of ", ls);
-  prim:=PrimitiveElementsOfAffineSemigroup(a);
+  prim:=DegreesOfPrimitiveElementsOfAffineSemigroup(a);
   Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
   max:=0;
   for p in prim do

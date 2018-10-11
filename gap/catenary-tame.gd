@@ -37,7 +37,7 @@ DeclareGlobalFunction( "NSGPfactorizationsNC" );
 ##    Analytic Theory, Pure and AppliedMathematics,
 ##    vol. 278, Chapman & Hall/CRC, 2006.
 ##  The algorithm used appears in
-##   -S. T. Chapman, P. A. García-Sánchez,
+##   -S. T. Chapman, P. A. Garcï¿½a-Sï¿½nchez,
 ##    D. Llena, V. Ponomarenko, and J. C. Rosales,
 ##    The catenary and tame degree in finitely generated
 ##    cancellative monoids, Manuscripta Mathematica 120 (2006) 253--264
@@ -83,7 +83,7 @@ DeclareGlobalFunction( "CatenaryDegreeOfElementInNumericalSemigroup" );
 ##    Analytic Theory, Pure and AppliedMathematics,
 ##    vol. 278, Chapman & Hall/CRC, 2006.
 ##  The algorithm used appears in
-##   -S. T. Chapman, P. A. García-Sánchez,
+##   -S. T. Chapman, P. A. Garcï¿½a-Sï¿½nchez,
 ##    D. Llena, V. Ponomarenko, and J. C. Rosales,
 ##    The catenary and tame degree in finitely generated
 ##    cancellative monoids, Manuscripta Mathematica 120 (2006) 253--264
@@ -104,7 +104,7 @@ DeclareGlobalFunction( "TameDegreeOfElementInNumericalSemigroup" );
 ##    Analytic Theory, Pure and AppliedMathematics,
 ##    vol. 278, Chapman & Hall/CRC, 2006.
 ##  The algorithm used appears in
-##   -S. T. Chapman, P. A. García-Sánchez,
+##   -S. T. Chapman, P. A. Garcï¿½a-Sï¿½nchez,
 ##    D. Llena,  The catenary and tame degree of numerical
 ##    semigroups, Forum Math. 2007 1--13.
 ##
@@ -387,24 +387,24 @@ DeclareGlobalFunction("MonotoneCatenaryDegreeOfSetOfFactorizations");
 DeclareGlobalFunction("LShapesOfNumericalSemigroup");
 
 ###########################################################################
-#F  MonotonePrimitiveElementsOfNumericalSemigroup(s)
+#F  DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s)
 ##
 ## Computes the sets of elements in s, such that there exists a minimal 
 ## solution to msg*x-msg*y = 0, |x|<=|y| such that x,y are factorizations of s
 ## Used to compute the monotone catenary degree of the semigroup s
 ##
 #############################################################################
-DeclareGlobalFunction("MonotonePrimitiveElementsOfNumericalSemigroup");
+DeclareGlobalFunction("DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup");
 
 ###########################################################################
-#F  EqualPrimitiveElementsOfNumericalSemigroup(s)
+#F  DegreesOfEqualPrimitiveElementsOfNumericalSemigroup(s)
 ##
 ## Computes the sets of elements in s, such that there exists a minimal 
 ## solution to msg*x-msg*y = 0, |x|=|y| such that x,y are factorizations of s
 ## Used to compute the equal catenary degree of the semigroup
 ##
 #############################################################################
-DeclareGlobalFunction("EqualPrimitiveElementsOfNumericalSemigroup");
+DeclareGlobalFunction("DegreesOfEqualPrimitiveElementsOfNumericalSemigroup");
 
 ####################################################################
 #F EqualCatenaryDegreeOfNumericalSemigroup(s) computes the 

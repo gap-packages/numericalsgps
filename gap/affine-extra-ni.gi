@@ -270,11 +270,11 @@ function(a)
 # (generators as a monoid; not to be confused with minimal presentations
 # to this end, use BettiElementsOfAffineSemigroup)
 #####################################################################
-# An implementation of PrimitiveElementsOfAffineSemigroup using
+# An implementation of DegreesOfPrimitiveElementsOfAffineSemigroup using
 # Normaliz
 # REQUERIMENTS: NormalizInterface
 #####################################################################
-InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
+InstallOtherMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
         "Computes the primitive elements of an affine semigroup",
         [IsAffineSemigroup],5,
         function(a)
@@ -344,131 +344,3 @@ InstallMethod(TameDegreeOfAffineSemigroup,
     return tame;
 
 end);
-
-
-#####################################################################
-# Computes the tame degree of the affine semigroup a
-# REQUERIMENTS: NormalizInterface
-#####################################################################
-#moved to affine.gi
-# InstallGlobalFunction(TameDegreeOfAffineSemigroup,
-#         function(a)
-#     local prim, tams, p, max, ls;
-
-#     if not(IsAffineSemigroup(a)) then
-#         Error("The argument must be an affine semigroup");
-#     fi;
-
-#     ls:=GeneratorsOfAffineSemigroup(a);
-
-#     Info(InfoNumSgps,2,"Computing primitive elements of ", ls);
-#     prim:=PrimitiveElementsOfAffineSemigroup(a);
-#     Info(InfoNumSgps,2,"Primitive elements of ", ls, ": ",prim);
-#     max:=0;
-#     for p in prim do
-#         Info(InfoNumSgps,2,"Computing the tame degree of ",p);
-#         tams:=TameDegreeOfSetOfFactorizations(
-#                       FactorizationsVectorWRTList(p,ls));
-#         Info(InfoNumSgps,2,"The tame degree of ",p, " is ",tams);
-#         if tams>max then
-#             max:=tams;
-#         fi;
-#     od;
-
-#     return max;
-# end);
-
-#####################################################################
-# Computes the elasticity of the affine semigroup a
-# REQUERIMENTS: NormalizInterface
-#####################################################################
-# InstallGlobalFunction(ElasticityOfAffineSemigroup,
-#         function(a)
-#     local mat, n, cone, facs, ls;
-
-
-#     if not(IsAffineSemigroup(a)) then
-#         Error("The argument must be an affine semigroup");
-#     fi;
-
-#     ls:=GeneratorsOfAffineSemigroup(a);
-
-#     n:=Length(ls);
-#     mat:=TransposedMat(Concatenation(ls,-ls));
-#     cone:=NmzCone(["equations",mat]);
-#     NmzCompute(cone,"DualMode");
-#     facs:=Set(NmzHilbertBasis(cone), f->[f{[1..n]},f{[n+1..2*n]}]);
-
-#     return Maximum(Set(facs, y->Sum(y[1])/Sum(y[2])));
-# end);
-#Elasticity now done with circuits: much faster
-
-#############################################################
-#############################################################################################################################
-###
-#M IsFullAffineSemigroup
-# Detects if the affine semigroup is full: the nonnegative
-# of the the group spanned by it coincides with the semigroup
-# itself; or in other words, if a,b\in S and a-b\in \mathbb N^n,
-# then a-b\in S
-################################################################
-## moved to affine-def
-# InstallGlobalFunction(IsFullAffineSemigroup,function(a)
-#     local eq, h, gens;
-
-#     if not(IsAffineSemigroup(a)) then
-#         Error("The argument must be an affine semigroup.");
-#     fi;
-
-#     gens:=Generators(a);
-#     eq:=EquationsOfGroupGeneratedBy(gens);
-#     h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-#     return ForAll(h, x->BelongsToAffineSemigroup(x,a));
-# end);
-##
-# InstallMethod(IsFullAffineSemigroup,
-#         "Tests if the affine semigroup S has the property of being full",
-#         [IsAffineSemigroup],2,
-#         function( S )
-#   local  gens, eq, h;
-
-#   gens := GeneratorsOfAffineSemigroup(S);
-#   eq:=EquationsOfGroupGeneratedBy(gens);
-#   h:=HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-#   if ForAll(h, x->BelongsToAffineSemigroup(x,S)) then
-#     SetEquationsAS(eq);
-#     Setter(IsAffineSemigroupByEquations)(S,true);
-#     Setter(IsFullAffineSemigroup)(S,true);
-#     return true;
-#   fi;
-#   return false;
-# end);
-#############################################################################
-##
-#O  GeneratorsOfAffineSemigroup(S)
-##
-##  Computes a set of generators of the affine semigroup S.
-##  If a set of generators has already been computed, this
-##  is the set returned.
-############################################################################
-#InstallOtherMethod(GeneratorsOfAffineSemigroup,
-#        "Computes a set of generators of the affine semigroup",
-#        [IsAffineSemigroup],2,
-#        function(S)
-#  local  basis, eq;
-
-#  if HasGenerators(S) then
-#     return Generators(S);
-#   fi;
-#   # REQUERIMENTS: NormalizInterface
-#   if IsAffineSemigroupByEquations(S) then
-#       eq:=EquationsAS(S);
-#       basis := HilbertBasisOfSystemOfHomogeneousEquations(eq[1],eq[2]);
-#       SetGenerators(S,basis);
-#       return basis;
-#   elif IsAffineSemigroupByInequalities(S) then
-#       basis := HilbertBasisOfSystemOfHomogeneousInequalities(InequalitiesAS(S));
-#       SetGenerators(S,basis);
-#       return basis;
-#   fi;
-# end);

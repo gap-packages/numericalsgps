@@ -6,7 +6,7 @@
 ##
 #Y  Copyright 2015-- Centro de Matemática da Universidade do Porto, Portugal and Universidad de Granada, Spain
 #############################################################################
-InstallOtherMethod(PrimitiveElementsOfAffineSemigroup,
+InstallOtherMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
         "Computes the set of primitive elements of an affine semigroup",
         [IsAffineSemigroup],4,
         function(a)

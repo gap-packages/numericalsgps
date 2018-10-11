@@ -1380,14 +1380,14 @@ end);
 
 
 ###########################################################################
-#F  MonotonePrimitiveElementsOfNumericalSemigroup(s)
+#F  DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s)
 ##
 ## Computes the sets of elements in s, such that there exists a minimal
 ## solution to msg*x-msg*y = 0, |x|<=|y| such that x,y are factorizations of s
 ## Used to compute the monotone catenary degree of the semigroup s
 ##
 #############################################################################
-InstallGlobalFunction(MonotonePrimitiveElementsOfNumericalSemigroup,function(s)
+InstallGlobalFunction(DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup,function(s)
 	local l, n, facs, mat, ones, ncone, nmzcone,nmzconeproperty;
 
     if not IsNumericalSemigroup(s) then
@@ -1414,14 +1414,14 @@ InstallGlobalFunction(MonotonePrimitiveElementsOfNumericalSemigroup,function(s)
 end);
 
 ###########################################################################
-#F  EqualPrimitiveElementsOfNumericalSemigroup(s)
+#F  DegreesOfEqualPrimitiveElementsOfNumericalSemigroup(s)
 ##
 ## Computes the sets of elements in s, such that there exists a minimal
 ## solution to msg*x-msg*y = 0, |x|=|y| such that x,y are factorizations of s
 ## Used to compute the equal catenary degree of the semigroup
 ##
 #############################################################################
-InstallGlobalFunction(EqualPrimitiveElementsOfNumericalSemigroup,function(s)
+InstallGlobalFunction(DegreesOfEqualPrimitiveElementsOfNumericalSemigroup,function(s)
 	local l, n, facs, mat, ones, ncone, nmzcone,nmzconeproperty;
 
     if not IsNumericalSemigroup(s) then
@@ -1465,7 +1465,7 @@ InstallGlobalFunction(EqualCatenaryDegreeOfNumericalSemigroup,function(s)
     # fi;
 
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    prim:=EqualPrimitiveElementsOfNumericalSemigroup(s);
+    prim:=DegreesOfEqualPrimitiveElementsOfNumericalSemigroup(s);
 
     return Maximum(Set(prim, n-> EqualCatenaryDegreeOfSetOfFactorizations(
                    FactorizationsIntegerWRTList(n,msg))));
@@ -1488,7 +1488,7 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfNumericalSemigroup,function(s)
     # fi;
 
     msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
-    prim:=MonotonePrimitiveElementsOfNumericalSemigroup(s);
+    prim:=DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s);
 
     return Maximum(Set(prim, n-> MonotoneCatenaryDegreeOfSetOfFactorizations(
                    FactorizationsIntegerWRTList(n,msg))));

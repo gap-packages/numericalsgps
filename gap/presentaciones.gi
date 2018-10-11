@@ -266,13 +266,13 @@ end);
 
 ############################################################################
 ##
-#F  PrimitiveElementsOfNumericalSemigroup(s)
+#F  DegreesOfPrimitiveElementsOfNumericalSemigroup(s)
 ##
 ## Computes the sets of elements in s, such that there exists a minimal
 ## solution to msg*x-msg*y = 0,  such that x,y are factorizations of s
 ##
 #############################################################################
-InstallGlobalFunction(PrimitiveElementsOfNumericalSemigroup,function(s)
+InstallGlobalFunction(DegreesOfPrimitiveElementsOfNumericalSemigroup,function(s)
 # 	local l, n, facs, mat, ncone, nmzcone,nmzconeproperty;
 
 #     if not IsNumericalSemigroup(s) then
@@ -300,5 +300,5 @@ InstallGlobalFunction(PrimitiveElementsOfNumericalSemigroup,function(s)
     fi;
 
     a:=AsAffineSemigroup(s);
-    return Union(PrimitiveElementsOfAffineSemigroup(a));
+    return Union(DegreesOfPrimitiveElementsOfAffineSemigroup(a));
 end);
