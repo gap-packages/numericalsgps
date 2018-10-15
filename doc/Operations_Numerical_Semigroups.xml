@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Section>
   <Heading>Intersections, and quotients and multiples by integers</Heading>
+
+We provide functions to build numerical semigroups from others by means of intersections, quotients, multiples and related constructions.
+
   <ManSection>
     <Oper Name="Intersection" Arg="S, T" Label="for numerical semigroups"/>
     <Func Name="IntersectionOfNumericalSemigroups" Arg="S, T"/>

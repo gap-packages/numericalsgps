@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-        Let <M>S</M> be a numerical semigroup. A set <M>I</M> of integers is an <E>ideal relative</E>
-        to a numerical semigroup <M>S</M> provided that <M>I+S\subseteq I</M> and that there
-        exists <M>d\in S</M> such that <M>d+I\subseteq S</M>.
-        <P/>
-        If <M>\{i_1,\ldots,i_k\}</M> is a subset of <M>{\mathbb Z}</M>, then the set
-        <M>I=\{i_1,\ldots,i_k\}+S=\bigcup_{n=1}^k i_n+S</M> is an ideal relative to <M>S</M>,
-        and <M>\{i_1,\ldots, i_k\}</M> is a system of generators of <M>I</M>. A system of generators
-        <M>M</M> is minimal if no proper subset of <M>M</M> generates the same ideal.
-        Usually, ideals are specified by means of its generators and the ambient numerical
-        semigroup to which they are ideals (for more information see for instance
-        <Cite Key="BDF97"></Cite>).
+
 
 <Section>
                 <Heading>
                     Definitions and basic operations
                 </Heading>
 
+                We describe in this section the basic functions to create and compute notable elements of ideals of numerical semigroups. We also include iterators and functions to treat ideals as lists, which easies the access to its elements.
 
                 <ManSection>
                     <Func Arg="l,S" Name="IdealOfNumericalSemigroup"></Func>
@@ -518,7 +509,7 @@ gap> TypeSequenceOfNumericalSemigroup(s);
                 <Heading>
                     Blow ups and closures
                 </Heading>
-
+                The blow up of an ideal <M>I</M> of a numerical semigroup is the ideal  <M>\bigcup_{n\geq 0} n<A>I</A>-n<A>I</A></M>. In this section we provide functions to compute the blow up and related invariants.
                 <ManSection>
                     <Func Arg="n, I" Name="HilbertFunctionOfIdealOfNumericalSemigroup"></Func>
                     <Description>

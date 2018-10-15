@@ -6,8 +6,8 @@
                 </Heading>
 
 
-
-
+    In this section we present formulas to compute invariants and notable elements of a numerical semigroup. Some tests depending on these invariants are provided heres, like being an acute or an ordinary numerical semigroup. We also present procedures to construct iterators from a numerical semigroup, or to retrieve several elemements from a numerical semigroup as if it where a list (with infinitely many elements).
+    
 
                 <ManSection>
                     <Attr Name="Multiplicity" Arg="NS" Label="for numerical semigroup"/>

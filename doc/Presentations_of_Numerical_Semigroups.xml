@@ -2,6 +2,8 @@
 <Section>
   <Heading>Presentations of Numerical Semigroups</Heading>
 
+  In this section we provide a way to compute minimal presentations of a numerical semigroup. These presentations are constructed from some special elelements in the semigroup (Betti elemenents) whose associated graphs are nonconnected. A generalization of these graphs are the simplicial complexes called shaded sets of an element.
+
   <ManSection>
 
     <Func Arg="S" Name="MinimalPresentationOfNumericalSemigroup"></Func>

@@ -35,6 +35,8 @@ gap> List(last,s->MinimalGenerators(s));
 
 <Section>
   <Heading> Constructing the set of numerical semigroup with given Frobenius number</Heading>
+
+  Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps.
                 <ManSection>
                     <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
@@ -99,7 +101,7 @@ gap> List(last,MinimalGenerators);
                 Refer to <Ref Func="PseudoFrobeniusOfNumericalSemigroup" />.
                 
                 <P/>
-                These procedures are described in <Cite Key="DGSRP15"></Cite>.
+                These procedures are described in <Cite Key="DGSRP15"></Cite>, and are used to find the set of numerical semigroups with a prescribed set of pseudo-Frobenius numbers.
                  <ManSection>
                     <Func Arg="PF" Name="ForcedIntegersForPseudoFrobenius"></Func>
                     <Description>
