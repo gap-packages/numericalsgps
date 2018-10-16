@@ -5,10 +5,6 @@
         Defining affine semigroups
     </Heading>
 
-    An affine semigroup <M>S</M> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<M> a s= b s</M> implies <M>a=b</M>, with <M>a,b\in \mathbb N</M> and <M>s\in S</M>).
-
-    Up to isomorphisms any affine semigroup can be viewed as a finitely generated submonoid of <M>\mathbb N^k</M> for some positive integer <M>k</M>. Thus affine semigroups are a natural generalization of numerical semigroups.
-
     The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually).
 
     If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are called full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
