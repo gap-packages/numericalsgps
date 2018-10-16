@@ -321,7 +321,7 @@ gap> Generators(last);
     Presentations of affine semigroups
   </Heading>
 
-  A minimal presentation of an affine semigroup is defined analogously as for numerical semigroups. The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
+  A minimal presentation of an affine semigroup is defined analogously as for numerical semigroups (See Chapter <Ref Chap="ch:min-pres"/>). The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
 
   <ManSection>
     <Oper Arg="M" Name="GeneratorsOfKernelCongruence"></Oper>
@@ -464,7 +464,7 @@ gap> DegreesOfPrimitiveElementsOfAffineSemigroup(a);
     Factorizations in affine semigroups
   </Heading>
 
-  The invariants presented here are defined as for numerical semigroups.
+  The invariants presented here are defined as for numerical semigroups (Chapter <Ref Chap="ch:factorizations"/>).
 
   <P/>As with presentations, the user should take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
 
