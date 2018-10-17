@@ -9,7 +9,6 @@ and if a numerical semigroup is a subsemigroup of another one.
                 <ManSection>
                     <Attr Name="IsNumericalSemigroup" Arg="NS"/>
                     <Attr Name="IsNumericalSemigroupByGenerators" Arg="NS"/>
-                    <Attr Name="IsNumericalSemigroupByMinimalGenerators" Arg="NS"/>
                     <Attr Name="IsNumericalSemigroupByInterval" Arg="NS"/>
                     <Attr Name="IsNumericalSemigroupByOpenInterval" Arg="NS"/>
                     <Attr Name="IsNumericalSemigroupBySubAdditiveFunction" Arg="NS"/>
@@ -20,8 +19,11 @@ and if a numerical semigroup is a subsemigroup of another one.
                     <Attr Name="IsProportionallyModularNumericalSemigroup" Arg="NS"/>
                     <Attr Name="IsModularNumericalSemigroup" Arg="NS"/>
                     <Description>
+
                         <A>NS</A> is a numerical semigroup and these attributes are available
                         (their names should be self explanatory).
+
+			The attribute <C>IsNumericalSemigroupByMinimalGenerators</C> is obsolet and is to be removed in a further version.
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7);
 <Numerical semigroup with 2 generators>

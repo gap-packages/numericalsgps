@@ -88,7 +88,7 @@ DeclareSynonymAttr( "GeneratorsOfNumericalSemigroup", Generators);
 ##  semigroup S.
 ##
 #############################################################################
-#DeclareAttribute( "MinimalGenerators", IsNumericalSemigroup);
+DeclareAttribute( "MinimalGenerators", IsNumericalSemigroup);
 DeclareSynonymAttr( "MinimalGeneratingSystem", MinimalGenerators);
 DeclareSynonymAttr( "MinimalGeneratingSystemOfNumericalSemigroup", MinimalGenerators);
 
