@@ -279,7 +279,7 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 		Polynomials and numerical semigroups
 	</Heading>
 
-    Polynomials appear related to numerical semigroups in several ways. One of them is through their associated generating function (or Hilber series), and another via value semigroups of a curve; and curves might be defined by polynomials. In this chapter we present several functions to compute the polynomial and Hilber series associated to a numerical semigroup, and to calculate the respective numerical semigroups given a set of defining polynomials.
+    Polynomials appear related to numerical semigroups in several ways. One of them is through their associated generating function (or Hilber series), and another via value semigroups of a curve; and curves might be defined by polynomials. In this chapter we present several functions to compute the polynomial and Hilbert series associated to a numerical semigroup, and to calculate the respective numerical semigroups given a set of defining polynomials.
 
 	<#Include SYSTEM "polynomial.xml">
 

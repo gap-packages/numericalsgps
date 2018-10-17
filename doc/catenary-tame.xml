@@ -720,7 +720,7 @@ gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
 
 
     <ManSection>
-        <Func Arg="n, S" Name="OmegaPrimalityOfNumericalSemigroup"></Func>
+        <Func Arg="S" Name="OmegaPrimalityOfNumericalSemigroup"></Func>
         <Description>
 	    <A>S</A> is a numerical semigroup.
 
@@ -789,7 +789,7 @@ gap> FactorizationsElementWRTNumericalSemigroup(230,s);
     </ManSection>
 
     <ManSection>
-        <Func Arg="n, S" Name="HomogeneousBettiElementsOfNumericalSemigroup"></Func>
+        <Func Arg="S" Name="HomogeneousBettiElementsOfNumericalSemigroup"></Func>
         <Description>
 	    <A>S</A> is a numerical semigroup.
 
