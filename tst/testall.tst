@@ -365,8 +365,40 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 [ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
 
 gap> S := NumericalSemigroup(7,8,17);;
+gap> S[53];
+68
+gap> S := NumericalSemigroup(7,8,17);;
+gap> S{[1..5]};
+[ 0, 7, 8, 14, 15 ]
+
+
+gap> S := NumericalSemigroup(7,8,17);;
+gap> NextElementOfNumericalSemigroup(S,9);
+14
+gap> NextElementOfNumericalSemigroup(16,S);
+17
+gap> NextElementOfNumericalSemigroup(S,FrobeniusNumber(S))=Conductor(S);
+true
+
+gap> S := NumericalSemigroup(7,8,17);;
+gap> ElementNumber_NumericalSemigroup(S,53);
+68
 gap> RthElementOfNumericalSemigroup(S,53);
 68
+
+gap> S := NumericalSemigroup(7,8,17);;
+gap> NumberElement_NumericalSemigroup(S,68);
+53
+
+gap> S := NumericalSemigroup(7,8,17);;
+gap> iter:=Iterator(S);
+<iterator>
+gap> NextIterator(iter);
+0
+gap> NextIterator(iter);
+7
+gap> NextIterator(iter);
+8
 
 gap> S := NumericalSemigroup("modular", 5,53);;
 gap> AperyListOfNumericalSemigroupWRTElement(S,12);
@@ -895,6 +927,14 @@ gap> BelongsToIdealOfNumericalSemigroup(10,J);
 true
 gap> 10 in J;
 true
+
+gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
+gap> ElementNumber_IdealOfNumericalSemigroup(I,10);
+19
+
+gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
+gap> NumberElement_IdealOfNumericalSemigroup(I,19);
+10
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
@@ -2228,6 +2268,57 @@ false
 # ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9);;
 # ns3 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,10);;
 # MinimalGeneratingSystem(ns3);;
+
+#############################################################################
+#############################################################################
+# Simple examples aiming for a better code coverage
+
+##obsolet
+gap> NumericalSemigroupByMinimalGenerators(3,5,6,7);
+#I  The list [ 3, 5, 6, 7 ] can not be the minimal generating set. The list [ 3, 5, 7 ] will be used instead.
+<Numerical semigroup with 3 generators>
+
+## irreducibles
+gap> ns := NumericalSemigroup(5,7);;
+gap> RemoveMinimalGeneratorFromNumericalSemigroup(5,ns);
+<Numerical semigroup with 7 generators>
+gap> SmallElements(last);
+[ 0, 7, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+
+gap> IsFreeNumericalSemigroup(NumericalSemigroup(7,8,9,12,13));
+false
+gap> IsFreeNumericalSemigroup(NumericalSemigroup(8, 12, 18, 19));
+true
+
+## ideals
+gap> ns := NumericalSemigroup(5,7,9);;
+gap> i := 3+ns;
+<Ideal of numerical semigroup>
+gap> Display(i);
+[ [ 3 ], [ 8 ], [ 10 ], [ 12, 13 ], [ 15 ], [ 17, "->" ] ]
+gap> j := 2+ns;
+<Ideal of numerical semigroup>
+gap> i<j;
+false
+gap> j<i;
+true
+gap> Generators(i);
+[ 3 ]
+gap> it := Iterator(i);
+<iterator>
+gap> l:= [];; for i in [1..20] do Add( l, NextIterator( it ) ); od; l;
+[ 3, 8, 10, 12, 13, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 
+  30 ]
+
+##good
+gap> e:=88+s;;
+gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> [ 110, 109 ] in dup;
+true
+gap> [87,109] in dup;
+false
+
+
 
 ## get info level to the original state
 gap> SetInfoLevel( InfoNumSgps, INFO_NSGPS);
