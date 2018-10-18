@@ -1764,6 +1764,14 @@ gap> IsAffineSemigroupByEquations(a1);
 false
 gap> IsAffineSemigroupByGenerators(a1);
 true
+gap> ns := NumericalSemigroup(3,5);
+<Numerical semigroup with 2 generators>
+gap> IsAffineSemigroup(ns);
+false
+gap> as := AsAffineSemigroup(ns);
+<Affine semigroup in 1 dimensional space, with 2 generators>
+gap> IsAffineSemigroup(as);
+true
 
 gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
 gap> BelongsToAffineSemigroup([5,5],a);
@@ -1799,6 +1807,11 @@ gap> GluingOfAffineSemigroups(a1,a2);
 <Affine semigroup in 2 dimensional space, with 3 generators>
 gap> Generators(last);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+
+gap> M := [[2,0],[0,2],[1,1]];
+[ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ]
+gap> GeneratorsOfKernelCongruence(M);
+[ [ [ 1, 1, 0 ], [ 0, 0, 2 ] ] ]
 
 gap> M:=[[3],[5],[7]];;
 gap> CanonicalBasisOfKernelCongruence(M,MonomialLexOrdering());

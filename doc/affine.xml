@@ -7,7 +7,7 @@
 
     The most common way to give an affine semigroup is by any of its systems of generators. As for numerical semigroups, any affine semigroup admits a unique minimal system of generators. A system of generators can be represented as a list of lists of nonnegative integers; all lists in the list having the same length (a matrix actually).
 
-    If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are called full affine semigroups). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
+    If <M>G</M> is a subgroup of <M>\mathbb Z^k</M>, then <M>S=G\cap \mathbb N^k</M> is an affine semigroup (these semigroups are called <E>full affine semigroups</E>). As <M>G</M> can be represented by its defining equations (homogeneous and some of them possibly in congruences), we can represent <M>S</M> by the defining equations of <M>G</M>; indeed <M>S</M> is just the set of nonnegative solutions of this system of equations. We can represent the equations as a list of lists of integers, all with the same length. Every list is a row of the matrix of coefficients of the system of equations. For the equations in congruences, if we arrange them so that they are the first ones in the list, we provide the corresponding moduli in a list. So for instance, the equations <M>x+y\equiv 0\bmod 2,\ x-2y=0</M> will be represented as [[1,1],[1,-2]] and the moduli [2].
     <P/>
 
 As happens with numerical semigroups, there are different ways to specify an affine semigroup <M>S</M>, namely, by means of a system of generators, a system of homogeneous linear Diophantine equations or a system of homogeneous linear Diophantine inequalities, just to mention some.
@@ -177,6 +177,14 @@ gap> IsAffineSemigroupByEquations(a1);
 false
 gap> IsAffineSemigroupByGenerators(a1);
 true
+gap> ns := NumericalSemigroup(3,5);
+<Numerical semigroup with 2 generators>
+gap> IsAffineSemigroup(ns);
+false
+gap> as := AsAffineSemigroup(ns);
+<Affine semigroup in 1 dimensional space, with 2 generators>
+gap> IsAffineSemigroup(as);
+true
 ]]></Example>
   </Description>
 </ManSection>
@@ -213,7 +221,7 @@ false
   <Prop Arg="S" Name="IsFull"></Prop>
   <Prop Arg="S" Name="IsFullAffineSemigroup"></Prop>
   <Description>
-    <A>s</A> is an affine semigroup.<P/>
+    <A>S</A> is an affine semigroup.<P/>
 
     Returns true if the semigroup is full, false otherwise. The semigroup is full if whenever <M>a,b\in S</M> and <M>b-a\in \mathbb N^k</M>, then <M>a-b\in S</M>, where <M>k</M> is the dimension of <M>S</M>.
     <P/>
@@ -321,7 +329,7 @@ gap> Generators(last);
     Presentations of affine semigroups
   </Heading>
 
-  A minimal presentation of an affine semigroup is defined analogously as for numerical semigroups (See Chapter <Ref Chap="ch:min-pres"/>). The user might take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
+  A <E>minimal presentation</E> of an affine semigroup is defined analogously as for numerical semigroups (See Chapter <Ref Chap="ch:min-pres"/>). We warn the user to take into account that generators are stored in a set, and thus might be arranged in a different way to the initial input.
 
   <ManSection>
     <Oper Arg="M" Name="GeneratorsOfKernelCongruence"></Oper>
@@ -329,7 +337,13 @@ gap> Generators(last);
       <A>M</A> is matrix with nonnegative integer coefficients.
       The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
   <P/>
-  The main difference with <C>MinimalPresentationOfAffineSemigroup</C> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
+  The main difference with <Ref Func="MinimalPresentationOfAffineSemigroup"/> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
+      <Example><![CDATA[
+gap> M := [[2,0],[0,2],[1,1]];
+[ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ]
+gap> GeneratorsOfKernelCongruence(M);
+[ [ [ 1, 1, 0 ], [ 0, 0, 2 ] ] ]
+]]></Example>
     </Description>
   </ManSection>
 
@@ -337,7 +351,7 @@ gap> Generators(last);
     <Oper Arg="M, Ord" Name="CanonicalBasisOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients, <A>Ord</A> a term ordering.
-      The output is a canonical bases of the congruence <M>\{(x,y)\mid xM=yM\}</M> (see <Cite Key="RGS99"></Cite>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <M>x_i\mapsto Y^{m_i}</M>, with <M>m_i</M> the <M>i</M>th row of <M>M</M>.
+      The output is a canonical basis of the congruence <M>\{(x,y)\mid xM=yM\}</M> (see <Cite Key="RGS99"></Cite>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <M>x_i\mapsto Y^{m_i}</M>, with <M>m_i</M> the <M>i</M>th row of <M>M</M>.
   <P/>
     Accepted term orderings are lexicographic (<C>MonomialLexOrdering()</C>), graded lexicographic (<A>MonomialGrlexOrdering()</A>) and reversed graded lexicographic (<A>MonomialGrevlexOrdering()</A>).
     <Example><![CDATA[

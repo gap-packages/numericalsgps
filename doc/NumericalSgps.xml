@@ -290,9 +290,11 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 		Affine semigroups
 	</Heading>
 
-    An affine semigroup <M>S</M> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<M> a s= b s</M> implies <M>a=b</M>, with <M>a,b\in \mathbb N</M> and <M>s\in S</M>).
+    An <E>affine semigroup</E> <M>S</M> is a finitely generated cancellative monoid that is reduced (no units other than 0) and is torsion-free (<M> a s= b s</M> implies <M>a=b</M>, with <M>a,b\in \mathbb N</M> and <M>s\in S</M>).
 
-    Up to isomorphisms any affine semigroup can be viewed as a finitely generated submonoid of <M>\mathbb N^k</M> for some positive integer <M>k</M>. Thus affine semigroups are a natural generalization of numerical semigroups.
+    Up to isomorphism any affine semigroup can be viewed as a finitely generated submonoid of <M>\mathbb N^k</M> for some positive integer <M>k</M>. Thus affine semigroups are a natural generalization of numerical semigroups.
+    <P/>
+    Some of the functions in this chapter may work considerably faster when some external package is installed and its use is alowed. When this is the case, it is reffered in the function documentation. We refer the user to Chapter <Ref Chap="ch:external"/> for details on the use of external packages.
 
 	<#Include SYSTEM "affine.xml">
 
@@ -307,7 +309,7 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 
 </Chapter>
 
-<Chapter>
+<Chapter Label="ch:external">
 	<Heading>
 		External packages
 	</Heading>
