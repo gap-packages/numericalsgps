@@ -6,7 +6,7 @@
       Defining good semigroups
     </Heading>
 
-Good semigroups can be constructed with numerical duplications, amalgamations, cartesian products, or by giving some of its generators and a candidate for conductor. Not every set determines a good semigroup; this is because the instersection of good semigroups might not be a good semigroup. So the term "good semigroup generated" by a set is a bit fragile.
+Good semigroups can be constructed with numerical duplications, amalgamations, cartesian products, or by giving some of its generators and a candidate for conductor. Not every set determines a good semigroup; this is because the intersection of good semigroups might not be a good semigroup. So the terminology "good semigroup generated" by a set is a bit fragile.
 
     <ManSection>
       <Func Arg="S" Name="IsGoodSemigroup"></Func>
@@ -76,7 +76,7 @@ true
       <ManSection>
         <Func Arg="X, C" Name="GoodSemigroup"></Func>
         <Description>
-          <A>X</A> is a list of points with nonnegative integer coordinates and <M>C</M> is a pair of nonnegative integer (a list with two elements).
+          <A>X</A> is a list of points with nonnegative integer coordinates and <M>C</M> is a pair of nonnegative integers (a list with two elements).
           If <M>M</M> is the affine and infimum closure of <A>X</A>, decides if it is a good semigroup, and if so, outputs it.
 
           <Example><![CDATA[
@@ -256,9 +256,12 @@ true
   </ManSection>
 
   <ManSection>
-    <Func Arg="S" Name="MinimalGoodGeneratingSystemOfGoodSemigroup"></Func>
-    <Description>
-      <A>S</A> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).
+   <Func Arg="S" Name="MinimalGoodGeneratingSystemOfGoodSemigroup"></Func>
+      <Attr Name="MinimalGoodGenerators" Arg="S"/>
+     <Description>
+       <A>S</A> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).
+       <P/>
+       <C>MinimalGoodGeneratingSystemOfGoodSemigroup</C> and <C>MinimalGoodGenerators</C> are synonyms.
 
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
@@ -267,30 +270,17 @@ gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
 gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+gap> MinimalGoodGenerators(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
 ]]></Example>
     </Description>
   </ManSection>
-  <ManSection>
-      <Attr Name="MinimalGenerators" Arg="S"/>
-      <Description>
-       This is just a synonym of <C> MinimalGoodGeneratingSystemOfGoodSemigroup</C> (<C>S</C>).
-      <Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> e:=6+s;;
-gap> dup:=NumericalSemigroupDuplication(s,e);
-<Good semigroup>
-gap> MinimalGenerators(dup);
-[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-]]></Example>
-     </Description>
-   </ManSection>
-
 </Section>
 
 
 <Section>
     <Heading>
-      Symmetric semigroups
+      Symmetric good semigroups
   </Heading>
 
   The concept of symmetry in a numerical semigroup extends to good semigroups. Here we describe a test for symmetry. 
@@ -315,9 +305,9 @@ true
 
 <Section>
   <Heading>
-    Arf closure
+    Arf good closure
   </Heading>
-  The definition af Arf good semigroup is similar to the definition of Arf numerical semigroup. In this section, we provide a function to compute the Arf good closure of a good semigroup.
+  The definition of Arf good semigroup is similar to the definition of Arf numerical semigroup. In this section, we provide a function to compute the Arf good closure of a good semigroup.
   
   <ManSection>
     <Func Arg="S" Name="ArfGoodSemigroupClosure"></Func>

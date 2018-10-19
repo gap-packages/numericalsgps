@@ -52,13 +52,13 @@ DeclareAttribute( "Generators", IsGoodSemigroup);
 ##
 ###################################################
 ##
-#A MinimalGenerators(M)
+#A MinimalGoodGenerators(M)
 #A MinimalGoodGeneratingSystemOfGoodSemigroup(M)
 ## returns the unique minimal good generating of the
 ## good semigroup M
 ###################################################
-DeclareAttribute( "MinimalGenerators", IsGoodSemigroup);
-DeclareSynonymAttr("MinimalGoodGeneratingSystemOfGoodSemigroup",MinimalGenerators);
+DeclareAttribute( "MinimalGoodGenerators", IsGoodSemigroup);
+DeclareSynonymAttr("MinimalGoodGeneratingSystemOfGoodSemigroup",MinimalGoodGenerators);
 
 ##
 DeclareAttribute( "Conductor", IsGoodSemigroup);

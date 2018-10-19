@@ -2017,12 +2017,7 @@ gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
 gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
-
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> e:=6+s;;
-gap> dup:=NumericalSemigroupDuplication(s,e);
-<Good semigroup>
-gap> MinimalGenerators(dup);
+gap> MinimalGoodGenerators(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
