@@ -245,3 +245,4 @@ InstallGlobalFunction(NumericalSemigroupByMinimalGeneratorsNC, function(arg)
 end);
 
 
+
