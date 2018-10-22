@@ -45,6 +45,15 @@ DeclareSynonymAttr( "SmallElementsOfNumericalSemigroup", SmallElements);
 #DeclareAttribute( "Gaps", IsNumericalSemigroup);
 DeclareSynonymAttr( "GapsOfNumericalSemigroup", Gaps);
 
+#############################################################################
+##
+#A  Weight(S)
+##
+##  Returns the sum of all  gaps of the numerical semigroup S.
+##
+#############################################################################
+DeclareOperation( "Weight", [IsNumericalSemigroup]);
+
 
 #############################################################################
 ##

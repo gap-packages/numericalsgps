@@ -469,6 +469,21 @@ gap> Gaps(NumericalSemigroup(5,7,11));
                     </Description>
                 </ManSection>
 
+                <ManSection>
+                    <Attr Name="Weight" Arg="NS" Label="for numerical semigroup" />
+                    <Description>
+                If <M>l_1&lt;\cdots &lt;l_g</M> are the gaps of <C>NS</C>, then its (Weierstrass) weight is <M>\sum_{i=1}^g (l_i-i)</M>.
+                
+                        <Example><![CDATA[
+gap> Weight(NumericalSemigroup(4,5,6,7));
+0
+gap> Weight(NumericalSemigroup(4,5));    
+9
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
   <ManSection>
     <Func Arg="NS" Name="DesertsOfNumericalSemigroup"></Func>
     <Description>

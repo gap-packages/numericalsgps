@@ -345,6 +345,20 @@ end);
 
 #############################################################################
 ##
+#A  Weight(S)
+##
+##  Returns the sum of all  gaps of the numerical semigroup S.
+##
+#############################################################################
+InstallMethod(Weight,
+    "Returns the sum of all gaps of a numerical semigroup",
+    [IsNumericalSemigroup],
+    function(sgp)
+    return Sum(Gaps(sgp)-[1..Genus(sgp)]);
+end);
+
+#############################################################################
+##
 #F  DesertsOfNumericalSemigroup(S)
 ##
 ##  Returns the lists of runs of gaps of the numerical semigroup S
