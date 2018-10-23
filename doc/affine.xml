@@ -534,6 +534,8 @@ gap> DeltaSetOfAffineSemigroup(a);
 
 <ManSection>
   <Func Arg="a" Name="CatenaryDegreeOfAffineSemigroup"></Func>
+  <Oper Arg="a" Name="CatenaryDegree" Label="for affine semigroups"/>
+
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the catenary degree of <A>a</A> (defined as for numerical semigroups).

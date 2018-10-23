@@ -455,6 +455,7 @@ gap> Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));
     <ManSection>
 
         <Func Arg="ls" Name="CatenaryDegreeOfSetOfFactorizations"></Func>
+        <Oper Arg="ls" Name="CatenaryDegree" Label="for sets of factorizations"/>
         <Description>
             <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same length).
             The output is the catenary degree of this set of factorizations.
@@ -517,6 +518,9 @@ gap> MonotoneCatenaryDegreeOfSetOfFactorizations(last);
 
 <ManSection>
         <Func Arg="n, S" Name="CatenaryDegreeOfElementInNumericalSemigroup"></Func>
+        <Oper Arg="n, S" Name="CatenaryDegree" Label="for element in a numerical semigroup"/>
+        <Oper Arg="S, n" Name="CatenaryDegree" Label="for a numerical semigroup and one of its elements"/>
+
         <Description>
             <A>n</A> is a nonnegative integer and <A>S</A> is a numerical semigroup.
             The output is the catenary degree of <A>n</A> relative to <A>S</A>.
@@ -548,6 +552,8 @@ gap> TameDegreeOfSetOfFactorizations(last);
 
     <ManSection>
         <Func Arg="S" Name="CatenaryDegreeOfNumericalSemigroup"></Func>
+        <Oper Arg="S" Name="CatenaryDegree" Label="for numerical semigroups"/>
+
         <Description>
             <A>S</A> is a numerical semigroup.
             The output is the catenary degree of <A>S</A>.

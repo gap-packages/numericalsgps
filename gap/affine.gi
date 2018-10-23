@@ -892,6 +892,11 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
     return max;
 end);
 
+InstallMethod(CatenaryDegree,
+    "Computes the catenary degree of an affine semigroup",
+    [IsAffineSemigroup],
+    CatenaryDegreeOfAffineSemigroup);
+
 ######################################################################
 # Computes the equal catenary degree of the affine semigroup a
 # uses [GSOSN]

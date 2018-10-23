@@ -95,6 +95,12 @@ InstallGlobalFunction( CatenaryDegreeOfNumericalSemigroup, function(s)
 
     return Maximum(List(rclasses,l->Maximum(List(l,r->Minimum(List(r,Sum))))));
 end);
+
+InstallMethod(CatenaryDegree, 
+    "Computes the catenary degree of a numerical semigroup",
+    [IsNumericalSemigroup],    
+    CatenaryDegreeOfNumericalSemigroup);
+
 ############################################################################
 ##
 #F This function returns true if the graph is connected an false otherwise
@@ -280,6 +286,19 @@ end);
 ## ----  End of CatenaryDegreeOfElementInNumericalSemigroup()  ----
 ##
 #========================================================================
+
+InstallMethod(CatenaryDegree, 
+    "Computes the catenary degree of an element in a numerical semigroup",
+    [IsInt, IsNumericalSemigroup],    
+    CatenaryDegreeOfElementInNumericalSemigroup);
+
+InstallMethod(CatenaryDegree, 
+    "Computes the catenary degree of an element in a numerical semigroup",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n)    
+        return CatenaryDegreeOfElementInNumericalSemigroup(n,s);
+end);
+
 
 #############################################################################
 ##
@@ -773,6 +792,12 @@ function(fs)
   Sort(cart,function(e,ee) return distance(e)<distance(ee); end);
   return Maximum(Set(Kruskal(fs,cart), distance));
 end);
+
+InstallMethod(CatenaryDegree, 
+    "Computes the catenary degree of a set of factorizations",
+    [IsRectangularTable],
+    CatenaryDegreeOfSetOfFactorizations
+    );
 
 #############################################################################
 ##

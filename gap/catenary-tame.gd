@@ -37,13 +37,14 @@ DeclareGlobalFunction( "NSGPfactorizationsNC" );
 ##    Analytic Theory, Pure and AppliedMathematics,
 ##    vol. 278, Chapman & Hall/CRC, 2006.
 ##  The algorithm used appears in
-##   -S. T. Chapman, P. A. Garc�a-S�nchez,
+##   -S. T. Chapman, P. A. Garcia-Sanchez,
 ##    D. Llena, V. Ponomarenko, and J. C. Rosales,
 ##    The catenary and tame degree in finitely generated
 ##    cancellative monoids, Manuscripta Mathematica 120 (2006) 253--264
 ##
 #############################################################################
 DeclareGlobalFunction( "CatenaryDegreeOfNumericalSemigroup" );
+DeclareOperation("CatenaryDegree",[IsNumericalSemigroup]);
 #############################################################################
 ##
 #F  IsConnectedGraphNCForNumericalSemigroups(l)
@@ -68,6 +69,8 @@ DeclareGlobalFunction("IsConnectedGraphNCForNumericalSemigroups");
 ##
 DeclareGlobalFunction( "CatenaryDegreeOfElementInNumericalSemigroup_NC" );
 DeclareGlobalFunction( "CatenaryDegreeOfElementInNumericalSemigroup" );
+DeclareOperation("CatenaryDegree",[IsNumericalSemigroup,IsInt]);
+DeclareOperation("CatenaryDegree",[IsInt,IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -255,6 +258,7 @@ DeclareGlobalFunction("DeltaSetOfSetOfIntegers");
 ##
 #############################################################################
 DeclareGlobalFunction("CatenaryDegreeOfSetOfFactorizations");
+DeclareOperation("CatenaryDegree",[IsRectangularTable]);
 
 #############################################################################
 ##

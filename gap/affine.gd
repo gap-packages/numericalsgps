@@ -144,6 +144,7 @@ DeclareGlobalFunction("ShadedSetOfElementInAffineSemigroup");
 # Computes the catenary degree of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareOperation("CatenaryDegree",[IsAffineSemigroup]);
 
 ###############################################################################
 #F DeltaSetOfAffineSemigroup
