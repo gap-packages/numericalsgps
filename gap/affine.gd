@@ -237,6 +237,7 @@ DeclareOperation("DegreesOfPrimitiveElementsOfAffineSemigroup",[IsAffineSemigrou
 # Computes the tame degree of the affine semigroup a
 ###########################################################################
 DeclareOperation("TameDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareOperation("TameDegree",[IsAffineSemigroup]);
 
 ###############################################################################
 ##

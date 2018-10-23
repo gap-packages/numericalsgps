@@ -592,6 +592,7 @@ gap> MonotoneCatenaryDegreeOfAffineSemigroup(a);
 
 <ManSection>
   <Oper Arg="a" Name="TameDegreeOfAffineSemigroup"></Oper>
+  <Oper Arg="a" Name="TameDegree" Label="for affine semigroups"></Oper>
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the tame degree of <A>a</A> (defined as for numerical semigroups). If <A>a</A> is given by equations (or its equations are known), then the procedure explained in <Cite Key="GSONW"></Cite> is used.

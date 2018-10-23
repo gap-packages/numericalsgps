@@ -86,14 +86,15 @@ DeclareOperation("CatenaryDegree",[IsInt,IsNumericalSemigroup]);
 ##    Analytic Theory, Pure and AppliedMathematics,
 ##    vol. 278, Chapman & Hall/CRC, 2006.
 ##  The algorithm used appears in
-##   -S. T. Chapman, P. A. Garc�a-S�nchez,
+##   -S. T. Chapman, P. A. Garcia-Sanchez,
 ##    D. Llena, V. Ponomarenko, and J. C. Rosales,
 ##    The catenary and tame degree in finitely generated
 ##    cancellative monoids, Manuscripta Mathematica 120 (2006) 253--264
 ##
 #############################################################################
 DeclareGlobalFunction( "TameDegreeOfElementInNumericalSemigroup" );
-
+DeclareOperation("TameDegree",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("TameDegree",[IsNumericalSemigroup,IsInt]);
 
 #############################################################################
 ##
@@ -107,13 +108,13 @@ DeclareGlobalFunction( "TameDegreeOfElementInNumericalSemigroup" );
 ##    Analytic Theory, Pure and AppliedMathematics,
 ##    vol. 278, Chapman & Hall/CRC, 2006.
 ##  The algorithm used appears in
-##   -S. T. Chapman, P. A. Garc�a-S�nchez,
+##   -S. T. Chapman, P. A. Garcia-Sanchez,
 ##    D. Llena,  The catenary and tame degree of numerical
 ##    semigroups, Forum Math. 2007 1--13.
 ##
 #############################################################################
 DeclareGlobalFunction( "TameDegreeOfNumericalSemigroup" );
-
+DeclareOperation("TameDegree",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -268,6 +269,8 @@ DeclareOperation("CatenaryDegree",[IsRectangularTable]);
 ##
 #############################################################################
 DeclareGlobalFunction("TameDegreeOfSetOfFactorizations");
+DeclareOperation("TameDegree",[IsRectangularTable]);
+
 
 #############################################################################
 ##

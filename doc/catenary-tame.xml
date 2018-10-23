@@ -536,6 +536,8 @@ gap> CatenaryDegreeOfElementInNumericalSemigroup(1157,NumericalSemigroup(13,18))
 
     <ManSection>
         <Func Arg="ls" Name="TameDegreeOfSetOfFactorizations"></Func>
+        <Oper Arg="ls" Name="TameDegree" Label="for sets of factorizations"></Oper>
+
         <Description>
             <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same length).
             The output is the tame degree of this set of factorizations.
@@ -640,6 +642,7 @@ gap> MonotoneCatenaryDegreeOfNumericalSemigroup(s);
 
     <ManSection>
         <Func Arg="S" Name="TameDegreeOfNumericalSemigroup"></Func>
+        <Oper Arg="S" Name="TameDegree" Label="for numerical semigroups"></Oper>
         <Description>
             <A>S</A> is a numerical semigroup.
             The output is the tame degree of <A>S</A>.
@@ -655,6 +658,9 @@ gap> TameDegreeOfNumericalSemigroup(s);
 
     <ManSection>
         <Func Arg="n, S" Name="TameDegreeOfElementInNumericalSemigroup"></Func>
+        <Oper Arg="n, S" Name="TameDegree" Label="for element in numerical semigroups"></Oper>
+        <Oper Arg="S, n" Name="TameDegree" Label="for numerical semigroups and one of its elements"></Oper>
+        
         <Description>
 	    <A>n</A> is an element of the numerical semigroup <A>S</A>.
 

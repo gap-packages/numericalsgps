@@ -368,6 +368,20 @@ InstallGlobalFunction( TameDegreeOfElementInNumericalSemigroup, function(n,s)
 end);
 
 
+InstallMethod(TameDegree,
+    "Tame degree for element in numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    TameDegreeOfElementInNumericalSemigroup);
+
+
+InstallMethod(TameDegree,
+    "Tame degree for element in numerical semigroup",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n)
+        return TameDegreeOfElementInNumericalSemigroup(n,s);
+    end);
+
+
 #############################################################################
 ##
 #F  TameDegreeOfNumericalSemigroup(s)
@@ -420,6 +434,10 @@ InstallGlobalFunction( TameDegreeOfNumericalSemigroup, function(s)
     return Maximum(Set(facts,n->TameDegreeOfSetOfFactorizations(n)));
 end);
 
+InstallMethod(TameDegree,
+    "Tame degree for a numerical semigroup",
+    [IsNumericalSemigroup],
+    TameDegreeOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -853,6 +871,11 @@ InstallGlobalFunction(TameDegreeOfSetOfFactorizations,function(fact)
     od;
     return max;
 end);
+
+InstallMethod(TameDegree,
+    "Tame degree for a set of factorizations",
+    [IsRectangularTable],
+    TameDegreeOfSetOfFactorizations);
 
 #############################################################################
 ##

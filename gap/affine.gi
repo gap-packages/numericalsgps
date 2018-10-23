@@ -1261,7 +1261,10 @@ InstallMethod(TameDegreeOfAffineSemigroup,
   return max;
 end);
 
-
+InstallMethod(TameDegree,
+    "Tame degree for affine semigroups",
+    [IsAffineSemigroup],
+    TameDegreeOfAffineSemigroup);
 
 ###############################################################################
 ##
