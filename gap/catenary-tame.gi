@@ -552,6 +552,11 @@ InstallGlobalFunction(ElasticityOfNumericalSemigroup, function(s)
     return max/min;
 end);
 
+InstallMethod(Elasticity,
+    "Computes the elasticity of a numerical semigroup",
+    [IsNumericalSemigroup],
+    ElasticityOfNumericalSemigroup);
+
 
 #############################################################################
 ##

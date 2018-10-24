@@ -167,7 +167,7 @@ DeclareGlobalFunction( "ElasticityOfFactorizationsElementWRTNumericalSemigroup" 
 ##
 #############################################################################
 DeclareGlobalFunction( "ElasticityOfNumericalSemigroup" );
-
+DeclareOperation("Elasticity",[IsNumericalSemigroup]);
 
 #############################################################################
 ##

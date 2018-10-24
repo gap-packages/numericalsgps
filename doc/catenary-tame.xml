@@ -182,6 +182,8 @@ gap> ElasticityOfFactorizationsElementWRTNumericalSemigroup(1100,s);
     <ManSection>
 
         <Func Arg="S" Name="ElasticityOfNumericalSemigroup"></Func>
+        <Oper Arg="S" Name="Elasticity" Label="for numerical semigroups"></Oper>
+
         <Description>
             <A>S</A> is a numerical semigroup.
             The output is the elasticity of <A>S</A>.

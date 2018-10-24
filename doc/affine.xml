@@ -501,6 +501,7 @@ gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
 
 <ManSection>
   <Oper Arg="a" Name="ElasticityOfAffineSemigroup"></Oper>
+  <Oper Arg="a" Name="Elasticity" Label="for affine semigroups"></Oper>
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the elasticity of <A>a</A> (defined as for numerical semigroups).

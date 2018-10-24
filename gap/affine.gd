@@ -215,6 +215,7 @@ DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
 # Computes the elasticity of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("ElasticityOfAffineSemigroup");
+DeclareOperation("Elasticity",[IsAffineSemigroup]);
 
 ###############################################################################
 ##

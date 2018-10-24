@@ -1169,6 +1169,12 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
     return Maximum(Set(cir, c->Sum(positive(c))/Sum(negative(c))));
 end);
 
+InstallMethod(Elasticity, 
+    "Computes the elasticity of an affine semigroup",
+    [IsAffineSemigroup],
+    ElasticityOfAffineSemigroup
+    );
+
 ###################################################################
 #lawrence Lifting
 ###################################################################
