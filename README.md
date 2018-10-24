@@ -33,3 +33,6 @@ Manuel Delgado			<mdelgado@fc.up.pt>
 
 Pedro A. García-Sánchez		<pedro@ugr.es>
 
+Installation
+------------
+This package consists only of GAP code, so for its installation please refer to the [GAP manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html#X82473E4B8756C6CD).
