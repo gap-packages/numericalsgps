@@ -475,6 +475,11 @@ gap> GapsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 gap> Gaps(NumericalSemigroup(5,7,11));
 [ 1, 2, 3, 4, 6, 8, 9, 13 ]
 
+gap> Weight(NumericalSemigroup(4,5,6,7));
+0
+gap> Weight(NumericalSemigroup(4,5));    
+9
+
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> DesertsOfNumericalSemigroup(s);
 [ [ 1, 2 ], [ 4 ] ]
@@ -1849,8 +1854,16 @@ gap> DegreesOfPrimitiveElementsOfAffineSemigroup(a);
 gap> Set(FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]));
 [ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
 
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
+gap> ElasticityOfFactorizationsElementWRTAffineSemigroup([5,5],a);
+1
+gap> Elasticity([5,5],a);
+1
+
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> ElasticityOfAffineSemigroup(a);
+1
+gap> Elasticity(a);
 1
 
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
