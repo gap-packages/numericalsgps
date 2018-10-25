@@ -1,9 +1,23 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
-1.1.8 dev
+1.1.8 -> 1.1.9
+- small fixes (Irreducibles, PseudoFrobenius, OmegaPrimalityOfElement*)
+- mark some functions as obsolet, namely: NumericalSemigroupByMinimalGenerators
+- Updates in the manual. This includes: fixing typos; adding text (mainly in the introduction of chapters or sections); adding links.
+- reference to external packages in the banner (and decrease the Info level ...
+- updates in the test file (in part to improve code coverage)
+- shortnames for various functions (e.g. CatenaryDegree, TameDegree, elasticity functions)
+- added ElasticityOfFactorizationsElementWRTAffineSemigroup
+- added Weight of a numerical semigroup
+- MinimalGenerators (for good semigroups) -> MinimalGoodGenerators
+- PrimitiveElements (which was part of the name of several functions) -> DegreesOfPrimitiveElements
+- Fixed inconsistency in the function ForcedIntegersForPseudoFrobenius (pointed out by I. Ojeda) 
+- new version of AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
 - functions AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType and AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType by Ignacio Ojeda
 - NumericalSemigroupByGaps([]) now returns N (it produced an error before)
+- the GPL file added to the repository
+- README.md updated (mainly for Travis & Codecov support) (Many thanks to Max Horn)
 
 1.1.7->1.1.8
 - functions to translate graphs related to numerical and affine semigroups to the dot language
