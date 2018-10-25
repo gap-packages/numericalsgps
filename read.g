@@ -75,8 +75,8 @@ if NumSgpsCanUse4ti2gap then
     Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2gap)");
 fi;
 if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2 or NumSgpsCanUse4ti2gap) then
-    Info(InfoNumSgps,1,"Please load package NormalizInterface or 4ti2Interface");
-    Info(InfoNumSgps,1,"to have extended functionalities.");
+    Info(InfoNumSgps,2,"Please load package NormalizInterface or 4ti2Interface");
+    Info(InfoNumSgps,2,"to have extended functionalities.");
 fi;
 
 NumSgpsWarnUseSingular:=true;
@@ -107,8 +107,8 @@ else
 fi;
 
 if NumSgpsWarnUseSingular then
-    Info(InfoNumSgps,1,"Please load package SingularInterface or singular (not both)");
-    Info(InfoNumSgps,1,"or GradedModules to have extended functionalities.");
+    Info(InfoNumSgps,2,"Please load package SingularInterface or singular (not both)");
+    Info(InfoNumSgps,2,"or GradedModules to have extended functionalities.");
 fi;
 
 

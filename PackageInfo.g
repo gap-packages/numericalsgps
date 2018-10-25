@@ -214,6 +214,8 @@ BannerString := Concatenation(
 #  "   ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
 #        " (", ~.Persons[3].WWWHome, ")\n",
   "For help, type: ?NumericalSgps: \n",
+                   "To gain profit from other packages, please refer to chapter\n",
+                   "'External Packages' in the manual, or type: ?NumSgpsUse \n",           
   "----------------------------------------------------------------\n" ),
 
 TestFile := "tst/testall.g",
