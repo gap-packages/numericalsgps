@@ -1102,6 +1102,56 @@ InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
     return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
 end);
 
+
+#############################################################################
+##
+#F  ElasticityOfFactorizationsElementWRTAffineSemigroup(n,s)
+##
+##  Computes the quotient (maximum length)/(minimum lenght) of the
+##  factorizations of an element <n> as linear combinations
+##  with nonnegative coefficients of the minimal generators
+##  of the semigroup <s>.
+##
+#############################################################################
+InstallGlobalFunction(ElasticityOfFactorizationsElementWRTAffineSemigroup, function(n,s)
+    local gen,max,min,lenfact;
+
+    if not IsAffineSemigroup(s) then
+        Error("The second argument must be an affine semigroup.\n");
+    fi;
+
+    if not IsListOfIntegersNS(n) then
+        Error("The first argument must be a list of integers.\n");
+    fi;
+
+    if not (n in s) then
+        Error("The first argument does not belong to the second.\n");
+    fi; #this ensures that the lengths won't be zero
+
+    gen:=MinimalGeneratingSystem(s);
+    lenfact:=Set(FactorizationsVectorWRTList(n,gen),Sum);
+    min:=Minimum(lenfact);
+    max:=Maximum(lenfact);
+    if min=0 then
+        Error("The element seems to be the zero vector.\n");
+    fi;
+
+    return max/min;
+end);
+
+InstallMethod(Elasticity,
+    "Elasticity of the factorizations of an element in an affine semigroup", 
+    [IsHomogeneousList,IsAffineSemigroup],
+    ElasticityOfFactorizationsElementWRTAffineSemigroup);
+
+InstallMethod(Elasticity,
+    "Elasticity of the factorizations in an affine semigroup of one of its elements", 
+    [IsAffineSemigroup, IsHomogeneousList],
+    function(a,v)
+        return  ElasticityOfFactorizationsElementWRTAffineSemigroup(v,a);
+    end);
+
+
 #####################################################################
 # Computes the elasticity of the affine semigroup a
 #####################################################################

@@ -525,6 +525,18 @@ InstallGlobalFunction(ElasticityOfFactorizationsElementWRTNumericalSemigroup, fu
     return max/min;
 end);
 
+InstallMethod(Elasticity,
+    "Elasticity of the factorizations of an element in a numerical semigroup", 
+    [IsPosInt,IsNumericalSemigroup],
+    ElasticityOfFactorizationsElementWRTAffineSemigroup);
+
+InstallMethod(Elasticity,
+    "Elasticity of the factorizations in a numerical semigroup of one of its elements", 
+    [IsNumericalSemigroup, IsPosInt],
+    function(a,v)
+        return  ElasticityOfFactorizationsElementWRTNumericalSemigroup(v,a);
+    end);
+
 
 #############################################################################
 ##

@@ -161,8 +161,9 @@ gap> LengthsOfFactorizationsElementWRTNumericalSemigroup(1100,s);
 
 
     <ManSection>
-
         <Func Arg="n, S" Name="ElasticityOfFactorizationsElementWRTNumericalSemigroup"></Func>
+        <Oper Arg="n, S" Name="Elasticity" Label="for the factorizations of an element in a numerical semigroup"></Oper>
+        <Oper Arg="S, n" Name="Elasticity" Label="for the factorizations in a numerical semigroup of one of its elements"></Oper>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> an element of <A>S</A>.
             The output is the maximum length divided by the minimum length

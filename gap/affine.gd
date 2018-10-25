@@ -210,6 +210,22 @@ DeclareOperation("OmegaPrimalityOfElementInAffineSemigroup",[IsHomogeneousList,I
 ###########################################################################
 DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
 
+
+#############################################################################
+##
+#F  ElasticityOfFactorizationsElementWRTAffineSemigroup(n,s)
+##
+##  Computes the quotient (maximum length)/(minimum lenght) of the
+##  factorizations of an element <n> as linear combinations
+##  with nonnegative coefficients of the minimal generators
+##  of the semigroup <s>.
+##
+#############################################################################
+DeclareGlobalFunction( "ElasticityOfFactorizationsElementWRTAffineSemigroup" );
+DeclareOperation("Elasticity",[IsHomogeneousList,IsAffineSemigroup]);
+DeclareOperation("Elasticity",[IsAffineSemigroup, IsHomogeneousList]);
+
+
 ###############################################################################
 #F ElasticityOfAffineSemigroup
 # Computes the elasticity of the affine semigroup a
