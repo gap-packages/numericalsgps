@@ -619,6 +619,18 @@ InstallGlobalFunction(DeltaSetOfFactorizationsElementWRTNumericalSemigroup, func
 
 end);
 
+InstallMethod(DeltaSet,
+    "for the factorizations of an element in a numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    DeltaSetOfFactorizationsElementWRTNumericalSemigroup);
+
+InstallMethod(DeltaSet,
+    "for the factorizations of an element in a numerical semigroup",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n)
+        return DeltaSetOfFactorizationsElementWRTNumericalSemigroup(n,s);
+    end);
+
 
 #############################################################################
 ##
@@ -765,7 +777,10 @@ InstallGlobalFunction(DeltaSetOfSetOfIntegers,function(ls)
     return Set([1..(Length(lenfact)-1)], i->lenfact[i+1]-lenfact[i]);
 
 end);
-
+InstallMethod(DeltaSet,
+    "for a list of integers",
+    [IsHomogeneousList],
+    DeltaSetOfSetOfIntegers);
 
 #############################################################################
 ##

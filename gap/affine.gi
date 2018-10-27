@@ -896,7 +896,11 @@ InstallGlobalFunction(DeltaSetOfAffineSemigroup,
     return candidates;
   end);
 
-
+InstallMethod(DeltaSet,
+    "for affine semigroups",
+    [IsAffineSemigroup],
+    DeltaSetOfAffineSemigroup);
+    
 ######################################################################
 # Computes the catenary degree of the affine semigroup a
 ######################################################################

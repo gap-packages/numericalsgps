@@ -226,6 +226,7 @@ DeclareGlobalFunction("DeltaSetUnionUpToElementWRTNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("DeltaSetOfNumericalSemigroup");
+DeclareOperation("DeltaSet",[IsNumericalSemigroup]);
 
 #############################################################################
 ##

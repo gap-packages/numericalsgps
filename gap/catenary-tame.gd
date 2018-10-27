@@ -183,7 +183,8 @@ DeclareOperation("Elasticity",[IsNumericalSemigroup]);
 ##
 #############################################################################
 DeclareGlobalFunction( "DeltaSetOfFactorizationsElementWRTNumericalSemigroup" );
-
+DeclareOperation("DeltaSet",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("DeltaSet",[IsNumericalSemigroup,IsInt]);
 
 #############################################################################
 ##
@@ -252,6 +253,7 @@ DeclareGlobalFunction("LengthsOfFactorizationsIntegerWRTList");
 ##
 #############################################################################
 DeclareGlobalFunction("DeltaSetOfSetOfIntegers");
+DeclareOperation("DeltaSet",[IsHomogeneousList]);
 
 #############################################################################
 ##

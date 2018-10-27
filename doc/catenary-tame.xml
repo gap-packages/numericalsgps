@@ -205,6 +205,7 @@ gap> ElasticityOfNumericalSemigroup(s);
     <ManSection>
 
         <Func Arg="ls" Name="DeltaSetOfSetOfIntegers"></Func>
+        <Oper Arg="ls" Name="DeltaSet" Label="for a list of integers"/>
         <Description>
             <A>ls</A> is list of integers.
             The output is the Delta set of the elements in <A>ls</A>, that is, the set of differences of consecutive elements in the list.
@@ -222,6 +223,8 @@ gap> DeltaSetOfSetOfIntegers(last);
     <ManSection>
 
         <Func Arg="n, S" Name="DeltaSetOfFactorizationsElementWRTNumericalSemigroup"></Func>
+        <Oper Arg="n, S" Name="DeltaSet" Label="for the factorizations of an element in a numerical semigroup"/>
+        <Oper Arg="S, n" Name="DeltaSet" Label="for the factorizations in a numerical semigroup of one of its elements"/>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> an element of <A>S</A>.
             The output is the Delta set of the factorizations of <A>n</A> in terms of the minimal
@@ -308,6 +311,7 @@ gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
 
     <ManSection>
       <Func Arg="S" Name="DeltaSetOfNumericalSemigroup"></Func>
+      <Oper Arg="S" Name="DeltaSet" Label="for a numerical semigroup"/>
       <Description>
 
         <A>S</A> is a numerical semigroup.

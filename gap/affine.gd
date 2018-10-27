@@ -160,6 +160,7 @@ DeclareOperation("CatenaryDegree",[IsAffineSemigroup]);
 # Computes the Delta set of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("DeltaSetOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareOperation("DeltaSet",[IsAffineSemigroup]);
 
 ###############################################################################
 #F EqualCatenaryDegreeOfAffineSemigroup

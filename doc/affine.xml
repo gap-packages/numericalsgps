@@ -557,6 +557,8 @@ gap> ElasticityOfAffineSemigroup(a);
 
 <ManSection>
   <Func Arg="a" Name="DeltaSetOfAffineSemigroup"></Func>
+  <Oper Arg="a" Name="DeltaSet" Label="for an affine semigroup"></Oper>
+
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the Delta set of <A>a</A> (defined as for numerical semigroups). The the procedure used is explained in <Cite Key="GSONW"></Cite>.

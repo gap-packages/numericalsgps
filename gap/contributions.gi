@@ -714,6 +714,10 @@ InstallGlobalFunction(DeltaSetOfNumericalSemigroup,function(s)
 	return DeltaSetUnionUpToElementWRTNumericalSemigroup(DeltaSetPeriodicityBoundForNumericalSemigroup(s)+msg[Length(msg)]-1,s);
 end);
 
+InstallMethod(DeltaSet,
+    "for numerical semigroups",
+    [IsNumericalSemigroup],
+    DeltaSetOfNumericalSemigroup);
 
 #############################################################################
 ##
