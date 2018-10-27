@@ -464,6 +464,18 @@ InstallGlobalFunction(FactorizationsElementWRTNumericalSemigroup, function(n,s)
     return FactorizationsIntegerWRTList(n,gen);
 end);
 
+InstallMethod(Factorizations,
+    "for an element in a numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    FactorizationsElementWRTNumericalSemigroup);
+
+InstallMethod(Factorizations,
+    "for an element in a numerical semigroup",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n)
+        return FactorizationsElementWRTNumericalSemigroup(n,s);
+        end);
+
 
 #############################################################################
 ##

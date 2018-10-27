@@ -25,6 +25,9 @@ gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
     <ManSection>
 
         <Func Arg="n, S" Name="FactorizationsElementWRTNumericalSemigroup"></Func>
+        <Oper Arg="n, S" Name="Factorizations" Label="for an element in a numerical semigroup"></Oper>
+        <Oper Arg="S, n" Name="Factorizations" Label="for a numerical semigroup and one of its elements"></Oper>
+
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> an element of <A>S</A>.
             The output is the set of factorizations of <A>n</A> in terms of the minimal

@@ -127,7 +127,8 @@ DeclareOperation("TameDegree",[IsNumericalSemigroup]);
 ##
 #############################################################################
 DeclareGlobalFunction( "FactorizationsElementWRTNumericalSemigroup" );
-
+DeclareOperation("Factorizations",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("Factorizations",[IsNumericalSemigroup,IsInt]);
 
 #############################################################################
 ##

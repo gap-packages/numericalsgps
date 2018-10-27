@@ -498,6 +498,27 @@ gap> FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]);
     </Description>
   </ManSection>
 
+  <ManSection>
+    <Oper Arg="v, a" Name="Factorizations" Label="for an element in an affine semigroup"></Oper>
+    <Oper Arg="a, v" Name="Factorizations"></Oper>
+    <Description>
+      <A>v</A> is a list of nonnegative integers and <A>a</A> is an affine semigroup. 
+      The output is set of factorizations of <A>v</A> in terms of the minimal generators of of <A>a</A>.
+  <P/>
+      <Example><![CDATA[
+gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+gap> Factorizations([5,5],a);
+[ [ 2, 1, 2 ], [ 1, 3, 1 ], [ 0, 5, 0 ] ]
+gap> Factorizations(a,[5,5]);
+[ [ 2, 1, 2 ], [ 1, 3, 1 ], [ 0, 5, 0 ] ]
+gap> MinimalGenerators(a);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+
 <ManSection>
   <Func Arg="n, a" Name="ElasticityOfFactorizationsElementWRTAffineSemigroup"></Func>
   <Oper Arg="n, a" Name="Elasticity" Label="for the factorizations of an element in an affine semigroup"></Oper>

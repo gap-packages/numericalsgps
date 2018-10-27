@@ -551,6 +551,37 @@ InstallMethod(FactorizationsVectorWRTList,
     return Concatenation(opt1,opt2);
 end);
 
+###############################################################################
+#O Factorizations
+# Vactorizations of a vector in terms of the minimal generating set of the 
+# affine semigroup
+########################################################################
+InstallMethod(Factorizations,
+    "factorizations of an element in terms of the generators of the affine semigroup",
+    [IsHomogeneousList,IsAffineSemigroup],
+    function(n,a)
+        local fac,gen;
+        if not(n in a) then
+            Error("The first argument is not an element of the second");
+        fi;
+        gen:=MinimalGeneratingSystem(a);
+        fac:=FactorizationsVectorWRTList(n,gen);
+        return fac;
+    end);
+
+InstallMethod(Factorizations,
+    "factorizations of an element in terms of the generators of the affine semigroup",
+    [IsAffineSemigroup,IsHomogeneousList],
+    function(a,n)
+        local fac,gen;
+        if not(n in a) then
+            Error("The first argument is not an element of the second");
+        fi;
+        gen:=MinimalGeneratingSystem(a);
+        fac:=FactorizationsVectorWRTList(n,gen);
+        return fac;
+    end);
+
 ############################################################
 # computes a set of generators of the kernel congruence
 # of the monoid morphism associated to the matrix m with

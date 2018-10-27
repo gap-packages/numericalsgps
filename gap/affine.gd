@@ -71,6 +71,15 @@ DeclareGlobalFunction("GluingOfAffineSemigroups");
 DeclareOperation("FactorizationsVectorWRTList",[IsHomogeneousList,IsMatrix]);
 
 ###############################################################################
+#O Factorizations
+# Vactorizations of a vector in terms of the minimal generating set of the 
+# affine semigroup
+########################################################################
+DeclareOperation("Factorizations",[IsHomogeneousList,IsAffineSemigroup]);
+DeclareOperation("Factorizations",[IsAffineSemigroup,IsHomogeneousList]);
+
+
+###############################################################################
 #O BettiElementsOfAffineSemigroup
 # Computes the Betti elements of the affine semigroup a
 ###########################################################################
