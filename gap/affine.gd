@@ -211,6 +211,8 @@ DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsRectangularT
 # Computes the omega-primality of v in the monoid a
 ###########################################################################
 DeclareOperation("OmegaPrimalityOfElementInAffineSemigroup",[IsHomogeneousList,IsAffineSemigroup]);
+DeclareOperation("OmegaPrimality",[IsHomogeneousList,IsAffineSemigroup]);
+DeclareOperation("OmegaPrimality",[IsAffineSemigroup,IsHomogeneousList]);
 
 ###############################################################################
 ##
@@ -219,7 +221,7 @@ DeclareOperation("OmegaPrimalityOfElementInAffineSemigroup",[IsHomogeneousList,I
 # Computes the omega primality of the affine semigroup a
 ###########################################################################
 DeclareGlobalFunction("OmegaPrimalityOfAffineSemigroup");
-
+DeclareOperation("OmegaPrimality",[IsAffineSemigroup]);
 
 #############################################################################
 ##

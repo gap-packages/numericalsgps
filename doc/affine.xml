@@ -651,6 +651,8 @@ gap> TameDegreeOfAffineSemigroup(a);
 
 <ManSection>
   <Oper Arg="v,a" Name="OmegaPrimalityOfElementInAffineSemigroup"></Oper>
+  <Oper Arg="v,a" Name="OmegaPrimality" Label="for an element in an affine semigroup"></Oper>
+  <Oper Arg="a,v" Name="OmegaPrimality" Label="for an affine semigroup and one of its elements"></Oper>
   <Description>
     <A>v</A> is a list of nonnegative integers and <A>a</A> is an affine semigroup.
             The output is the omega primality of <A>a</A> (defined as for numerical semigroups). Returns 0 if the element is not in the semigroup.
@@ -667,6 +669,7 @@ gap> OmegaPrimalityOfElementInAffineSemigroup([5,5],a);
 
 <ManSection>
   <Func Arg="a" Name="OmegaPrimalityOfAffineSemigroup"></Func>
+  <Oper Arg="a" Name="OmegaPrimality" Label="for an affine semigroup"></Oper>
   <Description>
     <A>a</A> is an affine semigroup.
             The output is the omega primality of <A>a</A> (defined as for numerical semigroups).

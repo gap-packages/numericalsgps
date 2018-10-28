@@ -696,6 +696,8 @@ gap> TameDegreeOfElementInNumericalSemigroup(100,s);
     
     <ManSection>
         <Func Arg="n, S" Name="OmegaPrimalityOfElementInNumericalSemigroup"></Func>
+        <Oper Arg="n, S" Name="OmegaPrimality" Label="for an element in a numerical semigroup"/>
+        <Oper Arg="S, n" Name="OmegaPrimality" Label="for a numerical semigroup and one of its elements"/>
         <Description>
 	    <A>n</A> is an element of the numerical semigroup <A>S</A>.
 
@@ -743,6 +745,7 @@ gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
 
     <ManSection>
         <Func Arg="S" Name="OmegaPrimalityOfNumericalSemigroup"></Func>
+        <Oper Arg="S" Name="OmegaPrimality" Label="for a numerical semigroup"/>
         <Description>
 	    <A>S</A> is a numerical semigroup.
 

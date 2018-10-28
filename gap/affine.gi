@@ -1122,6 +1122,20 @@ InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
     od;
 end);
 
+InstallMethod(OmegaPrimality,
+    "for an element in an affine semigroup",
+    [IsHomogeneousList,IsAffineSemigroup],
+    OmegaPrimalityOfElementInAffineSemigroup);
+
+
+InstallMethod(OmegaPrimality,
+    "for an element in an affine semigroup",
+    [IsAffineSemigroup,IsHomogeneousList],
+    function(a,l)
+        return OmegaPrimalityOfElementInAffineSemigroup(l,a);
+    end);
+
+
 ######################################################################
 # Computes the omega primality of the affine semigroup a
 ######################################################################
@@ -1137,6 +1151,10 @@ InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
     return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
 end);
 
+InstallMethod(OmegaPrimality,
+    "for affine semigroups",
+    [IsAffineSemigroup],
+    OmegaPrimalityOfAffineSemigroup);
 
 #############################################################################
 ##

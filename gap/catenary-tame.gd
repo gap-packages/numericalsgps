@@ -209,6 +209,9 @@ DeclareGlobalFunction( "MaximumDegreeOfElementWRTNumericalSemigroup" );
 ##
 #############################################################################
 DeclareGlobalFunction("OmegaPrimalityOfElementInNumericalSemigroup");
+DeclareOperation("OmegaPrimality",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("OmegaPrimality",[IsNumericalSemigroup,IsInt]);
+
 
 #############################################################################
 ##
@@ -218,7 +221,7 @@ DeclareGlobalFunction("OmegaPrimalityOfElementInNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("OmegaPrimalityOfNumericalSemigroup");
-
+DeclareOperation("OmegaPrimality",[IsNumericalSemigroup]);
 
 #############################################################################
 ##

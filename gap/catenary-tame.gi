@@ -689,6 +689,18 @@ InstallGlobalFunction(OmegaPrimalityOfElementInNumericalSemigroup, function(n,s)
 
 end);
 
+InstallMethod(OmegaPrimality,
+    "for an element in a numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    OmegaPrimalityOfElementInNumericalSemigroup);
+
+InstallMethod(OmegaPrimality,
+    "for an element in a numerical semigroup",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n)
+        return OmegaPrimalityOfElementInNumericalSemigroup(n,s);
+    end);
+
 #############################################################################
 ##
 #F  OmegaPrimalityOfNumericalSemigroup(s)
@@ -707,6 +719,10 @@ InstallGlobalFunction(OmegaPrimalityOfNumericalSemigroup, function(s)
 
 end);
 
+InstallMethod(OmegaPrimality,
+    "for numerical semigroups",
+    [IsNumericalSemigroup],
+    OmegaPrimalityOfNumericalSemigroup);
 
 
 #############################################################################
