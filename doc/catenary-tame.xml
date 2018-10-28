@@ -185,8 +185,8 @@ gap> ElasticityOfFactorizationsElementWRTNumericalSemigroup(1100,s);
 
     <ManSection>
 
-        <Func Arg="S" Name="ElasticityOfNumericalSemigroup"></Func>
         <Oper Arg="S" Name="Elasticity" Label="for numerical semigroups"></Oper>
+        <Func Arg="S" Name="ElasticityOfNumericalSemigroup"></Func>
 
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -204,8 +204,8 @@ gap> ElasticityOfNumericalSemigroup(s);
 
     <ManSection>
 
+        <Oper Arg="ls" Name="DeltaSet" Label="for a set of integers"/>
         <Func Arg="ls" Name="DeltaSetOfSetOfIntegers"></Func>
-        <Oper Arg="ls" Name="DeltaSet" Label="for a list of integers"/>
         <Description>
             <A>ls</A> is list of integers.
             The output is the Delta set of the elements in <A>ls</A>, that is, the set of differences of consecutive elements in the list.
@@ -310,8 +310,8 @@ gap> DeltaSetUnionUpToElementWRTNumericalSemigroup(60,s);
     </ManSection>
 
     <ManSection>
-      <Func Arg="S" Name="DeltaSetOfNumericalSemigroup"></Func>
       <Oper Arg="S" Name="DeltaSet" Label="for a numerical semigroup"/>
+      <Func Arg="S" Name="DeltaSetOfNumericalSemigroup"></Func>
       <Description>
 
         <A>S</A> is a numerical semigroup.
@@ -464,8 +464,8 @@ gap> Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));
     This section is devoted to invariants that rely on the concept of distance between two factorizations.
     <ManSection>
 
-        <Func Arg="ls" Name="CatenaryDegreeOfSetOfFactorizations"></Func>
         <Oper Arg="ls" Name="CatenaryDegree" Label="for sets of factorizations"/>
+        <Func Arg="ls" Name="CatenaryDegreeOfSetOfFactorizations"></Func>
         <Description>
             <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same length).
             The output is the catenary degree of this set of factorizations.
@@ -545,8 +545,8 @@ gap> CatenaryDegreeOfElementInNumericalSemigroup(1157,NumericalSemigroup(13,18))
     </ManSection>
 
     <ManSection>
-        <Func Arg="ls" Name="TameDegreeOfSetOfFactorizations"></Func>
         <Oper Arg="ls" Name="TameDegree" Label="for sets of factorizations"></Oper>
+        <Func Arg="ls" Name="TameDegreeOfSetOfFactorizations"></Func>
 
         <Description>
             <A>ls</A> is a set of factorizations (a list of lists of nonnegative integers with the same length).
@@ -563,8 +563,8 @@ gap> TameDegreeOfSetOfFactorizations(last);
     </ManSection>
 
     <ManSection>
-        <Func Arg="S" Name="CatenaryDegreeOfNumericalSemigroup"></Func>
         <Oper Arg="S" Name="CatenaryDegree" Label="for numerical semigroups"/>
+        <Func Arg="S" Name="CatenaryDegreeOfNumericalSemigroup"></Func>
 
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -651,8 +651,8 @@ gap> MonotoneCatenaryDegreeOfNumericalSemigroup(s);
 
 
     <ManSection>
-        <Func Arg="S" Name="TameDegreeOfNumericalSemigroup"></Func>
         <Oper Arg="S" Name="TameDegree" Label="for numerical semigroups"></Oper>
+        <Func Arg="S" Name="TameDegreeOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
             The output is the tame degree of <A>S</A>.
@@ -744,8 +744,8 @@ gap> OmegaPrimalityOfElementListInNumericalSemigroup(l,s);time;
 
 
     <ManSection>
-        <Func Arg="S" Name="OmegaPrimalityOfNumericalSemigroup"></Func>
         <Oper Arg="S" Name="OmegaPrimality" Label="for a numerical semigroup"/>
+        <Func Arg="S" Name="OmegaPrimalityOfNumericalSemigroup"></Func>
         <Description>
 	    <A>S</A> is a numerical semigroup.
 
@@ -835,7 +835,7 @@ gap> HomogeneousBettiElementsOfNumericalSemigroup(s);
         <Description>
 	    <A>S</A> is a numerical semigroup.
 
-            The output is the homogeneous catenary degree of <A>S</A>. Observe that for a single element in the homogenization of <A>S</A>, its catenary degree can be computed with CatenaryDegreeOfSetOfFactorizations and FactorizationsInHomogenizationOfNumericalSemigroup.
+            The output is the homogeneous catenary degree of <A>S</A>. Observe that for a single element in the homogenization of <A>S</A>, its catenary degree can be computed with <C>CatenaryDegreeOfSetOfFactorizations</C> and <C>FactorizationsInHomogenizationOfNumericalSemigroup</C>.
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,17,19);;
