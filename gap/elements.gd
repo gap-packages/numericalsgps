@@ -52,7 +52,7 @@ DeclareSynonymAttr( "GapsOfNumericalSemigroup", Gaps);
 ##  Returns the sum of all  gaps of the numerical semigroup S.
 ##
 #############################################################################
-DeclareOperation( "Weight", [IsNumericalSemigroup]);
+DeclareAttribute( "Weight", IsNumericalSemigroup);
 
 
 #############################################################################
