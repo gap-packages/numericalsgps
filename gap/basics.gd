@@ -135,7 +135,7 @@ DeclareSynonymAttr( "FundamentalGapsOfNumericalSemigroup",FundamentalGaps);
 ##
 #############################################################################
 DeclareAttribute( "PseudoFrobeniusOfNumericalSemigroup",IsNumericalSemigroup);
-
+DeclareSynonymAttr("PseudoFrobenius",PseudoFrobeniusOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -227,6 +227,8 @@ DeclareGlobalFunction("FirstElementsOfNumericalSemigroup");
 ## the output is the (m-1)-uple [k_1,k_2,...,k_{m-1}]
 #############################################################################
 DeclareGlobalFunction("KunzCoordinatesOfNumericalSemigroup");
+DeclareOperation("KunzCoordinates",[IsNumericalSemigroup]);
+DeclareOperation("KunzCoordinates",[IsNumericalSemigroup,IsInt]);
 
 #############################################################################
 ##

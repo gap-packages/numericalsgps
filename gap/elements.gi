@@ -389,6 +389,11 @@ InstallGlobalFunction(DesertsOfNumericalSemigroup, function(s)
   return ds;
 end);
 
+InstallMethod(Deserts,
+    "for numerical semigroups",
+    [IsNumericalSemigroup],
+    DesertsOfNumericalSemigroup);
+
 #############################################################################
 ##
 #A  GenusOfNumericalSemigroup(S)

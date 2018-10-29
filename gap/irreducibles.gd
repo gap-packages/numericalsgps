@@ -66,7 +66,7 @@ DeclareGlobalFunction("IrreducibleNumericalSemigroupsWithFrobeniusNumber");
 ##
 #############################################################################
 DeclareGlobalFunction("OverSemigroupsNumericalSemigroup");
-
+DeclareOperation("OverSemigroups",[IsNumericalSemigroup]);
 
 #############################################################################
 ##

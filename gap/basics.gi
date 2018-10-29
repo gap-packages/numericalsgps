@@ -515,7 +515,6 @@ InstallMethod( PseudoFrobeniusOfNumericalSemigroup,
 end);
 
 
-
 #############################################################################
 ##
 #A  SpecialGapsOfNumericalSemigroup(S)
@@ -947,6 +946,16 @@ InstallGlobalFunction(KunzCoordinatesOfNumericalSemigroup,
     ap:=AperyListOfNumericalSemigroupWRTElement(s,m);
     return List([2..m],i->(ap[i]-i+1)/m);
 end);
+
+InstallMethod(KunzCoordinates,
+    "for a numerical semigroup",
+    [IsNumericalSemigroup],
+    KunzCoordinatesOfNumericalSemigroup);
+
+InstallMethod(KunzCoordinates,
+    "for a numerical semigroup and an integer",
+    [IsNumericalSemigroup,IsInt],
+    KunzCoordinatesOfNumericalSemigroup);
 
 #############################################################################
 ##

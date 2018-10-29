@@ -63,7 +63,7 @@ DeclareOperation( "Weight", [IsNumericalSemigroup]);
 ##
 #############################################################################
 DeclareGlobalFunction("DesertsOfNumericalSemigroup");
-
+DeclareOperation("Deserts",[IsNumericalSemigroup]);
 
 #############################################################################
 ##

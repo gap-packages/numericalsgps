@@ -332,7 +332,8 @@ gap> AperyListOfNumericalSemigroupAsGraph(last);
 
 
 <ManSection>
-  <Func Name="KunzCoordinatesOfNumericalSemigroup" Arg="S,m"/>
+    <Oper Name="KunzCoordinates" Arg="S[,m]" Label="for a numerical semigroup and (optionally) an integer"/>
+  <Func Name="KunzCoordinatesOfNumericalSemigroup" Arg="S[,m]"/>
   <Description>
     <A>S</A> is a numerical semigroup, and <A>m</A> is a nonzero element of <A>S</A>. The second argument is optional, and if missing it is assumed to be the multiplicity of <A>S</A>.
 
@@ -422,6 +423,7 @@ gap> Conductor(NumericalSemigroup(3,5,7));
                 </ManSection>
 
                 <ManSection>
+                    <Attr Name="PseudoFrobenius" Arg="S"/>
                     <Attr Name="PseudoFrobeniusOfNumericalSemigroup" Arg="S"/>
                     <Description>
 		       An integer <M>z</M> is a <E>pseudo-Frobenius
@@ -439,6 +441,7 @@ gap> PseudoFrobeniusOfNumericalSemigroup(S);
                 </ManSection>
 
                 <ManSection>
+                    <Oper Name="Type" Arg="NS" Label="of a numerical semigroup"/>
                     <Attr Name="TypeOfNumericalSemigroup" Arg="NS"/>
                     <Description>
                       Stands for <C>Length(PseudoFrobeniusOfNumericalSemigroup (NS))</C>.
@@ -487,6 +490,7 @@ gap> Weight(NumericalSemigroup(4,5));
 
 
   <ManSection>
+    <Oper Arg="NS" Name="Deserts"/>
     <Func Arg="NS" Name="DesertsOfNumericalSemigroup"></Func>
     <Description>
       <A>NS</A> is a numerical semigroup.
@@ -502,8 +506,8 @@ gap> DesertsOfNumericalSemigroup(s);
   </ManSection>
 
   <ManSection>
-    <Prop Arg="NS" Name="IsOrdinaryNumericalSemigroup"></Prop>
     <Prop Arg="NS" Name="IsOrdinary" Label="for numerical semigroups"></Prop>
+    <Prop Arg="NS" Name="IsOrdinaryNumericalSemigroup"></Prop>
     <Description>
       <A>NS</A> is a numerical semigroup.
       Dectects if the semigroup is ordinary, that is, with less than two deserts.
@@ -518,8 +522,8 @@ false
   </ManSection>
 
   <ManSection>
-    <Prop Arg="NS" Name="IsAcuteNumericalSemigroup"></Prop>
     <Prop Arg="NS" Name="IsAcute" Label="for numerical semigroups"></Prop>
+    <Prop Arg="NS" Name="IsAcuteNumericalSemigroup"></Prop>
     <Description>
       <A>NS</A> is a numerical semigroup.
       Dectects if the semigroup is acute, that is, it is either ordinary or its last desert (the one with the Frobenius number) has less elements than the preceding one (<Cite Key="Br-acute"></Cite>).

@@ -16,6 +16,7 @@
                 
                 
                 <ManSection>
+                    <Oper Arg="s" Name="OverSemigroups" Label="of a numerical semigroup"/>
                     <Func Arg="s" Name="OverSemigroupsNumericalSemigroup"></Func>
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is the set of numerical semigroups

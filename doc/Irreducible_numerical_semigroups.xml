@@ -7,8 +7,8 @@
                 In this section we provide membership tests to the two families that conform the set of irreducible numerical semigroups. We also give a procedure to compute the set of all irreducible numerical semigroups with fixed Frobenius number (or equivalently genus, since for irreducible numerical semigroups once the Frobenius number is fixed, so is the genus). Also we give a function to compute the decomposition of a numerical semigroup as an intersection of irreducible numerical semigroups.
 
                 <ManSection>
-                    <Prop Arg="s" Name="IsIrreducibleNumericalSemigroup"></Prop>
                     <Prop Arg="s" Name="IsIrreducible" Label="for numerical semigroups"></Prop>
+                    <Prop Arg="s" Name="IsIrreducibleNumericalSemigroup"></Prop>
 
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is irreducible,
@@ -30,8 +30,8 @@ false
 
                 <ManSection>
                     <!--<Prop Arg="s" Name="IsSymmetric"></Prop>-->
-                    <Attr Arg="s" Name="IsSymmetricNumericalSemigroup"></Attr>
                     <Attr Arg="s" Name="IsSymmetric" Label="for numerical semigroups"></Attr>
+                    <Attr Arg="s" Name="IsSymmetricNumericalSemigroup"></Attr>
 
                     <Description>
                         <A>s</A> is a numerical semigroup. The output is <C>true</C> if <A>s</A> is symmetric,

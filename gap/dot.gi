@@ -327,6 +327,11 @@ InstallGlobalFunction(DotOverSemigroupsNumericalSemigroup, function(s)
   return out;  
 end);
 
+InstallMethod(DotOverSemigroups,
+  "for numerical semigrousp",
+  [IsNumericalSemigroup],
+  DotOverSemigroupsNumericalSemigroup);
+
 ############################################################################
 ##
 #O DotRosalesGraph(n,s)

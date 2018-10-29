@@ -6,8 +6,8 @@
 
   <ManSection>
 
-    <Func Arg="S" Name="MinimalPresentationOfNumericalSemigroup"></Func>
     <Oper Arg="S" Name="MinimalPresentation" Label="for numerical semigroups"></Oper>
+    <Func Arg="S" Name="MinimalPresentationOfNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup.
 
@@ -63,8 +63,8 @@ gap> GraphAssociatedToElementInNumericalSemigroup(10,s);
   </ManSection>
 
   <ManSection>
-    <Func Arg="S" Name="BettiElementsOfNumericalSemigroup"></Func>
     <Oper Arg="S" Name="BettiElements" Label="of numerical semigroup"></Oper>
+    <Func Arg="S" Name="BettiElementsOfNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup.
       <P/>
@@ -119,7 +119,7 @@ gap> ShadedSetOfElementInNumericalSemigroup(10,s);
 
   A numerical semigroup <M>S</M> is uniquely presented if for any two minimal presentations <M>\sigma</M> and <M>\tau</M> and any <M>(a,b)\in \sigma</M>, either <M>(a,b)\in \tau</M> or <M>(b,a)\in \tau</M>, that is, there is essentially a unique minimal presentation (up to arrangement of the components of the pairs in it).
   <ManSection Label="UniqPre">
-    <Prop Arg="S" Name="IsUniquelyPresented"></Prop>
+    <Prop Arg="S" Name="IsUniquelyPresented" Label="for numerical semigroups"></Prop>
     <Prop Arg="S" Name="IsUniquelyPresentedNumericalSemigroup"></Prop>
     <Description>
       <A>S</A> is a numerical semigroup.

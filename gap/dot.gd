@@ -81,6 +81,7 @@ DeclareGlobalFunction("DotTreeOfGluingsOfNumericalSemigroup");
 ##
 ############################################################################
 DeclareGlobalFunction("DotOverSemigroupsNumericalSemigroup");
+DeclareOperation("DotOverSemigroups", [IsNumericalSemigroup]);
 
 ############################################################################
 ##

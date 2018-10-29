@@ -250,6 +250,10 @@ InstallGlobalFunction(OverSemigroupsNumericalSemigroup, function(s)
     return A;
 end);
 
+InstallMethod(OverSemigroups,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    OverSemigroupsNumericalSemigroup);
 
 
 #############################################################################
