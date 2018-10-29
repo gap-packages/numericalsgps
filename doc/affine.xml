@@ -342,7 +342,7 @@ gap> Generators(last);
 gap> M := [[2,0],[0,2],[1,1]];
 [ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ]
 gap> GeneratorsOfKernelCongruence(M);
-[ [ [ 1, 1, 0 ], [ 0, 0, 2 ] ] ]
+[ [ [ 0, 0, 2 ], [ 1, 1, 0 ] ] ]
 ]]></Example>
     </Description>
   </ManSection>
@@ -401,7 +401,7 @@ gap> gr:=GraverBasis([[3,5,7]]);
       <Example><![CDATA[
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> MinimalPresentationOfAffineSemigroup(a);
-[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ]
+[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 gap> GeneratorsOfAffineSemigroup(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 ]]></Example>

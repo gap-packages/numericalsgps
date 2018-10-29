@@ -2,6 +2,7 @@
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
 1.1.8 -> 1.1.9
+- avoid differences in the output when all packages are loaded (the order of the pairs in representations is not relevant)
 - small fixes (Irreducibles, PseudoFrobenius, OmegaPrimalityOfElement*)
 - mark some functions as obsolet, namely: NumericalSemigroupByMinimalGenerators
 - Updates in the manual. This includes: fixing typos; adding text (mainly in the introduction of chapters or sections); adding links.
@@ -16,7 +17,7 @@
 - new version of AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
 - functions AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType and AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType by Ignacio Ojeda
 - NumericalSemigroupByGaps([]) now returns N (it produced an error before)
-- the GPL file added to the repository
+- GPL file added to the repository
 - README.md updated (mainly for Travis & Codecov support) (Many thanks to Max Horn)
 
 1.1.7->1.1.8
