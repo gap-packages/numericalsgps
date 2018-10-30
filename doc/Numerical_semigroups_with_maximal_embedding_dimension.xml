@@ -23,8 +23,8 @@ false
 
 
                 <ManSection>
+                  <Oper Arg="S" Name="MEDClosure"></Oper>
                   <Func Arg="S" Name="MEDNumericalSemigroupClosure"></Func>
-                    <Oper Arg="S" Name="MEDClosure" Label="for numerical semigroups"></Oper>
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         Returns the MED closure of <A>S</A>.
@@ -89,8 +89,8 @@ true
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="S" Name="ArfNumericalSemigroupClosure"></Func>
                     <Oper Arg="S" Name="ArfClosure" Label="of numerical semigroup"></Oper>
+                    <Func Arg="S" Name="ArfNumericalSemigroupClosure"></Func>
                     <Description>
                         <A>S</A> is a numerical semigroup.
                         Returns the Arf closure of <A>S</A>.
