@@ -112,7 +112,7 @@ InstallMethod( \in,
 end);
 
 InstallMethod(BelongsToAffineSemigroup,
-        "To test whether an integer belongs to a numerical semigroup",
+        "To test whether an element of N^n belongs to an affine semigroup",
         true,
         [ IsHomogeneousList, IsAffineSemigroup and HasGenerators],50,
 
@@ -137,10 +137,6 @@ InstallMethod(BelongsToAffineSemigroup,
 	return belongs(x-gen[1],gen) or belongs(x,gen{[2..Length(gen)]});
     end;
 
-    if not(IsAffineSemigroup(a)) then
-        Error("The first argument must be an affine semigroup.");
-    fi;
-
     if not(IsListOfIntegersNS(v)) then
         Error("The first argument must be a list of integers.");
     fi;
@@ -155,17 +151,12 @@ InstallMethod(BelongsToAffineSemigroup,
 end);
 
 InstallMethod(BelongsToAffineSemigroup,
-        "To test whether an integer belongs to a numerical semigroup",
+        "To test whether a list of elements of N^n belongs to an affine semigroup",
         true,
         [ IsHomogeneousList, IsAffineSemigroup and HasEquations],100,
 
         function(v,a)
     local equ,eq,md,ev,i;
-
-
-    if not(IsAffineSemigroup(a)) then
-        Error("The first argument must be an affine semigroup.");
-    fi;
 
     equ:=Equations(a);
     if not(IsListOfIntegersNS(v)) then
@@ -193,17 +184,12 @@ InstallMethod(BelongsToAffineSemigroup,
 end);
 
 InstallMethod(BelongsToAffineSemigroup,
-        "To test whether an integer belongs to a numerical semigroup",
+        "To test whether an element of N^n belongs to an affine semigroup",
         true,
         [ IsHomogeneousList, IsAffineSemigroup and HasInequalities],70,
 
         function(v,a)
     local equ,ev;
-
-
-    if not(IsAffineSemigroup(a)) then
-        Error("The first argument must be an affine semigroup.");
-    fi;
 
     equ:=AffineSemigroupInequalities(a);
     if not(IsListOfIntegersNS(v)) then
@@ -575,7 +561,7 @@ InstallMethod(Factorizations,
     function(a,n)
         local fac,gen;
         if not(n in a) then
-            Error("The first argument is not an element of the second");
+            Error("The second argument is not an element of the first");
         fi;
         gen:=MinimalGeneratingSystem(a);
         fac:=FactorizationsVectorWRTList(n,gen);
@@ -709,10 +695,6 @@ function(a)
   #PLAIN implementation
 	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
 
-    if not(IsRectangularTable(a)) then
-      Error("The argument must be a matrix.");
-    fi;
-
     if not(IsInt(a[1][1])) then
       Error("The entries of the matrix must be integers.");
     fi;
@@ -748,11 +730,6 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
-
-
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup.");
-    fi;
 
     msg:=GeneratorsOfAffineSemigroup(a); #for now we do not check minimality of the generators
     ed:=Length(msg);
@@ -790,10 +767,6 @@ InstallMethod(BettiElements,
 	function(a)
     local msg, pr;
 
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup.");
-    fi;
-
     msg:=GeneratorsOfAffineSemigroup(a);
 
     pr:=MinimalPresentationOfAffineSemigroup(a);
@@ -811,14 +784,11 @@ end);
 ##  Based in GS-O
 ##
 #############################################################################
-InstallMethod(IsUniquelyPresentedAffineSemigroup,
+InstallMethod(IsUniquelyPresented,
          "Tests if the affine semigroup S has a unique minimal presentation",
          [IsAffineSemigroup],1,
         function(a)
     local gs;
-    if not IsAffineSemigroup(a) then
-        Error("The second argument must be an affine semigroup.\n");
-    fi;
     gs:=GeneratorsOfAffineSemigroup(a);
     return ForAll(BettiElementsOfAffineSemigroup(a),
                   b->Length(FactorizationsVectorWRTList(b,gs))=2);
@@ -838,9 +808,6 @@ InstallMethod(IsGenericAffineSemigroup,
          [IsAffineSemigroup],1,
         function(a)
 	local mp;
-    if not IsAffineSemigroup(a) then
-        Error("The second argument must be an affine semigroup.\n");
-    fi;
     mp:=MinimalPresentationOfAffineSemigroup(a);
     return ForAll(mp,p->Product(p[1]+p[2])<>0);
 end);
@@ -1314,10 +1281,6 @@ InstallMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
         function(a)
 	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
 
-    if not(IsAffineSemigroup(a)) then
-        Error("The argument must be an affine semigroup.");
-    fi;
-
     Info(InfoNumSgps,2,"Using Lawrence lifting for computing primitive elements.");
     mgs:=GeneratorsOfAffineSemigroup(a);
     ed:=Length(mgs);
@@ -1347,10 +1310,6 @@ InstallMethod(TameDegreeOfAffineSemigroup,
         [IsAffineSemigroup],1,
         function(a)
   local prim, tams, p, max, ls;
-
-  if not(IsAffineSemigroup(a)) then
-    Error("The argument must be an affine semigroup");
-  fi;
 
   ls:=GeneratorsOfAffineSemigroup(a);
 

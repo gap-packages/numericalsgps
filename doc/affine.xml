@@ -447,11 +447,12 @@ gap> BettiElementsOfAffineSemigroup(a);
   </ManSection>
 
   <ManSection>
+  <Prop Arg="a" Name="IsUniquelyPresented" Label="for affine semigroups"></Prop>
     <Prop Arg="a" Name="IsUniquelyPresentedAffineSemigroup"></Prop>
     <Description>
       <A>a</A> is an affine semigroup.
       <P/>
-      The same as <C>IsUniquelyPresentedNumericalSemigroup</C> (<Ref Chap="UniqPre"/>) but for affine semigroups.
+      The same as the homonym function for numerical semigroups (<Ref Chap="UniqPre"/>), but for affine semigroups.
     </Description>
   </ManSection>
 

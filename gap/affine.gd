@@ -124,7 +124,9 @@ DeclareOperation("MinimalPresentation",[IsAffineSemigroup]);
 ##  Basado en GS-O
 ##
 #############################################################################
-DeclareProperty("IsUniquelyPresentedAffineSemigroup", IsAffineSemigroup);
+DeclareProperty("IsUniquelyPresented", IsAffineSemigroup);
+DeclareSynonymAttr("IsUniquelyPresentedAffineSemigroup", IsAffineSemigroup);
+
 
 #############################################################################
 ##
