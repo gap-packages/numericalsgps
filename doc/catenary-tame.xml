@@ -85,6 +85,7 @@ gap> RClassesOfSetOfFactorizations(last);
 
     <ManSection>
 
+        <Oper Arg="S" Name="LShapes"/>
         <Func Arg="S" Name="LShapesOfNumericalSemigroup"></Func>
         <Description>
            <A>S</A> is a numerical semigroup.
@@ -104,7 +105,6 @@ gap> LShapesOfNumericalSemigroup(s);
 
 
     <ManSection>
-
         <Func Arg="n, S" Name="DenumerantOfElementInNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> a positive integer.
@@ -119,6 +119,20 @@ gap> DenumerantOfElementInNumericalSemigroup(1311,s);
          </Description>
     </ManSection>
 
+    <ManSection>
+        <Oper Arg="S" Name="DenumerantFunction"/>
+        <Description>
+            <A>S</A> is a numerical semigroup.
+            The output is a function that for a given <M>n</M> computes the number of factorizations of <A>n</A> in terms of the minimal
+            generating set of <A>S</A>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,195,272,278,286);;
+gap> DenumerantFunction(s)(1311);
+6
+]]></Example>
+         </Description>
+    </ManSection>
 
 
 </Section>
@@ -329,7 +343,8 @@ gap> DeltaSetOfNumericalSemigroup(s);
 
 
     <ManSection>
-
+        <Oper Arg="n, S" Name="MaximumDegree"/>
+        <Oper Arg="S, n" Name="MaximumDegree"/>
         <Func Arg="n, S" Name="MaximumDegreeOfElementWRTNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> a nonnegative integer.
@@ -348,6 +363,8 @@ gap> MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);
 
 
     <ManSection>
+        <Oper Arg="n, S" Name="MaximalDenumerant" Label="for element in numerical semigroup"/>
+        <Oper Arg="S, n" Name="MaximalDenumerant" Label="for a numerical semigroup and one of its elements"/>
         <Func Arg="n, S" Name="MaximalDenumerantOfElementInNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup and <A>n</A> an element of <A>S</A>.
@@ -383,6 +400,7 @@ gap> MaximalDenumerantOfSetOfFactorizations(last);
 
 
    <ManSection>
+        <Oper Arg="S" Name="MaximalDenumerant"/>
         <Func Arg="S" Name="MaximalDenumerantOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -398,6 +416,7 @@ gap> MaximalDenumerantOfNumericalSemigroup(s);
 
 
    <ManSection>
+        <Oper Arg="S" Name="Adjustment"/>
         <Func Arg="S" Name="AdjustmentOfNumericalSemigroup"></Func>
         <Description>
             <A>S</A> is a numerical semigroup.
@@ -871,6 +890,21 @@ gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,10);
 2
 gap> MoebiusFunctionAssociatedToNumericalSemigroup(s,34);
 25
+]]></Example>
+        </Description>
+    </ManSection>
+
+    <ManSection>
+        <Oper Arg="S" Name="MoebiusFunction"/>
+        <Description>
+	    <A>S</A> is a numerical semigroup.
+
+           As <M>(S,\le_S)</M> is a poset, we can define the Möbius function associated to it as in <Cite Key="CHRA"></Cite>. The output is the Möbius function associated to <A>S</A>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> List([1..10],MoebiusFunction(s));
+[ 0, 0, -1, 0, -1, 0, -1, 1, 0, 2 ]
 ]]></Example>
         </Description>
     </ManSection>

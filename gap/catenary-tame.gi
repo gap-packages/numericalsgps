@@ -665,6 +665,19 @@ InstallGlobalFunction(MaximumDegreeOfElementWRTNumericalSemigroup, function(n,s)
     return Maximum(LengthsOfFactorizationsIntegerWRTList(n,gen));
 end);
 
+InstallMethod(MaximumDegree,
+    "for an element in a numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    MaximumDegreeOfElementWRTNumericalSemigroup);
+
+InstallMethod(MaximumDegree,
+    "for a numerical semigroup and one of its elements",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n) 
+        return MaximumDegreeOfElementWRTNumericalSemigroup(n,s);
+    end);
+
+
 #############################################################################
 ##
 #F  OmegaPrimalityOfElementInNumericalSemigroup(n,s)
@@ -996,6 +1009,17 @@ function(x,s)
 
 	return Length(Filtered(fact, x->Sum(x)=max));
 end);
+InstallMethod(MaximalDenumerant,
+    "for an element in a numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    MaximalDenumerantOfElementInNumericalSemigroup);
+
+InstallMethod(MaximalDenumerant,
+    "for a numerical semigroup and one if its elements",
+    [IsNumericalSemigroup,IsInt],
+    function(s,n)
+        return MaximalDenumerantOfElementInNumericalSemigroup(n,s);
+    end);
 
 ########################################################
 #  MaximalDenumerantOfSetOfFactorizations(ls)
@@ -1075,6 +1099,11 @@ InstallGlobalFunction(MaximalDenumerantOfNumericalSemigroup, function(s)
 	return md;
 end);
 
+InstallMethod(MaximalDenumerant,
+    "for a numerical semigroup",
+    [IsNumericalSemigroup],
+    MaximalDenumerantOfNumericalSemigroup);
+
 ########################################################
 # AdjustmentOfNumericalSemigroup(s)
 # computes the adjustment a numerical semigroup
@@ -1122,6 +1151,10 @@ InstallGlobalFunction(AdjustmentOfNumericalSemigroup,function(s)
 	od;
 	return adjust;
 end);
+InstallMethod(Adjustment,
+    "for numerical semigroups",
+    [IsNumericalSemigroup],
+    AdjustmentOfNumericalSemigroup);
 
 ##############################################################
 # IsAdditiveNumericalSemigroup(s)
@@ -1319,6 +1352,15 @@ InstallGlobalFunction(DenumerantOfElementInNumericalSemigroup, function(x,s)
 	  return NrRestrictedPartitions(x,gen);
 end);
 
+## as function
+InstallMethod(DenumerantFunction,
+    "function for a numerical semigroup",
+    [IsNumericalSemigroup],
+    function(s)
+        return n->DenumerantOfElementInNumericalSemigroup(n,s);
+    end);
+
+
 ####################################################################
 #F MoebiusFunctionAssociatedToNumericalSemigroup(s,x)
 ## Computes the value in x of  Moebius function of the poset
@@ -1366,6 +1408,14 @@ InstallGlobalFunction(MoebiusFunctionAssociatedToNumericalSemigroup,function(s,x
 	return -Sum(List(x-small,mu));
 
 end);
+
+### as a function
+InstallMethod(MoebiusFunction,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    function(s)
+        return n->MoebiusFunctionAssociatedToNumericalSemigroup(s,n);
+    end);
 
 ###################################################################
 #F  AdjacentCatenaryDegreeOfSetOfFactorizations(ls)
@@ -1486,6 +1536,10 @@ InstallGlobalFunction(LShapesOfNumericalSemigroup,function(s)
 	return total;
 end);
 
+InstallMethod(LShapes,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    LShapesOfNumericalSemigroup);
 
 ###########################################################################
 #F  DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s)

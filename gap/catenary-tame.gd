@@ -197,6 +197,8 @@ DeclareOperation("DeltaSet",[IsNumericalSemigroup,IsInt]);
 ##
 #############################################################################
 DeclareGlobalFunction( "MaximumDegreeOfElementWRTNumericalSemigroup" );
+DeclareOperation("MaximumDegree",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("MaximumDegree",[IsNumericalSemigroup,IsInt]);
 
 #############################################################################
 ##
@@ -294,6 +296,8 @@ DeclareGlobalFunction("RClassesOfSetOfFactorizations");
 #  the numerical semigroup s
 ########################################################
 DeclareGlobalFunction("MaximalDenumerantOfElementInNumericalSemigroup");
+DeclareOperation("MaximalDenumerant",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("MaximalDenumerant",[IsNumericalSemigroup,IsInt]);
 
 ########################################################
 #  MaximalDenumerantOfSetOfFactorizations(ls)
@@ -308,6 +312,7 @@ DeclareGlobalFunction("MaximalDenumerantOfSetOfFactorizations");
 # Semigroup Forum 86 (2013), 571-582
 ########################################################
 DeclareGlobalFunction("MaximalDenumerantOfNumericalSemigroup");
+DeclareOperation("MaximalDenumerant",[IsNumericalSemigroup]);
 
 ########################################################
 # AdjustmentOfNumericalSemigroup(s)
@@ -316,6 +321,7 @@ DeclareGlobalFunction("MaximalDenumerantOfNumericalSemigroup");
 # Semigroup Forum 86 (2013), 571-582
 ########################################################
 DeclareGlobalFunction("AdjustmentOfNumericalSemigroup");
+DeclareOperation("Adjustment",[IsNumericalSemigroup]);
 
 ##############################################################
 # IsAdditiveNumericalSemigroup(s)
@@ -363,10 +369,12 @@ DeclareGlobalFunction("HomogeneousBettiElementsOfNumericalSemigroup");
 DeclareGlobalFunction("HomogeneousCatenaryDegreeOfNumericalSemigroup");
 
 ########################################
-#F DenumerantElementInNumericalSemigroup(n,s)
+#F DenumerantOfElementInNumericalSemigroup(n,s)
 ## returns the denumerant
 ########################################
 DeclareGlobalFunction("DenumerantOfElementInNumericalSemigroup");
+### as function
+DeclareOperation("DenumerantFunction",[IsNumericalSemigroup]);
 
 ####################################################################
 #F MoebiusFunctionAssociatedToNumericalSemigroup(s,x)
@@ -375,6 +383,7 @@ DeclareGlobalFunction("DenumerantOfElementInNumericalSemigroup");
 ## -Chappelon and Ramirez Alfonsin, Semigroup Forum 87 (2013), 313-330
 ####################################################################
 DeclareGlobalFunction("MoebiusFunctionAssociatedToNumericalSemigroup");
+DeclareOperation("MoebiusFunction",[IsNumericalSemigroup]);
 
 ###################################################################
 #F  AdjacentCatenaryDegreeOfSetOfFactorizations(ls)
@@ -399,6 +408,7 @@ DeclareGlobalFunction("MonotoneCatenaryDegreeOfSetOfFactorizations");
 ## computes the set of LShapes associated to S (see [AG-GS])
 ##########################################################
 DeclareGlobalFunction("LShapesOfNumericalSemigroup");
+DeclareOperation("LShapes",[IsNumericalSemigroup]);
 
 ###########################################################################
 #F  DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s)
