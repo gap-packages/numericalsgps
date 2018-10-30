@@ -354,6 +354,10 @@ InstallGlobalFunction(TypeSequenceOfNumericalSemigroup,function(S)
 	return t;
 end);
 
+InstallMethod(TypeSequence,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    TypeSequenceOfNumericalSemigroup);
 
 ##########################################################
 ##

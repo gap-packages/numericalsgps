@@ -426,6 +426,7 @@ gap> IntersectionIdealsOfNumericalSemigroup(i,j);
 
 
 <ManSection>
+    <Oper Arg="S" Name="MaximalIdeal" Label="for numerical semigroups"/>
                     <Func Arg="S" Name="MaximalIdealOfNumericalSemigroup"></Func>
                     <Description>
                         Returns the maximal ideal of the numerical semigroup <A>S</A>.
@@ -439,6 +440,7 @@ gap> MaximalIdealOfNumericalSemigroup(NumericalSemigroup(3,7));
 
 
 <ManSection>
+    <Oper Arg="S" Name="CanonicalIdeal" Label="for numerical semigroups"/>
                     <Func Arg="S" Name="CanonicalIdealOfNumericalSemigroup"></Func>
                     <Description>
 		      <A>S</A> is a numerical semigroup.
@@ -478,6 +480,7 @@ true
 </ManSection>
 
 <ManSection>
+    <Oper Arg="S" Name="TypeSequence" Label="for numerical semigroups"/>
                     <Func Arg="S" Name="TypeSequenceOfNumericalSemigroup"></Func>
                     <Description>
 
@@ -525,6 +528,22 @@ gap> List([1..7],n->HilbertFunctionOfIdealOfNumericalSemigroup(n,I));
                 </ManSection>
 
                 <ManSection>
+                    <Attr Arg="I" Name="HilbertFunction"></Attr>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup. <A>I</A> must be contained in its ambient semigroup (integral ideal).
+                        The output is a function that maps to each <M>n</M> the cardinality of the set <M>n<A>I</A>\setminus (n+1)<A>I</A></M>.
+
+                        <Example><![CDATA[
+gap> I:=[6,9,11]+NumericalSemigroup(6,9,11);;
+gap> List([1..7],n->HilbertFunction(I)(n));
+[ 3, 5, 6, 6, 6, 6, 6 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+                <ManSection>
+                    <Oper Arg="I" Name="BlowUp" Label="for ideals of numerical semigroups"/>
                     <Func Arg="I" Name="BlowUpIdealOfNumericalSemigroup"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
@@ -562,6 +581,7 @@ gap> ReductionNumberIdealNumericalSemigroup(I);
 
 
 <ManSection>
+                    <Oper Arg="S" Name="BlowUp" Label="for numerical semigroups"/>
                     <Func Arg="S" Name="BlowUpOfNumericalSemigroup"></Func>
                     <Description>
 		      <A>S</A> is a numerical semigroup.
@@ -605,6 +625,7 @@ gap> SmallElementsOfNumericalSemigroup(last);
 
 
                 <ManSection>
+    <Oper Arg="I" Name="RatliffRushNumber"/>
                     <Func Arg="I" Name="RatliffRushNumberOfIdealOfNumericalSemigroup"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
@@ -621,6 +642,7 @@ gap> RatliffRushNumberOfIdealOfNumericalSemigroup(I);
 
 
                 <ManSection>
+    <Oper Arg="I" Name="RatliffRushClosure"/>
                     <Func Arg="I" Name="RatliffRushClosureOfIdealOfNumericalSemigroup"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
@@ -637,6 +659,7 @@ gap> MinimalGenerators(last);
                 </ManSection>
 
                 <ManSection>
+    <Oper Arg="I" Name="AsymptoticRatliffRushNumber"/>
                     <Func Arg="I" Name="AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup"></Func>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup.
@@ -652,6 +675,7 @@ gap> AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);
 
 
 <ManSection>
+    <Oper Arg="S" Name="MultiplicitySequence"/>
     <Func Name="MultiplicitySequenceOfNumericalSemigroup" Arg="S"/>
     <Description>
      <A>S</A> is a numerical semigroup. The output is a list with the multiplicities of the sequence <M>S\subseteq L(S)\subseteq \cdots \subseteq \mathbb{N}</M>, where <M>L(\cdot)</M> means <Ref Func="LipmanSemigroup"/>.
@@ -666,6 +690,7 @@ gap> MultiplicitySequenceOfNumericalSemigroup(s);
 
 
 <ManSection>
+    <Oper Arg="S" Name="MicroInvariants"/>
                     <Func Arg="S" Name="MicroInvariantsOfNumericalSemigroup"></Func>
                     <Description>
                         Returns the microinvariants of the numerical semigroup <A>S</A> defined
@@ -696,6 +721,7 @@ true
 
 
                 <ManSection>
+                    <Oper Arg="I,n" Name="AperyList"/>
                     <Func Arg="I,n" Name="AperyListOfIdealOfNumericalSemigroupWRTElement"></Func>
                     <Description>
 <A>I</A> is an ideal and <A>n</A> is an integer.

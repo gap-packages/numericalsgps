@@ -129,6 +129,7 @@ DeclareProperty("IsAperySetAlphaRectangular", IsNumericalSemigroup);
 ##
 ##############################################################################################################
 DeclareGlobalFunction("TypeSequenceOfNumericalSemigroup");
+DeclareOperation("TypeSequence",[IsNumericalSemigroup]);
 
 ##########################################################
 ##

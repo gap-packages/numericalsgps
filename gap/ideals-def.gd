@@ -157,7 +157,7 @@ DeclareGlobalFunction("MultipleOfIdealOfNumericalSemigroup");
 ## that is, nI\(n+1)I. I must be an ideal included in its ambient semigroup.
 #############################################################################
 DeclareGlobalFunction("HilbertFunctionOfIdealOfNumericalSemigroup");
-
+DeclareAttribute("HilbertFunction",IsIdealOfNumericalSemigroup);
 
 
 #############################################################################
@@ -168,7 +168,7 @@ DeclareGlobalFunction("HilbertFunctionOfIdealOfNumericalSemigroup");
 ##  the numerical semigroup <s>.
 #############################################################################
 DeclareGlobalFunction("BlowUpIdealOfNumericalSemigroup");
-
+DeclareOperation("BlowUp",[IsIdealOfNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -233,6 +233,7 @@ DeclareGlobalFunction("NumberElement_IdealOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("MaximalIdealOfNumericalSemigroup");
+DeclareOperation("MaximalIdeal",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -252,6 +253,8 @@ DeclareProperty("IsMonomialNumericalSemigroup", IsNumericalSemigroup);
 #############################################################################
 DeclareGlobalFunction("BlowUpOfNumericalSemigroup");
 DeclareSynonym("LipmanSemigroup",BlowUpOfNumericalSemigroup);
+DeclareOperation("BlowUp",[IsNumericalSemigroup]);
+
 #############################################################################
 ##
 #F MultiplicitySequenceOfNumericalSemigroup(s)
@@ -260,6 +263,7 @@ DeclareSynonym("LipmanSemigroup",BlowUpOfNumericalSemigroup);
 ##
 #############################################################################
 DeclareGlobalFunction("MultiplicitySequenceOfNumericalSemigroup");
+DeclareOperation("MultiplicitySequence",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -272,7 +276,7 @@ DeclareGlobalFunction("MultiplicitySequenceOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("MicroInvariantsOfNumericalSemigroup");
-
+DeclareOperation("MicroInvariants",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -295,6 +299,7 @@ DeclareProperty("IsGradedAssociatedRingNumericalSemigroupCM", IsNumericalSemigro
 ##
 #############################################################################
 DeclareGlobalFunction("CanonicalIdealOfNumericalSemigroup");
+DeclareOperation("CanonicalIdeal",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -327,6 +332,7 @@ DeclareSynonymAttr("ReductionNumberIdealNumericalSemigroup",ReductionNumber);
 ##
 #############################################################################
 DeclareGlobalFunction("RatliffRushClosureOfIdealOfNumericalSemigroup");
+DeclareOperation("RatliffRushClosure",[IsIdealOfNumericalSemigroup]);
 
 #############################################################################
 ##
@@ -337,6 +343,7 @@ DeclareGlobalFunction("RatliffRushClosureOfIdealOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("RatliffRushNumberOfIdealOfNumericalSemigroup");
+DeclareOperation("RatliffRushNumber",[IsIdealOfNumericalSemigroup]); 
 
 #############################################################################
 ##
@@ -347,6 +354,7 @@ DeclareGlobalFunction("RatliffRushNumberOfIdealOfNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup");
+DeclareOperation("AsymptoticRatliffRushNumber",[IsIdealOfNumericalSemigroup]); 
 
 
 #############################################################################

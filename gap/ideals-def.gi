@@ -548,6 +548,13 @@ InstallGlobalFunction(HilbertFunctionOfIdealOfNumericalSemigroup, function(n,I)
     return Length(DifferenceOfIdealsOfNumericalSemigroup(n*I,(n+1)*I));
 end);
 
+InstallMethod(HilbertFunction,
+    "gives the Hilbert function of the ideal",
+    [IsIdealOfNumericalSemigroup],
+    function(I)
+        return n->HilbertFunctionOfIdealOfNumericalSemigroup(n,I);
+    end);
+
 #############################################################################
 ##
 #P IsMonomialNumericalSemigroup
@@ -584,7 +591,10 @@ InstallGlobalFunction(BlowUpIdealOfNumericalSemigroup, function(I)
     return r*I-r*I;
 end);
 
-
+InstallMethod(BlowUp,
+    "blow up of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+    BlowUpIdealOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -599,6 +609,11 @@ InstallGlobalFunction(MaximalIdealOfNumericalSemigroup, function(S)
     fi;
     return MinimalGeneratingSystemOfNumericalSemigroup(S)+S;
 end);
+
+InstallMethod(MaximalIdeal,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    MaximalIdealOfNumericalSemigroup);
 
 
 #############################################################################
@@ -624,6 +639,12 @@ InstallGlobalFunction(BlowUpOfNumericalSemigroup, function(s)
 
     return NumericalSemigroup(genbu);
 end);
+
+InstallMethod(BlowUp,
+    "Blow up of the numerical semigroup",
+    [IsNumericalSemigroup],
+    BlowUpOfNumericalSemigroup);
+
 #############################################################################
 ##
 #F MultiplicitySequenceOfNumericalSemigroup(s)
@@ -648,6 +669,10 @@ InstallGlobalFunction(MultiplicitySequenceOfNumericalSemigroup, function(s)
     return Concatenation([m],MultiplicitySequenceOfNumericalSemigroup(NumericalSemigroup(msg)));
 end);
 
+InstallMethod(MultiplicitySequence, 
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    MultiplicitySequenceOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -672,7 +697,10 @@ InstallGlobalFunction(MicroInvariantsOfNumericalSemigroup, function(s)
             +AperyListOfNumericalSemigroupWRTElement(s,e))/e;
 
 end);
-
+InstallMethod(MicroInvariants,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    MicroInvariantsOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -720,6 +748,11 @@ InstallGlobalFunction(CanonicalIdealOfNumericalSemigroup, function(s)
     return IdealOfNumericalSemigroup(FrobeniusNumberOfNumericalSemigroup(s)-
             PseudoFrobeniusOfNumericalSemigroup(s),s);
 end);
+
+InstallMethod(CanonicalIdeal,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    CanonicalIdealOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -800,6 +833,12 @@ function(I)
   return (r+1)*I-r*I;
 end);
 
+InstallMethod(RatliffRushClosure,
+    "Ratliff-Rush closure of an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+    RatliffRushClosureOfIdealOfNumericalSemigroup);
+
+
 #############################################################################
 ##
 #F  RatliffRushNumberOfIdealOfNumericalSemigroup(I)
@@ -826,6 +865,11 @@ function(I)
 
   return n;
 end);
+
+InstallMethod(RatliffRushNumber,
+    "Ratliff-Rush number of ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+    RatliffRushNumberOfIdealOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -854,6 +898,11 @@ function(I)
     n:=n-1;
   od;
 end);
+
+InstallMethod(AsymptoticRatliffRushNumber,
+    "Asymptotic Ratliff-Rush number of ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+    AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup);
 
 #############################################################################
 ##
@@ -954,6 +1003,11 @@ InstallGlobalFunction(AperyListOfIdealOfNumericalSemigroupWRTElement,function(id
 	od;
 	return ap;
 end);
+
+InstallOtherMethod(AperyList,
+    "for ideals and an element in the ambient semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+    AperyListOfIdealOfNumericalSemigroupWRTElement);
 
 ########################################################################
 ##
