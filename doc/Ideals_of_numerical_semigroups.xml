@@ -740,6 +740,7 @@ gap> AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);
 
 
                 <ManSection>
+                    <Oper Arg="S" Name="AperyTable"/>
                     <Func Arg="s" Name="AperyTableOfNumericalSemigroup"></Func>
                     <Description>
 

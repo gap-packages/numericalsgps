@@ -404,6 +404,7 @@ DeclareGlobalFunction("AperyListOfIdealOfNumericalSemigroupWRTElement");
 ##  (see ReductionNumberIdealNumericalSemigroup).
 ########################################################################
 DeclareGlobalFunction("AperyTableOfNumericalSemigroup");
+DeclareOperation("AperyTable",[IsNumericalSemigroup]);
 
 ########################################################################
 ##

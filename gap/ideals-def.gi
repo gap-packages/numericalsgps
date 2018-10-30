@@ -1034,6 +1034,11 @@ InstallGlobalFunction(AperyTableOfNumericalSemigroup,function(S)
 	return table;
 end);
 
+InstallMethod(AperyTable,
+    "for numerical semigroups",
+    [IsNumericalSemigroup],
+    AperyTableOfNumericalSemigroup);
+
 ########################################################################
 ##
 #F StarClosureOfIdealOfNumericalSemigroup(i,is)
