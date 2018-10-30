@@ -53,24 +53,24 @@ In this section we describe functions that may be used
 to specify, in one of these ways, a numerical semigroup  in &GAP;.
 
                 <ManSection>
-                    <Func Name="NumericalSemigroupByGenerators" Arg="List"/>
-                    <Func Name="NumericalSemigroup" Arg="String, List" Label="by generators"/>
+                <Func Name="NumericalSemigroup" Arg="[String,] List" Label="by generators"/>
+                    <Func Name="NumericalSemigroupByGenerators" Arg="List"/>                   
                     <Description>
 		      <C>List</C> is a list of nonnegative integers with greatest common divisor equal to one. These integers may be given as a list or by a sequence of individual elements. The output is the numerical semigroup spanned by <C>List</C>.
 		      <P/>
 		      <C>String</C> does not need to be present. When it is present, it must be <C>"generators"</C>.
 			<Example><![CDATA[		
-gap> s1 := NumericalSemigroupByGenerators(3,5,7);             
+gap> s1 := NumericalSemigroup(3,5,7);               
 <Numerical semigroup with 3 generators>
-gap> s2 := NumericalSemigroupByGenerators([3,5,7]);
+gap> s2 := NumericalSemigroup([3,5,7]);
 <Numerical semigroup with 3 generators>
-gap> s3 := NumericalSemigroup("generators",3,5,7); 
+gap> s3 := NumericalSemigroupByGenerators(3,5,7);             
 <Numerical semigroup with 3 generators>
-gap> s4 := NumericalSemigroup("generators",[3,5,7]);
+gap> s4 := NumericalSemigroupByGenerators([3,5,7]);
 <Numerical semigroup with 3 generators>
-gap> s5 := NumericalSemigroup(3,5,7);               
+gap> s5 := NumericalSemigroup("generators",3,5,7); 
 <Numerical semigroup with 3 generators>
-gap> s6 := NumericalSemigroup([3,5,7]);
+gap> s6 := NumericalSemigroup("generators",[3,5,7]);
 <Numerical semigroup with 3 generators>
 gap> s1=s2;s2=s3;s3=s4;s4=s5;s5=s6;
 true

@@ -22,12 +22,15 @@
                         <A>s</A> is a numerical semigroup. The output is the set of numerical semigroups
                         containing it.           
                         <Example><![CDATA[
-gap> OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));
+gap> s := NumericalSemigroup(3,5,7);;
+gap> OverSemigroups(s);
 [ <The numerical semigroup N>, <Numerical semigroup with 2 generators>, 
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 3 generators> ]
 gap> List(last,s->MinimalGenerators(s));
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
+gap> OverSemigroupsNumericalSemigroup(s) = OverSemigroups(s);
+true
 ]]></Example>          
                     </Description>
                 </ManSection>

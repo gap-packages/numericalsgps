@@ -28,8 +28,10 @@
       (see also  <Cite Key="RGS99"></Cite>).
 
       <Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);
-<Numerical semigroup with 3 generators>
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
+[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
 gap> MinimalPresentationOfNumericalSemigroup(s);
 [ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
 [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
@@ -72,6 +74,8 @@ gap> GraphAssociatedToElementInNumericalSemigroup(10,s);
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> BettiElementsOfNumericalSemigroup(s);
+[ 10, 12, 14 ]
+gap> BettiElements(s);
 [ 10, 12, 14 ]
 ]]></Example>
     </Description>
@@ -127,6 +131,8 @@ gap> ShadedSetOfElementInNumericalSemigroup(10,s);
       The output is true if <A>S</A> has uniquely presented. The implementation is based on <Cite Key="GS-O"></Cite>.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsUniquelyPresented(s);
+true
 gap> IsUniquelyPresentedNumericalSemigroup(s);
 true
 ]]></Example>
@@ -145,6 +151,8 @@ true
       This filter implies <Ref Func="IsUniquelyPresentedNumericalSemigroup"/>.
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsGeneric(s);
+true
 gap> IsGenericNumericalSemigroup(s);
 true
 ]]></Example>

@@ -51,6 +51,8 @@ gap> List(last,MinimalGenerators);
                     <Description>
                         <A>s</A> is a numerical semigroup.  The output is <C>true</C> if the numerical semigroup is almost symmetric.
                         <Example><![CDATA[
+gap> IsAlmostSymmetric(NumericalSemigroup(5,8,11,14,17));
+true
 gap> IsAlmostSymmetricNumericalSemigroup(NumericalSemigroup(5,8,11,14,17));
 true
 ]]></Example>

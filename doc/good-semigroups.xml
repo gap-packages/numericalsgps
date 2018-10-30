@@ -256,8 +256,9 @@ true
   </ManSection>
 
   <ManSection>
+   <Attr Name="MinimalGoodGenerators" Arg="S"/>
    <Func Arg="S" Name="MinimalGoodGeneratingSystemOfGoodSemigroup"></Func>
-      <Attr Name="MinimalGoodGenerators" Arg="S"/>
+     
      <Description>
        <A>S</A> is a good semigroup. The output is its minimal good generating system (which is unique in the local case).
        <P/>
@@ -268,10 +269,11 @@ gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=6+s;;
 gap> dup:=NumericalSemigroupDuplication(s,e);
 <Good semigroup>
-gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
-[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
 gap> MinimalGoodGenerators(dup);
 [ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+gap> MinimalGoodGeneratingSystemOfGoodSemigroup(dup);
+[ [ 3, 3 ], [ 5, 5 ], [ 6, 11 ], [ 7, 7 ], [ 11, 6 ] ]
+
 ]]></Example>
     </Description>
   </ManSection>
@@ -285,8 +287,8 @@ gap> MinimalGoodGenerators(dup);
 
   The concept of symmetry in a numerical semigroup extends to good semigroups. Here we describe a test for symmetry. 
   <ManSection>
+  <Attr Arg="S" Name="IsSymmetric" Label="for good semigroups"></Attr>
     <Attr Arg="S" Name="IsSymmetricGoodSemigroup"></Attr>
-    <Attr Arg="S" Name="IsSymmetric" Label="for good semigroups"></Attr>
     <Description>
       <A>S</A> is a good semigroup. Determines if <A>S</A> is a symmetric good semigroup.
 
@@ -295,6 +297,8 @@ gap> s:=NumericalSemigroup(3,5,7);;
 gap> e:=CanonicalIdealOfNumericalSemigroup(s);;
 gap> e:=15+e;;
 gap> dup:=NumericalSemigroupDuplication(s,e);;
+gap> IsSymmetric(dup);
+true
 gap> IsSymmetricGoodSemigroup(dup);
 true
 ]]></Example>
@@ -310,8 +314,8 @@ true
   The definition of Arf good semigroup is similar to the definition of Arf numerical semigroup. In this section, we provide a function to compute the Arf good closure of a good semigroup.
   
   <ManSection>
+  <Oper Arg="S" Name="ArfClosure" Label="of good semigroup"></Oper>
     <Func Arg="S" Name="ArfGoodSemigroupClosure"></Func>
-    <Oper Arg="S" Name="ArfClosure" Label="of good semigroup"></Oper>
     <Description>
       <A>S</A> is a good semigroup. Determines the Arf good semigroup closure of <A>S</A>.
 
@@ -324,10 +328,12 @@ gap> S:=GoodSemigroup(G,C);
 <Good semigroup>
 gap> SmallElements(S);
 [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ], [ 4, 6 ], [ 5, 4 ], [ 6, 6 ] ]
-gap> A:=ArfGoodSemigroupClosure(S);
+gap> A:=ArfClosure(S);
 <Good semigroup>
 gap> SmallElements(A);
 [ [ 0, 0 ], [ 3, 3 ], [ 4, 4 ] ]
+gap> ArfGoodSemigroupClosure(S) = ArfClosure(S);
+true
 ]]></Example>
     </Description>
   </ManSection>

@@ -43,7 +43,7 @@ gap> AsGluingOfNumericalSemigroups(s);
                         <Example><![CDATA[
 gap> s := NumericalSemigroup( 10, 15, 16 );
 <Numerical semigroup with 3 generators>
-gap> IsACompleteIntersectionNumericalSemigroup(s);
+gap> IsACompleteIntersection(s);
 true
 gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
 <Numerical semigroup with 8 generators>
@@ -75,7 +75,7 @@ gap> Length(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(57));
                         <P/>
                         This filter implies <Ref Func="IsACompleteIntersectionNumericalSemigroup"/>.
                         <Example><![CDATA[
-gap> IsFreeNumericalSemigroup(NumericalSemigroup(10,15,16));
+gap> IsFree(NumericalSemigroup(10,15,16));
 true
 gap> IsFreeNumericalSemigroup(NumericalSemigroup(3,5,7));
 false
@@ -104,11 +104,13 @@ gap> Length(FreeNumericalSemigroupsWithFrobeniusNumber(57));
 						and <M>s'</M> is again a telescopic numerical semigroup, where <M>n_1 &lt; \cdots &lt; n_e </M> are the minimal generators of <A>s</A>.
 
                         <P/>
-                        This filter implies <Ref Func="IsAperySetBetaRectangular"/> and <Ref Func="IsFreeNumericalSemigroup"/>.
+                        This filter implies <Ref Func="IsAperySetBetaRectangular"/> and <Ref Func="IsFree"/>.
                         <Example><![CDATA[
+gap> IsTelescopic(NumericalSemigroup(4,11,14));
+false
 gap> IsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));
 false
-gap> IsFreeNumericalSemigroup(NumericalSemigroup(4,11,14));
+gap> IsFree(NumericalSemigroup(4,11,14));
 true
 ]]></Example>
                     </Description>

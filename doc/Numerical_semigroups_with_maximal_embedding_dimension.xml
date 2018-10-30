@@ -13,7 +13,7 @@
                         <A>S</A> is a numerical semigroup.
                         Returns true if <A>S</A> is a MED numerical semigroup and false otherwise.
                         <Example><![CDATA[
-gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5,7));
+gap> IsMED(NumericalSemigroup(3,5,7));
 true
 gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,5));
 false
@@ -29,10 +29,12 @@ false
                         <A>S</A> is a numerical semigroup.
                         Returns the MED closure of <A>S</A>.
                         <Example><![CDATA[
-gap> MEDNumericalSemigroupClosure(NumericalSemigroup(3,5));
+gap> s := MEDClosure(NumericalSemigroup(3,5));
 <Numerical semigroup>
-gap> MinimalGenerators(last);
+gap> MinimalGenerators(s);
 [ 3, 5, 7 ]
+gap> MEDNumericalSemigroupClosure(NumericalSemigroup(3,5)) = s;
+true
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -78,11 +80,11 @@ gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(
                         This property implies <Ref Func="IsMED"/> and <Ref Func="IsAcuteNumericalSemigroup"/>. 
 
                         <Example><![CDATA[
-gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,5,7));
+gap>  IsArf(3,5,7));
 true
 gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,7,11));
 false
-gap> IsMEDNumericalSemigroup(NumericalSemigroup(3,7,11));
+gap> IsMED(NumericalSemigroup(3,7,11));
 true
 ]]></Example>
                     </Description>
@@ -95,10 +97,13 @@ true
                         <A>S</A> is a numerical semigroup.
                         Returns the Arf closure of <A>S</A>.
                         <Example><![CDATA[
-gap> ArfNumericalSemigroupClosure(NumericalSemigroup(3,7,11));
+gap> s := NumericalSemigroup(3,7,11);;
+gap> t := ArfClosure(s);
 <Numerical semigroup>
-gap> MinimalGenerators(last);
+gap> MinimalGenerators(t);
 [ 3, 7, 8 ]
+gap> ArfNumericalSemigroupClosure(s) = t;
+true
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -114,8 +119,11 @@ gap> MinimalGenerators(last);
                         The current version of this algorithm is due to G. Zito.
 
                         <Example><![CDATA[
-gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup(
-> NumericalSemigroup(3,7,8));
+gap> s := NumericalSemigroup(3,7,8);
+<Numerical semigroup with 3 generators>
+gap> ArfCharactersOfArfNumericalSemigroup(s);
+[ 3, 7 ]
+gap> MinimalArfGeneratingSystemOfArfNumericalSemigroup(s);
 [ 3, 7 ]
 ]]></Example>
                     </Description>
@@ -222,7 +230,7 @@ gap> List(last,MinimalGenerators);
                         This property implies <Ref Func="IsArf"/>. 
 
                         <Example><![CDATA[
-gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(4,6,9,11));
+gap> IsSaturated(NumericalSemigroup(4,6,9,11));
 true
 gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(8, 9, 12, 13, 15, 19 ));
 false
@@ -231,16 +239,19 @@ false
                 </ManSection>
 
 <ManSection>
-    <Func Arg="S" Name="SaturatedNumericalSemigroupClosure"></Func>
     <Oper Arg="S" Name="SaturatedClosure" Label="for numerical semigroups"></Oper>
+    <Func Arg="S" Name="SaturatedNumericalSemigroupClosure"></Func>
     <Description>
         <A>S</A> is a numerical semigroup.
         Returns the saturated closure of <A>S</A>.
         <Example><![CDATA[
-gap> SaturatedNumericalSemigroupClosure(NumericalSemigroup(8, 9, 12, 13, 15));
+gap> s := NumericalSemigroup(8, 9, 12, 13, 15);
+gap> SaturatedClosure(s);
 <Numerical semigroup>
 gap> MinimalGenerators(last);
 [ 8 .. 15 ]
+gap> SaturatedNumericalSemigroupClosure(s) = SaturatedClosure(s);
+true
 ]]></Example>
     </Description>
 </ManSection>

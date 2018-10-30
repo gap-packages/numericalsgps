@@ -19,7 +19,7 @@
                         This filter implies <Ref Func="IsAlmostSymmetricNumericalSemigroup"/> and <Ref Func="IsAcuteNumericalSemigroup"/>.
                         
                         <Example><![CDATA[
-gap> IsIrreducibleNumericalSemigroup(NumericalSemigroup(4,6,9));
+gap> IsIrreducible(NumericalSemigroup(4,6,9));
 true
 gap> IsIrreducibleNumericalSemigroup(NumericalSemigroup(4,6,7,9));
 false
@@ -61,7 +61,7 @@ false
                         This filter implies <Ref Func="IsIrreducibleNumericalSemigroup"/>.
 
                         <Example><![CDATA[
-gap> IsPseudoSymmetricNumericalSemigroup(NumericalSemigroup(6,7,8,9,11));
+gap> IsPseudoSymmetric(NumericalSemigroup(6,7,8,9,11));
 true
 gap> IsPseudoSymmetricNumericalSemigroup(NumericalSemigroup(4,6,9));
 false
