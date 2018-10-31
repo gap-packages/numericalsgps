@@ -334,7 +334,7 @@ gap> GeneratorsOfNumericalSemigroup(S);
 [ 3, 5, 53 ]
 gap> MinimalGenerators(S);
 [ 3, 5 ]
-gap> MinimalGeneratorsSystemOfNumericalSemigroup(S);
+gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
 gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
 true
@@ -804,7 +804,7 @@ gap> AsGluingOfNumericalSemigroups(s);
 
 gap> s := NumericalSemigroup( 10, 15, 16 );
 <Numerical semigroup with 3 generators>
-gap> IsACompleteIntersection(s);
+gap> IsCompleteIntersection(s);
 true
 gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
 <Numerical semigroup with 8 generators>
@@ -1308,7 +1308,7 @@ gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(
 > NumericalSemigroup(3,5,7));
 [ 3, 5 ]
 
-gap>  IsArf(3,5,7));
+gap>  IsArf(NumericalSemigroup(3,5,7));
 true
 gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,7,11));
 false
@@ -1361,7 +1361,7 @@ true
 gap> IsSaturatedNumericalSemigroup(NumericalSemigroup(8, 9, 12, 13, 15, 19 ));
 false
 
-gap> s := NumericalSemigroup(8, 9, 12, 13, 15);
+gap> s := NumericalSemigroup(8, 9, 12, 13, 15);;
 gap> SaturatedClosure(s);
 <Numerical semigroup>
 gap> MinimalGenerators(last);
@@ -1589,9 +1589,9 @@ gap> CatenaryDegreeOfElementInNumericalSemigroup(1157,NumericalSemigroup(13,18))
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
 [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],
   [ 5, 2, 0, 1 ], [ 6, 0, 1, 1 ], [ 0, 1, 2, 3 ], [ 1, 1, 0, 4 ] ]
-gap> TameDegreeOfSetOfFactorizations(last);
-4
 gap> TameDegree(last);
+4
+gap> TameDegreeOfSetOfFactorizations(last2);
 4
 
 gap> s:=NumericalSemigroup(101,113,196,272,278,286);

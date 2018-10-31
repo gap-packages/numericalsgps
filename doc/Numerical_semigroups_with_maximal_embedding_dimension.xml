@@ -80,7 +80,7 @@ gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(
                         This property implies <Ref Func="IsMED"/> and <Ref Func="IsAcuteNumericalSemigroup"/>. 
 
                         <Example><![CDATA[
-gap>  IsArf(3,5,7));
+gap>  IsArf(NumericalSemigroup(3,5,7));
 true
 gap>  IsArfNumericalSemigroup(NumericalSemigroup(3,7,11));
 false
@@ -245,7 +245,7 @@ false
         <A>S</A> is a numerical semigroup.
         Returns the saturated closure of <A>S</A>.
         <Example><![CDATA[
-gap> s := NumericalSemigroup(8, 9, 12, 13, 15);
+gap> s := NumericalSemigroup(8, 9, 12, 13, 15);;
 gap> SaturatedClosure(s);
 <Numerical semigroup>
 gap> MinimalGenerators(last);

@@ -438,8 +438,8 @@ true
 
 
     <ManSection>
-      <Func Arg="I" Name="SmallElementsOfGoodIdeal"></Func>
       <Func Arg="I" Name="SmallElements" Label="for good ideal"></Func>
+      <Func Arg="I" Name="SmallElementsOfGoodIdeal"></Func>
 
       <Description>
         <A>I</A> is a good ideal. The output is its set of small elements, that is, the elements smaller than its conductor and larger than its minimum element (with respect to the usual partial ordering).

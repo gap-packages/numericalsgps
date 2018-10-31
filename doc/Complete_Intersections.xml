@@ -43,7 +43,7 @@ gap> AsGluingOfNumericalSemigroups(s);
                         <Example><![CDATA[
 gap> s := NumericalSemigroup( 10, 15, 16 );
 <Numerical semigroup with 3 generators>
-gap> IsACompleteIntersection(s);
+gap> IsCompleteIntersection(s);
 true
 gap> s := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );
 <Numerical semigroup with 8 generators>

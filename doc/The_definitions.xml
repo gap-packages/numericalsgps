@@ -65,7 +65,7 @@ gap> GeneratorsOfNumericalSemigroup(S);
 [ 3, 5, 53 ]
 gap> MinimalGenerators(S);
 [ 3, 5 ]
-gap> MinimalGeneratorsSystemOfNumericalSemigroup(S);
+gap> MinimalGeneratingSystemOfNumericalSemigroup(S);
 [ 3, 5 ]
 gap> MinimalGeneratingSystem(S)=MinimalGeneratingSystemOfNumericalSemigroup(S);
 true
