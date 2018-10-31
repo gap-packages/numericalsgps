@@ -10,7 +10,7 @@ NumericalSgps
 Introduction
 ------------
 
-This is release 1.1.8 of  the package `NumericalSgps`.
+This is release 1.1.9 of  the package `NumericalSgps`.
 
 The features of this package include
 
