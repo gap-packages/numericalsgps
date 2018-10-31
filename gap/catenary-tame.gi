@@ -540,7 +540,7 @@ end);
 InstallMethod(Elasticity,
     "Elasticity of the factorizations of an element in a numerical semigroup", 
     [IsPosInt,IsNumericalSemigroup],
-    ElasticityOfFactorizationsElementWRTAffineSemigroup);
+    ElasticityOfFactorizationsElementWRTNumericalSemigroup);
 
 InstallMethod(Elasticity,
     "Elasticity of the factorizations in a numerical semigroup of one of its elements", 

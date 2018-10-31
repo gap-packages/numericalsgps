@@ -35,8 +35,8 @@ DeclareProperty("IsGradedAssociatedRingNumericalSemigroupBuchsbaum", IsNumerical
 ##  Implemented by Alessio Sammartano
 ##
 ##############################################################################################################
-DeclareProperty("ISMPure",IsNumericalSemigroup);
-DeclareSynonymAttr("IsMpureNumericalSemigroup",ISMPure);
+DeclareProperty("IsMpure",IsNumericalSemigroup);
+DeclareSynonymAttr("IsMpureNumericalSemigroup",IsMpure);
 
 ##############################################################################################################
 ##
