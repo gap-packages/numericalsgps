@@ -49,16 +49,15 @@
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7EEA97AB85FE078C">5.3-1 OverSemigroupsNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7FBA34637ADAFEDA">5.3-1 OverSemigroups</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7F40052D7B0EC8ED">5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87369D567AA6DBA0">5.4-1 NumericalSemigroupsWithFrobeniusNumber</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X85725F5287D20CBB">5.5 <span class="Heading">
-                    Constructing the set of numerical semigroups with genus g, that is, numerical 
-                    semigroups with exactly g gaps
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7D6635CB7D041A54">5.5 <span class="Heading">
+                    Constructing the set of numerical semigroups with genus g
                 </span></a>
 </span>
 <div class="ContSSBlock">
@@ -79,6 +78,8 @@
 <h3>5 <span class="Heading">
                 Constructing numerical semigroups from others
             </span></h3>
+
+<p>This chapter provides several functions to construct numerical semigroups from others (via intersections, quotients by an integer, removing or adding integers, etc.).</p>
 
 <p><a id="X782F3AB97ACF84B8" name="X782F3AB97ACF84B8"></a></p>
 
@@ -112,7 +113,7 @@
 <h5>5.1-2 AddSpecialGapOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AddSpecialGapOfNumericalSemigroup</code>( <var class="Arg">g</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">g</var> is a special gap of <var class="Arg">S</var></p>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">g</var> is a special gap of <var class="Arg">S</var>.</p>
 
 <p>The output is the numerical semigroup <span class="SimpleMath"><var class="Arg">S</var> ∪{<var class="Arg">g</var>}</span> (see <a href="chapBib.html#biBRGGJ03">[RGSGGJM03]</a>, where it is explained why this set is a numerical semigroup).</p>
 
@@ -134,6 +135,8 @@ true
 
 <h4>5.2 <span class="Heading">Intersections, and quotients and multiples by integers</span></h4>
 
+<p>We provide functions to build numerical semigroups from others by means of intersections, quotients, multiples and related constructions.</p>
+
 <p><a id="X875A8D2679153D4B" name="X875A8D2679153D4B"></a></p>
 
 <h5>5.2-1 Intersection</h5>
@@ -152,10 +155,12 @@ true
 [ 0, 11, 12, 13, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(T);</span>
 [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IntersectionOfNumericalSemigroups(S,T);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Intersection(S,T);</span>
 &lt;Numerical semigroup&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(last);</span>
 [ 0, 12, 22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 37, 38, 39, 43 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IntersectionOfNumericalSemigroups(S,T) = Intersection(S,T);</span>
+true
 </pre></div>
 
 <p><a id="X83CCE63C82F34C25" name="X83CCE63C82F34C25"></a></p>
@@ -241,8 +246,8 @@ true
 
 <h5>5.2-6 InductiveNumericalSemigroup</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InductiveNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup, and <var class="Arg">a</var> and <var class="Arg">b</var> are lists of positive integers, such that <span class="SimpleMath">b[i+1]ge a[i]b[i]</span>. Computes inductively <span class="SimpleMath">S_0= N</span> and <span class="SimpleMath">S_i+1=a[i]S_i∪ {a[i]b[i],a[i]b[i]+1,-&gt;}</span>, and returns <span class="SimpleMath">S_k</span>, with <span class="SimpleMath">k</span> the length of <var class="Arg">a</var> and <var class="Arg">b</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InductiveNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">a</var> and <var class="Arg">b</var> are lists of positive integers, with <span class="SimpleMath">k</span> the length of <var class="Arg">a</var> and <var class="Arg">b</var>, and such that <span class="SimpleMath">b[i+1]ge a[i]b[i]</span> (<span class="SimpleMath">0le ile k-1</span>). Computes inductively <span class="SimpleMath">S_0= N</span> and <span class="SimpleMath">S_i+1=a[i]S_i∪ {a[i]b[i],a[i]b[i]+1,-&gt;}</span>, and returns <span class="SimpleMath">S_k</span>.</p>
 
 
 <div class="example"><pre>
@@ -257,37 +262,43 @@ true
                     Constructing the set of all numerical semigroups containing a given numerical semigroup
                 </span></h4>
 
-<p>In order to construct the set of numerical semigroups containing a fixed numerical semigroup <span class="SimpleMath">S</span>, one first constructs its unitary extensions, that is to say, the sets <span class="SimpleMath">S∪{g}</span> that are numerical semigroups with <span class="SimpleMath">g</span> a positive integer. This is achieved by constructing the special gaps of the semigroup, and then adding each of them to the numerical semigroup. Then we repeat the process for each of this new numerical semigroups until we reach <span class="SimpleMath">N</span>.</p>
+<p>In order to construct the set of numerical semigroups containing a fixed numerical semigroup <span class="SimpleMath">S</span>, one first constructs its unitary extensions, that is to say, the sets <span class="SimpleMath">S∪{g}</span> that are numerical semigroups with <span class="SimpleMath">g</span> a positive integer. This is achieved by constructing the special gaps of the semigroup, and then adding each of them to the numerical semigroup. Then we repeat the process for each of these new numerical semigroups until we reach <span class="SimpleMath">N</span>.</p>
 
 <p>These procedures are described in <a href="chapBib.html#biBRGGJ03">[RGSGGJM03]</a>.</p>
 
-<p><a id="X7EEA97AB85FE078C" name="X7EEA97AB85FE078C"></a></p>
+<p><a id="X7FBA34637ADAFEDA" name="X7FBA34637ADAFEDA"></a></p>
 
-<h5>5.3-1 OverSemigroupsNumericalSemigroup</h5>
+<h5>5.3-1 OverSemigroups</h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OverSemigroups</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OverSemigroupsNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is the set of numerical semigroups containing it.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OverSemigroupsNumericalSemigroup(NumericalSemigroup(3,5,7));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OverSemigroups(s);</span>
 [ &lt;The numerical semigroup N&gt;, &lt;Numerical semigroup with 2 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt;, 
   &lt;Numerical semigroup with 3 generators&gt; ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,s-&gt;MinimalGenerators(s));</span>
 [ [ 1 ], [ 2, 3 ], [ 3 .. 5 ], [ 3, 5, 7 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">OverSemigroupsNumericalSemigroup(s) = OverSemigroups(s);</span>
+true
 </pre></div>
 
 <p><a id="X7F40052D7B0EC8ED" name="X7F40052D7B0EC8ED"></a></p>
 
 <h4>5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></h4>
 
+<p>Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps.</p>
+
 <p><a id="X87369D567AA6DBA0" name="X87369D567AA6DBA0"></a></p>
 
 <h5>5.4-1 NumericalSemigroupsWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">f</var> is an non zero integer greater than or equal to -1. The output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var>. The algorithm implemented is given in <a href="chapBib.html#biBRGGJ04">[RGSGGJM04]</a>.</p>
+<p><var class="Arg">f</var> is an integer. The output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var>. The algorithm implemented is given in <a href="chapBib.html#biBRGGJ04">[RGSGGJM04]</a>.</p>
 
 
 <div class="example"><pre>
@@ -295,14 +306,13 @@ true
 200
 </pre></div>
 
-<p><a id="X85725F5287D20CBB" name="X85725F5287D20CBB"></a></p>
+<p><a id="X7D6635CB7D041A54" name="X7D6635CB7D041A54"></a></p>
 
 <h4>5.5 <span class="Heading">
-                    Constructing the set of numerical semigroups with genus g, that is, numerical 
-                    semigroups with exactly g gaps
+                    Constructing the set of numerical semigroups with genus g
                 </span></h4>
 
-<p>Given a numerical semigroup of genus g, removing minimal generators, one obtains numerical semigroups of genus g+1. In order to avoid repetitions, we only remove minimal generators greater than the Frobenius number of the numerical semigroup (this is accomplished with the local function sons).</p>
+<p>Given a numerical semigroup of genus g (that is, with exactly g gaps), removing minimal generators, one obtains numerical semigroups of genus g+1. In order to avoid repetitions, we only remove minimal generators greater than the Frobenius number of the numerical semigroup (this is accomplished with the local function sons).</p>
 
 <p>These procedures are described in <a href="chapBib.html#biBRGGB03">[RGSGGB03]</a> and <a href="chapBib.html#biBB-A08">[BA08]</a>.</p>
 
@@ -340,9 +350,9 @@ true
                     Constructing the set of numerical semigroups with a given set of pseudo-Frobenius numbers
                 </span></h4>
 
-<p>Refer to <code class="func">PseudoFrobeniusOfNumericalSemigroup</code> (<a href="chap3.html#X829A9C517A83FFD5"><span class="RefLink">3.1-22</span></a>).</p>
+<p>Refer to <code class="func">PseudoFrobeniusOfNumericalSemigroup</code> (<a href="chap3.html#X861DED207A2B5419"><span class="RefLink">3.1-22</span></a>).</p>
 
-<p>These procedures are described in <a href="chapBib.html#biBDGSRP15">[DGSRP16]</a>.</p>
+<p>These procedures are described in <a href="chapBib.html#biBDGSRP15">[DGSRP16]</a>, and are used to find the set of numerical semigroups with a prescribed set of pseudo-Frobenius numbers.</p>
 
 <p><a id="X874B252180BD7EB4" name="X874B252180BD7EB4"></a></p>
 
@@ -434,7 +444,7 @@ true
 
 <h5>5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">PF</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigroups S such that PF(S)=PF. When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
 
 
@@ -451,16 +461,18 @@ true
 [ [ 7, 9, 17, 20 ], [ 7, 10, 13, 16, 18 ], [ 9, 12, 14, 15, 16, 17, 20 ], 
   [ 10, 13, 14, 15, 16, 17, 18, 21 ], 
   [ 12, 13, 14, 15, 16, 17, 18, 20, 21, 23 ] ]
-</pre></div>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Set(last2,PseudoFrobeniusOfNumericalSemigroup);    </span>
+[ [ 11, 19, 22 ] ]
+g</pre></div>
 
 <p><a id="X862DBFA379D52E2C" name="X862DBFA379D52E2C"></a></p>
 
 <h5>5.6-4 ANumericalSemigroupWithPseudoFrobeniusNumbers</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ANumericalSemigroupWithPseudoFrobeniusNumbers</code>( <var class="Arg">g</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" option The output is: A numerical semigroup S such that PF(S)=PF. Returns fail if it concludes that it exists and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ANumericalSemigroupWithPseudoFrobeniusNumbers</code>( <var class="Arg">PF</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). Alternatively, a record with fields "pseudo_frobenius" and "max_attempts" may be given. The output is: A numerical semigroup S such that <span class="SimpleMath">PF(S)=PF</span>. Returns fail if it concludes that it does not exist and suggests to use NumericalSemigroupsWithPseudoFrobeniusNumbers if it is not able to conclude...</p>
 
-<p>It makes use of the function <code class="func">AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code> (<a href="chap6.html#X7C8AB03F7E0B71F0"><span class="RefLink">6.1-4</span></a>), when Length(PF)=1 or Length(PF)=2 and 2*PF[1] = PF[2].</p>
+<p>When <span class="SimpleMath">Length(PF)=1</span> or <span class="SimpleMath">Length(PF)=2</span> and <span class="SimpleMath">2*PF[1] = PF[2]</span>, it makes use of the function <code class="func">AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code> (<a href="chap6.html#X7C8AB03F7E0B71F0"><span class="RefLink">6.1-4</span></a>).</p>
 
 
 <div class="example"><pre>

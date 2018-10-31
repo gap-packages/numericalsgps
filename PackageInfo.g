@@ -7,10 +7,10 @@ SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.1.8",
-Date := "06/06/2018",
-# Version := "1.1.8 dev",
-# Date := "> 06/06/2018",
+Version := "1.1.9",
+Date := "31/11/2018",
+#Version := "1.1.8 dev",
+#Date := "> 06/06/2018",
 
 ##  Information about authors and maintainers.
 Persons := [
@@ -173,7 +173,7 @@ SourceRepository := rec(
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 PackageWWWHome  := "https://gap-packages.github.io/numericalsgps",
-README_URL      := Concatenation( ~.PackageWWWHome, "/README" ),
+README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                  "/releases/download/v", ~.Version,
@@ -214,6 +214,8 @@ BannerString := Concatenation(
 #  "   ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
 #        " (", ~.Persons[3].WWWHome, ")\n",
   "For help, type: ?NumericalSgps: \n",
+                   "To gain profit from other packages, please refer to chapter\n",
+                   "'External Packages' in the manual, or type: ?NumSgpsUse \n",           
   "----------------------------------------------------------------\n" ),
 
 TestFile := "tst/testall.g",

@@ -1,9 +1,6 @@
   
   [1X6 [33X[0;0YIrreducible numerical semigroups[133X[101X
   
-  
-  [1X6.1 [33X[0;0YIrreducible numerical semigroups[133X[101X
-  
   [33X[0;0YAn  irreducible  numerical semigroup is a semigroup that cannot be expressed
   as the intersection of numerical semigroups properly containing it.[133X
   
@@ -18,12 +15,10 @@
   irreducible  if  and  only  if  it  has  only  one  special gap. We use this
   characterization.[133X
   
-  [33X[0;0YIn this section we show how to construct the set of all numerical semigroups
-  with  a  given  Frobenius  number.  In old versions of the package, we first
-  constructed  an  irreducible  numerical  semigroup  with the given Frobenius
-  number  (as explained in [RGS04]), and then we constructed the rest from it.
-  That  is  why we separated both functions. The present version uses a faster
-  procedure presented in [BR13].[133X
+  [33X[0;0YIn  old  versions  of  the  package,  we  first  constructed  an irreducible
+  numerical  semigroup  with  the  given  Frobenius  number  (as  explained in
+  [RGS04]), and then we constructed the rest from it. The present version uses
+  a faster procedure presented in [BR13].[133X
   
   [33X[0;0YEvery numerical semigroup can be expressed as an intersection of irreducible
   numerical  semigroups.  If  [22XS[122X  can  be  expressed as [22XS=S_1∩ ⋯∩ S_n[122X, with [22XS_i[122X
@@ -31,30 +26,41 @@
   that  this  decomposition is minimal. Minimal decompositions can be computed
   by using Algorithm 26 in [RGSGGJM03].[133X
   
-  [1X6.1-1 IsIrreducibleNumericalSemigroup[101X
   
-  [33X[1;0Y[29X[2XIsIrreducibleNumericalSemigroup[102X( [3Xs[103X ) [32X property[133X
+  [1X6.1 [33X[0;0YIrreducible numerical semigroups[133X[101X
+  
+  [33X[0;0YIn this section we provide membership tests to the two families that conform
+  the  set  of  irreducible  numerical semigroups. We also give a procedure to
+  compute the set of all irreducible numerical semigroups with fixed Frobenius
+  number  (or  equivalently  genus, since for irreducible numerical semigroups
+  once  the  Frobenius  number  is  fixed,  so  is  the genus). Also we give a
+  function  to  compute  the  decomposition  of  a  numerical  semigroup as an
+  intersection of irreducible numerical semigroups.[133X
+  
+  [1X6.1-1 IsIrreducible[101X
+  
   [33X[1;0Y[29X[2XIsIrreducible[102X( [3Xs[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsIrreducibleNumericalSemigroup[102X( [3Xs[103X ) [32X property[133X
   
-  [33X[0;0Y[3Xs[103X  is  a  numerical semigroup. The output is true if [3Xs[103X is irreducible, false
+  [33X[0;0Y[3Xs[103X  is  a  numerical semigroup. The output is [10Xtrue[110X if [3Xs[103X is irreducible, [10Xfalse[110X
   otherwise.[133X
   
-  [33X[0;0YThis   filter   implies   [2XIsAlmostSymmetricNumericalSemigroup[102X   ([14X6.3-2[114X)  and
-  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-27[114X).[133X
+  [33X[0;0YThis   filter   implies   [2XIsAlmostSymmetricNumericalSemigroup[102X   ([14X6.3-3[114X)  and
+  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-28[114X).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsIrreducibleNumericalSemigroup(NumericalSemigroup(4,6,9));[127X[104X
+    [4X[25Xgap>[125X [27XIsIrreducible(NumericalSemigroup(4,6,9));[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsIrreducibleNumericalSemigroup(NumericalSemigroup(4,6,7,9));[127X[104X
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X6.1-2 IsSymmetricNumericalSemigroup[101X
+  [1X6.1-2 IsSymmetric[101X
   
-  [33X[1;0Y[29X[2XIsSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIsSymmetric[102X( [3Xs[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X attribute[133X
   
-  [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup.  The output is true if [3Xs[103X is symmetric, false
+  [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup.  The output is [10Xtrue[110X if [3Xs[103X is symmetric, [10Xfalse[110X
   otherwise.[133X
   
   [33X[0;0YThis filter implies [2XIsIrreducibleNumericalSemigroup[102X ([14X6.1-1[114X).[133X
@@ -71,13 +77,13 @@
   [33X[1;0Y[29X[2XIsPseudoSymmetric[102X( [3Xs[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsPseudoSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X property[133X
   
-  [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup. The output is true if [3Xs[103X is pseudo-symmetric,
-  false otherwise.[133X
+  [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup. The output is [10Xtrue[110X if [3Xs[103X is pseudo-symmetric,
+  [10Xfalse[110X otherwise.[133X
   
   [33X[0;0YThis filter implies [2XIsIrreducibleNumericalSemigroup[102X ([14X6.1-1[114X).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsPseudoSymmetricNumericalSemigroup(NumericalSemigroup(6,7,8,9,11));[127X[104X
+    [4X[25Xgap>[125X [27XIsPseudoSymmetric(NumericalSemigroup(6,7,8,9,11));[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsPseudoSymmetricNumericalSemigroup(NumericalSemigroup(4,6,9));[127X[104X
     [4X[28Xfalse[128X[104X
@@ -87,10 +93,10 @@
   
   [33X[1;0Y[29X[2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is an irreducible
-  numerical  semigroup with Frobenius number [3X f[103X. From the way the procedure is
-  implemented,  the  resulting  semigroup  has  at  most  four generators (see
-  [RGS04]).[133X
+  [33X[0;0Y[3Xf[103X  is  an  integer.  When  [22Xf=0[122X or [22Xfle -2[122X, the output is [10Xfail[110X. Otherwise, the
+  output  is  an irreducible numerical semigroup with Frobenius number [3Xf[103X. From
+  the  way  the  procedure is implemented, the resulting semigroup has at most
+  four generators (see [RGS04]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);[127X[104X
@@ -105,8 +111,8 @@
   
   [33X[1;0Y[29X[2XIrreducibleNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  irreducible numerical semigroups with Frobenius number [3Xf[103X.[133X
+  [33X[0;0Y[3Xf[103X  is  an  integer.  The  output  is  the  set  of all irreducible numerical
+  semigroups with Frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));[127X[104X
@@ -130,9 +136,9 @@
   
   [1X6.2 [33X[0;0YComplete intersection numerical semigroups[133X[101X
   
-  [33X[0;0YThe  cardinality of a minimal presentation of a numerical semigroup is alwas
+  [33X[0;0YThe cardinality of a minimal presentation of a numerical semigroup is always
   greater  than  or  equal  to  its  embedding  dimension  minus one. Complete
-  intersection  numerical  semigroups  are  numerical  semigroups reching this
+  intersection  numerical  semigroups  are  numerical semigroups reaching this
   bound,  and  they  are  irreducible.  It  can  be  shown that every complete
   intersection  (other that [22XN[122X) is a complete intersection if and only if it is
   the  gluing  of  two complete intersections. When in this gluing, one of the
@@ -149,7 +155,7 @@
   
   [33X[0;0Y[3Xs[103X  is a numerical semigroup. Returns all partitions [22X{A_1,A_2}[122X of the minimal
   generating  set  of  [3Xs[103X  such  that  [3Xs[103X  is  a  gluing of [22X⟨ A_1⟩[122X and [22X⟨ A_2⟩[122X by
-  [22Xgcd(A_1)gcd(A_2)[122X[133X
+  [22Xgcd(A_1)gcd(A_2)[122X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );[127X[104X
@@ -177,7 +183,7 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 10, 15, 16 );[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27XIsACompleteIntersectionNumericalSemigroup(s);[127X[104X
+    [4X[25Xgap>[125X [27XIsCompleteIntersection(s);[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27Xs := NumericalSemigroup( 18, 24, 34, 46, 51, 61, 74, 8 );[127X[104X
     [4X[28X<Numerical semigroup with 8 generators>[128X[104X
@@ -189,8 +195,8 @@
   
   [33X[1;0Y[29X[2XCompleteIntersectionNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  complete intersection numerical semigroups with frobenius number [3Xf[103X.[133X
+  [33X[0;0Y[3Xf[103X  is  an  integer.  The  output  is  the  set  of all complete intersection
+  numerical semigroups with Frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber(57));[127X[104X
@@ -209,7 +215,7 @@
   [33X[0;0YThis filter implies [2XIsACompleteIntersectionNumericalSemigroup[102X ([14X6.2-2[114X).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XIsFreeNumericalSemigroup(NumericalSemigroup(10,15,16));[127X[104X
+    [4X[25Xgap>[125X [27XIsFree(NumericalSemigroup(10,15,16));[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsFreeNumericalSemigroup(NumericalSemigroup(3,5,7));[127X[104X
     [4X[28Xfalse[128X[104X
@@ -219,8 +225,8 @@
   
   [33X[1;0Y[29X[2XFreeNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  free numerical semigroups with frobenius number [3Xf[103X.[133X
+  [33X[0;0Y[3Xf[103X is an integer. The output is the set of all free numerical semigroups with
+  Frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(FreeNumericalSemigroupsWithFrobeniusNumber(57));[127X[104X
@@ -237,13 +243,14 @@
   and  [22Xs'=⟨  n_1/d,...,  n_e-1/d⟩[122X,  and  [22Xs'[122X  is  again  a telescopic numerical
   semigroup, where [22Xn_1 < ⋯ < n_e[122X are the minimal generators of [3Xs[103X.[133X
   
-  [33X[0;0YThis     filter     implies     [2XIsAperySetBetaRectangular[102X    ([14X6.2-11[114X)    and
-  [2XIsFreeNumericalSemigroup[102X ([14X6.2-4[114X).[133X
+  [33X[0;0YThis filter implies [2XIsAperySetBetaRectangular[102X ([14X6.2-11[114X) and [2XIsFree[102X ([14X6.2-4[114X).[133X
   
   [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsTelescopic(NumericalSemigroup(4,11,14));[127X[104X
+    [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XIsTelescopicNumericalSemigroup(NumericalSemigroup(4,11,14));[127X[104X
     [4X[28Xfalse[128X[104X
-    [4X[25Xgap>[125X [27XIsFreeNumericalSemigroup(NumericalSemigroup(4,11,14));[127X[104X
+    [4X[25Xgap>[125X [27XIsFree(NumericalSemigroup(4,11,14));[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
@@ -251,8 +258,8 @@
   
   [33X[1;0Y[29X[2XTelescopicNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  telescopic numerical semigroups with frobenius number [3Xf[103X.[133X
+  [33X[0;0Y[3Xf[103X  is  an  integer.  The  output  is  the  set  of  all telescopic numerical
+  semigroups with Frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));[127X[104X
@@ -283,9 +290,9 @@
   
   [33X[1;0Y[29X[2XNumericalSemigroupsPlanarSingularityWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  numerical  semigroups  associated to irreducible planar curves singularities
-  with frobenius number [3Xf[103X.[133X
+  [33X[0;0Y[3Xf[103X  is  an  integer.  The  output  is  the  set  of  all numerical semigroups
+  associated  to irreducible planar curves singularities with Frobenius number
+  [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(NumericalSemigroupsPlanarSingularityWithFrobeniusNumber(57));[127X[104X
@@ -360,7 +367,7 @@
   
   [1X6.3 [33X[0;0YAlmost-symmetric numerical semigroups[133X[101X
   
-  [33X[0;0YA  numerical  semigroup  is  almost-symmetric  ([BR97])  if its genus is the
+  [33X[0;0YA  numerical  semigroup  is  almost-symmetric  ([BF97])  if its genus is the
   arithmetic  mean  of  its  Frobenius  number  and  type.  We use a procedure
   presented  in [RGS14] to determine the set of all almost-symmetric numerical
   semigroups  with  given  Frobenius  number.  In  order  to do this, we first
@@ -372,8 +379,8 @@
   [33X[1;0Y[29X[2XAlmostSymmetricNumericalSemigroupsFromIrreducible[102X( [3Xs[103X ) [32X function[133X
   
   [33X[0;0Y[3Xs[103X  is  an  irreducible  numerical  semigroup.  The  output  is  the  set  of
-  almost-symetric  numerical  semigroups  that  can  be  constructed from [3Xs[103X by
-  removing some of its generators as explained in [RGS14]).[133X
+  almost-symmetric  numerical  semigroups  that  can  be constructed from [3Xs[103X by
+  removing some of its generators (as explained in [RGS14]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xns := NumericalSemigroup(5,8,9,11);;[127X[104X
@@ -385,30 +392,67 @@
     [4X[28X[ [ 5, 8, 9, 11 ], [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ][128X[104X
   [4X[32X[104X
   
-  [1X6.3-2 IsAlmostSymmetric[101X
+  [1X6.3-2 AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType[101X
+  
+  [33X[1;0Y[29X[2XAlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType[102X( [3Xs[103X, [3Xt[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xs[103X  is  an  irreducible  numerical semigroup and [3Xt[103X is a positive integer. The
+  output  is the set of almost-symmetric numerical semigroups with type [3Xt[103X that
+  can  be  constructed from [3Xs[103X by removing some of its generators (as explained
+  in [BOR18]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(5,8,9,11);;[127X[104X
+    [4X[25Xgap>[125X [27XAlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType(ns,4);[127X[104X
+    [4X[28X[ <Numerical semigroup with 5 generators>, [128X[104X
+    [4X[28X  <Numerical semigroup with 5 generators> ][128X[104X
+    [4X[25Xgap>[125X [27XList(last,MinimalGenerators);[127X[104X
+    [4X[28X[ [ 5, 8, 11, 14, 17 ], [ 5, 9, 11, 13, 17 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X6.3-3 IsAlmostSymmetric[101X
   
   [33X[1;0Y[29X[2XIsAlmostSymmetric[102X( [3Xs[103X ) [32X function[133X
   [33X[1;0Y[29X[2XIsAlmostSymmetricNumericalSemigroup[102X( [3Xs[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
+  [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is [10Xtrue[110X if the numerical semigroup is
   almost symmetric.[133X
   
   [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsAlmostSymmetric(NumericalSemigroup(5,8,11,14,17));[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsAlmostSymmetricNumericalSemigroup(NumericalSemigroup(5,8,11,14,17));[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X6.3-3 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber[101X
+  [1X6.3-4 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber[101X
   
-  [33X[1;0Y[29X[2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X[, [3Xts[103X] ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer greater than or equal to -1. The output is the set of all
-  almost symmetric numerical semigroups with Frobenius number [3Xf[103X.[133X
+  [33X[0;0Y[3Xf[103X is an integer, and so is [3Xts[103X. The output is the set of all almost symmetric
+  numerical semigroups with Frobenius number [3Xf[103X, and type greater than or equal
+  to [3Xts[103X. If [3Xts[103X is not specified, then it is considered to be equal to one, and
+  so  the  output is the set of all almost symmetric numerical semigroups with
+  Frobenius number [3Xf[103X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12));[127X[104X
     [4X[28X15[128X[104X
     [4X[25Xgap>[125X [27XLength(IrreducibleNumericalSemigroupsWithFrobeniusNumber(12));[127X[104X
     [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27XList(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12,4),Type);[127X[104X
+    [4X[28X[ 12, 10, 8, 8, 6, 6, 6, 6, 4, 4, 4, 4, 4 ][128X[104X
+  [4X[32X[104X
+  
+  [1X6.3-5 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType[101X
+  
+  [33X[1;0Y[29X[2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType[102X( [3Xf[103X, [3Xt[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xf[103X  is  an integer and so is [3Xt[103X. The output is the set of all almost symmetric
+  numerical semigroups with Frobenius number [3Xf[103X and type [3Xt[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(12,4)); [127X[104X
+    [4X[28X5[128X[104X
   [4X[32X[104X
   

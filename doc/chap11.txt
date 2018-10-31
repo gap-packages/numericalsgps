@@ -1,21 +1,27 @@
   
   [1X11 [33X[0;0YAffine semigroups[133X[101X
   
+  [33X[0;0YAn  [13Xaffine  semigroup[113X  [22XS[122X is a finitely generated cancellative monoid that is
+  reduced  (no  units other than 0) and is torsion-free ([22Xa s= b s[122X implies [22Xa=b[122X,
+  with  [22Xa,b∈ N[122X and [22Xs∈ S[122X). Up to isomorphism any affine semigroup can be viewed
+  as  a  finitely generated submonoid of [22XN^k[122X for some positive integer [22Xk[122X. Thus
+  affine semigroups are a natural generalization of numerical semigroups.[133X
+  
+  [33X[0;0YSome of the functions in this chapter may work considerably faster when some
+  external package is installed and its use is allowed. When this is the case,
+  it  is  referred in the function documentation. We refer the user to Chapter
+  [14X13[114X for details on the use of external packages.[133X
+  
   
   [1X11.1 [33X[0;0YDefining affine semigroups[133X[101X
   
-  [33X[0;0YAn  affine  semigroup  [22XS[122X is a finitely generated cancellative monoid that is
-  reduced  (no  units other than 0) and is torsion-free ([22Xa s= b s[122X implies [22Xa=b[122X,
-  with [22Xa,b∈ N[122X and [22Xs∈ S[122X). Up to isomorphisms any affine semigroup can be viewed
-  as  a  finitely generated submonoid of [22XN^k[122X for some positive integer [22Xk[122X. Thus
-  affine  semigroups are a natural generalization of numerical semigroups. The
-  most  common  way  to  give  an affine semigroup is by any of its systems of
+  [33X[0;0YThe  most common way to give an affine semigroup is by any of its systems of
   generators.  As  for  numerical  semigroups,  any  affine semigroup admits a
   unique  minimal  system  of  generators.  A  system  of  generators  can  be
   represented  as  a  list  of lists of nonnegative integers; all lists in the
   list  having the same length (a matrix actually). If [22XG[122X is a subgroup of [22XZ^k[122X,
-  then  [22XS=G∩  N^k[122X  is  an  affine  semigroup (these semigroups are called full
-  affine  semigroups).  As  [22XG[122X  can  be  represented  by its defining equations
+  then  [22XS=G∩  N^k[122X  is  an  affine  semigroup (these semigroups are called [13Xfull
+  affine  semigroups[113X).  As  [22XG[122X  can  be  represented  by its defining equations
   (homogeneous  and  some of them possibly in congruences), we can represent [22XS[122X
   by  the  defining  equations  of  [22XG[122X; indeed [22XS[122X is just the set of nonnegative
   solutions  of  this system of equations. We can represent the equations as a
@@ -33,10 +39,10 @@
   functions  that  may  be  used  to  specify, in one of these ways, an affine
   semigroup in [5XGAP[105X.[133X
   
-  [1X11.1-1 AffineSemigroupByGenerators[101X
+  [1X11.1-1 AffineSemigroup[101X
   
+  [33X[1;0Y[29X[2XAffineSemigroup[102X( [[3XString[103X, ][3XList[103X ) [32X function[133X
   [33X[1;0Y[29X[2XAffineSemigroupByGenerators[102X( [3XList[103X ) [32X function[133X
-  [33X[1;0Y[29X[2XAffineSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X  is  a list of n-tuples of nonnegative integers, if the semigroup to be
   created  is  n-dimensional.  The  n-tuples  may  be  given as a list or by a
@@ -47,12 +53,12 @@
   [10X"generators"[110X and [10XList[110X must be a list, not a sequence of individual elements.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs1 := AffineSemigroupByGenerators([1,3],[7,2],[1,5]);[127X[104X
+    [4X[25Xgap>[125X [27Xs1 := AffineSemigroup([1,3],[7,2],[1,5]);[127X[104X
     [4X[28X<Affine semigroup in 2 dimensional space, with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27Xs2 := AffineSemigroupByGenerators([[1,3],[7,2],[1,5]]);;[127X[104X
-    [4X[25Xgap>[125X [27Xs3 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;[127X[104X
-    [4X[25Xgap>[125X [27Xs4 := AffineSemigroup([1,3],[7,2],[1,5]);;[127X[104X
-    [4X[25Xgap>[125X [27Xs5 := AffineSemigroup([[1,3],[7,2],[1,5]]);;[127X[104X
+    [4X[25Xgap>[125X [27Xs2 := AffineSemigroup([[1,3],[7,2],[1,5]]);;[127X[104X
+    [4X[25Xgap>[125X [27Xs3 := AffineSemigroupByGenerators([1,3],[7,2],[1,5]);;[127X[104X
+    [4X[25Xgap>[125X [27Xs4 := AffineSemigroupByGenerators([[1,3],[7,2],[1,5]]);;[127X[104X
+    [4X[25Xgap>[125X [27Xs5 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;[127X[104X
     [4X[25Xgap>[125X [27XLength(Set([s1,s2,s3,s4,s5]));[127X[104X
     [4X[28X1[128X[104X
   [4X[32X[104X
@@ -191,6 +197,14 @@
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XIsAffineSemigroupByGenerators(a1);[127X[104X
     [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xns := NumericalSemigroup(3,5);[127X[104X
+    [4X[28X<Numerical semigroup with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsAffineSemigroup(ns);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xas := AsAffineSemigroup(ns);[127X[104X
+    [4X[28X<Affine semigroup in 1 dimensional space, with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27XIsAffineSemigroup(as);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   [1X11.1-8 BelongsToAffineSemigroup[101X
@@ -226,7 +240,7 @@
   [33X[1;0Y[29X[2XIsFull[102X( [3XS[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsFullAffineSemigroup[102X( [3XS[103X ) [32X property[133X
   
-  [33X[0;0Y[3Xs[103X is an affine semigroup.[133X
+  [33X[0;0Y[3XS[103X is an affine semigroup.[133X
   
   [33X[0;0YReturns  true  if  the  semigroup is full, false otherwise. The semigroup is
   full  if whenever [22Xa,b∈ S[122X and [22Xb-a∈ N^k[122X, then [22Xa-b∈ S[122X, where [22Xk[122X is the dimension
@@ -237,6 +251,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup("equations",[[[1,1,1],[0,0,2]],[2,2]]);;[127X[104X
+    [4X[25Xgap>[125X [27XIsFull(a);[127X[104X
+    [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsFullAffineSemigroup(a);[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
@@ -341,10 +357,10 @@
   
   [1X11.3 [33X[0;0YPresentations of affine semigroups[133X[101X
   
-  [33X[0;0YA  minimal presentation of an affine semigroup is defined analogously as for
-  numerical  semigroups.  The user might take into account that generators are
-  stored  in  a  set,  and  thus  might  be arranged in a different way to the
-  initial input.[133X
+  [33X[0;0YA  [13Xminimal presentation[113X of an affine semigroup is defined analogously as for
+  numerical  semigroups  (See  Chapter  [14X9.7-2[114X).  We warn the user to take into
+  account that generators are stored in a set, and thus might be arranged in a
+  different way to the initial input.[133X
   
   [1X11.3-1 GeneratorsOfKernelCongruence[101X
   
@@ -353,15 +369,23 @@
   [33X[0;0Y[3XM[103X is matrix with nonnegative integer coefficients. The output is a system of
   generators of the congruence [22X{(x,y)∣ xM=yM}[122X.[133X
   
-  [33X[0;0YThe  main  difference  with [10XMinimalPresentationOfAffineSemigroup[110X is that the
-  matrix [3XM[103X can have repeated columns and these are not treated as a set.[133X
+  [33X[0;0YThe  main  difference  with [2XMinimalPresentationOfAffineSemigroup[102X ([14X11.3-4[114X) is
+  that  the  matrix [3XM[103X can have repeated columns and these are not treated as a
+  set.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XM := [[2,0],[0,2],[1,1]];[127X[104X
+    [4X[28X[ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsOfKernelCongruence(M);[127X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 1, 1, 0 ] ] ][128X[104X
+  [4X[32X[104X
   
   [1X11.3-2 CanonicalBasisOfKernelCongruence[101X
   
   [33X[1;0Y[29X[2XCanonicalBasisOfKernelCongruence[102X( [3XM[103X, [3XOrd[103X ) [32X operation[133X
   
   [33X[0;0Y[3XM[103X  is matrix with nonnegative integer coefficients, [3XOrd[103X a term ordering. The
-  output is a canonical bases of the congruence [22X{(x,y)∣ xM=yM}[122X (see [RGS99b]).
+  output is a canonical basis of the congruence [22X{(x,y)∣ xM=yM}[122X (see [RGS99b]).
   This corresponds with the exponents of the Gröbner basis of the kernel ideal
   of the morphism [22Xx_i↦ Y^m_i[122X, with [22Xm_i[122X the [22Xi[122Xth row of [22XM[122X.[133X
   
@@ -398,10 +422,10 @@
     [4X[28X  [ 7, 0, -3 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-4 MinimalPresentationOfAffineSemigroup[101X
+  [1X11.3-4 MinimalPresentation[101X
   
-  [33X[1;0Y[29X[2XMinimalPresentationOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XMinimalPresentation[102X( [3Xa[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XMinimalPresentationOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is a minimal presentation for [3Xa[103X.[133X
   
@@ -418,16 +442,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalPresentation(a);[127X[104X
+    [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ][128X[104X
     [4X[25Xgap>[125X [27XMinimalPresentationOfAffineSemigroup(a);[127X[104X
-    [4X[28X[ [ [ 1, 0, 1 ], [ 0, 2, 0 ] ] ][128X[104X
-    [4X[25Xgap>[125X [27XGeneratorsOfAffineSemigroup(a);[127X[104X
-    [4X[28X[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ][128X[104X
+    [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-5 BettiElementsOfAffineSemigroup[101X
+  [1X11.3-5 BettiElements[101X
   
-  [33X[1;0Y[29X[2XBettiElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XBettiElements[102X( [3Xa[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XBettiElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xa[103X  is  an  affine  semigroup.  The  output is the set of Betti elements of [3Xa[103X
   (defined as for numerical semigroups).[133X
@@ -436,6 +460,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XBettiElements(a);[127X[104X
+    [4X[28X[ [ 2, 2 ] ][128X[104X
     [4X[25Xgap>[125X [27XBettiElementsOfAffineSemigroup(a);[127X[104X
     [4X[28X[ [ 2, 2 ] ][128X[104X
   [4X[32X[104X
@@ -458,18 +484,19 @@
   
   [33X[0;0YThis property implies [2XIsUniquelyPresentedAffineSemigroup[102X ([14X11.3-8[114X).[133X
   
-  [1X11.3-8 IsUniquelyPresentedAffineSemigroup[101X
+  [1X11.3-8 IsUniquelyPresented[101X
   
+  [33X[1;0Y[29X[2XIsUniquelyPresented[102X( [3Xa[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsUniquelyPresentedAffineSemigroup[102X( [3Xa[103X ) [32X property[133X
   
   [33X[0;0Y[3Xa[103X is an affine semigroup.[133X
   
-  [33X[0;0YThe  same  as  [10XIsUniquelyPresentedNumericalSemigroup[110X  ([14X4.2-1[114X) but for affine
-  semigroups.[133X
+  [33X[0;0YThe  same  as the homonym function for numerical semigroups ([14X4.2-1[114X), but for
+  affine semigroups.[133X
   
-  [1X11.3-9 PrimitiveElementsOfAffineSemigroup[101X
+  [1X11.3-9 DegreesOfPrimitiveElementsOfAffineSemigroup[101X
   
-  [33X[1;0Y[29X[2XPrimitiveElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDegreesOfPrimitiveElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xa[103X  is  an affine semigroup. The output is the set of primitive elements of [3Xa[103X
   (defined as for numerical semigroups).[133X
@@ -481,14 +508,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
-    [4X[25Xgap>[125X [27XPrimitiveElementsOfAffineSemigroup(a);[127X[104X
+    [4X[25Xgap>[125X [27XDegreesOfPrimitiveElementsOfAffineSemigroup(a);[127X[104X
     [4X[28X[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ], [ 2, 2 ] ][128X[104X
   [4X[32X[104X
   
   
   [1X11.4 [33X[0;0YFactorizations in affine semigroups[133X[101X
   
-  [33X[0;0YThe invariants presented here are defined as for numerical semigroups.[133X
+  [33X[0;0YThe  invariants  presented  here  are  defined  as  for numerical semigroups
+  (Chapter [14X9.[114X).[133X
   
   [33X[0;0YAs with presentations, the user should take into account that generators are
   stored  in  a  set,  and  thus  might  be arranged in a different way to the
@@ -513,8 +541,48 @@
     [4X[28X[ [ 2, 2, 1 ], [ 1, 1, 3 ], [ 0, 0, 5 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.4-2 ElasticityOfAffineSemigroup[101X
+  [1X11.4-2 Factorizations[101X
   
+  [33X[1;0Y[29X[2XFactorizations[102X( [3Xv[103X, [3Xa[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XFactorizations[102X( [3Xa[103X, [3Xv[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xv[103X is a list of nonnegative integers and [3Xa[103X is an affine semigroup. The output
+  is set of factorizations of [3Xv[103X in terms of the minimal generators of of [3Xa[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([[2,0],[0,2],[1,1]]);[127X[104X
+    [4X[28X<Affine semigroup in 2 dimensional space, with 3 generators>[128X[104X
+    [4X[25Xgap>[125X [27XFactorizations([5,5],a);[127X[104X
+    [4X[28X[ [ 2, 1, 2 ], [ 1, 3, 1 ], [ 0, 5, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27XFactorizations(a,[5,5]);[127X[104X
+    [4X[28X[ [ 2, 1, 2 ], [ 1, 3, 1 ], [ 0, 5, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(a);[127X[104X
+    [4X[28X[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.4-3 Elasticity[101X
+  
+  [33X[1;0Y[29X[2XElasticity[102X( [3Xn[103X, [3Xa[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XElasticity[102X( [3Xa[103X, [3Xn[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XElasticityOfFactorizationsElementWRTAffineSemigroup[102X( [3Xn[103X, [3Xa[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xa[103X  is  an  affine semigroup and [3Xn[103X an element of [3Xa[103X. The output is the maximum
+  length  divided by the minimum length of the factorizations of [3Xn[103X in terms of
+  the minimal generating set of [3Xa[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([[2,0],[0,2],[1,1]]);;[127X[104X
+    [4X[25Xgap>[125X [27XElasticity([5,5],a);[127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27XElasticity(a,[5,5]);[127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27XElasticityOfFactorizationsElementWRTAffineSemigroup([5,5],a);[127X[104X
+    [4X[28X1[128X[104X
+  [4X[32X[104X
+  
+  [1X11.4-4 Elasticity[101X
+  
+  [33X[1;0Y[29X[2XElasticity[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XElasticityOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xa[103X  is an affine semigroup. The output is the elasticity of [3Xa[103X (defined as for
@@ -526,12 +594,15 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XElasticity(a);[127X[104X
+    [4X[28X1[128X[104X
     [4X[25Xgap>[125X [27XElasticityOfAffineSemigroup(a);[127X[104X
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1X11.4-3 DeltaSetOfAffineSemigroup[101X
+  [1X11.4-5 DeltaSet[101X
   
+  [33X[1;0Y[29X[2XDeltaSet[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XDeltaSetOfAffineSemigroup[102X( [3Xa[103X ) [32X function[133X
   
   [33X[0;0Y[3Xa[103X  is  an affine semigroup. The output is the Delta set of [3Xa[103X (defined as for
@@ -539,7 +610,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
-    [4X[25Xgap>[125X [27XDeltaSetOfAffineSemigroup(a);[127X[104X
+    [4X[25Xgap>[125X [27XDeltaSet(a);[127X[104X
     [4X[28X[  ][128X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,13,15,47);;[127X[104X
     [4X[25Xgap>[125X [27Xa:=AsAffineSemigroup(s);;[127X[104X
@@ -547,8 +618,9 @@
     [4X[28X[ 1, 2, 3, 5 ][128X[104X
   [4X[32X[104X
   
-  [1X11.4-4 CatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-6 CatenaryDegree[101X
   
+  [33X[1;0Y[29X[2XCatenaryDegree[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function[133X
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is the catenary degree of [3Xa[103X (defined as
@@ -556,11 +628,13 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XCatenaryDegree(a);[127X[104X
+    [4X[28X2[128X[104X
     [4X[25Xgap>[125X [27XCatenaryDegreeOfAffineSemigroup(a);[127X[104X
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X11.4-5 EqualCatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-7 EqualCatenaryDegreeOfAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XEqualCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function[133X
   
@@ -569,7 +643,7 @@
   
   [33X[0;0YThis function relies on the results presented in [GSOSRN13].[133X
   
-  [1X11.4-6 HomogeneousCatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-8 HomogeneousCatenaryDegreeOfAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XHomogeneousCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function[133X
   
@@ -578,7 +652,7 @@
   
   [33X[0;0YThis function is based on [GSOSRN13].[133X
   
-  [1X11.4-7 MonotoneCatenaryDegreeOfAffineSemigroup[101X
+  [1X11.4-9 MonotoneCatenaryDegreeOfAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XMonotoneCatenaryDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X function[133X
   
@@ -600,8 +674,9 @@
     [4X[28X3[128X[104X
   [4X[32X[104X
   
-  [1X11.4-8 TameDegreeOfAffineSemigroup[101X
+  [1X11.4-10 TameDegree[101X
   
+  [33X[1;0Y[29X[2XTameDegree[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XTameDegreeOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is the tame degree of [3Xa[103X (defined as for
@@ -610,12 +685,16 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XTameDegree(a);[127X[104X
+    [4X[28X2[128X[104X
     [4X[25Xgap>[125X [27XTameDegreeOfAffineSemigroup(a);[127X[104X
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X11.4-9 OmegaPrimalityOfElementInAffineSemigroup[101X
+  [1X11.4-11 OmegaPrimality[101X
   
+  [33X[1;0Y[29X[2XOmegaPrimality[102X( [3Xv[103X, [3Xa[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XOmegaPrimality[102X( [3Xa[103X, [3Xv[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XOmegaPrimalityOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xv[103X is a list of nonnegative integers and [3Xa[103X is an affine semigroup. The output
@@ -628,12 +707,17 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XOmegaPrimality(a,[5,5]);[127X[104X
+    [4X[28X6[128X[104X
+    [4X[25Xgap>[125X [27XOmegaPrimality([5,5],a);[127X[104X
+    [4X[28X6[128X[104X
     [4X[25Xgap>[125X [27XOmegaPrimalityOfElementInAffineSemigroup([5,5],a);[127X[104X
     [4X[28X6[128X[104X
   [4X[32X[104X
   
-  [1X11.4-10 OmegaPrimalityOfAffineSemigroup[101X
+  [1X11.4-12 OmegaPrimality[101X
   
+  [33X[1;0Y[29X[2XOmegaPrimality[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XOmegaPrimalityOfAffineSemigroup[102X( [3Xa[103X ) [32X function[133X
   
   [33X[0;0Y[3Xa[103X is an affine semigroup. The output is the omega primality of [3Xa[103X (defined as
@@ -641,6 +725,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,2],[1,1]);;[127X[104X
+    [4X[25Xgap>[125X [27XOmegaPrimality(a);[127X[104X
+    [4X[28X2[128X[104X
     [4X[25Xgap>[125X [27XOmegaPrimalityOfAffineSemigroup(a);[127X[104X
     [4X[28X2[128X[104X
   [4X[32X[104X

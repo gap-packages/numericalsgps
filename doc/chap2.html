@@ -31,7 +31,7 @@
                 </span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X79B38AB3816BF3C5">2.1-1 NumericalSemigroupByGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7D74299B8083E882">2.1-1 NumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86D9D2EE7E1C16C2">2.1-2 NumericalSemigroupBySubAdditiveFunction</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X799AC8727DB61A99">2.1-3 NumericalSemigroupByAperyList</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X81A7E3527998A74A">2.1-4 NumericalSemigroupBySmallElements</a></span>
@@ -82,29 +82,29 @@
 
 <p>There are different ways to specify a numerical semigroup <span class="SimpleMath">S</span>, namely, by its generators; by its gaps, its fundamental or special gaps by its Apéry set, just to name some. In this section we describe functions that may be used to specify, in one of these ways, a numerical semigroup in <strong class="pkg">GAP</strong>.</p>
 
-<p><a id="X79B38AB3816BF3C5" name="X79B38AB3816BF3C5"></a></p>
+<p><a id="X7D74299B8083E882" name="X7D74299B8083E882"></a></p>
 
-<h5>2.1-1 NumericalSemigroupByGenerators</h5>
+<h5>2.1-1 NumericalSemigroup</h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( [<var class="Arg">String</var>, ]<var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByGenerators</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><code class="code">List</code> is a list of nonnegative integers with greatest common divisor equal to one. These integers may be given as a list or by a sequence of individual elements. The output is the numerical semigroup spanned by <code class="code">List</code>.</p>
 
 <p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"generators"</code>.</p>
 
 
 <div class="example"><pre>		
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := NumericalSemigroupByGenerators(3,5,7);             </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1 := NumericalSemigroup(3,5,7);               </span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s2 := NumericalSemigroupByGenerators([3,5,7]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s2 := NumericalSemigroup([3,5,7]);</span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3 := NumericalSemigroup("generators",3,5,7); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3 := NumericalSemigroupByGenerators(3,5,7);             </span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s4 := NumericalSemigroup("generators",[3,5,7]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s4 := NumericalSemigroupByGenerators([3,5,7]);</span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s5 := NumericalSemigroup(3,5,7);               </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s5 := NumericalSemigroup("generators",3,5,7); </span>
 &lt;Numerical semigroup with 3 generators&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s6 := NumericalSemigroup([3,5,7]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s6 := NumericalSemigroup("generators",[3,5,7]);</span>
 &lt;Numerical semigroup with 3 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s1=s2;s2=s3;s3=s4;s4=s5;s5=s6;</span>
 true
@@ -357,7 +357,6 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupByGenerators</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupByMinimalGenerators</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupByInterval</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupByOpenInterval</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupBySubAdditiveFunction</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
@@ -367,7 +366,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupByFundamentalGaps</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsProportionallyModularNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsModularNumericalSemigroup</code>( <var class="Arg">NS</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
-<p><var class="Arg">NS</var> is a numerical semigroup and these attributes are available (their names should be self explanatory).</p>
+<p><var class="Arg">NS</var> is a numerical semigroup and these attributes are available (their names should be self explanatory). The attribute <code class="code">IsNumericalSemigroupByMinimalGenerators</code> is obsolet and is to be removed in a further version.</p>
 
 
 <div class="example"><pre>

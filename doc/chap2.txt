@@ -37,10 +37,10 @@
   just to name some. In this section we describe functions that may be used to
   specify, in one of these ways, a numerical semigroup in [5XGAP[105X.[133X
   
-  [1X2.1-1 NumericalSemigroupByGenerators[101X
+  [1X2.1-1 NumericalSemigroup[101X
   
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [[3XString[103X, ][3XList[103X ) [32X function[133X
   [33X[1;0Y[29X[2XNumericalSemigroupByGenerators[102X( [3XList[103X ) [32X function[133X
-  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X is a list of nonnegative integers with greatest common divisor equal to
   one.  These  integers  may be given as a list or by a sequence of individual
@@ -50,17 +50,17 @@
   [10X"generators"[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs1 := NumericalSemigroupByGenerators(3,5,7);             [127X[104X
+    [4X[25Xgap>[125X [27Xs1 := NumericalSemigroup(3,5,7);               [127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27Xs2 := NumericalSemigroupByGenerators([3,5,7]);[127X[104X
+    [4X[25Xgap>[125X [27Xs2 := NumericalSemigroup([3,5,7]);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27Xs3 := NumericalSemigroup("generators",3,5,7); [127X[104X
+    [4X[25Xgap>[125X [27Xs3 := NumericalSemigroupByGenerators(3,5,7);             [127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27Xs4 := NumericalSemigroup("generators",[3,5,7]);[127X[104X
+    [4X[25Xgap>[125X [27Xs4 := NumericalSemigroupByGenerators([3,5,7]);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27Xs5 := NumericalSemigroup(3,5,7);               [127X[104X
+    [4X[25Xgap>[125X [27Xs5 := NumericalSemigroup("generators",3,5,7); [127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
-    [4X[25Xgap>[125X [27Xs6 := NumericalSemigroup([3,5,7]);[127X[104X
+    [4X[25Xgap>[125X [27Xs6 := NumericalSemigroup("generators",[3,5,7]);[127X[104X
     [4X[28X<Numerical semigroup with 3 generators>[128X[104X
     [4X[25Xgap>[125X [27Xs1=s2;s2=s3;s3=s4;s4=s5;s5=s6;[127X[104X
     [4X[28Xtrue[128X[104X
@@ -318,7 +318,6 @@
   
   [33X[1;0Y[29X[2XIsNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIsNumericalSemigroupByGenerators[102X( [3XNS[103X ) [32X attribute[133X
-  [33X[1;0Y[29X[2XIsNumericalSemigroupByMinimalGenerators[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIsNumericalSemigroupByInterval[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIsNumericalSemigroupByOpenInterval[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIsNumericalSemigroupBySubAdditiveFunction[102X( [3XNS[103X ) [32X attribute[133X
@@ -330,7 +329,9 @@
   [33X[1;0Y[29X[2XIsModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XNS[103X  is a numerical semigroup and these attributes are available (their names
-  should be self explanatory).[133X
+  should        be        self        explanatory).        The       attribute
+  [10XIsNumericalSemigroupByMinimalGenerators[110X is obsolet and is to be removed in a
+  further version.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7);[127X[104X
