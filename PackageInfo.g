@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.1.9",
-Date := "31/11/2018",
+Version := "1.1.10",
+Date := "06/11/2018",
 #Version := "1.1.8 dev",
 #Date := "> 06/06/2018",
 
