@@ -83,16 +83,3 @@ versions of the manual are also available there.
 
 This package consists only of GAP code, so for its installation please refer to the [GAP manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html#X82473E4B8756C6CD).
 
-
-{% if site.data.package.citeas %}
-## Citing
-
-Please, cite this package as
-
-{{site.data.package.citeas}}
-
-You can get more info by typing `Cite("{{ site.data.package.name }}");` in the gap prompt.
-
-{% include button-bibtex.html %}
-
-{% endif %}
