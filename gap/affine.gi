@@ -210,6 +210,27 @@ InstallMethod(BelongsToAffineSemigroup,
 
 end);
 
+InstallMethod(BelongsToAffineSemigroup,
+        "To test whether an element of N^n belongs to an affine semigroup",
+        true,
+        [ IsHomogeneousList, IsAffineSemigroup and HasGaps],70,
+        function(v,a)
+            local gaps;
+
+            if not(IsListOfIntegersNS(v)) then
+                Error("The first argument must be a list of integers.");
+            fi;
+            if ForAny(v,x->x<0) then
+                return false;
+            fi;
+            gaps:=Gaps(a);
+            if Length(gaps[1])<>Length(v) then
+                Error("The dimension of the vector and the affine semigroup do not coincide.");
+            fi;
+
+            Info(InfoNumSgps,2,"Testing membership with gaps.");
+            return not(v in gaps);
+end);
 
 #############################################################
 # Computes a basis of a subgroup of Z^n with defining equations

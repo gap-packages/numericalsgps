@@ -348,6 +348,7 @@ InstallMethod(Gaps,
         H:=Concatenation(H,[P[k]]);
         fi;
   od; 
+  SetGaps(M,H);
   return H;  
 end);
 
