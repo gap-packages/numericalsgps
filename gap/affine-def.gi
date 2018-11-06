@@ -107,6 +107,253 @@ end);
 
 #############################################################################
 ##
+#F  AffineSemigroupByGaps(arg)
+##
+##  Returns the affine semigroup determined by the gaps arg.
+##  If the given set is not a set of gaps, then an error is raised.
+##
+#############################################################################
+InstallGlobalFunction(AffineSemigroupByGaps,
+
+function(arg)
+  local  gen, M, i,j,k,c,s,t,r,mingen, Leg, H;
+
+
+  if Length(arg) = 1 then
+    H := Set(arg[1]);
+  else
+    H := Set(arg);
+  fi;
+
+  if not IsRectangularTable(H) then
+    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+  elif not ForAll(H, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
+    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+  fi;
+
+#  Setter(IsAffineSemigroupByGenerators)(M,true);
+
+   c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
+   for i in [1..Length(H)] do
+       c:=c+1;
+       for j in [c..Length(H)] do
+           if Maximum(H[i],H[j])=H[i] then
+           t:=H[i];
+           H[i]:=H[j]; 
+           H[j]:=t;
+           fi;
+       od;    
+   od;   
+ #The elements are ordered now
+   gen:=IdentityMat(Length(H[1]));
+   
+   Leg:=Length(H[1])+1;
+
+  #Step 1, the generators are minimal actually
+
+  if not(H[1] in gen) then
+     Error("The given set is not a set of holes of an affine semigroup");
+  fi;
+  
+  Remove(gen,Position(gen,H[1]));
+  Leg:=Length(gen);
+  for k in [1..Length(gen)] do
+      gen:=Concatenation(gen,[gen[k]+H[1]]);
+  od;
+  gen:=Concatenation(gen,[2*H[1]]);
+  gen:=Concatenation(gen,[3*H[1]]);
+
+  M:= Objectify( AffineSemigroupsType, rec());
+
+ #Step 2, exploring a branch af the GNS tree
+       
+   for i in [2..Length(H)+1] do
+           s:=gen;
+       for j in [(Leg+1)..Length(gen)] do
+           t:=[];
+           for k in [1..Length(gen)] do
+               if k<>Position(gen,gen[j]) then
+                  t:=Concatenation(t,[gen[k]]);
+               fi;
+           od;
+           r:=AffineSemigroup("generators",t);
+           if BelongsToAffineSemigroup(gen[j],r) then
+              c:=[];
+           for k in [1..Length(s)] do
+               if s[k]<>gen[j] then
+                  c:=Concatenation(c,[s[k]]);
+               fi;
+           od;
+           s:=c;
+           fi;
+       od;
+       mingen:=s;
+       if i=(Length(H)+1) then
+            SetGaps(M,H);
+            SetMinimalGenerators(M,mingen);
+           return M;
+       fi;
+
+       if not(H[i] in mingen) then
+            Error("The set is not a set of gaps of an affine semigroup");
+       fi;
+       
+       Remove(mingen,Position(mingen,H[i]));        
+       Leg:=Length(mingen);
+       gen:=mingen;
+       for k in [1..Length(mingen)] do
+           gen:=Concatenation(gen,[mingen[k]+H[i]]);
+       od;
+       gen:=Concatenation(gen,[2*H[i]]);
+       gen:=Concatenation(gen,[3*H[i]]);
+   od;
+
+
+  SetGenerators(M,gen);
+  SetGaps(M,H);
+  return M;
+end);
+
+InstallMethod(Gaps,
+  "for an affine semigroups",
+  [IsAffineSemigroup],
+  function( M )
+  local i,j,k,l,r,c,t,temp,key,sum,S,N,V,vec,P,Aff,H, Rectangle, A;
+
+  if HasGaps(M) then
+    return Gaps(M);
+  fi;
+
+  Rectangle := function( C )
+    local G, A, H, R, i, j, k, t;
+    #local i, j, k, t;
+    R:=[];
+    G:=[];
+    for i in [0..C[1]] do
+        G:=Concatenation(G,[[i]]);
+    od;
+    for i in [2..Length(C)] do
+        H:=[];
+        for t in [0..C[i]] do
+            H:=Concatenation(H,[[t]]);
+        od;
+        for j in [1..Length(G)] do
+            for k in [1..Length(H)] do
+                A:=Concatenation(G[j],H[k]);
+                R:=Concatenation(R,[A]);
+            od;
+        od;
+        G:=R;
+        R:=[];
+    od;
+    return G;
+  end;
+
+  A:=List(Generators(M));
+  c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
+  for i in [1..Length(A)] do
+      c:=c+1;
+      for j in [c..Length(A)] do
+          if Maximum(A[i],A[j])=A[i] then
+          t:=A[i];
+          A[i]:=A[j]; 
+          A[j]:=t;
+          fi;
+      od;    
+  od;   
+  S:=[];
+  for j in [1..Length(A[1])] do
+      S:=Concatenation(S,[[]]);
+  od;
+  N:=NullMat(Length(A[1]),Length(A[1]));
+  V:=NullMat(Length(A[1]),Length(A[1]));                              #V is a "verification" matrix
+  for r in [1..Length(A)] do
+      temp:=0;                                                        #temp it is needed to not repeat the procedure if it is useless
+      for j in [1..Length(A[1])] do
+          if temp=0 then
+            key:=0;                                                  #key it is needed to verify hat each A[r][i]=0 for all i<>j 
+            for i in [1..Length(A[1])] do
+                if i<>j then
+                    if A[r][i]<>0 then
+                      key:=1;
+                    fi;
+                fi;
+              od;
+              if key=0 then
+                Append(S[j],[A[r][j]]);
+                temp:=1;
+              fi;     
+          fi;
+      od;
+
+          for i in [1..Length(A[1])] do
+              if A[r][i]=1 then
+                for k in [1..Length(A[1])] do
+                    if k<>i then
+                        if V[i][k]=0 then
+                          key:=0;
+                          for l in [1..Length(A[1])] do
+                              if (l<>i and l<>k) then
+                                  if A[r][l]<>0 then
+                                    key:=1;
+                                  fi;
+                              fi;
+                          od;
+                          if key=0 then
+                          N[i][k]:=A[r][k];
+                          V[i][k]:=1;
+                          fi;
+                        fi;
+                    fi;
+                od;
+              fi;
+          od;
+      
+  od;
+  for i in [1..Length(A[1])] do
+      for k in [1..Length(A[1])] do
+          if (k<>i and V[i][k]=0) then
+              Error("This afine semigroup has infinitely many gaps");
+          fi;
+      od;
+  od;
+          
+  vec:=[];
+  for j in [1..Length(A[1])] do
+      if (Gcd(S[j])<>1) then
+        Error("This affine semigroup has infinitely many gaps");
+      fi;
+      if FrobeniusNumber(NumericalSemigroup(S[j]))=-1 then
+      sum:=0;
+      else
+      sum:=FrobeniusNumber(NumericalSemigroup(S[j]));                          #functions of package numericalsgps are used
+      fi;
+      for i in [1..Length(A[1])] do
+          if i<>j then
+            if FrobeniusNumber(NumericalSemigroup(S[i]))=-1 then
+            temp:=0;
+            else
+            temp:=FrobeniusNumber(NumericalSemigroup(S[i]));
+            fi;
+          sum:=sum+temp*N[i][j]; 
+          fi;
+      od;
+      vec:=Concatenation(vec,[sum]);
+  od;
+  P:=Rectangle(vec);
+  H:=[];
+  Aff:=AffineSemigroup("generators",A);
+  for k in [1..Length(P)] do
+        if (not BelongsToAffineSemigroup(P[k],Aff)) then
+        H:=Concatenation(H,[P[k]]);
+        fi;
+  od; 
+  return H;  
+end);
+
+
+#############################################################################
+##
 #O  Inequalities(S)
 ##
 ##  If S is defined by inequalities, it returns them.
@@ -224,14 +471,17 @@ InstallGlobalFunction(AffineSemigroup, function(arg)
       return AffineSemigroupByEquations(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "inequalities" then
       return AffineSemigroupByInequalities(Filtered(arg, x -> not IsString(x))[1]);
+    elif arg[1] = "gaps" then
+      return AffineSemigroupByGaps(Filtered(arg, x -> not IsString(x))[1]);
     else
-      Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\" ");
+      Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\", \"gaps\" ");
     fi;
   elif Length(arg) = 1 and IsList(arg[1]) then
     return AffineSemigroupByGenerators(arg[1]);
   else
     return AffineSemigroupByGenerators(arg);
   fi;
+  Error("Invalid argumets");
 end);
 
 #############################################################################
