@@ -798,9 +798,6 @@ InstallMethod(ReductionNumber,
 function(I)
 
     local n, S, i;
-    if not IsIdealOfNumericalSemigroup(I) then
-        Error("The argument must be an ideal.");
-    fi;
 
     i:=Minimum(SmallElementsOfIdealOfNumericalSemigroup(I));
     n := 1;

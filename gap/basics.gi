@@ -282,11 +282,8 @@ end);
 #############################################################################
 InstallMethod(Conductor,
         "Returns the conductor of a numerical semigroup",
-        [IsNumericalSemigroup ],
+        [IsNumericalSemigroup],
         function( sgp )
-    if not IsNumericalSemigroup(sgp) then
-        Error("The argument must be a numerical semigroup");
-    fi;
     return FrobeniusNumber(sgp)+1;
 end);
 
@@ -325,10 +322,6 @@ InstallMethod( GeneratorsOfNumericalSemigroup,
         "Returns generators of a numerical sgp",
         [IsNumericalSemigroup],
         function(S)
-    if not IsNumericalSemigroup(S) then
-        Error("The argument must be a numerical semigroup");
-    fi;
-
     if HasMinimalGenerators(S) then
         return(MinimalGenerators(S));
     elif HasGenerators(S) then
@@ -1048,12 +1041,9 @@ end);
 # Given a numerical semigroup S and an integer r, returns the r-th element of S
 #############################################################################
 InstallMethod(RthElementOfNumericalSemigroup,
-        [IsNumericalSemigroup,IsInt],
+        [IsNumericalSemigroup,IsPosInt],
         function(S,r)
   local   selts,  n;
-  if r<=0 then
-    Error("The index must be a positive integer");
-  fi;
 
   selts := SmallElementsOfNumericalSemigroup( S );
   n := Length(selts);

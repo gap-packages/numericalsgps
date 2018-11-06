@@ -88,9 +88,6 @@ InstallMethod(IsArfNumericalSemigroup,
         "Tests if a Numerical Semigroup is an Arf-semigroup",
         [IsNumericalSemigroup],
         function(s)
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup");
-    fi;
     return (s = ArfNumericalSemigroupClosure(s));
 end);
 
@@ -690,9 +687,6 @@ InstallMethod(IsSaturated,
         "Tests if a Numerical Semigroup is a saturated semigroup",
         [IsNumericalSemigroup],
         function(s)
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup");
-    fi;
     return (s = SaturatedNumericalSemigroupClosure(s));
 end);
 

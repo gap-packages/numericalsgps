@@ -362,9 +362,6 @@ end);
 InstallMethod(IsIrreducibleNumericalSemigroup,
   "Tests whether the semigroup is irreducible", [IsNumericalSemigroup],1,
   function(s)
-    if(not(IsNumericalSemigroup(s))) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
 
     if HasIsSymmetricNumericalSemigroup(s) and (IsSymmetricNumericalSemigroup(s)) then
         return true;
@@ -379,7 +376,7 @@ end);
 
 
 InstallMethod(IsIrreducible,
-"Tests wheter the semigroup is symmetric",
+"Tests wheter the semigroup is irreducible",
 [IsNumericalSemigroup], IsIrreducibleNumericalSemigroup
 );
 
@@ -395,10 +392,6 @@ InstallMethod(IsSymmetricNumericalSemigroup,
   "Tests wheter the semigroup is symmetric",
   [IsNumericalSemigroup],1,
   function(s)
-
-    if(not(IsNumericalSemigroup(s))) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
 
     if HasGenerators(s) and Length(Generators(s))<=3 then
       return IsFreeNumericalSemigroup(s);
@@ -426,9 +419,6 @@ InstallMethod(IsPseudoSymmetricNumericalSemigroup,
   [IsNumericalSemigroup],1,function(s)
     local sg;
 
-    if(not(IsNumericalSemigroup(s))) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
     return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+2)/2;
 end);
 
@@ -454,10 +444,6 @@ InstallMethod(IsAlmostSymmetricNumericalSemigroup,
   "Tests whether the semigroup is almost symmetric",
   [IsNumericalSemigroup],1,
   function(s)
-
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
 
     return 2*GenusOfNumericalSemigroup(s)=FrobeniusNumber(s)+TypeOfNumericalSemigroup(s);
 end);
@@ -485,7 +471,6 @@ InstallGlobalFunction(AlmostSymmetricNumericalSemigroupsFromIrreducible,function
     if not IsIrreducibleNumericalSemigroup(s) then
         Error("The argument must be an irreducible numerical semigroup.\n");
     fi;
-
 
     #implements Condition (b) in Proposition 1 of [RGS13]
     conditionb:=function(l)
@@ -738,9 +723,6 @@ InstallMethod(IsACompleteIntersectionNumericalSemigroup,
   [IsNumericalSemigroup],1,
   function(s)
 
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
     ## if the semigroup is not symmetric, then it not a complete intersection
     if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;
@@ -765,9 +747,6 @@ InstallMethod(IsFreeNumericalSemigroup,
   function(s)
     local gluing, msg;
 
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
     ## if the semigroup is not symmetric, then it not free (deprecated)
     if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;
@@ -820,9 +799,6 @@ InstallMethod(IsTelescopicNumericalSemigroup,
   function(s)
     local gluing, msg, max;
 
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
     ## if the semigroup is not symmetric, then it not telescopic
     if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;
@@ -874,9 +850,6 @@ InstallMethod(IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity,
   function(s)
     local gluing, msg, max, di, dip1, rest, maxrest;
 
-    if not IsNumericalSemigroup(s) then
-        Error("The argument must be a numerical semigroup.\n");
-    fi;
     ## if the semigroup is not symmetric, then it not planar
     if HasIsSymmetricNumericalSemigroup(s) and (not IsSymmetricNumericalSemigroup(s)) then
         return false;

@@ -22,10 +22,6 @@ InstallMethod(IsAcuteNumericalSemigroup,
   function(s)
     local ds, nds;
 
-    if not(IsNumericalSemigroup(s)) then
-      Error("The argument must be a numerical semigroup");
-    fi;
-
     ds:=DesertsOfNumericalSemigroup(s);
     nds:=Length(ds);
     if nds<=1 then
@@ -49,10 +45,6 @@ InstallMethod(IsOrdinaryNumericalSemigroup,
   [IsNumericalSemigroup],1,
   function(s)
   local ds, nds;
-
-  if not(IsNumericalSemigroup(s)) then
-    Error("The argument must be a numerical semigroup");
-  fi;
 
   if HasMultiplicity(s) and HasConductor(s) then
     return Multiplicity(s)=Conductor(s);
