@@ -50,71 +50,20 @@ For bug reports, feature requests and suggestions, please use the
 {% endif %}
 
 
-Introduction
-------------
+## Features
 
 The features of this package include
 
 - defining numerical semigroups;
 - computing several properties of numerical semigroups, namely: multiplicity, Frobenius number, (minimal) system of generators, Apéry set, gaps, fundamental gaps, etc.;
 - perform several operations on numerical semigroups and ideals, namely: intersection, quotient by an integer, decompose into irreducible semigroups, add a special gap, ...;
--computing and testing membership to relevant families of numerical semigroups.
+- computing and testing membership to relevant families of numerical semigroups.
+
+There is a manual in the sub-directory `doc` written using the GAP package
+gapdoc which describes the available functions in detail. The pdf, html
+versions of the manual are also available there.
 
 
-Usage
------
-The package is distributed with the main GAP archive. In order to use it you
-just have to start GAP and type
+## Installation
 
-      LoadPackage( "numericalsgps" );
-
-
-Unpacking
----------
-
-You may get `NumericalSgps` as a compressed tar archive (file name ends with
-.tar.gz). Use the  appropriate  command  on  your system   to unpack the
-archive.
-
-On UNIX systems the compressed tar archive may be unpacked by
-
-    tar xzf numericalsgps-<version>.tar.gz
-
-or, if tar on your system does not understand the option z, by
-
-    gunzip numericalsgps-<version>.tar.gz
-    tar xf numericalsgps-<version>.tar
-
-which will in each case unpack the code into a directory 'numericalsgps'
-in the current directory. We assume that the current directory is the
-directory /usr/local/lib/gap4r7/pkg/.
-
-Installation
-------------
-
-Copy the folder 'numericalsgp' to your pkg gap folder (for instance /usr/local/lib/gap4r7/pkg).
-You can also place it somewhere else and then use the command `SetPackagePath`:
-
-	SetPackagePath("numericalsgps","whereveryouwant/numericalsgps");
-
-or add this line to your `gaprc`.
-
-In order to check the installation, launch `gap`:
-
-	gap
-
-Then try the following
-```gap
-gap> LoadPackage( "numericalsgps" );
-true
-gap>
-```
-Good luck!
-
-You can also add the line
-```gap
-LoadPackage( "numericalsgps" );
-```
-to your `gaprc` file.
-
-In other systems, there are equivalent ways to do the same.
+This package consists only of GAP code, so for its installation please refer to the [GAP manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html#X82473E4B8756C6CD).
