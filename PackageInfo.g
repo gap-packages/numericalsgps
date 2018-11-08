@@ -52,6 +52,14 @@ Persons := [
 # provide such a record for each author and/or maintainer ...
 
 rec(
+  LastName      := "Cisco",
+  FirstNames    := "Carmelo",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  WWWHome := "No address known"
+),
+
+rec(
   LastName      := "Heredia",
   FirstNames    := "Benjamín Alarcón",
   IsAuthor      := false,

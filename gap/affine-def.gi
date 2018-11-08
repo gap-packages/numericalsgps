@@ -133,17 +133,18 @@ function(arg)
 
 #  Setter(IsAffineSemigroupByGenerators)(M,true);
 
-   c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
-   for i in [1..Length(H)] do
-       c:=c+1;
-       for j in [c..Length(H)] do
-           if Maximum(H[i],H[j])=H[i] then
-           t:=H[i];
-           H[i]:=H[j]; 
-           H[j]:=t;
-           fi;
-       od;    
-   od;   
+  #  c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
+  #  for i in [1..Length(H)] do
+  #      c:=c+1;
+  #      for j in [c..Length(H)] do
+  #          if Maximum(H[i],H[j])=H[i] then
+  #          t:=H[i];
+  #          H[i]:=H[j]; 
+  #          H[j]:=t;
+  #          fi;
+  #      od;    
+  #  od;   
+  H:=Set(H);
  #The elements are ordered now
    gen:=IdentityMat(Length(H[1]));
    
