@@ -184,6 +184,13 @@ He also helped in preliminary versions of the following functions.
   Juan Ignacio implemented a preliminary version of
   <P/>
     <Ref Func="NumericalSemigroupsWithFrobeniusNumber"/>.
+
+</Section>
+
+
+<Section><Heading>Functions implemented by C. Cisto</Heading>
+  Carmelo provided some preliminary functions to deal with affine semigroups given by gaps, and to compute gaps of affine semigroups with finite genus, see for instance <Ref Func="AffineSemigroupByGaps"/>.
+
 </Section>
 
 
