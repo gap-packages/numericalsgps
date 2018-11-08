@@ -218,36 +218,11 @@ InstallMethod(Gaps,
   "for an affine semigroups",
   [IsAffineSemigroup],
   function( M )
-  local i,j,k,l,r,c,t,temp,key,sum,S,N,V,vec,P,Aff,H, Rectangle, A;
+  local i,j,k,l,r,c,t,temp,key,sum,S,N,V,vec,P,Aff,H, A;
 
   if HasGaps(M) then
     return Gaps(M);
   fi;
-
-  Rectangle := function( C )
-    local G, A, H, R, i, j, k, t;
-    #local i, j, k, t;
-    R:=[];
-    G:=[];
-    for i in [0..C[1]] do
-        G:=Concatenation(G,[[i]]);
-    od;
-    for i in [2..Length(C)] do
-        H:=[];
-        for t in [0..C[i]] do
-            H:=Concatenation(H,[[t]]);
-        od;
-        for j in [1..Length(G)] do
-            for k in [1..Length(H)] do
-                A:=Concatenation(G[j],H[k]);
-                R:=Concatenation(R,[A]);
-            od;
-        od;
-        G:=R;
-        R:=[];
-    od;
-    return G;
-  end;
 
   A:=List(Generators(M));
   c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
@@ -340,7 +315,7 @@ InstallMethod(Gaps,
       od;
       vec:=Concatenation(vec,[sum]);
   od;
-  P:=Rectangle(vec);
+  P:=Cartesian(List(vec,i->[0..i]));
   H:=[];
   Aff:=AffineSemigroup("generators",A);
   for k in [1..Length(P)] do
