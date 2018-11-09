@@ -1860,19 +1860,38 @@ gap> s5 := AffineSemigroup("generators",[[1,3],[7,2],[1,5]]);;
 gap> Length(Set([s1,s2,s3,s4,s5]));
 1
 
-gap> s1 := AffineSemigroupByEquations([[[-2,1]],[3]]);
+gap> s1 := AffineSemigroup("equations",[[[-2,1]],[3]]);
 <Affine semigroup>
-gap> s2 := AffineSemigroup("equations",[[[-2,1]],[3]]);
+gap> s2 := AffineSemigroupByEquations([[[-2,1]],[3]]);
 <Affine semigroup>
 gap> s1=s2;
 true
 
-gap> a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
+gap> a1:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
 <Affine semigroup>
-gap> a2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
+gap> a2:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
 <Affine semigroup>
 gap> a1=a2;
 true
+
+gap> gaps := [[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],[5,0,0,0]];;
+gap> a1 := AffineSemigroup("gaps", gaps );
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> a2 := AffineSemigroupByGaps( gaps );
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> a1 = a2;
+true
+gap> Generators(a1);
+[ [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ], [ 1, 0, 1, 0 ], 
+  [ 1, 0, 0, 1 ], [ 3, 0, 0, 0 ], [ 1, 2, 0, 0 ], [ 2, 0, 1, 0 ], 
+  [ 2, 0, 0, 1 ], [ 4, 0, 0, 0 ], [ 2, 2, 0, 0 ], [ 5, 1, 0, 0 ] ]
+
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0],[0,4,0,0]]);
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> Gaps(a);
+[ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ]
 
 gap> a:=AffineSemigroup([[1,0],[0,1],[1,1]]);
 <Affine semigroup in 2 dimensional space, with 3 generators>

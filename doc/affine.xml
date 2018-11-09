@@ -67,9 +67,9 @@ gap> Length(Set([s1,s2,s3,s4,s5]));
 		      <P/>
 		      In the second form, <C>String</C> must be <C>"equations"</C>.
 			<Example><![CDATA[
-gap> s1 := AffineSemigroupByEquations([[[-2,1]],[3]]);
+gap> s1 := AffineSemigroup("equations",[[[1,1]],[3]]);
 <Affine semigroup>
-gap> s2 := AffineSemigroup("equations",[[[1,1]],[3]]);
+gap> s2 := AffineSemigroupByEquations([[[-2,1]],[3]]);
 <Affine semigroup>
 gap> s1=s2;
 true
@@ -86,9 +86,9 @@ true
 		      <P/>
 		      In the second form, <C>String</C> must be <C>"inequalities"</C>.
 			<Example><![CDATA[
-gap> a1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
+gap> a1:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
 <Affine semigroup>
-gap> a2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);
+gap> a2:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
 <Affine semigroup>
 gap> a1=a2;
 true
@@ -100,14 +100,18 @@ true
                 <Func Name="AffineSemigroup" Arg="[String,] List" Label="by gaps"/>
                     <Func Name="AffineSemigroupByGaps" Arg="List"/>
                     <Description>
-		      <C>List</C> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup with gaps <C>List</C>. If the given set is not a set of gaps of a numerical semigroup, then the function raises an error.
+		      In the first form, <C>String</C>  must be <C>"gaps"</C> and <C>List</C> must be a list, not a sequence of individual elements.
 		      <P/>
-		      <C>String</C> does not need to be present. When it is present, it must be <C>"gaps"</C> and <C>List</C> must be a list, not a sequence of individual elements.
+		      In the second form, <C>List</C> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup with gaps <C>List</C>. If the given set is not a set of gaps of a numerical semigroup, then the function raises an error.
 			<Example><![CDATA[
-gap> a:=AffineSemigroupByGaps([[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],
-[5,0,0,0]]);
+gap> gaps := [[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],[5,0,0,0]];;
+gap> a1 := AffineSemigroup("gaps", gaps );
 <Affine semigroup in 4 dimensional space, with 12 generators>
-gap> Generators(a);
+gap> a2 := AffineSemigroupByGaps( gaps );
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> a1 = a2;
+true
+gap> Generators(a1);
 [ [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ], [ 1, 0, 1, 0 ], 
   [ 1, 0, 0, 1 ], [ 3, 0, 0, 0 ], [ 1, 2, 0, 0 ], [ 2, 0, 1, 0 ], 
   [ 2, 0, 0, 1 ], [ 4, 0, 0, 0 ], [ 2, 2, 0, 0 ], [ 5, 1, 0, 0 ] ]
@@ -121,8 +125,9 @@ gap> Generators(a);
     <A>S</A> is an affine semigroup, the output is its set of gaps, if this set has finitely many elements. Otherwise an error is raised. The procedure is inspired in <Cite Key="C-F-U"/>
     <P/>
     <Example><![CDATA[
-gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],[0,2,1,0],
-[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],[0,5,0,0],[0,4,0,0]]);
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0],[0,4,0,0]]);
 <Affine semigroup in 4 dimensional space, with 12 generators>
 gap> Gaps(a);
 [ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ]
