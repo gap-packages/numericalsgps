@@ -191,6 +191,7 @@ function(arg)
        mingen:=s;
        if i=(Length(H)+1) then
             SetGaps(M,H);
+            SetDimension(M,Length(H[1]));
             SetMinimalGenerators(M,mingen);
            return M;
        fi;
@@ -212,6 +213,7 @@ function(arg)
 
   SetGenerators(M,gen);
   SetGaps(M,H);
+  SetDimension(M,Length(H[1]));
   return M;
 end);
 
@@ -677,6 +679,10 @@ InstallMethod( Display,
 
    elif HasGenerators(x) and HasGenerators(y) and
      Generators(x) = Generators(y) then
+     return  true;
+
+   elif HasGaps(x) and HasGaps(y) and
+     Gaps(x) = Gaps(y) then
      return  true;
 
    elif HasGenerators(x) and HasGenerators(y) and not(EquationsOfGroupGeneratedBy(Generators(x))=EquationsOfGroupGeneratedBy(Generators(y))) then
