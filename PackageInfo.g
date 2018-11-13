@@ -56,7 +56,7 @@ rec(
   FirstNames    := "Carmelo",
   IsAuthor      := false,
   IsMaintainer  := false,
-  WWWHome := "No address known"
+  #WWWHome := "No address known"
 ),
 
 rec(
