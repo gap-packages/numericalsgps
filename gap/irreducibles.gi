@@ -1141,3 +1141,52 @@ InstallGlobalFunction(CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber
     od;
     return out;
 end);
+
+
+#####################################################################
+##                        Generalized Gorenstein numerical semigroups
+## See [G-I-K-T] [G-K]
+#####################################################################
+##
+#P IsGeneralizedGorenstein(arg)
+##
+## The argument is a numerical semigroup. The output is True or False depending
+## on if the semigroup has the generalized Gorenstein property
+##
+#####################################################################
+InstallMethod(IsGeneralizedGorenstein,
+  "Tests whether the semigroup is almost symmetric",
+  [IsNumericalSemigroup],1,
+  function(H)
+	local K, R, S,m,c,soc,b,f,PF,flg,r,i;
+	K:=CanonicalIdeal(H);
+	R:=[0]+H;
+	m:=MaximalIdeal(H);
+	if K=R then
+		return true;
+	fi;
+	if 3*K=2*K then
+		S:=2*K;
+		c:=R-S;
+		soc:=Intersection(c-m,R);
+		if Length(Difference(soc,c)) <> 1 then
+		  return false;
+		else
+		  b:=Difference(soc,c)[1];
+		  f:=FrobeniusNumber(H);
+		  PF:=PseudoFrobenius(H);
+		  flg:= true;
+		  r:= Type(H);
+		  for i in [1..(r-1)] do
+		    if f+b <> PF[i] + PF[r-i] then
+		      flg := false;
+		    fi;
+		  od;
+		  return flg;
+		fi;
+	else
+		return false;
+	fi;
+end);
+
+InstallTrueMethod(IsAlmostSymmetricNumericalSemigroup, IsSymmetricNumericalSemigroup);

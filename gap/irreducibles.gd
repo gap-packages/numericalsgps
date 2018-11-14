@@ -276,3 +276,18 @@ DeclareGlobalFunction("FreeNumericalSemigroupsWithFrobeniusNumber");
 ##
 #############################################################################
 DeclareGlobalFunction("CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber");
+
+
+
+#####################################################################
+##                        Generalized Gorenstein numerical semigroups
+## See [G-I-K-T] [G-K]
+#####################################################################
+##
+#P IsGeneralizedGorenstein(arg)
+##
+## The argument is a numerical semigroup. The output is True or False depending
+## on if the semigroup has the generalized Gorenstein property
+##
+#####################################################################
+DeclareProperty("IsGeneralizedGorenstein", IsNumericalSemigroup);

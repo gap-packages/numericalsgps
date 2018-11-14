@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Section>
+ <Label Name="sc:generalized-gorenstein" />
+                <Heading>
+                    Numerical semigroups with the generalized Gorenstein property
+                </Heading>
+
+
+Let <M>S</M> be a numerical semigroup and let <M>R</M> be its semigroup ring <M>K[\![S]\!]</M>. We say that <M>S</M> has the generalized Gorenstein property if its semigroup ring has this property. For the definition and characterization of generalized Gorenstein rings please see <Cite Key="G-I-K-T"></Cite>. 
+<P/>
+<ManSection>
+    <Prop Arg="s" Name="IsGeneralizedGorenstein"></Prop>
+    <Description>
+        <A>s</A> is a numerical semigroup.  The output is <C>true</C> if the semigroup ring <M>K[\![S]\!]</M> is generalized Gorenstein using the characterization by Goto-Kumashiro (<Cite Key="G-K"></Cite>). 
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,8);;
+gap> IsAlmostSymmetric(s);
+false
+gap> IsGeneralizedGorenstein(s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
+</Section>
