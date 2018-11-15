@@ -125,7 +125,7 @@ DeclareOperation("MinimalPresentation",[IsAffineSemigroup]);
 ##
 #############################################################################
 DeclareProperty("IsUniquelyPresented", IsAffineSemigroup);
-DeclareSynonymAttr("IsUniquelyPresentedAffineSemigroup", IsAffineSemigroup);
+DeclareSynonymAttr("IsUniquelyPresentedAffineSemigroup", IsUniquelyPresented);
 
 
 #############################################################################
