@@ -151,6 +151,26 @@ true
 
 
     <ManSection>
+        <Oper Arg="s, k" Name="CyclotomicExponentSequence"></Oper>
+        <Description>
+            <A>s</A> is a numerical semigroup and <A>k</A> is a positive integer.
+            Outputs the list of the first <A>k</A> elements of the cyclotomic exponent sequence of s (see <Cite Key="C-GS-M"/>).
+            
+            <P/>
+            The sequence will be truncated if the semigroup is cyclotomic and k is bigger than the last nonzero element in its sequence.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,4);;
+gap> CyclotomicExponentSequence(s,20);
+[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> CyclotomicExponentSequence(s,20);
+[ 1, 0, -1, 0, -1, 0, -1, 0, 0, 1, 0, 1, 0, 1, 0, 0, -1, 0, -1, 0 ]
+]]></Example>
+         </Description>
+    </ManSection>
+
+
+    <ManSection>
         <Func Arg="p" Name="IsSelfReciprocalUnivariatePolynomial"></Func>
         <Description>
             <A>p</A> is a univariate polynomial.

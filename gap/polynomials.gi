@@ -1294,3 +1294,46 @@ InstallGlobalFunction(GeneratorsKahlerDifferentials, function(A)
 	M:=List(A,p->Derivative(p,t));
 	return GeneratorsModule_Global(A,M);
 end);
+
+
+##################################################################
+##
+#O CyclotomicExponentSequence(s,k)
+##
+## s is a numerical semigroup and k a positive integer, the 
+## output is the list of the first k elements of the cyclotomic
+## exponent sequence of s (see [C-GS-M]).
+## The sequence will be truncated if the semigroup is cyclotomic
+## and k is bigger than the last nonzero element in its sequence.
+##################################################################
+InstallMethod(CyclotomicExponentSequence,[IsNumericalSemigroup, IsPosInt],
+
+function(s,k)
+    local invs, i, sec, e, n, left, right,p, x;
+		
+		x:=Indeterminate(Rationals,"x");
+		p:=NumericalSemigroupPolynomial(s,x);
+    sec :=[];
+		left:=1;
+		right:=p;
+    for i in [1..k] do
+        invs:=p mod x^(i+2);
+        for n in [1..i-1] do
+            invs:=(invs*PowerMod((1-x^n),sec[n],x^(i+2))) mod x^(i+2);
+        od;
+        e:=CoefficientsOfUnivariatePolynomial(invs+x^(i+2))[i+1];
+				if e>0 then 
+					right:=right*(1-x^i)^e;
+				else
+					left:=left*(1-x^i)^-e;
+				fi;
+        sec[i]:=e;    
+
+        if left = right then
+            return -sec;
+        fi; 
+    od;  
+    return -sec;
+end
+
+);

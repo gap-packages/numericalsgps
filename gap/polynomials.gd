@@ -172,3 +172,15 @@ DeclareGlobalFunction("GeneratorsModule_Global");
 ## derivatives of the elements in A
 ##################################################################
 DeclareGlobalFunction("GeneratorsKahlerDifferentials");
+
+##################################################################
+##
+#O CyclotomicExponentSequence(s,k)
+##
+## s is a numerical semigroup and k a positive integer, the 
+## output is the list of the first k elements of the cyclotomic
+## exponent sequence of s (see [C-GS-M]).
+## The sequence will be truncated if the semigroup is cyclotomic
+## and k is bigger than the last nonzero element in its sequence.
+##################################################################
+DeclareOperation("CyclotomicExponentSequence",[IsNumericalSemigroup, IsPosInt]);
