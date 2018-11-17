@@ -522,80 +522,88 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
  ########################################################################
  ########################################################################
 
- #############################################################################
- ##
- #M  PrintObj(S)
- ##
- ##  This method for numerical semigroups.
- ##
- #############################################################################
- InstallMethod( PrintObj,
-         "prints a Numerical Semigroup",
-         [ IsNumericalSemigroup],
-         function( S )
-     if HasModularConditionNS(S) then
-         Print("ModularNumericalSemigroup( ", ModularConditionNS(S), " )\n");
-     elif HasProportionallyModularConditionNS(S) then
-         Print("ProportionallyModularNumericalSemigroup( ", ProportionallyModularConditionNS(S), " )\n");
-     elif HasGenerators(S) then
-         Print("NumericalSemigroup( ", Generators(S), " )\n");
-     else
-         Print("NumericalSemigroup( ", GeneratorsOfNumericalSemigroup(S), " )\n");
-     fi;
- end);
+#############################################################################
+##
+#M  PrintObj(S)
+##
+##  This method for numerical semigroups.
+##
+#############################################################################
+InstallMethod( PrintObj,
+        "prints a Numerical Semigroup",
+        [ IsNumericalSemigroup],
+        function( S )
+    if HasModularConditionNS(S) then
+        Print("ModularNumericalSemigroup( ", ModularConditionNS(S), " )\n");
+    elif HasProportionallyModularConditionNS(S) then
+        Print("ProportionallyModularNumericalSemigroup( ", ProportionallyModularConditionNS(S), " )\n");
+    elif HasGenerators(S) then
+        Print("NumericalSemigroup( ", Generators(S), " )\n");
+    else
+        Print("NumericalSemigroup( ", GeneratorsOfNumericalSemigroup(S), " )\n");
+    fi;
+end);
 
- #############################################################################
- ##
- #M  ViewString(S)
- ##
- ##  This method for numerical semigroups.
- ##
- #############################################################################
- InstallMethod( ViewString,
-         "displays a Numerical Semigroup",
-         [IsNumericalSemigroup],
-         function( S )
-     if HasMinimalGenerators(S) and 1 in MinimalGenerators(S) then
-         return ("The numerical semigroup N");
-     elif HasMinimalGenerators(S) then
-         return Concatenation("Numerical semigroup with ", String(Length(MinimalGenerators(S))), " generators");
-     elif HasGenerators(S) then
-         return Concatenation("Numerical semigroup with ", String(Length(Generators(S))), " generators");
-     elif HasModularConditionNS(S) then
-         return Concatenation("Modular numerical semigroup satisfying ", String(ModularConditionNS(S)[1]),"x mod ",String(ModularConditionNS(S)[2]), " <= x");
-     elif HasProportionallyModularConditionNS(S) then
-         return Concatenation("Proportionally modular numerical semigroup satisfying ", String(ProportionallyModularConditionNS(S)[1]),"x mod ",String(ProportionallyModularConditionNS(S)[2]), " <= ",String(ProportionallyModularConditionNS(S)[3]),"x");
-     else
-         return ("Numerical semigroup");
-     fi;
- end);
+#############################################################################
+##
+#M  ViewString(S)
+##
+##  This method for numerical semigroups.
+##
+#############################################################################
+InstallMethod( ViewString,
+        "displays a Numerical Semigroup",
+        [IsNumericalSemigroup],
+        function( S )
+    if HasMinimalGenerators(S) and 1 in MinimalGenerators(S) then
+        return ("The numerical semigroup N");
+    elif HasMinimalGenerators(S) then
+        return Concatenation("Numerical semigroup with ", String(Length(MinimalGenerators(S))), " generators");
+    elif HasGenerators(S) then
+        return Concatenation("Numerical semigroup with ", String(Length(Generators(S))), " generators");
+    elif HasModularConditionNS(S) then
+        return Concatenation("Modular numerical semigroup satisfying ", String(ModularConditionNS(S)[1]),"x mod ",String(ModularConditionNS(S)[2]), " <= x");
+    elif HasProportionallyModularConditionNS(S) then
+        return Concatenation("Proportionally modular numerical semigroup satisfying ", String(ProportionallyModularConditionNS(S)[1]),"x mod ",String(ProportionallyModularConditionNS(S)[2]), " <= ",String(ProportionallyModularConditionNS(S)[3]),"x");
+    else
+        return ("Numerical semigroup");
+    fi;
+end);
 
+#############################################################################
+##
+#M  String(S)
+##
+##  This method for numerical semigroups.
+##
+#############################################################################
+InstallMethod(String,[IsNumericalSemigroup],ViewString);
 
- #############################################################################
- ##
- #M  ViewObj(S)
- ##
- ##  This method for numerical semigroups.
- ##
- #############################################################################
- InstallMethod( ViewObj,
-         "displays a Numerical Semigroup",
-         [IsNumericalSemigroup],
-         function( S )
-     if HasMinimalGenerators(S) and 1 in MinimalGenerators(S) then
-         Print("<The numerical semigroup N>");
-     elif HasMinimalGenerators(S) then
-         Print("<Numerical semigroup with ", Length(MinimalGenerators(S)), " generators>");
-     elif HasGenerators(S) then
-         Print("<Numerical semigroup with ", Length(Generators(S)), " generators>");
-     elif HasModularConditionNS(S) then
-         Print("<Modular numerical semigroup satisfying ", ModularConditionNS(S)[1],"x mod ",ModularConditionNS(S)[2], " <= x >");
-     elif HasProportionallyModularConditionNS(S) then
-         Print("<Proportionally modular numerical semigroup satisfying ", ProportionallyModularConditionNS(S)[1],"x mod ",ProportionallyModularConditionNS(S)[2], " <= ",ProportionallyModularConditionNS(S)[3],"x >");
-     else
-         Print("<Numerical semigroup>");
-     fi;
- end);
+#############################################################################
+##
+#M  ViewObj(S)
+##
+##  This method for numerical semigroups.
+##
+#############################################################################
+InstallMethod( ViewObj,
+        "displays a Numerical Semigroup",
+        [IsNumericalSemigroup],
+        function( S )
+    if HasMinimalGenerators(S) and 1 in MinimalGenerators(S) then
+        Print("<The numerical semigroup N>");
+    elif HasMinimalGenerators(S) then
+        Print("<Numerical semigroup with ", Length(MinimalGenerators(S)), " generators>");
+    elif HasGenerators(S) then
+        Print("<Numerical semigroup with ", Length(Generators(S)), " generators>");
+    elif HasModularConditionNS(S) then
+        Print("<Modular numerical semigroup satisfying ", ModularConditionNS(S)[1],"x mod ",ModularConditionNS(S)[2], " <= x >");
+    elif HasProportionallyModularConditionNS(S) then
+        Print("<Proportionally modular numerical semigroup satisfying ", ProportionallyModularConditionNS(S)[1],"x mod ",ProportionallyModularConditionNS(S)[2], " <= ",ProportionallyModularConditionNS(S)[3],"x >");
+    else
+        Print("<Numerical semigroup>");
+    fi;
+end);
 
 
 
