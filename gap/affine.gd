@@ -154,14 +154,14 @@ DeclareGlobalFunction("ShadedSetOfElementInAffineSemigroup");
 #F CatenaryDegreeOfAffineSemigroup
 # Computes the catenary degree of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("CatenaryDegreeOfAffineSemigroup");
 DeclareOperation("CatenaryDegree",[IsAffineSemigroup]);
 
 ###############################################################################
 #F DeltaSetOfAffineSemigroup
 # Computes the Delta set of the affine semigroup a
 ###########################################################################
-DeclareGlobalFunction("DeltaSetOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("DeltaSetOfAffineSemigroup");
 DeclareOperation("DeltaSet",[IsAffineSemigroup]);
 
 ###############################################################################
@@ -169,21 +169,21 @@ DeclareOperation("DeltaSet",[IsAffineSemigroup]);
 # Computes the equal catenary degree of the affine semigroup a
 # uses [GSOSN]
 ###########################################################################
-DeclareGlobalFunction("EqualCatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("EqualCatenaryDegreeOfAffineSemigroup");
 
 ###############################################################################
 #F HomogeneousCatenaryDegreeOfAffineSemigroup
 # Computes the homogeneous catenary degree of the affine semigroup a
 # uses [GSOSN]
 ###########################################################################
-DeclareGlobalFunction("HomogeneousCatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("HomogeneousCatenaryDegreeOfAffineSemigroup");
 
 ###############################################################################
 #F MonotoneCatenaryDegreeOfAffineSemigroup
 # Computes the monotone catenary degree of the affine semigroup a
 # uses [PH]
 ###########################################################################
-DeclareGlobalFunction("MonotoneCatenaryDegreeOfAffineSemigroup",[IsAffineSemigroup]);
+DeclareGlobalFunction("MonotoneCatenaryDegreeOfAffineSemigroup");
 
 #############################################################################
 ##
