@@ -1112,7 +1112,6 @@ InstallMethod(Iterator,
 # the nth element of I
 #############################################################################
 InstallGlobalFunction(ElementNumber_IdealOfNumericalSemigroup,
-        [IsIdealOfNumericalSemigroup,IsInt],
         function(I,r)
   local   selts,  n;
   if r<=0 then
