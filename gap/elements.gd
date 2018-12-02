@@ -11,6 +11,14 @@
 #Y  copyright notice in the GAP manual.
 ##
 #############################################################################
+#############################################################################
+##
+#F  ElementsOfNumericalSemigroupUpTo(S,b)
+##
+##  Returns the elements of S up to the positive integer b
+##
+#############################################################################
+DeclareGlobalFunction("ElementsOfNumericalSemigroupUpTo");
 
 #############################################################################
 ##

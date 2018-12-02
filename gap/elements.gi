@@ -12,6 +12,45 @@
 ##
 #############################################################################
 
+#############################################################################
+##
+#F  ElementsOfNumericalSemigroupUpTo(S,b)
+##
+##  Returns the elements of S up to the positive integer b
+##
+#############################################################################
+InstallGlobalFunction(ElementsOfNumericalSemigroupUpTo,function(S,b)
+  local gens, sg, m, maxlen, elements, i, eltsofprevlen, f, eltsoflen, g;
+
+  # check the arguments
+  if not IsNumericalSemigroup(S) then
+    Error("ElementsOfNumericalSemigroupUpTo: the first argument must be a numerical semigroup");
+  fi;
+  if not IsPosInt(b) then
+    Error("ElementsOfNumericalSemigroupUpTo: the second argument must be a positive integer");
+  fi;
+
+  gens := Set(Generators(S));
+  sg := Filtered(gens, g -> g <= b); #the generators up to b (if the generators were minimal, these were the elements of length 1)
+  m := gens[1]; #the multiplicity of S
+  maxlen := CeilingOfRational(b/m); #the maximum length of the elements to be computed
+  elements := [[0],sg];#initialize with the elements of length 0 and 1
+  for i in [2..maxlen] do #compute the sets of elements of bigger lengths
+    eltsofprevlen := elements[i]; #elements of previous length
+    f := First(sg, h -> eltsofprevlen[1] + h > b);
+    if f <> fail then
+      sg := Filtered(sg, h -> h < f); #bigger generators do not add anything and not to be used further
+    fi;
+    eltsoflen := [];
+    for g in sg do
+      eltsoflen := Union(eltsoflen,eltsofprevlen+g);
+    od;
+    Add(elements, Filtered(eltsoflen, g -> g <= b));
+  od;
+  
+  return Set(Flat(elements));
+end);
+
 
 #############################################################################
 ##
@@ -70,70 +109,122 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
 
 
 InstallMethod(SmallElementsOfNumericalSemigroup,
-        "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
+        "Returns the list of elements in the numerical semigroup not greater that the conductor",
         [IsNumericalSemigroup and HasGenerators],1,
-         function( sgp )
-     local g, S, n, bool, gen, R, sumNS, ss;
+        function( ns )
+  local primitives, m, elements, n, bool, k, gaps, frob, smalls;
 
-    #####################################################
-    # Computes the sum of subsets of numerical semigroups
-    sumNS := function(S,T)
-        local mm, s, t, R;
-        R := [];
-        mm := Minimum(Maximum(S),Maximum(T));
-        for s in S do
-            for t in T do
-                if s+t > mm then
-                    break;
-                else
-                    AddSet(R,s+t);
-                fi;
-            od;
-        od;
-        return R;
-    end;
-    if HasMinimalGenerators(sgp) then
-        gen := MinimalGenerators(sgp);
-    else
-        gen := Generators(sgp);
-        # a naive reduction of the number of generators
-        ss := sumNS(gen,gen);
-        gen := Difference(gen,ss);
-        if ss <> [] then
-            gen := Difference(gen,sumNS(ss,gen));
-        fi;
-    fi;
+  primitives := MinimalGenerators(ns);
+  m := primitives[1];
+  # we start by computing the elements up to 5m by using a function that is efficient in practice
+  # note that (by a result of Zhai) assimtotically most numerical semigroups fall in this class 
+  elements := ElementsOfNumericalSemigroupUpTo(ns,5*m);
+  # if the small elements are not yet computed we continue using a more traditional process 
+  # we test m elements in a row to reduce the number of tests 
+  n := Maximum(elements);
+  if not IsSubset(elements,[n-m+1 .. n]) then
+    repeat
+     bool := true;
+      for k in [n..n+m-1] do
+        if Intersection(k-primitives,elements) <> [] then
+           AddSet(elements,k);
+         else
+          bool := false;
+          n := k+1;
+          break;
+        fi;  
+      od;
+    until bool;
+  fi;
+  ## set gaps, Frobenius number and small elements
+  if Length(elements) > 1 then
+    gaps := Difference([1..Maximum(elements)],elements);
+  else
+    gaps := [];
+  fi;
+  SetGapsOfNumericalSemigroup(ns,gaps);
+  ## setFrobenius number
+  if gaps = [] then
+    frob := -1;
+  else
+    frob := Maximum(gaps);
+  fi;
+  SetFrobeniusNumberOfNumericalSemigroup(ns,frob);
+  ## set small elements
+  smalls := Intersection([0..frob+1],elements);
+  SetSmallElements(ns, smalls);
+  ##
+  return smalls;
 
-    S := [0];
-    n := 1;
-    bool := true;
-    while bool do
-        for g in gen do
-            if n -g in S then
-                AddSet(S,n);
-                break;
-            fi;
-        od;
-        if not IsSubset(S,[S[Length(S)]-gen[1]+1..S[Length(S)]]) then
-            n:=n+1;
-        else
-            bool := false;
-        fi;
-    od;
-    if Length(S) > 1 then
-        SetGapsOfNumericalSemigroup(sgp,AsList(Difference([1..S[Length(S)]],S)));
-    fi;
-    R := GapsOfNumericalSemigroup(sgp);
-    if R = [] then
-        g := -1;
-    else
-        g := R[Length(R)];
-    fi;
-    SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
-
-    SetSmallElements(sgp, Intersection([0..g+1],Union(S, [g+1])));
-    return SmallElements(sgp);
 end);
+
+
+
+# InstallMethod(SmallElementsOfNumericalSemigroup,
+#         "Returns the list of elements in the numerical semigroup not greater that the Frobenius number + 1",
+#         [IsNumericalSemigroup and HasGenerators],1,
+#          function( sgp )
+#      local g, S, n, bool, gen, R, sumNS, ss;
+
+#     #####################################################
+#     # Computes the sum of subsets of numerical semigroups
+#     sumNS := function(S,T)
+#         local mm, s, t, R;
+#         R := [];
+#         mm := Minimum(Maximum(S),Maximum(T));
+#         for s in S do
+#             for t in T do
+#                 if s+t > mm then
+#                     break;
+#                 else
+#                     AddSet(R,s+t);
+#                 fi;
+#             od;
+#         od;
+#         return R;
+#     end;
+#     if HasMinimalGenerators(sgp) then
+#         gen := MinimalGenerators(sgp);
+#     else
+#         gen := Generators(sgp);
+#         # a naive reduction of the number of generators
+#         ss := sumNS(gen,gen);
+#         gen := Difference(gen,ss);
+#         if ss <> [] then
+#             gen := Difference(gen,sumNS(ss,gen));
+#         fi;
+#     fi;
+
+#     S := [0];
+#     n := 1;
+#     bool := true;
+#     while bool do
+#         for g in gen do
+#             if n -g in S then
+#                 AddSet(S,n);
+#                 break;
+#             fi;
+#         od;
+#         if not IsSubset(S,[S[Length(S)]-gen[1]+1..S[Length(S)]]) then
+#             n:=n+1;
+#         else
+#             bool := false;
+#         fi;
+#     od;
+#     if Length(S) > 1 then
+#         SetGapsOfNumericalSemigroup(sgp,AsList(Difference([1..S[Length(S)]],S)));
+#     fi;
+#     R := GapsOfNumericalSemigroup(sgp);
+#     if R = [] then
+#         g := -1;
+#     else
+#         g := R[Length(R)];
+#     fi;
+#     SetFrobeniusNumberOfNumericalSemigroup(sgp,g);
+
+#     SetSmallElements(sgp, Intersection([0..g+1],Union(S, [g+1])));
+#     return SmallElements(sgp);
+# end);
 
 
 
