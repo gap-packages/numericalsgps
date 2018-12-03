@@ -3,7 +3,7 @@
                    ----------------------------------------
 1.1.9 -> 1.1.10
 - improved the SmallElements method for a numerical semigroup given by generators. (The improvment goes beyond the order of 20 in most examples.)
-- added the global function ElementsOfNumericalSemigroupUpTo
+- added the global function ElementsUpTo
 - avoid duplication of tests in some methods
 1.1.8 -> 1.1.9
 - avoid differences in the output when all packages are loaded (the order of the pairs in representations is not relevant)

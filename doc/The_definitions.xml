@@ -138,6 +138,22 @@ gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 ]]></Example>
 					</Description>
 </ManSection>
+				<ManSection>
+					<Func Name="ElementsUpTo" Arg="NS, b"></Func>
+					<Description>
+						<A>NS</A> is a numerical semigroup, <A>b</A> a positve integer. It returns the set of
+						elements of <A>NS</A> up to <A>b</A>.
+						<Example><![CDATA[
+gap> ns := NumericalSemigroup(5,7);;
+gap> SmallElements(ns);
+[ 0, 5, 7, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+gap> ElementsUpTo(ns,18);
+[ 0, 5, 7, 10, 12, 14, 15, 17 ]
+gap> ElementsUpTo(ns,27);
+[ 0, 5, 7, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24, 25, 26, 27 ]
+]]></Example>
+					</Description>
+</ManSection>
 
 
 				<ManSection>

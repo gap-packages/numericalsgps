@@ -366,6 +366,14 @@ gap> FirstElementsOfNumericalSemigroup(2,NumericalSemigroup(3,5,7));
 gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
 [ 0, 3, 5, 6, 7, 8, 9, 10, 11, 12 ]
 
+gap> ns := NumericalSemigroup(5,7);;
+gap> SmallElements(ns);
+[ 0, 5, 7, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+gap> ElementsUpTo(ns,18);
+[ 0, 5, 7, 10, 12, 14, 15, 17 ]
+gap> ElementsUpTo(ns,27);
+[ 0, 5, 7, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24, 25, 26, 27 ]
+
 gap> S := NumericalSemigroup(7,8,17);;
 gap> S[53];
 68

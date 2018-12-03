@@ -14,12 +14,12 @@
 
 #############################################################################
 ##
-#F  ElementsOfNumericalSemigroupUpTo(S,b)
+#F  ElementsUpTo(S,b)
 ##
 ##  Returns the elements of S up to the positive integer b
 ##
 #############################################################################
-InstallGlobalFunction(ElementsOfNumericalSemigroupUpTo,function(S,b)
+InstallGlobalFunction(ElementsUpTo,function(S,b)
   local gens, sg, m, maxlen, elements, i, eltsofprevlen, f, eltsoflen, g;
 
   # check the arguments
@@ -118,7 +118,7 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
   m := primitives[1];
   # we start by computing the elements up to 5m by using a function that is efficient in practice
   # note that (by a result of Zhai) assimtotically most numerical semigroups fall in this class 
-  elements := ElementsOfNumericalSemigroupUpTo(ns,5*m);
+  elements := ElementsUpTo(ns,5*m);
   # if the small elements are not yet computed we continue using a more traditional process 
   # we test m elements in a row to reduce the number of tests 
   n := Maximum(elements);

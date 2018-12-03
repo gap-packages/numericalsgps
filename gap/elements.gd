@@ -13,12 +13,12 @@
 #############################################################################
 #############################################################################
 ##
-#F  ElementsOfNumericalSemigroupUpTo(S,b)
+#F  ElementsUpTo(S,b)
 ##
 ##  Returns the elements of S up to the positive integer b
 ##
 #############################################################################
-DeclareGlobalFunction("ElementsOfNumericalSemigroupUpTo");
+DeclareGlobalFunction("ElementsUpTo");
 
 #############################################################################
 ##
