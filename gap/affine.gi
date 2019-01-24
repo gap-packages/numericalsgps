@@ -589,6 +589,7 @@ InstallMethod(Factorizations,
         return fac;
     end);
 
+
 ############################################################
 # computes a set of generators of the kernel congruence
 # of the monoid morphism associated to the matrix m with

@@ -331,6 +331,35 @@ InstallMethod(Gaps,
 end);
 
 
+##############################################################
+#A PseudoFrobenius
+# Computes the set of PseudoFrobenius
+# Works only if the affine semigroup has finitely many gaps
+##############################################################
+InstallMethod(PseudoFrobenius, [IsAffineSemigroup],
+function(s)
+    local gaps, gens;
+    gens:=Generators(s);
+    gaps:=Gaps(s);
+    return Filtered(gaps, g->ForAll(gens, n -> n+g in s));
+
+end);
+
+##############################################################
+#A SpecialGaps
+# Computes the set of special gaps
+# Works only if the affine semigroup has finitely many gaps
+##############################################################
+InstallMethod(SpecialGaps, [IsAffineSemigroup],
+function(s)
+    local gaps, gens;
+    gens:=Generators(s);
+    gaps:=PseudoFrobenius(s);
+    return Filtered(gaps, g->2*g in s);
+
+end);
+
+
 #############################################################################
 ##
 #O  Inequalities(S)

@@ -61,6 +61,21 @@ DeclareSynonymAttr( "DimensionOfAffineSemigroup", Dimension);
 DeclareAttribute( "MinimalGenerators", IsAffineSemigroup);
 DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGenerators);
 
+###############################################################################
+#A PseudoFrobenius
+# The set of PseudoFrobeniusVectors
+# Works only if the affine semigroup has finitely many gaps
+###############################################################################
+DeclareAttribute("PseudoFrobenius", IsAffineSemigroup);
+
+###############################################################################
+#O SpecialGaps
+# The set of special gaps
+# Works only if the affine semigroup has finitely many gaps
+###############################################################################
+DeclareAttribute("SpecialGaps", IsAffineSemigroup);
+
+
 
 #############################################################################
 ##
