@@ -967,6 +967,7 @@ InstallGlobalFunction(KunzPolytope,
     fi;
 
     c:=Cartesian([1..m-1],[1..m-1]);
+    c:=Filtered(c,p->p[1]<=p[2]);
     eq:=IdentityMat(m-1);
     eq:=TransposedMat(Concatenation(eq,[List([1..m-1],_->-1)]));
     zero:=List([1..m],_->0);
