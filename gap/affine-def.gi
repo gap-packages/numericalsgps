@@ -301,6 +301,8 @@ InstallMethod(Gaps,
       if (Gcd(S[j])<>1) then
         Error("This affine semigroup has infinitely many gaps");
       fi;
+  od;
+  for j in [1..Length(A[1])] do
       if FrobeniusNumber(NumericalSemigroup(S[j]))=-1 then
       sum:=0;
       else
