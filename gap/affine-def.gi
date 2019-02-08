@@ -49,7 +49,7 @@ InstallMethod(Generators,
          "Computes a set of generators of the affine semigroup",
          [IsAffineSemigroup],1,
         function(S)
-  local  basis, eq;
+  local  basis, eq, H;
 
   if HasGenerators(S) then
       return Generators(S);
@@ -67,6 +67,98 @@ InstallMethod(Generators,
       basis := HilbertBasisOfSystemOfHomogeneousInequalities(AffineSemigroupInequalities(S));
       SetMinimalGenerators(S,basis);
       return MinimalGenerators(S);
+  fi;
+  if HasGaps(S) then
+     H:=Gaps(S);
+     #########################################################
+     #F  Corollary9(<h>)
+     # Returns if it is possible, a system of generators of 
+     # \N^(|h[1]|) \setminus <h>, or [] if not.
+     #
+     Corollary9 := function(h)
+        local lSi, lSip, lH, lHi, le, si, sp, se, MinimalElements;
+
+        #########################################################
+        #F  MinimalElements(<a>, <b>, <c>)
+        #  Returns the minimal elements in <b> with respect to 
+        #  <a> \cup <b> discarding every e in <b> such that 
+        #  exists z \in <a> \cup <b> and e-z \notin <c> and  
+        #  e-z is in the 1st ortant
+        #
+        MinimalElements := function(a, b, c)
+          local slenA, slenB, si, lb, lminimals, ldif, bDiscard;
+
+          slenA := Length(a);
+          slenB := Length(b);
+          lminimals := [];
+          for lb in b do
+            bDiscard := false;
+            si := 1;
+            while si<=slenA and not bDiscard do
+              ldif := lb-a[si];
+              if ForAll(ldif, v->v>=0) and not ldif in c then
+                bDiscard := true;
+              fi;
+             si := si+1;
+            od;
+            if not bDiscard then
+              si := 1;
+              while si<=slenB and not bDiscard do
+                if b[si]=lb then ## skip the same element
+                  si := si+1;
+                  continue;
+                fi;
+                ldif := lb-b[si];
+                if ForAll(ldif, v->v>=0) and not ldif in c then
+                  bDiscard := true;
+                fi;
+                si := si+1;
+              od;
+            fi;
+            if not bDiscard then
+              Append(lminimals, [lb]);
+            fi;
+          od;
+          return lminimals;
+          end;
+
+        if not IsRectangularTable(h) then
+          Error("The argument must be a list of list");
+        fi;
+        sp := Length(h[1]);
+        lH := ShallowCopy(h);
+        lSi := IdentityMat(sp);
+        lHi := [];
+        si := 1;
+        while lH <> [] and si<=Length(lH) do
+          se := First([1..Length(lSi)], v->lSi[v]=lH[si]);
+          if se=fail then
+            si := si+1;
+            continue;
+          fi;
+          le := lH[si];
+          Remove(lH, si);
+          Add(lHi, le);
+          lSip := [List(3*le)];
+          Append(lSip, List(lSi, v->v+le));
+          Remove(lSi, se);
+          se := 1;
+          while se <= Length(lSip) do
+            if lSip[se] in lSi then
+              Remove(lSip, se);
+            else
+              se := se+1;
+            fi;
+          od;
+          Append(lSi, MinimalElements(lSi, lSip, lHi));
+        od;
+        #if lH <> [] then
+        #  return [];
+        #fi;
+        return lSi;
+      end; 
+    SetMinimalGenerators(S,Corollary9(H));
+    return MinimalGenerators(S); 
   fi;
 end);
 
@@ -131,7 +223,7 @@ if Length(arg) = 1 then
 fi;
 
 if (Zero(H[1]) in H) then
-  return false; #Error("the given set is not a set of gaps");
+  return Error("the given set is not a set of gaps");
 fi;  
 for h in H do
    P:=Cartesian(List(h,i->[0..i]));
@@ -144,6 +236,7 @@ for h in H do
 od;
 M:=Objectify(AffineSemigroupsType,rec());
 SetGaps(M,H);
+SetDimension(M,Length(H1));
 return M;
 end);
 
