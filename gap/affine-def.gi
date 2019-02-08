@@ -116,10 +116,9 @@ end);
 InstallGlobalFunction(AffineSemigroupByGaps,
 
 function(arg)
-  local  gen, M, i,j,k,c,s,t,r,mingen, Leg, H;
+local P,E,h,H,e,M;
 
-
-  if Length(arg) = 1 then
+if Length(arg) = 1 then
     H := Set(arg[1]);
   else
     H := Set(arg);
@@ -129,92 +128,23 @@ function(arg)
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
   elif not ForAll(H, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
-  fi;
+fi;
 
-#  Setter(IsAffineSemigroupByGenerators)(M,true);
-
-  #  c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
-  #  for i in [1..Length(H)] do
-  #      c:=c+1;
-  #      for j in [c..Length(H)] do
-  #          if Maximum(H[i],H[j])=H[i] then
-  #          t:=H[i];
-  #          H[i]:=H[j]; 
-  #          H[j]:=t;
-  #          fi;
-  #      od;    
-  #  od;   
-  H:=Set(H);
- #The elements are ordered now
-   gen:=IdentityMat(Length(H[1]));
-   
-   Leg:=Length(H[1])+1;
-
-  #Step 1, the generators are minimal actually
-
-  if not(H[1] in gen) then
-     Error("The given set is not a set of holes of an affine semigroup");
-  fi;
-  
-  Remove(gen,Position(gen,H[1]));
-  Leg:=Length(gen);
-  for k in [1..Length(gen)] do
-      gen:=Concatenation(gen,[gen[k]+H[1]]);
-  od;
-  gen:=Concatenation(gen,[2*H[1]]);
-  gen:=Concatenation(gen,[3*H[1]]);
-
-  M:= Objectify( AffineSemigroupsType, rec());
-
- #Step 2, exploring a branch af the GNS tree
-       
-   for i in [2..Length(H)+1] do
-           s:=gen;
-       for j in [(Leg+1)..Length(gen)] do
-           t:=[];
-           for k in [1..Length(gen)] do
-               if k<>Position(gen,gen[j]) then
-                  t:=Concatenation(t,[gen[k]]);
-               fi;
-           od;
-           r:=AffineSemigroup("generators",t);
-           if BelongsToAffineSemigroup(gen[j],r) then
-              c:=[];
-           for k in [1..Length(s)] do
-               if s[k]<>gen[j] then
-                  c:=Concatenation(c,[s[k]]);
-               fi;
-           od;
-           s:=c;
-           fi;
-       od;
-       mingen:=s;
-       if i=(Length(H)+1) then
-            SetGaps(M,H);
-            SetDimension(M,Length(H[1]));
-            SetMinimalGenerators(M,mingen);
-           return M;
-       fi;
-
-       if not(H[i] in mingen) then
-            Error("The set is not a set of gaps of an affine semigroup");
-       fi;
-       
-       Remove(mingen,Position(mingen,H[i]));        
-       Leg:=Length(mingen);
-       gen:=mingen;
-       for k in [1..Length(mingen)] do
-           gen:=Concatenation(gen,[mingen[k]+H[i]]);
-       od;
-       gen:=Concatenation(gen,[2*H[i]]);
-       gen:=Concatenation(gen,[3*H[i]]);
-   od;
-
-
-  SetGenerators(M,gen);
-  SetGaps(M,H);
-  SetDimension(M,Length(H[1]));
-  return M;
+if (Zero(H[1]) in H) then
+  return false; #Error("the given set is not a set of gaps");
+fi;  
+for h in H do
+   P:=Cartesian(List(h,i->[0..i]));
+   E:=Difference(P,H);
+   for e in E do
+     if (h<>e and not((h-e) in H)) then
+       return Error("the given set is not a set of gaps");
+     fi;
+   od;    
+od;
+M:=Objectify(AffineSemigroupsType,rec());
+SetGaps(M,H);
+return M;
 end);
 
 InstallMethod(Gaps,
