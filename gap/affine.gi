@@ -184,6 +184,33 @@ InstallMethod(BelongsToAffineSemigroup,
 end);
 
 InstallMethod(BelongsToAffineSemigroup,
+        "To test whether a list of elements of N^n belongs to an affine semigroup",
+        true,
+        [ IsHomogeneousList, IsAffineSemigroup and HasPMInequality],100,
+
+        function(v,a)
+    local f, b, g, ineq;
+
+    ineq:=PMInequality(a);
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    if ForAny(v,x->x<0) then
+        return false;
+    fi;
+
+    f:=ineq[1];
+    b:=ineq[2];
+    g:=ineq[3];
+    if Length(ineq[1])<>Length(v) then
+        Error("The dimension of the vector and the affine semigroup do not coincide.");
+    fi;
+
+    return ((f*v) mod b) <= g*v;
+
+end);
+
+InstallMethod(BelongsToAffineSemigroup,
         "To test whether an element of N^n belongs to an affine semigroup",
         true,
         [ IsHomogeneousList, IsAffineSemigroup and HasInequalities],70,

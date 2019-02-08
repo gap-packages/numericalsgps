@@ -144,6 +144,16 @@ DeclareAttribute( "AffineSemigroupInequalities", IsAffineSemigroup);
 DeclareSynonymAttr( "HasInequalities", HasAffineSemigroupInequalities);
 DeclareOperation("Inequalities", [IsAffineSemigroup and HasInequalities]);
 
+#############################################################################
+##
+#F  AffineSemigroupByPMInequality(f, b, g)
+##
+##  Returns the proportionally modular affine semigroup defined by the 
+##  inequality f*x mod b <= g*x
+##
+#############################################################################
+DeclareGlobalFunction( "AffineSemigroupByPMInequality" );
+DeclareAttribute( "PMInequality", IsAffineSemigroup);
 
 #############################################################################
 ##
