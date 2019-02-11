@@ -49,7 +49,7 @@ InstallMethod(Generators,
          "Computes a set of generators of the affine semigroup",
          [IsAffineSemigroup],1,
         function(S)
-  local  basis, eq, H;
+  local  basis, eq, H, Corollary9;
 
   if HasGenerators(S) then
       return Generators(S);
