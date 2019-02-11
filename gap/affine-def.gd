@@ -61,6 +61,21 @@ DeclareSynonymAttr( "DimensionOfAffineSemigroup", Dimension);
 DeclareAttribute( "MinimalGenerators", IsAffineSemigroup);
 DeclareSynonymAttr( "IsAffineSemigroupByMinimalGenerators", HasMinimalGenerators);
 
+###############################################################################
+#A PseudoFrobenius
+# The set of PseudoFrobeniusVectors
+# Works only if the affine semigroup has finitely many gaps
+###############################################################################
+DeclareAttribute("PseudoFrobenius", IsAffineSemigroup);
+
+###############################################################################
+#O SpecialGaps
+# The set of special gaps
+# Works only if the affine semigroup has finitely many gaps
+###############################################################################
+DeclareAttribute("SpecialGaps", IsAffineSemigroup);
+
+
 
 #############################################################################
 ##
@@ -129,6 +144,16 @@ DeclareAttribute( "AffineSemigroupInequalities", IsAffineSemigroup);
 DeclareSynonymAttr( "HasInequalities", HasAffineSemigroupInequalities);
 DeclareOperation("Inequalities", [IsAffineSemigroup and HasInequalities]);
 
+#############################################################################
+##
+#F  AffineSemigroupByPMInequality(f, b, g)
+##
+##  Returns the proportionally modular affine semigroup defined by the 
+##  inequality f*x mod b <= g*x
+##
+#############################################################################
+DeclareGlobalFunction( "AffineSemigroupByPMInequality" );
+DeclareAttribute( "PMInequality", IsAffineSemigroup);
 
 #############################################################################
 ##

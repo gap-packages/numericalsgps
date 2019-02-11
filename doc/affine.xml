@@ -97,6 +97,29 @@ true
 </ManSection>
 
                 <ManSection>
+                    <Func Name="AffineSemigroup" Arg="String, List" Label="by pminequality"/>
+                    <Func Name="AffineSemigroupByPMInequality" Arg="f, b, g"/>
+                    <Description>
+		      <A>f</A>, <A>g</A> are lists of integers and <A>b</A> is a positive integer.
+          <P/>
+          Returns the proportionally modular affine semigroup defined by the <M>f\times X \mod b \leq g\times X</M>
+		      <P/>
+		      In the second form, <C>String</C> must be <C>"pmiequality"</C>.
+			<Example><![CDATA[
+gap> s:=AffineSemigroupByPMInequality([0, 1, 1, 0, -1], 4, [1, 0, -2, -3, 1]); 
+<Affine semigroup>
+gap> MinimalGenerators(s);
+[ [ 0, 0, 0, 0, 2 ], [ 0, 0, 0, 0, 3 ], [ 0, 0, 0, 1, 4 ], [ 0, 0, 0, 2, 7 ], [ 0, 0, 0, 4, 12 ], [ 0, 0, 1, 0, 4 ], 
+  [ 0, 0, 1, 0, 5 ], [ 0, 0, 1, 1, 5 ], [ 0, 0, 2, 0, 5 ], [ 0, 0, 2, 0, 6 ], [ 0, 0, 3, 0, 7 ], [ 0, 0, 4, 0, 8 ], 
+  [ 0, 1, 0, 0, 1 ], [ 0, 1, 0, 1, 4 ], [ 0, 1, 0, 3, 9 ], [ 0, 1, 1, 0, 2 ], [ 0, 2, 0, 0, 1 ], [ 0, 2, 0, 2, 6 ], 
+  [ 0, 3, 0, 1, 3 ], [ 0, 4, 0, 0, 0 ], [ 1, 0, 0, 0, 0 ], [ 1, 0, 0, 0, 1 ], [ 1, 0, 0, 1, 3 ], [ 1, 0, 0, 3, 8 ], 
+  [ 1, 0, 1, 0, 1 ], [ 1, 1, 0, 0, 0 ], [ 1, 1, 0, 2, 5 ], [ 1, 2, 0, 1, 2 ], [ 2, 0, 0, 2, 4 ], [ 2, 1, 0, 1, 1 ], 
+  [ 2, 3, 1, 0, 0 ], [ 3, 0, 0, 1, 0 ], [ 3, 0, 1, 0, 0 ], [ 4, 2, 2, 0, 0 ], [ 6, 1, 3, 0, 0 ], [ 8, 0, 4, 0, 0 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+                <ManSection>
                 <Func Name="AffineSemigroup" Arg="[String,] List" Label="by gaps"/>
                     <Func Name="AffineSemigroupByGaps" Arg="List"/>
                     <Description>
@@ -131,6 +154,42 @@ gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
 <Affine semigroup in 4 dimensional space, with 12 generators>
 gap> Gaps(a);
 [ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ]
+]]></Example>
+
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="PseudoFrobenius" Arg="S" Label="for affine semigroup"/>
+  <Description>
+    <A>S</A> is an affine semigroup, the output is its set of pseudo-Frobenius vectors, that is, the gaps <M>g</M> of <A>S</A> such that for every nonzero element <M>s</M> of <A>S</A>, the vector <M>g+s</M> is in <A>S</A>. The package will only find pseudo-Frobenius vectors for affine semigroups with a finite set of gaps.
+    <P/>
+    <Example><![CDATA[
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0],[0,4,0,0]]);
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> PseudoFrobenius(a);
+[ [ 0, 2, 0, 0 ], [ 2, 1, 0, 0 ] ]
+]]></Example>
+
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="SpecialGaps" Arg="S" Label="for affine semigroup"/>
+  <Description>
+    <A>S</A> is an affine semigroup, the output is its set of special gaps of <A>S</A>, that is, the gaps <M>g</M> of <A>S</A> such that <M><A>S</A>\cup\{g\}</M> is a semigroup. Special gaps can only be computed in the package for affine semigroups with finitely many gaps.
+    <P/>
+    <Example><![CDATA[
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0],[0,4,0,0]]);
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> SpecialGaps(a);
+[ [ 0, 2, 0, 0 ], [ 2, 1, 0, 0 ] ]
 ]]></Example>
 
   </Description>

@@ -37,6 +37,7 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
 #  Setter(IsAffineSemigroupByGenerators)(M,true);
   return M;
 end);
+
 #############################################################################
 ##
 #O  Generators(S)
@@ -164,6 +165,292 @@ end);
 
 #############################################################################
 ##
+#O  Generators(S)
+##
+##  Computes a set of generators of the affine semigroup S.
+##  If a set of generators has already been computed, this
+##  is the set returned.
+############################################################################
+InstallMethod(Generators,
+         "Computes a set of generators of the affine semigroup",
+         [IsAffineSemigroup and HasPMInequality],10,
+        function(M)
+  local MinimalGensAndMaybeGapsFromInequality, ineq;
+  
+MinimalGensAndMaybeGapsFromInequality:=function(f, b, g)
+  local ComputeForGGreaterThanZero, ComputeForGGreaterLowerZero;
+
+  if ForAll(g, v->v<0) then
+    # Setter #######################
+    SetMinimalGenerators(M, []);
+    ################################
+  elif ForAll(g, v->v>0) then
+    ComputeForGGreaterThanZero := function()
+      local sp, si, se, lH, lsH, lSi, lSip, lHi, le, MinimalElements;
+
+      #########################################################
+      #F  MinimalElements(<a>, <b>, <c>)
+      #  Returns the minimal elements in <b> with respect to 
+      #  <a> \cup <b> discarding every e in <b> such that 
+      #  exists z \in <a> \cup <b> and e-z \notin <c> and  
+      #  e-z is in the 1st ortant
+      #
+      MinimalElements := function(a, b, c)
+        local slenA, slenB, si, lb, lminimals, ldif, bDiscard;
+
+        slenA := Length(a);
+        slenB := Length(b);
+        lminimals := [];
+        for lb in b do
+          bDiscard := false;
+          si := 1;
+          while si<=slenA and not bDiscard do
+            ldif := lb-a[si];
+            if ForAll(ldif, v->v>=0) and not ldif in c then
+              bDiscard := true;
+            fi;
+            si := si+1;
+          od;
+          if not bDiscard then
+            si := 1;
+            while si<=slenB and not bDiscard do
+              if b[si]=lb then ## skip the same element
+                si := si+1;
+                continue;
+              fi;
+              ldif := lb-b[si];
+              if ForAll(ldif, v->v>=0) and not ldif in c then
+                bDiscard := true;
+              fi;
+              si := si+1;
+            od;
+          fi;
+          if not bDiscard then
+            Append(lminimals, [lb]);
+          fi;
+        od;
+        return lminimals;
+      end;
+
+      sp := Length(g);
+      lH := [];
+      for si in [1..b-1] do
+        lsH := FactorizationsIntegerWRTList(si, g);
+        for se in lsH do
+          if f*se mod b > g*se then
+            Add(lH, se);
+          fi;
+        od;
+      od;
+      # Setter ###############
+      SetGaps(M, lH);
+      ########################
+      lSi := IdentityMat(sp);
+      lHi := [];
+      si := 1;
+      while lH <> [] do
+        se := First([1..Length(lSi)], v->lSi[v]=lH[si]);
+        if se<>fail then
+          le := lH[si];
+          Remove(lH, si);
+          Add(lHi, le);
+          lSip := [List(3*le)];
+          Append(lSip, List(lSi, v->v+le));
+          Remove(lSi, se);
+          se := 1;
+          while se <= Length(lSip) do
+            if lSip[se] in lSi then
+              Remove(lSip, se);
+            else
+              se := se+1;
+            fi;
+          od;
+          Append(lSi, MinimalElements(lSi, lSip, lHi));
+        else
+          si := si+1;
+        fi;
+      od;
+      return lSi;
+    end;
+
+    # Setter ######################################
+    SetMinimalGenerators(M, ComputeForGGreaterThanZero());
+    ###############################################
+  else 
+    ComputeForGGreaterLowerZero:=function()
+      local sd, sk, lheqs, slenf, lCdash, lMdk, le, lee, ls, lr, lzero, 
+            ComputeCdash;
+
+      if b=1 then
+        return HilbertBasisOfSystemOfHomogeneousInequalities(
+                  Concatenation([g], IdentityMat(Length(g))));
+      else
+        slenf := Length(f);
+        ComputeCdash:=function()
+          local lzero, lw, lV, lU, lwzetas, lC, lCk, lomegas,
+                SplitMGSC0, GenSysOfCk, Dash;
+
+          ######################################################  
+          #F SplitMGSC0(<v>, <c0>)
+          #
+          # Extracts from w \in <c0> those such that w \notin <v>, 
+          # and <g>(w)<b or <g>(w)>=b,  
+          # returning them in a list omegas of lists. 
+          # w \in omegas[i-1], if _g(w) = i 
+          # w \in omegas[b-1], if _g(w) >= _b 
+          SplitMGSC0 := function(v, c0)
+
+            local si, lC0minusV, lomegas, lw;
+
+            lC0minusV := Difference(c0, v);
+
+            lomegas := List([1..b], v->[]);
+            for lw in lC0minusV do
+              si := g*lw;
+              if si > b then
+                si := b;
+              fi;
+              Add(lomegas[si], lw);
+            od;
+            return lomegas;
+          end;
+
+          ######################################################
+          #F GenSysOfCk( <omegask>, <v>, <ckm1>)
+          #
+          # Recursive construction of set 
+          # C_k = <ckm1> \setminus <omegask> \cup
+          # \{2<omegask>, 3<omegask>\} \cup 
+          # \{<omegask>+s | s \in <ckm1>\setminus <v>\}
+          GenSysOfCk := function(omegask, v, ckm1)
+            local lv, lw, lCk, lCkm1minusV, lws;
+
+            lCk := Difference(ckm1, omegask);
+            lCkm1minusV := Difference(ckm1, v);
+
+            lws := [];
+            for lv in omegask do
+              lw := 2*lv;
+              if not lw in lCk then
+                Add(lCk, lw);
+              fi;
+              lw := lw+lv;
+              if not lw in lCk then
+                Add(lCk, lw);
+              fi;
+              
+              Append(lws, Filtered(lCkm1minusV+lv, e->not e in lws));
+            od;
+            Append(lCk, Filtered(lws, u->not u in lCk));
+            return lCk;
+          end;
+
+          ## Compute $V$, $x$ such that $g(x) = 0$
+          lV := HilbertBasisOfSystemOfHomogeneousEquations([g], []);
+
+          ## Compute $C_0$, the mgs of $L(S)\cap\N^p$
+          ## $g(x)\ge 0$, $x_i\ge 0$
+          lC := HilbertBasisOfSystemOfHomogeneousInequalities(
+                  Concatenation([g], IdentityMat(Length(g))));
+
+          lomegas := SplitMGSC0(lV, lC);
+
+          ## Compute C_k recursivelly
+          lCk := [];
+          Append(lCk, [lC]);
+          for sk in [2..b] do
+            Append(lCk, [GenSysOfCk(lomegas[sk-1], lV, lCk[sk-1])]);
+          od;
+
+          ## Compute $U$, $x$ such that
+          ## $f(x) \mod b = 0$, and $g(x) = 0$
+          lzero := List([1..Length(f)], v->0);
+          lU := Filtered(List(HilbertBasisOfSystemOfHomogeneousEquations([f, g], [b]), 
+                              u->u{[1..slenf]}), 
+                          e->e<>lzero);
+
+          ## Compute $(C_{b-1}\setminus V)\cup U$
+          lC := Set(List(Difference(lCk[b], lV)));
+          UniteSet(lC, lU);
+          
+          ## Take $w \in C$ such that $g(w)\ge b$
+          lw := Filtered(lC, e->g*e >= b);
+
+          ######################################################
+          #F Dash( <w>, <d> )
+          # Computes the set 
+          # \cup_{<w>} \{z\in N^p | <w> < z <= <w> + <d>} 
+          # and returns it as a set
+          Dash := function(w, d)
+            local slend, luz, lw, lrngs, lwmd;
+
+            luz := Set([]);
+            slend := Length(d);
+            for lw in w do
+              lwmd := lw + d;
+              lrngs := List([1..slend], e->[lw[e]..lwmd[e]]);
+              # TODO: avoid repeating Cartesian computations for overlapping
+              # ranges
+              UniteSet(luz, Cartesian(lrngs));
+              RemoveSet(luz, lw);
+            od;
+            return luz;
+          end;
+
+          ## Compute $z\in \N^p, z!=w, z-w \in \N^p, w+\sum_{v\in V}b v - z \in \N^p$
+          lwzetas := Dash(lw, Sum(List(lV, v->b*v)));
+          ## \~C = C \cup wzetas
+          UniteSet(lC, lwzetas);
+          
+          return lC;
+        end;
+
+        lCdash := ComputeCdash();
+        lMdk := List([1..b-1], e->List([1..e+1], ee->[]));
+        lzero := List([1..slenf], e->0);
+        for sd in [1..b-1] do
+          lheqs := [Concatenation(f, [0]), Concatenation(g, [-sd])];
+          for sk in [0..sd] do
+            lheqs[1][slenf+1] := -sk;
+            lMdk[sd][sk+1] := Filtered(List(
+                                        Filtered(
+                                          HilbertBasisOfSystemOfHomogeneousEquations(lheqs, [b]), 
+                                            r->r[slenf+1]=1), 
+                                          e->e{[1..slenf]}), 
+                                        ee->ee<>lzero);
+            UniteSet(lCdash, lMdk[sd][sk+1]);
+          od;
+        od;
+        sd := 1;
+        while sd <= Length(lCdash) do
+          le := lCdash[sd];
+          sd := sd+1;
+          lee := Filtered(lCdash, e->ForAll(le-e, v->v>=0) and e<>le);
+          for ls in lee do
+            lr := le - ls;
+            if f*lr mod b <= g*lr then
+              Unbind(lCdash[sd-1]);
+              break;
+            fi;
+          od;
+        od;
+        return Compacted(lCdash);
+      fi;
+    end;
+
+    # Setter #######################################
+    SetMinimalGenerators(M, ComputeForGGreaterLowerZero());
+    ################################################
+  fi;
+  return MinimalGenerators(M);
+end;
+
+  ineq := PMInequality(M);
+  return MinimalGensAndMaybeGapsFromInequality(ineq[1], ineq[2], ineq[3]);
+end);
+
+#############################################################################
+##
 #O  MinimalGenerators(S)
 ##
 ##  Computes the set of minimal  generators of the affine semigroup S.
@@ -188,6 +475,9 @@ InstallMethod(MinimalGenerators,
   elif HasInequalities(S) then
       basis := HilbertBasisOfSystemOfHomogeneousInequalities(AffineSemigroupInequalities(S));
       SetMinimalGenerators(S,basis);
+      return MinimalGenerators(S);
+  elif HasPMInequality(S) then
+      SetMinimalGenerators(S, Generators(S));
       return MinimalGenerators(S);
   fi;
   gen:=Generators(S);
@@ -244,10 +534,34 @@ InstallMethod(Gaps,
   "for an affine semigroups",
   [IsAffineSemigroup],
   function( M )
-  local i,j,k,l,r,c,t,temp,key,sum,S,N,V,vec,P,Aff,H, A;
+  local i,j,k,l,r,c,t,temp,key,sum,S,N,V,vec,P,Aff,H, A,
+        f, b, g, lH, si, lsH, se;
 
   if HasGaps(M) then
     return Gaps(M);
+  fi;
+  if HasPMInequality(M) then
+    g := PMInequality(M)[3];
+    if ForAll(g, v->v<0) then
+      SetGaps(M, []);
+      return [];
+    elif ForAll(g, v->v>0) then
+      f := PMInequality(M)[1];
+      b := PMInequality(M)[2];
+      lH := [];
+      for si in [1..b-1] do
+        lsH := FactorizationsIntegerWRTList(si, g);
+        for se in lsH do
+          if ((f*se) mod b) > g*se then
+            Add(lH, se);
+          fi;
+        od;
+      od;
+      SetGaps(M, lH);
+      return Gaps(M);
+    else
+      Error("This afine semigroup has infinitely many gaps");
+    fi;
   fi;
 
   A:=List(Generators(M));
@@ -355,6 +669,34 @@ InstallMethod(Gaps,
   return H;  
 end);
 
+##############################################################
+#A PseudoFrobenius
+# Computes the set of PseudoFrobenius
+# Works only if the affine semigroup has finitely many gaps
+##############################################################
+InstallMethod(PseudoFrobenius, [IsAffineSemigroup],
+function(s)
+    local gaps, gens;
+    gens:=Generators(s);
+    gaps:=Gaps(s);
+    return Filtered(gaps, g->ForAll(gens, n -> n+g in s));
+
+end);
+
+##############################################################
+#A SpecialGaps
+# Computes the set of special gaps
+# Works only if the affine semigroup has finitely many gaps
+##############################################################
+InstallMethod(SpecialGaps, [IsAffineSemigroup],
+function(s)
+    local gaps, gens;
+    gens:=Generators(s);
+    gaps:=PseudoFrobenius(s);
+    return Filtered(gaps, g->2*g in s);
+
+end);
+
 
 #############################################################################
 ##
@@ -369,7 +711,7 @@ InstallMethod(Inequalities,
           return AffineSemigroupInequalities(S);
 end);
 #############################################################################
-## Full ffine semigroups
+## Full affine semigroups
 #############################################################################
 ##
 #F  AffineSemigroupByEquations(ls,md)
@@ -448,6 +790,32 @@ InstallGlobalFunction(AffineSemigroupByInequalities, function(arg)
   return M;
 end);
 
+#############################################################################
+##
+#F  AffineSemigroupByPMInequality(f, b, g)
+##
+##  Returns the proportionally modular affine semigroup defined by the 
+##  inequality f*x mod b <= g*x
+##
+#############################################################################
+InstallGlobalFunction(AffineSemigroupByPMInequality, function(f, b, g)
+  local M;
+
+  if not (IsListOfIntegersNS(f) or IsListOfIntegersNS(g)) then
+    Error("f and g must be lists\n");
+  fi;
+  if Length(f)<>Length(g) then
+    Error("f and g must be equal length lists\n");
+  fi;
+  if b<=0 then
+    Error("b should be greater than 0\n");
+  fi;
+
+  M:= Objectify( AffineSemigroupsType, rec());
+  SetPMInequality(M, [f, b, g]);
+  SetDimension(M, Length(g));
+  return M;
+end);
 
 #############################################################################
 
@@ -477,8 +845,10 @@ InstallGlobalFunction(AffineSemigroup, function(arg)
       return AffineSemigroupByInequalities(Filtered(arg, x -> not IsString(x))[1]);
     elif arg[1] = "gaps" then
       return AffineSemigroupByGaps(Filtered(arg, x -> not IsString(x))[1]);
+    elif arg[1] = "pminequality" then
+      return AffineSemigroupByPMInequality(arg[2][1], arg[2][2], arg[2][3]);
     else
-      Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\", \"gaps\" ");
+      Error("Invalid first argument, it should be one of: \"generators\", \"minimalgenerators\", \"gaps\" , \"pminequality\"");
     fi;
   elif Length(arg) = 1 and IsList(arg[1]) then
     return AffineSemigroupByGenerators(arg[1]);
