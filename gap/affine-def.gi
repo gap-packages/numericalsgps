@@ -50,7 +50,7 @@ InstallMethod(Generators,
          "Computes a set of generators of the affine semigroup",
          [IsAffineSemigroup],1,
         function(S)
-  local basis, eq;
+  local  basis, eq, H, Corollary9;
 
   if HasGenerators(S) then
       return Generators(S);
@@ -68,6 +68,98 @@ InstallMethod(Generators,
       basis := HilbertBasisOfSystemOfHomogeneousInequalities(AffineSemigroupInequalities(S));
       SetMinimalGenerators(S,basis);
       return MinimalGenerators(S);
+  fi;
+  if HasGaps(S) then
+     H:=Gaps(S);
+     #########################################################
+     #F  Corollary9(<h>)
+     # Returns if it is possible, a system of generators of 
+     # \N^(|h[1]|) \setminus <h>, or [] if not.
+     #
+     Corollary9 := function(h)
+        local lSi, lSip, lH, lHi, le, si, sp, se, MinimalElements;
+
+        #########################################################
+        #F  MinimalElements(<a>, <b>, <c>)
+        #  Returns the minimal elements in <b> with respect to 
+        #  <a> \cup <b> discarding every e in <b> such that 
+        #  exists z \in <a> \cup <b> and e-z \notin <c> and  
+        #  e-z is in the 1st ortant
+        #
+        MinimalElements := function(a, b, c)
+          local slenA, slenB, si, lb, lminimals, ldif, bDiscard;
+
+          slenA := Length(a);
+          slenB := Length(b);
+          lminimals := [];
+          for lb in b do
+            bDiscard := false;
+            si := 1;
+            while si<=slenA and not bDiscard do
+              ldif := lb-a[si];
+              if ForAll(ldif, v->v>=0) and not ldif in c then
+                bDiscard := true;
+              fi;
+             si := si+1;
+            od;
+            if not bDiscard then
+              si := 1;
+              while si<=slenB and not bDiscard do
+                if b[si]=lb then ## skip the same element
+                  si := si+1;
+                  continue;
+                fi;
+                ldif := lb-b[si];
+                if ForAll(ldif, v->v>=0) and not ldif in c then
+                  bDiscard := true;
+                fi;
+                si := si+1;
+              od;
+            fi;
+            if not bDiscard then
+              Append(lminimals, [lb]);
+            fi;
+          od;
+          return lminimals;
+          end;
+
+        if not IsRectangularTable(h) then
+          Error("The argument must be a list of list");
+        fi;
+        sp := Length(h[1]);
+        lH := ShallowCopy(h);
+        lSi := IdentityMat(sp);
+        lHi := [];
+        si := 1;
+        while lH <> [] and si<=Length(lH) do
+          se := First([1..Length(lSi)], v->lSi[v]=lH[si]);
+          if se=fail then
+            si := si+1;
+            continue;
+          fi;
+          le := lH[si];
+          Remove(lH, si);
+          Add(lHi, le);
+          lSip := [List(3*le)];
+          Append(lSip, List(lSi, v->v+le));
+          Remove(lSi, se);
+          se := 1;
+          while se <= Length(lSip) do
+            if lSip[se] in lSi then
+              Remove(lSip, se);
+            else
+              se := se+1;
+            fi;
+          od;
+          Append(lSi, MinimalElements(lSi, lSip, lHi));
+        od;
+        #if lH <> [] then
+        #  return [];
+        #fi;
+        return lSi;
+      end; 
+    SetMinimalGenerators(S,Corollary9(H));
+    return MinimalGenerators(S); 
   fi;
 end);
 
@@ -406,10 +498,9 @@ end);
 InstallGlobalFunction(AffineSemigroupByGaps,
 
 function(arg)
-  local  gen, M, i,j,k,c,s,t,r,mingen, Leg, H;
+local P,E,h,H,e,M;
 
-
-  if Length(arg) = 1 then
+if Length(arg) = 1 then
     H := Set(arg[1]);
   else
     H := Set(arg);
@@ -419,92 +510,24 @@ function(arg)
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
   elif not ForAll(H, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
     Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
-  fi;
+fi;
 
-#  Setter(IsAffineSemigroupByGenerators)(M,true);
-
-  #  c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
-  #  for i in [1..Length(H)] do
-  #      c:=c+1;
-  #      for j in [c..Length(H)] do
-  #          if Maximum(H[i],H[j])=H[i] then
-  #          t:=H[i];
-  #          H[i]:=H[j]; 
-  #          H[j]:=t;
-  #          fi;
-  #      od;    
-  #  od;   
-  H:=Set(H);
- #The elements are ordered now
-   gen:=IdentityMat(Length(H[1]));
-   
-   Leg:=Length(H[1])+1;
-
-  #Step 1, the generators are minimal actually
-
-  if not(H[1] in gen) then
-     Error("The given set is not a set of holes of an affine semigroup");
-  fi;
-  
-  Remove(gen,Position(gen,H[1]));
-  Leg:=Length(gen);
-  for k in [1..Length(gen)] do
-      gen:=Concatenation(gen,[gen[k]+H[1]]);
-  od;
-  gen:=Concatenation(gen,[2*H[1]]);
-  gen:=Concatenation(gen,[3*H[1]]);
-
-  M:= Objectify( AffineSemigroupsType, rec());
-
- #Step 2, exploring a branch af the GNS tree
-       
-   for i in [2..Length(H)+1] do
-           s:=gen;
-       for j in [(Leg+1)..Length(gen)] do
-           t:=[];
-           for k in [1..Length(gen)] do
-               if k<>Position(gen,gen[j]) then
-                  t:=Concatenation(t,[gen[k]]);
-               fi;
-           od;
-           r:=AffineSemigroup("generators",t);
-           if BelongsToAffineSemigroup(gen[j],r) then
-              c:=[];
-           for k in [1..Length(s)] do
-               if s[k]<>gen[j] then
-                  c:=Concatenation(c,[s[k]]);
-               fi;
-           od;
-           s:=c;
-           fi;
-       od;
-       mingen:=s;
-       if i=(Length(H)+1) then
-            SetGaps(M,H);
-            SetDimension(M,Length(H[1]));
-            SetMinimalGenerators(M,mingen);
-           return M;
-       fi;
-
-       if not(H[i] in mingen) then
-            Error("The set is not a set of gaps of an affine semigroup");
-       fi;
-       
-       Remove(mingen,Position(mingen,H[i]));        
-       Leg:=Length(mingen);
-       gen:=mingen;
-       for k in [1..Length(mingen)] do
-           gen:=Concatenation(gen,[mingen[k]+H[i]]);
-       od;
-       gen:=Concatenation(gen,[2*H[i]]);
-       gen:=Concatenation(gen,[3*H[i]]);
-   od;
-
-
-  SetGenerators(M,gen);
-  SetGaps(M,H);
-  SetDimension(M,Length(H[1]));
-  return M;
+if (Zero(H[1]) in H) then
+  return Error("the given set is not a set of gaps");
+fi;  
+for h in H do
+   P:=Cartesian(List(h,i->[0..i]));
+   E:=Difference(P,H);
+   for e in E do
+     if (h<>e and not((h-e) in H)) then
+       return Error("the given set is not a set of gaps");
+     fi;
+   od;    
+od;
+M:=Objectify(AffineSemigroupsType,rec());
+SetGaps(M,H);
+SetDimension(M,Length(H1));
+return M;
 end);
 
 InstallMethod(Gaps,
