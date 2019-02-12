@@ -75,7 +75,24 @@ DeclareAttribute("PseudoFrobenius", IsAffineSemigroup);
 ###############################################################################
 DeclareAttribute("SpecialGaps", IsAffineSemigroup);
 
+###############################################################################
+#
+# RemoveMinimalGeneratorFromAffineSemigroup(x,s)
+#
+# Compute the affine semigroup obtained by removing the minimal generator x from 
+# the given affine semigroup s. If s has finite gaps, its set of gaps is setted 
+# 
+###############################################################################
+DeclareGlobalFunction("RemoveMinimalGeneratorFromAffineSemigroup");
 
+############################################################################## 
+#
+#  AddSpecialGapOfAffineSemigroup(x,s)
+#
+# Let a an affine semigroup with finite gaps and x be a special gap of a.
+# We compute the unitary extension of a with x
+################################################################################
+DeclareGlobalFunction("AddSpecialGapOfAffineSemigroup");
 
 #############################################################################
 ##
