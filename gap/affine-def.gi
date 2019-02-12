@@ -502,14 +502,18 @@ local P,E,h,H,e,M;
 
 if Length(arg) = 1 then
     H := Set(arg[1]);
-  else
-    H := Set(arg);
-  fi;
+else
+  H := Set(arg);
+fi;
 
-  if not IsRectangularTable(H) then
-    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
-  elif not ForAll(H, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
-    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+if H=[] then 
+  Error("The dimension is ambiguous");
+fi;
+
+if not IsRectangularTable(H) then
+  Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+elif not ForAll(H, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
+  Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
 fi;
 
 if (Zero(H[1]) in H) then
@@ -526,7 +530,7 @@ for h in H do
 od;
 M:=Objectify(AffineSemigroupsType,rec());
 SetGaps(M,H);
-SetDimension(M,Length(H1));
+SetDimension(M,Length(H[1]));
 return M;
 end);
 
