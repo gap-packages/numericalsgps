@@ -751,7 +751,7 @@ InstallGlobalFunction(AddSpecialGapOfAffineSemigroup, function( x, a )
     Error("The first argument must be a list of non negative integers.\n");
   fi;
 
-  if(not(IsAffineSemigroup(s))) then
+  if(not(IsAffineSemigroup(a))) then
     Error("The second argument must be an affine semigroup.\n");
   fi;
   
