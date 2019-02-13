@@ -763,7 +763,7 @@ InstallGlobalFunction(AddSpecialGapOfAffineSemigroup, function( x, a )
     SetGaps(s,H);
     return s;
   else
-    Error(x," must be a special gap of ",s,".\n");  
+    Error(x," must be a special gap of ",a,".\n");  
   fi;
 end);
 
