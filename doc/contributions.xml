@@ -189,7 +189,13 @@ He also helped in preliminary versions of the following functions.
 
 
 <Section><Heading>Functions implemented by C. Cisto</Heading>
-  Carmelo provided some preliminary functions to deal with affine semigroups given by gaps, and to compute gaps of affine semigroups with finite genus, see for instance <Ref Func="AffineSemigroupByGaps"/>.
+  Carmelo provided some functions to deal with affine semigroups given by gaps, and to compute gaps of affine semigroups with finite genus, see for instance 
+  <P/>
+    <Ref Func="AffineSemigroupByGaps"/>,
+  <P/>
+    <Ref Func="RemoveMinimalGeneratorFromAffineSemigroup">,
+  <P/>
+    <Ref Func="AddSpecialGapOfAffineSemigroup">.
 
 </Section>
 

@@ -701,6 +701,71 @@ function(s)
 
 end);
 
+###############################################################################
+#
+# RemoveMinimalGeneratorFromAffineSemigroup(x,s)
+#
+# Compute the affine semigroup obtained by removing the minimal generator x from 
+# the given affine semigroup s. If s has finite gaps, its set of gaps is setted 
+# 
+#################################################################################
+InstallGlobalFunction(RemoveMinimalGeneratorFromAffineSemigroup, function(x,s)
+  local H,t,gens;
+
+  if not(ForAll(x,i -> (IsPosInt(i) or i = 0))) then
+    Error("The first argument must be a list of non negative integers.\n");
+  fi;
+
+  if(not(IsAffineSemigroup(s))) then
+    Error("The second argument must be an affine semigroup.\n");
+  fi;
+
+  gens:=MinimalGenerators(s);
+  if x in gens then
+    gens:=Difference(gens,[x]);
+    gens:=Union(gens,gens+x);
+    gens:=Union(gens,[2*x,3*x]);
+    t:=AffineSemigroup(gens);
+    if HasGaps(s) then
+      H:=Gaps(s);
+      H:=Union(H,[x]);
+      SetGaps(t,H);
+    fi;  
+    return t;
+  else
+    return Error(x," must be a minimal generator of ",s,".\n");
+  fi;
+end);
+
+############################################################################## 
+#
+#  AddSpecialGapOfAffineSemigroup(x,s)
+#
+# Let a an affine semigroup with finite gaps and x be a special gap of a.
+# We compute the unitary extension of a with x.
+################################################################################
+InstallGlobalFunction(AddSpecialGapOfAffineSemigroup, function( x, a )
+  local H,s,gens;
+
+  if not(ForAll(x,i -> (IsPosInt(i) or i = 0))) then
+    Error("The first argument must be a list of non negative integers.\n");
+  fi;
+
+  if(not(IsAffineSemigroup(a))) then
+    Error("The second argument must be an affine semigroup.\n");
+  fi;
+  
+  H:=Set(Gaps(a));
+  if x in SpecialGaps(a) then
+    RemoveSet(H,x);
+    gens:=Union(Generators(a),[x]);
+    s:=AffineSemigroup(gens);
+    SetGaps(s,H);
+    return s;
+  else
+    Error(x," must be a special gap of ",a,".\n");  
+  fi;
+end);
 
 #############################################################################
 ##
