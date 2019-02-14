@@ -99,7 +99,7 @@ rec(
   FirstNames    := "Max",
   IsAuthor      := false,
   IsMaintainer  := false,
-  WWWHome       := "http://www.quendi.de/en/math.html"
+  WWWHome       := "https://www.quendi.de/math"
 ),
 
 
