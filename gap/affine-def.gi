@@ -538,7 +538,7 @@ InstallMethod(Gaps,
   "for an affine semigroups",
   [IsAffineSemigroup],
   function( M )
-  local i,j,k,l,r,c,t,temp,key,sum,S,N,V,vec,P,Aff,H, A,
+  local i,j,k,d,sum,S,NS,N,V,vec,F,P,G,A,E,minA,ge,m,
         f, b, g, lH, si, lsH, se;
 
   if HasGaps(M) then
@@ -568,109 +568,101 @@ InstallMethod(Gaps,
     fi;
   fi;
 
-  A:=List(Generators(M));
-  c:=0;                                              #Ordering the elements of H with rspect to lexicographical order
-  for i in [1..Length(A)] do
-      c:=c+1;
-      for j in [c..Length(A)] do
-          if Maximum(A[i],A[j])=A[i] then
-          t:=A[i];
-          A[i]:=A[j]; 
-          A[j]:=t;
-          fi;
-      od;    
-  od;   
+  A:=List(Generators(M));     #A will be modified
   S:=[];
-  for j in [1..Length(A[1])] do
-      S:=Concatenation(S,[[]]);
+  NS:=[];
+  d:=Length(A[1]);
+  if M=AffineSemigroup(IdentityMat(d)) then
+     Error("The semigroup N^d has not gaps");
+  fi;  
+  #Let i in {1,..d}, I have to find in A the elements in which all coordinates 
+  #different from i is zero, I need the nonzero coordinates of these elements and such 
+  #coordinates must generate a numerical semigroup
+  for i in [1..d] do
+    S[i]:=Filtered(A,j->ForAll([1..d],k->(j[k]=0 or k=i)));
+    NS[i]:=List(S[i],j->j[i]);
+    A:=Difference(A,S[i]); #now A is no more the set of minimal generators (it is not needed)
+    if NS[i]=[] or (Gcd(NS[i])<>1) then
+      Error("This affine semigroup has infinitely many gaps");
+    fi;
   od;
-  N:=NullMat(Length(A[1]),Length(A[1]));
-  V:=NullMat(Length(A[1]),Length(A[1]));                              #V is a "verification" matrix
-  for r in [1..Length(A)] do
-      temp:=0;                                                        #temp it is needed to not repeat the procedure if it is useless
-      for j in [1..Length(A[1])] do
-          if temp=0 then
-            key:=0;                                                  #key it is needed to verify hat each A[r][i]=0 for all i<>j 
-            for i in [1..Length(A[1])] do
-                if i<>j then
-                    if A[r][i]<>0 then
-                      key:=1;
-                    fi;
-                fi;
-              od;
-              if key=0 then
-                Append(S[j],[A[r][j]]);
-                temp:=1;
-              fi;     
+  
+  #I have to find in A all elements e(i)+n(i,k)e(k), since e(i) is the i-th standard basis
+  #vector in N^d, with i different by k. Moreover I have to store the numbers n(i,k).
+  #When i=k it is useless.
+  N:=NullMat(d,d);
+  for i in [1..d] do
+    #If e(i) belong to S[i] then we can choose n(i,k)=0 for all k 
+    if IdentityMat(d)[i] in S[i] then
+      N[i]:=NullMat(1,d)[1];
+    else  
+      for k in [1..d] do
+        if i<>k then
+          V:=Filtered(Filtered(A,j->j[i]=1),r->ForAll([1..d],t->(r[t]=0 or (t=k or t=i))));
+          if V=[] then
+            Error("This affine semigroup has infinitely many gaps");
           fi;
-      od;
-
-          for i in [1..Length(A[1])] do
-              if A[r][i]=1 then
-                for k in [1..Length(A[1])] do
-                    if k<>i then
-                        if V[i][k]=0 then
-                          key:=0;
-                          for l in [1..Length(A[1])] do
-                              if (l<>i and l<>k) then
-                                  if A[r][l]<>0 then
-                                    key:=1;
-                                  fi;
-                              fi;
-                          od;
-                          if key=0 then
-                          N[i][k]:=A[r][k];
-                          V[i][k]:=1;
-                          fi;
-                        fi;
-                    fi;
-                od;
-              fi;
-          od;
-      
-  od;
-  for i in [1..Length(A[1])] do
-      for k in [1..Length(A[1])] do
-          if (k<>i and V[i][k]=0) then
-              Error("This afine semigroup has infinitely many gaps");
-          fi;
-      od;
-  od;
-          
-  vec:=[];
-  for j in [1..Length(A[1])] do
-      if (Gcd(S[j])<>1) then
-        Error("This affine semigroup has infinitely many gaps");
-      fi;
-  od;
-  for j in [1..Length(A[1])] do
-      if FrobeniusNumber(NumericalSemigroup(S[j]))=-1 then
-      sum:=0;
-      else
-      sum:=FrobeniusNumber(NumericalSemigroup(S[j]));                          #functions of package numericalsgps are used
-      fi;
-      for i in [1..Length(A[1])] do
-          if i<>j then
-            if FrobeniusNumber(NumericalSemigroup(S[i]))=-1 then
-            temp:=0;
-            else
-            temp:=FrobeniusNumber(NumericalSemigroup(S[i]));
-            fi;
-          sum:=sum+temp*N[i][j]; 
-          fi;
-      od;
-      vec:=Concatenation(vec,[sum]);
-  od;
-  P:=Cartesian(List(vec,i->[0..i]));
-  H:=[];
-  Aff:=AffineSemigroup("generators",A);
-  for k in [1..Length(P)] do
-        if (not BelongsToAffineSemigroup(P[k],Aff)) then
-        H:=Concatenation(H,[P[k]]);
+          N[i,k]:=Minimum(List(V,j->j[k]));      
+          #Taking the minimum above, it would reduce the successive computations.
         fi;
-  od; 
-  SetGaps(M,H);
-  return H;  
+      od;
+    fi;
+  od;
+  #if this point is reached, then the semigroup has finitely many gaps
+  #
+  #next the set of gaps is computed
+  #
+ #I have to build the vector V of the pseudocode;
+ #F is the list of Frobenius numbers of the semigroups in the axes.
+ #F:=List(NS,j->Maximum(FrobeniusNumber(NumericalSemigroup(j)),0);
+ F:=List(NS,j->FrobeniusNumber(NumericalSemigroup(j)));
+ for j in [1..d] do
+   if F[j]=-1 then
+     F[j]:=0;
+    fi;
+ od;
+ vec:=[];
+ for j in [1..d] do
+   sum:=F[j];
+    for i in [1..d] do
+      if i<>j then
+        sum:=sum+F[i]*N[i,j];
+      fi;
+    od;
+    vec[j]:=sum; 
+  od;
+  #Now the gaps of the semiroup M are all contained in the set of all elements smaller
+  #than the vector vec (with repsect to partial order). We check those not belonging to M. 
+  P:=Cartesian(List(vec,i->[0..i]));
+  G:=[];
+  #G is the set of gaps and G:=Filtered(P,i->not(BelongsToAffineSemigroup(i,M)));
+  #Or we eliminate succesively from P, many elements of the Semigroup, stored in E.
+  for i in [1..d] do
+    S[i]:=NumericalSemigroup(NS[i]);
+    G:=Union(G,List(Gaps(S[i]),g->IdentityMat(d)[i]*g));
+    NS[i]:=ElementsUpTo(S[i],vec[i]);     
+  od;
+  P:=Difference(P,Cartesian(List([1..d],i->[F[i]+1..vec[i]])));
+  E:=Difference(Cartesian(NS),Cartesian(List([1..d],i->[F[i]+1..vec[i]])));
+  A:=Filtered(A,i->i in P);
+  A:=Union(A,Union(List(A,i->A+i)));
+  E:=Union(E,Union(List(A,i->E+i)));
+  m:=Cartesian(List([1..d],i->[0..Multiplicity(S[i])-1]));
+  A:=Intersection(m,A);
+  if IsEmpty(A) then
+     G:=Union(G,Difference(m,NullMat(1,d)));
+  else
+    ge:=function(x,y)
+      return ForAll([1..Length(x)], i->x[i]>=y[i]);
+    end;;   
+    minA:=Filtered(A, a->not(ForAny(A, aa-> ge(a,aa) and a<>aa)));
+    G:=Union(G,Union(List(minA,a->Difference(Cartesian(List(a,i->[0..i])),[a]))));
+    G:=Difference(G,NullMat(1,d));
+  fi;
+  P:=Difference(P,Union(E,G));
+  G:=Union(G,Filtered(P,i->not(BelongsToAffineSemigroup(i,M))));
+  SetGaps(M,G);
+  return G;
 end);
 
 ##############################################################
