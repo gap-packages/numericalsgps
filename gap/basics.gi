@@ -246,7 +246,7 @@ end);
 #The algorithm used here was obtained by Delgado&Rosales
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and IsProportionallyModularNumericalSemigroup],
+        [IsNumericalSemigroup and HasProportionallyModularConditionNS],
         function(S)
     local   a,  b,  c,  j;
 
