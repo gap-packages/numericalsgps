@@ -1882,24 +1882,52 @@ gap> a2:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
 gap> a1=a2;
 true
 
+gap> s:=AffineSemigroupByPMInequality([0, 1, 1, 0, -1], 4, [1, 0, -2, -3, 1]);
+<Affine semigroup>
+gap> MinimalGenerators(s);
+[ [ 0, 0, 0, 0, 2 ], [ 0, 0, 0, 0, 3 ], [ 0, 0, 0, 1, 4 ], [ 0, 0, 0, 2, 7 ], 
+  [ 0, 0, 0, 4, 12 ], [ 0, 0, 1, 0, 4 ], [ 0, 0, 1, 0, 5 ], [ 0, 0, 1, 1, 5 ],
+  [ 0, 0, 2, 0, 5 ], [ 0, 0, 2, 0, 6 ], [ 0, 0, 3, 0, 7 ], [ 0, 0, 4, 0, 8 ], 
+  [ 0, 1, 0, 0, 1 ], [ 0, 1, 0, 1, 4 ], [ 0, 1, 0, 3, 9 ], [ 0, 1, 1, 0, 2 ], 
+  [ 0, 2, 0, 0, 1 ], [ 0, 2, 0, 2, 6 ], [ 0, 3, 0, 1, 3 ], [ 0, 4, 0, 0, 0 ], 
+  [ 1, 0, 0, 0, 0 ], [ 1, 0, 0, 0, 1 ], [ 1, 0, 0, 1, 3 ], [ 1, 0, 0, 3, 8 ], 
+  [ 1, 0, 1, 0, 1 ], [ 1, 1, 0, 0, 0 ], [ 1, 1, 0, 2, 5 ], [ 1, 2, 0, 1, 2 ], 
+  [ 2, 0, 0, 2, 4 ], [ 2, 1, 0, 1, 1 ], [ 2, 3, 1, 0, 0 ], [ 3, 0, 0, 1, 0 ], 
+  [ 3, 0, 1, 0, 0 ], [ 4, 2, 2, 0, 0 ], [ 6, 1, 3, 0, 0 ], [ 8, 0, 4, 0, 0 ] ]
+
 gap> gaps := [[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],[5,0,0,0]];;
 gap> a1 := AffineSemigroup("gaps", gaps );
-<Affine semigroup in 4 dimensional space, with 12 generators>
+<Affine semigroup>
 gap> a2 := AffineSemigroupByGaps( gaps );
-<Affine semigroup in 4 dimensional space, with 12 generators>
+<Affine semigroup>
 gap> a1 = a2;
 true
-gap> Generators(a1);
-[ [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ], [ 1, 0, 1, 0 ], 
-  [ 1, 0, 0, 1 ], [ 3, 0, 0, 0 ], [ 1, 2, 0, 0 ], [ 2, 0, 1, 0 ], 
-  [ 2, 0, 0, 1 ], [ 4, 0, 0, 0 ], [ 2, 2, 0, 0 ], [ 5, 1, 0, 0 ] ]
+gap> Generators(a1);;
+gap> Set(last);
+[ [ 0, 0, 0, 1 ], [ 0, 0, 1, 0 ], [ 0, 1, 0, 0 ], [ 1, 0, 0, 1 ], 
+  [ 1, 0, 1, 0 ], [ 1, 2, 0, 0 ], [ 2, 0, 0, 1 ], [ 2, 0, 1, 0 ], 
+  [ 2, 2, 0, 0 ], [ 3, 0, 0, 0 ], [ 4, 0, 0, 0 ], [ 5, 1, 0, 0 ] ]
 
 gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
 > [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
 > [0,5,0,0],[0,4,0,0]]);
 <Affine semigroup in 4 dimensional space, with 12 generators>
-gap> Gaps(a);
+gap> Set(Gaps(a));
 [ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ]
+
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0],[0,4,0,0]]);
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> PseudoFrobenius(a);
+[ [ 0, 2, 0, 0 ], [ 2, 1, 0, 0 ] ]
+
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0],[0,4,0,0]]);
+<Affine semigroup in 4 dimensional space, with 12 generators>
+gap> SpecialGaps(a);
+[ [ 0, 2, 0, 0 ], [ 2, 1, 0, 0 ] ]
 
 gap> a:=AffineSemigroup([[1,0],[0,1],[1,1]]);
 <Affine semigroup in 2 dimensional space, with 3 generators>
@@ -1910,6 +1938,23 @@ gap> a:=AffineSemigroup([[1,0],[0,1],[1,1]]);
 <Affine semigroup in 2 dimensional space, with 3 generators>
 gap> MinimalGenerators(a);
 [ [ 0, 1 ], [ 1, 0 ] ]
+
+gap> a:=AffineSemigroup([2,0],[0,4]);
+<Affine semigroup in 2 dimensional space, with 2 generators>
+gap> b:=RemoveMinimalGeneratorFromAffineSemigroup([2,0],a);Generators(b);
+<Affine semigroup in 2 dimensional space, with 4 generators>
+[ [ 0, 4 ], [ 2, 4 ], [ 4, 0 ], [ 6, 0 ] ]
+
+gap> s:=AffineSemigroup([[2,0],[3,0],[0,4],[0,5],[1,1]]);
+<Affine semigroup in 2 dimensional space, with 5 generators>
+gap> t:=AddSpecialGapOfAffineSemigroup([1,12],s);
+<Affine semigroup in 2 dimensional space, with 6 generators>
+gap> Gaps(s);
+[ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 0, 6 ], [ 0, 7 ], [ 0, 11 ], [ 1, 0 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ],
+[ 1, 7 ], [ 1, 8 ], [ 1, 12 ], [ 2, 1 ], [ 2, 3 ], [ 3, 2 ], [ 4, 3 ] ]
+gap> Gaps(t);
+[ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 0, 6 ], [ 0, 7 ], [ 0, 11 ], [ 1, 0 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ],
+[ 1, 7 ], [ 1, 8 ], [ 2, 1 ], [ 2, 3 ], [ 3, 2 ], [ 4, 3 ] ]
 
 gap>  s:=NumericalSemigroup(1310,1411,1546,1601);
 <Numerical semigroup with 4 generators>
