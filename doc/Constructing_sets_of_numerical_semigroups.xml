@@ -74,7 +74,9 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
                     <Func Arg="g" Name="NumericalSemigroupsWithGenus"></Func>
                     <Description>
                         <A>g</A> is a nonnegative integer. The output is the set of numerical semigroups
-                        with genus <A>g</A>.           
+                        with genus <A>g</A>.
+
+			If the user just wants to use some numerical semigroup with a given genus pseudo-randomly choosen, he is probably looking for the function <Ref Func="RandomNumericalSemigroupWithGenus" />.
                         <Example><![CDATA[
 gap> NumericalSemigroupsWithGenus(5);
 [ <Numerical semigroup with 6 generators>, 

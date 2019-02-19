@@ -151,7 +151,8 @@ gap> RandomAffineSemigroup(5,5,3);Generators(last);
  Returns a full affine semigroup either given by equations or inequalities (when no string is given, one is choosen at random). The matrix is an <A>n</A>*<A>d</A> matrix where <A>d</A> (the dimension) is randomly choosen from [1..<A>d</A>] and <A>n</A> is randomly choosen from [1..<A>n</A>]. When it is given by equations, the moduli are choosen at random. The entries of the matrix (and moduli) are randomly choosen from [0..<A>m</A>] (when the third integer is not present, m is taken as <A>n</A>*<A>d</A>)                <Example><![CDATA[
 gap> RandomFullAffineSemigroup(5,5,3);Generators(last);
 <Affine semigroup>
-#I  Using contejeanDevieAlgorithm for Hilbert Basis. Please, consider using NormalizInterface, 4ti2Interface or 4ti2gap.
+#I  Using contejeanDevieAlgorithm for Hilbert Basis. Please, consider using
+NormalizInterface, 4ti2Interface or 4ti2gap.
 [ [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 1, 0, 0, 0 ], 
   [ 1, 0, 0, 0, 0 ] ]
 ]]></Example>
