@@ -675,8 +675,7 @@ function(s)
     local gaps, gens;
     gens:=Generators(s);
     gaps:=Gaps(s);
-    return Filtered(gaps, g->ForAll(gens, n -> n+g in s));
-
+   return Filtered(gaps, g->not ForAny(gens, n -> n+g in gaps));
 end);
 
 ##############################################################
@@ -686,11 +685,7 @@ end);
 ##############################################################
 InstallMethod(SpecialGaps, [IsAffineSemigroup],
 function(s)
-    local gaps, gens;
-    gens:=Generators(s);
-    gaps:=PseudoFrobenius(s);
-    return Filtered(gaps, g->2*g in s);
-
+  return Filtered(PseudoFrobenius(s), g->2*g in s);
 end);
 
 ###############################################################################

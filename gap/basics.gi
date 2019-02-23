@@ -475,8 +475,6 @@ InstallMethod( FundamentalGapsOfNumericalSemigroup,
 #  SetFundamentalGaps(S, fh);
 #  return FundamentalGaps(S);
 end);
-
-
 #############################################################################
 ##
 #A  PseudoFrobeniusOfNumericalSemigroup(S)
@@ -490,23 +488,15 @@ InstallMethod( PseudoFrobeniusOfNumericalSemigroup,
         true,
         [IsNumericalSemigroup],
         function(S)
-    local   hs,  ehs,  SE,  S0,  x;
-
-    hs := GapsOfNumericalSemigroup(S);
-    if hs = [] then                 # S is N
-        return [-1];
-    fi;
-    ehs := [];
-    SE := SmallElementsOfNumericalSemigroup(S);
-    S0 := SE{[2..Length(SE)]};
-    for x in hs do
-        if ForAll(S0, s-> BelongsToNumericalSemigroup(x+s,S)) then
-            Add(ehs, x);
-        fi;
-    od;
-    return ehs;
+  local  gaps, f, lefts;
+  gaps := GapsOfNumericalSemigroup(S);
+  if gaps = [] then                 # S is N
+    return [-1];
+  fi;
+  f := Maximum(gaps);
+  lefts := Difference([1..f],gaps);
+  return Filtered(gaps, g-> ForAll(lefts, n -> (n+g in lefts) or (n+g > f)));
 end);
-
 
 #############################################################################
 ##
@@ -516,22 +506,24 @@ end);
 ##  semigroup S.
 ##
 #############################################################################
-  InstallMethod( SpecialGapsOfNumericalSemigroup,
-          "returns the list of special gaps",
-          true,
-          [IsNumericalSemigroup],
-          function(S)
-    local  PF, Y, y;
-
-    PF := PseudoFrobeniusOfNumericalSemigroup(S);
-    Y := [];
-    for y in PF do
-      if BelongsToNumericalSemigroup(2*y,S) then
-        Add(Y,y);
-      fi;
-    od;
-    return Y;
-  end);
+InstallMethod( SpecialGapsOfNumericalSemigroup,
+        "returns the list of special gaps",
+        true,
+        [IsNumericalSemigroup],
+        function(S)
+  local  gaps, PF, f, non_specials, y, specials;
+  gaps := GapsOfNumericalSemigroup(S);
+  PF := PseudoFrobeniusOfNumericalSemigroup(S);
+  f := Maximum(PF);
+  non_specials := [];
+  for y in Intersection(PF,[1..Int(f/2)+1]) do
+    if (2*y in gaps) then
+      Add(non_specials,y);
+    fi; 
+  od;
+  specials := Difference(PF,non_specials);
+  return specials;
+end);
 
 
 #############################################################################
