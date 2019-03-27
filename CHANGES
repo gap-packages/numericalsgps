@@ -1,10 +1,18 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+1.1.10 -> 1.1.11
+- various small fixes and improvements
+- fixed a problem in ArfGoodSemigroupClosure (Thanks Nicola Maugeri!)
+- updates in the manual and in the test file
+- Travis integration updated (Thanks Max Horn!)
+- added functions for random semigroups with genus
+- added functions for afine semigroups with a finite number of gaps (generalized numerical semigroups) -- mostly contributions of Carmelo Cisto
+- improved the SmallElements method for a numerical semigroup given by generators. (The improvment goes beyond the order of 20 in most examples.)	   
 1.1.9 -> 1.1.10
-- improved the SmallElements method for a numerical semigroup given by generators. (The improvment goes beyond the order of 20 in most examples.)
 - added the global function ElementsUpTo
 - avoid duplication of tests in some methods
+- avoid using obsolete 'Tuple' (Thanks Max Horn!)
 1.1.8 -> 1.1.9
 - avoid differences in the output when all packages are loaded (the order of the pairs in representations is not relevant)
 - small fixes (Irreducibles, PseudoFrobenius, OmegaPrimalityOfElement*)
