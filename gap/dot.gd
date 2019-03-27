@@ -5,8 +5,6 @@
 #W                          Andrés Herrera-Poyatos <andreshp9@gmail.com>
 ##
 ##
-#H  @(#)$Id: dot.gd $
-##
 #Y  Copyright 2018 by Manuel Delgado and Pedro Garcia-Sanchez
 #Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
