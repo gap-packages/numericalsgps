@@ -124,6 +124,14 @@ gap> Set(MinimalPresentation(a),p->Set(p));
 gap> CatenaryDegreeOfAffineSemigroup(a)=CatenaryDegreeOfNumericalSemigroup(s);
 true
 
+gap> n := 12;; ns := RandomNumericalSemigroupWithGenus(n);;
+gap> Genus(ns) = n;
+true
+
+gap> n := 10;;RandomAffineSemigroupWithGenusAndDimension(n,3);;
+gap> Length(Gaps(last)) = n;
+true
+
 #############################################################################
 #############################################################################
 # Examples from the manual
