@@ -18,7 +18,7 @@
   Edges join those elements which are related with respect to [10Xbr[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xbr:=BinaryRelationByElements(Domain([1,2]), [Tuple([1,2])]);[127X[104X
+    [4X[25Xgap>[125X [27Xbr:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);[127X[104X
     [4X[28X<general mapping: <object> -> <object> >[128X[104X
     [4X[25Xgap>[125X [27XPrint(DotBinaryRelation(br));[127X[104X
     [4X[28Xdigraph  NSGraph{rankdir = TB; edge[dir=back];[128X[104X

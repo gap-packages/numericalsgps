@@ -46,7 +46,7 @@
   otherwise.[133X
   
   [33X[0;0YThis   filter   implies   [2XIsAlmostSymmetricNumericalSemigroup[102X   ([14X6.3-3[114X)  and
-  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-28[114X).[133X
+  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-29[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsIrreducible(NumericalSemigroup(4,6,9));[127X[104X
@@ -454,5 +454,29 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(12,4)); [127X[104X
     [4X[28X5[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X6.4 [33X[0;0YNumerical semigroups with the generalized Gorenstein property[133X[101X
+  
+  [33X[0;0YLet  [22XS[122X  be  a numerical semigroup and let [22XR[122X be its semigroup ring [22XK[[S]][122X. We
+  say that [22XS[122X has the generalized Gorenstein property if its semigroup ring has
+  this  property.  For  the  definition  and  characterization  of generalized
+  Gorenstein rings please see [tttt17].[133X
+  
+  [1X6.4-1 IsGeneralizedGorenstein[101X
+  
+  [33X[1;0Y[29X[2XIsGeneralizedGorenstein[102X( [3Xs[103X ) [32X property[133X
+  
+  [33X[0;0Y[3Xs[103X  is a numerical semigroup. The output is [10Xtrue[110X if the semigroup ring [22XK[[S]][122X
+  is  generalized  Gorenstein  using  the  characterization  by Goto-Kumashiro
+  ([MK17]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,8);;[127X[104X
+    [4X[25Xgap>[125X [27XIsAlmostSymmetric(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedGorenstein(s);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   

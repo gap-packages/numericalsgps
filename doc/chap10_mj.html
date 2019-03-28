@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (NumericalSgps) - Chapter 10: 
 		Polynomials and numerical semigroups
@@ -42,7 +42,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X87A46B53815B158F">10.1-6 IsCyclotomicPolynomial</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7D9618ED83776B0B">10.1-7 IsKroneckerPolynomial</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8366BB727C496D31">10.1-8 IsCyclotomicNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X82C6355287C3BDD1">10.1-9 IsSelfReciprocalUnivariatePolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7B428FA2877EC733">10.1-9 CyclotomicExponentSequence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X82C6355287C3BDD1">10.1-10 IsSelfReciprocalUnivariatePolynomial</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X7EEF2A1781432A2D">10.2 <span class="Heading">
 		Semigroup of values of algebraic curves
@@ -205,9 +206,28 @@ true
 true
 </pre></div>
 
+<p><a id="X7B428FA2877EC733" name="X7B428FA2877EC733"></a></p>
+
+<h5>10.1-9 CyclotomicExponentSequence</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CyclotomicExponentSequence</code>( <var class="Arg">s</var>, <var class="Arg">k</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup and <var class="Arg">k</var> is a positive integer. Outputs the list of the first <var class="Arg">k</var> elements of the cyclotomic exponent sequence of s (see <a href="chapBib_mj.html#biBC-GS-M">[CGSM16]</a>).</p>
+
+<p>The sequence will be truncated if the semigroup is cyclotomic and k is bigger than the last nonzero element in its sequence.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,4);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CyclotomicExponentSequence(s,20);</span>
+[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CyclotomicExponentSequence(s,20);</span>
+[ 1, 0, -1, 0, -1, 0, -1, 0, 0, 1, 0, 1, 0, 1, 0, 0, -1, 0, -1, 0 ]
+</pre></div>
+
 <p><a id="X82C6355287C3BDD1" name="X82C6355287C3BDD1"></a></p>
 
-<h5>10.1-9 IsSelfReciprocalUnivariatePolynomial</h5>
+<h5>10.1-10 IsSelfReciprocalUnivariatePolynomial</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSelfReciprocalUnivariatePolynomial</code>( <var class="Arg">p</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">p</var> is a univariate polynomial. Detects if <var class="Arg">p</var> is selfreciprocal. A numerical semigroup is symmetric if and only if it is selfreciprocal, <a href="chapBib_mj.html#biBM">[Mor14]</a>. The current implementation is due to A. Herrera-Poyatos.</p>

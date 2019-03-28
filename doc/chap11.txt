@@ -63,10 +63,10 @@
     [4X[28X1[128X[104X
   [4X[32X[104X
   
-  [1X11.1-2 AffineSemigroupByEquations[101X
+  [1X11.1-2 AffineSemigroup[101X
   
-  [33X[1;0Y[29X[2XAffineSemigroupByEquations[102X( [3XList[103X ) [32X function[133X
   [33X[1;0Y[29X[2XAffineSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAffineSemigroupByEquations[102X( [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X  is  a  list  with  two  components. The first represents a matrix with
   integer coefficients, say [22XA=(a_ij)[122X, and so it is a list of lists of integers
@@ -92,18 +92,18 @@
   [33X[0;0YIn the second form, [10XString[110X must be [10X"equations"[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xs1 := AffineSemigroupByEquations([[[-2,1]],[3]]);[127X[104X
+    [4X[25Xgap>[125X [27Xs1 := AffineSemigroup("equations",[[[1,1]],[3]]);[127X[104X
     [4X[28X<Affine semigroup>[128X[104X
-    [4X[25Xgap>[125X [27Xs2 := AffineSemigroup("equations",[[[1,1]],[3]]);[127X[104X
+    [4X[25Xgap>[125X [27Xs2 := AffineSemigroupByEquations([[[-2,1]],[3]]);[127X[104X
     [4X[28X<Affine semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xs1=s2;[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-3 AffineSemigroupByInequalities[101X
+  [1X11.1-3 AffineSemigroup[101X
   
-  [33X[1;0Y[29X[2XAffineSemigroupByInequalities[102X( [3XList[103X ) [32X function[133X
   [33X[1;0Y[29X[2XAffineSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAffineSemigroupByInequalities[102X( [3XList[103X ) [32X function[133X
   
   [33X[0;0Y[10XList[110X  is  a  list  of  lists (a matrix) of integers that represents a set of
   inequalities.[133X
@@ -114,15 +114,120 @@
   [33X[0;0YIn the second form, [10XString[110X must be [10X"inequalities"[110X.[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xa1:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);[127X[104X
+    [4X[25Xgap>[125X [27Xa1:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);[127X[104X
     [4X[28X<Affine semigroup>[128X[104X
-    [4X[25Xgap>[125X [27Xa2:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);[127X[104X
+    [4X[25Xgap>[125X [27Xa2:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);[127X[104X
     [4X[28X<Affine semigroup>[128X[104X
     [4X[25Xgap>[125X [27Xa1=a2;[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-4 Generators[101X
+  [1X11.1-4 AffineSemigroup[101X
+  
+  [33X[1;0Y[29X[2XAffineSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAffineSemigroupByPMInequality[102X( [3Xf[103X, [3Xb[103X, [3Xg[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xf[103X, [3Xg[103X are lists of integers and [3Xb[103X is a positive integer.[133X
+  
+  [33X[0;0YReturns  the proportionally modular affine semigroup defined by the [22Xf× X mod
+  b ≤ g× X[122X[133X
+  
+  [33X[0;0YIn the second form, [10XString[110X must be [10X"pmiequality"[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=AffineSemigroupByPMInequality([0, 1, 1, 0, -1], 4, [1, 0, -2, -3, 1]); [127X[104X
+    [4X[28X<Affine semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(s);[127X[104X
+    [4X[28X[ [ 0, 0, 0, 0, 2 ], [ 0, 0, 0, 0, 3 ], [ 0, 0, 0, 1, 4 ], [ 0, 0, 0, 2, 7 ], [ 0, 0, 0, 4, 12 ], [ 0, 0, 1, 0, 4 ], [128X[104X
+    [4X[28X  [ 0, 0, 1, 0, 5 ], [ 0, 0, 1, 1, 5 ], [ 0, 0, 2, 0, 5 ], [ 0, 0, 2, 0, 6 ], [ 0, 0, 3, 0, 7 ], [ 0, 0, 4, 0, 8 ], [128X[104X
+    [4X[28X  [ 0, 1, 0, 0, 1 ], [ 0, 1, 0, 1, 4 ], [ 0, 1, 0, 3, 9 ], [ 0, 1, 1, 0, 2 ], [ 0, 2, 0, 0, 1 ], [ 0, 2, 0, 2, 6 ], [128X[104X
+    [4X[28X  [ 0, 3, 0, 1, 3 ], [ 0, 4, 0, 0, 0 ], [ 1, 0, 0, 0, 0 ], [ 1, 0, 0, 0, 1 ], [ 1, 0, 0, 1, 3 ], [ 1, 0, 0, 3, 8 ], [128X[104X
+    [4X[28X  [ 1, 0, 1, 0, 1 ], [ 1, 1, 0, 0, 0 ], [ 1, 1, 0, 2, 5 ], [ 1, 2, 0, 1, 2 ], [ 2, 0, 0, 2, 4 ], [ 2, 1, 0, 1, 1 ], [128X[104X
+    [4X[28X  [ 2, 3, 1, 0, 0 ], [ 3, 0, 0, 1, 0 ], [ 3, 0, 1, 0, 0 ], [ 4, 2, 2, 0, 0 ], [ 6, 1, 3, 0, 0 ], [ 8, 0, 4, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-5 AffineSemigroup[101X
+  
+  [33X[1;0Y[29X[2XAffineSemigroup[102X( [[3XString[103X, ][3XList[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XAffineSemigroupByGaps[102X( [3XList[103X ) [32X function[133X
+  
+  [33X[0;0YIn  the  first  form,  [10XString[110X  must be [10X"gaps"[110X and [10XList[110X must be a list, not a
+  sequence of individual elements.[133X
+  
+  [33X[0;0YIn  the  second form, [10XList[110X is a list of n-tuples of nonnegative integers, if
+  the semigroup to be created is n-dimensional. The n-tuples may be given as a
+  list  or  by  a  sequence  of  individual elements. The output is the affine
+  semigroup  with  gaps  [10XList[110X.  If  the  given  set  is not a set of gaps of a
+  numerical semigroup, then the function raises an error.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xgaps := [[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],[5,0,0,0]];;[127X[104X
+    [4X[25Xgap>[125X [27Xa1 := AffineSemigroup("gaps", gaps );[127X[104X
+    [4X[28X<Affine semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xa2 := AffineSemigroupByGaps( gaps );[127X[104X
+    [4X[28X<Affine semigroup>[128X[104X
+    [4X[25Xgap>[125X [27Xa1 = a2;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XGenerators(a1);;[127X[104X
+    [4X[25Xgap>[125X [27XSet(last);[127X[104X
+    [4X[28X[ [ 0, 0, 0, 1 ], [ 0, 0, 1, 0 ], [ 0, 1, 0, 0 ], [ 1, 0, 0, 1 ], [128X[104X
+    [4X[28X  [ 1, 0, 1, 0 ], [ 1, 2, 0, 0 ], [ 2, 0, 0, 1 ], [ 2, 0, 1, 0 ], [128X[104X
+    [4X[28X  [ 2, 2, 0, 0 ], [ 3, 0, 0, 0 ], [ 4, 0, 0, 0 ], [ 5, 1, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-6 Gaps[101X
+  
+  [33X[1;0Y[29X[2XGaps[102X( [3XS[103X ) [32X attribute[133X
+  
+  [33X[0;0Y[3XS[103X  is  an  affine  semigroup, the output is its set of gaps, if this set has
+  finitely  many  elements.  Otherwise  an  error  is raised. The procedure is
+  inspired in [CFR18][133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],[127X[104X
+    [4X[25X>[125X [27X[0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],[127X[104X
+    [4X[25X>[125X [27X[0,5,0,0],[0,4,0,0]]);[127X[104X
+    [4X[28X<Affine semigroup in 4 dimensional space, with 12 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSet(Gaps(a));[127X[104X
+    [4X[28X[ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-7 PseudoFrobenius[101X
+  
+  [33X[1;0Y[29X[2XPseudoFrobenius[102X( [3XS[103X ) [32X attribute[133X
+  
+  [33X[0;0Y[3XS[103X is an affine semigroup, the output is its set of pseudo-Frobenius vectors,
+  that  is,  the  gaps  [22Xg[122X of [3XS[103X such that for every nonzero element [22Xs[122X of [3XS[103X, the
+  vector  [22Xg+s[122X is in [3XS[103X. The package will only find pseudo-Frobenius vectors for
+  affine semigroups with a finite set of gaps.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],[127X[104X
+    [4X[25X>[125X [27X[0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],[127X[104X
+    [4X[25X>[125X [27X[0,5,0,0],[0,4,0,0]]);[127X[104X
+    [4X[28X<Affine semigroup in 4 dimensional space, with 12 generators>[128X[104X
+    [4X[25Xgap>[125X [27XPseudoFrobenius(a);[127X[104X
+    [4X[28X[ [ 0, 2, 0, 0 ], [ 2, 1, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-8 SpecialGaps[101X
+  
+  [33X[1;0Y[29X[2XSpecialGaps[102X( [3XS[103X ) [32X attribute[133X
+  
+  [33X[0;0Y[3XS[103X  is  an affine semigroup, the output is its set of special gaps of [3XS[103X, that
+  is, the gaps [22Xg[122X of [3XS[103X such that [22X[3XS[103X∪{g}[122X is a semigroup. Special gaps can only be
+  computed in the package for affine semigroups with finitely many gaps.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],[127X[104X
+    [4X[25X>[125X [27X[0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],[127X[104X
+    [4X[25X>[125X [27X[0,5,0,0],[0,4,0,0]]);[127X[104X
+    [4X[28X<Affine semigroup in 4 dimensional space, with 12 generators>[128X[104X
+    [4X[25Xgap>[125X [27XSpecialGaps(a);[127X[104X
+    [4X[28X[ [ 0, 2, 0, 0 ], [ 2, 1, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-9 Generators[101X
   
   [33X[1;0Y[29X[2XGenerators[102X( [3XS[103X ) [32X function[133X
   [33X[1;0Y[29X[2XGeneratorsOfAffineSemigroup[102X( [3XS[103X ) [32X function[133X
@@ -136,7 +241,7 @@
     [4X[28X[ [ 0, 1 ], [ 1, 0 ], [ 1, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.1-5 MinimalGenerators[101X
+  [1X11.1-10 MinimalGenerators[101X
   
   [33X[1;0Y[29X[2XMinimalGenerators[102X( [3XS[103X ) [32X function[133X
   [33X[1;0Y[29X[2XMinimalGeneratingSystem[102X( [3XS[103X ) [32X function[133X
@@ -151,7 +256,46 @@
     [4X[28X  [128X[104X
   [4X[32X[104X
   
-  [1X11.1-6 AsAffineSemigroup[101X
+  [1X11.1-11 RemoveMinimalGeneratorFromAffineSemigroup[101X
+  
+  [33X[1;0Y[29X[2XRemoveMinimalGeneratorFromAffineSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X is an affine semigroup and [3Xn[103X is one if its minimal generators.[133X
+  
+  [33X[0;0YThe  output  is the affine semigroup [22X[3XS[103X ∖{[3Xn[103X}[122X ([22XS∖{n}[122X is an affine semigroup if
+  and only if [22Xn[122X is a minimal generator of [22XS[122X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xa:=AffineSemigroup([2,0],[0,4]);[127X[104X
+    [4X[28X<Affine semigroup in 2 dimensional space, with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xb:=RemoveMinimalGeneratorFromAffineSemigroup([2,0],a);Generators(b);[127X[104X
+    [4X[28X<Affine semigroup in 2 dimensional space, with 4 generators>[128X[104X
+    [4X[28X[ [ 0, 4 ], [ 2, 4 ], [ 4, 0 ], [ 6, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-12 AddSpecialGapOfAffineSemigroup[101X
+  
+  [33X[1;0Y[29X[2XAddSpecialGapOfAffineSemigroup[102X( [3Xg[103X, [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X is an semigroup and [3Xg[103X is a special gap of [3XS[103X.[133X
+  
+  [33X[0;0YThe  output  is the numerical semigroup [22X[3XS[103X ∪{[3Xg[103X}[122X (see [RGSGGJM03], where it is
+  explained why this set is a numerical semigroup).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=AffineSemigroup([[2,0],[3,0],[0,4],[0,5],[1,1]]);[127X[104X
+    [4X[28X<Affine semigroup in 2 dimensional space, with 5 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xt:=AddSpecialGapOfAffineSemigroup([1,12],s);[127X[104X
+    [4X[28X<Affine semigroup in 2 dimensional space, with 6 generators>[128X[104X
+    [4X[25Xgap>[125X [27XGaps(s);[127X[104X
+    [4X[28X[ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 0, 6 ], [ 0, 7 ], [ 0, 11 ], [ 1, 0 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ],[128X[104X
+    [4X[28X[ 1, 7 ], [ 1, 8 ], [ 1, 12 ], [ 2, 1 ], [ 2, 3 ], [ 3, 2 ], [ 4, 3 ] ][128X[104X
+    [4X[25Xgap>[125X [27XGaps(t);[127X[104X
+    [4X[28X[ [ 0, 1 ], [ 0, 2 ], [ 0, 3 ], [ 0, 6 ], [ 0, 7 ], [ 0, 11 ], [ 1, 0 ], [ 1, 2 ], [ 1, 3 ], [ 1, 4 ],[128X[104X
+    [4X[28X[ 1, 7 ], [ 1, 8 ], [ 2, 1 ], [ 2, 3 ], [ 3, 2 ], [ 4, 3 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.1-13 AsAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XAsAffineSemigroup[102X( [3XS[103X ) [32X function[133X
   
@@ -179,7 +323,7 @@
     [4X[28X32[128X[104X
   [4X[32X[104X
   
-  [1X11.1-7 IsAffineSemigroup[101X
+  [1X11.1-14 IsAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XIsAffineSemigroup[102X( [3XAS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XIsAffineSemigroupByGenerators[102X( [3XAS[103X ) [32X attribute[133X
@@ -207,7 +351,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-8 BelongsToAffineSemigroup[101X
+  [1X11.1-15 BelongsToAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XBelongsToAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function[133X
   [33X[1;0Y[29X[2X\in[102X( [3Xv[103X, [3Xa[103X ) [32X operation[133X
@@ -219,7 +363,9 @@
   semigroup  was  defined  by  equations,  or  because  the  user  has  called
   [10XIsFullAffineSemgiroup(a)[110X  and  the  output  was  true),  then  membership is
   performed  by  evaluating  [3Xv[103X  in  the  equations.  The same holds for normal
-  semigroups and its defining inequalities.[133X
+  semigroups  and  its defining inequalities. If the set of gaps is finite and
+  known,  then membership is just checking that [3Xv[103X has nonnegative integers and
+  it is not in the set of gaps.[133X
   
   [33X[0;0Y[3X v in a[103X can be used for short.[133X
   
@@ -235,7 +381,7 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X11.1-9 IsFull[101X
+  [1X11.1-16 IsFull[101X
   
   [33X[1;0Y[29X[2XIsFull[102X( [3XS[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsFullAffineSemigroup[102X( [3XS[103X ) [32X property[133X
@@ -257,7 +403,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X11.1-10 HilbertBasisOfSystemOfHomogeneousEquations[101X
+  [1X11.1-17 HilbertBasisOfSystemOfHomogeneousEquations[101X
   
   [33X[1;0Y[29X[2XHilbertBasisOfSystemOfHomogeneousEquations[102X( [3Xls[103X, [3Xm[103X ) [32X operation[133X
   
@@ -283,7 +429,7 @@
   If  we  put  them  in  a  matrix  [22XS[122X can be defined as the set of nonnegative
   integer solutions to [22XAx ge 0[122X.[133X
   
-  [1X11.1-11 HilbertBasisOfSystemOfHomogeneousInequalities[101X
+  [1X11.1-18 HilbertBasisOfSystemOfHomogeneousInequalities[101X
   
   [33X[1;0Y[29X[2XHilbertBasisOfSystemOfHomogeneousInequalities[102X( [3Xls[103X ) [32X operation[133X
   
@@ -300,7 +446,7 @@
     [4X[28X[ [ 1, 0 ], [ 2, 1 ], [ 3, 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.1-12 EquationsOfGroupGeneratedBy[101X
+  [1X11.1-19 EquationsOfGroupGeneratedBy[101X
   
   [33X[1;0Y[29X[2XEquationsOfGroupGeneratedBy[102X( [3XM[103X ) [32X function[133X
   
@@ -313,7 +459,7 @@
     [4X[28X[ [ [ 0, 0, -1 ], [ -2, 1, 3 ] ], [ 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.1-13 BasisOfGroupGivenByEquations[101X
+  [1X11.1-20 BasisOfGroupGivenByEquations[101X
   
   [33X[1;0Y[29X[2XBasisOfGroupGivenByEquations[102X( [3XA[103X, [3Xm[103X ) [32X function[133X
   

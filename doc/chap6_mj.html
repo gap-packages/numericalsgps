@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (NumericalSgps) - Chapter 6: 
                 Irreducible numerical semigroups
@@ -70,6 +70,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B0DF2FE7D00A9E0">6.3-4 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85C4DA6E82E726D2">6.3-5 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7FF9451382970019">6.4 <span class="Heading">
+                    Numerical semigroups with the generalized Gorenstein property
+                </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8221EC44802E5158">6.4-1 IsGeneralizedGorenstein</a></span>
+</div></div>
 </div>
 
 <h3>6 <span class="Heading">
@@ -102,7 +109,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if <var class="Arg">s</var> is irreducible, <code class="code">false</code> otherwise.</p>
 
-<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6_mj.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3_mj.html#X83D4AFE882A79096"><span class="RefLink">3.1-28</span></a>).</p>
+<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6_mj.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3_mj.html#X83D4AFE882A79096"><span class="RefLink">3.1-29</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -500,6 +507,30 @@ true
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(12,4)); </span>
 5
+</pre></div>
+
+<p><a id="X7FF9451382970019" name="X7FF9451382970019"></a></p>
+
+<h4>6.4 <span class="Heading">
+                    Numerical semigroups with the generalized Gorenstein property
+                </span></h4>
+
+<p>Let <span class="SimpleMath">\(S\)</span> be a numerical semigroup and let <span class="SimpleMath">\(R\)</span> be its semigroup ring <span class="SimpleMath">\(K[\![S]\!]\)</span>. We say that <span class="SimpleMath">\(S\)</span> has the generalized Gorenstein property if its semigroup ring has this property. For the definition and characterization of generalized Gorenstein rings please see <a href="chapBib_mj.html#biBG-I-K-T">[tttt17]</a>.</p>
+
+<p><a id="X8221EC44802E5158" name="X8221EC44802E5158"></a></p>
+
+<h5>6.4-1 IsGeneralizedGorenstein</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneralizedGorenstein</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if the semigroup ring <span class="SimpleMath">\(K[\![S]\!]\)</span> is generalized Gorenstein using the characterization by Goto-Kumashiro (<a href="chapBib_mj.html#biBG-K">[MK17]</a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAlmostSymmetric(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGeneralizedGorenstein(s);</span>
+true
 </pre></div>
 
 

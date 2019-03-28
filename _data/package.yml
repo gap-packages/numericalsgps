@@ -1,6 +1,6 @@
 name: NumericalSgps
-version: 1.1.10
-date: 2018-11-06
+version: 1.1.11
+date: 2019-03-28
 description: |
     A package for numerical semigroups
 
@@ -18,6 +18,7 @@ maintainers:
       url: http://www.ugr.es/~pedro/
 
 contributors:
+    - name: Carmelo Cisco
     - name: Benjamín Alarcón Heredia
       url: https://github.com/baheredia
     - name: Juan Ignacio García-García
@@ -27,7 +28,7 @@ contributors:
     - name: Andrés Herrera-Poyatos
       url: https://github.com/andreshp
     - name: Max Horn
-      url: http://www.quendi.de/en/math.html
+      url: https://www.quendi.de/math
     - name: Carlos Jesús Moreno Ávila
     - name: Ignacio Ojeda
       url: http://matematicas.unex.es/~ojedamc
@@ -51,7 +52,7 @@ packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.1.10/NumericalSgps-1.1.10.tar.gz
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.1.11/NumericalSgps-1.1.11.tar.gz
 
 abstract: |
     The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.
@@ -63,26 +64,28 @@ keywords: |
     Numerical Semigroups, Affine semigroups, Good semigroups.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>DGM18</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
+    [<span class='BibKey'>DGM19</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
      <i class='BibTitle'>NumericalSgps, A package for numerical semigroups,
-             Version 1.1.10</i>
-     (<span class='BibYear'>2018</span>)<br />
+             Version 1.1.11</i>
+     (<span class='BibYear'>2019</span>)<br />
     (<span class='BibNote'>Refereed GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/numericalsgps">https://gap-packages.github.io/numericalsgps</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ NumericalSgps1.1.10,
+    @misc{ NumericalSgps1.1.11,
       author =           {Delgado, M. and Garcia-Sanchez, P. A. and Morais, J.},
-      title =            {{NumericalSgps}, A package for numerical semigroups, {V}ersion 1.1.10},
-      month =            {Nov},
-      year =             {2018},
+      title =            {{NumericalSgps},  A  package for numerical semigroups,
+                          {V}ersion 1.1.11},
+      month =            {Mar},
+      year =             {2019},
       note =             {Refereed GAP package},
-      howpublished =     {\href                            {https://gap-packages.github.io/numericalsgps}
+      howpublished =     {\href   {https://gap-packages.github.io/numericalsgps}
                           {\texttt{https://gap-packages.github.io/}\discretionary
                           {}{}{}\texttt{numericalsgps}}},
-      keywords =         {Numerical Semigroups; Affine semigroups; Good semigroups},
-      printedkey =       {DGM18}
+      keywords =         {Numerical    Semigroups;   Affine   semigroups;   Good
+                          semigroups},
+      printedkey =       {DGM19}
     }
 

@@ -142,7 +142,7 @@
   
   [33X[0;0YAndrés Herrera-Poyatos gave new implementations of[133X
   
-  [33X[0;0Y[2XIsSelfReciprocalUnivariatePolynomial[102X ([14X10.1-9[114X) and[133X
+  [33X[0;0Y[2XIsSelfReciprocalUnivariatePolynomial[102X ([14X10.1-10[114X) and[133X
   
   [33X[0;0Y[2XIsKroneckerPolynomial[102X   ([14X10.1-7[114X).   Andrés  is  also  coauthor  of  the  dot
   functions, see Chapter [14X14[114X[133X
@@ -160,4 +160,23 @@
   [33X[0;0YJuan Ignacio implemented a preliminary version of[133X
   
   [33X[0;0Y[2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-1[114X).[133X
+  
+  
+  [1XC.11 [33X[0;0YFunctions implemented by C. Cisto[133X[101X
+  
+  [33X[0;0YCarmelo  provided  some  functions  to  deal with affine semigroups given by
+  gaps,  and  to  compute gaps of affine semigroups with finite genus, see for
+  instance[133X
+  
+  [33X[0;0Y[2XAffineSemigroupByGaps[102X ([14X11.1-5[114X),[133X
+  
+  [33X[0;0Y[2XRemoveMinimalGeneratorFromAffineSemigroup[102X ([14X11.1-11[114X),[133X
+  
+  [33X[0;0Y[2XAddSpecialGapOfAffineSemigroup[102X ([14X11.1-12[114X).[133X
+  
+  
+  [1XC.12 [33X[0;0YFunctions implemented by N. Matsuoka[133X[101X
+  
+  [33X[0;0YNaoyuki  implemented  the  function associated to the generalized Gorenstein
+  property, see Section [14X6.4[114X.[133X
   

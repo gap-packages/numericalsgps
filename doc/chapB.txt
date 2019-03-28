@@ -106,3 +106,70 @@
     [4X[28X[ 0, 10 ][128X[104X
   [4X[32X[104X
   
+  [1XB.1-7 RandomNumericalSemigroupWithGenus[101X
+  
+  [33X[1;0Y[29X[2XRandomNumericalSemigroupWithGenus[102X( [3Xg[103X ) [32X function[133X
+  
+  [33X[0;0YProduces a pseudo-random numerical semigroup with genus [3Xg[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomNumericalSemigroupWithGenus(7);Gaps(last);[127X[104X
+    [4X[28X<Numerical semigroup with 7 generators>[128X[104X
+    [4X[28X[ 1, 2, 3, 4, 5, 6, 9 ][128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-8 RandomAffineSemigroupWithGenusAndDimension[101X
+  
+  [33X[1;0Y[29X[2XRandomAffineSemigroupWithGenusAndDimension[102X( [3Xg[103X, [3Xd[103X ) [32X function[133X
+  
+  [33X[0;0YProduces a pseudo-random affine semigroup with genus [3Xg[103X and dimension [3Xd[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomAffineSemigroupWithGenusAndDimension(10,3);Gaps(last);[127X[104X
+    [4X[28X<Affine semigroup in 3 dimensional space, with 66 generators>[128X[104X
+    [4X[28X[ [ 0, 1, 0 ], [ 0, 2, 0 ], [ 0, 3, 0 ], [ 0, 4, 0 ], [ 0, 5, 0 ], [128X[104X
+    [4X[28X  [ 0, 7, 0 ], [ 1, 0, 0 ], [ 1, 1, 0 ], [ 2, 0, 0 ], [ 3, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-9 RandomAffineSemigroup[101X
+  
+  [33X[1;0Y[29X[2XRandomAffineSemigroup[102X( [3Xn[103X, [3Xd[103X, [3Xm[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  an  affine  semigroup  generated  by  a  [3Xn[103X*[3Xd[103X  matrix  where  [3Xd[103X (the
+  dimension)  is randomly choosen from [1..[3Xd[103X] and [3Xn[103X (the number of generators)
+  is  randomly  choosen  from  [1..[3Xn[103X].  The entries of the matrix are randomly
+  choosen  from  [0..[3Xm[103X] (when the third argument is not present, m is taken as
+  [3Xn[103X*[3Xd[103X)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomAffineSemigroup(5,5);Generators(last);[127X[104X
+    [4X[28X<Affine semigroup in 5 dimensional space, with 4 generators>[128X[104X
+    [4X[28X[ [ 4, 10, 10, 8, 20 ], [ 9, 12, 16, 3, 16 ], [ 14, 19, 14, 3, 20 ], [128X[104X
+    [4X[28X  [ 16, 6, 0, 7, 13 ] ][128X[104X
+    [4X[25Xgap>[125X [27XRandomAffineSemigroup(5,5,3);Generators(last);[127X[104X
+    [4X[28X<Affine semigroup in 4 dimensional space, with 5 generators>[128X[104X
+    [4X[28X[ [ 0, 2, 1, 3 ], [ 1, 3, 3, 2 ], [ 2, 3, 3, 2 ], [ 3, 1, 2, 1 ], [128X[104X
+    [4X[28X  [ 3, 3, 1, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1XB.1-10 RandomFullAffineSemigroup[101X
+  
+  [33X[1;0Y[29X[2XRandomFullAffineSemigroup[102X( [3Xn[103X, [3Xd[103X, [3Xm[103X ) [32X function[133X
+  
+  [33X[0;0YReturns  a  full  affine semigroup either given by equations or inequalities
+  (when  no  string  is given, one is choosen at random). The matrix is an [3Xn[103X*[3Xd[103X
+  matrix  where  [3Xd[103X  (the  dimension)  is randomly choosen from [1..[3Xd[103X] and [3Xn[103X is
+  randomly  choosen from [1..[3Xn[103X]. When it is given by equations, the moduli are
+  choosen  at  random.  The  entries  of  the matrix (and moduli) are randomly
+  choosen  from  [0..[3Xm[103X]  (when the third integer is not present, m is taken as
+  [3Xn[103X*[3Xd[103X)[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XRandomFullAffineSemigroup(5,5,3);Generators(last);[127X[104X
+    [4X[28X<Affine semigroup>[128X[104X
+    [4X[28X#I  Using contejeanDevieAlgorithm for Hilbert Basis. Please, consider using[128X[104X
+    [4X[28XNormalizInterface, 4ti2Interface or 4ti2gap.[128X[104X
+    [4X[28X[ [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 1, 0, 0, 0 ], [128X[104X
+    [4X[28X  [ 1, 0, 0, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  

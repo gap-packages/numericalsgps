@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (NumericalSgps) - Chapter 14: 
 		Dot functions
@@ -69,7 +69,7 @@
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">br:=BinaryRelationByElements(Domain([1,2]), [Tuple([1,2])]);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);</span>
 &lt;general mapping: &lt;object&gt; -&gt; &lt;object&gt; &gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotBinaryRelation(br));</span>
 digraph  NSGraph{rankdir = TB; edge[dir=back];

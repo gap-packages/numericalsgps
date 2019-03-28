@@ -142,7 +142,27 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X10.1-9 IsSelfReciprocalUnivariatePolynomial[101X
+  [1X10.1-9 CyclotomicExponentSequence[101X
+  
+  [33X[1;0Y[29X[2XCyclotomicExponentSequence[102X( [3Xs[103X, [3Xk[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xs[103X  is a numerical semigroup and [3Xk[103X is a positive integer. Outputs the list of
+  the  first  [3Xk[103X  elements  of  the  cyclotomic  exponent  sequence  of  s (see
+  [CGSM16]).[133X
+  
+  [33X[0;0YThe  sequence  will  be  truncated  if  the semigroup is cyclotomic and k is
+  bigger than the last nonzero element in its sequence.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,4);;[127X[104X
+    [4X[25Xgap>[125X [27XCyclotomicExponentSequence(s,20);[127X[104X
+    [4X[28X[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1 ][128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XCyclotomicExponentSequence(s,20);[127X[104X
+    [4X[28X[ 1, 0, -1, 0, -1, 0, -1, 0, 0, 1, 0, 1, 0, 1, 0, 0, -1, 0, -1, 0 ][128X[104X
+  [4X[32X[104X
+  
+  [1X10.1-10 IsSelfReciprocalUnivariatePolynomial[101X
   
   [33X[1;0Y[29X[2XIsSelfReciprocalUnivariatePolynomial[102X( [3Xp[103X ) [32X function[133X
   
