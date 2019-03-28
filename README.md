@@ -10,9 +10,7 @@ NumericalSgps
 Introduction
 ------------
 
-This is release 1.1.10 of  the package `NumericalSgps`.
-
-The features of this package include
+The features of the package `NumericalSgps` include
 
 - defining numerical semigroups;
 - computing several properties of numerical semigroups, namely: multiplicity, Frobenius number, (minimal) system of generators, Apéry set, gaps, fundamental gaps, etc.;
