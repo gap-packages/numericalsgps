@@ -39,16 +39,11 @@ This package consists only of GAP code, so for its installation please refer to 
 Funding
 -------
 
-The first author was (partially) supported by the FCT project PTDC/MAT/65481/200
-6 and also by the Centro de Matemática da Universidade do
-Porto< (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT - Fundação para a Ciência e a Tecnologia under the project PEst-C/MAT/UI0144/2011.
+The first author was (partially) supported by the FCT project PTDC/MAT/65481/2006 and also by the Centro de Matemática da Universidade do Porto (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT - Fundação para a Ciência e a Tecnologia under the project PEst-C/MAT/UI0144/2011.
 
-The second author was/is supported by the project MTM2014-55367-P, which is funded
-by Ministerio de Economía y Competitividad and the Fondo Europeo de Desarrollo Regional FEDER.
+The mantainers where supported by the project MTM2014-55367-P, funded by Ministerio de Economía y Competitividad and the Fondo Europeo de Desarrollo Regional FEDER.
 
-Both maintainers want to acknowledge partial support by CMUP (UID/MAT/00144/2013), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.
-
-Both maintainers are also supported by the project MTM2014-55367-P, which is funded by Ministerio de Economía y Competitividad and Fondo Europeo de Desarrollo Regional FEDER.
+Both maintainers want to acknowledge partial support by CMUP (UID/MAT/00144/2013), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020; and also by the project MTM2017-84890-P, which is funded by Ministerio de Economía y Competitividad and Fondo Europeo de Desarrollo Regional FEDER.
 
 The maintainers want to thank the organizers of *GAPDays* in their several editions.
 
