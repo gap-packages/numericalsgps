@@ -47,4 +47,4 @@ Both maintainers want to acknowledge partial support by CMUP (UID/MAT/00144/2013
 
 The maintainers want to thank the organizers of *GAPDays* in their several editions.
 
-The authors also thank the Centro de Servicios de Informática y Redes de Comunicaciones (CSIRC), Universidad de Granada, for providing the computing time, specially Rafael Arco Arredondo for installing this package and the extra software needed in alhambra.ugr.es
+The authors also thank the Centro de Servicios de Informática y Redes de Comunicaciones (CSIRC), Universidad de Granada, for providing the computing time, specially Rafael Arco Arredondo for installing this package and the extra software needed in alhambra.ugr.es, and Santiago Melchor Ferrer for helping in job submission to the cluster
