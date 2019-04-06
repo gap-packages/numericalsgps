@@ -184,3 +184,14 @@ DeclareGlobalFunction("GeneratorsKahlerDifferentials");
 ## and k is bigger than the last nonzero element in its sequence.
 ##################################################################
 DeclareOperation("CyclotomicExponentSequence",[IsNumericalSemigroup, IsPosInt]);
+
+##################################################################
+##
+#O WittCoefficients(p,k)
+##
+## p is a univariate polynomial with integer coefficientas and 
+## p(1)=1. Then p(x)=\prod_{n\ge 0}(1-x^n)^{e_n}.
+## output is the list [e_1,..,e_k], and it is computed bu using 
+## [C-GS-HP-M]
+##################################################################
+DeclareOperation("WittCoefficients",[IsUnivariatePolynomial, IsPosInt]);
