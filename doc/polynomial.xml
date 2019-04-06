@@ -169,6 +169,23 @@ gap> CyclotomicExponentSequence(s,20);
          </Description>
     </ManSection>
 
+    <ManSection>
+        <Oper Arg="p, k" Name="WittCoefficients"></Oper>
+        <Description>
+            <A>p</A> is a univariate polynomial with integer coefficientas and <M>p(1)=1</M>. Then <M>p(x)=\prod_{n\ge 0}(1-x^n)^{e_n}</M>, for some integers <M>e_n</M>. The output is the list <M>[e_1,\ldots,e_k]</M>, and it is computed by using <Cite Key="C-GS-HP-M"/>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,4);;
+gap> x:=Indeterminate(Rationals,"x");;
+gap> p:=NumericalSemigroupPolynomial(s,x);;
+gap> WittCoefficients(p,20);
+[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
+]]></Example>
+        The difference with this example and the one in <Ref Func="CyclotomicExponentSequence"/> is that in that case a cyclotomic check is performed that slows down the process. 
+         </Description>
+    </ManSection>
+
+
 
     <ManSection>
         <Func Arg="p" Name="IsSelfReciprocalUnivariatePolynomial"></Func>

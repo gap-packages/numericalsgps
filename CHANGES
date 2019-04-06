@@ -1,6 +1,9 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
+1.1.11 -> deb
+- added WittCoefficients for a univariate polynomial
+
 1.1.10 -> 1.1.11
 - various small fixes and improvements
 - fixed a problem in ArfGoodSemigroupClosure (Thanks Nicola Maugeri!)
