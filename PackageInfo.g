@@ -102,6 +102,13 @@ rec(
   WWWHome       := "https://www.quendi.de/math"
 ),
 
+rec(
+  LastName      := "Maugeri",
+  FirstNames    := "Nicola",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  PostalAddress := "Università degli Studi di Catania"
+),
 
 rec(
   LastName      := "Moreno Ávila",
