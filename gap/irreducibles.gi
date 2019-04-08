@@ -199,8 +199,8 @@ InstallGlobalFunction(IrreducibleNumericalSemigroupsWithFrobeniusNumber, functio
         s:=B[1];
         B:=B{[2..Length(B)]};
         lsons:=sons(s);
-        irr:=Union(irr,lsons);
-        B:=Union(B,lsons);
+        Append(irr,lsons);
+        Append(B,lsons);
     od;
     for s in irr do
       Setter(IsIrreducibleNumericalSemigroup)(s,true);
