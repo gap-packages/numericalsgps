@@ -544,6 +544,15 @@ InstallMethod(GenusOfNumericalSemigroup,
 	return Length(GapsOfNumericalSemigroup(sgp));
 end);
 
+InstallMethod(GenusOfNumericalSemigroup,
+        "Returns the genus of the numerical semigroup",
+        [IsNumericalSemigroup and HasGenerators],10,
+        function( s )
+          local apery, m;
+          apery:=AperyList(s);
+          m:=Length(apery);	
+          return Sum(apery)/m-(m-1)/2; #Selmer's formula
+  end);
 
 #############################################################################
 ##
