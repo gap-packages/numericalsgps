@@ -1074,3 +1074,154 @@ InstallMethod( Display,
          function( S )
          Print("<Good semigroup>");
  end);
+
+
+
+
+
+
+
+
+
+
+
+#####################################################
+##
+#F ProjectionOfGoodSemigroup:=function(S,num)
+## Given a good semigroup S it returns the num-th numerical semigroup projection
+#####################################################
+
+InstallGlobalFunction(ProjectionOfGoodSemigroup,
+function(S,num)
+  local small,S1,S2;
+    if not(IsGoodSemigroup(S)) then
+        Error("The first argument must be a good semigroup");
+    fi;
+
+    if not(num=1 or num=2)  then
+        Error("The second argument must be 1 or 2");
+    fi;
+    small:=SmallElements(S);
+
+    if num=1 then
+    return NumericalSemigroupBySmallElements(Set([1..Length(small)],i->small[i][1]));
+    fi;
+    if num=2 then
+    return NumericalSemigroupBySmallElements(Set([1..Length(small)],i->small[i][2]));
+    fi;
+end);
+
+
+#####################################################
+##
+#F GenusOfGoodSemigroup:=function(S)
+## Given a good semigroup S it returns its genus
+#####################################################
+InstallGlobalFunction(GenusOfGoodSemigroup,
+function(S)
+    if not(IsGoodSemigroup(S)) then
+        Error("The argument must be a good semigroup");
+    fi;
+    return Length(MaximalElementsOfGoodSemigroup(S))+Genus(ProjectionOfGoodSemigroup(S,1))+Genus(ProjectionOfGoodSemigroup(S,2));
+end);
+
+
+#####################################################
+##
+#F LengthOfGoodSemigroup:=function(S)
+## Given a good semigroup S it returns its length
+#####################################################
+InstallGlobalFunction(LengthOfGoodSemigroup,
+function(S)
+    local c;
+    if not(IsGoodSemigroup(S)) then
+        Error("The argument must be a good semigroup");
+    fi;
+    c:=Conductor(S);
+    return c[1]+c[2]-GenusOfGoodSemigroup(S);
+    return Length(MaximalElementsOfGoodSemigroup(S))+Genus(ProjectionOfGoodSemigroup(S,1))+Genus(ProjectionOfGoodSemigroup(S,2));
+end);
+
+#####################################################
+#F AperySetOfGoodSemigroup:=function(S)
+## Given a good semigroup S it returns a list with the elements of the Apery Set
+#####################################################
+InstallGlobalFunction(AperySetOfGoodSemigroup,
+function(S)
+    local c,small,i,j,AddElementsOverTheConductor;
+
+    AddElementsOverTheConductor:=function(v,w)
+        local ags,i,j;
+
+        if Length(v)=1 then
+            ags:=[];
+            for i in [v[1]..w[1]] do
+                ags:=Union(ags,[[i]]);
+            od;  
+        
+        else 
+            ags:=[];
+            for i in AddElementsOverTheConductor(v{[1..Length(v)-1]},w{[1..Length(v)-1]}) do
+                for j in [v[Length(v)]..w[Length(v)]] do
+                    ags:=Union(ags,[Concatenation(i,[j])]);
+                od;
+            od;
+        fi;
+        
+        return ags;
+    end;
+
+    if not(IsGoodSemigroup(S)) then
+        Error("The argument must be a good semigroup");
+    fi;
+
+    c:=Conductor(S);
+    small:=SmallElements(S);
+
+    #First we add to the small elements the elements on the infinite lines that can to become elements of the AperySet.
+
+    for i in Filtered(small,j->j[1]=c[1]) do
+        for j in [c[1]+1..c[1]+small[2][1]] do
+            small:=Union(small,[[j,i[2]]]); 
+        od; 
+    od;
+
+    for i in Filtered(small,j->j[2]=c[2]) do
+        for j in [c[2]+1..c[2]+small[2][2]] do
+            small:=Union(small,[[i[1],j]]);
+        od; 
+    od;
+
+    return  Filtered(Union(small,AddElementsOverTheConductor(c,c+small[2])),i-> not i-small[2] in small);
+end);
+
+#####################################################
+#F LevelsOfTheAperySet:=function(S)
+## Given a good semigroup S it prints the number of levels and it returns a list
+# where the elements are the list of the level Apery Set
+#####################################################
+InstallGlobalFunction(StratifiedAperySetOfGoodSemigroup,
+function(S)
+local Dominance,ce,small,A,ags,temp,temp2;
+
+    Dominance:=function(v,w,cond)
+        return v=w or ForAll([1..Length(v)], i->v[i]<w[i] or w[i]=cond[i]);
+    end;
+    
+    if not(IsGoodSemigroup(S)) then
+        Error("The argument must be a good semigroup");
+    fi;
+
+    small:=SmallElements(S);
+    ce:=Conductor(S)+small[2];
+    A:=AperySetOfGoodSemigroup(S);
+    ags:=[];
+    while A<>[] do
+        temp:=Filtered(A,i->Length(Filtered(A,j->Dominance(i,j,ce)))=1);
+        temp2:=Filtered(temp,i->Filtered(temp,j->j[1]=i[1] and j[2]>i[2])=[] or Filtered(temp,j->j[2]=i[2] and j[1]>i[1])=[]);
+        ags:=Union(ags,[temp2]);
+        A:=Filtered(A,i->not i in temp2);
+    od;
+    Info(InfoNumSgps,2,"Number of levels ", Length(ags));
+    return ags;
+end);
