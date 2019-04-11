@@ -167,6 +167,40 @@ DeclareGlobalFunction("IrreducibleMaximalElementsOfGoodSemigroup");
 ###############################################################
 DeclareGlobalFunction("GoodSemigroupByMaximalElements");
 
+#####################################################
+##
+#F ProjectionOfAGoodSemigroup:=function(S,num)
+## Given a good semigroup S it returns the num-th numerical semigroup projection
+#####################################################
+DeclareGlobalFunction("ProjectionOfGoodSemigroup");
+
+#####################################################
+##
+#F GenusOfAGoodSemigroup:=function(S)
+## Given a good semigroup S it returns its genus
+#####################################################
+DeclareGlobalFunction("GenusOfGoodSemigroup");
+
+#####################################################
+##
+#F LengthOfAGoodSemigroup:=function(S)
+## Given a good semigroup S it returns its length
+#####################################################
+DeclareGlobalFunction("LengthOfGoodSemigroup");
+
+#####################################################
+#F AperySetOfAGoodSemigroup:=function(S)
+## Given a good semigroup S it returns a list with the elements of the Apery Set
+#####################################################
+DeclareGlobalFunction("AperySetOfGoodSemigroup");
+
+#####################################################
+#F LevelsOfTheAperySet:=function(S)
+## Given a good semigroup S it prints the number of levels and it returns a list
+# where the elements are the list of the level Apery Set
+#####################################################
+DeclareGlobalFunction("StratifiedAperySetOfGoodSemigroup");
+
 
 # ## FUNCTIONS ##
 
@@ -381,3 +415,4 @@ DeclareGlobalFunction("GoodSemigroupByMaximalElements");
 # ## good semigroup M
 # ###################################################
 # DeclareGlobalFunction("MinimalGoodGeneratingSystemOfGoodSemigroup");
+
