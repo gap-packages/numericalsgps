@@ -369,6 +369,9 @@ gap> SmallElements(NumericalSemigroup(3,5,7));
 gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 [ 0, 3, 5 ]
 
+gap> Length(NumericalSemigroup(3,5,7));
+2
+
 gap> FirstElementsOfNumericalSemigroup(2,NumericalSemigroup(3,5,7));
 [ 0, 3 ]
 gap> FirstElementsOfNumericalSemigroup(10,NumericalSemigroup(3,5,7));
@@ -1922,6 +1925,23 @@ gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
 <Affine semigroup in 4 dimensional space, with 12 generators>
 gap> Set(Gaps(a));
 [ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ]
+gap> n := AffineSemigroup([1,1],[0,1]);;
+gap> Gaps(n);
+#I  The given affine semigroup has infinitely many gaps
+fail
+
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0]]);
+<Affine semigroup in 4 dimensional space, with 11 generators>
+gap> Genus(a);
+7
+gap> n := AffineSemigroup([1,1],[0,1]);;
+gap> Genus(n);
+#I  The given affine semigroup has infinitely many gaps
+infinity
+gap> last > 10^50;
+true
 
 gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
 > [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
@@ -2283,6 +2303,11 @@ gap> SmallElements(S2);
 
 gap> GenusOfGoodSemigroup(S);
 21
+
+gap> Length(S);
+15
+gap> LengthOfGoodSemigroup(S);
+15
 
 gap> AperySetOfGoodSemigroup(S);
 [ [ 0, 0 ], [ 4, 6 ], [ 8, 5 ], [ 8, 7 ], [ 8, 8 ], [ 8, 12 ], [ 8, 13 ], 
