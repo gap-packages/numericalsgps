@@ -180,6 +180,7 @@ DeclareGlobalFunction("ProjectionOfGoodSemigroup");
 ## Given a good semigroup S it returns its genus
 #####################################################
 DeclareGlobalFunction("GenusOfGoodSemigroup");
+DeclareAttribute( "Genus", IsGoodSemigroup);
 
 #####################################################
 ##
