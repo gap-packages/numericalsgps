@@ -564,7 +564,8 @@ InstallMethod(Gaps,
       SetGaps(M, lH);
       return Gaps(M);
     else
-      Error("This afine semigroup has infinitely many gaps");
+      Info(InfoWarning,1,"The given affine semigroup has infinitely many gaps");
+      return fail;
     fi;
   fi;
 
@@ -573,7 +574,7 @@ InstallMethod(Gaps,
   NS:=[];
   d:=Length(A[1]);
   if M=AffineSemigroup(IdentityMat(d)) then
-     Error("The semigroup N^d has not gaps");
+    return []; # The semigroup N^d has no gaps
   fi;  
   #Let i in {1,..d}, I have to find in A the elements in which all coordinates 
   #different from i is zero, I need the nonzero coordinates of these elements and such 
@@ -583,7 +584,8 @@ InstallMethod(Gaps,
     NS[i]:=List(S[i],j->j[i]);
     A:=Difference(A,S[i]); #now A is no more the set of minimal generators (it is not needed)
     if NS[i]=[] or (Gcd(NS[i])<>1) then
-      Error("This affine semigroup has infinitely many gaps");
+      Info(InfoWarning,1,"The given affine semigroup has infinitely many gaps");
+      return fail;
     fi;
   od;
   
@@ -663,6 +665,27 @@ InstallMethod(Gaps,
   G:=Union(G,Filtered(P,i->not(BelongsToAffineSemigroup(i,M))));
   SetGaps(M,G);
   return G;
+end);
+
+#####################################################
+##
+#F GenusOfAffineSemigroup:=function(S)
+## Returns the number of gaps of an affine semigroup if it has finitely many and infinite otherwise.
+#####################################################
+InstallMethod(Genus,
+        "for affine semigroups",[IsAffineSemigroup],
+        function(S)
+  local gaps;
+
+  if not(IsAffineSemigroup(S)) then
+    Error("The argument must be an affine semigroup");
+  fi;
+  gaps := Gaps(S);
+  if gaps = fail then
+    return infinity;
+  else
+    return Length(gaps);
+  fi;
 end);
 
 ##############################################################
