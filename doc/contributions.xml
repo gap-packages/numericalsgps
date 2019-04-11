@@ -214,6 +214,23 @@ He also helped in preliminary versions of the following functions.
 <Section><Heading>Functions implemented by N. Maugeri</Heading>
   Nicola fixed the implementation of  <Ref Func="ArfGoodSemigroupClosure"/>.
 
+  He also implemented 
+
+  <P/>
+  <Ref Func="ProjectionOfAGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="GenusOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="LengthOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="AperySetOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="StratifiedAperySetOfGoodSemigroup"/>.
+
 </Section>
 
 

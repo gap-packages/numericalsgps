@@ -1126,6 +1126,8 @@ function(S)
 end);
 
 
+InstallMethod(Genus,"Genus for a good semigroup",[IsGoodSemigroup], GenusOfGoodSemigroup );
+
 #####################################################
 ##
 #F LengthOfGoodSemigroup:=function(S)

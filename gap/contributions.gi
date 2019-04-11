@@ -715,6 +715,9 @@ InstallGlobalFunction(DeltaSetOfNumericalSemigroup,function(s)
 	local msg;
 
 	msg:=MinimalGeneratingSystemOfNumericalSemigroup(s);
+    if 1 in msg then 
+        return [];
+    fi;
 	return DeltaSetUnionUpToElementWRTNumericalSemigroup(DeltaSetPeriodicityBoundForNumericalSemigroup(s)+msg[Length(msg)]-1,s);
 end);
 
