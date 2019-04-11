@@ -123,6 +123,18 @@ gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
 ]]></Example>
                     </Description>
                 </ManSection>
+		
+                <ManSection>
+                    <Attr Name="Length" Arg="NS" Label="for numerical semigroup"/>
+                    <Description>
+                        <C>NS</C>
+                        is a numerical semigroup. It returns the number of small elements of <C>NS</C> up to the conductor.
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroup(3,5,7));
+2
+]]></Example>
+                    </Description>
+                </ManSection>
 
 
 				<ManSection>

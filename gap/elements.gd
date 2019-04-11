@@ -32,6 +32,13 @@ DeclareGlobalFunction("ElementsUpTo");
 #DeclareAttribute( "SmallElements", IsNumericalSemigroup);
 DeclareSynonymAttr( "SmallElementsOfNumericalSemigroup", SmallElements);
 #############################################################################
+#A Length
+##
+## The number of left elements of the semigroup (the elements up to the conductor)
+#############################################################################
+DeclareAttribute( "Length", IsNumericalSemigroup);
+
+#############################################################################
 ##
 #F  SmallElements(S)
 ##

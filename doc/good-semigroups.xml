@@ -305,8 +305,9 @@ gap> SmallElements(S2);
 
 
     <ManSection>
+      <Attr Name="Genus" Arg="S" Label="for good semigroup"/>
       <Func Arg="S" Name="GenusOfGoodSemigroup"></Func>
-      <Attr Name="Genus" Arg="S" Label="for good semigroup"/>      <Description>
+      <Description>
         <A>S</A> is a good semigroup.
         The output is the genus of <A>S</A>, defined as <M>g(S)=d(\mathbb{N}^2\setminus C(S)</M>, where <M>C(S)=\{(\alpha_1,\alpha_2)\in S\mid (\alpha_1,\alpha_2)\geq \boldsymbol{c}\}</M>.
 
@@ -327,6 +328,7 @@ gap> GenusOfGoodSemigroup(S);
 
 
 <ManSection>
+  <Attr Arg="S" Name="Length" Label="for good semigroup"/>
       <Func Arg="S" Name="LengthOfGoodSemigroup"></Func>
       <Description>
         <A>S</A> is a good semigroup.
@@ -341,6 +343,8 @@ gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 5 ], [ 4, 6 ], [ 8, 5 ],
 [ 22, 10 ], [ 23, 7 ], [ 23, 8 ], [ 23, 10 ], [ 24, 7 ], [ 24, 8 ], [ 24, 10 ],
 [ 25, 7 ], [ 25, 8 ], [ 26, 7 ], [ 26, 10 ] ]);
 <Good semigroup>
+gap> Length(S);
+15
 gap> LengthOfGoodSemigroup(S);
 15
 ]]></Example>

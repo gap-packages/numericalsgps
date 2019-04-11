@@ -1144,6 +1144,7 @@ function(S)
     return Length(MaximalElementsOfGoodSemigroup(S))+Genus(ProjectionOfGoodSemigroup(S,1))+Genus(ProjectionOfGoodSemigroup(S,2));
 end);
 
+InstallMethod(Length,"for a good semigroup",[IsGoodSemigroup], LengthOfGoodSemigroup );
 #####################################################
 #F AperySetOfGoodSemigroup:=function(S)
 ## Given a good semigroup S it returns a list with the elements of the Apery Set
