@@ -295,15 +295,15 @@ local SemiringGeneratedBy, ThirdP, AddVectors, AdmissibleElementsToAdd, Inverti,
 
 
   if CompareGS(m,cond)=false then
-  Error("The first argument has to be smaller then the second one respect the partial order in N^2");
+  Error("The first argument must to be smaller then the second one respect the partial order in N^2");
   fi;
 
   if Length(m)<>2 then
-  Error("The first argument has to be length equal to 2");
+  Error("The first argument must to have length equal to 2");
   fi;
 
   if Length(cond)<>2 then
-  Error("The second argument has to be length equal to 2");
+  Error("The second argument must to have length equal to 2");
   fi;
 
   AddVectors:=function(vs,u)
