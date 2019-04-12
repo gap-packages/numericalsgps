@@ -417,7 +417,7 @@ local SemiringGeneratedBy, ThirdP, AddVectors, AdmissibleElementsToAdd, Inverti,
     for i in [2..Length(vs)] do
     S:=AddVectors(S,[vs[i]]);
     od;
-    return S;
+    return Union(S,[[0,0]]);
   end;
 
  #  ThirdP:=function(A) internal function that, given a semiring of N^2, 
