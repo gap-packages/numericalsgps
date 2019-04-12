@@ -463,6 +463,15 @@ end);
 # end);
 
 #############################################################################
+#A Length
+InstallMethod(Length, 
+        "for numerical semigroups", 
+        [IsNumericalSemigroup], 
+        function(s)
+  return Length(SmallElementsOfNumericalSemigroup(s))-1;
+end);
+
+#############################################################################
 ##
 #A  GapsOfNumericalSemigroup(S)
 ##

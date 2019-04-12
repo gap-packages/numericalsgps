@@ -188,6 +188,7 @@ DeclareAttribute( "Genus", IsGoodSemigroup);
 ## Given a good semigroup S it returns its length
 #####################################################
 DeclareGlobalFunction("LengthOfGoodSemigroup");
+DeclareAttribute( "Length", IsGoodSemigroup);
 
 #####################################################
 #F AperySetOfAGoodSemigroup:=function(S)

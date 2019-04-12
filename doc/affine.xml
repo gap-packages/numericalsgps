@@ -146,7 +146,7 @@ gap> Set(last);
 <ManSection>
   <Attr Name="Gaps" Arg="S" Label="for affine semigroup"/>
   <Description>
-    <A>S</A> is an affine semigroup, the output is its set of gaps, if this set has finitely many elements. Otherwise an error is raised. The procedure is inspired in <Cite Key="C-F-U"/>
+    <A>S</A> is an affine semigroup, the output is its set of gaps, if this set has finitely many elements. Otherwise the output is 'fail' and a warning is raised. The procedure is inspired in <Cite Key="C-F-U"/>
     <P/>
     <Example><![CDATA[
 gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
@@ -155,6 +155,32 @@ gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
 <Affine semigroup in 4 dimensional space, with 12 generators>
 gap> Set(Gaps(a));
 [ [ 0, 1, 0, 0 ], [ 0, 2, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 1, 0, 0 ] ]
+gap> n := AffineSemigroup([1,1],[0,1]);;
+gap> Gaps(n);
+#I  The given affine semigroup has infinitely many gaps
+fail
+]]></Example>
+
+  </Description>
+</ManSection>
+<ManSection>
+  <Attr Name="Genus" Arg="S" Label="for affine semigroup"/>
+  <Description>
+    <A>S</A> is an affine semigroup, the output is the cardinality of its set of gaps, if this set is finite. Otherwise the output is 'infinite'. The procedure is inspired in <Cite Key="C-F-U"/>
+    <P/>
+    <Example><![CDATA[
+gap> a:=AffineSemigroup([[1,0,0,0],[3,1,0,0],[1,2,0,0],[0,0,1,0],
+> [0,2,1,0],[0,1,1,0],[0,0,0,1],[0,2,0,1],[0,1,0,1],[0,3,0,0],
+> [0,5,0,0]]);
+<Affine semigroup in 4 dimensional space, with 11 generators>
+gap> Genus(a);
+7
+gap> n := AffineSemigroup([1,1],[0,1]);;
+gap> Genus(n);
+#I  The given affine semigroup has infinitely many gaps
+infinity
+gap> last > 10^50;
+true
 ]]></Example>
 
   </Description>

@@ -105,6 +105,8 @@ DeclareGlobalFunction("AddSpecialGapOfAffineSemigroup");
 DeclareGlobalFunction( "AffineSemigroupByGaps" );
 #A
 DeclareAttribute( "Gaps", IsAffineSemigroup);
+#A
+DeclareAttribute( "Genus", IsAffineSemigroup);
 
 
 #############################################################################

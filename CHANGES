@@ -1,9 +1,10 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
-1.1.11 -> deb
+1.1.11 -> dev
 - New implementation of AperyListOfNumericalSemigroupWRTElement by Chris O'Neill (this affects the speed of many other functions in the package)
 - added WittCoefficients for a univariate polynomial
+- added several functions for good semigroups implemented by Nicola Maugeri
 
 1.1.10 -> 1.1.11
 - various small fixes and improvements
