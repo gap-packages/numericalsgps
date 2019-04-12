@@ -203,6 +203,18 @@ DeclareGlobalFunction("AperySetOfGoodSemigroup");
 #####################################################
 DeclareGlobalFunction("StratifiedAperySetOfGoodSemigroup");
 
+#####################################################
+#F IrriducibleAbsolutesOfGoodSemigroup:=function(S)
+## Given a good semigroup S, the function returns the irriducible absolutes of S.
+#  These are the elements that generates S as semiring.
+#####################################################
+DeclareGlobalFunction("IrriducibleAbsolutesOfGoodSemigroup");
+
+#####################################################
+#F TracksOfGoodSemigroup:=function(S)
+## Given a good semigroup S, the function returns the tracks of S.
+#####################################################
+DeclareGlobalFunction("TracksOfGoodSemigroup");
 
 # ## FUNCTIONS ##
 

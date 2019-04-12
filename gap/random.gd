@@ -112,3 +112,12 @@ DeclareGlobalFunction("RandomAffineSemigroup");
 ###########################################################################
 DeclareGlobalFunction("RandomFullAffineSemigroup");
 
+###############################################################################
+# Random functions for good semigroups
+#############################################################################
+##
+#####################################################
+#F RandomGoodSemigroupWithFixedMultiplicity:=function(m,cond)
+# It produces a Good Semigroup with multiplicity m and conductor bounded by cond
+#####################################################
+DeclareGlobalFunction("RandomGoodSemigroupWithFixedMultiplicity");
