@@ -1199,8 +1199,8 @@ end);
 
 #####################################################
 #F LevelsOfTheAperySet:=function(S)
-## Given a good semigroup S it prints the number of levels and it returns a list
-# where the elements are the list of the level Apery Set
+## Given a good semigroup S, it returns a list
+#  where the elements are the levels of the AperySet
 #####################################################
 InstallGlobalFunction(StratifiedAperySetOfGoodSemigroup,
 function(S)
@@ -1226,4 +1226,229 @@ local Dominance,ce,small,A,ags,temp,temp2;
     od;
     Info(InfoNumSgps,2,"Number of levels ", Length(ags));
     return ags;
+end);
+
+
+#####################################################
+#F IrriducibleAbsolutesOfGoodSemigroup:=function(S)
+## Given a good semigroup S, the function returns the irriducible absolutes of S.
+#  These are the elements that generates S as semiring.
+#####################################################
+InstallGlobalFunction(IrriducibleAbsolutesOfGoodSemigroup,
+function(S)
+local ElementsOnTheEdge,TransformToInf,c,small,irrabsf,irrabsi,infi,edge,i;
+
+  if not(IsGoodSemigroup(S)) then
+    Error("The argument must be a good semigroup");
+  fi;
+  
+  #This function check if an elements has a coordinate equal to the conductor.
+  ElementsOnTheEdge:=function(vs,c)
+    return vs[1]=c[1] or vs[2]=c[2];
+  end;
+
+  #This function transforms the elements with a coordinate equal to the conductor in infinities.
+  TransformToInf:=function(vs,c)
+    local a,i;
+    a:=ShallowCopy(vs);
+      for i in Filtered([1..2],j->vs[j]=c[j]) do
+        a[i]:=infinity;
+      od;
+    return a;
+  end;
+
+  c:=Conductor(S);
+  small:=Difference(SmallElements(S),[[0,0]]);
+  #Computation of finite irriducible absolutes.
+  irrabsf:=IrreducibleMaximalElementsOfGoodSemigroup(S);
+
+  #I take the elements of S different from the conductor but with a coordinate equal to this one.
+  edge:=Filtered(small,k->k<>c and ElementsOnTheEdge(k,c));
+
+  infi:=[];
+
+  #Here I add to Infi the infinities in the square over the conductor (built considering the multiplicity)
+  for i in [0..small[1][1]-1] do
+    infi:=Union(infi,[[c[1]+i,infinity]]);
+  od;
+
+  for i in [0..small[1][2]-1] do
+    infi:=Union(infi,[[infinity,c[2]+i]]);
+  od;
+
+  #Here I add the infinities under the conductor
+  for i in edge do
+    infi:=Union(infi,[TransformToInf(i,c)]);
+  od;
+
+  #Computation of infinite irreducible absolutes
+  irrabsi:=Filtered(infi,i->Filtered(small,j->i-j in infi)=[]);
+
+  return  Union(irrabsi,irrabsf);
+end);
+
+
+#####################################################
+#F TracksOfGoodSemigroup:=function(S)
+## Given a good semigroup S, the function returns the tracks of S.
+#####################################################
+InstallGlobalFunction(TracksOfGoodSemigroup,
+function(S)
+local CompareGS,MinimumGS,I,RemoveLabels,GluePieceOfTrack,ComputePieceOfTrack,T,temp;
+  
+  if not(IsGoodSemigroup(S)) then
+    Error("The argument must be a good semigroup");
+  fi;
+
+  CompareGS:=function(v,w)
+
+    return ForAll([1..Length(v)], i->v[i]<=w[i]);
+  end;
+
+  MinimumGS:=function(v,w)
+    return List([1..Length(v)],i->Minimum(v[i],w[i]));
+  end;
+
+  #It glues a new piece of track to an existing track. T is the list of all piece of track. V is a list of two elements, 
+  # V[1] represents not complete tracks and V[2] the complete tracks.
+  #The function add a new piece to the incomplete tracks and returns the updated V.
+  GluePieceOfTrack:=function(T,V)
+    local ags,temp,i,j;
+    ags:=[[],[]];
+    ags[2]:=ShallowCopy(V[2]);
+    for i in V[1] do
+      temp:=i[Length(i)];
+      if temp="last" then
+        ags[2]:=Union(ags[2],[i]);
+      else
+        for j in Filtered(T,k->k[1]=temp) do
+          ags[1]:=Union(ags[1],[Concatenation(i,[j[2]])]);
+        od;
+      fi;
+    od;
+    return ags;
+  end;
+
+  #This funcion compute all possibles piece of track of a good semigroups having irriducible absolutes I
+  ComputePieceOfTrack:=function(I)
+    local IsAPOT,MaximalRed,ags,first,last,i;
+
+    #It check if between two irreducible absolutes there is a piece of track. It check if  their minimum overcome
+    #the maximum  in both direction or is equal to this one in entrambe le direzioni o coincide
+    IsAPOT:=function(a,b)
+        local min;
+        if CompareGS(a[1],b[1]) or CompareGS(b[1],a[1]) then return false; else if a[1][1]>b[1][1] then return false; else
+
+        min:=MinimumGS(a[1],b[1]); return min[2]>=a[3] and min[1]>=b[2];
+        fi; fi;
+    end;
+
+    #If (x,y) is an irreducible absolute it returns (x1,y1), where (x,y1) is the greatest irr. abs. under (x,y)
+    # and (x1,y) is the greatest irr. abs. on the left of (x,y).
+    MaximalRed:=function(v,I)
+      local Factorize,ind,temp,temp2,temp3;
+
+      Factorize:=function(n,l)
+          local a,b,ags,i,c,j,a1;
+
+          if l=[] then
+            return [];
+
+          else
+            a1:=Filtered([1..Length(l)],i->l[i]<>infinity);
+            a:=List(a1,k->l[k]);
+            b:=FactorizationsIntegerWRTList(n,a);
+            ags:=[];
+              for i in b do
+                c:=List([1..Length(l)],o->0);
+                j:=1;
+                while j<=Length(a1) do
+                  c[a1[j]]:=i[j]; j:=j+1;
+                od;
+                ags:=Union(ags,[c]);
+              od;
+            return ags;
+          fi;
+
+      end;
+
+      if not v in I then
+      return [0,0];
+
+      else
+        if infinity in v then
+        temp3:=[0,0];
+        ind:=First([1,2],i->v[i]<>infinity);
+        temp3[3-ind]:=0;
+        temp:=Filtered(I,i->i[ind]<v[ind]);
+        temp2:=List(List(Factorize(v[ind],List(temp,i->i[ind])),j->Sum(List([1..Length(j)],k->j[k]*temp[k]))),k1->k1[3-ind]);
+
+          if temp2=[] then
+          temp3[ind]:=0;
+          return Reversed(temp3);
+
+          else
+          temp3[ind]:=Maximum(temp2);
+          return Reversed(temp3);
+          fi;
+        else
+        temp3:=[0,0];
+
+          for ind in [1,2] do
+          temp:=Filtered(I,i->i[ind]<v[ind]);
+          temp2:=List(List(Factorize(v[ind],List(temp,i->i[ind])),j->Sum(List([1..Length(j)],k->j[k]*temp[k]))),k1->k1[3-ind]);
+
+            if temp2=[] then
+            temp3[ind]:=0;
+            else
+            temp3[ind]:=Maximum(temp2);
+            fi;
+          od;
+        return Reversed(temp3);
+        fi;
+      fi;
+    end;
+
+
+    #If (x,y) is an irreducible absolute it returns ((x,y),x1,y1), where (x,y1) is the greatest irr. abs. under (x,y)
+    # and (x1,y) is the greatest irr. abs. on the left of (x,y).
+    I:=List(I,i->Concatenation([i],MaximalRed(i,I)));
+
+    #I add all the Piece Of Track
+    ags:=List(Filtered(Cartesian(I,I),i->IsAPOT(i[1],i[2])),k->[k[1][1],k[2][1]]);
+
+    #I add the point of start and the point of end
+    first:=Filtered(I,i->i[2]=0);
+    last:=Filtered(I,i->i[3]=0);
+
+    for i in first do
+    ags:=Union(ags,[["first",i[1]]]);
+    od;
+
+    for i in last do
+    ags:=Union(ags,[[i[1],"last"]]);
+    od;
+
+    return ags;
+  end;
+
+  #This function removes the label "first" and "last" in the tracks.
+  RemoveLabels:=function(T)
+    return List(T,i->Filtered(i,j->j<>"last" and j<>"first"));
+  end;
+
+  I:=IrriducibleAbsolutesofSemiring(S);
+  T:=ComputePieceOfTrack(I);
+
+  #The idea is to create the list of all tracks, adding one by one the piece of tracks in all possible way, reccalling
+  #GluePieceOfTrack until all possible track are completed (V[1]=[])
+  temp:=[[["first"]],[]];
+  temp:=GluePieceOfTrack(T,temp);
+
+  while temp[1]<>[] do
+  temp:=GluePieceOfTrack(T,temp);
+  od;
+
+  return RemoveLabels(temp[2]);
+
 end);
