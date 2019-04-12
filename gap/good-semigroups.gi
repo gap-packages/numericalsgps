@@ -1437,7 +1437,7 @@ local CompareGS,MinimumGS,I,RemoveLabels,GluePieceOfTrack,ComputePieceOfTrack,T,
     return List(T,i->Filtered(i,j->j<>"last" and j<>"first"));
   end;
 
-  I:=IrriducibleAbsolutesofSemiring(S);
+  I:=IrriducibleAbsolutesOfGoodSemigroup(S);
   T:=ComputePieceOfTrack(I);
 
   #The idea is to create the list of all tracks, adding one by one the piece of tracks in all possible way, reccalling
