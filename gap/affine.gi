@@ -1235,7 +1235,7 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
         rows:=Length(a);
         cols:=Length(a[1]);
         e:=IdentityMat(cols);
-        comb:=Combinations([1..cols],rows+1);
+        comb:=IteratorOfCombinations([1..cols],rows+1);
         #Print("Combinations ",comb,"\n");
         circ:=[];
         for c in comb do
