@@ -128,7 +128,7 @@ gap> SmallElementsOfNumericalSemigroup(NumericalSemigroup(3,5,7));
                     <Attr Name="Length" Arg="NS" Label="for numerical semigroup"/>
                     <Description>
                         <C>NS</C>
-                        is a numerical semigroup. It returns the number of small elements of <C>NS</C> up to the conductor.
+                        is a numerical semigroup. It returns the number of small elements of <C>NS</C> below the conductor. This corresponds with the length of the semigroup ring modulo the conductor ideal. See also <Ref Func="LengthOfGoodSemigroup"/>.
                         <Example><![CDATA[
 gap> Length(NumericalSemigroup(3,5,7));
 2

@@ -334,6 +334,9 @@ gap> GenusOfGoodSemigroup(S);
         <A>S</A> is a good semigroup.
         The output is the lenght of <A>S</A>, defined as <M>g(S)=d(S\setminus C(S)</M>, where <M>C(S)=\{(\alpha_1,\alpha_2)\in S\mid (\alpha_1,\alpha_2)\geq \boldsymbol{c}\}</M>.
 
+        <P/>
+         When the good semigroup is the good semigroup of valuation of a ring <M>R</M>, it corresponds to the length of <M>R/C</M> as <M>R</M>-module, with <M>C</M> the conductor of <M>R</M>. See <Cite Key="B-DA-F-1"/>, <Cite Key="B-DA-F-2"/>, <Cite Key="DM"/>.
+
         <Example><![CDATA[
 gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 5 ], [ 4, 6 ], [ 8, 5 ],
 [ 8, 7 ], [ 8, 8 ], [ 8, 10 ], [ 11, 5 ], [ 11, 7], [ 11, 8 ], [ 11, 10 ], 
