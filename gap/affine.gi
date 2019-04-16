@@ -1225,8 +1225,6 @@ InstallMethod(Elasticity,
 # Computes the elasticity of the affine semigroup a
 #####################################################################
 InstallGlobalFunction(ElasticityOfAffineSemigroup,
-         function(a)
-
     function(s)
 
     local gens, positive, negative, cir, el,a, elt,
