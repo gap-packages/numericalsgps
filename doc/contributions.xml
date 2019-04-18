@@ -104,6 +104,10 @@ Ignacio also implemented the following functions.
 <P/>
 <Ref Func="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType"/>,
 <P/>
+<Ref Func="NumericalSemigroupsWithFrobeniusNumberAndMultiplicity"/>,
+<P/>
+<Ref Func="IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity"/>.
+<P/>
 Ignacio also implemented the new version of 
 <P/>
 <Ref Func="AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber"/>,
@@ -229,7 +233,16 @@ He also helped in preliminary versions of the following functions.
   <Ref Func="AperySetOfGoodSemigroup"/>,
 
   <P/>
-  <Ref Func="StratifiedAperySetOfGoodSemigroup"/>.
+  <Ref Func="StratifiedAperySetOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="AbsoluteIrreduciblesOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="TracksOfGoodSemigroup"/>,
+
+  <P/>
+  <Ref Func="RandomGoodSemigroupWithFixedMultiplicity"/>.
 
 </Section>
 

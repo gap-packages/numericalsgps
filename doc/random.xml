@@ -4,7 +4,7 @@
 Here we describe some functions which allow to create
 several "random" objects. We make use of the function <C>RandomList</C>.
 
-<Section><Heading>Random functions</Heading>
+<Section><Heading>Random functions for numerical semigroups</Heading>
 
 <ManSection>
             <Func Name="RandomNumericalSemigroup" Arg="n,a[,b]"></Func>
@@ -115,6 +115,10 @@ gap> RandomNumericalSemigroupWithGenus(7);Gaps(last);
             </Description>
         </ManSection>
 
+</Section>
+
+<Section><Heading>Random functions for affine semigroups</Heading>
+
 	<ManSection>
             <Func Name="RandomAffineSemigroupWithGenusAndDimension" Arg="g,d"></Func>
             <Description>
@@ -161,4 +165,26 @@ NormalizInterface, 4ti2Interface or 4ti2gap.
 	
 </Section>
 
+
+<Section><Heading>Random functions for good semigroups</Heading>
+
+<ManSection>
+      <Func Arg="m, cond" Name="RandomGoodSemigroupWithFixedMultiplicity"></Func>
+      <Description>
+        This function produces a "random" semigroup with multiplicity <A>m</A> and with conductor bounded by <A>cond</A> 
+
+        <Example><![CDATA[
+gap> S:=RandomGoodSemigroupWithFixedMultiplicity([6,7],[30,30]);
+<Good semigroup>
+gap> SmallElements(S);
+[ [ 0, 0 ], [ 6, 7 ], [ 9, 8 ], [ 9, 10 ], [ 9, 11 ], [ 9, 14 ], [ 9, 15 ],
+  [ 9, 16 ], [ 10, 8 ], [ 11, 10 ], [ 11, 11 ], [ 12, 10 ], [ 12, 14 ],
+  [ 13, 10 ], [ 13, 15 ], [ 13, 16 ], [ 15, 10 ], [ 15, 15 ], [ 15, 16 ],
+  [ 16, 10 ], [ 16, 15 ], [ 17, 10 ], [ 17, 16 ] ]
+  
+]]></Example>
+      </Description>
+    </ManSection>
+
+</Section>
 </Appendix>

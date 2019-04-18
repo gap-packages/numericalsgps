@@ -132,6 +132,30 @@ gap> n := 10;;RandomAffineSemigroupWithGenusAndDimension(n,3);;
 gap> Length(Gaps(last)) = n;
 true
 
+#some tests involving random functions
+#
+gap> ns := RandomNumericalSemigroup(3,9,55);;
+gap> EmbeddingDimension(ns) > 3;
+false
+gap> Multiplicity(ns) >= 9;
+true
+gap> l := RandomListForNS(13,1,79);;
+gap> Gcd(l);
+1
+gap> RandomNumericalSemigroupWithGenus(7);;
+gap> Genus(last);
+7
+gap> RandomAffineSemigroupWithGenusAndDimension(10,3);;
+gap> Genus(last);
+10
+gap> Dimension(last2);
+3
+gap> s:=RandomGoodSemigroupWithFixedMultiplicity([6,7],[30,30]);
+<Good semigroup>
+gap> Conductor(s) <= [30,30];
+true
+
+
 #############################################################################
 #############################################################################
 # Examples from the manual
@@ -734,6 +758,9 @@ true
 gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
 200
 
+gap> Length(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));
+28
+
 gap> NumericalSemigroupsWithGenus(5);
 [ <Numerical semigroup with 6 generators>,
   <Numerical semigroup with 5 generators>,
@@ -805,6 +832,9 @@ gap> FrobeniusNumber(AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28));
 
 gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));
 20
+
+gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(31,11));
+16
 
 gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
 [ <Numerical semigroup with 3 generators>,
@@ -2421,6 +2451,31 @@ gap> d:=NumericalSemigroupDuplication(s,e);;
 gap> c:=CanonicalIdealOfGoodSemigroup(d);;
 gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
 [ [ 0, 0 ], [ 2, 2 ] ]
+
+gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 5, 4 ], [ 5, 8 ], [ 5, 11 ],
+> [ 5, 12 ], [ 5, 13 ], [ 6, 4 ], [ 7, 8 ], [ 7, 11 ], [ 7, 12 ], [ 7, 14 ],
+> [ 8, 8 ], [ 8, 11 ], [ 8, 12 ], [ 8, 15 ], [ 8, 16 ], [ 8, 17 ], [ 8, 18 ], 
+> [ 10, 8 ], [ 10, 11 ], [ 10, 12 ], [ 10, 15 ], [ 10, 16 ], [ 10, 17 ], 
+> [ 10, 18 ], [ 11, 8 ], [ 11, 11 ], [ 11, 12 ], [ 11, 15 ], [ 11, 16 ],
+> [ 11, 17 ], [ 12, 8 ], [ 12, 11 ], [ 12, 12 ], [ 12, 15 ], [ 12, 16 ], 
+> [ 12, 18 ] ]);
+<Good semigroup>
+gap> AbsoluteIrreduciblesOfGoodSemigroup(S);
+[ [ 5, 13 ], [ 6, 4 ], [ 7, 14 ], [ 8, infinity ], [ 10, infinity ], 
+  [ 12, infinity ], [ infinity, 8 ], [ infinity, 11 ], [ infinity, 18 ] ]
+
+gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 3 ], [ 8, 6 ], [ 8, 7 ],
+> [ 12, 6 ], [ 12, 9 ], [ 12, 10 ], [ 16, 6 ], [ 16, 9 ], [ 16, 12 ], [ 16, 13 ],
+> [ 16, 14 ], [ 18, 6 ], [ 20, 9 ], [ 20, 12 ], [ 20, 13 ], [ 20, 15 ], [ 20, 16 ],
+> [ 20, 17 ], [ 22, 9 ], [ 24, 12 ], [ 24, 13 ], [ 24, 15 ], [ 24, 16 ], [ 24, 18 ],
+> [ 26, 12 ], [ 26, 13 ], [ 28, 12 ], [ 28, 15 ], [ 28, 16 ], [ 28, 18 ],[ 30, 12 ], 
+> [ 30, 15 ], [ 30, 16 ], [ 30, 18 ] ]);
+<Good semigroup>
+gap> TracksOfGoodSemigroup(S);
+[ [ [ 4, 3 ] ], [ [ 8, 7 ], [ 18, 6 ] ], 
+  [ [ 30, infinity ], [ infinity, 16 ] ], 
+  [ [ 31, infinity ], [ infinity, 16 ] ], [ [ 31, infinity ] ], 
+  [ [ 33, infinity ], [ infinity, 16 ] ], [ [ 33, infinity ] ] ]
 
 ##dot.xml
 gap> br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);

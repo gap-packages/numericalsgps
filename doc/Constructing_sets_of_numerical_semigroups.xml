@@ -40,7 +40,7 @@ true
 <Section>
   <Heading> Constructing the set of numerical semigroup with given Frobenius number</Heading>
 
-  Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps.
+  Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps. If the multiplicity is fixed, then the construction relies on the calculation of irreducible numerical semigroups with that Frobenius number and multiplicity.
                 <ManSection>
                     <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
@@ -53,6 +53,21 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
 ]]></Example>          
                     </Description>
                 </ManSection>
+
+
+                <ManSection>
+                    <Func Arg="f, m" Name="NumericalSemigroupsWithFrobeniusNumberAndMultiplicity"></Func>
+                    <Description>
+                        <A>f</A> and <A>m</A> are integers. The output is the 
+                        set of numerical semigroups with Frobenius number <A>f</A> and multiplicity <A>m</A>.           
+The algorithm implemented is given in <Cite Key="BOR19"/>.
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));
+28
+]]></Example>          
+                    </Description>
+                </ManSection>
+
 
 </Section>
 

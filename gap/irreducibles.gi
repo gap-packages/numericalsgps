@@ -211,6 +211,87 @@ end);
 
 #############################################################################
 ##
+#F  IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(F,m)
+##
+##  Computes the set of irreducible numerical semigroups with multipliciy m
+##  and Frobenius number F. The algorithm is based on "The set of numerical 
+##  semigroups of a given multiplicity and Frobenius number" 
+##  arXiv:1904.05551 [math.GR]
+##
+############################################################################# 
+InstallGlobalFunction(IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity,
+function(F,m)
+    local sons, p,r, sgCmf, Cmf, A, Irrmf, s, lsons;
+
+    if (not(IsInt(F))) or (not(IsInt(m))) then
+        Error("The arguments must be two integers.\n");
+    fi;
+
+    if F<-1 or F=0 then
+        return [];#Error(f," is not a valid Frobenius number.\n");
+    fi;
+
+    if m<=0 then
+        return [];#Error(m," is not a valid Multiplicity.\n");
+    fi;
+
+    if F=-1 and m = 1 then
+        return [NumericalSemigroup(1)];
+    fi;
+ 
+    if m > (F+2)/2 or RemInt(F,m) = 0 then 
+        return [];
+    fi;
+
+    if m=2 then 
+        return [NumericalSemigroupByMinimalGenerators([m,F+m])];
+    fi;
+
+    if m=3 and IsEvenInt(F) then
+        return [NumericalSemigroupByMinimalGenerators([m,F/2+m,F+m])];
+    fi;
+
+    sons:=function(s,F)
+        local small, m, r, msg, candidates;
+        small:=SmallElementsOfNumericalSemigroup(s);
+        m:=small[2]; 
+        r:=First(small,i->RemInt(i,m) <> 0);
+        msg:=function(x)
+            return Filtered(small, y-> (y<x) and (x-y) in small)=[0];
+        end;
+        candidates:=Filtered(small, x-> (x>F/2) and (x<F) 
+                             and not(2*x-F in small) and not(3*x=2*F) 
+                             and not(4*x=3*F) and (F-x>m) and (F-x<r) 
+                             and (msg(x)));
+        return List(candidates, x->
+                    NumericalSemigroupBySmallElements(Set(Concatenation(
+                    Difference(small,[x]),[F-x]))));
+    end;
+
+    p := RemInt(F,2); 
+    r := RemInt((F+2-p)/2,m);
+    if r = 0 then 
+        r:=m; 
+    fi;
+    sgCmf := (F+2-p)/2 + Difference([0 .. (m-1)], [m-r, r-(2-p)]);
+    Cmf := NumericalSemigroupByMinimalGenerators(Concatenation([m],sgCmf));
+    A:=[Cmf];
+    Irrmf:=A;
+    while A<>[] do
+        s:=A[1];
+        A:=A{[2..Length(A)]};
+        lsons:=sons(s,F);
+        Append(Irrmf,lsons);
+        Append(A,lsons);
+    od;
+    for s in Irrmf do
+      Setter(IsIrreducibleNumericalSemigroup)(s,true);
+    od;
+    return Set(Irrmf);
+end);
+
+#############################################################################
+##
 #F  OverSemigroupsNumericalSemigroup(s)
 ##
 ##  Computes the set of numerical semigroups containing s.

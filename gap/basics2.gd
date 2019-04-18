@@ -96,3 +96,14 @@ DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumber");
 ##
 #############################################################################
 DeclareGlobalFunction("NumericalSemigroupsWithGenus");
+
+#############################################################################
+##
+#F  NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(F,m)
+##
+##  Computes the set of numerical semigroups with multipliciy m and Frobenius
+##  number F. The algorithm is based on "The set of numerical semigroups of a
+##  given multiplicity and Frobenius number" arXiv:1904.05551 [math.GR]
+##
+############################################################################# 
+DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumberAndMultiplicity");

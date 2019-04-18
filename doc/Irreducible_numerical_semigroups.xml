@@ -92,13 +92,26 @@ gap> FrobeniusNumber(s);
                     <Func Arg="f" Name="IrreducibleNumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
                         <A>f</A> is an integer. The output is the set of all
-                        irreducible numerical semigroups with Frobenius number <A>f</A>.
+                        irreducible numerical semigroups with Frobenius number <A>f</A>. The algorithm is inspired in <Cite Key="BR13"></Cite>.
                         <Example><![CDATA[
 gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumber(19));
 20
 ]]></Example>
                     </Description>
                 </ManSection>
+
+                <ManSection>
+                    <Func Arg="f, m" Name="IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity"></Func>
+                    <Description>
+                        <A>f</A> and <A>m</A> are integers. The output is the set of all
+                        irreducible numerical semigroups with Frobenius number <A>f</A> and multiplicity <A>m</A>. The implementation appears in <Cite Key="BOR19"></Cite>.
+                        <Example><![CDATA[
+gap> Length(IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(31,11));
+16
+]]></Example>
+                    </Description>
+                </ManSection>
+
 
                 <ManSection>
                     <Func Arg="s" Name="DecomposeIntoIrreducibles" Label="for numerical semigroup"></Func>
@@ -113,5 +126,6 @@ gap> DecomposeIntoIrreducibles(NumericalSemigroup(5,6,8));
 ]]></Example>
                     </Description>
                 </ManSection>
+
 
             </Section>

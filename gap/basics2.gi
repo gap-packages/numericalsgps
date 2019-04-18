@@ -130,9 +130,13 @@ end);
 #############################################################################
 InstallGlobalFunction(RepresentsGapsOfNumericalSemigroup, function(L)
     local ld, ns;
-
+    
+    if L = [] then # represents the gaps of N
+      return true;
+    fi;
+    
     if not (IsListOfIntegersNS(L) and ForAll(L, i -> IsPosInt(i))) then
-        Error("The argument must be a list of positive integers");
+      return false; # Error("The argument must be a list of positive integers");
     fi;
     ld := Union(List(L,DivisorsInt));
     if ld <> L then
@@ -206,6 +210,80 @@ InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
     return List(fg,x->NumericalSemigroupByFundamentalGaps(x));
 end);
 
+
+#############################################################################
+##
+#F  NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(F,m)
+##
+##  Computes the set of numerical semigroups with multipliciy m and Frobenius
+##  number F. The algorithm is based on "The set of numerical semigroups of a
+##  given multiplicity and Frobenius number" arXiv:1904.05551 [math.GR]
+##
+############################################################################# 
+InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity,
+
+function(F,m)
+    local G,IrrmF,Lmf,S,small,small2,genZ,smallZ,SZ,D,pow,A,B,b,TB,TBD,bS;
+      
+    if (not(IsInt(F))) or (not(IsInt(m))) then
+        Error("The arguments must be two integers.\n");
+    fi;
+
+    if F<-1 or F=0 then
+        return [];#Error(f," is not a valid Frobenius number.\n");
+    fi;
+
+    if m<=0 then
+        return [];#Error(m," is not a valid Multiplicity.\n");
+    fi;
+
+    if F=-1 and m = 1 then
+        return [NumericalSemigroup(1)];
+    fi;
+
+    if F < m-1 or RemInt(F,m) = 0 then 
+        return [];
+    fi;
+
+    if m=2 then 
+        return [NumericalSemigroupByMinimalGenerators([m,F+m])];
+    fi;
+
+    if F=m-1 then 
+        return [NumericalSemigroupByGaps([1 .. F])];
+    fi;
+
+    if (F in [(m+1) .. (2*m-1)]) then 
+        Lmf:=[];
+        G:=Difference([1 .. F],[m]);
+        pow:=Combinations([(m+1) .. (F-1)]);
+        for A in pow do
+            Append(Lmf,[NumericalSemigroupByGaps(Difference(G,A))]);
+        od;
+    else 
+        IrrmF:=IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(F,m);
+        Lmf:=ShallowCopy(IrrmF);
+        for S in IrrmF do 
+            small:=SmallElementsOfNumericalSemigroup(S);
+            small2:=Intersection(small,[m .. Int(F/2)]);
+            genZ:=Union(small2,[F+1 .. (F+m)]);
+            SZ:=NumericalSemigroupByGenerators(genZ);
+            smallZ:=SmallElements(SZ);
+            D:=Difference(small,smallZ); 
+            pow:=Combinations(D);
+            for B in pow do
+                TB:=[];
+                for b in B do
+                    Append(TB,b+smallZ);
+                od;
+                TBD:=Intersection(TB,D);
+                bS:=NumericalSemigroupByGenerators(Concatenation(genZ,TBD));
+                AddSet(Lmf,bS);
+            od;
+        od;
+    fi;
+    return Set(Lmf);
+end);
 
 ##############################################################################
 ##
