@@ -1141,7 +1141,7 @@ end);
  #M Methods for the comparison of affine semigroups.
  ##
  InstallMethod( \=,
-         "for two numerical semigroups",
+         "for two affine semigroups",
          [IsAffineSemigroup and IsAffineSemigroupRep,
           IsAffineSemigroup and IsAffineSemigroupRep],
          function(x, y )

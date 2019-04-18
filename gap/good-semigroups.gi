@@ -1454,6 +1454,12 @@ local CompareGS,MinimumGS,I,RemoveLabels,GluePieceOfTrack,ComputePieceOfTrack,T,
 
 end);
 
+###############################################################
+##
+#P IsLocal(S)
+## Determines if S is local
+###############################################################
+
 InstallMethod(IsLocal,
 "Determines if the good semigroup is local",
 [IsGoodSemigroup], function(S)
@@ -1461,6 +1467,12 @@ local small;
 small:=Difference(SmallElements(S),[[0,0]]);
 return ForAll([1..Length(small)],i->small[i][1]<>0);
 end);
+
+###############################################################
+##
+#A Multiplicity(S)
+## Determines the multiplicity of S
+###############################################################
 
 InstallMethod(Multiplicity,
 "Returns the multiplicity of a local good semigroup",
