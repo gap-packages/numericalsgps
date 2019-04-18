@@ -122,7 +122,7 @@ false
     </ManSection>
 
   <ManSection>
-    <Func Arg="S" Name="Conductor" Label="for good semigroup"></Func>
+    <Func Arg="S" Name="Conductor" Label="for good semigroups"></Func>
     <Func Arg="S" Name="ConductorOfGoodSemigroup"></Func>
     <Description>
       <A>S</A> is a good semigroup. The output is its conductor.
@@ -139,6 +139,37 @@ gap> ConductorOfGoodSemigroup(dup);
 ]]></Example>
     </Description>
   </ManSection>
+
+  <ManSection>
+    <Attr Arg="S" Name="Multiplicity" Label="for good semigroups"></Attr>
+    <Description>
+      <A>S</A> is a good semigroup. The output is its multiplicity (the minimum of the nonzero elements of the semigroup with respect to the usual partial order). It the semigroup is not local, it returns an error.
+
+      <Example><![CDATA[
+gap> s:=GoodSemigroup([[2,2],[3,3]],[4,4]);
+<Good semigroup>
+gap> Multiplicity(s);
+[ 2, 2 ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
+    <Prop Arg="S" Name="IsLocal" Label="for good semigroups"></Prop>
+    <Description>
+      <A>S</A> is a good semigroup. Returns true if the semigroup is local, and false otherwise.
+
+      <Example><![CDATA[
+gap> s:=GoodSemigroup([[2,2],[3,3]],[4,4]);
+<Good semigroup>
+gap> IsLoca(s);
+true
+]]></Example>
+    </Description>
+  </ManSection>
+
+
 
   <ManSection>
     <Func Arg="S" Name="SmallElements" Label="for good semigroup"></Func>

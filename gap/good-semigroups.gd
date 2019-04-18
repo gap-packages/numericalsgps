@@ -218,19 +218,19 @@ DeclareGlobalFunction("TracksOfGoodSemigroup");
 
 ###############################################################
 ##
-#F IsLocalGoodSemigroup(S)
+#P IsLocal(S)
 ## Determines if S is local
 ###############################################################
 
-DeclareProperty("IsLocalGoodSemigroup",IsGoodSemigroup);
+DeclareProperty("IsLocal",IsGoodSemigroup);
 
 
 ###############################################################
 ##
-#F MultiplicityOfAGoodSemigroup(S)
+#A Multiplicity(S)
 ## Determines the multiplicity of S
 ###############################################################
-DeclareAttribute("MultiplicityOfAGoodSemigroup",IsGoodSemigroup);
+DeclareAttribute("Multiplicity",IsGoodSemigroup);
 
 # ## FUNCTIONS ##
 
