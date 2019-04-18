@@ -216,6 +216,22 @@ DeclareGlobalFunction("AbsoluteIrreduciblesOfGoodSemigroup");
 #####################################################
 DeclareGlobalFunction("TracksOfGoodSemigroup");
 
+###############################################################
+##
+#F IsLocalGoodSemigroup(S)
+## Determines if S is local
+###############################################################
+
+DeclareProperty("IsLocalGoodSemigroup",IsGoodSemigroup);
+
+
+###############################################################
+##
+#F MultiplicityOfAGoodSemigroup(S)
+## Determines the multiplicity of S
+###############################################################
+DeclareAttribute("MultiplicityOfAGoodSemigroup",IsGoodSemigroup);
+
 # ## FUNCTIONS ##
 
 #  ####################################################

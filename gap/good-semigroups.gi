@@ -1453,3 +1453,25 @@ local CompareGS,MinimumGS,I,RemoveLabels,GluePieceOfTrack,ComputePieceOfTrack,T,
   return RemoveLabels(temp[2]);
 
 end);
+
+InstallMethod(IsLocalGoodSemigroup,
+"Determines if the good semigroup is local",
+[IsGoodSemigroup], function(S)
+local small;
+small:=Difference(SmallElements(S),[[0,0]]);
+return ForAll([1..Length(small)],i->small[i][1]<>0);
+end);
+
+InstallMethod(MultiplicityOfAGoodSemigroup,
+"Tests the multiplicity of a local good semigroup",
+[IsGoodSemigroup], function(S)
+local small;
+if not(IsLocal(S)) then
+  Error("The good semigroup must be local");
+fi;
+
+small:=SmallElements(S);
+return small[2];
+);
+
+
