@@ -1466,12 +1466,12 @@ InstallMethod(MultiplicityOfAGoodSemigroup,
 "Tests the multiplicity of a local good semigroup",
 [IsGoodSemigroup], function(S)
 local small;
-if not(IsLocal(S)) then
+if not(IsLocalGoodSemigroup(S)) then
   Error("The good semigroup must be local");
 fi;
 
 small:=SmallElements(S);
 return small[2];
-);
+end);
 
 
