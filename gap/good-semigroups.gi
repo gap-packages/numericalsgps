@@ -1231,11 +1231,11 @@ end);
 
 
 #####################################################
-#F IrriducibleAbsolutesOfGoodSemigroup:=function(S)
-## Given a good semigroup S, the function returns the irriducible absolutes of S.
+#F AbsoluteIrreduciblesOfGoodSemigroup:=function(S)
+## Given a good semigroup S, the function returns the irreducible absolutes of S.
 #  These are the elements that generates S as semiring.
 #####################################################
-InstallGlobalFunction(IrriducibleAbsolutesOfGoodSemigroup,
+InstallGlobalFunction(AbsoluteIrreduciblesOfGoodSemigroup,
 function(S)
 local ElementsOnTheEdge,TransformToInf,c,small,irrabsf,irrabsi,infi,edge,i;
 
@@ -1260,7 +1260,7 @@ local ElementsOnTheEdge,TransformToInf,c,small,irrabsf,irrabsi,infi,edge,i;
 
   c:=Conductor(S);
   small:=Difference(SmallElements(S),[[0,0]]);
-  #Computation of finite irriducible absolutes.
+  #Computation of finite irreducible absolutes.
   irrabsf:=IrreducibleMaximalElementsOfGoodSemigroup(S);
 
   #I take the elements of S different from the conductor but with a coordinate equal to this one.
@@ -1330,7 +1330,7 @@ local CompareGS,MinimumGS,I,RemoveLabels,GluePieceOfTrack,ComputePieceOfTrack,T,
     return ags;
   end;
 
-  #This funcion compute all possibles piece of track of a good semigroups having irriducible absolutes I
+  #This funcion compute all possibles piece of track of a good semigroups having irreducible absolutes I
   ComputePieceOfTrack:=function(I)
     local IsAPOT,MaximalRed,ags,first,last,i;
 
@@ -1438,7 +1438,7 @@ local CompareGS,MinimumGS,I,RemoveLabels,GluePieceOfTrack,ComputePieceOfTrack,T,
     return List(T,i->Filtered(i,j->j<>"last" and j<>"first"));
   end;
 
-  I:=IrriducibleAbsolutesOfGoodSemigroup(S);
+  I:=AbsoluteIrreduciblesOfGoodSemigroup(S);
   T:=ComputePieceOfTrack(I);
 
   #The idea is to create the list of all tracks, adding one by one the piece of tracks in all possible way, reccalling
