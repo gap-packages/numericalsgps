@@ -130,9 +130,13 @@ end);
 #############################################################################
 InstallGlobalFunction(RepresentsGapsOfNumericalSemigroup, function(L)
     local ld, ns;
-
+    
+    if L = [] then # represents the gaps of N
+      return true;
+    fi;
+    
     if not (IsListOfIntegersNS(L) and ForAll(L, i -> IsPosInt(i))) then
-        Error("The argument must be a list of positive integers");
+      return false; # Error("The argument must be a list of positive integers");
     fi;
     ld := Union(List(L,DivisorsInt));
     if ld <> L then
