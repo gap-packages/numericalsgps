@@ -150,14 +150,14 @@ end);
 
 #############################################################################
 ##
-#F  NumericalSemigroupsWithFrobeniusNumber(g)
+#F  NumericalSemigroupsWithFrobeniusNumberFG(g)
 ##
 ##  Computes the set of numerical semigroups with Frobenius number g.
 ##  The algorithm is based on
 ##  "Fundamental gaps in numerical semigroup".
 ##
 #############################################################################
-InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(g)
+InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumberFG, function(g)
     local fg, fundamentalGapsRepresentingNSGenerator;
 
     if(not(IsInt(g))) then
@@ -284,7 +284,23 @@ function(F,m)
     fi;
     return Set(Lmf);
 end);
-
+#############################################################################
+##
+#F  NumericalSemigroupsWithFrobeniusNumber(g)
+##
+##  Making use of NumericalSemigroupsWithFrobeniusNumberAndMultiplicity, computes 
+## the set of numerical semigroups with Frobenius number g.
+##  
+##
+#############################################################################
+InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(F)
+  local  L, m;
+  L:=[];
+  for m in [1 .. F+1] do 
+    Append(L,NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(F,m));;
+  od;
+  return(L);
+end);
 ##############################################################################
 ##
 #F NumericalSemigroupsWithGenus

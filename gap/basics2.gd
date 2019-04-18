@@ -60,14 +60,14 @@ DeclareGlobalFunction("RepresentsGapsOfNumericalSemigroup");
 
 #############################################################################
 ##
-#F  NumericalSemigroupsWithFrobeniusNumber(g)
+#F  NumericalSemigroupsWithFrobeniusNumberFG(g)
 ##
 ##  Computes the set of numerical semigroups with Frobenius number g.
 ##  The algorithm is based on
 ##  "Fundamental gaps in numerical semigroup".
 ##
 #############################################################################
-DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumber");
+DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumberFG");
 
 ##############################################################################
 ##
@@ -107,3 +107,13 @@ DeclareGlobalFunction("NumericalSemigroupsWithGenus");
 ##
 ############################################################################# 
 DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumberAndMultiplicity");
+#############################################################################
+##
+#F  NumericalSemigroupsWithFrobeniusNumber(g)
+##
+##  Making use of NumericalSemigroupsWithFrobeniusNumberAndMultiplicity, computes 
+## the set of numerical semigroups with Frobenius number g.
+##  
+##
+#############################################################################
+DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumber");
