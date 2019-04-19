@@ -627,7 +627,7 @@ InstallMethod(GeneratorsOfKernelCongruence,
 	[IsRectangularTable],1,
 	function( m )
 
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+    local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 
@@ -635,13 +635,6 @@ InstallMethod(GeneratorsOfKernelCongruence,
     #if NumSgpsCanUseSI or NumSgpsCanUseSingular then
     #    TryNextMethod();
     #fi;
-
-    ##computes the s degree of a monomial in the semigroup ideal
-    sdegree:=function(m)
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
 
     bintopair:=function(p)
         local m1,m2, d1, d2;
@@ -686,17 +679,10 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
 	[IsRectangularTable, IsMonomialOrdering],1,
   function( m, ord )
 
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+    local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 
-
-    ##computes the s degree of a monomial in the semigroup ideal
-    sdegree:=function(m)
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
 
     bintopair:=function(p)
         local m1,m2, d1, d2;
@@ -776,7 +762,7 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
 	[IsAffineSemigroup],1,
 	function( a )
 
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+    local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 

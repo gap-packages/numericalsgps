@@ -222,6 +222,10 @@ gap> Display(a);
 <Affine semigroup>
 gap> ViewString(a);
 "<Affine semigroup>"
+gap> [1,1] in a;
+true
+gap> [0,2] in a;
+false
 gap> MinimalGenerators(a);
 [ [ 1, 1 ] ]
 gap> a:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
@@ -232,6 +236,10 @@ gap> ViewString(a);
 "<Affine semigroup>"
 gap> Display(a);
 <Affine semigroup>
+gap> [1,1] in a;
+true
+gap> [0,20] in a;
+false
 gap> MinimalGenerators(a);
 [ [ 1, 1 ], [ 1, 2 ], [ 2, 1 ], [ 3, 1 ] ]
 
@@ -244,6 +252,30 @@ gap> Gaps(a);
 [ [ 1, 0 ], [ 3, 0 ], [ 1, 1 ] ]
 gap> IsFullAffineSemigroup(a);
 false
+
+# factorizations
+
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);
+<Affine semigroup in 2 dimensional space, with 4 generators>
+gap> MinimalGenerators(a);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+gap> Factorizations([10,10],a);
+[ [ 5, 0, 5 ], [ 4, 2, 4 ], [ 3, 4, 3 ], [ 2, 6, 2 ], [ 1, 8, 1 ], [ 0, 10, 0 ] ]
+gap> Factorizations(a,[10,10]);
+[ [ 5, 0, 5 ], [ 4, 2, 4 ], [ 3, 4, 3 ], [ 2, 6, 2 ], [ 1, 8, 1 ], [ 0, 10, 0 ] ]
+
+# presentations
+
+gap> IsUniquelyPresented(a);
+true
+gap> IsGeneric(a);
+false
+gap> ShadedSetOfElementInAffineSemigroup([3,1],a);
+[ [  ], [ [ 1, 1 ] ], [ [ 1, 1 ], [ 2, 0 ] ], [ [ 2, 0 ] ], [ [ 3, 1 ] ] ]
+gap> MinimalGenerators(LawrenceLiftingOfAffineSemigroup(a));
+[ [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 2, 1, 0, 0 ], [ 1, 1, 0, 1, 0 ],
+  [ 2, 0, 0, 0, 1 ] ]
+
 
 #############################################################################
 #############################################################################
