@@ -255,8 +255,7 @@ false
 
 # factorizations
 
-gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);
-<Affine semigroup in 2 dimensional space, with 4 generators>
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> MinimalGenerators(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 gap> Factorizations([10,10],a);
@@ -269,9 +268,9 @@ gap> Factorizations(a,[10,10]);
 gap> IsUniquelyPresented(a);
 true
 gap> IsGeneric(a);
-false
+true
 gap> ShadedSetOfElementInAffineSemigroup([3,1],a);
-[ [  ], [ [ 1, 1 ] ], [ [ 1, 1 ], [ 2, 0 ] ], [ [ 2, 0 ] ], [ [ 3, 1 ] ] ]
+[ [  ], [ [ 1, 1 ] ], [ [ 1, 1 ], [ 2, 0 ] ], [ [ 2, 0 ] ] ]
 gap> MinimalGenerators(LawrenceLiftingOfAffineSemigroup(a));
 [ [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 2, 1, 0, 0 ], [ 1, 1, 0, 1, 0 ],
   [ 2, 0, 0, 0, 1 ] ]
