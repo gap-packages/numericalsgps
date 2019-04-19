@@ -144,6 +144,9 @@ true
 
 ##some tests involving random functions
 #
+gap> RandomNumericalSemigroup(3,9);;
+gap> IsNumericalSemigroup(last);
+true
 gap> ns := RandomNumericalSemigroup(3,9,55);;
 gap> EmbeddingDimension(ns) > 3;
 false
@@ -152,14 +155,45 @@ true
 gap> l := RandomListForNS(13,1,79);;
 gap> Gcd(l);
 1
+gap> RandomModularNumericalSemigroup(9);;
+gap> RandomModularNumericalSemigroup(10,25);;
+gap> IsModularNumericalSemigroup(last);IsModularNumericalSemigroup(last2);
+true
+true
+gap> pm1 := RandomProportionallyModularNumericalSemigroup(9);;
+gap> pm2 := RandomProportionallyModularNumericalSemigroup(10,25);;
+gap> IsProportionallyModularNumericalSemigroup(pm1);IsProportionallyModularNumericalSemigroup(pm2);
+true
+true
+gap> RandomListRepresentingSubAdditiveFunction(7,9);;
+gap> RepresentsPeriodicSubAdditiveFunction(last);
+true
+gap> ns := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,50);;
+gap> ns2 := NumericalSemigroupWithRandomElementsAndFrobenius(5,10,9); 
+#I  The third argument must not be smaller than the second
+fail
+gap> FrobeniusNumber(ns) > 50;
+false
 gap> RandomNumericalSemigroupWithGenus(7);;
 gap> Genus(last);
 7
+
 gap> RandomAffineSemigroupWithGenusAndDimension(10,3);;
 gap> Genus(last);
 10
 gap> Dimension(last2);
 3
+gap> RandomAffineSemigroup(5,5);;
+gap> RandomAffineSemigroup(5,5,3);;
+gap> IsAffineSemigroup(last);IsAffineSemigroup(last2);
+true
+true
+
+#gap> a := RandomFullAffineSemigroup(5,5,3);;
+#gap> IsAffineSemigroup(a);IsFullAffineSemigroup(a);
+#true
+#true
+
 gap> s:=RandomGoodSemigroupWithFixedMultiplicity([6,7],[30,30]);
 <Good semigroup>
 gap> Conductor(s) <= [30,30];
