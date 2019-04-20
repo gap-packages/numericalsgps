@@ -390,6 +390,10 @@ gap> HilbertSeriesOfNumericalSemigroup(s,x);
 (x^5-x^4+x^3-x+1)/(-x+1)
 gap> IsCyclotomicPolynomial(CyclotomicPolynomial(Rationals,4));
 true
+gap> IsCyclotomicPolynomial(2*x+1);
+false
+gap> IsCyclotomicPolynomial((x-1)*(x+1));
+false
 gap> IsKroneckerPolynomial(0*x);
 false
 gap> IsKroneckerPolynomial(0*x);
@@ -426,6 +430,37 @@ gap> y:=Indeterminate(Rationals,2);; SetName(y,"y");
 gap> CurveAssociatedToDeltaSequence([3,2]);
 y^3-x^2
 
+
+# good semigroups
+
+gap> g:=GoodSemigroup([[2,2]],[3,3]);;
+gap> Conductor(g);
+[ 3, 3 ]
+gap> [1,1] in g;
+false
+gap> Display(g);
+<Good semigroup>
+gap> ViewString(g);
+"Good semigroup"
+gap> g:=GoodSemigroupBySmallElements([[0,0],[2,2],[3,3]]);;
+gap> Conductor(g);
+[ 3, 3 ]
+gap> [1,1] in g;
+false
+gap> SmallElements(g);
+[ [ 0, 0 ], [ 2, 2 ], [ 3, 3 ] ]
+gap> s:=NumericalSemigroup(3,4);;
+gap> g:=CartesianProductOfNumericalSemigroups(s,s);;
+gap> Conductor(g);
+[ 6, 6 ]
+gap> [2,2] in g;
+false
+gap> [3,4] in g;
+true
+gap> SmallElements(g);
+[ [ 0, 0 ], [ 0, 3 ], [ 0, 4 ], [ 0, 6 ], [ 3, 0 ], [ 3, 3 ], [ 3, 4 ],
+  [ 3, 6 ], [ 4, 0 ], [ 4, 3 ], [ 4, 4 ], [ 4, 6 ], [ 6, 0 ], [ 6, 3 ],
+  [ 6, 4 ], [ 6, 6 ] ]
 
 #############################################################################
 #############################################################################

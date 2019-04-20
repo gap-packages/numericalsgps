@@ -42,17 +42,6 @@ InstallGlobalFunction(NumericalDuplication, function(S,E,b)
     fi;
 
     return NumericalSemigroup(Union(2*mgsS, 2*mgsE+b));
-
-    f:=2*Conductor(E)+b;
-    doubS:=MultipleOfNumericalSemigroup(S,2,f);
-    smallS:=SmallElements(doubS);
-    smallE:=SmallElements(E);
-    small:=Union(smallS,2*smallE+b);
-    if not(RepresentsSmallElementsOfNumericalSemigroup(small)) then
-      Error("The third argument does not define a numerical semigroup");
-    fi;
-    return NumericalSemigroupBySmallElements(small);
-
 end);
 
 
@@ -457,23 +446,8 @@ InstallMethod(MinimalGoodGeneratingSystemOfGoodSemigroup,
   ## filter outputs a subset that generates all
   filter:=function(G,C)
 
-      local member,member1, member2,  gen, inf, g, gg, visited, left;
+      local member1, member2,  gen, g, gg, visited, left;
 
-      inf:=function(x,y)
-          return [Minimum(x[1],y[1]), Minimum(x[2],y[2])];
-      end;
-
-      member:=function(X,x)
-          if x[1]*x[2]=0 then
-              return x[1]+x[2]<=0;
-          fi;
-          if x[1]<0 or x[2]< 0 then
-              return false;
-          fi;
-
-          return ForAny(X, y->member(X,x-y));
-
-      end;
 
       member1:=function(X,x)
           if x[1]*x[2]=0 then
@@ -820,7 +794,6 @@ end);
 InstallMethod(BelongsToGoodSemigroup,
          "Tests if the vector is in the semigroup",
          [IsHomogeneousList, IsGoodSemigroup], 50,
-#BelongsToGoodSemigroup:=
   function(v, a)
     local S,T,E,c,s,t,sprime, X, saturation, C,edge1,edge2, sm, edge;
 
