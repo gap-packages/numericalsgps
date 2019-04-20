@@ -1114,7 +1114,6 @@ function(S)
     fi;
     c:=Conductor(S);
     return c[1]+c[2]-GenusOfGoodSemigroup(S);
-    return Length(MaximalElementsOfGoodSemigroup(S))+Genus(ProjectionOfGoodSemigroup(S,1))+Genus(ProjectionOfGoodSemigroup(S,2));
 end);
 
 InstallMethod(Length,"for a good semigroup",[IsGoodSemigroup], LengthOfGoodSemigroup );
