@@ -296,6 +296,12 @@ gap> Factorizations([10,10],a);
 [ [ 5, 0, 5 ], [ 4, 2, 4 ], [ 3, 4, 3 ], [ 2, 6, 2 ], [ 1, 8, 1 ], [ 0, 10, 0 ] ]
 gap> Factorizations(a,[10,10]);
 [ [ 5, 0, 5 ], [ 4, 2, 4 ], [ 3, 4, 3 ], [ 2, 6, 2 ], [ 1, 8, 1 ], [ 0, 10, 0 ] ]
+gap> s:=NumericalSemigroup(3,5);
+<Numerical semigroup with 2 generators>
+gap> DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s);
+[ 3, 5, 15 ]
+gap> MonotoneCatenaryDegreeOfNumericalSemigroup(s);
+5
 
 # presentations
 
@@ -308,6 +314,59 @@ gap> ShadedSetOfElementInAffineSemigroup([3,1],a);
 gap> MinimalGenerators(LawrenceLiftingOfAffineSemigroup(a));
 [ [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 2, 1, 0, 0 ], [ 1, 1, 0, 1, 0 ],
   [ 2, 0, 0, 0, 1 ] ]
+
+# Arf
+gap> a:=ArfNumericalSemigroupClosure(3,4);
+<Numerical semigroup>
+gap> a:=ArfNumericalSemigroupClosure([3,4]);
+<Numerical semigroup>
+gap> ArfNumericalSemigroupsWithFrobeniusNumber(-1);
+[ <The numerical semigroup N> ]
+gap> ArfNumericalSemigroupsWithGenusUpTo(0);
+[ <The numerical semigroup N> ]
+gap> ArfNumericalSemigroupsWithFrobeniusNumberUpTo(-1);
+[ <The numerical semigroup N> ]
+gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(0,-1);
+[ <The numerical semigroup N> ]
+gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(2,1);
+[  ]
+
+# MED
+
+gap> MEDNumericalSemigroupClosure(3,4);
+<Numerical semigroup>
+gap> s:=NumericalSemigroup(2,5);;
+gap> MinimalMEDGeneratingSystemOfMEDNumericalSemigroup(s);
+[ 2, 5 ]
+
+# Saturated
+
+gap> s:=NumericalSemigroup(2,3);
+<Numerical semigroup with 2 generators>
+gap> HasMinimalGenerators(s);
+true
+gap> SaturatedNumericalSemigroupClosure(s);
+<Numerical semigroup>
+gap> SaturatedNumericalSemigroupClosure(3,7);
+<Numerical semigroup>
+gap> SaturatedNumericalSemigroupsWithFrobeniusNumber(-1);
+[ <The numerical semigroup N> ]
+gap> Length(SaturatedNumericalSemigroupsWithFrobeniusNumber(41));
+378
+
+# dot
+
+gap> s:=NumericalSemigroup(4,6,9);
+<Numerical semigroup with 3 generators>
+gap> IsString(DotTreeOfGluingsOfNumericalSemigroup(s));
+true
+gap> IsString(DotOverSemigroups(s));
+true
+gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);
+<Affine semigroup in 2 dimensional space, with 3 generators>
+gap> DotRosalesGraph([3,3],a);
+"graph  NSGraph{\n1 [label=\"[ 0, 2 ]\"];\n2 [label=\"[ 1, 1 ]\"];\n3 [label=\"[ 2, 0 ]\"];\n2 -- 1;\
+\n3 -- 1;\n3 -- 2;\n}"
 
 
 #############################################################################

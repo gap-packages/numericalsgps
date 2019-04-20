@@ -13,53 +13,6 @@
 #############################################################################
 
 
-#############################################################################
-##
-#F  FortenTruncatedNCForNumericalSemigroups(l)
-##
-##  l contains the list of coefficients of a
-##  single linear equation. fortenTruncated gives a minimal generator
-##  of the affine semigroup of nonnegative solutions of this equation
-##  with the first coordinate equal to one.
-##
-##  Used for computing minimal presentations.
-##
-#############################################################################
-InstallGlobalFunction(FortenTruncatedNCForNumericalSemigroups, function(l)
-    local   leq,  m,  solutions,  explored,  candidates,  x,  tmp;
-
-
-    #  leq(v1,v2)
-    #  Compares vectors (lists) v1 and v2, returning true if v1 is less than or
-    #  equal than v2 with the usual partial order.
-    leq := function(v1,v2)
-        local v;
-        #one should make sure here that the lengths are the same
-        v:=v2-v1;
-        return (First(v,n->n<0)=fail);
-    end;
-    ##  End of leq()  --
-
-    m:=IdentityMat(Length(l));
-    solutions:=[];
-    explored:=[];
-    candidates:=[m[1]];
-    m:=m{[2..Length(m)]};
-    while (not(candidates=[])) do
-        x:=candidates[1];
-        explored:=Union([x],explored);
-        candidates:=candidates{[2..Length(candidates)]};
-        if(l*x=0) then
-            return x;
-        else
-            tmp:=List(Filtered(m,n->((l*x)*(l*n)<0)),y->y+x);
-            tmp:=Difference(tmp,explored);
-            tmp:=Filtered(tmp,n->(First(solutions,y->leq(y,n))=fail));
-            candidates:=Union(candidates,tmp);
-        fi;
-    od;
-    return fail;
-end);
 
 
 #############################################################################

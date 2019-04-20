@@ -47,27 +47,12 @@ DeclareGlobalFunction( "CatenaryDegreeOfNumericalSemigroup" );
 DeclareOperation("CatenaryDegree",[IsNumericalSemigroup]);
 #############################################################################
 ##
-#F  IsConnectedGraphNCForNumericalSemigroups(l)
-##
-## This function returns true if the graph is connected an false otherwise
-##
-## It is part of the NumericalSGPS package just to avoid the need of using 
-## other graph packages only to this effect. It is used in 
-## CatenaryDegreeOfElementNS
-##
-#############################################################################
-DeclareGlobalFunction("IsConnectedGraphNCForNumericalSemigroups");
-#############################################################################
-##
 #F  CatenaryDegreeOfElementInNumericalSemigroup(s)
 ##
 ## This function returns the catenary cegree in a numerical semigroup S of 
 ## a positive integer n
 ##
-## The NC version of CatenaryDegreeOfElementNS works well for numbers
-## bigger than the Frobenius number
 ##
-DeclareGlobalFunction( "CatenaryDegreeOfElementInNumericalSemigroup_NC" );
 DeclareGlobalFunction( "CatenaryDegreeOfElementInNumericalSemigroup" );
 DeclareOperation("CatenaryDegree",[IsNumericalSemigroup,IsInt]);
 DeclareOperation("CatenaryDegree",[IsInt,IsNumericalSemigroup]);

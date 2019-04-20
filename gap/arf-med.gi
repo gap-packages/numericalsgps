@@ -106,24 +106,7 @@ InstallMethod(MinimalArfGeneratingSystemOfArfNumericalSemigroup,
   "Returns the minimal Arf-generating system of an Arf-semigroup",
   [IsNumericalSemigroup],
   function(s)
-    local char,  ms,  inarf,i,j,  m, r, b;
-
-    # tests whether x is in the Arf semigroup with multiplicity
-    # sequence j
-    inarf:=function(x,j)
-        local l;
-        if x>Sum(j) then
-          return true;
-        fi;
-        if x=0 then
-          return true;
-        fi;
-        if x<j[1] then
-          return false;
-        fi;
-        l:=List([1..Length(j)], i-> Sum(j{[1..i]}));
-        return x in l;
-    end;
+    local char,  ms,i,j,  m, r, b;
 
 
     if not(IsArfNumericalSemigroup(s)) then

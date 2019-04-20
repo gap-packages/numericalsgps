@@ -246,3 +246,209 @@ end);
 
 
 
+#############################################################################
+##
+#F  FortenTruncatedNCForNumericalSemigroups(l)
+##
+##  l contains the list of coefficients of a
+##  single linear equation. fortenTruncated gives a minimal generator
+##  of the affine semigroup of nonnegative solutions of this equation
+##  with the first coordinate equal to one.
+##
+##  Used for computing minimal presentations.
+##
+#############################################################################
+InstallGlobalFunction(FortenTruncatedNCForNumericalSemigroups, function(l)
+    local   leq,  m,  solutions,  explored,  candidates,  x,  tmp;
+
+
+    #  leq(v1,v2)
+    #  Compares vectors (lists) v1 and v2, returning true if v1 is less than or
+    #  equal than v2 with the usual partial order.
+    leq := function(v1,v2)
+        local v;
+        #one should make sure here that the lengths are the same
+        v:=v2-v1;
+        return (First(v,n->n<0)=fail);
+    end;
+    ##  End of leq()  --
+
+    m:=IdentityMat(Length(l));
+    solutions:=[];
+    explored:=[];
+    candidates:=[m[1]];
+    m:=m{[2..Length(m)]};
+    while (not(candidates=[])) do
+        x:=candidates[1];
+        explored:=Union([x],explored);
+        candidates:=candidates{[2..Length(candidates)]};
+        if(l*x=0) then
+            return x;
+        else
+            tmp:=List(Filtered(m,n->((l*x)*(l*n)<0)),y->y+x);
+            tmp:=Difference(tmp,explored);
+            tmp:=Filtered(tmp,n->(First(solutions,y->leq(y,n))=fail));
+            candidates:=Union(candidates,tmp);
+        fi;
+    od;
+    return fail;
+end);
+
+#========================================================================
+##
+#F This function is the NC version of CatenaryDegreeOfElementInNumericalSemigroup. It works
+## well for numbers bigger than the Frobenius number
+## DEPRECATED
+##------------------------------------------------------------------------
+InstallGlobalFunction(CatenaryDegreeOfElementInNumericalSemigroup_NC, function(n,s)
+    local   len,  distance,  Fn,  V,  underlyinggraph,  i,  weights,
+            weightedgraph,  j,  dd,  d,  w;
+
+    #---- Local functions definitions -------------------------
+    #==========================================================
+    #==========================================================
+    #Given two factorizations a and b of n, the distance between a
+    #and b is d(a,b)=max |a-gcd(a,b)|,|b-gcd(a,b)|, where
+    #gcd((a_1,...,a_n),(b_1,...,b_n))=(min(a_1,b_1),...,min(a_n,b_n)).
+
+
+    #----------------------------------------------------------
+    distance := function(a,b)
+        local   k,  gcd,  i;
+
+        k := Length(a);
+        if k <> Length(b) then
+            Error("The lengths of a and b are different.\n");
+        fi;
+
+
+        gcd := [];
+        for i in [1..k] do
+            Add(gcd, Minimum(a[i],b[i]));
+        od;
+        return(Maximum(Sum(a-gcd),Sum(b-gcd)));
+
+    end;
+    ## ----  End of distance()  ----
+
+    #==========================================================
+    #---- End of Local functions definitions ------------------
+
+    #==========================================================
+    #-----------      MAIN CODE       -------------------------
+    #----------------------------------------------------------
+
+    Fn := FactorizationsElementWRTNumericalSemigroup( n, s );
+    #Print("Factorizations:\n",Fn,"\n");
+    V := Length(Fn);
+    if V = 1 then
+        return 0;
+    elif V = 2 then
+        return distance(Fn[1],Fn[2]);
+    fi;
+
+
+    # compute the directed weighted graph
+    underlyinggraph := [];
+    for i in [2 .. V] do
+        Add(underlyinggraph, [i..V]);
+    od;
+    Add(underlyinggraph, []);
+    weights := [];
+    weightedgraph := StructuralCopy(underlyinggraph);
+    for i in [1..Length(weightedgraph)] do
+        for j in [1..Length(weightedgraph[i])] do
+            dd := distance(Fn[i],Fn[weightedgraph[i][j]]);
+            Add(weights,dd);
+            weightedgraph[i][j] := [weightedgraph[i][j],dd];
+
+        od;
+    od;
+    weights:=Set(weights);
+    d := 0;
+    while IsConnectedGraphNCForNumericalSemigroups(underlyinggraph) do
+        w := weights[Length(weights)-d];
+        d := d+1;
+        for i in weightedgraph do
+            for j in i do
+                if IsBound(j[2]) and j[2]= w then
+                    Unbind(i[Position(i,j)]);
+                fi;
+            od;
+        od;
+        for i in [1..Length(weightedgraph)] do
+            weightedgraph[i] := Compacted(weightedgraph[i]);
+        od;
+        underlyinggraph := [];
+        for i in weightedgraph do
+            if i <> [] then
+                Add(underlyinggraph, TransposedMatMutable(i)[1]);
+            else
+                Add(underlyinggraph, []);
+            fi;
+        od;
+    od;
+
+
+    return(weights[Length(weights)-d+1]);
+
+end);
+## ----  End of CatenaryDegreeOfElementInNumericalSemigroup_NC()  ----
+#========================================================================
+##
+#========================================================================
+############################################################################
+##
+#F This function returns true if the graph is connected an false otherwise
+##
+## It is part of the NumericalSGPS package just to avoid the need of using
+## other graph packages only to this effect. It is used in
+## CatenaryDegreeOfElementInNumericalSemigroup
+##
+##
+InstallGlobalFunction( IsConnectedGraphNCForNumericalSemigroups, function(G)
+    local i, j, fl,
+          n, # number of vertices
+          uG, # undirected graph (an edge of the undirected graph may be
+          #                 seen as a pair of edges of the directed graph)
+          visit,
+          dfs;
+
+    fl := Flat(G);
+    if fl=[] then
+        n := Length(G);
+    else
+        n := Maximum(Length(G),Maximum(fl));
+    fi;
+    uG := StructuralCopy(G);
+    while Length(uG) < n do
+        Add(uG,[]);
+    od;
+    for i in [1..Length(G)] do
+        for j in G[i] do
+            UniteSet(uG[j],[i]);
+        od;
+    od;
+
+
+    visit := [];          # mark the vertices an unvisited
+    for i in [1..n] do
+        visit[i] := 0;
+    od;
+
+    dfs := function(v) #recursive call to Depth First Search
+        local w;
+        visit[v] := 1;
+        for w in uG[v] do
+            if visit[w] = 0 then
+                dfs(w);
+            fi;
+        od;
+    end;
+    dfs(1);
+    if 0 in visit then
+        return false;
+    fi;
+    return true;
+end);
+

@@ -55,3 +55,35 @@ DeclareGlobalFunction( "NumericalSemigroupByMinimalGeneratorsNC" );
 
 
 
+
+#############################################################################
+##
+#F  FortenTruncatedNCForNumericalSemigroups(l)
+##
+##  l contains the list of coefficients of a
+##  single linear equation. FortenTruncatedNCForNumericalSemigroups
+##  gives a minimal generator
+##  of the affine semigroup of nonnegative solutions of this equation
+##  with the first coordinate equal to one.
+##
+##  Used for computing minimal presentations.
+##
+#############################################################################
+DeclareGlobalFunction("FortenTruncatedNCForNumericalSemigroups");
+
+
+## The NC version of CatenaryDegreeOfElementNS works well for numbers
+## bigger than the Frobenius number
+DeclareGlobalFunction( "CatenaryDegreeOfElementInNumericalSemigroup_NC" );
+#############################################################################
+##
+#F  IsConnectedGraphNCForNumericalSemigroups(l)
+##
+## This function returns true if the graph is connected an false otherwise
+##
+## It is part of the NumericalSGPS package just to avoid the need of using 
+## other graph packages only to this effect. It is used in 
+## CatenaryDegreeOfElementNS
+##
+#############################################################################
+DeclareGlobalFunction("IsConnectedGraphNCForNumericalSemigroups");

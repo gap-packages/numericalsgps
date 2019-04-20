@@ -101,164 +101,7 @@ InstallMethod(CatenaryDegree,
     [IsNumericalSemigroup],    
     CatenaryDegreeOfNumericalSemigroup);
 
-############################################################################
-##
-#F This function returns true if the graph is connected an false otherwise
-##
-## It is part of the NumericalSGPS package just to avoid the need of using
-## other graph packages only to this effect. It is used in
-## CatenaryDegreeOfElementInNumericalSemigroup
-##
-##
-InstallGlobalFunction( IsConnectedGraphNCForNumericalSemigroups, function(G)
-    local i, j, fl,
-          n, # number of vertices
-          uG, # undirected graph (an edge of the undirected graph may be
-          #                 seen as a pair of edges of the directed graph)
-          visit,
-          dfs;
 
-    fl := Flat(G);
-    if fl=[] then
-        n := Length(G);
-    else
-        n := Maximum(Length(G),Maximum(fl));
-    fi;
-    uG := StructuralCopy(G);
-    while Length(uG) < n do
-        Add(uG,[]);
-    od;
-    for i in [1..Length(G)] do
-        for j in G[i] do
-            UniteSet(uG[j],[i]);
-        od;
-    od;
-
-
-    visit := [];          # mark the vertices an unvisited
-    for i in [1..n] do
-        visit[i] := 0;
-    od;
-
-    dfs := function(v) #recursive call to Depth First Search
-        local w;
-        visit[v] := 1;
-        for w in uG[v] do
-            if visit[w] = 0 then
-                dfs(w);
-            fi;
-        od;
-    end;
-    dfs(1);
-    if 0 in visit then
-        return false;
-    fi;
-    return true;
-end);
-
-#========================================================================
-##
-#F This function is the NC version of CatenaryDegreeOfElementInNumericalSemigroup. It works
-## well for numbers bigger than the Frobenius number
-## DEPRECATED
-##------------------------------------------------------------------------
-InstallGlobalFunction(CatenaryDegreeOfElementInNumericalSemigroup_NC, function(n,s)
-    local   len,  distance,  Fn,  V,  underlyinggraph,  i,  weights,
-            weightedgraph,  j,  dd,  d,  w;
-
-    #---- Local functions definitions -------------------------
-    #==========================================================
-    #==========================================================
-    #Given two factorizations a and b of n, the distance between a
-    #and b is d(a,b)=max |a-gcd(a,b)|,|b-gcd(a,b)|, where
-    #gcd((a_1,...,a_n),(b_1,...,b_n))=(min(a_1,b_1),...,min(a_n,b_n)).
-
-
-    #----------------------------------------------------------
-    distance := function(a,b)
-        local   k,  gcd,  i;
-
-        k := Length(a);
-        if k <> Length(b) then
-            Error("The lengths of a and b are different.\n");
-        fi;
-
-
-        gcd := [];
-        for i in [1..k] do
-            Add(gcd, Minimum(a[i],b[i]));
-        od;
-        return(Maximum(Sum(a-gcd),Sum(b-gcd)));
-
-    end;
-    ## ----  End of distance()  ----
-
-    #==========================================================
-    #---- End of Local functions definitions ------------------
-
-    #==========================================================
-    #-----------      MAIN CODE       -------------------------
-    #----------------------------------------------------------
-
-    Fn := FactorizationsElementWRTNumericalSemigroup( n, s );
-    #Print("Factorizations:\n",Fn,"\n");
-    V := Length(Fn);
-    if V = 1 then
-        return 0;
-    elif V = 2 then
-        return distance(Fn[1],Fn[2]);
-    fi;
-
-
-    # compute the directed weighted graph
-    underlyinggraph := [];
-    for i in [2 .. V] do
-        Add(underlyinggraph, [i..V]);
-    od;
-    Add(underlyinggraph, []);
-    weights := [];
-    weightedgraph := StructuralCopy(underlyinggraph);
-    for i in [1..Length(weightedgraph)] do
-        for j in [1..Length(weightedgraph[i])] do
-            dd := distance(Fn[i],Fn[weightedgraph[i][j]]);
-            Add(weights,dd);
-            weightedgraph[i][j] := [weightedgraph[i][j],dd];
-
-        od;
-    od;
-    weights:=Set(weights);
-    d := 0;
-    while IsConnectedGraphNCForNumericalSemigroups(underlyinggraph) do
-        w := weights[Length(weights)-d];
-        d := d+1;
-        for i in weightedgraph do
-            for j in i do
-                if IsBound(j[2]) and j[2]= w then
-                    Unbind(i[Position(i,j)]);
-                fi;
-            od;
-        od;
-        for i in [1..Length(weightedgraph)] do
-            weightedgraph[i] := Compacted(weightedgraph[i]);
-        od;
-        underlyinggraph := [];
-        for i in weightedgraph do
-            if i <> [] then
-                Add(underlyinggraph, TransposedMatMutable(i)[1]);
-            else
-                Add(underlyinggraph, []);
-            fi;
-        od;
-    od;
-
-
-    return(weights[Length(weights)-d+1]);
-
-end);
-## ----  End of CatenaryDegreeOfElementInNumericalSemigroup_NC()  ----
-#========================================================================
-##
-#========================================================================
 ##
 #F This function returns the catenary cegree in a numerical semigroup S of
 ## a positive integer n
@@ -1465,29 +1308,11 @@ end);
 ## computes the equal catenary degree of of the set of factorizations
 ###################################################################
 InstallGlobalFunction(EqualCatenaryDegreeOfSetOfFactorizations,function(ls)
-    local distance, lFni;
+    local lFni;
 
 	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
 		Error("The argument is not a list of factorizations.\n");
 	fi;
-
-
-   # distance between two factorizations
-    distance:=function(x,y)
-        local p,n,i,z;
-
-        p:=0; n:=0;
-        z:=x-y;
-        for i in [1..Length(z)] do
-            if z[i]>0 then
-                p:=p+z[i];
-            else
-                n:=n+z[i];
-            fi;
-        od;
-
-        return Maximum(p,-n);
-    end;
 
 
     lFni:=Set( ls, t->Sum( t ) );
@@ -1725,7 +1550,7 @@ end);
 InstallMethod(FengRaoNumber,"Feng-Rao number for a numerical semigroup",
         [IsNumericalSemigroup,IsPosInt],
   function(NS,r)
-  local  fr, m, gens, a, ne, dm, fe, aux, span, 
+  local  fr, m, gens, a, ne, dm, fe, span, 
          generators_for_lists_for_Feng_Rao, LIST, RES, numbers, M, divs;
 
 
@@ -1740,18 +1565,7 @@ InstallMethod(FengRaoNumber,"Feng-Rao number for a numerical semigroup",
 
   ###########################################################################
   ##################### local functions
-  ###########################################################################
-  ## computes, see remarks in [DelgadoFarranGarcia-SanchezLlena2013MC], the union of the divisors of the elements in the configuration that are not divisors of m
-  aux := function(configuration)
-    local    u,  i;
-
-    u := [];
-    for i in [2..Length(configuration)] do
-      u := Union(u,(m-configuration[i])+fe);
-    od;
-    return Difference(u,fe);
-  end;
-
+  ##########################################################################
   span := function(conf)
     local   u,  i;
 

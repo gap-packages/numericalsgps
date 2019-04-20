@@ -13,22 +13,6 @@
 #############################################################################
 
 
-#############################################################################
-##
-#F  FortenTruncatedNCForNumericalSemigroups(l)
-##
-##  l contains the list of coefficients of a
-##  single linear equation. FortenTruncatedNCForNumericalSemigroups
-##  gives a minimal generator
-##  of the affine semigroup of nonnegative solutions of this equation
-##  with the first coordinate equal to one.
-##
-##  Used for computing minimal presentations.
-##
-#############################################################################
-DeclareGlobalFunction("FortenTruncatedNCForNumericalSemigroups");
-
-
 
 
 #############################################################################
