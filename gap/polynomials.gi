@@ -1120,27 +1120,13 @@ end);
 ##################################################################
 InstallGlobalFunction(GeneratorsModule_Global, function(Al,M)
 
-local S, gens, gM, a, b, da, db, i, j, rs, rd, rel, fcta, fctb, C, pair, reduction, n, reduce,  A, R, ker, t;
+local S, gens, gM, a, b, da, db, i, j, rs, rd, rel, fcta, fctb, C, pair, reduction, n, reduce,  A, R, t;
 
 R:=function(a,b,s)
 	local i, mg;
 	i:=IntersectionIdealsOfNumericalSemigroup(a+s,b+s);
 	mg:=MinimalGenerators(i);
 	return List(mg, m->[m-a,m-b]);
-end;
-
-ker:=function(I)
-	local mg, s, r, i, j, n;
-	s:=AmbientNumericalSemigroupOfIdeal(I);
-	mg:=MinimalGenerators(I);
-	r:=[];
-	n:=Length(mg);
-	for i in [1..n] do
-		for j in [i+1..n] do
-			r:=Union(r,R(mg[i],mg[j],s));
-		od;
-	od;
-	return r;
 end;
 
 # improve to reducing all terms, not only the leading term

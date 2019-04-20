@@ -369,6 +369,64 @@ gap> DotRosalesGraph([3,3],a);
 \n3 -- 1;\n3 -- 2;\n}"
 
 
+# polynomials
+
+gap> x:=Indeterminate(Rationals,"x");;
+gap> IsNumericalSemigroupPolynomial(2*x+1);
+false
+gap> IsNumericalSemigroupPolynomial(x+1/2);
+false
+gap> IsNumericalSemigroupPolynomial(x+1);
+false
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> HilbertSeriesOfNumericalSemigroup(s,x);
+(x^5-x^4+x^3-x+1)/(-x+1)
+gap> HasAperyList(s);
+false
+gap> AperyList(s);
+[ 0, 7, 5 ]
+gap> HilbertSeriesOfNumericalSemigroup(s,x);
+(x^5-x^4+x^3-x+1)/(-x+1)
+gap> IsCyclotomicPolynomial(CyclotomicPolynomial(Rationals,4));
+true
+gap> IsKroneckerPolynomial(0*x);
+false
+gap> IsKroneckerPolynomial(0*x);
+false
+gap> IsKroneckerPolynomial(x^2+x);
+true
+gap> IsKroneckerPolynomial(x+1);
+true
+gap> IsKroneckerPolynomial(x-1);
+true
+gap> IsKroneckerPolynomial(0*x+1);
+true
+gap> IsKroneckerPolynomial(x^2+1);
+true
+gap> s:=NumericalSemigroup(6,9,20);
+<Numerical semigroup with 3 generators>
+gap> IsCyclotomicNumericalSemigroup(s);
+true
+gap> x:=Indeterminate(Rationals,1);; 
+gap> y:=Indeterminate(Rationals,2);; 
+gap> f:=((y^3-x^2)^2-x*y^2)^4-(y^3-x^2);;
+gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(f);
+<Numerical semigroup with 4 generators>
+gap> IsDeltaSequence([2,4]);
+false
+gap> IsDeltaSequence([1,2]);
+false
+gap> DeltaSequencesWithFrobeniusNumber(2);
+[  ]
+gap> DeltaSequencesWithFrobeniusNumber(-1);
+[ [ 1 ] ]
+gap> x:=Indeterminate(Rationals,1);; SetName(x,"x");
+gap> y:=Indeterminate(Rationals,2);; SetName(y,"y");
+gap> CurveAssociatedToDeltaSequence([3,2]);
+y^3-x^2
+
+
 #############################################################################
 #############################################################################
 # Examples from the manual
@@ -2039,6 +2097,20 @@ gap> x:=X(Rationals,"x");;
 gap> ForAll(l, s->
 > IsSelfReciprocalUnivariatePolynomial(NumericalSemigroupPolynomial(s,x)));
 true
+
+gap> s:=NumericalSemigroup(3,4);;
+gap> CyclotomicExponentSequence(s,20);
+[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> CyclotomicExponentSequence(s,20);
+[ 1, 0, -1, 0, -1, 0, -1, 0, 0, 1, 0, 1, 0, 1, 0, 0, -1, 0, -1, 0 ]
+
+gap> s:=NumericalSemigroup(3,4);;
+gap> x:=Indeterminate(Rationals,"x");;
+gap> p:=NumericalSemigroupPolynomial(s,x);;
+gap> WittCoefficients(p,20);
+[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
+
 
 # Semigroup of values of algebraic curves
 gap> x:=Indeterminate(Rationals,1);; SetName(x,"x");
