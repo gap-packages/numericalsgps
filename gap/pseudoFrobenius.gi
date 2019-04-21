@@ -240,9 +240,9 @@ InstallGlobalFunction(ForcedIntegersForPseudoFrobenius, function(arg)
   local  PF, type, frob, sfg, f_ints, n_ad, new_gaps;
 
   ## arguments
-  if Length(arg) = 1 then
-    PF := Set(arg[1]);   
-  elif Length(arg) > 1 then 
+  if Length(arg) = 1 and IsList(arg[1]) then
+    PF := Set(arg[1]); 
+  else 
     PF := Set(arg);
   fi;
   ##
@@ -277,9 +277,9 @@ end);
 InstallGlobalFunction(ForcedIntegersForPseudoFrobenius_QV, function(arg)
   local  PF, type, frob, sfg;
   ## arguments
-  if Length(arg) = 1 then
-    PF := Set(arg[1]);   
-  elif Length(arg) > 1 then 
+  if Length(arg) = 1 and IsList(arg[1]) then
+    PF := Set(arg[1]); 
+  else 
     PF := Set(arg);
   fi;
   ##

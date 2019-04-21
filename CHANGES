@@ -5,6 +5,7 @@
 - New implementation of AperyListOfNumericalSemigroupWRTElement by Chris O'Neill (this affects the speed of many other functions in the package)
 - added WittCoefficients for a univariate polynomial
 - added several functions for good semigroups implemented by Nicola Maugeri
+- Code coverage improved
 
 1.1.10 -> 1.1.11
 - various small fixes and improvements
@@ -12,8 +13,8 @@
 - updates in the manual and in the test file
 - Travis integration updated (Thanks Max Horn!)
 - added functions for random semigroups with genus
-- added functions for afine semigroups with a finite number of gaps (generalized numerical semigroups) -- mostly contributions of Carmelo Cisto
-- improved the SmallElements method for a numerical semigroup given by generators. (The improvment goes beyond the order of 20 in most examples.)	   
+- added functions for affine semigroups with a finite number of gaps (generalized numerical semigroups) -- mostly contributions of Carmelo Cisto
+- improved the SmallElements method for a numerical semigroup given by generators. (The improvement goes beyond the order of 20 in most examples.)	   
 1.1.9 -> 1.1.10
 - added the global function ElementsUpTo
 - avoid duplication of tests in some methods

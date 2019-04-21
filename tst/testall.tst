@@ -219,6 +219,29 @@ gap> IsProportionallyModularNumericalSemigroup(ns);
 false
 
 ##
+gap> ForcedIntegersForPseudoFrobenius_QV(5,8);
+fail
+gap> ForcedIntegersForPseudoFrobenius_QV(5,9);
+fail
+gap> ForcedIntegersForPseudoFrobenius_QV(7,9);
+[ [ 1, 2, 3, 4, 7, 9 ], [ 0, 5, 6, 8, 10 ] ]
+gap> ForcedIntegersForPseudoFrobenius_QV([9]);
+[ [ 1, 3, 9 ], [ 0, 10 ] ]
+gap> ForcedIntegersForPseudoFrobenius_QV(9);
+[ [ 1, 3, 9 ], [ 0, 10 ] ]
+gap> ForcedIntegersForPseudoFrobenius(9);
+[ [ 1, 3, 9 ], [ 0, 10 ] ]
+gap> ForcedIntegersForPseudoFrobenius(8);
+[  ]
+gap> NumericalSemigroupsWithPseudoFrobeniusNumbers(8);
+[  ]
+gap> record := rec(pseudo_frobenius := [ 166, 182, 269, 279, 295 ],
+> max_attempts := 25);
+rec( max_attempts := 25, pseudo_frobenius := [ 166, 182, 269, 279, 295 ] )
+gap> ANumericalSemigroupWithPseudoFrobeniusNumbers(record);
+<Numerical semigroup>
+
+##
 # Generators
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1],[3,1]);
 <Affine semigroup in 2 dimensional space, with 4 generators>
