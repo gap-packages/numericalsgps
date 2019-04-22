@@ -31,7 +31,7 @@ Manuel Delgado			<mdelgado@fc.up.pt>
 
 Pedro A. García-Sánchez		<pedro@ugr.es>
 
-For the full list of contributions, please refer to  to the [contributions](https://gap-packages.github.io/numericalsgps/doc/chapC.html) appendix in the manual.
+For the full list of contributors (and contributions), please refer to  to the [contributions](https://gap-packages.github.io/numericalsgps/doc/chapC.html) appendix in the manual.
 
 Installation
 ------------
