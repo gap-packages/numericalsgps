@@ -13,7 +13,7 @@
                     <Attr Name="Multiplicity" Arg="NS" Label="for numerical semigroup"/>
                     <Attr Name="MultiplicityOfNumericalSemigroup" Arg="NS"/>
                     <Description>
-                        <A>NS</A> is a numerical semigroup. Returns the multiplicity of <A>NS</A>, which is the smallest positive integer belonging to <A>NS</A>.
+                        <A>NS</A> is a numerical semigroup. Returns the multiplicity of <A>NS</A>, which is the smallest positive integer belonging to <A>NS</A>. Depending on the information known about <A>NS</A> different methods are implemented. There are methods for the following cases: generators are known, Apéry set is known, it is a modular numerical semigroup, or it is proportionally modular (and thus is defined by a closed interval <Cite Key="RosalesVasco2008MIA"/>).
                         <Example><![CDATA[
 gap> NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>

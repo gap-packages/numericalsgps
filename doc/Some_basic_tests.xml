@@ -141,7 +141,7 @@ true
                     <Oper Name="\in" Arg="n,S" Label="membership test for numerical semigroup"/>
                     <Description>
                         <A>n</A> is an integer and <A>S</A> is a numerical semigroup. Tests whether
-                        <A>n</A> belongs to <A>S</A>. <C>\in(n,S)</C> calls the infix variant <C>n in S</C>, and both can be seen as a short for <C>BelongsToNumericalSemigroup(n,S)</C>.
+                        <A>n</A> belongs to <A>S</A>. <C>\in(n,S)</C> calls the infix variant <C>n in S</C>, and both can be seen as a short for <C>BelongsToNumericalSemigroup(n,S)</C>. Several methods are implemented for membership, depending on the properties of <A>S</A> known. For instance, there are methods if any of the following information is known: Apéry set, small elements, defining (proportionally) modular Diophantine equation, fundamental gaps, gaps, generators.
                         <Example><![CDATA[
 gap> S := NumericalSemigroup("modular", 5,53);
 <Modular numerical semigroup satisfying 5x mod 53 <= x >
