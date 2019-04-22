@@ -249,7 +249,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         Error("The argument must be an affine semigroup.");
     fi;
 
-    msg:=GeneratorsOfAffineSemigroup(a); #for now we do not check minimality of the generators
+    msg:=MinimalGenerators(a); 
     ed:=Length(msg);
     if ed=0 then
         return [];

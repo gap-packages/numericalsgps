@@ -13,7 +13,7 @@ InstallOtherMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
     local dir, filename, exec, filestream, matrix,
 				 facs, mat, trunc, ls;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     dir := DirectoryTemporary();
     filename := Filename( dir, "gap_4ti2_temp_matrix" );
@@ -302,7 +302,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         Error("The argument must be an affine semigroup.");
     fi;
 
-    gens:=GeneratorsOfAffineSemigroup(a);
+    gens:=MinimalGenerators(a);
 
     gr:=4ti2Interface_groebner_matrix(gens);
     Info(InfoNumSgps,2,"4ti output:",gr);
@@ -351,7 +351,7 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
         Error("The first argument must be a list of on nonnegative integers.");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
 

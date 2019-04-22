@@ -94,7 +94,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
 
     ##computes the s degree of a pol in the semigroup ideal

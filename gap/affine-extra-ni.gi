@@ -185,7 +185,7 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
         Error("The first argument must be a list of on nonnegative integers.");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
 
@@ -220,7 +220,7 @@ InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
 
     Info(InfoNumSgps,2,"Using that the semigroup is full.");
 
-    ls:=Generators(a);
+    ls:=MinimalGenerators(a);
     n:=Length(ls);
     one:=[List([1..n],_->1)];
     mat:=TransposedMat(Concatenation(ls,[-v]));
@@ -284,7 +284,7 @@ InstallOtherMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls));
@@ -313,7 +313,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
             return ForAll(b-a,x-> x>=0);
         end;
 
-        ls:=Generators(a);
+        ls:=MinimalGenerators(a);
         n:=Length(ls);
         one:=[List([1..n],_->1)];
         mat:=TransposedMat(Concatenation(ls,[-v]));
@@ -327,7 +327,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
 
     Info(InfoNumSgps,2,"Using NormalizInterface with full affine semigroup");
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     tame:=0;
     for gen in ls do
         min:=minimalElementsPrincipalIdealOfAffineSemigroup(gen,a);

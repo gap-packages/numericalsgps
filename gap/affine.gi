@@ -766,7 +766,7 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 
-    msg:=GeneratorsOfAffineSemigroup(a); #for now we do not check minimality of the generators
+    msg:=MinimalGenerators(a);
     ed:=Length(msg);
     if ed=0 then
         return [];
@@ -802,7 +802,7 @@ InstallMethod(BettiElements,
 	function(a)
     local msg, pr;
 
-    msg:=GeneratorsOfAffineSemigroup(a);
+    msg:=MinimalGenerators(a);
 
     pr:=MinimalPresentationOfAffineSemigroup(a);
 
@@ -824,7 +824,7 @@ InstallMethod(IsUniquelyPresented,
          [IsAffineSemigroup],1,
         function(a)
     local gs;
-    gs:=GeneratorsOfAffineSemigroup(a);
+    gs:=MinimalGenerators(a);
     return ForAll(BettiElementsOfAffineSemigroup(a),
                   b->Length(FactorizationsVectorWRTList(b,gs))=2);
 end);
@@ -868,7 +868,7 @@ InstallGlobalFunction(ShadedSetOfElementInAffineSemigroup, function(x,a)
         Error("The first argument must be an element of the second.\n");
     fi;
 
-    msg:=GeneratorsOfAffineSemigroup(a);
+    msg:=MinimalGenerators(a);
     return Filtered(Combinations(msg), c-> (x-Sum(c)) in a);
 end);
 
@@ -886,7 +886,7 @@ InstallGlobalFunction(DeltaSetOfAffineSemigroup,
       Error("The argument must be an affine semigroup");
     fi;
 
-    m:=GeneratorsOfAffineSemigroup(a);
+    m:=MinimalGenerators(a);
 
     if Length(m)=0 then
       return [];
@@ -913,7 +913,7 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
     betti:=BettiElementsOfAffineSemigroup(a);
@@ -946,7 +946,7 @@ InstallGlobalFunction(EqualCatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     lsh:=List(ls, x-> Concatenation(x,[1]));
     ah:=AffineSemigroup(lsh);
     primeq:=BettiElementsOfAffineSemigroup(ah);
@@ -968,7 +968,7 @@ InstallGlobalFunction(HomogeneousCatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     if ls=[] then return 0;
     fi;
 
@@ -997,7 +997,7 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     if ls=[] then return 0;
     fi;
@@ -1032,7 +1032,7 @@ InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
     local i, j, p, rel, rgb, msg, pol, ed,  degree, monomial,  facts, fact, mp,id, reduce, nonnegative,
           mu1,A,B,C, lt, tl, exp, new;
 
-    msg:=GeneratorsOfAffineSemigroup(s);
+    msg:=MinimalGenerators(s);
     ed:=Length(msg);
     mp:=MinimalPresentationOfAffineSemigroup(s);
     p := [];
@@ -1149,7 +1149,7 @@ InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
 end);
 
@@ -1244,7 +1244,7 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
     if not(IsAffineSemigroup(s)) then
         Error("The argument must be an affine semigroup.");
     fi;
-    gens:=GeneratorsOfAffineSemigroup(s);
+    gens:=MinimalGenerators(s);
     a:=TransposedMat(gens);
     el:=1;
     #we compute the circuits as explained in Eisenbud-Sturmfels Lemma 8.8
@@ -1297,7 +1297,7 @@ InstallGlobalFunction(LawrenceLiftingOfAffineSemigroup,function(a)
         Error("The argument must be an affine semigroup.");
     fi;
 
-    msg:=GeneratorsOfAffineSemigroup(a);
+    msg:=MinimalGenerators(a);
     ed:=Length(msg);
     dim:=Length(msg[1]);
     id:=IdentityMat(ed);
@@ -1324,7 +1324,7 @@ InstallMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
 	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
 
     Info(InfoNumSgps,2,"Using Lawrence lifting for computing primitive elements.");
-    mgs:=GeneratorsOfAffineSemigroup(a);
+    mgs:=MinimalGenerators(a);
     ed:=Length(mgs);
     dim:=Length(mgs[1]);
     #lft:=LawrenceLiftingOfAffineSemigroup(a);
@@ -1353,7 +1353,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
         function(a)
   local prim, tams, p, max, ls;
 
-  ls:=GeneratorsOfAffineSemigroup(a);
+  ls:=MinimalGenerators(a);
 
   Info(InfoNumSgps,2,"Computing primitive elements of ", ls);
   prim:=DegreesOfPrimitiveElementsOfAffineSemigroup(a);

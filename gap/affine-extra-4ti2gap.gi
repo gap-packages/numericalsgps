@@ -12,7 +12,7 @@ InstallOtherMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
         function(a)
     local  matrix, facs, mat, trunc, ls;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     Info(InfoNumSgps,2,"Using 4ti2gap for Graver.");
 
@@ -271,7 +271,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         Error("The argument must be an affine semigroup.");
     fi;
 
-    gens:=GeneratorsOfAffineSemigroup(a);
+    gens:=MinimalGenerators(a);
 
     gr:=GroebnerBasis4ti2(TransposedMat(gens));
     Info(InfoNumSgps,2,"4ti output:",gr);
@@ -318,7 +318,7 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
         Error("The first argument must be a list of on nonnegative integers.");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
 
@@ -362,7 +362,7 @@ InstallOtherMethod(OmegaPrimalityOfElementInAffineSemigroup,
         Error("The first argument must be a list of on nonnegative integers.");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     n:=Length(ls);
     mat:=TransposedMat(Concatenation(ls,-ls,[-v]));
 
@@ -396,7 +396,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
 
     Info(InfoNumSgps,2,"Using 4ti2gap with full affine semigroup");
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     tame:=0;
     n:=Length(ls);
 
