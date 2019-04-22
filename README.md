@@ -41,4 +41,4 @@ This package consists only of GAP code, so for its installation please refer to 
 Acknowledgements and funding
 ----------------------------
 
-Please refer to the [acknowledgements](https://gap-packages.github.io/numericalsgps/doc/chap0.html).
+Please refer to the [acknowledgements](https://gap-packages.github.io/numericalsgps/doc/chap0.html) section in the manual.
