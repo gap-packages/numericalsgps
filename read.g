@@ -49,7 +49,7 @@ ReadPackage( "numericalsgps", "gap/affine.gi" );
 ##
 ## obsolet
 ##
-ReadPackage( "numericalsgps", "gap/obsolet.gi" );
+#ReadPackage( "numericalsgps", "gap/obsolet.gi" );
 ##
 ## dot
 ##

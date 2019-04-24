@@ -1,7 +1,22 @@
                    ----------------------------------------
                    | CHANGES of the numericalsgps package |
                    ----------------------------------------
-1.1.11 -> dev
+
+#=======
+1.1.0 -> 1.2.0 * brief summary *
+* This is just a summary of the changes made from the major release 1.1.0 to the major release 1.2.0.
+* For details, please check the lists of changes between minor releases below.
+- Many small fixes and slight improvements (both in the code and in the manual).
+- Many functions added (in particular some for affine and good semigroups (especially for generalized numerical semigroups - contributions of Carmelo Cisto, and for good semigroups - contributions of Nicola Maugeri))
+- Travis & Codecov support added (great help of Max Horn in this and other aspects).
+- The list of contributors has increased and has been updated.
+- Great improvement of the critical functions 'AperyList' (thanks Chris O'Neill) and 'SmallElements': this led to a considerable speedup of numerous functions in the package.
+- Added several shortnames.
+- Globally profound revision of the manual.
+- Several functions marked as obsolet and finally removed.
+#=======
+
+1.1.11 -> 1.1.11 dev
 - New implementation of AperyListOfNumericalSemigroupWRTElement by Chris O'Neill (this affects the speed of many other functions in the package)
 - added WittCoefficients for a univariate polynomial
 - added several functions for good semigroups implemented by Nicola Maugeri
@@ -22,7 +37,7 @@
 1.1.8 -> 1.1.9
 - avoid differences in the output when all packages are loaded (the order of the pairs in representations is not relevant)
 - small fixes (Irreducibles, PseudoFrobenius, OmegaPrimalityOfElement*)
-- mark some functions as obsolet, namely: NumericalSemigroupByMinimalGenerators
+- mark some functions as obsolete, namely: NumericalSemigroupByMinimalGenerators
 - Updates in the manual. This includes: fixing typos; adding text (mainly in the introduction of chapters or sections); adding links.
 - reference to external packages in the banner (and decrease the Info level ...
 - updates in the test file (in part to improve code coverage)
@@ -42,7 +57,7 @@
 - functions to translate graphs related to numerical and affine semigroups to the dot language
 
 1.1.6->1.1.7
-- some technical improvments related to automatic tests
+- some technical improvements related to automatic tests
 
 1.1.5->1.1.6
 - NumberElement_IdealOfNumericalSemigroup and ElementNumber_IdealOfNumericalSemigroup

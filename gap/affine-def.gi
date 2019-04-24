@@ -19,7 +19,11 @@ InstallGlobalFunction(AffineSemigroupByGenerators, function(arg)
 
 
   if Length(arg) = 1 then
-    gens := Set(arg[1]);
+    if ForAll(arg[1], x -> (IsPosInt(x) or x = 0)) then
+      gens := Set(arg);
+    else
+      gens := Set(arg[1]);
+    fi;
   else
     gens := Set(arg);
   fi;

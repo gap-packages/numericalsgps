@@ -23,7 +23,6 @@ and if a numerical semigroup is a subsemigroup of another one.
                         <A>NS</A> is a numerical semigroup and these attributes are available
                         (their names should be self explanatory).
 
-			The attribute <C>IsNumericalSemigroupByMinimalGenerators</C> is obsolet and is to be removed in a further version.
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7);
 <Numerical semigroup with 2 generators>

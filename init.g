@@ -55,14 +55,14 @@ ReadPackage( "numericalsgps", "gap/affine.gd" );
 ##
 ## obsolet
 ##
-ReadPackage( "numericalsgps", "gap/obsolet.gd" );
+#ReadPackage( "numericalsgps", "gap/obsolet.gd" );
 ##
 ## dot
 ##
 ReadPackage( "numericalsgps", "gap/dot.gd" );
 
 ##
-## optinal packages
+## optional packages
 ##
 
 if IsPackageMarkedForLoading("NormalizInterface","0.0") then

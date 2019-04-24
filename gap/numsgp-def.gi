@@ -499,13 +499,8 @@ InstallGlobalFunction(NumericalSemigroup, function(arg)
             return NumericalSemigroupByAperyList(arg[2]);
         elif arg[1] = "generators" then
             return NumericalSemigroupByGenerators(Flat(arg{[2..Length(arg)]}));
-            ##obsolet
-            #        elif arg[1] = "minimalgenerators" then
-#            return NumericalSemigroupByMinimalGenerators(Flat(arg{[2..Length(arg)]}));
         else
           Error("Invalid first argument, it should be one of: \"modular\", \"propmodular\", \"interval\", \"openinterval\", \"fundamentalgaps\", \"gaps\", \"elements\", \"subadditive\", \"apery\", \"generators\" ");
-          ##obsolet
-#            Error("Invalid first argument, it should be one of: \"modular\", \"propmodular\", \"interval\", \"openinterval\", \"fundamentalgaps\", \"gaps\", \"elements\", \"subadditive\", \"apery\", \"generators\", \"minimalgenerators\" ");
        fi;
 
 

@@ -244,11 +244,13 @@ function(F,m)
     fi;
 
     if m=2 then 
-        return [NumericalSemigroupByMinimalGenerators([m,F+m])];
+#        return [NumericalSemigroupByMinimalGenerators([m,F+m])];
+        return [NumericalSemigroup([m,F+m])];
     fi;
 
     if m=3 and IsEvenInt(F) then
-        return [NumericalSemigroupByMinimalGenerators([m,F/2+m,F+m])];
+#        return [NumericalSemigroupByMinimalGenerators([m,F/2+m,F+m])];
+        return [NumericalSemigroup([m,F/2+m,F+m])];
     fi;
 
     sons:=function(s,F)
@@ -274,7 +276,8 @@ function(F,m)
         r:=m; 
     fi;
     sgCmf := (F+2-p)/2 + Difference([0 .. (m-1)], [m-r, r-(2-p)]);
-    Cmf := NumericalSemigroupByMinimalGenerators(Concatenation([m],sgCmf));
+#    Cmf := NumericalSemigroupByMinimalGenerators(Concatenation([m],sgCmf));
+    Cmf := NumericalSemigroup(Concatenation([m],sgCmf));
     A:=[Cmf];
     Irrmf:=A;
     while A<>[] do

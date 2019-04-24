@@ -51,8 +51,9 @@ The function has 1 to 3 arguments. One of them a numerical semigroup. Then an ar
                         <C>MinimalGeneratingSystemOfNumericalSemigroup</C>
                         returns the minimal set of generators of <C>S</C>.
 			The shorter names <C>MinimalGenerators</C> or <C>MinimalGeneratingSystem</C> may be used.
-<P/>
-From Version 0.980, <C>ReducedSetOfGeneratorsOfNumericalSemigroup</C> is a synonym of <C>MinimalGeneratingSystemOfNumericalSemigroup</C>; <C>GeneratorsOfNumericalSemigroupNC</C> is a synonym of <C>GeneratorsOfNumericalSemigroup</C>. The names are kept for compatibility with code produced for previous versions, but will be removed in the future.  
+			<P/>
+			<!--
+From Version 0.980, <C>ReducedSetOfGeneratorsOfNumericalSemigroup</C> is a synonym of <C>MinimalGeneratingSystemOfNumericalSemigroup</C>; <C>GeneratorsOfNumericalSemigroupNC</C> is a synonym of <C>GeneratorsOfNumericalSemigroup</C>. The names are kept for compatibility with code produced for previous versions, but will be removed in the future.  -->
 
                         <Example><![CDATA[
 gap> S := NumericalSemigroup("modular", 5,53);

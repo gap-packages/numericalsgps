@@ -43,6 +43,9 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(ns);
 gap> GapsOfNumericalSemigroup(ns);
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
+gap> AffineSemigroup([2,3]) = AffineSemigroup([[2,3]]);
+true
+
 #############################################################################
 # Some more elaborated tests
 
@@ -3015,9 +3018,9 @@ false
 # Simple examples aiming for a better code coverage
 
 ##obsolet
-gap> NumericalSemigroupByMinimalGenerators(3,5,6,7);
+#gap> NumericalSemigroupByMinimalGenerators(3,5,6,7);
 #I  The list [ 3, 5, 6, 7 ] can not be the minimal generating set. The list [ 3, 5, 7 ] will be used instead.
-<Numerical semigroup with 3 generators>
+#<Numerical semigroup with 3 generators>
 
 ## irreducibles
 gap> ns := NumericalSemigroup(5,7);;
