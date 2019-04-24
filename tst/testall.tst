@@ -43,6 +43,9 @@ gap> MinimalGeneratingSystemOfNumericalSemigroup(ns);
 gap> GapsOfNumericalSemigroup(ns);
 [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
+gap> AffineSemigroup([2,3]) = AffineSemigroup([[2,3]]);
+true
+
 #############################################################################
 # Some more elaborated tests
 
