@@ -649,6 +649,9 @@ InstallMethod( BelongsToNumericalSemigroup,
     if HasMinimalGenerators(S) then
         gen := MinimalGenerators(S);
         ed:=Length(gen);
+        if ed=1 then 
+            return n>=0;
+        fi;
         # some konwn bounds for Frobenius number can be used
         # Selmer's, Erdos-Graham, Schur
         if n>Minimum([2*gen[ed]*Int(gen[1]/ed)-gen[1], 2*gen[ed-1]*Int(gen[ed]/ed)-gen[ed], (gen[1]-1)*(gen[ed]-1)-1] ) then
