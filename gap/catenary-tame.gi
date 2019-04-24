@@ -111,7 +111,7 @@ InstallMethod(CatenaryDegree,
 InstallGlobalFunction(CatenaryDegreeOfElementInNumericalSemigroup, function(n,S)
 
     #---- Tests on the arguments ------------------------------
-    if not (IsNumericalSemigroup(S) and IsPosInt(n-1)) then
+    if not (IsNumericalSemigroup(S) and IsPosInt(n+1)) then
         Error(" The arguments of CatenaryDegreeOfElementInNumericalSemigroup are a nonnegativeinteger and a numerical semigroup.\n");
     fi;
 
