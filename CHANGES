@@ -7,9 +7,9 @@
 * This is just a summary of the changes made from the major release 1.1.0 to the major release 1.2.0.
 * For details, please check the lists of changes between minor releases below.
 - Many small fixes and slight improvements (both in the code and in the manual).
-- Many functions added (in particular some for affine semigroups (especially for generalized numerical semigroups - contributions of Carmelo Cisto, and for good semigroups - contributions of Nicola Maugeri))
+- Many functions added (in particular some for affine and good semigroups (especially for generalized numerical semigroups - contributions of Carmelo Cisto, and for good semigroups - contributions of Nicola Maugeri))
 - Travis & Codecov support added (great help of Max Horn in this and other aspects).
-- The list of contributors has increased an has been updated.
+- The list of contributors has increased and has been updated.
 - Great improvement of the critical functions 'AperyList' (thanks Chris O'Neill) and 'SmallElements': this led to a considerable speedup of numerous functions in the package.
 - Added several shortnames.
 - Globally profound revision of the manual.
