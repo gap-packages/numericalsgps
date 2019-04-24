@@ -246,7 +246,8 @@ function(F,m)
     fi;
 
     if m=2 then 
-        return [NumericalSemigroupByMinimalGenerators([m,F+m])];
+#        return [NumericalSemigroupByMinimalGenerators([m,F+m])];
+        return [NumericalSemigroup([m,F+m])];
     fi;
 
     if F=m-1 then 

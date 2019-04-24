@@ -3015,9 +3015,9 @@ false
 # Simple examples aiming for a better code coverage
 
 ##obsolet
-gap> NumericalSemigroupByMinimalGenerators(3,5,6,7);
+#gap> NumericalSemigroupByMinimalGenerators(3,5,6,7);
 #I  The list [ 3, 5, 6, 7 ] can not be the minimal generating set. The list [ 3, 5, 7 ] will be used instead.
-<Numerical semigroup with 3 generators>
+#<Numerical semigroup with 3 generators>
 
 ## irreducibles
 gap> ns := NumericalSemigroup(5,7);;
