@@ -24,14 +24,14 @@ InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup",
         [IsNumericalSemigroup and HasGenerators],10,
         function(S)
-    return GeneratorsOfNumericalSemigroup(S)[1];
+    return Minimum(GeneratorsOfNumericalSemigroup(S));
 end);
 
 InstallMethod(MultiplicityOfNumericalSemigroup,
         "Returns the multiplicity of a numerical semigroup",
         [IsNumericalSemigroup and HasAperyList],1,
         function(S)
-    return Minimum(Difference(S!.aperylist,[0]),Length(S!.aperylist));
+    return Length(S!.aperylist);
 end);
 
 InstallMethod(MultiplicityOfNumericalSemigroup,
@@ -126,14 +126,14 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
   if Gaps(S) = [] then
     return -1;
   fi;
-  return(Gaps(S)[Length(Gaps(S))]);
+  return(Maximum(Gaps(S)));
 end);
 
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
         [IsNumericalSemigroup and HasSmallElements],99,
         function(S)
-    return(SmallElements(S)[Length(SmallElements(S))] - 1);
+    return(Maximum(SmallElements(S)) - 1);
 end);
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
@@ -151,11 +151,9 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
   local  set, len, min_mult_n3_in_n1n2, gens, n, C, gg, c, n1, n2, n3, c1, 
          c2, c3, delta, d, gn, og, newgens, ap;
 
-    if not (HasMinimalGenerators(S) or HasGenerators(S)) then
-        set := SmallElementsOfNumericalSemigroup(S);
-        len := Length(set);
-        return(set[len] - 1);
-    fi;
+  if not (HasMinimalGenerators(S) or HasGenerators(S)) then
+    return(Maximum(SmallElementsOfNumericalSemigroup(S))-1);
+  fi;
     ## Local Functions
     ##############################################################
     ## Rosales&Vasco
@@ -176,8 +174,6 @@ InstallMethod(FrobeniusNumberOfNumericalSemigroup,
     ##############################################################
     gens := MinimalGeneratingSystemOfNumericalSemigroup(S);
     n := Length(gens);
-#    C := Combinations(gens,n-1);
-#    gg := First(C,c -> Gcd(c)<>1);
     C := IteratorOfCombinations(gens,n-1);
     gg := fail;
     
@@ -225,7 +221,7 @@ end);
 #The algorithm used here was obtained by Rosales&Vasco
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and IsModularNumericalSemigroup],
+        [IsNumericalSemigroup and IsModularNumericalSemigroup],1,
         function(S)
     local   a,  b,  r,  s,  ns,  m;
 
@@ -245,7 +241,7 @@ end);
 #The algorithm used here was obtained by Delgado&Rosales
 InstallMethod(FrobeniusNumberOfNumericalSemigroup,
         "Returns the Frobenius Number of the numerical sgp",
-        [IsNumericalSemigroup and HasProportionallyModularConditionNS],
+        [IsNumericalSemigroup and HasProportionallyModularConditionNS],1,
         function(S)
     local   a,  b,  c,  j;
 
@@ -551,7 +547,7 @@ InstallMethod( BelongsToNumericalSemigroup,
         return true;
     fi;
     s := SmallElements(S);
-    return (n in s) or (n >= s[Length(s)]);
+    return (n in s) or (n >= Maximum(s));
 end);
 
 InstallMethod( BelongsToNumericalSemigroup,
@@ -709,7 +705,7 @@ InstallMethod( BelongsToNumericalSemigroup,
     fi;
     m := MultiplicityOfNumericalSemigroup(S);
     ap := AperyListOfNumericalSemigroupWRTElement(S,m);
-    if First([1..m], i-> (n mod m = i-1) and n >= ap[i]) <> fail then
+    if ForAny([1..m], i-> (n mod m = i-1) and n >= ap[i]) then
         return true;
     else
         return false;
