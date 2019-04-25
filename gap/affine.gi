@@ -582,7 +582,8 @@ InstallMethod(FactorizationsVectorWRTList,
     fi;
     opt2:=List(FactorizationsVectorWRTList(v,ls{[2..len]}),
                x->Concatenation([0],x));
-    return Concatenation(opt1,opt2);
+#    return Concatenation(opt1,opt2);
+    return Union(opt1,opt2);
 end);
 
 ###############################################################################

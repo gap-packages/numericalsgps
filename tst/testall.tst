@@ -319,9 +319,11 @@ gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> MinimalGenerators(a);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 gap> Factorizations([10,10],a);
-[ [ 5, 0, 5 ], [ 4, 2, 4 ], [ 3, 4, 3 ], [ 2, 6, 2 ], [ 1, 8, 1 ], [ 0, 10, 0 ] ]
+[ [ 0, 10, 0 ], [ 1, 8, 1 ], [ 2, 6, 2 ], [ 3, 4, 3 ], [ 4, 2, 4 ], 
+  [ 5, 0, 5 ] ]
 gap> Factorizations(a,[10,10]);
-[ [ 5, 0, 5 ], [ 4, 2, 4 ], [ 3, 4, 3 ], [ 2, 6, 2 ], [ 1, 8, 1 ], [ 0, 10, 0 ] ]
+[ [ 0, 10, 0 ], [ 1, 8, 1 ], [ 2, 6, 2 ], [ 3, 4, 3 ], [ 4, 2, 4 ], 
+  [ 5, 0, 5 ] ]
 gap> s:=NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>
 gap> DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s);
