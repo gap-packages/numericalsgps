@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.1.11
+                                 Version 1.2.0
   
   
                                  Manuel Delgado
@@ -36,6 +36,25 @@
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
+  [33X[0;0YThe  authors wish to thank the contributors of the package. A full list with
+  the  help  received  is available in Appendix [14XC[114X. We are also in debt with H.
+  Schönemann,  C.  Söeger and M. Barakat for their fruitful advices concerning
+  SingularInterface, Singular, Normaliz, NormalizInterface and GradedModules.[133X
+  
+  [33X[0;0YThe  maintainers  want  to  thank the organizers of [10XGAPDays[110X in their several
+  editions.[133X
+  
+  [33X[0;0YThe  authors  also  thank  the Centro de Servicios de Informática y Redes de
+  Comunicaciones  (CSIRC), Universidad de Granada, for providing the computing
+  time,  specially  Rafael  Arco Arredondo for installing this package and the
+  extra  software  needed  in alhambra.ugr.es, and Santiago Melchor Ferrer for
+  helping in job submission to the cluster.[133X
+  
+  [33X[0;0YThe  first  and second authors warmly thank María Burgos for her support and
+  help.[133X
+  
+  [33X[0;0Y[12XFunding[112X[133X
+  
   [33X[0;0YThe  first  author's  work  was  (partially)  supported  by  the  [13XCentro  de
   Matemática  da  Universidade  do  Porto[113X  (CMUP),  financed by FCT (Portugal)
   through  the  programs  POCTI  (Programa  Operacional  "Ciência, Tecnologia,
@@ -43,26 +62,12 @@
   national  and  European Community structural funds and a sabbatical grant of
   FCT.[133X
   
-  [33X[0;0YThe second author was supported by the projects MTM2004-01446, MTM2007-62346
-  and MTM2010-15595, the Junta de Andalucía group FQM-343, and FEDER founds.[133X
+  [33X[0;0YThe   second   author  was  supported  by  the  projects  MTM2004-01446  and
+  MTM2007-62346, the Junta de Andalucía group FQM-343, and FEDER founds.[133X
   
   [33X[0;0YThe third author acknowledges financial support of FCT and the POCTI program
   through  a  scholarship  given  by  [13XCentro  de Matemática da Universidade do
   Porto[113X.[133X
-  
-  [33X[0;0YThe authors wish to thank J. I. García-García and Alfredo Sánchez-R. Navarro
-  for  many  helpful  discussions  and  for  helping  in  the  programming  of
-  preliminary  versions  of  some  functions,  and  also  to  C.  O'Neill,  A.
-  Sammartano,  I.  Ojeda, C. M. Moreno Ávila, A. Herrera-Poyatos and K. Stokes
-  for  their  contributions  (see  Contributions Chapter). We are also in debt
-  with  S. Gutsche, M. Horn, H. Schönemann, C. Söeger and M. Barakat for their
-  fruitful  advices  concerning  4ti2Interface,  SingularInterface,  Singular,
-  Normaliz, NormalizInterface and GradedModules.[133X
-  
-  [33X[0;0YThe  first  and second authors warmly thank María Burgos for her support and
-  help.[133X
-  
-  [33X[0;0Y[12XConcerning the mantainment:[112X[133X
   
   [33X[0;0YThe   first   author   was   (partially)   supported   by  the  FCT  project
   PTDC/MAT/65481/2006  and also by the [13XCentro de Matemática da Universidade do
@@ -71,26 +76,21 @@
   Fundação    para    a   Ciência   e   a   Tecnologia   under   the   project
   PEst-C/MAT/UI0144/2011.[133X
   
-  [33X[0;0YThe  second author was/is supported by the project MTM2014-55367-P, which is
-  funded  by  Ministerio de Economía y Competitividad and the Fondo Europeo de
-  Desarrollo Regional FEDER.[133X
+  [33X[0;0YBoth  maintainers  were  (partially) supported by the projects MTM2010-15595
+  and   MTM2014-55367-P,  which  were  funded  by  Ministerio  de  Economía  y
+  Competitividad and the Fondo Europeo de Desarrollo Regional FEDER.[133X
   
   [33X[0;0YBoth   maintainers   want   to   acknowledge   partial   support   by   CMUP
-  (UID/MAT/00144/2013),  which is funded by FCT (Portugal) with national (MEC)
-  and  European  structural  funds  through  the  programs  FEDER,  under  the
-  partnership agreement PT2020.[133X
+  (UID/MAT/00144/2013   and   UID/MAT/00144/2019),  which  is  funded  by  FCT
+  (Portugal)  with  national  (MEC)  and European structural funds through the
+  programs FEDER, under the partnership agreement PT2020.[133X
   
-  [33X[0;0YBoth maintainers are also supported by the project MTM2014-55367-P, which is
-  funded  by  Ministerio  de  Economía  y  Competitividad and Fondo Europeo de
-  Desarrollo Regional FEDER.[133X
+  [33X[0;0YBoth   maintainers   are   also   partially   supported   by   the   project
+  MTM2017-84890-P,  which is funded by Ministerio de Economía y Competitividad
+  and Fondo Europeo de Desarrollo Regional FEDER.[133X
   
-  [33X[0;0YThe  maintainers  want  to  thank the organizers of [10XGAPDays[110X in their several
-  editions.[133X
-  
-  [33X[0;0YThe  authors  also  thank  the Centro de Servicios de Informática y Redes de
-  Comunicaciones  (CSIRC), Universidad de Granada, for providing the computing
-  time,  specially  Rafael  Arco Arredondo for installing this package and the
-  extra software needed in alhambra.ugr.es.[133X
+  [33X[0;0YThe   first   author   acknowledges   a   sabbatical  grant  from  the  FCT:
+  SFRH/BSAB/142918/2018.[133X
   
   
   -------------------------------------------------------
@@ -143,36 +143,37 @@
       3.1-2 Generators
       3.1-3 EmbeddingDimension
       3.1-4 SmallElements
-      3.1-5 FirstElementsOfNumericalSemigroup
-      3.1-6 ElementsUpTo
-      3.1-7 \[ \]
-      3.1-8 \{ \}
-      3.1-9 NextElementOfNumericalSemigroup
-      3.1-10 ElementNumber_NumericalSemigroup
-      3.1-11 RthElementOfNumericalSemigroup
-      3.1-12 NumberElement_NumericalSemigroup
-      3.1-13 Iterator
-      3.1-14 AperyList
+      3.1-5 Length
+      3.1-6 FirstElementsOfNumericalSemigroup
+      3.1-7 ElementsUpTo
+      3.1-8 \[ \]
+      3.1-9 \{ \}
+      3.1-10 NextElementOfNumericalSemigroup
+      3.1-11 ElementNumber_NumericalSemigroup
+      3.1-12 RthElementOfNumericalSemigroup
+      3.1-13 NumberElement_NumericalSemigroup
+      3.1-14 Iterator
       3.1-15 AperyList
       3.1-16 AperyList
-      3.1-17 AperyListOfNumericalSemigroupAsGraph
-      3.1-18 KunzCoordinates
-      3.1-19 KunzPolytope
-      3.1-20 CocycleOfNumericalSemigroupWRTElement
-      3.1-21 FrobeniusNumber
-      3.1-22 Conductor
-      3.1-23 PseudoFrobenius
-      3.1-24 Type
-      3.1-25 Gaps
-      3.1-26 Weight
-      3.1-27 Deserts
-      3.1-28 IsOrdinary
-      3.1-29 IsAcute
-      3.1-30 Holes
-      3.1-31 LatticePathAssociatedToNumericalSemigroup
-      3.1-32 Genus
-      3.1-33 FundamentalGaps
-      3.1-34 SpecialGaps
+      3.1-17 AperyList
+      3.1-18 AperyListOfNumericalSemigroupAsGraph
+      3.1-19 KunzCoordinates
+      3.1-20 KunzPolytope
+      3.1-21 CocycleOfNumericalSemigroupWRTElement
+      3.1-22 FrobeniusNumber
+      3.1-23 Conductor
+      3.1-24 PseudoFrobenius
+      3.1-25 Type
+      3.1-26 Gaps
+      3.1-27 Weight
+      3.1-28 Deserts
+      3.1-29 IsOrdinary
+      3.1-30 IsAcute
+      3.1-31 Holes
+      3.1-32 LatticePathAssociatedToNumericalSemigroup
+      3.1-33 Genus
+      3.1-34 FundamentalGaps
+      3.1-35 SpecialGaps
     3.2 [33X[0;0YWilf's conjecture[133X
       3.2-1 WilfNumber
       3.2-2 EliahouNumber
@@ -204,7 +205,9 @@
       5.3-1 OverSemigroups
     5.4 [33X[0;0YConstructing the set of numerical semigroup with given Frobenius
     number[133X
-      5.4-1 NumericalSemigroupsWithFrobeniusNumber
+      5.4-1 NumericalSemigroupsWithFrobeniusNumberFG
+      5.4-2 NumericalSemigroupsWithFrobeniusNumberAndMultiplicity
+      5.4-3 NumericalSemigroupsWithFrobeniusNumber
     5.5 [33X[0;0YConstructing the set of numerical semigroups with genus g[133X
       5.5-1 NumericalSemigroupsWithGenus
     5.6 [33X[0;0YConstructing the set of numerical semigroups with a given set of
@@ -220,7 +223,8 @@
       6.1-3 IsPseudoSymmetric
       6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber
       6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber
-      6.1-6 DecomposeIntoIrreducibles
+      6.1-6 IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity
+      6.1-7 DecomposeIntoIrreducibles
     6.2 [33X[0;0YComplete intersection numerical semigroups[133X
       6.2-1 AsGluingOfNumericalSemigroups
       6.2-2 IsCompleteIntersection
@@ -389,7 +393,8 @@
       10.1-7 IsKroneckerPolynomial
       10.1-8 IsCyclotomicNumericalSemigroup
       10.1-9 CyclotomicExponentSequence
-      10.1-10 IsSelfReciprocalUnivariatePolynomial
+      10.1-10 WittCoefficients
+      10.1-11 IsSelfReciprocalUnivariatePolynomial
     10.2 [33X[0;0YSemigroup of values of algebraic curves[133X
       10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity
       10.2-2 IsDeltaSequence
@@ -409,20 +414,21 @@
       11.1-4 AffineSemigroup
       11.1-5 AffineSemigroup
       11.1-6 Gaps
-      11.1-7 PseudoFrobenius
-      11.1-8 SpecialGaps
-      11.1-9 Generators
-      11.1-10 MinimalGenerators
-      11.1-11 RemoveMinimalGeneratorFromAffineSemigroup
-      11.1-12 AddSpecialGapOfAffineSemigroup
-      11.1-13 AsAffineSemigroup
-      11.1-14 IsAffineSemigroup
-      11.1-15 BelongsToAffineSemigroup
-      11.1-16 IsFull
-      11.1-17 HilbertBasisOfSystemOfHomogeneousEquations
-      11.1-18 HilbertBasisOfSystemOfHomogeneousInequalities
-      11.1-19 EquationsOfGroupGeneratedBy
-      11.1-20 BasisOfGroupGivenByEquations
+      11.1-7 Genus
+      11.1-8 PseudoFrobenius
+      11.1-9 SpecialGaps
+      11.1-10 Generators
+      11.1-11 MinimalGenerators
+      11.1-12 RemoveMinimalGeneratorFromAffineSemigroup
+      11.1-13 AddSpecialGapOfAffineSemigroup
+      11.1-14 AsAffineSemigroup
+      11.1-15 IsAffineSemigroup
+      11.1-16 BelongsToAffineSemigroup
+      11.1-17 IsFull
+      11.1-18 HilbertBasisOfSystemOfHomogeneousEquations
+      11.1-19 HilbertBasisOfSystemOfHomogeneousInequalities
+      11.1-20 EquationsOfGroupGeneratedBy
+      11.1-21 BasisOfGroupGivenByEquations
     11.2 [33X[0;0YGluings of affine semigroups[133X
       11.2-1 GluingOfAffineSemigroups
     11.3 [33X[0;0YPresentations of affine semigroups[133X
@@ -458,13 +464,20 @@
     12.2 [33X[0;0YNotable elements[133X
       12.2-1 BelongsToGoodSemigroup
       12.2-2 Conductor
-      12.2-3 SmallElements
-      12.2-4 RepresentsSmallElementsOfGoodSemigroup
-      12.2-5 GoodSemigroupBySmallElements
-      12.2-6 MaximalElementsOfGoodSemigroup
-      12.2-7 IrreducibleMaximalElementsOfGoodSemigroup
-      12.2-8 GoodSemigroupByMaximalElements
-      12.2-9 MinimalGoodGenerators
+      12.2-3 Multiplicity
+      12.2-4 IsLocal
+      12.2-5 SmallElements
+      12.2-6 RepresentsSmallElementsOfGoodSemigroup
+      12.2-7 GoodSemigroupBySmallElements
+      12.2-8 MaximalElementsOfGoodSemigroup
+      12.2-9 IrreducibleMaximalElementsOfGoodSemigroup
+      12.2-10 GoodSemigroupByMaximalElements
+      12.2-11 MinimalGoodGenerators
+      12.2-12 ProjectionOfAGoodSemigroup
+      12.2-13 Genus
+      12.2-14 Length
+      12.2-15 AperySetOfGoodSemigroup
+      12.2-16 StratifiedAperySetOfGoodSemigroup
     12.3 [33X[0;0YSymmetric good semigroups[133X
       12.3-1 IsSymmetric
     12.4 [33X[0;0YArf good closure[133X
@@ -477,6 +490,8 @@
       12.5-5 BelongsToGoodIdeal
       12.5-6 SmallElements
       12.5-7 CanonicalIdealOfGoodSemigroup
+      12.5-8 AbsoluteIrreduciblesOfGoodSemigroup
+      12.5-9 TracksOfGoodSemigroup
   13 [33X[0;0YExternal packages[133X
     13.1 [33X[0;0YUsing external packages[133X
       13.1-1 NumSgpsUse4ti2
@@ -507,7 +522,7 @@
       A.2-1 RepresentsPeriodicSubAdditiveFunction
       A.2-2 IsListOfIntegersNS
   B [33X[0;0Y"Random" functions[133X
-    B.1 [33X[0;0YRandom functions[133X
+    B.1 [33X[0;0YRandom functions for numerical semigroups[133X
       B.1-1 RandomNumericalSemigroup
       B.1-2 RandomListForNS
       B.1-3 RandomModularNumericalSemigroup
@@ -515,9 +530,12 @@
       B.1-5 RandomListRepresentingSubAdditiveFunction
       B.1-6 NumericalSemigroupWithRandomElementsAndFrobenius
       B.1-7 RandomNumericalSemigroupWithGenus
-      B.1-8 RandomAffineSemigroupWithGenusAndDimension
-      B.1-9 RandomAffineSemigroup
-      B.1-10 RandomFullAffineSemigroup
+    B.2 [33X[0;0YRandom functions for affine semigroups[133X
+      B.2-1 RandomAffineSemigroupWithGenusAndDimension
+      B.2-2 RandomAffineSemigroup
+      B.2-3 RandomFullAffineSemigroup
+    B.3 [33X[0;0YRandom functions for good semigroups[133X
+      B.3-1 RandomGoodSemigroupWithFixedMultiplicity
   C [33X[0;0YContributions[133X
     C.1 [33X[0;0YFunctions implemented by A. Sammartano[133X
     C.2 [33X[0;0YFunctions implemented by C. O'Neill[133X
@@ -531,6 +549,7 @@
     C.10 [33X[0;0YFunctions implemented by Juan Ignacio García-García[133X
     C.11 [33X[0;0YFunctions implemented by C. Cisto[133X
     C.12 [33X[0;0YFunctions implemented by N. Matsuoka[133X
+    C.13 [33X[0;0YFunctions implemented by N. Maugeri[133X
   
   
   [32X

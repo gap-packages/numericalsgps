@@ -61,11 +61,14 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC_mj.html#X8130D17C7D6B5096">C.12 <span class="Heading">Functions implemented by N. Matsuoka</span></a>
 </span>
 </div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC_mj.html#X78ED0D447B74A9FF">C.13 <span class="Heading">Functions implemented by N. Maugeri</span></a>
+</span>
+</div>
 </div>
 
 <h3>C <span class="Heading">Contributions</span></h3>
 
-<p>Sebastian Gutsche helped in the implementation of inference of properties from already known properties. Max Horn adapted the definition of the objects numerical and affine semigroups; the behave like lists of integers or lists of lists of integers (affine case), and one can intersect numerical semigroups with lists of integers, or affine semigroup with cartesian products of lists of integers.</p>
+<p>Sebastian Gutsche helped in the implementation of inference of properties from already known properties, and also with the integration of 4ti2Interface. Max Horn adapted the definition of the objects numerical and affine semigroups; the behave like lists of integers or lists of lists of integers (affine case), and one can intersect numerical semigroups with lists of integers, or affine semigroup with cartesian products of lists of integers.</p>
 
 <p><a id="X8516272A7ACC7C02" name="X8516272A7ACC7C02"></a></p>
 
@@ -101,7 +104,7 @@
 
 <h4>C.2 <span class="Heading">Functions implemented by C. O'Neill</span></h4>
 
-<p>C. O'Neill implemented the following functions described in <a href="chapBib_mj.html#biBB-P-ON">[BOP14]</a>:</p>
+<p>Chris implemented the following functions described in <a href="chapBib_mj.html#biBB-P-ON">[BOP17]</a>:</p>
 
 <p><code class="func">OmegaPrimalityOfElementListInNumericalSemigroup</code> (<a href="chap9_mj.html#X85EB5E2581FFB8B2"><span class="RefLink">9.4-2</span></a>),</p>
 
@@ -119,7 +122,9 @@
 
 <p>And contributed to:</p>
 
-<p><code class="func">DeltaSetOfAffineSemigroup</code> (<a href="chap11_mj.html#X839549448300AD26"><span class="RefLink">11.4-5</span></a>).</p>
+<p><code class="func">DeltaSetOfAffineSemigroup</code> (<a href="chap11_mj.html#X839549448300AD26"><span class="RefLink">11.4-5</span></a>). Also he implemented the new version of</p>
+
+<p><code class="func">AperyListOfNumericalSemigroupWRTElement</code> (<a href="chap3_mj.html#X7CB24F5E84793BE1"><span class="RefLink">3.1-15</span></a>).</p>
 
 <p><a id="X7F4C9F8A7F7CDBC8" name="X7F4C9F8A7F7CDBC8"></a></p>
 
@@ -131,7 +136,7 @@
 
 <h4>C.4 <span class="Heading">Functions implemented by I. Ojeda and C. J. Moreno Ávila</span></h4>
 
-<p>Ignacio and Carlos Jesús implemented the algorithms given in <a href="chapBib_mj.html#biBRoune">[Rou08]</a> and <a href="chapBib_mj.html#biBMC-O-T">[MCOT15]</a> for the calculation of the Frobenius number and Apéry set of a numerical semigroup using Gröbner basis calculations. These methods will be used if 4ti2 is loaded (either 4ti2Interface or 4ti2gap). A faster algorithm is employed provided that singular is loaded.</p>
+<p>Ignacio and Carlos Jesús implemented the algorithms given in <a href="chapBib_mj.html#biBRoune">[Rou08]</a> and <a href="chapBib_mj.html#biBMC-O-T">[MCOT15]</a> for the calculation of the Frobenius number and Apéry set of a numerical semigroup using Gröbner basis calculations. Since the new implementation by Chris was included, these algorithms are no longer used.</p>
 
 <p><a id="X7C7DCFA37C8B5260" name="X7C7DCFA37C8B5260"></a></p>
 
@@ -143,9 +148,15 @@
 
 <p><code class="func">AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType</code> (<a href="chap6_mj.html#X85C4DA6E82E726D2"><span class="RefLink">6.3-5</span></a>),</p>
 
-<p>Ignacio also implemented the new version of</p>
+<p><code class="func">NumericalSemigroupsWithFrobeniusNumberAndMultiplicity</code> (<a href="chap5_mj.html#X7DB3994B872C4940"><span class="RefLink">5.4-2</span></a>),</p>
+
+<p><code class="func">IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</code> (<a href="chap6_mj.html#X87C2738C7AA109DC"><span class="RefLink">6.1-6</span></a>).</p>
+
+<p>Ignacio also implemented the new versions of</p>
 
 <p><code class="func">AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap6_mj.html#X7B0DF2FE7D00A9E0"><span class="RefLink">6.3-4</span></a>),</p>
+
+<p><code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5_mj.html#X87369D567AA6DBA0"><span class="RefLink">5.4-3</span></a>),</p>
 
 <p><a id="X8549AE427919FFDC" name="X8549AE427919FFDC"></a></p>
 
@@ -203,7 +214,7 @@
 
 <p>Andrés Herrera-Poyatos gave new implementations of</p>
 
-<p><code class="func">IsSelfReciprocalUnivariatePolynomial</code> (<a href="chap10_mj.html#X82C6355287C3BDD1"><span class="RefLink">10.1-10</span></a>) and</p>
+<p><code class="func">IsSelfReciprocalUnivariatePolynomial</code> (<a href="chap10_mj.html#X82C6355287C3BDD1"><span class="RefLink">10.1-11</span></a>) and</p>
 
 <p><code class="func">IsKroneckerPolynomial</code> (<a href="chap10_mj.html#X7D9618ED83776B0B"><span class="RefLink">10.1-7</span></a>). Andrés is also coauthor of the dot functions, see Chapter <a href="chap14_mj.html#X7B8D661F79E957A6"><span class="RefLink">14</span></a></p>
 
@@ -221,7 +232,7 @@
 
 <p>Juan Ignacio implemented a preliminary version of</p>
 
-<p><code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5_mj.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>).</p>
+<p><code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5_mj.html#X87369D567AA6DBA0"><span class="RefLink">5.4-3</span></a>).</p>
 
 <p><a id="X8348844883A78B05" name="X8348844883A78B05"></a></p>
 
@@ -231,15 +242,37 @@
 
 <p><code class="func">AffineSemigroupByGaps</code> (<a href="chap11_mj.html#X790969937B5D0DB6"><span class="RefLink">11.1-5</span></a>),</p>
 
-<p><code class="func">RemoveMinimalGeneratorFromAffineSemigroup</code> (<a href="chap11_mj.html#X80516BCC78FDD45D"><span class="RefLink">11.1-11</span></a>),</p>
+<p><code class="func">RemoveMinimalGeneratorFromAffineSemigroup</code> (<a href="chap11_mj.html#X80516BCC78FDD45D"><span class="RefLink">11.1-12</span></a>),</p>
 
-<p><code class="func">AddSpecialGapOfAffineSemigroup</code> (<a href="chap11_mj.html#X7B78E02F7C50583F"><span class="RefLink">11.1-12</span></a>).</p>
+<p><code class="func">AddSpecialGapOfAffineSemigroup</code> (<a href="chap11_mj.html#X7B78E02F7C50583F"><span class="RefLink">11.1-13</span></a>).</p>
 
 <p><a id="X8130D17C7D6B5096" name="X8130D17C7D6B5096"></a></p>
 
 <h4>C.12 <span class="Heading">Functions implemented by N. Matsuoka</span></h4>
 
 <p>Naoyuki implemented the function associated to the generalized Gorenstein property, see Section <a href="chap6_mj.html#X7FF9451382970019"><span class="RefLink">6.4</span></a>.</p>
+
+<p><a id="X78ED0D447B74A9FF" name="X78ED0D447B74A9FF"></a></p>
+
+<h4>C.13 <span class="Heading">Functions implemented by N. Maugeri</span></h4>
+
+<p>Nicola fixed the implementation of <code class="func">ArfGoodSemigroupClosure</code> (<a href="chap12_mj.html#X87248BD481228F36"><span class="RefLink">12.4-1</span></a>). He also implemented</p>
+
+<p><code class="func">ProjectionOfAGoodSemigroup</code> (<a href="chap12_mj.html#X806865CB794CAC5D"><span class="RefLink">12.2-12</span></a>),</p>
+
+<p><code class="func">GenusOfGoodSemigroup</code> (<a href="chap12_mj.html#X7D70CD958333D49B"><span class="RefLink">12.2-13</span></a>),</p>
+
+<p><code class="func">LengthOfGoodSemigroup</code> (<a href="chap12_mj.html#X81BD57ED80145EB0"><span class="RefLink">12.2-14</span></a>),</p>
+
+<p><code class="func">AperySetOfGoodSemigroup</code> (<a href="chap12_mj.html#X809E0C077A613806"><span class="RefLink">12.2-15</span></a>),</p>
+
+<p><code class="func">StratifiedAperySetOfGoodSemigroup</code> (<a href="chap12_mj.html#X7B234A537F0C0AEF"><span class="RefLink">12.2-16</span></a>),</p>
+
+<p><code class="func">AbsoluteIrreduciblesOfGoodSemigroup</code> (<a href="chap12_mj.html#X7DC7A4B57BC2E55C"><span class="RefLink">12.5-8</span></a>),</p>
+
+<p><code class="func">TracksOfGoodSemigroup</code> (<a href="chap12_mj.html#X87AB3B09857B383A"><span class="RefLink">12.5-9</span></a>),</p>
+
+<p><code class="func">RandomGoodSemigroupWithFixedMultiplicity</code> (<a href="chapB_mj.html#X7F582A997B4B05EE"><span class="RefLink">B.3-1</span></a>). And the multiplicity and local property for good semigroups.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chapB_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>

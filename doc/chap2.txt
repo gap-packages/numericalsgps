@@ -76,8 +76,8 @@
   [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0YA  periodic  subadditive function with period [22Xm[122X is given through the list of
-  images  of  the integers from [22X1[122X to [22Xm[122X. The image of [22Xm[122X has to be [22X0[122X. The output
-  is the numerical semigroup determined by this subadditive function.[133X
+  images of the integers from [22X1[122X to [22Xm[122X, [Ros07]. The image of [22Xm[122X has to be [22X0[122X. The
+  output is the numerical semigroup determined by this subadditive function.[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"subadditive"[110X.[133X
   
@@ -175,10 +175,10 @@
   [33X[1;0Y[29X[2XNumericalSemigroupByFundamentalGaps[102X( [3XList[103X ) [32X function[133X
   [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
-  [33X[0;0Y[10XList[110X  is the set of fundamental gaps of a numerical semigroup. The output is
-  the  numerical  semigroup  determined  by  these  gaps.  When  the given set
-  contains  elements  (which will be gaps) that are not fundamental gaps, they
-  are silently removed.[133X
+  [33X[0;0Y[10XList[110X  is the set of fundamental gaps of a numerical semigroup, [RGSGGJM04b].
+  The  output  is  the  numerical semigroup determined by these gaps. When the
+  given  set  contains  elements (which will be gaps) that are not fundamental
+  gaps, they are silently removed.[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"fundamentalgaps"[110X.[133X
   
@@ -223,7 +223,7 @@
   [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0YGiven  two  positive  integers  [3Xa[103X  and  [3Xb[103X,  this  function returns a modular
-  numerical semigroup satisfying [22Xax mod b le x[122X.[133X
+  numerical semigroup satisfying [22Xax mod b le x[122X, [RGSUB05].[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"modular"[110X.[133X
   
@@ -240,7 +240,8 @@
   [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
   
   [33X[0;0YGiven  three  positive  integers  [3Xa[103X,  [3Xb[103X  and  [3Xc[103X,  this  function  returns  a
-  proportionally modular numerical semigroup satisfying [22Xaxmod b le cx[122X.[133X
+  proportionally  modular  numerical  semigroup  satisfying  [22Xaxmod  b  le  cx[122X,
+  [RAGGUB03].[133X
   
   [33X[0;0YIn the second form, [10XString[110X must be [10X"propmodular"[110X.[133X
   
@@ -270,7 +271,7 @@
   
   [33X[0;0YThe  input  is  a  list  of rational numbers defining a closed interval. The
   output  is  the  semigroup  of  numerators  of  all rational numbers in this
-  interval.[133X
+  interval, [RAGGUB03].[133X
   
   [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
   [10X"interval"[110X.[133X
@@ -290,7 +291,8 @@
   [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
   [33X[0;0YThe input is a list of rational numbers defining a open interval. The output
-  is the semigroup of numerators of all rational numbers in this interval.[133X
+  is  the  semigroup  of  numerators of all rational numbers in this interval,
+  [RUB06].[133X
   
   [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
   [10X"openinterval"[110X.[133X
@@ -329,9 +331,7 @@
   [33X[1;0Y[29X[2XIsModularNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XNS[103X  is a numerical semigroup and these attributes are available (their names
-  should        be        self        explanatory).        The       attribute
-  [10XIsNumericalSemigroupByMinimalGenerators[110X is obsolet and is to be removed in a
-  further version.[133X
+  should be self explanatory).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7);[127X[104X
@@ -448,7 +448,11 @@
   
   [33X[0;0Y[3Xn[103X  is  an integer and [3XS[103X is a numerical semigroup. Tests whether [3Xn[103X belongs to
   [3XS[103X.  [10X\in(n,S)[110X calls the infix variant [10Xn in S[110X, and both can be seen as a short
-  for [10XBelongsToNumericalSemigroup(n,S)[110X.[133X
+  for  [10XBelongsToNumericalSemigroup(n,S)[110X.  Several  methods are implemented for
+  membership,  depending on the properties of [3XS[103X known. For instance, there are
+  methods  if  any  of  the  following  information is known: Apéry set, small
+  elements,    defining   (proportionally)   modular   Diophantine   equation,
+  fundamental gaps, gaps, generators.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS := NumericalSemigroup("modular", 5,53);[127X[104X

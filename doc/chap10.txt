@@ -162,7 +162,27 @@
     [4X[28X[ 1, 0, -1, 0, -1, 0, -1, 0, 0, 1, 0, 1, 0, 1, 0, 0, -1, 0, -1, 0 ][128X[104X
   [4X[32X[104X
   
-  [1X10.1-10 IsSelfReciprocalUnivariatePolynomial[101X
+  [1X10.1-10 WittCoefficients[101X
+  
+  [33X[1;0Y[29X[2XWittCoefficients[102X( [3Xp[103X, [3Xk[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xp[103X  is  a  univariate  polynomial with integer coefficientas and [22Xp(1)=1[122X. Then
+  [22Xp(x)=∏_nge  0(1-x^n)^e_n[122X,  for  some  integers  [22Xe_n[122X.  The output is the list
+  [22X[e_1,...,e_k][122X, and it is computed by using [CGSHPM19].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,4);;[127X[104X
+    [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
+    [4X[25Xgap>[125X [27Xp:=NumericalSemigroupPolynomial(s,x);;[127X[104X
+    [4X[25Xgap>[125X [27XWittCoefficients(p,20);[127X[104X
+    [4X[28X[ 1, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThe  difference  with this example and the one in [2XCyclotomicExponentSequence[102X
+  ([14X10.1-9[114X)  is  that  in  that case a cyclotomic check is performed that slows
+  down the process.[133X
+  
+  [1X10.1-11 IsSelfReciprocalUnivariatePolynomial[101X
   
   [33X[1;0Y[29X[2XIsSelfReciprocalUnivariatePolynomial[102X( [3Xp[103X ) [32X function[133X
   
@@ -198,7 +218,7 @@
   [22Xmathrmint(f,g)=dim_  K  (  K[x,y]/(f,g))[122X.  The algorithm checks if [3Xf[103X has one
   place  at infinity. If the extra argument "all" is given, then the output is
   the  [22Xδ[122X-sequence  and  approximate  roots  of  [3Xf[103X.  The method is explained in
-  [AGS16].[133X
+  [AGS16a].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,1);; SetName(x,"x");[127X[104X

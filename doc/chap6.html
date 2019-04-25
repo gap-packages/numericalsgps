@@ -36,7 +36,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7EA0D85085C4B607">6.1-3 IsPseudoSymmetric</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7C8AB03F7E0B71F0">6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X78345A267ADEFBAB">6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8753F78D7FD732E2">6.1-6 DecomposeIntoIrreducibles</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X87C2738C7AA109DC">6.1-6 IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8753F78D7FD732E2">6.1-7 DecomposeIntoIrreducibles</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7D3FD9C8786B5D72">6.2 <span class="Heading">
                     Complete intersection numerical semigroups
@@ -106,7 +107,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if <var class="Arg">s</var> is irreducible, <code class="code">false</code> otherwise.</p>
 
-<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3.html#X83D4AFE882A79096"><span class="RefLink">3.1-29</span></a>).</p>
+<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3.html#X83D4AFE882A79096"><span class="RefLink">3.1-30</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -174,7 +175,7 @@ false
 <h5>6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleNumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var>.</p>
+<p><var class="Arg">f</var> is an integer. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var>. The algorithm is inspired in <a href="chapBib.html#biBBR13">[BR13]</a>.</p>
 
 
 <div class="example"><pre>
@@ -182,9 +183,22 @@ false
 20
 </pre></div>
 
+<p><a id="X87C2738C7AA109DC" name="X87C2738C7AA109DC"></a></p>
+
+<h5>6.1-6 IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</code>( <var class="Arg">f</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">f</var> and <var class="Arg">m</var> are integers. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var> and multiplicity <var class="Arg">m</var>. The implementation appears in <a href="chapBib.html#biBBOR19">[ttt19]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(31,11));</span>
+16
+</pre></div>
+
 <p><a id="X8753F78D7FD732E2" name="X8753F78D7FD732E2"></a></p>
 
-<h5>6.1-6 DecomposeIntoIrreducibles</h5>
+<h5>6.1-7 DecomposeIntoIrreducibles</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecomposeIntoIrreducibles</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is a set of irreducible numerical semigroups containing it. These elements appear in a minimal decomposition of <var class="Arg">s</var> as intersection into irreducibles.</p>

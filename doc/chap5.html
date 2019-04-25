@@ -54,7 +54,9 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7F40052D7B0EC8ED">5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87369D567AA6DBA0">5.4-1 NumericalSemigroupsWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X81759C3482B104D6">5.4-1 NumericalSemigroupsWithFrobeniusNumberFG</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7DB3994B872C4940">5.4-2 NumericalSemigroupsWithFrobeniusNumberAndMultiplicity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87369D567AA6DBA0">5.4-3 NumericalSemigroupsWithFrobeniusNumber</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7D6635CB7D041A54">5.5 <span class="Heading">
                     Constructing the set of numerical semigroups with genus g
@@ -291,14 +293,40 @@ true
 
 <h4>5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></h4>
 
-<p>Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps.</p>
+<p>Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps. If the multiplicity is fixed, then the construction relies on the calculation of irreducible numerical semigroups with that Frobenius number and multiplicity.</p>
+
+<p><a id="X81759C3482B104D6" name="X81759C3482B104D6"></a></p>
+
+<h5>5.4-1 NumericalSemigroupsWithFrobeniusNumberFG</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithFrobeniusNumberFG</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">f</var> is an integer. The output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var>. The algorithm implemented is given in <a href="chapBib.html#biBRGGJ04">[RGSGGJM04a]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(NumericalSemigroupsWithFrobeniusNumberFG(15));</span>
+200
+</pre></div>
+
+<p><a id="X7DB3994B872C4940" name="X7DB3994B872C4940"></a></p>
+
+<h5>5.4-2 NumericalSemigroupsWithFrobeniusNumberAndMultiplicity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithFrobeniusNumberAndMultiplicity</code>( <var class="Arg">f</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">f</var> and <var class="Arg">m</var> are integers. The output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var> and multiplicity <var class="Arg">m</var>. The algorithm implemented is given in <a href="chapBib.html#biBBOR19">[ttt19]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));</span>
+28
+</pre></div>
 
 <p><a id="X87369D567AA6DBA0" name="X87369D567AA6DBA0"></a></p>
 
-<h5>5.4-1 NumericalSemigroupsWithFrobeniusNumber</h5>
+<h5>5.4-3 NumericalSemigroupsWithFrobeniusNumber</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer. The output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var>. The algorithm implemented is given in <a href="chapBib.html#biBRGGJ04">[RGSGGJM04]</a>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithFrobeniusNumber</code>( <var class="Arg">f</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">f</var> is an integer. As happens with the function <code class="func">NumericalSemigroupsWithFrobeniusNumberFG</code> (<a href="chap5.html#X81759C3482B104D6"><span class="RefLink">5.4-1</span></a>), the output is the set of numerical semigroups with Frobenius number <var class="Arg">f</var>. It makes use of <code class="func">NumericalSemigroupsWithFrobeniusNumberAndMultiplicity</code> (<a href="chap5.html#X7DB3994B872C4940"><span class="RefLink">5.4-2</span></a>) to compute the semigroups with the Frobenius number given for all the possible multiplicities.</p>
 
 
 <div class="example"><pre>
@@ -350,7 +378,7 @@ true
                     Constructing the set of numerical semigroups with a given set of pseudo-Frobenius numbers
                 </span></h4>
 
-<p>Refer to <code class="func">PseudoFrobeniusOfNumericalSemigroup</code> (<a href="chap3.html#X861DED207A2B5419"><span class="RefLink">3.1-23</span></a>).</p>
+<p>Refer to <code class="func">PseudoFrobeniusOfNumericalSemigroup</code> (<a href="chap3.html#X861DED207A2B5419"><span class="RefLink">3.1-24</span></a>).</p>
 
 <p>These procedures are described in <a href="chapBib.html#biBDGSRP15">[DGSRP16]</a>, and are used to find the set of numerical semigroups with a prescribed set of pseudo-Frobenius numbers.</p>
 
@@ -445,7 +473,7 @@ true
 <h5>5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsWithPseudoFrobeniusNumbers</code>( <var class="Arg">PF</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigroups S such that PF(S)=PF. When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5.html#X87369D567AA6DBA0"><span class="RefLink">5.4-1</span></a>)</p>
+<p><var class="Arg">PF</var> is a list of positive integers (given as a list or individual elements). The output is: a list of numerical semigroups S such that PF(S)=PF. When Length(PF)=1, it makes use of the function <code class="func">NumericalSemigroupsWithFrobeniusNumber</code> (<a href="chap5.html#X87369D567AA6DBA0"><span class="RefLink">5.4-3</span></a>)</p>
 
 
 <div class="example"><pre>

@@ -2,11 +2,12 @@
   [1XC [33X[0;0YContributions[133X[101X
   
   [33X[0;0YSebastian  Gutsche  helped  in the implementation of inference of properties
-  from  already  known  properties.  Max  Horn  adapted  the definition of the
-  objects  numerical  and affine semigroups; the behave like lists of integers
-  or lists of lists of integers (affine case), and one can intersect numerical
-  semigroups  with  lists  of  integers,  or  affine  semigroup with cartesian
-  products of lists of integers.[133X
+  from   already   known   properties,   and  also  with  the  integration  of
+  4ti2Interface.  Max Horn adapted the definition of the objects numerical and
+  affine  semigroups;  the  behave like lists of integers or lists of lists of
+  integers  (affine  case),  and  one  can intersect numerical semigroups with
+  lists  of  integers, or affine semigroup with cartesian products of lists of
+  integers.[133X
   
   
   [1XC.1 [33X[0;0YFunctions implemented by A. Sammartano[133X[101X
@@ -40,7 +41,7 @@
   
   [1XC.2 [33X[0;0YFunctions implemented by C. O'Neill[133X[101X
   
-  [33X[0;0YC. O'Neill implemented the following functions described in [BOP14]:[133X
+  [33X[0;0YChris implemented the following functions described in [BOP17]:[133X
   
   [33X[0;0Y[2XOmegaPrimalityOfElementListInNumericalSemigroup[102X ([14X9.4-2[114X),[133X
   
@@ -58,7 +59,9 @@
   
   [33X[0;0YAnd contributed to:[133X
   
-  [33X[0;0Y[2XDeltaSetOfAffineSemigroup[102X ([14X11.4-5[114X).[133X
+  [33X[0;0Y[2XDeltaSetOfAffineSemigroup[102X ([14X11.4-5[114X). Also he implemented the new version of[133X
+  
+  [33X[0;0Y[2XAperyListOfNumericalSemigroupWRTElement[102X ([14X3.1-15[114X).[133X
   
   
   [1XC.3 [33X[0;0YFunctions implemented by K. Stokes[133X[101X
@@ -71,9 +74,8 @@
   
   [33X[0;0YIgnacio  and  Carlos  Jesús  implemented the algorithms given in [Rou08] and
   [MCOT15]  for  the  calculation  of  the Frobenius number and Apéry set of a
-  numerical  semigroup using Gröbner basis calculations. These methods will be
-  used if 4ti2 is loaded (either 4ti2Interface or 4ti2gap). A faster algorithm
-  is employed provided that singular is loaded.[133X
+  numerical   semigroup  using  Gröbner  basis  calculations.  Since  the  new
+  implementation by Chris was included, these algorithms are no longer used.[133X
   
   
   [1XC.5 [33X[0;0YFunctions implemented by I. Ojeda[133X[101X
@@ -84,9 +86,15 @@
   
   [33X[0;0Y[2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType[102X ([14X6.3-5[114X),[133X
   
-  [33X[0;0YIgnacio also implemented the new version of[133X
+  [33X[0;0Y[2XNumericalSemigroupsWithFrobeniusNumberAndMultiplicity[102X ([14X5.4-2[114X),[133X
+  
+  [33X[0;0Y[2XIrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity[102X ([14X6.1-6[114X).[133X
+  
+  [33X[0;0YIgnacio also implemented the new versions of[133X
   
   [33X[0;0Y[2XAlmostSymmetricNumericalSemigroupsWithFrobeniusNumber[102X ([14X6.3-4[114X),[133X
+  
+  [33X[0;0Y[2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-3[114X),[133X
   
   
   [1XC.6 [33X[0;0YFunctions implemented by A. Sánchez-R. Navarro[133X[101X
@@ -142,7 +150,7 @@
   
   [33X[0;0YAndrés Herrera-Poyatos gave new implementations of[133X
   
-  [33X[0;0Y[2XIsSelfReciprocalUnivariatePolynomial[102X ([14X10.1-10[114X) and[133X
+  [33X[0;0Y[2XIsSelfReciprocalUnivariatePolynomial[102X ([14X10.1-11[114X) and[133X
   
   [33X[0;0Y[2XIsKroneckerPolynomial[102X   ([14X10.1-7[114X).   Andrés  is  also  coauthor  of  the  dot
   functions, see Chapter [14X14[114X[133X
@@ -159,7 +167,7 @@
   
   [33X[0;0YJuan Ignacio implemented a preliminary version of[133X
   
-  [33X[0;0Y[2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-1[114X).[133X
+  [33X[0;0Y[2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-3[114X).[133X
   
   
   [1XC.11 [33X[0;0YFunctions implemented by C. Cisto[133X[101X
@@ -170,13 +178,36 @@
   
   [33X[0;0Y[2XAffineSemigroupByGaps[102X ([14X11.1-5[114X),[133X
   
-  [33X[0;0Y[2XRemoveMinimalGeneratorFromAffineSemigroup[102X ([14X11.1-11[114X),[133X
+  [33X[0;0Y[2XRemoveMinimalGeneratorFromAffineSemigroup[102X ([14X11.1-12[114X),[133X
   
-  [33X[0;0Y[2XAddSpecialGapOfAffineSemigroup[102X ([14X11.1-12[114X).[133X
+  [33X[0;0Y[2XAddSpecialGapOfAffineSemigroup[102X ([14X11.1-13[114X).[133X
   
   
   [1XC.12 [33X[0;0YFunctions implemented by N. Matsuoka[133X[101X
   
   [33X[0;0YNaoyuki  implemented  the  function associated to the generalized Gorenstein
   property, see Section [14X6.4[114X.[133X
+  
+  
+  [1XC.13 [33X[0;0YFunctions implemented by N. Maugeri[133X[101X
+  
+  [33X[0;0YNicola fixed the implementation of [2XArfGoodSemigroupClosure[102X ([14X12.4-1[114X). He also
+  implemented[133X
+  
+  [33X[0;0Y[2XProjectionOfAGoodSemigroup[102X ([14X12.2-12[114X),[133X
+  
+  [33X[0;0Y[2XGenusOfGoodSemigroup[102X ([14X12.2-13[114X),[133X
+  
+  [33X[0;0Y[2XLengthOfGoodSemigroup[102X ([14X12.2-14[114X),[133X
+  
+  [33X[0;0Y[2XAperySetOfGoodSemigroup[102X ([14X12.2-15[114X),[133X
+  
+  [33X[0;0Y[2XStratifiedAperySetOfGoodSemigroup[102X ([14X12.2-16[114X),[133X
+  
+  [33X[0;0Y[2XAbsoluteIrreduciblesOfGoodSemigroup[102X ([14X12.5-8[114X),[133X
+  
+  [33X[0;0Y[2XTracksOfGoodSemigroup[102X ([14X12.5-9[114X),[133X
+  
+  [33X[0;0Y[2XRandomGoodSemigroupWithFixedMultiplicity[102X  ([14XB.3-1[114X).  And the multiplicity and
+  local property for good semigroups.[133X
   

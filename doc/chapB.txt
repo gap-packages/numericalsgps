@@ -5,7 +5,7 @@
   objects. We make use of the function [10XRandomList[110X.[133X
   
   
-  [1XB.1 [33X[0;0YRandom functions[133X[101X
+  [1XB.1 [33X[0;0YRandom functions for numerical semigroups[133X[101X
   
   [1XB.1-1 RandomNumericalSemigroup[101X
   
@@ -118,7 +118,10 @@
     [4X[28X[ 1, 2, 3, 4, 5, 6, 9 ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-8 RandomAffineSemigroupWithGenusAndDimension[101X
+  
+  [1XB.2 [33X[0;0YRandom functions for affine semigroups[133X[101X
+  
+  [1XB.2-1 RandomAffineSemigroupWithGenusAndDimension[101X
   
   [33X[1;0Y[29X[2XRandomAffineSemigroupWithGenusAndDimension[102X( [3Xg[103X, [3Xd[103X ) [32X function[133X
   
@@ -131,7 +134,7 @@
     [4X[28X  [ 0, 7, 0 ], [ 1, 0, 0 ], [ 1, 1, 0 ], [ 2, 0, 0 ], [ 3, 0, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-9 RandomAffineSemigroup[101X
+  [1XB.2-2 RandomAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XRandomAffineSemigroup[102X( [3Xn[103X, [3Xd[103X, [3Xm[103X ) [32X function[133X
   
@@ -152,7 +155,7 @@
     [4X[28X  [ 3, 3, 1, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1XB.1-10 RandomFullAffineSemigroup[101X
+  [1XB.2-3 RandomFullAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XRandomFullAffineSemigroup[102X( [3Xn[103X, [3Xd[103X, [3Xm[103X ) [32X function[133X
   
@@ -171,5 +174,26 @@
     [4X[28XNormalizInterface, 4ti2Interface or 4ti2gap.[128X[104X
     [4X[28X[ [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 1, 0, 0, 0 ], [128X[104X
     [4X[28X  [ 1, 0, 0, 0, 0 ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1XB.3 [33X[0;0YRandom functions for good semigroups[133X[101X
+  
+  [1XB.3-1 RandomGoodSemigroupWithFixedMultiplicity[101X
+  
+  [33X[1;0Y[29X[2XRandomGoodSemigroupWithFixedMultiplicity[102X( [3Xm[103X, [3Xcond[103X ) [32X function[133X
+  
+  [33X[0;0YThis  function  produces  a  "random" semigroup with multiplicity [3Xm[103X and with
+  conductor bounded by [3Xcond[103X[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS:=RandomGoodSemigroupWithFixedMultiplicity([6,7],[30,30]);[127X[104X
+    [4X[28X<Good semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XSmallElements(S);[127X[104X
+    [4X[28X[ [ 0, 0 ], [ 6, 7 ], [ 9, 8 ], [ 9, 10 ], [ 9, 11 ], [ 9, 14 ], [ 9, 15 ],[128X[104X
+    [4X[28X  [ 9, 16 ], [ 10, 8 ], [ 11, 10 ], [ 11, 11 ], [ 12, 10 ], [ 12, 14 ],[128X[104X
+    [4X[28X  [ 13, 10 ], [ 13, 15 ], [ 13, 16 ], [ 15, 10 ], [ 15, 15 ], [ 15, 16 ],[128X[104X
+    [4X[28X  [ 16, 10 ], [ 16, 15 ], [ 17, 10 ], [ 17, 16 ] ][128X[104X
+    [4X[28X  [128X[104X
   [4X[32X[104X
   

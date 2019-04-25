@@ -28,7 +28,7 @@
 
 <h1><strong class="pkg">numericalsgps</strong>-- a package for numerical semigroups</h1>
 
-<p> Version 1.1.11</p>
+<p> Version 1.2.0</p>
 
 </div>
 <p><b> Manuel Delgado
@@ -56,29 +56,31 @@
 
 <p><a id="X82A988D47DFAFCFA" name="X82A988D47DFAFCFA"></a></p>
 <h3>Acknowledgements</h3>
-<p>The first author's work was (partially) supported by the <em>Centro de Matemática da Universidade do Porto</em> (CMUP), financed by FCT (Portugal) through the programs POCTI (Programa Operacional "Ciência, Tecnologia, Inovação") and POSI (Programa Operacional Sociedade da Informação), with national and European Community structural funds and a sabbatical grant of FCT.</p>
-
-<p>The second author was supported by the projects MTM2004-01446, MTM2007-62346 and MTM2010-15595, the Junta de Andalucía group FQM-343, and FEDER founds.</p>
-
-<p>The third author acknowledges financial support of FCT and the POCTI program through a scholarship given by <em>Centro de Matemática da Universidade do Porto</em>.</p>
-
-<p>The authors wish to thank J. I. García-García and Alfredo Sánchez-R. Navarro for many helpful discussions and for helping in the programming of preliminary versions of some functions, and also to C. O'Neill, A. Sammartano, I. Ojeda, C. M. Moreno Ávila, A. Herrera-Poyatos and K. Stokes for their contributions (see Contributions Chapter). We are also in debt with S. Gutsche, M. Horn, H. Schönemann, C. Söeger and M. Barakat for their fruitful advices concerning 4ti2Interface, SingularInterface, Singular, Normaliz, NormalizInterface and GradedModules.</p>
-
-<p>The first and second authors warmly thank María Burgos for her support and help.</p>
-
-<p><strong class="button">Concerning the mantainment:</strong></p>
-
-<p>The first author was (partially) supported by the FCT project PTDC/MAT/65481/2006 and also by the <em>Centro de Matemática da Universidade do Porto</em> (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT - Fundação para a Ciência e a Tecnologia under the project PEst-C/MAT/UI0144/2011.</p>
-
-<p>The second author was/is supported by the project MTM2014-55367-P, which is funded by Ministerio de Economía y Competitividad and the Fondo Europeo de Desarrollo Regional FEDER.</p>
-
-<p>Both maintainers want to acknowledge partial support by CMUP (UID/MAT/00144/2013), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.</p>
-
-<p>Both maintainers are also supported by the project MTM2014-55367-P, which is funded by Ministerio de Economía y Competitividad and Fondo Europeo de Desarrollo Regional FEDER.</p>
+<p>The authors wish to thank the contributors of the package. A full list with the help received is available in Appendix <a href="chapC_mj.html#X7F1146137C92FF0E"><span class="RefLink">C</span></a>. We are also in debt with H. Schönemann, C. Söeger and M. Barakat for their fruitful advices concerning SingularInterface, Singular, Normaliz, NormalizInterface and GradedModules.</p>
 
 <p>The maintainers want to thank the organizers of <code class="code">GAPDays</code> in their several editions.</p>
 
-<p>The authors also thank the Centro de Servicios de Informática y Redes de Comunicaciones (CSIRC), Universidad de Granada, for providing the computing time, specially Rafael Arco Arredondo for installing this package and the extra software needed in alhambra.ugr.es.</p>
+<p>The authors also thank the Centro de Servicios de Informática y Redes de Comunicaciones (CSIRC), Universidad de Granada, for providing the computing time, specially Rafael Arco Arredondo for installing this package and the extra software needed in alhambra.ugr.es, and Santiago Melchor Ferrer for helping in job submission to the cluster.</p>
+
+<p>The first and second authors warmly thank María Burgos for her support and help.</p>
+
+<p><strong class="button">Funding</strong></p>
+
+<p>The first author's work was (partially) supported by the <em>Centro de Matemática da Universidade do Porto</em> (CMUP), financed by FCT (Portugal) through the programs POCTI (Programa Operacional "Ciência, Tecnologia, Inovação") and POSI (Programa Operacional Sociedade da Informação), with national and European Community structural funds and a sabbatical grant of FCT.</p>
+
+<p>The second author was supported by the projects MTM2004-01446 and MTM2007-62346, the Junta de Andalucía group FQM-343, and FEDER founds.</p>
+
+<p>The third author acknowledges financial support of FCT and the POCTI program through a scholarship given by <em>Centro de Matemática da Universidade do Porto</em>.</p>
+
+<p>The first author was (partially) supported by the FCT project PTDC/MAT/65481/2006 and also by the <em>Centro de Matemática da Universidade do Porto</em> (CMUP), funded by the European Regional Development Fund through the programme COMPETE and by the Portuguese Government through the FCT - Fundação para a Ciência e a Tecnologia under the project PEst-C/MAT/UI0144/2011.</p>
+
+<p>Both maintainers were (partially) supported by the projects MTM2010-15595 and MTM2014-55367-P, which were funded by Ministerio de Economía y Competitividad and the Fondo Europeo de Desarrollo Regional FEDER.</p>
+
+<p>Both maintainers want to acknowledge partial support by CMUP (UID/MAT/00144/2013 and UID/MAT/00144/2019), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.</p>
+
+<p>Both maintainers are also partially supported by the project MTM2017-84890-P, which is funded by Ministerio de Economía y Competitividad and Fondo Europeo de Desarrollo Regional FEDER.</p>
+
+<p>The first author acknowledges a sabbatical grant from the FCT: SFRH/BSAB/142918/2018.</p>
 
 <p><a id="X7982162280BC7A61" name="X7982162280BC7A61"></a></p>
 <h3>Colophon</h3>
@@ -141,36 +143,37 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X850F430A8284DF9A">3.1-2 Generators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7884AE27790E687F">3.1-3 EmbeddingDimension</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X84A6B16E8113167B">3.1-4 SmallElements</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F0EDFA77F929120">3.1-5 FirstElementsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7D2B3AA9823371AE">3.1-6 ElementsUpTo</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X81A2505E8120F4D7"><code>3.1-7 \[ \]</code></a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7A34F16F8112C2B5"><code>3.1-8 \{ \}</code></a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X84345D5E7CAA9B77">3.1-9 NextElementOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7B6C82DD86E5422F">3.1-10 ElementNumber_NumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X821ED59C8292F6E4">3.1-11 RthElementOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X78F4A7A7797E26D4">3.1-12 NumberElement_NumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X867ABF7C7991ED7C">3.1-13 Iterator</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7CB24F5E84793BE1">3.1-14 AperyList</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X80431F487C71D67B">3.1-15 AperyList</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7D06B00D7C305C64">3.1-16 AperyList</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8022CC477E9BF678">3.1-17 AperyListOfNumericalSemigroupAsGraph</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X80B398537887FD87">3.1-18 KunzCoordinates</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C21E5417A3894EC">3.1-19 KunzPolytope</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7802096584D32795">3.1-20 CocycleOfNumericalSemigroupWRTElement</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X847BAD9480D186C0">3.1-21 FrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X835C729D7D8B1B36">3.1-22 Conductor</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X861DED207A2B5419">3.1-23 PseudoFrobenius</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X865E2E12804CFCD3">3.1-24 Type</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8688B1837E4BC079">3.1-25 Gaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F71983880DF4B9D">3.1-26 Weight</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7EB81BF886DDA29A">3.1-27 Deserts</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X82B1868F7A780B49">3.1-28 IsOrdinary</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X83D4AFE882A79096">3.1-29 IsAcute</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7CCFC5267FD27DDE">3.1-30 Holes</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X794E615F85C2AAB0">3.1-31 LatticePathAssociatedToNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7E9C8E157C4EAAB0">3.1-32 Genus</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7EC438CC7BF539D0">3.1-33 FundamentalGaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X803D550C78717A7C">3.1-34 SpecialGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7A56569F853DADED">3.1-5 Length</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F0EDFA77F929120">3.1-6 FirstElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7D2B3AA9823371AE">3.1-7 ElementsUpTo</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X81A2505E8120F4D7"><code>3.1-8 \[ \]</code></a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7A34F16F8112C2B5"><code>3.1-9 \{ \}</code></a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X84345D5E7CAA9B77">3.1-10 NextElementOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7B6C82DD86E5422F">3.1-11 ElementNumber_NumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X821ED59C8292F6E4">3.1-12 RthElementOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X78F4A7A7797E26D4">3.1-13 NumberElement_NumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X867ABF7C7991ED7C">3.1-14 Iterator</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7CB24F5E84793BE1">3.1-15 AperyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X80431F487C71D67B">3.1-16 AperyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7D06B00D7C305C64">3.1-17 AperyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8022CC477E9BF678">3.1-18 AperyListOfNumericalSemigroupAsGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X80B398537887FD87">3.1-19 KunzCoordinates</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C21E5417A3894EC">3.1-20 KunzPolytope</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7802096584D32795">3.1-21 CocycleOfNumericalSemigroupWRTElement</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X847BAD9480D186C0">3.1-22 FrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X835C729D7D8B1B36">3.1-23 Conductor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X861DED207A2B5419">3.1-24 PseudoFrobenius</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X865E2E12804CFCD3">3.1-25 Type</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X8688B1837E4BC079">3.1-26 Gaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7F71983880DF4B9D">3.1-27 Weight</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7EB81BF886DDA29A">3.1-28 Deserts</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X82B1868F7A780B49">3.1-29 IsOrdinary</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X83D4AFE882A79096">3.1-30 IsAcute</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7CCFC5267FD27DDE">3.1-31 Holes</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X794E615F85C2AAB0">3.1-32 LatticePathAssociatedToNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7E9C8E157C4EAAB0">3.1-33 Genus</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7EC438CC7BF539D0">3.1-34 FundamentalGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X803D550C78717A7C">3.1-35 SpecialGaps</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7EE22CA979CCAAB9">3.2 <span class="Heading">Wilf's conjecture</span></a>
 </span>
@@ -231,7 +234,9 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X7F40052D7B0EC8ED">5.4 <span class="Heading"> Constructing the set of numerical semigroup with given Frobenius number</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X87369D567AA6DBA0">5.4-1 NumericalSemigroupsWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X81759C3482B104D6">5.4-1 NumericalSemigroupsWithFrobeniusNumberFG</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7DB3994B872C4940">5.4-2 NumericalSemigroupsWithFrobeniusNumberAndMultiplicity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X87369D567AA6DBA0">5.4-3 NumericalSemigroupsWithFrobeniusNumber</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X7D6635CB7D041A54">5.5 <span class="Heading">
                     Constructing the set of numerical semigroups with genus g
@@ -264,7 +269,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EA0D85085C4B607">6.1-3 IsPseudoSymmetric</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C8AB03F7E0B71F0">6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78345A267ADEFBAB">6.1-5 IrreducibleNumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8753F78D7FD732E2">6.1-6 DecomposeIntoIrreducibles</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87C2738C7AA109DC">6.1-6 IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8753F78D7FD732E2">6.1-7 DecomposeIntoIrreducibles</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7D3FD9C8786B5D72">6.2 <span class="Heading">
                     Complete intersection numerical semigroups
@@ -533,7 +539,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7D9618ED83776B0B">10.1-7 IsKroneckerPolynomial</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8366BB727C496D31">10.1-8 IsCyclotomicNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7B428FA2877EC733">10.1-9 CyclotomicExponentSequence</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X82C6355287C3BDD1">10.1-10 IsSelfReciprocalUnivariatePolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7A33BA9B813A4070">10.1-10 WittCoefficients</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X82C6355287C3BDD1">10.1-11 IsSelfReciprocalUnivariatePolynomial</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X7EEF2A1781432A2D">10.2 <span class="Heading">
 		Semigroup of values of algebraic curves
@@ -566,20 +573,21 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A4755147C24ADF2">11.1-4 AffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X790969937B5D0DB6">11.1-5 AffineSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8361194C86AE807B">11.1-6 Gaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X80C3CD2082CE02F7">11.1-7 PseudoFrobenius</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X82D42FCE81F20277">11.1-8 SpecialGaps</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X84FDF85D7CDEDF3E">11.1-9 Generators</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7ED1549486C251CA">11.1-10 MinimalGenerators</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X80516BCC78FDD45D">11.1-11 RemoveMinimalGeneratorFromAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7B78E02F7C50583F">11.1-12 AddSpecialGapOfAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X844806D97B4781B5">11.1-13 AsAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A2902207BAA3936">11.1-14 IsAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X851788D781A13C50">11.1-15 BelongsToAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8607B621833FAECB">11.1-16 IsFull</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7D4D017A79AD98E2">11.1-17 HilbertBasisOfSystemOfHomogeneousEquations</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X825B1CD37B0407A6">11.1-18 HilbertBasisOfSystemOfHomogeneousInequalities</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8307A0597864B098">11.1-19 EquationsOfGroupGeneratedBy</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A1CE5A98425CEA1">11.1-20 BasisOfGroupGivenByEquations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X867B27BD81104BEE">11.1-7 Genus</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X80C3CD2082CE02F7">11.1-8 PseudoFrobenius</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X82D42FCE81F20277">11.1-9 SpecialGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X84FDF85D7CDEDF3E">11.1-10 Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7ED1549486C251CA">11.1-11 MinimalGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X80516BCC78FDD45D">11.1-12 RemoveMinimalGeneratorFromAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7B78E02F7C50583F">11.1-13 AddSpecialGapOfAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X844806D97B4781B5">11.1-14 AsAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A2902207BAA3936">11.1-15 IsAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X851788D781A13C50">11.1-16 BelongsToAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8607B621833FAECB">11.1-17 IsFull</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7D4D017A79AD98E2">11.1-18 HilbertBasisOfSystemOfHomogeneousEquations</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X825B1CD37B0407A6">11.1-19 HilbertBasisOfSystemOfHomogeneousInequalities</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X8307A0597864B098">11.1-20 EquationsOfGroupGeneratedBy</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11_mj.html#X7A1CE5A98425CEA1">11.1-21 BasisOfGroupGivenByEquations</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11_mj.html#X7F13DF9D7A4FB547">11.2 <span class="Heading">
     Gluings of affine semigroups
@@ -642,14 +650,21 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X79EBBF6D7A2C9A12">12.2-1 BelongsToGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X84FA9A46790B062B">12.2-2 Conductor</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X836AB83682858A11">12.2-3 SmallElements</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X82D40159783F0D48">12.2-4 RepresentsSmallElementsOfGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7E538585815C94D0">12.2-5 GoodSemigroupBySmallElements</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X83F444E586D96723">12.2-6 MaximalElementsOfGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X8503AC767A90C2BD">12.2-7 IrreducibleMaximalElementsOfGoodSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X78B456D27856761F">12.2-8 GoodSemigroupByMaximalElements</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X8742875C836C9488">12.2-9 MinimalGoodGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X78A2A60481EE02E7">12.2-2 Conductor</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7B2F716B7985872B">12.2-3 Multiplicity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X792BCCF87CF63122">12.2-4 IsLocal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X836AB83682858A11">12.2-5 SmallElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X82D40159783F0D48">12.2-6 RepresentsSmallElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7E538585815C94D0">12.2-7 GoodSemigroupBySmallElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X83F444E586D96723">12.2-8 MaximalElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X8503AC767A90C2BD">12.2-9 IrreducibleMaximalElementsOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X78B456D27856761F">12.2-10 GoodSemigroupByMaximalElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X8742875C836C9488">12.2-11 MinimalGoodGenerators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X806865CB794CAC5D">12.2-12 ProjectionOfAGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7D70CD958333D49B">12.2-13 Genus</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X81BD57ED80145EB0">12.2-14 Length</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X809E0C077A613806">12.2-15 AperySetOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7B234A537F0C0AEF">12.2-16 StratifiedAperySetOfGoodSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap12_mj.html#X87FE42227F47666F">12.3 <span class="Heading">
       Symmetric good semigroups
@@ -677,6 +692,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X797999937E4E1E2B">12.5-5 BelongsToGoodIdeal</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X842F3CE07E893949">12.5-6 SmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7DA7AE32837CC1C7">12.5-7 CanonicalIdealOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X7DC7A4B57BC2E55C">12.5-8 AbsoluteIrreduciblesOfGoodSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap12_mj.html#X87AB3B09857B383A">12.5-9 TracksOfGoodSemigroup</a></span>
 </div></div>
 </div>
 <div class="ContChap"><a href="chap13_mj.html#X84A2793F7A9F3E6A">13 <span class="Heading">
@@ -732,7 +749,7 @@
 </div></div>
 </div>
 <div class="ContChap"><a href="chapB_mj.html#X86746B487B54A2D6">B <span class="Heading">"Random" functions</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB_mj.html#X86746B487B54A2D6">B.1 <span class="Heading">Random functions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB_mj.html#X7F3FF11486C5CA4B">B.1 <span class="Heading">Random functions for numerical semigroups</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7CC477867B00AD13">B.1-1 RandomNumericalSemigroup</a></span>
@@ -742,9 +759,18 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X8665F6B08036AFFB">B.1-5 RandomListRepresentingSubAdditiveFunction</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7B459C8C825194E4">B.1-6 NumericalSemigroupWithRandomElementsAndFrobenius</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X78A2A0107CCBBB79">B.1-7 RandomNumericalSemigroupWithGenus</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7FBFEE457E823E15">B.1-8 RandomAffineSemigroupWithGenusAndDimension</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X82569F0079599515">B.1-9 RandomAffineSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7F7BB53A7DF77ED5">B.1-10 RandomFullAffineSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB_mj.html#X7D86D133840F6860">B.2 <span class="Heading">Random functions for affine semigroups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7FBFEE457E823E15">B.2-1 RandomAffineSemigroupWithGenusAndDimension</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X82569F0079599515">B.2-2 RandomAffineSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7F7BB53A7DF77ED5">B.2-3 RandomFullAffineSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapB_mj.html#X7DB89F2078A6095F">B.3 <span class="Heading">Random functions for good semigroups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chapB_mj.html#X7F582A997B4B05EE">B.3-1 RandomGoodSemigroupWithFixedMultiplicity</a></span>
 </div></div>
 </div>
 <div class="ContChap"><a href="chapC_mj.html#X7F1146137C92FF0E">C <span class="Heading">Contributions</span></a>
@@ -782,6 +808,9 @@
 </span>
 </div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC_mj.html#X8130D17C7D6B5096">C.12 <span class="Heading">Functions implemented by N. Matsuoka</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chapC_mj.html#X78ED0D447B74A9FF">C.13 <span class="Heading">Functions implemented by N. Maugeri</span></a>
 </span>
 </div>
 </div>

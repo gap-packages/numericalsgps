@@ -215,14 +215,45 @@
   
   [33X[0;0YFinding the set of all numerical semigroups with a given Frobenius number is
   not  accomplished  via  over  semigroups.  In  order to achieve this, we use
-  fundamental gaps.[133X
+  fundamental gaps. If the multiplicity is fixed, then the construction relies
+  on  the  calculation of irreducible numerical semigroups with that Frobenius
+  number and multiplicity.[133X
   
-  [1X5.4-1 NumericalSemigroupsWithFrobeniusNumber[101X
+  [1X5.4-1 NumericalSemigroupsWithFrobeniusNumberFG[101X
   
-  [33X[1;0Y[29X[2XNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroupsWithFrobeniusNumberFG[102X( [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X  is  an  integer.  The  output  is  the  set  of numerical semigroups with
-  Frobenius number [3Xf[103X. The algorithm implemented is given in [RGSGGJM04].[133X
+  Frobenius number [3Xf[103X. The algorithm implemented is given in [RGSGGJM04a].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(NumericalSemigroupsWithFrobeniusNumberFG(15));[127X[104X
+    [4X[28X200[128X[104X
+  [4X[32X[104X
+  
+  [1X5.4-2 NumericalSemigroupsWithFrobeniusNumberAndMultiplicity[101X
+  
+  [33X[1;0Y[29X[2XNumericalSemigroupsWithFrobeniusNumberAndMultiplicity[102X( [3Xf[103X, [3Xm[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xf[103X  and  [3Xm[103X  are  integers. The output is the set of numerical semigroups with
+  Frobenius number [3Xf[103X and multiplicity [3Xm[103X. The algorithm implemented is given in
+  [ttt19].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));[127X[104X
+    [4X[28X28[128X[104X
+  [4X[32X[104X
+  
+  [1X5.4-3 NumericalSemigroupsWithFrobeniusNumber[101X
+  
+  [33X[1;0Y[29X[2XNumericalSemigroupsWithFrobeniusNumber[102X( [3Xf[103X, [3Xm[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xf[103X     is     an     integer.     As     happens     with     the    function
+  [2XNumericalSemigroupsWithFrobeniusNumberFG[102X  ([14X5.4-1[114X),  the output is the set of
+  numerical   semigroups   with   Frobenius   number   [3Xf[103X.   It  makes  use  of
+  [2XNumericalSemigroupsWithFrobeniusNumberAndMultiplicity[102X ([14X5.4-2[114X) to compute the
+  semigroups   with   the   Frobenius   number  given  for  all  the  possible
+  multiplicities.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(NumericalSemigroupsWithFrobeniusNumber(15));[127X[104X
@@ -273,7 +304,7 @@
   [1X5.6  [33X[0;0YConstructing  the  set  of  numerical  semigroups  with  a given set of[101X
   [1Xpseudo-Frobenius numbers[133X[101X
   
-  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-23[114X).[133X
+  [33X[0;0YRefer to [2XPseudoFrobeniusOfNumericalSemigroup[102X ([14X3.1-24[114X).[133X
   
   [33X[0;0YThese procedures are described in [DGSRP16], and are used to find the set of
   numerical semigroups with a prescribed set of pseudo-Frobenius numbers.[133X
@@ -346,7 +377,7 @@
   [33X[0;0Y[3XPF[103X  is a list of positive integers (given as a list or individual elements).
   The  output  is:  a  list of numerical semigroups S such that PF(S)=PF. When
   Length(PF)=1,       it       makes       use       of      the      function
-  [2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-1[114X)[133X
+  [2XNumericalSemigroupsWithFrobeniusNumber[102X ([14X5.4-3[114X)[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xpf := [ 58, 64, 75 ];[127X[104X
