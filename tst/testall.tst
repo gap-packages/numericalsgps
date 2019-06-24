@@ -2835,8 +2835,7 @@ gap> TracksOfGoodSemigroup(S);
   [ [ 33, infinity ], [ infinity, 16 ] ], [ [ 33, infinity ] ] ]
 
 ##dot.xml
-gap> br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);
-<general mapping: <object> -> <object> >
+gap> br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);;
 gap> Print(DotBinaryRelation(br));
 digraph  NSGraph{rankdir = TB; edge[dir=back];
 1 [label="1"];
@@ -2845,18 +2844,21 @@ digraph  NSGraph{rankdir = TB; edge[dir=back];
 }
 
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> HasseDiagramOfNumericalSemigroup(s,[1,2,3]);
-<general mapping: <object> -> <object> >
+gap> IsHasseDiagram(HasseDiagramOfNumericalSemigroup(s,[1,2,3]));
+true
 
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> HasseDiagramOfBettiElementsOfNumericalSemigroup(s);
-<general mapping: <object> -> <object> >
+gap> hb:=HasseDiagramOfBettiElementsOfNumericalSemigroup(s);;
+gap> List(Source(hb));
+[ 10, 12, 14 ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
-gap> HasseDiagramOfAperyListOfNumericalSemigroup(s);
-<general mapping: <object> -> <object> >
-gap> HasseDiagramOfAperyListOfNumericalSemigroup(s,10);
-<general mapping: <object> -> <object> >
+gap> h:=HasseDiagramOfAperyListOfNumericalSemigroup(s);;
+gap> Source(h)=Set(AperyList(s));
+true
+gap> h:=HasseDiagramOfAperyListOfNumericalSemigroup(s,10);;
+gap> Source(h)=Set(AperyList(s,10));
+true
 
 #gap> s:=NumericalSemigroup(4,6,9);;
 #gap> Print(DotTreeOfGluingsOfNumericalSemigroup(s));
