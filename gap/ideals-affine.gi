@@ -2,11 +2,11 @@
 ##
 #W  ideals-affine.gi           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro Garcia-Sanchez <pedro@ugr.es>
-#W                          Jose Morais <josejoao@fc.up.pt>
+#W                          Helena Martin Cruz <
 ##
 ##
-#Y  Copyright 2005 by Manuel Delgado,
-#Y  Pedro Garcia-Sanchez and Jose Joao Morais
+#Y  Copyright 2019 by Manuel Delgado,
+#Y  Pedro Garcia-Sanchez and Helena Martin Cruz
 #Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ##
