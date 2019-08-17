@@ -2,7 +2,7 @@
 ##
 #W  ideals-affine.gi           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro Garcia-Sanchez <pedro@ugr.es>
-#W                          Helena Martin Cruz <
+#W                          Helena Martin Cruz 
 ##
 ##
 #Y  Copyright 2019 by Manuel Delgado,
@@ -26,22 +26,30 @@
 #############################################################################
 
 InstallGlobalFunction(IdealOfAffineSemigroup, function(l,S)
-    local  I;
+    local  I, gens;
 
     if not IsAffineSemigroup(S) then
         Error("The second argument must be an affine semigroup.");
-    elif not IsRectangularTable(l) then
-        Error("The first argument must be a list of lists with the same length.");
-    elif not ForAll(l, el -> ForAll(el,x -> (IsPosInt(x) or x = 0))) then
-        Error("The first argument must be a list of lists of non negative integers.");
-    elif Dimension(S)<>Length(l[1]) then
-        Error("The length of the lists (generators) must be equal to the dimension of the affine semigroup.");
     fi;
 
+    if IsListOfIntegersNS(l) then
+        gens:=[l];
+        if Dimension(S)<>Length(l) then 
+        Error("The length of the generator must be equal to the dimension of the affine semigroup.");
+        fi;    
+    elif not(IsRectangularTable(l) and ForAll(l,IsListOfIntegersNS)) then
+        Error("The first argument must be a list of lists with the same length, or a list of integers");
+    fi;
+    if IsRectangularTable(l) then
+        gens:=l;
+        if Dimension(S)<>Length(l[1]) then
+            Error("The length of the lists (generators) must be equal to the dimension of the affine semigroup.");
+        fi;
+    fi;
+    
     I := Objectify(IdealsOfAffineSemigroupsType, rec());
-
     SetUnderlyingASIdeal(I,S);
-    SetGenerators(I,Set(l));
+    SetGenerators(I,Set(gens));
 
     return I;
 end );
@@ -282,7 +290,9 @@ InstallGlobalFunction(IntersectionIdealsOfAffineSemigroup, function(I,J)
     return res;
 end);
 
-
+InstallOtherMethod(Intersection2, [IsIdealOfAffineSemigroup, IsIdealOfAffineSemigroup], function(I,J)
+  return IntersectionIdealsOfAffineSemigroup(I,J);
+end);
 
 
 #############################################################################
@@ -406,8 +416,8 @@ end);
 InstallGlobalFunction(TranslationOfIdealOfAffineSemigroup, function(k,I)
     local l;
 
-    if not IsInt(k) then
-        Error("The first argument must be an integer");
+    if not IsListOfIntegersNS(k) then
+        Error("The first argument must be a list of integers");
     fi;
     if not IsIdealOfAffineSemigroup(I) then
         Error("The second argument must be an ideal of an affine semigroup");
@@ -429,6 +439,6 @@ end);
 
 InstallOtherMethod( \+,
     "for an integer and an ideal of an affine semigroup", true,
-    [IsInt and IsAdditiveElement, IsIdealOfAffineSemigroup], function(k,I)
+    [IsList and IsAdditiveElement, IsIdealOfAffineSemigroup], function(k,I)
     return TranslationOfIdealOfAffineSemigroup(k, I);
 end);

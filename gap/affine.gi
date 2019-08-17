@@ -184,6 +184,33 @@ InstallMethod(BelongsToAffineSemigroup,
 end);
 
 InstallMethod(BelongsToAffineSemigroup,
+        "To test whether a list of elements of N^n belongs to an affine semigroup",
+        true,
+        [ IsHomogeneousList, IsAffineSemigroup and HasPMInequality],100,
+
+        function(v,a)
+    local f, b, g, ineq;
+
+    ineq:=PMInequality(a);
+    if not(IsListOfIntegersNS(v)) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    if ForAny(v,x->x<0) then
+        return false;
+    fi;
+
+    f:=ineq[1];
+    b:=ineq[2];
+    g:=ineq[3];
+    if Length(ineq[1])<>Length(v) then
+        Error("The dimension of the vector and the affine semigroup do not coincide.");
+    fi;
+
+    return ((f*v) mod b) <= g*v;
+
+end);
+
+InstallMethod(BelongsToAffineSemigroup,
         "To test whether an element of N^n belongs to an affine semigroup",
         true,
         [ IsHomogeneousList, IsAffineSemigroup and HasInequalities],70,
@@ -555,7 +582,8 @@ InstallMethod(FactorizationsVectorWRTList,
     fi;
     opt2:=List(FactorizationsVectorWRTList(v,ls{[2..len]}),
                x->Concatenation([0],x));
-    return Concatenation(opt1,opt2);
+#    return Concatenation(opt1,opt2);
+    return Union(opt1,opt2);
 end);
 
 ###############################################################################
@@ -589,6 +617,7 @@ InstallMethod(Factorizations,
         return fac;
     end);
 
+
 ############################################################
 # computes a set of generators of the kernel congruence
 # of the monoid morphism associated to the matrix m with
@@ -599,7 +628,7 @@ InstallMethod(GeneratorsOfKernelCongruence,
 	[IsRectangularTable],1,
 	function( m )
 
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+    local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 
@@ -607,13 +636,6 @@ InstallMethod(GeneratorsOfKernelCongruence,
     #if NumSgpsCanUseSI or NumSgpsCanUseSingular then
     #    TryNextMethod();
     #fi;
-
-    ##computes the s degree of a monomial in the semigroup ideal
-    sdegree:=function(m)
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
 
     bintopair:=function(p)
         local m1,m2, d1, d2;
@@ -658,17 +680,10 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
 	[IsRectangularTable, IsMonomialOrdering],1,
   function( m, ord )
 
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+    local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 
-
-    ##computes the s degree of a monomial in the semigroup ideal
-    sdegree:=function(m)
-        local exp;
-        exp:=List([1..ed], i->DegreeIndeterminate(m,i));
-        return exp*msg;
-    end;
 
     bintopair:=function(p)
         local m1,m2, d1, d2;
@@ -748,11 +763,11 @@ InstallMethod(MinimalPresentationOfAffineSemigroup,
 	[IsAffineSemigroup],1,
 	function( a )
 
-    local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
+    local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
           R,id, ie, vars, mingen, exps, bintopair, dim, zero, gen,
           pres,c, rclass;
 
-    msg:=GeneratorsOfAffineSemigroup(a); #for now we do not check minimality of the generators
+    msg:=MinimalGenerators(a);
     ed:=Length(msg);
     if ed=0 then
         return [];
@@ -788,7 +803,7 @@ InstallMethod(BettiElements,
 	function(a)
     local msg, pr;
 
-    msg:=GeneratorsOfAffineSemigroup(a);
+    msg:=MinimalGenerators(a);
 
     pr:=MinimalPresentationOfAffineSemigroup(a);
 
@@ -810,7 +825,7 @@ InstallMethod(IsUniquelyPresented,
          [IsAffineSemigroup],1,
         function(a)
     local gs;
-    gs:=GeneratorsOfAffineSemigroup(a);
+    gs:=MinimalGenerators(a);
     return ForAll(BettiElementsOfAffineSemigroup(a),
                   b->Length(FactorizationsVectorWRTList(b,gs))=2);
 end);
@@ -854,7 +869,7 @@ InstallGlobalFunction(ShadedSetOfElementInAffineSemigroup, function(x,a)
         Error("The first argument must be an element of the second.\n");
     fi;
 
-    msg:=GeneratorsOfAffineSemigroup(a);
+    msg:=MinimalGenerators(a);
     return Filtered(Combinations(msg), c-> (x-Sum(c)) in a);
 end);
 
@@ -872,7 +887,7 @@ InstallGlobalFunction(DeltaSetOfAffineSemigroup,
       Error("The argument must be an affine semigroup");
     fi;
 
-    m:=GeneratorsOfAffineSemigroup(a);
+    m:=MinimalGenerators(a);
 
     if Length(m)=0 then
       return [];
@@ -899,7 +914,7 @@ InstallGlobalFunction(CatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     Info(InfoNumSgps,2,"Computing the Betti elements of the affine semigroup.");
     betti:=BettiElementsOfAffineSemigroup(a);
@@ -932,7 +947,7 @@ InstallGlobalFunction(EqualCatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     lsh:=List(ls, x-> Concatenation(x,[1]));
     ah:=AffineSemigroup(lsh);
     primeq:=BettiElementsOfAffineSemigroup(ah);
@@ -954,7 +969,7 @@ InstallGlobalFunction(HomogeneousCatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     if ls=[] then return 0;
     fi;
 
@@ -983,7 +998,7 @@ InstallGlobalFunction(MonotoneCatenaryDegreeOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
 
     if ls=[] then return 0;
     fi;
@@ -1018,7 +1033,7 @@ InstallMethod(OmegaPrimalityOfElementInAffineSemigroup,
     local i, j, p, rel, rgb, msg, pol, ed,  degree, monomial,  facts, fact, mp,id, reduce, nonnegative,
           mu1,A,B,C, lt, tl, exp, new;
 
-    msg:=GeneratorsOfAffineSemigroup(s);
+    msg:=MinimalGenerators(s);
     ed:=Length(msg);
     mp:=MinimalPresentationOfAffineSemigroup(s);
     p := [];
@@ -1135,7 +1150,7 @@ InstallGlobalFunction(OmegaPrimalityOfAffineSemigroup,
         Error("The argument must be an affine semigroup");
     fi;
 
-    ls:=GeneratorsOfAffineSemigroup(a);
+    ls:=MinimalGenerators(a);
     return Maximum(Set(ls, v-> OmegaPrimalityOfElementInAffineSemigroup(v,a)));
 end);
 
@@ -1197,34 +1212,10 @@ InstallMethod(Elasticity,
 # Computes the elasticity of the affine semigroup a
 #####################################################################
 InstallGlobalFunction(ElasticityOfAffineSemigroup,
-         function(a)
+    function(s)
 
-    local circuits, gens, positive, negative, cir, el;
-
-    #computes the circuits as explained in Eisenbud-Sturmfels Lemma 8.8
-    circuits:=function(a)
-        local cols,rows, e, comb, c, i, circ,mat, matt, sum;
-        rows:=Length(a);
-        cols:=Length(a[1]);
-        e:=IdentityMat(cols);
-        comb:=Combinations([1..cols],rows+1);
-        #Print("Combinations ",comb,"\n");
-        circ:=[];
-        for c in comb do
-            sum:=0;
-            for i in [1..rows+1] do
-                mat:=TransposedMat(a);
-                matt:=mat{Difference(c,[c[i]])};
-                #Print("c ",c," da ",matt,"\n");
-                sum:=sum+(-1)^(i+1)*DeterminantIntMat(matt)*e[c[i]];
-            od;
-            if ForAny(sum, x->x<>0) then
-                Add(circ,sum/Gcd(sum));
-            fi;
-
-        od;
-        return circ;
-    end;
+    local gens, positive, negative, cir, el,a, elt,
+        cols,rows, e, comb, c, i, circ,mat, matt, sum, sp, sn;
 
     # computes x^+
     positive:=function(x)
@@ -1251,13 +1242,44 @@ InstallGlobalFunction(ElasticityOfAffineSemigroup,
     end;
 
 
-    if not(IsAffineSemigroup(a)) then
+    if not(IsAffineSemigroup(s)) then
         Error("The argument must be an affine semigroup.");
     fi;
-    gens:=GeneratorsOfAffineSemigroup(a);
-    cir:=circuits(TransposedMat(gens));
-    cir:=Union(cir,-cir);
-    return Maximum(Set(cir, c->Sum(positive(c))/Sum(negative(c))));
+    gens:=MinimalGenerators(s);
+    a:=TransposedMat(gens);
+    el:=1;
+    #we compute the circuits as explained in Eisenbud-Sturmfels Lemma 8.8
+    rows:=Length(a);
+    cols:=Length(a[1]);
+    e:=IdentityMat(cols);
+    mat:=TransposedMat(a);
+    comb:=IteratorOfCombinations([1..cols],rows+1);
+    #Print("Combinations ",comb,"\n");
+    Info(InfoNumSgps,2,"Running over ",NrCombinations([1..cols],rows+1)," combinations to compute circuits");
+    for c in comb do
+        sum:=0;
+        for i in [1..rows+1] do
+            matt:=mat{Difference(c,[c[i]])};
+            #Print("c ",c," da ",matt,"\n");
+            sum:=sum+(-1)^(i+1)*DeterminantIntMat(matt)*e[c[i]];
+        od;
+        if ForAny(sum, x->x<>0) then
+            sum:=sum/Gcd(sum);
+            sp:=Sum(positive(sum));
+            sn:=Sum(negative(sum));
+            if sp>=sn then 
+                elt:=sp/sn;
+            else
+                elt:=sn/sp;
+            fi;
+            if elt>el then 
+                Info(InfoNumSgps,2, "new elasticity reached ", elt);
+                el:=elt;
+            fi;
+        fi;
+    od;
+ 
+    return el;
 end);
 
 InstallMethod(Elasticity, 
@@ -1276,7 +1298,7 @@ InstallGlobalFunction(LawrenceLiftingOfAffineSemigroup,function(a)
         Error("The argument must be an affine semigroup.");
     fi;
 
-    msg:=GeneratorsOfAffineSemigroup(a);
+    msg:=MinimalGenerators(a);
     ed:=Length(msg);
     dim:=Length(msg[1]);
     id:=IdentityMat(ed);
@@ -1303,7 +1325,7 @@ InstallMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
 	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
 
     Info(InfoNumSgps,2,"Using Lawrence lifting for computing primitive elements.");
-    mgs:=GeneratorsOfAffineSemigroup(a);
+    mgs:=MinimalGenerators(a);
     ed:=Length(mgs);
     dim:=Length(mgs[1]);
     #lft:=LawrenceLiftingOfAffineSemigroup(a);
@@ -1332,7 +1354,7 @@ InstallMethod(TameDegreeOfAffineSemigroup,
         function(a)
   local prim, tams, p, max, ls;
 
-  ls:=GeneratorsOfAffineSemigroup(a);
+  ls:=MinimalGenerators(a);
 
   Info(InfoNumSgps,2,"Computing primitive elements of ", ls);
   prim:=DegreesOfPrimitiveElementsOfAffineSemigroup(a);
@@ -1357,67 +1379,14 @@ InstallMethod(TameDegree,
 
 ###############################################################################
 ##
-###############################################################################
-###############################################################################
-##
-#F RandomAffineSemigroup(n,d[,m])
-# Returns an affine semigroup generated by a n'*d' matrix where d' (the dimension) is randomly choosen from [1..d] and n' (the number of generators) is randomly choosen from [1..n]. The entries of the matrix are randomly choosen from [0..m] (when the third argument is not present, m is taken as n'*d')
-###########################################################################
-InstallGlobalFunction(RandomAffineSemigroup,function(arg)
-  local  rn, rd, max;
-
-  rn := Random([1..arg[1]]);
-  rd := Random([1..arg[2]]);
-  if Length(arg) = 3 then
-    max := arg[3];
-  else
-    max := rn*rd;
-  fi;
-
-  return AffineSemigroup("generators",RandomMat(rn,rd,[0..max]));
-
-end);
-
-###############################################################################
-##
-#F RandomFullAffineSemigroup(n,d[,m, string])
-# Returns a full affine semigroup either given by equations or inequalities (when no string is given, one is choosen at random). The matrix is an n'*d' matrix where d' (the dimension) is randomly choosen from [1..d] and n' is randomly choosen from [1..n]. When it is given by equations, the moduli are choosen at random. The entries of the matrix (and moduli) are randomly choosen from [0..m] (when the third integer is not present, m is taken as n'*d')
-###########################################################################
-InstallGlobalFunction(RandomFullAffineSemigroup,function(arg)
-  local  type, nums, rn, rd, max;
-
-  if First(arg, IsString) <> fail then
-    type := First(arg, IsString);
-  else
-    type := RandomList(["equations","inequalities"]);
-  fi;
-
-  nums := Filtered(arg,IsInt);
-
-  rn := Random([1..nums[1]]);
-  rd := Random([1..nums[2]]);
-  if Length(nums) = 3 then
-    max := nums[3];
-  else
-    max := rn*rd;
-  fi;
-
-
-  if type = "equations" then
-    return AffineSemigroup(type,[RandomMat(rn,rd,[0..max]),RandomMat(1,rd,[0..max])[1]]);
-  fi;
-  return AffineSemigroup(type,RandomMat(rn,rd,[0..max]));
-end);
-
 ##########################################################################
 ##
 #F NumSgpsUseNormaliz
-#  Loads the package NormalizInterface and reads affine-extra-ni and ideals-extra-ni
+#  Loads the package NormalizInterface and reads affine-extra-ni
 ##########################################################################
 InstallGlobalFunction(NumSgpsUseNormaliz, function()
     if LoadPackage("NormalizInterface")=true then
         ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
-        ReadPackage("numericalsgps", "gap/ideals-extra-ni.gi");
         NumSgpsCanUseNI:=true;
         return true;
     else
