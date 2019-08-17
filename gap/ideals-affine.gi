@@ -213,6 +213,9 @@ InstallGlobalFunction(UnionIdealsOfAffineSemigroup, function(I,J)
 end);
 
 
+InstallMethod(Union2, [IsIdealOfAffineSemigroup, IsIdealOfAffineSemigroup], function(I,J)
+  return UnionIdealsOfAffineSemigroup(I,J);
+end);
 
 
 #############################################################################
@@ -225,15 +228,15 @@ end);
 InstallMethod(IntersectionPrincipalIdealsOfAffineSemigroup,[IsIdealOfAffineSemigroup,IsIdealOfAffineSemigroup],1,function(I,J)
     local a, b, S, l, n, A, A2, P, x, res, i;
     
-    if not (Length(GeneratorsOfIdealOfAffineSemigroup(I))=1 and Length(GeneratorsOfIdealOfAffineSemigroup(J))=1)
+    if not (Length(MinimalGenerators(I))=1 and Length(MinimalGenerators(J))=1)
     or not AmbientAffineSemigroupOfIdeal(I) = AmbientAffineSemigroupOfIdeal(J) then
         Error("The arguments must be principal ideals of the same affine semigroup.");
     fi;
 
-    a := Generators(I)[1];
-    b := Generators(J)[1];
-    S := UnderlyingASIdeal(I);
-    l := GeneratorsOfAffineSemigroup(S);
+    a := MinimalGenerators(I)[1];
+    b := MinimalGenerators(J)[1];
+    S := AmbientAffineSemigroupOfIdeal(I);
+    l := MinimalGenerators(S);
     n := Length(l);
     A := TransposedMat(l);
     A2 := TransposedMat(Concatenation(l,-l,[-b+a]));
@@ -290,7 +293,7 @@ InstallGlobalFunction(IntersectionIdealsOfAffineSemigroup, function(I,J)
     return res;
 end);
 
-InstallOtherMethod(Intersection2, [IsIdealOfAffineSemigroup, IsIdealOfAffineSemigroup], function(I,J)
+InstallMethod(Intersection2, [IsIdealOfAffineSemigroup, IsIdealOfAffineSemigroup], function(I,J)
   return IntersectionIdealsOfAffineSemigroup(I,J);
 end);
 
