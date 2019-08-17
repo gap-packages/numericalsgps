@@ -103,6 +103,14 @@ rec(
 ),
 
 rec(
+  LastName      := "Martin Cruz",
+  FirstNames    := "Helena",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  WWWHome       := "https://github.com/helenahmc"
+),
+
+rec(
   LastName      := "Maugeri",
   FirstNames    := "Nicola",
   IsAuthor      := false,
