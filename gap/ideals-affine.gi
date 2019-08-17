@@ -32,6 +32,13 @@ InstallGlobalFunction(IdealOfAffineSemigroup, function(l,S)
         Error("The second argument must be an affine semigroup.");
     fi;
 
+    if l=[] then
+        I := Objectify(IdealsOfAffineSemigroupsType, rec());
+        SetUnderlyingASIdeal(I,S);
+        SetGenerators(I,Set([]));
+        return I;
+    fi;
+
     if IsListOfIntegersNS(l) then
         gens:=[l];
         if Dimension(S)<>Length(l) then 
@@ -54,6 +61,11 @@ InstallGlobalFunction(IdealOfAffineSemigroup, function(l,S)
     return I;
 end );
 
+InstallMethod(IsEmpty, "for ideals of affine semigroups", [IsIdealOfAffineSemigroup], 
+    function(I)
+        return Generators(I)=[];
+    end);
+
 
 ##############################################################################
 ## L is a list of integers tuples and S an affine semigroup
@@ -74,7 +86,7 @@ end);
 InstallOtherMethod(\+,
     "for an integer tuple and an affine semigroup", true,
     [IsList, IsAffineSemigroup], function(x,S)
-    return IdealOfAffineSemigroup([x],S);
+    return IdealOfAffineSemigroup(x,S);
 end);
 
 #############################################################################
@@ -272,23 +284,16 @@ InstallGlobalFunction(IntersectionIdealsOfAffineSemigroup, function(I,J)
         Error("The arguments must be ideals of the same affine semigroup.");
     fi;
 
-    S := UnderlyingASIdeal(I);
-    l1 := GeneratorsOfIdealOfAffineSemigroup(I);
-    l2 := GeneratorsOfIdealOfAffineSemigroup(J);
-    res := IntersectionPrincipalIdealsOfAffineSemigroup(l1[1]+S,l2[1]+S);
+    S := AmbientAffineSemigroupOfIdeal(I);
+    l1 := MinimalGenerators(I);
+    l2 := MinimalGenerators(J);
+    res := []+S;
     for i in l1 do
         for j in l2 do
             it := IntersectionPrincipalIdealsOfAffineSemigroup(i+S, j+S);
-            if it <> [] then
-                if res = [] then
-                    res := it;
-                else
-                    res := UnionIdealsOfAffineSemigroup(res, it);
-                fi;
-            fi;
+            res:=Union(res,it);
         od;
     od;
-
 
     return res;
 end);
