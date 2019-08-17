@@ -423,6 +423,10 @@ InstallGlobalFunction(TranslationOfIdealOfAffineSemigroup, function(k,I)
         Error("The second argument must be an ideal of an affine semigroup");
     fi;
 
+    if Dimension(AmbientAffineSemigroupOfIdeal(I))<>Length(k) then
+        Error("Dimension of the ambient semigroup of the ideal and length of the translation vector do not coincide");
+    fi;
+
     l := List(GeneratorsOfIdealOfAffineSemigroup(I), g -> g+k);
 
     return IdealOfAffineSemigroup(l, AmbientAffineSemigroupOfIdeal(I));
