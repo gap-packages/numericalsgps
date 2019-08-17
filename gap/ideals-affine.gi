@@ -2,7 +2,7 @@
 ##
 #W  ideals-affine.gi           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro Garcia-Sanchez <pedro@ugr.es>
-#W                          Helena Martin Cruz 
+#W                          Helena Martin Cruz <Helena.mc18@gmail.com>
 ##
 ##
 #Y  Copyright 2019 by Manuel Delgado,
@@ -442,3 +442,18 @@ InstallOtherMethod( \+,
     [IsList and IsAdditiveElement, IsIdealOfAffineSemigroup], function(k,I)
     return TranslationOfIdealOfAffineSemigroup(k, I);
 end);
+
+
+#############################################################################
+##
+#O  MaximalIdealOfNumericalSemigroup(S)
+##
+##  Returns the maximal ideal of S.
+##
+#############################################################################
+InstallMethod(MaximalIdeal,
+    "of a numerical semigroup",
+    [IsAffineSemigroup],
+    function(S)
+        return MinimalGenerators(S)+S;
+    end);

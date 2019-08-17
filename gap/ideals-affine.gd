@@ -2,11 +2,11 @@
 ##
 #W  ideals-affine.gd           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
-#W                          Jose Morais <josejoao@fc.up.pt>
+#W                          Helena Martin Cruz <Helena.mc18@gmail.com>
 ##
 ##
 #Y  Copyright 2005 by Manuel Delgado,
-#Y  Pedro Garcia-Sanchez and Jose Joao Morais
+#Y  Pedro Garcia-Sanchez and Helena Marting Cruz
 #Y  We adopt the copyright regulations of GAP as detailed in the
 #Y  copyright notice in the GAP manual.
 ##
@@ -172,3 +172,12 @@ DeclareSynonymAttr("MinimalGeneratingSystemOfIdealOfAffineSemigroup", MinimalGen
 ##
 #############################################################################
 DeclareGlobalFunction("TranslationOfIdealOfAffineSemigroup");
+
+#############################################################################
+##
+#O  MaximalIdealOfNumericalSemigroup(S)
+##
+##  Returns the maximal ideal of S.
+##
+#############################################################################
+DeclareOperation("MaximalIdeal",[IsAffineSemigroup]);
