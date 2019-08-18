@@ -36,7 +36,7 @@ DeclareCategory( "IsIdealOfAffineSemigroup", IsAdditiveMagma and IsIdealOfAffine
 # Elements of ideals of affine semigroups are integers tuples, so ideals of
 # affine semigroups are collections of integers tuples.
 BindGlobal( "IdealsOfAffineSemigroupsType",
-        NewType( CollectionsFamily(CyclotomicsFamily),
+        NewType( CollectionsFamily( CollectionsFamily(CyclotomicsFamily)),
                  IsIdealOfAffineSemigroup));
 
 
