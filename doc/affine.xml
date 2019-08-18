@@ -1074,7 +1074,7 @@ gap> MinimalGenerators([2,2]+j);
                 </ManSection>
 
 <ManSection>
-    <Func Arg="I, J" Name="UnionIdealsOfAffinSemigroup"></Func>
+    <Func Arg="I, J" Name="UnionIdealsOfAffineSemigroup"></Func>
     <Func Arg="I, J" Name="Union" Label="for ideals of affine semigroup"></Func>
     <Description>
         <A>I, J</A> are ideals of an affine semigroup.

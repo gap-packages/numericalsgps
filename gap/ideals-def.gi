@@ -976,6 +976,22 @@ InstallGlobalFunction(IntersectionIdealsOfNumericalSemigroup, function(I, J)
 
 end);
 
+#############################################################################
+##
+#O  Union(I,J)
+##
+##  Given two ideals <I> and <J> of a numerical semigroup S
+##  returns their union
+##
+#############################################################################
+InstallOtherMethod(Union2, [IsIdealOfNumericalSemigroup, IsIdealOfNumericalSemigroup], 
+function(I,J)
+  if not(AmbientNumericalSemigroupOfIdeal(I)=AmbientNumericalSemigroupOfIdeal(J)) then
+    Error("Both ideals must be ideals of the same semigroup");
+  fi;
+  return Union(MinimalGenerators(I),MinimalGenerators(J))+AmbientNumericalSemigroupOfIdeal(I);
+end);
+
 
 ########################################################################
 ##
