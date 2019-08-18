@@ -158,14 +158,15 @@ end);
 #M Methods for the comparison of ideals of a numerical semigroup.
 ##
 InstallMethod( \=,
-        "for two ideals of a numerical semigroup",
+        "for two ideals of numerical semigroups",
         [IsIdealOfNumericalSemigroup,
          IsIdealOfNumericalSemigroup],
         function(I, J )
 
     if not AmbientNumericalSemigroupOfIdeal(I)
        = AmbientNumericalSemigroupOfIdeal(J) then
-        Error("The ambient numerical semigroup must be the same for both ideals.");
+        #Error("The ambient numerical semigroup must be the same for both ideals.");
+        return false;
     fi;
     if HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I) and HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(J) then
         return MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I)

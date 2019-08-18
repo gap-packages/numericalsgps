@@ -147,6 +147,39 @@ InstallGlobalFunction(AmbientAffineSemigroupOfIdeal, function(I)
     return UnderlyingASIdeal(I);
 end);
 
+# equality for ideals of affine semigroups
+
+InstallMethod( \=,
+        "for two ideals of affine semigroups",
+        [IsIdealOfAffineSemigroup,
+         IsIdealOfAffineSemigroup],
+    function(I, J )
+
+    if not AmbientAffineSemigroupOfIdeal(I)
+       = AmbientAffineSemigroupOfIdeal(J) then
+        return false;
+    fi;
+    return MinimalGenerators(I)=MinimalGenerators(J);
+end);
+
+
+# inclusion
+
+InstallMethod(IsSubset, 
+    "for ideals of affine semigroups",
+        [IsIdealOfAffineSemigroup,
+         IsIdealOfAffineSemigroup],
+    function(I, J )
+    local mgJ;
+
+    if not AmbientAffineSemigroupOfIdeal(I)
+       = AmbientAffineSemigroupOfIdeal(J) then
+        return false;
+    fi;
+    mgJ:=MinimalGenerators(J);
+    return ForAll(mgJ, j-> BelongsToIdealOfAffineSemigroup(j,I));
+end);
+
 #############################################################################
 ##
 #P  IsIntegralIdealOfAffineSemigroup(I)
@@ -312,7 +345,7 @@ end);
 #############################################################################
 
 InstallGlobalFunction(BelongsToIdealOfAffineSemigroup, function(x, I)
-    local gI, S, small;
+    local gI, S;
 
     if not (IsIdealOfAffineSemigroup(I) and IsListOfIntegersNS(x))  then
         Error("The arguments must be an integer tuple and an ideal of an affine semigroup.");
@@ -321,9 +354,8 @@ InstallGlobalFunction(BelongsToIdealOfAffineSemigroup, function(x, I)
     fi;
 
     S := AmbientAffineSemigroupOfIdeal(I);
-    gI := GeneratorsOfIdealOfAffineSemigroup(I);
-
-    return(First(gI, n -> (BelongsToAffineSemigroup(x-n,S))) <> fail);
+    gI := Generators(I);
+    return(First(gI, n -> x-n in S) <> fail);
 end);
 
 
