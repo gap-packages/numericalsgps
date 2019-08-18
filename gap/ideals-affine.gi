@@ -343,8 +343,22 @@ end);
 ##  Tests if the integer tuple n belongs to the ideal I.
 ##
 #############################################################################
+#############################################################################
+## n in I means BelongsToIdealOfAffineSemigroup(n,I)
+#############################################################################
 
-InstallGlobalFunction(BelongsToIdealOfAffineSemigroup, function(x, I)
+InstallMethod( \in,
+    "for ideals of affine semigroups", 
+    [IsHomogeneousList, IsIdealOfAffineSemigroup],
+    function(x,I)
+        return BelongsToIdealOfAffineSemigroup(x,I);
+end);
+
+
+InstallMethod(BelongsToIdealOfAffineSemigroup, 
+    "tests if a vector is in an ideal", 
+    [IsHomogeneousList, IsIdealOfAffineSemigroup],
+    function(x, I)
     local gI, S;
 
     if not (IsIdealOfAffineSemigroup(I) and IsListOfIntegersNS(x))  then
@@ -359,16 +373,6 @@ InstallGlobalFunction(BelongsToIdealOfAffineSemigroup, function(x, I)
 end);
 
 
-
-#############################################################################
-## n in I means BelongsToIdealOfAffineSemigroup(n,I)
-#############################################################################
-
-InstallMethod( \in,
-    "for ideals of affine semigroups", [IsList, IsIdealOfAffineSemigroup],
-    function(x,I)
-        return BelongsToIdealOfAffineSemigroup(x,I);
-end);
 
 
 

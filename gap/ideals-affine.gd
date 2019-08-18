@@ -20,8 +20,7 @@
 ##
 #############################################################################
 DeclareRepresentation( "IsIdealOfAffineSemigroupRep", IsAttributeStoringRep,
-        ["UnderlyingASIdeal", "Generators"] );
-
+        [] );
 
 #############################################################################
 ##
@@ -130,12 +129,12 @@ DeclareGlobalFunction("IntersectionIdealsOfAffineSemigroup");
 
 #############################################################################
 ##
-#F  BelongsToIdealOfAffineSemigroup(n,I)
+#O  BelongsToIdealOfAffineSemigroup(n,I)
 ##
 ##  Tests if the integer tuple n belongs to the ideal I.
 ##
 #############################################################################
-DeclareGlobalFunction("BelongsToIdealOfAffineSemigroup");
+DeclareOperation("BelongsToIdealOfAffineSemigroup",[IsHomogeneousList,IsIdealOfAffineSemigroup]);
 
 
 #############################################################################
