@@ -109,7 +109,7 @@ gap> AmbientNumericalSemigroupOfIdeal(I);
                 </ManSection>
 
                 <ManSection>
-                    <Prop Arg="I" Name="IsIntegral"></Prop>
+                    <Prop Arg="I" Name="IsIntegral" Label="for ideal of numerical semigroup"></Prop>
                     <Prop Arg="I" Name="IsIntegralIdealOfNumericalSemigroup"></Prop>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup, say <M>S</M>.
