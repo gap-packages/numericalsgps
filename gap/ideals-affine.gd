@@ -59,8 +59,6 @@ DeclareAttribute( "UnderlyingASIdeal", IsIdealOfAffineSemigroup);
 #A  GeneratorsOfIdealOfAffineSemigroup(I)
 ##
 ##  Returns a set of generators of the ideal I.
-##  If a minimal generating system has already been computed, this
-##  is the set returned.
 ############################################################################
 DeclareAttribute( "Generators", IsIdealOfAffineSemigroup);
 DeclareSynonymAttr( "GeneratorsOfIdealOfAffineSemigroup", Generators);
@@ -150,7 +148,6 @@ DeclareGlobalFunction("MultipleOfIdealOfAffineSemigroup");
 #############################################################################
 ##
 #A MinimalGenerators(I)
-#A MinimalGeneratingSystem(I)
 #A MinimalGeneratingSystemOfIdealOfAffineSemigroup(I)
 ##
 ## The argument I is an ideal of an affine semigroup
