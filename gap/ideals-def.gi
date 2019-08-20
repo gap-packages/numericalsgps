@@ -158,14 +158,15 @@ end);
 #M Methods for the comparison of ideals of a numerical semigroup.
 ##
 InstallMethod( \=,
-        "for two ideals of a numerical semigroup",
+        "for two ideals of numerical semigroups",
         [IsIdealOfNumericalSemigroup,
          IsIdealOfNumericalSemigroup],
         function(I, J )
 
     if not AmbientNumericalSemigroupOfIdeal(I)
        = AmbientNumericalSemigroupOfIdeal(J) then
-        Error("The ambient numerical semigroup must be the same for both ideals.");
+        #Error("The ambient numerical semigroup must be the same for both ideals.");
+        return false;
     fi;
     if HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I) and HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(J) then
         return MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I)
@@ -973,6 +974,22 @@ InstallGlobalFunction(IntersectionIdealsOfNumericalSemigroup, function(I, J)
 
     return(IdealOfNumericalSemigroup(l,AmbientNumericalSemigroupOfIdeal(I)));
 
+end);
+
+#############################################################################
+##
+#O  Union(I,J)
+##
+##  Given two ideals <I> and <J> of a numerical semigroup S
+##  returns their union
+##
+#############################################################################
+InstallOtherMethod(Union2, [IsIdealOfNumericalSemigroup, IsIdealOfNumericalSemigroup], 
+function(I,J)
+  if not(AmbientNumericalSemigroupOfIdeal(I)=AmbientNumericalSemigroupOfIdeal(J)) then
+    Error("Both ideals must be ideals of the same semigroup");
+  fi;
+  return Union(MinimalGenerators(I),MinimalGenerators(J))+AmbientNumericalSemigroupOfIdeal(I);
 end);
 
 

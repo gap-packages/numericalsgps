@@ -5,6 +5,8 @@
 #W                          Jose Morais <josejoao@fc.up.pt>
 ##
 ##
+#H  @(#)$Id: init.g,v 1.1.10 $
+##
 #Y  Copyright 2005 by Manuel Delgado,
 #Y  Pedro A. Garcia-Sanchez and Jose Joao Morais
 #Y  We adopt the copyright regulations of GAP as detailed in the
@@ -51,18 +53,19 @@ NumSgpsCanUseGradedModules:=false;
 
 ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );
+ReadPackage( "numericalsgps", "gap/ideals-affine.gd" );
 
 ##
 ## obsolet
 ##
-#ReadPackage( "numericalsgps", "gap/obsolet.gd" );
+# ReadPackage( "numericalsgps", "gap/obsolet.gd" );
 ##
 ## dot
 ##
 ReadPackage( "numericalsgps", "gap/dot.gd" );
 
 ##
-## optional packages
+## optiOnal packages
 ##
 
 if IsPackageMarkedForLoading("NormalizInterface","0.0") then

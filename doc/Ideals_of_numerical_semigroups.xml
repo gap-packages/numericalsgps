@@ -109,7 +109,7 @@ gap> AmbientNumericalSemigroupOfIdeal(I);
                 </ManSection>
 
                 <ManSection>
-                    <Prop Arg="I" Name="IsIntegral"></Prop>
+                    <Prop Arg="I" Name="IsIntegral" Label="for ideal of numerical semigroup"></Prop>
                     <Prop Arg="I" Name="IsIntegralIdealOfNumericalSemigroup"></Prop>
                     <Description>
                         <A>I</A> is an ideal of a numerical semigroup, say <M>S</M>.
@@ -410,6 +410,24 @@ true
 ]]></Example>
 									</Description>
                 </ManSection>
+
+<ManSection>
+    <Func Arg="I, J" Name="Union" Label="for ideals of affine semigroup"></Func>
+    <Description>
+        <A>I, J</A> are ideals of a numerical semigroup.
+        The output is the union of both ideals.
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> I:=2+s;;
+gap> J:=3+s;;
+gap> Union(I,J);
+<Ideal of numerical semigroup>
+gap> Generators(last);
+[ 2, 3 ]
+]]></Example>
+      </Description>
+  </ManSection>
+
 
                 <ManSection>
                     <Oper Name="Intersection" Arg="I, J" Label="for ideals of numerical semigroups"/>
