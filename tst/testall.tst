@@ -2525,6 +2525,63 @@ gap> OmegaPrimality(a);
 gap> OmegaPrimalityOfAffineSemigroup(a);
 2
 
+# ideals of affine semigroups
+
+gap> a:=AffineSemigroup([2,0],[0,2]);;
+gap> i:=IdealOfAffineSemigroup([[1,0],[0,3]],a);
+<Ideal of affine semigroup>
+gap> [[1,0],[0,3]]+a=i;
+true
+gap> [0,1]+a;
+<Ideal of affine semigroup>
+gap> IsSubset(i,[1,0]+a);
+true
+gap> IsSubset([1,0]+a,i);
+false
+gap> IsIdealOfAffineSemigroup(i);
+true
+gap> i:=[[1,0],[3,0]]+AffineSemigroup([2,0],[0,2]);;
+gap> Generators(i);
+[ [ 1, 0 ], [ 3, 0 ] ]
+gap> MinimalGenerators(i);
+[ [ 1, 0 ] ]
+gap> AmbientAffineSemigroupOfIdeal(i)=a;
+true
+gap> IsIntegral([1,0]+a);
+false
+gap> IsIntegral([2,0]+a);
+true
+gap> i:=[2,0]+a;;
+gap> [2,0] in i;
+true
+gap> [4,4] in i;
+true
+gap> [1,2] in i;
+false
+gap> j:=[[1,0],[0,1]]+a;;
+gap> MinimalGenerators(i+j);
+[ [ 2, 1 ], [ 3, 0 ] ]
+gap> j:=[[1,0],[0,1]]+a;;
+gap> MinimalGenerators(2*j);
+[ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
+gap> j:=[[1,0],[0,1]]+a;;
+gap> MinimalGenerators([2,2]+j);
+[ [ 2, 3 ], [ 3, 2 ] ]
+gap> i:=[2,0]+a;;
+gap> j:=[[1,0],[0,1]]+a;;
+gap> MinimalGenerators(Union(i,j));
+[ [ 0, 1 ], [ 1, 0 ], [ 2, 0 ] ]
+gap> a:=AffineSemigroup([1,0],[0,1]);;
+gap> i:=[2,0]+a;;
+gap> j:=[[1,0],[0,1]]+a;;
+gap> MinimalGenerators(Intersection(i,j));
+[ [ 2, 0 ] ]
+gap> a:=AffineSemigroup([2,0],[0,2]);;
+gap> MinimalGenerators(MaximalIdeal(a));
+[ [ 0, 2 ], [ 2, 0 ] ]
+
+
+
 ##good-semigroups.xml
 
 gap> s:=NumericalSemigroup(3,5,7);;
