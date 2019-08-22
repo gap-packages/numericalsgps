@@ -1378,6 +1378,15 @@ true
 gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(2*I);
 [ 0, 1, 2 ]
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> I:=2+s;;
+gap> J:=3+s;;
+gap> Generators(Union(I,J));
+[ 2, 3 ]
+gap> Generators(Intersection(I,J));
+[ 8, 9, 10, 11 ]
+
+
 gap> S:=NumericalSemigroup(14, 15, 20, 21, 25);;
 gap> I:=[0,1]+S;;
 gap> II:=S-I;;
