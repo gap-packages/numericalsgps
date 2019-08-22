@@ -7,6 +7,7 @@ if fail = LoadPackage("AutoDoc", ">= 2016.01.21") then
     Error("AutoDoc 2016.01.21 or newer is required");
 fi;
 
-AutoDoc(rec( scaffold := rec( MainPage := false, gapdoc_latex_options := rec(EarlyExtraPreamble:="\\usepackage{graphicx}") ))); # ,InputEncoding := "laatin1"
+AutoDoc(rec( gapdoc := rec(MainPage := false, LaTeXOptions := rec(EarlyExtraPreamble:="\\usepackage{graphicx}") )));
 PrintTo("version", GAPInfo.PackageInfoCurrent.Version);
-
+#
+QUIT;
