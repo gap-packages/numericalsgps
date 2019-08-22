@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.2.0
+                                 Version 1.2.1
   
   
                                  Manuel Delgado
@@ -268,11 +268,12 @@
       7.1-18 SubtractIdealsOfNumericalSemigroup
       7.1-19 Difference
       7.1-20 TranslationOfIdealOfNumericalSemigroup
-      7.1-21 Intersection
-      7.1-22 MaximalIdeal
-      7.1-23 CanonicalIdeal
-      7.1-24 IsCanonicalIdeal
-      7.1-25 TypeSequence
+      7.1-21 Union
+      7.1-22 Intersection
+      7.1-23 MaximalIdeal
+      7.1-24 CanonicalIdeal
+      7.1-25 IsCanonicalIdeal
+      7.1-26 TypeSequence
     7.2 [33X[0;0YBlow ups and closures[133X
       7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
       7.2-2 HilbertFunction
@@ -454,6 +455,20 @@
       11.4-10 TameDegree
       11.4-11 OmegaPrimality
       11.4-12 OmegaPrimality
+    11.5 [33X[0;0YFinitely generated ideals of affine semigroups[133X
+      11.5-1 IdealOfAffineSemigroup
+      11.5-2 IsIdealOfAffineSemigroup
+      11.5-3 MinimalGenerators
+      11.5-4 Generators
+      11.5-5 AmbientAffineSemigroupOfIdeal
+      11.5-6 IsIntegral
+      11.5-7 BelongsToIdealOfAffineSemigroup
+      11.5-8 SumIdealsOfAffinSemigroup
+      11.5-9 MultipleOfIdealOfAffineSemigroup
+      11.5-10 TranslationOfIdealOfAffineSemigroup
+      11.5-11 UnionIdealsOfAffineSemigroup
+      11.5-12 Intersection
+      11.5-13 MaximalIdeal
   12 [33X[0;0YGood semigroups[133X
     12.1 [33X[0;0YDefining good semigroups[133X
       12.1-1 IsGoodSemigroup
@@ -550,6 +565,7 @@
     C.11 [33X[0;0YFunctions implemented by C. Cisto[133X
     C.12 [33X[0;0YFunctions implemented by N. Matsuoka[133X
     C.13 [33X[0;0YFunctions implemented by N. Maugeri[133X
+    C.14 [33X[0;0YFunctions implemented by H. Martín Cruz[133X
   
   
   [32X

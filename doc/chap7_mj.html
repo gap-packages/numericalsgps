@@ -39,7 +39,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X85144E0F791038AE">7.1-3 MinimalGenerators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7A842A4385B73C63">7.1-4 Generators</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X81E445518529C175">7.1-5 AmbientNumericalSemigroupOfIdeal</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7EDE6C287CD5FE3D">7.1-6 IsIntegral</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7B0343BF794AC7EA">7.1-6 IsIntegral</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7811E92487110941">7.1-7 SmallElements</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7EDDC78883A98A6E">7.1-8 Conductor</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X821919B47D3D191A">7.1-9 Minimum</a></span>
@@ -54,11 +54,12 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X78743CE2845B5860">7.1-18 SubtractIdealsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X8321A10885D2DEF8">7.1-19 Difference</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X803921F97BEDCA88">7.1-20 TranslationOfIdealOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7B34033979009F64">7.1-21 Intersection</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7D77F1BA7F22DA70">7.1-22 MaximalIdeal</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X85975C3C86C2BC53">7.1-23 CanonicalIdeal</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7D15FA4C843A13B7">7.1-24 IsCanonicalIdeal</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7BB2A1B28139AA7E">7.1-25 TypeSequence</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X87340A6B7F532BB5">7.1-21 Union</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7B34033979009F64">7.1-22 Intersection</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7D77F1BA7F22DA70">7.1-23 MaximalIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X85975C3C86C2BC53">7.1-24 CanonicalIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7D15FA4C843A13B7">7.1-25 IsCanonicalIdeal</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7BB2A1B28139AA7E">7.1-26 TypeSequence</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X81CD9B12807EEA85">7.2 <span class="Heading">
                     Blow ups and closures
@@ -217,7 +218,7 @@ false
 &lt;Numerical semigroup with 2 generators&gt;
 </pre></div>
 
-<p><a id="X7EDE6C287CD5FE3D" name="X7EDE6C287CD5FE3D"></a></p>
+<p><a id="X7B0343BF794AC7EA" name="X7B0343BF794AC7EA"></a></p>
 
 <h5>7.1-6 IsIntegral</h5>
 
@@ -508,9 +509,27 @@ true
 true
 </pre></div>
 
+<p><a id="X87340A6B7F532BB5" name="X87340A6B7F532BB5"></a></p>
+
+<h5>7.1-21 Union</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Union</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">I, J</var> are ideals of a numerical semigroup. The output is the union of both ideals.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">I:=2+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">J:=3+s;;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Union(I,J);</span>
+&lt;Ideal of numerical semigroup&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(last);</span>
+[ 2, 3 ]
+</pre></div>
+
 <p><a id="X7B34033979009F64" name="X7B34033979009F64"></a></p>
 
-<h5>7.1-21 Intersection</h5>
+<h5>7.1-22 Intersection</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Intersection</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IntersectionIdealsOfNumericalSemigroup</code>( <var class="Arg">I</var>, <var class="Arg">J</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
@@ -528,7 +547,7 @@ true
 
 <p><a id="X7D77F1BA7F22DA70" name="X7D77F1BA7F22DA70"></a></p>
 
-<h5>7.1-22 MaximalIdeal</h5>
+<h5>7.1-23 MaximalIdeal</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalIdeal</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalIdealOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
@@ -545,7 +564,7 @@ true
 
 <p><a id="X85975C3C86C2BC53" name="X85975C3C86C2BC53"></a></p>
 
-<h5>7.1-23 CanonicalIdeal</h5>
+<h5>7.1-24 CanonicalIdeal</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalIdeal</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
@@ -569,7 +588,7 @@ true
 
 <p><a id="X7D15FA4C843A13B7" name="X7D15FA4C843A13B7"></a></p>
 
-<h5>7.1-24 IsCanonicalIdeal</h5>
+<h5>7.1-25 IsCanonicalIdeal</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdeal</code>( <var class="Arg">E</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCanonicalIdealOfNumericalSemigroup</code>( <var class="Arg">E</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
@@ -589,7 +608,7 @@ true
 
 <p><a id="X7BB2A1B28139AA7E" name="X7BB2A1B28139AA7E"></a></p>
 
-<h5>7.1-25 TypeSequence</h5>
+<h5>7.1-26 TypeSequence</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TypeSequence</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TypeSequenceOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>

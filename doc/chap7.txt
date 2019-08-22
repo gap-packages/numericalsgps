@@ -384,7 +384,24 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-21 Intersection[101X
+  [1X7.1-21 Union[101X
+  
+  [33X[1;0Y[29X[2XUnion[102X( [3XI[103X, [3XJ[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XI,  J[103X  are  ideals of a numerical semigroup. The output is the union of both
+  ideals.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XI:=2+s;;[127X[104X
+    [4X[25Xgap>[125X [27XJ:=3+s;;[127X[104X
+    [4X[25Xgap>[125X [27XUnion(I,J);[127X[104X
+    [4X[28X<Ideal of numerical semigroup>[128X[104X
+    [4X[25Xgap>[125X [27XGenerators(last);[127X[104X
+    [4X[28X[ 2, 3 ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.1-22 Intersection[101X
   
   [33X[1;0Y[29X[2XIntersection[102X( [3XI[103X, [3XJ[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIntersectionIdealsOfNumericalSemigroup[102X( [3XI[103X, [3XJ[103X ) [32X function[133X
@@ -401,7 +418,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-22 MaximalIdeal[101X
+  [1X7.1-23 MaximalIdeal[101X
   
   [33X[1;0Y[29X[2XMaximalIdeal[102X( [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XMaximalIdealOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
@@ -416,7 +433,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-23 CanonicalIdeal[101X
+  [1X7.1-24 CanonicalIdeal[101X
   
   [33X[1;0Y[29X[2XCanonicalIdeal[102X( [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XCanonicalIdealOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
@@ -439,7 +456,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-24 IsCanonicalIdeal[101X
+  [1X7.1-25 IsCanonicalIdeal[101X
   
   [33X[1;0Y[29X[2XIsCanonicalIdeal[102X( [3XE[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsCanonicalIdealOfNumericalSemigroup[102X( [3XE[103X ) [32X property[133X
@@ -459,7 +476,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.1-25 TypeSequence[101X
+  [1X7.1-26 TypeSequence[101X
   
   [33X[1;0Y[29X[2XTypeSequence[102X( [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XTypeSequenceOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
