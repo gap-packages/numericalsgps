@@ -1,6 +1,6 @@
 #############################################################################
 ##
-##  PackageInfo.g for the package `NumericalSgps'              Manuel Delgado
+##  PackageInfo.g for the package `NumericalSgps'             Manuel Delgado
 ##                                                    Pedro A. Garcia-Sanchez
 
 SetPackageInfo( rec(
