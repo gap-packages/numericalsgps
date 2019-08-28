@@ -1104,7 +1104,9 @@ InstallMethod(DivisorsOfElementInNumericalSemigroup,
 
   #the first n elements of S not greater than n
   elts := FirstElementsOfNumericalSemigroup(n, S );
-
+  if n=0 then 
+    return [0];
+  fi;
   return(Intersection(n - elts,elts));
 end);
 ########
