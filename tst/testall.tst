@@ -2102,6 +2102,8 @@ gap> DivisorsOfElementInNumericalSemigroup(s,20);
 [ 0, 5, 10, 15, 20 ]
 gap> DivisorsOfElementInNumericalSemigroup(20,s);
 [ 0, 5, 10, 15, 20 ]
+gap> DivisorsOfElementInNumericalSemigroup(0,s);
+[ 0 ]
 
 gap> S := NumericalSemigroup(7,9,17);;
 gap> FengRaoDistance(S,6,100);
