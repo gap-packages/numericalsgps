@@ -46,7 +46,7 @@ true
                     <Description>
                         <A>f</A> is an integer. The output is the 
                         set of numerical semigroups with Frobenius number <A>f</A>.           
-The algorithm implemented is given in <Cite Key="RGGJ04"/>.
+The algorithm implemented is given in <Cite Key="RGSGGJM"/>.
                         <Example><![CDATA[
 gap> Length(NumericalSemigroupsWithFrobeniusNumberFG(15));
 200
