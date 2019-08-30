@@ -412,7 +412,7 @@ true
                 </ManSection>
 
 <ManSection>
-    <Func Arg="I, J" Name="Union" Label="for ideals of affine semigroup"></Func>
+    <Func Arg="I, J" Name="Union" Label="for ideals of numerical semigroup"></Func>
     <Description>
         <A>I, J</A> are ideals of a numerical semigroup.
         The output is the union of both ideals.
