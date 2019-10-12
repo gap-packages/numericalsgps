@@ -179,7 +179,8 @@ InstallMethod(Generators,
          "Computes a set of generators of the affine semigroup",
          [IsAffineSemigroup and HasPMInequality],10,
         function(M)
-  local MinimalGensAndMaybeGapsFromInequality, ineq;
+  local MinimalGensAndMaybeGapsFromInequality, ineq,
+        MinimalGensFromInequalityN2;
   
 MinimalGensAndMaybeGapsFromInequality:=function(f, b, g)
   local ComputeForGGreaterThanZero, ComputeForGGreaterLowerZero;
@@ -364,6 +365,8 @@ MinimalGensAndMaybeGapsFromInequality:=function(f, b, g)
           Append(lCk, [lC]);
           for sk in [2..b] do
             Append(lCk, [GenSysOfCk(lomegas[sk-1], lV, lCk[sk-1])]);
+            
+            lomegas := SplitMGSC0(lV, lCk[sk]);
           od;
 
           ## Compute $U$, $x$ such that
@@ -395,7 +398,7 @@ MinimalGensAndMaybeGapsFromInequality:=function(f, b, g)
               lrngs := List([1..slend], e->[lw[e]..lwmd[e]]);
               # TODO: avoid repeating Cartesian computations for overlapping
               # ranges
-              UniteSet(luz, Cartesian(lrngs));
+              UniteSet(luz, Filtered(Cartesian(lrngs), r->g*r = g*w));
               RemoveSet(luz, lw);
             od;
             return luz;
@@ -449,8 +452,218 @@ MinimalGensAndMaybeGapsFromInequality:=function(f, b, g)
   return MinimalGenerators(M);
 end;
 
+MinimalGensFromInequalityN2:=function(f, b, g)
+  local lutilde, lu, lu2, lw, lw2, lchLatt, lS, si,
+        pmsgb, latt_tria, latt_trap;
+
+  pmsgb:=function(e, f, b, g)
+    return ForAll(e, v->v>=0) and f*e mod b <= g*e;
+  end;
+
+  latt_tria:=function(ax, by)
+    local xp, xv, ix, iy, result;
+
+    # if not(IsInt(ax) or IsRat(ax)) or not(IsInt(by) or IsRat(by)) then
+    #   Error("Invalid input values");
+    # fi;
+
+    if ax <= 0 or by < 0 then
+      return [];
+    fi;
+    xp := -by/ax; xv := by;
+    if IsRat(by) then
+      by := Int(Floor(Float(by)));
+    fi;
+    result := List([0..by], e->[0, e]);
+    ix := 1;
+    while ix<=ax do
+      iy := xp * ix + xv;
+      if IsRat(iy) then
+        iy := Int(Floor(Float(iy)));
+      fi;
+      Append(result, List([0..iy], e->[ix, e]));
+      ix := ix + 1;
+    od;
+    return result;
+  end;
+
+  latt_trap:=function(p)
+    local l, er, r1, r2, minvx, minvy, maxvx, maxvy, e1, e2, x, y, latt,
+          ecurec;
+
+    ecurec:=function(a, b)
+      return [b[2]-a[2], a[1]-b[1], -a[1]*(b[2]-a[2]) + a[2]*(b[1]-a[1])];
+    end;
+
+    # if Length(p)<>3 then
+    #   Error("latt_trap: incorrect number of elements in argument");
+    # fi;
+
+    l:=First([1..3], i->p[i,1]=0);
+    if l<>fail then
+      maxvy:=p[l][2];
+      if not IsInt(maxvy) then
+        maxvy:=Int(Floor(Float(maxvy)));
+      fi;
+      latt:=List([0..maxvy], i->[0, i]);
+      minvx:=Minimum(p{[1..3]}[1]);
+      maxvx:=Maximum(p{[1..3]}[1]);
+      minvy:=Minimum(List(Filtered(p, i->i[1]<>0), i->i[2]));
+      maxvy:=Maximum(p{[1..3]}[2]);
+      er:=[p[l], ];
+      l:=First([1..3], i->p[i,2]=maxvy);
+      er[2]:=p[l];
+      r2:=ecurec(er[1], er[2]);
+      l:=First([1..3], i->p[i,2]=minvy);
+      er:=[p[l], [0,0]];
+      r1:=ecurec(er[1], er[2]);
+
+      x:=1;
+      if not IsInt(maxvx) then
+        maxvx:=Int(Floor(Float(maxvx)));
+      fi;
+      while x<=maxvx do
+        if r1[2]=0 then
+          e1:=0;
+        else
+          e1:=-(r1[1]*x+r1[3])/r1[2];
+        fi;
+        if not IsInt(e1) then
+          e1:=Int(Ceil(Float(e1)));
+        fi;
+        if r2[2]=0 then
+          e2:=0;
+        else
+          e2:=-(r2[1]*x+r2[3])/r2[2];
+        fi;
+        if not IsInt(e2) then
+          e2:=Int(Floor(Float(e2)));
+        fi;
+
+        Append(latt, List([e1..e2], i->[x, i]));
+        x:=x+1;
+      od;
+    else
+      l:=First([1..3], i->p[i,2]=0);
+      # if l=fail then
+      #   Error("latt_trap: incorrect list elements");
+      # fi;
+      maxvx:=p[l][1];
+      if not IsInt(maxvx) then
+        maxvx:=Int(Floor(Float(maxvx)));
+      fi;
+      latt:=List([0..maxvx], i->[i, 0]);
+      minvx:=Minimum(List(Filtered(p, i->i[2]<>0), i->i[1]));
+      maxvx:=Maximum(p{[1..3]}[1]);
+      minvy:=Minimum(p{[1..3]}[2]);
+      maxvy:=Maximum(p{[1..3]}[2]);
+      er:=[p[l],];
+      l:=First([1..3], i->p[i,1]=maxvx);
+      er[2]:= p[l];
+      r2:=ecurec(er[1], er[2]);
+      l:=First([1..3], i->p[i,1]=minvx);
+      er:=[p[l], [0, 0]];
+      r1:=ecurec(er[1], er[2]);
+
+      y:=1;
+      if not IsInt(maxvy) then
+        maxvy:=Int(Floor(Float(maxvy)));
+      fi;
+      while y<=maxvy do
+        if r1[1]=0 then
+          e1:=0;
+        else
+          e1:=(-r1[3]-r1[2]*y)/r1[1];
+        fi;
+        if not IsInt(e1) then
+          e1:=Int(Ceil(Float(e1)));
+        fi;
+        if r2[1]=0 then
+          e2:=0;
+        else
+          e2:=(-r2[3]-r2[2]*y)/r2[1];
+        fi;
+        if not IsInt(e2) then
+          e2:=Int(Floor(Float(e2)));
+        fi;
+        Append(latt, List([e1..e2], i->[i, y]));
+        y:=y+1;
+      od;
+    fi;
+    return latt;
+  end;
+
+  # if Length(f)<>2 or Length(g)<>2 then
+  #   Error("n2gmpi: f and g should have lenght equal o 2.");
+  # fi;
+  if ForAll(g, v->v<=0) then
+    # Setter #######################
+    SetMinimalGenerators(M, []);
+    ################################
+  else
+    if ForAll(g, v->v>0) then
+      if f[1] mod b = 0 then
+        lu := [1, 0];
+      else
+        lu:=[Minimum(MinimalGeneratingSystemOfNumericalSemigroup(
+            ProportionallyModularNumericalSemigroup(f[1] mod b, b, g[1]))), 0];
+      fi;
+      if f[2] mod b = 0 then
+        lu2 := [0, 1];
+      else
+        lu2:=[0, Minimum(MinimalGeneratingSystemOfNumericalSemigroup(
+               ProportionallyModularNumericalSemigroup(f[2] mod b, b, g[2])))];
+      fi;
+
+      lw := [b/g[1], 0]; lw2 := [0, b/g[2]];
+      lchLatt := latt_tria(lw[1]+lu[1], lw2[2]+lu2[2]);
+    else
+      lu := Filtered(List(HilbertBasisOfSystemOfHomogeneousEquations([f, g], [b]),
+                          u->u{[1,2]}), e->e<>[0,0])[1];
+      if g[1]>= 0 then
+        if f[1] mod b = 0 then
+          lutilde := [1, 0];
+        else
+
+          lutilde := [Minimum(MinimalGeneratingSystemOfNumericalSemigroup(
+                      ProportionallyModularNumericalSemigroup(f[1] mod b, b, g[1]))), 0];
+        fi;
+        lw := [b/g[1], 0];
+      else
+        if f[2] mod b = 0 then
+          lutilde := [0, 1];
+        else
+          lutilde := [0, Minimum(MinimalGeneratingSystemOfNumericalSemigroup(
+                       ProportionallyModularNumericalSemigroup(f[2] mod b, b, g[2])))];
+        fi;
+        lw := [0, b/g[2]];
+      fi;
+      lchLatt :=latt_trap([lu, lu+lw+lutilde, lw+lutilde]);
+    fi;
+    lS := Filtered(lchLatt{[1..Length(lchLatt)]}{[1,2]}, e->e<>[0, 0] and f*e mod b <= g*e);
+    si := 1;
+    while si <= Length(lS) do
+      if ForAny(lS{[1..si-1]}, e->pmsgb(lS[si]-e, f, b, g)) or
+          (si+1<Length(lS) and ForAny(lS{[si+1, Length(lS)]}, e->pmsgb(lS[si]-e, f, b, g))) then
+        Remove(lS, si);
+      else
+        si:=si+1;
+      fi;
+    od;
+    
+    # Setter #######################################
+    SetMinimalGenerators(M, lS);
+    ################################################
+  fi;
+  return MinimalGenerators(M);
+end;
+
   ineq := PMInequality(M);
-  return MinimalGensAndMaybeGapsFromInequality(ineq[1], ineq[2], ineq[3]);
+  if Length(ineq[1])=2 then
+    return MinimalGensFromInequalityN2(ineq[1], ineq[2], ineq[3]);
+  else
+    return MinimalGensAndMaybeGapsFromInequality(ineq[1], ineq[2], ineq[3]);
+  fi;
 end);
 
 #############################################################################
