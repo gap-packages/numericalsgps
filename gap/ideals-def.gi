@@ -187,6 +187,20 @@ InstallMethod( \<,
     return(SmallElementsOfIdealOfNumericalSemigroup(I) < SmallElementsOfIdealOfNumericalSemigroup(J));
 end );
 
+# inclusion
+
+InstallMethod(IsSubset, 
+    "for ideals of affine semigroups",
+        [IsIdealOfNumericalSemigroup,
+         IsIdealOfNumericalSemigroup],
+    function(I, J)
+
+    if not AmbientNumericalSemigroupOfIdeal(I)
+       = AmbientNumericalSemigroupOfIdeal(J) then
+        return false;
+    fi;
+    return ForAll(MinimalGenerators(J), j-> j in I);
+end);
 
 #############################################################################
 ##
