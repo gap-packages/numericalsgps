@@ -5,6 +5,8 @@
 #======
 1.2.1 -> 1.2.1 dev
 - Bug fix for DivisorsOfElementInNumericalSemigroup(0,s).
+- Bug fix in proportionally modular affine semigroups of dimenstion two
+- Added IsSubset for ideals of numerical semigroups
 
 #=======
 1.2.0 -> 1.2.1
