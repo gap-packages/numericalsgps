@@ -138,12 +138,14 @@ InstallMethod(BelongsToAffineSemigroup,
     end;
 
     if not(IsListOfIntegersNS(v)) then
-        Error("The first argument must be a list of integers.");
+      #Error("The first argument must be a list of integers.");
+      return false;
     fi;
 
     gen:=Generators(a);
     if not(IsRectangularTable(Concatenation(gen,[v]))) then
-        Error("The dimension of the vector and the affine semigroup do not coincide.");
+      #Error("The dimension of the vector and the affine semigroup do not coincide.");
+      return false;
     fi;
 
     return belongs(v,gen);
@@ -160,7 +162,8 @@ InstallMethod(BelongsToAffineSemigroup,
 
     equ:=Equations(a);
     if not(IsListOfIntegersNS(v)) then
-        Error("The first argument must be a list of integers.");
+      #Error("The first argument must be a list of integers.");
+      return false;
     fi;
     if ForAny(v,x->x<0) then
         return false;
@@ -169,7 +172,8 @@ InstallMethod(BelongsToAffineSemigroup,
     eq:=equ[1];
     md:=equ[2];
     if Length(eq[1])<>Length(v) then
-        Error("The dimension of the vector and the affine semigroup do not coincide.");
+       # Error("The dimension of the vector and the affine semigroup do not coincide.");
+        return false;
     fi;
     ev:=ShallowCopy(eq*v);
 
@@ -193,7 +197,8 @@ InstallMethod(BelongsToAffineSemigroup,
 
     ineq:=PMInequality(a);
     if not(IsListOfIntegersNS(v)) then
-        Error("The first argument must be a list of integers.");
+      #Error("The first argument must be a list of integers.");
+      return false;
     fi;
     if ForAny(v,x->x<0) then
         return false;
@@ -203,7 +208,8 @@ InstallMethod(BelongsToAffineSemigroup,
     b:=ineq[2];
     g:=ineq[3];
     if Length(ineq[1])<>Length(v) then
-        Error("The dimension of the vector and the affine semigroup do not coincide.");
+      #Error("The dimension of the vector and the affine semigroup do not coincide.");
+      return false;
     fi;
 
     return ((f*v) mod b) <= g*v;
@@ -220,14 +226,16 @@ InstallMethod(BelongsToAffineSemigroup,
 
     equ:=AffineSemigroupInequalities(a);
     if not(IsListOfIntegersNS(v)) then
-        Error("The first argument must be a list of integers.");
+      #Error("The first argument must be a list of integers.");
+      return false;
     fi;
     if ForAny(v,x->x<0) then
         return false;
     fi;
 
     if Length(equ[1])<>Length(v) then
-        Error("The dimension of the vector and the affine semigroup do not coincide.");
+      #Error("The dimension of the vector and the affine semigroup do not coincide.");
+      return false;
     fi;
     ev:=equ*v;
 
@@ -245,14 +253,16 @@ InstallMethod(BelongsToAffineSemigroup,
             local gaps;
 
             if not(IsListOfIntegersNS(v)) then
-                Error("The first argument must be a list of integers.");
+              #Error("The first argument must be a list of integers.");
+              return false;
             fi;
             if ForAny(v,x->x<0) then
                 return false;
             fi;
             gaps:=Gaps(a);
             if Length(gaps[1])<>Length(v) then
-                Error("The dimension of the vector and the affine semigroup do not coincide.");
+              #Error("The dimension of the vector and the affine semigroup do not coincide.");
+              return false;
             fi;
 
             Info(InfoNumSgps,2,"Testing membership with gaps.");

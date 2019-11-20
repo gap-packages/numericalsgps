@@ -364,7 +364,8 @@ InstallMethod(BelongsToIdealOfAffineSemigroup,
     if not (IsIdealOfAffineSemigroup(I) and IsListOfIntegersNS(x))  then
         Error("The arguments must be an integer tuple and an ideal of an affine semigroup.");
     elif Dimension(AmbientAffineSemigroupOfIdeal(I)) <> Length(x) then
-        Error("The element to test must be a list of n positive integers, where n is the dimension of the affine semigroup.");
+      #Error("The element to test must be a list of n positive integers, where n is the dimension of the affine semigroup.");
+      return false;
     fi;
 
     S := AmbientAffineSemigroupOfIdeal(I);
