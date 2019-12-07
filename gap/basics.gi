@@ -739,10 +739,10 @@ InstallMethod( AperyListOfNumericalSemigroupWRTElement,
         nonmults := Difference(msg,[m]);
         ret := ListWithIdenticalEntries(m,infinity);
 
-        ret[1] := 0;
-        for g in nonmults do
+        for g in Reversed(nonmults) do
             ret[(g mod m)+1] := g;
         od;
+        ret[1] := 0;
 
         curround := List(nonmults);
 
