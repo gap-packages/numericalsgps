@@ -950,6 +950,12 @@ InstallOtherMethod( \+, "for an integer and an ideal of a numerical semigroup", 
         function(k,I)
     return(TranslationOfIdealOfNumericalSemigroup(k, I));
 end);
+InstallOtherMethod( \+, "for an ideal of a numerical semigroup and an integer", true,
+        [IsIdealOfNumericalSemigroup, 
+        IsInt and IsAdditiveElement], 0,
+        function(I,k)
+    return(TranslationOfIdealOfNumericalSemigroup(k, I));
+end);
 
 
 
