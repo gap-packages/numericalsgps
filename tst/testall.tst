@@ -1053,8 +1053,8 @@ gap> SmallElementsOfNumericalSemigroup(u);
 
 gap> N:=NumericalSemigroup(1);;
 gap> s:=MultipleOfNumericalSemigroup(N,4,20);;
-gap> SmallElements(s);
-[ 0, 4, 8, 12, 16, 20 ]
+gap> SmallElements(s)=[ 0, 4, 8, 12, 16, 20 ];
+true
 
 gap> ns1 := NumericalSemigroup(5,7);;
 gap> ns2 := NumericalSemigroup(7,11,12);;
@@ -1327,8 +1327,8 @@ gap> IsIntegralIdealOfNumericalSemigroup(10+s);
 true
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
-gap> SmallElements(I);
-[ 3, 5, 7, 9, 11, 13 ]
+gap> SmallElements(I)=[ 3, 5, 7, 9, 11, 13 ];
+true
 gap> SmallElements(I) = SmallElementsOfIdealOfNumericalSemigroup(I);
 true
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
