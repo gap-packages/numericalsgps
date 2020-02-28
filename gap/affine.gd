@@ -315,4 +315,4 @@ DeclareGlobalFunction("NumSgpsUse4ti2gap");
 #F NumSgpsUseGradedModules
 #  Loads the package GradedModules and reads affine-extra-gm
 ##########################################################################
-DeclareGlobalFunction("NumSgpsUseGradedModules");
+# DeclareGlobalFunction("NumSgpsUseGradedModules");

@@ -1499,13 +1499,12 @@ end);
 #F NumSgpsUseGradedModules
 #  Loads the package GradedModules and reads affine-extra-gm
 ##########################################################################
-InstallGlobalFunction(NumSgpsUseGradedModules, function()
-    if LoadPackage("GradedModules")=true then
-        ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
-        NumSgpsCanUseGradedModules:=true;
-        return true;
-    else
-        return fail;
-    fi;
-
-end);
+# InstallGlobalFunction(NumSgpsUseGradedModules, function()
+#     if LoadPackage("GradedModules")=true then
+#         ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
+#         NumSgpsCanUseGradedModules:=true;
+#         return true;
+#     else
+#         return fail;
+#     fi;
+# end);

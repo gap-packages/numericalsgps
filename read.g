@@ -98,19 +98,19 @@ else
         #  ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
         #fi;
         NumSgpsWarnUseSingular:=false;
-    else
-        if NumSgpsCanUseGradedModules then
-            #NumSgpsRationals:=HomalgFieldOfRationalsInSingular();
-            ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
-            Info(InfoNumSgps,1,"Loaded interface to Singular (through GradedModules)");
-            NumSgpsWarnUseSingular:=false;
-        fi;
+    # else
+    #     if NumSgpsCanUseGradedModules then
+    #         #NumSgpsRationals:=HomalgFieldOfRationalsInSingular();
+    #         ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
+    #         Info(InfoNumSgps,1,"Loaded interface to Singular (through GradedModules)");
+    #         NumSgpsWarnUseSingular:=false;
+    #     fi;
     fi;
 fi;
 
 if NumSgpsWarnUseSingular then
     Info(InfoNumSgps,2,"Please load package SingularInterface or singular (not both)");
-    Info(InfoNumSgps,2,"or GradedModules to have extended functionalities.");
+    # Info(InfoNumSgps,2,"or GradedModules to have extended functionalities.");
 fi;
 
 
