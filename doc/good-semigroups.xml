@@ -340,7 +340,7 @@ gap> SmallElements(S2);
       <Func Arg="S" Name="GenusOfGoodSemigroup"></Func>
       <Description>
         <A>S</A> is a good semigroup.
-        The output is the genus of <A>S</A>, defined as <M>g(S)=d(\mathbb{N}^2\setminus C(S)</M>, where <M>C(S)=\{(\alpha_1,\alpha_2)\in S\mid (\alpha_1,\alpha_2)\geq \boldsymbol{c}\}</M>.
+        The output is the genus of <A>S</A>, defined as <M>g(S)=d(\mathbb{N}^2\setminus C(S))</M>, where <M>C(S)=\{(\alpha_1,\alpha_2)\in S\mid (\alpha_1,\alpha_2)\geq c\}</M>, and <M>c</M> is the conductor.
 
         <Example><![CDATA[
 gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 5 ], [ 4, 6 ], [ 8, 5 ],
@@ -363,7 +363,7 @@ gap> GenusOfGoodSemigroup(S);
       <Func Arg="S" Name="LengthOfGoodSemigroup"></Func>
       <Description>
         <A>S</A> is a good semigroup.
-        The output is the lenght of <A>S</A>, defined as <M>g(S)=d(S\setminus C(S)</M>, where <M>C(S)=\{(\alpha_1,\alpha_2)\in S\mid (\alpha_1,\alpha_2)\geq \boldsymbol{c}\}</M>.
+        The output is the lenght of <A>S</A>, defined as <M>g(S)=d(S\setminus C(S))</M>, where <M>C(S)=\{(\alpha_1,\alpha_2)\in S\mid (\alpha_1,\alpha_2)\geq c\}</M> (<M>c</M> is the conductor).
 
         <P/>
          When the good semigroup is the good semigroup of valuation of a ring <M>R</M>, it corresponds to the length of <M>R/C</M> as <M>R</M>-module, with <M>C</M> the conductor of <M>R</M>. See <Cite Key="B-DA-F-1"/>, <Cite Key="B-DA-F-2"/>, <Cite Key="DM"/>.
@@ -389,7 +389,7 @@ gap> LengthOfGoodSemigroup(S);
       <Func Arg="S" Name="AperySetOfGoodSemigroup"></Func>
       <Description>
         <A>S</A> is a good semigroup.
-        The output is the list of the Apery set of <A>S</A>, defined as <M>Ap(S)=\{\boldsymbol{\alpha}\in S\mid \boldsymbol{\alpha}-\boldsymbol{\e}\notin S</M>, where <M>e</M> is the multiplicity of the good semigroup.
+        The output is the list of the Apery set of <A>S</A>, defined as <M>Ap(S)=\{\alpha\in S\mid \alpha-e \notin S</M>, where <M>e</M> is the multiplicity of the good semigroup.
 
         <Example><![CDATA[
 gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 5 ], [ 4, 6 ], [ 8, 5 ],
@@ -660,7 +660,7 @@ gap> MinimalGoodGeneratingSystemOfGoodIdeal(c);
       <Description>
         <A>S</A> is a good semigroup; this function returns the absolute irreducibles of <A>S</A>: nonzero elements of 
         the semigroup that are irreducible with respect to both operations (that is, 
-        in the semiring <M>(S,\operatorname{min},+)</M>). The notations <M>(x,\infty)</M> and <M>(\infty,y)</M> denote that 
+        in the semiring <M>(S,\mathrm{min},+)</M>). The notations <M>(x,\infty)</M> and <M>(\infty,y)</M> denote that 
         starting from a certain element the respective line is included in the semigroup.
         <Example><![CDATA[
 gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 5, 4 ], [ 5, 8 ], [ 5, 11 ],
@@ -685,8 +685,8 @@ gap> AbsoluteIrreduciblesOfGoodSemigroup(S);
         <A>S</A> is a good semigroup. This function returns the tracks of the good semigroup (see <Cite Key="M-Z"></Cite>
         for the definition of track). Tracks behave like minimal generators in a numerical semigroups, because removing the elements of a track from the semigroup,  with the exception of the infimums of incomparable elements, we obtain a good semigroup contained in <A>S</A>.
         <P/>
-        A track <M>T(\boldsymbol{\alpha_1},\ldots,\boldsymbol{\alpha_n})</M> is represented with the list of the elements
-        <M>\boldsymbol{\alpha_1},\ldots,\boldsymbol{\alpha_n}</M> that determine it completely.
+        A track <M>T(\alpha_1,\ldots,\alpha_n)</M> is represented with the list of the elements
+        <M>\alpha_1,\ldots,\alpha_n</M> that determine it completely.
 
         <Example><![CDATA[
 gap> S:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 3 ], [ 8, 6 ], [ 8, 7 ],

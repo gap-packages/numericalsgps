@@ -102,7 +102,7 @@ true
                     <Description>
 		      <A>f</A>, <A>g</A> are lists of integers and <A>b</A> is a positive integer.
           <P/>
-          Returns the proportionally modular affine semigroup defined by the <M>f\times X \mod b \leq g\times X</M>
+          Returns the proportionally modular affine semigroup defined by the <M>f\times X \pmod{b} \leq g\times X</M>
 		      <P/>
 		      In the first form, <C>String</C> must be <C>"pminequality"</C>.
 			<Example><![CDATA[
