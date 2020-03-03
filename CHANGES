@@ -3,7 +3,9 @@
                    ----------------------------------------
 
 #======
-1.2.1 -> 1.2.1 dev
+1.2.2 -> 1.2.2 dev
+#======
+1.2.1 -> 1.2.2
 - Bug fix for DivisorsOfElementInNumericalSemigroup(0,s).
 - Bug fix in proportionally modular affine semigroups of dimenstion two
 - Added IsSubset for ideals of numerical semigroups
