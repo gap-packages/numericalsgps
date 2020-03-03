@@ -85,20 +85,20 @@
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
     [4X[25Xgap>[125X [27XPrint(DotOverSemigroupsNumericalSemigroup(s));[127X[104X
     [4X[28Xdigraph  NSGraph{rankdir = TB; [128X[104X
-    [4X[28X0 [label="〈 4, 6, 9 〉"]; [128X[104X
-    [4X[28X0 [label="〈 4, 6, 9 〉", style=filled]; [128X[104X
-    [4X[28X1 [label="〈 4 〉 + 〈 6, 9 〉" , shape=box]; [128X[104X
-    [4X[28X2 [label="〈 1 〉", style=filled]; [128X[104X
-    [4X[28X3 [label="〈 2, 3 〉", style=filled]; [128X[104X
-    [4X[28X4 [label="〈 2 〉 + 〈 3 〉" , shape=box]; [128X[104X
-    [4X[28X5 [label="〈 1 〉", style=filled]; [128X[104X
-    [4X[28X6 [label="〈 1 〉", style=filled]; [128X[104X
-    [4X[28X7 [label="〈 4, 6 〉 + 〈 9 〉" , shape=box]; [128X[104X
-    [4X[28X8 [label="〈 2, 3 〉", style=filled]; [128X[104X
-    [4X[28X10 [label="〈 2 〉 + 〈 3 〉" , shape=box]; [128X[104X
-    [4X[28X11 [label="〈 1 〉", style=filled]; [128X[104X
-    [4X[28X12 [label="〈 1 〉", style=filled]; [128X[104X
-    [4X[28X9 [label="〈 1 〉", style=filled]; [128X[104X
+    [4X[28X0 [label="< 4, 6, 9 >"]; [128X[104X
+    [4X[28X0 [label="< 4, 6, 9 >", style=filled]; [128X[104X
+    [4X[28X1 [label="< 4 > + < 6, 9 >" , shape=box]; [128X[104X
+    [4X[28X2 [label="< 1 >", style=filled]; [128X[104X
+    [4X[28X3 [label="< 2, 3 >", style=filled]; [128X[104X
+    [4X[28X4 [label="< 2 > + < 3 >" , shape=box]; [128X[104X
+    [4X[28X5 [label="< 1 >", style=filled]; [128X[104X
+    [4X[28X6 [label="< 1 >", style=filled]; [128X[104X
+    [4X[28X7 [label="< 4, 6 > + < 9 >" , shape=box]; [128X[104X
+    [4X[28X8 [label="< 2, 3 >", style=filled]; [128X[104X
+    [4X[28X10 [label="< 2 > + < 3 >" , shape=box]; [128X[104X
+    [4X[28X11 [label="< 1 >", style=filled]; [128X[104X
+    [4X[28X12 [label="< 1 >", style=filled]; [128X[104X
+    [4X[28X9 [label="< 1 >", style=filled]; [128X[104X
     [4X[28X0 -> 1; [128X[104X
     [4X[28X1 -> 2; [128X[104X
     [4X[28X1 -> 3; [128X[104X
@@ -125,18 +125,18 @@
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
     [4X[25Xgap>[125X [27XPrint(DotOverSemigroupsNumericalSemigroup(s));[127X[104X
     [4X[28Xdigraph  NSGraph{rankdir = TB; edge[dir=back];[128X[104X
-    [4X[28X1 [label="〈 1 〉", style=filled];[128X[104X
-    [4X[28X2 [label="〈 2, 3 〉", style=filled];[128X[104X
-    [4X[28X3 [label="〈 2, 5 〉", style=filled];[128X[104X
-    [4X[28X4 [label="〈 2, 7 〉", style=filled];[128X[104X
-    [4X[28X5 [label="〈 2, 9 〉", style=filled];[128X[104X
-    [4X[28X6 [label="〈 3, 4, 5 〉", style=filled];[128X[104X
-    [4X[28X7 [label="〈 3, 4 〉", style=filled];[128X[104X
-    [4X[28X8 [label="〈 4, 5, 6, 7 〉"];[128X[104X
-    [4X[28X9 [label="〈 4, 5, 6 〉", style=filled];[128X[104X
-    [4X[28X10 [label="〈 4, 6, 7, 9 〉"];[128X[104X
-    [4X[28X11 [label="〈 4, 6, 9, 11 〉"];[128X[104X
-    [4X[28X12 [label="〈 4, 6, 9 〉", style=filled];[128X[104X
+    [4X[28X1 [label="< 1 >", style=filled];[128X[104X
+    [4X[28X2 [label="< 2, 3 >", style=filled];[128X[104X
+    [4X[28X3 [label="< 2, 5 >", style=filled];[128X[104X
+    [4X[28X4 [label="< 2, 7 >", style=filled];[128X[104X
+    [4X[28X5 [label="< 2, 9 >", style=filled];[128X[104X
+    [4X[28X6 [label="< 3, 4, 5 >", style=filled];[128X[104X
+    [4X[28X7 [label="< 3, 4 >", style=filled];[128X[104X
+    [4X[28X8 [label="< 4, 5, 6, 7 >"];[128X[104X
+    [4X[28X9 [label="< 4, 5, 6 >", style=filled];[128X[104X
+    [4X[28X10 [label="< 4, 6, 7, 9 >"];[128X[104X
+    [4X[28X11 [label="< 4, 6, 9, 11 >"];[128X[104X
+    [4X[28X12 [label="< 4, 6, 9 >", style=filled];[128X[104X
     [4X[28X1 -> 2;[128X[104X
     [4X[28X2 -> 3;[128X[104X
     [4X[28X2 -> 6;[128X[104X

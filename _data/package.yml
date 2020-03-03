@@ -1,6 +1,6 @@
 name: NumericalSgps
-version: 1.2.1
-date: 2019-08-22
+version: 1.2.2
+date: 2020-03-03
 description: |
     A package for numerical semigroups
 
@@ -55,7 +55,7 @@ packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.2.1/NumericalSgps-1.2.1.tar.gz
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.2.2/NumericalSgps-1.2.2.tar.gz
 
 abstract: |
     The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.
@@ -67,28 +67,28 @@ keywords: |
     Numerical Semigroups, Affine semigroups, Good semigroups.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>DGM19</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
+    [<span class='BibKey'>DGM20</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
      <i class='BibTitle'>NumericalSgps, A package for numerical semigroups,
-             Version 1.2.1</i>
-     (<span class='BibYear'>2019</span>)<br />
+             Version 1.2.2</i>
+     (<span class='BibYear'>2020</span>)<br />
     (<span class='BibNote'>Refereed GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/numericalsgps">https://gap-packages.github.io/numericalsgps</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ NumericalSgps1.2.1,
+    @misc{ NumericalSgps1.2.2,
       author =           {Delgado, M. and Garcia-Sanchez, P. A. and Morais, J.},
       title =            {{NumericalSgps},  A  package for numerical semigroups,
-                          {V}ersion 1.2.1},
-      month =            {Aug},
-      year =             {2019},
+                          {V}ersion 1.2.2},
+      month =            {Mar},
+      year =             {2020},
       note =             {Refereed GAP package},
       howpublished =     {\href   {https://gap-packages.github.io/numericalsgps}
                           {\texttt{https://gap-packages.github.io/}\discretionary
                           {}{}{}\texttt{numericalsgps}}},
       keywords =         {Numerical    Semigroups;   Affine   semigroups;   Good
                           semigroups},
-      printedkey =       {DGM19}
+      printedkey =       {DGM20}
     }
 

@@ -89,7 +89,7 @@
   x-2y=0[122X  will  be  represented  as [22XA[122X equal to [[1,1],[1,-2]] and the moduli [22Xd[122X
   equal to [2].[133X
   
-  [33X[0;0YIn the second form, [10XString[110X must be [10X"equations"[110X.[133X
+  [33X[0;0YIn the first form, [10XString[110X must be [10X"equations"[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs1 := AffineSemigroup("equations",[[[1,1]],[3]]);[127X[104X
@@ -111,7 +111,7 @@
   [33X[0;0YReturns the (normal) affine semigroup of nonegative integer solutions of the
   system of inequalities [22XList× Xge 0[122X.[133X
   
-  [33X[0;0YIn the second form, [10XString[110X must be [10X"inequalities"[110X.[133X
+  [33X[0;0YIn the first form, [10XString[110X must be [10X"inequalities"[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xa1:=AffineSemigroup("inequalities",[[2,-1],[-1,3]]);[127X[104X
@@ -132,18 +132,15 @@
   [33X[0;0YReturns  the proportionally modular affine semigroup defined by the [22Xf× X mod
   b ≤ g× X[122X[133X
   
-  [33X[0;0YIn the second form, [10XString[110X must be [10X"pmiequality"[110X.[133X
+  [33X[0;0YIn the first form, [10XString[110X must be [10X"pminequality"[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=AffineSemigroupByPMInequality([0, 1, 1, 0, -1], 4, [1, 0, -2, -3, 1]); [127X[104X
     [4X[28X<Affine semigroup>[128X[104X
-    [4X[25Xgap>[125X [27XMinimalGenerators(s);[127X[104X
-    [4X[28X[ [ 0, 0, 0, 0, 2 ], [ 0, 0, 0, 0, 3 ], [ 0, 0, 0, 1, 4 ], [ 0, 0, 0, 2, 7 ], [ 0, 0, 0, 4, 12 ], [ 0, 0, 1, 0, 4 ], [128X[104X
-    [4X[28X  [ 0, 0, 1, 0, 5 ], [ 0, 0, 1, 1, 5 ], [ 0, 0, 2, 0, 5 ], [ 0, 0, 2, 0, 6 ], [ 0, 0, 3, 0, 7 ], [ 0, 0, 4, 0, 8 ], [128X[104X
-    [4X[28X  [ 0, 1, 0, 0, 1 ], [ 0, 1, 0, 1, 4 ], [ 0, 1, 0, 3, 9 ], [ 0, 1, 1, 0, 2 ], [ 0, 2, 0, 0, 1 ], [ 0, 2, 0, 2, 6 ], [128X[104X
-    [4X[28X  [ 0, 3, 0, 1, 3 ], [ 0, 4, 0, 0, 0 ], [ 1, 0, 0, 0, 0 ], [ 1, 0, 0, 0, 1 ], [ 1, 0, 0, 1, 3 ], [ 1, 0, 0, 3, 8 ], [128X[104X
-    [4X[28X  [ 1, 0, 1, 0, 1 ], [ 1, 1, 0, 0, 0 ], [ 1, 1, 0, 2, 5 ], [ 1, 2, 0, 1, 2 ], [ 2, 0, 0, 2, 4 ], [ 2, 1, 0, 1, 1 ], [128X[104X
-    [4X[28X  [ 2, 3, 1, 0, 0 ], [ 3, 0, 0, 1, 0 ], [ 3, 0, 1, 0, 0 ], [ 4, 2, 2, 0, 0 ], [ 6, 1, 3, 0, 0 ], [ 8, 0, 4, 0, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27X[ 3, 0, 0, 4, 12 ] in s;[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27X[ 3, 0, 0, 4, 1 ] in s;[127X[104X
+    [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
   [1X11.1-5 AffineSemigroup[101X

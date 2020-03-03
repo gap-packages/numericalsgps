@@ -1,14 +1,14 @@
 #############################################################################
 ##
-##  PackageInfo.g for the package `NumericalSgps'             Manuel Delgado
+##  PackageInfo.g for the package `NumericalSgps'              Manuel Delgado
 ##                                                    Pedro A. Garcia-Sanchez
 
 SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.2.1",
-Date := "22/08/2019", # dd/mm/yyyy format
+Version := "1.2.2",
+Date := "03/03/2020", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 ##  Information about authors and maintainers.

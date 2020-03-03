@@ -359,7 +359,7 @@
   [33X[1;0Y[29X[2XGenusOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is a good semigroup. The output is the genus of [3XS[103X, defined as [22Xg(S)=d(N^2∖
-  C(S)[122X, where [22XC(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ boldsymbolc}[122X.[133X
+  C(S))[122X, where [22XC(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ c}[122X, and [22Xc[122X is the conductor.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 5 ], [ 4, 6 ], [ 8, 5 ],[127X[104X
@@ -380,7 +380,7 @@
   [33X[1;0Y[29X[2XLengthOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a good semigroup. The output is the lenght of [3XS[103X, defined as [22Xg(S)=d(S∖
-  C(S)[122X, where [22XC(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ boldsymbolc}[122X.[133X
+  C(S))[122X, where [22XC(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ c}[122X ([22Xc[122X is the conductor).[133X
   
   [33X[0;0YWhen  the  good semigroup is the good semigroup of valuation of a ring [22XR[122X, it
   corresponds to the length of [22XR/C[122X as [22XR[122X-module, with [22XC[122X the conductor of [22XR[122X. See
@@ -406,8 +406,7 @@
   [33X[1;0Y[29X[2XAperySetOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is the list of the Apery set of [3XS[103X, defined
-  as  [22XAp(S)={boldsymbolα∈  S∣  boldsymbolα-boldsymbole∉  S[122X,  where  [22Xe[122X  is  the
-  multiplicity of the good semigroup.[133X
+  as [22XAp(S)={α∈ S∣ α-e ∉ S[122X, where [22Xe[122X is the multiplicity of the good semigroup.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 5 ], [ 4, 6 ], [ 8, 5 ],[127X[104X
@@ -658,9 +657,9 @@
   
   [33X[0;0Y[3XS[103X is a good semigroup; this function returns the absolute irreducibles of [3XS[103X:
   nonzero  elements of the semigroup that are irreducible with respect to both
-  operations  (that  is, in the semiring [22X(S,operatornamemin,+)[122X). The notations
-  [22X(x,∞)[122X  and  [22X(∞,y)[122X denote that starting from a certain element the respective
-  line is included in the semigroup.[133X
+  operations  (that  is, in the semiring [22X(S,mathrmmin,+)[122X). The notations [22X(x,∞)[122X
+  and [22X(∞,y)[122X denote that starting from a certain element the respective line is
+  included in the semigroup.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 5, 4 ], [ 5, 8 ], [ 5, 11 ],[127X[104X
@@ -686,8 +685,8 @@
   of  a  track  from  the  semigroup,  with  the  exception of the infimums of
   incomparable elements, we obtain a good semigroup contained in [3XS[103X.[133X
   
-  [33X[0;0YA  track  [22XT(boldsymbolα_1,...,boldsymbolα_n)[122X is represented with the list of
-  the elements [22Xboldsymbolα_1,...,boldsymbolα_n[122X that determine it completely.[133X
+  [33X[0;0YA  track  [22XT(α_1,...,α_n)[122X  is  represented  with  the  list  of  the elements
+  [22Xα_1,...,α_n[122X that determine it completely.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS:=GoodSemigroupBySmallElements([ [ 0, 0 ], [ 4, 3 ], [ 8, 6 ], [ 8, 7 ],[127X[104X

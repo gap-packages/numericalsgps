@@ -39,7 +39,6 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap13_mj.html#X875040237A692C3C">13.1-3 NumSgpsUseNormalize</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap13_mj.html#X7CD12ADD78089CBE">13.1-4 NumSgpsUseSingular</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap13_mj.html#X7F7699A9829940C2">13.1-5 NumSgpsUseSingularInterface</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap13_mj.html#X7F7F2ED87E151582">13.1-6 NumSgpsUseSingularGradedModules</a></span>
 </div></div>
 </div>
 
@@ -47,7 +46,7 @@
 		External packages
 	</span></h3>
 
-<p>The use of the packages <code class="code">NormalizInterface</code> <a href="chapBib_mj.html#biBNmzInterface">[GHS14]</a> (an interface to <code class="code">Normalize</code> <a href="chapBib_mj.html#biBNormaliz">[BIRC14]</a>; or in its absence <code class="code">4ti2Interface</code><a href="chapBib_mj.html#biB4ti2Interface">[Gut]</a>, an interface to <code class="code">4ti2</code><a href="chapBib_mj.html#biB4ti2">[tt]</a>), <code class="code">SingularInterface</code> (an interface to <code class="code">Singular</code> <a href="chapBib_mj.html#biBSingular">[DGPS12]</a>; or in its absence <code class="code">Singular</code> <a href="chapBib_mj.html#biBSingularpackage">[CdG12]</a>); or in its absence <code class="code">GradedModules</code> <a href="chapBib_mj.html#biBGradedModules">[BGJ+14]</a> is highly recommended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower). The package tests if the user has downloaded any of the above packages, and if so puts <code class="code">NumSgpsCanUsePackage</code> to true, where <code class="code">Package</code> is any of the above.</p>
+<p>The use of the packages <code class="code">NormalizInterface</code> <a href="chapBib_mj.html#biBNmzInterface">[GHS14]</a> (an interface to <code class="code">Normalize</code> <a href="chapBib_mj.html#biBNormaliz">[BIRC14]</a>; or in its absence <code class="code">4ti2Interface</code><a href="chapBib_mj.html#biB4ti2Interface">[Gut]</a>, an interface to <code class="code">4ti2</code><a href="chapBib_mj.html#biB4ti2">[tt]</a>), <code class="code">SingularInterface</code> (an interface to <code class="code">Singular</code> <a href="chapBib_mj.html#biBSingular">[DGPS12]</a>; or in its absence <code class="code">Singular</code> <a href="chapBib_mj.html#biBSingularpackage">[CdG12]</a>) is highly recommended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower). The package tests if the user has downloaded any of the above packages, and if so puts <code class="code">NumSgpsCanUsePackage</code> to true, where <code class="code">Package</code> is any of the above.</p>
 
 <p><a id="X7BD18FC581F0C4D3" name="X7BD18FC581F0C4D3"></a></p>
 
@@ -95,15 +94,6 @@
 <p>Tries to load the package <code class="code">SingularInterface</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
 
 <p>To prevent incompatibilities, the package will not load if <code class="code">singular</code> has been already loaded.</p>
-
-<p><a id="X7F7F2ED87E151582" name="X7F7F2ED87E151582"></a></p>
-
-<h5>13.1-6 NumSgpsUseSingularGradedModules</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumSgpsUseSingularGradedModules</code>(  )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>Tries to load the package <code class="code">GradedModules</code>. If the package is available, then it also loads methods implemented using functions in this package.</p>
-
-<p>It also creates a ring of rationals <code class="code">NumSgpsRationals</code>.</p>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap12_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap14_mj.html">[Next Chapter]</a>&nbsp;  </div>

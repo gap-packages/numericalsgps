@@ -447,7 +447,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Genus</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GenusOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a good semigroup. The output is the genus of <var class="Arg">S</var>, defined as <span class="SimpleMath">g(S)=d(N^2∖ C(S)</span>, where <span class="SimpleMath">C(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ boldsymbolc}</span>.</p>
+<p><var class="Arg">S</var> is a good semigroup. The output is the genus of <var class="Arg">S</var>, defined as <span class="SimpleMath">g(S)=d(N^2∖ C(S))</span>, where <span class="SimpleMath">C(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ c}</span>, and <span class="SimpleMath">c</span> is the conductor.</p>
 
 
 <div class="example"><pre>
@@ -469,7 +469,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Length</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LengthOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a good semigroup. The output is the lenght of <var class="Arg">S</var>, defined as <span class="SimpleMath">g(S)=d(S∖ C(S)</span>, where <span class="SimpleMath">C(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ boldsymbolc}</span>.</p>
+<p><var class="Arg">S</var> is a good semigroup. The output is the lenght of <var class="Arg">S</var>, defined as <span class="SimpleMath">g(S)=d(S∖ C(S))</span>, where <span class="SimpleMath">C(S)={(α_1,α_2)∈ S∣ (α_1,α_2)≥ c}</span> (<span class="SimpleMath">c</span> is the conductor).</p>
 
 <p>When the good semigroup is the good semigroup of valuation of a ring <span class="SimpleMath">R</span>, it corresponds to the length of <span class="SimpleMath">R/C</span> as <span class="SimpleMath">R</span>-module, with <span class="SimpleMath">C</span> the conductor of <span class="SimpleMath">R</span>. See <a href="chapBib.html#biBB-DA-F-1">[BDF00b]</a>, <a href="chapBib.html#biBB-DA-F-2">[BDF00a]</a>, <a href="chapBib.html#biBDM">[DdlM88]</a>.</p>
 
@@ -494,7 +494,7 @@ true
 <h5>12.2-15 AperySetOfGoodSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AperySetOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a good semigroup. The output is the list of the Apery set of <var class="Arg">S</var>, defined as <span class="SimpleMath">Ap(S)={boldsymbolα∈ S∣ boldsymbolα-boldsymbole∉ S</span>, where <span class="SimpleMath">e</span> is the multiplicity of the good semigroup.</p>
+<p><var class="Arg">S</var> is a good semigroup. The output is the list of the Apery set of <var class="Arg">S</var>, defined as <span class="SimpleMath">Ap(S)={α∈ S∣ α-e ∉ S</span>, where <span class="SimpleMath">e</span> is the multiplicity of the good semigroup.</p>
 
 
 <div class="example"><pre>
@@ -759,7 +759,7 @@ true
 <h5>12.5-8 AbsoluteIrreduciblesOfGoodSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AbsoluteIrreduciblesOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a good semigroup; this function returns the absolute irreducibles of <var class="Arg">S</var>: nonzero elements of the semigroup that are irreducible with respect to both operations (that is, in the semiring <span class="SimpleMath">(S,operatornamemin,+)</span>). The notations <span class="SimpleMath">(x,∞)</span> and <span class="SimpleMath">(∞,y)</span> denote that starting from a certain element the respective line is included in the semigroup.</p>
+<p><var class="Arg">S</var> is a good semigroup; this function returns the absolute irreducibles of <var class="Arg">S</var>: nonzero elements of the semigroup that are irreducible with respect to both operations (that is, in the semiring <span class="SimpleMath">(S,mathrmmin,+)</span>). The notations <span class="SimpleMath">(x,∞)</span> and <span class="SimpleMath">(∞,y)</span> denote that starting from a certain element the respective line is included in the semigroup.</p>
 
 
 <div class="example"><pre>
@@ -783,7 +783,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TracksOfGoodSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a good semigroup. This function returns the tracks of the good semigroup (see <a href="chapBib.html#biBM-Z">[tt19]</a> for the definition of track). Tracks behave like minimal generators in a numerical semigroups, because removing the elements of a track from the semigroup, with the exception of the infimums of incomparable elements, we obtain a good semigroup contained in <var class="Arg">S</var>.</p>
 
-<p>A track <span class="SimpleMath">T(boldsymbolα_1,...,boldsymbolα_n)</span> is represented with the list of the elements <span class="SimpleMath">boldsymbolα_1,...,boldsymbolα_n</span> that determine it completely.</p>
+<p>A track <span class="SimpleMath">T(α_1,...,α_n)</span> is represented with the list of the elements <span class="SimpleMath">α_1,...,α_n</span> that determine it completely.</p>
 
 
 <div class="example"><pre>

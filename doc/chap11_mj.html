@@ -171,7 +171,7 @@
 
 <p>As pointed at the beginning of the section, the equations <span class="SimpleMath">\(x+y\equiv 0\bmod 2,\ x-2y=0\)</span> will be represented as <span class="SimpleMath">\(A\)</span> equal to [[1,1],[1,-2]] and the moduli <span class="SimpleMath">\(d\)</span> equal to [2].</p>
 
-<p>In the second form, <code class="code">String</code> must be <code class="code">"equations"</code>.</p>
+<p>In the first form, <code class="code">String</code> must be <code class="code">"equations"</code>.</p>
 
 
 <div class="example"><pre>
@@ -193,7 +193,7 @@ true
 
 <p>Returns the (normal) affine semigroup of nonegative integer solutions of the system of inequalities <span class="SimpleMath">\(List\times X\ge 0\)</span>.</p>
 
-<p>In the second form, <code class="code">String</code> must be <code class="code">"inequalities"</code>.</p>
+<p>In the first form, <code class="code">String</code> must be <code class="code">"inequalities"</code>.</p>
 
 
 <div class="example"><pre>
@@ -213,21 +213,18 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AffineSemigroupByPMInequality</code>( <var class="Arg">f</var>, <var class="Arg">b</var>, <var class="Arg">g</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var>, <var class="Arg">g</var> are lists of integers and <var class="Arg">b</var> is a positive integer.</p>
 
-<p>Returns the proportionally modular affine semigroup defined by the <span class="SimpleMath">\(f\times X \mod b \leq g\times X\)</span></p>
+<p>Returns the proportionally modular affine semigroup defined by the <span class="SimpleMath">\(f\times X \pmod{b} \leq g\times X\)</span></p>
 
-<p>In the second form, <code class="code">String</code> must be <code class="code">"pmiequality"</code>.</p>
+<p>In the first form, <code class="code">String</code> must be <code class="code">"pminequality"</code>.</p>
 
 
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=AffineSemigroupByPMInequality([0, 1, 1, 0, -1], 4, [1, 0, -2, -3, 1]); </span>
 &lt;Affine semigroup&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalGenerators(s);</span>
-[ [ 0, 0, 0, 0, 2 ], [ 0, 0, 0, 0, 3 ], [ 0, 0, 0, 1, 4 ], [ 0, 0, 0, 2, 7 ], [ 0, 0, 0, 4, 12 ], [ 0, 0, 1, 0, 4 ], 
-  [ 0, 0, 1, 0, 5 ], [ 0, 0, 1, 1, 5 ], [ 0, 0, 2, 0, 5 ], [ 0, 0, 2, 0, 6 ], [ 0, 0, 3, 0, 7 ], [ 0, 0, 4, 0, 8 ], 
-  [ 0, 1, 0, 0, 1 ], [ 0, 1, 0, 1, 4 ], [ 0, 1, 0, 3, 9 ], [ 0, 1, 1, 0, 2 ], [ 0, 2, 0, 0, 1 ], [ 0, 2, 0, 2, 6 ], 
-  [ 0, 3, 0, 1, 3 ], [ 0, 4, 0, 0, 0 ], [ 1, 0, 0, 0, 0 ], [ 1, 0, 0, 0, 1 ], [ 1, 0, 0, 1, 3 ], [ 1, 0, 0, 3, 8 ], 
-  [ 1, 0, 1, 0, 1 ], [ 1, 1, 0, 0, 0 ], [ 1, 1, 0, 2, 5 ], [ 1, 2, 0, 1, 2 ], [ 2, 0, 0, 2, 4 ], [ 2, 1, 0, 1, 1 ], 
-  [ 2, 3, 1, 0, 0 ], [ 3, 0, 0, 1, 0 ], [ 3, 0, 1, 0, 0 ], [ 4, 2, 2, 0, 0 ], [ 6, 1, 3, 0, 0 ], [ 8, 0, 4, 0, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ 3, 0, 0, 4, 12 ] in s;</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ 3, 0, 0, 4, 1 ] in s;</span>
+false
 </pre></div>
 
 <p><a id="X790969937B5D0DB6" name="X790969937B5D0DB6"></a></p>
