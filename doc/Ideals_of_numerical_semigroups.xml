@@ -127,6 +127,44 @@ true
                     </Description>
                 </ManSection>
 
+
+
+    <ManSection>
+	    <Oper Arg="X,S" Name="IsComplementOfIntegralIdeal"></Oper>
+	    <Oper Arg="S,X" Name="IsComplementOfIntegralIdeal"></Oper>
+            <Description>
+            <A>S</A> is a numerical semigroup and <A>X</A> is a subset of <A>S</A>. Determines if the subset <A>X</A> of <A>S</A> is the complement of an integral ideal of <A>S</A>.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,11,15,19);;
+gap> i:=[20,21,25]+s;;
+gap> d:=Difference(0+s,i);
+[ 0, 10, 11, 15, 19, 22, 26, 29, 33, 34, 37, 38, 48 ]
+gap> IsComplementOfIntegralIdeal(d,s);
+true
+gap> d:=DivisorsOfElementInNumericalSemigroup(50,s);
+[ 0, 10, 11, 15, 19, 20, 21, 25, 29, 30, 31, 35, 39, 40, 50 ]
+gap> IsComplementOfIntegralIdeal(d,s);
+true            
+]]></Example>
+            </Description>
+    </ManSection>
+
+    <ManSection>
+	    <Oper Arg="X,S" Name="IdealByDivisorClosedSet"></Oper>
+	    <Oper Arg="S,X" Name="IdealByDivisorClosedSet"></Oper>
+            <Description>
+            <A>S</A> is a numerical semigroup and <A>X</A> is a subset of <A>S</A> with the following property: for all <M>x</M> in <A>X</A> and every <M>y</M> in <A>S</A> with <M>x-y</M> in <A>S</A>, the integer <M>y</M> is also in <A>X</A>. The output is the integral ideal <M><A>S</A>\setminus <A>X</A></M>.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,11,15,19);;
+gap> i:=[20,21,25]+s;;
+gap> d:=Difference(0+s,i);
+[ 0, 10, 11, 15, 19, 22, 26, 29, 33, 34, 37, 38, 48 ]
+gap> i=IdealByDivisorClosedSet(d,s);
+true
+]]></Example>
+            </Description>
+        </ManSection>
+
                 <ManSection>
 		  <Func Arg="I" Name="SmallElements" Label="for ideal of numerical semigroup"></Func>
                   <Func Arg="I" Name="SmallElementsOfIdealOfNumericalSemigroup"></Func>

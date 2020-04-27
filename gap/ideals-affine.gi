@@ -197,7 +197,83 @@ InstallMethod(IsIntegralIdealOfAffineSemigroup,
     return IsSubset(s,MinimalGeneratingSystemOfIdealOfAffineSemigroup(I));
 end);
 
+#############################################################################
+##
+#O  IsComplementOfIntegralIdeal(X,S)
+#O  IsComplementOfIntegralIdeal(S,X)
+##
+##  Determines if the subset X of S is the complement of an integral ideal
+##  of S.
+############################################################################
+InstallMethod( IsComplementOfIntegralIdeal, 
+    "Detects if the given list is a complement of an integral ideal of the semigroup",
+    [IsList,IsNumericalSemigroup],
+function(X,S)
+    local Xs, m, Dm;
 
+    if not(IsSubset (S,X)) then
+        Error("The list must a subset of the semigroup");
+    fi;
+
+    Xs:=Set(X);
+    while Xs<>[] do
+        m:=Maximum(Xs);
+        Dm:=DivisorsOfElementInNumericalSemigroup(m,S);
+        if not(IsSubset(X,Dm)) then
+            return false;
+        fi;
+        Xs:=Difference(Xs,Dm);
+    od;
+    return true;
+end);
+
+InstallMethod( IsComplementOfIntegralIdeal, 
+    "Detects if the given list is a complement of an integral ideal of the semigroup",
+    [IsNumericalSemigroup,IsList], 
+    function(S,X)
+    return IsComplementOfIntegralIdeal(X,S);
+end);
+
+#############################################################################
+##
+#O  IdealByDivisorClosedSet(X,S)
+#O  IdealByDivisorClosedSet(S,X)
+##
+##  If X is a divisor closed subset of S (for all x in X and y in S, 
+##  if x-y in S, the integer y is in X), then it returns the ideal S\X.
+############################################################################
+InstallMethod(IdealByDivisorClosedSet,
+    "Integral Ideal defined as de complement of a divisor closed set",
+    [IsList,IsNumericalSemigroup],
+function(X,S)
+    local i, gens, ap, m;
+
+    if not(IsNumericalSemigroup(S)) then 
+        Error("The second argument must be a numerical semigroup");
+    fi;
+    if not(IsComplementOfIntegralIdeal (X,S)) then
+        Error("The first argument must be divisor closed in the second");
+    fi;
+
+    ap:=List(AperyList(S));
+    m:=Multiplicity(S);
+    for i in [1..m] do
+        if ap[i] in X then 
+            while ap[i] in X do
+                ap[i]:=ap[i]+m;
+            od; 
+        fi;
+    od;
+    return ap+S;
+end);
+
+
+InstallMethod(IdealByDivisorClosedSet,
+    "Integral Ideal defined as de complement of a divisor closed set",
+    [IsNumericalSemigroup,IsList],
+function(S,X)
+    return IdealByDivisorClosedSet(X,S);
+end);
 
 #############################################################################
 ##

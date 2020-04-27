@@ -97,6 +97,29 @@ DeclareGlobalFunction("AmbientNumericalSemigroupOfIdeal");
 DeclareProperty("IsIntegral", IsIdealOfNumericalSemigroup);
 DeclareSynonym("IsIntegralIdealOfNumericalSemigroup", IsIntegral);
 
+#############################################################################
+##
+#O  IsComplementOfIntegralIdeal(X,S)
+#O  IsComplementOfIntegralIdeal(S,X)
+##
+##  Determines if the subset X of S is the complement of an integral ideal
+##  of S.
+############################################################################
+DeclareOperation("IsComplementOfIntegralIdeal",[IsList,IsNumericalSemigroup]);
+DeclareOperation("IsComplementOfIntegralIdeal",[IsNumericalSemigroup,IsList]);
+
+#############################################################################
+##
+#O  IdealByDivisorClosedSet(X,S)
+#O  IdealByDivisorClosedSet(S,X)
+##
+##  If X is a divisor closed subset of S (for all x in X and y in S with x-y in S, 
+##  the integer y is in X), then it returns the ideal S\X.
+############################################################################
+DeclareOperation("IdealByDivisorClosedSet",[IsList,IsNumericalSemigroup]);
+DeclareOperation("IdealByDivisorClosedSet",[IsNumericalSemigroup,IsList]);
+
+
 
 #############################################################################
 ##
