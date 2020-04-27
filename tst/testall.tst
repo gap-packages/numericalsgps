@@ -1326,6 +1326,14 @@ false
 gap> IsIntegralIdealOfNumericalSemigroup(10+s);
 true
 
+gap> s:=NumericalSemigroup(10,11,15,19);;
+gap> i:=[20,21,25]+s;;
+gap> d:=Difference(0+s,i);;
+gap> IsComplementOfIntegralIdeal(d,s);
+true
+gap> i=IdealByDivisorClosedSet(d,s);
+true
+
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> SmallElements(I)=[ 3, 5, 7, 9, 11, 13 ];
 true
