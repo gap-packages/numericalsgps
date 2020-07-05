@@ -294,7 +294,7 @@ gap> SmallElements(last);
                     <Func Name="NumericalSemigroupByOpenInterval" Arg="List"/>
                     <Func Name="NumericalSemigroup" Arg="String, List" Label="by open interval"/>
                     <Description>
-		      The input is a list of rational numbers defining a open interval. The output is the semigroup of numerators of all rational numbers in this interval, <Cite Key="RUB"/>.
+		      The input is a list of rational numbers defining an open interval. The output is the semigroup of numerators of all rational numbers in this interval, <Cite Key="RUB"/>.
 		      <P/>
 		       <C>String</C> does not need to be present. When it is present, it must be <C>"openinterval"</C>.
 			<Example><![CDATA[		
