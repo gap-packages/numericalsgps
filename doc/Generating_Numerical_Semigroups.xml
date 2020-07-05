@@ -204,10 +204,10 @@ gap> NumericalSemigroup("fundamentalgaps",fg);
 
 <ManSection>
     <Func Name="NumericalSemigroupByAffineMap" Arg="a,b,c"/>
-    <Func Name="NumericalSemigroup" Arg="String, a,b" Label="by affine map"/>
+    <Func Name="NumericalSemigroup" Arg="String, a,b, c" Label="by affine map"/>
     <Description>
         Given three nonnegative integers <A>a</A>, <A>b</A> and <A>c</A>, with <M>a,c>0</M> and <M>\gcd(b,c)=1</M>,
-        this function returns the least (with restpect to set order inclusion) numerical semigroup containing <A>c</A> and closed under the map <M>x\mapsto ax+b</M>. The procedure is explained in <Cite Key="Ugolini"></Cite>.
+        this function returns the least (with respect to set order inclusion) numerical semigroup containing <A>c</A> and closed under the map <M>x\mapsto ax+b</M>. The procedure is explained in <Cite Key="Ugolini"></Cite>.
 	<P/>
 			In the second form, <C>String</C> must be <C>"affinemap"</C>.
         <Example><![CDATA[
