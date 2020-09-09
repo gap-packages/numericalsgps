@@ -123,14 +123,14 @@ InstallMethod(SmallElementsOfNumericalSemigroup,
     smalls := Union(smalls, [CeilingOfRational(i*r)..Int(i*s)]);
   od;
   
-  gaps := Difference([1..k*s], smalls); #the set of gaps
+  gaps := Difference([1..Int(k*s)], smalls); #the set of gaps
   if gaps = [] then # the Frobenius number
     f := -1;
   else
     f := Maximum(gaps);
   fi;
   c := f+1; # the conductor
-  smalls := Difference(smalls,[c+1..k*s]);
+  smalls := Difference(smalls,[c+1..CeilingOfRational(k*s)]);
     
   SetGapsOfNumericalSemigroup(sgp,gaps);
   SetFrobeniusNumberOfNumericalSemigroup(sgp,f);
