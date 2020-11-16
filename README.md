@@ -1,3 +1,4 @@
+[![Build Status](https://github.com/gap-packages/numericalsgps/workflows/CI/badge.svg?branch=master)](https://github.com/gap-packages/numericalsgps/actions?query=workflow%3ACI+branch%3Amaster)
 [![Build Status](https://travis-ci.org/gap-packages/numericalsgps.svg?branch=master)](https://travis-ci.org/gap-packages/numericalsgps)
 [![Code Coverage](https://codecov.io/github/gap-packages/numericalsgps/coverage.svg?branch=master&token=)](https://codecov.io/gh/gap-packages/numericalsgps)
 
