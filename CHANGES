@@ -5,6 +5,7 @@
 #======
 1.2.2 -> 1.2.2 dev
 - Added IsComplementOfIntegralIdeal and IdealByDivisorClosedSet
+- ViewString for affine semigroups now considers singular in a single generator or minimal generator
 #======
 1.2.1 -> 1.2.2
 - Bug fix for DivisorsOfElementInNumericalSemigroup(0,s).

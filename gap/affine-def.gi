@@ -1283,17 +1283,26 @@ end);
 ##  This method for affine semigroups.
 ##
 #############################################################################
-InstallMethod( ViewString,
-        "Displays an Affine Semigroup",
-        [IsAffineSemigroup],
-        function( S )
+InstallMethod( ViewString, "Displays an Affine Semigroup", [IsAffineSemigroup],
+  function( S )
+  local ed;
   if HasMinimalGenerators(S) then
-        return Concatenation("Affine semigroup in ", String(Length(MinimalGenerators(S)[1]))," dimensional space, with ", String(Length(MinimalGenerators(S))), " generators");
-    elif HasGenerators(S) then
-        return Concatenation("Affine semigroup in ", String(Length(Generators(S)[1]))," dimensional space, with ", String(Length(Generators(S))), " generators");
+    ed:= Length(MinimalGenerators(S));
+    if ed>1 then 
+      return Concatenation("Affine semigroup in ", String(Length(MinimalGenerators(S)[1]))," dimensional space, with ", String(ed), " generators");
     else
-        return ("<Affine semigroup>");
+      return Concatenation("Affine semigroup in ", String(Length(MinimalGenerators(S)[1]))," dimensional space, with ", String(ed), " generator");
     fi;
+  elif HasGenerators(S) then
+    ed:=Length(Generators(S));
+    if ed>1 then
+      return Concatenation("Affine semigroup in ", String(Length(Generators(S)[1]))," dimensional space, with ", String(ed), " generators");
+    else
+      return Concatenation("Affine semigroup in ", String(Length(MinimalGenerators(S)[1]))," dimensional space, with ", String(ed), " generator");
+    fi;
+  else
+    return ("<Affine semigroup>");
+  fi;
 end);
 
 #############################################################################
@@ -1312,17 +1321,9 @@ InstallMethod(String,[IsAffineSemigroup],ViewString);
 ##  This method for affine semigroups.
 ##
 #############################################################################
-InstallMethod( ViewObj,
-        "Displays an Affine Semigroup",
-        [IsAffineSemigroup],
-        function( S )
-  if HasMinimalGenerators(S) then
-        Print("<Affine semigroup in ", Length(MinimalGenerators(S)[1])," dimensional space, with ", Length(MinimalGenerators(S)), " generators>");
-    elif HasGenerators(S) then
-        Print("<Affine semigroup in ", Length(Generators(S)[1])," dimensional space, with ", Length(Generators(S)), " generators>");
-    else
-        Print("<Affine semigroup>");
-    fi;
+InstallMethod( ViewObj, "Displays an Affine Semigroup", [IsAffineSemigroup],
+  function( S )
+    Print(ViewString(S));
 end);
 
 
@@ -1334,18 +1335,7 @@ end);
 ##  This method for affine semigroups. ## under construction... (= View)
 ##
 #############################################################################
-InstallMethod( Display,
-        "Displays an Affine Semigroup",
-        [IsAffineSemigroup],
-        function( S )
-    if HasMinimalGenerators(S) then
-        Print("<Affine semigroup in ", Length(MinimalGenerators(S)[1]),"-dimensional space, with ", Length(MinimalGenerators(S)), " generators>");
-    elif HasGenerators(S) then
-        Print("<Affine semigroup in ", Length(Generators(S)[1]),"-dimensional space, with ", Length(Generators(S)), " generators>");
-    else
-        Print("<Affine semigroup>");
-    fi;
-end);
+InstallMethod( Display, "Displays an Affine Semigroup", [IsAffineSemigroup], ViewObj);
 
 
 
