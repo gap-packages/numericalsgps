@@ -283,7 +283,7 @@ gap> a:=AffineSemigroupByEquations([[1,-1]],[]);
 gap> Display(a);
 <Affine semigroup>
 gap> ViewString(a);
-"<Affine semigroup>"
+"Affine semigroup"
 gap> [1,1] in a;
 true
 gap> [0,2] in a;
@@ -295,7 +295,7 @@ gap> a:=AffineSemigroupByInequalities([[2,-1],[-1,3]]);
 gap> Print(a);
 AffineSemigroupByInequalities( [ [ -1, 3 ], [ 2, -1 ] ] )
 gap> ViewString(a);
-"<Affine semigroup>"
+"Affine semigroup"
 gap> Display(a);
 <Affine semigroup>
 gap> [1,1] in a;
@@ -2432,7 +2432,7 @@ gap> BasisOfGroupGivenByEquations([[0,0,1],[2,-1,-3]],[2]);
 gap> a1:=AffineSemigroup([[2,0],[0,2]]);
 <Affine semigroup in 2 dimensional space, with 2 generators>
 gap> a2:=AffineSemigroup([[1,1]]);
-<Affine semigroup in 2 dimensional space, with 1 generators>
+<Affine semigroup in 2 dimensional space, with 1 generator>
 gap> GluingOfAffineSemigroups(a1,a2);
 <Affine semigroup in 2 dimensional space, with 3 generators>
 gap> Generators(last);

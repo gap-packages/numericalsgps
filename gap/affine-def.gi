@@ -1301,7 +1301,7 @@ InstallMethod( ViewString, "Displays an Affine Semigroup", [IsAffineSemigroup],
       return Concatenation("Affine semigroup in ", String(Length(MinimalGenerators(S)[1]))," dimensional space, with ", String(ed), " generator");
     fi;
   else
-    return ("<Affine semigroup>");
+    return ("Affine semigroup");
   fi;
 end);
 
@@ -1323,7 +1323,7 @@ InstallMethod(String,[IsAffineSemigroup],ViewString);
 #############################################################################
 InstallMethod( ViewObj, "Displays an Affine Semigroup", [IsAffineSemigroup],
   function( S )
-    Print(ViewString(S));
+    Print("<",ViewString(S),">");
 end);
 
 
