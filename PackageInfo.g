@@ -180,7 +180,16 @@ rec(
   IsAuthor      := false,
   IsMaintainer  := false,
   PostalAddress := "Università degli Studi di Catania"
+),
+
+rec(
+  LastName      := "Angulo Rodríguez",
+  FirstNames    := "Jorge",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  PostalAddress := "Universidad de Valladolid"
 )
+
 
 ],
 
