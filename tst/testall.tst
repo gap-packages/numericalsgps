@@ -1479,6 +1479,25 @@ gap> s:=NumericalSemigroup(4,6,11);;
 gap> TypeSequenceOfNumericalSemigroup(s);
 [ 1, 1, 1, 1, 1, 1, 1 ]
 
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=[4,5]+s;;
+gap> zc:=IrreducibleZComponents(i);
+[ <Ideal of numerical semigroup>, <Ideal of numerical semigroup> ]
+gap> List(zc,MinimalGenerators);
+[ [ -2, 0 ], [ 2, 4 ] ]
+gap> i=Intersection(zc);
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=10+s;;
+gap> di:=DecomposeIntegralIdealIntoIrreducibles(i);
+[ <Ideal of numerical semigroup>, <Ideal of numerical semigroup> ]
+gap> List(di,MinimalGenerators);
+[ [ 8, 10 ], [ 10, 12 ] ]
+gap> i=Intersection(di);
+true
+
 gap> I:=[6,9,11]+NumericalSemigroup(6,9,11);;
 gap> List([1..7],n->HilbertFunctionOfIdealOfNumericalSemigroup(n,I));
 [ 3, 5, 6, 6, 6, 6, 6 ]

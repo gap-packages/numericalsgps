@@ -577,6 +577,52 @@ gap> TypeSequenceOfNumericalSemigroup(s);
 
 </Section>
 
+<Section Label="sec:decomposition-irreducibles">
+    <Heading>
+        Decomposition into irreducibles
+    </Heading>
+
+    Let <M>I</M> be an ideal of a numerical semigroup <M>S</M>. We say that <M>I</M> is <M>\mathbb{Z}</M>-<E>irreducible</E> if it cannot be expressed as a finite intersection of other relative ideals properly containing it. Every ideal <M>I</M> can be expressed as an intersection of exactly <M>t</M> irreducible ideals of <M>S</M>, where <M>t</M> is the type of <M>I</M>. These irreducible ideals are unique and are known as the <E>irreducible <M>\mathbb{Z}</M>-components</E> of <M>I</M>.
+
+    Recall that an ideal is integral (or proper) if it is contained in its ambient semigroup. We say that an integral ideal is <E>irreducible</E> if it cannot be expressed as an intersection of other proper integral ideals. Every integral ideal admits a unique decomposition into irredundant irreducible integral ideals. 
+
+    <ManSection>
+        <Oper Arg="I" Name="IrreducibleZComponents"></Oper>
+        <Description>
+            <A>I</A> is an ideal of a numerical semigroup. The output is the list of irreducible <M>\mathbb{Z}</M>-components of <A>I</A>. These are calculated using Proposition 24 in <Cite Key="nsapp2"></Cite>.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=[4,5]+s;;
+gap> zc:=IrreducibleZComponents(i);
+[ <Ideal of numerical semigroup>, <Ideal of numerical semigroup> ]
+gap> List(zc,MinimalGenerators);
+[ [ -2, 0 ], [ 2, 4 ] ]
+gap> i=Intersection(zc);
+true
+]]></Example>
+        </Description>
+    </ManSection>
+
+    <ManSection>
+        <Oper Arg="I" Name="DecomposeIntegralIdealIntoIrreducibles"></Oper>
+        <Description>
+            <A>I</A> is an integral ideal of a numerical semigroup. The output is the list of irreducible integral ideals whose intersection is the unique irredundant decomposition of <A>I</A> into integral proper ideals. The computations are performed using Theorem 4 in <Cite Key="nsapp2"></Cite>.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=10+s;;
+gap> di:=DecomposeIntegralIdealIntoIrreducibles(i);
+[ <Ideal of numerical semigroup>, <Ideal of numerical semigroup> ]
+gap> List(di,MinimalGenerators);
+[ [ 8, 10 ], [ 10, 12 ] ]
+gap> i=Intersection(di);
+true
+]]></Example>
+        </Description>
+    </ManSection>
+
+
+</Section>
+
 <Section>
                 <Heading>
                     Blow ups and closures

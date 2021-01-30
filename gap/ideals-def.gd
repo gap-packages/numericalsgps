@@ -440,3 +440,33 @@ DeclareOperation("AperyTable",[IsNumericalSemigroup]);
 ########################################################################
 
 DeclareGlobalFunction("StarClosureOfIdealOfNumericalSemigroup");
+
+########################################################################
+##
+#O IrreducibleZComponents(i)
+##
+## i is an ideal of a numerical semigroup
+## The output is the list of irreducible Z-components of the ideal
+## There are exactly t(i) (type of i) Z-components and i is the 
+## intersection of them
+## See Proposition 24 in A. Assi, M. D'Anna, P. A. García-Sánchez, 
+## Numerical semigroups and applications, Second edition, 
+## RSME Springer series 3, Springer, Switzerland, 2020.
+########################################################################
+DeclareOperation("IrreducibleZComponents",[IsIdealOfNumericalSemigroup]);
+
+
+########################################################################
+##
+#O DecomposeIntegralIdealIntoIrreducibles(i)
+##
+## i is an integral (proper) ideal of a numerical semigroup S
+## The output is a list of irreducible ideals of S, such that its 
+## intersection is the unique irredundant decompostion of i into 
+## proper irreducible ideals
+## The calculation is performed using Theorem 4 in 
+## A. Assi, M. D'Anna, P. A. García-Sánchez, 
+## Numerical semigroups and applications, Second edition, 
+## RSME Springer series 3, Springer, Switzerland, 2020.
+########################################################################
+DeclareOperation("DecomposeIntegralIdealIntoIrreducibles",[IsIdealOfNumericalSemigroup]);
