@@ -353,7 +353,7 @@ InstallGlobalFunction(NumericalSemigroupByGaps, function(L)
         return NumericalSemigroup(1);
     fi;
 
-    K := Difference([0..L[Length(L)]+1],L);
+    K := Difference([0..Maximum(L)+1],L);
     if not RepresentsSmallElementsOfNumericalSemigroup(K) then
         Error("The argument does not represent the gaps of a numerical semigroup");
     fi;
