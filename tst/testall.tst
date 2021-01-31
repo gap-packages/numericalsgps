@@ -2134,6 +2134,13 @@ gap> DivisorsOfElementInNumericalSemigroup(20,s);
 gap> DivisorsOfElementInNumericalSemigroup(0,s);
 [ 0 ]
 
+gap> NuSequence:=S->List([1..2*Conductor(S)-Genus(S)], i->Length(DivisorsOfElementInNumericalSemigroup(S[i],S)));;
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> NuSequence(s);
+[ 1, 2, 2, 3, 2, 4, 3, 4, 4, 6, 4, 6, 5, 8, 9, 8, 9, 10, 12, 12 ]
+gap> s=NumericalSemigroupByNuSequence(last);
+true
+
 gap> S := NumericalSemigroup(7,9,17);;
 gap> FengRaoDistance(S,6,100);
 86

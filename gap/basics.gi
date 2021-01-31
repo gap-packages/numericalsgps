@@ -1117,6 +1117,84 @@ InstallMethod(DivisorsOfElementInNumericalSemigroup,
 end);
 
 
+#########################################################################
+#F NumericalSemigroupByNuSequence(NuSeq)
+## Given a nu-sequence, compute the semigroup asociated to it.
+## Based on the code by Jorge Angulo, inspired in 
+## - Bras-Amorós, Maria Numerical semigroups and codes. 
+## Algebraic geometry modeling in information theory, 167–218, 
+## Ser. Coding Theory Cryptol., 8, World Sci. Publ., Hackensack, NJ, 2013
+#########################################################################
+InstallGlobalFunction(NumericalSemigroupByNuSequence,
+function(NuSeq)
+    local isNu, i, l, S, g, c, k, G, DTilde;
+    if not(IsListOfIntegersNS(NuSeq)) then
+        Error("The argument must be a list of integers.");
+    fi;
+    #Some checks on sequence. This are only necesary Conditions for a Nu sequence
+    isNu:=true;
+    l:=Size(NuSeq);
+    if l>0 then
+        if not(NuSeq[1]=1) then isNu:=false; fi;
+        if l>1 then
+            if not(NuSeq[2]=2) then isNu:=false; fi;
+        else #If nu sequece is [1], then the semigroup is N
+            return NumericalSemigroup(1);
+        fi;
+        for i in [1..l] do
+            if not(NuSeq[i]<=i) then isNu:=false; fi;
+        od;
+    fi;
+    if not isNu then
+        Error("The argument is not a nu-sequence.");
+    fi;
+    #We compute numerical semigroup from NuSeq.
+    S:=[];
+    #We first need to compute k, greatest i such that nu_i=nu_{i+1}
+    k:=1;
+    for i in [1..(l-1)] do
+        if NuSeq[i]=NuSeq[i+1] then
+        k:=i;
+        fi;
+    od;
+    #From k on, every entry should increas by one
+    if First([k+1..(l-1)],i->not(NuSeq[i]+1=NuSeq[i+1]))<>fail then
+        Error("The argument is not a nu-sequence.");
+    fi;
+    #With k, we can calculate both Genus and Conductor
+    g:=k+1-NuSeq[k];
+    c:=(k+g+1)/2;
+
+    #We keep track of gaps.
+    #Note that 1 is gap, since the trivial semigroup was already considered.
+    G:=[1,c-1];
+
+    #This auxiliar function computes the number of gaps, l, i<l<c-1 such that:
+    #c-1+i-l is also a Gap
+    DTilde:=function(i,c,G)
+        local l, D;
+        D:=0;
+        for l in [(i+1)..(c-2)] do
+        if l in G then
+            if (c+i-l-1) in G then D:=D+1; fi;
+        fi;
+        od;
+        return D;
+    end;
+
+    for i in Reversed([2..(c-1)]) do
+        if NuSeq[c+i-g]=(c+i-2*g+DTilde(i,c,G)) then
+        Add(S,i,1);
+        else
+        Add(G,i);
+        fi;
+    od;
+    #Now, we determine small elements of the semigroup.
+    Add(S,0,1); # O is always n the semigroup.
+    Add(S,c); # Conductor is always n the semigroup.
+    return NumericalSemigroupBySmallElements(Set(S));
+end);
+
 #############################################################################
 ##
 #F ElementNumber_NumericalSemigroup(S,n)

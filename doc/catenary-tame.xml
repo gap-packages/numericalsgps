@@ -914,8 +914,10 @@ gap> HomogeneousCatenaryDegreeOfNumericalSemigroup(s);
 
 	Given a numerical semigroup <M>S</M> and two integers <M>a,b</M>, we write <M>a\le_S b</M> if <M>b-a\in S</M>. We also say that <M>a</M> divides <M>b</M> (with respect to <M>S</M>). The semigroup <M>S</M> with this binary relation is a poset.<P/>
 
-  The set of divisors of <M>n</M> in <M>S</M> will be denoted by <M>\mathrm{D}_S(n)</M>.  If we are given <M>n_1,\ldots,n_r\in S</M>, the set of the divisors of these elements is <M>\mathrm{D}(n_1,\ldots, n_r)= \bigcup_{i=1}^r \mathrm{D}(n_i)</M>.
+  The set of divisors of <M>n</M> in <M>S</M> will be denoted by <M>\mathrm{D}_S(n)</M>.  If we are given <M>n_1,\ldots,n_r\in S</M>, the set of the divisors of these elements is <M>\mathrm{D}(n_1,\ldots, n_r)= \bigcup_{i=1}^r \mathrm{D}(n_i)</M>.<P/>
 
+
+    For a numerical semigroup <M>S</M>, we can define the sequence <M>\{\nu_i\}_{i\ge 1}</M>, with <M>\nu_i</M> the number of divisors of the <M>i</M>th element in <M>S</M>. It can be shown that the first <M>2g-c</M> elements of the sequence uniquely determine the semigroup (with <M>c</M> the conductor of <M>S</M> and <M>g</M> its genus), see <Cite Key="bras-ns-codes"/>.
     <ManSection>
         <Func Arg="S,n" Name="MoebiusFunctionAssociatedToNumericalSemigroup"></Func>
         <Description>
@@ -962,6 +964,28 @@ gap> DivisorsOfElementInNumericalSemigroup(s,20);
 [ 0, 5, 10, 15, 20 ]
 gap> DivisorsOfElementInNumericalSemigroup(20,s);
 [ 0, 5, 10, 15, 20 ]
+              ]]></Example>
+        </Description>
+    </ManSection>
+
+
+    <ManSection>
+        <Func Arg="nuseq" Name="NumericalSemigroupByNuSequence"/>
+        <Description>
+	    <A>nuseq</A> is a list of integers that represents a <M>\nu</M>-sequence, that is, the <M>i</M>th element in the sequence is the number of divisors of the <M>i</M>th element in a certain numerical semigroup. Though the sequence is finite, it is understood that from the last element every entry increases exactly by one. <P/>
+        
+        The output is the only numerical semigroup whose <M>\nu</M> sequence is <M><A>nusec</A>\cup \{k,k+1, \ldots\}</M> (with <M>k</M> the last element of <A>nusec</A>).  <P/>
+
+        The implementation is inspired in Theorem 1.54 in <Cite Key="bras-ns-codes"/>.
+
+            <Example><![CDATA[
+gap> NuSequence:=S->List([1..2*Conductor(S)-Genus(S)],
+i->Length(DivisorsOfElementInNumericalSemigroup(S[i],S)));;
+gap> s:=NumericalSemigroup(5,7,11);;
+gap> NuSequence(s);
+[ 1, 2, 2, 3, 2, 4, 3, 4, 4, 6, 4, 6, 5, 8, 9, 8, 9, 10, 12, 12 ]
+gap> s=NumericalSemigroupByNuSequence(last);
+true
               ]]></Example>
         </Description>
     </ManSection>
