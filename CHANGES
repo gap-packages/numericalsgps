@@ -7,7 +7,8 @@
 - Added IsComplementOfIntegralIdeal and IdealByDivisorClosedSet
 - ViewString for affine semigroups now considers singular in a single generator or minimal generator
 - Decomposition of ideals into irreducibles (by Jorge Angulo)
-- NumericalSemgigroupByNuSequence (by Jorge Angulo)
+- NumericalSemgigroupByNuSequence and NumericalSemgigroupByTauSequence (by Jorge Angulo)
+
 #======
 1.2.1 -> 1.2.2
 - Bug fix for DivisorsOfElementInNumericalSemigroup(0,s).

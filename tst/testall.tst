@@ -2141,6 +2141,18 @@ gap> NuSequence(s);
 gap> s=NumericalSemigroupByNuSequence(last);
 true
 
+gap> TauNS := function(i,S)
+>    local d, D, si;
+>    D:=DivisorsOfElementInNumericalSemigroup(S[i+1],S);
+>    si:=S[i+1];
+>    d:=Maximum(Intersection(D,[0..Int(si/2)]));
+>    return NumberElement_NumericalSemigroup(S,d)-1;
+> end;;
+gap> TauSequence:=S->List([0..(2*Conductor(S)-Genus(S)+1)], i->TauNS(i,S));;
+gap> s:=NumericalSemigroup(6,7,8,17);;
+gap> s=NumericalSemigroupByTauSequence(TauSequence(s));
+true
+
 gap> S := NumericalSemigroup(7,9,17);;
 gap> FengRaoDistance(S,6,100);
 86

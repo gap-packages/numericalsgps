@@ -304,6 +304,16 @@ DeclareOperation("DivisorsOfElementInNumericalSemigroup",[IsInt,IsNumericalSemig
 #########################################################################
 DeclareGlobalFunction("NumericalSemigroupByNuSequence");
 
+#########################################################################
+#F NumericalSemigroupByTauSequence(TauSeq)
+## Given a tau-sequence, compute the semigroup asociated to it.
+## Based on the code by Jorge Angulo, inspired in 
+## - Bras-Amorós, Maria Numerical semigroups and codes. 
+## Algebraic geometry modeling in information theory, 167–218, 
+## Ser. Coding Theory Cryptol., 8, World Sci. Publ., Hackensack, NJ, 2013
+#########################################################################
+DeclareGlobalFunction("NumericalSemigroupByTauSequence");
+
 #############################################################################
 ##
 #F ElementNumber_NumericalSemigroup(S,n)
