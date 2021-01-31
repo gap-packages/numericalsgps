@@ -1127,7 +1127,7 @@ end);
 #########################################################################
 InstallGlobalFunction(NumericalSemigroupByNuSequence,
 function(NuSeq)
-    local isNu, i, l, S, g, c, k, G, DTilde;
+    local isNu, i, l, S, g, c, k, G, DTilde, cand, ncand, NuSequence;
     if not(IsListOfIntegersNS(NuSeq)) then
         Error("The argument must be a list of integers.");
     fi;
@@ -1192,7 +1192,14 @@ function(NuSeq)
     #Now, we determine small elements of the semigroup.
     Add(S,0,1); # O is always n the semigroup.
     Add(S,c); # Conductor is always n the semigroup.
-    return NumericalSemigroupBySmallElements(Set(S));
+
+    NuSequence:=S->List([1..2*Conductor(S)-Genus(S)],i->Length(DivisorsOfElementInNumericalSemigroup(S[i],S)));
+    cand:= NumericalSemigroupBySmallElements(Set(S));
+    ncand:=NuSequence(cand);
+    if ncand<>NuSeq{[1..Length(ncand)]} then
+        Error("The sequence determines a semigroup, but it is not a nu-sequence");
+    fi;
+    return cand;
 end);
 
 #############################################################################
