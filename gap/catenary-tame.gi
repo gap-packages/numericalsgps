@@ -1916,7 +1916,7 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
 
 
   return Minimum(List(posiblesOfLen2(r), d -> Length(divisorsOfMany2(d))));
-end;
+end);
 
 ###########################################################################
 ##
