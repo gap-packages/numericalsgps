@@ -1883,7 +1883,7 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
       return FengRaoDistanceArf(s,m);
     fi;
 
-    if HasIsSymmetric(s) and IsSymmetric and m>=conductor then
+    if HasIsSymmetric(s) and IsSymmetric(s) and m>=conductor then
       return FengRaoDistanceSymmetric(s,m);
     fi;
 
