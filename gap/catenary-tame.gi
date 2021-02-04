@@ -1496,7 +1496,7 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
   local  conductor, genus, multiplicity, final, elementsUpToFinal, divisorsOfMany2,
          addOne2, posiblesOfLen2, FengRaoDistanceArf, FengRaoDistanceSymmetric,
          FengRaoDistanceBruteForce, FengRaoDistanceSymmetricGeneralized,
-         FengRaoDistanceOrdinary2, FengRaoDistanceArf2, FRD2Small,
+         FengRaoDistanceOrdinary2, FengRaoDistanceArf2, FRD2Small, Nu, NuSequence,
           FengRaoDistanceTwoGenerators;
 
   conductor := ConductorOfNumericalSemigroup(s);
@@ -1547,6 +1547,24 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
       return Union(tot);
     fi;
   end;
+
+  #This function computes nu of a certain index.
+  #I is the i-th element of the semigroup S
+  Nu := function(i,S)
+        local d;
+	d:=DivisorsOfElementInNumericalSemigroup(S[i],S);
+	if d=[] then
+	   return 1;
+	  else
+	   return Length(d);
+	  fi;
+  end;
+  
+  #Calculates nu sequence of semigroup, up to nu_i=2c-g.
+  #For numbers greater than that, it increases 1 by 1.
+  NuSequence:=S->List([1..2*Conductor(S)-Genus(S)],
+    i->Nu(i,S));
+
 
   #FengRaoDistanceArf############################################################
   #S must be an Arf numerical semigroup (IsArf(s) is true)                      #
