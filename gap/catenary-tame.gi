@@ -1494,8 +1494,7 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
 	
  function(s,r,m)
   local  conductor, genus, multiplicity, final, elementsUpToFinal, divisorsOfMany2,
-         addOne2, posiblesOfLen2, FengRaoDistanceArf, FengRaoDistanceSymmetric,
-         FengRaoDistanceBruteForce, FengRaoDistanceSymmetricGeneralized,
+         addOne2, posiblesOfLen2, FengRaoDistanceArf, FengRaoDistanceBruteForce, 
          FengRaoDistanceOrdinary2, FengRaoDistanceArf2, FRD2Small, Nu, NuSequence,
           FengRaoDistanceTwoGenerators;
 
@@ -1657,20 +1656,20 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
   # IEEE Transactions on information theory, 2013                               #
   ###############################################################################
 
-  FengRaoDistanceTwoGenerators := function(S,m)
-    local conductor, genus, ro, p, min, L;
+  #FengRaoDistanceTwoGenerators := function(S,m)
+  #  local conductor, genus, ro, p, min, L;
     # We use the formula fr:=min{ρ_k ∈ S | ρ_k ≥ m + 2 - 2g}, for m≥c.
-    conductor:=Conductor(S);
-    genus:=Genus(S);
-    L:=ElementsUpTo(S,2*conductor);
-    min:=4*conductor;
-    for ro in L do
-      if ro >= m+1-2*genus and min>(ro+m+1-2*genus) then
-        min:=ro;
-      fi;
-    od;
-    return min;
-  end;
+  #  conductor:=Conductor(S);
+  #  genus:=Genus(S);
+  #  L:=ElementsUpTo(S,2*conductor);
+  #  min:=4*conductor;
+  #  for ro in L do
+  #    if ro >= m+1-2*genus and min>(ro+m+1-2*genus) then
+  #      min:=ro;
+  #    fi;
+  #  od;
+  #  return min;
+  # end;
 
   #Computes the generalized r-th Feng-Rao distance for m in the semigrup such that
   #m=2g-1+e for some e in the semigroup.
@@ -1682,9 +1681,9 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
   # from 2001                                                 #
   # Theorem 9                                                 #
   #############################################################
-  FengRaoDistanceSymmetricGeneralized := function(s,r,m)
-      return m+1-2*Genus(s)+FengRaoNumber(r,s);
-  end;
+  #FengRaoDistanceSymmetricGeneralized := function(s,r,m)
+  #    return m+1-2*Genus(s)+FengRaoNumber(r,s);
+  #end;
 
   #Computes the 2-nd feng rao distance of m, and element of the semigrup s
   #in the interval [c,2c]
@@ -1905,9 +1904,9 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
       return FengRaoDistanceSymmetric(s,m);
     fi;
 
-    if m>=conductor and Size(Generators(s))=2 then
-      return FengRaoDistanceTwoGenerators(s,m);
-    fi;
+    #if m>=conductor and Size(Generators(s))=2 then
+    #  return FengRaoDistanceTwoGenerators(s,m);
+    #fi;
 
     return FengRaoDistanceBruteForce(s,m);
 
@@ -1928,9 +1927,9 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
 
   #Generalized, symmetric:
 
-  if HasIsSymmetric(s) and IsSymmetric(s) and ((m-2*Genus(s)+1) in s) then
-    FengRaoDistanceSymmetricGeneralized(s,r,m);
-  fi;
+  #if HasIsSymmetric(s) and IsSymmetric(s) and ((m-2*Genus(s)+1) in s) then
+  #  FengRaoDistanceSymmetricGeneralized(s,r,m);
+  #fi;
 
 
   return Minimum(List(posiblesOfLen2(r), d -> Length(divisorsOfMany2(d))));
