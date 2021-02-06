@@ -1928,7 +1928,7 @@ InstallMethod(FengRaoDistance, "Feng-Rao distance of element in Numerical Semigr
 
   #Generalized, symmetric:
 
-  if HasIsSymmetric(s) and ((m-2*Genus(s)+1) in s) then
+  if HasIsSymmetric(s) and IsSymmetric(s) and ((m-2*Genus(s)+1) in s) then
     FengRaoDistanceSymmetricGeneralized(s,r,m);
   fi;
 
