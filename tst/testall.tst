@@ -1485,7 +1485,7 @@ gap> i:=[4,5]+s;;
 gap> zc:=IrreducibleZComponents(i);
 [ <Ideal of numerical semigroup>, <Ideal of numerical semigroup> ]
 gap> List(zc,MinimalGenerators);
-[ [ -2, 0 ], [ 2, 4 ] ]
+[ [ 2, 4 ], [ -2, 0 ] ]
 gap> i=Intersection(zc);
 true
 

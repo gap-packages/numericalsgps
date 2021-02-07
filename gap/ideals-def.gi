@@ -1237,7 +1237,7 @@ function(I)
     MG:=MinimalGenerators(MG);
     output:=[];
     for g in MG do
-      Add(output, g+K);
+      Add(output, -g+K);
     od;
     return output;
 end
