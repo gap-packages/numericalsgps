@@ -1037,7 +1037,7 @@ gap> MinimalGenerators(NumericalSemigroupByTauSequence(tau));
   The <M>r</M>th generalized distance is <M>\delta_S^r(n)=\{ \#\mathrm{D}(n_1,\ldots,n_r) \mid n\le n_1 &lt; \cdots &lt; n_r,\ n_i\in S\}</M>.
 
     <ManSection>
-        <Func Arg="S,r" Name="FengRaoDistance"></Func>
+        <Func Arg="S,r,m" Name="FengRaoDistance"></Func>
         <Description>
 	    <A>S</A> is a numerical semigroup, <A>r</A> and <A>m</A> integers.
 
