@@ -566,6 +566,23 @@ true
 </ManSection>
 
 <ManSection>
+  <Prop Arg="E" Name="IsAlmostCanonicalIdeal"></Prop>
+  <Description>
+    <A>E</A> is an ideal of a numerical semigroup, say <M>S</M>. Set <M>I</M> to be a translation of <A>E</A> so that its conductor is the same as the conductor of <M>S</M>, and let <M>M</M> and <M>K</M> be the maximal and canonical ideals of <M>S</M>, respectively. Then <A>E</A> is almost canonical if <M>I-M=K-M</M> (see <Cite Key="gas-semigroups"></Cite>). Determines if <A>E</A> almost canonical.
+
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsAlmostSymmetric(s);
+true
+gap> IsAlmostCanonical(MaximalIdeal(s));
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
+
+<ManSection>
     <Oper Arg="S" Name="TypeSequence" Label="for numerical semigroups"/>
                     <Func Arg="S" Name="TypeSequenceOfNumericalSemigroup"></Func>
                     <Description>

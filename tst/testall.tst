@@ -1477,6 +1477,12 @@ true
 gap> IsCanonicalIdealOfNumericalSemigroup(c);
 true
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsAlmostSymmetric(s);
+true
+gap> IsAlmostCanonical(MaximalIdeal(s));
+true
+
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> TypeSequence(s);
 [ 13, 3, 4, 4, 7, 3, 3, 3, 2, 2, 2, 3, 3, 2, 4, 3, 2, 1, 3, 2, 1, 1, 2, 2, 1,

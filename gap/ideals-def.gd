@@ -344,6 +344,16 @@ DeclareOperation("CanonicalIdeal",[IsNumericalSemigroup]);
 DeclareProperty("IsCanonicalIdeal",IsIdealOfNumericalSemigroup);
 DeclareSynonymAttr("IsCanonicalIdealOfNumericalSemigroup", IsCanonicalIdeal);
 
+#############################################################################
+##
+#P  IsAlmostCanonical(e)
+##
+##  Detects if the ideal e is almost canonical as defined in [DS21]
+##
+#############################################################################
+DeclareProperty("IsAlmostCanonical",IsIdealOfNumericalSemigroup);
+
+
 
 #############################################################################
 ##

@@ -814,6 +814,27 @@ InstallMethod(IsCanonicalIdealOfNumericalSemigroup,
   return i=(me-mc)+c;
 end);
 
+#############################################################################
+##
+#P  IsAlmostCanonical(e)
+##
+##  Detects if the ideal e is almost canonical as defined in [DS21]
+##
+#############################################################################
+InstallMethod(IsAlmostCanonical, "Tests if an ideal of a numerical semigroup is almost canonical", true, [IsIdealOfNumericalSemigroup],
+function(I)
+	local S,f,c,J,K,M;
+	S:=AmbientNumericalSemigroupOfIdeal(I);
+	f:=FrobeniusNumber(S);
+	c:=Conductor(I);
+	J:=(f-c+1)+I;
+	M:=MaximalIdeal(S);
+    K:=CanonicalIdeal(S);
+	return(J-M=K-M);
+end);
+
+InstallTrueMethod(IsAlmostCanonical, IsCanonicalIdeal);
+
 
 #############################################################################
 ##
