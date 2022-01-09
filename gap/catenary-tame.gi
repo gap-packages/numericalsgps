@@ -1657,3 +1657,20 @@ InstallMethod(FengRaoNumber,"Feng-Rao number for a numerical semigroup",
   function(r,NS)
   return FengRaoNumber(NS,r);
 end);
+
+
+##############################################################################################################
+##
+#P  IsHomogeneousNumericalSemigroup(S)
+##
+##  Tests if S is homogeneous, that is, for every element a in the Apéry set of its multiplicity,
+##  all the factorizations of a have the same length
+##
+##############################################################################################################
+InstallMethod(IsHomogeneousNumericalSemigroup,"Checks if the numerical semigroup is homogeneous",
+        [IsNumericalSemigroup],
+function(S)
+    local A;
+    A:=AperyList(S);
+    return ForAll(A, a->Length(LengthsOfFactorizationsElementWRTNumericalSemigroup(a,S))=1);
+end);

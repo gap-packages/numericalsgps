@@ -325,3 +325,14 @@ DeclareGlobalFunction("IsAdmittedPatternByIdeal");
 ##
 #############################################################################
 DeclareGlobalFunction("IsAdmittedPatternByNumericalSemigroup");
+
+##############################################################################################################
+##
+#P  IsHomogeneousNumericalSemigroup(S)
+##
+##  Tests if S is homogeneous, that is, for every element a in the Apéry set of its multiplicity,
+##  all the factorizations of a have the same length
+##  Implemented by Francesco Strazzanti
+##
+##############################################################################################################
+DeclareProperty("IsHomogeneousNumericalSemigroup",IsNumericalSemigroup);

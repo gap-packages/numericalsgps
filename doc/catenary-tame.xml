@@ -1083,7 +1083,10 @@ Let <M>S</M> be a numerical semigroup with maximal ideal <M>M</M>, and let <M>x\
 Recall that for <M>x,y\in \mathbb{Z}</M>, we write <M>x\le_S y</M> if <M>y-x\in S</M>. Define the relation <M>\preceq_S</M> on <M>S</M> as <M>x\preceq_S y</M> if <M>x\le_S y</M> and <M>\operatorname{ord}(y)=\operatorname{ord}(x)+\operatorname{ord}(y-x)</M>.
 
 <P/>
-A numerical semigroup <M>S</M> with multiplicity <M>m</M> is said to be pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\le_S</M> have all the same order. The semigroup <M>S</M> is M-pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\preceq_S</M> have all the same order.
+A numerical semigroup <M>S</M> with multiplicity <M>m</M> is said to be pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\le_S</M> have all the same order. The semigroup <M>S</M> is M-pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\preceq_S</M> have all the same order, <Cite Key="Br"></Cite>.
+
+<P/>
+The numerical semigroup <M>S</M> is said to be homogeneous if for every element in <M>\operatorname{Ap}(S,m)</M>, its set of lengths is a singleton (that is, all its a factorizations have the same length), <Cite Key="homogeneous-ns"></Cite>.
 
 <ManSection>
     <Prop Arg="S" Name="IsPure"></Prop>
@@ -1127,6 +1130,29 @@ gap> IsMpure(s);
 false
 gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsMpureNumericalSemigroup(s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
+<ManSection>
+    <Prop Arg="S" Name="IsHomogeneousNumericalSemigroup"></Prop>
+    <Description>
+
+        <A>S</A> is a numerical semigroup.
+        <P/>
+
+        Detects if <A>S</A> is homogeneous.
+
+    <P/>
+
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,11,12,25);;
+gap> IsHomogeneousNumericalSemigroup(s);
+false
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsHomogeneousNumericalSemigroup(s);
 true
 ]]></Example>
     </Description>

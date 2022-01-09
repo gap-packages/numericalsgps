@@ -457,3 +457,13 @@ DeclareOperation("FengRaoDistance",[IsNumericalSemigroup,IsPosInt,IsPosInt]);
 #####################################################################
 DeclareOperation("FengRaoNumber",[IsNumericalSemigroup,IsPosInt]);
 DeclareOperation("FengRaoNumber",[IsPosInt,IsNumericalSemigroup]);
+
+##############################################################################################################
+##
+#P  IsHomogeneousNumericalSemigroup(S)
+##
+##  Tests if S is homogeneous, that is, for every element a in the Apéry set of its multiplicity,
+##  all the factorizations of a have the same length
+##
+##############################################################################################################
+DeclareProperty("IsHomogeneousNumericalSemigroup",IsNumericalSemigroup);

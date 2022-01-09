@@ -1744,6 +1744,13 @@ gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsPureNumericalSemigroup(s);
 true
 
+gap> s:=NumericalSemigroup(10,11,12,25);;
+gap> IsHomogeneousNumericalSemigroup(s);
+false
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsHomogeneousNumericalSemigroup(s);
+true
+
 gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
 gap> IsGradedAssociatedRingNumericalSemigroupGorenstein(s);
 false

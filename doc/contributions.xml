@@ -262,7 +262,7 @@ Jorge implemented the code corresponding to decompositions of ideals into irredu
 </Section>
 
 <Section><Heading>Functions implemented by F. Strazzanti</Heading>
-Francesco hepled in the implementation of the following methods.
+Francesco helped in the implementation of the following methods.
 
   <P/>
   <Ref Prop="IsAlmostCanonicalIdeal"/>,
@@ -272,6 +272,8 @@ Francesco hepled in the implementation of the following methods.
   <Ref Prop="IsNearlyGorenstein"/>,
   <P/>
   <Ref Prop="IsGeneralizedAlmostSymmetric"/>,
+  <P/>
+  <Ref Prop="IsHomogeneousNumericalSemigroup"/>.
 
 </Section>
 
