@@ -11,6 +11,7 @@ Let <M>S</M> be a numerical semigroup and let <M>R</M> be its semigroup ring <M>
 
 A numerical semigroup is said to be nearly Gorenstein if its maximal ideal is contained in its trace ideal <Cite Key="trace-canonical"></Cite>. Every almost symmetric numerical semigroup is nearly Gorenstein. 
 
+<P/>
 A numerical semigroup <M>S</M> with canonical ideal <M>K</M> is a generalized almost symmetric numerical semigroup if either <M>2K=K</M> (symmetric) or <M>2K\setminus K=\{\operatorname{F}(S)-x_1,\dots, \operatorname{F}(S)-x_r,\operatorname{F}(S)\}</M> for some <M>x_1,\dots,x_r \in M\setminus 2M</M> (minimal generators) and <M>x_i-x_j\not\in (S-M)\setminus S</M> (not pseudo-Frobenius numbers). As expected, every almost symmetric numerical semigroup is a generalized almost symmetric numerical semigroup.
 
 <ManSection>
