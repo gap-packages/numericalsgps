@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Section>
-  <Heading>Intersections, and quotients and multiples by integers</Heading>
+  <Heading>Intersections, quotients, dilatations, numerical duplications and multiples by integers</Heading>
 
 We provide functions to build numerical semigroups from others by means of intersections, quotients, multiples and related constructions.
 
@@ -88,6 +88,26 @@ gap> SmallElements(ndup);
 ]]></Example>
   </Description>
 </ManSection>
+
+
+<ManSection>
+  <Func Name="AsNumericalDuplication" Arg="T"/>
+  <Description>
+    <A>T</A> is a numerical semigroup. Detects wheter or not <A>T</A> can be expressed as <C>NumericalDuplication</C>(S,E,b). Returns the list [S,E,b] if this is possible, and <C>fail</C> otherwise.
+    <P/>
+    Notice that a numerical semigroup can be represented in different ways as a numerical duplication.
+
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> ndup:=NumericalDuplication(s,6+s,11);;
+gap> asdup:=AsNumericalDuplication(ndup);
+[ <Numerical semigroup with 3 generators>, <Ideal of numerical semigroup>, 3 ]
+gap> ndup = CallFuncList(NumericalDuplication,asdup);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
 
   <ManSection>
     <Func Name="InductiveNumericalSemigroup" Arg="a, b"/>

@@ -6,12 +6,11 @@
 
     Denumerants, sets of factorizations, R-classes, and L-shapes are described in this section. 
 
-    <ManSection>
-
-        <Func Arg="n, ls" Name="FactorizationsIntegerWRTList"></Func>
-        <Description>
-            <A>ls</A> is a list of integers and <A>n</A> an integer.
-            The output is the set of factorizations of <A>n</A> in terms of the elements in the list <A>ls</A>. This function uses <Ref Func="RestrictedPartitions" BookName="ref"/>.
+<ManSection>
+    <Func Arg="n, ls" Name="FactorizationsIntegerWRTList"></Func>
+    <Description>
+        <A>ls</A> is a list of integers and <A>n</A> an integer.
+        The output is the set of factorizations of <A>n</A> in terms of the elements in the list <A>ls</A>. This function uses <Ref Func="RestrictedPartitions" BookName="ref"/>.
 
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);

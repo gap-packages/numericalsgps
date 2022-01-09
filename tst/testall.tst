@@ -1074,6 +1074,14 @@ gap> ndup:=NumericalDuplication(s,e,3);
 gap> SmallElements(ndup);
 [ 0, 6, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24 ]
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> ndup:=NumericalDuplication(s,6+s,11);;
+gap> asdup:=AsNumericalDuplication(ndup);
+[ <Numerical semigroup with 3 generators>, <Ideal of numerical semigroup>, 3 ]
+gap> ndup = CallFuncList(NumericalDuplication,asdup);
+true
+
+
 gap> s:=InductiveNumericalSemigroup([4,2],[5,23]);;
 gap> SmallElements(s);
 [ 0, 8, 16, 24, 32, 40, 42, 44, 46 ]

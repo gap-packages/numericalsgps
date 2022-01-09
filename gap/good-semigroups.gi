@@ -44,6 +44,64 @@ InstallGlobalFunction(NumericalDuplication, function(S,E,b)
     return NumericalSemigroup(Union(2*mgsS, 2*mgsE+b));
 end);
 
+####################################################
+##
+#F AsNumericalDublication(T)
+## Detects whether a numerical semigroup T can be obtained 
+## as a numerical duplication (with a proper ideal). 
+## It returns fail or the list [S,I,b], such that 
+## T=NumericalDuplication(S,I,b)
+####################################################
+InstallGlobalFunction(AsNumericalDuplication,
+function(T)
+    local G, Ev, O, j, S, x, Sm, B, b, H1, N, k, I;
+    if ((Multiplicity(T) mod 2)=0) then
+        G:=MinimalGenerators(T);
+        O:=[];
+        Ev:=[];
+        for j in [1..Length(G)] do
+            if ((G[j] mod 2)=1) then
+                Append(O,[G[j]]);
+            fi;
+            if ((G[j] mod 2)=0) then
+                Append(Ev,[G[j]]);
+            fi;
+        od;
+        if Gcd(Ev/2)=1 then
+            S:=NumericalSemigroup(Ev/2);
+            Sm:=SmallElements(S);
+            B:=[];
+            x:=Minimum(O)-Multiplicity(T);
+            for j in [1..Length(Sm)] do
+                if ((Sm[j] mod 2)=1) and (Sm[j]<=x) then
+                    Append(B,[Sm[j]]);
+                fi;
+            od;
+            for j in [Sm[Length(Sm)]..x] do
+                if ((j mod 2)=1) then
+                    Append(B,[j]);
+                fi;
+            od;
+            for b in [1..Length(B)] do
+                if B[b]<=Minimum(O) then
+                    H1:=[];
+                    H1:=(O-B[b])/2;
+                    N:=0;
+                    for k in [1..Length(H1)] do
+                        if (H1[k] in S) then 
+                            N:=N+1;
+                        fi;
+                    od;
+                    if (N=Length(H1)) then	
+                        I:=H1+S;
+                        return([S,I,B[b]]);
+                    fi;
+                fi;
+            od;
+        fi;
+    fi;
+    return(fail);
+end);
 
 
 ###################################################

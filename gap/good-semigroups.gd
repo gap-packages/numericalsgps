@@ -84,12 +84,23 @@ DeclareOperation("BelongsToGoodSemigroup",[IsHomogeneousList,IsGoodSemigroup]);
 
 ## FUNCTIONS ##
 
- ####################################################
- ##
- #F NumericalDublication(S,E,b)
- ## returns 2S\cup(2E+b)
- ####################################################
+####################################################
+##
+#F NumericalDublication(S,E,b)
+## returns 2S\cup(2E+b)
+####################################################
 DeclareGlobalFunction("NumericalDuplication");
+
+####################################################
+##
+#F AsNumericalDublication(T)
+## Detects whether a numerical semigroup T can be obtained 
+## as a numerical duplication (with a proper ideal). 
+## It returns fail or the list [S,I,b], such that 
+## T=NumericalDuplication(S,I,b)
+####################################################
+DeclareGlobalFunction("AsNumericalDuplication");
+
 
 ###################################################
 ##
