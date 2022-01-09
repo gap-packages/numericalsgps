@@ -1281,6 +1281,27 @@ gap> List(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber(12,4),Type);
 gap> Length(AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType(12,4)); 
 5
 
+gap> s:=NumericalSemigroup(3,7,8);;
+gap> IsAlmostSymmetric(s);
+false
+gap> IsGeneralizedGorenstein(s);
+true
+
+gap> s:=NumericalSemigroup(10,11,12,25);;
+gap> IsAlmostSymmetric(s);
+false
+gap> IsNearlyGorenstein(s);
+true
+gap> s:=NumericalSemigroup(3,7,8);;
+gap> IsNearlyGorenstein(s);
+false
+
+gap> s:=NumericalSemigroup(9, 24, 39, 43, 77);;
+gap> IsGeneralizedAlmostSymmetric(s);
+true
+gap> IsAlmostSymmetric(s);
+false
+
 ##Ideals_of_numerical_semigroups.xml
 
 gap> IdealOfNumericalSemigroup([3,5],NumericalSemigroup(9,11));

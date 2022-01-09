@@ -1239,7 +1239,7 @@ end);
 ##
 #####################################################################
 InstallMethod(IsGeneralizedGorenstein,
-  "Tests whether the semigroup is almost symmetric",
+  "Tests whether the semigroup is generalized Gorenstein",
   [IsNumericalSemigroup],1,
   function(H)
 	local K, R, S,m,c,soc,b,f,PF,flg,r,i;
@@ -1274,3 +1274,61 @@ InstallMethod(IsGeneralizedGorenstein,
 end);
 
 InstallTrueMethod(IsAlmostSymmetricNumericalSemigroup, IsSymmetricNumericalSemigroup);
+
+#####################################################################
+##
+#P IsNearlyGorenstein(arg)
+##
+## The argument is a numerical semigroup. The output is True or False depending
+## on if the semigroup is nearly Gorenstein
+##
+#####################################################################
+InstallMethod(IsNearlyGorenstein,
+  "Tests whether the semigroup is nearly Gorenstein",
+  [IsNumericalSemigroup],1,
+function(S)
+    local T,msg;
+
+    T:=TraceIdeal(S);
+    msg:=MinimalGenerators(S);
+    return ForAll(msg, g->g in T);
+end);
+
+InstallTrueMethod(IsNearlyGorenstein, IsAlmostSymmetricNumericalSemigroup);
+
+#####################################################################
+##
+#P IsGeneralizedAlmostSymmetric(S)
+##
+## The argument is a numerical semigroup. The output is True or False depending
+## on if S is a generalized almost symmetric numerical semigroup, see [DS21]
+##
+#####################################################################
+InstallMethod(IsGeneralizedAlmostSymmetric,
+  "Tests whether the semigroup is a GAS semigroup",
+  [IsNumericalSemigroup],1,
+function(S)
+	local PF,K,A,B,i,j;
+
+	PF:=PseudoFrobenius(S);
+	K:=CanonicalIdeal(S);
+	A:=Difference(K+K,K);
+	if Length(A)<2 then
+		return true;
+	fi;
+	if Length(A)>1 then
+		A:=Maximum(PF)-A;
+		B:=Concatenation(MinimalGenerators(S),[0]);
+		if IsSubsetSet(B,A) then
+			Sort(A);
+			for i in [2..Length(A)] do
+				for j in [i+1..Length(A)] do
+					if (A[j]-A[i] in PF) then
+						return false;
+					fi;
+				od;
+			od;
+		fi;
+	fi;
+	return true;
+end);

@@ -303,3 +303,23 @@ DeclareGlobalFunction("CompleteIntersectionNumericalSemigroupsWithFrobeniusNumbe
 ##
 #####################################################################
 DeclareProperty("IsGeneralizedGorenstein", IsNumericalSemigroup);
+
+#####################################################################
+##
+#P IsGeneralizedGorenstein(arg)
+##
+## The argument is a numerical semigroup. The output is True or False depending
+## on if the semigroup nearly Gorenstein
+##
+#####################################################################
+DeclareProperty("IsNearlyGorenstein", IsNumericalSemigroup);
+
+#####################################################################
+##
+#P IsGeneralizedAlmostSymmetric(S)
+##
+## The argument is a numerical semigroup. The output is True or False depending
+## on if S is a generalized almost symmetric numerical semigroup
+##
+#####################################################################
+DeclareProperty("IsGeneralizedAlmostSymmetric", IsNumericalSemigroup);

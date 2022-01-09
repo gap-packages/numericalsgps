@@ -2,12 +2,17 @@
 <Section>
  <Label Name="sc:generalized-gorenstein" />
                 <Heading>
-                    Numerical semigroups with the generalized Gorenstein property
+                    Several approches genaralizating the concept of symmetry
                 </Heading>
 
 
 Let <M>S</M> be a numerical semigroup and let <M>R</M> be its semigroup ring <M>K[\![S]\!]</M>. We say that <M>S</M> has the generalized Gorenstein property if its semigroup ring has this property. For the definition and characterization of generalized Gorenstein rings please see <Cite Key="G-I-K-T"></Cite>. 
 <P/>
+
+A numerical semigroup is said to be nearly Gorenstein if its maximal ideal is contained in its trace ideal <Cite Key="trace-canonical"></Cite>. Every almost symmetric numerical semigroup is nearly Gorenstein. 
+
+A numerical semigroup <M>S</M> with canonical ideal <M>K</M> is a generalized almost symmetric numerical semigroup if either <M>2K=K</M> (symmetric) or <M>2K\setminus K=\{\operatorname{F}(S)-x_1,\dots, \operatorname{F}(S)-x_r,\operatorname{F}(S)\}</M> for some <M>x_1,\dots,x_r \in M\setminus 2M</M> (minimal generators) and <M>x_i-x_j\not\in (S-M)\setminus S</M> (not pseudo-Frobenius numbers). As expected, every almost symmetric numerical semigroup is a generalized almost symmetric numerical semigroup.
+
 <ManSection>
     <Prop Arg="s" Name="IsGeneralizedGorenstein"></Prop>
     <Description>
@@ -21,6 +26,40 @@ true
 ]]></Example>
     </Description>
 </ManSection>
+
+
+<ManSection>
+    <Prop Arg="s" Name="IsNearlyGorenstein"></Prop>
+    <Description>
+        <A>s</A> is a numerical semigroup.  The output is <C>true</C> if the semigroup is nearly Gorenstein, and <C>false</C> otherwise. 
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,11,12,25);;
+gap> IsAlmostSymmetric(s);
+false
+gap> IsNearlyGorenstein(s);
+true
+gap> s:=NumericalSemigroup(3,7,8);;
+gap> IsNearlyGorenstein(s);
+false
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+    <Prop Arg="s" Name="IsGeneralizedAlmostSymmetric"></Prop>
+    <Description>
+        <A>s</A> is a numerical semigroup.  Determines whether or not <A>s</A> is a generalized almost symmetric numerical semigroup. 
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(9, 24, 39, 43, 77);;
+gap> IsGeneralizedAlmostSymmetric(s);
+true
+gap> IsAlmostSymmetric(s);
+false
+]]></Example>
+    </Description>
+</ManSection>
+
+
 
 
 </Section>
