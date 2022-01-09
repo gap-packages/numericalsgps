@@ -4,7 +4,7 @@
 
 #======
 1.2.2 -> 1.2.2 dev
-- Added IsAlmostCanonicalIdeal (by Francesco Strazzanti)
+- Added IsAlmostCanonicalIdeal, IsNearlyGorenstein, IsGeneralizedAlmostSymmetric (by Francesco Strazzanti)
 - Added PseudoFrobenius, Type and FrobeniusNumber for an ideal of a numerical semigroup 
 - Added IsComplementOfIntegralIdeal and IdealByDivisorClosedSet
 - ViewString for affine semigroups now considers singular in a single generator or minimal generator
