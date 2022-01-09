@@ -122,6 +122,23 @@ gap> SmallElements(s);
     </Description>
   </ManSection>
 
+    <ManSection>
+    <Func Name="DilatationOfNumericalSemigroup" Arg="S, a"/>
+    <Description>
+      <A>S</A> is a numerical semigroup, and <A>a</A> is a positive integers. If <M>M</M> is the maximal ideal of <A>S</A>, then <A>a</A> must be in <M>M-2M</M>. 
+      Computes the numerical semigroup <M>\{0\} \cup \{a+s \mid s\in M\}</M>. 
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,4,5);;
+gap> m:=MaximalIdeal(s);;
+gap> SmallElements(m-2*m);
+[ -3 ]
+gap> d:=DilatationOfNumericalSemigroup(s,3);
+<Numerical semigroup>
+gap> SmallElements(d);
+[ 0, 6 ]
+]]></Example>
+    </Description>
+</ManSection>
 
 
 </Section>

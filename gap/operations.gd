@@ -42,3 +42,13 @@ DeclareGlobalFunction("MultipleOfNumericalSemigroup");
 ##
 ##################################################################
 DeclareGlobalFunction("InductiveNumericalSemigroup");
+
+#############################################################################
+##
+#F  DilatationOfNumericalSemigroup(S,a)
+##
+##  Computes {0}\cup{a+s |s in S\{0}}; a must be in M-2M, 
+##  with M the maximal ideal of S 
+##
+#############################################################################
+DeclareGlobalFunction( "DilatationOfNumericalSemigroup" );

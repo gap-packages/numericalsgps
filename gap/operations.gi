@@ -129,3 +129,24 @@ InstallGlobalFunction(InductiveNumericalSemigroup,function(a,b)
 	return stmp;
 	
 end);    
+
+#############################################################################
+##
+#F  DilatationOfNumericalSemigroup(S,a)
+##
+##  Computes {0}\cup{a+s |s in S\{0}}; a must be in M-2M, 
+##  with M the maximal ideal of S 
+##
+#############################################################################
+InstallGlobalFunction( DilatationOfNumericalSemigroup,
+function(S,a)
+    local M;
+    if not(IsNumericalSemigroup(S)) then
+        Error("The first argument must be a numerical semigroup");
+    fi;
+    M:=MaximalIdeal(S);
+    if not(a in M-2*M) then
+        Error("The second argument must be an integer in M-2M, with M the maximal ideal of the first argument");
+    fi;
+    return NumericalSemigroupBySmallElements(Concatenation([0], a+Difference(SmallElements(S),[0])));
+end);

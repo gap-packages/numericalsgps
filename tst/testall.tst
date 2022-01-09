@@ -1056,6 +1056,15 @@ gap> s:=MultipleOfNumericalSemigroup(N,4,20);;
 gap> SmallElements(s)=[ 0, 4, 8, 12, 16, 20 ];
 true
 
+gap> s:=NumericalSemigroup(3,4,5);;
+gap> m:=MaximalIdeal(s);;
+gap> SmallElements(m-2*m);
+[ -3 ]
+gap> d:=DilatationOfNumericalSemigroup(s,3);
+<Numerical semigroup>
+gap> SmallElements(d);
+[ 0, 6 ]
+
 gap> ns1 := NumericalSemigroup(5,7);;
 gap> ns2 := NumericalSemigroup(7,11,12);;
 gap> Difference(ns1,ns2);
