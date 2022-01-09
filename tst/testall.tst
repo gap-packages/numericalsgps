@@ -1349,6 +1349,13 @@ gap> Conductor(10+s);
 gap> ConductorOfIdealOfNumericalSemigroup(10+s);
 15
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=4+s;;
+gap> PseudoFrobenius(i);
+[ 6, 8 ]
+gap> PseudoFrobenius(s)=PseudoFrobenius(0+s);
+true
+
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> Minimum(J);
 2

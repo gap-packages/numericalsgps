@@ -229,6 +229,15 @@ DeclareSynonymAttr( "SmallElementsOfIdealOfNumericalSemigroup", SmallElements);
 DeclareAttribute("Conductor", IsIdealOfNumericalSemigroup);
 DeclareSynonymAttr("ConductorOfIdealOfNumericalSemigroup", Conductor);
 
+#############################################################################
+##
+#A  PseudoFrobenius(I)
+##
+##  Returns the pseudo-Frobenius numbers of the ideal I, see [DS21]
+##
+#############################################################################
+DeclareAttribute("PseudoFrobenius",IsIdealOfNumericalSemigroup);
+
 
 #############################################################################
 ##

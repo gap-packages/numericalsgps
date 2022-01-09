@@ -4,6 +4,7 @@
 
 #======
 1.2.2 -> 1.2.2 dev
+- Added PseudoFrobenius, which computed the pseudo-Frobenius numbers of an ideal of a numerical semigroup 
 - Added IsComplementOfIntegralIdeal and IdealByDivisorClosedSet
 - ViewString for affine semigroups now considers singular in a single generator or minimal generator
 - Decomposition of ideals into irreducibles (by Jorge Angulo)

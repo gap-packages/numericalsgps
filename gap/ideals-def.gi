@@ -323,6 +323,22 @@ InstallMethod(Conductor,
      return seI[Length(seI)];
 end);
 
+
+#############################################################################
+##
+#A  PseudoFrobenius(I)
+##
+##  Returns the pseudo-Frobenius numbers of the ideal  I, see [DS21]
+##
+#############################################################################
+InstallMethod(PseudoFrobenius,"Pseudo-frobenius numbers for ideals",true, [IsIdealOfNumericalSemigroup],
+function(i)
+    local m;
+    m:=MaximalIdeal(AmbientNumericalSemigroupOfIdeal(i));
+    return Difference(i-m,i);
+end);
+
+
 #############################################################################
 ##
 #F  BelongsToIdealOfNumericalSemigroup(n,I)
