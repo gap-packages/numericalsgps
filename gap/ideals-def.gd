@@ -344,9 +344,9 @@ DeclareProperty("IsGradedAssociatedRingNumericalSemigroupCM", IsNumericalSemigro
 
 #############################################################################
 ##
-#F  CanonicalIdealOfNumericalSemigroup(s)
+#F  CanonicalIdealOfNumericalSemigroup(S)
 ##
-##  Computes a canonical ideal of <s> ([B06]):
+##  Computes a canonical ideal of S [B06]:
 ##      { x in Z | g-x not in S}
 ##
 #############################################################################
@@ -373,6 +373,15 @@ DeclareSynonymAttr("IsCanonicalIdealOfNumericalSemigroup", IsCanonicalIdeal);
 #############################################################################
 DeclareProperty("IsAlmostCanonical",IsIdealOfNumericalSemigroup);
 
+#############################################################################
+##
+#F  TracecalIdealOfNumericalSemigroup(s)
+##
+##  Computes a trace ideal of s
+##
+#############################################################################
+DeclareGlobalFunction("TraceIdealOfNumericalSemigroup");
+DeclareOperation("TraceIdeal",[IsNumericalSemigroup]);
 
 
 #############################################################################

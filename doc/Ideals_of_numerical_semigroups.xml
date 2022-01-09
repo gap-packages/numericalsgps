@@ -575,8 +575,8 @@ true
 gap> CanonicalIdealOfNumericalSemigroup(s) = c;
 true
 ]]></Example>
-                    </Description>
-                </ManSection>
+    </Description>
+</ManSection>
 
 <ManSection>
   <Prop Arg="E" Name="IsCanonicalIdeal"></Prop>
@@ -612,6 +612,21 @@ true
     </Description>
 </ManSection>
 
+<ManSection>
+    <Oper Arg="S" Name="TraceIdeal" Label="for numerical semigroups"/>
+                    <Func Arg="S" Name="TraceIdealOfNumericalSemigroup"></Func>
+                    <Description>
+		      <A>S</A> is a numerical semigroup.
+                        Computes the trace ideal of <A>S</A> (<Cite Key="trace-ideal"></Cite>), that is,
+                        <M>K+(<A>S</A>-K)</M>, with <M>K</M> the canonical ideal of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MinimalGenerators(TraceIdeal(s));
+[ 3, 5, 7 ]
+]]></Example>
+    </Description>
+</ManSection>
 
 
 <ManSection>

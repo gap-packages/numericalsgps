@@ -1363,6 +1363,10 @@ gap> k:=CanonicalIdeal(s);;
 gap> Type(k);
 1
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MinimalGenerators(TraceIdeal(s));
+[ 3, 5, 7 ]
+
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> Minimum(J);
 2

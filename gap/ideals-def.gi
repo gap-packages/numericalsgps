@@ -790,9 +790,9 @@ end);
 
 #############################################################################
 ##
-#F  CanonicalIdealOfNumericalSemigroup(s)
+#F  CanonicalIdealOfNumericalSemigroup(S)
 ##
-##  Computes a canonical ideal of <s> ([B06]):
+##  Computes a canonical ideal of S [B06]:
 ##      { x in Z | g-x not in S}
 ##
 #############################################################################
@@ -860,6 +860,32 @@ function(I)
 end);
 
 InstallTrueMethod(IsAlmostCanonical, IsCanonicalIdeal);
+
+
+#############################################################################
+##
+#F  TraceIdealOfNumericalSemigroup(S)
+##
+##  Computes a canonical ideal of S [B06]:
+##      { x in Z | g-x not in S}
+##
+#############################################################################
+InstallGlobalFunction(TraceIdealOfNumericalSemigroup, function(s)
+    local K;
+
+
+    if not IsNumericalSemigroup(s) then
+        Error("The argument must be a numerical semigroup.");
+    fi;
+    K:=CanonicalIdeal(s);
+    return(K+(s-K));
+
+end);
+
+InstallMethod(TraceIdeal,
+    "of a numerical semigroup",
+    [IsNumericalSemigroup],
+    TraceIdealOfNumericalSemigroup);
 
 
 #############################################################################
