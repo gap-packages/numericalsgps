@@ -231,12 +231,32 @@ DeclareSynonymAttr("ConductorOfIdealOfNumericalSemigroup", Conductor);
 
 #############################################################################
 ##
+#A  FrobeniusNumberOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the Frobenius number of I, the largest integer not in I
+##
+#############################################################################
+DeclareAttribute("FrobeniusNumber", IsIdealOfNumericalSemigroup);
+DeclareSynonymAttr("FrobeniusNumberOfIdealOfNumericalSemigroup", FrobeniusNumber);
+
+#############################################################################
+##
 #A  PseudoFrobenius(I)
 ##
 ##  Returns the pseudo-Frobenius numbers of the ideal I, see [DS21]
 ##
 #############################################################################
 DeclareAttribute("PseudoFrobenius",IsIdealOfNumericalSemigroup);
+DeclareSynonymAttr("PseudoFrobeniusOfIdealOfNumericalSemigroup",PseudoFrobenius);
+
+#############################################################################
+##
+#O  Type(I)
+##
+##  Returns the type of the ideal I, see [DS21]
+##
+#############################################################################
+DeclareOperation("Type",[IsIdealOfNumericalSemigroup]);
 
 
 #############################################################################

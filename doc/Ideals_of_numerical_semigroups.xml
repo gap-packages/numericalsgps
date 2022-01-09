@@ -186,12 +186,12 @@ gap> SmallElements(J);
                     </Description>
                 </ManSection>
 
-		<ManSection>
-                    <Attr Name="Conductor" Arg="I" Label="for ideal of numerical semigroup"/>
-                    <Func Arg="I" Name="ConductorOfIdealOfNumericalSemigroup"></Func>
-                    <Description>
-                        <A>I</A> is an ideal of a numerical semigroup.
-                        The output is the largest element in  <A>SmallElements(I)</A>.
+<ManSection>
+            <Attr Name="Conductor" Arg="I" Label="for ideal of numerical semigroup"/>
+            <Func Arg="I" Name="ConductorOfIdealOfNumericalSemigroup"></Func>
+            <Description>
+                <A>I</A> is an ideal of a numerical semigroup.
+                The output is the largest element in  <A>SmallElements(I)</A>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7,5);;
@@ -200,16 +200,32 @@ gap> Conductor(10+s);
 gap> ConductorOfIdealOfNumericalSemigroup(10+s);
 15
 ]]></Example>
-                    </Description>
-                </ManSection>
+    </Description>
+</ManSection>
 
-		<ManSection>
-                    <Attr Name="PseudoFrobenius" Arg="I" Label="for ideal of numerical semigroup"/>
-                    <Description>
-                        <A>I</A> is an ideal of a numerical semigroup.
-                        The output is the set of pseudo-Frobenius numbers of  <A>I</A>, that is the set <M><A>I</A>-M\setminus <A>I</A></M>, with <M>M</M> the maximal ideal of the ambient semigroup of <A>I</A> (see <Cite Key="gas-semigroups"></Cite>)
+<ManSection>
+            <Attr Name="FrobeniusNumber" Arg="I" Label="for ideal of numerical semigroup"/>
+            <Func Arg="I" Name="FrobeniusNumberOfIdealOfNumericalSemigroup"></Func>
+            <Description>
+                <A>I</A> is an ideal of a numerical semigroup.
+                The output is the largest element not belonging to <A>I</A>.
 
                         <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> FrobeniusNumber(0+s);
+4
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+    <Attr Name="PseudoFrobenius" Arg="I" Label="for ideal of numerical semigroup"/>
+    <Attr Name="PseudoFrobeniusOfIdealOfNumericalSemigroup" Arg="I" Label="for ideal of numerical semigroup"/>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup.
+        The output is the set of pseudo-Frobenius numbers of  <A>I</A>, that is the set <M><A>I</A>-M\setminus <A>I</A></M>, with <M>M</M> the maximal ideal of the ambient semigroup of <A>I</A> (see <Cite Key="gas-semigroups"></Cite>).
+
+                <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> i:=4+s;;
 gap> PseudoFrobenius(i);
@@ -217,8 +233,24 @@ gap> PseudoFrobenius(i);
 gap> PseudoFrobenius(s)=PseudoFrobenius(0+s);
 true
 ]]></Example>
-                    </Description>
-                </ManSection>
+    </Description>
+</ManSection>
+
+<ManSection>
+    <Oper Name="Type" Arg="I" Label="for ideal of numerical semigroup"/>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup.
+        The output is the cardinality of the set of pseudo-Frobenius numbers of  <A>I</A> (see <Cite Key="gas-semigroups"></Cite>).
+
+                <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> k:=CanonicalIdeal(s);;
+gap> Type(k);
+1
+]]></Example>
+    </Description>
+</ManSection>
+
 
                 <ManSection>
                     <Oper Name="Minimum" Arg="I" Label="minimum of ideal of numerical semigroup"/>

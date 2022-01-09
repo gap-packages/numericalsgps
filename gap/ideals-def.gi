@@ -323,6 +323,20 @@ InstallMethod(Conductor,
      return seI[Length(seI)];
 end);
 
+#############################################################################
+##
+#F  FrobeniusNumberOfIdealOfNumericalSemigroup(I)
+##
+##  Returns the largest integer not belonging to I
+##
+#############################################################################
+InstallMethod(FrobeniusNumber,
+        "Returns the largest integer not belonging to the ideal",
+        [IsIdealOfNumericalSemigroup ],
+        function(I)
+     return Conductor(I)-1;
+end);
+
 
 #############################################################################
 ##
@@ -336,6 +350,18 @@ function(i)
     local m;
     m:=MaximalIdeal(AmbientNumericalSemigroupOfIdeal(i));
     return Difference(i-m,i);
+end);
+
+#############################################################################
+##
+#O  Type(I)
+##
+##  Returns the type of the ideal  I, see [DS21]
+##
+#############################################################################
+InstallMethod(Type,"Pseudo-frobenius numbers for ideals",true, [IsIdealOfNumericalSemigroup],
+function(i)
+    return Length(PseudoFrobenius(i));
 end);
 
 
