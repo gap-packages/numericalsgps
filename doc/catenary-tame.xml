@@ -1070,3 +1070,67 @@ gap> FengRaoNumber(209,S);
 
 
 </Section>
+
+
+<Section>
+    <Heading>
+        Numerical semigroups with Apéry sets having special factorization properties
+    </Heading>
+
+Let <M>S</M> be a numerical semigroup with maximal ideal <M>M</M>, and let <M>x\in S</M>. The order of <M>x</M>, denoted <M>\operatorname{ord}(x)</M> is the largest positive integer <M>k</M> such that <M>x\in kM\setminus(k+1)M</M>.
+
+<P/>
+Recall that for <M>x,y\in \mathbb{Z}</M>, we write <M>x\le_S y</M> if <M>y-x\in S</M>. Define the relation <M>\preceq_S</M> on <M>S</M> as <M>x\preceq_S y</M> if <M>x\le_S y</M> and <M>\operatorname{ord}(y)=\operatorname{ord}(x)+\operatorname{ord}(y-x)</M>.
+
+<P/>
+A numerical semigroup <M>S</M> with multiplicity <M>m</M> is said to be pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\le_S</M> have all the same order. The semigroup <M>S</M> is M-pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\preceq_S</M> have all the same order.
+
+<ManSection>
+    <Prop Arg="S" Name="IsPure"></Prop>
+    <Prop Arg="S" Name="IsPureNumericalSemigroup"></Prop>
+    <Description>
+
+        <A>S</A> is a numerical semigroup.
+        <P/>
+
+        Test for the purity of the numerical semigroup S <A>S</A>.
+        This test is based on <Cite Key="Br"></Cite>.
+
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsPure(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsPureNumericalSemigroup(s);
+true
+]]></Example>
+            </Description>
+</ManSection>
+
+<ManSection>
+    <Prop Arg="S" Name="IsMpure"></Prop>
+    <Prop Arg="S" Name="IsMpureNumericalSemigroup"></Prop>
+    <Description>
+
+        <A>S</A> is a numerical semigroup.
+        <P/>
+
+        Test for the M-Purity of the numerical semigroup S <A>S</A>.
+        This test is based on <Cite Key="Br"></Cite>.
+
+    <P/>
+    This filter implies <Ref Func="IsPureNumericalSemigroup"/>.
+
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;
+gap> IsMpure(s);
+false
+gap> s:=NumericalSemigroup(4,6,11);;
+gap> IsMpureNumericalSemigroup(s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
+</Section>
