@@ -21,6 +21,13 @@ InstallOtherMethod(DegreesOfPrimitiveElementsOfAffineSemigroup,
 	mat:=TransposedMat(ls);
     4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
     exec := IO_FindExecutable( "graver" );
+    if exec=fail then
+        exec := IO_FindExecutable( "4ti2-graver" );
+    fi;
+    if exec=fail then
+        Error("Sorry, I could not find graver (4ti2)");
+    fi;
+
     filestream := IO_Popen2( exec, [ filename ]);
     while IO_ReadLine( filestream.stdout ) <> "" do od;
     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".gra" ) );
@@ -61,6 +68,13 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
         4ti2Interface_Write_Matrix_To_File( sign, Concatenation( filename, ".sign" ) );
         exec := IO_FindExecutable( "zsolve" );
+        if exec=fail then
+            exec := IO_FindExecutable( "4ti2-zsolve" );
+        fi;
+        if exec=fail then
+            Error("Sorry, I could not find zsolve (4ti2)");
+        fi;
+
         filestream := IO_Popen2( exec, [ filename ]);
         while IO_ReadLine( filestream.stdout ) <> "" do od;
         matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zhom" ) );
@@ -141,6 +155,12 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
     4ti2Interface_Write_Matrix_To_File( sign, Concatenation( filename, ".sign" ) );
     4ti2Interface_Write_Matrix_To_File( rel, Concatenation( filename, ".rel" ) );
     exec := IO_FindExecutable( "zsolve" );
+    if exec=fail then
+        exec := IO_FindExecutable( "4ti2-zsolve" );
+    fi;
+    if exec=fail then
+        Error("Sorry, I could not find zsolve (4ti2)");
+    fi;
     filestream := IO_Popen2( exec, [ filename ]);
     while IO_ReadLine( filestream.stdout ) <> "" do od;
     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zhom" ) );
@@ -149,39 +169,45 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
 end);
 
 
-InstallOtherMethod(FactorizationsVectorWRTList,
-        "Computes the factorizations of v in terms of the elments in ls",
-        [IsHomogeneousList,IsMatrix],4,
-        function(v,l)
-    local  dir, filename, exec, filestream, matrix,mat,rhs,sign;
+# InstallOtherMethod(FactorizationsVectorWRTList,
+#         "Computes the factorizations of v in terms of the elments in ls",
+#         [IsHomogeneousList,IsMatrix],4,
+#         function(v,l)
+#     local  dir, filename, exec, filestream, matrix,mat,rhs,sign;
 
-    Info(InfoNumSgps,2,"Using 4ti2 for factorizations.");
+#     Info(InfoNumSgps,2,"Using 4ti2 for factorizations.");
 
-    if not(IsListOfIntegersNS(v)) then
-        Error("The first argument must be a list of integers.");
-    fi;
+#     if not(IsListOfIntegersNS(v)) then
+#         Error("The first argument must be a list of integers.");
+#     fi;
 
-    if not(IsInt(l[1][1])) then
-        Error("The matrix must be of integers.");
-    fi;
+#     if not(IsInt(l[1][1])) then
+#         Error("The matrix must be of integers.");
+#     fi;
 
-    dir := DirectoryTemporary();
-    filename := Filename( dir, "gap_4ti2_temp_matrix" );
+#     dir := DirectoryTemporary();
+#     filename := Filename( dir, "gap_4ti2_temp_matrix" );
 
-    mat:=TransposedMat(l);
-    sign:=[List(mat[1],_->1)];
-    rhs:=[v];
-    #Print(mat,"\n");
-    4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
-    4ti2Interface_Write_Matrix_To_File( sign, Concatenation( filename, ".sign" ) );
-    4ti2Interface_Write_Matrix_To_File( rhs, Concatenation( filename, ".rhs" ) );
-    exec := IO_FindExecutable( "zsolve" );
-    filestream := IO_Popen2( exec, [ filename ]);
-    while IO_ReadLine( filestream.stdout ) <> "" do od;
-    matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zinhom" ) );
-    return matrix;
+#     mat:=TransposedMat(l);
+#     sign:=[List(mat[1],_->1)];
+#     rhs:=[v];
+#     #Print(mat,"\n");
+#     4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
+#     4ti2Interface_Write_Matrix_To_File( sign, Concatenation( filename, ".sign" ) );
+#     4ti2Interface_Write_Matrix_To_File( rhs, Concatenation( filename, ".rhs" ) );
+#     exec := IO_FindExecutable( "zsolve" );
+#     if exec=fail then
+#         exec := IO_FindExecutable( "4ti2-zsolve" );
+#     fi;
+#     if exec=fail then
+#         Error("Sorry, I could not find zsolve (4ti2)");
+#     fi;
+#     filestream := IO_Popen2( exec, [ filename ]);
+#     while IO_ReadLine( filestream.stdout ) <> "" do od;
+#     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zinhom" ) );
+#     return matrix;
 
-end);
+# end);
 
 
 InstallOtherMethod(GeneratorsOfKernelCongruence,
