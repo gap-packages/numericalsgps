@@ -107,6 +107,22 @@ true
          </Description>
     </ManSection>
 
+<ManSection>
+<Func Arg="f,S" Name="RFMatrices"></Func>
+<Description>
+    <A>S</A> is a numerical semigroup, and <A>f</A> is a pseudo-Frobenius number of <A>S</A>. <P/>
+
+    The output is the list of RF-matrices associated to <A>f</A>. The ith row of each matrix contains the coefficients of a combination of <A>f</A> in terms of the minimal generators of the semigroup, obtained by substractin the ith generator to the factorizations of <A>f</A> plus the ith generator of <A>S</A>, see  <Cite Key="RFMatrix"></Cite>.
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(6, 7, 9, 10);;
+gap> RFMatrices(8,s);
+[ [ [ -1, 2, 0, 0 ], [ 1, -1, 1, 0 ], [ 0, 1, -1, 1 ], [ 3, 0, 0, -1 ] ],
+  [ [ -1, 2, 0, 0 ], [ 1, -1, 1, 0 ], [ 0, 1, -1, 1 ], [ 0, 0, 2, -1 ] ] ]
+]]></Example>
+         </Description>
+    </ManSection>
+
 
     <ManSection>
         <Func Arg="n, S" Name="DenumerantOfElementInNumericalSemigroup"></Func>
@@ -379,7 +395,7 @@ gap> MaximumDegreeOfElementWRTNumericalSemigroup(1100,s);
 <ManSection>
     <Func Arg="S" Name="IsAdditiveNumericalSemigroup"></Func>
     <Description>
-        <A>S</A> is a numerical semigroup. Detects if <A>S</A> is additive, that is, <M>\operatorname{ord}(m+x)=\operatorname{ord}(x)+1</M> for all <M>x</M> in <A>S</A>, where <M>m</M> is the multiplicity of <A>S</A> (<M>\operatorname{ord}</M> corresponds to <Ref Func="MaximumDegreeOfElementWRTNumericalSemigroup"/>; see Section <Ref Sect="sec:ns-ap-fact"/> for an alternate definition). For these semigroups <M>\operatorname{gr}_\mathfrak{m}(K[\![S]\!])</M> is  Cohen-Macaulay (see <Cite Key="BH"></Cite>).
+        <A>S</A> is a numerical semigroup. Detects if <A>S</A> is additive, that is, <M>\textrm{ord}(m+x)=\textrm{ord}(x)+1</M> for all <M>x</M> in <A>S</A>, where <M>m</M> is the multiplicity of <A>S</A> (<M>\textrm{ord}</M> corresponds to <Ref Func="MaximumDegreeOfElementWRTNumericalSemigroup"/>; see Section <Ref Sect="sec:ns-ap-fact"/> for an alternate definition). For these semigroups <M>\textrm{gr}_\mathfrak{m}(K[\![S]\!])</M> is  Cohen-Macaulay (see <Cite Key="BH"></Cite>).
 
         <Example><![CDATA[
 gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
@@ -1062,19 +1078,19 @@ gap> FengRaoNumber(209,S);
         Numerical semigroups with Apéry sets having special factorization properties
     </Heading>
 
-Let <M>S</M> be a numerical semigroup with maximal ideal <M>M</M>, and let <M>x\in S</M>. The order of <M>x</M>, denoted <M>\operatorname{ord}(x)</M> is the largest positive integer <M>k</M> such that <M>x\in kM\setminus(k+1)M</M>. Notice that the order of an element corresponds with <Ref Func="MaximumDegreeOfElementWRTNumericalSemigroup"/>.
+Let <M>S</M> be a numerical semigroup with maximal ideal <M>M</M>, and let <M>x\in S</M>. The order of <M>x</M>, denoted <M>\textrm{ord}(x)</M> is the largest positive integer <M>k</M> such that <M>x\in kM\setminus(k+1)M</M>. Notice that the order of an element corresponds with <Ref Func="MaximumDegreeOfElementWRTNumericalSemigroup"/>.
 
 <P/>
-Recall that for <M>x,y\in \mathbb{Z}</M>, we write <M>x\le_S y</M> if <M>y-x\in S</M>. Define the relation <M>\preceq_S</M> on <M>S</M> as <M>x\preceq_S y</M> if <M>x\le_S y</M> and <M>\operatorname{ord}(y)=\operatorname{ord}(x)+\operatorname{ord}(y-x)</M>.
+Recall that for <M>x,y\in \mathbb{Z}</M>, we write <M>x\le_S y</M> if <M>y-x\in S</M>. Define the relation <M>\preceq_S</M> on <M>S</M> as <M>x\preceq_S y</M> if <M>x\le_S y</M> and <M>\textrm{ord}(y)=\textrm{ord}(x)+\textrm{ord}(y-x)</M>.
 
 <P/>
-A numerical semigroup <M>S</M> with multiplicity <M>m</M> is said to be pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\le_S</M> have all the same order. The semigroup <M>S</M> is M-pure if the maximal elements of <M>\operatorname{Ap}(S,m)</M> with respect to <M>\preceq_S</M> have all the same order, <Cite Key="Br"></Cite>.
+A numerical semigroup <M>S</M> with multiplicity <M>m</M> is said to be pure if the maximal elements of <M>\textrm{Ap}(S,m)</M> with respect to <M>\le_S</M> have all the same order. The semigroup <M>S</M> is M-pure if the maximal elements of <M>\textrm{Ap}(S,m)</M> with respect to <M>\preceq_S</M> have all the same order, <Cite Key="Br"></Cite>.
 
 <P/>
-The numerical semigroup <M>S</M> is said to be homogeneous if for every element in <M>\operatorname{Ap}(S,m)</M>, its set of lengths is a singleton (that is, all its a factorizations have the same length), <Cite Key="homogeneous-ns"></Cite>.
+The numerical semigroup <M>S</M> is said to be homogeneous if for every element in <M>\textrm{Ap}(S,m)</M>, its set of lengths is a singleton (that is, all its a factorizations have the same length), <Cite Key="homogeneous-ns"></Cite>.
 
 <P/>
-A numerical semigroup <M>S</M> is supersymmetric if it is symmetric, additive, and whenever <M>w+w'=f+m</M> for some <M>w,w'\in \operatorname{Ap}(S,m)</M> (with <M>m</M> the multiplicity and <M>f</M> the Frobenius number), we have <M>\operatorname{ord}(w+w')=\operatorname{ord}(w)+\operatorname{ord}(w')</M>, see <Cite Key="BH"></Cite>).
+A numerical semigroup <M>S</M> is supersymmetric if it is symmetric, additive, and whenever <M>w+w'=f+m</M> for some <M>w,w'\in \textrm{Ap}(S,m)</M> (with <M>m</M> the multiplicity and <M>f</M> the Frobenius number), we have <M>\textrm{ord}(w+w')=\textrm{ord}(w)+\textrm{ord}(w')</M>, see <Cite Key="BH"></Cite>).
 
 <ManSection>
     <Prop Arg="S" Name="IsPure"></Prop>

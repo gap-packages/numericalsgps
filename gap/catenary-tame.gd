@@ -117,6 +117,22 @@ DeclareOperation("Factorizations",[IsNumericalSemigroup,IsInt]);
 
 #############################################################################
 ##
+#F  RFMatrices(f,s)
+##
+##  The integer f is a pseudo-Frobenius number of the numerical semigroup s
+##  For each minimal generator n of s, it computes the factorizations of 
+##  f+n in terms of the generators of s. These factorizations yield 
+##  combinations of f in terms of the minimal generators of s (by substracting n).
+##  The output is the cartesian product of these combinations for each of the 
+##  minimal generator. This corresponds with the set of all Row Factorization 
+##  matrices introduced by Moscariello (RF-Matrices)
+##
+#############################################################################
+DeclareGlobalFunction( "RFMatrices" );
+
+
+#############################################################################
+##
 #F  LengthsOfFactorizationsElementWRTNumericalSemigroup(n,s)
 ##
 ##  Computes the lengths of the set of

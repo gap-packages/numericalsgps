@@ -4,7 +4,7 @@
 
 #======
 1.2.2 -> 1.2.2 dev
-- Added IsAlmostCanonicalIdeal, IsNearlyGorenstein, IsGeneralizedAlmostSymmetric, IsHomogeneousNumericalSemigroup, AsNumericalDuplication, DilatationOfNumericalSemigroup (by Francesco Strazzanti)
+- Added IsAlmostCanonicalIdeal, IsNearlyGorenstein, IsGeneralizedAlmostSymmetric, IsHomogeneousNumericalSemigroup, AsNumericalDuplication, DilatationOfNumericalSemigroup, RFMatrices (by Francesco Strazzanti)
 - Added new section in the chapter of factorizationas, and moved IsMpure and IsPure to this new section
 - Added PseudoFrobenius, Type and FrobeniusNumber for an ideal of a numerical semigroup 
 - Added IsComplementOfIntegralIdeal and IdealByDivisorClosedSet

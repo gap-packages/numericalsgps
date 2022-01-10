@@ -1915,6 +1915,11 @@ gap> LShapes(s);
 gap> LShapesOfNumericalSemigroup(s) = LShapes(s);
 true
 
+gap> s:=NumericalSemigroup(6, 7, 9, 10);;
+gap> RFMatrices(8,s);
+[ [ [ -1, 2, 0, 0 ], [ 1, -1, 1, 0 ], [ 0, 1, -1, 1 ], [ 3, 0, 0, -1 ] ],
+  [ [ -1, 2, 0, 0 ], [ 1, -1, 1, 0 ], [ 0, 1, -1, 1 ], [ 0, 0, 2, -1 ] ] ]
+
 gap> s:=NumericalSemigroup(101,113,195,272,278,286);;
 gap> DenumerantOfElementInNumericalSemigroup(1311,s);
 6

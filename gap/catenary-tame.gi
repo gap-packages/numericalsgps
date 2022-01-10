@@ -1366,6 +1366,38 @@ InstallMethod(LShapes,
     [IsNumericalSemigroup],
     LShapesOfNumericalSemigroup);
 
+#############################################################################
+##
+#F  RFMatrices(f,s)
+##
+##  The integer f is a pseudo-Frobenius number of the numerical semigroup s
+##  For each minimal generator n of s, it computes the factorizations of 
+##  f+n in terms of the generators of s. These factorizations yield 
+##  combinations of f in terms of the minimal generators of s (by substracting n).
+##  The output is the cartesian product of these combinations for each of the 
+##  minimal generator. This corresponds with the set of all Row Factorization 
+##  matrices introduced by Moscariello (RF-Matrices)
+##
+#############################################################################
+InstallGlobalFunction(RFMatrices,function(f,S)
+    local A, B, v, F, k, pf;
+    if not(IsNumericalSemigroup(S)) then 
+        Error("The second argument must be a numerical semigroup");
+    fi;
+    A:=MinimalGenerators(S);
+    if not(IsInt(f)) or (f in S) or ForAny(A, a->not(f+a in S)) then 
+        Error("The first argument must be a pseudo-Frobenius number of the second");
+    fi;
+    v:=Length(A);
+    B:=IdentityMat(v);
+    F:=[];
+    for k in [1..Length(A)] do
+        F[k]:=Factorizations(f+A[k],S)-B[k];
+    od;
+    return Cartesian(F);
+end);
+
+
 ###########################################################################
 #F  DegreesOfMonotonePrimitiveElementsOfNumericalSemigroup(s)
 ##
