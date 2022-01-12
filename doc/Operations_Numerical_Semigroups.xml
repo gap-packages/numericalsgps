@@ -93,7 +93,7 @@ gap> SmallElements(ndup);
 <ManSection>
   <Func Name="AsNumericalDuplication" Arg="T"/>
   <Description>
-    <A>T</A> is a numerical semigroup. Detects wheter or not <A>T</A> can be expressed as <C>NumericalDuplication</C>(S,E,b). Returns the list [S,E,b] if this is possible, and <C>fail</C> otherwise.
+    <A>T</A> is a numerical semigroup. Detects whether or not <A>T</A> can be expressed as <C>NumericalDuplication</C>(S,E,b), with E a proper ideal of S. Returns the list [S,E,b] if this is possible, and <C>fail</C> otherwise.
     <P/>
     Notice that a numerical semigroup can be represented in different ways as a numerical duplication.
 
@@ -126,7 +126,7 @@ gap> SmallElements(s);
     <Func Name="DilatationOfNumericalSemigroup" Arg="S, a"/>
     <Description>
       <A>S</A> is a numerical semigroup, and <A>a</A> is a positive integers. If <M>M</M> is the maximal ideal of <A>S</A>, then <A>a</A> must be in <M>M-2M</M>. 
-      Computes the numerical semigroup <M>\{0\} \cup \{a+s \mid s\in M\}</M>. 
+      Computes the numerical semigroup <M>\{0\} \cup \{a+s \mid s\in M\}</M>, see <Cite Key="dilatation"/>. 
       <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,4,5);;
 gap> m:=MaximalIdeal(s);;

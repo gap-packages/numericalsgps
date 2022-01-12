@@ -112,7 +112,7 @@ true
 <Description>
     <A>S</A> is a numerical semigroup, and <A>f</A> is a pseudo-Frobenius number of <A>S</A>. <P/>
 
-    The output is the list of RF-matrices associated to <A>f</A>. The ith row of each matrix contains the coefficients of a combination of <A>f</A> in terms of the minimal generators of the semigroup, obtained by substractin the ith generator to the factorizations of <A>f</A> plus the ith generator of <A>S</A>, see  <Cite Key="RFMatrix"></Cite>.
+    The output is the list of RF-matrices associated to <A>f</A>. The ith row of each matrix contains the coefficients of a combination of <A>f</A> in terms of the minimal generators of the semigroup, obtained by substraction the ith generator to the factorizations of <A>f</A> plus the ith generator of <A>S</A>, see  <Cite Key="RFMatrix"></Cite>.
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(6, 7, 9, 10);;

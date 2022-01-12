@@ -221,7 +221,7 @@ gap> FrobeniusNumber(0+s);
     <Attr Name="PseudoFrobeniusOfIdealOfNumericalSemigroup" Arg="I" Label="for ideal of numerical semigroup"/>
     <Description>
         <A>I</A> is an ideal of a numerical semigroup.
-        The output is the set of pseudo-Frobenius numbers of  <A>I</A>, that is the set <M><A>I</A>-M\setminus <A>I</A></M>, with <M>M</M> the maximal ideal of the ambient semigroup of <A>I</A> (see <Cite Key="gas-semigroups"></Cite>).
+        The output is the set of pseudo-Frobenius numbers of  <A>I</A>, that is the set <M><A>I</A>-M\setminus <A>I</A></M>, with <M>M</M> the maximal ideal of the ambient semigroup of <A>I</A> (see <Cite Key="nsapp2"></Cite>).
 
                 <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
