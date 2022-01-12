@@ -36,7 +36,7 @@ DeclareGlobalFunction("EquationsOfGroupGeneratedBy");
 ###
 #F GluingOfAffineSemigroups
 # Determines if there is a gluing of the two affine semigroups
-# if so, returns the gluin of them, and fail otherwise
+# if so, returns the gluing of them, and fail otherwise
 ##############################################################
 DeclareGlobalFunction("GluingOfAffineSemigroups");
 
@@ -85,6 +85,14 @@ DeclareOperation("Factorizations",[IsAffineSemigroup,IsHomogeneousList]);
 ###########################################################################
 DeclareOperation("BettiElements",[IsAffineSemigroup]);
 DeclareSynonym("BettiElementsOfAffineSemigroup",BettiElements);
+
+#######################################################################
+#O CircuitsOfKernelCongruence
+# computes a set of circuits (relations with minimal support) of the 
+# kernel congruence of the monoid morphism associated to the matrix m
+########################################################################
+DeclareOperation("CircuitsOfKernelCongruence",[IsRectangularTable]);
+
 
 ############################################################
 #O GeneratorsOfKernelCongruence

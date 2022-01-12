@@ -628,6 +628,76 @@ InstallMethod(Factorizations,
     end);
 
 
+#######################################################################
+#O CircuitsOfKernelCongruence
+# computes a set of circuits (relations with minimal support) of the 
+# kernel congruence of the monoid morphism associated to the matrix m
+########################################################################
+InstallMethod(CircuitsOfKernelCongruence,
+  "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
+	[IsRectangularTable],1,
+function( m )
+    local gens, positive, negative, cir,
+        cols,rows, e, comb, c, i, circ, matt, sum, sp, sn;
+
+    # computes x^+
+    positive:=function(x)
+        local p,i;
+
+        p:=[];
+        for i in [1..Length(x)] do
+            p[i]:=Maximum(x[i],0);
+        od;
+
+        return p;
+    end;
+
+    # computes x^-
+    negative:=function(x)
+        local p,i;
+
+        p:=[];
+        for i in [1..Length(x)] do
+            p[i]:=-Minimum(x[i],0);
+        od;
+
+        return p;
+    end;
+
+
+    if not(IsRectangularTable(m)) then
+        Error("The argument must be an array of integers.");
+    fi;
+    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+        Error("The argument must be a matrix of nonnegative integers.");
+    fi;
+
+    #we compute the circuits as explained in Eisenbud-Sturmfels Lemma 8.8
+    cols:=Length(m);
+    rows:=Length(m[1]);
+    e:=IdentityMat(cols);
+    comb:=IteratorOfCombinations([1..cols],rows+1);
+    circ:=[];
+    #Print("Combinations ",comb,"\n");
+    Info(InfoNumSgps,2,"Running over ",NrCombinations([1..cols],rows+1)," combinations to compute circuits");
+    for c in comb do
+        sum:=0;
+        for i in [1..rows+1] do
+            matt:=m{Difference(c,[c[i]])};
+            #Print("c ",c," da ",matt,"\n");
+            sum:=sum+(-1)^(i+1)*DeterminantIntMat(matt)*e[c[i]];
+        od;
+        if ForAny(sum, x->x<>0) then
+            sum:=sum/Gcd(sum);
+            sp:=positive(sum);
+            sn:=negative(sum);
+            Add(circ,[sp,sn]);
+        fi;
+    od;
+ 
+    return circ;
+end);
+
 ############################################################
 # computes a set of generators of the kernel congruence
 # of the monoid morphism associated to the matrix m with
@@ -657,7 +727,7 @@ InstallMethod(GeneratorsOfKernelCongruence,
     end;
 
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
-        Error("The argument must be a matrix of nonnegative integer.");
+        Error("The argument must be a matrix of nonnegative integers.");
     fi;
 
     msg:=ShallowCopy(m);

@@ -500,13 +500,32 @@ gap> Generators(last);
 
   A <E>minimal presentation</E> of an affine semigroup is defined analogously as for numerical semigroups (see Chapter <Ref Chap="ch:min-pres"/>). We warn the user to take into account that minimal generators are stored in a set, and thus might be arranged in a different way to the initial input. If a presentation is needed with a certain arrangment in the set of generators, or some of the generators are not necessarily minimal, then <Ref Oper="GeneratorsOfKernelCongruence"/> is recommended.
 
+
+  <ManSection>
+    <Oper Arg="M" Name="CircuitsOfKernelCongruence"></Oper>
+    <Description>
+      <A>M</A> is matrix with nonnegative integer coefficients.
+      The output is the set of circuits (pairs with minimal support) of the congruence <M>\{(x,y)\mid xM=yM\}</M>. The computation is performed by using Lemma 8.8 in <Cite Key="MR1394747"/>.
+  <P/>
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> CircuitsOfKernelCongruence([[4],[6],[9]]);
+[ [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ], [ [ 0, 3, 0 ], [ 0, 0, 2 ] ] ]
+gap> MinimalPresentation(s);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+
   <ManSection>
     <Oper Arg="M" Name="GeneratorsOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients.
       The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
   <P/>
-  The main difference with <Ref Func="MinimalPresentationOfAffineSemigroup"/> is that the matrix <A>M</A> can have repeated columns and these are not treated as a set.
+  The main difference with <Ref Func="MinimalPresentationOfAffineSemigroup"/> is that the matrix <A>M</A> can have repeated rows and these are not treated as a set.
       <Example><![CDATA[
 gap> M := [[2,0],[0,2],[1,1]];
 [ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ]
