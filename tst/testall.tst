@@ -2550,6 +2550,16 @@ gap> GluingOfAffineSemigroups(a1,a2);
 gap> Generators(last);
 [ [ 0, 2 ], [ 1, 1 ], [ 2, 0 ] ]
 
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> CircuitsOfKernelCongruence([[4],[6],[9]]);
+[ [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ], [ [ 0, 3, 0 ], [ 0, 0, 2 ] ] ]
+gap> MinimalPresentation(s);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+
+gap> PrimitiveRelationsOfKernelCongruence([[4],[6],[9]]);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
+  [ [ 6, 0, 0 ], [ 0, 1, 2 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ] ]
+
 gap> M := [[2,0],[0,2],[1,1]];
 [ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ]
 gap> GeneratorsOfKernelCongruence(M);

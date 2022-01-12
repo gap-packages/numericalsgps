@@ -93,6 +93,13 @@ DeclareSynonym("BettiElementsOfAffineSemigroup",BettiElements);
 ########################################################################
 DeclareOperation("CircuitsOfKernelCongruence",[IsRectangularTable]);
 
+#######################################################################
+#O PrimitiveRelationsOfKernelCongruence
+# computes a set of primitive relations of the 
+# kernel congruence of the monoid morphism associated to the matrix m
+########################################################################
+DeclareOperation("PrimitiveRelationsOfKernelCongruence",[IsRectangularTable]);
+
 
 ############################################################
 #O GeneratorsOfKernelCongruence

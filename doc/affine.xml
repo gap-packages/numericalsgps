@@ -505,7 +505,7 @@ gap> Generators(last);
     <Oper Arg="M" Name="CircuitsOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients.
-      The output is the set of circuits (pairs with minimal support) of the congruence <M>\{(x,y)\mid xM=yM\}</M>. The computation is performed by using Lemma 8.8 in <Cite Key="MR1394747"/>.
+      The output is the set of circuits (pairs with minimal support) of the congruence <M>\{(x,y)\mid x<A>M</A>=y<A>M</A>\}</M>. The computation is performed by using Lemma 8.8 in <Cite Key="MR1394747"/>.
   <P/>
 
       <Example><![CDATA[
@@ -520,10 +520,26 @@ gap> MinimalPresentation(s);
 
 
   <ManSection>
+    <Oper Arg="M" Name="PrimitiveRelationsOfKernelCongruence"></Oper>
+    <Description>
+      <A>M</A> is matrix with nonnegative integer coefficients.
+      The output is the set of primitive relations  of the congruence <M>R=\{(x,y)\mid x<A>M</A>=y<A>M</A>\}</M>. A pair (relation) <M>(x,y)</M> in <M>R</M> is primitive if <M>x\neq y</M> and it cannot be expressed as a sumo of two nonzero pairs in <M>R</M>. 
+  <P/>     
+
+      <Example><![CDATA[
+gap> PrimitiveRelationsOfKernelCongruence([[4],[6],[9]]);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
+  [ [ 6, 0, 0 ], [ 0, 1, 2 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ] ]
+]]></Example>
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
     <Oper Arg="M" Name="GeneratorsOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients.
-      The output is a system of generators of the congruence <M>\{(x,y)\mid xM=yM\}</M>.
+      The output is a system of generators of the congruence <M>\{(x,y)\mid x<A>M</A>=y<A>M</A>\}</M>.
   <P/>
   The main difference with <Ref Func="MinimalPresentationOfAffineSemigroup"/> is that the matrix <A>M</A> can have repeated rows and these are not treated as a set.
       <Example><![CDATA[
@@ -539,7 +555,7 @@ gap> GeneratorsOfKernelCongruence(M);
     <Oper Arg="M, Ord" Name="CanonicalBasisOfKernelCongruence"></Oper>
     <Description>
       <A>M</A> is matrix with nonnegative integer coefficients, <A>Ord</A> a term ordering.
-      The output is a canonical basis of the congruence <M>\{(x,y)\mid xM=yM\}</M> (see <Cite Key="RGS99"></Cite>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <M>x_i\mapsto Y^{m_i}</M>, with <M>m_i</M> the <M>i</M>th row of <M>M</M>.
+      The output is a canonical basis of the congruence <M>\{(x,y)\mid x<A>M</A>=y<A>M</A>\}</M> (see <Cite Key="RGS99"></Cite>). This corresponds with the exponents of the Gröbner basis of the kernel ideal of the morphism <M>x_i\mapsto Y^{m_i}</M>, with <M>m_i</M> the <M>i</M>th row of <M>M</M>.
   <P/>
     Accepted term orderings are lexicographic (<C>MonomialLexOrdering()</C>), graded lexicographic (<A>MonomialGrlexOrdering()</A>) and reversed graded lexicographic (<A>MonomialGrevlexOrdering()</A>).
     <Example><![CDATA[

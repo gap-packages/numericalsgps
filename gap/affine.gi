@@ -634,7 +634,7 @@ InstallMethod(Factorizations,
 # kernel congruence of the monoid morphism associated to the matrix m
 ########################################################################
 InstallMethod(CircuitsOfKernelCongruence,
-  "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
+  "Computes the set of circuits the kernel congruence of the monoid morphism associated to a matrix",
 	[IsRectangularTable],1,
 function( m )
     local gens, positive, negative, cir,
@@ -696,6 +696,44 @@ function( m )
     od;
  
     return circ;
+end);
+
+
+#######################################################################
+#O PrimitiveRelationsOfKernelCongruence
+# computes a set of primitive relations of the 
+# kernel congruence of the monoid morphism associated to the matrix m
+########################################################################
+InstallMethod(PrimitiveRelationsOfKernelCongruence,
+  "Computes the set of primitive relations the kernel congruence of the monoid morphism associated to a matrix",
+	[IsRectangularTable],1,
+function( m )
+    local gens,dim, sols,e,prim, msg,aid,zeroid,lft,prlft,id,zero,zeroes;
+
+    if not(IsRectangularTable(m)) then
+        Error("The argument must be an array of integers.");
+    fi;
+    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+        Error("The argument must be a matrix of nonnegative integers.");
+    fi;
+
+    Info(InfoNumSgps,2,"Using Lawrence lifting for computing primitive relations.");
+    e:=Length(m);
+    dim:=Length(m[1]);
+    id:=IdentityMat(e);
+    zero:=List([1..e],_->0);
+    zeroes:=List([1..dim],_->zero);
+
+    msg:=TransposedMat(m);
+    aid:=TransposedMat(Concatenation(msg,id));
+    zeroid:=TransposedMat(Concatenation(zeroes,id));
+
+    lft:=(Concatenation(aid,zeroid));
+    prlft:=GeneratorsOfKernelCongruence(lft);
+    Info(InfoNumSgps,2,"The kernel congruence is of the lifting is ", prlft);
+
+    prim:=Set(prlft, p->[p[1]{[e+1..e+e]},p[2]{[e+1..e+e]}]);
+    return prim;
 end);
 
 ############################################################
