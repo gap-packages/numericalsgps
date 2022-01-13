@@ -980,6 +980,14 @@ gap> BettiElementsOfNumericalSemigroup(s);
 gap> BettiElements(s);
 [ 10, 12, 14 ]
 
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+gap> IsMinimalRelationOfNumericalSemigroup([[2,1,0],[0,0,2]],s);
+false
+gap> IsMinimalRelationOfNumericalSemigroup([[3,1,0],[0,0,2]],s);
+true
+
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> DegreesOfPrimitiveElementsOfNumericalSemigroup(s);
 [ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ]

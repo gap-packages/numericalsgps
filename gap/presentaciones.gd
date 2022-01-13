@@ -60,6 +60,15 @@ DeclareOperation("BettiElements", [IsNumericalSemigroup]);
 
 #############################################################################
 ##
+#F  IsMinimalRelationOfNumericalSemigroup(p,s)
+##  For a pair p (relation) and a numerical semigroup s, it decides if p is 
+##  in a minimal presentation of s
+##
+#############################################################################
+DeclareGlobalFunction("IsMinimalRelationOfNumericalSemigroup");
+
+#############################################################################
+##
 #P  IsUniquelyPresentedNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, checks it it has a unique minimal presentation

@@ -82,6 +82,24 @@ gap> BettiElements(s);
   </ManSection>
 
   <ManSection>
+    <Func Arg="p,S" Name="IsMinimalRelationOfNumericalSemigroup"></Func>
+    <Description>
+      <A>S</A> is a numerical semigroup and <A>p</A> is a pair (a relation) of lists of integers. Determines if the pair <A>p</A> is a minimal relation in a minimal presentation of <A>S</A>.
+      <P/>
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+gap> IsMinimalRelationOfNumericalSemigroup([[2,1,0],[0,0,2]],s);
+false
+gap> IsMinimalRelationOfNumericalSemigroup([[3,1,0],[0,0,2]],s);
+true
+]]></Example>
+    </Description>
+  </ManSection>
+
+
+  <ManSection>
     <Func Arg="S" Name="DegreesOfPrimitiveElementsOfNumericalSemigroup"></Func>
     <Description>
       <A>S</A> is a numerical semigroup.

@@ -161,6 +161,43 @@ BettiElementsOfNumericalSemigroup
 
 #############################################################################
 ##
+#F  IsMinimalRelationOfNumericalSemigroup(p,s)
+##  For a pair p (relation) and a numerical semigroup s, it decides if p is 
+##  in a minimal presentation of s
+##
+#############################################################################
+InstallGlobalFunction(IsMinimalRelationOfNumericalSemigroup,
+function(p,s)
+    local rc, deg, msg, c1, c2;
+    if not(IsNumericalSemigroup(s)) then
+        Error("The second argument must be a numerical semigroup");
+    fi;
+    if not(IsRectangularTable(p)) then
+        Error("The first argument must be a list of two lists of integers");
+    fi;
+    if Length(p)<>2 then
+        Error("The first argument must be a list of two elements");
+    fi;
+    if not(ForAll(p[1], x->IsInt(x) and x>=0) and ForAll(p[2], x->IsInt(x) and x>=0)) then
+        Error("The first argument must be a list of two lists of nonnegative integers");
+    fi;
+    msg:=MinimalGenerators(s);
+    deg:=msg*p[1];
+    if deg<>msg*p[2] then 
+        return false;
+    fi;
+    rc:=RClassesOfSetOfFactorizations(Factorizations(deg,s));
+    if Length(rc)<=1 then
+        return false;
+    fi;
+    c1:=First(rc, c->p[1] in c);
+    c2:=First(rc, c->p[2] in c);
+    return c1<>fail and c2<> fail and c1<>c2;
+end);
+
+
+#############################################################################
+##
 #P  IsUniquelyPresentedNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, checks it it has a unique minimal presentation
