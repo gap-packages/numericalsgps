@@ -48,6 +48,23 @@ DeclareOperation("MinimalPresentation",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
+## Presentations of numerical semigroups can be computed either by using 
+## connected components of certain graphs associated to elements in the 
+## semigroup, or by using elimination in polynomial ideals. If set to true, 
+## numericalsgps will use the elimination approach.
+##
+## This can be of special interest if the user decides to load 4ti2 or 
+## singular interfaces.
+##
+## This affects methods like MinimalPresentation and BettiElements. The primitive 
+## functions MinimalPresentationOfNumericalSemigroup and 
+## BettiElementsOfNumericalSemigroup use the graph approach.
+##
+#############################################################################
+#DeclareGlobalVariable("NumSgpsUseEliminationForMinimalPresentations");
+
+#############################################################################
+##
 #F  AllMinimalRelationsOfNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, gives the union of all minimal presentations

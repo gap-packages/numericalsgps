@@ -2617,6 +2617,10 @@ gap> DegreesOfPrimitiveElementsOfAffineSemigroup(a);
 gap> Set(FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]));
 [ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
 
+gap> FactorizationsVectorWRTList([7000],[[101],[102],[303]]);
+[ [ 38, 31, 0 ], [ 35, 31, 1 ], [ 32, 31, 2 ], [ 29, 31, 3 ], [ 26, 31, 4 ], [ 23, 31, 5 ], [ 20, 31, 6 ],
+  [ 17, 31, 7 ], [ 14, 31, 8 ], [ 11, 31, 9 ], [ 8, 31, 10 ], [ 5, 31, 11 ], [ 2, 31, 12 ] ]
+
 gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
 gap> Elasticity([5,5],a);
 1

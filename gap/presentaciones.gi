@@ -45,7 +45,22 @@ InstallGlobalFunction(GraphAssociatedToElementInNumericalSemigroup, function(n,s
 end);
 
 
-
+#############################################################################
+##
+## Presentations of numerical semigroups can be computed either by using 
+## connected components of certain graphs associated to elements in the 
+## semigroup, or by using elimination in polynomial ideals. If set to true, 
+## numericalsgps will use the elimination approach.
+##
+## This can be of special interest if the user decides to load 4ti2 or 
+## singular interfaces.
+##
+## This affects methods like MinimalPresentation and BettiElements. The primitive 
+## functions MinimalPresentationOfNumericalSemigroup and 
+## BettiElementsOfNumericalSemigroup use the graph approach.
+##
+#############################################################################
+NumSgpsUseEliminationForMinimalPresentations:=false;
 
 
 #############################################################################
@@ -87,9 +102,13 @@ end);
 
 InstallMethod(MinimalPresentation,
 "Computes a minimal presentation of the numerical semigroup",
-[IsNumericalSemigroup],
-MinimalPresentationOfNumericalSemigroup
-);
+[IsNumericalSemigroup], function(s)
+    if NumSgpsUseEliminationForMinimalPresentations then
+        return MinimalPresentation(AsAffineSemigroup(s));
+    else
+        return MinimalPresentationOfNumericalSemigroup(s);
+    fi;
+end);
 
 #############################################################################
 ##
@@ -108,7 +127,7 @@ function(s)
     fi;
     mb:=[];
     msg:=MinimalGenerators(s);
-    betti:=Set(GeneratorsOfKernelCongruence(List(msg, g->[g])), p->p[1]*msg);
+    betti:=BettiElements(s);
     for b in betti do
         fc:=FactorizationsElementWRTNumericalSemigroup(b,s);
         rc:=RClassesOfSetOfFactorizations(fc);
@@ -192,9 +211,13 @@ end);
 
 InstallMethod(BettiElements,
 "Computes the Betti elements of the numerical semigroup",
-[IsNumericalSemigroup],
-BettiElementsOfNumericalSemigroup
-);
+[IsNumericalSemigroup], function(s)
+    if NumSgpsUseEliminationForMinimalPresentations then
+        return Set(BettiElements(AsAffineSemigroup(s)), b->b[1]);
+    else
+        return BettiElementsOfNumericalSemigroup(s);
+    fi;
+end);
 
 #############################################################################
 ##

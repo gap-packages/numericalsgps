@@ -571,8 +571,12 @@ InstallMethod(FactorizationsVectorWRTList,
         return [];
     fi;
 
+    dim:=Length(ls[1]);
+    if dim=1 then
+        return FactorizationsIntegerWRTList(v[1],Flat(ls));
+    fi;
+
     if Length(ls)=1 then
-        dim:=Length(ls[1]);
 
         i:=First([1..dim],x->ls[1][x]<>0);
 
