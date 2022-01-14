@@ -98,6 +98,25 @@ true
     </Description>
   </ManSection>
 
+<ManSection>
+<Func Arg="S" Name="AllMinimalRelationsOfNumericalSemigroup"></Func>
+<Description>
+  <A>S</A> is a numerical semigroup.
+
+      The output is the union of all minimal presentations of <A>S</A>. Notice that if [x,y] is a minimal relator, then either [x,y] or [y,x] will be in the output, but not both.
+
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+gap> AllMinimalRelationsOfNumericalSemigroup(s);
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ] ]
+]]></Example>
+
+  </Description>
+</ManSection>
+
+
 
   <ManSection>
     <Func Arg="S" Name="DegreesOfPrimitiveElementsOfNumericalSemigroup"></Func>

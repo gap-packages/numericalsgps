@@ -93,6 +93,43 @@ MinimalPresentationOfNumericalSemigroup
 
 #############################################################################
 ##
+#F  AllMinimalRelationsOfNumericalSemigroup(s)
+##
+##  For a numerical semigroup s, gives the union of all minimal presentations
+##  without taking into account the symmetry of the pairs belonging to them
+##
+#############################################################################
+InstallGlobalFunction(AllMinimalRelationsOfNumericalSemigroup,
+function(s)
+    local betti, rc, fc, mb,msg,fcc, b, p, c1,c2;
+
+    if not(IsNumericalSemigroup(s)) then
+        Error("The argument must be a numerical semigroup");
+    fi;
+    mb:=[];
+    msg:=MinimalGenerators(s);
+    betti:=Set(GeneratorsOfKernelCongruence(List(msg, g->[g])), p->p[1]*msg);
+    for b in betti do
+        fc:=FactorizationsElementWRTNumericalSemigroup(b,s);
+        rc:=RClassesOfSetOfFactorizations(fc);
+        if Length(rc)>1 then 
+            fcc:=IteratorOfCartesianProduct(fc,fc);
+            for p in fcc do
+                if p[1]>p[2] then
+                    c1:=First(rc, c->p[1] in c);
+                    c2:=First(rc, c->p[2] in c);
+                    if c1<>c2 then
+                        Add(mb,p);
+                    fi;
+                fi;
+            od;
+        fi;
+    od;
+    return Set(mb);
+end);
+
+#############################################################################
+##
 #F  BettiElementsOfNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, returns the elements whose associated graphs

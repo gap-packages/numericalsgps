@@ -48,6 +48,16 @@ DeclareOperation("MinimalPresentation",[IsNumericalSemigroup]);
 
 #############################################################################
 ##
+#F  AllMinimalRelationsOfNumericalSemigroup(s)
+##
+##  For a numerical semigroup s, gives the union of all minimal presentations
+##  without taking into account the symmetry of the pairs belonging to them
+##
+#############################################################################
+DeclareGlobalFunction("AllMinimalRelationsOfNumericalSemigroup");
+
+#############################################################################
+##
 #F  BettiElementsOfNumericalSemigroup(s)
 ##
 ##  For a numerical semigroup s, returns the elements whose associated graphs
