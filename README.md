@@ -42,3 +42,9 @@ Acknowledgements and funding
 ----------------------------
 
 Please refer to the [acknowledgements](https://gap-packages.github.io/numericalsgps/doc/chap0.html) section in the manual.
+
+
+Papers using numericalsgps
+--------------------------
+
+A list can be found in [swmath](https://www.swmath.org/software/640).
