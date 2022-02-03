@@ -3212,6 +3212,9 @@ false
 gap> IsListOfIntegersNS([]);
 false
 
+gap> IsListOfIntegersNS([1,1/2]);  
+false
+
 ##random.xml
 
 # RandomNumericalSemigroup(3,9,55);;
