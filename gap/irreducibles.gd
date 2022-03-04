@@ -306,13 +306,28 @@ DeclareProperty("IsGeneralizedGorenstein", IsNumericalSemigroup);
 
 #####################################################################
 ##
-#P IsGeneralizedGorenstein(arg)
+#P IsNearlyGorenstein(arg)
 ##
 ## The argument is a numerical semigroup. The output is True or False depending
 ## on if the semigroup nearly Gorenstein
 ##
 #####################################################################
 DeclareProperty("IsNearlyGorenstein", IsNumericalSemigroup);
+
+
+#####################################################################
+##
+#O NearlyGorensteinVectors(arg)
+##
+## The argument is a numerical semigroup S. The output is a lists of 
+## lists. If ni is the ith generator of S, in the ith position of the 
+## list it returns all pseudo-Frobenius numbers f of S such that 
+## ni+f-f' is in S for all f a pseudo-Frobenius number of S.
+##
+#####################################################################
+DeclareOperation("NearlyGorensteinVectors", [IsNumericalSemigroup]);
+
+
 
 #####################################################################
 ##

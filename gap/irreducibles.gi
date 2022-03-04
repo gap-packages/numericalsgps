@@ -1298,6 +1298,26 @@ InstallTrueMethod(IsNearlyGorenstein, IsAlmostSymmetricNumericalSemigroup);
 
 #####################################################################
 ##
+#O NearlyGorensteinVectors(arg)
+##
+## The argument is a numerical semigroup S. The output is a lists of 
+## lists. If ni is the ith generator of S, in the ith position of the 
+## list it returns all pseudo-Frobenius numbers f of S such that 
+## ni+f-f' is in S for all f a pseudo-Frobenius number of S.
+##
+#####################################################################
+InstallMethod(NearlyGorensteinVectors, 
+    "Returns all possible nearly-Gorenstein vectors", 
+    [IsNumericalSemigroup], 1,
+function(s)
+    local pf, msg;
+    msg:=MinimalGenerators(s);
+    pf:=PseudoFrobenius(s);
+    return List(msg, g-> Filtered(pf, f-> ForAll(pf, h-> g+f-h in s)));
+end);
+
+#####################################################################
+##
 #P IsGeneralizedAlmostSymmetric(S)
 ##
 ## The argument is a numerical semigroup. The output is True or False depending
