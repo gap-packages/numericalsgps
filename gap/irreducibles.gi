@@ -484,11 +484,6 @@ InstallMethod(IsSymmetricNumericalSemigroup,
     return GenusOfNumericalSemigroup(s)=(FrobeniusNumberOfNumericalSemigroup(s)+1)/2;
 end);
 
-InstallMethod(IsSymmetric,
-"Tests wheter the semigroup is symmetric",
-[IsNumericalSemigroup], IsSymmetricNumericalSemigroup
-);
-
 InstallTrueMethod(IsIrreducibleNumericalSemigroup, IsSymmetricNumericalSemigroup);
 
 #############################################################################
