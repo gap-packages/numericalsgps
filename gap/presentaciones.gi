@@ -92,7 +92,7 @@ InstallGlobalFunction(MinimalPresentationOfNumericalSemigroup, function(s)
     presentation:=[];
 	for n in candidates do
 		rclasses:=RClassesOfSetOfFactorizations(FactorizationsIntegerWRTList(n,msg));
-		pairs:=List([2..Length(rclasses)],i-> [rclasses[1][1],rclasses[i][1]]);
+		pairs:=List([2..Length(rclasses)],i-> Set([rclasses[1][1],rclasses[i][1]]));
 		presentation:=Union(presentation,pairs);
 	od;
 
