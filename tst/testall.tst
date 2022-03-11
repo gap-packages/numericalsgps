@@ -964,11 +964,11 @@ gap> SmallElements(s);
 
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> MinimalPresentation(s);
-[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
-[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 gap> MinimalPresentationOfNumericalSemigroup(s);
-[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
-[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> GraphAssociatedToElementInNumericalSemigroup(10,s);
@@ -982,7 +982,7 @@ gap> BettiElements(s);
 
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> MinimalPresentation(s);
-[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ]
 gap> IsMinimalRelationOfNumericalSemigroup([[2,1,0],[0,0,2]],s);
 false
 gap> IsMinimalRelationOfNumericalSemigroup([[3,1,0],[0,0,2]],s);
@@ -990,7 +990,7 @@ true
 
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> MinimalPresentation(s);
-[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ]
 gap> AllMinimalRelationsOfNumericalSemigroup(s);
 [ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ] ]
 
@@ -2576,11 +2576,12 @@ gap> s:=NumericalSemigroup(4,6,9);;
 gap> CircuitsOfKernelCongruence([[4],[6],[9]]);
 [ [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ], [ [ 0, 3, 0 ], [ 0, 0, 2 ] ] ]
 gap> MinimalPresentation(s);
-[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ] ]
+[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ]
 
 gap> PrimitiveRelationsOfKernelCongruence([[4],[6],[9]]);
-[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
-  [ [ 6, 0, 0 ], [ 0, 1, 2 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ] ]
+[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], 
+  [ [ 0, 0, 4 ], [ 9, 0, 0 ] ], [ [ 0, 1, 2 ], [ 6, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ]
 
 gap> M := [[2,0],[0,2],[1,1]];
 [ [ 2, 0 ], [ 0, 2 ], [ 1, 1 ] ]
@@ -2625,9 +2626,10 @@ gap> DegreesOfPrimitiveElementsOfAffineSemigroup(a);
 gap> Set(FactorizationsVectorWRTList([5,5],[[2,0],[0,2],[1,1]]));
 [ [ 0, 0, 5 ], [ 1, 1, 3 ], [ 2, 2, 1 ] ]
 
-gap> FactorizationsVectorWRTList([7000],[[101],[102],[303]]);
-[ [ 38, 31, 0 ], [ 35, 31, 1 ], [ 32, 31, 2 ], [ 29, 31, 3 ], [ 26, 31, 4 ], [ 23, 31, 5 ], [ 20, 31, 6 ],
-  [ 17, 31, 7 ], [ 14, 31, 8 ], [ 11, 31, 9 ], [ 8, 31, 10 ], [ 5, 31, 11 ], [ 2, 31, 12 ] ]
+gap> Set(FactorizationsVectorWRTList([7000],[[101],[102],[303]]));
+[ [ 2, 31, 12 ], [ 5, 31, 11 ], [ 8, 31, 10 ], [ 11, 31, 9 ], [ 14, 31, 8 ], 
+  [ 17, 31, 7 ], [ 20, 31, 6 ], [ 23, 31, 5 ], [ 26, 31, 4 ], [ 29, 31, 3 ], 
+  [ 32, 31, 2 ], [ 35, 31, 1 ], [ 38, 31, 0 ] ]
 
 gap> a:=AffineSemigroup([[2,0],[0,2],[1,1]]);;
 gap> Elasticity([5,5],a);
