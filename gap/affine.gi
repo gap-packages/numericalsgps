@@ -736,7 +736,7 @@ function( m )
     prlft:=GeneratorsOfKernelCongruence(lft);
     Info(InfoNumSgps,2,"The kernel congruence is of the lifting is ", prlft);
 
-    prim:=Set(prlft, p->[p[1]{[e+1..e+e]},p[2]{[e+1..e+e]}]);
+    prim:=Set(prlft, p->Set([p[1]{[e+1..e+e]},p[2]{[e+1..e+e]}]));
     return prim;
 end);
 

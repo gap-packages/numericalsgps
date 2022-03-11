@@ -44,7 +44,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         m2:=m1-p;
         d1:=List([1..ed], i->DegreeIndeterminate(m1,i));;
         d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
-        return [d1,d2];
+        return Set([d1,d2]);
     end;
 
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then

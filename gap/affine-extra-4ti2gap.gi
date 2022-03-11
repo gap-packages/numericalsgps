@@ -167,7 +167,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         local d1, d2;
         d1:=List(p, i->Maximum(i,0));
         d2:=List(p, i->-Minimum(0,i));
-        return [d1,d2];
+        return Set([d1,d2]);
     end;
 
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then

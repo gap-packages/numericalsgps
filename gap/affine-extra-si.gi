@@ -44,7 +44,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         m2:=p[2];#m1-p;
         d1:=_SI_Plistintvec(SI_leadexp(m1));
         d2:=_SI_Plistintvec(SI_leadexp(m2));
-        return [d1{[1..ed]},d2{[1..ed]}];
+        return Set([d1{[1..ed]},d2{[1..ed]}]);
     end;
 
     msg:=ShallowCopy(m);
