@@ -285,7 +285,7 @@ InstallOtherMethod(MinimalPresentationOfAffineSemigroup,
         rclass:=RClassesOfSetOfFactorizations(exps);
         if Length(rclass)>1 then
             pres:=Concatenation(pres,List([2..Length(rclass)],
-                          i->[rclass[1][1],rclass[i][1]]));
+                          i->Set([rclass[1][1],rclass[i][1]])));
         fi;
     od;
     return pres;
