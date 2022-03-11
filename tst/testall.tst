@@ -1327,6 +1327,14 @@ gap> s:=NumericalSemigroup(3,7,8);;
 gap> IsNearlyGorenstein(s);
 false
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> NearlyGorensteinVectors(s);
+[ [ 4 ], [ 2, 4 ], [ 2, 4 ] ]
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> NearlyGorensteinVectors(s);
+[ [ 11 ], [ 11 ], [ 11 ] ]
+
+
 gap> s:=NumericalSemigroup(9, 24, 39, 43, 77);;
 gap> IsGeneralizedAlmostSymmetric(s);
 true
@@ -3210,6 +3218,9 @@ gap> IsListOfIntegersNS([[2],3]);
 false
 
 gap> IsListOfIntegersNS([]);
+false
+
+gap> IsListOfIntegersNS([1,1/2]);  
 false
 
 ##random.xml

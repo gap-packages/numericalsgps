@@ -46,6 +46,29 @@ false
     </Description>
 </ManSection>
 
+
+<ManSection>
+    <Oper Arg="s" Name="NearlyGorensteinVectors"></Oper>
+    <Description>
+        <A>s</A> is a numerical semigroup.  
+        The output is a lists of lists (making the cartesian product of them yields all possible NG-vectors). If <M>n_i</M> is the ith 
+        generator of <A>s</A>, in the ith position of the list it returns all pseudo-Frobenius numbers <M>f</M> of <A>s</A> such that 
+        <M>n_i+f-f'</M> is in <A>s</A> for all <M>f</M> a pseudo-Frobenius number of <A>s</A>, <Cite Key="nearly-almost"></Cite>.
+        <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,11,12,25);;
+gap> IsAlmostSymmetric(s);
+false
+gap> IsNearlyGorenstein(s);
+true
+gap> s:=NumericalSemigroup(3,7,8);;
+gap> IsNearlyGorenstein(s);
+false
+]]></Example>
+    </Description>
+</ManSection>
+
+
+
 <ManSection>
     <Prop Arg="s" Name="IsGeneralizedAlmostSymmetric"></Prop>
     <Description>

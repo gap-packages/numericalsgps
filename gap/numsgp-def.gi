@@ -396,7 +396,7 @@ end);
 #F NumericalSemigroupByAffineMap(a,b,c)
 ## Computes the smallest numerical semigroup
 ## containing c and closed under x->ax+b
-## see http://arxiv.org/pdf/1505.06580v4.pdf
+## see https://arxiv.org/pdf/1505.06580v4.pdf
 #############################################################################
 InstallGlobalFunction(NumericalSemigroupByAffineMap,function(a,b,c)
     local gs,gen, t ,sk;

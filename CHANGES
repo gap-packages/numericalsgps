@@ -4,6 +4,7 @@
 
 #======
 1.2.2 -> 1.2.2 dev
+- Addeed NearlyGorensteinVectors
 - Added CircuitsOfKernelCongruence, PrimitiveRelationsOfKernelCongruence, IsMinimalRelationOfNumericalSemigroup, AllMinimalRelationsOfNumericalSemigroup
 - Added IsAlmostCanonicalIdeal, IsNearlyGorenstein, IsGeneralizedAlmostSymmetric, IsHomogeneousNumericalSemigroup, AsNumericalDuplication, DilatationOfNumericalSemigroup, RFMatrices (by Francesco Strazzanti)
 - Added new section in the chapter of factorizationas, and moved IsMpure and IsPure to this new section

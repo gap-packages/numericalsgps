@@ -481,10 +481,6 @@ InstallMethod(IsSymmetricGoodSemigroup,
   return Sum(c)=w1+w2+b1+b2-2;
 end);
 
-InstallMethod(IsSymmetric,
-"Tests wheter the semigroup is symmetric",
-[IsGoodSemigroup], IsSymmetricGoodSemigroup
-);
 
 
 ###################################################

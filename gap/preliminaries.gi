@@ -242,18 +242,13 @@ end);
 ##
 #############################################################################
 InstallGlobalFunction(IsListOfIntegersNS, function(list)
-  if not(IsList(list)) then 
+  if not(IsList(list)) or list = [] then 
     return false;
   fi;
-
-  if list <> [] then
-    if IsInt(list[1]) then
-      if IsHomogeneousList(list) then
-        return true;
-      fi;
-    fi;
+  if ForAny(list, x->not(IsInt(x))) then
+    return false;
   fi;
-  return false;
+  return true;
 end);
 
 #############################################################################
