@@ -137,8 +137,8 @@ DeclareGlobalFunction("RepresentsSmallElementsOfGoodSemigroup");
 ## Determines if M is symmetric
 ###############################################################
 #DeclareGlobalFunction("IsSymmetricGoodSemigroup");
-DeclareProperty("IsSymmetricGoodSemigroup",IsGoodSemigroup);
-DeclareAttribute("IsSymmetric",IsGoodSemigroup);
+DeclareProperty("IsSymmetric",IsGoodSemigroup);
+DeclareSynonymAttr("IsSymmetricGoodSemigroup",IsSymmetric);
 
 ###############################################################
 ##
