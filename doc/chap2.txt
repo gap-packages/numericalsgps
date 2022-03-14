@@ -198,10 +198,10 @@
   [1X2.1-7 NumericalSemigroupByAffineMap[101X
   
   [33X[1;0Y[29X[2XNumericalSemigroupByAffineMap[102X( [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function[133X
-  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3Xa[103X, [3Xb[103X, [3Xc[103X ) [32X function[133X
   
   [33X[0;0YGiven three nonnegative integers [3Xa[103X, [3Xb[103X and [3Xc[103X, with [22Xa,c>0[122X and [22Xgcd(b,c)=1[122X, this
-  function  returns the least (with restpect to set order inclusion) numerical
+  function  returns  the least (with respect to set order inclusion) numerical
   semigroup  containing  [3Xc[103X  and closed under the map [22Xx↦ ax+b[122X. The procedure is
   explained in [Ugo16].[133X
   
@@ -290,9 +290,9 @@
   [33X[1;0Y[29X[2XNumericalSemigroupByOpenInterval[102X( [3XList[103X ) [32X function[133X
   [33X[1;0Y[29X[2XNumericalSemigroup[102X( [3XString[103X, [3XList[103X ) [32X function[133X
   
-  [33X[0;0YThe input is a list of rational numbers defining a open interval. The output
-  is  the  semigroup  of  numerators of all rational numbers in this interval,
-  [RUB06].[133X
+  [33X[0;0YThe  input  is  a  list  of  rational numbers defining an open interval. The
+  output  is  the  semigroup  of  numerators  of  all rational numbers in this
+  interval, [RUB06].[133X
   
   [33X[0;0Y[10XString[110X  does  not  need  to  be  present.  When  it  is  present, it must be
   [10X"openinterval"[110X.[133X

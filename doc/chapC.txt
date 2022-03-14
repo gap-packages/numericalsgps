@@ -20,23 +20,23 @@
   
   [33X[0;0Y[2XIsAperySetAlphaRectangular[102X ([14X6.2-12[114X),[133X
   
-  [33X[0;0Y[2XTypeSequenceOfNumericalSemigroup[102X ([14X7.1-26[114X),[133X
+  [33X[0;0Y[2XTypeSequenceOfNumericalSemigroup[102X ([14X7.1-33[114X),[133X
   
-  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X ([14X7.4-2[114X),[133X
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X ([14X7.5-2[114X),[133X
   
-  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X ([14X7.4-2[114X),[133X
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupBuchsbaum[102X ([14X7.5-2[114X),[133X
   
-  [33X[0;0Y[2XTorsionOfAssociatedGradedRingNumericalSemigroup[102X ([14X7.4-3[114X),[133X
+  [33X[0;0Y[2XTorsionOfAssociatedGradedRingNumericalSemigroup[102X ([14X7.5-3[114X),[133X
   
-  [33X[0;0Y[2XBuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup[102X ([14X7.4-4[114X),[133X
+  [33X[0;0Y[2XBuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup[102X ([14X7.5-4[114X),[133X
   
-  [33X[0;0Y[2XIsMpureNumericalSemigroup[102X ([14X7.4-5[114X),[133X
+  [33X[0;0Y[2XIsMpureNumericalSemigroup[102X ([14X9.8-2[114X),[133X
   
-  [33X[0;0Y[2XIsPureNumericalSemigroup[102X ([14X7.4-6[114X),[133X
+  [33X[0;0Y[2XIsPureNumericalSemigroup[102X ([14X9.8-1[114X),[133X
   
-  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupGorenstein[102X ([14X7.4-7[114X),[133X
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupGorenstein[102X ([14X7.5-5[114X),[133X
   
-  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupCI[102X ([14X7.4-8[114X).[133X
+  [33X[0;0Y[2XIsGradedAssociatedRingNumericalSemigroupCI[102X ([14X7.5-6[114X).[133X
   
   
   [1XC.2 [33X[0;0YFunctions implemented by C. O'Neill[133X[101X
@@ -61,13 +61,13 @@
   
   [33X[0;0Y[2XDeltaSetOfAffineSemigroup[102X ([14X11.4-5[114X). Also he implemented the new version of[133X
   
-  [33X[0;0Y[2XAperyListOfNumericalSemigroupWRTElement[102X ([14X3.1-15[114X).[133X
+  [33X[0;0Y[2XAperyListOfNumericalSemigroupWRTElement[102X ([14X3.1-16[114X).[133X
   
   
   [1XC.3 [33X[0;0YFunctions implemented by K. Stokes[133X[101X
   
   [33X[0;0YKlara Stokes helped with the implementation of functions related to patterns
-  for ideals of numerical semigroups [14X7.3[114X.[133X
+  for ideals of numerical semigroups [14X7.4[114X.[133X
   
   
   [1XC.4 [33X[0;0YFunctions implemented by I. Ojeda and C. J. Moreno Ávila[133X[101X
@@ -104,9 +104,9 @@
   
   [33X[0;0Y[2XFactorizationsVectorWRTList[102X ([14X11.4-1[114X),[133X
   
-  [33X[0;0Y[2XDegreesOfPrimitiveElementsOfAffineSemigroup[102X ([14X11.3-9[114X),[133X
+  [33X[0;0Y[2XDegreesOfPrimitiveElementsOfAffineSemigroup[102X ([14X11.3-11[114X),[133X
   
-  [33X[0;0Y[2XMinimalPresentationOfAffineSemigroup[102X ([14X11.3-4[114X).[133X
+  [33X[0;0Y[2XMinimalPresentationOfAffineSemigroup[102X ([14X11.3-6[114X).[133X
   
   [33X[0;0YHe also helped in preliminary versions of the following functions.[133X
   
@@ -216,4 +216,32 @@
   
   [33X[0;0YHelena  helped  in  the  implementation  of  the  code  for ideals of affine
   semigroups [14X11.5[114X[133X
+  
+  
+  [1XC.15 [33X[0;0YFunctions implemented by J. Angulo Rodríguez[133X[101X
+  
+  [33X[0;0YJorge  implemented  the  code corresponding to decompositions of ideals into
+  irreducibles [14X7.2[114X. He also implemented [2XNumericalSemigroupByNuSequence[102X ([14X9.6-4[114X)
+  and [2XNumericalSemigroupByTauSequence[102X ([14X9.6-5[114X).[133X
+  
+  
+  [1XC.16 [33X[0;0YFunctions implemented by F. Strazzanti[133X[101X
+  
+  [33X[0;0YFrancesco helped in the implementation of the following methods.[133X
+  
+  [33X[0;0Y[2XIsAlmostCanonicalIdeal[102X ([14X7.1-31[114X),[133X
+  
+  [33X[0;0Y[2XTraceIdealOfNumericalSemigroup[102X ([14X7.1-32[114X),[133X
+  
+  [33X[0;0Y[2XIsNearlyGorenstein[102X ([14X6.4-2[114X),[133X
+  
+  [33X[0;0Y[2XIsGeneralizedAlmostSymmetric[102X ([14X6.4-4[114X),[133X
+  
+  [33X[0;0Y[2XIsHomogeneousNumericalSemigroup[102X ([14X9.8-3[114X),[133X
+  
+  [33X[0;0Y[2XAsNumericalDuplication[102X ([14X5.2-5[114X),[133X
+  
+  [33X[0;0Y[2XRFMatrices[102X ([14X9.1-6[114X),[133X
+  
+  [33X[0;0Y[2XDilatationOfNumericalSemigroup[102X ([14X5.2-7[114X).[133X
   

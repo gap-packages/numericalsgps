@@ -46,7 +46,7 @@
   otherwise.[133X
   
   [33X[0;0YThis   filter   implies   [2XIsAlmostSymmetricNumericalSemigroup[102X   ([14X6.3-3[114X)  and
-  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-30[114X).[133X
+  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-31[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsIrreducible(NumericalSemigroup(4,6,9));[127X[104X
@@ -470,12 +470,23 @@
   [4X[32X[104X
   
   
-  [1X6.4 [33X[0;0YNumerical semigroups with the generalized Gorenstein property[133X[101X
+  [1X6.4 [33X[0;0YSeveral approaches generalizing the concept of symmetry[133X[101X
   
   [33X[0;0YLet  [22XS[122X  be  a numerical semigroup and let [22XR[122X be its semigroup ring [22XK[[S]][122X. We
   say that [22XS[122X has the generalized Gorenstein property if its semigroup ring has
   this  property.  For  the  definition  and  characterization  of generalized
   Gorenstein rings please see [tttt17].[133X
+  
+  [33X[0;0YA  numerical  semigroup is said to be nearly Gorenstein if its maximal ideal
+  is  contained  in  its trace ideal [HHS19]. Every almost symmetric numerical
+  semigroup is nearly Gorenstein.[133X
+  
+  [33X[0;0YA  numerical  semigroup  [22XS[122X  with  canonical  ideal [22XK[122X is a generalized almost
+  symmetric   numerical   semigroup   if   either   [22X2K=K[122X  (symmetric)  or  [22X2K∖
+  K={F(S)-x_1,dots,  F(S)-x_r,F(S)}[122X  for  some  [22Xx_1,dots,x_r  ∈ M∖ 2M[122X (minimal
+  generators)  and  [22Xx_i-x_jnot\in (S-M)∖ S[122X (not pseudo-Frobenius numbers), see
+  [DS21].  As  expected,  every  almost  symmetric  numerical  semigroup  is a
+  generalized almost symmetric numerical semigroup.[133X
   
   [1X6.4-1 IsGeneralizedGorenstein[101X
   
@@ -483,7 +494,7 @@
   
   [33X[0;0Y[3Xs[103X  is a numerical semigroup. The output is [10Xtrue[110X if the semigroup ring [22XK[[S]][122X
   is  generalized  Gorenstein  using  the  characterization  by Goto-Kumashiro
-  ([MK17]).[133X
+  [MK17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,8);;[127X[104X
@@ -491,5 +502,59 @@
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XIsGeneralizedGorenstein(s);[127X[104X
     [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X6.4-2 IsNearlyGorenstein[101X
+  
+  [33X[1;0Y[29X[2XIsNearlyGorenstein[102X( [3Xs[103X ) [32X property[133X
+  
+  [33X[0;0Y[3Xs[103X  is  a  numerical semigroup. The output is [10Xtrue[110X if the semigroup is nearly
+  Gorenstein, and [10Xfalse[110X otherwise.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,12,25);;[127X[104X
+    [4X[25Xgap>[125X [27XIsAlmostSymmetric(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsNearlyGorenstein(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,8);;[127X[104X
+    [4X[25Xgap>[125X [27XIsNearlyGorenstein(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X6.4-3 NearlyGorensteinVectors[101X
+  
+  [33X[1;0Y[29X[2XNearlyGorensteinVectors[102X( [3Xs[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup.  The  output is a lists of lists (making the
+  cartesian product of them yields all possible NG-vectors). If [22Xn_i[122X is the ith
+  generator   of   [3Xs[103X,  in  the  ith  position  of  the  list  it  returns  all
+  pseudo-Frobenius  numbers  [22Xf[122X  of  [3Xs[103X  such  that [22Xn_i+f-f'[122X is in [3Xs[103X for all [22Xf[122X a
+  pseudo-Frobenius number of [3Xs[103X, [MS21].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,12,25);;[127X[104X
+    [4X[25Xgap>[125X [27XIsAlmostSymmetric(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsNearlyGorenstein(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,7,8);;[127X[104X
+    [4X[25Xgap>[125X [27XIsNearlyGorenstein(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X6.4-4 IsGeneralizedAlmostSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsGeneralizedAlmostSymmetric[102X( [3Xs[103X ) [32X property[133X
+  
+  [33X[0;0Y[3Xs[103X  is  a  numerical  semigroup. Determines whether or not [3Xs[103X is a generalized
+  almost symmetric numerical semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(9, 24, 39, 43, 77);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedAlmostSymmetric(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsAlmostSymmetric(s);[127X[104X
+    [4X[28Xfalse[128X[104X
   [4X[32X[104X
   

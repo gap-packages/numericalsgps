@@ -32,8 +32,10 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X81A2C4317A0BA48D">4.1-1 MinimalPresentation</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X81CC5A6C870377E1">4.1-2 GraphAssociatedToElementInNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X815C0AF17A371E3E">4.1-3 BettiElements</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7A9B5AE782CAEA2F">4.1-4 DegreesOfPrimitiveElementsOfNumericalSemigroup</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C42DEB68285F2B8">4.1-5 ShadedSetOfElementInNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7FC66A1B82E86FAF">4.1-4 IsMinimalRelationOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8750A6837EF75CA2">4.1-5 AllMinimalRelationsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7A9B5AE782CAEA2F">4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C42DEB68285F2B8">4.1-7 ShadedSetOfElementInNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7D7EA20F818A5994">4.2 <span class="Heading">Uniquely Presented Numerical Semigroups</span></a>
 </span>
@@ -73,11 +75,11 @@
 <div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentation(s);</span>
-[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
-[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentationOfNumericalSemigroup(s);</span>
-[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],
-[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ]
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 </pre></div>
 
 <p>The first element in the list means that <span class="SimpleMath">1× 3+1× 7=2× 5</span>, and the others have similar meanings.</p>
@@ -119,9 +121,43 @@
 [ 10, 12, 14 ]
 </pre></div>
 
+<p><a id="X7FC66A1B82E86FAF" name="X7FC66A1B82E86FAF"></a></p>
+
+<h5>4.1-4 IsMinimalRelationOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMinimalRelationOfNumericalSemigroup</code>( <var class="Arg">p</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">p</var> is a pair (a relation) of lists of integers. Determines if the pair <var class="Arg">p</var> is a minimal relation in a minimal presentation of <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentation(s);</span>
+[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalRelationOfNumericalSemigroup([[2,1,0],[0,0,2]],s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMinimalRelationOfNumericalSemigroup([[3,1,0],[0,0,2]],s);</span>
+true
+</pre></div>
+
+<p><a id="X8750A6837EF75CA2" name="X8750A6837EF75CA2"></a></p>
+
+<h5>4.1-5 AllMinimalRelationsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllMinimalRelationsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the union of all minimal presentations of <var class="Arg">S</var>. Notice that if [x,y] is a minimal relator, then either [x,y] or [y,x] will be in the output, but not both.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentation(s);</span>
+[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AllMinimalRelationsOfNumericalSemigroup(s);</span>
+[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ] ]
+</pre></div>
+
 <p><a id="X7A9B5AE782CAEA2F" name="X7A9B5AE782CAEA2F"></a></p>
 
-<h5>4.1-4 DegreesOfPrimitiveElementsOfNumericalSemigroup</h5>
+<h5>4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DegreesOfPrimitiveElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
@@ -137,7 +173,7 @@
 
 <p><a id="X7C42DEB68285F2B8" name="X7C42DEB68285F2B8"></a></p>
 
-<h5>4.1-5 ShadedSetOfElementInNumericalSemigroup</h5>
+<h5>4.1-7 ShadedSetOfElementInNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ShadedSetOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> is an element in <var class="Arg">S</var>.</p>

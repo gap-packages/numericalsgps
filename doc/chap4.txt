@@ -43,11 +43,11 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
     [4X[25Xgap>[125X [27XMinimalPresentation(s);[127X[104X
-    [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
-    [4X[28X[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], [128X[104X
+    [4X[28X  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ][128X[104X
     [4X[25Xgap>[125X [27XMinimalPresentationOfNumericalSemigroup(s);[127X[104X
-    [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ],[128X[104X
-    [4X[28X[ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], [128X[104X
+    [4X[28X  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ][128X[104X
   [4X[32X[104X
   
   [33X[0;0YThe first element in the list means that [22X1× 3+1× 7=2× 5[122X, and the others have
@@ -91,7 +91,41 @@
     [4X[28X[ 10, 12, 14 ][128X[104X
   [4X[32X[104X
   
-  [1X4.1-4 DegreesOfPrimitiveElementsOfNumericalSemigroup[101X
+  [1X4.1-4 IsMinimalRelationOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XIsMinimalRelationOfNumericalSemigroup[102X( [3Xp[103X, [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup  and  [3Xp[103X  is  a  pair (a relation) of lists of
+  integers.  Determines  if  the  pair  [3Xp[103X  is  a minimal relation in a minimal
+  presentation of [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalPresentation(s);[127X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XIsMinimalRelationOfNumericalSemigroup([[2,1,0],[0,0,2]],s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsMinimalRelationOfNumericalSemigroup([[3,1,0],[0,0,2]],s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-5 AllMinimalRelationsOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XAllMinimalRelationsOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical  semigroup.  The  output  is  the  union  of all minimal
+  presentations  of  [3XS[103X. Notice that if [x,y] is a minimal relator, then either
+  [x,y] or [y,x] will be in the output, but not both.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalPresentation(s);[127X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XAllMinimalRelationsOfNumericalSemigroup(s);[127X[104X
+    [4X[28X[ [ [ 0, 3, 0 ], [ 0, 0, 2 ] ], [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 3, 1, 0 ], [ 0, 0, 2 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XDegreesOfPrimitiveElementsOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
@@ -108,7 +142,7 @@
     [4X[28X[ 3, 5, 7, 10, 12, 14, 15, 21, 28, 35 ][128X[104X
   [4X[32X[104X
   
-  [1X4.1-5 ShadedSetOfElementInNumericalSemigroup[101X
+  [1X4.1-7 ShadedSetOfElementInNumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XShadedSetOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   

@@ -528,23 +528,54 @@
   [1X11.3 [33X[0;0YPresentations of affine semigroups[133X[101X
   
   [33X[0;0YA  [13Xminimal presentation[113X of an affine semigroup is defined analogously as for
-  numerical  semigroups  (see  Chapter  [14X9.7-2[114X).  We warn the user to take into
-  account  that  minimal  generators  are  stored  in a set, and thus might be
-  arranged  in  a  different  way  to  the initial input. If a presentation is
-  needed  with  a  certain arrangment in the set of generators, or some of the
-  generators  are  not  necessarily minimal, then [2XGeneratorsOfKernelCongruence[102X
-  ([14X11.3-1[114X) is recommended.[133X
+  numerical  semigroups (see Chapter [14X4[114X). We warn the user to take into account
+  that minimal generators are stored in a set, and thus might be arranged in a
+  different  way  to  the  initial  input.  If a presentation is needed with a
+  certain  arrangment  in the set of generators, or some of the generators are
+  not  necessarily  minimal,  then  [2XGeneratorsOfKernelCongruence[102X  ([14X11.3-3[114X)  is
+  recommended.[133X
   
-  [1X11.3-1 GeneratorsOfKernelCongruence[101X
+  [1X11.3-1 CircuitsOfKernelCongruence[101X
+  
+  [33X[1;0Y[29X[2XCircuitsOfKernelCongruence[102X( [3XM[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3XM[103X  is matrix with nonnegative integer coefficients. The output is the set of
+  circuits  (pairs with minimal support) of the congruence [22X{(x,y)∣ x[3XM[103X=y[3XM[103X}[122X. The
+  computation is performed by using Lemma 8.8 in [ES96].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XCircuitsOfKernelCongruence([[4],[6],[9]]);[127X[104X
+    [4X[28X[ [ [ 3, 0, 0 ], [ 0, 2, 0 ] ], [ [ 9, 0, 0 ], [ 0, 0, 4 ] ], [ [ 0, 3, 0 ], [ 0, 0, 2 ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalPresentation(s);[127X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.3-2 PrimitiveRelationsOfKernelCongruence[101X
+  
+  [33X[1;0Y[29X[2XPrimitiveRelationsOfKernelCongruence[102X( [3XM[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3XM[103X  is matrix with nonnegative integer coefficients. The output is the set of
+  primitive  relations  of  the congruence [22XR={(x,y)∣ x[3XM[103X=y[3XM[103X}[122X. A pair (relation)
+  [22X(x,y)[122X  in [22XR[122X is primitive if [22Xx≠ y[122X and it cannot be expressed as a sumo of two
+  nonzero pairs in [22XR[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XPrimitiveRelationsOfKernelCongruence([[4],[6],[9]]);[127X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 0, 3, 0 ] ], [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [128X[104X
+    [4X[28X  [ [ 0, 0, 4 ], [ 9, 0, 0 ] ], [ [ 0, 1, 2 ], [ 6, 0, 0 ] ], [128X[104X
+    [4X[28X  [ [ 0, 2, 0 ], [ 3, 0, 0 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X11.3-3 GeneratorsOfKernelCongruence[101X
   
   [33X[1;0Y[29X[2XGeneratorsOfKernelCongruence[102X( [3XM[103X ) [32X operation[133X
   
   [33X[0;0Y[3XM[103X is matrix with nonnegative integer coefficients. The output is a system of
-  generators of the congruence [22X{(x,y)∣ xM=yM}[122X.[133X
+  generators of the congruence [22X{(x,y)∣ x[3XM[103X=y[3XM[103X}[122X.[133X
   
-  [33X[0;0YThe  main  difference  with [2XMinimalPresentationOfAffineSemigroup[102X ([14X11.3-4[114X) is
-  that  the  matrix [3XM[103X can have repeated columns and these are not treated as a
-  set.[133X
+  [33X[0;0YThe  main  difference  with [2XMinimalPresentationOfAffineSemigroup[102X ([14X11.3-6[114X) is
+  that the matrix [3XM[103X can have repeated rows and these are not treated as a set.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XM := [[2,0],[0,2],[1,1]];[127X[104X
@@ -553,12 +584,12 @@
     [4X[28X[ [ [ 0, 0, 2 ], [ 1, 1, 0 ] ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-2 CanonicalBasisOfKernelCongruence[101X
+  [1X11.3-4 CanonicalBasisOfKernelCongruence[101X
   
   [33X[1;0Y[29X[2XCanonicalBasisOfKernelCongruence[102X( [3XM[103X, [3XOrd[103X ) [32X operation[133X
   
   [33X[0;0Y[3XM[103X  is matrix with nonnegative integer coefficients, [3XOrd[103X a term ordering. The
-  output is a canonical basis of the congruence [22X{(x,y)∣ xM=yM}[122X (see [RGS99b]).
+  output is a canonical basis of the congruence [22X{(x,y)∣ x[3XM[103X=y[3XM[103X}[122X (see [RGS99b]).
   This corresponds with the exponents of the Gröbner basis of the kernel ideal
   of the morphism [22Xx_i↦ Y^m_i[122X, with [22Xm_i[122X the [22Xi[122Xth row of [22XM[122X.[133X
   
@@ -581,7 +612,7 @@
     [4X[28X  [ [ 4, 0, 0 ], [ 0, 1, 1 ] ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-3 GraverBasis[101X
+  [1X11.3-5 GraverBasis[101X
   
   [33X[1;0Y[29X[2XGraverBasis[102X( [3XM[103X ) [32X operation[133X
   
@@ -595,7 +626,7 @@
     [4X[28X  [ 7, 0, -3 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-4 MinimalPresentation[101X
+  [1X11.3-6 MinimalPresentation[101X
   
   [33X[1;0Y[29X[2XMinimalPresentation[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XMinimalPresentationOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
@@ -621,7 +652,7 @@
     [4X[28X[ [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-5 BettiElements[101X
+  [1X11.3-7 BettiElements[101X
   
   [33X[1;0Y[29X[2XBettiElements[102X( [3Xa[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XBettiElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
@@ -639,14 +670,14 @@
     [4X[28X[ [ 2, 2 ] ][128X[104X
   [4X[32X[104X
   
-  [1X11.3-6 ShadedSetOfElementInAffineSemigroup[101X
+  [1X11.3-8 ShadedSetOfElementInAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XShadedSetOfElementInAffineSemigroup[102X( [3Xv[103X, [3Xa[103X ) [32X function[133X
   
   [33X[0;0Y[3Xa[103X  is an affine semigroup and [3Xv[103X is an element in [3Xa[103X. This is a translation to
-  affine semigroups of [10XShadedSetOfElementInNumericalSemigroup[110X ([14X4.1-5[114X).[133X
+  affine semigroups of [10XShadedSetOfElementInNumericalSemigroup[110X ([14X4.1-7[114X).[133X
   
-  [1X11.3-7 IsGeneric[101X
+  [1X11.3-9 IsGeneric[101X
   
   [33X[1;0Y[29X[2XIsGeneric[102X( [3Xa[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsGenericAffineSemigroup[102X( [3Xa[103X ) [32X property[133X
@@ -655,9 +686,9 @@
   
   [33X[0;0YThe same as [10XIsGenericNumericalSemigroup[110X ([14X4.2-2[114X) but for affine semigroups.[133X
   
-  [33X[0;0YThis property implies [2XIsUniquelyPresentedAffineSemigroup[102X ([14X11.3-8[114X).[133X
+  [33X[0;0YThis property implies [2XIsUniquelyPresentedAffineSemigroup[102X ([14X11.3-10[114X).[133X
   
-  [1X11.3-8 IsUniquelyPresented[101X
+  [1X11.3-10 IsUniquelyPresented[101X
   
   [33X[1;0Y[29X[2XIsUniquelyPresented[102X( [3Xa[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsUniquelyPresentedAffineSemigroup[102X( [3Xa[103X ) [32X property[133X
@@ -667,7 +698,7 @@
   [33X[0;0YThe  same  as the homonym function for numerical semigroups ([14X4.2-1[114X), but for
   affine semigroups.[133X
   
-  [1X11.3-9 DegreesOfPrimitiveElementsOfAffineSemigroup[101X
+  [1X11.3-11 DegreesOfPrimitiveElementsOfAffineSemigroup[101X
   
   [33X[1;0Y[29X[2XDegreesOfPrimitiveElementsOfAffineSemigroup[102X( [3Xa[103X ) [32X operation[133X
   
@@ -689,7 +720,7 @@
   [1X11.4 [33X[0;0YFactorizations in affine semigroups[133X[101X
   
   [33X[0;0YThe  invariants  presented  here  are  defined  as  for numerical semigroups
-  (Chapter [14X9.[114X).[133X
+  (Chapter [14X9[114X).[133X
   
   [33X[0;0YAs  with  presentations,  the  user  should  take  into account that minimal
   generators  are  stored  in a set, and thus might be arranged in a different

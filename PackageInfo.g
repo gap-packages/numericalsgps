@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.2.2",
-Date := "03/03/2020", # dd/mm/yyyy format
+Version := "1.3.0",
+Date := "14/03/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 ##  Information about authors and maintainers.
@@ -180,7 +180,16 @@ rec(
   IsAuthor      := false,
   IsMaintainer  := false,
   PostalAddress := "Università degli Studi di Catania"
+),
+
+rec(
+  LastName      := "Angulo Rodríguez",
+  FirstNames    := "Jorge",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  PostalAddress := "Universidad de Valladolid"
 )
+
 
 ],
 
@@ -220,6 +229,7 @@ PackageDoc := rec(
 Dependencies := rec(
   GAP := "4.7",
   NeededOtherPackages := [],
+#  SuggestedOtherPackages := [["singular","normaliz"]],
   SuggestedOtherPackages := [],
   ExternalConditions := []
 

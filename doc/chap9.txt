@@ -133,7 +133,26 @@
     [4X[28Xtrue     [128X[104X
   [4X[32X[104X
   
-  [1X9.1-6 DenumerantOfElementInNumericalSemigroup[101X
+  [1X9.1-6 RFMatrices[101X
+  
+  [33X[1;0Y[29X[2XRFMatrices[102X( [3Xf[103X, [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup, and [3Xf[103X is a pseudo-Frobenius number of [3XS[103X.[133X
+  
+  [33X[0;0YThe  output  is the list of RF-matrices associated to [3Xf[103X. The ith row of each
+  matrix  contains  the  coefficients  of  a  combination of [3Xf[103X in terms of the
+  minimal  generators  of  the  semigroup,  obtained  by  substraction the ith
+  generator  to  the  factorizations  of  [3Xf[103X  plus  the ith generator of [3XS[103X, see
+  [Mos16].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(6, 7, 9, 10);;[127X[104X
+    [4X[25Xgap>[125X [27XRFMatrices(8,s);[127X[104X
+    [4X[28X[ [ [ -1, 2, 0, 0 ], [ 1, -1, 1, 0 ], [ 0, 1, -1, 1 ], [ 3, 0, 0, -1 ] ],[128X[104X
+    [4X[28X  [ [ -1, 2, 0, 0 ], [ 1, -1, 1, 0 ], [ 0, 1, -1, 1 ], [ 0, 0, 2, -1 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X9.1-7 DenumerantOfElementInNumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XDenumerantOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
@@ -146,7 +165,7 @@
     [4X[28X6[128X[104X
   [4X[32X[104X
   
-  [1X9.1-7 DenumerantFunction[101X
+  [1X9.1-8 DenumerantFunction[101X
   
   [33X[1;0Y[29X[2XDenumerantFunction[102X( [3XS[103X ) [32X operation[133X
   
@@ -366,7 +385,25 @@
     [4X[28X9[128X[104X
   [4X[32X[104X
   
-  [1X9.2-13 MaximalDenumerant[101X
+  [1X9.2-13 IsAdditiveNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XIsAdditiveNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X   is   a   numerical  semigroup.  Detects  if  [3XS[103X  is  additive,  that  is,
+  [22Xord(m+x)=ord(x)+1[122X  for  all  [22Xx[122X  in  [3XS[103X, where [22Xm[122X is the multiplicity of [3XS[103X ([22Xord[122X
+  corresponds  to  [2XMaximumDegreeOfElementWRTNumericalSemigroup[102X  ([14X9.2-12[114X);  see
+  Section   [14X9.8[114X   for   an   alternate   definition).   For  these  semigroups
+  [22Xgr_mathfrakm(K[[S]])[122X is Cohen-Macaulay (see [BH13]).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xl:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;[127X[104X
+    [4X[25Xgap>[125X [27XLength(l);[127X[104X
+    [4X[28X109[128X[104X
+    [4X[25Xgap>[125X [27XLength(Filtered(l,IsAdditiveNumericalSemigroup));[127X[104X
+    [4X[28X20[128X[104X
+  [4X[32X[104X
+  
+  [1X9.2-14 MaximalDenumerant[101X
   
   [33X[1;0Y[29X[2XMaximalDenumerant[102X( [3Xn[103X, [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XMaximalDenumerant[102X( [3XS[103X, [3Xn[103X ) [32X operation[133X
@@ -386,7 +423,7 @@
     [4X[28X2[128X[104X
   [4X[32X[104X
   
-  [1X9.2-14 MaximalDenumerantOfSetOfFactorizations[101X
+  [1X9.2-15 MaximalDenumerantOfSetOfFactorizations[101X
   
   [33X[1;0Y[29X[2XMaximalDenumerantOfSetOfFactorizations[102X( [3Xls[103X ) [32X function[133X
   
@@ -402,7 +439,7 @@
     [4X[28X6[128X[104X
   [4X[32X[104X
   
-  [1X9.2-15 MaximalDenumerant[101X
+  [1X9.2-16 MaximalDenumerant[101X
   
   [33X[1;0Y[29X[2XMaximalDenumerant[102X( [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XMaximalDenumerantOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
@@ -419,7 +456,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X9.2-16 Adjustment[101X
+  [1X9.2-17 Adjustment[101X
   
   [33X[1;0Y[29X[2XAdjustment[102X( [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XAdjustmentOfNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
@@ -446,40 +483,6 @@
     [4X[28X  710, 716, 722 ][128X[104X
     [4X[25Xgap>[125X [27XAdjustmentOfNumericalSemigroup(s) = a;[127X[104X
     [4X[28Xtrue[128X[104X
-  [4X[32X[104X
-  
-  [1X9.2-17 IsAdditiveNumericalSemigroup[101X
-  
-  [33X[1;0Y[29X[2XIsAdditiveNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
-  
-  [33X[0;0Y[3XS[103X   is   a   numerical  semigroup.  Detects  if  [3XS[103X  is  additive,  that  is,
-  [22Xord(m+x)=ord(x)+1[122X  for  all [22Xx[122X in [3XS[103X, where [22Xm[122X is the multiplicity of [3XS[103X and [22Xord[122X
-  stands for MaximumDegreeOfElementWRTNumericalSemigroup. For these semigroups
-  [22Xgr_m(K[[S]])[122X is Cohen-Macaulay(see [BH13]).[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xl:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;[127X[104X
-    [4X[25Xgap>[125X [27XLength(l);[127X[104X
-    [4X[28X109[128X[104X
-    [4X[25Xgap>[125X [27XLength(Filtered(l,IsAdditiveNumericalSemigroup));[127X[104X
-    [4X[28X20[128X[104X
-  [4X[32X[104X
-  
-  [1X9.2-18 IsSuperSymmetricNumericalSemigroup[101X
-  
-  [33X[1;0Y[29X[2XIsSuperSymmetricNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
-  
-  [33X[0;0Y[3XS[103X  is  a numerical semigroup. Detects if [3XS[103X is supersymmetric, that is, it is
-  symmetric, additive and whenever [22Xw+w'=f+m[122X (with [22Xm[122X the multiplicity and [22Xf[122X the
-  Frobenius  number)  we  have  [22Xord(w+w')=ord(w)+ord(w')[122X, where [22Xord[122X stands for
-  MaximumDegreeOfElementWRTNumericalSemigroup.[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27Xl:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;[127X[104X
-    [4X[25Xgap>[125X [27XLength(l);[127X[104X
-    [4X[28X109[128X[104X
-    [4X[25Xgap>[125X [27XLength(Filtered(l,IsSuperSymmetricNumericalSemigroup));[127X[104X
-    [4X[28X7[128X[104X
   [4X[32X[104X
   
   
@@ -877,6 +880,29 @@
   given  [22Xn_1,...,n_r∈  S[122X,  the  set  of  the  divisors  of  these  elements is
   [22XmathrmD(n_1,..., n_r)= ⋃_i=1^r mathrmD(n_i)[122X.[133X
   
+  [33X[0;0YFor  a  numerical  semigroup [22XS[122X, we can define the sequence [22X{ν_i}_ige 1[122X, with
+  [22Xν_i[122X the number of divisors of the [22Xi[122Xth element in [22XS[122X. It can be shown that the
+  first [22X2g-c[122X elements of the sequence uniquely determine the semigroup (with [22Xc[122X
+  the conductor of [22XS[122X and [22Xg[122X its genus), see [BA13].[133X
+  
+  [33X[0;0YThere  is  another  sequence associated to divisors that also determines the
+  semigroup.  Let [22XS={λ_0=0 < λ_1 dots}[122X be a numerical semigroup. We can define
+  the  following  binary  operation  on  [22XN[122X:  [22Xi⊕_S  i=k[122X,  where  [22Xk[122X is such that
+  [22Xλ_i+λ_j=λ_k[122X. Set [22Xτ_i=max{ j∈ N: hbox exists k∈{j,...,i} hbox with j⊕_S k=i}[122X.
+  The first [22X2c-g+1[122X determine uniquely [22XS[122X (see [BA13]).[133X
+  
+  [33X[0;0YTranslated to code, the definition of [22Xτ_i[122X could be as follows.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28XTauNS := function(i,S)[128X[104X
+    [4X[28X    local d, D, si;[128X[104X
+    [4X[28X    D:=DivisorsOfElementInNumericalSemigroup(S[i+1],S);[128X[104X
+    [4X[28X    si:=S[i+1];[128X[104X
+    [4X[28X    d:=Maximum(Intersection(D,[0..Int(si/2)]));[128X[104X
+    [4X[28X    return NumberElement_NumericalSemigroup(S,d)-1;[128X[104X
+    [4X[28Xend;[128X[104X
+  [4X[32X[104X
+  
   [1X9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XMoebiusFunctionAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function[133X
@@ -921,7 +947,50 @@
     [4X[28X[ 0, 5, 10, 15, 20 ][128X[104X
     [4X[25Xgap>[125X [27XDivisorsOfElementInNumericalSemigroup(20,s);[127X[104X
     [4X[28X[ 0, 5, 10, 15, 20 ][128X[104X
-    [4X[28X              [128X[104X
+  [4X[32X[104X
+  
+  [1X9.6-4 NumericalSemigroupByNuSequence[101X
+  
+  [33X[1;0Y[29X[2XNumericalSemigroupByNuSequence[102X( [3Xnuseq[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xnuseq[103X  is  a list of integers that represents a [22Xν[122X-sequence, that is, the [22Xi[122Xth
+  element  in  the  sequence is the number of divisors of the [22Xi[122Xth element in a
+  certain numerical semigroup. Though the sequence is finite, it is understood
+  that from the last element every entry increases exactly by one.[133X
+  
+  [33X[0;0YThe  output  is  the  only  numerical  semigroup  whose [22Xν[122X-sequence is [22X[3Xnusec[103X∪
+  {k,k+1, ...}[122X (with [22Xk[122X the last element of [3Xnusec[103X).[133X
+  
+  [33X[0;0YThe implementation is inspired in Theorem 1.54 in [BA13].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XNuSequence:=S->List([1..2*Conductor(S)-Genus(S)],[127X[104X
+    [4X[28Xi->Length(DivisorsOfElementInNumericalSemigroup(S[i],S)));;[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
+    [4X[25Xgap>[125X [27XNuSequence(s);[127X[104X
+    [4X[28X[ 1, 2, 2, 3, 2, 4, 3, 4, 4, 6, 4, 6, 5, 8, 9, 8, 9, 10, 12, 12 ][128X[104X
+    [4X[25Xgap>[125X [27Xs=NumericalSemigroupByNuSequence(last);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X9.6-5 NumericalSemigroupByTauSequence[101X
+  
+  [33X[1;0Y[29X[2XNumericalSemigroupByTauSequence[102X( [3Xtauseq[103X ) [32X function[133X
+  
+  [33X[0;0Y[3Xtauseq[103X  is  a  list  of  integers  that  represents a [22Xτ[122X-sequence. Though the
+  sequence  is  finite,  it  is  understood that [22Xτ_k+2i = τ_k+2i+1[122X, with [22Xk[122X the
+  length of the list, and this amount increases by one as [22Xi[122X increases.[133X
+  
+  [33X[0;0YThe  output  is  the  only  numerical  semigroup whose [22Xτ[122X-sequence is [22X[3Xtausec[103X∪
+  {l+1,l+1,l+2,l+2, ...}[122X (with [22Xl[122X the last element of [3Xtausec[103X).[133X
+  
+  [33X[0;0YThe implementation is inspired in Theorem 1.60 in [BA13].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xtau:=[ 0, 0, 0, 0, 1, 1, 2, 2, 3, 0, 1, 2, 3, 3, 3, 3, 4, 4 ];[127X[104X
+    [4X[28X[ 0, 0, 0, 0, 1, 1, 2, 2, 3, 0, 1, 2, 3, 3, 3, 3, 4, 4 ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(NumericalSemigroupByTauSequence(tau));[127X[104X
+    [4X[28X[ 6, 7, 8, 17 ][128X[104X
   [4X[32X[104X
   
   
@@ -935,7 +1004,7 @@
   
   [1X9.7-1 FengRaoDistance[101X
   
-  [33X[1;0Y[29X[2XFengRaoDistance[102X( [3XS[103X, [3Xr[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XFengRaoDistance[102X( [3XS[103X, [3Xr[103X, [3Xm[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical  semigroup,  [3Xr[103X  and  [3Xm[103X  integers. The output is the [3Xr[103X-th
   Feng-Rao distance of the element [3Xm[103X in the numerical semigroup [3XS[103X.[133X
@@ -959,5 +1028,101 @@
     [4X[28X224[128X[104X
     [4X[25Xgap>[125X [27XFengRaoNumber(209,S);[127X[104X
     [4X[28X224[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X9.8  [33X[0;0YNumerical  semigroups  with  Apéry  sets  having  special factorization[101X
+  [1Xproperties[133X[101X
+  
+  [33X[0;0YLet [22XS[122X be a numerical semigroup with maximal ideal [22XM[122X, and let [22Xx∈ S[122X. The order
+  of  [22Xx[122X,  denoted  [22Xord(x)[122X  is  the  largest  positive  integer  [22Xk[122X such that [22Xx∈
+  kM∖(k+1)M[122X.   Notice   that   the   order  of  an  element  corresponds  with
+  [2XMaximumDegreeOfElementWRTNumericalSemigroup[102X ([14X9.2-12[114X).[133X
+  
+  [33X[0;0YRecall  that  for  [22Xx,y∈  Z[122X,  we write [22Xxle_S y[122X if [22Xy-x∈ S[122X. Define the relation
+  [22Xpreceq_S[122X on [22XS[122X as [22Xxpreceq_S y[122X if [22Xxle_S y[122X and [22Xord(y)=ord(x)+ord(y-x)[122X.[133X
+  
+  [33X[0;0YA  numerical  semigroup  [22XS[122X  with  multiplicity  [22Xm[122X  is said to be pure if the
+  maximal  elements  of  [22XAp(S,m)[122X with respect to [22Xle_S[122X have all the same order.
+  The semigroup [22XS[122X is M-pure if the maximal elements of [22XAp(S,m)[122X with respect to
+  [22Xpreceq_S[122X have all the same order, [Bry10].[133X
+  
+  [33X[0;0YThe  numerical semigroup [22XS[122X is said to be homogeneous if for every element in
+  [22XAp(S,m)[122X,   its   set  of  lengths  is  a  singleton  (that  is,  all  its  a
+  factorizations have the same length), [JZA18].[133X
+  
+  [33X[0;0YA  numerical semigroup [22XS[122X is supersymmetric if it is symmetric, additive, and
+  whenever  [22Xw+w'=f+m[122X for some [22Xw,w'∈ Ap(S,m)[122X (with [22Xm[122X the multiplicity and [22Xf[122X the
+  Frobenius number), we have [22Xord(w+w')=ord(w)+ord(w')[122X, see [BH13]).[133X
+  
+  [1X9.8-1 IsPure[101X
+  
+  [33X[1;0Y[29X[2XIsPure[102X( [3XS[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsPureNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YTest  for  the  purity of the numerical semigroup S [3XS[103X. This test is based on
+  [Bry10].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
+    [4X[25Xgap>[125X [27XIsPure(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
+    [4X[25Xgap>[125X [27XIsPureNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X9.8-2 IsMpure[101X
+  
+  [33X[1;0Y[29X[2XIsMpure[102X( [3XS[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsMpureNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YTest  for the M-Purity of the numerical semigroup S [3XS[103X. This test is based on
+  [Bry10].[133X
+  
+  [33X[0;0YThis filter implies [2XIsPureNumericalSemigroup[102X ([14X9.8-1[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
+    [4X[25Xgap>[125X [27XIsMpure(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,11);;[127X[104X
+    [4X[25Xgap>[125X [27XIsMpureNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X9.8-3 IsHomogeneousNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XIsHomogeneousNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
+  
+  [33X[0;0YDetects if [3XS[103X is homogeneous.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,12,25);;[127X[104X
+    [4X[25Xgap>[125X [27XIsHomogeneousNumericalSemigroup(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XIsHomogeneousNumericalSemigroup(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [1X9.8-4 IsSuperSymmetricNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XIsSuperSymmetricNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
+  
+  [33X[0;0Y[3XS[103X is a numerical semigroup. Detects if [3XS[103X is supersymmetric.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xl:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;[127X[104X
+    [4X[25Xgap>[125X [27XLength(l);[127X[104X
+    [4X[28X109[128X[104X
+    [4X[25Xgap>[125X [27XLength(Filtered(l,IsSuperSymmetricNumericalSemigroup));[127X[104X
+    [4X[28X7[128X[104X
   [4X[32X[104X
   

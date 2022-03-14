@@ -71,12 +71,15 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B0DF2FE7D00A9E0">6.3-4 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85C4DA6E82E726D2">6.3-5 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7FF9451382970019">6.4 <span class="Heading">
-                    Numerical semigroups with the generalized Gorenstein property
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7FDC79A285EE016B">6.4 <span class="Heading">
+                    Several approaches generalizing the concept of symmetry
                 </span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8221EC44802E5158">6.4-1 IsGeneralizedGorenstein</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X866E48B47D66CFF2">6.4-2 IsNearlyGorenstein</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78049FC380A0006E">6.4-3 NearlyGorensteinVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83F13D6482F021B2">6.4-4 IsGeneralizedAlmostSymmetric</a></span>
 </div></div>
 </div>
 
@@ -110,7 +113,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if <var class="Arg">s</var> is irreducible, <code class="code">false</code> otherwise.</p>
 
-<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6_mj.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3_mj.html#X83D4AFE882A79096"><span class="RefLink">3.1-30</span></a>).</p>
+<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6_mj.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3_mj.html#X83D4AFE882A79096"><span class="RefLink">3.1-31</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -523,20 +526,24 @@ true
 5
 </pre></div>
 
-<p><a id="X7FF9451382970019" name="X7FF9451382970019"></a></p>
+<p><a id="X7FDC79A285EE016B" name="X7FDC79A285EE016B"></a></p>
 
 <h4>6.4 <span class="Heading">
-                    Numerical semigroups with the generalized Gorenstein property
+                    Several approaches generalizing the concept of symmetry
                 </span></h4>
 
 <p>Let <span class="SimpleMath">\(S\)</span> be a numerical semigroup and let <span class="SimpleMath">\(R\)</span> be its semigroup ring <span class="SimpleMath">\(K[\![S]\!]\)</span>. We say that <span class="SimpleMath">\(S\)</span> has the generalized Gorenstein property if its semigroup ring has this property. For the definition and characterization of generalized Gorenstein rings please see <a href="chapBib_mj.html#biBG-I-K-T">[tttt17]</a>.</p>
+
+<p>A numerical semigroup is said to be nearly Gorenstein if its maximal ideal is contained in its trace ideal <a href="chapBib_mj.html#biBtrace-canonical">[HHS19]</a>. Every almost symmetric numerical semigroup is nearly Gorenstein.</p>
+
+<p>A numerical semigroup <span class="SimpleMath">\(S\)</span> with canonical ideal <span class="SimpleMath">\(K\)</span> is a generalized almost symmetric numerical semigroup if either <span class="SimpleMath">\(2K=K\)</span> (symmetric) or <span class="SimpleMath">\(2K\setminus K=\{\textrm{F}(S)-x_1,\dots, \textrm{F}(S)-x_r,\textrm{F}(S)\}\)</span> for some <span class="SimpleMath">\(x_1,\dots,x_r \in M\setminus 2M\)</span> (minimal generators) and <span class="SimpleMath">\(x_i-x_j\not\in (S-M)\setminus S\)</span> (not pseudo-Frobenius numbers), see <a href="chapBib_mj.html#biBgas-semigroups">[DS21]</a>. As expected, every almost symmetric numerical semigroup is a generalized almost symmetric numerical semigroup.</p>
 
 <p><a id="X8221EC44802E5158" name="X8221EC44802E5158"></a></p>
 
 <h5>6.4-1 IsGeneralizedGorenstein</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneralizedGorenstein</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
-<p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if the semigroup ring <span class="SimpleMath">\(K[\![S]\!]\)</span> is generalized Gorenstein using the characterization by Goto-Kumashiro (<a href="chapBib_mj.html#biBG-K">[MK17]</a>).</p>
+<p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if the semigroup ring <span class="SimpleMath">\(K[\![S]\!]\)</span> is generalized Gorenstein using the characterization by Goto-Kumashiro <a href="chapBib_mj.html#biBG-K">[MK17]</a>.</p>
 
 
 <div class="example"><pre>
@@ -545,6 +552,60 @@ true
 false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGeneralizedGorenstein(s);</span>
 true
+</pre></div>
+
+<p><a id="X866E48B47D66CFF2" name="X866E48B47D66CFF2"></a></p>
+
+<h5>6.4-2 IsNearlyGorenstein</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNearlyGorenstein</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if the semigroup is nearly Gorenstein, and <code class="code">false</code> otherwise.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,12,25);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAlmostSymmetric(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearlyGorenstein(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearlyGorenstein(s);</span>
+false
+</pre></div>
+
+<p><a id="X78049FC380A0006E" name="X78049FC380A0006E"></a></p>
+
+<h5>6.4-3 NearlyGorensteinVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NearlyGorensteinVectors</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup. The output is a lists of lists (making the cartesian product of them yields all possible NG-vectors). If <span class="SimpleMath">\(n_i\)</span> is the ith generator of <var class="Arg">s</var>, in the ith position of the list it returns all pseudo-Frobenius numbers <span class="SimpleMath">\(f\)</span> of <var class="Arg">s</var> such that <span class="SimpleMath">\(n_i+f-f'\)</span> is in <var class="Arg">s</var> for all <span class="SimpleMath">\(f\)</span> a pseudo-Frobenius number of <var class="Arg">s</var>, <a href="chapBib_mj.html#biBnearly-almost">[MS21]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,11,12,25);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAlmostSymmetric(s);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearlyGorenstein(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,7,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsNearlyGorenstein(s);</span>
+false
+</pre></div>
+
+<p><a id="X83F13D6482F021B2" name="X83F13D6482F021B2"></a></p>
+
+<h5>6.4-4 IsGeneralizedAlmostSymmetric</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneralizedAlmostSymmetric</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup. Determines whether or not <var class="Arg">s</var> is a generalized almost symmetric numerical semigroup.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(9, 24, 39, 43, 77);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGeneralizedAlmostSymmetric(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAlmostSymmetric(s);</span>
+false
 </pre></div>
 
 

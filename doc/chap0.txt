@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.2.2
+                                 Version 1.3.0
   
   
                                  Manuel Delgado
@@ -92,6 +92,9 @@
   [33X[0;0YThe   first   author   acknowledges   a   sabbatical  grant  from  the  FCT:
   SFRH/BSAB/142918/2018.[133X
   
+  [33X[0;0YThe second author was supported in part by Grant PGC2018-096446-B-C21 funded
+  by MCIN/AEI/10.13039/501100011033 and by "ERDF A way of making Europe".[133X
+  
   
   -------------------------------------------------------
   [1XColophon[101X
@@ -153,27 +156,28 @@
       3.1-12 RthElementOfNumericalSemigroup
       3.1-13 NumberElement_NumericalSemigroup
       3.1-14 Iterator
-      3.1-15 AperyList
+      3.1-15 Difference
       3.1-16 AperyList
       3.1-17 AperyList
-      3.1-18 AperyListOfNumericalSemigroupAsGraph
-      3.1-19 KunzCoordinates
-      3.1-20 KunzPolytope
-      3.1-21 CocycleOfNumericalSemigroupWRTElement
-      3.1-22 FrobeniusNumber
-      3.1-23 Conductor
-      3.1-24 PseudoFrobenius
-      3.1-25 Type
-      3.1-26 Gaps
-      3.1-27 Weight
-      3.1-28 Deserts
-      3.1-29 IsOrdinary
-      3.1-30 IsAcute
-      3.1-31 Holes
-      3.1-32 LatticePathAssociatedToNumericalSemigroup
-      3.1-33 Genus
-      3.1-34 FundamentalGaps
-      3.1-35 SpecialGaps
+      3.1-18 AperyList
+      3.1-19 AperyListOfNumericalSemigroupAsGraph
+      3.1-20 KunzCoordinates
+      3.1-21 KunzPolytope
+      3.1-22 CocycleOfNumericalSemigroupWRTElement
+      3.1-23 FrobeniusNumber
+      3.1-24 Conductor
+      3.1-25 PseudoFrobenius
+      3.1-26 Type
+      3.1-27 Gaps
+      3.1-28 Weight
+      3.1-29 Deserts
+      3.1-30 IsOrdinary
+      3.1-31 IsAcute
+      3.1-32 Holes
+      3.1-33 LatticePathAssociatedToNumericalSemigroup
+      3.1-34 Genus
+      3.1-35 FundamentalGaps
+      3.1-36 SpecialGaps
     3.2 [33X[0;0YWilf's conjecture[133X
       3.2-1 WilfNumber
       3.2-2 EliahouNumber
@@ -184,8 +188,10 @@
       4.1-1 MinimalPresentation
       4.1-2 GraphAssociatedToElementInNumericalSemigroup
       4.1-3 BettiElements
-      4.1-4 DegreesOfPrimitiveElementsOfNumericalSemigroup
-      4.1-5 ShadedSetOfElementInNumericalSemigroup
+      4.1-4 IsMinimalRelationOfNumericalSemigroup
+      4.1-5 AllMinimalRelationsOfNumericalSemigroup
+      4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup
+      4.1-7 ShadedSetOfElementInNumericalSemigroup
     4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X
       4.2-1 IsUniquelyPresented
       4.2-2 IsGeneric
@@ -193,13 +199,15 @@
     5.1 [33X[0;0YAdding and removing elements of a numerical semigroup[133X
       5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup
       5.1-2 AddSpecialGapOfNumericalSemigroup
-    5.2 [33X[0;0YIntersections, and quotients and multiples by integers[133X
+    5.2 [33X[0;0YIntersections, quotients, dilatations, numerical duplications and
+    multiples by integers[133X
       5.2-1 Intersection
       5.2-2 QuotientOfNumericalSemigroup
       5.2-3 MultipleOfNumericalSemigroup
-      5.2-4 Difference
-      5.2-5 NumericalDuplication
+      5.2-4 NumericalDuplication
+      5.2-5 AsNumericalDuplication
       5.2-6 InductiveNumericalSemigroup
+      5.2-7 DilatationOfNumericalSemigroup
     5.3 [33X[0;0YConstructing the set of all numerical semigroups containing a given
     numerical semigroup[133X
       5.3-1 OverSemigroups
@@ -244,8 +252,11 @@
       6.3-3 IsAlmostSymmetric
       6.3-4 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
       6.3-5 AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType
-    6.4 [33X[0;0YNumerical semigroups with the generalized Gorenstein property[133X
+    6.4 [33X[0;0YSeveral approaches generalizing the concept of symmetry[133X
       6.4-1 IsGeneralizedGorenstein
+      6.4-2 IsNearlyGorenstein
+      6.4-3 NearlyGorensteinVectors
+      6.4-4 IsGeneralizedAlmostSymmetric
   7 [33X[0;0YIdeals of numerical semigroups[133X
     7.1 [33X[0;0YDefinitions and basic operations[133X
       7.1-1 IdealOfNumericalSemigroup
@@ -254,59 +265,67 @@
       7.1-4 Generators
       7.1-5 AmbientNumericalSemigroupOfIdeal
       7.1-6 IsIntegral
-      7.1-7 SmallElements
-      7.1-8 Conductor
-      7.1-9 Minimum
-      7.1-10 BelongsToIdealOfNumericalSemigroup
-      7.1-11 ElementNumber_IdealOfNumericalSemigroup
-      7.1-12 NumberElement_IdealOfNumericalSemigroup
-      7.1-13 \[ \]
-      7.1-14 \{ \}
-      7.1-15 Iterator
-      7.1-16 SumIdealsOfNumericalSemigroup
-      7.1-17 MultipleOfIdealOfNumericalSemigroup
-      7.1-18 SubtractIdealsOfNumericalSemigroup
-      7.1-19 Difference
-      7.1-20 TranslationOfIdealOfNumericalSemigroup
-      7.1-21 Union
-      7.1-22 Intersection
-      7.1-23 MaximalIdeal
-      7.1-24 CanonicalIdeal
-      7.1-25 IsCanonicalIdeal
-      7.1-26 TypeSequence
-    7.2 [33X[0;0YBlow ups and closures[133X
-      7.2-1 HilbertFunctionOfIdealOfNumericalSemigroup
-      7.2-2 HilbertFunction
-      7.2-3 BlowUp
-      7.2-4 ReductionNumber
-      7.2-5 BlowUp
-      7.2-6 LipmanSemigroup
-      7.2-7 RatliffRushNumber
-      7.2-8 RatliffRushClosure
-      7.2-9 AsymptoticRatliffRushNumber
-      7.2-10 MultiplicitySequence
-      7.2-11 MicroInvariants
-      7.2-12 AperyList
-      7.2-13 AperyTable
-      7.2-14 StarClosureOfIdealOfNumericalSemigroup
-    7.3 [33X[0;0YPatterns for ideals[133X
-      7.3-1 IsAdmissiblePattern
-      7.3-2 IsStronglyAdmissiblePattern
-      7.3-3 AsIdealOfNumericalSemigroup
-      7.3-4 BoundForConductorOfImageOfPattern
-      7.3-5 ApplyPatternToIdeal
-      7.3-6 ApplyPatternToNumericalSemigroup
-      7.3-7 IsAdmittedPatternByIdeal
-      7.3-8 IsAdmittedPatternByNumericalSemigroup
-    7.4 [33X[0;0YGraded associated ring of numerical semigroup[133X
-      7.4-1 IsGradedAssociatedRingNumericalSemigroupCM
-      7.4-2 IsGradedAssociatedRingNumericalSemigroupBuchsbaum
-      7.4-3 TorsionOfAssociatedGradedRingNumericalSemigroup
-      7.4-4 BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup
-      7.4-5 IsMpure
-      7.4-6 IsPure
-      7.4-7 IsGradedAssociatedRingNumericalSemigroupGorenstein
-      7.4-8 IsGradedAssociatedRingNumericalSemigroupCI
+      7.1-7 IsComplementOfIntegralIdeal
+      7.1-8 IdealByDivisorClosedSet
+      7.1-9 SmallElements
+      7.1-10 Conductor
+      7.1-11 FrobeniusNumber
+      7.1-12 PseudoFrobenius
+      7.1-13 Type
+      7.1-14 Minimum
+      7.1-15 BelongsToIdealOfNumericalSemigroup
+      7.1-16 ElementNumber_IdealOfNumericalSemigroup
+      7.1-17 NumberElement_IdealOfNumericalSemigroup
+      7.1-18 \[ \]
+      7.1-19 \{ \}
+      7.1-20 Iterator
+      7.1-21 SumIdealsOfNumericalSemigroup
+      7.1-22 MultipleOfIdealOfNumericalSemigroup
+      7.1-23 SubtractIdealsOfNumericalSemigroup
+      7.1-24 Difference
+      7.1-25 TranslationOfIdealOfNumericalSemigroup
+      7.1-26 Union
+      7.1-27 Intersection
+      7.1-28 MaximalIdeal
+      7.1-29 CanonicalIdeal
+      7.1-30 IsCanonicalIdeal
+      7.1-31 IsAlmostCanonicalIdeal
+      7.1-32 TraceIdeal
+      7.1-33 TypeSequence
+    7.2 [33X[0;0YDecomposition into irreducibles[133X
+      7.2-1 IrreducibleZComponents
+      7.2-2 DecomposeIntegralIdealIntoIrreducibles
+    7.3 [33X[0;0YBlow ups and closures[133X
+      7.3-1 HilbertFunctionOfIdealOfNumericalSemigroup
+      7.3-2 HilbertFunction
+      7.3-3 BlowUp
+      7.3-4 ReductionNumber
+      7.3-5 BlowUp
+      7.3-6 LipmanSemigroup
+      7.3-7 RatliffRushNumber
+      7.3-8 RatliffRushClosure
+      7.3-9 AsymptoticRatliffRushNumber
+      7.3-10 MultiplicitySequence
+      7.3-11 MicroInvariants
+      7.3-12 AperyList
+      7.3-13 AperyTable
+      7.3-14 StarClosureOfIdealOfNumericalSemigroup
+    7.4 [33X[0;0YPatterns for ideals[133X
+      7.4-1 IsAdmissiblePattern
+      7.4-2 IsStronglyAdmissiblePattern
+      7.4-3 AsIdealOfNumericalSemigroup
+      7.4-4 BoundForConductorOfImageOfPattern
+      7.4-5 ApplyPatternToIdeal
+      7.4-6 ApplyPatternToNumericalSemigroup
+      7.4-7 IsAdmittedPatternByIdeal
+      7.4-8 IsAdmittedPatternByNumericalSemigroup
+    7.5 [33X[0;0YGraded associated ring of numerical semigroup[133X
+      7.5-1 IsGradedAssociatedRingNumericalSemigroupCM
+      7.5-2 IsGradedAssociatedRingNumericalSemigroupBuchsbaum
+      7.5-3 TorsionOfAssociatedGradedRingNumericalSemigroup
+      7.5-4 BuchsbaumNumberOfAssociatedGradedRingNumericalSemigroup
+      7.5-5 IsGradedAssociatedRingNumericalSemigroupGorenstein
+      7.5-6 IsGradedAssociatedRingNumericalSemigroupCI
   8 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
     8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X
       8.1-1 IsMED
@@ -332,8 +351,9 @@
       9.1-3 FactorizationsElementListWRTNumericalSemigroup
       9.1-4 RClassesOfSetOfFactorizations
       9.1-5 LShapes
-      9.1-6 DenumerantOfElementInNumericalSemigroup
-      9.1-7 DenumerantFunction
+      9.1-6 RFMatrices
+      9.1-7 DenumerantOfElementInNumericalSemigroup
+      9.1-8 DenumerantFunction
     9.2 [33X[0;0YInvariants based on lengths[133X
       9.2-1 LengthsOfFactorizationsIntegerWRTList
       9.2-2 LengthsOfFactorizationsElementWRTNumericalSemigroup
@@ -347,12 +367,11 @@
       9.2-10 DeltaSetUnionUpToElementWRTNumericalSemigroup
       9.2-11 DeltaSet
       9.2-12 MaximumDegree
-      9.2-13 MaximalDenumerant
-      9.2-14 MaximalDenumerantOfSetOfFactorizations
-      9.2-15 MaximalDenumerant
-      9.2-16 Adjustment
-      9.2-17 IsAdditiveNumericalSemigroup
-      9.2-18 IsSuperSymmetricNumericalSemigroup
+      9.2-13 IsAdditiveNumericalSemigroup
+      9.2-14 MaximalDenumerant
+      9.2-15 MaximalDenumerantOfSetOfFactorizations
+      9.2-16 MaximalDenumerant
+      9.2-17 Adjustment
     9.3 [33X[0;0YInvariants based on distances[133X
       9.3-1 CatenaryDegree
       9.3-2 AdjacentCatenaryDegreeOfSetOfFactorizations
@@ -380,9 +399,17 @@
       9.6-1 MoebiusFunctionAssociatedToNumericalSemigroup
       9.6-2 MoebiusFunction
       9.6-3 DivisorsOfElementInNumericalSemigroup
+      9.6-4 NumericalSemigroupByNuSequence
+      9.6-5 NumericalSemigroupByTauSequence
     9.7 [33X[0;0YFeng-Rao distances and numbers[133X
       9.7-1 FengRaoDistance
       9.7-2 FengRaoNumber
+    9.8 [33X[0;0YNumerical semigroups with Apéry sets having special factorization
+    properties[133X
+      9.8-1 IsPure
+      9.8-2 IsMpure
+      9.8-3 IsHomogeneousNumericalSemigroup
+      9.8-4 IsSuperSymmetricNumericalSemigroup
   10 [33X[0;0YPolynomials and numerical semigroups[133X
     10.1 [33X[0;0YGenerating functions or Hilbert series[133X
       10.1-1 NumericalSemigroupPolynomial
@@ -433,15 +460,17 @@
     11.2 [33X[0;0YGluings of affine semigroups[133X
       11.2-1 GluingOfAffineSemigroups
     11.3 [33X[0;0YPresentations of affine semigroups[133X
-      11.3-1 GeneratorsOfKernelCongruence
-      11.3-2 CanonicalBasisOfKernelCongruence
-      11.3-3 GraverBasis
-      11.3-4 MinimalPresentation
-      11.3-5 BettiElements
-      11.3-6 ShadedSetOfElementInAffineSemigroup
-      11.3-7 IsGeneric
-      11.3-8 IsUniquelyPresented
-      11.3-9 DegreesOfPrimitiveElementsOfAffineSemigroup
+      11.3-1 CircuitsOfKernelCongruence
+      11.3-2 PrimitiveRelationsOfKernelCongruence
+      11.3-3 GeneratorsOfKernelCongruence
+      11.3-4 CanonicalBasisOfKernelCongruence
+      11.3-5 GraverBasis
+      11.3-6 MinimalPresentation
+      11.3-7 BettiElements
+      11.3-8 ShadedSetOfElementInAffineSemigroup
+      11.3-9 IsGeneric
+      11.3-10 IsUniquelyPresented
+      11.3-11 DegreesOfPrimitiveElementsOfAffineSemigroup
     11.4 [33X[0;0YFactorizations in affine semigroups[133X
       11.4-1 FactorizationsVectorWRTList
       11.4-2 Factorizations
@@ -565,6 +594,8 @@
     C.12 [33X[0;0YFunctions implemented by N. Matsuoka[133X
     C.13 [33X[0;0YFunctions implemented by N. Maugeri[133X
     C.14 [33X[0;0YFunctions implemented by H. Martín Cruz[133X
+    C.15 [33X[0;0YFunctions implemented by J. Angulo Rodríguez[133X
+    C.16 [33X[0;0YFunctions implemented by F. Strazzanti[133X
   
   
   [32X

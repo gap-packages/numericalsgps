@@ -1,6 +1,6 @@
 name: NumericalSgps
-version: 1.2.2
-date: 2020-03-03
+version: 1.3.0
+date: 2022-03-14
 description: |
     A package for numerical semigroups
 
@@ -46,6 +46,7 @@ contributors:
     - name: Strazzanti Francesco
       url: https://sites.google.com/site/francescostrazzanti
     - name: Giuseppe Zito
+    - name: Jorge Angulo Rodríguez
 
 GAP: "4.7"
 
@@ -55,7 +56,7 @@ packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.2.2/NumericalSgps-1.2.2.tar.gz
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.3.0/NumericalSgps-1.3.0.tar.gz
 
 abstract: |
     The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.
@@ -67,28 +68,28 @@ keywords: |
     Numerical Semigroups, Affine semigroups, Good semigroups.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>DGM20</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
+    [<span class='BibKey'>DGM22</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
      <i class='BibTitle'>NumericalSgps, A package for numerical semigroups,
-             Version 1.2.2</i>
-     (<span class='BibYear'>2020</span>)<br />
+             Version 1.3.0</i>
+     (<span class='BibYear'>2022</span>)<br />
     (<span class='BibNote'>Refereed GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/numericalsgps">https://gap-packages.github.io/numericalsgps</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ NumericalSgps1.2.2,
+    @misc{ NumericalSgps1.3.0,
       author =           {Delgado, M. and Garcia-Sanchez, P. A. and Morais, J.},
       title =            {{NumericalSgps},  A  package for numerical semigroups,
-                          {V}ersion 1.2.2},
+                          {V}ersion 1.3.0},
       month =            {Mar},
-      year =             {2020},
+      year =             {2022},
       note =             {Refereed GAP package},
       howpublished =     {\href   {https://gap-packages.github.io/numericalsgps}
                           {\texttt{https://gap-packages.github.io/}\discretionary
                           {}{}{}\texttt{numericalsgps}}},
       keywords =         {Numerical    Semigroups;   Affine   semigroups;   Good
                           semigroups},
-      printedkey =       {DGM20}
+      printedkey =       {DGM22}
     }
 
