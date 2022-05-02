@@ -288,11 +288,8 @@ InstallGlobalFunction(BasisOfGroupGivenByEquations,function(A,m)
     end;
 
 
-    if not(IsRectangularTable(A)) then
+    if not(IsRectangularTable(A) and ForAll(A,IsListOfIntegersNS)) then
         Error("The first argument must be a matrix.");
-    fi;
-    if not(IsInt(A[1][1])) then
-        Error("The first argument must be a matrix of integers.");
     fi;
 
     n:=Length(A[1]);
@@ -335,11 +332,8 @@ end);
 InstallGlobalFunction(EquationsOfGroupGeneratedBy,function(M)
     local A, m, snf, nones;
 
-    if not(IsRectangularTable(M)) then
+    if not(IsRectangularTable(M) and ForAll(M,IsListOfIntegersNS)) then
         Error("The first argument must be a matrix.");
-    fi;
-    if not(IsInt(M[1][1])) then
-        Error("The first argument must be a matrix of integers.");
     fi;
 
     snf:=SmithNormalFormIntegerMatTransforms(M);
@@ -410,7 +404,7 @@ end);
 #  set of minimal generators of the affine semigroup of nonnegative soultions of this equation
 ##############################################################################################
 InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
-        "Computes the Hilbert basis of a system of linear Diophantine equations, some evetually in congruences.",[IsRectangularTable,IsHomogeneousList],1,
+        "Computes the Hilbert basis of a system of linear Diophantine equations, some evetually in congruences.",[IsHomogeneousList,IsHomogeneousList],1,
   function(ls,md)
   local  contejeanDevieAlgorithm, contejeanDevieAlgorithmWithCongruences, leq;
 
@@ -435,9 +429,9 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     #if not(IsRectangularTable(l)) then
     #  Error("The argument must be a matrix.");
     #fi;
-    if not(IsInt(l[1][1])) then
-      Error("The matrix must be of integers.");
-    fi;
+    #if not(IsInt(l[1][1])) then
+    #  Error("The matrix must be of integers.");
+    #fi;
 
 
     m:=IdentityMat(Length(l[1]));
@@ -493,6 +487,11 @@ InstallMethod(HilbertBasisOfSystemOfHomogeneousEquations,
   Info(InfoNumSgps,1,"Using contejeanDevieAlgorithm for Hilbert Basis. Please, consider using NormalizInterface, 4ti2Interface or 4ti2gap.");
   #ls := arg[1][1];
   #md := arg[1][2];
+
+  if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
+    Error("The first argument must be a matrix of integers.");
+  fi;
+
   if md = [] then
     return contejeanDevieAlgorithm(ls);
   else
@@ -508,14 +507,12 @@ end);
 #
 InstallMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes the Hilbert basis of a set of inequalities",
-        [IsRectangularTable],1,
+        [IsHomogeneousList],1,
         function(ls)
     local mat, neq, dim, id, hil,zero ;
-    #if not(IsRectangularTable(ls)) then
-    #  Error("The argument must be a matrix.");
-    #fi;
-    if not(IsInt(ls[1][1])) then
-      Error("The matrix must be of integers.");
+
+    if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
+      Error("The argument must be a matrix.");
     fi;
 
     neq:=Length(ls);
@@ -639,7 +636,7 @@ InstallMethod(Factorizations,
 ########################################################################
 InstallMethod(CircuitsOfKernelCongruence,
   "Computes the set of circuits the kernel congruence of the monoid morphism associated to a matrix",
-	[IsRectangularTable],1,
+	[IsHomogeneousList],1,
 function( m )
     local gens, positive, negative, cir,
         cols,rows, e, comb, c, i, circ, matt, sum, sp, sn;
@@ -710,7 +707,7 @@ end);
 ########################################################################
 InstallMethod(PrimitiveRelationsOfKernelCongruence,
   "Computes the set of primitive relations the kernel congruence of the monoid morphism associated to a matrix",
-	[IsRectangularTable],1,
+	[IsHomogeneousList],1,
 function( m )
     local gens,dim, sols,e,prim, msg,aid,zeroid,lft,prlft,id,zero,zeroes;
 
@@ -747,7 +744,7 @@ end);
 ############################################################
 InstallMethod(GeneratorsOfKernelCongruence,
   "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
-	[IsRectangularTable],1,
+	[IsHomogeneousList],1,
 	function( m )
 
     local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
@@ -767,6 +764,10 @@ InstallMethod(GeneratorsOfKernelCongruence,
         d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
         return Set([d1,d2]);
     end;
+
+    if not(IsRectangularTable(m)) then
+        Error("The argument must be a matrix of nonegative integers.");
+    fi;
 
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
         Error("The argument must be a matrix of nonnegative integers.");
@@ -799,7 +800,7 @@ end);
 ############################################################
 InstallMethod(CanonicalBasisOfKernelCongruence,
 	"Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
-	[IsRectangularTable, IsMonomialOrdering],1,
+	[IsHomogeneousList, IsMonomialOrdering],1,
   function( m, ord )
 
     local i, p, rel, rgb, msg, pol, ed, monomial, candidates, mp,
@@ -815,6 +816,10 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
         d2:=List([1..ed], i->DegreeIndeterminate(m2,i));;
         return [d1,d2];
     end;
+
+    if not(IsRectangularTable(m)) then
+        Error("The argument must be a matrix of nonnegative integers.");
+    fi;
 
     if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
         Error("The argument must be a matrix of nonnegative integers.");
@@ -848,14 +853,15 @@ end);
 ############################################################
 InstallMethod(GraverBasis,
         "Computes the Graver basis of the matrix",
-        [IsRectangularTable],1,
+        [IsHomogeneousList],1,
 function(a)
   #PLAIN implementation
 	local msg, mgs, ed, dim, prlft, lft,zero, zeroes, id, aid, zeroid;
 
-    if not(IsInt(a[1][1])) then
-      Error("The entries of the matrix must be integers.");
+    if not(IsRectangularTable(a) and ForAll(a,IsListOfIntegersNS)) then
+        Error("The argument must be a matrix of integers.");
     fi;
+
     Info(InfoNumSgps,1,"Using Lawrence lifting for computing Graver Basis. Please, consider using NormalizInterface, 4ti2Interface or 4ti2gap.");
     mgs:=TransposedMat(a);
     ed:=Length(mgs);

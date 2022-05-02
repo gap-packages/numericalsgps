@@ -703,7 +703,7 @@ function(fs)
         return Maximum(p,-n);
     end;
 
-    if not(IsRectangularTable(fs) and IsListOfIntegersNS(fs[1])) then
+    if not(IsRectangularTable(fs) and ForAll(fs,IsListOfIntegersNS)) then
       Error("The argument is not a list of factorizations.\n");
     fi;
     if Minimum(Flat(fs))<0 then
@@ -729,7 +729,7 @@ end);
 
 InstallMethod(CatenaryDegree, 
     "Computes the catenary degree of a set of factorizations",
-    [IsRectangularTable],
+    [IsHomogeneousList],
     CatenaryDegreeOfSetOfFactorizations
     );
 
@@ -743,7 +743,7 @@ InstallMethod(CatenaryDegree,
 InstallGlobalFunction(TameDegreeOfSetOfFactorizations,function(fact)
     local distance, i, max, mtemp, candidates, rest, len;
 
-	if not(IsRectangularTable(fact) and IsListOfIntegersNS(fact[1])) then
+	if not(IsRectangularTable(fact) and ForAll(fact, IsListOfIntegersNS)) then
 		Error("The argument is not a list of factorizations.\n");
 	fi;
 	if Minimum(Flat(fact))<0 then
@@ -790,7 +790,7 @@ end);
 
 InstallMethod(TameDegree,
     "Tame degree for a set of factorizations",
-    [IsRectangularTable],
+    [IsHomogeneousList],
     TameDegreeOfSetOfFactorizations);
 
 #############################################################################
@@ -803,7 +803,7 @@ InstallMethod(TameDegree,
 InstallGlobalFunction(RClassesOfSetOfFactorizations, function(l)
     local current, pos, len, colisionan, cola;
 
-	if not(IsRectangularTable(l) and IsListOfIntegersNS(l[1])) then
+	if not(IsRectangularTable(l) and ForAll(l,IsListOfIntegersNS)) then
 		Error("The argument is not a list of factorizations.\n");
 	fi;
 
@@ -872,7 +872,7 @@ InstallGlobalFunction(MaximalDenumerantOfSetOfFactorizations,
 function(ls)
 	local max;
 
-	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
+	if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
 		Error("The argument is not a list of factorizations.\n");
 	fi;
 	if Minimum(Flat(ls))<0 then
@@ -1268,7 +1268,7 @@ InstallGlobalFunction(AdjacentCatenaryDegreeOfSetOfFactorizations,function(ls)
     local distance, Fn, lenset, Zi, facti, i;
 
 
-	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
+	if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
 		Error("The argument is not a list of factorizations.\n");
 	fi;
 
@@ -1310,7 +1310,7 @@ end);
 InstallGlobalFunction(EqualCatenaryDegreeOfSetOfFactorizations,function(ls)
     local lFni;
 
-	if not(IsRectangularTable(ls) and IsListOfIntegersNS(ls[1])) then
+	if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
 		Error("The argument is not a list of factorizations.\n");
 	fi;
 

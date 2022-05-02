@@ -91,14 +91,14 @@ DeclareSynonym("BettiElementsOfAffineSemigroup",BettiElements);
 # computes a set of circuits (relations with minimal support) of the 
 # kernel congruence of the monoid morphism associated to the matrix m
 ########################################################################
-DeclareOperation("CircuitsOfKernelCongruence",[IsRectangularTable]);
+DeclareOperation("CircuitsOfKernelCongruence",[IsHomogeneousList]);
 
 #######################################################################
 #O PrimitiveRelationsOfKernelCongruence
 # computes a set of primitive relations of the 
 # kernel congruence of the monoid morphism associated to the matrix m
 ########################################################################
-DeclareOperation("PrimitiveRelationsOfKernelCongruence",[IsRectangularTable]);
+DeclareOperation("PrimitiveRelationsOfKernelCongruence",[IsHomogeneousList]);
 
 
 ############################################################
@@ -106,7 +106,7 @@ DeclareOperation("PrimitiveRelationsOfKernelCongruence",[IsRectangularTable]);
 # computes a set of generators of the kernel congruence
 # of the monoid morphism associated to the matrix m
 ############################################################
-DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
+DeclareOperation("GeneratorsOfKernelCongruence",[IsHomogeneousList]);
 
 ############################################################
 #O CanonicalBasisOfKernelCongruence
@@ -115,13 +115,13 @@ DeclareOperation("GeneratorsOfKernelCongruence",[IsRectangularTable]);
 # nonnegative integer coefficients wrt the term ordering
 # the kernel is the pairs (x,y) such that xm=ym
 ############################################################
-DeclareOperation("CanonicalBasisOfKernelCongruence",[IsRectangularTable, IsMonomialOrdering]);
+DeclareOperation("CanonicalBasisOfKernelCongruence",[IsHomogeneousList, IsMonomialOrdering]);
 
 ############################################################
 #O GraverBasis
 # computes the Graver basis of matrix with integer entries
 ############################################################
-DeclareOperation("GraverBasis",[IsRectangularTable]);
+DeclareOperation("GraverBasis",[IsHomogeneousList]);
 
 
 ###############################################################################
@@ -210,7 +210,7 @@ DeclareGlobalFunction("MonotoneCatenaryDegreeOfAffineSemigroup");
 # the lengths of the elements of ls, then the rest of equations are considered
 # to be homogeneous linear Diophantine equations
 ##########################################################################
-DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsRectangularTable,IsHomogeneousList]);
+DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsHomogeneousList,IsHomogeneousList]);
 
 #############################################################################
 ##
@@ -219,7 +219,7 @@ DeclareOperation("HilbertBasisOfSystemOfHomogeneousEquations",[IsRectangularTabl
 # Computes the Hilbert basis of the system ls*X>=0 over the nonnegative
 # integers
 ##########################################################################
-DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsRectangularTable]);
+DeclareOperation("HilbertBasisOfSystemOfHomogeneousInequalities",[IsHomogeneousList]);
 
 ###############################################################################
 ##

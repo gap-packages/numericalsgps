@@ -269,7 +269,7 @@ DeclareOperation("DeltaSet",[IsHomogeneousList]);
 ##
 #############################################################################
 DeclareGlobalFunction("CatenaryDegreeOfSetOfFactorizations");
-DeclareOperation("CatenaryDegree",[IsRectangularTable]);
+DeclareOperation("CatenaryDegree",[IsHomogeneousList]);
 
 #############################################################################
 ##
@@ -279,7 +279,7 @@ DeclareOperation("CatenaryDegree",[IsRectangularTable]);
 ##
 #############################################################################
 DeclareGlobalFunction("TameDegreeOfSetOfFactorizations");
-DeclareOperation("TameDegree",[IsRectangularTable]);
+DeclareOperation("TameDegree",[IsHomogeneousList]);
 
 
 #############################################################################

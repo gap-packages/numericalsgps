@@ -408,7 +408,7 @@ end);
 ## degree is reached in the edges of the tree.
 ##
 #############################################################################
-InstallMethod(DotFactorizationGraph, [IsRectangularTable],
+InstallMethod(DotFactorizationGraph, [IsHomogeneousList],
   function(f)
   local fs, c, nf, i, p, ln, distance, Kruskal, tv, out, output, d;
 
@@ -450,6 +450,9 @@ InstallMethod(DotFactorizationGraph, [IsRectangularTable],
 
   end;
 
+  if not(IsRectangularTable(f) and ForAll(f,IsListOfIntegersNS)) then
+    Error("The argument must be an array of integers.");
+  fi;
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
@@ -489,7 +492,7 @@ end);
 ## distances between nodes they join.
 ##
 #############################################################################
-InstallMethod(DotEliahouGraph, [IsRectangularTable],
+InstallMethod(DotEliahouGraph, [IsHomogeneousList],
   function(f)
   local fs, c, nf, i, p, ln, distance, tv, out, output, d;
 
@@ -509,6 +512,10 @@ InstallMethod(DotEliahouGraph, [IsRectangularTable],
       return(Maximum(Sum(a-gcd),Sum(b-gcd)));
 
   end;
+
+  if not(IsRectangularTable(f) and ForAll(f,IsListOfIntegersNS)) then
+    Error("The argument must be an array of integers.");
+  fi;
 
   out := "";
   output := OutputTextString(out, true);

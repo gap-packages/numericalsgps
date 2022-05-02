@@ -23,7 +23,7 @@ BindGlobal("NumSgpsRationals",HomalgFieldOfRationalsInSingular());
 
 InstallOtherMethod(GeneratorsOfKernelCongruence,
         "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix", 
-        [IsRectangularTable],5,
+        [IsHomogeneousList],5,
         function(msg)
     
     

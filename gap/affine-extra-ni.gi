@@ -21,7 +21,7 @@
 ##########################################################################
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         "Computes the Hilbert basis of a system of linear Diophantine equations, some of them can be in congruences",
-        [IsRectangularTable,IsHomogeneousList],5,
+        [IsHomogeneousList,IsHomogeneousList],5,
         function(ls,md)
     local matcong, cone, ncong, ncoord, nequ, matfree;
 
@@ -31,7 +31,7 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
     #    Error("The arguments must be homogeneous lists.");
     #fi;
 
-    if not(ForAll(ls,IsListOfIntegersNS)) then
+    if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
         Error("The first argument must be a list of lists of integers.");
     fi;
 
@@ -92,17 +92,13 @@ end);
 ##########################################################################
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes the Hilbert basis of a system of inequalities",
-        [IsRectangularTable],5,
+        [IsHomogeneousList],5,
         function(ls)
     local cone,  ncoord;
 
     Info(InfoNumSgps,2,"Using normaliz to find the Hilbert basis.");
 
-    #if not(IsHomogeneousList(ls)) then
-    #    Error("The argument must be a homogeneous lists.");
-    #fi;
-
-    if not(ForAll(ls,IsListOfIntegersNS)) then
+    if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
         Error("The argument must be a list of lists of integers.");
     fi;
 
@@ -237,17 +233,13 @@ end);
 ############################################################
 InstallMethod(GraverBasis,
         "Computes the Graver basis of the matrix",
-        [IsRectangularTable],8,
+        [IsHomogeneousList],8,
 function(a)
     #normaliz implementation
     local n, mat, cone, facs;
 
-    if not(IsRectangularTable(a)) then
+    if not(IsRectangularTable(a) and ForAll(a, IsListOfIntegersNS)) then
       Error("The argument must be a matrix.");
-    fi;
-
-    if not(IsInt(a[1][1])) then
-      Error("The entries of the matrix must be integers.");
     fi;
 
     Info(InfoNumSgps,2,"Using normaliz for Graver.");

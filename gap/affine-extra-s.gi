@@ -22,7 +22,7 @@
 ############################################################
 InstallOtherMethod(GeneratorsOfKernelCongruence,
         "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
-        [IsRectangularTable],6,
+        [IsHomogeneousList],6,
         function(m)
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
 		Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens, GBASIStmp;
@@ -47,7 +47,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         return Set([d1,d2]);
     end;
 
-    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+    if not(IsRectangularTable(m) and ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
         Error("The argument must be a matrix of nonnegative integer.");
     fi;
 
@@ -91,7 +91,7 @@ end);
 ############################################################
 InstallMethod(CanonicalBasisOfKernelCongruence,
 "Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
-	[IsRectangularTable, IsMonomialOrdering],6,
+	[IsHomogeneousList, IsMonomialOrdering],6,
   function(m,ord)
   	local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
   	Rtmp, R,id, ie, vars, mingen, exps, bintopair, dim, zero, gens, GBASIStmp;
@@ -116,7 +116,7 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   		return [d1,d2];
   	end;
 
-  	if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+  	if not(IsRectangularTable(m) and ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
   		Error("The argument must be a matrix of nonnegative integer.");
   	fi;
 

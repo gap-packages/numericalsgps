@@ -30,7 +30,7 @@ end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         "Computes a Hilbert basis of a systemd of linear Diophantine equations, some eventually in congruences.",
-        [IsRectangularTable,IsHomogeneousList],6,
+        [IsHomogeneousList,IsHomogeneousList],6,
         function(ls,md)
     local  homogeneous, withCongruences;
 
@@ -42,9 +42,9 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
         #if not(IsRectangularTable(l)) then
         #    Error("The argument must be a matrix.");
         #fi;
-        if not(IsInt(l[1][1])) then
-            Error("The matrix must be of integers.");
-        fi;
+        #if not(IsInt(l[1][1])) then
+        #    Error("The matrix must be of integers.");
+        #fi;
 
 	mat:=l;
         sign:=[List(l[1],_->1)];
@@ -93,6 +93,11 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousEquations,
 
   #ls := arg[1][1];
   #md := arg[1][2];
+
+  if not(IsRectangularTable(ls) and ForAll(ls,IsListOfIntegersNS)) then
+    Error("The first argument must be a matrix of integers.");
+  fi;
+
   if md = [] then
       return homogeneous(ls);
   else
@@ -104,17 +109,14 @@ end);
 
 InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
         "Computes a Hilbert basis of l*x>=0, x>=0",
-        [IsRectangularTable],6,
+        [IsHomogeneousList],6,
         function(l)
     local  problem, matrix,mat,sign,rel;
 
     Info(InfoNumSgps,2,"Using 4ti2gap for Hilbert.");
 
-    #if not(IsRectangularTable(l)) then
-    #    Error("The argument must be a matrix.");
-    #fi;
-    if not(IsInt(l[1][1])) then
-        Error("The matrix must be of integers.");
+    if not(IsRectangularTable(l) and ForAll(l,IsListOfIntegersNS)) then
+        Error("The argument must be a matrix.");
     fi;
 
     mat:=l;
@@ -159,7 +161,7 @@ end);
 
 InstallOtherMethod(GeneratorsOfKernelCongruence,
         "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
-        [IsRectangularTable],7,
+        [IsHomogeneousList],7,
         function(m)
     local positivenegative, gr;
 
@@ -170,8 +172,8 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
         return Set([d1,d2]);
     end;
 
-    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
-        Error("The argument must be a matrix of nonnegative integer.");
+    if not(IsRectangularTable(m) and ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+        Error("The argument must be a matrix of nonnegative integers.");
     fi;
 
     gr:=GroebnerBasis4ti2(TransposedMat(m));
@@ -188,7 +190,7 @@ end);
 ############################################################
 InstallMethod(CanonicalBasisOfKernelCongruence,
 "Computes a canonical basis for the congruence of of the monoid morphism associated to the matrix",
-	[IsRectangularTable, IsMonomialOrdering],7,
+	[IsHomogeneousList, IsMonomialOrdering],7,
   function(m,ord)
     local positivenegative, gr, nord, to;
 
@@ -199,8 +201,8 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
   		return [d1,d2];
   	end;
 
-  	if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
-  		Error("The argument must be a matrix of nonnegative integer.");
+  	if not(IsRectangularTable(m) and ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+  		Error("The argument must be a matrix of nonnegative integers.");
   	fi;
 
 
@@ -228,22 +230,16 @@ InstallMethod(CanonicalBasisOfKernelCongruence,
 ############################################################
 InstallMethod(GraverBasis,
         "Computes the Graver basis of the matrix",
-        [IsRectangularTable],8,
+        [IsHomogeneousList],8,
   function(a)
     #4ti2gap implementation
     local gr;
 
-
-    if not(IsRectangularTable(a)) then
+    if not(IsRectangularTable(a) and ForAll(a, IsListOfIntegersNS)) then
       Error("The argument must be a matrix.");
     fi;
 
-    if not(IsInt(a[1][1])) then
-      Error("The entries of the matrix must be integers.");
-    fi;
-
     Info(InfoNumSgps,2,"Using 4ti2gap for Graver.");
-
 
     gr := GraverBasis4ti2(["mat",a]);
     return Union(gr,-gr);

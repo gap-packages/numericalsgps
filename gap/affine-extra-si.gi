@@ -18,7 +18,7 @@
 ############################################################
 InstallOtherMethod(GeneratorsOfKernelCongruence,
         "Computes a set of generators of the kernel congruence of the monoid morphism associated to a matrix",
-        [IsRectangularTable],6,
+        [IsHomogeneousList],6,
         function(m)
 
     local i, p, rel, rgb, msg, pol, ed,  sdegree, monomial, candidates, mp,
@@ -26,7 +26,7 @@ InstallOtherMethod(GeneratorsOfKernelCongruence,
 
     Info(InfoNumSgps,2,"Using SingularInterface to compute minimal presentations.");
 
-    if not(ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
+    if not(IsRectangularTable(m) and ForAll(m, l->ForAll(l, x->(x=0) or IsPosInt(x)))) then
         Error("The argument must be a matrix of nonnegative integer.");
     fi;
 

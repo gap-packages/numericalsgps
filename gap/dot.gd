@@ -104,7 +104,7 @@ DeclareOperation("DotRosalesGraph",[IsInt,IsNumericalSemigroup]);
 ## degree is reached in the edges of the tree.
 ##
 #############################################################################
-DeclareOperation("DotFactorizationGraph",[IsRectangularTable]);
+DeclareOperation("DotFactorizationGraph",[IsHomogeneousList]);
 
 ############################################################################
 ##
@@ -117,7 +117,7 @@ DeclareOperation("DotFactorizationGraph",[IsRectangularTable]);
 ## distances between nodes they join.
 ##
 #############################################################################
-DeclareOperation("DotEliahouGraph",[IsRectangularTable]);
+DeclareOperation("DotEliahouGraph",[IsHomogeneousList]);
 
 ############################################################################
 ##

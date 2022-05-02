@@ -74,7 +74,7 @@ InstallMethod(IsEmpty, "for ideals of affine semigroups", [IsIdealOfAffineSemigr
 
 InstallOtherMethod(\+,
     "for a list and an affine semigroup", true,
-    [IsRectangularTable, IsAffineSemigroup], function(l,S)
+    [IsHomogeneousList, IsAffineSemigroup], function(l,S)
     return IdealOfAffineSemigroup(l,S);
 end);
 
