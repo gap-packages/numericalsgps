@@ -128,6 +128,29 @@ gap> Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));
                     </Description>
                 </ManSection>
 
+
+                <ManSection>
+                    <Prop Arg="s" Name="IsUniversallyFree"></Prop>
+                    <Prop Arg="s" Name="IsUniversallyFreeNumericalSemigroup"></Prop>
+                    <Description>
+                        <A>s</A> is a numerical semigroup.  The output is true if the numerical semigroup is free for all the arrangements of its minimal generators.
+
+                        <P/>
+                        This filter implies <Ref Func="IsTelescopic"/>.
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(10,15,18);;
+gap> IsUniversallyFree(s);
+true
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> IsFree(s);
+true
+gap> IsUniversallyFree(s);
+false
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
                 <ManSection>
                     <Prop Arg="s" Name="IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity"></Prop>
                     <Description>

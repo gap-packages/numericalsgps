@@ -219,8 +219,8 @@ DeclareSynonymAttr("IsACompleteIntersectionNumericalSemigroup",IsCompleteInterse
 ##
 #P IsFreeNumericalSemigroup
 ##
-# # returns true if the numerical semigroup is a free semigroup, in the sense of
-# # Bertin and Carbonne [BC77]
+##  returns true if the numerical semigroup is a free semigroup, in the sense of
+##  Bertin and Carbonne [BC77]
 ##
 #############################################################################
 DeclareProperty("IsFree",IsNumericalSemigroup);
@@ -230,12 +230,24 @@ DeclareSynonymAttr("IsFreeNumericalSemigroup",IsFree);
 ##
 #P IsTelescopicNumericalSemigroup
 ##
-# # returns true if the numerical semigroup is telescopic [KP95],
+##  returns true if the numerical semigroup is telescopic [KP95],
 ##  that is, free for the ordering n_1<...<n_e, with n_i the minimal generators
 ##
 #############################################################################
 DeclareProperty("IsTelescopic",IsNumericalSemigroup);
 DeclareSynonymAttr("IsTelescopicNumericalSemigroup",IsTelescopic);
+
+#############################################################################
+##
+#P IsUniversallyFreeNumericalSemigroup
+##
+## returns true if the numerical semigroup is free for all possible 
+## arrangements of its generators
+##
+#############################################################################
+DeclareProperty("IsUniversallyFree",IsNumericalSemigroup);
+DeclareSynonymAttr("IsUniversallyFreeNumericalSemigroup",IsUniversallyFree);
+
 
 #############################################################################
 ##

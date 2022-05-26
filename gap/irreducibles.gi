@@ -971,6 +971,61 @@ end);
 
 InstallTrueMethod(IsTelescopicNumericalSemigroup, IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity);
 
+
+#############################################################################
+##
+#P IsUniversallyFreeNumericalSemigroup
+##
+## returns true if the numerical semigroup is free for all possible 
+## arrangements of its generators
+##
+#############################################################################
+InstallMethod(IsUniversallyFreeNumericalSemigroup,
+  "Tests if the semigroup is universally free", [IsNumericalSemigroup],1,
+  function(s)
+    local isfree, msg, gluing, g, i, sigma,e, arr;
+    gluing:=function ( l1, l2 )
+        local d1, d2, t1, t2, s1, s2;
+        d1 := Gcd( l1 );
+        d2 := Gcd( l2 );
+        if not Gcd( d1, d2 ) = 1 then
+            return false;
+        fi;
+        s1 := NumericalSemigroup( l1 / d1 );
+        s2 := NumericalSemigroup( l2 / d2 );
+        return not d1 in l2 and not d2 in l1 and (d1 in s2 and d2 in s1);
+    end;
+    isfree:=function ( l )
+        local l1, l1g, lst, g;
+        if Length( l ) <= 2 then
+            return true;
+        fi;
+        lst := l[Length( l )];
+        l1 := l{[ 1 .. Length( l ) - 1 ]};
+        g := Gcd( l1 );
+        l1g := l1 / g;
+        return gluing( l1, [ lst ] ) and isfree( l1g );
+    end;
+
+    msg:=MinimalGenerators(s);
+
+    # return ForAll(PermutationsList(msg), isfree);
+    e:=EmbeddingDimension(s);
+    g:=SymmetricGroup(e);
+    i:=Iterator(g);
+    for sigma in i do
+        arr:=List([1..e], x-> x^sigma);
+        if not(isfree(msg{arr})) then
+            Info(InfoNumSgps,2,"Fails for the arrangment", msg{arr},"\n");
+            return false;
+        fi;
+    od;
+    return true;
+end);
+
+InstallTrueMethod(IsTelescopicNumericalSemigroup, IsUniversallyFreeNumericalSemigroup);
+
+
 #############################################################################
 ##
 #F NumericalSemigroupsPlanarSingularityWithFrobeniusNumber

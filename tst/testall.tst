@@ -1250,6 +1250,13 @@ true
 gap> Length(TelescopicNumericalSemigroupsWithFrobeniusNumber(57));
 20
 
+gap> s:=NumericalSemigroup(10,15,18);;
+gap> IsUniversallyFree(s);
+true
+gap> s:=NumericalSemigroup(4,6,9);;
+gap> IsUniversallyFree(s);
+false
+
 gap> ns := NumericalSemigroup(4,11,14);;
 gap> IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity(ns);
 false
