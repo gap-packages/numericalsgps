@@ -352,3 +352,33 @@ InstallGlobalFunction(DegreesOfPrimitiveElementsOfNumericalSemigroup,function(s)
     a:=AsAffineSemigroup(s);
     return Union(DegreesOfPrimitiveElementsOfAffineSemigroup(a));
 end);
+
+
+############################################################################
+##
+#O BinomialIdealOfNumericalSemigroup([K,]s)
+## 
+## K is a field, s is a numerical semigroup
+## the output is the binomial ideal associated to the numerical semigroup
+##
+#############################################################################
+InstallMethod(BinomialIdealOfNumericalSemigroup, 
+            "Returns the binomial ideal associated to the numerical semigroup", 
+            [IsField,IsNumericalSemigroup],
+function(K,s)
+    local msg, R, vars, i, mp, e;
+
+    e:=EmbeddingDimension(s);
+    mp:=MinimalPresentation(s);
+    vars:=List([1..e],i->X(K,i));
+    R:=PolynomialRing(K,vars);
+    i:=Ideal(R,List(mp, p->Product(List([1..e], i->vars[i]^p[1][i]))-Product(List([1..e], i->vars[i]^p[2][i]))));
+    return i;
+end);
+
+InstallMethod(BinomialIdealOfNumericalSemigroup, 
+            "Returns the binomial  ideal associated to the numerical semigroup", 
+            [IsNumericalSemigroup],
+function(s)
+    return BinomialIdealOfNumericalSemigroup(Rationals,s);
+end);

@@ -135,3 +135,15 @@ DeclareGlobalFunction("ShadedSetOfElementInNumericalSemigroup");
 ##
 #############################################################################
 DeclareGlobalFunction("DegreesOfPrimitiveElementsOfNumericalSemigroup");
+
+
+############################################################################
+##
+#O BinomialIdealOfNumericalSemigroup([K,]s)
+## 
+## K is a field, s is a numerical semigroup
+## the output is the binomial ideal associated to the numerical semigroup
+##
+#############################################################################
+DeclareOperation("BinomialIdealOfNumericalSemigroup", [IsNumericalSemigroup]);
+DeclareOperation("BinomialIdealOfNumericalSemigroup", [IsField, IsNumericalSemigroup]);

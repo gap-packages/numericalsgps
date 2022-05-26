@@ -2,7 +2,9 @@
 <Section>
   <Heading>Presentations of Numerical Semigroups</Heading>
 
-  In this section we provide a way to compute minimal presentations of a numerical semigroup. These presentations are constructed from some special elelements in the semigroup (Betti elemenents) whose associated graphs are nonconnected. A generalization of these graphs are the simplicial complexes called shaded sets of an element.
+  In this section we provide a way to compute minimal presentations of a numerical semigroup. These presentations are constructed from some special elelements in the semigroup (Betti elemenents) whose associated graphs are nonconnected. A generalization of these graphs are the simplicial complexes called shaded sets of an element.<P/>
+
+  If the variable <A>NumSgpsUseEliminationForMinimalPresentations</A> is set to true, then minimal presentations are computed via binomial ideals and elimination.
 
   <ManSection>
 
@@ -152,6 +154,37 @@ gap> ShadedSetOfElementInNumericalSemigroup(10,s);
 ]]></Example>
     </Description>
   </ManSection>
+</Section>
+
+
+<Section>
+<Heading>Binomial ideals associated to numerical semigroups</Heading>
+
+Let <M>S</M> be a numerical semigroup, and let <M>K</M> be a field. Let <M>\{n_1,\dots,n_e\}</M> be a set of minimal generators of <M>S</M>, and let <M>K[x_1,\dots,x_e]</M> be the ring of polynomial in the indeterminates <M>x_1,\dots,x_e</M> and with coefficients in <M>K</M>. Let <M>K[t]</M> be the ring of polynomials in <M>t</M> with coefficients in <M>K</M>.<P/>
+
+Let <M>\varphi: K[x_1,\dots,x_e] \to K[t]</M> be the ring homomorphism determined by <M>\varphi(x_i)=t^{n_i}</M> for all <M>i</M>. The image of this morphism is usually known as the <E>semigroup ring associated</E> to <M>S</M>. The kernel is the <E>(binomial) ideal associated</E> to <M>S</M>. According to <Cite Key="MR0269762"></Cite>, from the exponents of the binomials in this ideal we can recover a presentation of <M>S</M> and viceversa.
+
+<ManSection>
+<Oper Arg="[K,]S" Name="BinomialIdealOfNumericalSemigroup"></Oper>
+<Description>
+The argument <A>K</A> is optional; when it is not supplied, the field of rational numbers is taken as base field. <A>S</A> is a numerical semigroup. The output is the binomial ideal associated to <A>S</A>.
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> BinomialIdealOfNumericalSemigroup(GF(2),s);
+<two-sided ideal in GF(2)[x_1,x_2,x_3], (3 generators)>
+gap> GeneratorsOfTwoSidedIdeal(last);
+[ x_1^3*x_2+x_3^2, x_1^4+x_2*x_3, x_1*x_3+x_2^2 ]
+gap> BinomialIdealOfNumericalSemigroup(s);
+<two-sided ideal in Rationals[x_1,x_2,x_3], (3 generators)>
+gap> GeneratorsOfTwoSidedIdeal(last);
+[ -x_1^3*x_2+x_3^2, -x_1^4+x_2*x_3, -x_1*x_3+x_2^2 ]
+gap> MinimalPresentation(s);
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+[ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
+]]></Example>
+</Description>
+</ManSection>
+
 </Section>
 
 

@@ -1002,6 +1002,19 @@ gap> s:=NumericalSemigroup(3,5,7);;
 gap> ShadedSetOfElementInNumericalSemigroup(10,s);
 [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
 
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> BinomialIdealOfNumericalSemigroup(GF(2),s);
+<two-sided ideal in GF(2)[x_1,x_2,x_3], (3 generators)>
+gap> GeneratorsOfTwoSidedIdeal(last);
+[ x_1^3*x_2+x_3^2, x_1^4+x_2*x_3, x_1*x_3+x_2^2 ]
+gap> BinomialIdealOfNumericalSemigroup(s);
+<two-sided ideal in Rationals[x_1,x_2,x_3], (3 generators)>
+gap> GeneratorsOfTwoSidedIdeal(last);
+[ -x_1^3*x_2+x_3^2, -x_1^4+x_2*x_3, -x_1*x_3+x_2^2 ]
+gap> MinimalPresentation(s);
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
+
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsUniquelyPresented(s);
 true
