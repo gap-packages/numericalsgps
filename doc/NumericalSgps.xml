@@ -238,7 +238,9 @@ If you have predominantly used the functions in the Appendix, contributed by oth
         <M> n=a_1 n_1+\cdots+a_n m_n</M>. The <E>length</E> of <M>a</M> is <M>|a|=a_1+\cdots+a_n</M>.
         Given two factorizations <M>a</M> and <M>b</M> of  <M>n</M>, the <E>distance</E>
         between <M>a</M> and <M>b</M> is <M>d(a,b)=\max \{ |a-\gcd(a,b)|,|b-\gcd(a,b)|\}</M>,
-        where <M>\gcd((a_1,\ldots,a_n),(b_1,\ldots,b_n))=(\min(a_1,b_1),\ldots,\min(a_n,b_n))</M>.
+        where <M>\gcd((a_1,\ldots,a_n),(b_1,\ldots,b_n))=(\min(a_1,b_1),\ldots,\min(a_n,b_n))</M>. 
+        In the literature, factorizations are sometimes called representations or expressions of the 
+        element in terms of the generators.
 
         <P/>
         If <M>l_1>\cdots > l_k</M> are the lengths of all the factorizations of
