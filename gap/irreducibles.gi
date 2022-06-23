@@ -322,7 +322,7 @@ InstallGlobalFunction(OverSemigroupsNumericalSemigroup, function(s)
     sg:=SpecialGapsOfNumericalSemigroup(t); #which must be different from [-1]
     A:=[NumericalSemigroup(1),t];
     O:=List(sg,g->AddSpecialGapOfNumericalSemigroup(g,t));
-    while(not(O)=[]) do
+    while(O<>[]) do
         t:=O[1];
         O:=O{[2..Length(O)]};
         if(not(t in A)) then
