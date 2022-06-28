@@ -377,6 +377,15 @@ DeclareGlobalFunction("DenumerantOfElementInNumericalSemigroup");
 ### as function
 DeclareOperation("DenumerantFunction",[IsNumericalSemigroup]);
 
+
+#################################################################
+## DenumerantIdeal(s,n)
+## returns the ideal of s of all elements in s with denumerant 
+## larger than n
+#################################################################
+DeclareOperation("DenumerantIdeal",[IsNumericalSemigroup,IsInt]);
+DeclareOperation("DenumerantIdeal",[IsInt,IsNumericalSemigroup]);
+
 ####################################################################
 #F MoebiusFunctionAssociatedToNumericalSemigroup(s,x)
 ## Computes the value in x of  Moebius function of the poset 

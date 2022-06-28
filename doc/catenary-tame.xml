@@ -155,6 +155,25 @@ gap> DenumerantFunction(s)(1311);
     </ManSection>
 
 
+
+
+    <ManSection>
+        <Oper Arg="n, S" Name="DenumerantIdeal"></Oper>
+        <Oper Arg="S, n" Name="DenumerantIdeal"></Oper>
+        <Description>
+            <A>S</A> is a numerical semigroup and <A>n</A> a nonnegative integer.
+            The output is the ideal of elements in <A>S</A> with more than <A>n</A> factorizations. If we add zero to this set, we obtain a numerical semigroup denoted <M><A>S</A>_<A>n</A></M> in <Cite Key="komatsu"></Cite>
+
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(101,113,195,272,278,286);;
+gap> 1311 in DenumerantIdeal(6,s);
+false
+gap> 1311 in DenumerantIdeal(5,s);
+true
+]]></Example>
+         </Description>
+    </ManSection>
+
 </Section>
 
 <Section>

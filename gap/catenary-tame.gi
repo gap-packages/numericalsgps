@@ -1197,12 +1197,83 @@ end);
 
 ## as function
 InstallMethod(DenumerantFunction,
-    "function for a numerical semigroup",
+    "denumerant function for a numerical semigroup",
     [IsNumericalSemigroup],
     function(s)
         return n->DenumerantOfElementInNumericalSemigroup(n,s);
     end);
 
+
+#################################################################
+## DenumerantIdeal(s,n)
+## returns the ideal of s of all elements in s with denumerant 
+## larger than n
+#################################################################
+InstallMethod(DenumerantIdeal,
+    "Denumerant ideal of numerical semigroup",
+    [IsNumericalSemigroup,IsInt],
+
+    function(s,p)
+    local msg, m, maxgen, factorizations, n, i, f, facts, toadd, gaps, ap, di;
+
+    if p<0 then 
+        Error("The integer argument must be non-negative");
+    fi;
+    if p=0 then 
+        return 0+s;
+    fi;
+    msg:=MinimalGenerators(s);
+    m:=Multiplicity(s);
+    maxgen:=Maximum(msg);
+    factorizations:=[];
+    gaps:=[0];
+    ap:=List([1..m], _->0);
+    n:=0;
+    while ForAny(ap,x->x=0) do
+        if n>maxgen then 
+            factorizations:=factorizations{[2..maxgen+1]};
+        fi;
+        factorizations[Minimum(n,maxgen)+1]:=[];
+
+        for i in [1 .. Length(msg)] do
+            if n-msg[i] >= 0 then
+                facts:=[List(msg,x->0)];
+                if n-msg[i] > 0 then
+                    facts:=factorizations[Minimum(n,maxgen)+1-msg[i]];
+                fi;
+
+                for f in facts do
+                    toadd:=List(f);
+                    toadd[i]:=toadd[i]+1;
+                    Add(factorizations[Minimum(n,maxgen)+1],toadd);
+                od;
+            fi;
+        od;
+
+        factorizations[Minimum(n,maxgen)+1]:=Set(factorizations[Minimum(n,maxgen)+1]);
+
+        if Length(factorizations[Minimum(n,maxgen)+1])<=p then
+            Add(gaps,n);
+        else
+            if ap[(n mod m) +1]=0 then 
+                ap[(n mod m)+1]:=n;
+            fi;
+        fi;
+        n:=n+1;
+    od;
+
+    di:=ap+s;
+    Setter(SmallElements)(di,Difference([0..Maximum(gaps)+1],gaps));
+
+    return di;
+end);
+
+InstallMethod(DenumerantIdeal,
+    "Denumerant ideal of numerical semigroup",
+    [IsInt,IsNumericalSemigroup],
+    function(p,s)
+        return DenumerantIdeal(s,p);
+end);
 
 ####################################################################
 #F MoebiusFunctionAssociatedToNumericalSemigroup(s,x)
