@@ -107,6 +107,45 @@ DeclareGlobalFunction("ArfNumericalSemigroupsWithGenusUpTo");
 DeclareGlobalFunction("ArfNumericalSemigroupsWithGenusAndFrobeniusNumber");
 
 #####################################################################
+##
+## ArfSpecialGaps(s)
+##
+## returns the set of gaps g of s such that s cup {g} is again Arf
+##
+#####################################################################
+DeclareOperation("ArfSpecialGaps",[IsNumericalSemigroup]);
+
+#####################################################################
+##
+## ArfOverSemigroups(s)
+##
+## returns the set of Arf oversemigroups of s
+##
+#####################################################################
+DeclareOperation("ArfOverSemigroups",[IsNumericalSemigroup]);
+
+#####################################################################
+##
+## IsArfIrreducible(s)
+##
+## detects it s can be written as the intersection of two or more 
+## Arf semigroups containing it
+##
+#####################################################################
+DeclareProperty("IsArfIrreducible",IsNumericalSemigroup);
+
+#####################################################################
+##
+## DecomposeIntoArfIrreducibles(s)
+##
+## retuns a set of Arf irreducible numerical semigroups whose
+## intersection is s; this representation is minimal in the sense
+## that no semigroup can be removed
+##
+#####################################################################
+DeclareOperation("DecomposeIntoArfIrreducibles",[IsNumericalSemigroup]);
+
+#####################################################################
 ##                        MED
 ## See [RGGB03]
 #####################################################################

@@ -485,6 +485,209 @@ end);
 
 
 #####################################################################
+##
+## ArfSpecialGaps(s)
+##
+## returns the set of gaps g of s such that s cup {g} is again Arf
+##
+#####################################################################
+InstallMethod(ArfSpecialGaps,
+  "Returns Arf special gaps",
+  [IsNumericalSemigroup],
+function(s)
+    local ag, sg, g, se, rse, e1, e2;
+
+    if not(IsArf(s)) then
+        Error("The argument must be an Arf numerical semigroup");
+    fi;
+
+    ag:=[];
+
+    sg:=SpecialGaps(s);
+    se:=SmallElements(s);
+    rse:=Reversed(se);
+    for g in sg do
+        e1:=First(rse, e->g-e>0);
+        e2:=First(se, e->g-e<0);
+        if (2*g-e1 in s) and (2*e2-g in s) then
+            Add(ag,g);
+        fi;
+    od;    
+    return ag;
+end);
+
+#####################################################################
+##
+## ArfOverSemigroups(s)
+##
+## returns the set of Arf oversemigroups of s
+##
+#####################################################################
+InstallMethod(ArfOverSemigroups,
+  "Returns the set of Arf oversemigroups of the given numerical semigroup",
+  [IsNumericalSemigroup],
+  function(s)
+    local   t,  sg,  A,  O, g, a;
+
+    if(not(IsArf(s))) then
+        Error("The argument must be an Arf numerical semigroup");
+    fi;
+
+    if(s=NumericalSemigroup(1)) then
+        return [s];
+    fi;
+
+    t:=s;
+    sg:=ArfSpecialGaps(t); #which must be different from [-1]
+    A:=[NumericalSemigroup(1),t];
+    O:=[];
+    for g in sg do #List(sg,g->AddSpecialGapOfNumericalSemigroup(g,t));
+        a:=AddSpecialGapOfNumericalSemigroup(g,t);
+        Setter(IsArf)(a,true);
+        AddSet(O,a);
+    od;
+    
+    while(not(O=[])) do
+        t:=O[1];
+        O:=O{[2..Length(O)]};
+        if(not(t in A)) then
+            A:=Union(A,[t]);
+            sg:=ArfSpecialGaps(t);
+            for g in sg do #O:=Union(O,List(sg,g->AddSpecialGapOfNumericalSemigroup(g,t)));
+                a:=AddSpecialGapOfNumericalSemigroup(g,t);
+                Setter(IsArf)(a,true);
+                AddSet(O,a);
+            od;
+        fi;
+    od;
+    return A;
+end);
+
+#####################################################################
+##
+## IsArfIrreducible(s)
+##
+## detects it s can be written as the intersection of two or more 
+## Arf semigroups containing it
+##
+#####################################################################
+InstallMethod(IsArfIrreducible,
+  "Tests wether the semigroup is Arf irreducible",
+  [IsNumericalSemigroup],
+  function(s)
+     if not(IsArf(s)) then
+        Error("The argument must be an Arf numerical semigroup");
+    fi;
+    return Length(ArfSpecialGaps(s))<=1;
+end);
+
+InstallTrueMethod(IsArfIrreducible, IsArf and IsArfIrreducible);
+
+#####################################################################
+##
+## DecomposeIntoArfIrreducibles(s)
+##
+## retuns a set of Arf irreducible numerical semigroups whose
+## intersection is s; this representation is minimal in the sense
+## that no semigroup can be removed
+##
+#####################################################################
+InstallMethod(DecomposeIntoArfIrreducibles,
+  "retuns the Arf irreducible numerical semigroups whose intersection is the arguement",
+  [IsNumericalSemigroup],
+  function(s)
+
+    local   sg,  caux,  I,  C,  B,  pair,  i,  I2,  j,  l, dec, si;
+
+    #sg contains the special gaps of s
+    #B auxiliar ser used to construct C and I
+    #I will include Arf irreducibles containing s
+    #C non irreducibles
+    #caux(t) is to compute those elements in gs that are not in t
+    #II auxiliar set of Arf irreducibles
+
+    if(not(IsNumericalSemigroup(s))) then
+        Error("The argument must be a numerical semigroup.\n");
+    fi;
+
+    if(not(IsArf(s))) then
+        Error("The argument must be an Arf numerical semigroup.\n");
+    fi;
+
+
+    if(s=NumericalSemigroup(1)) then
+        Setter(IsIrreducibleNumericalSemigroup)(s,true);
+        return [s];
+    fi;
+
+    sg:=ArfSpecialGaps(s);
+    if (Length(sg)=1) then
+        #Setter(IsIrreducibleNumericalSemigroup)(s,true);
+        return [s];
+    fi;
+
+    caux:=function(t)
+        return Filtered(sg,g->not(BelongsToNumericalSemigroup(g,t)));
+    end;
+
+    I:=[];
+    C:=[s];
+    B:=[];
+    while(not(C=[])) do
+        B:=Union(List(C,sp->List(ArfSpecialGaps(sp),g->AddSpecialGapOfNumericalSemigroup(g,sp))));
+        B:=Filtered(B,b->not(caux(b)=[]));
+        B:=Filtered(B,b->Filtered(I,i->IsSubsemigroupOfNumericalSemigroup(i,b))=[]);
+        C:=Filtered(B,b->not(Length(ArfSpecialGaps(b))=1));
+        I:=Union(I,Difference(B,C));
+    od;
+    I:=List(I,i->[i,caux(i)]);
+    while(true) do
+        pair := fail;
+        for i in I do
+            I2 := [];
+            for j in I do
+                if not j = i then
+                    Add(I2, j);
+                fi;
+            od;
+
+            l := [];
+            for j in I2 do
+                Add(l, j[2]);
+            od;
+            if Union(l) = sg then
+                pair := i;
+                break;
+            fi;
+        od;
+
+        if(pair=fail) then
+            dec:=List(I, x -> x[1]);
+            for si in dec do
+               Setter(IsArfIrreducible)(si,true);
+            od;
+            return dec;
+        fi;
+
+        I2 := [];
+        for j in I do
+            if not j = pair then
+                Add(I2, j);
+            fi;
+        od;
+
+        I := I2;
+        Unbind(I2);
+    od;
+    dec:=List(I, x -> x[1]);
+    for si in dec do
+      Setter(IsArfIrreducible)(si,true);
+    od;
+    return dec;
+
+end);
+
+#####################################################################
 ##                        MED
 ## See [RGGB03]
 #####################################################################

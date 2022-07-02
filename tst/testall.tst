@@ -360,6 +360,22 @@ gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(0,-1);
 [ <The numerical semigroup N> ]
 gap> ArfNumericalSemigroupsWithGenusAndFrobeniusNumber(2,1);
 [  ]
+gap> s:=NumericalSemigroup(10,24,25,26,27,28,29,31,32,33);;
+gap> ArfSpecialGaps(s);
+[ 15, 22, 23 ]
+gap> s:=NumericalSemigroup(6,9,11,13,14,16);;
+gap> List(ArfOverSemigroups(s),MinimalGenerators);
+[ [ 1 ], [ 2, 3 ], [ 2, 5 ], [ 2, 7 ], [ 2, 9 ], [ 3 .. 5 ], [ 3, 5, 7 ], [ 3, 7, 8 ], [ 3, 8, 10 ], [ 3, 10, 11 ],
+  [ 3, 11, 13 ], [ 4 .. 7 ], [ 4, 6, 7, 9 ], [ 4, 6, 9, 11 ], [ 5 .. 9 ], [ 6 .. 11 ], [ 6, 8, 9, 10, 11, 13 ],
+  [ 6, 9, 10, 11, 13, 14 ], [ 6, 9, 11, 13, 14, 16 ] ]
+gap> s:=NumericalSemigroup(6,9,11,13,14,16);;
+gap> List(DecomposeIntoArfIrreducibles(s),MinimalGenerators);
+[ [ 2, 9 ], [ 3, 11, 13 ] ]
+gap> s:=NumericalSemigroupBySmallElements([0,10,17,20]);;
+gap> IsArfIrreducible(s);
+true
+gap> IsIrreducible(s);
+false
 
 # MED
 
@@ -1971,6 +1987,12 @@ gap> DenumerantOfElementInNumericalSemigroup(1311,s);
 gap> s:=NumericalSemigroup(101,113,195,272,278,286);;
 gap> DenumerantFunction(s)(1311);
 6
+
+gap> s:=NumericalSemigroup(101,113,195,272,278,286);;
+gap> 1311 in DenumerantIdeal(6,s);
+false
+gap> 1311 in DenumerantIdeal(5,s);
+true
 
 gap> LengthsOfFactorizationsIntegerWRTList(100,[11,13,15,19]);
 [ 6, 8 ]
