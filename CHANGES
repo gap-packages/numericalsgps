@@ -4,6 +4,7 @@
 
 #======
 1.3.0 -> 1.3.0 dev
+- AperyList now works for an ideal, and computes the Apéry list wrt the multiplicity of its ambient numerical semigroup
 - Added SpecialArfGaps, IsArfIrreducible, ArfOverSemigroups, DecomposeIntoArfIrreducibles 
 - Added DenumerantIdeal
 - Remove IsRectangularTable as filter 

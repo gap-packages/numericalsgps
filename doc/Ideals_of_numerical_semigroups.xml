@@ -934,7 +934,7 @@ true
 
 
                 <ManSection>
-                    <Oper Arg="I,n" Name="AperyList"/>
+                    <Oper Arg="I,n" Name="AperyList" Label="for ideals of numerical semigroups with respect to element"/>
                     <Func Arg="I,n" Name="AperyListOfIdealOfNumericalSemigroupWRTElement"></Func>
                     <Description>
 <A>I</A> is an ideal and <A>n</A> is an integer.
@@ -952,6 +952,21 @@ gap> AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);
 ]]></Example>
                      </Description>
                 </ManSection>
+
+                <ManSection>
+                    <Oper Arg="I" Name="AperyList" Label="for ideals of numerical semigroups with respect to multiplicity"/>
+                    <Description>
+                    <A>I</A> is an ideal. Computes the Apéry list of <A>I</A> with respect to the multiplicity of its ambient numerical semigroup.
+
+                       <Example><![CDATA[
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> i:=[0,1,2]+s;;
+gap> AperyList(i);
+[ 0, 1, 2, 8, 9 ]
+]]></Example>
+                     </Description>
+                </ManSection>
+
 
 
                 <ManSection>

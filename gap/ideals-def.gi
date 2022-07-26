@@ -1132,6 +1132,14 @@ InstallOtherMethod(AperyList,
     [IsIdealOfNumericalSemigroup,IsInt],
     AperyListOfIdealOfNumericalSemigroupWRTElement);
 
+InstallOtherMethod(AperyList,
+    "for ideals and the multiplicity of the ambient semigroup",
+    [IsIdealOfNumericalSemigroup],
+    function(i)
+    return AperyListOfIdealOfNumericalSemigroupWRTElement(i,Multiplicity(AmbientNumericalSemigroupOfIdeal(i)));
+    end);
+
+
 ########################################################################
 ##
 #F AperyTableOfNumericalSemigroup(S)

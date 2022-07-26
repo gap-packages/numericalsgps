@@ -1712,6 +1712,11 @@ gap> AperyList(i,10);
 gap> AperyListOfIdealOfNumericalSemigroupWRTElement(i,10);
 [ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ]
 
+gap> s:=NumericalSemigroup(5,7,9);;
+gap> i:=[0,1,2]+s;;
+gap> AperyList(i);
+[ 0, 1, 2, 8, 9 ]
+
 gap> s:=NumericalSemigroup(10,11,13);;
 gap> AperyTable(s);
 [ [ 0, 11, 22, 13, 24, 35, 26, 37, 48, 39 ],
