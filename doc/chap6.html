@@ -51,11 +51,12 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86B4BA6A79F734A8">6.2-5 FreeNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X830D0E0F7B8C6284">6.2-6 IsTelescopic</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X84475353846384E8">6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X847CD0EF8452F771">6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8784D11578C912F2">6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X80CAA1FA7F6FF4FD">6.2-10 IsAperySetGammaRectangular</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7E6E262C7C421635">6.2-11 IsAperySetBetaRectangular</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86F52FB67F76D2CB">6.2-12 IsAperySetAlphaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7A1C2C737BC1C4CE">6.2-8 IsUniversallyFree</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X847CD0EF8452F771">6.2-9 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X8784D11578C912F2">6.2-10 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X80CAA1FA7F6FF4FD">6.2-11 IsAperySetGammaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X7E6E262C7C421635">6.2-12 IsAperySetBetaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6.html#X86F52FB67F76D2CB">6.2-13 IsAperySetAlphaRectangular</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6.html#X7998FF857F70C9A2">6.3 <span class="Heading">
                     Almost-symmetric numerical semigroups
@@ -314,7 +315,7 @@ false
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsTelescopicNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is telescopic in the sense of <a href="chapBib.html#biBKP95">[KP95]</a>: it is either <span class="SimpleMath">N</span> or the gluing of <span class="SimpleMath">⟨ n_e⟩</span> and <span class="SimpleMath">s'=⟨ n_1/d,..., n_e-1/d⟩</span>, and <span class="SimpleMath">s'</span> is again a telescopic numerical semigroup, where <span class="SimpleMath">n_1 &lt; ⋯ &lt; n_e</span> are the minimal generators of <var class="Arg">s</var>.</p>
 
-<p>This filter implies <code class="func">IsAperySetBetaRectangular</code> (<a href="chap6.html#X7E6E262C7C421635"><span class="RefLink">6.2-11</span></a>) and <code class="func">IsFree</code> (<a href="chap6.html#X7CD2A77778432E7B"><span class="RefLink">6.2-4</span></a>).</p>
+<p>This filter implies <code class="func">IsAperySetBetaRectangular</code> (<a href="chap6.html#X7E6E262C7C421635"><span class="RefLink">6.2-12</span></a>) and <code class="func">IsFree</code> (<a href="chap6.html#X7CD2A77778432E7B"><span class="RefLink">6.2-4</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -339,14 +340,36 @@ true
 20
 </pre></div>
 
+<p><a id="X7A1C2C737BC1C4CE" name="X7A1C2C737BC1C4CE"></a></p>
+
+<h5>6.2-8 IsUniversallyFree</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniversallyFree</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniversallyFreeNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is free for all the arrangements of its minimal generators.</p>
+
+<p>This filter implies <code class="func">IsTelescopic</code> (<a href="chap6.html#X830D0E0F7B8C6284"><span class="RefLink">6.2-6</span></a>).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,15,18);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsUniversallyFree(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsFree(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsUniversallyFree(s);</span>
+false
+</pre></div>
+
 <p><a id="X847CD0EF8452F771" name="X847CD0EF8452F771"></a></p>
 
-<h5>6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</h5>
+<h5>6.2-9 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is true if the numerical semigroup is associated to an irreducible planar curve singularity (<a href="chapBib.html#biBZ86">[Zar86]</a>). These semigroups are telescopic.</p>
 
-<p>This filter implies <code class="func">IsAperySetAlphaRectangular</code> (<a href="chap6.html#X86F52FB67F76D2CB"><span class="RefLink">6.2-12</span></a>) and <code class="func">IsTelescopicNumericalSemigroup</code> (<a href="chap6.html#X830D0E0F7B8C6284"><span class="RefLink">6.2-6</span></a>).</p>
+<p>This filter implies <code class="func">IsAperySetAlphaRectangular</code> (<a href="chap6.html#X86F52FB67F76D2CB"><span class="RefLink">6.2-13</span></a>) and <code class="func">IsTelescopicNumericalSemigroup</code> (<a href="chap6.html#X830D0E0F7B8C6284"><span class="RefLink">6.2-6</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -360,7 +383,7 @@ true
 
 <p><a id="X8784D11578C912F2" name="X8784D11578C912F2"></a></p>
 
-<h5>6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</h5>
+<h5>6.2-10 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">f</var> is an integer. The output is the set of all numerical semigroups associated to irreducible planar curves singularities with Frobenius number <var class="Arg">f</var>.</p>
@@ -373,7 +396,7 @@ true
 
 <p><a id="X80CAA1FA7F6FF4FD" name="X80CAA1FA7F6FF4FD"></a></p>
 
-<h5>6.2-10 IsAperySetGammaRectangular</h5>
+<h5>6.2-11 IsAperySetGammaRectangular</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetGammaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
@@ -394,14 +417,14 @@ true
 
 <p><a id="X7E6E262C7C421635" name="X7E6E262C7C421635"></a></p>
 
-<h5>6.2-11 IsAperySetBetaRectangular</h5>
+<h5>6.2-12 IsAperySetBetaRectangular</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetBetaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>Test for the <span class="SimpleMath">β</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib.html#biBDAMSClasses">[DMS14]</a>; <span class="SimpleMath">β</span>-rectangularity implies <span class="SimpleMath">γ</span>-rectangularity.</p>
 
-<p>This filter implies <code class="func">IsAperySetGammaRectangular</code> (<a href="chap6.html#X80CAA1FA7F6FF4FD"><span class="RefLink">6.2-10</span></a>).</p>
+<p>This filter implies <code class="func">IsAperySetGammaRectangular</code> (<a href="chap6.html#X80CAA1FA7F6FF4FD"><span class="RefLink">6.2-11</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -415,14 +438,14 @@ true
 
 <p><a id="X86F52FB67F76D2CB" name="X86F52FB67F76D2CB"></a></p>
 
-<h5>6.2-12 IsAperySetAlphaRectangular</h5>
+<h5>6.2-13 IsAperySetAlphaRectangular</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAperySetAlphaRectangular</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">S</var> is a numerical semigroup.</p>
 
 <p>Test for the <span class="SimpleMath">α</span>-rectangularity of the Apéry Set of a numerical semigroup. This test is the implementation of the algorithm given in <a href="chapBib.html#biBDAMSClasses">[DMS14]</a>; <span class="SimpleMath">α</span>-rectangularity implies <span class="SimpleMath">β</span>-rectangularity.</p>
 
-<p>This filter implies <code class="func">IsAperySetBetaRectangular</code> (<a href="chap6.html#X7E6E262C7C421635"><span class="RefLink">6.2-11</span></a>).</p>
+<p>This filter implies <code class="func">IsAperySetBetaRectangular</code> (<a href="chap6.html#X7E6E262C7C421635"><span class="RefLink">6.2-12</span></a>).</p>
 
 
 <div class="example"><pre>

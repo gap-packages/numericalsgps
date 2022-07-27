@@ -256,7 +256,7 @@
   and  [22Xs'=⟨  n_1/d,...,  n_e-1/d⟩[122X,  and  [22Xs'[122X  is  again  a telescopic numerical
   semigroup, where [22Xn_1 < ⋯ < n_e[122X are the minimal generators of [3Xs[103X.[133X
   
-  [33X[0;0YThis filter implies [2XIsAperySetBetaRectangular[102X ([14X6.2-11[114X) and [2XIsFree[102X ([14X6.2-4[114X).[133X
+  [33X[0;0YThis filter implies [2XIsAperySetBetaRectangular[102X ([14X6.2-12[114X) and [2XIsFree[102X ([14X6.2-4[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsTelescopic(NumericalSemigroup(4,11,14));[127X[104X
@@ -279,7 +279,28 @@
     [4X[28X20[128X[104X
   [4X[32X[104X
   
-  [1X6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity[101X
+  [1X6.2-8 IsUniversallyFree[101X
+  
+  [33X[1;0Y[29X[2XIsUniversallyFree[102X( [3Xs[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsUniversallyFreeNumericalSemigroup[102X( [3Xs[103X ) [32X property[133X
+  
+  [33X[0;0Y[3Xs[103X is a numerical semigroup. The output is true if the numerical semigroup is
+  free for all the arrangements of its minimal generators.[133X
+  
+  [33X[0;0YThis filter implies [2XIsTelescopic[102X ([14X6.2-6[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,15,18);;[127X[104X
+    [4X[25Xgap>[125X [27XIsUniversallyFree(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
+    [4X[25Xgap>[125X [27XIsFree(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsUniversallyFree(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-9 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity[101X
   
   [33X[1;0Y[29X[2XIsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity[102X( [3Xs[103X ) [32X property[133X
   
@@ -287,7 +308,7 @@
   associated  to  an  irreducible  planar  curve  singularity ([Zar86]). These
   semigroups are telescopic.[133X
   
-  [33X[0;0YThis     filter     implies    [2XIsAperySetAlphaRectangular[102X    ([14X6.2-12[114X)    and
+  [33X[0;0YThis     filter     implies    [2XIsAperySetAlphaRectangular[102X    ([14X6.2-13[114X)    and
   [2XIsTelescopicNumericalSemigroup[102X ([14X6.2-6[114X).[133X
   
   [4X[32X  Example  [32X[104X
@@ -299,7 +320,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber[101X
+  [1X6.2-10 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber[101X
   
   [33X[1;0Y[29X[2XNumericalSemigroupsPlanarSingularityWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
@@ -312,7 +333,7 @@
     [4X[28X7[128X[104X
   [4X[32X[104X
   
-  [1X6.2-10 IsAperySetGammaRectangular[101X
+  [1X6.2-11 IsAperySetGammaRectangular[101X
   
   [33X[1;0Y[29X[2XIsAperySetGammaRectangular[102X( [3XS[103X ) [32X function[133X
   
@@ -334,7 +355,7 @@
     [4X[28X                [128X[104X
   [4X[32X[104X
   
-  [1X6.2-11 IsAperySetBetaRectangular[101X
+  [1X6.2-12 IsAperySetBetaRectangular[101X
   
   [33X[1;0Y[29X[2XIsAperySetBetaRectangular[102X( [3XS[103X ) [32X function[133X
   
@@ -344,7 +365,7 @@
   This  test  is  the  implementation  of  the  algorithm  given  in  [DMS14];
   [22Xβ[122X-rectangularity implies [22Xγ[122X-rectangularity.[133X
   
-  [33X[0;0YThis filter implies [2XIsAperySetGammaRectangular[102X ([14X6.2-10[114X).[133X
+  [33X[0;0YThis filter implies [2XIsAperySetGammaRectangular[102X ([14X6.2-11[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X
@@ -356,7 +377,7 @@
     [4X[28X                [128X[104X
   [4X[32X[104X
   
-  [1X6.2-12 IsAperySetAlphaRectangular[101X
+  [1X6.2-13 IsAperySetAlphaRectangular[101X
   
   [33X[1;0Y[29X[2XIsAperySetAlphaRectangular[102X( [3XS[103X ) [32X function[133X
   
@@ -366,7 +387,7 @@
   This  test  is  the  implementation  of  the  algorithm  given  in  [DMS14];
   [22Xα[122X-rectangularity implies [22Xβ[122X-rectangularity.[133X
   
-  [33X[0;0YThis filter implies [2XIsAperySetBetaRectangular[102X ([14X6.2-11[114X).[133X
+  [33X[0;0YThis filter implies [2XIsAperySetBetaRectangular[102X ([14X6.2-12[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X

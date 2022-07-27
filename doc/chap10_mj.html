@@ -62,6 +62,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X836D31F787641C22">10.2-9 GeneratorsKahlerDifferentials</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7A04B8887F493733">10.2-10 IsMonomialNumericalSemigroup</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X84C670E1826F8B92">10.3 <span class="Heading">
+		Semigroups and Legendrian curves
+	</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7980A7CE79F09A89">10.3-1 LegendrianGenericNumericalSemigroup</a></span>
+</div></div>
 </div>
 
 <h3>10 <span class="Heading">
@@ -451,6 +458,26 @@ fail
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));</span>
 false
+</pre></div>
+
+<p><a id="X84C670E1826F8B92" name="X84C670E1826F8B92"></a></p>
+
+<h4>10.3 <span class="Heading">
+		Semigroups and Legendrian curves
+	</span></h4>
+
+<p><a id="X7980A7CE79F09A89" name="X7980A7CE79F09A89"></a></p>
+
+<h5>10.3-1 LegendrianGenericNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LegendrianGenericNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><var class="Arg">n</var> and <var class="Arg">m</var> are coprime integers with <span class="SimpleMath">\(\textit{m}\ge 2\textit{n}+1\)</span>. The output is the semigroup of a generic element in the class of irreducible Legendrian singularities with equisingularity equal to the topological type of <span class="SimpleMath">\(y^n=x^m\)</span>, as described in Section 5 of <a href="chapBib_mj.html#biBaraujo-neto">[AN09]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=LegendrianGenericNumericalSemigroup(5,11);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallElements(s);</span>
+[ 0, 5, 6, 10, 11, 12, 13, 15 ]
 </pre></div>
 
 

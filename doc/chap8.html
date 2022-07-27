@@ -48,6 +48,10 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X80A13F7C81463AE5">8.2-6 ArfNumericalSemigroupsWithGenus</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X80EB35C17C83694D">8.2-7 ArfNumericalSemigroupsWithGenusUpTo</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7EE73B2F813F7E85">8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7CC73F15831B06CE">8.2-9 ArfSpecialGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X7DD2831683F870C5">8.2-10 ArfOverSemigroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X8052BCE67CC2472F">8.2-11 IsArfIrreducible</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8.html#X848E5559867D2D81">8.2-12 DecomposeIntoArfIrreducibles</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap8.html#X7E6D857179E5BF1B">8.3 <span class="Heading">
                     Saturated numerical semigroups
@@ -265,6 +269,68 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(last,MinimalGenerators);</span>
 [ [ 8, 10, 12, 14, 15, 17, 19, 21 ], [ 6, 10, 14, 15, 17, 19 ],
   [ 5, 12, 14, 16, 18 ], [ 6, 9, 14, 16, 17, 19 ], [ 4, 14, 15, 17 ] ]
+</pre></div>
+
+<p><a id="X7CC73F15831B06CE" name="X7CC73F15831B06CE"></a></p>
+
+<h5>8.2-9 ArfSpecialGaps</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfSpecialGaps</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is an Arf numerical semigroup. The output is the set of gaps <span class="SimpleMath">g</span> of <var class="Arg">s</var> such that <span class="SimpleMath"><var class="Arg">s</var>∪ {g}</span> is an Arf numerical semigroup. The implementation is based on <a href="chapBib.html#biBSUER">[Süe22]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(10,24,25,26,27,28,29,31,32,33);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ArfSpecialGaps(s);</span>
+[ 15, 22, 23 ]
+</pre></div>
+
+<p><a id="X7DD2831683F870C5" name="X7DD2831683F870C5"></a></p>
+
+<h5>8.2-10 ArfOverSemigroups</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ArfOverSemigroups</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is an Arf numerical semigroup. The output is the set of Arf oversemigroups of <var class="Arg">s</var>. The implementation is based on <a href="chapBib.html#biBSUER">[Süe22]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(6,9,11,13,14,16);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(ArfOverSemigroups(s),MinimalGenerators);</span>
+[ [ 1 ], [ 2, 3 ], [ 2, 5 ], [ 2, 7 ], [ 2, 9 ], [ 3 .. 5 ], [ 3, 5, 7 ], 
+  [ 3, 7, 8 ], [ 3, 8, 10 ], [ 3, 10, 11 ], [ 3, 11, 13 ], [ 4 .. 7 ], 
+  [ 4, 6, 7, 9 ], [ 4, 6, 9, 11 ], [ 5 .. 9 ], [ 6 .. 11 ], 
+  [ 6, 8, 9, 10, 11, 13 ], [ 6, 9, 10, 11, 13, 14 ], 
+  [ 6, 9, 11, 13, 14, 16 ] ]
+</pre></div>
+
+<p><a id="X8052BCE67CC2472F" name="X8052BCE67CC2472F"></a></p>
+
+<h5>8.2-11 IsArfIrreducible</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsArfIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is an Arf numerical semigroup. Detects if <var class="Arg">s</var> is Arf-irreducible, that is, irreducible in the Frobenius variety of Arf numerical semigroups. The implementation is based on <a href="chapBib.html#biBSUER">[Süe22]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroupBySmallElements([0,10,17,20]);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsArfIrreducible(s);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsIrreducible(s);</span>
+false
+</pre></div>
+
+<p><a id="X848E5559867D2D81" name="X848E5559867D2D81"></a></p>
+
+<h5>8.2-12 DecomposeIntoArfIrreducibles</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecomposeIntoArfIrreducibles</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><var class="Arg">s</var> is an Arf numerical semigroup. The output is a set of Arf irreuducible numerical semigroups whose intersection is <var class="Arg">s</var>. This decomposition is not redundant in the sense that no semigroup can be removes. The implementation is based on <a href="chapBib.html#biBSUER">[Süe22]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(6,9,11,13,14,16);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(DecomposeIntoArfIrreducibles(s),MinimalGenerators);</span>
+[ [ 2, 9 ], [ 3, 11, 13 ] ]
 </pre></div>
 
 <p><a id="X7E6D857179E5BF1B" name="X7E6D857179E5BF1B"></a></p>

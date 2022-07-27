@@ -1,6 +1,6 @@
 name: NumericalSgps
-version: 1.3.0
-date: 2022-03-14
+version: 1.3.1
+date: 2022-07-27
 description: |
     A package for numerical semigroups
 
@@ -56,7 +56,9 @@ packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.3.0/NumericalSgps-1.3.0.tar.gz
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.3.1/NumericalSgps-1.3.1.tar.gz
+    - name: .zip
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.3.1/NumericalSgps-1.3.1.zip
 
 abstract: |
     The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.
@@ -70,7 +72,7 @@ citeas: |
     <p class='BibEntry'>
     [<span class='BibKey'>DGM22</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
      <i class='BibTitle'>NumericalSgps, A package for numerical semigroups,
-             Version 1.3.0</i>
+             Version 1.3.1</i>
      (<span class='BibYear'>2022</span>)<br />
     (<span class='BibNote'>Refereed GAP package</span>),
     <span class='BibHowpublished'><a href="https://gap-packages.github.io/numericalsgps">https://gap-packages.github.io/numericalsgps</a></span>.
@@ -78,11 +80,11 @@ citeas: |
     
 
 bibtex: |
-    @misc{ NumericalSgps1.3.0,
+    @misc{ NumericalSgps1.3.1,
       author =           {Delgado, M. and Garcia-Sanchez, P. A. and Morais, J.},
       title =            {{NumericalSgps},  A  package for numerical semigroups,
-                          {V}ersion 1.3.0},
-      month =            {Mar},
+                          {V}ersion 1.3.1},
+      month =            {Jul},
       year =             {2022},
       note =             {Refereed GAP package},
       howpublished =     {\href   {https://gap-packages.github.io/numericalsgps}

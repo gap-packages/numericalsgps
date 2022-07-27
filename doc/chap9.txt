@@ -6,7 +6,9 @@
   nonnegative  integers  such  that  [22Xn=a_1  n_1+⋯+a_n  m_n[122X. The [13Xlength[113X of [22Xa[122X is
   [22X|a|=a_1+⋯+a_n[122X. Given two factorizations [22Xa[122X and [22Xb[122X of [22Xn[122X, the [13Xdistance[113X between [22Xa[122X
   and     [22Xb[122X     is     [22Xd(a,b)=max    {    |a-gcd(a,b)|,|b-gcd(a,b)|}[122X,    where
-  [22Xgcd((a_1,...,a_n),(b_1,...,b_n))=(min(a_1,b_1),...,min(a_n,b_n))[122X.[133X
+  [22Xgcd((a_1,...,a_n),(b_1,...,b_n))=(min(a_1,b_1),...,min(a_n,b_n))[122X.   In   the
+  literature,   factorizations   are   sometimes   called  representations  or
+  expressions of the element in terms of the generators.[133X
   
   [33X[0;0YIf [22Xl_1>⋯ > l_k[122X are the lengths of all the factorizations of [22Xs ∈ S[122X, the [13Xdelta
   set[113X associated to [22Xs[122X is [22X∆(s)={l_1-l_2,...,l_k-l_k-1}[122X.[133X
@@ -177,6 +179,23 @@
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(101,113,195,272,278,286);;[127X[104X
     [4X[25Xgap>[125X [27XDenumerantFunction(s)(1311);[127X[104X
     [4X[28X6[128X[104X
+  [4X[32X[104X
+  
+  [1X9.1-9 DenumerantIdeal[101X
+  
+  [33X[1;0Y[29X[2XDenumerantIdeal[102X( [3Xn[103X, [3XS[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDenumerantIdeal[102X( [3XS[103X, [3Xn[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X a nonnegative integer. The output is the
+  ideal  of  elements  in [3XS[103X with more than [3Xn[103X factorizations. If we add zero to
+  this set, we obtain what is is called in [Kom21] an [3Xn[103X-semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(101,113,195,272,278,286);;[127X[104X
+    [4X[25Xgap>[125X [27X1311 in DenumerantIdeal(6,s);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27X1311 in DenumerantIdeal(5,s);[127X[104X
+    [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
   

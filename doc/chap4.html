@@ -37,11 +37,16 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7A9B5AE782CAEA2F">4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C42DEB68285F2B8">4.1-7 ShadedSetOfElementInNumericalSemigroup</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7D7EA20F818A5994">4.2 <span class="Heading">Uniquely Presented Numerical Semigroups</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X795E7F5682A6C8B3">4.2 <span class="Heading">Binomial ideals associated to numerical semigroups</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C6F554486274CAE">4.2-1 IsUniquelyPresented</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X79C010537C838154">4.2-2 IsGeneric</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7E6BBAA7803DE7F3">4.2-1 BinomialIdealOfNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7D7EA20F818A5994">4.3 <span class="Heading">Uniquely Presented Numerical Semigroups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7C6F554486274CAE">4.3-1 IsUniquelyPresented</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X79C010537C838154">4.3-2 IsGeneric</a></span>
 </div></div>
 </div>
 
@@ -58,6 +63,8 @@
 <h4>4.1 <span class="Heading">Presentations of Numerical Semigroups</span></h4>
 
 <p>In this section we provide a way to compute minimal presentations of a numerical semigroup. These presentations are constructed from some special elelements in the semigroup (Betti elemenents) whose associated graphs are nonconnected. A generalization of these graphs are the simplicial complexes called shaded sets of an element.</p>
+
+<p>If the variable <var class="Arg">NumSgpsUseEliminationForMinimalPresentations</var> is set to true, then minimal presentations are computed via binomial ideals and elimination.</p>
 
 <p><a id="X81A2C4317A0BA48D" name="X81A2C4317A0BA48D"></a></p>
 
@@ -189,15 +196,46 @@ true
 [ [  ], [ 3 ], [ 3, 7 ], [ 5 ], [ 7 ] ]
 </pre></div>
 
+<p><a id="X795E7F5682A6C8B3" name="X795E7F5682A6C8B3"></a></p>
+
+<h4>4.2 <span class="Heading">Binomial ideals associated to numerical semigroups</span></h4>
+
+<p>Let <span class="SimpleMath">S</span> be a numerical semigroup, and let <span class="SimpleMath">K</span> be a field. Let <span class="SimpleMath">{n_1,dots,n_e}</span> be a set of minimal generators of <span class="SimpleMath">S</span>, and let <span class="SimpleMath">K[x_1,dots,x_e]</span> be the ring of polynomial in the indeterminates <span class="SimpleMath">x_1,dots,x_e</span> and with coefficients in <span class="SimpleMath">K</span>. Let <span class="SimpleMath">K[t]</span> be the ring of polynomials in <span class="SimpleMath">t</span> with coefficients in <span class="SimpleMath">K</span>.</p>
+
+<p>Let <span class="SimpleMath">φ: K[x_1,dots,x_e] -&gt; K[t]</span> be the ring homomorphism determined by <span class="SimpleMath">φ(x_i)=t^n_i</span> for all <span class="SimpleMath">i</span>. The image of this morphism is usually known as the <em>semigroup ring associated</em> to <span class="SimpleMath">S</span>. The kernel is the <em>(binomial) ideal associated</em> to <span class="SimpleMath">S</span>. According to <a href="chapBib.html#biBMR0269762">[Her70]</a>, from the exponents of the binomials in this ideal we can recover a presentation of <span class="SimpleMath">S</span> and viceversa.</p>
+
+<p><a id="X7E6BBAA7803DE7F3" name="X7E6BBAA7803DE7F3"></a></p>
+
+<h5>4.2-1 BinomialIdealOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BinomialIdealOfNumericalSemigroup</code>( [<var class="Arg">K</var>, ]<var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The argument <var class="Arg">K</var> is optional; when it is not supplied, the field of rational numbers is taken as base field. <var class="Arg">S</var> is a numerical semigroup. The output is the binomial ideal associated to <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BinomialIdealOfNumericalSemigroup(GF(2),s);</span>
+&lt;two-sided ideal in GF(2)[x_1,x_2,x_3], (3 generators)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfTwoSidedIdeal(last);</span>
+[ x_1^3*x_2+x_3^2, x_1^4+x_2*x_3, x_1*x_3+x_2^2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BinomialIdealOfNumericalSemigroup(s);</span>
+&lt;two-sided ideal in Rationals[x_1,x_2,x_3], (3 generators)&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfTwoSidedIdeal(last);</span>
+[ -x_1^3*x_2+x_3^2, -x_1^4+x_2*x_3, -x_1*x_3+x_2^2 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPresentation(s);</span>
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+[ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
+</pre></div>
+
 <p><a id="X7D7EA20F818A5994" name="X7D7EA20F818A5994"></a></p>
 
-<h4>4.2 <span class="Heading">Uniquely Presented Numerical Semigroups</span></h4>
+<h4>4.3 <span class="Heading">Uniquely Presented Numerical Semigroups</span></h4>
 
 <p>A numerical semigroup <span class="SimpleMath">S</span> is uniquely presented if for any two minimal presentations <span class="SimpleMath">σ</span> and <span class="SimpleMath">τ</span> and any <span class="SimpleMath">(a,b)∈ σ</span>, either <span class="SimpleMath">(a,b)∈ τ</span> or <span class="SimpleMath">(b,a)∈ τ</span>, that is, there is essentially a unique minimal presentation (up to arrangement of the components of the pairs in it).</p>
 
 <p><a id="X7C6F554486274CAE" name="X7C6F554486274CAE"></a></p>
 
-<h5>4.2-1 IsUniquelyPresented</h5>
+<h5>4.3-1 IsUniquelyPresented</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresented</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsUniquelyPresentedNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
@@ -216,7 +254,7 @@ true
 
 <p><a id="X79C010537C838154" name="X79C010537C838154"></a></p>
 
-<h5>4.2-2 IsGeneric</h5>
+<h5>4.3-2 IsGeneric</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneric</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGenericNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
@@ -224,7 +262,7 @@ true
 
 <p>The output is true if <var class="Arg">S</var> has a generic presentation, that is, in every minimal relation all generators occur. These semigroups are uniquely presented (see <a href="chapBib.html#biBB-GS-G">[BGSG11]</a>).</p>
 
-<p>This filter implies <code class="func">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4.html#X7C6F554486274CAE"><span class="RefLink">4.2-1</span></a>).</p>
+<p>This filter implies <code class="func">IsUniquelyPresentedNumericalSemigroup</code> (<a href="chap4.html#X7C6F554486274CAE"><span class="RefLink">4.3-1</span></a>).</p>
 
 
 <div class="example"><pre>

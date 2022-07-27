@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.3.0
+                                 Version 1.3.1
   
   
                                  Manuel Delgado
@@ -85,7 +85,7 @@
   (Portugal)  with  national  (MEC)  and European structural funds through the
   programs FEDER, under the partnership agreement PT2020.[133X
   
-  [33X[0;0YBoth   maintainers   are   also   partially   supported   by   the   project
+  [33X[0;0YBoth   maintainers   were   also   partially   supported   by   the  project
   MTM2017-84890-P,  which is funded by Ministerio de Economía y Competitividad
   and Fondo Europeo de Desarrollo Regional FEDER.[133X
   
@@ -94,6 +94,10 @@
   
   [33X[0;0YThe second author was supported in part by Grant PGC2018-096446-B-C21 funded
   by MCIN/AEI/10.13039/501100011033 and by "ERDF A way of making Europe".[133X
+  
+  [33X[0;0YBoth  maintainers were partially supported by CMUP, member of LASI, which is
+  financed  by Portuguese national funds through FCT – Fundação para a Ciência
+  e a Tecnologia, I.P., under the project with reference UIDB/00144/2020.[133X
   
   
   -------------------------------------------------------
@@ -106,7 +110,7 @@
   
   [33X[0;0YIf  you have benefited from the use of the numerigalsgps GAP package in your
   research,  please  cite  it  in addition to GAP itself, following the scheme
-  proposed in [7Xhttp://www.gap-system.org/Contacts/cite.html[107X.[133X
+  proposed in [7Xhttps://www.gap-system.org/Contacts/cite.html[107X.[133X
   
   [33X[0;0YIf you have predominantly used the functions in the Appendix, contributed by
   other  authors,  please  cite in addition these authors, referring "software
@@ -192,9 +196,11 @@
       4.1-5 AllMinimalRelationsOfNumericalSemigroup
       4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup
       4.1-7 ShadedSetOfElementInNumericalSemigroup
-    4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X
-      4.2-1 IsUniquelyPresented
-      4.2-2 IsGeneric
+    4.2 [33X[0;0YBinomial ideals associated to numerical semigroups[133X
+      4.2-1 BinomialIdealOfNumericalSemigroup
+    4.3 [33X[0;0YUniquely Presented Numerical Semigroups[133X
+      4.3-1 IsUniquelyPresented
+      4.3-2 IsGeneric
   5 [33X[0;0YConstructing numerical semigroups from others[133X
     5.1 [33X[0;0YAdding and removing elements of a numerical semigroup[133X
       5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup
@@ -241,11 +247,12 @@
       6.2-5 FreeNumericalSemigroupsWithFrobeniusNumber
       6.2-6 IsTelescopic
       6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber
-      6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
-      6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber
-      6.2-10 IsAperySetGammaRectangular
-      6.2-11 IsAperySetBetaRectangular
-      6.2-12 IsAperySetAlphaRectangular
+      6.2-8 IsUniversallyFree
+      6.2-9 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+      6.2-10 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber
+      6.2-11 IsAperySetGammaRectangular
+      6.2-12 IsAperySetBetaRectangular
+      6.2-13 IsAperySetAlphaRectangular
     6.3 [33X[0;0YAlmost-symmetric numerical semigroups[133X
       6.3-1 AlmostSymmetricNumericalSemigroupsFromIrreducible
       6.3-2 AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType
@@ -308,8 +315,9 @@
       7.3-10 MultiplicitySequence
       7.3-11 MicroInvariants
       7.3-12 AperyList
-      7.3-13 AperyTable
-      7.3-14 StarClosureOfIdealOfNumericalSemigroup
+      7.3-13 AperyList
+      7.3-14 AperyTable
+      7.3-15 StarClosureOfIdealOfNumericalSemigroup
     7.4 [33X[0;0YPatterns for ideals[133X
       7.4-1 IsAdmissiblePattern
       7.4-2 IsStronglyAdmissiblePattern
@@ -340,6 +348,10 @@
       8.2-6 ArfNumericalSemigroupsWithGenus
       8.2-7 ArfNumericalSemigroupsWithGenusUpTo
       8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber
+      8.2-9 ArfSpecialGaps
+      8.2-10 ArfOverSemigroups
+      8.2-11 IsArfIrreducible
+      8.2-12 DecomposeIntoArfIrreducibles
     8.3 [33X[0;0YSaturated numerical semigroups[133X
       8.3-1 IsSaturated
       8.3-2 SaturatedClosure
@@ -354,6 +366,7 @@
       9.1-6 RFMatrices
       9.1-7 DenumerantOfElementInNumericalSemigroup
       9.1-8 DenumerantFunction
+      9.1-9 DenumerantIdeal
     9.2 [33X[0;0YInvariants based on lengths[133X
       9.2-1 LengthsOfFactorizationsIntegerWRTList
       9.2-2 LengthsOfFactorizationsElementWRTNumericalSemigroup
@@ -434,6 +447,8 @@
       10.2-8 GeneratorsModule_Global
       10.2-9 GeneratorsKahlerDifferentials
       10.2-10 IsMonomialNumericalSemigroup
+    10.3 [33X[0;0YSemigroups and Legendrian curves[133X
+      10.3-1 LegendrianGenericNumericalSemigroup
   11 [33X[0;0YAffine semigroups[133X
     11.1 [33X[0;0YDefining affine semigroups[133X
       11.1-1 AffineSemigroup

@@ -888,7 +888,21 @@
     [4X[28X[ 40, 51, 12, 23, 14, 25, 36, 27, 38, 49 ][128X[104X
   [4X[32X[104X
   
-  [1X7.3-13 AperyTable[101X
+  [1X7.3-13 AperyList[101X
+  
+  [33X[1;0Y[29X[2XAperyList[102X( [3XI[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3XI[103X is an ideal. Computes the Apéry list of [3XI[103X with respect to the multiplicity
+  of its ambient numerical semigroup.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,9);;[127X[104X
+    [4X[25Xgap>[125X [27Xi:=[0,1,2]+s;;[127X[104X
+    [4X[25Xgap>[125X [27XAperyList(i);[127X[104X
+    [4X[28X[ 0, 1, 2, 8, 9 ][128X[104X
+  [4X[32X[104X
+  
+  [1X7.3-14 AperyTable[101X
   
   [33X[1;0Y[29X[2XAperyTable[102X( [3XS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XAperyTableOfNumericalSemigroup[102X( [3Xs[103X ) [32X function[133X
@@ -912,7 +926,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X7.3-14 StarClosureOfIdealOfNumericalSemigroup[101X
+  [1X7.3-15 StarClosureOfIdealOfNumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XStarClosureOfIdealOfNumericalSemigroup[102X( [3Xi[103X, [3Xis[103X ) [32X function[133X
   
@@ -1203,7 +1217,7 @@
   [DMS13].[133X
   
   [33X[0;0YThis   filter   implies   [2XIsGradedAssociatedRingNumericalSemigroupGorenstein[102X
-  ([14X7.5-5[114X) and [2XIsAperySetGammaRectangular[102X ([14X6.2-10[114X).[133X
+  ([14X7.5-5[114X) and [2XIsAperySetGammaRectangular[102X ([14X6.2-11[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(30, 35, 42, 47, 148, 153, 157, 169, 181, 193);;[127X[104X

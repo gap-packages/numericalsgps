@@ -23,6 +23,9 @@
   nonconnected.  A generalization of these graphs are the simplicial complexes
   called shaded sets of an element.[133X
   
+  [33X[0;0YIf the variable [3XNumSgpsUseEliminationForMinimalPresentations[103X is set to true,
+  then minimal presentations are computed via binomial ideals and elimination.[133X
+  
   [1X4.1-1 MinimalPresentation[101X
   
   [33X[1;0Y[29X[2XMinimalPresentation[102X( [3XS[103X ) [32X operation[133X
@@ -160,14 +163,51 @@
   [4X[32X[104X
   
   
-  [1X4.2 [33X[0;0YUniquely Presented Numerical Semigroups[133X[101X
+  [1X4.2 [33X[0;0YBinomial ideals associated to numerical semigroups[133X[101X
+  
+  [33X[0;0YLet  [22XS[122X be a numerical semigroup, and let [22XK[122X be a field. Let [22X{n_1,dots,n_e}[122X be
+  a  set  of  minimal  generators of [22XS[122X, and let [22XK[x_1,dots,x_e][122X be the ring of
+  polynomial  in  the  indeterminates [22Xx_1,dots,x_e[122X and with coefficients in [22XK[122X.
+  Let [22XK[t][122X be the ring of polynomials in [22Xt[122X with coefficients in [22XK[122X.[133X
+  
+  [33X[0;0YLet  [22Xφ:  K[x_1,dots,x_e]  ->  K[t][122X  be  the  ring homomorphism determined by
+  [22Xφ(x_i)=t^n_i[122X  for  all [22Xi[122X. The image of this morphism is usually known as the
+  [13Xsemigroup  ring  associated[113X  to  [22XS[122X.  The  kernel  is  the  [13X(binomial)  ideal
+  associated[113X  to  [22XS[122X. According to [Her70], from the exponents of the binomials
+  in this ideal we can recover a presentation of [22XS[122X and viceversa.[133X
+  
+  [1X4.2-1 BinomialIdealOfNumericalSemigroup[101X
+  
+  [33X[1;0Y[29X[2XBinomialIdealOfNumericalSemigroup[102X( [[3XK[103X, ][3XS[103X ) [32X operation[133X
+  
+  [33X[0;0YThe  argument  [3XK[103X is optional; when it is not supplied, the field of rational
+  numbers  is  taken  as base field. [3XS[103X is a numerical semigroup. The output is
+  the binomial ideal associated to [3XS[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
+    [4X[25Xgap>[125X [27XBinomialIdealOfNumericalSemigroup(GF(2),s);[127X[104X
+    [4X[28X<two-sided ideal in GF(2)[x_1,x_2,x_3], (3 generators)>[128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsOfTwoSidedIdeal(last);[127X[104X
+    [4X[28X[ x_1^3*x_2+x_3^2, x_1^4+x_2*x_3, x_1*x_3+x_2^2 ][128X[104X
+    [4X[25Xgap>[125X [27XBinomialIdealOfNumericalSemigroup(s);[127X[104X
+    [4X[28X<two-sided ideal in Rationals[x_1,x_2,x_3], (3 generators)>[128X[104X
+    [4X[25Xgap>[125X [27XGeneratorsOfTwoSidedIdeal(last);[127X[104X
+    [4X[28X[ -x_1^3*x_2+x_3^2, -x_1^4+x_2*x_3, -x_1*x_3+x_2^2 ][128X[104X
+    [4X[25Xgap>[125X [27XMinimalPresentation(s);[127X[104X
+    [4X[28X[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], [128X[104X
+    [4X[28X[ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.3 [33X[0;0YUniquely Presented Numerical Semigroups[133X[101X
   
   [33X[0;0YA  numerical  semigroup  [22XS[122X  is  uniquely  presented  if  for any two minimal
   presentations  [22Xσ[122X  and  [22Xτ[122X and any [22X(a,b)∈ σ[122X, either [22X(a,b)∈ τ[122X or [22X(b,a)∈ τ[122X, that
   is, there is essentially a unique minimal presentation (up to arrangement of
   the components of the pairs in it).[133X
   
-  [1X4.2-1 IsUniquelyPresented[101X
+  [1X4.3-1 IsUniquelyPresented[101X
   
   [33X[1;0Y[29X[2XIsUniquelyPresented[102X( [3XS[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsUniquelyPresentedNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
@@ -185,7 +225,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X4.2-2 IsGeneric[101X
+  [1X4.3-2 IsGeneric[101X
   
   [33X[1;0Y[29X[2XIsGeneric[102X( [3XS[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsGenericNumericalSemigroup[102X( [3XS[103X ) [32X property[133X
@@ -196,7 +236,7 @@
   minimal  relation  all  generators  occur.  These  semigroups  are  uniquely
   presented (see [BGSG11]).[133X
   
-  [33X[0;0YThis filter implies [2XIsUniquelyPresentedNumericalSemigroup[102X ([14X4.2-1[114X).[133X
+  [33X[0;0YThis filter implies [2XIsUniquelyPresentedNumericalSemigroup[102X ([14X4.3-1[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X

@@ -209,6 +209,68 @@
     [4X[28X  [ 5, 12, 14, 16, 18 ], [ 6, 9, 14, 16, 17, 19 ], [ 4, 14, 15, 17 ] ][128X[104X
   [4X[32X[104X
   
+  [1X8.2-9 ArfSpecialGaps[101X
+  
+  [33X[1;0Y[29X[2XArfSpecialGaps[102X( [3Xs[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xs[103X  is  an Arf numerical semigroup. The output is the set of gaps [22Xg[122X of [3Xs[103X such
+  that  [22X[3Xs[103X∪  {g}[122X  is an Arf numerical semigroup. The implementation is based on
+  [Süe22].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,24,25,26,27,28,29,31,32,33);;[127X[104X
+    [4X[25Xgap>[125X [27XArfSpecialGaps(s);[127X[104X
+    [4X[28X[ 15, 22, 23 ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-10 ArfOverSemigroups[101X
+  
+  [33X[1;0Y[29X[2XArfOverSemigroups[102X( [3Xs[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xs[103X is an Arf numerical semigroup. The output is the set of Arf oversemigroups
+  of [3Xs[103X. The implementation is based on [Süe22].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(6,9,11,13,14,16);;[127X[104X
+    [4X[25Xgap>[125X [27XList(ArfOverSemigroups(s),MinimalGenerators);[127X[104X
+    [4X[28X[ [ 1 ], [ 2, 3 ], [ 2, 5 ], [ 2, 7 ], [ 2, 9 ], [ 3 .. 5 ], [ 3, 5, 7 ], [128X[104X
+    [4X[28X  [ 3, 7, 8 ], [ 3, 8, 10 ], [ 3, 10, 11 ], [ 3, 11, 13 ], [ 4 .. 7 ], [128X[104X
+    [4X[28X  [ 4, 6, 7, 9 ], [ 4, 6, 9, 11 ], [ 5 .. 9 ], [ 6 .. 11 ], [128X[104X
+    [4X[28X  [ 6, 8, 9, 10, 11, 13 ], [ 6, 9, 10, 11, 13, 14 ], [128X[104X
+    [4X[28X  [ 6, 9, 11, 13, 14, 16 ] ][128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-11 IsArfIrreducible[101X
+  
+  [33X[1;0Y[29X[2XIsArfIrreducible[102X( [3Xs[103X ) [32X property[133X
+  
+  [33X[0;0Y[3Xs[103X  is  an Arf numerical semigroup. Detects if [3Xs[103X is Arf-irreducible, that is,
+  irreducible  in  the  Frobenius  variety  of  Arf  numerical semigroups. The
+  implementation is based on [Süe22].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroupBySmallElements([0,10,17,20]);;[127X[104X
+    [4X[25Xgap>[125X [27XIsArfIrreducible(s);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XIsIrreducible(s);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-12 DecomposeIntoArfIrreducibles[101X
+  
+  [33X[1;0Y[29X[2XDecomposeIntoArfIrreducibles[102X( [3Xs[103X ) [32X operation[133X
+  
+  [33X[0;0Y[3Xs[103X  is  an  Arf  numerical semigroup. The output is a set of Arf irreuducible
+  numerical  semigroups  whose  intersection  is  [3Xs[103X. This decomposition is not
+  redundant  in the sense that no semigroup can be removes. The implementation
+  is based on [Süe22].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(6,9,11,13,14,16);;[127X[104X
+    [4X[25Xgap>[125X [27XList(DecomposeIntoArfIrreducibles(s),MinimalGenerators);[127X[104X
+    [4X[28X[ [ 2, 9 ], [ 3, 11, 13 ] ][128X[104X
+  [4X[32X[104X
+  
   
   [1X8.3 [33X[0;0YSaturated numerical semigroups[133X[101X
   

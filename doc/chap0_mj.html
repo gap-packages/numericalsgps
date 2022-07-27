@@ -28,7 +28,7 @@
 
 <h1><strong class="pkg">numericalsgps</strong>-- a package for numerical semigroups</h1>
 
-<p> Version 1.3.0</p>
+<p> Version 1.3.1</p>
 
 </div>
 <p><b> Manuel Delgado
@@ -78,17 +78,19 @@
 
 <p>Both maintainers want to acknowledge partial support by CMUP (UID/MAT/00144/2013 and UID/MAT/00144/2019), which is funded by FCT (Portugal) with national (MEC) and European structural funds through the programs FEDER, under the partnership agreement PT2020.</p>
 
-<p>Both maintainers are also partially supported by the project MTM2017-84890-P, which is funded by Ministerio de Economía y Competitividad and Fondo Europeo de Desarrollo Regional FEDER.</p>
+<p>Both maintainers were also partially supported by the project MTM2017-84890-P, which is funded by Ministerio de Economía y Competitividad and Fondo Europeo de Desarrollo Regional FEDER.</p>
 
 <p>The first author acknowledges a sabbatical grant from the FCT: SFRH/BSAB/142918/2018.</p>
 
 <p>The second author was supported in part by Grant PGC2018-096446-B-C21 funded by MCIN/AEI/10.13039/501100011033 and by "ERDF A way of making Europe".</p>
 
+<p>Both maintainers were partially supported by CMUP, member of LASI, which is financed by Portuguese national funds through FCT – Fundação para a Ciência e a Tecnologia, I.P., under the project with reference UIDB/00144/2020.</p>
+
 <p><a id="X7982162280BC7A61" name="X7982162280BC7A61"></a></p>
 <h3>Colophon</h3>
 <p>This work started when (in 2004) the first author visited the University of Granada in part of a sabbatical year. Since Version 0.96 (released in 2008), the package is maintained by the first two authors. Bug reports, suggestions and comments are, of course, welcome. Please use our email addresses to this effect.</p>
 
-<p>If you have benefited from the use of the numerigalsgps GAP package in your research, please cite it in addition to GAP itself, following the scheme proposed in <span class="URL"><a href="http://www.gap-system.org/Contacts/cite.html">http://www.gap-system.org/Contacts/cite.html</a></span>.</p>
+<p>If you have benefited from the use of the numerigalsgps GAP package in your research, please cite it in addition to GAP itself, following the scheme proposed in <span class="URL"><a href="https://www.gap-system.org/Contacts/cite.html">https://www.gap-system.org/Contacts/cite.html</a></span>.</p>
 
 <p>If you have predominantly used the functions in the Appendix, contributed by other authors, please cite in addition these authors, referring "software implementations available in the GAP package NumericalSgps".</p>
 
@@ -201,11 +203,16 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7A9B5AE782CAEA2F">4.1-6 DegreesOfPrimitiveElementsOfNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7C42DEB68285F2B8">4.1-7 ShadedSetOfElementInNumericalSemigroup</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X7D7EA20F818A5994">4.2 <span class="Heading">Uniquely Presented Numerical Semigroups</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X795E7F5682A6C8B3">4.2 <span class="Heading">Binomial ideals associated to numerical semigroups</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7C6F554486274CAE">4.2-1 IsUniquelyPresented</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X79C010537C838154">4.2-2 IsGeneric</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7E6BBAA7803DE7F3">4.2-1 BinomialIdealOfNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X7D7EA20F818A5994">4.3 <span class="Heading">Uniquely Presented Numerical Semigroups</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7C6F554486274CAE">4.3-1 IsUniquelyPresented</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X79C010537C838154">4.3-2 IsGeneric</a></span>
 </div></div>
 </div>
 <div class="ContChap"><a href="chap5_mj.html#X8148F05A830EE2D5">5 <span class="Heading">
@@ -290,11 +297,12 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86B4BA6A79F734A8">6.2-5 FreeNumericalSemigroupsWithFrobeniusNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X830D0E0F7B8C6284">6.2-6 IsTelescopic</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84475353846384E8">6.2-7 TelescopicNumericalSemigroupsWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X847CD0EF8452F771">6.2-8 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8784D11578C912F2">6.2-9 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80CAA1FA7F6FF4FD">6.2-10 IsAperySetGammaRectangular</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E6E262C7C421635">6.2-11 IsAperySetBetaRectangular</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86F52FB67F76D2CB">6.2-12 IsAperySetAlphaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A1C2C737BC1C4CE">6.2-8 IsUniversallyFree</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X847CD0EF8452F771">6.2-9 IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8784D11578C912F2">6.2-10 NumericalSemigroupsPlanarSingularityWithFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80CAA1FA7F6FF4FD">6.2-11 IsAperySetGammaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E6E262C7C421635">6.2-12 IsAperySetBetaRectangular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86F52FB67F76D2CB">6.2-13 IsAperySetAlphaRectangular</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7998FF857F70C9A2">6.3 <span class="Heading">
                     Almost-symmetric numerical semigroups
@@ -384,9 +392,10 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X79494A587A549E15">7.3-9 AsymptoticRatliffRushNumber</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X8344B30D7EDE3B04">7.3-10 MultiplicitySequence</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X87AC917578976B1E">7.3-11 MicroInvariants</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X82362D7184AEAB0B">7.3-12 AperyList</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X8244CCAE7D957F46">7.3-13 AperyTable</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7A16238D7EDB2AB3">7.3-14 StarClosureOfIdealOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X805C984685EBC65C">7.3-12 AperyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X82D2784B813C67D8">7.3-13 AperyList</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X8244CCAE7D957F46">7.3-14 AperyTable</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap7_mj.html#X7A16238D7EDB2AB3">7.3-15 StarClosureOfIdealOfNumericalSemigroup</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap7_mj.html#X78F124CC82E7B585">7.4 <span class="Heading">
     Patterns for ideals
@@ -438,6 +447,10 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X80A13F7C81463AE5">8.2-6 ArfNumericalSemigroupsWithGenus</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X80EB35C17C83694D">8.2-7 ArfNumericalSemigroupsWithGenusUpTo</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7EE73B2F813F7E85">8.2-8 ArfNumericalSemigroupsWithGenusAndFrobeniusNumber</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7CC73F15831B06CE">8.2-9 ArfSpecialGaps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X7DD2831683F870C5">8.2-10 ArfOverSemigroups</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X8052BCE67CC2472F">8.2-11 IsArfIrreducible</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap8_mj.html#X848E5559867D2D81">8.2-12 DecomposeIntoArfIrreducibles</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap8_mj.html#X7E6D857179E5BF1B">8.3 <span class="Heading">
                     Saturated numerical semigroups
@@ -465,6 +478,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X86062FCA85A51870">9.1-6 RFMatrices</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X86D58E0084CFD425">9.1-7 DenumerantOfElementInNumericalSemigroup</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X801DA4247A0BEBDA">9.1-8 DenumerantFunction</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X7D91A9377DAFAE35">9.1-9 DenumerantIdeal</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9_mj.html#X846FEE457D4EC03D">9.2 <span class="Heading">
         Invariants based on lengths
@@ -592,6 +606,13 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7EE8528484642CEE">10.2-8 GeneratorsModule_Global</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X836D31F787641C22">10.2-9 GeneratorsKahlerDifferentials</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7A04B8887F493733">10.2-10 IsMonomialNumericalSemigroup</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X84C670E1826F8B92">10.3 <span class="Heading">
+		Semigroups and Legendrian curves
+	</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7980A7CE79F09A89">10.3-1 LegendrianGenericNumericalSemigroup</a></span>
 </div></div>
 </div>
 <div class="ContChap"><a href="chap11_mj.html#X7D92A1997D098A00">11 <span class="Heading">
