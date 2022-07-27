@@ -1360,3 +1360,35 @@ function(p,k)
 
     return e;
 end);
+
+##################################################################
+##
+#F LegendrianGenericNumericalSemigroup(n,m)
+## n and m are coprime integers with m>=2n+1. The output is the 
+## semigroup of a generic element in the class of irreducible 
+## Legendrian singularities with equisingularity equial to the 
+## topological type of y^n=x^m. 
+################################################################
+InstallGlobalFunction(LegendrianGenericNumericalSemigroup,
+function(n,m)
+    local gamma, i, ni, wi, c, s, li, smg;
+
+    if not(IsPosInt(n) and IsPosInt(m) and Gcd(n,m)=1 and m>2*n) then
+        Error("The arguments are two positive coprime integers such that the second is larger than twice the first");
+    fi;
+
+    s:=NumericalSemigroup(n,m-n);
+    c:=Conductor(s);
+    gamma:=MultipleOfNumericalSemigroup(NumericalSemigroup(1),n,c);
+    i:=0;
+    while(i<>m-n) do
+        i:=Maximum(Difference(s,gamma));
+        smg:=SmallElements(gamma);
+        li:=Difference([i..Conductor(gamma)], smg);
+        ni:=Minimum(NrRestrictedPartitions(i,[n,m,m-n]),Length(li));
+        wi:=li[ni];
+        gamma:=NumericalSemigroupBySmallElements(Union(smg,[i..wi]));
+    od;
+
+    return gamma;
+end);

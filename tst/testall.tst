@@ -475,7 +475,9 @@ gap> x:=Indeterminate(Rationals,1);; SetName(x,"x");
 gap> y:=Indeterminate(Rationals,2);; SetName(y,"y");
 gap> CurveAssociatedToDeltaSequence([3,2]);
 y^3-x^2
-
+gap> s:=LegendrianGenericNumericalSemigroup(5,11);;
+gap> SmallElements(s);
+[ 0, 5, 6, 10, 11, 12, 13, 15 ]
 
 # good semigroups
 

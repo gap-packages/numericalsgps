@@ -195,3 +195,13 @@ DeclareOperation("CyclotomicExponentSequence",[IsNumericalSemigroup, IsPosInt]);
 ## [C-GS-HP-M]
 ##################################################################
 DeclareOperation("WittCoefficients",[IsUnivariatePolynomial, IsPosInt]);
+
+##################################################################
+##
+#F LegendrianGenericNumericalSemigroup(n,m)
+## n and m are coprime integers with m>=2n+1. The output is the 
+## semigroup of a generic element in the class of irreducible 
+## Legendrian singularities with equisingularity equial to the 
+## topological type of y^n=x^m. 
+################################################################
+DeclareGlobalFunction("LegendrianGenericNumericalSemigroup");
