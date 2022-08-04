@@ -540,7 +540,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasSmallElements],10,
+        [IsInt,IsNumericalSemigroup and HasSmallElements],20,
         function(n,S)
     local s;
     if n=0 then
@@ -553,7 +553,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasAperyList],
+        [IsInt,IsNumericalSemigroup and HasAperyList],10,
         function(n,S)
     local   ap,  m;
 
@@ -572,7 +572,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasFundamentalGaps],
+        [IsInt,IsNumericalSemigroup and HasFundamentalGaps],10,
         function(n,S)
     local   f;
 
@@ -586,7 +586,7 @@ end);
 InstallMethod( BelongsToNumericalSemigroup,
         "To test whether an integer belongs to a numerical semigroup",
         true,
-        [IsInt,IsNumericalSemigroup and HasModularConditionNS],
+        [IsInt,IsNumericalSemigroup and HasModularConditionNS],15,
         function(n,S)
     local a,b;
     if n=0 then
