@@ -673,21 +673,27 @@ InstallMethod( BelongsToNumericalSemigroup,
   fi;
 
   ##########################
-  # the desperate method
-  belongs:=function(x,gen)
-    if gen=[] then
-            return false;
-    fi;
-
-    if x=0 then
-            return true;
-    fi;
-
-    if x<0 then
-            return false;
-    fi;
-
-    return belongs(x-gen[1],gen) or belongs(x,gen{[2..Length(gen)]});
+  # the desperate method, inspired in the code of NrRestrictedPartitions
+  # the old version caused some recursion depth problems
+  belongs:=function(n,set)
+    local p,m,l;
+    p := [];
+    for m  in [1..n+1]  do
+	if (m-1) mod set[1] = 0  then
+	    p[m] := 1;
+	else
+	    p[m] := 0;
+	fi;
+    od;
+    for l  in set{ [2..Length(set)] }  do
+	for m  in [l+1..n+1]  do
+	    p[m] := p[m] + p[m-l];
+	od;
+	if p[n+1]>0 then
+	    return true;
+	fi;
+    od;
+    return p[n+1]<>0;
   end;
 
   return belongs(n,gen);
