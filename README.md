@@ -35,7 +35,7 @@ For the full list of contributors (and contributions), please refer to  to the [
 
 Installation
 ------------
-This package consists only of GAP code, so for its installation please refer to the [GAP manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html#X82473E4B8756C6CD).
+This package consists only of GAP code, so for its installation please refer to the [GAP manual](https://docs.gap-system.org/doc/ref/chap76.html#X82473E4B8756C6CD).
 
 
 Acknowledgements and funding
