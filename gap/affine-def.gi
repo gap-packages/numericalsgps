@@ -1278,12 +1278,12 @@ end);
 
 #############################################################################
 ##
-#M  ViewString(S)
+#M  String(S)
 ##
 ##  This method for affine semigroups.
 ##
 #############################################################################
-InstallMethod( ViewString, "Displays an Affine Semigroup", [IsAffineSemigroup],
+InstallMethod( String, "String for Affine Semigroup", [IsAffineSemigroup],
   function( S )
   local ed;
   if HasMinimalGenerators(S) then
@@ -1307,12 +1307,12 @@ end);
 
 #############################################################################
 ##
-#M  String(S)
+#M  ViewString(S)
 ##
 ##  This method for affine semigroups.
 ##
 #############################################################################
-InstallMethod(String,[IsAffineSemigroup],ViewString);
+InstallMethod(ViewString,[IsAffineSemigroup],String);
 
 #############################################################################
 ##

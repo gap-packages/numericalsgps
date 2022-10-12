@@ -541,12 +541,12 @@ end);
 
 #############################################################################
 ##
-#M  ViewString(S)
+#M  String(S)
 ##
 ##  This method for numerical semigroups.
 ##
 #############################################################################
-InstallMethod( ViewString,
+InstallMethod( String,
         "displays a Numerical Semigroup",
         [IsNumericalSemigroup],
         function( S )
@@ -567,12 +567,12 @@ end);
 
 #############################################################################
 ##
-#M  String(S)
+#M  ViewString(S)
 ##
 ##  This method for numerical semigroups.
 ##
 #############################################################################
-InstallMethod(String,[IsNumericalSemigroup],ViewString);
+InstallMethod(ViewString,[IsNumericalSemigroup],String);
 
 #############################################################################
 ##
