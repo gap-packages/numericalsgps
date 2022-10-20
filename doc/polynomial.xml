@@ -375,7 +375,7 @@ gap> GeneratorsModule_Global(A,M);
 
 
 		<ManSection>
-        <Func Arg="A,M" Name="GeneratorsKahlerDifferentials"></Func>
+        <Func Arg="A" Name="GeneratorsKahlerDifferentials"></Func>
         <Description>
 					<A>A</A> is a list of polynomials in the same variable. The output is
 				 	<A>GeneratorsModule_Global(A,M)</A>, with <A>M</A> the set of derivatives of the elements in <A>A</A>.
