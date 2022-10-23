@@ -260,7 +260,7 @@ And one with circo engine
 
 
 <ManSection>
-  <Func Name="DotSplash" Arg="[dots]"/>
+  <Func Name="DotSplash" Arg="dots..."/>
   <Description>
    Launches a browser and visualizes the dots diagrams provided as arguments. It outputs the html page displayed as a string, and prints the location of the temporary file that contains it.
   </Description>
