@@ -195,6 +195,9 @@ InstallMethod(AperyList,
 
     v := MinimalGeneratingSystemOfNumericalSemigroup(S);
     n := Length(v);
+    if Multiplicity(S) = 1 then
+        return [0];
+    fi;
     M := MonomialIdeal(v);
     msm := MaximalStandardMonomials(M,[],Zero([1 .. n-1]),1,[]);
     L := [];
