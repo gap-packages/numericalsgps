@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Section>
-  <Heading>Intersections, quotients, dilatations, numerical duplications and multiples by integers</Heading>
+  <Heading>Intersections, sums, quotients, dilatations, numerical duplications and multiples by integers</Heading>
 
 We provide functions to build numerical semigroups from others by means of intersections, quotients, multiples and related constructions.
 
@@ -29,6 +29,22 @@ true
 ]]></Example>
     </Description>
   </ManSection>
+
+  <ManSection>
+    <Oper Name="\+" Arg="S, T" Label="for numerical semigroups"/>
+    <Description>
+      <A>S</A> and <A>T</A>
+      are numerical semigroups. Computes the sum of <A>S</A> and <A>T</A>
+      (which is a numerical semigroup).
+      <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,9);;
+gap> t:=NumericalSemigroup(6,7);;
+gap> MinimalGenerators(s+t);
+[ 4, 6, 7, 9 ]
+]]></Example>
+    </Description>
+  </ManSection>
+
 
   <ManSection>
     <Func Name="QuotientOfNumericalSemigroup" Arg="S, n"></Func>

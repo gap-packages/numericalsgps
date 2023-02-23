@@ -1084,6 +1084,11 @@ gap> SmallElements(last);
 gap> IntersectionOfNumericalSemigroups(S,T) = Intersection(S,T);
 true
 
+gap> s:=NumericalSemigroup(4,9);;
+gap> t:=NumericalSemigroup(6,7);;
+gap> MinimalGenerators(s+t);
+[ 4, 6, 7, 9 ]
+
 gap> s:=NumericalSemigroup(3,29);
 <Numerical semigroup with 2 generators>
 gap> SmallElementsOfNumericalSemigroup(s);

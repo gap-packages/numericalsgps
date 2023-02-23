@@ -119,6 +119,20 @@ InstallGlobalFunction(IntersectionOfNumericalSemigroups, function(S,T)
     return NumericalSemigroupBySmallElements(Intersection(R,[0..g+1]));
 end);
 
+#############################################################################
+##
+#O + for numerical semigroups
+##
+#############################################################################
+InstallMethod(\+,"for numerical semigroups",[IsNumericalSemigroup,IsNumericalSemigroup],
+    function(S,T)
+    local msgS,msgT;
+
+    msgS:=MinimalGenerators(S);
+    msgT:=MinimalGenerators(T);
+    return NumericalSemigroup(Union(msgS,msgT));
+end);
+
 
 #############################################################################
 ##
