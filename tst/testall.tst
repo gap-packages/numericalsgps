@@ -575,6 +575,10 @@ gap> t := NumericalSemigroup("gaps",g);;
 gap> s=t;
 true
 
+gap> s:=FiniteComplementIdealExtension([0,2],[1,1],[3,0]);;
+gap> MinimalGenerators(s);
+[ [ 0, 3 ], [ 1, 1 ], [ 0, 2 ], [ 3, 0 ], [ 2, 1 ], [ 1, 2 ], [ 3, 1 ], [ 5, 0 ], [ 4, 0 ] ]
+
 # gap> h := [ 1, 2, 5, 7, 8, 10, 13, 16 ];;
 # gap> NumericalSemigroupByGaps(h);
 # Error, The argument does not represent the gaps of a numerical semigroup called

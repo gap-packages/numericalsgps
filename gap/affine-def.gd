@@ -211,3 +211,16 @@ DeclareSynonymAttr("IsFullAffineSemigroup",IsFull);
 ##
 #############################################################################
 DeclareGlobalFunction("AsAffineSemigroup");
+
+#############################################################################
+##
+#F  FiniteComplementIdealExtension(l)
+##
+##  The argument is a list of lists of non-negative integers, which represent
+##  elements in N^n. Returns affine semigroup {0} union (l+N^n) if this has 
+##  finitely many gaps, and an error otherwise (in this setting there are 
+##  infinitely many minimal generators and the monoid is not an affine 
+##  semigroup) 
+##
+#############################################################################
+DeclareGlobalFunction( "FiniteComplementIdealExtension" );

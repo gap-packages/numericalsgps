@@ -1422,3 +1422,55 @@ InstallGlobalFunction(AsAffineSemigroup, function(s)
     return AffineSemigroup(List(msg, x->[x]));
 
 end);
+
+#############################################################################
+##
+#F  FiniteComplementIdealExtension(l)
+##
+##  The argument is a list of lists of non-negative integers, which represent
+##  elements in N^n. Returns affine semigroup {0} union (l+N^n) if this has 
+##  finitely many gaps, and an error otherwise (in this setting there are 
+##  infinitely many minimal generators and the monoid is not an affine 
+##  semigroup) 
+##
+#############################################################################
+InstallGlobalFunction(FiniteComplementIdealExtension, function(arg)
+  local a, h, gaps, support,d, b, g, box, gens;
+
+  support:=function(l)
+      return Filtered([1..Length(l)], i->l[i]<>0);
+  end;
+
+  box:=function(a,b)
+      return a+Cartesian(List([1..Length(a)], i->[0..b[i]-a[i]]));
+  end;
+
+  if Length(arg) = 1 then
+    gens := Set(arg[1]);
+  else
+    gens := Set(arg);
+  fi;
+
+  if not IsRectangularTable(gens) then
+    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+  elif not ForAll(gens, l -> ForAll(l,x -> (IsPosInt(x) or x = 0))) then
+    Error("The arguments must be lists of non negative integers with the same length, or a list of such lists");
+  fi;
+
+  h:=Filtered(gens, g->Filtered(gens, gg->ForAll(g-gg,x->x>=0))=[g]);
+  d:=Length(h[1]);
+  if not(ForAll([1..d], i->ForAny(h, g->support(g)=[i]))) then
+      Error("These elements do not generate a zero dimensional ideal");
+  fi;
+  b:=List([1..d], i->Filtered(h, g->support(g)=[i])[1][i]);
+  gaps:=Cartesian(List(b,i->[0..i-1]));
+  for g in h do
+      gaps:=Difference(gaps,box(g,b));
+  od;
+  gaps:=Difference(gaps,[Zero(h[1])]);
+  #a:=AffineSemigroupByGaps(Difference(gaps,[Zero(h[1])]));
+  a:=Objectify(AffineSemigroupsType,rec());
+  SetGaps(a,gaps);
+  SetDimension(a,d);
+  return a;
+end);

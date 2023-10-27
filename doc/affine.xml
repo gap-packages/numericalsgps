@@ -116,14 +116,14 @@ false
   </Description>
 </ManSection>
 
-                <ManSection>
-                <Func Name="AffineSemigroup" Arg="[String,] List" Label="by gaps"/>
-                    <Func Name="AffineSemigroupByGaps" Arg="List"/>
-                    <Description>
-		      In the first form, <C>String</C>  must be <C>"gaps"</C> and <C>List</C> must be a list, not a sequence of individual elements.
-		      <P/>
-		      In the second form, <C>List</C> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup with gaps <C>List</C>. If the given set is not a set of gaps of a numerical semigroup, then the function raises an error.
-			<Example><![CDATA[
+<ManSection>
+  <Func Name="AffineSemigroup" Arg="[String,] List" Label="by gaps"/>
+  <Func Name="AffineSemigroupByGaps" Arg="List"/>
+  <Description>
+    In the first form, <C>String</C>  must be <C>"gaps"</C> and <C>List</C> must be a list, not a sequence of individual elements.
+    <P/>
+    In the second form, <C>List</C> is a list of n-tuples of nonnegative integers, if the semigroup to be created is n-dimensional. The n-tuples may be given as a list or by a sequence of individual elements. The output is the affine semigroup with gaps <C>List</C>. If the given set is not a set of gaps of a numerical semigroup, then the function raises an error.
+<Example><![CDATA[
 gap> gaps := [[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],[5,0,0,0]];;
 gap> a1 := AffineSemigroup("gaps", gaps );
 <Affine semigroup>
@@ -139,6 +139,22 @@ gap> Set(last);
 ]]></Example>
   </Description>
 </ManSection>
+
+<ManSection>
+  <Func Name="FiniteComplementIdealExtension" Arg="List"/>
+  <Description>
+  <C>List</C> is a list or sequence of <M>n</M>-tuples of nonnegative integers. If the monoid <M>M=\{0\}\cup (\mathtt{List}+\mathbb{N}^n)</M> is an affine semigroup (equivalently, <M>M</M> has finitely many gaps), then the output is <M>M</M>. Otherwise, an error is raised.
+<Example><![CDATA[
+gap> s:=FiniteComplementIdealExtension([[0,2],[1,1],[3,0]]);
+<Affine semigroup>
+gap> MinimalGenerators(s);
+[ [ 0, 3 ], [ 1, 1 ], [ 0, 2 ], [ 3, 0 ], [ 2, 1 ], [ 1, 2 ], [ 3, 1 ], [ 5, 0 ], [ 4, 0 ] ]
+gap> s:=FiniteComplementIdealExtension([0,2],[1,1],[3,0]);
+<Affine semigroup>
+]]></Example>
+  </Description>
+</ManSection>
+
 
 <ManSection>
   <Attr Name="Gaps" Arg="S" Label="for affine semigroup"/>
