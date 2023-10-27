@@ -53,7 +53,7 @@ Persons := [
 # provide such a record for each author and/or maintainer ...
 
 rec(
-  LastName      := "Cisco",
+  LastName      := "Cisto",
   FirstNames    := "Carmelo",
   IsAuthor      := false,
   IsMaintainer  := false,

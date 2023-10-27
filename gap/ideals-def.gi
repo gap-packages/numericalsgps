@@ -931,7 +931,8 @@ function(I)
   fi;
 
   r:=ReductionNumberIdealNumericalSemigroup(I);
-  return (r+1)*I-r*I;
+  S:=AmbientNumericalSemigroupOfIdeal(I);
+  return Intersection(0+S,(r+1)*I-r*I);
 end);
 
 InstallMethod(RatliffRushClosure,
@@ -951,16 +952,16 @@ InstallMethod(RatliffRushClosure,
 InstallGlobalFunction(RatliffRushNumberOfIdealOfNumericalSemigroup,
 function(I)
 
-  local n, J, Jn, rrc;
+  local n, S, rrc;
 
   if not IsIdealOfNumericalSemigroup(I) then
       Error("The argument must be an ideal.");
   fi;
 
   rrc:=RatliffRushClosureOfIdealOfNumericalSemigroup(I);
-  J:=I-0*I;
+  S:=AmbientNumericalSemigroupOfIdeal(I);
   n:=0;
-  while rrc<>(n+1)*I-n*I do
+  while rrc<>Intersection(0+S,(n+1)*I-n*I) do
     n:=n+1;
   od;
 

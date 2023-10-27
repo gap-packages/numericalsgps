@@ -832,16 +832,17 @@ gap> SmallElementsOfNumericalSemigroup(last);
     <Oper Arg="I" Name="RatliffRushNumber"/>
                     <Func Arg="I" Name="RatliffRushNumberOfIdealOfNumericalSemigroup"></Func>
                     <Description>
-                        <A>I</A> is an ideal of a numerical semigroup.
+                        <A>I</A> is an ideal of a numerical semigroup <M>S</M>.
                         The output is the least integer
-                        such that  <M>(n+1)<A>I</A>-n<A>I</A></M> is the Ratliff-Rush closure of <A>I</A> (see <Cite Key="DA-G-H"></Cite>).
+                        such that  <M>S\cap (n+1)<A>I</A>-n<A>I</A></M> is the Ratliff-Rush closure of <A>I</A> (see <Cite Key="DA-G-H"></Cite>).
 
                         <Example><![CDATA[
-gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
-gap> RatliffRushNumber(I);
-1
-gap> RatliffRushNumberOfIdealOfNumericalSemigroup(I);
-1
+gap> s:=NumericalSemigroup([9..17]);;
+gap> i:=[9,10,12]+s;;
+gap> RatliffRushNumber(i);
+3
+gap> ReductionNumber(i);
+4
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -851,17 +852,14 @@ gap> RatliffRushNumberOfIdealOfNumericalSemigroup(I);
     <Oper Arg="I" Name="RatliffRushClosure"/>
                     <Func Arg="I" Name="RatliffRushClosureOfIdealOfNumericalSemigroup"></Func>
                     <Description>
-                        <A>I</A> is an ideal of a numerical semigroup.
-                        The output is the Ratliff-Rush closure of <A>I</A>:  <M>\bigcup_{n\in \mathbb{N}}(n+1)<A>I</A>-n<A>I</A></M> (see <Cite Key="DA-G-H"></Cite>).
+                        <A>I</A> is an ideal of a numerical semigroup <M>S</M>.
+                        The output is the Ratliff-Rush closure of <A>I</A>:  <M>S\cap \bigcup_{n\in \mathbb{N}}(n+1)<A>I</A>-n<A>I</A></M> (see <Cite Key="DA-G-H"></Cite>).
 
                         <Example><![CDATA[
-gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
-gap> RatliffRushClosure(I);
-<Ideal of numerical semigroup>
-gap> MinimalGenerators(last);
-[ 0, 2, 4 ]
-gap> RatliffRushClosureOfIdealOfNumericalSemigroup(I) = RatliffRushClosure(I);
-true
+gap> s:=NumericalSemigroup(4,5,6,7);;
+gap> i:=[4,5]+s;;
+gap> MinimalGenerators(RatliffRushClosure(i));
+[ 4, 5, 6, 7 ]
 ]]></Example>
                     </Description>
                 </ManSection>
@@ -874,11 +872,9 @@ true
                         The output is the least <M>n</M> such that the Ratliff-Rush closure of <M>m<A>I</A></M> equals <M>m<A>I</A></M> for all <M>m\ge n</M> (see <Cite Key="DA-G-H"></Cite>).
 
                         <Example><![CDATA[
-gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
-gap> AsymptoticRatliffRushNumber(I);
-2
-gap> AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);
-2
+gap> i:=[4,5]+NumericalSemigroup([4..7]);;
+gap> AsymptoticRatliffRushNumber(i);
+3
 ]]></Example>
                     </Description>
                 </ManSection>

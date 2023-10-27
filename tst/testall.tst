@@ -1678,25 +1678,19 @@ gap> SmallElementsOfNumericalSemigroup(last);
 [ 0, 5, 10, 12, 15, 17, 20, 22, 24, 25, 27, 29, 30, 32, 34, 35, 36, 37, 39,
   40, 41, 42, 44 ]
 
-gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
-gap> RatliffRushNumber(I);
-1
-gap> RatliffRushNumberOfIdealOfNumericalSemigroup(I);
-1
+gap> s:=NumericalSemigroup([9..17]);;
+gap> i:=[9,10,12]+s;;
+gap> RatliffRushNumber(i);
+3
 
-gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
-gap> RatliffRushClosure(I);
-<Ideal of numerical semigroup>
-gap> MinimalGenerators(last);
-[ 0, 2, 4 ]
-gap> RatliffRushClosureOfIdealOfNumericalSemigroup(I) = RatliffRushClosure(I);
-true
+gap> s:=NumericalSemigroup(4,5,6,7);;
+gap> i:=[4,5]+s;;
+gap> MinimalGenerators(RatliffRushClosure(i));
+[ 4, 5, 6, 7 ]
 
-gap> I:=[0,2]+NumericalSemigroup(6,9,11);;
-gap> AsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);
-2
-gap> AsymptoticRatliffRushNumber(I);
-2
+gap> i:=[4,5]+NumericalSemigroup([4..7]);;
+gap> AsymptoticRatliffRushNumber(i);
+3
 
 gap> s:=NumericalSemigroup(3,5);;
 gap> MultiplicitySequence(s);
