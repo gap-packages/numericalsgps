@@ -1459,6 +1459,9 @@ InstallGlobalFunction(FiniteComplementIdealExtension, function(arg)
 
   h:=Filtered(gens, g->Filtered(gens, gg->ForAll(g-gg,x->x>=0))=[g]);
   d:=Length(h[1]);
+  if h=[ListWithIdenticalEntries(d,0)] then
+    return AffineSemigroup(IdentityMat(d));
+  fi;
   if not(ForAll([1..d], i->ForAny(h, g->support(g)=[i]))) then
       Error("These elements do not generate a zero dimensional ideal");
   fi;
