@@ -32,27 +32,29 @@ InstallGlobalFunction(DotSplash, function(dots...)
   
   # HTML header
   html := "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n <title>Graph Viz</title>\n";
-  html := Concatenation(html, "<style>\n .content {\n display: inline-block;\n text-align: center;\n vertical-align: top;\n}\n</style></head>\n<body>\n<script  src=\"http://mdaines.github.io/viz.js/bower_components/viz.js/viz.js\">\n</script>\n");
+  html := Concatenation(html, "<style>\n .content {\n display: inline-block;\n text-align: center;\n vertical-align: top;\n}\n</style></head>\n<body>\n<script  src=\"https://github.com/mdaines/viz-js/releases/download/release-viz-3.2.3/viz-standalone.js\">\n</script>\n");
   #html:=Concatenation(html, "<style>\n .content {\n display: inline-block;\n text-align: center;\n vertical-align: top;\n}\n</style></head>\n<body>\n<script  src=\"viz.js\">\n</script>\n");
   
-  # Assign an ID to each graph
-  for i in [1..Length(dots)] do
-    line := Concatenation("<span id=", str(i), " class='content'>Graph to be displayed here (internet connection required) </span>\n");
-    html := Concatenation(html, line);
-  od;
+  # # Assign an ID to each graph
+  # for i in [1..Length(dots)] do
+  #   line := Concatenation("<span id=", str(i), " class='content'>Graph to be displayed here (internet connection required) </span>\n");
+  #   html := Concatenation(html, line);
+  # od;
   
   # Draw each graph
-  line := "<script>\n";
+  line := "<script>\n Viz.instance().then(function(viz) {\n";
   html := Concatenation(html, line);
   i := 1;
   for digraph in dots do
-    line := Concatenation(" document.getElementById(", str(i), ").innerHTML =Viz('", NormalizedWhitespace(digraph), "', {engine: \"", DotNSEngine, "\"});\n");
+    line := Concatenation(" document.body.appendChild(viz.renderSVGElement('", NormalizedWhitespace(digraph), "', {engine: \"", DotNSEngine, "\"}));\n");
+    html := Concatenation(html, line);
+    line := " document.body.appendChild(document.createElement('hr'));\n";
     html := Concatenation(html, line);
     i := i+1;
   od;
   
   # End the HTML code
-  line := "</script>\n</body>\n</html>";
+  line := "});\n</script>\n</body>\n</html>";
   html := Concatenation(html, line);
   
   # Draw the graph
@@ -62,7 +64,7 @@ InstallGlobalFunction(DotSplash, function(dots...)
   if ARCH_IS_MAC_OS_X() then
     Exec("open ", temp_file);
   elif ARCH_IS_WINDOWS() then
-    Exec("start firefox ", temp_file);
+    Exec("start ", temp_file);
   elif ARCH_IS_UNIX() then
     Exec("xdg-open ", temp_file);
   fi;
