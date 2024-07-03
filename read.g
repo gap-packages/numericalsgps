@@ -17,7 +17,6 @@
 #R  Read the installation files.
 ##
 #############################################################################
-ReadPackage( "numericalsgps", "gap/infolevelnumsgps" );
 ReadPackage( "numericalsgps", "gap/preliminaries.gi" );
 ReadPackage( "numericalsgps", "gap/numsgp-def.gi" );
 ReadPackage( "numericalsgps", "gap/elements.gi" );
