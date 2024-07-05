@@ -330,6 +330,13 @@ end);
 InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,function(M,m)
     local NSgpsWithMultiplicityRatioAndMaximumPrimitive, LIST, coprime_mM, Mmodm, nonPrims, PossiblePrims, iter, Y, prims, r, coprime_mrM, s, lcombs, allowable, Mmodr, listsprim_mr, aux;
 
+    if M < m then
+       Error("The multiplicity must not exceed the maximum primitive");
+    elif M=1 and m=1 then
+       return
+       [[1]];   
+    fi;
+
     Info(InfoMaxPrim,1,"multiplicity=",m);
     ##
     ##
@@ -343,6 +350,7 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
         Info(InfoMaxPrim,2,"ratio=",r);
         listsprim := []; # list used to store the semigroups (through its minimal generating sets)
         if coprime_mrM then
+#        if Gcd(m,r,M)=1 then
             for k in [1..m-3] do # the embedding dimension of a numerical semigroup does not exceed the multiplicity, thus the sets of primitives (other than m, r and M) are among the subsets of 'allowable' with at most m-3 elements.
             #subsets := Combinations(allowable,k);
                 iter := IteratorOfCombinations(allowable,k); # the direct use of 'Combinations' (rather than the use of an iterator) would require too much memory for large M (M > 50, say)
@@ -377,6 +385,7 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
                 od;
             od;
         fi;
+
         return listsprim;
     end;
     ##
@@ -477,7 +486,7 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
             else
                 coprime_mrM := false;
             fi;
-            ##### The cases where m+r >= M-1 can be treated separately in mor efficient way (experimental: efficiency increases ~ 8%)
+            ##### The cases where m+r >= M-1 can be treated separately in a more efficient way (experimental: efficiency increases ~ 8%)
             if m+r = M-1 then
                 iter := IteratorOfCombinations(Intersection([r+1..M-2],PossiblePrims));
                 if coprime_mrM then
@@ -488,7 +497,8 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
                 else
                     for Y in iter do
                         if Gcd(Union([m,r,M],Y)) = 1 then
-                            prims := Union([m,M],Y);
+##                            prims := Union([m,M],Y);
+                            prims := Union([m,r,M],Y);
                             Add(LIST,prims);
                         fi;
                     od;
@@ -503,7 +513,8 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
                 else
                     for Y in iter do
                         if Gcd(Union([m,r,M],Y)) = 1 then
-                            prims := Union([m,M],Y);
+##                            prims := Union([m,M],Y);
+                            prims := Union([m,r,M],Y);
                             Add(LIST,prims);
                         fi;
                     od;
