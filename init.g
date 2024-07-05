@@ -34,6 +34,8 @@ ReadPackage( "numericalsgps", "gap/numsgps-utils.gd" );
 ReadPackage( "numericalsgps", "gap/polynomials.gd" );
 ReadPackage( "numericalsgps", "gap/other-families-ns.gd" );
 ##
+ReadPackage( "numericalsgps", "gap/databases.gd" );
+##
 ## Good semigroups N^2
 ##
 ReadPackage( "numericalsgps", "gap/good-semigroups.gd" );

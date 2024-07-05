@@ -316,6 +316,240 @@ InstallGlobalFunction(NumericalSemigroupsWithFrobeniusNumber, function(F)
   od;
   return(L);
 end);
+
+#############################################################################
+
+#############################################################################
+##
+#F  NumericalSemigroupsWithMaxPrimitiveAndMultiplicity(M,m)
+##
+##  Computes the set of numerical semigroups with multipliciy m and maximum
+## primitive M. The algorithm is based on ongoinw work by M. Delgado and Neeraj Kumar
+##
+############################################################################# 
+InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,function(M,m)
+    local NSgpsWithMultiplicityRatioAndMaximumPrimitive, LIST, coprime_mM, Mmodm, nonPrims, PossiblePrims, iter, Y, prims, r, coprime_mrM, s, lcombs, allowable, Mmodr, listsprim_mr, aux;
+
+    Info(InfoMaxPrim,1,"multiplicity=",m);
+    ##
+    ##
+    #### local function
+    ## NSgpsWithMultiplicityRatioAndMaximumPrimitive computes the numerical semigroups with fixed multiplicity (m), second largest primitive (r) and maximum primitive (M)
+    ## (Note that the embedding dimension of the computed numerical semigroups is between 4 and m (the dimension 3 case was already treated). The strategy used is to loop through the possible embedding dimensions)
+    ##
+    NSgpsWithMultiplicityRatioAndMaximumPrimitive := function() # m, r and M are used; it is also used a set of allowable primitives (other than m, r and M)
+        local listsprim, k, A, union, mingens, num;
+    
+        Info(InfoMaxPrim,2,"ratio=",r);
+        listsprim := []; # list used to store the semigroups (through its minimal generating sets)
+        if coprime_mrM then
+            for k in [1..m-3] do # the embedding dimension of a numerical semigroup does not exceed the multiplicity, thus the sets of primitives (other than m, r and M) are among the subsets of 'allowable' with at most m-3 elements.
+            #subsets := Combinations(allowable,k);
+                iter := IteratorOfCombinations(allowable,k); # the direct use of 'Combinations' (rather than the use of an iterator) would require too much memory for large M (M > 50, say)
+                for A in iter do
+                    if Length(Set(A,x->x mod m)) = k then # there is no more than one minimal generator per residue class mod m, thus A must have some element in exactly k residue classes
+                        union := Union([m,r,M],A);
+                         #if NrRestrictedPartitions(M,union)=1 then # guarantees M to be a primitive (slightly slower than testing below)
+                        s := NumericalSemigroup(union);
+                        mingens := MinimalGenerators(s);
+                        if M in mingens then
+                            AddSet(listsprim,mingens); # this step is used to discard repetitions
+                        fi;
+                    fi;
+                od;
+            od;
+        else
+            for k in [1..m-3] do # the embedding dimension of a numerical semigroup does not exceed the multiplicity, thus the sets of primitives (other than m, r and M) are among the subsets of 'allowable' with at most m-3 elements.
+            #subsets := Combinations(allowable,k);
+                iter := IteratorOfCombinations(allowable,k); # the direct use of 'Combinations' (rather than the use of an iterator) would require too much memory for large M (M > 50, say)
+                for A in iter do
+                    if Length(Set(A,x->x mod m)) = k then # there is no more than one minimal generator per residue class mod m, thus A must have some element in exactly k residue classes
+                        union := Union([m,r,M],A);
+                        # if NrRestrictedPartitions(M,union)=1 then # guarantees M to be a primitive (slightly slower than testing below)
+                        if Gcd(union) = 1 then
+                            s := NumericalSemigroup(union);
+                            mingens := MinimalGenerators(s);
+                            if M in mingens then                            
+                                AddSet(listsprim,mingens); # this step is used to discard repetitions
+                            fi;
+                        fi;
+                    fi;
+                od;
+            od;
+        fi;
+        return listsprim;
+    end;
+    ##
+    # end of local function
+    ######
+    ##
+    LIST := [];
+    coprime_mM := false;
+    ##
+    #####
+    ## Some trivial cases
+    if (M = 2) or (m > M) or (M mod m = 0) then # some impossible cases
+        return LIST;
+    fi;
+    #
+    if (M = 1) and (m = 1) then # The maxprim 1 case
+        Add(LIST,[1]);
+        return LIST;
+    fi;
+    if m = 2 then # the multiplicity 2 case
+        if (M mod m = 1) then 
+            Add(LIST,[m,M]);
+        fi;
+        return LIST;
+    fi;
+    ######
+    ## Computing a list of possible primitives of some numerical semigroup with multiplicity m and maximum primitive M. It is obtained by discarding some integers in [m+1..M-1] that are "easily" seen no be primitives of any such semigroup.
+ 
+    Mmodm := M mod m; #remainder of the integer division of M by m
+    
+    ## Note that m and M are the only primitives in their residue classes mod m. Furthermore, no divisor of M is primitive.
+    nonPrims := Filtered(Difference([m+1..M-1],DivisorsInt(M)), g -> (g mod m = 0) or (g mod m = Mmodm));
+    PossiblePrims := Difference([m+1..M-1],nonPrims); # preliminary list of integers (other than m and M) that can be primitives
+    ## Cleaning up the preliminary list of possible primitives:
+    PossiblePrims := Filtered(PossiblePrims, g -> NrRestrictedPartitions(M,[m,g])=0); # Recall that M can not be partitioned into a sum of generators, since it is primitive
+    ######
+    ##
+    #####
+    ## The boolean variable coprime_mM aims to avoid the systematic need to compute gcds
+    if Gcd(m,M) = 1 then # note that <m,M> is a numerical semigroup with multiplicity m and maximum primitive M
+        coprime_mM := true;
+    else
+        coprime_mM := false;
+    fi;
+    #####
+
+    ## The various multiplicities present some specificities. In practice, some need considerably more computations than others. The numerical semigroups of max primitive depth 2 and those of multiplicity equal to Int(M/2) or M/2 - 1 can be quickly computed (in practice). The computations for the remaining cases are much slower (unless the multiplicities are very small). These correspond roughly to semigroups of max primitive depth greater than 3.
+    ####
+    ## "large" multiplicity 
+    ####
+    if m > M/2 then # the max primitive depth 2 case 
+        # As the double of m does not belong to [m+1..M-1], any subset Y of [m+1..M-1] consists of primitives (provided that Gcd(Y\cup [m,M])=1)
+        iter := IteratorOfCombinations([m+1..M-1]);
+        if coprime_mM then
+            for Y in iter do
+                prims := Union([m,M],Y);
+                Add(LIST,prims);
+            od;
+        else
+            for Y in iter do
+                prims := Union([m,M],Y);
+                if Gcd(prims) = 1 then
+                    Add(LIST,prims);
+                fi;
+            od;
+        fi;
+    elif m = Int(M/2) then # this case only occurs when M is odd, since otherwise M/2 is a divisor of M
+        # 2m = M-1 is not a primitive; m+1 is not a primitive (observe that Int(M/2)+Int(M/2)+1 = M). Any other integer in [m+1..M-1] is a primitive of some semigroup in A(m,M). In fact, the sum of any two of them is greater than M, and 2m is the only multiple of m in the interval.
+        iter := IteratorOfCombinations([m+2..M-2]);
+        for Y in iter do# # note that m = (M-1)/2, thus gcd(m,M)=1
+            prims := Union([m,M],Y);
+            Add(LIST,prims);
+        od;
+    elif m = M/2 - 1 then # this case only occurs when M is even, since otherwise M/2 is not an integer
+        # 2m=M-2 is not a primitive; m+2 is not a primitive (observe that (m+2 + m) = (M/2+1 +M/2-1 = M); also m+1 is not a primitive (observe that m+1 + m+1 = M/2 + M/2 = M). Any other integer in [m+1..M-1] is a primitive of some semigroup in A(m,M). In fact, the sum of any two of them is greater than M, and 2m is the only multiple of m in the interval.
+        iter := IteratorOfCombinations(Difference([m+3..M-1],[M-2]));
+        if coprime_mM then
+            for Y in iter do
+                prims := Union([m,M],Y);
+                Add(LIST,prims);
+           od;
+        else
+            for Y in iter do
+                if Gcd(Union([m,M],Y)) = 1 then
+                    prims := Union([m,M],Y);
+                    Add(LIST,prims);
+               fi;
+            od;
+        fi;
+    else # semigroups of small multiplicity
+        if coprime_mM then 
+            Add(LIST,[m,M]);
+        fi;
+        ##
+        for r in PossiblePrims do # loop through the possible primitives (other than m and M)
+            if Gcd(m,r,M) = 1 then ## The boolean variable coprime_mrM aims to avoid the need to compute gcds systematically
+                coprime_mrM := true;
+            else
+                coprime_mrM := false;
+            fi;
+            ##### The cases where m+r >= M-1 can be treated separately in mor efficient way (experimental: efficiency increases ~ 8%)
+            if m+r = M-1 then
+                iter := IteratorOfCombinations(Intersection([r+1..M-2],PossiblePrims));
+                if coprime_mrM then
+                    for Y in iter do
+                        prims := Union([m,r,M],Y);
+                        Add(LIST,prims);
+                    od;
+                else
+                    for Y in iter do
+                        if Gcd(Union([m,r,M],Y)) = 1 then
+                            prims := Union([m,M],Y);
+                            Add(LIST,prims);
+                        fi;
+                    od;
+                fi;
+            elif m+r > M-1 then
+                iter := IteratorOfCombinations(Intersection([r+1..M-1],PossiblePrims));
+                if coprime_mrM then
+                    for Y in iter do
+                        prims := Union([m,r,M],Y);
+                        Add(LIST,prims);
+                    od;
+                else
+                    for Y in iter do
+                        if Gcd(Union([m,r,M],Y)) = 1 then
+                            prims := Union([m,M],Y);
+                            Add(LIST,prims);
+                        fi;
+                    od;
+                fi;
+            else
+            #####
+                Mmodr := M mod r; #remainder of the integer division of M by m
+                ## Producing a list of integers that (besides m, r and M) are allowed to be primitves
+                s := NumericalSemigroup(Union([m,r],[M+1..M+m]));
+                lcombs := ElementsUpTo(s,M+1); #the set of linear combinations with nonnegative integer coefficients of m and r, up to M+1
+                # note that M must not be a linear combination of m and r (otherwise M would not be primitive), but this is guaranteed by the way 'PossiblePrims' have been constructed
+                allowable := Intersection([r+1..M-1],PossiblePrims);
+                allowable := Difference(allowable,Union(lcombs,M-lcombs)); # list of possible primitives other than m, r and M. # Note that linear combinations of m and r can not be primitives. # Note also that M minus such a linear combination were a primitive, then M would not be a primitive.
+                ##
+                if Gcd(m,r,M) = 1 then
+                    Add(LIST,[m,r,M]); 
+                fi;
+                ##
+                if allowable <> [] then
+                    aux := NSgpsWithMultiplicityRatioAndMaximumPrimitive();
+                    listsprim_mr := aux;
+                    Append(LIST,listsprim_mr);
+                fi;
+            fi;            
+        od;
+    fi;
+    return LIST;
+end);
+#############################################################################
+##
+#F  NumericalSemigroupsWithMaxPrimitive(M)
+##
+##  Making use of NumericalSemigroupsWithMaxPrimitiveAndMultiplicity, computes 
+## the set of numerical semigroups with maximum primitiveFrobenius number M.
+##  
+##
+#############################################################################
+InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitive,function(M)
+  local  L, m;
+  L:=[];
+  for m in [1 .. M] do 
+    Append(L,NumericalSemigroupsWithMaxPrimitiveAndMultiplicity(M,m));;
+  od;
+  return L;
+end);
+
 ##############################################################################
 ##
 #F NumericalSemigroupsWithGenus

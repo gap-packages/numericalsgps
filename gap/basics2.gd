@@ -117,3 +117,27 @@ DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumberAndMultiplicity");
 ##
 #############################################################################
 DeclareGlobalFunction("NumericalSemigroupsWithFrobeniusNumber");
+
+
+#############################################################################
+# It is useful to have an Info class that gives information on how the computations are developing
+InfoMaxPrim:=NewInfoClass("InfoMaxPrim");
+#############################################################################
+##
+#F  NumericalSemigroupsWithMaxPrimitiveAndMultiplicity(M,m)
+##
+##  Computes the set of numerical semigroups with multipliciy m and maximum
+## primitive M. The algorithm is based on ongoinw work by M. Delgado and Neeraj Kumar
+##
+############################################################################# 
+DeclareGlobalFunction("NumericalSemigroupsWithMaxPrimitiveAndMultiplicity");
+#############################################################################
+##
+#F  NumericalSemigroupsWithMaxPrimitive(M)
+##
+##  Making use of NumericalSemigroupsWithMaxPrimitiveAndMultiplicity, computes 
+## the set of numerical semigroups with maximum primitiveFrobenius number M.
+##  
+##
+#############################################################################
+DeclareGlobalFunction("NumericalSemigroupsWithMaxPrimitive");

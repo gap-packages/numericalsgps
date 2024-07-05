@@ -69,13 +69,47 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));
                 </ManSection>
 
                 <ManSection>
-                    <Func Arg="f, m" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
+                    <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumber"></Func>
                     <Description>
                         <A>f</A> is an integer. As happens with the function <Ref Func="NumericalSemigroupsWithFrobeniusNumberFG"/>, the output is the 
                         set of numerical semigroups with Frobenius number <A>f</A>. It makes use of <Ref Func="NumericalSemigroupsWithFrobeniusNumberAndMultiplicity"/> to compute the semigroups with the Frobenius number given for all the possible multiplicities.
                         <Example><![CDATA[
 gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
 200
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+
+</Section>
+
+<Section>
+  <Heading> Constructing the set of numerical semigroup with given maximum primitive</Heading>
+
+  Finding the set of all numerical semigroups with a given maximum primitive.
+
+                <ManSection>
+                    <Func Arg="M, m" Name="NumericalSemigroupsWithMaxPrimitiveAndMultiplicity"></Func>
+                    <Description>
+                        <A>M</A> and <A>m</A> are integers. The output is the 
+                        set of numerical semigroups with maximum primitive <A>M</A> and multiplicity <A>m</A>.           
+The algorithm implemented is based on work by M. Delgado and Neeraj Kumar.
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity(15,6));
+27
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="M" Name="NumericalSemigroupsWithMaxPrimitive"></Func>
+                    <Description>
+                        <A>M</A> is an integer. The output is the set of numerical semigroups with maximum primitive <A>M</A>. It makes use of <Ref Func="NumericalSemigroupsWithMaxPrimitiveAndMultiplicity"/> to compute the semigroups with the given maximum primitive for all the possible multiplicities.
+                        <Example><![CDATA[
+gap> NumericalSemigroupsWithMaxPrimitive(5);
+[ [ 2, 5 ], [ 3, 5 ], [ 3 .. 5 ], [ 4, 5 ] ]
+gap> Length(NumericalSemigroupsWithMaxPrimitive(15));
+194
 ]]></Example>          
                     </Description>
                 </ManSection>
