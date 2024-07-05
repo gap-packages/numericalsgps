@@ -1173,7 +1173,10 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));
 28
 
 gap> NumericalSemigroupsWithMaxPrimitive(5);
-[ [ 2, 5 ], [ 3, 5 ], [ 3 .. 5 ], [ 4, 5 ] ]
+[ <Numerical semigroup with 2 generators>, 
+  <Numerical semigroup with 2 generators>, 
+  <Numerical semigroup with 3 generators>, 
+  <Numerical semigroup with 2 generators> ]
 gap> Length(NumericalSemigroupsWithMaxPrimitive(15));
 194
 gap> Length(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity(15,6));

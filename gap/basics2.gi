@@ -386,7 +386,8 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
             od;
         fi;
 
-        return listsprim;
+     return List(listprim, gens -> NumericalSemigroup(gens));
+#       return listsprim;
     end;
     ##
     # end of local function
@@ -398,18 +399,21 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
     #####
     ## Some trivial cases
     if (M = 2) or (m > M) or (M mod m = 0) then # some impossible cases
-        return LIST;
-    fi;
+  #      return LIST;
+     return List(LIST, gens -> NumericalSemigroup(gens));
+   fi;
     #
     if (M = 1) and (m = 1) then # The maxprim 1 case
         Add(LIST,[1]);
-        return LIST;
-    fi;
+ #       return LIST;
+      return List(LIST, gens -> NumericalSemigroup(gens));
+  fi;
     if m = 2 then # the multiplicity 2 case
         if (M mod m = 1) then 
             Add(LIST,[m,M]);
         fi;
-        return LIST;
+      return List(LIST, gens -> NumericalSemigroup(gens));
+#      return LIST;
     fi;
     ######
     ## Computing a list of possible primitives of some numerical semigroup with multiplicity m and maximum primitive M. It is obtained by discarding some integers in [m+1..M-1] that are "easily" seen no be primitives of any such semigroup.
@@ -541,7 +545,8 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
             fi;            
         od;
     fi;
-    return LIST;
+#    return LIST;
+    return List(LIST, gens -> NumericalSemigroup(gens));
 end);
 #############################################################################
 ##
