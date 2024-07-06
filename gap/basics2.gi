@@ -333,8 +333,8 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
     if M < m then
        Error("The multiplicity must not exceed the maximum primitive");
     elif M=1 and m=1 then
-       return
-       [[1]];   
+#       return [[1]];   
+       return [NumericalSemigroup([1])];   
     fi;
 
     Info(InfoMaxPrim,1,"multiplicity=",m);
@@ -386,8 +386,8 @@ InstallGlobalFunction(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity,functio
             od;
         fi;
 
-     return List(listprim, gens -> NumericalSemigroup(gens));
-#       return listsprim;
+#     return List(listsprim, gens -> NumericalSemigroup(gens));
+       return listsprim;
     end;
     ##
     # end of local function
