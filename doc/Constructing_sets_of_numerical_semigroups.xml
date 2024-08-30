@@ -80,6 +80,17 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
                     </Description>
                 </ManSection>
 
+                <ManSection>
+                    <Func Arg="f" Name="NumericalSemigroupsWithFrobeniusNumberPC"></Func>
+                    <Description>
+                      <A>f</A> is an integer. The output is the 
+                        set of numerical semigroups with Frobenius number <A>f</A>. It relies on pre-computed data, which is available for small values of <A>f</A>.
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroupsWithFrobeniusNumberPC(15));
+200
+]]></Example>          
+                    </Description>
+                </ManSection>
 
 </Section>
 
@@ -112,6 +123,17 @@ gap> NumericalSemigroupsWithMaxPrimitive(5);
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 2 generators> ]
 gap> Length(NumericalSemigroupsWithMaxPrimitive(15));
+194
+]]></Example>          
+                    </Description>
+                </ManSection>
+
+                <ManSection>
+                    <Func Arg="M" Name="NumericalSemigroupsWithMaxPrimitivePC"></Func>
+                    <Description>
+                      <A>M</A> is an integer. The output is the set of numerical semigroups with maximum primitive <A>M</A>. It relies on pre-computed data, which is available for small values of <A>M</A>.
+		      <Example><![CDATA[
+gap> Length(NumericalSemigroupsWithMaxPrimitivePC(15));
 194
 ]]></Example>          
                     </Description>
@@ -159,6 +181,18 @@ gap> List(last,MinimalGenerators);
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ], 
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ], 
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
+]]></Example>          
+                    </Description>
+                </ManSection>
+                
+                <ManSection>
+                    <Func Arg="g" Name="NumericalSemigroupsWithGenusPC"></Func>
+                    <Description>
+                        <A>g</A> is a nonnegative integer. The output is the set of numerical semigroups
+                        with genus <A>g</A>. It relies on pre-computed data, which is available for small values of <A>g</A>.
+                        <Example><![CDATA[
+gap> Length(NumericalSemigroupsWithGenusPC(15));
+2857
 ]]></Example>          
                     </Description>
                 </ManSection>
