@@ -38,7 +38,7 @@ true
 </Section>
 
 <Section>
-  <Heading> Constructing the set of numerical semigroup with given Frobenius number</Heading>
+  <Heading> Constructing the set of numerical semigroups with given Frobenius number</Heading>
 
   Finding the set of all numerical semigroups with a given Frobenius number is not accomplished via over semigroups. In order to achieve this, we use fundamental gaps. If the multiplicity is fixed, then the construction relies on the calculation of irreducible numerical semigroups with that Frobenius number and multiplicity.
                 <ManSection>
@@ -84,7 +84,7 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
 </Section>
 
 <Section>
-  <Heading> Constructing the set of numerical semigroup with given maximum primitive</Heading>
+  <Heading> Constructing the set of numerical semigroups with given maximum primitive</Heading>
 
   Finding the set of all numerical semigroups with a given maximum primitive.
 

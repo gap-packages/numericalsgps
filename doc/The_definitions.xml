@@ -6,14 +6,14 @@
                 </Heading>
 
 
-    In this section we present formulas to compute invariants and notable elements of a numerical semigroup. Some tests depending on these invariants are provided heres, like being an acute or an ordinary numerical semigroup. We also present procedures to construct iterators from a numerical semigroup, or to retrieve several elemements from a numerical semigroup as if it where a list (with infinitely many elements).
+    In this section we present formulas to compute invariants and notable elements of a numerical semigroup. Some tests depending on these invariants are provided here, like being an acute or an ordinary numerical semigroup. We also present procedures to construct iterators from a numerical semigroup, or to retrieve several elements from a numerical semigroup as if it were a list (with infinitely many elements).
     
 
                 <ManSection>
                     <Attr Name="Multiplicity" Arg="NS" Label="for numerical semigroup"/>
                     <Attr Name="MultiplicityOfNumericalSemigroup" Arg="NS"/>
                     <Description>
-                        <A>NS</A> is a numerical semigroup. Returns the multiplicity of <A>NS</A>, which is the smallest positive integer belonging to <A>NS</A>. Depending on the information known about <A>NS</A> different methods are implemented. There are methods for the following cases: generators are known, Apéry set is known, it is a modular numerical semigroup, or it is proportionally modular (and thus is defined by a closed interval <Cite Key="RosalesVasco2008MIA"/>).
+                        <A>NS</A> is a numerical semigroup. Returns the multiplicity of <A>NS</A>, which is the smallest positive integer belonging to <A>NS</A>. Depending on the information known about <A>NS</A>, different methods are implemented. There are methods for the following cases: generators are known, Apéry set is known, it is a modular numerical semigroup, or it is proportionally modular (and thus is defined by a closed interval <Cite Key="RosalesVasco2008MIA"/>).
                         <Example><![CDATA[
 gap> NumericalSemigroup(3,5);
 <Numerical semigroup with 2 generators>
@@ -214,7 +214,8 @@ true
 
 
 				<ManSection>
-				  <Func Arg="S,r"  Name="ElementNumber_NumericalSemigroup"/>
+				        <Func Arg="S,r"  Name="ElementNumber_NumericalSemigroup"/>
+				        <Oper Arg="S,r"  Name="RthElementOfNumericalSemigroup"/>
 					<Description>
 						 <A>S</A> is a numerical semigroup and <A>r</A> is an integer. Both functions (which are like synonyms) return the <A>r</A>-th element of <A>S</A>.
 						<Example><![CDATA[
@@ -226,7 +227,7 @@ gap> RthElementOfNumericalSemigroup(S,53);
 ]]></Example>
 					</Description>
 </ManSection>
-
+<!--
 				<ManSection>
 					<Oper Arg="S,r"  Name="RthElementOfNumericalSemigroup"/>
 					<Description>
@@ -238,7 +239,7 @@ gap> RthElementOfNumericalSemigroup(S,53);
 ]]></Example>
 					</Description>
 </ManSection>
-
+-->
 
 				<ManSection>
 					<Func Arg="S,r"  Name="NumberElement_NumericalSemigroup"/>
@@ -330,9 +331,8 @@ gap> AperyListOfNumericalSemigroup(S);
                     </Description>
                 </ManSection>
 
-
                 <ManSection>
-                    <Attr Name="AperyList" Arg="S, n" Label="for numerical semigroup with respect to integer"/>
+                    <Attr Name="AperyList" Arg="S, m" Label="for numerical semigroup with respect to integer"/>
                     <Func Name="AperyListOfNumericalSemigroupWRTInteger" Arg="S, m"/>
                     <Description>
                         <A>S</A> is a numerical semigroup and <A>m</A> is an integer.
@@ -340,7 +340,7 @@ gap> AperyListOfNumericalSemigroup(S);
 			set of elements <M>x</M> in <A>S</A> such that <M>x-</M><A>m</A> is not in <A>S</A>.
 			If <A>m</A> is an element in <A>S</A>, then the output of <C>AperyListOfNumericalSemigroupWRTInteger</C>, as sets, is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>,
 			though without side effects,
-			in the sense that this information is no longer used by the package. The output of <C>AperyList</C> is the same as <C>AperyListOfNumericalSemigroupWRTElement</C>.
+			in the sense that this information is no longer used by the package. The output of <C>AperyList</C> is the same as <C>AperyListOfNumericalSemigroupWRTInteger</C>.
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,13,19,27);;
