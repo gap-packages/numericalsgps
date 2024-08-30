@@ -1168,6 +1168,8 @@ gap> Length(NumericalSemigroupsWithFrobeniusNumberFG(15));
 200
 gap> Length(NumericalSemigroupsWithFrobeniusNumber(15));
 200
+gap> Length(NumericalSemigroupsWithFrobeniusNumberPC(15));
+200
 
 gap> Length(NumericalSemigroupsWithFrobeniusNumberAndMultiplicity(15,6));
 28
@@ -1178,6 +1180,8 @@ gap> NumericalSemigroupsWithMaxPrimitive(5);
   <Numerical semigroup with 3 generators>, 
   <Numerical semigroup with 2 generators> ]
 gap> Length(NumericalSemigroupsWithMaxPrimitive(15));
+194
+gap> Length(NumericalSemigroupsWithMaxPrimitivePC(15));
 194
 gap> Length(NumericalSemigroupsWithMaxPrimitiveAndMultiplicity(15,6));
 27
@@ -1200,6 +1204,8 @@ gap> List(last,MinimalGeneratingSystemOfNumericalSemigroup);
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ],
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ],
   [ 4, 5, 11 ], [ 3, 8, 10 ], [ 3, 7, 11 ], [ 2, 11 ] ]
+gap> Length(NumericalSemigroupsWithGenusPC(15));
+2857
 
 gap> pf := [ 58, 64, 75 ];
 [ 58, 64, 75 ]
