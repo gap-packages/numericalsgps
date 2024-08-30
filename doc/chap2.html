@@ -220,7 +220,7 @@ you can 'return;' to continue
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByFundamentalGaps</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><code class="code">List</code> is the set of fundamental gaps of a numerical semigroup, <a href="chapBib.html#biBRGSGGJM">[RGSGGJM04]</a>. The output is the numerical semigroup determined by these gaps. When the given set contains elements (which will be gaps) that are not fundamental gaps, they are silently removed.</p>
+<p><code class="code">List</code> is the set of fundamental gaps of a numerical semigroup, <a href="chapBib.html#biBRGSGGJM">[RGGJM04]</a>. The output is the numerical semigroup determined by these gaps. When the given set contains elements (which will be gaps) that are not fundamental gaps, they are silently removed.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"fundamentalgaps"</code>.</p>
 
@@ -244,7 +244,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByAffineMap</code>( <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>Given three nonnegative integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, with <span class="SimpleMath">a,c&gt;0</span> and <span class="SimpleMath">gcd(b,c)=1</span>, this function returns the least (with respect to set order inclusion) numerical semigroup containing <var class="Arg">c</var> and closed under the map <span class="SimpleMath">x↦ ax+b</span>. The procedure is explained in <a href="chapBib.html#biBUgolini">[Ugo16]</a>.</p>
+<p>Given three nonnegative integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, with <span class="SimpleMath">a,c&gt;0</span> and <span class="SimpleMath">gcd(b,c)=1</span>, this function returns the least (with respect to set order inclusion) numerical semigroup containing <var class="Arg">c</var> and closed under the map <span class="SimpleMath">x↦ ax+b</span>. The procedure is explained in <a href="chapBib.html#biBUgolini">[Ugo17]</a>.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"affinemap"</code>.</p>
 
@@ -265,7 +265,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ModularNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>Given two positive integers <var class="Arg">a</var> and <var class="Arg">b</var>, this function returns a modular numerical semigroup satisfying <span class="SimpleMath">ax mod b le x</span>, <a href="chapBib.html#biBRGSUB">[RGSUB05]</a>.</p>
+<p>Given two positive integers <var class="Arg">a</var> and <var class="Arg">b</var>, this function returns a modular numerical semigroup satisfying <span class="SimpleMath">ax mod b ≤ x</span>, <a href="chapBib.html#biBRGSUB">[RGU05]</a>.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"modular"</code>.</p>
 
@@ -283,7 +283,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProportionallyModularNumericalSemigroup</code>( <var class="Arg">a</var>, <var class="Arg">b</var>, <var class="Arg">c</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">a</var>, <var class="Arg">b</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>Given three positive integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, this function returns a proportionally modular numerical semigroup satisfying <span class="SimpleMath">axmod b le cx</span>, <a href="chapBib.html#biBRGGU03">[RAGGUB03]</a>.</p>
+<p>Given three positive integers <var class="Arg">a</var>, <var class="Arg">b</var> and <var class="Arg">c</var>, this function returns a proportionally modular numerical semigroup satisfying <span class="SimpleMath">axmod b ≤ cx</span>, <a href="chapBib.html#biBRGGU03">[RAGU03]</a>.</p>
 
 <p>In the second form, <code class="code">String</code> must be <code class="code">"propmodular"</code>.</p>
 
@@ -311,7 +311,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByInterval</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>The input is a list of rational numbers defining a closed interval. The output is the semigroup of numerators of all rational numbers in this interval, <a href="chapBib.html#biBRGGU03">[RAGGUB03]</a>.</p>
+<p>The input is a list of rational numbers defining a closed interval. The output is the semigroup of numerators of all rational numbers in this interval, <a href="chapBib.html#biBRGGU03">[RAGU03]</a>.</p>
 
 <p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"interval"</code>.</p>
 
@@ -331,7 +331,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroupByOpenInterval</code>( <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumericalSemigroup</code>( <var class="Arg">String</var>, <var class="Arg">List</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p>The input is a list of rational numbers defining an open interval. The output is the semigroup of numerators of all rational numbers in this interval, <a href="chapBib.html#biBRUB">[RUB06]</a>.</p>
+<p>The input is a list of rational numbers defining an open interval. The output is the semigroup of numerators of all rational numbers in this interval, <a href="chapBib.html#biBRUB">[RU06]</a>.</p>
 
 <p><code class="code">String</code> does not need to be present. When it is present, it must be <code class="code">"openinterval"</code>.</p>
 
@@ -509,6 +509,6 @@ true
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

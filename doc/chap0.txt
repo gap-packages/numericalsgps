@@ -3,7 +3,7 @@
                [1X[5Xnumericalsgps[105X-- a package for numerical semigroups[101X
   
   
-                                 Version 1.3.1
+                                 Version 1.4.0
   
   
                                  Manuel Delgado
@@ -97,7 +97,11 @@
   
   [33X[0;0YBoth  maintainers were partially supported by CMUP, member of LASI, which is
   financed  by Portuguese national funds through FCT – Fundação para a Ciência
-  e a Tecnologia, I.P., under the project with reference UIDB/00144/2020.[133X
+  e  a  Tecnologia, I.P., under the project with reference UIDB/00144/2020 and
+  UIDP/00144/2020.[133X
+  
+  [33X[0;0YBoth  maintainers  acknowledge  the  "Proyecto  de Excelencia de la Junta de
+  Andalucía" (ProyExcel 00868).[133X
   
   
   -------------------------------------------------------
@@ -157,31 +161,30 @@
       3.1-9 \{ \}
       3.1-10 NextElementOfNumericalSemigroup
       3.1-11 ElementNumber_NumericalSemigroup
-      3.1-12 RthElementOfNumericalSemigroup
-      3.1-13 NumberElement_NumericalSemigroup
-      3.1-14 Iterator
-      3.1-15 Difference
+      3.1-12 NumberElement_NumericalSemigroup
+      3.1-13 Iterator
+      3.1-14 Difference
+      3.1-15 AperyList
       3.1-16 AperyList
       3.1-17 AperyList
-      3.1-18 AperyList
-      3.1-19 AperyListOfNumericalSemigroupAsGraph
-      3.1-20 KunzCoordinates
-      3.1-21 KunzPolytope
-      3.1-22 CocycleOfNumericalSemigroupWRTElement
-      3.1-23 FrobeniusNumber
-      3.1-24 Conductor
-      3.1-25 PseudoFrobenius
-      3.1-26 Type
-      3.1-27 Gaps
-      3.1-28 Weight
-      3.1-29 Deserts
-      3.1-30 IsOrdinary
-      3.1-31 IsAcute
-      3.1-32 Holes
-      3.1-33 LatticePathAssociatedToNumericalSemigroup
-      3.1-34 Genus
-      3.1-35 FundamentalGaps
-      3.1-36 SpecialGaps
+      3.1-18 AperyListOfNumericalSemigroupAsGraph
+      3.1-19 KunzCoordinates
+      3.1-20 KunzPolytope
+      3.1-21 CocycleOfNumericalSemigroupWRTElement
+      3.1-22 FrobeniusNumber
+      3.1-23 Conductor
+      3.1-24 PseudoFrobenius
+      3.1-25 Type
+      3.1-26 Gaps
+      3.1-27 Weight
+      3.1-28 Deserts
+      3.1-29 IsOrdinary
+      3.1-30 IsAcute
+      3.1-31 Holes
+      3.1-32 LatticePathAssociatedToNumericalSemigroup
+      3.1-33 Genus
+      3.1-34 FundamentalGaps
+      3.1-35 SpecialGaps
     3.2 [33X[0;0YWilf's conjecture[133X
       3.2-1 WilfNumber
       3.2-2 EliahouNumber
@@ -205,31 +208,39 @@
     5.1 [33X[0;0YAdding and removing elements of a numerical semigroup[133X
       5.1-1 RemoveMinimalGeneratorFromNumericalSemigroup
       5.1-2 AddSpecialGapOfNumericalSemigroup
-    5.2 [33X[0;0YIntersections, quotients, dilatations, numerical duplications and
-    multiples by integers[133X
+    5.2 [33X[0;0YIntersections, sums, quotients, dilatations, numerical duplications
+    and multiples by integers[133X
       5.2-1 Intersection
-      5.2-2 QuotientOfNumericalSemigroup
-      5.2-3 MultipleOfNumericalSemigroup
-      5.2-4 NumericalDuplication
-      5.2-5 AsNumericalDuplication
-      5.2-6 InductiveNumericalSemigroup
-      5.2-7 DilatationOfNumericalSemigroup
+      5.2-2 \+
+      5.2-3 QuotientOfNumericalSemigroup
+      5.2-4 MultipleOfNumericalSemigroup
+      5.2-5 NumericalDuplication
+      5.2-6 AsNumericalDuplication
+      5.2-7 InductiveNumericalSemigroup
+      5.2-8 DilatationOfNumericalSemigroup
     5.3 [33X[0;0YConstructing the set of all numerical semigroups containing a given
     numerical semigroup[133X
       5.3-1 OverSemigroups
-    5.4 [33X[0;0YConstructing the set of numerical semigroup with given Frobenius
+    5.4 [33X[0;0YConstructing the set of numerical semigroups with given Frobenius
     number[133X
       5.4-1 NumericalSemigroupsWithFrobeniusNumberFG
       5.4-2 NumericalSemigroupsWithFrobeniusNumberAndMultiplicity
       5.4-3 NumericalSemigroupsWithFrobeniusNumber
-    5.5 [33X[0;0YConstructing the set of numerical semigroups with genus g[133X
-      5.5-1 NumericalSemigroupsWithGenus
-    5.6 [33X[0;0YConstructing the set of numerical semigroups with a given set of
+      5.4-4 NumericalSemigroupsWithFrobeniusNumberPC
+    5.5 [33X[0;0YConstructing the set of numerical semigroups with given maximum
+    primitive[133X
+      5.5-1 NumericalSemigroupsWithMaxPrimitiveAndMultiplicity
+      5.5-2 NumericalSemigroupsWithMaxPrimitive
+      5.5-3 NumericalSemigroupsWithMaxPrimitivePC
+    5.6 [33X[0;0YConstructing the set of numerical semigroups with genus g[133X
+      5.6-1 NumericalSemigroupsWithGenus
+      5.6-2 NumericalSemigroupsWithGenusPC
+    5.7 [33X[0;0YConstructing the set of numerical semigroups with a given set of
     pseudo-Frobenius numbers[133X
-      5.6-1 ForcedIntegersForPseudoFrobenius
-      5.6-2 SimpleForcedIntegersForPseudoFrobenius
-      5.6-3 NumericalSemigroupsWithPseudoFrobeniusNumbers
-      5.6-4 ANumericalSemigroupWithPseudoFrobeniusNumbers
+      5.7-1 ForcedIntegersForPseudoFrobenius
+      5.7-2 SimpleForcedIntegersForPseudoFrobenius
+      5.7-3 NumericalSemigroupsWithPseudoFrobeniusNumbers
+      5.7-4 ANumericalSemigroupWithPseudoFrobeniusNumbers
   6 [33X[0;0YIrreducible numerical semigroups[133X
     6.1 [33X[0;0YIrreducible numerical semigroups[133X
       6.1-1 IsIrreducible
@@ -452,26 +463,27 @@
   11 [33X[0;0YAffine semigroups[133X
     11.1 [33X[0;0YDefining affine semigroups[133X
       11.1-1 AffineSemigroup
-      11.1-2 AffineSemigroup
-      11.1-3 AffineSemigroup
-      11.1-4 AffineSemigroup
-      11.1-5 AffineSemigroup
-      11.1-6 Gaps
-      11.1-7 Genus
-      11.1-8 PseudoFrobenius
-      11.1-9 SpecialGaps
-      11.1-10 Generators
-      11.1-11 MinimalGenerators
-      11.1-12 RemoveMinimalGeneratorFromAffineSemigroup
-      11.1-13 AddSpecialGapOfAffineSemigroup
-      11.1-14 AsAffineSemigroup
-      11.1-15 IsAffineSemigroup
-      11.1-16 BelongsToAffineSemigroup
-      11.1-17 IsFull
-      11.1-18 HilbertBasisOfSystemOfHomogeneousEquations
-      11.1-19 HilbertBasisOfSystemOfHomogeneousInequalities
-      11.1-20 EquationsOfGroupGeneratedBy
-      11.1-21 BasisOfGroupGivenByEquations
+      11.1-2 AffineSemigroupByEquations
+      11.1-3 AffineSemigroupByInequalities
+      11.1-4 AffineSemigroupByPMInequality
+      11.1-5 AffineSemigroupByGaps
+      11.1-6 FiniteComplementIdealExtension
+      11.1-7 Gaps
+      11.1-8 Genus
+      11.1-9 PseudoFrobenius
+      11.1-10 SpecialGaps
+      11.1-11 Generators
+      11.1-12 MinimalGenerators
+      11.1-13 RemoveMinimalGeneratorFromAffineSemigroup
+      11.1-14 AddSpecialGapOfAffineSemigroup
+      11.1-15 AsAffineSemigroup
+      11.1-16 IsAffineSemigroup
+      11.1-17 BelongsToAffineSemigroup
+      11.1-18 IsFull
+      11.1-19 HilbertBasisOfSystemOfHomogeneousEquations
+      11.1-20 HilbertBasisOfSystemOfHomogeneousInequalities
+      11.1-21 EquationsOfGroupGeneratedBy
+      11.1-22 BasisOfGroupGivenByEquations
     11.2 [33X[0;0YGluings of affine semigroups[133X
       11.2-1 GluingOfAffineSemigroups
     11.3 [33X[0;0YPresentations of affine semigroups[133X

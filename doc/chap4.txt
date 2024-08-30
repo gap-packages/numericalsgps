@@ -41,7 +41,7 @@
   [33X[0;0YAny  other  relation  among  the  minimal generators of the semigroup can be
   deduced from the ones given in the output.[133X
   
-  [33X[0;0YThe algorithm implemented is described in [Ros96a] (see also [RGS99b]).[133X
+  [33X[0;0YThe algorithm implemented is described in [Ros96a] (see also [RG99b]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -84,7 +84,7 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
   [33X[0;0YThe  output  is  the  set  of  elements  in  [3XS[103X  whose  associated  graph  is
-  nonconnected [GSO10].[133X
+  nonconnected [GO10].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -215,7 +215,7 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
   [33X[0;0YThe  output is true if [3XS[103X has uniquely presented. The implementation is based
-  on [GSO10].[133X
+  on [GO10].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -234,7 +234,7 @@
   
   [33X[0;0YThe  output  is  true  if  [3XS[103X  has  a generic presentation, that is, in every
   minimal  relation  all  generators  occur.  These  semigroups  are  uniquely
-  presented (see [BGSG11]).[133X
+  presented (see [BGG11]).[133X
   
   [33X[0;0YThis filter implies [2XIsUniquelyPresentedNumericalSemigroup[102X ([14X4.3-1[114X).[133X
   

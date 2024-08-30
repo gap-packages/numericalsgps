@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (NumericalSgps) - Chapter 9: 
 		Nonunique invariants for factorizations in numerical semigroups
@@ -150,7 +150,7 @@
 
 <p>The <em><span class="SimpleMath">\(\omega\)</span>-primality</em> of an element <span class="SimpleMath">\(s\)</span> in <span class="SimpleMath">\(S\)</span> is the least positive integer <span class="SimpleMath">\(k\)</span> such that if <span class="SimpleMath">\((\sum_{i\in I} s_i)-s\in S, s_i\in S\)</span>, then there exists <span class="SimpleMath">\(\Omega\subseteq I\)</span> with cardinality <span class="SimpleMath">\(k\)</span> such that <span class="SimpleMath">\((\sum_{i\in \Omega} s_i)-s\in S\)</span>. The <em><span class="SimpleMath">\(\omega\)</span>-primality</em> of <span class="SimpleMath">\(S\)</span> is the maximum of the <span class="SimpleMath">\(\omega\)</span>-primality of its minimal generators.</p>
 
-<p>The basic properties of these constants can be found in <a href="chapBib_mj.html#biBGHKb">[GHK06]</a>. The algorithm used to compute the catenary and tame degree is an adaptation of the algorithms appearing in <a href="chapBib_mj.html#biBCGLPR">[CGSL+06]</a> for numerical semigroups (see <a href="chapBib_mj.html#biBCGL">[CGSD07]</a>). The computation of the elasticity of a numerical semigroup reduces to <span class="SimpleMath">\(m/n\)</span> with <span class="SimpleMath">\(m\)</span> the multiplicity of the semigroup and <span class="SimpleMath">\(n\)</span> its largest minimal generator (see <a href="chapBib_mj.html#biBCHM06">[CHM06]</a> or <a href="chapBib_mj.html#biBGHKb">[GHK06]</a>).</p>
+<p>The basic properties of these constants can be found in <a href="chapBib_mj.html#biBGHKb">[GH06]</a>. The algorithm used to compute the catenary and tame degree is an adaptation of the algorithms appearing in <a href="chapBib_mj.html#biBCGLPR">[CGL+06]</a> for numerical semigroups (see <a href="chapBib_mj.html#biBCGL">[CGD07]</a>). The computation of the elasticity of a numerical semigroup reduces to <span class="SimpleMath">\(m/n\)</span> with <span class="SimpleMath">\(m\)</span> the multiplicity of the semigroup and <span class="SimpleMath">\(n\)</span> its largest minimal generator (see <a href="chapBib_mj.html#biBCHM06">[CHM06]</a> or <a href="chapBib_mj.html#biBGHKb">[GH06]</a>).</p>
 
 <p><a id="X7FDB54217B15148F" name="X7FDB54217B15148F"></a></p>
 
@@ -165,7 +165,7 @@
 <h5>9.1-1 FactorizationsIntegerWRTList</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FactorizationsIntegerWRTList</code>( <var class="Arg">n</var>, <var class="Arg">ls</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">ls</var> is a list of integers and <var class="Arg">n</var> an integer. The output is the set of factorizations of <var class="Arg">n</var> in terms of the elements in the list <var class="Arg">ls</var>. This function uses <code class="func">RestrictedPartitions</code> (<a href="https://www.gap-system.org/Manuals/doc/ref/chap16_mj.html#X7A70D4F3809494E7"><span class="RefLink">Reference: RestrictedPartitions</span></a>).</p>
+<p><var class="Arg">ls</var> is a list of integers and <var class="Arg">n</var> an integer. The output is the set of factorizations of <var class="Arg">n</var> in terms of the elements in the list <var class="Arg">ls</var>. This function uses <code class="func">RestrictedPartitions</code> (<a href="https://docs.gap-system.org/doc/ref/chap16_mj.html#X7A70D4F3809494E7"><span class="RefLink">Reference: RestrictedPartitions</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -219,7 +219,7 @@ true
 <h5>9.1-4 RClassesOfSetOfFactorizations</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RClassesOfSetOfFactorizations</code>( <var class="Arg">ls</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same length). The output is the set of <span class="SimpleMath">\(\mathcal R\)</span>-classes of this set of factorizations as defined in Chapter 7 of <a href="chapBib_mj.html#biBRGbook">[RGS09]</a>.</p>
+<p><var class="Arg">ls</var> is a set of factorizations (a list of lists of nonnegative integers with the same length). The output is the set of <span class="SimpleMath">\(\mathcal R\)</span>-classes of this set of factorizations as defined in Chapter 7 of <a href="chapBib_mj.html#biBRGbook">[RG09]</a>.</p>
 
 
 <div class="example"><pre>
@@ -238,7 +238,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LShapes</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LShapesOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup. The output is the number of LShapes associated to <var class="Arg">S</var>. These are ways of arranging the set of factorizations of the elements in the Apéry set of the largest generator, so that if one factorization <span class="SimpleMath">\(x\)</span> is chosen for <span class="SimpleMath">\(w\)</span> and <span class="SimpleMath">\(w-w'\in S\)</span>, then only the factorization of <span class="SimpleMath">\(x'\)</span> of <span class="SimpleMath">\(w'\)</span> with <span class="SimpleMath">\(x'\le x\)</span> can be in the LShape (and if there is no such a factorization, then we have no LShape with <span class="SimpleMath">\(x\)</span> in it), see <a href="chapBib_mj.html#biBAG-GS">[AGGS10]</a>.</p>
+<p><var class="Arg">S</var> is a numerical semigroup. The output is the number of LShapes associated to <var class="Arg">S</var>. These are ways of arranging the set of factorizations of the elements in the Apéry set of the largest generator, so that if one factorization <span class="SimpleMath">\(x\)</span> is chosen for <span class="SimpleMath">\(w\)</span> and <span class="SimpleMath">\(w-w'\in S\)</span>, then only the factorization of <span class="SimpleMath">\(x'\)</span> of <span class="SimpleMath">\(w'\)</span> with <span class="SimpleMath">\(x'\le x\)</span> can be in the LShape (and if there is no such a factorization, then we have no LShape with <span class="SimpleMath">\(x\)</span> in it), see <a href="chapBib_mj.html#biBAG-GS">[AG10]</a>.</p>
 
 
 <div class="example"><pre>
@@ -303,7 +303,7 @@ true
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DenumerantIdeal</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DenumerantIdeal</code>( <var class="Arg">S</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a nonnegative integer. The output is the ideal of elements in <var class="Arg">S</var> with more than <var class="Arg">n</var> factorizations. If we add zero to this set, we obtain what is is called in <a href="chapBib_mj.html#biBkomatsu">[Kom21]</a> an <var class="Arg">n</var>-semigroup.</p>
+<p><var class="Arg">S</var> is a numerical semigroup and <var class="Arg">n</var> a nonnegative integer. The output is the ideal of elements in <var class="Arg">S</var> with more than <var class="Arg">n</var> factorizations. If we add zero to this set, we obtain what is is called in <a href="chapBib_mj.html#biBkomatsu">[Kom24]</a> an <var class="Arg">n</var>-semigroup.</p>
 
 
 <div class="example"><pre>
@@ -430,7 +430,7 @@ true
 <h5>9.2-7 DeltaSetPeriodicityBoundForNumericalSemigroup</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DeltaSetPeriodicityBoundForNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">S</var> is a numerical semigroup. Computes the bound were the periodicity starts for Delta sets of the elements in <var class="Arg">S</var>; see <a href="chapBib_mj.html#biBGG-MF-VT">[GGMFVT15]</a>.</p>
+<p><var class="Arg">S</var> is a numerical semigroup. Computes the bound were the periodicity starts for Delta sets of the elements in <var class="Arg">S</var>; see <a href="chapBib_mj.html#biBGG-MF-VT">[GMV15]</a>.</p>
 
 
 <div class="example"><pre>
@@ -871,7 +871,7 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimality</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimality</code>( <var class="Arg">S</var>, <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; OmegaPrimalityOfElementInNumericalSemigroup</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">n</var> is an element of the numerical semigroup <var class="Arg">S</var>. The output is the <span class="SimpleMath">\(\omega\)</span>-primality of <var class="Arg">n</var> in <var class="Arg">S</var> as explained in <a href="chapBib_mj.html#biBB-GS-G">[BGSG11]</a>. The current implementation is due to Chris O'Neill based on a work in progress with Pelayo and Thomas.</p>
+<p><var class="Arg">n</var> is an element of the numerical semigroup <var class="Arg">S</var>. The output is the <span class="SimpleMath">\(\omega\)</span>-primality of <var class="Arg">n</var> in <var class="Arg">S</var> as explained in <a href="chapBib_mj.html#biBB-GS-G">[BGG11]</a>. The current implementation is due to Chris O'Neill based on a work in progress with Pelayo and Thomas.</p>
 
 
 <div class="example"><pre>
@@ -937,7 +937,7 @@ true
         Homogenization of Numerical Semigroups
     </span></h4>
 
-<p>Let <span class="SimpleMath">\( S \)</span> be a numerical semigroup minimally generated by <span class="SimpleMath">\( \{m_1,\ldots,m_n\} \)</span>. The homogenization of <span class="SimpleMath">\(S\)</span>, <span class="SimpleMath">\(S^\mathrm{hom}\)</span> is the semigroup generated by <span class="SimpleMath">\(\{(1,0),(1,m_1),\ldots, (1,m_n)\}\)</span>. The catenary degree of <span class="SimpleMath">\(S^\mathrm{hom}\)</span> coincides with the homogeneous catenary degree of <span class="SimpleMath">\(S\)</span>, and it is between the catenary and the monotone catenary degree of <span class="SimpleMath">\(S\)</span>. The advantage of this catenary degree is that is less costly to compute than the monotone catenary degree, and has some nice interpretations (<a href="chapBib_mj.html#biBGSOSN">[GSOSRN13]</a>). This section contains the auxiliary functions needed to compute the homogeneous catenary degree.</p>
+<p>Let <span class="SimpleMath">\( S \)</span> be a numerical semigroup minimally generated by <span class="SimpleMath">\( \{m_1,\ldots,m_n\} \)</span>. The homogenization of <span class="SimpleMath">\(S\)</span>, <span class="SimpleMath">\(S^\mathrm{hom}\)</span> is the semigroup generated by <span class="SimpleMath">\(\{(1,0),(1,m_1),\ldots, (1,m_n)\}\)</span>. The catenary degree of <span class="SimpleMath">\(S^\mathrm{hom}\)</span> coincides with the homogeneous catenary degree of <span class="SimpleMath">\(S\)</span>, and it is between the catenary and the monotone catenary degree of <span class="SimpleMath">\(S\)</span>. The advantage of this catenary degree is that is less costly to compute than the monotone catenary degree, and has some nice interpretations (<a href="chapBib_mj.html#biBGSOSN">[GSOSt13]</a>). This section contains the auxiliary functions needed to compute the homogeneous catenary degree.</p>
 
 <p><a id="X856B689185C1F5D9" name="X856B689185C1F5D9"></a></p>
 
@@ -1021,9 +1021,9 @@ false
 
 <p>The set of divisors of <span class="SimpleMath">\(n\)</span> in <span class="SimpleMath">\(S\)</span> will be denoted by <span class="SimpleMath">\(\mathrm{D}_S(n)\)</span>. If we are given <span class="SimpleMath">\(n_1,\ldots,n_r\in S\)</span>, the set of the divisors of these elements is <span class="SimpleMath">\(\mathrm{D}(n_1,\ldots, n_r)= \bigcup_{i=1}^r \mathrm{D}(n_i)\)</span>.</p>
 
-<p>For a numerical semigroup <span class="SimpleMath">\(S\)</span>, we can define the sequence <span class="SimpleMath">\(\{\nu_i\}_{i\ge 1}\)</span>, with <span class="SimpleMath">\(\nu_i\)</span> the number of divisors of the <span class="SimpleMath">\(i\)</span>th element in <span class="SimpleMath">\(S\)</span>. It can be shown that the first <span class="SimpleMath">\(2g-c\)</span> elements of the sequence uniquely determine the semigroup (with <span class="SimpleMath">\(c\)</span> the conductor of <span class="SimpleMath">\(S\)</span> and <span class="SimpleMath">\(g\)</span> its genus), see <a href="chapBib_mj.html#biBbras-ns-codes">[BA13]</a>.</p>
+<p>For a numerical semigroup <span class="SimpleMath">\(S\)</span>, we can define the sequence <span class="SimpleMath">\(\{\nu_i\}_{i\ge 1}\)</span>, with <span class="SimpleMath">\(\nu_i\)</span> the number of divisors of the <span class="SimpleMath">\(i\)</span>th element in <span class="SimpleMath">\(S\)</span>. It can be shown that the first <span class="SimpleMath">\(2g-c\)</span> elements of the sequence uniquely determine the semigroup (with <span class="SimpleMath">\(c\)</span> the conductor of <span class="SimpleMath">\(S\)</span> and <span class="SimpleMath">\(g\)</span> its genus), see <a href="chapBib_mj.html#biBbras-ns-codes">[Bra13]</a>.</p>
 
-<p>There is another sequence associated to divisors that also determines the semigroup. Let <span class="SimpleMath">\(S=\{\lambda_0=0 &lt; \lambda_1 \dots\}\)</span> be a numerical semigroup. We can define the following binary operation on <span class="SimpleMath">\(\mathbb{N}\)</span>: <span class="SimpleMath">\(i\oplus_S i=k\)</span>, where <span class="SimpleMath">\(k\)</span> is such that <span class="SimpleMath">\(\lambda_i+\lambda_j=\lambda_k\)</span>. Set <span class="SimpleMath">\(\tau_i=\max\{ j\in \mathbb{N}: \hbox{ exists } k\in\{j,\ldots,i\} \hbox{ with } j\oplus_S k=i\}\)</span>. The first <span class="SimpleMath">\(2c-g+1\)</span> determine uniquely <span class="SimpleMath">\(S\)</span> (see <a href="chapBib_mj.html#biBbras-ns-codes">[BA13]</a>).</p>
+<p>There is another sequence associated to divisors that also determines the semigroup. Let <span class="SimpleMath">\(S=\{\lambda_0=0 &lt; \lambda_1 \dots\}\)</span> be a numerical semigroup. We can define the following binary operation on <span class="SimpleMath">\(\mathbb{N}\)</span>: <span class="SimpleMath">\(i\oplus_S i=k\)</span>, where <span class="SimpleMath">\(k\)</span> is such that <span class="SimpleMath">\(\lambda_i+\lambda_j=\lambda_k\)</span>. Set <span class="SimpleMath">\(\tau_i=\max\{ j\in \mathbb{N}: \hbox{ exists } k\in\{j,\ldots,i\} \hbox{ with } j\oplus_S k=i\}\)</span>. The first <span class="SimpleMath">\(2c-g+1\)</span> determine uniquely <span class="SimpleMath">\(S\)</span> (see <a href="chapBib_mj.html#biBbras-ns-codes">[Bra13]</a>).</p>
 
 <p>Translated to code, the definition of <span class="SimpleMath">\(\tau_i\)</span> could be as follows.</p>
 
@@ -1093,7 +1093,7 @@ end;
 
 <p>The output is the only numerical semigroup whose <span class="SimpleMath">\(\nu\)</span>-sequence is <span class="SimpleMath">\(\textit{nusec}\cup \{k,k+1, \ldots\}\)</span> (with <span class="SimpleMath">\(k\)</span> the last element of <var class="Arg">nusec</var>).</p>
 
-<p>The implementation is inspired in Theorem 1.54 in <a href="chapBib_mj.html#biBbras-ns-codes">[BA13]</a>.</p>
+<p>The implementation is inspired in Theorem 1.54 in <a href="chapBib_mj.html#biBbras-ns-codes">[Bra13]</a>.</p>
 
 
 <div class="example"><pre>
@@ -1115,7 +1115,7 @@ true
 
 <p>The output is the only numerical semigroup whose <span class="SimpleMath">\(\tau\)</span>-sequence is <span class="SimpleMath">\(\textit{tausec}\cup \{l+1,l+1,l+2,l+2, \ldots\}\)</span> (with <span class="SimpleMath">\(l\)</span> the last element of <var class="Arg">tausec</var>).</p>
 
-<p>The implementation is inspired in Theorem 1.60 in <a href="chapBib_mj.html#biBbras-ns-codes">[BA13]</a>.</p>
+<p>The implementation is inspired in Theorem 1.60 in <a href="chapBib_mj.html#biBbras-ns-codes">[Bra13]</a>.</p>
 
 
 <div class="example"><pre>
@@ -1265,6 +1265,6 @@ true
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chap12_mj.html">12</a>  <a href="chap13_mj.html">13</a>  <a href="chap14_mj.html">14</a>  <a href="chapA_mj.html">A</a>  <a href="chapB_mj.html">B</a>  <a href="chapC_mj.html">C</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

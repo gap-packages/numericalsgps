@@ -12,10 +12,10 @@
   
   [33X[0;0YIn  this  section  we  present  formulas  to  compute invariants and notable
   elements  of a numerical semigroup. Some tests depending on these invariants
-  are  provided heres, like being an acute or an ordinary numerical semigroup.
+  are  provided  here, like being an acute or an ordinary numerical semigroup.
   We   also  present  procedures  to  construct  iterators  from  a  numerical
-  semigroup,  or  to retrieve several elemements from a numerical semigroup as
-  if it where a list (with infinitely many elements).[133X
+  semigroup,  or to retrieve several elements from a numerical semigroup as if
+  it were a list (with infinitely many elements).[133X
   
   [1X3.1-1 Multiplicity[101X
   
@@ -24,7 +24,7 @@
   
   [33X[0;0Y[3XNS[103X  is  a  numerical semigroup. Returns the multiplicity of [3XNS[103X, which is the
   smallest  positive  integer  belonging  to  [3XNS[103X. Depending on the information
-  known  about [3XNS[103X different methods are implemented. There are methods for the
+  known about [3XNS[103X, different methods are implemented. There are methods for the
   following  cases:  generators are known, Apéry set is known, it is a modular
   numerical semigroup, or it is proportionally modular (and thus is defined by
   a closed interval [RV08]).[133X
@@ -204,6 +204,7 @@
   [1X3.1-11 ElementNumber_NumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XElementNumber_NumericalSemigroup[102X( [3XS[103X, [3Xr[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XRthElementOfNumericalSemigroup[102X( [3XS[103X, [3Xr[103X ) [32X operation[133X
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xr[103X is an integer. Both functions (which are
   like synonyms) return the [3Xr[103X-th element of [3XS[103X.[133X
@@ -216,20 +217,7 @@
     [4X[28X68[128X[104X
   [4X[32X[104X
   
-  [1X3.1-12 RthElementOfNumericalSemigroup[101X
-  
-  [33X[1;0Y[29X[2XRthElementOfNumericalSemigroup[102X( [3XS[103X, [3Xr[103X ) [32X operation[133X
-  
-  [33X[0;0YThis  operation  works  as  a  synonym  of  [2XElementNumber_NumericalSemigroup[102X
-  ([14X3.1-11[114X).[133X
-  
-  [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XS := NumericalSemigroup(7,8,17);;[127X[104X
-    [4X[25Xgap>[125X [27XRthElementOfNumericalSemigroup(S,53);[127X[104X
-    [4X[28X68[128X[104X
-  [4X[32X[104X
-  
-  [1X3.1-13 NumberElement_NumericalSemigroup[101X
+  [1X3.1-12 NumberElement_NumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XNumberElement_NumericalSemigroup[102X( [3XS[103X, [3Xr[103X ) [32X function[133X
   
@@ -242,7 +230,7 @@
     [4X[28X53[128X[104X
   [4X[32X[104X
   
-  [1X3.1-14 Iterator[101X
+  [1X3.1-13 Iterator[101X
   
   [33X[1;0Y[29X[2XIterator[102X( [3XS[103X ) [32X operation[133X
   
@@ -260,7 +248,7 @@
     [4X[28X8[128X[104X
   [4X[32X[104X
   
-  [1X3.1-15 Difference[101X
+  [1X3.1-14 Difference[101X
   
   [33X[1;0Y[29X[2XDifference[102X( [3XS[103X, [3XT[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XDifferenceOfNumericalSemigroups[102X( [3XS[103X, [3XT[103X ) [32X function[133X
@@ -278,7 +266,7 @@
     [4X[28X[ 11, 18, 23 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-16 AperyList[101X
+  [1X3.1-15 AperyList[101X
   
   [33X[1;0Y[29X[2XAperyList[102X( [3XS[103X, [3Xn[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XAperyListOfNumericalSemigroupWRTElement[102X( [3XS[103X, [3Xn[103X ) [32X operation[133X
@@ -298,7 +286,7 @@
     [4X[28X13[128X[104X
   [4X[32X[104X
   
-  [1X3.1-17 AperyList[101X
+  [1X3.1-16 AperyList[101X
   
   [33X[1;0Y[29X[2XAperyList[102X( [3XS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XAperyListOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute[133X
@@ -314,9 +302,9 @@
     [4X[28X[ 0, 12, 13, 25, 26, 38, 39, 51, 52, 53, 32 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-18 AperyList[101X
+  [1X3.1-17 AperyList[101X
   
-  [33X[1;0Y[29X[2XAperyList[102X( [3XS[103X, [3Xn[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XAperyList[102X( [3XS[103X, [3Xm[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XAperyListOfNumericalSemigroupWRTInteger[102X( [3XS[103X, [3Xm[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X is a numerical semigroup and [3Xm[103X is an integer. Computes the Apéry list of [3XS[103X
@@ -325,7 +313,7 @@
   [10XAperyListOfNumericalSemigroupWRTInteger[110X,   as   sets,   is   the   same   as
   [10XAperyListOfNumericalSemigroupWRTElement[110X, though without side effects, in the
   sense  that this information is no longer used by the package. The output of
-  [10XAperyList[110X is the same as [10XAperyListOfNumericalSemigroupWRTElement[110X.[133X
+  [10XAperyList[110X is the same as [10XAperyListOfNumericalSemigroupWRTInteger[110X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,13,19,27);;[127X[104X
@@ -345,7 +333,7 @@
     [4X[28X10[128X[104X
   [4X[32X[104X
   
-  [1X3.1-19 AperyListOfNumericalSemigroupAsGraph[101X
+  [1X3.1-18 AperyListOfNumericalSemigroupAsGraph[101X
   
   [33X[1;0Y[29X[2XAperyListOfNumericalSemigroupAsGraph[102X( [3Xap[103X ) [32X function[133X
   
@@ -363,7 +351,7 @@
     [4X[28X[ 14, 21 ], [ 15, 18, 21 ],,, [ 18, 21 ],,, [ 21 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-20 KunzCoordinates[101X
+  [1X3.1-19 KunzCoordinates[101X
   
   [33X[1;0Y[29X[2XKunzCoordinates[102X( [3XS[103X[, [3Xm[103X] ) [32X operation[133X
   [33X[1;0Y[29X[2XKunzCoordinatesOfNumericalSemigroup[102X( [3XS[103X[, [3Xm[103X] ) [32X function[133X
@@ -388,14 +376,14 @@
     [4X[28X[ 1, 1, 0, 1 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-21 KunzPolytope[101X
+  [1X3.1-20 KunzPolytope[101X
   
   [33X[1;0Y[29X[2XKunzPolytope[102X( [3Xm[103X ) [32X function[133X
   
   [33X[0;0Y[3Xm[103X is a positive integer.[133X
   
   [33X[0;0YThe  Kunz coordinates of the semigroups with multiplicity [3Xm[103X are solutions of
-  a  system  of  inequalities [22XAxge b[122X (see [CAGGB02]). The output is the matrix
+  a  system  of  inequalities  [22XAx≥  b[122X (see [CAGB02]). The output is the matrix
   [22X(A|-b)[122X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -403,14 +391,14 @@
     [4X[28X[ [ 1, 0, -1 ], [ 0, 1, -1 ], [ 2, -1, 0 ], [ -1, 2, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-22 CocycleOfNumericalSemigroupWRTElement[101X
+  [1X3.1-21 CocycleOfNumericalSemigroupWRTElement[101X
   
   [33X[1;0Y[29X[2XCocycleOfNumericalSemigroupWRTElement[102X( [3XS[103X, [3Xm[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup, and [3Xm[103X is a nonzero element of [3XS[103X. The output is
   the  matrix  [22Xh(i,j)=(w(i)+w(j)-w((i+j)mod  m))/m[122X, where [22Xw(i)[122X is the smallest
   element  in  [3XS[103X congruent with [22Xi[122X modulo [22Xm[122X (and thus it is in the Apéry set of
-  [22Xm[122X), [GSHKR17].[133X
+  [22Xm[122X), [GHKR17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -418,7 +406,7 @@
     [4X[28X[ [ 0, 0, 0 ], [ 0, 3, 4 ], [ 0, 4, 1 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-23 FrobeniusNumber[101X
+  [1X3.1-22 FrobeniusNumber[101X
   
   [33X[1;0Y[29X[2XFrobeniusNumber[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XFrobeniusNumberOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
@@ -439,7 +427,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X3.1-24 Conductor[101X
+  [1X3.1-23 Conductor[101X
   
   [33X[1;0Y[29X[2XConductor[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XConductorOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
@@ -453,7 +441,7 @@
     [4X[28X5[128X[104X
   [4X[32X[104X
   
-  [1X3.1-25 PseudoFrobenius[101X
+  [1X3.1-24 PseudoFrobenius[101X
   
   [33X[1;0Y[29X[2XPseudoFrobenius[102X( [3XS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XPseudoFrobeniusOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute[133X
@@ -472,7 +460,7 @@
     [4X[28X[ 21, 40, 41, 42 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-26 Type[101X
+  [1X3.1-25 Type[101X
   
   [33X[1;0Y[29X[2XType[102X( [3XNS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XTypeOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
@@ -488,7 +476,7 @@
     [4X[28X4[128X[104X
   [4X[32X[104X
   
-  [1X3.1-27 Gaps[101X
+  [1X3.1-26 Gaps[101X
   
   [33X[1;0Y[29X[2XGaps[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XGapsOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
@@ -503,7 +491,7 @@
     [4X[28X[ 1, 2, 4 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-28 Weight[101X
+  [1X3.1-27 Weight[101X
   
   [33X[1;0Y[29X[2XWeight[102X( [3XNS[103X ) [32X attribute[133X
   
@@ -517,7 +505,7 @@
     [4X[28X9[128X[104X
   [4X[32X[104X
   
-  [1X3.1-29 Deserts[101X
+  [1X3.1-28 Deserts[101X
   
   [33X[1;0Y[29X[2XDeserts[102X( [3XNS[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XDesertsOfNumericalSemigroup[102X( [3XNS[103X ) [32X function[133X
@@ -533,7 +521,7 @@
     [4X[28X[ [ 1, 2 ], [ 4 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-30 IsOrdinary[101X
+  [1X3.1-29 IsOrdinary[101X
   
   [33X[1;0Y[29X[2XIsOrdinary[102X( [3XNS[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsOrdinaryNumericalSemigroup[102X( [3XNS[103X ) [32X property[133X
@@ -541,7 +529,7 @@
   [33X[0;0Y[3XNS[103X is a numerical semigroup. Dectects if the semigroup is ordinary, that is,
   with less than two deserts.[133X
   
-  [33X[0;0YThis filter implies [2XIsAcuteNumericalSemigroup[102X ([14X3.1-31[114X).[133X
+  [33X[0;0YThis filter implies [2XIsAcuteNumericalSemigroup[102X ([14X3.1-30[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -549,14 +537,14 @@
     [4X[28Xfalse[128X[104X
   [4X[32X[104X
   
-  [1X3.1-31 IsAcute[101X
+  [1X3.1-30 IsAcute[101X
   
   [33X[1;0Y[29X[2XIsAcute[102X( [3XNS[103X ) [32X property[133X
   [33X[1;0Y[29X[2XIsAcuteNumericalSemigroup[102X( [3XNS[103X ) [32X property[133X
   
   [33X[0;0Y[3XNS[103X is a numerical semigroup. Dectects if the semigroup is acute, that is, it
   is  either  ordinary  or its last desert (the one with the Frobenius number)
-  has less elements than the preceding one ([BA04]).[133X
+  has less elements than the preceding one ([Bra04]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -564,7 +552,7 @@
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   
-  [1X3.1-32 Holes[101X
+  [1X3.1-31 Holes[101X
   
   [33X[1;0Y[29X[2XHoles[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XHolesOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute[133X
@@ -581,7 +569,7 @@
     [4X[28X[ 2 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-33 LatticePathAssociatedToNumericalSemigroup[101X
+  [1X3.1-32 LatticePathAssociatedToNumericalSemigroup[101X
   
   [33X[1;0Y[29X[2XLatticePathAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xp[103X, [3Xq[103X ) [32X attribute[133X
   
@@ -604,7 +592,7 @@
     [4X[28X  [ 14, 0 ] ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-34 Genus[101X
+  [1X3.1-33 Genus[101X
   
   [33X[1;0Y[29X[2XGenus[102X( [3XNS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XGenusOfNumericalSemigroup[102X( [3XNS[103X ) [32X attribute[133X
@@ -623,7 +611,7 @@
     [4X[28X26[128X[104X
   [4X[32X[104X
   
-  [1X3.1-35 FundamentalGaps[101X
+  [1X3.1-34 FundamentalGaps[101X
   
   [33X[1;0Y[29X[2XFundamentalGaps[102X( [3XS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XFundamentalGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute[133X
@@ -646,7 +634,7 @@
     [4X[28X[ 1, 2, 3, 4, 6, 8, 9, 13 ][128X[104X
   [4X[32X[104X
   
-  [1X3.1-36 SpecialGaps[101X
+  [1X3.1-35 SpecialGaps[101X
   
   [33X[1;0Y[29X[2XSpecialGaps[102X( [3XS[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XSpecialGapsOfNumericalSemigroup[102X( [3XS[103X ) [32X attribute[133X
@@ -670,7 +658,7 @@
   
   [33X[0;0YLet  [22XS[122X be a numerical semigroup, with conductor [22Xc[122X and embedding dimension [22Xe[122X.
   Denote by [22Xl[122X the cardinality of the set of elements in [22XS[122X smaller than [22Xc[122X. Wilf
-  in  [Wil78]  asked whether or not [22Xl/cge 1/e[122X for all numerical semigroups. In
+  in  [Wil78]  asked  whether or not [22Xl/c≥ 1/e[122X for all numerical semigroups. In
   this  section  we give some functions to experiment with this conjecture, as
   defined in [Eli18].[133X
   

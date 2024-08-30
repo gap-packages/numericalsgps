@@ -218,7 +218,7 @@
   
   [33X[0;0Y[3XI[103X  is  an  ideal  of  a  numerical  semigroup.  The  output  is  the  set of
   pseudo-Frobenius  numbers  of  [3XI[103X, that is the set [22X[3XI[103X-M∖ [3XI[103X[122X, with [22XM[122X the maximal
-  ideal of the ambient semigroup of [3XI[103X (see [ADGS20]).[133X
+  ideal of the ambient semigroup of [3XI[103X (see [ADG20]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -598,8 +598,8 @@
   [33X[0;0Y[3XS[103X is a numerical semigroup.[133X
   
   [33X[0;0YComputes  the  type sequence of a numerical semigroup. That is, the secuence
-  [22Xt_i([3XS[103X)=♯([3XS[103X(i)∖  [3XS[103X(i-1))[122X,  with [22X[3XS[103X(i)={ s∈ S∣ sge s_i}[122X and [22Xs_i[122X the [22Xi[122Xth element
-  of [3XS[103X.[133X
+  [22Xt_i([3XS[103X)=♯([3XS[103X(i)∖ [3XS[103X(i-1))[122X, with [22X[3XS[103X(i)={ s∈ S∣ s≥ s_i}[122X and [22Xs_i[122X the [22Xi[122Xth element of
+  [3XS[103X.[133X
   
   [33X[0;0YThis function is the implementation of the algorithm given in [BDF97].[133X
   
@@ -634,7 +634,7 @@
   
   [33X[0;0Y[3XI[103X  is  an  ideal  of  a  numerical  semigroup.  The  output  is  the list of
   irreducible  [22XZ[122X-components of [3XI[103X. These are calculated using Proposition 24 in
-  [ADGS20].[133X
+  [ADG20].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -654,7 +654,7 @@
   [33X[0;0Y[3XI[103X  is  an integral ideal of a numerical semigroup. The output is the list of
   irreducible  integral  ideals  whose  intersection is the unique irredundant
   decomposition  of  [3XI[103X  into  integral  proper  ideals.  The  computations are
-  performed using Theorem 4 in [ADGS20].[133X
+  performed using Theorem 4 in [ADG20].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,5,7);;[127X[104X
@@ -785,15 +785,16 @@
   [33X[1;0Y[29X[2XRatliffRushNumber[102X( [3XI[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XRatliffRushNumberOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function[133X
   
-  [33X[0;0Y[3XI[103X is an ideal of a numerical semigroup. The output is the least integer such
-  that [22X(n+1)[3XI[103X-n[3XI[103X[122X is the Ratliff-Rush closure of [3XI[103X (see [DGH01]).[133X
+  [33X[0;0Y[3XI[103X  is  an  ideal of a numerical semigroup [22XS[122X. The output is the least integer
+  such that [22XS∩ (n+1)[3XI[103X-n[3XI[103X[122X is the Ratliff-Rush closure of [3XI[103X (see [DGH01]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XI:=[0,2]+NumericalSemigroup(6,9,11);;[127X[104X
-    [4X[25Xgap>[125X [27XRatliffRushNumber(I);[127X[104X
-    [4X[28X1[128X[104X
-    [4X[25Xgap>[125X [27XRatliffRushNumberOfIdealOfNumericalSemigroup(I);[127X[104X
-    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup([9..17]);;[127X[104X
+    [4X[25Xgap>[125X [27Xi:=[9,10,12]+s;;[127X[104X
+    [4X[25Xgap>[125X [27XRatliffRushNumber(i);[127X[104X
+    [4X[28X3[128X[104X
+    [4X[25Xgap>[125X [27XReductionNumber(i);[127X[104X
+    [4X[28X4[128X[104X
   [4X[32X[104X
   
   [1X7.3-8 RatliffRushClosure[101X
@@ -801,17 +802,14 @@
   [33X[1;0Y[29X[2XRatliffRushClosure[102X( [3XI[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XRatliffRushClosureOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function[133X
   
-  [33X[0;0Y[3XI[103X  is  an  ideal  of  a  numerical semigroup. The output is the Ratliff-Rush
-  closure of [3XI[103X: [22X⋃_n∈ N}(n+1)[3XI[103X-n[3XI[103X[122X (see [DGH01]).[133X
+  [33X[0;0Y[3XI[103X  is  an  ideal  of a numerical semigroup [22XS[122X. The output is the Ratliff-Rush
+  closure of [3XI[103X: [22XS∩ ⋃_n∈ N}(n+1)[3XI[103X-n[3XI[103X[122X (see [DGH01]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XI:=[0,2]+NumericalSemigroup(6,9,11);;[127X[104X
-    [4X[25Xgap>[125X [27XRatliffRushClosure(I);[127X[104X
-    [4X[28X<Ideal of numerical semigroup>[128X[104X
-    [4X[25Xgap>[125X [27XMinimalGenerators(last);[127X[104X
-    [4X[28X[ 0, 2, 4 ][128X[104X
-    [4X[25Xgap>[125X [27XRatliffRushClosureOfIdealOfNumericalSemigroup(I) = RatliffRushClosure(I);[127X[104X
-    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,5,6,7);;[127X[104X
+    [4X[25Xgap>[125X [27Xi:=[4,5]+s;;[127X[104X
+    [4X[25Xgap>[125X [27XMinimalGenerators(RatliffRushClosure(i));[127X[104X
+    [4X[28X[ 4, 5, 6, 7 ][128X[104X
   [4X[32X[104X
   
   [1X7.3-9 AsymptoticRatliffRushNumber[101X
@@ -820,14 +818,12 @@
   [33X[1;0Y[29X[2XAsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup[102X( [3XI[103X ) [32X function[133X
   
   [33X[0;0Y[3XI[103X  is an ideal of a numerical semigroup. The output is the least [22Xn[122X such that
-  the Ratliff-Rush closure of [22Xm[3XI[103X[122X equals [22Xm[3XI[103X[122X for all [22Xmge n[122X (see [DGH01]).[133X
+  the Ratliff-Rush closure of [22Xm[3XI[103X[122X equals [22Xm[3XI[103X[122X for all [22Xm≥ n[122X (see [DGH01]).[133X
   
   [4X[32X  Example  [32X[104X
-    [4X[25Xgap>[125X [27XI:=[0,2]+NumericalSemigroup(6,9,11);;[127X[104X
-    [4X[25Xgap>[125X [27XAsymptoticRatliffRushNumber(I);[127X[104X
-    [4X[28X2[128X[104X
-    [4X[25Xgap>[125X [27XAsymptoticRatliffRushNumberOfIdealOfNumericalSemigroup(I);[127X[104X
-    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27Xi:=[4,5]+NumericalSemigroup([4..7]);;[127X[104X
+    [4X[25Xgap>[125X [27XAsymptoticRatliffRushNumber(i);[127X[104X
+    [4X[28X3[128X[104X
   [4X[32X[104X
   
   [1X7.3-10 MultiplicitySequence[101X
@@ -956,7 +952,7 @@
   [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a pattern.[133X
   
   [33X[0;0YReturns  [10Xtrue[110X  or  [10Xfalse[110X  depending if the pattern is admissible or not (see
-  [BAGS06]).[133X
+  [BG06]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,1,-1]);[127X[104X
@@ -972,7 +968,7 @@
   [33X[0;0Y[3Xp[103X is the list of integers that are the coefficients of a pattern.[133X
   
   [33X[0;0YReturns [10Xtrue[110X or [10Xfalse[110X depending if the pattern is strongly admissible or not
-  (see [BAGS06]).[133X
+  (see [BG06]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsAdmissiblePattern([1,-1]);[127X[104X

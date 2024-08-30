@@ -16,7 +16,7 @@
   MED  generating system for [22XS[122X provided that every proper subset of [22XM[122X is not a
   MED  system  of  generators of [22XS[122X. Minimal MED generating systems are unique,
   and  in  general  are  smaller than the classical minimal generating systems
-  (see [RGSGGB03]).[133X
+  (see [RGGB03]).[133X
   
   
   [1X8.1 [33X[0;0YNumerical semigroups with maximal embedding dimension[133X[101X
@@ -79,7 +79,7 @@
   can  consider the Arf closure of a set of nonnegative integers with greatest
   common  divisor  equal to one. Analogously as with MED numerical semigroups,
   we define Arf systems of generators and minimal Arf generating system for an
-  Arf numerical semigroup. These are also unique (see [RGSGGB04]).[133X
+  Arf numerical semigroup. These are also unique (see [RGGB04]).[133X
   
   [1X8.2-1 IsArf[101X
   
@@ -89,7 +89,7 @@
   [33X[0;0Y[3XS[103X  is a numerical semigroup. Returns true if [3XS[103X is an Arf numerical semigroup
   and false otherwise.[133X
   
-  [33X[0;0YThis property implies [2XIsMED[102X ([14X8.1-1[114X) and [2XIsAcuteNumericalSemigroup[102X ([14X3.1-31[114X).[133X
+  [33X[0;0YThis property implies [2XIsMED[102X ([14X8.1-1[114X) and [2XIsAcuteNumericalSemigroup[102X ([14X3.1-30[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27X IsArf(NumericalSemigroup(3,5,7));[127X[104X
@@ -197,8 +197,7 @@
   [33X[1;0Y[29X[2XArfNumericalSemigroupsWithGenusAndFrobeniusNumber[102X( [3Xg[103X, [3Xf[103X ) [32X function[133X
   
   [33X[0;0Y[3Xf[103X  and [3Xg[103X are integers. The output is the set of all Arf numerical semigroups
-  with  genus  [3Xg[103X  and  Frobenius  number  [3Xf[103X.  The  algorithm  is  explained in
-  [GSHKR17].[133X
+  with genus [3Xg[103X and Frobenius number [3Xf[103X. The algorithm is explained in [GHKR17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XArfNumericalSemigroupsWithGenusAndFrobeniusNumber(10,13);[127X[104X
@@ -282,7 +281,7 @@
   
   [33X[0;0YThe  intersection  of two saturated numerical semigroups is again saturated,
   and  thus  we  can  consider  the  saturated closure of a set of nonnegative
-  integers with greatest common divisor equal to one (see [RGS09]).[133X
+  integers with greatest common divisor equal to one (see [RG09]).[133X
   
   [1X8.3-1 IsSaturated[101X
   

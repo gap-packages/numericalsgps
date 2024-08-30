@@ -29,12 +29,12 @@
   such  that  [22X(∑_i∈  Ω  s_i)-s∈  S[122X. The [13X[22Xω[122X-primality[113X of [22XS[122X is the maximum of the
   [22Xω[122X-primality of its minimal generators.[133X
   
-  [33X[0;0YThe  basic  properties  of  these  constants  can  be  found in [GHK06]. The
+  [33X[0;0YThe  basic  properties  of  these  constants  can  be  found  in [GH06]. The
   algorithm  used  to compute the catenary and tame degree is an adaptation of
-  the   algorithms  appearing  in  [CGSL+06]  for  numerical  semigroups  (see
-  [CGSD07]).  The  computation  of  the  elasticity  of  a numerical semigroup
-  reduces  to  [22Xm/n[122X  with [22Xm[122X the multiplicity of the semigroup and [22Xn[122X its largest
-  minimal generator (see [CHM06] or [GHK06]).[133X
+  the algorithms appearing in [CGL+06] for numerical semigroups (see [CGD07]).
+  The  computation  of  the elasticity of a numerical semigroup reduces to [22Xm/n[122X
+  with [22Xm[122X the multiplicity of the semigroup and [22Xn[122X its largest minimal generator
+  (see [CHM06] or [GH06]).[133X
   
   
   [1X9.1 [33X[0;0YFactorizations in Numerical Semigroups[133X[101X
@@ -100,7 +100,7 @@
   
   [33X[0;0Y[3Xls[103X  is a set of factorizations (a list of lists of nonnegative integers with
   the  same length). The output is the set of [22Xmathcal R[122X-classes of this set of
-  factorizations as defined in Chapter 7 of [RGS09].[133X
+  factorizations as defined in Chapter 7 of [RG09].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(10,11,19,23);;[127X[104X
@@ -120,9 +120,9 @@
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. The output is the number of LShapes associated
   to  [3XS[103X. These are ways of arranging the set of factorizations of the elements
   in the Apéry set of the largest generator, so that if one factorization [22Xx[122X is
-  chosen  for [22Xw[122X and [22Xw-w'∈ S[122X, then only the factorization of [22Xx'[122X of [22Xw'[122X with [22Xx'le
-  x[122X  can  be  in  the LShape (and if there is no such a factorization, then we
-  have no LShape with [22Xx[122X in it), see [AGGS10].[133X
+  chosen for [22Xw[122X and [22Xw-w'∈ S[122X, then only the factorization of [22Xx'[122X of [22Xw'[122X with [22Xx'≤ x[122X
+  can  be in the LShape (and if there is no such a factorization, then we have
+  no LShape with [22Xx[122X in it), see [AG10].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(4,6,9);;[127X[104X
@@ -188,7 +188,7 @@
   
   [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X a nonnegative integer. The output is the
   ideal  of  elements  in [3XS[103X with more than [3Xn[103X factorizations. If we add zero to
-  this set, we obtain what is is called in [Kom21] an [3Xn[103X-semigroup.[133X
+  this set, we obtain what is is called in [Kom24] an [3Xn[103X-semigroup.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(101,113,195,272,278,286);;[127X[104X
@@ -309,7 +309,7 @@
   [33X[1;0Y[29X[2XDeltaSetPeriodicityBoundForNumericalSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a numerical semigroup. Computes the bound were the periodicity starts
-  for Delta sets of the elements in [3XS[103X; see [GGMFVT15].[133X
+  for Delta sets of the elements in [3XS[103X; see [GMV15].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(5,7,11);;[127X[104X
@@ -676,7 +676,7 @@
   
   [33X[0;0YThe  output  is  the set of elements [22Xs[122X in [3XS[103X such that there exists a minimal
   solution  to  [22Xmsg⋅ x-msg⋅ y = 0[122X, such that [22Xx,y[122X are factorizations of [22Xs[122X, with
-  [22X|x|le |y|[122X; [22Xmsg[122X stands the minimal generating system of [3XS[103X. These elements are
+  [22X|x|≤  |y|[122X; [22Xmsg[122X stands the minimal generating system of [3XS[103X. These elements are
   used to compute the monotone catenary degree of [3XS[103X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -748,7 +748,7 @@
   [33X[1;0Y[29X[2XOmegaPrimalityOfElementInNumericalSemigroup[102X( [3Xn[103X, [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3Xn[103X  is an element of the numerical semigroup [3XS[103X. The output is the [22Xω[122X-primality
-  of  [3Xn[103X  in  [3XS[103X  as explained in [BGSG11]. The current implementation is due to
+  of  [3Xn[103X  in  [3XS[103X  as  explained in [BGG11]. The current implementation is due to
   Chris O'Neill based on a work in progress with Pelayo and Thomas.[133X
   
   [4X[32X  Example  [32X[104X
@@ -814,7 +814,7 @@
   with  the  homogeneous  catenary degree of [22XS[122X, and it is between the catenary
   and the monotone catenary degree of [22XS[122X. The advantage of this catenary degree
   is that is less costly to compute than the monotone catenary degree, and has
-  some  nice interpretations ([GSOSRN13]). This section contains the auxiliary
+  some  nice  interpretations ([GSOSt13]). This section contains the auxiliary
   functions needed to compute the homogeneous catenary degree.[133X
   
   [1X9.5-1 BelongsToHomogenizationOfNumericalSemigroup[101X
@@ -891,7 +891,7 @@
   
   [1X9.6 [33X[0;0YDivisors, posets[133X[101X
   
-  [33X[0;0YGiven a numerical semigroup [22XS[122X and two integers [22Xa,b[122X, we write [22Xale_S b[122X if [22Xb-a∈
+  [33X[0;0YGiven  a numerical semigroup [22XS[122X and two integers [22Xa,b[122X, we write [22Xa≤_S b[122X if [22Xb-a∈
   S[122X.  We  also  say that [22Xa[122X divides [22Xb[122X (with respect to [22XS[122X). The semigroup [22XS[122X with
   this binary relation is a poset.[133X
   
@@ -899,16 +899,16 @@
   given  [22Xn_1,...,n_r∈  S[122X,  the  set  of  the  divisors  of  these  elements is
   [22XmathrmD(n_1,..., n_r)= ⋃_i=1^r mathrmD(n_i)[122X.[133X
   
-  [33X[0;0YFor  a  numerical  semigroup [22XS[122X, we can define the sequence [22X{ν_i}_ige 1[122X, with
-  [22Xν_i[122X the number of divisors of the [22Xi[122Xth element in [22XS[122X. It can be shown that the
+  [33X[0;0YFor a numerical semigroup [22XS[122X, we can define the sequence [22X{ν_i}_i≥ 1[122X, with [22Xν_i[122X
+  the  number  of  divisors  of the [22Xi[122Xth element in [22XS[122X. It can be shown that the
   first [22X2g-c[122X elements of the sequence uniquely determine the semigroup (with [22Xc[122X
-  the conductor of [22XS[122X and [22Xg[122X its genus), see [BA13].[133X
+  the conductor of [22XS[122X and [22Xg[122X its genus), see [Bra13].[133X
   
   [33X[0;0YThere  is  another  sequence associated to divisors that also determines the
   semigroup.  Let [22XS={λ_0=0 < λ_1 dots}[122X be a numerical semigroup. We can define
   the  following  binary  operation  on  [22XN[122X:  [22Xi⊕_S  i=k[122X,  where  [22Xk[122X is such that
   [22Xλ_i+λ_j=λ_k[122X. Set [22Xτ_i=max{ j∈ N: hbox exists k∈{j,...,i} hbox with j⊕_S k=i}[122X.
-  The first [22X2c-g+1[122X determine uniquely [22XS[122X (see [BA13]).[133X
+  The first [22X2c-g+1[122X determine uniquely [22XS[122X (see [Bra13]).[133X
   
   [33X[0;0YTranslated to code, the definition of [22Xτ_i[122X could be as follows.[133X
   
@@ -926,7 +926,7 @@
   
   [33X[1;0Y[29X[2XMoebiusFunctionAssociatedToNumericalSemigroup[102X( [3XS[103X, [3Xn[103X ) [32X function[133X
   
-  [33X[0;0Y[3XS[103X  is  a numerical semigroup and [3Xn[103X is an integer. As [22X(S,le_S)[122X is a poset, we
+  [33X[0;0Y[3XS[103X  is  a  numerical semigroup and [3Xn[103X is an integer. As [22X(S,≤_S)[122X is a poset, we
   can define the Möbius function associated to it as in [CRA13]. The output is
   the  value  of  the Möbius function in the integer [3Xn[103X, that is, the alternate
   sum of the number of chains from 0 to [3Xn[103X.[133X
@@ -943,7 +943,7 @@
   
   [33X[1;0Y[29X[2XMoebiusFunction[102X( [3XS[103X ) [32X operation[133X
   
-  [33X[0;0Y[3XS[103X is a numerical semigroup. As [22X(S,le_S)[122X is a poset, we can define the Möbius
+  [33X[0;0Y[3XS[103X  is a numerical semigroup. As [22X(S,≤_S)[122X is a poset, we can define the Möbius
   function  associated  to it as in [CRA13]. The output is the Möbius function
   associated to [3XS[103X.[133X
   
@@ -980,7 +980,7 @@
   [33X[0;0YThe  output  is  the  only  numerical  semigroup  whose [22Xν[122X-sequence is [22X[3Xnusec[103X∪
   {k,k+1, ...}[122X (with [22Xk[122X the last element of [3Xnusec[103X).[133X
   
-  [33X[0;0YThe implementation is inspired in Theorem 1.54 in [BA13].[133X
+  [33X[0;0YThe implementation is inspired in Theorem 1.54 in [Bra13].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XNuSequence:=S->List([1..2*Conductor(S)-Genus(S)],[127X[104X
@@ -1003,7 +1003,7 @@
   [33X[0;0YThe  output  is  the  only  numerical  semigroup whose [22Xτ[122X-sequence is [22X[3Xtausec[103X∪
   {l+1,l+1,l+2,l+2, ...}[122X (with [22Xl[122X the last element of [3Xtausec[103X).[133X
   
-  [33X[0;0YThe implementation is inspired in Theorem 1.60 in [BA13].[133X
+  [33X[0;0YThe implementation is inspired in Theorem 1.60 in [Bra13].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xtau:=[ 0, 0, 0, 0, 1, 1, 2, 2, 3, 0, 1, 2, 3, 3, 3, 3, 4, 4 ];[127X[104X
@@ -1016,9 +1016,9 @@
   [1X9.7 [33X[0;0YFeng-Rao distances and numbers[133X[101X
   
   [33X[0;0YLet  [22XS[122X  be a numerical semigroup and let [22Xn∈ S[122X. The Feng-Rao distance of [22Xn[122X is
-  then defined as [22Xδ_S(n)=min{ #mathrmD(x)∣ nle x, x∈ S}[122X.[133X
+  then defined as [22Xδ_S(n)=min{ #mathrmD(x)∣ n≤ x, x∈ S}[122X.[133X
   
-  [33X[0;0YThe [22Xr[122Xth generalized distance is [22Xδ_S^r(n)={ #mathrmD(n_1,...,n_r) ∣ nle n_1 <
+  [33X[0;0YThe  [22Xr[122Xth generalized distance is [22Xδ_S^r(n)={ #mathrmD(n_1,...,n_r) ∣ n≤ n_1 <
   ⋯ < n_r, n_i∈ S}[122X.[133X
   
   [1X9.7-1 FengRaoDistance[101X
@@ -1058,12 +1058,12 @@
   kM∖(k+1)M[122X.   Notice   that   the   order  of  an  element  corresponds  with
   [2XMaximumDegreeOfElementWRTNumericalSemigroup[102X ([14X9.2-12[114X).[133X
   
-  [33X[0;0YRecall  that  for  [22Xx,y∈  Z[122X,  we write [22Xxle_S y[122X if [22Xy-x∈ S[122X. Define the relation
-  [22Xpreceq_S[122X on [22XS[122X as [22Xxpreceq_S y[122X if [22Xxle_S y[122X and [22Xord(y)=ord(x)+ord(y-x)[122X.[133X
+  [33X[0;0YRecall  that  for  [22Xx,y∈  Z[122X,  we  write [22Xx≤_S y[122X if [22Xy-x∈ S[122X. Define the relation
+  [22Xpreceq_S[122X on [22XS[122X as [22Xxpreceq_S y[122X if [22Xx≤_S y[122X and [22Xord(y)=ord(x)+ord(y-x)[122X.[133X
   
   [33X[0;0YA  numerical  semigroup  [22XS[122X  with  multiplicity  [22Xm[122X  is said to be pure if the
-  maximal  elements  of  [22XAp(S,m)[122X with respect to [22Xle_S[122X have all the same order.
-  The semigroup [22XS[122X is M-pure if the maximal elements of [22XAp(S,m)[122X with respect to
+  maximal elements of [22XAp(S,m)[122X with respect to [22X≤_S[122X have all the same order. The
+  semigroup  [22XS[122X  is  M-pure  if the maximal elements of [22XAp(S,m)[122X with respect to
   [22Xpreceq_S[122X have all the same order, [Bry10].[133X
   
   [33X[0;0YThe  numerical semigroup [22XS[122X is said to be homogeneous if for every element in

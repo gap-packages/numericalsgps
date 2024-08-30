@@ -89,11 +89,11 @@
 
 <p>It is not difficult to prove that a semigroup is irreducible if and only if it is maximal (with respect to set inclusion) in the set of all numerical semigroups having its same Frobenius number (see <a href="chapBib.html#biBRB03">[RB03]</a>). Hence, according to <a href="chapBib.html#biBFGH87">[FGR87]</a> (respectively <a href="chapBib.html#biBBDF97">[BDF97]</a>), symmetric (respectively pseudo-symmetric) numerical semigroups are those irreducible numerical semigroups with odd (respectively even) Frobenius number.</p>
 
-<p>In <a href="chapBib.html#biBRGGJ03">[RGSGGJM03]</a> it is shown that a nontrivial numerical semigroup is irreducible if and only if it has only one special gap. We use this characterization.</p>
+<p>In <a href="chapBib.html#biBRGGJ03">[RGGJ03]</a> it is shown that a nontrivial numerical semigroup is irreducible if and only if it has only one special gap. We use this characterization.</p>
 
-<p>In old versions of the package, we first constructed an irreducible numerical semigroup with the given Frobenius number (as explained in <a href="chapBib.html#biBRGS04">[RGS04]</a>), and then we constructed the rest from it. The present version uses a faster procedure presented in <a href="chapBib.html#biBBR13">[BR13]</a>.</p>
+<p>In old versions of the package, we first constructed an irreducible numerical semigroup with the given Frobenius number (as explained in <a href="chapBib.html#biBRGS04">[RG04]</a>), and then we constructed the rest from it. The present version uses a faster procedure presented in <a href="chapBib.html#biBBR13">[BR13]</a>.</p>
 
-<p>Every numerical semigroup can be expressed as an intersection of irreducible numerical semigroups. If <span class="SimpleMath">S</span> can be expressed as <span class="SimpleMath">S=S_1∩ ⋯∩ S_n</span>, with <span class="SimpleMath">S_i</span> irreducible numerical semigroups, and no factor can be removed, then we say that this decomposition is minimal. Minimal decompositions can be computed by using Algorithm 26 in <a href="chapBib.html#biBRGGJ03">[RGSGGJM03]</a>.</p>
+<p>Every numerical semigroup can be expressed as an intersection of irreducible numerical semigroups. If <span class="SimpleMath">S</span> can be expressed as <span class="SimpleMath">S=S_1∩ ⋯∩ S_n</span>, with <span class="SimpleMath">S_i</span> irreducible numerical semigroups, and no factor can be removed, then we say that this decomposition is minimal. Minimal decompositions can be computed by using Algorithm 26 in <a href="chapBib.html#biBRGGJ03">[RGGJ03]</a>.</p>
 
 <p><a id="X83C597EC7FAA1C0F" name="X83C597EC7FAA1C0F"></a></p>
 
@@ -111,7 +111,7 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsIrreducibleNumericalSemigroup</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p><var class="Arg">s</var> is a numerical semigroup. The output is <code class="code">true</code> if <var class="Arg">s</var> is irreducible, <code class="code">false</code> otherwise.</p>
 
-<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3.html#X83D4AFE882A79096"><span class="RefLink">3.1-31</span></a>).</p>
+<p>This filter implies <code class="func">IsAlmostSymmetricNumericalSemigroup</code> (<a href="chap6.html#X84C44C7A7D9270BB"><span class="RefLink">6.3-3</span></a>) and <code class="func">IsAcuteNumericalSemigroup</code> (<a href="chap3.html#X83D4AFE882A79096"><span class="RefLink">3.1-30</span></a>).</p>
 
 
 <div class="example"><pre>
@@ -162,7 +162,7 @@ false
 <h5>6.1-4 AnIrreducibleNumericalSemigroupWithFrobeniusNumber</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AnIrreducibleNumericalSemigroupWithFrobeniusNumber</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">f</var> is an integer. When <span class="SimpleMath">f=0</span> or <span class="SimpleMath">fle -2</span>, the output is <code class="code">fail</code>. Otherwise, the output is an irreducible numerical semigroup with Frobenius number <var class="Arg">f</var>. From the way the procedure is implemented, the resulting semigroup has at most four generators (see <a href="chapBib.html#biBRGS04">[RGS04]</a>).</p>
+<p><var class="Arg">f</var> is an integer. When <span class="SimpleMath">f=0</span> or <span class="SimpleMath">f≤ -2</span>, the output is <code class="code">fail</code>. Otherwise, the output is an irreducible numerical semigroup with Frobenius number <var class="Arg">f</var>. From the way the procedure is implemented, the resulting semigroup has at most four generators (see <a href="chapBib.html#biBRGS04">[RG04]</a>).</p>
 
 
 <div class="example"><pre>
@@ -192,7 +192,7 @@ false
 <h5>6.1-6 IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity</code>( <var class="Arg">f</var>, <var class="Arg">m</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">f</var> and <var class="Arg">m</var> are integers. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var> and multiplicity <var class="Arg">m</var>. The implementation appears in <a href="chapBib.html#biBBOR19">[ttt19]</a>.</p>
+<p><var class="Arg">f</var> and <var class="Arg">m</var> are integers. The output is the set of all irreducible numerical semigroups with Frobenius number <var class="Arg">f</var> and multiplicity <var class="Arg">m</var>. The implementation appears in <a href="chapBib.html#biBBOR19">[BOR21]</a>.</p>
 
 
 <div class="example"><pre>
@@ -220,7 +220,7 @@ false
                     Complete intersection numerical semigroups
                 </span></h4>
 
-<p>The cardinality of a minimal presentation of a numerical semigroup is always greater than or equal to its embedding dimension minus one. Complete intersection numerical semigroups are numerical semigroups reaching this bound, and they are irreducible. It can be shown that every complete intersection (other that <span class="SimpleMath">N</span>) is a complete intersection if and only if it is the gluing of two complete intersections. When in this gluing, one of the copies is isomorphic to <span class="SimpleMath">N</span>, then we obtain a free semigroup in the sense of <a href="chapBib.html#biBBC77">[BC77]</a>. Two special kinds of free semigroups are telescopic semigroups (<a href="chapBib.html#biBKP95">[KP95]</a>) and those associated to an irreducible planar curve (<a href="chapBib.html#biBZ86">[Zar86]</a>). We use the algorithms presented in <a href="chapBib.html#biBAGS13">[AGS13]</a> to find the set of all complete intersections (also free, telescopic and associated to irreducible planar curves) numerical semigroups with given Frobenius number.</p>
+<p>The cardinality of a minimal presentation of a numerical semigroup is always greater than or equal to its embedding dimension minus one. Complete intersection numerical semigroups are numerical semigroups reaching this bound, and they are irreducible. It can be shown that every complete intersection (other that <span class="SimpleMath">N</span>) is a complete intersection if and only if it is the gluing of two complete intersections. When in this gluing, one of the copies is isomorphic to <span class="SimpleMath">N</span>, then we obtain a free semigroup in the sense of <a href="chapBib.html#biBBC77">[BC77]</a>. Two special kinds of free semigroups are telescopic semigroups (<a href="chapBib.html#biBKP95">[KP95]</a>) and those associated to an irreducible planar curve (<a href="chapBib.html#biBZ86">[Zar86]</a>). We use the algorithms presented in <a href="chapBib.html#biBAGS13">[AG13]</a> to find the set of all complete intersections (also free, telescopic and associated to irreducible planar curves) numerical semigroups with given Frobenius number.</p>
 
 <p><a id="X848FCB49851D19B8" name="X848FCB49851D19B8"></a></p>
 
@@ -463,14 +463,14 @@ true
                     Almost-symmetric numerical semigroups
                 </span></h4>
 
-<p>A numerical semigroup is almost-symmetric (<a href="chapBib.html#biBBF97">[BF97]</a>) if its genus is the arithmetic mean of its Frobenius number and type. We use a procedure presented in <a href="chapBib.html#biBMR3169635">[RGS14]</a> to determine the set of all almost-symmetric numerical semigroups with given Frobenius number. In order to do this, we first calculate the set of all almost-symmetric numerical semigroups that can be constructed from an irreducible numerical semigroup.</p>
+<p>A numerical semigroup is almost-symmetric (<a href="chapBib.html#biBBF97">[BF97]</a>) if its genus is the arithmetic mean of its Frobenius number and type. We use a procedure presented in <a href="chapBib.html#biBMR3169635">[RG14]</a> to determine the set of all almost-symmetric numerical semigroups with given Frobenius number. In order to do this, we first calculate the set of all almost-symmetric numerical semigroups that can be constructed from an irreducible numerical semigroup.</p>
 
 <p><a id="X7A81F31479DB5DF2" name="X7A81F31479DB5DF2"></a></p>
 
 <h5>6.3-1 AlmostSymmetricNumericalSemigroupsFromIrreducible</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AlmostSymmetricNumericalSemigroupsFromIrreducible</code>( <var class="Arg">s</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">s</var> is an irreducible numerical semigroup. The output is the set of almost-symmetric numerical semigroups that can be constructed from <var class="Arg">s</var> by removing some of its generators (as explained in <a href="chapBib.html#biBMR3169635">[RGS14]</a>).</p>
+<p><var class="Arg">s</var> is an irreducible numerical semigroup. The output is the set of almost-symmetric numerical semigroups that can be constructed from <var class="Arg">s</var> by removing some of its generators (as explained in <a href="chapBib.html#biBMR3169635">[RG14]</a>).</p>
 
 
 <div class="example"><pre>
@@ -635,6 +635,6 @@ false
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

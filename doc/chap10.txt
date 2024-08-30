@@ -147,8 +147,7 @@
   [33X[1;0Y[29X[2XCyclotomicExponentSequence[102X( [3Xs[103X, [3Xk[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xs[103X  is a numerical semigroup and [3Xk[103X is a positive integer. Outputs the list of
-  the  first  [3Xk[103X  elements  of  the  cyclotomic  exponent  sequence  of  s (see
-  [CGSM16]).[133X
+  the first [3Xk[103X elements of the cyclotomic exponent sequence of s (see [CGM16]).[133X
   
   [33X[0;0YThe  sequence  will  be  truncated  if  the semigroup is cyclotomic and k is
   bigger than the last nonzero element in its sequence.[133X
@@ -167,8 +166,8 @@
   [33X[1;0Y[29X[2XWittCoefficients[102X( [3Xp[103X, [3Xk[103X ) [32X operation[133X
   
   [33X[0;0Y[3Xp[103X  is  a  univariate  polynomial with integer coefficientas and [22Xp(1)=1[122X. Then
-  [22Xp(x)=∏_nge  0(1-x^n)^e_n[122X,  for  some  integers  [22Xe_n[122X.  The output is the list
-  [22X[e_1,...,e_k][122X, and it is computed by using [CGSHPM19].[133X
+  [22Xp(x)=∏_n≥  0(1-x^n)^e_n[122X,  for  some  integers  [22Xe_n[122X.  The  output is the list
+  [22X[e_1,...,e_k][122X, and it is computed by using [CGHM19].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs:=NumericalSemigroup(3,4);;[127X[104X
@@ -204,7 +203,7 @@
   [33X[0;0YLet  [22Xf(x,y)∈  K[x,y][122X, with [22XK[122X an algebraically closed field of characteristic
   zero.  Let  [22Xf(x,y)=y^n+a_1(x)y^n-1+dots+a_n(x)[122X  be  a  nonzero polynomial of
   [22XK[x][y][122X.  After  possibly  a  change  of variables, we may assume that, that
-  [22Xdeg_x(a_i(x))le  i-1[122X  for  all  [22Xi∈{1,...,  n}[122X.  For  [22Xg∈ K[x,y][122X that is not a
+  [22Xdeg_x(a_i(x))≤  i-1[122X  for  all  [22Xi∈{1,...,  n}[122X.  For  [22Xg∈  K[x,y][122X that is not a
   multiple  of  [22Xf[122X, define [22Xmathrmint(f,g)=dim_ K frac K[x,y](f,g)[122X. If [22Xf[122X has one
   place  at  infinity,  then the set [22X{mathrmint(f,g)∣ g∈ K[x,y]∖(f)}[122X is a free
   numerical semigroup (and thus a complete intersection).[133X
@@ -218,7 +217,7 @@
   [22Xmathrmint(f,g)=dim_  K  (  K[x,y]/(f,g))[122X.  The algorithm checks if [3Xf[103X has one
   place  at infinity. If the extra argument "all" is given, then the output is
   the  [22Xδ[122X-sequence  and  approximate  roots  of  [3Xf[103X.  The method is explained in
-  [AGS16a].[133X
+  [AG16a].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,1);; SetName(x,"x");[127X[104X
@@ -319,7 +318,7 @@
   ([10Xfail[110X  if  there is no such polynomial, that is, [3Xval[103X is not in the semigroup
   of values).[133X
   
-  [33X[0;0YThe method is explained in [AGSM17].[133X
+  [33X[0;0YThe method is explained in [AGM17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
@@ -350,7 +349,7 @@
   ([10Xfail[110X  if  there is no such polynomial, that is, [3Xval[103X is not in the semigroup
   of values).[133X
   
-  [33X[0;0YThe method is explained in [AGSM17].[133X
+  [33X[0;0YThe method is explained in [AGM17].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xx:=Indeterminate(Rationals,"x");;[127X[104X
@@ -373,7 +372,7 @@
   [33X[0;0Y[3XA[103X and [3XM[103X are lists of polynomials in the same variable. The output is a basis
   of  the  ideal [22XM K[A][122X, that is, a set [22XF[122X such that [22Xdeg(F)[122X generates the ideal
   [22Xdeg(M  K[A])[122X  of  [22Xdeg(K[A])[122X,  where  [22Xdeg[122X  stands  for  degree. The method is
-  explained in [AAGS17].[133X
+  explained in [AAG19].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xt:=Indeterminate(Rationals,"t");;[127X[104X
@@ -385,7 +384,7 @@
   
   [1X10.2-9 GeneratorsKahlerDifferentials[101X
   
-  [33X[1;0Y[29X[2XGeneratorsKahlerDifferentials[102X( [3XA[103X, [3XM[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XGeneratorsKahlerDifferentials[102X( [3XA[103X ) [32X function[133X
   
   [33X[0;0Y[3XA[103X   is   a  list  of  polynomials  in  the  same  variable.  The  output  is
   [3XGeneratorsModule_Global(A,M)[103X,  with [3XM[103X the set of derivatives of the elements
@@ -428,7 +427,7 @@
   
   [33X[1;0Y[29X[2XLegendrianGenericNumericalSemigroup[102X( [3Xn[103X, [3Xm[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xn[103X and [3Xm[103X are coprime integers with [22X[3Xm[103Xge 2[3Xn[103X+1[122X. The output is the semigroup of a
+  [33X[0;0Y[3Xn[103X  and [3Xm[103X are coprime integers with [22X[3Xm[103X≥ 2[3Xn[103X+1[122X. The output is the semigroup of a
   generic  element  in  the class of irreducible Legendrian singularities with
   equisingularity  equal  to  the topological type of [22Xy^n=x^m[122X, as described in
   Section 5 of [AN09].[133X

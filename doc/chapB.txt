@@ -37,7 +37,7 @@
   
   [33X[1;0Y[29X[2XRandomModularNumericalSemigroup[102X( [3Xk[103X[, [3Xm[103X] ) [32X function[133X
   
-  [33X[0;0YReturns  a ``random" modular numerical semigroup [22XS(a,b)[122X with [22Xa le k[122X (see [14X1.[114X)
+  [33X[0;0YReturns  a ``random" modular numerical semigroup [22XS(a,b)[122X with [22Xa ≤ k[122X (see [14X1.0[114X)
   and multiplicity at least [22Xm[122X, were [22Xm[122X is the second argument, which may not be
   present..[133X
   
@@ -53,7 +53,7 @@
   [33X[1;0Y[29X[2XRandomProportionallyModularNumericalSemigroup[102X( [3Xk[103X[, [3Xm[103X] ) [32X function[133X
   
   [33X[0;0YReturns a ``random" proportionally modular numerical semigroup [22XS(a,b,c)[122X with
-  [22Xa  le k[122X (see [14X1.[114X) and multiplicity at least [22Xm[122X, were [22Xm[122X is the second argument,
+  [22Xa  ≤ k[122X (see [14X1.0[114X) and multiplicity at least [22Xm[122X, were [22Xm[122X is the second argument,
   which may not be present.[133X
   
   [4X[32X  Example  [32X[104X
@@ -67,8 +67,8 @@
   
   [33X[1;0Y[29X[2XRandomListRepresentingSubAdditiveFunction[102X( [3Xm[103X, [3Xa[103X ) [32X function[133X
   
-  [33X[0;0YProduces a ``random" list representing a subadditive function (see [14X1.[114X) which
-  is  periodic  with  period  [3Xm[103X  (or  less).  When possible, the images are in
+  [33X[0;0YProduces  a  ``random"  list  representing  a subadditive function (see [14X1.0[114X)
+  which  is periodic with period [3Xm[103X (or less). When possible, the images are in
   [3X[a..20*a][103X. (Otherwise, the list of possible images is enlarged.)[133X
   
   [4X[32X  Example  [32X[104X

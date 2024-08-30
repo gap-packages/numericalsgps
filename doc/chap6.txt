@@ -11,20 +11,19 @@
   numerical  semigroups  are  those  irreducible numerical semigroups with odd
   (respectively even) Frobenius number.[133X
   
-  [33X[0;0YIn  [RGSGGJM03]  it  is  shown  that  a  nontrivial  numerical  semigroup is
-  irreducible  if  and  only  if  it  has  only  one  special gap. We use this
-  characterization.[133X
+  [33X[0;0YIn [RGGJ03] it is shown that a nontrivial numerical semigroup is irreducible
+  if and only if it has only one special gap. We use this characterization.[133X
   
   [33X[0;0YIn  old  versions  of  the  package,  we  first  constructed  an irreducible
   numerical  semigroup  with  the  given  Frobenius  number  (as  explained in
-  [RGS04]), and then we constructed the rest from it. The present version uses
+  [RG04]),  and then we constructed the rest from it. The present version uses
   a faster procedure presented in [BR13].[133X
   
   [33X[0;0YEvery numerical semigroup can be expressed as an intersection of irreducible
   numerical  semigroups.  If  [22XS[122X  can  be  expressed as [22XS=S_1∩ ⋯∩ S_n[122X, with [22XS_i[122X
   irreducible  numerical semigroups, and no factor can be removed, then we say
   that  this  decomposition is minimal. Minimal decompositions can be computed
-  by using Algorithm 26 in [RGSGGJM03].[133X
+  by using Algorithm 26 in [RGGJ03].[133X
   
   
   [1X6.1 [33X[0;0YIrreducible numerical semigroups[133X[101X
@@ -46,7 +45,7 @@
   otherwise.[133X
   
   [33X[0;0YThis   filter   implies   [2XIsAlmostSymmetricNumericalSemigroup[102X   ([14X6.3-3[114X)  and
-  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-31[114X).[133X
+  [2XIsAcuteNumericalSemigroup[102X ([14X3.1-30[114X).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XIsIrreducible(NumericalSemigroup(4,6,9));[127X[104X
@@ -93,10 +92,10 @@
   
   [33X[1;0Y[29X[2XAnIrreducibleNumericalSemigroupWithFrobeniusNumber[102X( [3Xf[103X ) [32X function[133X
   
-  [33X[0;0Y[3Xf[103X  is  an  integer.  When  [22Xf=0[122X or [22Xfle -2[122X, the output is [10Xfail[110X. Otherwise, the
+  [33X[0;0Y[3Xf[103X  is  an  integer.  When  [22Xf=0[122X  or [22Xf≤ -2[122X, the output is [10Xfail[110X. Otherwise, the
   output  is  an irreducible numerical semigroup with Frobenius number [3Xf[103X. From
   the  way  the  procedure is implemented, the resulting semigroup has at most
-  four generators (see [RGS04]).[133X
+  four generators (see [RG04]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xs := AnIrreducibleNumericalSemigroupWithFrobeniusNumber(28);[127X[104X
@@ -125,7 +124,7 @@
   
   [33X[0;0Y[3Xf[103X  and  [3Xm[103X  are  integers. The output is the set of all irreducible numerical
   semigroups  with  Frobenius  number [3Xf[103X and multiplicity [3Xm[103X. The implementation
-  appears in [ttt19].[133X
+  appears in [BOR21].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XLength(IrreducibleNumericalSemigroupsWithFrobeniusNumberAndMultiplicity(31,11));[127X[104X
@@ -158,7 +157,7 @@
   copies  is  isomorphic to [22XN[122X, then we obtain a free semigroup in the sense of
   [BC77].  Two  special  kinds  of  free  semigroups are telescopic semigroups
   ([KP95])  and  those associated to an irreducible planar curve ([Zar86]). We
-  use  the  algorithms  presented  in  [AGS13] to find the set of all complete
+  use  the  algorithms  presented  in  [AG13]  to find the set of all complete
   intersections  (also  free,  telescopic and associated to irreducible planar
   curves) numerical semigroups with given Frobenius number.[133X
   
@@ -403,7 +402,7 @@
   
   [33X[0;0YA  numerical  semigroup  is  almost-symmetric  ([BF97])  if its genus is the
   arithmetic  mean  of  its  Frobenius  number  and  type.  We use a procedure
-  presented  in [RGS14] to determine the set of all almost-symmetric numerical
+  presented  in  [RG14] to determine the set of all almost-symmetric numerical
   semigroups  with  given  Frobenius  number.  In  order  to do this, we first
   calculate  the  set of all almost-symmetric numerical semigroups that can be
   constructed from an irreducible numerical semigroup.[133X
@@ -414,7 +413,7 @@
   
   [33X[0;0Y[3Xs[103X  is  an  irreducible  numerical  semigroup.  The  output  is  the  set  of
   almost-symmetric  numerical  semigroups  that  can  be constructed from [3Xs[103X by
-  removing some of its generators (as explained in [RGS14]).[133X
+  removing some of its generators (as explained in [RG14]).[133X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27Xns := NumericalSemigroup(5,8,9,11);;[127X[104X

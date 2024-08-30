@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (NumericalSgps) - Chapter 10: 
 		Polynomials and numerical semigroups
@@ -219,7 +219,7 @@ true
 <h5>10.1-9 CyclotomicExponentSequence</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CyclotomicExponentSequence</code>( <var class="Arg">s</var>, <var class="Arg">k</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p><var class="Arg">s</var> is a numerical semigroup and <var class="Arg">k</var> is a positive integer. Outputs the list of the first <var class="Arg">k</var> elements of the cyclotomic exponent sequence of s (see <a href="chapBib_mj.html#biBC-GS-M">[CGSM16]</a>).</p>
+<p><var class="Arg">s</var> is a numerical semigroup and <var class="Arg">k</var> is a positive integer. Outputs the list of the first <var class="Arg">k</var> elements of the cyclotomic exponent sequence of s (see <a href="chapBib_mj.html#biBC-GS-M">[CGM16]</a>).</p>
 
 <p>The sequence will be truncated if the semigroup is cyclotomic and k is bigger than the last nonzero element in its sequence.</p>
 
@@ -238,7 +238,7 @@ true
 <h5>10.1-10 WittCoefficients</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WittCoefficients</code>( <var class="Arg">p</var>, <var class="Arg">k</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p><var class="Arg">p</var> is a univariate polynomial with integer coefficientas and <span class="SimpleMath">\(p(1)=1\)</span>. Then <span class="SimpleMath">\(p(x)=\prod_{n\ge 0}(1-x^n)^{e_n}\)</span>, for some integers <span class="SimpleMath">\(e_n\)</span>. The output is the list <span class="SimpleMath">\([e_1,\ldots,e_k]\)</span>, and it is computed by using <a href="chapBib_mj.html#biBC-GS-HP-M">[CGSHPM19]</a>.</p>
+<p><var class="Arg">p</var> is a univariate polynomial with integer coefficientas and <span class="SimpleMath">\(p(1)=1\)</span>. Then <span class="SimpleMath">\(p(x)=\prod_{n\ge 0}(1-x^n)^{e_n}\)</span>, for some integers <span class="SimpleMath">\(e_n\)</span>. The output is the list <span class="SimpleMath">\([e_1,\ldots,e_k]\)</span>, and it is computed by using <a href="chapBib_mj.html#biBC-GS-HP-M">[CGHM19]</a>.</p>
 
 
 <div class="example"><pre>
@@ -280,7 +280,7 @@ true
 <h5>10.2-1 SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">\(\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}\)</span>, where <span class="SimpleMath">\(\mathrm{int}(f,g)=\dim_{\mathbb K} (\mathbb K[x,y]/(f,g))\)</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">\(\delta\)</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib_mj.html#biBAGS14">[AGS16a]</a>.</p>
+<p><var class="Arg">f</var> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). Computes the semigroup <span class="SimpleMath">\(\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}\)</span>, where <span class="SimpleMath">\(\mathrm{int}(f,g)=\dim_{\mathbb K} (\mathbb K[x,y]/(f,g))\)</span>. The algorithm checks if <var class="Arg">f</var> has one place at infinity. If the extra argument "all" is given, then the output is the <span class="SimpleMath">\(\delta\)</span>-sequence and approximate roots of <var class="Arg">f</var>. The method is explained in <a href="chapBib_mj.html#biBAGS14">[AG16a]</a>.</p>
 
 
 <div class="example"><pre>
@@ -370,7 +370,7 @@ y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 
 <p>If only one argument is given, the output is the semigroup of all possible orders of <span class="SimpleMath">\(K[[pols]]\)</span> provided that <span class="SimpleMath">\(K[[x]]/K[[pols]]\)</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">\(K[[pols]]\)</span> such that the orders of the basis elements generate minimally the semigroup of orders of <span class="SimpleMath">\(K[[pols]]\)</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">\(K[[pols]]\)</span> with order <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomial, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
 
-<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGSM17]</a>.</p>
+<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGM17]</a>.</p>
 
 
 <div class="example"><pre>
@@ -394,7 +394,7 @@ x^20
 
 <p>If only one argument is given, the output is the semigroup of all possible degrees of <span class="SimpleMath">\(K[pols]\)</span> provided that <span class="SimpleMath">\(K[x]/K[pols]\)</span> has finite length. If the second argument <var class="Arg">"basis"</var> is given, then the output is a (reduced) basis of the algebra <span class="SimpleMath">\(K[pols]\)</span> such that the degrees of the basis elements generate minimally the semigroup of degrees of <span class="SimpleMath">\(K[pols]\)</span>. If an integer <var class="Arg">val</var> is the second argument, then the output is a polynomial in <span class="SimpleMath">\(K[pols]\)</span> with degree <var class="Arg">val</var> (<code class="code">fail</code> if there is no such polynomial, that is, <var class="Arg">val</var> is not in the semigroup of values).</p>
 
-<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGSM17]</a>.</p>
+<p>The method is explained in <a href="chapBib_mj.html#biBAGSM14">[AGM17]</a>.</p>
 
 
 <div class="example"><pre>
@@ -416,7 +416,7 @@ fail
 <h5>10.2-8 GeneratorsModule_Global</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsModule_Global</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
-<p><var class="Arg">A</var> and <var class="Arg">M</var> are lists of polynomials in the same variable. The output is a basis of the ideal <span class="SimpleMath">\(M K[A]\)</span>, that is, a set <span class="SimpleMath">\(F\)</span> such that <span class="SimpleMath">\(deg(F)\)</span> generates the ideal <span class="SimpleMath">\(deg(M K[A])\)</span> of <span class="SimpleMath">\(deg(K[A])\)</span>, where <span class="SimpleMath">\(deg\)</span> stands for degree. The method is explained in <a href="chapBib_mj.html#biBA-A-GS">[AAGS17]</a>.</p>
+<p><var class="Arg">A</var> and <var class="Arg">M</var> are lists of polynomials in the same variable. The output is a basis of the ideal <span class="SimpleMath">\(M K[A]\)</span>, that is, a set <span class="SimpleMath">\(F\)</span> such that <span class="SimpleMath">\(deg(F)\)</span> generates the ideal <span class="SimpleMath">\(deg(M K[A])\)</span> of <span class="SimpleMath">\(deg(K[A])\)</span>, where <span class="SimpleMath">\(deg\)</span> stands for degree. The method is explained in <a href="chapBib_mj.html#biBA-A-GS">[AAG19]</a>.</p>
 
 
 <div class="example"><pre>
@@ -431,7 +431,7 @@ fail
 
 <h5>10.2-9 GeneratorsKahlerDifferentials</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsKahlerDifferentials</code>( <var class="Arg">A</var>, <var class="Arg">M</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsKahlerDifferentials</code>( <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
 <p><var class="Arg">A</var> is a list of polynomials in the same variable. The output is <var class="Arg">GeneratorsModule_Global(A,M)</var>, with <var class="Arg">M</var> the set of derivatives of the elements in <var class="Arg">A</var>.</p>
 
 
@@ -487,6 +487,6 @@ false
 <div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chap11_mj.html">11</a>  <a href="chap12_mj.html">12</a>  <a href="chap13_mj.html">13</a>  <a href="chap14_mj.html">14</a>  <a href="chapA_mj.html">A</a>  <a href="chapB_mj.html">B</a>  <a href="chapC_mj.html">C</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
-<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
 </body>
 </html>

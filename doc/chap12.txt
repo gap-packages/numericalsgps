@@ -18,7 +18,7 @@
   there  is  a minimum [22XC[122X fulfilling [22XC+N^n⊆ S[122X, which is called the [13Xconductor[113X of
   [22XS[122X.[133X
   
-  [33X[0;0YThe contents of this chapter are described in [DGSMT18].[133X
+  [33X[0;0YThe contents of this chapter are described in [DGMT18].[133X
   
   
   [1X12.1 [33X[0;0YDefining good semigroups[133X[101X
@@ -254,7 +254,7 @@
   [33X[1;0Y[29X[2XMaximalElementsOfGoodSemigroup[102X( [3XS[103X ) [32X attribute[133X
   
   [33X[0;0Y[3XS[103X is a good semigroup. The output is the set of elements [22X(x,y)[122X of [3XS[103X with the
-  following  property:  there  is  no  other element [22X(x',y')[122X in [3XS[103X with [22X(x,y)le
+  following  property:  there  is  no  other  element [22X(x',y')[122X in [3XS[103X with [22X(x,y)≤
   (x',y')[122X sharing a coordinate with [22X(x,y)[122X.[133X
   
   [4X[32X  Example  [32X[104X
@@ -311,7 +311,7 @@
   [33X[1;0Y[29X[2XMinimalGoodGeneratingSystemOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  good  semigroup.  The output is its minimal good generating system
-  (which is unique in the local case, [DGSMT18]).[133X
+  (which is unique in the local case, [DGMT18]).[133X
   
   [33X[0;0Y[10XMinimalGoodGeneratingSystemOfGoodSemigroup[110X   and  [10XMinimalGoodGenerators[110X  are
   synonyms.[133X
@@ -680,7 +680,7 @@
   [33X[1;0Y[29X[2XTracksOfGoodSemigroup[102X( [3XS[103X ) [32X function[133X
   
   [33X[0;0Y[3XS[103X  is  a  good  semigroup.  This  function  returns  the  tracks of the good
-  semigroup  (see  [tt19]  for  the  definition  of track). Tracks behave like
+  semigroup  (see  [MZ20]  for  the  definition  of track). Tracks behave like
   minimal  generators in a numerical semigroups, because removing the elements
   of  a  track  from  the  semigroup,  with  the  exception of the infimums of
   incomparable elements, we obtain a good semigroup contained in [3XS[103X.[133X

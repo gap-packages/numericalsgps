@@ -7,8 +7,8 @@ SetPackageInfo( rec(
 
 PackageName := "NumericalSgps",
 Subtitle := "A package for numerical semigroups",
-Version := "1.3.1",
-Date := "27/07/2022", # dd/mm/yyyy format
+Version := "1.4.0",
+Date := "30/08/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 ##  Information about authors and maintainers.
@@ -53,7 +53,7 @@ Persons := [
 # provide such a record for each author and/or maintainer ...
 
 rec(
-  LastName      := "Cisco",
+  LastName      := "Cisto",
   FirstNames    := "Carmelo",
   IsAuthor      := false,
   IsMaintainer  := false,
@@ -219,7 +219,7 @@ AbstractHTML :=
 PackageDoc := rec(
   BookName  := "NumericalSgps",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
   LongTitle := "NumericalSgps, a GAP package for numerical semigroups",
