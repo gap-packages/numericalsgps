@@ -1015,8 +1015,8 @@ InstallGlobalFunction(IsAdditiveNumericalSemigroup, function(s)
 
 	m:=MultiplicityOfNumericalSemigroup(s);
 	b:=BlowUpOfNumericalSemigroup(s);
-	return AdjustmentOfNumericalSemigroup(s)
-				=AperyListOfNumericalSemigroupWRTElement(b,m);
+	return Set(AdjustmentOfNumericalSemigroup(s))
+				=Set(AperyListOfNumericalSemigroupWRTElement(b,m));
 end);
 
 
