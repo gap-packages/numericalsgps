@@ -2135,13 +2135,13 @@ gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
 gap> Length(l);
 109
 gap> Length(Filtered(l,IsAdditiveNumericalSemigroup));
-20
+99
 
 gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
 gap> Length(l);
 109
 gap> Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));
-7
+64
 
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
 [ [ 2, 6, 0, 0 ], [ 3, 4, 1, 0 ], [ 4, 2, 2, 0 ], [ 5, 0, 3, 0 ],

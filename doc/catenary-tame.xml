@@ -422,7 +422,7 @@ gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
 gap> Length(l);
 109
 gap> Length(Filtered(l,IsAdditiveNumericalSemigroup));
-20
+99
 ]]></Example>
         </Description>
 </ManSection>
@@ -1192,7 +1192,7 @@ gap> l:=IrreducibleNumericalSemigroupsWithFrobeniusNumber(31);;
 gap> Length(l);
 109
 gap> Length(Filtered(l,IsSuperSymmetricNumericalSemigroup));
-7
+64
 ]]></Example>
     </Description>
 </ManSection>
