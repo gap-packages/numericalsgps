@@ -564,7 +564,7 @@ gap> AdjacentCatenaryDegreeOfSetOfFactorizations(last);
     <ManSection>
         <Func Arg="ls" Name="EqualCatenaryDegreeOfSetOfFactorizations"></Func>
         <Description>
-            <A>ls</A> is a set of factorizations. The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations joined by the chain must have the same length, and the elements in the chain also. Equivalently,  if <M>l_1,\ldots,l_t</M> are the lengths of the factorizations of the elements in <A>ls</A>, and <M>Z_{l_i}</M> is the set of factorizations in <A>ls</A> with length <M>l_i</M>, then the equal catenary degree is the maximum of the CatenaryDegreeOfSetOfFactorizations of <M>\mathrm d (Z_{l_i},Z_{l_{i+1}})</M>.
+            <A>ls</A> is a set of factorizations. The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations joined by the chain must have the same length, and the elements in the chain also. Equivalently,  if <M>l_1,\ldots,l_t</M> are the lengths of the factorizations of the elements in <A>ls</A>, and <M>Z_{l_i}</M> is the set of factorizations in <A>ls</A> with length <M>l_i</M>, then the equal catenary degree is the maximum of the CatenaryDegreeOfSetOfFactorizations of <M>\mathrm d (Z_{l_i},Z_{l_{i+1}})</M>. See <Cite Key="GSOSN"></Cite>.
 
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
@@ -579,7 +579,7 @@ gap> EqualCatenaryDegreeOfSetOfFactorizations(last);
     <ManSection>
         <Func Arg="ls" Name="MonotoneCatenaryDegreeOfSetOfFactorizations"></Func>
         <Description>
-            <A>ls</A> is a set of factorizations. The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations are joined by a chain with nondecreasing lengths. Equivalently, it is the maximum of the AdjacentCatenaryDegreeOfSetOfFactorizations and the EqualCatenaryDegreeOfSetOfFactorizations.
+            <A>ls</A> is a set of factorizations. The same as CatenaryDegreeOfSetOfFactorizations, but now the factorizations are joined by a chain with nondecreasing lengths. Equivalently, it is the maximum of the AdjacentCatenaryDegreeOfSetOfFactorizations and the EqualCatenaryDegreeOfSetOfFactorizations. See <Cite Key="GSOSN"></Cite>.
 
             <Example><![CDATA[
 gap> FactorizationsIntegerWRTList(100,[11,13,15,19]);
@@ -992,7 +992,7 @@ gap> List([1..10],MoebiusFunction(s));
         <Description>
 	    <A>S</A> is a numerical semigroup and <A>n</A> is an integer. The arguments can also be given as <A>n, S</A>.
 
-      The output is the set of divisors of <A>n</A> in <A>S</A>.
+      The output is the set of divisors of <A>n</A> in <A>S</A>. See <Cite Key="nsapp2"></Cite>.
 
             <Example><![CDATA[
 gap> s:=NumericalSemigroup(5,7,11);;
@@ -1055,7 +1055,7 @@ gap> MinimalGenerators(NumericalSemigroupByTauSequence(tau));
 
 	Let <M>S</M> be a numerical semigroup and let <M>n\in S</M>.  The Feng-Rao distance of <M>n</M> is then defined as <M>\delta_S(n)=\min\{ \#\mathrm{D}(x)\mid n\le x,\ x\in S\}</M>.<P/>
 
-  The <M>r</M>th generalized distance is <M>\delta_S^r(n)=\{ \#\mathrm{D}(n_1,\ldots,n_r) \mid n\le n_1 &lt; \cdots &lt; n_r,\ n_i\in S\}</M>.
+  The <M>r</M>th generalized distance is <M>\delta_S^r(n)=\{ \#\mathrm{D}(n_1,\ldots,n_r) \mid n\le n_1 &lt; \cdots &lt; n_r,\ n_i\in S\}</M>. See <Cite Key="nsapp2"></Cite>
 
     <ManSection>
         <Func Arg="S,r,m" Name="FengRaoDistance"></Func>

@@ -936,7 +936,7 @@ true
 <A>I</A> is an ideal and <A>n</A> is an integer.
  					Computes the set of elements <M>x</M> of <A>I</A>  such that <M>x-</M><A>n</A> is not in the ideal <A>I</A>,
 					where <A>n</A> is supposed to be in the ambient semigroup of <A>I</A>.
-					The element in the <M>i</M>th position of the output list (starting in 0) is congruent with <M>i</M> modulo <A>n</A>.
+					The element in the <M>i</M>th position of the output list (starting in 0) is congruent with <M>i</M> modulo <A>n</A>. See <Cite Key="ASICMNS"></Cite>
 
                        <Example><![CDATA[
 gap> s:=NumericalSemigroup(10,11,13);;
