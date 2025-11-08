@@ -1181,8 +1181,17 @@ InstallMethod(AperyTable,
 ##  -D. Spirito, Star Operations on Numerical Semigroups
 ########################################################################
 
-InstallGlobalFunction(StarClosureOfIdealOfNumericalSemigroup, function(i,is)
-	local j, s, k;
+InstallGlobalFunction(StarClosureOfIdealOfNumericalSemigroup, function(i,ideals...)
+	local j, s, k, is;
+
+
+    if Length(ideals) = 0 then
+        is:=[];
+    elif Length(ideals) = 1 then
+        is := ideals[1];
+    else
+        Error("The number of arguments must be one or two");
+    fi;
 
 	s:=AmbientNumericalSemigroupOfIdeal(i);
 	j:=s-(s-i); # i^v
@@ -1375,3 +1384,70 @@ function(I)
     return output;
 end    
 );
+
+
+#############################################################################
+## 
+#P IsReflexive(i)
+## Detects if the ideal is reflexive: i = (S - (S - i)), with S the ambient
+## semigroup of i
+###########################################################################
+InstallMethod(IsReflexive,
+  "Detects if the ideal is reflexive", [IsIdealOfNumericalSemigroup],
+  function(i)
+
+  local s;
+
+  s:=AmbientNumericalSemigroupOfIdeal(i);
+  return i = s - (s - i);
+end);
+
+##########################################################################
+##
+#O IdealOfElementsGreaterThanOrEqualTo(k,S)
+## Given a numerical semigroup S and an integer k,
+## returns the ideal of S formed by all elements greater than or equal to k
+##########################################################################
+InstallMethod(IdealOfElementsGreaterThanOrEqualTo," The ideal of elements greater than or equal to k in S",
+    [IsInt, IsNumericalSemigroup],
+function(x,s)
+    local pos,c, posc,m;
+    if not(x in s) then
+        Error("The integer must belong to the numerical semigroup");
+    fi;
+    c:=Conductor(s);
+    m:=Multiplicity(s);
+    if x>=c then
+        return [x..x+m-1]+s;
+    fi;
+    pos:=NumberElement_NumericalSemigroup(s,x);
+    posc:=NumberElement_NumericalSemigroup(s,c);
+    return s{[pos..posc+m]}+s;
+end);
+InstallMethod(IdealOfElementsGreaterThanOrEqualTo," The ideal of elements greater than or equal to k in S",
+    [IsNumericalSemigroup,IsInt],
+function(s,x)
+    return IdealOfElementsGreaterThanOrEqualTo(x,s);
+end);
+
+#############################################################################
+##
+#A IsIntegrallyClosed(I)
+##  Detects if the ideal I is integrally closed, that is, if it is equal to
+##  the ideal of elements in S greater than or equal to min(I), with S the
+##  ambient semigroup of I
+###########################################################################
+InstallMethod(IsIntegrallyClosed,
+  "Detects if the ideal is integrally closed", [IsIdealOfNumericalSemigroup],
+  function(I)
+
+  local s, minI, IC;
+
+  s:=AmbientNumericalSemigroupOfIdeal(I);
+  minI:=Minimum(GeneratorsOfIdealOfNumericalSemigroup(I));
+  if not(minI in s) then
+      return false;
+  fi;
+  IC:=IdealOfElementsGreaterThanOrEqualTo(minI,s);
+  return I = IC;
+end);

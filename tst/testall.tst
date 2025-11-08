@@ -1869,6 +1869,25 @@ gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
 true
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=[0,2]+s;;
+gap> IsReflexive(i);
+false
+gap> IsReflexive(s-(s-i));
+true
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> SmallElements(IdealOfElementsGreaterThanOrEqualTo(s,19));
+[ 19, 21, 23, 24, 25, 27, 29, 30, 31, 33 ]
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,6,7]+s;;
+gap> IsIntegrallyClosed(i);
+false
+gap> j:=IdealOfElementsGreaterThanOrEqualTo(23,s);;
+gap> IsIntegrallyClosed(j);
+true
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

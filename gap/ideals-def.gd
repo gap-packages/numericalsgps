@@ -518,3 +518,29 @@ DeclareOperation("IrreducibleZComponents",[IsIdealOfNumericalSemigroup]);
 ## RSME Springer series 3, Springer, Switzerland, 2020.
 ########################################################################
 DeclareOperation("DecomposeIntegralIdealIntoIrreducibles",[IsIdealOfNumericalSemigroup]);
+
+#############################################################################
+## 
+#P IsReflexive(i)
+## Detects if the ideal is reflexive: i = (S - (S - i)), with S the ambient
+## semigroup of i
+###########################################################################
+DeclareProperty("IsReflexive",IsIdealOfNumericalSemigroup);
+
+##########################################################################
+##
+#O IdealOfElementsGreaterThanOrEqualTo(k,S)
+## Given a numerical semigroup S and an integer k,
+## returns the ideal of S formed by all elements greater than or equal to k
+##########################################################################
+DeclareOperation("IdealOfElementsGreaterThanOrEqualTo",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("IdealOfElementsGreaterThanOrEqualTo",[IsNumericalSemigroup,IsInt]);
+
+#############################################################################
+##
+#P IsIntegrallyClosed(I)
+##  Detects if the ideal I is integrally closed, that is, if it is equal to
+##  the ideal of elements in S greater than or equal to min(I), with S the
+##  ambient semigroup of I
+###########################################################################
+DeclareProperty("IsIntegrallyClosed",IsIdealOfNumericalSemigroup);
