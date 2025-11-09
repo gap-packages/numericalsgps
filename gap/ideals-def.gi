@@ -1518,7 +1518,7 @@ end);
 ##########################################################################
 InstallMethod(NormalizedIdeals,
     "Computes the list of normalized ideals of a numerical semigroup",
-    [IsNumericalSemigroup],
+    [IsNumericalSemigroup],1,
 function(s)
     local k, c, v, m, isaperylistideal,t, ca;
     # detects if a given list is the apery list of an ideal of s
