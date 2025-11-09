@@ -544,3 +544,13 @@ DeclareOperation("IdealOfElementsGreaterThanOrEqualTo",[IsNumericalSemigroup,IsI
 ##  ambient semigroup of I
 ###########################################################################
 DeclareProperty("IsIntegrallyClosed",IsIdealOfNumericalSemigroup);
+
+#############################################################################
+##
+#F IdealOfNumericalSemigroupBySmallElements(l,S)
+## l is a list of integers and S a numerical semigroup
+##
+## returns the ideal of S whose small elements are those in l.
+##
+#############################################################################
+DeclareGlobalFunction("IdealOfNumericalSemigroupBySmallElements");

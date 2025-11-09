@@ -1888,6 +1888,11 @@ gap> j:=IdealOfElementsGreaterThanOrEqualTo(23,s);;
 gap> IsIntegrallyClosed(j);
 true
 
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> i=IdealOfNumericalSemigroupBySmallElements(SmallElements(i),s);
+true
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

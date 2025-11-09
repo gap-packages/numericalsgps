@@ -163,35 +163,6 @@ true
             </Description>
         </ManSection>
 
-    <ManSection>
-	    <Oper Arg="x,S" Name="IdealOfElementsGreaterThanOrEqualTo" Label="for an element in a numerical semigroup"></Oper>
-	    <Oper Arg="S,x" Name="IdealOfElementsGreaterThanOrEqualTo" Label="for a numerical semigroup and one if its elements"></Oper>
-            <Description>
-            <A>S</A> is a numerical semigroup and <A>x</A> is an element of <A>S</A>. The output is the integral ideal <M>\{ s\in <A>S</A> : s\ge <A>x</A>\}</M>.
-            <Example><![CDATA[
-gap> s:=NumericalSemigroup(6,17,19,21);;
-gap> SmallElements(IdealOfElementsGreaterThanOrEqualTo(s,19));
-[ 19, 21, 23, 24, 25, 27, 29, 30, 31, 33 ]
-]]></Example>
-            </Description>
-        </ManSection>
-
-    <ManSection>
-	    <Prop Arg="I" Name="IsIntegrallyClosed" Label="for an ideal of a numerical semigroup"></Prop>
-            <Description>
-            <A>I</A> is an ideal of a numerical semigroup. Determines if <A>I</A> is integrally closed, that is, if <M>I=\{ s\in S : s\ge m\}</M>, with <M>m</M> the minimum of <A>I</A>.
-            <Example><![CDATA[
-gap> s:=NumericalSemigroup(6,17,19,21);;
-gap> i:=[0,6,7]+s;;
-gap> IsIntegrallyClosed(i);
-false
-gap> j:=IdealOfElementsGreaterThanOrEqualTo(23,s);;
-gap> IsIntegrallyClosed(j);
-true
-]]></Example>
-            </Description>
-        </ManSection>
-
 
                 <ManSection>
 		  <Attr Arg="I" Name="SmallElements" Label="for ideal of numerical semigroup"></Attr>
@@ -213,6 +184,22 @@ gap> SmallElements(J);
 ]]></Example>
                     </Description>
                 </ManSection>
+
+<ManSection>
+            <Func Arg="L,S" Name="IdealOfNumericalSemigroupBySmallElements"></Func>
+            <Description>
+                <A>L</A> is a list of integers and <A>S</A> is a numerical semigroup.
+                Checks if <A>L</A> is the list of small elements of an ideal of <A>S</A> and, in this case, returns this ideal. Otherwise it raises an error.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> i=IdealOfNumericalSemigroupBySmallElements(SmallElements(i),s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
 
 <ManSection>
             <Attr Name="Conductor" Arg="I" Label="for ideal of numerical semigroup"/>
@@ -396,6 +383,37 @@ gap> SmallElements(i);
 ]]></Example>
 					</Description>
 </ManSection>
+
+
+    <ManSection>
+	    <Oper Arg="x,S" Name="IdealOfElementsGreaterThanOrEqualTo" Label="for an element in a numerical semigroup"></Oper>
+	    <Oper Arg="S,x" Name="IdealOfElementsGreaterThanOrEqualTo" Label="for a numerical semigroup and one if its elements"></Oper>
+            <Description>
+            <A>S</A> is a numerical semigroup and <A>x</A> is an element of <A>S</A>. The output is the integral ideal <M>\{ s\in <A>S</A> : s\ge <A>x</A>\}</M>.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> SmallElements(IdealOfElementsGreaterThanOrEqualTo(s,19));
+[ 19, 21, 23, 24, 25, 27, 29, 30, 31, 33 ]
+]]></Example>
+            </Description>
+        </ManSection>
+
+    <ManSection>
+	    <Prop Arg="I" Name="IsIntegrallyClosed" Label="for an ideal of a numerical semigroup"></Prop>
+            <Description>
+            <A>I</A> is an ideal of a numerical semigroup. Determines if <A>I</A> is integrally closed, that is, if <M>I=\{ s\in S : s\ge m\}</M>, with <M>m</M> the minimum of <A>I</A>.
+            <Example><![CDATA[
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,6,7]+s;;
+gap> IsIntegrallyClosed(i);
+false
+gap> j:=IdealOfElementsGreaterThanOrEqualTo(23,s);;
+gap> IsIntegrallyClosed(j);
+true
+]]></Example>
+            </Description>
+        </ManSection>
+
 
                 <ManSection>
                     <Func Arg="I, J" Name="SumIdealsOfNumericalSemigroup"></Func>

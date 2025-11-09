@@ -1451,3 +1451,36 @@ InstallMethod(IsIntegrallyClosed,
   IC:=IdealOfElementsGreaterThanOrEqualTo(minI,s);
   return I = IC;
 end);
+
+#############################################################################
+##
+#F IdealOfNumericalSemigroupBySmallElements(l,S)
+## l is a list of integers and S a numerical semigroup
+##
+## returns the ideal of S whose small elements are those in l.
+##
+#############################################################################
+InstallGlobalFunction(IdealOfNumericalSemigroupBySmallElements, function(l,s)
+    local i,ls,ln,maxl,mult;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.");
+    fi;
+
+    if not IsListOfIntegersNS(l) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    ls:=List(Set(l));
+    ln:=Length(ls);
+    while (ln>1) and (ls[ln]=ls[ln-1]+1) do
+        Remove(ls,ln);
+        ln:=ln-1;
+    od;
+    maxl:=Maximum(ls);
+    mult:=Multiplicity(s);
+    i:=Union(l,[maxl.. maxl+mult])+s;
+    if not(SmallElements(i) = ls) then
+        Error("The given list is not a list of small elements of an ideal of the given numerical semigroup.");
+    fi;
+    return i;
+end);
