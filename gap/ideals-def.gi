@@ -1565,7 +1565,7 @@ InstallMethod(KunzCoordinates,
     "Computes the Kunz coordinates of an ideal of a numerical semigroup",
     [IsIdealOfNumericalSemigroup,IsInt],
 function(I,m)
-    local s,p;
+    local s,ap;
     s:=AmbientNumericalSemigroupOfIdeal(I);
     if not(m in s) then
         Error("The second argument must be an element of the ambient semigroup of the ideal.");
