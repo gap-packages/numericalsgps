@@ -1554,3 +1554,32 @@ function(s)
     v:=List(ca, k->List([1..m],i->k[i]*m+i-1)+s);
     return v;
 end);
+
+##########################################################################
+##
+#O KunzCoordinates(I,[m])
+##  Given an ideal I of a numerical semigroup S, returns the Kunz coordinates of
+##  I. If the optional argument m is given, it is assumed to in S.
+##########################################################################
+InstallMethod(KunzCoordinates,
+    "Computes the Kunz coordinates of an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+function(I,m)
+    local s,p;
+    s:=AmbientNumericalSemigroupOfIdeal(I);
+    if not(m in s) then
+        Error("The second argument must be an element of the ambient semigroup of the ideal.");
+    fi;
+    ap:=AperyList(I,m);
+    return List([2..m],i->(ap[i]-i+1)/m);
+end);
+
+InstallMethod(KunzCoordinates,
+    "Computes the Kunz coordinates of an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+function(I)
+    local s,m;
+    s:=AmbientNumericalSemigroupOfIdeal(I);
+    m:=MultiplicityOfNumericalSemigroup(s);
+    return KunzCoordinates(I,m);
+end);

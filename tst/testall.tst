@@ -1908,6 +1908,14 @@ gap> is:=NormalizedIdeals(s);;
 gap> Set(is,MinimalGenerators);
 [ [ 0 ], [ 0, 1 ], [ 0, 1, 2 ], [ 0, 2 ], [ 0, 2, 4 ], [ 0, 4 ] ]
 
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> KunzCoordinates(i,17);
+[ 1, 0, 1, 1, 2, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1 ]
+gap> KunzCoordinates(i);
+[ 1, 0, 3, 4, 2 ]
+
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

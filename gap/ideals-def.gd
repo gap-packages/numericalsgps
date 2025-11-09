@@ -571,3 +571,12 @@ DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsIdealOfNumericalSemigroup,
 ##  that is, the ideals I of S such that min(I)=0
 ##########################################################################
 DeclareOperation("NormalizedIdeals",[IsNumericalSemigroup]);
+
+##########################################################################
+##
+#O KunzCoordinates(I,[m])
+##  Given an ideal I of a numerical semigroup S, returns the Kunz coordinates of
+##  I. If the optional argument m is given, it is assumed to in S.
+##########################################################################
+DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup]);
+DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup,IsInt]);
