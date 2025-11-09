@@ -1903,6 +1903,11 @@ gap> j:=AddPseudoFrobeniusNumberToIdeal(11,i);;
 gap> SmallElements(j);
 [ 0, 2, 6, 7, 8, 11, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> is:=NormalizedIdeals(s);;
+gap> Set(is,MinimalGenerators);
+[ [ 0 ], [ 0, 1 ], [ 0, 1, 2 ], [ 0, 2 ], [ 0, 2, 4 ], [ 0, 4 ] ]
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

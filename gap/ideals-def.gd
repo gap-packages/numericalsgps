@@ -563,3 +563,11 @@ DeclareGlobalFunction("IdealOfNumericalSemigroupBySmallElements");
 #########################################################################
 DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsInt,IsIdealOfNumericalSemigroup]);
 DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsIdealOfNumericalSemigroup,IsInt]);
+
+##########################################################################
+##
+#O NormalizedIdeals(s)
+##  Given a numerical semigroup S, returns the list of normalized ideals of S,
+##  that is, the ideals I of S such that min(I)=0
+##########################################################################
+DeclareOperation("NormalizedIdeals",[IsNumericalSemigroup]);

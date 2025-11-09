@@ -327,6 +327,20 @@ true
                     </Description>
                 </ManSection>
 
+<ManSection>
+            <Oper Name="NormalizedIdeals" Arg="I" Label="for a numerical semigroup"/>
+            <Description>
+                <A>S</A> is  a numerical semigroup.
+                The output is the set of all the ideals of <A>S</A> whose minimum is zero; it uses the procedure explained in  <Cite Key="ASICMNS"></Cite>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> is:=NormalizedIdeals(s);;
+gap> Set(is,MinimalGenerators);
+[ [ 0 ], [ 0, 1 ], [ 0, 1, 2 ], [ 0, 2 ], [ 0, 2, 4 ], [ 0, 4 ] ]
+]]></Example>
+    </Description>
+</ManSection>
 
 
 				<ManSection>
