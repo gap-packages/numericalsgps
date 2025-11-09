@@ -554,3 +554,12 @@ DeclareProperty("IsIntegrallyClosed",IsIdealOfNumericalSemigroup);
 ##
 #############################################################################
 DeclareGlobalFunction("IdealOfNumericalSemigroupBySmallElements");
+
+#########################################################################
+##
+#O AddPseudoFrobeniusNumberToIdeal(f,I)
+##  Given an ideal I of a numerical semigroup S and a pseudo-Frobenius
+##  number f of I, returns the ideal J=I U {f}
+#########################################################################
+DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsInt,IsIdealOfNumericalSemigroup]);
+DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsIdealOfNumericalSemigroup,IsInt]);

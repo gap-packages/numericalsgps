@@ -1893,6 +1893,16 @@ gap> i:=[0,2,7]+s;;
 gap> i=IdealOfNumericalSemigroupBySmallElements(SmallElements(i),s);
 true
 
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> pf:=PseudoFrobenius(i);
+[ 11, 15, 22 ]
+gap> SmallElements(i);
+[ 0, 2, 6, 7, 8, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+gap> j:=AddPseudoFrobeniusNumberToIdeal(11,i);;
+gap> SmallElements(j);
+[ 0, 2, 6, 7, 8, 11, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

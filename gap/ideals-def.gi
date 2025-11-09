@@ -1484,3 +1484,28 @@ InstallGlobalFunction(IdealOfNumericalSemigroupBySmallElements, function(l,s)
     fi;
     return i;
 end);
+
+#########################################################################
+##
+#O AddPseudoFrobeniusNumberToIdeal(f,I)
+##  Given an ideal I of a numerical semigroup S and a pseudo-Frobenius
+##  number f of I, returns the ideal J=I U {f}
+#########################################################################
+InstallMethod(AddPseudoFrobeniusNumberToIdeal,
+    "Adds a pseudo-Frobenius number to an ideal of a numerical semigroup",
+    [IsInt, IsIdealOfNumericalSemigroup],
+function(f,I)
+    local smi;
+    if not(f in PseudoFrobenius(I)) then
+        Error("The first argument must be a pseudo-Frobenius number of the ideal.");
+    fi;
+    smi:=SmallElements(I);
+    return IdealOfNumericalSemigroupBySmallElements(Union(smi,[f]),AmbientNumericalSemigroupOfIdeal(I));
+end);
+
+InstallMethod(AddPseudoFrobeniusNumberToIdeal,
+    "Adds a pseudo-Frobenius number to an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+function(I,f)
+    return AddPseudoFrobeniusNumberToIdeal(f,I);
+end);

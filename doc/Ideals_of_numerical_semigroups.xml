@@ -266,6 +266,27 @@ gap> Type(k);
     </Description>
 </ManSection>
 
+<ManSection>
+    <Oper Name="AddPseudoFrobeniusNumberToIdeal" Arg="f,I" Label="for a pseodo-Frobenius number of an ideal of numerical semigroup"/>
+    <Oper Name="AddPseudoFrobeniusNumberToIdeal" Arg="I,f" Label="for ideal of numerical semigroup and one of its pseudo-Frobenius numbers"/>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup and <A>f</A> is a pseudo-Frobenius number of <A>I</A>.
+        The output is the ideal <M><A>I</A>\cup \{<A>f</A>\}</M>. If <A>f</A> is not a pseudo-Frobenius number of <A>I</A>, an error is raised. 
+
+                <Example><![CDATA[
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> pf:=PseudoFrobenius(i);
+[ 11, 15, 22 ]
+gap> SmallElements(i);
+[ 0, 2, 6, 7, 8, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+gap> j:=AddPseudoFrobeniusNumberToIdeal(11,i);;
+gap> SmallElements(j);
+[ 0, 2, 6, 7, 8, 11, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+]]></Example>
+    </Description>
+</ManSection>
+
 
                 <ManSection>
                     <Oper Name="Minimum" Arg="I" Label="minimum of ideal of numerical semigroup"/>
