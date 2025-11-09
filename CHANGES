@@ -8,6 +8,8 @@
 - Added IsReflexive for ideals of numerical semigroups
 - Added IdealOfElementsGreaterThanOrEqualTo for numerical semigroups
 - Added IsIntegrallyClosed for ideals of numerical semigroups
+- Added IdealOfNumericalSemigroupBySmallElements
+- Added AddPseudoFrobeniusNumberToIdeal
 
 1.3.1 -> 1.4.0
 - Added NumericalSemigroupsWithFrobeniusNumberPC
