@@ -164,8 +164,8 @@ true
         </ManSection>
 
     <ManSection>
-	    <Oper Arg="x,S" Name="IdealOfElementsGreaterThanOrEqualTo"></Oper>
-	    <Oper Arg="S,x" Name="IdealOfElementsGreaterThanOrEqualTo"></Oper>
+	    <Oper Arg="x,S" Name="IdealOfElementsGreaterThanOrEqualTo" Label="for an element in a numerical semigroup"></Oper>
+	    <Oper Arg="S,x" Name="IdealOfElementsGreaterThanOrEqualTo" Label="for a numerical semigroup and one if its elements"></Oper>
             <Description>
             <A>S</A> is a numerical semigroup and <A>x</A> is an element of <A>S</A>. The output is the integral ideal <M>\{ s\in <A>S</A> : s\ge <A>x</A>\}</M>.
             <Example><![CDATA[
@@ -177,7 +177,7 @@ gap> SmallElements(IdealOfElementsGreaterThanOrEqualTo(s,19));
         </ManSection>
 
     <ManSection>
-	    <Prop Arg="I" Name="IsIntegrallyClosed"></Prop>
+	    <Prop Arg="I" Name="IsIntegrallyClosed" Label="for an ideal of a numerical semigroup"></Prop>
             <Description>
             <A>I</A> is an ideal of a numerical semigroup. Determines if <A>I</A> is integrally closed, that is, if <M>I=\{ s\in S : s\ge m\}</M>, with <M>m</M> the minimum of <A>I</A>.
             <Example><![CDATA[
@@ -1038,7 +1038,7 @@ gap> MinimalGenerators(last);
 
 
                 <ManSection>
-                    <Prop Arg="i" Name="IsReflexive"></Prop>
+                    <Prop Arg="i" Name="IsReflexive" Label="for an ideal of a numerical semigroup"></Prop>
                     <Description>
 
 						<A>i</A> is an ideal. Checks whether <M>i=s-(s-i)</M>, where <M>s</M> is the ambient numerical semigroup of <A>i</A>.
