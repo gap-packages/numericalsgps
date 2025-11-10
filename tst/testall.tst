@@ -1927,6 +1927,14 @@ gap> Difference(i,j);
 gap> j=RemoveMinimalGeneratorFromIdeal(i,7);
 true
 
+gap> s:=NumericalSemigroup(11,17,19,21);;
+gap> i:=[ 0, 4, 8, 12, 13, 14, 16, 18, 20 ]+s;;
+gap> i+i=i;
+true
+gap> SmallElements(i);
+[ 0, 4, 8, 11 ]
+gap> SmallElements(AsNumericalSemigroup(i));
+[ 0, 4, 8, 11 ]
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

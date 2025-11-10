@@ -492,6 +492,27 @@ gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);
                     </Description>
                 </ManSection>
 
+<ManSection>
+    <Oper Arg="I" Name="AsNumericalSemigroup" Label="for idempotent ideals of a numerical semigroup"></Oper>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup such that <M>I+I=I</M> (that is, an idempotent ideal), and thus it is a numerical semigroup.
+        The output is <A>I</A> as a numerical semigroup.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(11,17,19,21);;
+gap> i:=[ 0, 4, 8, 12, 13, 14, 16, 18, 20 ]+s;;
+gap> i+i=i;
+true
+gap> SmallElements(i);
+[ 0, 4, 8, 11 ]
+gap> SmallElements(AsNumericalSemigroup(i));
+[ 0, 4, 8, 11 ]
+]]></Example>
+                    </Description>
+                </ManSection>
+
+
+
                 <ManSection>
                     <Func Arg="n, I" Name="MultipleOfIdealOfNumericalSemigroup"></Func>
                     <Func Arg="n, I" Name="*" Label="for multiple of ideal of numerical semigroup"></Func>

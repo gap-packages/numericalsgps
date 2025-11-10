@@ -1619,3 +1619,19 @@ function(I,n)
     fi;
     return RemoveMinimalGeneratorFromIdeal(n,I);
 end);
+
+###########################################################################
+##
+#O AsNumericalSemigroup(I)
+##  Given an ideal I of a numerical semigroup S such that I+I=I (and thus it
+##  is a numerical semigroup), returns I as a numerical semigroup
+###########################################################################
+InstallMethod(AsNumericalSemigroup,
+    "Converts an idempotent ideal of a numerical semigroup into a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+function(I)
+    if not(I+I=I) then
+        Error("The ideal must be idempotent (I+I=I)");
+    fi;
+    return NumericalSemigroupBySmallElements(SmallElements(I));
+end);

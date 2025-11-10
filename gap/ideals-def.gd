@@ -589,3 +589,11 @@ DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup,IsInt]);
 ##########################################################################
 DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsInt,IsIdealOfNumericalSemigroup]);
 DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsIdealOfNumericalSemigroup,IsInt]);
+
+###########################################################################
+##
+#O AsNumericalSemigroup(I)
+##  Given an ideal I of a numerical semigroup S such that I+I=I (and thus it
+##  is a numerical semigroup), returns I as a numerical semigroup
+###########################################################################
+DeclareOperation("AsNumericalSemigroup",[IsIdealOfNumericalSemigroup]);
