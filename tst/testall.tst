@@ -3409,7 +3409,13 @@ true
 gap> [87,109] in dup;
 false
 
-
+## non-elimination version of presentations
+gap> NumSgpsUseEliminationForMinimalPresentations:=false;
+false
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 
 ## get info level to the original state
 gap> SetInfoLevel( InfoNumSgps, INFO_NSGPS);
