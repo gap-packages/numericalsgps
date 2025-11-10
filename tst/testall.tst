@@ -1937,11 +1937,12 @@ gap> SmallElements(AsNumericalSemigroup(i));
 [ 0, 4, 8, 11 ]
 
 gap> s:=NumericalSemigroup(3,5,7);;
+gap> is:=NormalizedIdeals(s);;
 gap> os:=Filtered(is,i->i+i=i);;
 gap> os=Filtered(is,IsStable);
 true
 gap> Length(os);
-230
+4
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

@@ -626,11 +626,12 @@ true
 
                         <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
+gap> is:=NormalizedIdeals(s);;
 gap> os:=Filtered(is,i->i+i=i);;
 gap> os=Filtered(is,IsStable);
 true
 gap> Length(os);
-230
+4
 ]]></Example>
     </Description>
 </ManSection>
