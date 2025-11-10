@@ -1885,6 +1885,8 @@ gap> i:=[0,6,7]+s;;
 gap> IsIntegrallyClosed(i);
 false
 gap> j:=IdealOfElementsGreaterThanOrEqualTo(23,s);;
+gap> j=IdealOfElementsGreaterThanOrEqualTo(s,23);
+true
 gap> IsIntegrallyClosed(j);
 true
 
@@ -1902,6 +1904,8 @@ gap> SmallElements(i);
 gap> j:=AddPseudoFrobeniusNumberToIdeal(11,i);;
 gap> SmallElements(j);
 [ 0, 2, 6, 7, 8, 11, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+gap> j=AddPseudoFrobeniusNumberToIdeal(i,11);
+true
 
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> is:=NormalizedIdeals(s);;
@@ -1914,6 +1918,14 @@ gap> KunzCoordinates(i,17);
 [ 1, 0, 1, 1, 2, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1 ]
 gap> KunzCoordinates(i);
 [ 1, 0, 3, 4, 2 ]
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> j:=RemoveMinimalGeneratorFromIdeal(7,i);;
+gap> Difference(i,j);
+[ 7 ]
+gap> j=RemoveMinimalGeneratorFromIdeal(i,7);
+true
 
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml

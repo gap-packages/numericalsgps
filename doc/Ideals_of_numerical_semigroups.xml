@@ -70,6 +70,27 @@ gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I);
                     </Description>
                 </ManSection>
 
+<ManSection>
+    <Oper Arg="I,n" Name="RemoveMinimalGeneratorFromIdeal" Label="for an ideal of numerical semigroup"></Oper>
+    <Oper Arg="n,I" Name="RemoveMinimalGeneratorFromIdeal" ></Oper>
+                    <Description>
+                        <A>I</A> is an ideal of a numerical semigroup and <A>n</A> is a minimal generator of <A>I</A> (if not, an error is raised).
+                        The output is the ideal <M><A>I</A>\setminus\{<A>n</A>\}</M>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> j:=RemoveMinimalGeneratorFromIdeal(7,i);;
+gap> Difference(i,j);
+[ 7 ]
+gap> j=RemoveMinimalGeneratorFromIdeal(i,7);
+true
+]]></Example>
+                    </Description>
+</ManSection>
+
+
+
                 <ManSection>
                     <Attr Arg="I" Name="Generators" Label="for ideal of numerical semigroup"></Attr>
                     <Attr Arg="I" Name="GeneratorsOfIdealOfNumericalSemigroup"></Attr>

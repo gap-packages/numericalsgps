@@ -580,3 +580,12 @@ DeclareOperation("NormalizedIdeals",[IsNumericalSemigroup]);
 ##########################################################################
 DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup]);
 DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup,IsInt]);
+
+##########################################################################
+##
+#O RemoveMinimalGeneratorFromIdeal(n.I)
+##  Given an ideal I of a numerical semigroup S and an integer n in I that is
+##  a minimal generator of I, returns the ideal I\{n}
+##########################################################################
+DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsInt,IsIdealOfNumericalSemigroup]);
+DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsIdealOfNumericalSemigroup,IsInt]);

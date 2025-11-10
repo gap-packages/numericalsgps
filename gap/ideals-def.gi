@@ -1507,6 +1507,9 @@ InstallMethod(AddPseudoFrobeniusNumberToIdeal,
     "Adds a pseudo-Frobenius number to an ideal of a numerical semigroup",
     [IsIdealOfNumericalSemigroup,IsInt],
 function(I,f)
+    if not(f in PseudoFrobenius(I)) then
+        Error("The second argument must be a pseudo-Frobenius number of the ideal.");
+    fi;
     return AddPseudoFrobeniusNumberToIdeal(f,I);
 end);
 
@@ -1582,4 +1585,37 @@ function(I)
     s:=AmbientNumericalSemigroupOfIdeal(I);
     m:=MultiplicityOfNumericalSemigroup(s);
     return KunzCoordinates(I,m);
+end);
+
+##########################################################################
+##
+#O RemoveMinimalGeneratorFromIdeal(n.I)
+##  Given an ideal I of a numerical semigroup S and an integer n in I that is
+##  a minimal generator of I, returns the ideal I\{n}
+##########################################################################
+InstallMethod(RemoveMinimalGeneratorFromIdeal,
+    "Removes a minimal generator from an ideal of a numerical semigroup",
+    [IsInt, IsIdealOfNumericalSemigroup],
+function(n,I)
+    local mg,s,mgs;
+    mg:=MinimalGenerators(I);
+    if not(n in mg) then
+        Error("The first argument must be a minimal generator of the ideal.");
+    fi;
+
+    s:=AmbientNumericalSemigroupOfIdeal(I);
+    mgs:=MinimalGenerators(s);
+    return Union(Difference(mg,[n]),n+mgs)+s;
+end);
+
+InstallMethod(RemoveMinimalGeneratorFromIdeal,
+    "Removes a minimal generator from an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+function(I,n)
+    local mg;
+    mg:=MinimalGenerators(I);
+    if not(n in mg) then
+        Error("The second argument must be a minimal generator of the ideal.");
+    fi;
+    return RemoveMinimalGeneratorFromIdeal(n,I);
 end);
