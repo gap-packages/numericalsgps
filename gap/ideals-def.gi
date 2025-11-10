@@ -1635,3 +1635,16 @@ function(I)
     fi;
     return NumericalSemigroupBySmallElements(SmallElements(I));
 end);
+
+###########################################################################
+##
+#P IsStable(I)
+##  Detects if the ideal I is stable, that is, if I+I=min(I)+I
+## If the ideal is normalized (min(I), then it is equivalent to say that 
+## I is idempotent (I+I=I)
+###########################################################################
+InstallMethod(IsStable,
+  "Detects if the ideal is stable", [IsIdealOfNumericalSemigroup],
+  function(I)
+      return I+I = Minimum(I)+I;
+end);

@@ -1936,6 +1936,13 @@ gap> SmallElements(i);
 gap> SmallElements(AsNumericalSemigroup(i));
 [ 0, 4, 8, 11 ]
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> os:=Filtered(is,i->i+i=i);;
+gap> os=Filtered(is,IsStable);
+true
+gap> Length(os);
+230
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

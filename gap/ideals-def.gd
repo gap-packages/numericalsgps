@@ -597,3 +597,10 @@ DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsIdealOfNumericalSemigroup,
 ##  is a numerical semigroup), returns I as a numerical semigroup
 ###########################################################################
 DeclareOperation("AsNumericalSemigroup",[IsIdealOfNumericalSemigroup]);
+
+###########################################################################
+##
+#P IsStable(I)
+##  Detects if the ideal I is stable, that is, if I+I=min(I)+I
+###########################################################################
+DeclareProperty("IsStable",IsIdealOfNumericalSemigroup);

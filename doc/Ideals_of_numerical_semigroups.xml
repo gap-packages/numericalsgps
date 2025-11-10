@@ -495,7 +495,7 @@ gap> MinimalGeneratingSystemOfIdealOfNumericalSemigroup(last);
 <ManSection>
     <Oper Arg="I" Name="AsNumericalSemigroup" Label="for idempotent ideals of a numerical semigroup"></Oper>
     <Description>
-        <A>I</A> is an ideal of a numerical semigroup such that <M>I+I=I</M> (that is, an idempotent ideal), and thus it is a numerical semigroup.
+        <A>I</A> is an ideal of a numerical semigroup such that <M><A>I</A>+<A>I</A> = <A>I</A></M> (that is, an idempotent ideal), and thus it is a numerical semigroup.
         The output is <A>I</A> as a numerical semigroup.
 
                         <Example><![CDATA[
@@ -508,9 +508,8 @@ gap> SmallElements(i);
 gap> SmallElements(AsNumericalSemigroup(i));
 [ 0, 4, 8, 11 ]
 ]]></Example>
-                    </Description>
-                </ManSection>
-
+    </Description>
+</ManSection>
 
 
                 <ManSection>
@@ -619,6 +618,23 @@ true
 ]]></Example>
 									</Description>
                 </ManSection>
+
+<ManSection>
+    <Prop Arg="I" Name="IsStable" Label="for ideals of a numerical semigroup"></Prop>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup; checks if <M><A>I</A>+<A>I</A> = \min(<A>I</A>)+<A>I</A></M>. If <M>\min(<A>I</A>)=0</M>, this is equivalent to say that <A>I</A> is idempotent.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> os:=Filtered(is,i->i+i=i);;
+gap> os=Filtered(is,IsStable);
+true
+gap> Length(os);
+230
+]]></Example>
+    </Description>
+</ManSection>
+
 
 <ManSection>
     <Func Arg="I, J" Name="Union" Label="for ideals of numerical semigroup"></Func>
