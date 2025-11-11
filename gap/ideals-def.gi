@@ -1181,8 +1181,17 @@ InstallMethod(AperyTable,
 ##  -D. Spirito, Star Operations on Numerical Semigroups
 ########################################################################
 
-InstallGlobalFunction(StarClosureOfIdealOfNumericalSemigroup, function(i,is)
-	local j, s, k;
+InstallGlobalFunction(StarClosureOfIdealOfNumericalSemigroup, function(i,ideals...)
+	local j, s, k, is;
+
+
+    if Length(ideals) = 0 then
+        is:=[];
+    elif Length(ideals) = 1 then
+        is := ideals[1];
+    else
+        Error("The number of arguments must be one or two");
+    fi;
 
 	s:=AmbientNumericalSemigroupOfIdeal(i);
 	j:=s-(s-i); # i^v
@@ -1375,3 +1384,267 @@ function(I)
     return output;
 end    
 );
+
+
+#############################################################################
+## 
+#P IsReflexive(i)
+## Detects if the ideal is reflexive: i = (S - (S - i)), with S the ambient
+## semigroup of i
+###########################################################################
+InstallMethod(IsReflexive,
+  "Detects if the ideal is reflexive", [IsIdealOfNumericalSemigroup],
+  function(i)
+
+  local s;
+
+  s:=AmbientNumericalSemigroupOfIdeal(i);
+  return i = s - (s - i);
+end);
+
+##########################################################################
+##
+#O IdealOfElementsGreaterThanOrEqualTo(k,S)
+## Given a numerical semigroup S and an integer k,
+## returns the ideal of S formed by all elements greater than or equal to k
+##########################################################################
+InstallMethod(IdealOfElementsGreaterThanOrEqualTo," The ideal of elements greater than or equal to k in S",
+    [IsInt, IsNumericalSemigroup],
+function(x,s)
+    local pos,c, posc,m;
+    if not(x in s) then
+        Error("The integer must belong to the numerical semigroup");
+    fi;
+    c:=Conductor(s);
+    m:=Multiplicity(s);
+    if x>=c then
+        return [x..x+m-1]+s;
+    fi;
+    pos:=NumberElement_NumericalSemigroup(s,x);
+    posc:=NumberElement_NumericalSemigroup(s,c);
+    return s{[pos..posc+m]}+s;
+end);
+InstallMethod(IdealOfElementsGreaterThanOrEqualTo," The ideal of elements greater than or equal to k in S",
+    [IsNumericalSemigroup,IsInt],
+function(s,x)
+    return IdealOfElementsGreaterThanOrEqualTo(x,s);
+end);
+
+#############################################################################
+##
+#A IsIntegrallyClosed(I)
+##  Detects if the ideal I is integrally closed, that is, if it is equal to
+##  the ideal of elements in S greater than or equal to min(I), with S the
+##  ambient semigroup of I
+###########################################################################
+InstallMethod(IsIntegrallyClosed,
+  "Detects if the ideal is integrally closed", [IsIdealOfNumericalSemigroup],
+  function(I)
+
+  local s, minI, IC;
+
+  s:=AmbientNumericalSemigroupOfIdeal(I);
+  minI:=Minimum(GeneratorsOfIdealOfNumericalSemigroup(I));
+  if not(minI in s) then
+      return false;
+  fi;
+  IC:=IdealOfElementsGreaterThanOrEqualTo(minI,s);
+  return I = IC;
+end);
+
+#############################################################################
+##
+#F IdealOfNumericalSemigroupBySmallElements(l,S)
+## l is a list of integers and S a numerical semigroup
+##
+## returns the ideal of S whose small elements are those in l.
+##
+#############################################################################
+InstallGlobalFunction(IdealOfNumericalSemigroupBySmallElements, function(l,s)
+    local i,ls,ln,maxl,mult;
+
+    if not IsNumericalSemigroup(s) then
+        Error("The second argument must be a numerical semigroup.");
+    fi;
+
+    if not IsListOfIntegersNS(l) then
+        Error("The first argument must be a list of integers.");
+    fi;
+    ls:=List(Set(l));
+    ln:=Length(ls);
+    while (ln>1) and (ls[ln]=ls[ln-1]+1) do
+        Remove(ls,ln);
+        ln:=ln-1;
+    od;
+    maxl:=Maximum(ls);
+    mult:=Multiplicity(s);
+    i:=Union(l,[maxl.. maxl+mult])+s;
+    if not(SmallElements(i) = ls) then
+        Error("The given list is not a list of small elements of an ideal of the given numerical semigroup.");
+    fi;
+    return i;
+end);
+
+#########################################################################
+##
+#O AddPseudoFrobeniusNumberToIdeal(f,I)
+##  Given an ideal I of a numerical semigroup S and a pseudo-Frobenius
+##  number f of I, returns the ideal J=I U {f}
+#########################################################################
+InstallMethod(AddPseudoFrobeniusNumberToIdeal,
+    "Adds a pseudo-Frobenius number to an ideal of a numerical semigroup",
+    [IsInt, IsIdealOfNumericalSemigroup],
+function(f,I)
+    local smi;
+    if not(f in PseudoFrobenius(I)) then
+        Error("The first argument must be a pseudo-Frobenius number of the ideal.");
+    fi;
+    smi:=SmallElements(I);
+    return IdealOfNumericalSemigroupBySmallElements(Union(smi,[f]),AmbientNumericalSemigroupOfIdeal(I));
+end);
+
+InstallMethod(AddPseudoFrobeniusNumberToIdeal,
+    "Adds a pseudo-Frobenius number to an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+function(I,f)
+    if not(f in PseudoFrobenius(I)) then
+        Error("The second argument must be a pseudo-Frobenius number of the ideal.");
+    fi;
+    return AddPseudoFrobeniusNumberToIdeal(f,I);
+end);
+
+##########################################################################
+##
+#O NormalizedIdeals(s)
+##  Given a numerical semigroup S, returns the list of normalized ideals of S,
+##  that is, the ideals I of S such that min(I)=0
+##########################################################################
+InstallMethod(NormalizedIdeals,
+    "Computes the list of normalized ideals of a numerical semigroup",
+    [IsNumericalSemigroup],1,
+function(s)
+    local k, c, v, m, isaperylistideal,t, ca;
+    # detects if a given list is the apery list of an ideal of s
+
+    m:=Multiplicity(s);
+
+    isaperylistideal:=function(ap,s)
+        local aps, m;
+        if not(IsListOfIntegersNS(ap)) then
+            return false;
+        fi;
+
+        if not(ForAll(ap, x->x>=0)) then    
+            return false;
+        fi;
+        m:=Multiplicity(s);
+        if Length(ap)<>m then
+            return false;
+        fi;
+
+        aps:=AperyList(s);
+        return ForAll(Cartesian([1..m],[1..m]), i-> ap[i[1]]+aps[i[2]] >= ap[1+(i[1]+i[2]-2) mod m]);
+    end;
+    k:=Concatenation([0],KunzCoordinates(s));
+    c:=IteratorOfCartesianProduct(List([1..m],i->[0..k[i]]));
+    #c:=Filtered(c, k->isaperylistideal(List([1..m],i->k[i]*m+i-1),s));
+    ca:=[];
+    for t in c do
+        if isaperylistideal(List([1..m],i->t[i]*m+i-1),s) then
+            Add(ca, t);
+        fi;
+    od;
+    v:=List(ca, k->List([1..m],i->k[i]*m+i-1)+s);
+    return v;
+end);
+
+##########################################################################
+##
+#O KunzCoordinates(I,[m])
+##  Given an ideal I of a numerical semigroup S, returns the Kunz coordinates of
+##  I. If the optional argument m is given, it is assumed to in S.
+##########################################################################
+InstallMethod(KunzCoordinates,
+    "Computes the Kunz coordinates of an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+function(I,m)
+    local s,ap;
+    s:=AmbientNumericalSemigroupOfIdeal(I);
+    if not(m in s) then
+        Error("The second argument must be an element of the ambient semigroup of the ideal.");
+    fi;
+    ap:=AperyList(I,m);
+    return List([2..m],i->(ap[i]-i+1)/m);
+end);
+
+InstallMethod(KunzCoordinates,
+    "Computes the Kunz coordinates of an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+function(I)
+    local s,m;
+    s:=AmbientNumericalSemigroupOfIdeal(I);
+    m:=MultiplicityOfNumericalSemigroup(s);
+    return KunzCoordinates(I,m);
+end);
+
+##########################################################################
+##
+#O RemoveMinimalGeneratorFromIdeal(n.I)
+##  Given an ideal I of a numerical semigroup S and an integer n in I that is
+##  a minimal generator of I, returns the ideal I\{n}
+##########################################################################
+InstallMethod(RemoveMinimalGeneratorFromIdeal,
+    "Removes a minimal generator from an ideal of a numerical semigroup",
+    [IsInt, IsIdealOfNumericalSemigroup],
+function(n,I)
+    local mg,s,mgs;
+    mg:=MinimalGenerators(I);
+    if not(n in mg) then
+        Error("The first argument must be a minimal generator of the ideal.");
+    fi;
+
+    s:=AmbientNumericalSemigroupOfIdeal(I);
+    mgs:=MinimalGenerators(s);
+    return Union(Difference(mg,[n]),n+mgs)+s;
+end);
+
+InstallMethod(RemoveMinimalGeneratorFromIdeal,
+    "Removes a minimal generator from an ideal of a numerical semigroup",
+    [IsIdealOfNumericalSemigroup,IsInt],
+function(I,n)
+    local mg;
+    mg:=MinimalGenerators(I);
+    if not(n in mg) then
+        Error("The second argument must be a minimal generator of the ideal.");
+    fi;
+    return RemoveMinimalGeneratorFromIdeal(n,I);
+end);
+
+###########################################################################
+##
+#O AsNumericalSemigroup(I)
+##  Given an ideal I of a numerical semigroup S such that I+I=I (and thus it
+##  is a numerical semigroup), returns I as a numerical semigroup
+###########################################################################
+InstallMethod(AsNumericalSemigroup,
+    "Converts an idempotent ideal of a numerical semigroup into a numerical semigroup",
+    [IsIdealOfNumericalSemigroup],
+function(I)
+    if not(I+I=I) then
+        Error("The ideal must be idempotent (I+I=I)");
+    fi;
+    return NumericalSemigroupBySmallElements(SmallElements(I));
+end);
+
+###########################################################################
+##
+#P IsStable(I)
+##  Detects if the ideal I is stable, that is, if I+I=min(I)+I
+## If the ideal is normalized (min(I), then it is equivalent to say that 
+## I is idempotent (I+I=I)
+###########################################################################
+InstallMethod(IsStable,
+  "Detects if the ideal is stable", [IsIdealOfNumericalSemigroup],
+  function(I)
+      return I+I = Minimum(I)+I;
+end);

@@ -1869,6 +1869,81 @@ gap> s:=NumericalSemigroup(4,6,11);;
 gap> IsGradedAssociatedRingNumericalSemigroupCI(s);
 true
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> i:=[0,2]+s;;
+gap> IsReflexive(i);
+false
+gap> IsReflexive(s-(s-i));
+true
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> SmallElements(IdealOfElementsGreaterThanOrEqualTo(s,19));
+[ 19, 21, 23, 24, 25, 27, 29, 30, 31, 33 ]
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,6,7]+s;;
+gap> IsIntegrallyClosed(i);
+false
+gap> j:=IdealOfElementsGreaterThanOrEqualTo(23,s);;
+gap> j=IdealOfElementsGreaterThanOrEqualTo(s,23);
+true
+gap> IsIntegrallyClosed(j);
+true
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> i=IdealOfNumericalSemigroupBySmallElements(SmallElements(i),s);
+true
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> pf:=PseudoFrobenius(i);
+[ 11, 15, 22 ]
+gap> SmallElements(i);
+[ 0, 2, 6, 7, 8, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+gap> j:=AddPseudoFrobeniusNumberToIdeal(11,i);;
+gap> SmallElements(j);
+[ 0, 2, 6, 7, 8, 11, 12, 13, 14, 17, 18, 19, 20, 21, 23 ]
+gap> j=AddPseudoFrobeniusNumberToIdeal(i,11);
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> is:=NormalizedIdeals(s);;
+gap> Set(is,MinimalGenerators);
+[ [ 0 ], [ 0, 1 ], [ 0, 1, 2 ], [ 0, 2 ], [ 0, 2, 4 ], [ 0, 4 ] ]
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> KunzCoordinates(i,17);
+[ 1, 0, 1, 1, 2, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1 ]
+gap> KunzCoordinates(i);
+[ 1, 0, 3, 4, 2 ]
+
+gap> s:=NumericalSemigroup(6,17,19,21);;
+gap> i:=[0,2,7]+s;;
+gap> j:=RemoveMinimalGeneratorFromIdeal(7,i);;
+gap> Difference(i,j);
+[ 7 ]
+gap> j=RemoveMinimalGeneratorFromIdeal(i,7);
+true
+
+gap> s:=NumericalSemigroup(11,17,19,21);;
+gap> i:=[ 0, 4, 8, 12, 13, 14, 16, 18, 20 ]+s;;
+gap> i+i=i;
+true
+gap> SmallElements(i);
+[ 0, 4, 8, 11 ]
+gap> SmallElements(AsNumericalSemigroup(i));
+[ 0, 4, 8, 11 ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> is:=NormalizedIdeals(s);;
+gap> os:=Filtered(is,i->i+i=i);;
+gap> os=Filtered(is,IsStable);
+true
+gap> Length(os);
+4
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));
@@ -3362,7 +3437,13 @@ true
 gap> [87,109] in dup;
 false
 
-
+## non-elimination version of presentations
+gap> NumSgpsUseEliminationForMinimalPresentations:=false;
+false
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> MinimalPresentation(s);
+[ [ [ 0, 0, 2 ], [ 3, 1, 0 ] ], [ [ 0, 1, 1 ], [ 4, 0, 0 ] ], 
+  [ [ 0, 2, 0 ], [ 1, 0, 1 ] ] ]
 
 ## get info level to the original state
 gap> SetInfoLevel( InfoNumSgps, INFO_NSGPS);

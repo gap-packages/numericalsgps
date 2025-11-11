@@ -518,3 +518,89 @@ DeclareOperation("IrreducibleZComponents",[IsIdealOfNumericalSemigroup]);
 ## RSME Springer series 3, Springer, Switzerland, 2020.
 ########################################################################
 DeclareOperation("DecomposeIntegralIdealIntoIrreducibles",[IsIdealOfNumericalSemigroup]);
+
+#############################################################################
+## 
+#P IsReflexive(i)
+## Detects if the ideal is reflexive: i = (S - (S - i)), with S the ambient
+## semigroup of i
+###########################################################################
+DeclareProperty("IsReflexive",IsIdealOfNumericalSemigroup);
+
+##########################################################################
+##
+#O IdealOfElementsGreaterThanOrEqualTo(k,S)
+## Given a numerical semigroup S and an integer k,
+## returns the ideal of S formed by all elements greater than or equal to k
+##########################################################################
+DeclareOperation("IdealOfElementsGreaterThanOrEqualTo",[IsInt,IsNumericalSemigroup]);
+DeclareOperation("IdealOfElementsGreaterThanOrEqualTo",[IsNumericalSemigroup,IsInt]);
+
+#############################################################################
+##
+#P IsIntegrallyClosed(I)
+##  Detects if the ideal I is integrally closed, that is, if it is equal to
+##  the ideal of elements in S greater than or equal to min(I), with S the
+##  ambient semigroup of I
+###########################################################################
+DeclareProperty("IsIntegrallyClosed",IsIdealOfNumericalSemigroup);
+
+#############################################################################
+##
+#F IdealOfNumericalSemigroupBySmallElements(l,S)
+## l is a list of integers and S a numerical semigroup
+##
+## returns the ideal of S whose small elements are those in l.
+##
+#############################################################################
+DeclareGlobalFunction("IdealOfNumericalSemigroupBySmallElements");
+
+#########################################################################
+##
+#O AddPseudoFrobeniusNumberToIdeal(f,I)
+##  Given an ideal I of a numerical semigroup S and a pseudo-Frobenius
+##  number f of I, returns the ideal J=I U {f}
+#########################################################################
+DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsInt,IsIdealOfNumericalSemigroup]);
+DeclareOperation("AddPseudoFrobeniusNumberToIdeal",[IsIdealOfNumericalSemigroup,IsInt]);
+
+##########################################################################
+##
+#O NormalizedIdeals(s)
+##  Given a numerical semigroup S, returns the list of normalized ideals of S,
+##  that is, the ideals I of S such that min(I)=0
+##########################################################################
+DeclareOperation("NormalizedIdeals",[IsNumericalSemigroup]);
+
+##########################################################################
+##
+#O KunzCoordinates(I,[m])
+##  Given an ideal I of a numerical semigroup S, returns the Kunz coordinates of
+##  I. If the optional argument m is given, it is assumed to in S.
+##########################################################################
+DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup]);
+DeclareOperation("KunzCoordinates",[IsIdealOfNumericalSemigroup,IsInt]);
+
+##########################################################################
+##
+#O RemoveMinimalGeneratorFromIdeal(n.I)
+##  Given an ideal I of a numerical semigroup S and an integer n in I that is
+##  a minimal generator of I, returns the ideal I\{n}
+##########################################################################
+DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsInt,IsIdealOfNumericalSemigroup]);
+DeclareOperation("RemoveMinimalGeneratorFromIdeal",[IsIdealOfNumericalSemigroup,IsInt]);
+
+###########################################################################
+##
+#O AsNumericalSemigroup(I)
+##  Given an ideal I of a numerical semigroup S such that I+I=I (and thus it
+##  is a numerical semigroup), returns I as a numerical semigroup
+###########################################################################
+DeclareOperation("AsNumericalSemigroup",[IsIdealOfNumericalSemigroup]);
+
+###########################################################################
+##
+#P IsStable(I)
+##  Detects if the ideal I is stable, that is, if I+I=min(I)+I
+###########################################################################
+DeclareProperty("IsStable",IsIdealOfNumericalSemigroup);

@@ -53,3 +53,53 @@ InstallMethod(IntersectionPrincipalIdealsOfAffineSemigroup,[IsIdealOfAffineSemig
     return IdealOfAffineSemigroup(res, S);
 
 end);
+
+##########################################################################
+##
+#O NormalizedIdeals(s)
+##  Given a numerical semigroup S, returns the list of normalized ideals of S,
+##  that is, the ideals I of S such that min(I)=0
+##########################################################################
+InstallMethod(NormalizedIdeals,
+    "Computes the list of normalized ideals of a numerical semigroup",
+    [IsNumericalSemigroup],5,
+function(s)
+    local c, points, m, isaperylistideal,I0ineq, idealByKunzCoordinates;
+    # detects if a given list is the apery list of an ideal of s
+
+    m:=Multiplicity(s);
+
+    # computes the inequalities defining the cone of Kunz coordinates of 
+    # normalized ideals of s
+    I0ineq:=function(s)
+        local k, ineq, m, i,j, id;
+        m:=Multiplicity(s);
+        id:=IdentityMat(m);
+        ineq:=id{[1..m-1]}; # x_i>=0 para todo i in {1,...,m-1}
+        k:=KunzCoordinates(s);
+        for i in [1..m-1] do
+            Add(ineq, -id[i]+k[i]*id[m]); # first inequalities from Th. 4.4, x_i<=k_i
+        od;
+        for i in [1..m-1] do
+            for j in [1..m-1] do
+                if (i+j)< m then
+                    Add(ineq, k[j]*id[m]+id[i]-id[i+j]); #second family of inequalities Th. 4.4
+                elif (i+j)>m then
+                    Add(ineq, (k[j]+1)*id[m]+id[i]-id[i+j-m]); #third family
+                fi;
+            od;
+        od;
+        return ineq;
+    end;
+
+    # builds the ideal from its Kunz coordinates
+    idealByKunzCoordinates:=function(k,s)
+        local m;
+        m:=Length(k)+1;
+        return Concatenation([0],List([1..m-1],i->k[i]*m+i))+s;
+    end;
+
+    c:=NmzCone(["inhom_inequalities",I0ineq(s)]);
+    points:=NmzLatticePoints(c);
+    return List(points,p->idealByKunzCoordinates(p{[1..m-1]},s));
+end);

@@ -1515,6 +1515,7 @@ InstallMethod(TameDegree,
 InstallGlobalFunction(NumSgpsUseNormaliz, function()
     if LoadPackage("NormalizInterface")=true then
         ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
+        ReadPackage("numericalsgps", "gap/ideals-extra-ni.gi");
         NumSgpsCanUseNI:=true;
         return true;
     else
