@@ -197,38 +197,40 @@ digraph  NSGraph{rankdir = TB;
   <Func Name="DotOverSemigroupsNumericalSemigroup" Arg="S"/>
   <Description>
     <C>S</C> is a numerical semigroup. It outputs the Hasse diagram (in dot) of oversemigroups of <C>S</C>. 
+    Nodes corresponding to irreducible semigroups are filled in gray (pseudo-symmetric in dark gray). 
+    Edges are labelled with the special gap added.
 <Example><![CDATA[
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> Print(DotOverSemigroupsNumericalSemigroup(s));
-digraph  NSGraph{rankdir = TB; edge[dir=back];
-1 [label="< 1 >", style=filled];
-2 [label="< 2, 3 >", style=filled];
-3 [label="< 2, 5 >", style=filled];
-4 [label="< 2, 7 >", style=filled];
-5 [label="< 2, 9 >", style=filled];
-6 [label="< 3, 4, 5 >", style=filled];
-7 [label="< 3, 4 >", style=filled];
-8 [label="< 4, 5, 6, 7 >"];
-9 [label="< 4, 5, 6 >", style=filled];
-10 [label="< 4, 6, 7, 9 >"];
-11 [label="< 4, 6, 9, 11 >"];
-12 [label="< 4, 6, 9 >", style=filled];
-1 -> 2;
-2 -> 3;
-2 -> 6;
-3 -> 4;
-3 -> 8;
-4 -> 5;
-4 -> 10;
-5 -> 11;
-6 -> 7;
-6 -> 8;
-7 -> 10;
-8 -> 9;
-8 -> 10;
-9 -> 11;
-10 -> 11;
-11 -> 12;
+digraph  NSGraph{rankdir = TB; edge[dir=back]; node[shape=box,style=rounded]
+1 [label="〈 1 〉", style="rounded,filled"];
+2 [label="〈 2, 3 〉", style="rounded,filled"];
+3 [label="〈 2, 5 〉", style="rounded,filled"];
+4 [label="〈 2, 7 〉", style="rounded,filled"];
+5 [label="〈 2, 9 〉", style="rounded,filled"];
+6 [label="〈 3, 4, 5 〉", style="rounded,filled", fillcolor="darkgray"];
+7 [label="〈 3, 4 〉", style="rounded,filled"];
+8 [label="〈 4, 5, 6, 7 〉"];
+9 [label="〈 4, 5, 6 〉", style="rounded,filled"];
+10 [label="〈 4, 6, 7, 9 〉"];
+11 [label="〈 4, 6, 9, 11 〉"];
+12 [label="〈 4, 6, 9 〉", style="rounded,filled"];
+1 -> 2 [label="1" fontsize=10];
+2 -> 3 [label="3" fontsize=10];
+2 -> 6 [label="2" fontsize=10];
+3 -> 4 [label="5" fontsize=10];
+3 -> 8 [label="2" fontsize=10];
+4 -> 5 [label="7" fontsize=10];
+4 -> 10 [label="2" fontsize=10];
+5 -> 11 [label="2" fontsize=10];
+6 -> 7 [label="5" fontsize=10];
+6 -> 8 [label="3" fontsize=10];
+7 -> 10 [label="3" fontsize=10];
+8 -> 9 [label="7" fontsize=10];
+8 -> 10 [label="5" fontsize=10];
+9 -> 11 [label="5" fontsize=10];
+10 -> 11 [label="7" fontsize=10];
+11 -> 12 [label="11" fontsize=10];
 }
 ]]></Example>
   </Description>

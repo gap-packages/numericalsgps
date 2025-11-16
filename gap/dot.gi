@@ -364,12 +364,16 @@ InstallGlobalFunction(DotOverSemigroupsNumericalSemigroup, function(s)
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"digraph  NSGraph{rankdir = TB; edge[dir=back];\n");
+  AppendTo(output,"digraph  NSGraph{rankdir = TB; edge[dir=back]; node[shape=box,style=rounded]\n");
 
   # Add vertices
   for i in [1..n] do
    if IsIrreducible(ov[i]) then 
-    AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\", style=filled];\n");
+    if IsSymmetric(ov[i]) then
+      AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\", style=\"rounded,filled\"];\n");
+    else
+      AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\", style=\"rounded,filled\", fillcolor=\"darkgray\"];\n");
+    fi;
    else 
     AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\"];\n");
    fi;
@@ -382,7 +386,7 @@ InstallGlobalFunction(DotOverSemigroupsNumericalSemigroup, function(s)
   c:=hasse(c);
 
   for r in c do
-    AppendTo(output,r[1]," -> ",r[2],";\n");
+    AppendTo(output,r[1]," -> ",r[2]," [label=",str(Difference(ov[r[1]],ov[r[2]])[1])," fontsize=10];\n");
   od;
 
   AppendTo(output, "}");
