@@ -276,7 +276,7 @@ InstallGlobalFunction(DotTreeOfGluingsOfNumericalSemigroup, function(s, depth...
       
     lg := AsGluingOfNumericalSemigroups(s);    
     
-    labels := Concatenation(labels, String(parent), " [label=\"", SystemOfGeneratorsToString(MinimalGenerators(s)), "\", style=filled]; \n");
+    labels := Concatenation(labels, String(parent), " [label=\"", SystemOfGeneratorsToString(MinimalGenerators(s)), "\", style=\"filled,rounded\"]; \n");
     #labels := Concatenation(labels, String(parent), " [label=\"", SystemOfGeneratorsToString(MinimalGenerators(s)), "\"]; \n");
         
     if level = 0 then
@@ -287,7 +287,7 @@ InstallGlobalFunction(DotTreeOfGluingsOfNumericalSemigroup, function(s, depth...
     for p in lg do
       # Add the gluing 
       label := Concatenation(SystemOfGeneratorsToString(p[1])," + ", SystemOfGeneratorsToString(p[2]));
-      labels := Concatenation(labels, String(index), " [label=\"", label, "\" , shape=box]; \n");
+      labels := Concatenation(labels, String(index), " [label=\"", label, "\"]; \n");
       edges := Concatenation(edges, String(parent), " -> ", String(index), "; \n");
       
       # Add the two numerical semigroups involved
@@ -321,7 +321,7 @@ InstallGlobalFunction(DotTreeOfGluingsOfNumericalSemigroup, function(s, depth...
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"digraph  NSGraph{rankdir = TB; \n");
+  AppendTo(output,"digraph  NSGraph{rankdir = TB; node [shape=box style=rounded]\n");
   AppendTo(output, labels);
   AppendTo(output, edges);
   AppendTo(output, "}");
@@ -415,7 +415,7 @@ function(n,s)
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"graph  NSGraph{\n");
+  AppendTo(output,"graph  NSGraph{ node[shape=box style=rounded]\n");
 
   # Add vertices
   for i in [1..e] do
@@ -525,7 +525,7 @@ InstallMethod(DotFactorizationGraph, [IsHomogeneousList],
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"graph  NSGraph{\n");
+  AppendTo(output,"graph  NSGraph{ node[shape=box style=rounded] \n");
 
   nf:=Length(f);
   fs:=[];
@@ -589,7 +589,7 @@ InstallMethod(DotEliahouGraph, [IsHomogeneousList],
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"graph  NSGraph{\n");
+  AppendTo(output,"graph  NSGraph{ node[shape=box style=rounded]\n");
 
   nf:=Length(f);
   fs:=[];

@@ -3358,16 +3358,15 @@ true
 
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> Print(DotRosalesGraph(15,s));
-graph  NSGraph{
+graph  NSGraph{ node[shape=box style=rounded]
 1 [label="6"];
 2 [label="9"];
 2 -- 1;
 }
 
-gap> f:=FactorizationsIntegerWRTList(20,[3,5,7]);
-[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ]
+gap> f:=FactorizationsIntegerWRTList(20,[3,5,7]);;
 gap> Print(DotFactorizationGraph(f));
-graph  NSGraph{
+graph  NSGraph{ node[shape=box style=rounded] 
 1 [label=" (5, 1, 0)"];
 2 [label=" (0, 4, 0)"];
 3 [label=" (1, 2, 1)"];
@@ -3380,10 +3379,9 @@ graph  NSGraph{
 1 -- 2[label="5" ];
 }
 
-gap> f:=FactorizationsIntegerWRTList(20,[3,5,7]);
-[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ]
+gap> f:=FactorizationsIntegerWRTList(20,[3,5,7]);;
 gap> Print(DotEliahouGraph(f));
-graph  NSGraph{
+graph  NSGraph{ node[shape=box style=rounded]
 1 [label=" (5, 1, 0)"];
 2 [label=" (0, 4, 0)"];
 3 [label=" (1, 2, 1)"];
