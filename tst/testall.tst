@@ -3205,10 +3205,74 @@ gap> TracksOfGoodSemigroup(S);
 ##dot.xml
 gap> br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);;
 gap> Print(DotBinaryRelation(br));
-digraph  NSGraph{rankdir = TB; edge[dir=back];
-1 [label="1"];
-2 [label="2"];
-2 -> 1;
+digraph NSGraph{
+rankdir = TB;
+edge [dir=back];
+1 [label="1" ];
+2 [label="2" ];
+2 -> 1 [];
+}
+
+gap> d6:=Domain(DivisorsInt(12));;
+gap> rels6:=Filtered(Tuples(d6,2),a-> a[2] mod a[1]=0);;
+gap> r6:=BinaryRelationByElements(d6,List(rels6,Tuple));;
+gap> r6:=HasseDiagramBinaryRelation(r6);;
+gap> style:=function ( x )
+>     if IsPrimeInt(x) then
+>         return "filled";
+>     else
+>         return "solid";
+>     fi;
+>     return;
+> end;
+function( x ) ... end
+gap> color:=function ( x )
+>     if x mod 2 = 1 then
+>         return "lightblue";
+>     else
+>         return "orange";
+>     fi;
+>     return;
+> end;
+function( x ) ... end
+gap> labele:=function(x,y)
+>     return y/x;
+> end;
+function( x, y ) ... end
+gap> stylee:=function(x,y)
+>     if y/x=2 then
+>         return "dashed";
+>     else
+>         return "solid";
+>     fi;
+> end;
+function( x, y ) ... end
+gap> colore:=function(x,y)
+>     if y/x>2 then
+>         return "red";
+>     else
+>         return "black";
+>     fi;
+> end;
+function( x, y ) ... end
+gap> Print(DotBinaryRelation(r6, rec(graph:="rankdir=LR",nodestyle:=style,nodecolor:=color,edgelabel:=labele,edgestyle:=stylee,edgecolor:=colore,arrowsize:={x,y}->"0.2")));
+
+digraph NSGraph{
+graph [rankdir=LR]; 
+edge [dir=back];
+1 [label="1" style="solid" color="lightblue" ];
+2 [label="2" style="filled" color="orange" ];
+3 [label="3" style="filled" color="lightblue" ];
+4 [label="4" style="solid" color="orange" ];
+5 [label="6" style="solid" color="orange" ];
+6 [label="12" style="solid" color="orange" ];
+2 -> 1 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+3 -> 1 [label="3" style="solid" color="red" arrowsize="0.2" ];
+4 -> 2 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+5 -> 2 [label="3" style="solid" color="red" arrowsize="0.2" ];
+5 -> 3 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+6 -> 4 [label="3" style="solid" color="red" arrowsize="0.2" ];
+6 -> 5 [label="2" style="dashed" color="black" arrowsize="0.2" ];
 }
 
 gap> s:=NumericalSemigroup(3,5,7);;
