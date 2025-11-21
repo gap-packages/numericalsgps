@@ -74,14 +74,16 @@ end);
 
 ############################################################################
 ##
-#F  DotBinaryRelation(br)
+#F  DotBinaryRelation(br, opt)
 ##  Returns a GraphViz dot which represents the binary relation br.
 ##  The set of vertices of the resulting graph is the source of br.
 ##  Edges join those elements which are related in br.
-##
+##  The argument opt is optional and must be a rec. It may include 
+##  general options regarding the graph, edges, nodes, and then functions
+##  to determine specific functions for each node and edge.
 ############################################################################
-InstallGlobalFunction(DotBinaryRelation, function(br)
-  local pre, element, im, output, out, str, i, d;
+InstallGlobalFunction(DotBinaryRelation, function(br,opt...)
+  local pre, element, im, output, out, str, i, d, options,j;
 
   str := function(i)
     return Concatenation("\"",String(i),"\"");
@@ -90,19 +92,60 @@ InstallGlobalFunction(DotBinaryRelation, function(br)
   if not IsBinaryRelation(br) then
     Error("The argument must be a binary relation");
   fi;
-  
+
+  options := rec();
+  if Length(opt) >= 1 then
+    options := opt[1];
+  fi;
+
   # Add the header of the GraphViz code
   out := "";
   output := OutputTextString(out, true);
-  AppendTo(output,"digraph  NSGraph{rankdir = TB; edge[dir=back];\n");
-  
+  AppendTo(output,"digraph NSGraph{\n");
+  if IsBound(options.graph) then
+    AppendTo(output, "graph [", options.graph,"];\n ");
+  else
+    AppendTo(output, "rankdir = TB;\n");
+  fi;
+  if IsBound(options.edge) then
+    AppendTo(output, "edge [", options.edge,"];\n ");
+  else 
+    AppendTo(output, "edge [dir=back];\n");
+  fi;
+  if IsBound(options.node) then
+    AppendTo(output, "node [", options.node,"];\n ");
+  fi;
+
   # Add the vertices
   pre := Source(br);  
   d := NewDictionary(false, true, pre);
   i := 1;  
   for element in pre do
-    AddDictionary(d, element, i);      
-    AppendTo(output, i," [label=", str(element), "];\n");
+    AddDictionary(d, element, i);
+    if IsBound(options.nodelabel) then
+      AppendTo(output, i," [label=", str(options.nodelabel(element))," ");
+    else      
+      AppendTo(output, i," [label=", str(element)," ");
+    fi;
+    if IsBound(options.nodestyle) then
+      AppendTo(output, "style=", str(options.nodestyle(element))," ");
+    fi;
+    if IsBound(options.nodecolor) then
+      AppendTo(output, "color=", str(options.nodecolor(element))," ");
+    fi;
+    if IsBound(options.nodefillcolor) then
+      AppendTo(output, "fillcolor=", str(options.nodefillcolor(element))," ");
+    fi;
+    if IsBound(options.nodeshape) then
+      AppendTo(output, "shape=", str(options.nodeshape(element))," ");
+    fi;
+    if IsBound(options.nodefontsize) then
+      AppendTo(output, "fontsize=", str(options.nodefontsize(element))," ");
+    fi;
+    if IsBound(options.nodefontcolor) then
+      AppendTo(output, "fontcolor=", str(options.nodefontcolor(element))," ");
+    fi;
+    AppendTo(output, "];\n");
     i := i+1;    
   od;
   
@@ -110,7 +153,27 @@ InstallGlobalFunction(DotBinaryRelation, function(br)
   i := 1;  
   for element in pre do
     for im in Image(br, [element]) do
-      AppendTo(output, LookupDictionary(d, im), " -> ", i, ";\n");
+      j:= LookupDictionary(d, im);
+      AppendTo(output, j, " -> ", i," [");
+      if IsBound(options.edgelabel) then
+        AppendTo(output, "label=", str(options.edgelabel(element, im))," ");
+      fi;
+      if IsBound(options.edgestyle) then
+        AppendTo(output, "style=", str(options.edgestyle(element, im))," ");
+      fi;
+      if IsBound(options.edgecolor) then
+        AppendTo(output, "color=", str(options.edgecolor(element, im))," ");
+      fi;
+      if IsBound(options.edgefontsize) then
+        AppendTo(output, "fontsize=", str(options.edgefontsize(element, im))," ");
+      fi;
+      if IsBound(options.edgefontcolor) then
+        AppendTo(output, "fontcolor=", str(options.edgefontcolor(element, im))," ");
+      fi;
+      if IsBound(options.arrowsize) then
+        AppendTo(output, "arrowsize=", str(options.arrowsize(element, im))," ");
+      fi;
+      AppendTo(output, "];\n");
     od;
     i := i+1;    
   od;
@@ -213,7 +276,7 @@ InstallGlobalFunction(DotTreeOfGluingsOfNumericalSemigroup, function(s, depth...
       
     lg := AsGluingOfNumericalSemigroups(s);    
     
-    labels := Concatenation(labels, String(parent), " [label=\"", SystemOfGeneratorsToString(MinimalGenerators(s)), "\", style=filled]; \n");
+    labels := Concatenation(labels, String(parent), " [label=\"", SystemOfGeneratorsToString(MinimalGenerators(s)), "\", style=\"filled,rounded\"]; \n");
     #labels := Concatenation(labels, String(parent), " [label=\"", SystemOfGeneratorsToString(MinimalGenerators(s)), "\"]; \n");
         
     if level = 0 then
@@ -224,7 +287,7 @@ InstallGlobalFunction(DotTreeOfGluingsOfNumericalSemigroup, function(s, depth...
     for p in lg do
       # Add the gluing 
       label := Concatenation(SystemOfGeneratorsToString(p[1])," + ", SystemOfGeneratorsToString(p[2]));
-      labels := Concatenation(labels, String(index), " [label=\"", label, "\" , shape=box]; \n");
+      labels := Concatenation(labels, String(index), " [label=\"", label, "\"]; \n");
       edges := Concatenation(edges, String(parent), " -> ", String(index), "; \n");
       
       # Add the two numerical semigroups involved
@@ -258,7 +321,7 @@ InstallGlobalFunction(DotTreeOfGluingsOfNumericalSemigroup, function(s, depth...
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"digraph  NSGraph{rankdir = TB; \n");
+  AppendTo(output,"digraph  NSGraph{rankdir = TB; node [shape=box style=rounded]\n");
   AppendTo(output, labels);
   AppendTo(output, edges);
   AppendTo(output, "}");
@@ -301,12 +364,16 @@ InstallGlobalFunction(DotOverSemigroupsNumericalSemigroup, function(s)
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"digraph  NSGraph{rankdir = TB; edge[dir=back];\n");
+  AppendTo(output,"digraph  NSGraph{rankdir = TB; edge[dir=back]; node[shape=box,style=rounded]\n");
 
   # Add vertices
   for i in [1..n] do
    if IsIrreducible(ov[i]) then 
-    AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\", style=filled];\n");
+    if IsSymmetric(ov[i]) then
+      AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\", style=\"rounded,filled\"];\n");
+    else
+      AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\", style=\"rounded,filled\", fillcolor=\"darkgray\"];\n");
+    fi;
    else 
     AppendTo(output,i," [label=\"",SystemOfGeneratorsToString(MinimalGenerators(ov[i])) ,"\"];\n");
    fi;
@@ -319,7 +386,7 @@ InstallGlobalFunction(DotOverSemigroupsNumericalSemigroup, function(s)
   c:=hasse(c);
 
   for r in c do
-    AppendTo(output,r[1]," -> ",r[2],";\n");
+    AppendTo(output,r[1]," -> ",r[2]," [label=",str(Difference(ov[r[1]],ov[r[2]])[1])," fontsize=10];\n");
   od;
 
   AppendTo(output, "}");
@@ -348,7 +415,7 @@ function(n,s)
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"graph  NSGraph{\n");
+  AppendTo(output,"graph  NSGraph{ node[shape=box style=rounded]\n");
 
   # Add vertices
   for i in [1..e] do
@@ -458,7 +525,7 @@ InstallMethod(DotFactorizationGraph, [IsHomogeneousList],
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"graph  NSGraph{\n");
+  AppendTo(output,"graph  NSGraph{ node[shape=box style=rounded] \n");
 
   nf:=Length(f);
   fs:=[];
@@ -522,7 +589,7 @@ InstallMethod(DotEliahouGraph, [IsHomogeneousList],
   out := "";
   output := OutputTextString(out, true);
   SetPrintFormattingStatus(output, false);
-  AppendTo(output,"graph  NSGraph{\n");
+  AppendTo(output,"graph  NSGraph{ node[shape=box style=rounded]\n");
 
   nf:=Length(f);
   fs:=[];

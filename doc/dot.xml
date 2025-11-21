@@ -8,9 +8,12 @@
     We provide several functions to translate graphs, Hasse diagrams or trees related to numerical and affine semigroups to the dot language. This can either be used with graphviz or any javascript library that interprets dot language. We give the alternative to use <C>DotSplash</C> that uses viz.js. 
 
 <ManSection>
-  <Func Name="DotBinaryRelation" Arg="br"/>
+  <Func Name="DotBinaryRelation" Arg="br, [opt]"/>
   <Description>
-    <C>br</C> is a binary relation.  Returns a GraphViz dot that represents the binary relation <C>br</C>. The set of vertices of the resulting graph is the source of <C>br</C>. Edges join those elements which are related with respect to <C>br</C>.
+    <C>br</C> is a binary relation.  Returns a GraphViz dot that represents the binary relation <C>br</C>. 
+    The set of vertices of the resulting graph is the source of <C>br</C>. 
+    Edges join those elements which are related with respect to <C>br</C>.
+
 <Example><![CDATA[
 gap> br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);
 <general mapping: <object> -> <object> >
@@ -21,6 +24,82 @@ digraph  NSGraph{rankdir = TB; edge[dir=back];
 2 -> 1;
 }
 ]]></Example>
+
+    The argument <A>opt</A> is optional and must be a record. It may include general options regarding the graph, edges and nodes.
+    It may also include specific options for nodes (a function the depends on the node) or edges (a function in two variables
+    to be applied to the nodes connected by the edge). The complete list of options is graph, edge, node (these are general),
+    nodelabel, nodestyle, nodecolor, nodefillcolor, nodeshape, nodefontsize, nodefontcolor (these are for nodes),
+    edgelabel, edgestyle, edgecolor, edgefontsize, edgefontcolor, arrowsize.   
+<Example><![CDATA[
+gap> d6:=Domain(DivisorsInt(12));;
+gap> rels6:=Filtered(Tuples(d6,2),a-> a[2] mod a[1]=0);;
+gap> r6:=BinaryRelationByElements(d6,List(rels6,Tuple));;
+gap> r6:=HasseDiagramBinaryRelation(r6);;
+gap> style:=function ( x )
+>     if IsPrimeInt(x) then
+>         return "filled";
+>     else
+>         return "solid";
+>     fi;
+>     return;
+> end;
+function( x ) ... end
+gap> color:=function ( x )
+>     if x mod 2 = 1 then
+>         return "lightblue";
+>     else
+>         return "orange";
+>     fi;
+>     return;
+> end;
+function( x ) ... end
+gap> labele:=function(x,y)
+>     return y/x;
+> end;
+function( x, y ) ... end
+gap> stylee:=function(x,y)
+>     if y/x=2 then
+>         return "dashed";
+>     else
+>         return "solid";
+>     fi;
+> end;
+function( x, y ) ... end
+gap> colore:=function(x,y)
+>     if y/x>2 then
+>         return "red";
+>     else
+>         return "black";
+>     fi;
+> end;
+function( x, y ) ... end
+gap> Print(DotBinaryRelation(r6, 
+      rec(graph:="rankdir=LR",
+          nodestyle:=style,
+          nodecolor:=color,
+          edgelabel:=labele,
+          edgestyle:=stylee,
+          edgecolor:=colore,
+          arrowsize:={x,y}->"0.2")));
+
+digraph NSGraph{
+graph [rankdir=LR]; edge [dir=back];
+1 [label="1" style="solid" color="lightblue" ];
+2 [label="2" style="filled" color="orange" ];
+3 [label="3" style="filled" color="lightblue" ];
+4 [label="4" style="solid" color="orange" ];
+5 [label="6" style="solid" color="orange" ];
+6 [label="12" style="solid" color="orange" ];
+2 -> 1 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+3 -> 1 [label="3" style="solid" color="red" arrowsize="0.2" ];
+4 -> 2 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+5 -> 2 [label="3" style="solid" color="red" arrowsize="0.2" ];
+5 -> 3 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+6 -> 4 [label="3" style="solid" color="red" arrowsize="0.2" ];
+6 -> 5 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+}
+]]></Example>
+
   </Description>
 </ManSection>
 
@@ -118,38 +197,40 @@ digraph  NSGraph{rankdir = TB;
   <Func Name="DotOverSemigroupsNumericalSemigroup" Arg="S"/>
   <Description>
     <C>S</C> is a numerical semigroup. It outputs the Hasse diagram (in dot) of oversemigroups of <C>S</C>. 
+    Nodes corresponding to irreducible semigroups are filled in gray (pseudo-symmetric in dark gray). 
+    Edges are labelled with the special gap added.
 <Example><![CDATA[
 gap> s:=NumericalSemigroup(4,6,9);;
 gap> Print(DotOverSemigroupsNumericalSemigroup(s));
-digraph  NSGraph{rankdir = TB; edge[dir=back];
-1 [label="< 1 >", style=filled];
-2 [label="< 2, 3 >", style=filled];
-3 [label="< 2, 5 >", style=filled];
-4 [label="< 2, 7 >", style=filled];
-5 [label="< 2, 9 >", style=filled];
-6 [label="< 3, 4, 5 >", style=filled];
-7 [label="< 3, 4 >", style=filled];
-8 [label="< 4, 5, 6, 7 >"];
-9 [label="< 4, 5, 6 >", style=filled];
-10 [label="< 4, 6, 7, 9 >"];
-11 [label="< 4, 6, 9, 11 >"];
-12 [label="< 4, 6, 9 >", style=filled];
-1 -> 2;
-2 -> 3;
-2 -> 6;
-3 -> 4;
-3 -> 8;
-4 -> 5;
-4 -> 10;
-5 -> 11;
-6 -> 7;
-6 -> 8;
-7 -> 10;
-8 -> 9;
-8 -> 10;
-9 -> 11;
-10 -> 11;
-11 -> 12;
+digraph  NSGraph{rankdir = TB; edge[dir=back]; node[shape=box,style=rounded]
+1 [label="〈 1 〉", style="rounded,filled"];
+2 [label="〈 2, 3 〉", style="rounded,filled"];
+3 [label="〈 2, 5 〉", style="rounded,filled"];
+4 [label="〈 2, 7 〉", style="rounded,filled"];
+5 [label="〈 2, 9 〉", style="rounded,filled"];
+6 [label="〈 3, 4, 5 〉", style="rounded,filled", fillcolor="darkgray"];
+7 [label="〈 3, 4 〉", style="rounded,filled"];
+8 [label="〈 4, 5, 6, 7 〉"];
+9 [label="〈 4, 5, 6 〉", style="rounded,filled"];
+10 [label="〈 4, 6, 7, 9 〉"];
+11 [label="〈 4, 6, 9, 11 〉"];
+12 [label="〈 4, 6, 9 〉", style="rounded,filled"];
+1 -> 2 [label="1" fontsize=10];
+2 -> 3 [label="3" fontsize=10];
+2 -> 6 [label="2" fontsize=10];
+3 -> 4 [label="5" fontsize=10];
+3 -> 8 [label="2" fontsize=10];
+4 -> 5 [label="7" fontsize=10];
+4 -> 10 [label="2" fontsize=10];
+5 -> 11 [label="2" fontsize=10];
+6 -> 7 [label="5" fontsize=10];
+6 -> 8 [label="3" fontsize=10];
+7 -> 10 [label="3" fontsize=10];
+8 -> 9 [label="7" fontsize=10];
+8 -> 10 [label="5" fontsize=10];
+9 -> 11 [label="5" fontsize=10];
+10 -> 11 [label="7" fontsize=10];
+11 -> 12 [label="11" fontsize=10];
 }
 ]]></Example>
   </Description>
