@@ -163,11 +163,11 @@ InstallMethod( \=,
          IsIdealOfNumericalSemigroup],
         function(I, J )
 
-    if not AmbientNumericalSemigroupOfIdeal(I)
-       = AmbientNumericalSemigroupOfIdeal(J) then
-        #Error("The ambient numerical semigroup must be the same for both ideals.");
-        return false;
-    fi;
+    # if not AmbientNumericalSemigroupOfIdeal(I)
+    #    = AmbientNumericalSemigroupOfIdeal(J) then
+    #     #Error("The ambient numerical semigroup must be the same for both ideals.");
+    #     return false;
+    # fi;
     if HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(I) and HasMinimalGeneratingSystemOfIdealOfNumericalSemigroup(J) then
         return MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I)
                = MinimalGeneratingSystemOfIdealOfNumericalSemigroup(J);
@@ -180,10 +180,10 @@ InstallMethod( \<,
         "for two ideals of a numerical semigroups",
         [IsIdealOfNumericalSemigroup,IsIdealOfNumericalSemigroup],
         function(I, J )
-    if not AmbientNumericalSemigroupOfIdeal(I)
-       = AmbientNumericalSemigroupOfIdeal(J) then
-        Error("The ambient numerical semigroup must be the same for both ideals.");
-    fi;
+    # if not AmbientNumericalSemigroupOfIdeal(I)
+    #    = AmbientNumericalSemigroupOfIdeal(J) then
+    #     Error("The ambient numerical semigroup must be the same for both ideals.");
+    # fi;
     return(SmallElementsOfIdealOfNumericalSemigroup(I) < SmallElementsOfIdealOfNumericalSemigroup(J));
 end );
 
@@ -195,12 +195,72 @@ InstallMethod(IsSubset,
          IsIdealOfNumericalSemigroup],
     function(I, J)
 
-    if not AmbientNumericalSemigroupOfIdeal(I)
-       = AmbientNumericalSemigroupOfIdeal(J) then
+    # if not AmbientNumericalSemigroupOfIdeal(I)
+    #    = AmbientNumericalSemigroupOfIdeal(J) then
+    #     return false;
+    # fi;
+    if AmbientNumericalSemigroupOfIdeal(I) = AmbientNumericalSemigroupOfIdeal(J) then
+        return ForAll(MinimalGenerators(J), j-> j in I);
+    fi;
+    if Conductor(I) > Conductor(J) then
         return false;
     fi;
-    return ForAll(MinimalGenerators(J), j-> j in I);
+    return ForAll(SmallElements(J), j-> (j<Conductor(I)) or (j in I));
 end);
+
+############################################################################
+## equality and inclusion for ideals and semigroups
+InstallMethod( \=,
+        "for an ideal of a numerical semigroup and a numerical semigroup",
+        [IsIdealOfNumericalSemigroup,
+         IsNumericalSemigroup],
+function(I,S)
+    if Minimum(I)<>0 then
+        return false;
+    fi;
+    if (I+I<>I) then 
+        return false;
+    fi;
+    return S=AsNumericalSemigroup(I);
+end);
+InstallMethod( \=,
+        "for a numerical semigroup and an ideal of a numerical semigroup",
+        [IsNumericalSemigroup,
+         IsIdealOfNumericalSemigroup],
+function(S,I)
+    return I=S;
+end);
+
+InstallMethod( \<,
+        "for an ideal of a numerical semigroup and a numerical semigroup",
+        [IsIdealOfNumericalSemigroup,IsNumericalSemigroup],
+        function(I, S )
+    return(SmallElements(I) < SmallElements(S));
+end );
+
+InstallMethod( \<,
+        "for a numerical semigroup and an ideal of a numerical semigroup",
+        [IsNumericalSemigroup,IsIdealOfNumericalSemigroup],
+        function(S, I )
+    return(SmallElements(S) < SmallElements(I));
+end );
+
+InstallMethod(IsSubset, 
+    "for an ideal of a numerical semigroup and a numerical semigroup",
+        [IsIdealOfNumericalSemigroup,
+         IsNumericalSemigroup],
+function(I,S)
+        return IsSubset(I,0+S);
+end);
+
+InstallMethod(IsSubset, 
+    "for a numerical semigroup and an ideal of a numerical semigroup",
+        [IsNumericalSemigroup,
+         IsIdealOfNumericalSemigroup],
+function(S,I)
+        return IsSubset(0+S,I);
+end);
+
 
 #############################################################################
 ##

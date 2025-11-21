@@ -1944,6 +1944,14 @@ true
 gap> Length(os);
 4
 
+gap> s:=NumericalSemigroup(3,7);;
+gap> is:=NormalizedIdeals(s);;
+gap> os:=OverSemigroups(s);;
+gap> IsSubset(is,os);
+true
+gap> IsSubset(os,is);
+false
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));
