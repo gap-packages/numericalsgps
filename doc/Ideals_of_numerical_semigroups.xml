@@ -335,6 +335,17 @@ gap> is:=NormalizedIdeals(s);;
 gap> Set(is,MinimalGenerators);
 [ [ 0 ], [ 0, 1 ], [ 0, 1, 2 ], [ 0, 2 ], [ 0, 2, 4 ], [ 0, 4 ] ]
 ]]></Example>
+    Every oversemigroup is a normalized ideal.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7);;
+gap> is:=NormalizedIdeals(s);;
+gap> os:=OverSemigroups(s);;
+gap> IsSubset(is,os);
+true
+gap> IsSubset(os,is);
+false
+]]></Example>
     </Description>
 </ManSection>
 

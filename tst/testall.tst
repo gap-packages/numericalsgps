@@ -1952,6 +1952,20 @@ true
 gap> IsSubset(os,is);
 false
 
+gap> s:=NumericalSemigroup(3,7);;
+gap> i:=[0,1]+s;;
+gap> j:=[0,4]+s;;
+gap> IsSubset(i,j);
+true
+gap> IsSubset(j,i);
+false
+gap> i=j;
+false
+gap> IsSubset(NumericalSemigroup([3..5]),i);
+true
+gap> IsSubset(i,NumericalSemigroup([3..5]));
+false
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));
