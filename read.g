@@ -57,6 +57,10 @@ ReadPackage( "numericalsgps", "gap/ideals-affine.gi" );
 ##
 ReadPackage( "numericalsgps", "gap/dot.gi" );
 ##
+## Numerical sets
+##
+ReadPackage( "numericalsgps", "gap/numset.gi" );
+##
 ## optional packages
 ##
 
