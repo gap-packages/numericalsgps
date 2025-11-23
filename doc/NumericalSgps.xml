@@ -331,6 +331,16 @@ The contents of this chapter are described in <Cite Key="DGSM"></Cite>.
 
 </Chapter>
 
+<Chapter>
+	<Heading>
+		Numerical sets
+	</Heading>
+
+    <#Include SYSTEM "Numerical_sets.xml">
+
+
+</Chapter>
+
 <Chapter Label="ch:external">
 	<Heading>
 		External packages

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+A numerical set is a subset of the non-negative integers containing 0 and with finite complement in the non-negative integers. Numerical semigroups and normalized ideals of numerical semigroups (ideals whose minimal elements are zero) are particular cases of numerical sets.
+
+<Section>
+                <Heading>
+                    Definitions and basic operations
+                </Heading>
+
+                We describe in this section the basic functions to create and compute notable elements of numerical sets.
+
+<ManSection>
+  <Func Arg="L" Name="NumericalSetBySmallElements"></Func>
+  <Description>
+    <A>L</A> is a list of non-negative integers containing 0.
+    The output is the numerical set <M><A>L</A>\cup (\max(<A>L</A>)+\mathbb{N})</M>.
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,1,2,3,5,6,9,10,12]);
+<Numerical set>
+gap> Print(s);
+{0,...,3,5,6,9,10,12,->}
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="L" Name="NumericalSetByGaps"></Func>
+  <Description>
+    <A>L</A> is a list of positive integers containing 0.
+    The output is the numerical set <M>\mathbb{N}\setminus <A>L</A></M>.
+    <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);
+<Numerical set>
+gap> Gaps(s);
+[ 1, 3, 5 ]
+gap> SmallElements(s);
+[ 0, 2, 4, 6 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S" Name="AsNumericalSet" Label="for numerical semigroups"></Oper>
+  <Oper Arg="I" Name="AsNumericalSet" Label="for normalized ideals of numerical semigroups"></Oper>
+  <Description>
+    <A>S</A> is a numerical semigroup; <A>I</A> is a normalized ideal of a numerical semigroup (that is an ideal whose minimal element is zero).
+
+    The output is <A>S</A> (or <A>I</A>) considered as a numerical set.
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5);;
+gap> Print(AsNumericalSet(s));
+{0,4,5,8,9,10,12,->}
+gap> i:=[0,1]+s;;
+gap> Print(AsNumericalSet(i));
+{0,1,4,5,6,8,->}
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="Obj" Name="IsNumericalSet"></Func>
+  <Description>
+    Tests if the object <A>Obj</A> is a numerical set.
+
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,1,3]);
+<Numerical set>
+gap> IsNumericalSet(s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+</Section>
+
+
+<Section>
+
+  <Heading>
+    Notable elements of numerical sets
+  </Heading>
+
+<ManSection>
+  <Attr Name="SmallElements" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the set of small elements of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> SmallElements(s);
+[ 0, 2, 4, 6 ]
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Name="Multiplicity" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is least positive integer in <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Multiplicity(s);
+2
+]]></Example>
+    </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="Gaps" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the set of gaps of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Gaps(s);
+[ 1, 3, 5 ]
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Name="Genus" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the number of gaps of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Genus(s);
+3
+]]></Example>
+    </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="Conductor" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the largest element in <A>SmallElements(S)</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Conductor(s);
+6
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+            <Attr Name="FrobeniusNumber" Arg="S" Label="for numerical sets"/>
+            <Description>
+                <A>S</A> is a numerical set.
+                The output is the largest integer not belonging to <A>S</A>.
+  
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> FrobeniusNumber(s);
+5
+]]></Example>
+    </Description>
+</ManSection>
+
+
+</Section>
