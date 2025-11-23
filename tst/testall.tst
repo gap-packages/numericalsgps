@@ -1993,6 +1993,12 @@ gap> Genus(s);
 4
 gap> s=NumericalSetByGaps(Gaps(s));
 true
+gap> s=NumericalSemigroup(2,3);
+false
+gap> NumericalSemigroup(2,3)=s;
+false
+gap> NumericalSemigroup(2,3)=NumericalSetByGaps([1]);
+true
 gap> Multiplicity(s);
 1
 gap> 4 in s;
@@ -2014,6 +2020,36 @@ gap> Difference(s,t);
 [ 3 ]
 gap> IsSubset(NumericalSetBySmallElements([0,1,2]),t);
 true
+gap> Gaps(Difference(t,[5..9]));
+[ 3 .. 9 ]
+gap> Difference([1..9],t);
+[ 3, 4 ]
+gap> Gaps(Difference(NumericalSemigroup(2,3),[2]));
+[ 1, 2 ]
+gap> [0,1]+NumericalSemigroup(2,3)=NumericalSetByGaps([]);
+true
+gap> i:=[0,2]+NumericalSemigroup(7,8);;
+gap> NumericalSetBySmallElements(SmallElements(i))=i;
+true
+gap> i:=1+NumericalSemigroup(2,3);;
+gap> i=NumericalSetBySmallElements([0,5]);
+false
+gap> s:=NumericalSemigroup(2,3);;
+gap> IsSubset(s,Difference(s,[20]));
+true
+gap> IsSubset(Difference(s,[2]),s);
+false
+gap> s:=NumericalSemigroup(2,3);;
+gap> IsSubset(s,Difference(s,[20]));
+true
+gap> IsSubset(Difference(s,[2]),s);
+false
+gap> IsSubset(-3+s,NumericalSetByGaps([]));
+true
+gap> IsSubset(NumericalSetByGaps([3]),4+s);
+true
+gap> IsSubset(NumericalSetByGaps([3]),1+s);
+false
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

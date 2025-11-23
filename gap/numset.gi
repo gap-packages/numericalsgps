@@ -40,10 +40,16 @@ end);
 InstallGlobalFunction(NumericalSetByGaps,
 function(L)
   local ns,gs,c;
-  if not IsListOfIntegersNS(L) or Minimum(L)<0 then
-    return Error("The argument must be a nonempty list of positive integers");
+  if not( IsList(L) ) then
+    return Error("The argument must be a list of positive integers");
   fi;
   gs:=List(Set(L));
+  if gs=[] then
+    return NumericalSetBySmallElements([0]);
+  fi;
+  if not IsListOfIntegersNS(L) or Minimum(L)<0 then
+    return Error("The argument must be a list of positive integers");
+  fi;
   c:=Maximum(gs)+1;
   ns:= Objectify( NumericalSetsType, rec() );
   SetGaps(ns, gs);
@@ -246,6 +252,34 @@ function( ns1, ns2 )
   return SmallElements(ns1) = SmallElements(ns2);
 end);
 
+InstallMethod(\=, "for numerical semigroups and numerical sets",
+[ IsNumericalSemigroup, IsNumericalSet ],
+function( ns1, ns2 )
+  return SmallElements(ns1) = SmallElements(ns2);
+end);
+
+InstallMethod(\=, "for numerical sets and numerical semigroups",
+[ IsNumericalSet, IsNumericalSemigroup ],
+function( ns1, ns2 )
+  return SmallElements(ns1) = SmallElements(ns2);
+end);
+
+InstallMethod(\=, "for numerical sets and ideals of numerical semigroups",
+[ IsNumericalSet, IsIdealOfNumericalSemigroup ],
+function( ns, i )
+  if Minimum(i)<>0 then
+    return false;
+  fi;
+  return SmallElements(ns) = SmallElements(i);
+end);
+
+InstallMethod(\=, "for ideals of numerical semigroups and numerical sets",
+[ IsIdealOfNumericalSemigroup, IsNumericalSet ],
+function( i, ns )
+  return ns=i;
+end);
+
+
 #############################################################################
 ## ordering
 InstallMethod( \<, "for numerical sets",
@@ -253,6 +287,31 @@ InstallMethod( \<, "for numerical sets",
 function( ns1, ns2 )
   return SmallElements(ns1) < SmallElements(ns2);
 end);
+
+InstallMethod( \<, "for numerical sets and numerical semigroups",
+[ IsNumericalSet, IsNumericalSemigroup ] ,
+function( ns1, ns2 )
+  return SmallElements(ns1) < SmallElements(ns2);
+end);
+
+InstallMethod( \<, "for numerical semigroups and numerical sets",
+[ IsNumericalSemigroup, IsNumericalSet ] ,
+function( ns1, ns2 )
+  return SmallElements(ns1) < SmallElements(ns2);
+end);
+
+InstallMethod( \<, "for numerical sets and ideals of numerical semigroups",
+[ IsNumericalSet, IsIdealOfNumericalSemigroup ] ,
+function( ns, I )
+  return SmallElements(ns) < SmallElements(I);
+end);
+
+InstallMethod( \<, "for ideals of numerical semigroups and numerical sets",
+[ IsIdealOfNumericalSemigroup, IsNumericalSet ] ,
+function( I, ns )
+  return SmallElements(I) < SmallElements(ns);
+end);
+
 
 #############################################################################
 ## membership
@@ -279,6 +338,43 @@ function( ns1, ns2 )
     return ForAll(SmallElements(ns2), j-> (j>Conductor(ns1)) or (j in ns1));
 end);
 
+InstallMethod( IsSubset, "for numerical sets and numerical semigroups",
+[ IsNumericalSet, IsNumericalSemigroup ],
+function( ns1, ns2 )
+    if Conductor(ns1) > Conductor(ns2) then
+        return false;
+    fi;
+    return ForAll(SmallElements(ns2), j-> (j>Conductor(ns1)) or (j in ns1));
+end);
+
+InstallMethod( IsSubset, "for numerical semigroups and numerical sets",
+[ IsNumericalSemigroup, IsNumericalSet ],
+function( ns1, ns2 )
+    if Conductor(ns1) > Conductor(ns2) then
+        return false;
+    fi;
+    return ForAll(SmallElements(ns2), j-> (j>Conductor(ns1)) or (j in ns1));
+end);
+
+InstallMethod( IsSubset, "for numerical sets and ideals of numerical semigroups",
+[ IsNumericalSet, IsIdealOfNumericalSemigroup ],
+function( ns, I )
+    if Conductor(ns) > Conductor(I) then
+        return false;
+    fi;
+    return ForAll(SmallElements(I), j-> (j>Conductor(ns)) or (j in ns));
+end);
+
+InstallMethod( IsSubset, "for ideals of numerical semigroups and numerical sets", 
+[ IsIdealOfNumericalSemigroup, IsNumericalSet ],
+function( I, ns )
+    if Conductor(I) > Conductor(ns) then
+        return false;
+    fi;
+    return ForAll(SmallElements(ns), j-> (j>Conductor(I)) or (j in I));
+end);
+
+
 #############################################################################
 ## difference
 InstallMethod( Difference, "for numerical sets",
@@ -293,4 +389,27 @@ function( ns1, ns2 )
   sm1:=Union(s1, [m1..m]);
   sm2:=Union(s2, [m2..m]);
   return Difference(sm1, sm2);
+end);
+
+InstallMethod( Difference, "for numerical sets and lists",
+[ IsNumericalSet, IsList ],
+function( ns, l )
+  local gs;
+  if (0 in l) then
+    Error("The list of integers must not contain 0");
+  fi;
+  gs:=Gaps(ns);
+  return NumericalSetByGaps(Union(gs, Filtered(l, IsPosInt)));
+ end);
+
+InstallMethod( Difference, "for lists and numerical sets",
+[ IsList, IsNumericalSet ],
+function( l, ns )
+  return Filtered(l, x-> not (x in ns) );
+end);
+
+InstallMethod( Difference, "for numerical semigroups and lists",
+[ IsNumericalSemigroup, IsList ],
+function( ns, l )
+  return Difference( NumericalSetBySmallElements(SmallElements(ns)), l );
 end);
