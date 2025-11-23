@@ -59,6 +59,28 @@ end);
 
 #############################################################################
 ##
+#O AsNumericalSet( S )
+##
+## Returns S as a numerical set.
+##
+#############################################################################
+InstallMethod( AsNumericalSet ,
+[ IsNumericalSemigroup ],
+function( S )
+  return NumericalSetBySmallElements( SmallElements(S) );
+end);
+
+InstallMethod( AsNumericalSet ,
+[ IsIdealOfNumericalSemigroup ],
+function( I )
+  if Minimum(I)<>0 then
+    return Error("The minimum of ideal must be 0 to be converted into a numerical set");
+  fi;
+  return NumericalSetBySmallElements( SmallElements(I) );
+end);
+
+#############################################################################
+##
 #O Gaps(ns)
 ## Gaps of a numerical set
 ##
@@ -399,7 +421,7 @@ function( ns, l )
     Error("The list of integers must not contain 0");
   fi;
   gs:=Gaps(ns);
-  return NumericalSetByGaps(Union(gs, Filtered(l, IsPosInt)));
+  return NumericalSetByGaps(Union(gs, Filtered(l, IsPosInt));
  end);
 
 InstallMethod( Difference, "for lists and numerical sets",
@@ -411,5 +433,5 @@ end);
 InstallMethod( Difference, "for numerical semigroups and lists",
 [ IsNumericalSemigroup, IsList ],
 function( ns, l )
-  return Difference( NumericalSetBySmallElements(SmallElements(ns)), l );
+  return Difference( AsNumericalSet(ns), l );
 end);

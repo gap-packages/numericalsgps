@@ -70,3 +70,14 @@ DeclareAttribute( "FrobeniusNumber", IsNumericalSet);
 DeclareAttribute( "Genus", IsNumericalSet);
 #A
 DeclareAttribute( "Multiplicity", IsNumericalSet);
+
+#############################################################################
+##
+#O AsNumericalSet( S )
+##
+## Returns S as a numerical set.
+##
+#############################################################################
+DeclareOperation( "AsNumericalSet" , [IsNumericalSemigroup]);
+
+DeclareOperation( "AsNumericalSet" , [IsIdealOfNumericalSemigroup] );

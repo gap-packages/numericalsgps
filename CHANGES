@@ -21,7 +21,7 @@
 - Print, string, display for numerical sets
 - Added membership for numerical sets
 - Added equality, inclusion and difference between numerical sets and numerical semigroups and ideals of numerical semigroups
-
+- Convert numerical semigroups to numerical sets and ideals of numerical semigroups to numerical sets (if the minimum element is zero)
 
 1.3.1 -> 1.4.0
 - Added NumericalSemigroupsWithFrobeniusNumberPC

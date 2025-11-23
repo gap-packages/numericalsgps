@@ -2050,6 +2050,11 @@ gap> IsSubset(NumericalSetByGaps([3]),4+s);
 true
 gap> IsSubset(NumericalSetByGaps([3]),1+s);
 false
+gap> s:=NumericalSemigroup(3,7);;
+gap> Print(AsNumericalSet(s));
+{0,3,6,7,9,10,12,->}
+gap> Print(AsNumericalSet([0,2]+s));
+{0,2,3,5,->}
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
