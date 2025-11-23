@@ -205,7 +205,7 @@ InstallMethod(IsSubset,
     if Conductor(I) > Conductor(J) then
         return false;
     fi;
-    return ForAll(SmallElements(J), j-> (j<Conductor(I)) or (j in I));
+    return ForAll(SmallElements(J), j-> (j>Conductor(I)) or (j in I));
 end);
 
 ############################################################################

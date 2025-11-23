@@ -49,11 +49,7 @@ true
 #############################################################################
 # Some more elaborated tests
 
-gap> ls1 := NumericalSemigroupsWithFrobeniusNumberFG(7);
-[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup> ]
+gap> ls1 := NumericalSemigroupsWithFrobeniusNumberFG(7);;
 gap> ls2 := NumericalSemigroupsWithFrobeniusNumber(7);;
 gap> ge1 := List(ls1, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 [ [ 3, 5 ], [ 4, 5, 11 ], [ 4, 5, 6 ], [ 5, 6, 8, 9 ], [ 2, 9 ], 
@@ -66,19 +62,7 @@ gap> ge2 := List(ls2, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 gap> Set(ge1)=Set(ge2);
 true
 
-gap> NumericalSemigroupsWithGenus(5);
-[ <Numerical semigroup with 6 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 3 generators>,
-  <Numerical semigroup with 3 generators>,
-  <Numerical semigroup with 2 generators> ]
+gap> NumericalSemigroupsWithGenus(5);;
 gap> List(last, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ],
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ],
@@ -1962,9 +1946,9 @@ false
 gap> i=j;
 false
 gap> IsSubset(NumericalSemigroup([3..5]),i);
-true
-gap> IsSubset(i,NumericalSemigroup([3..5]));
 false
+gap> IsSubset(i,NumericalSemigroup(6,7));
+true
 
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> t:=NumericalSemigroup(3,7);;
@@ -1987,6 +1971,48 @@ true
 gap> t in is;
 false
 gap> s in it;
+true
+
+##Numerical_sets
+
+gap> s:=NumericalSetBySmallElements([0,1,2,3,5,6,9,10,12]);
+<Numerical set>
+gap> Print(s);
+{0,...,3,5,6,9,10,12,->}
+gap> Display(s);
+[ [ 0 .. 3 ], [ 5, 6 ], [ 9, 10 ], [ 12, "->" ] ]
+gap> SmallElements(s);
+[ 0, 1, 2, 3, 5, 6, 9, 10, 12 ]
+gap> FrobeniusNumber(s);
+11
+gap> Conductor(s);
+12
+gap> Gaps(s);
+[ 4, 7, 8, 11 ]
+gap> Genus(s);
+4
+gap> s=NumericalSetByGaps(Gaps(s));
+true
+gap> Multiplicity(s);
+1
+gap> 4 in s;
+false
+gap> 13 in s;
+true
+gap> -1 in s;
+false
+gap> 5 in s;
+true
+gap> t:=NumericalSetBySmallElements([0,1,2,5]);;
+gap> IsSubset(s,t);
+false
+gap> IsSubset(t,s);
+false
+gap> Difference(t,s);
+[ 7, 8, 11 ]
+gap> Difference(s,t);
+[ 3 ]
+gap> IsSubset(NumericalSetBySmallElements([0,1,2]),t);
 true
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml

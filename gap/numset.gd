@@ -18,7 +18,7 @@
 ##  The representation of a numerical set.
 ##
 #############################################################################
-DeclareRepresentation( "IsNumericalSetRep", IsAttributeStoringRep, []);
+DeclareRepresentation( "IsNumericalSetRep", IsAdditiveMagma and IsAttributeStoringRep, []);
 
 
 #############################################################################
@@ -30,6 +30,7 @@ DeclareRepresentation( "IsNumericalSetRep", IsAttributeStoringRep, []);
 #############################################################################
 DeclareCategory( "IsNumericalSet", IsNumericalSetRep);
 
+#InstallTrueMethod(IsNumericalSet, IsNumericalSemigroup);
 
 # Elements of numerical semigroups are integers, so numerical semigroups are
 # collections of integers.
