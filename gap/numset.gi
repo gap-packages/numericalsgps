@@ -421,7 +421,7 @@ function( ns, l )
     Error("The list of integers must not contain 0");
   fi;
   gs:=Gaps(ns);
-  return NumericalSetByGaps(Union(gs, Filtered(l, IsPosInt));
+  return NumericalSetByGaps(Union(gs, Filtered(l, IsPosInt)));
  end);
 
 InstallMethod( Difference, "for lists and numerical sets",
