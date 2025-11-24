@@ -72,6 +72,29 @@ true
   </Description>
 </ManSection>
 
+
+<ManSection>
+  <Oper Arg="S,R" Name="Difference" Label="for numerical sets"></Oper>
+  <Description>
+    <A>S</A> and <A>R</A> can be numerical sets, numerical semigroups or lists of integers. 
+
+    The output is <M><A>S</A>\setminus<A>R</A></M>. In some cases, the output is a numerical set.
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5);;
+gap> t:=Difference(s,[5..10]);
+<Numerical set>
+gap> SmallElements(s);
+[ 0, 4, 5, 8, 9, 10, 12 ]
+gap> SmallElements(t);
+[ 0, 4, 12 ]
+gap> Difference([0..Conductor(s)],s)=Gaps(s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
 </Section>
 
 
