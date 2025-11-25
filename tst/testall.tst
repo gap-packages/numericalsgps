@@ -2089,6 +2089,12 @@ gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
 gap> t:=NumericalSemigroup(5,7);;
 gap> SmallElements(s+t);
 [ 0, 2, 5, 6, 7, 9 ]
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> i:=[0,2]+s;
+<Ideal of numerical semigroup>
+gap> AsNumericalSet(i)+AsNumericalSet(s)=AsNumericalSet(i);
+true
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

@@ -533,7 +533,7 @@ function(ns1,ns2)
 
   c1:=Conductor(ns1);
   c2:=Conductor(ns2);
-  c:=Maximum(c1,c2);
+  c:=c1+c2;
   sm1:=Union(SmallElements(ns1),[c1..c]);
   sm2:=Union(SmallElements(ns2),[c2..c]);
   return NumericalSetBySmallElements(Set(Cartesian(sm1,sm2),Sum));
