@@ -435,3 +435,116 @@ InstallMethod( Difference, "for numerical semigroups and lists",
 function( ns, l )
   return Difference( AsNumericalSet(ns), l );
 end);
+
+
+##################################################################################
+##
+#O ns[n]
+## The nth element of ns
+##################################################################################
+
+InstallOtherMethod(\[\], [IsNumericalSet,IsInt],
+function(ns,n)
+  local sm,nsm;
+  if n<=0 then 
+    Error("The index must be a positive integer");
+  fi;
+  sm:=SmallElements(ns);
+  nsm:=Length(sm);
+  if n<=nsm then
+    return sm[n];
+  else
+    return Conductor(ns)-nsm+n;
+  fi;
+end);
+
+##################################################################################
+##
+#O ns{ls}
+## [I[n] :  n in ls]
+##################################################################################
+
+
+InstallOtherMethod(\{\}, [IsNumericalSet,IsList],
+function(i,l)
+    return List(l,n->i[n]);
+end);
+
+##################################################################################
+##
+#O Union(ns1,ns2)
+## Union of the numerical sets ns1 and ns2
+##
+##################################################################################
+InstallMethod(Union2, [IsNumericalSet,IsNumericalSet], 
+function(ns1,ns2)
+ local sm1,sm2,c1,c2,c;
+
+ c1:=Conductor(ns1);
+ c2:=Conductor(ns2);
+ c:=Maximum(c1,c2);
+ sm1:=Union(SmallElements(ns1),[c1..c]);
+ sm2:=Union(SmallElements(ns2),[c2..c]);
+ return NumericalSetBySmallElements(Union(sm1,sm2));
+end);
+
+InstallMethod(Union2, [IsNumericalSet,IsNumericalSemigroup], 
+function(ns1,ns2)
+  return Union(ns1,AsNumericalSet(ns2));
+end);
+
+InstallMethod(Union2, [IsNumericalSemigroup,IsNumericalSet], 
+function(ns1,ns2)
+  return Union(AsNumericalSet(ns1),ns2);
+end);
+
+
+##################################################################################
+##
+#O Intersection(ns1,ns2)
+## Intersection of the numerical sets ns1 and ns2
+##
+##################################################################################
+InstallMethod(Intersection2, [IsNumericalSet,IsNumericalSet], 
+  function(ns1,ns2)
+  return NumericalSetByGaps(Union(Gaps(ns1),Gaps(ns2)));
+end);
+
+
+InstallMethod(Intersection2, [IsNumericalSemigroup,IsNumericalSet], 
+  function(ns1,ns2)
+  return Intersection(AsNumericalSet(ns1),ns2);
+end);
+
+InstallMethod(Intersection2, [IsNumericalSet,IsNumericalSemigroup], 
+  function(ns1,ns2)
+  return Intersection(ns2,ns1);
+end);
+
+##################################################################################
+##
+#O \+(ns1,ns2)
+## Sum of the numerical sets ns1 and ns2
+##
+##################################################################################
+InstallMethod(\+, [IsNumericalSet,IsNumericalSet], 
+function(ns1,ns2)
+  local sm1,sm2,c1,c2,c;
+
+  c1:=Conductor(ns1);
+  c2:=Conductor(ns2);
+  c:=Maximum(c1,c2);
+  sm1:=Union(SmallElements(ns1),[c1..c]);
+  sm2:=Union(SmallElements(ns2),[c2..c]);
+  return NumericalSetBySmallElements(Set(Cartesian(sm1,sm2),Sum));
+end);
+
+InstallMethod(\+, [IsNumericalSemigroup,IsNumericalSet], 
+function(ns1,ns2)
+  return AsNumericalSet(ns1)+ns2;
+end);
+
+InstallMethod(\+, [IsNumericalSet,IsNumericalSemigroup], 
+function(ns1,ns2)
+  return ns2+ns1;
+end);

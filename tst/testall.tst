@@ -2055,6 +2055,40 @@ gap> Print(AsNumericalSet(s));
 {0,3,6,7,9,10,12,->}
 gap> Print(AsNumericalSet([0,2]+s));
 {0,2,3,5,->}
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> s[1];
+0
+gap> s{[1..10]};
+[ 0, 2, 5, 6, 9, 10, 11, 12, 13, 14 ]
+gap> SmallElements(s);
+[ 0, 2, 5, 6, 9 ]
+gap> s[3];
+5
+gap> s[7];
+11
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(4,7);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 4 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 5, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 6, 9 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,7]);;
+gap> SmallElements(s+t);
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(s+t);
+[ 0, 2, 5, 6, 7, 9 ]
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

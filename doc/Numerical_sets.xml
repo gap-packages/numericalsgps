@@ -93,6 +93,93 @@ true
   </Description>
 </ManSection>
 
+<ManSection>
+  <Oper Arg="ns,r"  Name="\[ \]" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is an a numerical set and <A>r</A> is a positive integer. 
+                  It returns the <A>r</A>-th element of <A>ns</A>.
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> s[1];
+0
+gap> s[3];
+5
+gap> s[7];
+11
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="Ins,ls"  Name="\{ \}" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is a numerical set and <A>ls</A> is a list of positive integers. 
+                  It returns the list <A>[ns[r] : r in ls]</A>.
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> s{[1..10]};
+[ 0, 2, 5, 6, 9, 10, 11, 12, 13, 14 ]
+gap> SmallElements(s);
+[ 0, 2, 5, 6, 9 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="R, S" Name="Union" Label="for numerical sets"></Oper>
+  <Description>
+      <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
+      The output is the union of both numerical sets.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(4,7);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 4 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, S" Name="Intersection" Label="for numerical sets"></Oper>
+  <Description>
+      <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
+      The output is the intersection of both numerical sets.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 5, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 6, 9 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, S" Name="+" Label="for numerical sets"></Oper>
+  <Description>
+      <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
+      The output is the sum of both numerical sets.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,7]);;
+gap> SmallElements(s+t);
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(s+t);
+[ 0, 2, 5, 6, 7, 9 ]
+
+]]></Example>
+  </Description>
+</ManSection>
 
 
 </Section>
