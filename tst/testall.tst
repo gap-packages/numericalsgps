@@ -2095,6 +2095,29 @@ gap> i:=[0,2]+s;
 <Ideal of numerical semigroup>
 gap> AsNumericalSet(i)+AsNumericalSet(s)=AsNumericalSet(i);
 true
+gap> s:=NumericalSetByGaps([1..5]);;
+gap> MinimalGenerators(AsNumericalSemigroup(s));
+[ 6 .. 11 ]
+gap> s:=NumericalSemigroup(3,5);;
+gap> t:=NumericalSetBySmallElements([0,4]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);
+false
+gap> r:=NumericalSetBySmallElements([0,3,5,6,8]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(r,s);
+true
+gap> s:=NumericalSetBySmallElements([0,3,5]);;
+gap> Positions(s,2);
+[  ]
+gap> Positions(s,3);
+[ 2 ]
+gap> Position(s,-3);
+fail
+gap> Position(s,0);
+1
+gap> Position(s,0,1);
+fail
+gap> Position(s,6);
+4
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

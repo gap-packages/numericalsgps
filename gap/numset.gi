@@ -81,6 +81,52 @@ end);
 
 #############################################################################
 ##
+#O AsNumericalSemigroup( S )
+##
+## Returns S as a numerical semigroup if s+s=s; raises an error otherwise.
+##
+#############################################################################
+InstallMethod(AsNumericalSemigroup,"for numerical sets",[IsNumericalSet],
+  function(s)
+  if s+s=s then 
+    return NumericalSemigroupBySmallElements(SmallElements(s));
+  fi;
+  Error("The given numerical set is not a numerical semigroup");
+end);
+
+#############################################################################
+##
+#O AsIdealOfNumericalSemigroup( R, S )
+##
+## Returns R as an ideal of the numerical semigroup S if R+S=R; 
+## raises an error otherwise.
+##
+#############################################################################
+# InstallMethod(AsIdealOfNumericalSemigroup, "for numerical sets", [IsNumericalSet,IsNumericalSemigroup]
+# function (r,s)
+#   if r+s=r then
+#     return IdealOfNumericalSemigroupBySmallElements(SmallElements(r),s);
+# end);
+
+#############################################################################
+##
+#O IsAssociatedNumericalSetOfNumericalSemigroup( R, S )
+##
+## Checks if R is an associated set of S, that is,  R is an ideal and R-R=S
+##
+#############################################################################
+InstallMethod(IsAssociatedNumericalSetOfNumericalSemigroup, [IsNumericalSet,IsNumericalSemigroup],
+function(r,s)
+  local i;
+  if r+s=r then # r is an ideal of s
+    i:=IdealOfNumericalSemigroupBySmallElements(SmallElements(r),s);
+    return i-i=s;
+  fi;
+  return false;
+end);
+
+#############################################################################
+##
 #O Gaps(ns)
 ## Gaps of a numerical set
 ##
@@ -469,6 +515,50 @@ InstallOtherMethod(\{\}, [IsNumericalSet,IsList],
 function(i,l)
     return List(l,n->i[n]);
 end);
+
+##################################################################################
+##
+#O Positions(s,n)
+#O Position(s,n)
+## 
+## Determines the position of n in s as a list
+##
+#################################################################################
+InstallOtherMethod(PositionsOp, "for numerical sets", [IsNumericalSet,IsObject],
+function(s,n)
+  local c,sm;
+  if not(IsInt(n)) then
+    return [];
+  fi;
+  c:=Conductor(s);
+  sm:=SmallElements(s);
+  if n>=c then 
+    return [n-c+Length(sm)];
+  fi;
+  return Positions(sm,n);
+end);
+
+InstallOtherMethod(Position, [IsNumericalSet,IsObject,IsInt],
+function(s,n,f)
+  local c,sm,p;
+  if not(IsInt(n)) then
+    return fail;
+  fi;
+
+  c:=Conductor(s);
+  sm:=SmallElements(s);
+  if n>=c then 
+    p:=n-c+Length(sm);
+    if p > f then 
+      return p;
+    else
+      return fail;
+    fi;
+  fi;
+  return Position(sm,n,f);
+end);
+
+
 
 ##################################################################################
 ##

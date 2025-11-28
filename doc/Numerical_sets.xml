@@ -59,6 +59,24 @@ gap> Print(AsNumericalSet(i));
 
 
 <ManSection>
+  <Oper Arg="S" Name="AsNumericalSemigroup" Label="for numerical sets"></Oper>
+  <Description>
+    <A>S</A> is a numerical set. 
+
+    The output is <A>S</A> considered as a numerical semigroup provided that <M><A>S</A>+<A>S</A> = <A>S</A></M> (otherwise, it raises an error).
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5);;
+gap> Print(AsNumericalSet(s));
+{0,4,5,8,9,10,12,->}
+gap> i:=[0,1]+s;;
+gap> Print(AsNumericalSet(i));
+{0,1,4,5,6,8,->}
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
   <Func Arg="Obj" Name="IsNumericalSet"></Func>
   <Description>
     Tests if the object <A>Obj</A> is a numerical set.
@@ -125,6 +143,38 @@ gap> SmallElements(s);
 ]]></Example>
   </Description>
 </ManSection>
+
+
+<ManSection>
+  <Oper Arg="ns,r,[f]"  Name="Position" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is an a numerical set, <A>r</A> is an object, and <A>f</A> is an index; it works exactly as <A>Position</A> for lists considering <A>ns</A> as an infinite list of integers. 
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,3,5]);;
+gap> Position(s,-3);
+fail
+gap> Position(s,0);
+1
+gap> Position(s,0,1);
+fail
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="ns,r"  Name="Positions" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is an a numerical set and <A>r</A> is an object; it works exactly as <A>Positions</A> for lists considering <A>ns</A> as an infinite list of integers. 
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,3,5]);;
+gap> Positions(s,2);
+[  ]
+gap> Positions(s,3);
+[ 2 ]
+]]></Example>
+  </Description>
+</ManSection>
+
 
 
 <ManSection>
@@ -275,6 +325,31 @@ gap> FrobeniusNumber(s);
 5
 ]]></Example>
     </Description>
+</ManSection>
+
+</Section>
+
+<Section>
+                <Heading>
+                    Associated sets to numerical semigroups
+                </Heading>
+
+<ManSection>
+  <Oper Arg="R, S" Name="IsAssociatedNumericalSetOfNumericalSemigroup"></Oper>
+  <Description>
+      <A>R</A> is a numerical set and <A>S</A> is a numerical semigroup. 
+      
+      Determines if <A>R</A> is an ideal of <A>S</A> and if <A>R-R=S</A>.
+  <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5);;
+gap> t:=NumericalSetBySmallElements([0,4]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);
+false
+gap> r:=NumericalSetBySmallElements([0,3,5,6,8]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(r,s);
+true
+]]></Example>
+  </Description>
 </ManSection>
 
 
