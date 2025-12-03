@@ -1559,6 +1559,7 @@ gap> Difference([0,1]+s,s);
 gap> Difference(s,10+s);
 [ 0, 5, 11, 16, 18, 22, 23, 24, 27, 29 ]
 gap> Difference(0+s,10+s);
+[ 0, 5, 11, 16, 18, 22, 23, 24, 27, 29 ]
 
 gap> s:=NumericalSemigroup(13,23);;
 gap> l:=List([1..6], _ -> Random([8..34]));;
