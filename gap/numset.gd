@@ -122,6 +122,8 @@ DeclareOperation("IsAssociatedNumericalSetOfNumericalSemigroup",[IsNumericalSet,
 # work for integral ideals ...
 # Thus, I am really in the mood of changing the existing function; we can probably use
 # the new machinery of arithmetic of numerical sets.
+# AsIdealOfNumericalSemigroup could simply be 
+# i->IdealOfNumericalSemigroupBySmallElements(SmallElements(i),s)
 #
 # 2.
 # We have n*I which is I+...+I (n times), but we do not have the same thing for 
