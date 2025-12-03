@@ -616,6 +616,17 @@ InstallGlobalFunction(DifferenceOfIdealsOfNumericalSemigroup, function(I, J)
     return Difference(SI,SJ);
 end);
 
+InstallMethod(Difference, "for ideals of numerical semigroups and numerical semigroups",
+[IsIdealOfNumericalSemigroup, IsNumericalSemigroup], function(I, S)
+  return DifferenceOfIdealsOfNumericalSemigroup(I,0+S);
+end);
+
+InstallMethod(Difference, "for numerical semigroups and ideals of numerical semigroups",
+[IsNumericalSemigroup, IsIdealOfNumericalSemigroup], function(S, I)
+  return DifferenceOfIdealsOfNumericalSemigroup(0+S,I);
+end);
+
+
 #############################################################################
 ##
 #F MultipleOfIdealOfNumericalSemigroup(n,I)

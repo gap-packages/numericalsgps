@@ -1553,6 +1553,13 @@ gap> DifferenceOfIdealsOfNumericalSemigroup(ii,i);
 gap> Difference(i,ii);
 [  ]
 
+gap> s:=NumericalSemigroup( 5, 11, 18, 24);;
+gap> Difference([0,1]+s,s);
+[ 1, 6, 12, 17, 19 ]
+gap> Difference(s,10+s);
+[ 0, 5, 11, 16, 18, 22, 23, 24, 27, 29 ]
+gap> Difference(0+s,10+s);
+
 gap> s:=NumericalSemigroup(13,23);;
 gap> l:=List([1..6], _ -> Random([8..34]));;
 gap> I:=IdealOfNumericalSemigroup(l, s);;
