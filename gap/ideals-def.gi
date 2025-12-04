@@ -205,7 +205,7 @@ InstallMethod(IsSubset,
     if Conductor(I) > Conductor(J) then
         return false;
     fi;
-    return ForAll(SmallElements(J), j-> (j<Conductor(I)) or (j in I));
+    return ForAll(SmallElements(J), j-> (j>Conductor(I)) or (j in I));
 end);
 
 ############################################################################
@@ -615,6 +615,17 @@ InstallGlobalFunction(DifferenceOfIdealsOfNumericalSemigroup, function(I, J)
     # fi;
     return Difference(SI,SJ);
 end);
+
+InstallMethod(Difference, "for ideals of numerical semigroups and numerical semigroups",
+[IsIdealOfNumericalSemigroup, IsNumericalSemigroup], function(I, S)
+  return DifferenceOfIdealsOfNumericalSemigroup(I,0+S);
+end);
+
+InstallMethod(Difference, "for numerical semigroups and ideals of numerical semigroups",
+[IsNumericalSemigroup, IsIdealOfNumericalSemigroup], function(S, I)
+  return DifferenceOfIdealsOfNumericalSemigroup(0+S,I);
+end);
+
 
 #############################################################################
 ##

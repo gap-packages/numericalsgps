@@ -580,7 +580,8 @@ gap> MinimalGenerators(I+II);
                     <Description>
                         <A>I, J</A> are ideals of a numerical semigroup. <A>J</A> must be contained in <A>I</A>.
                         The output is the set <M><A>I</A>\setminus <A>J</A></M>.
-
+                        <P/>
+                        If one of the arguments is a numerical semigroup <M>S</M>, it is considered as the ideal <M>0+S</M>.
                         <Example><![CDATA[
 gap> S:=NumericalSemigroup(14, 15, 20, 21, 25);;
 gap> I:=[0,1]+S;
