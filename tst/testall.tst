@@ -777,6 +777,16 @@ gap> S := NumericalSemigroup(7,8,17);;
 gap> NumberElement_NumericalSemigroup(S,68);
 53
 
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> SmallElements(s);
+[ 0, 3, 5 ]
+gap> Position(s,6);
+4
+gap> Position(s,6,4);
+fail
+gap> Position(s,6,3);
+4
+
 gap> S := NumericalSemigroup(7,8,17);;
 gap> iter:=Iterator(S);
 <iterator>
@@ -1498,6 +1508,15 @@ gap> ElementNumber_IdealOfNumericalSemigroup(I,10);
 gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
 gap> NumberElement_IdealOfNumericalSemigroup(I,19);
 10
+
+gap> s:=NumericalSemigroup(8, 9, 10, 11, 12, 15);;
+gap> i:=[2,5]+s;;
+gap> SmallElements(i);
+[ 2, 5, 10 ]
+gap> Position(i,5);
+2
+gap> Position(i,5,2);
+fail
 
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> J:=[2,11]+NumericalSemigroup(2,11);;

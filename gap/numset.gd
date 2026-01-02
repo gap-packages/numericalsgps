@@ -135,6 +135,3 @@ DeclareOperation("IsAssociatedNumericalSetOfNumericalSemigroup",[IsNumericalSet,
 # Iterators: we have iterators for ideals and numerical semigroups. We do not have one for 
 # numerical sets
 #
-# 4. 
-# We do not have Position for numerical semigroups nor for ideals; we have 
-# NumberElement_NumericalSemigroup instead...
