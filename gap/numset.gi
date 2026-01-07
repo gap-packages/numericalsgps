@@ -578,6 +578,8 @@ function(ns1,ns2)
  return NumericalSetBySmallElements(Union(sm1,sm2));
 end);
 
+### Unions of numerical sets and numerical semigroups
+
 InstallMethod(Union2, [IsNumericalSet,IsNumericalSemigroup], 
 function(ns1,ns2)
   return Union(ns1,AsNumericalSet(ns2));
@@ -588,6 +590,50 @@ function(ns1,ns2)
   return Union(AsNumericalSet(ns1),ns2);
 end);
 
+InstallMethod(Union2, [IsNumericalSemigroup,IsNumericalSemigroup], 
+function(ns1,ns2)
+  return Union(AsNumericalSet(ns1),AsNumericalSet(ns2));
+end);
+
+### Unions of numerical sets (and numerical semigroups) and lists of integers
+
+InstallMethod(Union2, [IsNumericalSet,IsList], 
+function(ns,l)
+  local sm, c;
+  if not( IsListOfIntegersNS(l) ) then
+    return Error("The second argument must be a list of non-negative integers");
+  fi;
+  if not( ForAll(l, x-> x>=0) ) then
+    return Error("The list must contain only non-negative integers");
+  fi;
+  c:=Conductor(ns);
+  sm:=Union(SmallElements(ns), Filtered(l, x-> x<c) );
+  return NumericalSetBySmallElements(sm);
+end);
+
+InstallMethod(Union2, [IsList,IsNumericalSet], 
+function(l,ns)
+  local sm, c;
+  if not( IsListOfIntegersNS(l) ) then
+    return Error("The first argument must be a list of non-negative integers");
+  fi;
+  if not( ForAll(l, x-> x>=0) ) then
+    return Error("The list must contain only non-negative integers");
+  fi;
+  c:=Conductor(ns);
+  sm:=Union(SmallElements(ns), Filtered(l, x-> x<c) );
+  return NumericalSetBySmallElements(sm);
+end);
+
+InstallMethod(Union2, [IsNumericalSemigroup,IsList], 
+function(ns,l)
+  return Union(AsNumericalSet(ns),l);
+end);
+
+InstallMethod(Union2, [IsList,IsNumericalSemigroup], 
+function(l,ns)
+  return Union(l,AsNumericalSet(ns));
+end);
 
 ##################################################################################
 ##

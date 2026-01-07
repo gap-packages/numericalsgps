@@ -2093,6 +2093,7 @@ gap> s[3];
 5
 gap> s[7];
 11
+
 gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
 gap> t:=NumericalSetBySmallElements([0,6]);;
 gap> SmallElements(Union(s,t));
@@ -2101,6 +2102,22 @@ gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
 gap> t:=NumericalSemigroup(4,7);;
 gap> SmallElements(Union(s,t));
 [ 0, 2, 4 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSemigroup(3,7);;
+gap> SmallElements(Union(s,t));
+[ 0, 2 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,7]);;
+gap> SmallElements(Union(s,[3,6,9]));
+[ 0, 2, 3, 5 ]
+gap> s:=NumericalSemigroup(4,6,9,11);;
+gap> t:=Union(s,[2,5]);;
+gap> SmallElements(t);
+[ 0, 2, 4, 5, 6, 8 ]
+gap> t+t=t;
+false
+gap> Union(s,[2,5])=Union([2,5],s);
+true
+
 gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
 gap> t:=NumericalSemigroup(5,7);;
 gap> SmallElements(Intersection(s,t));
