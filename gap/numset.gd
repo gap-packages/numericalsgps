@@ -111,6 +111,17 @@ DeclareOperation("AsNumericalSemigroup",[IsNumericalSet]);
 #############################################################################
 DeclareOperation("IsAssociatedNumericalSetOfNumericalSemigroup",[IsNumericalSet,IsNumericalSemigroup]);
 
+#############################################################################
+##
+#O IntegerPartition(S)
+##
+## Returns the integer partition associated to the numerical set S
+## S can also be a numerical semigroup
+## Written in collaboration with M. Yeşil
+###############################################################################
+DeclareOperation("IntegerPartition",[IsNumericalSet]);
+DeclareOperation("IntegerPartition",[IsNumericalSemigroup]);
+
 
 #TODO
 # 1.

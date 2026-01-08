@@ -684,3 +684,37 @@ InstallMethod(\+, [IsNumericalSet,IsNumericalSemigroup],
 function(ns1,ns2)
   return ns2+ns1;
 end);
+
+
+#############################################################################
+##
+#O IntegerPartition(S)
+##
+## Returns the integer partition associated to the numerical set S
+## S can also be a numerical semigroup
+## Written in collaboration with M. Yeşil
+###############################################################################
+InstallMethod(IntegerPartition, [IsNumericalSet],
+function(S)
+  local ns, yd, i, ri, k, P;
+
+  ns := SmallElements(S);
+
+  i := Length(ns);
+  P := [];
+  while i > 1 do
+    yd := [];
+    ri := ns[i] - ns[i-1] - 1;
+    for k in [1..ri] do
+      yd[k] := i-1;
+    od;
+    i := i - 1;
+    Append(P, yd);
+  od;
+  return P;
+end);
+
+InstallMethod(IntegerPartition, [IsNumericalSemigroup],
+function(S)
+  return IntegerPartition(AsNumericalSet(S));
+end);

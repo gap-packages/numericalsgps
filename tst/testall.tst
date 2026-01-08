@@ -2163,6 +2163,13 @@ fail
 gap> Position(s,6);
 4
 
+gap> s:=NumericalSetBySmallElements([0,4,6,7,9,10,12]);;
+gap> IntegerPartition(s);
+[ 6, 4, 2, 1, 1, 1 ]
+gap> s:=NumericalSemigroup(5,7,9,11,13);;
+gap> IntegerPartition(s);
+[ 3, 2, 1, 1, 1, 1 ]
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

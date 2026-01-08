@@ -354,3 +354,25 @@ true
 
 
 </Section>
+
+<Section>
+                <Heading>
+                    Integer partitions associated to numerical sets
+                </Heading>
+
+<ManSection>
+  <Oper Arg="S" Name="IntegerPartition"></Oper>
+  <Description>
+      <A>S</A> is a numerical set or a numerical semigroup. 
+      The output is the integer partition associated to <A>S</A>.
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,4,6,7,9,10,12]);;
+gap> IntegerPartition(s);
+[ 6, 4, 2, 1, 1, 1 ]
+gap> s:=NumericalSemigroup(5,7,9,11,13);;
+gap> IntegerPartition(s);
+[ 3, 2, 1, 1, 1, 1 ]
+]]></Example>
+  </Description>
+</ManSection>
+</Section>
