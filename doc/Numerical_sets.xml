@@ -364,7 +364,7 @@ true
   <Oper Arg="S" Name="IntegerPartition"></Oper>
   <Description>
       <A>S</A> is a numerical set or a numerical semigroup. 
-      The output is the integer partition associated to <A>S</A>.
+      The output is the integer partition associated to <A>S</A>, which is the one associated to its Young diagram. The algorithm used is the one explained in <Cite Key="Mehmet2025"></Cite>.
 <Example><![CDATA[
 gap> s:=NumericalSetBySmallElements([0,4,6,7,9,10,12]);;
 gap> IntegerPartition(s);
@@ -375,4 +375,21 @@ gap> IntegerPartition(s);
 ]]></Example>
   </Description>
 </ManSection>
+
+
+<ManSection>
+  <Func Arg="L" Name="IntegerPartition"></Func>
+  <Description>
+      <A>L</A> is a list that is either empty or of non-increasing positive integers, and represents an integer partition. 
+      The output is numerical set associated to <A>L</A>. The algorithm used is the one described in <Cite Key="Mehmet2025"></Cite>.
+<Example><![CDATA[
+gap> SmallElements(NumericalSetByIntegerPartition([]));
+[ 0 ]
+gap> IntegerPartition(NumericalSetByIntegerPartition([6,3,1]))=[6,3,1];
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
 </Section>

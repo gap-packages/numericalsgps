@@ -2169,6 +2169,10 @@ gap> IntegerPartition(s);
 gap> s:=NumericalSemigroup(5,7,9,11,13);;
 gap> IntegerPartition(s);
 [ 3, 2, 1, 1, 1, 1 ]
+gap> SmallElements(NumericalSetByIntegerPartition([]));
+[ 0 ]
+gap> IntegerPartition(NumericalSetByIntegerPartition([6,3,1]))=[6,3,1];
+true
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 

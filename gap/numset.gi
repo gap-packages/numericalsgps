@@ -718,3 +718,51 @@ InstallMethod(IntegerPartition, [IsNumericalSemigroup],
 function(S)
   return IntegerPartition(AsNumericalSet(S));
 end);
+
+#############################################################################
+##
+#F NumericalSetByIntegerPartition(part)
+##
+## Returns the numerical set associated to the integer partition part
+## Written in collaboration with M. Yeşil
+#################################################################################
+InstallGlobalFunction(NumericalSetByIntegerPartition,
+function(P)
+  local i, j, n, ns, aux, p;
+ 
+  if P=[] then
+    return NumericalSetBySmallElements([0]);
+  fi;
+
+  if not IsListOfIntegersNS(P) then 
+    Error("The argument must be a list of non-negative integers");
+  fi;
+
+  if P=[] then
+    return NumericalSetBySmallElements([0]);
+  fi;
+  if not( ForAll(P, IsPosInt) and ForAll([1..Length(P)-1], i-> P[i]>=P[i+1]) ) then
+    Error("The integers in the partition must be positive and in non-increasing order");
+  fi;
+
+  p := ShallowCopy(P);
+  n := Length(p);
+  i := p[n];
+  ns := [0];
+  if i>1 then
+  Append(ns, [1..i-1]);
+  fi;
+  j := 1;
+  while j < n do
+    aux := p[n-j] - p[n-j+1];
+    if aux = 0 then
+      i := i + 1;
+    else
+      Append(ns, [i+1..i+aux]);
+      i := i + aux+1;
+    fi;
+    j := j + 1;
+  od;
+  Add(ns, i+1);
+  return NumericalSetBySmallElements(ns);
+end);

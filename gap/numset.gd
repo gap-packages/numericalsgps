@@ -122,6 +122,15 @@ DeclareOperation("IsAssociatedNumericalSetOfNumericalSemigroup",[IsNumericalSet,
 DeclareOperation("IntegerPartition",[IsNumericalSet]);
 DeclareOperation("IntegerPartition",[IsNumericalSemigroup]);
 
+#############################################################################
+##
+#F NumericalSetByIntegerPartition(part)
+##
+## Returns the numerical set associated to the integer partition part
+## Written in collaboration with M. Yeşil
+#################################################################################
+DeclareGlobalFunction("NumericalSetByIntegerPartition");
+
 
 #TODO
 # 1.
