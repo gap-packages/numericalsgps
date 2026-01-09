@@ -378,7 +378,7 @@ gap> IntegerPartition(s);
 
 
 <ManSection>
-  <Func Arg="L" Name="IntegerPartition"></Func>
+  <Func Arg="L" Name="NumericalSetByIntegerPartition"></Func>
   <Description>
       <A>L</A> is a list that is either empty or of non-increasing positive integers, and represents an integer partition. 
       The output is numerical set associated to <A>L</A>. The algorithm used is the one described in <Cite Key="Mehmet2025"></Cite>.
@@ -387,6 +387,22 @@ gap> SmallElements(NumericalSetByIntegerPartition([]));
 [ 0 ]
 gap> IntegerPartition(NumericalSetByIntegerPartition([6,3,1]))=[6,3,1];
 true
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S" Name="HookLengths"></Oper>
+  <Description>
+      <A>S</A> is a numerical set or a numerical semigroup. 
+      The output is the list of hook lengths associated to the integer partition associated to <A>S</A>. The algorithm used is the one explained in <Cite Key="Mehmet2025"></Cite>.
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0, 5, 7, 9]);;
+gap> HookLengths(s);
+[ [ 8, 3, 1 ], [ 6, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
+gap> s:=NumericalSemigroup(5,6,11,13,14);;
+gap> HookLengths(s);
+[ [ 9, 4, 3 ], [ 8, 3, 2 ], [ 7, 2, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
 ]]></Example>
   </Description>
 </ManSection>

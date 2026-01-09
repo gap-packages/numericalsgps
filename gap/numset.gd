@@ -131,6 +131,17 @@ DeclareOperation("IntegerPartition",[IsNumericalSemigroup]);
 #################################################################################
 DeclareGlobalFunction("NumericalSetByIntegerPartition");
 
+#############################################################################
+##
+#O HookLengths(S)
+## Returns a list of lists with the hook lengths of the integer partition
+## associated to the numerical set S
+## S can also be a numerical semigroup
+## Written in collaboration with M. Yeşil
+###############################################################################
+DeclareOperation("HookLengths",[IsNumericalSet]);
+DeclareOperation("HookLengths",[IsNumericalSemigroup]);
+
 
 #TODO
 # 1.

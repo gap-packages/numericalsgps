@@ -766,3 +766,34 @@ function(P)
   Add(ns, i+1);
   return NumericalSetBySmallElements(ns);
 end);
+
+#############################################################################
+##
+#O HookLengths(S)
+## Returns a list of lists with the hook lengths of the integer partition
+## associated to the numerical set S
+## S can also be a numerical semigroup
+## Written in collaboration with M. Yeşil
+###############################################################################
+InstallMethod(HookLengths, [IsNumericalSet],
+function(S)
+  local ns, i, hooks, n, f, mset, k, a, aux;
+  ns := SmallElements(S);
+  mset := IntegerPartition(S);
+  k := Length(mset);
+  n := Length(ns);
+  f := ns[n]-1;
+  hooks := [];
+  hooks[1] := Filtered(f - ns, m -> m > 0);
+  for i in [2..k] do
+    a := mset[i-1] - mset[i] + 1;
+    aux := hooks[i-1]-a;
+    hooks[i] := Filtered(aux, m -> m > 0);
+  od;
+  return hooks;
+end);
+
+InstallMethod(HookLengths, [IsNumericalSemigroup],
+function(S)
+  return HookLengths(AsNumericalSet(S));
+end);
