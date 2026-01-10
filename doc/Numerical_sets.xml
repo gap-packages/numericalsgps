@@ -181,7 +181,11 @@ gap> Positions(s,3);
   <Oper Arg="R, S" Name="Union" Label="for numerical sets"></Oper>
   <Description>
       <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
-      The output is the union of both numerical sets.
+      <P/>
+      One of the arguments can also be a list of non-negative integers. 
+      <P/>
+      
+      The output is the union of both arguments, and it is a numerical set.
   <Example><![CDATA[
 gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
 gap> t:=NumericalSetBySmallElements([0,6]);;
@@ -191,6 +195,9 @@ gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
 gap> t:=NumericalSemigroup(4,7);;
 gap> SmallElements(Union(s,t));
 [ 0, 2, 4 ]
+gap> t:=Union(s,[2,5]);;
+gap> SmallElements(t);
+[ 0, 2, 4, 5, 6, 8 ]
 ]]></Example>
   </Description>
 </ManSection>
