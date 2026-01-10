@@ -142,6 +142,16 @@ DeclareGlobalFunction("NumericalSetByIntegerPartition");
 DeclareOperation("HookLengths",[IsNumericalSet]);
 DeclareOperation("HookLengths",[IsNumericalSemigroup]);
 
+#############################################################################
+##
+#O DualNumericalSet(S)
+## Returns the dual numerical set of S
+## S can also be a numerical semigroup
+## Written in collaboration with M. Yeşil
+###############################################################################
+DeclareOperation("DualNumericalSet",[IsNumericalSet]);
+DeclareOperation("DualNumericalSet",[IsNumericalSemigroup]);
+
 
 #TODO
 # 1.

@@ -797,3 +797,30 @@ InstallMethod(HookLengths, [IsNumericalSemigroup],
 function(S)
   return HookLengths(AsNumericalSet(S));
 end);
+
+
+#############################################################################
+##
+#O DualNumericalSet(S)
+## Returns the dual numerical set of S
+## S can also be a numerical semigroup
+## Written in collaboration with M. Yeşil
+###############################################################################
+InstallMethod(DualNumericalSet, [IsNumericalSet],
+function(S)
+  local numset, dual, f, c, l, g, gaps;
+  numset := SmallElements(S);
+  l:= Length(numset);
+  c:= Conductor(S);
+  f:= FrobeniusNumber(S);
+  gaps := Gaps(S);
+  g:= Genus(S);
+  dual := List([1..g], i -> f - gaps[g - i + 1]);
+  Add(dual,c);
+  return NumericalSetBySmallElements(dual);
+end);
+
+InstallMethod(DualNumericalSet, [IsNumericalSemigroup],
+function(S)
+  return DualNumericalSet(AsNumericalSet(S));
+end);

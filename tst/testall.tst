@@ -2180,6 +2180,13 @@ gap> s:=NumericalSemigroup(5,6,11,13,14);;
 gap> HookLengths(s);
 [ [ 9, 4, 3 ], [ 8, 3, 2 ], [ 7, 2, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
 
+gap> s:=NumericalSetBySmallElements([0,4,8,10]);;
+gap> SmallElements(DualNumericalSet(s));
+[ 0, 2, 3, 4, 6, 7, 8, 10 ]
+gap> s:=NumericalSemigroup(4,5);;
+gap> s=DualNumericalSet(s);
+true
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

@@ -334,6 +334,24 @@ gap> FrobeniusNumber(s);
     </Description>
 </ManSection>
 
+<ManSection>
+    <Oper Name="DualNumericalSet" Arg="S"/>
+    <Description>
+        <A>S</A> is a numerical set or a numerical semigroup.
+        The output is the dual of <A>S</A>. If <M><A>S</A></M> has gaps <M>{g_1,g_2,\dots,g_n=f}</M> and conductor <M>c</M>, then its dual has small elements <M>{0,f-g_{n-1},\dots,f-g_1, c}</M>.
+  
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,4,8,10]);;
+gap> SmallElements(DualNumericalSet(s));
+[ 0, 2, 3, 4, 6, 7, 8, 10 ]
+gap> s:=NumericalSemigroup(4,5);;
+gap> s=DualNumericalSet(s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
 </Section>
 
 <Section>
