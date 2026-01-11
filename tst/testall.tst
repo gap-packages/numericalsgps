@@ -2217,6 +2217,17 @@ gap> SmallElements(CojointSum(t,s));
 gap> SmallElements(CojointSum(s,s));
 [ 0, 2, 5, 7 ]
 
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(EndToEndSum(s,t));
+[ 8, 7, 5, 4, 2, 1 ]
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4,5);;
+gap> SmallElements(EndToEndSum(s,t));
+[ 0, 2, 5 ]
+gap> EndToEndSum(AsNumericalSet(s),t)=EndToEndSum(s,AsNumericalSet(t));
+true
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

@@ -474,6 +474,25 @@ gap> SmallElements(CojointSum(s,t));
   </Description>
 </ManSection>
 
+<ManSection>
+  <Oper Arg="S,T" Name="EndToEndSum"></Oper>
+  <Description>
+    The arguments are numerical sets or numerical semigroups. The output is the end to end sum of them as described in <Cite Key="Mehmet2025"></Cite>. If the small elements of <A>S</A> are <M>\{0=s_0,s_1,\dots,s_n\}</M> and the small elements of <A>T</A> are <M>\{0=t_0,t_1,\dots,t_m\}</M>, then the small elements of the bonded sum of <A>S</A> and <A>T</A> are <M>\{0=s_0,s_1,\dots,s_n,t_1+s_n,t_2+s_n,\dots, t_m+s_n\}</M>.<P/>
+
+    In terms of the Young diagrams associated to the arguments, the resulting numerical set is the one corresponding to the Young diagram obtained by placing the diagram of the second above and on the right of the second (in diagonal).
+<Example><![CDATA[
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(EndToEndSum(s,t));
+[ 8, 7, 5, 4, 2, 1 ]
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4,5);;
+gap> SmallElements(EndToEndSum(s,t));
+[ 0, 2, 5 ]
+]]></Example>
+  </Description>
+</ManSection>
+
 
 
 </Section>

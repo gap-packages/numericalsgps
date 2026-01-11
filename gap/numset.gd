@@ -176,6 +176,18 @@ DeclareOperation("CojointSum",[IsNumericalSet,IsNumericalSemigroup]);
 DeclareOperation("CojointSum",[IsNumericalSemigroup,IsNumericalSet]);
 DeclareOperation("CojointSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
+#############################################################################
+##
+#O EndToEndSum(S,T)
+## Returns the cojoint sum of the numerical sets (or semigroups) S and T
+## as defined in [Mehmet2025]
+## Written in collaboration with M. Yeşil
+###############################################################################
+DeclareOperation("EndToEndSum",[IsNumericalSet,IsNumericalSet]);
+DeclareOperation("EndToEndSum",[IsNumericalSet,IsNumericalSemigroup]);
+DeclareOperation("EndToEndSum",[IsNumericalSemigroup,IsNumericalSet]);
+DeclareOperation("EndToEndSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
+
 
 #TODO
 # 1.

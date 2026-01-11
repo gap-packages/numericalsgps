@@ -902,3 +902,36 @@ InstallMethod(CojointSum,[IsNumericalSemigroup,IsNumericalSemigroup],
 function(S,T)
   return CojointSum(AsNumericalSet(S),AsNumericalSet(T));
 end);
+
+#############################################################################
+##
+#O EndToEndSum(S,T)
+## Returns the cojoint sum of the numerical sets (or semigroups) S and T
+## as defined in [Mehmet2025]
+## Written in collaboration with M. Yeşil
+###############################################################################
+InstallMethod(EndToEndSum, [IsNumericalSet,IsNumericalSet],
+function(S,T)
+  if S=NumericalSetByGaps([]) then 
+    return T;
+  fi;
+  if T=NumericalSetByGaps([]) then 
+    return S;
+  fi;
+ return BondedSum(CojointSum(S,NumericalSetBySmallElements([0,2])),T);
+end);
+
+InstallMethod(EndToEndSum, [IsNumericalSet,IsNumericalSemigroup],
+function(S,T)
+  return EndToEndSum(S,AsNumericalSet(T));
+end);
+
+InstallMethod(EndToEndSum, [IsNumericalSemigroup,IsNumericalSet],
+function(S,T)
+  return EndToEndSum(AsNumericalSet(S),T);
+end);
+
+InstallMethod(EndToEndSum, [IsNumericalSemigroup,IsNumericalSemigroup],
+function(S,T)
+  return EndToEndSum(AsNumericalSet(S),AsNumericalSet(T));
+end);
