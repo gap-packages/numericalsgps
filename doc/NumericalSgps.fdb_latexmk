@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex NumericalSgps"] 1762679712.59343 "NumericalSgps.aux" "NumericalSgps.bbl" "NumericalSgps" 1762679712.65501 2
-  "./NumericalSgps.bib" 1762679710.46255 51075 b23bf573f5e68f509c502443b82a9c93 ""
+["bibtex NumericalSgps"] 1767943448.85139 "NumericalSgps.aux" "NumericalSgps.bbl" "NumericalSgps" 1767943448.91553 2
+  "./NumericalSgps.bib" 1767943445.74361 51315 3047a90b1f257d8203b34b9ec173d156 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/bibtex/bst/base/alpha.bst" 1741388039 23907 a5f93555796fb564b924339521f10a7c ""
-  "NumericalSgps.aux" 1762679712.59137 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "NumericalSgps.aux" 1767943448.4834 200181 729dd52efd9fd272baff4409f59771f9 "pdflatex"
   (generated)
   "NumericalSgps.bbl"
   "NumericalSgps.blg"
   (rewritten before read)
-["makeindex NumericalSgps.idx"] 1762679710.8629 "NumericalSgps.idx" "NumericalSgps.ind" "NumericalSgps" 1762679712.65471 0
-  "NumericalSgps.idx" 0 -1 0 "pdflatex"
+["makeindex NumericalSgps.idx"] 1767943448.8076 "NumericalSgps.idx" "NumericalSgps.ind" "NumericalSgps" 1767943448.91395 0
+  "NumericalSgps.idx" 1767943448.49699 73909 50025abab7231973a173d837ab6c4b5d "pdflatex"
   (generated)
   "NumericalSgps.ilg"
   "NumericalSgps.ind"
   (rewritten before read)
-["pdflatex"] 1762679710.99689 "/Users/pedro/.gap/pkg/numericalsgps/doc/NumericalSgps.tex" "NumericalSgps.pdf" "NumericalSgps" 1762679712.49515 0
-  "/Users/pedro/.gap/pkg/numericalsgps/doc/NumericalSgps.tex" 1762679659.22066 593359 44789c9347bf53b551375e89c2240c1a ""
+["pdflatex"] 1767943447.47401 "/Users/pedro/.gap/pkg/numericalsgps/doc/NumericalSgps.tex" "NumericalSgps.pdf" "NumericalSgps" 1767943448.91401 0
+  "/Users/pedro/.gap/pkg/numericalsgps/doc/NumericalSgps.tex" 1767901086.47631 629312 e91a7019e26329f7e7520b16c962e1c6 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1741388039 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1741388039 2971 def0b6c1f0b107b3b936def894055589 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -157,13 +157,13 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/url/url.sty" 1741388039 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf" 1741388039 42151 79f67285bdd95beca4d137b380b4b9e5 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346141 1288109d02d1c772df65535881471649 ""
-  "NumericalSgps.aux" 1762679712.59137 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "NumericalSgps.bbl" 1762679712.6536 0 d41d8cd98f00b204e9800998ecf8427e "bibtex NumericalSgps"
-  "NumericalSgps.brf" 1762679712.17593 8983 eed03220c5c4f451322d5723d8ab5a58 "pdflatex"
-  "NumericalSgps.ind" 0 -1 0 "makeindex NumericalSgps.idx"
-  "NumericalSgps.out" 0 -1 0 "pdflatex"
-  "NumericalSgps.tex" 1762679659.22066 593359 44789c9347bf53b551375e89c2240c1a ""
-  "NumericalSgps.toc" 0 -1 0 "pdflatex"
+  "NumericalSgps.aux" 1767943448.4834 200181 729dd52efd9fd272baff4409f59771f9 "pdflatex"
+  "NumericalSgps.bbl" 1767943448.91225 23050 188c4a616a764a63cb74cc25cdf1e2a6 "bibtex NumericalSgps"
+  "NumericalSgps.brf" 1767943448.49666 9088 5d4d827df301d4c07c574e8d320e86f5 "pdflatex"
+  "NumericalSgps.ind" 1767943448.85083 54466 cac50e23248e0a5672fa6bda36569c2a "makeindex NumericalSgps.idx"
+  "NumericalSgps.out" 1767943448.49638 23417 3f4106d896eb6aec40620f3bcfbe8da1 "pdflatex"
+  "NumericalSgps.tex" 1767901086.47631 629312 e91a7019e26329f7e7520b16c962e1c6 ""
+  "NumericalSgps.toc" 1767943448.49703 68517 5610926dd9756d981991c45f28bdc2a2 "pdflatex"
   "img/fact-circo.pdf" 1711389643.39786 11940 9389498d9f77111f9d209a716ab880da ""
   "img/fact-dot.pdf" 1711389643.39801 11998 d0af2f5e7aa9e9f6a55603346f1ecf57 ""
   "img/tree-dot.pdf" 1711389643.39834 144529 8a91c74b17e1d1f8477fb86852405eb1 ""

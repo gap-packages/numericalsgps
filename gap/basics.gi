@@ -1298,6 +1298,19 @@ InstallGlobalFunction(NumberElement_NumericalSemigroup,
     end
 );
 
+InstallOtherMethod(Position, [IsNumericalSemigroup,IsObject,IsInt],
+function(s,n,f)
+  local c,p;
+  if not(IsInt(n)) then
+    return fail;
+  fi;
+  p:=NumberElement_NumericalSemigroup(s,n);
+  if p = fail or p<=f then
+    return fail;
+  fi;
+  return p;
+end);
+
 
 ##################################################################################
 ##

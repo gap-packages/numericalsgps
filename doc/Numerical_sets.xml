@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+A numerical set is a subset of the non-negative integers containing 0 and with finite complement in the non-negative integers. Numerical semigroups and normalized ideals of numerical semigroups (ideals whose minimal elements are zero) are particular cases of numerical sets.
+
+<Section>
+                <Heading>
+                    Definitions and basic operations
+                </Heading>
+
+                We describe in this section the basic functions to create and compute notable elements of numerical sets.
+
+<ManSection>
+  <Func Arg="L" Name="NumericalSetBySmallElements"></Func>
+  <Description>
+    <A>L</A> is a list of non-negative integers containing 0.
+    The output is the numerical set <M><A>L</A>\cup (\max(<A>L</A>)+\mathbb{N})</M>.
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,1,2,3,5,6,9,10,12]);
+<Numerical set>
+gap> Print(s);
+{0,...,3,5,6,9,10,12,->}
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Func Arg="L" Name="NumericalSetByGaps"></Func>
+  <Description>
+    <A>L</A> is a list of positive integers containing 0.
+    The output is the numerical set <M>\mathbb{N}\setminus <A>L</A></M>.
+    <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);
+<Numerical set>
+gap> Gaps(s);
+[ 1, 3, 5 ]
+gap> SmallElements(s);
+[ 0, 2, 4, 6 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S" Name="AsNumericalSet" Label="for numerical semigroups"></Oper>
+  <Oper Arg="I" Name="AsNumericalSet" Label="for normalized ideals of numerical semigroups"></Oper>
+  <Description>
+    <A>S</A> is a numerical semigroup; <A>I</A> is a normalized ideal of a numerical semigroup (that is an ideal whose minimal element is zero).
+
+    The output is <A>S</A> (or <A>I</A>) considered as a numerical set.
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5);;
+gap> Print(AsNumericalSet(s));
+{0,4,5,8,9,10,12,->}
+gap> i:=[0,1]+s;;
+gap> Print(AsNumericalSet(i));
+{0,1,4,5,6,8,->}
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="S" Name="AsNumericalSemigroup" Label="for numerical sets"></Oper>
+  <Description>
+    <A>S</A> is a numerical set. 
+
+    The output is <A>S</A> considered as a numerical semigroup provided that <M><A>S</A>+<A>S</A> = <A>S</A></M> (otherwise, it raises an error).
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5);;
+gap> Print(AsNumericalSet(s));
+{0,4,5,8,9,10,12,->}
+gap> i:=[0,1]+s;;
+gap> Print(AsNumericalSet(i));
+{0,1,4,5,6,8,->}
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="Obj" Name="IsNumericalSet"></Func>
+  <Description>
+    Tests if the object <A>Obj</A> is a numerical set.
+
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,1,3]);
+<Numerical set>
+gap> IsNumericalSet(s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="S,R" Name="Difference" Label="for numerical sets"></Oper>
+  <Description>
+    <A>S</A> and <A>R</A> can be numerical sets, numerical semigroups or lists of integers. 
+
+    The output is <M><A>S</A>\setminus<A>R</A></M>. In some cases, the output is a numerical set.
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5);;
+gap> t:=Difference(s,[5..10]);
+<Numerical set>
+gap> SmallElements(s);
+[ 0, 4, 5, 8, 9, 10, 12 ]
+gap> SmallElements(t);
+[ 0, 4, 12 ]
+gap> Difference([0..Conductor(s)],s)=Gaps(s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="ns,r"  Name="\[ \]" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is an a numerical set and <A>r</A> is a positive integer. 
+                  It returns the <A>r</A>-th element of <A>ns</A>.
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> s[1];
+0
+gap> s[3];
+5
+gap> s[7];
+11
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="Ins,ls"  Name="\{ \}" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is a numerical set and <A>ls</A> is a list of positive integers. 
+                  It returns the list <A>[ns[r] : r in ls]</A>.
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> s{[1..10]};
+[ 0, 2, 5, 6, 9, 10, 11, 12, 13, 14 ]
+gap> SmallElements(s);
+[ 0, 2, 5, 6, 9 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Arg="ns,r,[f]"  Name="Position" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is an a numerical set, <A>r</A> is an object, and <A>f</A> is an index; it works exactly as <A>Position</A> for lists considering <A>ns</A> as an infinite list of integers. 
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,3,5]);;
+gap> Position(s,-3);
+fail
+gap> Position(s,0);
+1
+gap> Position(s,0,1);
+fail
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="ns,r"  Name="Positions" Label="for numerical sets"/>
+  <Description>
+      <A>ns</A> is an a numerical set and <A>r</A> is an object; it works exactly as <A>Positions</A> for lists considering <A>ns</A> as an infinite list of integers. 
+    <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,3,5]);;
+gap> Positions(s,2);
+[  ]
+gap> Positions(s,3);
+[ 2 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
+<ManSection>
+  <Oper Arg="R, S" Name="Union" Label="for numerical sets"></Oper>
+  <Description>
+      <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
+      <P/>
+      One of the arguments can also be a list of non-negative integers. 
+      <P/>
+      
+      The output is the union of both arguments, and it is a numerical set.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(4,7);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 4 ]
+gap> t:=Union(s,[2,5]);;
+gap> SmallElements(t);
+[ 0, 2, 4, 5, 6, 8 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, S" Name="Intersection" Label="for numerical sets"></Oper>
+  <Description>
+      <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
+      The output is the intersection of both numerical sets.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 5, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 6, 9 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="R, S" Name="+" Label="for numerical sets"></Oper>
+  <Description>
+      <A>R, S</A> are numerical sets (one of them can be a numerical semigroup).
+      The output is the sum of both numerical sets.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,7]);;
+gap> SmallElements(s+t);
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(s+t);
+[ 0, 2, 5, 6, 7, 9 ]
+
+]]></Example>
+  </Description>
+</ManSection>
+
+
+</Section>
+
+
+<Section>
+
+  <Heading>
+    Notable elements of numerical sets
+  </Heading>
+
+<ManSection>
+  <Attr Name="SmallElements" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the set of small elements of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> SmallElements(s);
+[ 0, 2, 4, 6 ]
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Name="Multiplicity" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is least positive integer in <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Multiplicity(s);
+2
+]]></Example>
+    </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="Gaps" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the set of gaps of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Gaps(s);
+[ 1, 3, 5 ]
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+  <Attr Name="Genus" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the number of gaps of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Genus(s);
+3
+]]></Example>
+    </Description>
+</ManSection>
+
+
+<ManSection>
+  <Attr Name="Conductor" Arg="S" Label="for numerical sets"/>
+  <Description>
+      <A>S</A> is numerical set.
+      The output is the largest element in <A>SmallElements(S)</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> Conductor(s);
+6
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+            <Attr Name="FrobeniusNumber" Arg="S" Label="for numerical sets"/>
+            <Description>
+                <A>S</A> is a numerical set.
+                The output is the largest integer not belonging to <A>S</A>.
+  
+                        <Example><![CDATA[
+gap> s:=NumericalSetByGaps([1,3,5]);;
+gap> FrobeniusNumber(s);
+5
+]]></Example>
+    </Description>
+</ManSection>
+
+<ManSection>
+    <Oper Name="DualNumericalSet" Arg="S"/>
+    <Description>
+        <A>S</A> is a numerical set or a numerical semigroup.
+        The output is the dual of <A>S</A>. If <M><A>S</A></M> has gaps <M>{g_1,g_2,\dots,g_n=f}</M> and conductor <M>c</M>, then its dual has small elements <M>{0,f-g_{n-1},\dots,f-g_1, c}</M>.
+  
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,4,8,10]);;
+gap> SmallElements(DualNumericalSet(s));
+[ 0, 2, 3, 4, 6, 7, 8, 10 ]
+gap> s:=NumericalSemigroup(4,5);;
+gap> s=DualNumericalSet(s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
+</Section>
+
+<Section>
+                <Heading>
+                    Associated sets to numerical semigroups
+                </Heading>
+
+<ManSection>
+  <Oper Arg="R, S" Name="IsAssociatedNumericalSetOfNumericalSemigroup"></Oper>
+  <Description>
+      <A>R</A> is a numerical set and <A>S</A> is a numerical semigroup. 
+      
+      Determines if <A>R</A> is an ideal of <A>S</A> and if <A>R-R=S</A> (see <Cite Key="kaplan2025"></Cite> ).
+  <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5);;
+gap> t:=NumericalSetBySmallElements([0,4]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);
+false
+gap> r:=NumericalSetBySmallElements([0,3,5,6,8]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(r,s);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+</Section>
+
+<Section>
+  <Heading>
+      Integer partitions associated to numerical sets
+  </Heading>
+
+<ManSection>
+  <Oper Arg="S" Name="IntegerPartition"></Oper>
+  <Description>
+      <A>S</A> is a numerical set or a numerical semigroup. 
+      The output is the integer partition associated to <A>S</A>, which is the one associated to its Young diagram. The algorithm used is the one explained in <Cite Key="Mehmet2025"></Cite>.
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,4,6,7,9,10,12]);;
+gap> IntegerPartition(s);
+[ 6, 4, 2, 1, 1, 1 ]
+gap> s:=NumericalSemigroup(5,7,9,11,13);;
+gap> IntegerPartition(s);
+[ 3, 2, 1, 1, 1, 1 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S" Name="FerrersDiagram"></Oper>
+  <Description>
+      <A>S</A> is a numerical set or a numerical semigroup. 
+      The output is the integer partition associated to <A>S</A>. It also displays the Ferrers diagram associated to this partition.
+<Example><![CDATA[
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> FerrersDiagram(s);
+····
+··
+·
+[ 4, 2, 1 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> FerrersDiagram(s);
+··
+·
+·
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Func Arg="L" Name="NumericalSetByIntegerPartition"></Func>
+  <Description>
+      <A>L</A> is a list that is either empty or of non-increasing positive integers, and represents an integer partition. 
+      The output is numerical set associated to <A>L</A>. The algorithm used is the one described in <Cite Key="Mehmet2025"></Cite>.
+<Example><![CDATA[
+gap> SmallElements(NumericalSetByIntegerPartition([]));
+[ 0 ]
+gap> IntegerPartition(NumericalSetByIntegerPartition([6,3,1]))=[6,3,1];
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S" Name="HookLengths"></Oper>
+  <Description>
+      <A>S</A> is a numerical set or a numerical semigroup. 
+      The output is the list of hook lengths associated to the integer partition associated to <A>S</A>. The algorithm used is the one explained in <Cite Key="Mehmet2025"></Cite>.
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0, 5, 7, 9]);;
+gap> HookLengths(s);
+[ [ 8, 3, 1 ], [ 6, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
+gap> s:=NumericalSemigroup(5,6,11,13,14);;
+gap> HookLengths(s);
+[ [ 9, 4, 3 ], [ 8, 3, 2 ], [ 7, 2, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S,T" Name="BondedSum"></Oper>
+  <Description>
+    The arguments are numerical sets or numerical semigroups. The output is the bonded sum of them as explained in <Cite Key="Mehmet2025"></Cite>. If the small elements of <A>S</A> are <M>\{0=s_0,s_1,\dots,s_n\}</M> and the small elements of <A>T</A> are <M>\{0=t_0,t_1,\dots,t_m\}</M>, then the small elements of the bonded sum of <A>S</A> and <A>T</A> are <M>\{0=s_0,s_1,\dots,s_{n-1},s_n-1,t_1+s_n-1,t_2+s_n-1,\dots, t_m+s_n-1\}</M>.<P/>
+
+    In terms of the Young diagrams associated to the arguments, the resulting numerical set is the one corresponding to the Young diagram obtained by placing the diagram of the second above and on the right of the second, so that the first row of the first is followed by the last row of the second.
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,4]);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(BondedSum(s,t));
+[ 8, 7, 5, 2, 1 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S,T" Name="CojointSum"></Oper>
+  <Description>
+    The arguments are numerical sets or numerical semigroups. The output is the cojoint sum of them as defined in <Cite Key="Mehmet2025"></Cite>. If the small elements of <A>S</A> are <M>\{0=s_0,s_1,\dots,s_n\}</M> and the small elements of <A>T</A> are <M>\{0=t_0,t_1,\dots,t_m\}</M>, then the small elements of the bonded sum of <A>S</A> and <A>T</A> are <M>\{0=s_0,s_1,\dots,s_{n-1},t_1+s_n-1,t_2+s_n-1,\dots, t_m+s_n-1\}</M>.<P/>
+
+    In terms of the Young diagrams associated to the arguments, the resulting numerical set is the one corresponding to the Young diagram obtained by placing the diagram of the second above and on the right of the second, so that the last column of the first is below by the first column of the second.
+<Example><![CDATA[
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(CojointSum(s,t));
+[ 7, 6, 4, 4, 2, 1 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(CojointSum(s,t));
+[ 0, 2, 5 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Arg="S,T" Name="EndToEndSum"></Oper>
+  <Description>
+    The arguments are numerical sets or numerical semigroups. The output is the end to end sum of them as described in <Cite Key="Mehmet2025"></Cite>. If the small elements of <A>S</A> are <M>\{0=s_0,s_1,\dots,s_n\}</M> and the small elements of <A>T</A> are <M>\{0=t_0,t_1,\dots,t_m\}</M>, then the small elements of the bonded sum of <A>S</A> and <A>T</A> are <M>\{0=s_0,s_1,\dots,s_n,t_1+s_n,t_2+s_n,\dots, t_m+s_n\}</M>.<P/>
+
+    In terms of the Young diagrams associated to the arguments, the resulting numerical set is the one corresponding to the Young diagram obtained by placing the diagram of the second above and on the right of the second (in diagonal).
+<Example><![CDATA[
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(EndToEndSum(s,t));
+[ 8, 7, 5, 4, 2, 1 ]
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4,5);;
+gap> SmallElements(EndToEndSum(s,t));
+[ 0, 2, 5 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+
+</Section>

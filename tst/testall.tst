@@ -49,11 +49,7 @@ true
 #############################################################################
 # Some more elaborated tests
 
-gap> ls1 := NumericalSemigroupsWithFrobeniusNumberFG(7);
-[ <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup>, <Numerical semigroup>, 
-  <Numerical semigroup>, <Numerical semigroup> ]
+gap> ls1 := NumericalSemigroupsWithFrobeniusNumberFG(7);;
 gap> ls2 := NumericalSemigroupsWithFrobeniusNumber(7);;
 gap> ge1 := List(ls1, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 [ [ 3, 5 ], [ 4, 5, 11 ], [ 4, 5, 6 ], [ 5, 6, 8, 9 ], [ 2, 9 ], 
@@ -66,19 +62,7 @@ gap> ge2 := List(ls2, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 gap> Set(ge1)=Set(ge2);
 true
 
-gap> NumericalSemigroupsWithGenus(5);
-[ <Numerical semigroup with 6 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 5 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 4 generators>,
-  <Numerical semigroup with 3 generators>,
-  <Numerical semigroup with 3 generators>,
-  <Numerical semigroup with 2 generators> ]
+gap> NumericalSemigroupsWithGenus(5);;
 gap> List(last, s -> MinimalGeneratingSystemOfNumericalSemigroup(s));
 [ [ 6 .. 11 ], [ 5, 7, 8, 9, 11 ], [ 5, 6, 8, 9 ], [ 5, 6, 7, 9 ],
   [ 5, 6, 7, 8 ], [ 4, 6, 7 ], [ 4, 7, 9, 10 ], [ 4, 6, 9, 11 ],
@@ -792,6 +776,16 @@ gap> RthElementOfNumericalSemigroup(S,53);
 gap> S := NumericalSemigroup(7,8,17);;
 gap> NumberElement_NumericalSemigroup(S,68);
 53
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> SmallElements(s);
+[ 0, 3, 5 ]
+gap> Position(s,6);
+4
+gap> Position(s,6,4);
+fail
+gap> Position(s,6,3);
+4
 
 gap> S := NumericalSemigroup(7,8,17);;
 gap> iter:=Iterator(S);
@@ -1515,6 +1509,15 @@ gap> I := [2,5]+ NumericalSemigroup(7,8,17);;
 gap> NumberElement_IdealOfNumericalSemigroup(I,19);
 10
 
+gap> s:=NumericalSemigroup(8, 9, 10, 11, 12, 15);;
+gap> i:=[2,5]+s;;
+gap> SmallElements(i);
+[ 2, 5, 10 ]
+gap> Position(i,5);
+2
+gap> Position(i,5,2);
+fail
+
 gap> I:=[3,5,9]+NumericalSemigroup(2,11);;
 gap> J:=[2,11]+NumericalSemigroup(2,11);;
 gap> I+J;
@@ -1568,6 +1571,14 @@ gap> DifferenceOfIdealsOfNumericalSemigroup(ii,i);
 [ 26, 27, 37, 38 ]
 gap> Difference(i,ii);
 [  ]
+
+gap> s:=NumericalSemigroup( 5, 11, 18, 24);;
+gap> Difference([0,1]+s,s);
+[ 1, 6, 12, 17, 19 ]
+gap> Difference(s,10+s);
+[ 0, 5, 11, 16, 18, 22, 23, 24, 27, 29 ]
+gap> Difference(0+s,10+s);
+[ 0, 5, 11, 16, 18, 22, 23, 24, 27, 29 ]
 
 gap> s:=NumericalSemigroup(13,23);;
 gap> l:=List([1..6], _ -> Random([8..34]));;
@@ -1962,9 +1973,9 @@ false
 gap> i=j;
 false
 gap> IsSubset(NumericalSemigroup([3..5]),i);
-true
-gap> IsSubset(i,NumericalSemigroup([3..5]));
 false
+gap> IsSubset(i,NumericalSemigroup(6,7));
+true
 
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> t:=NumericalSemigroup(3,7);;
@@ -1988,6 +1999,246 @@ gap> t in is;
 false
 gap> s in it;
 true
+
+##Numerical_sets
+
+gap> s:=NumericalSetBySmallElements([0,1,2,3,5,6,9,10,12]);
+<Numerical set>
+gap> Print(s);
+{0,...,3,5,6,9,10,12,->}
+gap> Display(s);
+[ [ 0 .. 3 ], [ 5, 6 ], [ 9, 10 ], [ 12, "->" ] ]
+gap> SmallElements(s);
+[ 0, 1, 2, 3, 5, 6, 9, 10, 12 ]
+gap> FrobeniusNumber(s);
+11
+gap> Conductor(s);
+12
+gap> Gaps(s);
+[ 4, 7, 8, 11 ]
+gap> Genus(s);
+4
+gap> s=NumericalSetByGaps(Gaps(s));
+true
+gap> s=NumericalSemigroup(2,3);
+false
+gap> NumericalSemigroup(2,3)=s;
+false
+gap> NumericalSemigroup(2,3)=NumericalSetByGaps([1]);
+true
+gap> Multiplicity(s);
+1
+gap> 4 in s;
+false
+gap> 13 in s;
+true
+gap> -1 in s;
+false
+gap> 5 in s;
+true
+gap> t:=NumericalSetBySmallElements([0,1,2,5]);;
+gap> IsSubset(s,t);
+false
+gap> IsSubset(t,s);
+false
+gap> Difference(t,s);
+[ 7, 8, 11 ]
+gap> Difference(s,t);
+[ 3 ]
+gap> IsSubset(NumericalSetBySmallElements([0,1,2]),t);
+true
+gap> Gaps(Difference(t,[5..9]));
+[ 3 .. 9 ]
+gap> Difference([1..9],t);
+[ 3, 4 ]
+gap> Gaps(Difference(NumericalSemigroup(2,3),[2]));
+[ 1, 2 ]
+gap> [0,1]+NumericalSemigroup(2,3)=NumericalSetByGaps([]);
+true
+gap> i:=[0,2]+NumericalSemigroup(7,8);;
+gap> NumericalSetBySmallElements(SmallElements(i))=i;
+true
+gap> i:=1+NumericalSemigroup(2,3);;
+gap> i=NumericalSetBySmallElements([0,5]);
+false
+gap> s:=NumericalSemigroup(2,3);;
+gap> IsSubset(s,Difference(s,[20]));
+true
+gap> IsSubset(Difference(s,[2]),s);
+false
+gap> s:=NumericalSemigroup(2,3);;
+gap> IsSubset(s,Difference(s,[20]));
+true
+gap> IsSubset(Difference(s,[2]),s);
+false
+gap> IsSubset(-3+s,NumericalSetByGaps([]));
+true
+gap> IsSubset(NumericalSetByGaps([3]),4+s);
+true
+gap> IsSubset(NumericalSetByGaps([3]),1+s);
+false
+gap> s:=NumericalSemigroup(3,7);;
+gap> Print(AsNumericalSet(s));
+{0,3,6,7,9,10,12,->}
+gap> Print(AsNumericalSet([0,2]+s));
+{0,2,3,5,->}
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> s[1];
+0
+gap> s{[1..10]};
+[ 0, 2, 5, 6, 9, 10, 11, 12, 13, 14 ]
+gap> SmallElements(s);
+[ 0, 2, 5, 6, 9 ]
+gap> s[3];
+5
+gap> s[7];
+11
+
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(4,7);;
+gap> SmallElements(Union(s,t));
+[ 0, 2, 4 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSemigroup(3,7);;
+gap> SmallElements(Union(s,t));
+[ 0, 2 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,7]);;
+gap> SmallElements(Union(s,[3,6,9]));
+[ 0, 2, 3, 5 ]
+gap> s:=NumericalSemigroup(4,6,9,11);;
+gap> t:=Union(s,[2,5]);;
+gap> SmallElements(t);
+[ 0, 2, 4, 5, 6, 8 ]
+gap> t+t=t;
+false
+gap> Union(s,[2,5])=Union([2,5],s);
+true
+
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 5, 10, 12, 14, 15, 17, 19, 20, 21, 22, 24 ]
+gap> t:=NumericalSetBySmallElements([0,6]);;
+gap> SmallElements(Intersection(s,t));
+[ 0, 6, 9 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,7]);;
+gap> SmallElements(s+t);
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(s+t);
+[ 0, 2, 5, 6, 7, 9 ]
+gap> s:=NumericalSemigroup(3,5,7);
+<Numerical semigroup with 3 generators>
+gap> i:=[0,2]+s;
+<Ideal of numerical semigroup>
+gap> AsNumericalSet(i)+AsNumericalSet(s)=AsNumericalSet(i);
+true
+gap> s:=NumericalSetByGaps([1..5]);;
+gap> MinimalGenerators(AsNumericalSemigroup(s));
+[ 6 .. 11 ]
+gap> s:=NumericalSemigroup(3,5);;
+gap> t:=NumericalSetBySmallElements([0,4]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);
+false
+gap> r:=NumericalSetBySmallElements([0,3,5,6,8]);;
+gap> IsAssociatedNumericalSetOfNumericalSemigroup(r,s);
+true
+gap> s:=NumericalSetBySmallElements([0,3,5]);;
+gap> Positions(s,2);
+[  ]
+gap> Positions(s,3);
+[ 2 ]
+gap> Position(s,-3);
+fail
+gap> Position(s,0);
+1
+gap> Position(s,0,1);
+fail
+gap> Position(s,6);
+4
+
+gap> s:=NumericalSetBySmallElements([0,4,6,7,9,10,12]);;
+gap> IntegerPartition(s);
+[ 6, 4, 2, 1, 1, 1 ]
+gap> s:=NumericalSemigroup(5,7,9,11,13);;
+gap> IntegerPartition(s);
+[ 3, 2, 1, 1, 1, 1 ]
+gap> SmallElements(NumericalSetByIntegerPartition([]));
+[ 0 ]
+gap> IntegerPartition(NumericalSetByIntegerPartition([6,3,1]))=[6,3,1];
+true
+gap> s:=NumericalSetBySmallElements([0, 5, 7, 9]);;
+gap> HookLengths(s);
+[ [ 8, 3, 1 ], [ 6, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
+gap> s:=NumericalSemigroup(5,6,11,13,14);;
+gap> HookLengths(s);
+[ [ 9, 4, 3 ], [ 8, 3, 2 ], [ 7, 2, 1 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ] ]
+
+gap> s:=NumericalSetBySmallElements([0,4,8,10]);;
+gap> SmallElements(DualNumericalSet(s));
+[ 0, 2, 3, 4, 6, 7, 8, 10 ]
+gap> s:=NumericalSemigroup(4,5);;
+gap> s=DualNumericalSet(s);
+true
+
+gap> s:=NumericalSetBySmallElements([0,2,4]);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(BondedSum(s,t));
+[ 8, 7, 5, 2, 1 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> SmallElements(BondedSum(s,s));
+[ 0, 2, 3, 5, 7 ]
+gap> SmallElements(BondedSum(t,s));
+[ 0, 1, 3, 5 ]
+
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(CojointSum(s,t));
+[ 7, 6, 4, 4, 2, 1 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(CojointSum(s,t));
+[ 0, 2, 5 ]
+gap> SmallElements(CojointSum(t,s));
+[ 0, 3, 5 ]
+gap> SmallElements(CojointSum(s,s));
+[ 0, 2, 5, 7 ]
+
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(EndToEndSum(s,t));
+[ 8, 7, 5, 4, 2, 1 ]
+gap> s:=NumericalSemigroup(2,3);;
+gap> t:=NumericalSemigroup(3,4,5);;
+gap> SmallElements(EndToEndSum(s,t));
+[ 0, 2, 5 ]
+gap> EndToEndSum(AsNumericalSet(s),t)=EndToEndSum(s,AsNumericalSet(t));
+true
+
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> FerrersDiagram(s);
+····
+··
+·
+[ 4, 2, 1 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> FerrersDiagram(s);
+··
+·
+·
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
