@@ -2187,6 +2187,23 @@ gap> s:=NumericalSemigroup(4,5);;
 gap> s=DualNumericalSet(s);
 true
 
+gap> s:=NumericalSetBySmallElements([0,2,4]);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(BondedSum(s,t));
+[ 8, 7, 5, 2, 1 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> SmallElements(BondedSum(s,s));
+[ 0, 2, 3, 5, 7 ]
+gap> SmallElements(BondedSum(t,s));
+[ 0, 1, 3, 5 ]
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

@@ -152,6 +152,17 @@ DeclareOperation("HookLengths",[IsNumericalSemigroup]);
 DeclareOperation("DualNumericalSet",[IsNumericalSet]);
 DeclareOperation("DualNumericalSet",[IsNumericalSemigroup]);
 
+#############################################################################
+##
+#O BondedSum(S,T)
+## Returns the bonded sum of the numerical sets (or semigroups) S and T
+## as defined in [Mehmet2025]
+## Written in collaboration with M. Yeşil
+###############################################################################
+DeclareOperation("BondedSum",[IsNumericalSet,IsNumericalSet]);
+DeclareOperation("BondedSum",[IsNumericalSet,IsNumericalSemigroup]);
+DeclareOperation("BondedSum",[IsNumericalSemigroup,IsNumericalSet]);
+DeclareOperation("BondedSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
 #TODO
 # 1.

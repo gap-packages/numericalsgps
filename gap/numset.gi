@@ -824,3 +824,41 @@ InstallMethod(DualNumericalSet, [IsNumericalSemigroup],
 function(S)
   return DualNumericalSet(AsNumericalSet(S));
 end);
+
+#############################################################################
+##
+#O BondedSum(S,T)
+## Returns the bonded sum of the numerical sets (or semigroups) S and T
+## as defined in [Mehmet2025]
+## Written in collaboration with M. Yeşil
+###############################################################################
+InstallMethod(BondedSum, [IsNumericalSet, IsNumericalSet],
+function(S,T)
+  local ls, lt, k1, k2;
+  ls := SmallElements(S);
+  lt := SmallElements(T);
+  k1 := ls[Length(ls)];
+  k2 := lt[Length(lt)];
+  if ls=[0] or lt=[0] then
+    Error("The arguments cannot be the set of non-negative integers");
+  fi;
+  #Remove(ls,Length(ls));
+  ls:=ls{[1..Length(ls)-1]};
+  lt := List(lt, s -> s+k1-1);
+  return NumericalSetBySmallElements(Concatenation(ls,lt));
+end);
+
+InstallMethod(BondedSum, [IsNumericalSet,IsNumericalSemigroup],
+function(S,T)
+  return BondedSum(S,AsNumericalSet(T));
+end);
+
+InstallMethod(BondedSum, [IsNumericalSemigroup,IsNumericalSet],
+function(S,T)
+  return BondedSum(AsNumericalSet(S),T);
+end);
+
+InstallMethod(BondedSum, [IsNumericalSemigroup,IsNumericalSemigroup],
+function(S,T)
+  return BondedSum(AsNumericalSet(S),AsNumericalSet(T));
+end);

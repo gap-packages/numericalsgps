@@ -364,7 +364,7 @@ true
   <Description>
       <A>R</A> is a numerical set and <A>S</A> is a numerical semigroup. 
       
-      Determines if <A>R</A> is an ideal of <A>S</A> and if <A>R-R=S</A>.
+      Determines if <A>R</A> is an ideal of <A>S</A> and if <A>R-R=S</A> (see <Cite Key="kaplan2025"></Cite> ).
   <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5);;
 gap> t:=NumericalSetBySmallElements([0,4]);;
@@ -381,9 +381,9 @@ true
 </Section>
 
 <Section>
-                <Heading>
-                    Integer partitions associated to numerical sets
-                </Heading>
+  <Heading>
+      Integer partitions associated to numerical sets
+  </Heading>
 
 <ManSection>
   <Oper Arg="S" Name="IntegerPartition"></Oper>
@@ -431,6 +431,34 @@ gap> HookLengths(s);
 ]]></Example>
   </Description>
 </ManSection>
+
+<ManSection>
+  <Oper Arg="S,T" Name="BondedSum"></Oper>
+  <Description>
+    The arguments are numerical sets or numerical semigroup. The output is the bonded sum of them as explained in <Cite Key="Mehmet2025"></Cite>. If the small elements of <A>S</A> are <M>\{0=s_0,s_1,\dots,s_n\}</M> and the small elements of <A>T</A> are <M>\{0=t_0,t_1,\dots,t_m\}</M>, then the small elements of the bonded sum of <A>S</A> and <A>T</A> are <M>\{0=s_0,s_1,\dots,s_{n-1},s_n-1,t_1+s_n-1,t_2+s_n-1,\dots, t_m+s_n-1\}</M>.<P/>
+
+    In terms of the Young diagrams associated to the arguments, the resulting numerical set is the one corresponding to the Young diagram obtained by placing the diagram of the second above and on the right of the second, so that the last row of the first is followed by the first row of the second.
+<Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,4]);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> t:=NumericalSetByIntegerPartition([4,3,1]);;
+gap> IntegerPartition(BondedSum(s,t));
+[ 8, 7, 5, 2, 1 ]
+gap> s:=NumericalSemigroup(2,5);;
+gap> t:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(BondedSum(s,t));
+[ 0, 2, 3, 5 ]
+gap> SmallElements(BondedSum(s,s));
+[ 0, 2, 3, 5, 7 ]
+gap> SmallElements(BondedSum(t,s));
+[ 0, 1, 3, 5 ]
+]]></Example>
+  </Description>
+</ManSection>
+
 
 
 </Section>
