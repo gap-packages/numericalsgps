@@ -188,6 +188,15 @@ DeclareOperation("EndToEndSum",[IsNumericalSet,IsNumericalSemigroup]);
 DeclareOperation("EndToEndSum",[IsNumericalSemigroup,IsNumericalSet]);
 DeclareOperation("EndToEndSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
+###############################################################################
+##
+#O FerrersDiagram(S)
+## Prints the Ferrers diagram of S and returns the integer partition associated
+## to S, which can be a numerical set or a numerical semigroup
+###############################################################################
+DeclareOperation("FerrersDiagram",[IsNumericalSet]);
+DeclareOperation("FerrersDiagram",[IsNumericalSemigroup]);
+
 
 #TODO
 # 1.

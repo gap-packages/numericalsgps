@@ -935,3 +935,28 @@ InstallMethod(EndToEndSum, [IsNumericalSemigroup,IsNumericalSemigroup],
 function(S,T)
   return EndToEndSum(AsNumericalSet(S),AsNumericalSet(T));
 end);
+
+
+###############################################################################
+##
+#O FerrersDiagram(S)
+## Prints the Ferrers diagram of S and returns the integer partition associated
+## to S, which can be a numerical set or a numerical semigroup
+###############################################################################
+InstallMethod(FerrersDiagram, [IsNumericalSet],
+function(s)
+  local ip, l, i;
+  ip:=IntegerPartition(s);
+  for l in ip do
+    for i in [1..l] do 
+      Print("·");
+    od;
+    Print("\n");
+  od;
+  return ip; 
+end);
+
+InstallMethod(FerrersDiagram, [IsNumericalSemigroup],
+function(s)
+  FerrersDiagram(AsNumericalSet(s));
+end);

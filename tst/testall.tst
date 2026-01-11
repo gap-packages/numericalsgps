@@ -2228,6 +2228,18 @@ gap> SmallElements(EndToEndSum(s,t));
 gap> EndToEndSum(AsNumericalSet(s),t)=EndToEndSum(s,AsNumericalSet(t));
 true
 
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> FerrersDiagram(s);
+····
+··
+·
+[ 4, 2, 1 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> FerrersDiagram(s);
+··
+·
+·
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

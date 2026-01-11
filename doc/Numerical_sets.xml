@@ -401,6 +401,27 @@ gap> IntegerPartition(s);
   </Description>
 </ManSection>
 
+<ManSection>
+  <Oper Arg="S" Name="FerrersDiagram"></Oper>
+  <Description>
+      <A>S</A> is a numerical set or a numerical semigroup. 
+      The output is the integer partition associated to <A>S</A>. It also displays the Ferrers diagram associated to this partition.
+<Example><![CDATA[
+gap> s:=NumericalSetByIntegerPartition([4,2,1]);;
+gap> FerrersDiagram(s);
+····
+··
+·
+[ 4, 2, 1 ]
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> FerrersDiagram(s);
+··
+·
+·
+]]></Example>
+  </Description>
+</ManSection>
+
 
 <ManSection>
   <Func Arg="L" Name="NumericalSetByIntegerPartition"></Func>
