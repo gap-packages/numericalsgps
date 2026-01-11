@@ -164,6 +164,19 @@ DeclareOperation("BondedSum",[IsNumericalSet,IsNumericalSemigroup]);
 DeclareOperation("BondedSum",[IsNumericalSemigroup,IsNumericalSet]);
 DeclareOperation("BondedSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
 
+#############################################################################
+##
+#O CojointSum(S,T)
+## Returns the cojoint sum of the numerical sets (or semigroups) S and T
+## as defined in [Mehmet2025]
+## Written in collaboration with M. Yeşil
+###############################################################################
+DeclareOperation("CojointSum",[IsNumericalSet,IsNumericalSet]);
+DeclareOperation("CojointSum",[IsNumericalSet,IsNumericalSemigroup]);
+DeclareOperation("CojointSum",[IsNumericalSemigroup,IsNumericalSet]);
+DeclareOperation("CojointSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
+
+
 #TODO
 # 1.
 # we have different behavior between AsIdealOfNumericalSemigroup and AsNumericalSemigroup

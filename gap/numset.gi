@@ -862,3 +862,43 @@ InstallMethod(BondedSum, [IsNumericalSemigroup,IsNumericalSemigroup],
 function(S,T)
   return BondedSum(AsNumericalSet(S),AsNumericalSet(T));
 end);
+
+#############################################################################
+##
+#O CojointSum(S,T)
+## Returns the cojoint sum of the numerical sets (or semigroups) S and T
+## as defined in [Mehmet2025]
+## Written in collaboration with M. Yeşil
+###############################################################################
+InstallMethod(CojointSum,[IsNumericalSet,IsNumericalSet],
+function(S,T)
+  local ls, lt,k1,k2;
+  ls := SmallElements(S);
+  lt := SmallElements(T);
+  k1 := Conductor(S);
+  k2 := Conductor(T);
+  if ls=[0] or lt=[0] then
+    Error("The arguments cannot be the set of non-negative integers");
+  fi;
+  #Remove(ls,Length(ls));
+  ls:=ls{[1..Length(ls)-1]};
+  # Remove(lt,1);
+  lt:=lt{[2..Length(lt)]};
+  lt := List(lt, s -> s+k1-1);
+  return NumericalSetBySmallElements(Concatenation(ls,lt));
+end);
+
+InstallMethod(CojointSum,[IsNumericalSemigroup,IsNumericalSet],
+function(S,T)
+  return CojointSum(AsNumericalSet(S),T);
+end);
+
+InstallMethod(CojointSum,[IsNumericalSet,IsNumericalSemigroup],
+function(S,T)
+  return CojointSum(S,AsNumericalSet(T));
+end);
+
+InstallMethod(CojointSum,[IsNumericalSemigroup,IsNumericalSemigroup],
+function(S,T)
+  return CojointSum(AsNumericalSet(S),AsNumericalSet(T));
+end);
