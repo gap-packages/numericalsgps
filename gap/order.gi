@@ -72,6 +72,13 @@ end);
 InstallGlobalFunction(AntichainsOfNumericalSemigroup, function(s, l)
   local n, leq, antichain_queues, antinchain, queue, x, new_antichain, new_queue, t, pop, list_antichains;
 
+  if not IsNumericalSemigroup(s) then
+    Error("The firts argument must be a numerical semigroup.\n");
+  fi;
+  if not IsListOfIntegersNS(l) then
+    Error("The second argument must be a list of integers.\n");
+  fi;
+  
   n:=Length(l);
   #leq:=List([1..n], i->Filtered(l, x->x<>l[i] and x-l[i] in s));
   #we will not use this, since we are calling it with l=Gaps(s) and then membership in s is faster
