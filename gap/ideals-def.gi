@@ -1608,39 +1608,42 @@ InstallMethod(NormalizedIdeals,
     "Computes the list of normalized ideals of a numerical semigroup",
     [IsNumericalSemigroup],1,
 function(s)
-    local k, c, v, m, isaperylistideal,t, ca;
-    # detects if a given list is the apery list of an ideal of s
+    # local k, c, v, m, isaperylistideal,t, ca;
+    # # detects if a given list is the apery list of an ideal of s
 
-    m:=Multiplicity(s);
+    # m:=Multiplicity(s);
 
-    isaperylistideal:=function(ap,s)
-        local aps, m;
-        if not(IsListOfIntegersNS(ap)) then
-            return false;
-        fi;
+    # isaperylistideal:=function(ap,s)
+    #     local aps, m;
+    #     if not(IsListOfIntegersNS(ap)) then
+    #         return false;
+    #     fi;
 
-        if not(ForAll(ap, x->x>=0)) then    
-            return false;
-        fi;
-        m:=Multiplicity(s);
-        if Length(ap)<>m then
-            return false;
-        fi;
+    #     if not(ForAll(ap, x->x>=0)) then    
+    #         return false;
+    #     fi;
+    #     m:=Multiplicity(s);
+    #     if Length(ap)<>m then
+    #         return false;
+    #     fi;
 
-        aps:=AperyList(s);
-        return ForAll(Cartesian([1..m],[1..m]), i-> ap[i[1]]+aps[i[2]] >= ap[1+(i[1]+i[2]-2) mod m]);
-    end;
-    k:=Concatenation([0],KunzCoordinates(s));
-    c:=IteratorOfCartesianProduct(List([1..m],i->[0..k[i]]));
-    #c:=Filtered(c, k->isaperylistideal(List([1..m],i->k[i]*m+i-1),s));
-    ca:=[];
-    for t in c do
-        if isaperylistideal(List([1..m],i->t[i]*m+i-1),s) then
-            Add(ca, t);
-        fi;
-    od;
-    v:=List(ca, k->List([1..m],i->k[i]*m+i-1)+s);
-    return v;
+    #     aps:=AperyList(s);
+    #     return ForAll(Cartesian([1..m],[1..m]), i-> ap[i[1]]+aps[i[2]] >= ap[1+(i[1]+i[2]-2) mod m]);
+    # end;
+    # k:=Concatenation([0],KunzCoordinates(s));
+    # c:=IteratorOfCartesianProduct(List([1..m],i->[0..k[i]]));
+    # #c:=Filtered(c, k->isaperylistideal(List([1..m],i->k[i]*m+i-1),s));
+    # ca:=[];
+    # for t in c do
+    #     if isaperylistideal(List([1..m],i->t[i]*m+i-1),s) then
+    #         Add(ca, t);
+    #     fi;
+    # od;
+    # v:=List(ca, k->List([1..m],i->k[i]*m+i-1)+s);
+    # return v;
+  local ac;
+  ac:=AntichainsOfNumericalSemigroup(s,Gaps(s));
+  return List(ac, a->Concatenation([0], a)+s);
 end);
 
 ##########################################################################
