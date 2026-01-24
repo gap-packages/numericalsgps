@@ -5,7 +5,7 @@
       Dot functions
     </Heading>
 
-    We provide several functions to translate graphs, Hasse diagrams or trees related to numerical and affine semigroups to the dot language. This can either be used with graphviz or any javascript library that interprets dot language. We give the alternative to use <C>DotSplash</C> that uses viz.js. 
+    We provide several functions to translate graphs related to numerical and affine semigroups to the dot language. This can either be used with graphviz or any javascript library that interprets dot language. We give the alternative to use <C>DotSplash</C> that uses viz.js. 
 
 <ManSection>
   <Func Name="DotBinaryRelation" Arg="br, [opt]"/>
@@ -100,45 +100,6 @@ graph [rankdir=LR]; edge [dir=back];
 }
 ]]></Example>
 
-  </Description>
-</ManSection>
-
-<ManSection>
-  <Func Name="HasseDiagramOfNumericalSemigroup" Arg="S, A"/>
-  <Description>
-    <C>S</C> is a numerical semigroup and <C>A</C> is a set of integers. Returns a binary relation which is the Hasse diagram of <C>A</C> with  respect to the ordering <M>a\preceq b</M> if <M>b - a</M> in <C>S</C>.
-<Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> HasseDiagramOfNumericalSemigroup(s,[1,2,3]);
-<general mapping: <object> -> <object> >
-]]></Example>
-  </Description>
-</ManSection>
-
-
-<ManSection>
-  <Func Name="HasseDiagramOfBettiElementsOfNumericalSemigroup" Arg="S"/>
-  <Description>
-    <C>S</C> is a numerical semigroup. Applies <Ref Func="HasseDiagramOfBettiElementsOfNumericalSemigroup"/> with arguments <C>S</C> and its Betti elements.
-<Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> HasseDiagramOfBettiElementsOfNumericalSemigroup(s);
-<general mapping: <object> -> <object> >
-]]></Example>
-  </Description>
-</ManSection>
-
-<ManSection>
-  <Func Name="HasseDiagramOfAperyListOfNumericalSemigroup" Arg="S, [n]"/>
-  <Description>
-    <C>S</C> is a numerical semigroup, <C>n</C> is an integer (optional, if not provided, the multiplicity of the semigroup is taken as its value). Applies <Ref Func="HasseDiagramOfBettiElementsOfNumericalSemigroup"/> with arguments <C>S</C> and the Apéry set of <C>S</C> with respect to <C>n</C>.
-<Example><![CDATA[
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> HasseDiagramOfAperyListOfNumericalSemigroup(s);
-<general mapping: <object> -> <object> >
-gap> HasseDiagramOfAperyListOfNumericalSemigroup(s,10);
-<general mapping: <object> -> <object> >
-]]></Example>
   </Description>
 </ManSection>
 

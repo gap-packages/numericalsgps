@@ -2845,6 +2845,29 @@ true
 gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));
 false
 
+##orders.xml
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> IsHasseDiagram(HasseDiagramOfNumericalSemigroup(s,[1,2,3]));
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> hb:=HasseDiagramOfBettiElementsOfNumericalSemigroup(s);;
+gap> List(Source(hb));
+[ 10, 12, 14 ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> h:=HasseDiagramOfAperyListOfNumericalSemigroup(s);;
+gap> Source(h)=Set(AperyList(s));
+true
+gap> h:=HasseDiagramOfAperyListOfNumericalSemigroup(s,10);;
+gap> Source(h)=Set(AperyList(s,10));
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> AntichainsOfNumericalSemigroup(s,Gaps(s));
+[ [  ], [ 4 ], [ 2 ], [ 2, 4 ], [ 1 ], [ 1, 2 ] ]
+
 ##affine.xml
 
 gap> s1 := AffineSemigroup([1,3],[7,2],[1,5]);
@@ -3570,23 +3593,6 @@ edge [dir=back];
 6 -> 4 [label="3" style="solid" color="red" arrowsize="0.2" ];
 6 -> 5 [label="2" style="dashed" color="black" arrowsize="0.2" ];
 }
-
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> IsHasseDiagram(HasseDiagramOfNumericalSemigroup(s,[1,2,3]));
-true
-
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> hb:=HasseDiagramOfBettiElementsOfNumericalSemigroup(s);;
-gap> List(Source(hb));
-[ 10, 12, 14 ]
-
-gap> s:=NumericalSemigroup(3,5,7);;
-gap> h:=HasseDiagramOfAperyListOfNumericalSemigroup(s);;
-gap> Source(h)=Set(AperyList(s));
-true
-gap> h:=HasseDiagramOfAperyListOfNumericalSemigroup(s,10);;
-gap> Source(h)=Set(AperyList(s,10));
-true
 
 #gap> s:=NumericalSemigroup(4,6,9);;
 #gap> Print(DotTreeOfGluingsOfNumericalSemigroup(s));

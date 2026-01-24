@@ -185,67 +185,6 @@ end);
 
 ############################################################################
 ##
-#F HasseDiagramOfNumericalSemigroup(s, A)
-##  Returns a binary relation which is the Hasse diagram of A with 
-##  respect to the ordering a <= b if b - a in S.
-##
-############################################################################
-InstallGlobalFunction(HasseDiagramOfNumericalSemigroup, function(s, A)
-  local rel, p, D;
-  
-  if not IsNumericalSemigroup(s) then
-    Error("The argument must be a numerical semigroup.\n");
-  fi;
-  
-  # Build the binary relation and returns its Hasse diagram
-  D := Domain(Set(A));
-  rel := Tuples(D, 2);
-  rel := Filtered(rel, p -> p[2] - p[1] in s);
-  rel := List(rel, p -> DirectProductElement([p[1], p[2]]));  
-  rel := BinaryRelationByElements(D, rel);  
-  return HasseDiagramBinaryRelation(rel);  
-end);
-
-############################################################################
-##
-#F HasseDiagramOfBettiElementsOfNumericalSemigroup(s)
-##  Returns a binary relation which is the Hasse diagram of the Betti
-##  elements of s with respect to the ordering a <= b if b - a in S.
-##
-############################################################################
-InstallGlobalFunction(HasseDiagramOfBettiElementsOfNumericalSemigroup, function(s)
-  if not IsNumericalSemigroup(s) then
-    Error("The argument must be a numerical semigroup.\n");
-  fi;
-    
-  return HasseDiagramOfNumericalSemigroup(s, BettiElementsOfNumericalSemigroup(s));    
-end);
-
-############################################################################
-##
-#F HasseDiagramOfAperyListOfNumericalSemigroup(s, n)
-##
-############################################################################
-InstallGlobalFunction(HasseDiagramOfAperyListOfNumericalSemigroup, function(s, n...)
-  local a;
-    
-  if not IsNumericalSemigroup(s) then
-    Error("The argument must be a numerical semigroup.\n");
-  fi;
-  
-  if Length(n) = 0 then
-    a := MultiplicityOfNumericalSemigroup(s);
-  elif Length(n) = 1 then
-    a := n[1];
-  else
-    Error("The number of arguments must be one or two");
-  fi;
-    
-  return HasseDiagramOfNumericalSemigroup(s, AperyListOfNumericalSemigroup(s, a));    
-end);
-
-############################################################################
-##
 #F DotTreeOfGluingsOfNumericalSemigroup(s, depth...)
 ##  Returns a GraphViz dot that represents the tree of gluings of the
 ##  numerical semigroup s.
