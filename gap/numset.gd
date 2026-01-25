@@ -205,6 +205,17 @@ DeclareOperation("FerrersDiagram",[IsNumericalSemigroup]);
 ###############################################################################
 DeclareOperation("AtomMonoid",[IsNumericalSet]);
 
+###############################################################################
+##
+#O AssociatedNumericalSets(s)
+## Returns the list of associated numerical sets of the numerical semigroup s
+## (all numerical sets such that its atom monoid is s)
+## this function is based on Algorithm 5.1 [cklo2023] and was implemented by
+## Araitz Unanue Bidal
+###############################################################################
+DeclareOperation("AssociatedNumericalSets",[IsNumericalSemigroup]);
+
+
 #TODO
 # 1.
 # we have different behavior between AsIdealOfNumericalSemigroup and AsNumericalSemigroup

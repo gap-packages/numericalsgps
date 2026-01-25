@@ -975,3 +975,123 @@ function(ns)
   sma:=Filtered(sm, x->IsSubset(ns,x+sm));
   return NumericalSemigroupBySmallElements(sma);
 end);
+
+###############################################################################
+##
+#O AssociatedNumericalSets(s)
+## Returns the list of associated numerical sets of the numerical semigroup s
+## (all numerical sets such that its atom monoid is s)
+## this function is based on Algorithm 5.1 [cklo2023] and was implemented by
+## Araitz Unanue Bidal
+###############################################################################
+InstallMethod(AssociatedNumericalSets, [IsNumericalSemigroup],
+function(S)
+     local F, gaps, H, H_Set, PF, PF_max, Tr, R, UpSet, DownSet, P, TrP,N, P_max, x, y, lim, 
+     A, C_A, Car_A, a, G, B1, B2, Z, L_anti, anti, Y, T, PF_DownSets, tuple, Explore;
+
+    # AUXILIARY FUNCTIONS
+
+    # UpSet(val): Returns a list of elements in Holes(S) >= val respecting S order
+     UpSet := function(val)
+        local geq, z, start_index;
+        geq := [];
+        start_index := PositionSorted(H, val);
+        for z in H{[start_index..Length(H)]} do
+            if (z-val) in S then Add(geq, z); fi;
+        od;
+        return geq;
+    end;
+
+    # DownSet(val): Returns a list of elements in Holes(S) <= val respecting S order
+    DownSet := function(val)
+        local leq, z;
+        leq := [];
+        for z in H do
+            if z > val then break; fi;
+            if (val - z) in S then Add(leq, z); fi;
+        od;
+        return leq;
+    end;
+
+    # PRE-COMPUTATION
+
+    F := FrobeniusNumber(S);
+    gaps := Gaps(S);
+    H := Holes(S);
+    H_Set := Set(H);
+    PF := PseudoFrobenius(S);
+    PF_max := Difference(PF, [F]);
+
+    # Pre-compute DownSets for all Pseudo-Frobenius numbers
+    PF_DownSets := rec();
+    for P in PF do
+        PF_DownSets.(String(P)) := DownSet(P); 
+    od;
+
+    # Pre-compute Frobenius Triangles for all Pseudo-Frobenius except F
+    Tr := rec();
+    N := Length(PF_max);
+    if N > 0 then
+        P_max:= PF_max[N]; 
+        Tr.(String(P_max)) := [ [P_max, F-P_max, 0, UpSet(F-P_max), [] ] ];  # The largest Pseudo-Frobenius after F(S) has no valid triangles except base case
+        for P in PF_max{[1..N-1]} do
+            TrP := [ [P, F-P, 0, UpSet(F-P), [] ] ]; # Base case
+            lim := PositionSorted(H, F-P);
+            if lim > Length(H) or H[lim] >= (F-P) then 
+                lim := lim - 1; 
+            fi;
+            for x in H{[1..lim]} do
+                y := F-P-x;
+                if y in H_Set then 
+                    Add(TrP, [P, x, y, UpSet(x), DownSet(F-y)]);
+                fi;
+            od;
+            Tr.(String(P)) := TrP;
+        od;
+    fi;
+
+    R := [];
+    
+    # RECURSIVE EXPLORATION
+    Explore:=function(i, G_act, B1_act, B2_act, A_act)
+        local P, C_P, new_G, new_B1, new_B2, anti, L_anti, Z, Y, T;
+
+        if not IsEmpty(Intersection(Union(G_act, A_act), Union(B1_act, B2_act))) then  # Pruning check
+            return; 
+        fi;
+
+        if i > N then   # Base case, all Pseudo-Frobenius numbers processed
+            Z := Difference(H, Union(A_act, G_act, B1_act, B2_act)); 
+            if Z=[] then
+              L_anti:=[[]];
+              else
+              L_anti := AntichainsOfNumericalSemigroup(S,Z); # Generate valid subsets from Z using Antichains
+            fi;
+            for anti in L_anti do
+                Y := Filtered(Z, z -> ForAny(anti, gen -> (z - gen) in S));
+                T := NumericalSetByGaps(Difference(gaps, Union(A_act, G_act, Y))); # Construct final set T
+                Add(R, T);
+            od;
+            return;
+        fi;
+
+        P := PF_max[i];
+        # BRANCH 1: Include P in A
+        C_P := Tr.(String(P));
+        for a in C_P do 
+            new_G := ShallowCopy(G_act);
+            new_B1 := ShallowCopy(B1_act);
+            UniteSet(new_G, a[4]); # Everything above x must be included
+            UniteSet(new_B1, a[5]); # Everything below (F-y) must be excluded
+            Explore(i+1, new_G, new_B1, B2_act, Union(A_act, [P]));
+        od;
+
+        # BRANCH 2: Exclude P from A
+        new_B2 := ShallowCopy(B2_act);
+        UniteSet(new_B2, PF_DownSets.(String(P))); # Everything below P must be excluded
+        Explore(i+1, G_act, B1_act, new_B2, A_act);
+    end;
+
+    Explore(1, [], [], [], []);
+    return Set(R);
+end);

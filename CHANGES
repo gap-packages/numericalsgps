@@ -38,6 +38,7 @@
 - New chapter on orders induced by numerical semigroups; Hasse diagrams functions moved there
 - Added AntichainsOfNumericalSemigroup which computes antichains of sets of integers wrt order induced by a numerical semigroup
 - Added AtomMonoid for numerical sets
+- Added AssociatedNumericalSets for numerical semigroups
 1.3.1 -> 1.4.0
 - Added NumericalSemigroupsWithFrobeniusNumberPC
 - Added NumericalSemigroupsWithGenusPC

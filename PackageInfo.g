@@ -196,9 +196,15 @@ rec(
   IsAuthor      := false,
   IsMaintainer  := false,
   PostalAddress := "Batman University"
+), 
+
+rec(
+  LastName      := "Unanue Bidal",
+  FirstNames    := "Araitz",
+  IsAuthor      := false,
+  IsMaintainer  := false,
+  PostalAddress := "Universidad de Granada"
 )
-
-
 
 ],
 

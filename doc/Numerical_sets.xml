@@ -375,6 +375,23 @@ gap> SmallElements(AtomMonoid(ns));
 
 
 <ManSection>
+    <Oper Name="AssociatedNumericalSets" Arg="S"/>
+    <Description>
+        <A>S</A> is a numerical semigroup. The output is the list of associated numerical sets of <A>S</A> (all numerical sets such that its atom monoid is <A>S</A>). The algorithm is baser on Algorithm 5.1 in <Cite Key="cklo2023"></Cite> and was implemented by Araitz Unanue Bidal.
+  
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(17,20,27,19);;
+gap> as:=AssociatedNumericalSets(s);;
+gap> ForAll(as,ns->IsAssociatedNumericalSetOfNumericalSemigroup(ns,s));
+true
+gap> ForAll(as,ns->AtomMonoid(ns)=s);
+true
+]]></Example>
+    </Description>
+</ManSection>
+
+
+<ManSection>
   <Oper Arg="R, S" Name="IsAssociatedNumericalSetOfNumericalSemigroup"></Oper>
   <Description>
       <A>R</A> is a numerical set and <A>S</A> is a numerical semigroup. 

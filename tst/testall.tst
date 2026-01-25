@@ -2147,6 +2147,13 @@ gap> ns:=NumericalSetBySmallElements([0,3,5,7]);;
 gap> SmallElements(AtomMonoid(ns));
 [ 0, 5, 7 ]
 
+gap> s:=NumericalSemigroup(17,20,27,19);;
+gap> as:=AssociatedNumericalSets(s);;
+gap> ForAll(as,ns->IsAssociatedNumericalSetOfNumericalSemigroup(ns,s));
+true
+gap> ForAll(as,ns->AtomMonoid(ns)=s);
+true
+
 gap> s:=NumericalSemigroup(3,5);;
 gap> t:=NumericalSetBySmallElements([0,4]);;
 gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);
