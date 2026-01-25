@@ -960,3 +960,18 @@ InstallMethod(FerrersDiagram, [IsNumericalSemigroup],
 function(s)
   FerrersDiagram(AsNumericalSet(s));
 end);
+
+###############################################################################
+##
+#O AtomMonoid(s)
+## Returns the atom monoid of the numerical set s, which is a numerical semigroup
+## defined as the set of all integers n such that n + s is a subset of s
+###############################################################################
+InstallMethod(AtomMonoid, [IsNumericalSet],
+function(ns)
+  local c, sm, sma;
+  c:=Conductor(ns);
+  sm:=SmallElements(ns);
+  sma:=Filtered(sm, x->IsSubset(ns,x+sm));
+  return NumericalSemigroupBySmallElements(sma);
+end);

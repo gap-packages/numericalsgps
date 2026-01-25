@@ -359,12 +359,27 @@ true
                     Associated sets to numerical semigroups
                 </Heading>
 
+
+<ManSection>
+    <Oper Name="AtomMonoid" Arg="S"/>
+    <Description>
+        <A>S</A> is a numerical set. The output is the atom monoid of <A>S</A>, which is a numerical semigroup defined as the set of all integers n such that n + <A>S</A> is a subset of <A>S</A> (see <Cite Key="am2002"></Cite>).
+  
+<Example><![CDATA[
+gap> ns:=NumericalSetBySmallElements([0,3,5,7]);;
+gap> SmallElements(AtomMonoid(ns));
+[ 0, 5, 7 ]
+]]></Example>
+    </Description>
+</ManSection>
+
+
 <ManSection>
   <Oper Arg="R, S" Name="IsAssociatedNumericalSetOfNumericalSemigroup"></Oper>
   <Description>
       <A>R</A> is a numerical set and <A>S</A> is a numerical semigroup. 
       
-      Determines if <A>R</A> is an ideal of <A>S</A> and if <A>R-R=S</A> (see <Cite Key="kaplan2025"></Cite> ).
+      Determines if <A>R</A> is an ideal of <A>S</A> and if <A>R-R=S</A> (see <Cite Key="kaplan2025"></Cite> ). Equivalently, it checks if the atom monoid of <A>R</A> is equal to <A>S</A>.
   <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5);;
 gap> t:=NumericalSetBySmallElements([0,4]);;

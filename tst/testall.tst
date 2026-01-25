@@ -2142,6 +2142,11 @@ true
 gap> s:=NumericalSetByGaps([1..5]);;
 gap> MinimalGenerators(AsNumericalSemigroup(s));
 [ 6 .. 11 ]
+
+gap> ns:=NumericalSetBySmallElements([0,3,5,7]);;
+gap> SmallElements(AtomMonoid(ns));
+[ 0, 5, 7 ]
+
 gap> s:=NumericalSemigroup(3,5);;
 gap> t:=NumericalSetBySmallElements([0,4]);;
 gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);

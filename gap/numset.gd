@@ -197,6 +197,13 @@ DeclareOperation("EndToEndSum",[IsNumericalSemigroup,IsNumericalSemigroup]);
 DeclareOperation("FerrersDiagram",[IsNumericalSet]);
 DeclareOperation("FerrersDiagram",[IsNumericalSemigroup]);
 
+###############################################################################
+##
+#O AtomMonoid(s)
+## Returns the atom monoid of the numerical set s, which is a numerical semigroup
+## defined as the set of all integers n such that n + s is a subset of s
+###############################################################################
+DeclareOperation("AtomMonoid",[IsNumericalSet]);
 
 #TODO
 # 1.
