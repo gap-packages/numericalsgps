@@ -459,6 +459,19 @@ function( ns1, ns2 )
   return Difference(sm1, sm2);
 end);
 
+InstallMethod( Difference, "for numerical semigroups and numerical sets",
+[ IsNumericalSemigroup, IsNumericalSet ],
+function( s, ns )
+  return Difference( AsNumericalSet(s), ns );
+end);
+
+InstallMethod( Difference, "for numerical sets and numerical semigroups",
+[ IsNumericalSet, IsNumericalSemigroup ],
+function( s, ns )
+  return Difference( s, AsNumericalSet(ns) );
+end);
+
+
 InstallMethod( Difference, "for numerical sets and lists",
 [ IsNumericalSet, IsList ],
 function( ns, l )
@@ -481,6 +494,7 @@ InstallMethod( Difference, "for numerical semigroups and lists",
 function( ns, l )
   return Difference( AsNumericalSet(ns), l );
 end);
+
 
 
 ##################################################################################

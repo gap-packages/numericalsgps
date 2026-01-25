@@ -2154,6 +2154,11 @@ true
 gap> ForAll(as,ns->AtomMonoid(ns)=s);
 true
 
+gap> s:=NumericalSemigroup([5..9]);;
+gap> as:=AssociatedNumericalSets(s);;
+gap> Set(as,n->Difference(n,s));
+[ [  ], [ 1 ], [ 1, 2 ], [ 1, 2, 3 ], [ 1, 3 ], [ 2 ] ]
+
 gap> s:=NumericalSemigroup(3,5);;
 gap> t:=NumericalSetBySmallElements([0,4]);;
 gap> IsAssociatedNumericalSetOfNumericalSemigroup(t,s);
