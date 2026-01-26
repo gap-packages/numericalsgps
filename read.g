@@ -34,6 +34,7 @@ ReadPackage( "numericalsgps", "gap/contributions.gi" );
 ReadPackage( "numericalsgps", "gap/numsgps-utils.gi" );
 ReadPackage( "numericalsgps", "gap/polynomials.gi" );
 ReadPackage( "numericalsgps", "gap/other-families-ns.gi" );
+ReadPackage( "numericalsgps", "gap/order.gi" );
 ##
 ReadPackage( "numericalsgps", "gap/databases.gi" );
 ##
