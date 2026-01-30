@@ -136,11 +136,11 @@ end);
 
 #############################################################################
 ##
-#O UpSet(p,l)
+#O Upset(p,l)
 ##  Returns the upset of the list l in the poset p
 ##
 #############################################################################
-InstallMethod(UpSet, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
+InstallMethod(Upset, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
 function(p, l)
   local s;
   if not(IsListOfIntegersNS(l)) then
@@ -155,12 +155,12 @@ end);
 
 #############################################################################
 ##
-#O DownSet(p,l)
+#O Downset(p,l)
 ##  Returns the downset of the list l in the poset p, that is, the set of 
 ##  elements less than or equal to some element of l.
 ##
 #############################################################################
-InstallMethod(DownSet, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
+InstallMethod(Downset, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
 function(p, l)
   local s;
   if not(IsListOfIntegersNS(l)) then

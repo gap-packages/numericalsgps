@@ -2877,15 +2877,15 @@ true
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> l:=[1..10];;
 gap> p:=PosetNS(l,s);;
-gap> UpSet(p,[2,4]);
+gap> Upset(p,[2,4]);
 [ 2, 4, 5, 7, 8, 9, 10 ]
-gap> UpSet(p,[2])=Filtered(l,i->i-2 in s);
+gap> Upset(p,[2])=Filtered(l,i->i-2 in s);
 true
 
-gap> DownSet(p,[5,6]);
+gap> Downset(p,[5,6]);
 [ 1, 2, 3, 5, 6 ]
 gap> p:=PosetNS(s,AperyList(s));;
-gap> DownSet(p,Multiplicity(s)+PseudoFrobenius(s))=GroundSet(p);
+gap> Downset(p,Multiplicity(s)+PseudoFrobenius(s))=GroundSet(p);
 true
 
 gap> s:=NumericalSemigroup(3,5,7);;

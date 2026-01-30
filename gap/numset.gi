@@ -1000,13 +1000,13 @@ end);
 ###############################################################################
 InstallMethod(AssociatedNumericalSets, [IsNumericalSemigroup],
 function(S)
-     local F, gaps, H, H_Set, PF, PF_max, Tr, R, UpSet, DownSet, P, TrP,N, P_max, x, y, lim, 
-     A, C_A, Car_A, a, G, B1, B2, Z, L_anti, anti, Y, T, PF_DownSets, tuple, Explore;
+     local F, gaps, H, H_Set, PF, PF_max, Tr, R, Upset, Downset, P, TrP,N, P_max, x, y, lim, 
+     A, C_A, Car_A, a, G, B1, B2, Z, L_anti, anti, Y, T, PF_Downsets, tuple, Explore;
 
     # AUXILIARY FUNCTIONS
 
-    # UpSet(val): Returns a list of elements in Holes(S) >= val respecting S order
-     UpSet := function(val)
+    # Upset(val): Returns a list of elements in Holes(S) >= val respecting S order
+     Upset := function(val)
         local geq, z, start_index;
         geq := [];
         start_index := PositionSorted(H, val);
@@ -1016,8 +1016,8 @@ function(S)
         return geq;
     end;
 
-    # DownSet(val): Returns a list of elements in Holes(S) <= val respecting S order
-    DownSet := function(val)
+    # Downset(val): Returns a list of elements in Holes(S) <= val respecting S order
+    Downset := function(val)
         local leq, z;
         leq := [];
         for z in H do
@@ -1036,10 +1036,10 @@ function(S)
     PF := PseudoFrobenius(S);
     PF_max := Difference(PF, [F]);
 
-    # Pre-compute DownSets for all Pseudo-Frobenius numbers
-    PF_DownSets := rec();
+    # Pre-compute Downsets for all Pseudo-Frobenius numbers
+    PF_Downsets := rec();
     for P in PF do
-        PF_DownSets.(String(P)) := DownSet(P); 
+        PF_Downsets.(String(P)) := Downset(P); 
     od;
 
     # Pre-compute Frobenius Triangles for all Pseudo-Frobenius except F
@@ -1047,9 +1047,9 @@ function(S)
     N := Length(PF_max);
     if N > 0 then
         P_max:= PF_max[N]; 
-        Tr.(String(P_max)) := [ [P_max, F-P_max, 0, UpSet(F-P_max), [] ] ];  # The largest Pseudo-Frobenius after F(S) has no valid triangles except base case
+        Tr.(String(P_max)) := [ [P_max, F-P_max, 0, Upset(F-P_max), [] ] ];  # The largest Pseudo-Frobenius after F(S) has no valid triangles except base case
         for P in PF_max{[1..N-1]} do
-            TrP := [ [P, F-P, 0, UpSet(F-P), [] ] ]; # Base case
+            TrP := [ [P, F-P, 0, Upset(F-P), [] ] ]; # Base case
             lim := PositionSorted(H, F-P);
             if lim > Length(H) or H[lim] >= (F-P) then 
                 lim := lim - 1; 
@@ -1057,7 +1057,7 @@ function(S)
             for x in H{[1..lim]} do
                 y := F-P-x;
                 if y in H_Set then 
-                    Add(TrP, [P, x, y, UpSet(x), DownSet(F-y)]);
+                    Add(TrP, [P, x, y, Upset(x), Downset(F-y)]);
                 fi;
             od;
             Tr.(String(P)) := TrP;
@@ -1102,7 +1102,7 @@ function(S)
 
         # BRANCH 2: Exclude P from A
         new_B2 := ShallowCopy(B2_act);
-        UniteSet(new_B2, PF_DownSets.(String(P))); # Everything below P must be excluded
+        UniteSet(new_B2, PF_Downsets.(String(P))); # Everything below P must be excluded
         Explore(i+1, G_act, B1_act, new_B2, A_act);
     end;
 

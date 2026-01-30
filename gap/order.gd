@@ -70,21 +70,21 @@ DeclareAttribute("MinimalElements", IsPosetNS);
 
 #############################################################################
 ##
-#O UpSet(p,l)
+#O Upset(p,l)
 ##  Returns the upset of the list l in the poset p, that is, the set of 
 ##  elements greater than or equal to some element of l.
 ##
 #############################################################################
-DeclareOperation("UpSet", [IsPosetNS, IsList]);
+DeclareOperation("Upset", [IsPosetNS, IsList]);
 
 #############################################################################
 ##
-#O DownSet(p,l)
+#O Downset(p,l)
 ##  Returns the downset of the list l in the poset p, that is, the set of 
 ##  elements less than or equal to some element of l.
 ##
 #############################################################################
-DeclareOperation("DownSet", [IsPosetNS, IsList]);
+DeclareOperation("Downset", [IsPosetNS, IsList]);
 
 #############################################################################
 ##

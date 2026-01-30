@@ -52,33 +52,33 @@ gap> MinimalElements(p);
 
 
 <ManSection>
-  <Oper Name="UpSet" Arg="P,l" Label="for posets defined by numerical semigroups"/>
+  <Oper Name="Upset" Arg="P,l" Label="for posets defined by numerical semigroups"/>
   <Description>
     <C>P</C> is a poset induced by a numerical semigroup, <C>l</C> is a list of integers (contained in the ground set of <C>P</C>). Returns the upset of the list <C>l</C> in the poset <C>P</C>, that is, all elements of <C>P</C> greater than or equal to some element of <C>l</C>.
 <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> l:=[1..10];;
 gap> p:=PosetNS(l,s);;
-gap> UpSet(p,[2,4]);
+gap> Upset(p,[2,4]);
 [ 2, 4, 5, 7, 8, 9, 10 ]
-gap> UpSet(p,[2])=Filtered(l,i->i-2 in s);
+gap> Upset(p,[2])=Filtered(l,i->i-2 in s);
 true
 ]]></Example>
   </Description>
 </ManSection>
 
 <ManSection>
-  <Oper Name="DownSet" Arg="P,l" Label="for posets defined by numerical semigroups"/>
+  <Oper Name="Downset" Arg="P,l" Label="for posets defined by numerical semigroups"/>
   <Description>
     <C>P</C> is a poset induced by a numerical semigroup, <C>l</C> is a list of integers (contained in the ground set of <C>P</C>). Returns the downset of the list <C>l</C> in the poset <C>P</C>, that is, all elements of <C>P</C> less than or equal to some element of <C>l</C>.
 <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> l:=[1..10];;
 gap> p:=PosetNS(l,s);;
-gap> DownSet(p,[5,6]);
+gap> Downset(p,[5,6]);
 [ 1, 2, 3, 5, 6 ]
 gap> p:=PosetNS(s,AperyList(s));;
-gap> DownSet(p,Multiplicity(s)+PseudoFrobenius(s))=GroundSet(p);
+gap> Downset(p,Multiplicity(s)+PseudoFrobenius(s))=GroundSet(p);
 true
 ]]></Example>
   </Description>
