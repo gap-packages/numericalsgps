@@ -68,6 +68,32 @@ DeclareAttribute("MaximalElements", IsPosetNS);
 #############################################################################
 DeclareAttribute("MinimalElements", IsPosetNS);
 
+#############################################################################
+##
+#O UpSet(p,l)
+##  Returns the upset of the list l in the poset p, that is, the set of 
+##  elements greater than or equal to some element of l.
+##
+#############################################################################
+DeclareOperation("UpSet", [IsPosetNS, IsList]);
+
+#############################################################################
+##
+#O DownSet(p,l)
+##  Returns the downset of the list l in the poset p, that is, the set of 
+##  elements less than or equal to some element of l.
+##
+#############################################################################
+DeclareOperation("DownSet", [IsPosetNS, IsList]);
+
+#############################################################################
+##
+#O Antichains(p)
+##  Returns the set of antichains (sets of non comparable elements) of p.
+##
+#############################################################################
+DeclareOperation("Antichains", [IsPosetNS]);
+
 ############################################################################
 ##
 #F HasseDiagramOfNumericalSemigroup(s, A)

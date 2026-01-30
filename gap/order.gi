@@ -10,8 +10,6 @@
 ##
 #############################################################################
 
-
-
 #############################################################################
 #####################        Defining posets           ######################
 #############################################################################
@@ -26,7 +24,7 @@
 ##
 #############################################################################
 InstallMethod(PosetNS, "for list of integers and numerical semigroup",
-        [IsList, IsNumericalSemigroup],
+  [IsList, IsNumericalSemigroup],
 function(l,S)
   local  I;
       if not (IsNumericalSemigroup(S)) then
@@ -54,9 +52,9 @@ end);
 ##
 #############################################################################
 InstallMethod( ViewObj,
-        "prints poset of a numerical semigroup",
-        [IsPosetNS],
-        function( p )
+  "prints poset of a numerical semigroup",
+  [IsPosetNS],
+  function( p )
     Print("<Poset defined wrt to numerical semigroup>");
 end);
 
@@ -69,9 +67,9 @@ end);
 ##
 #############################################################################
 InstallMethod( ViewString,
-        "prints a poset defined by a numerical semigroup",
-        [IsPosetNS],
-        function( p )
+  "prints a poset defined by a numerical semigroup",
+  [IsPosetNS],
+  function( p )
     return ("Poset defined by numerical semigroup");
 end);
 
@@ -83,9 +81,9 @@ end);
 ##
 #############################################################################
 InstallMethod(String,
-        "prints a poset defined by a numerical semigroup",
-        [IsPosetNS],
-        function( p )
+  "prints a poset defined by a numerical semigroup",
+  [IsPosetNS],
+  function( p )
     return (Concatenation(String(GroundSet(p)), " ordered wrt NumericalSemigroup([", 
         String(Generators(UnderlyingNSPoset(p))), "])"));
 end);
@@ -97,9 +95,9 @@ end);
 ##
 #############################################################################
 InstallMethod(MaximalElements,
-        "for posets defined by numerical semigroups",
-        [IsPosetNS],  
-        function( p )
+  "for posets defined by numerical semigroups",
+  [IsPosetNS],  
+  function( p )
     local s,l,maxs,max,below;    
     s := UnderlyingNSPoset(p);
     l := List(GroundSet(p));
@@ -120,9 +118,9 @@ end);
 ##
 #############################################################################
 InstallMethod(MinimalElements,
-        "for posets defined by numerical semigroups",
-        [IsPosetNS],  
-        function( p )
+  "for posets defined by numerical semigroups",
+  [IsPosetNS],  
+  function( p )
     local s,l,mins,min,above;    
     s := UnderlyingNSPoset(p);
     l := Reversed(List(GroundSet(p)));
@@ -136,6 +134,55 @@ InstallMethod(MinimalElements,
     return mins;
 end);
 
+#############################################################################
+##
+#O UpSet(p,l)
+##  Returns the upset of the list l in the poset p
+##
+#############################################################################
+InstallMethod(UpSet, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
+function(p, l)
+  local s;
+  if not(IsListOfIntegersNS(l)) then
+    Error("The second argument must be a list of integers.\n");
+  fi;
+  if not(IsSubset(GroundSet(p), Set(l))) then
+    Error("The elements of the list must belong to the ground set of the poset.\n");
+  fi;
+  s:=UnderlyingNSPoset(p);
+  return Filtered(GroundSet(p), x->ForAny(l, y-> x - y in s));
+end);
+
+#############################################################################
+##
+#O DownSet(p,l)
+##  Returns the downset of the list l in the poset p, that is, the set of 
+##  elements less than or equal to some element of l.
+##
+#############################################################################
+InstallMethod(DownSet, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
+function(p, l)
+  local s;
+  if not(IsListOfIntegersNS(l)) then
+    Error("The second argument must be a list of integers.\n");
+  fi;
+  if not(IsSubset(GroundSet(p), Set(l))) then
+    Error("The elements of the list must belong to the ground set of the poset.\n");
+  fi;
+  s:=UnderlyingNSPoset(p);
+  return Filtered(GroundSet(p), x->ForAny(l, y-> y - x in s));
+end);
+
+#############################################################################
+##
+#O Antichains(p)
+##  Returns the set of antichains (sets of non comparable elements) of p.
+##
+#############################################################################
+InstallMethod(Antichains, "for posets defined by numerical semigroups", [IsPosetNS],
+function(p)
+  return AntichainsOfNumericalSemigroup(UnderlyingNSPoset(p), List(GroundSet(p)));
+end);
 
 ############################################################################
 ##
