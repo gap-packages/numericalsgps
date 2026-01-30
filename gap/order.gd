@@ -133,3 +133,12 @@ DeclareGlobalFunction("HasseDiagramOfAperyListOfNumericalSemigroup");
 ##
 ############################################################################
 DeclareGlobalFunction("AntichainsOfNumericalSemigroup");
+
+
+############################################################################
+##
+#O HasseDiagram(P)
+##  Returns the Hasse diagram of the poset P.
+##
+############################################################################
+DeclareOperation("HasseDiagram", [IsPosetNS]);

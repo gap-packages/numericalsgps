@@ -2896,6 +2896,12 @@ gap> Antichains(p)=AntichainsOfNumericalSemigroup(s,Gaps(s));
 true
 
 gap> s:=NumericalSemigroup(3,5,7);;
+gap> p:=PosetNS(s,Gaps(s));;
+gap> HasseDiagram(p)=HasseDiagramOfNumericalSemigroup(s,Gaps(s));
+true
+
+
+gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsHasseDiagram(HasseDiagramOfNumericalSemigroup(s,[1,2,3]));
 true
 

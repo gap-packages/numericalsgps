@@ -286,3 +286,15 @@ InstallGlobalFunction(AntichainsOfNumericalSemigroup, function(s, l)
 
   return List(list_antichains, a->l{a});
 end);
+
+
+############################################################################
+##
+#O HasseDiagram(P)
+##  Returns the Hasse diagram of the poset P.
+##
+############################################################################
+InstallMethod(HasseDiagram, "for posets defined by numerical semigroups", [IsPosetNS],
+function(p)
+  return HasseDiagramOfNumericalSemigroup(UnderlyingNSPoset(p), List(GroundSet(p)));
+end);

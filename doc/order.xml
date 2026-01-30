@@ -97,7 +97,7 @@ gap> AntichainsOfNumericalSemigroup(s,Gaps(s));
 </ManSection>
 
 <ManSection>
-  <Func Name="Antichains" Arg="P"/>
+  <Oper Name="Antichains" Arg="P"/>
   <Description>
     <C>P</C> is a poset defined by a numerical semigroup. Returns the set of antichains (sets of non-comparable elements) of <C>P</C>.
 <Example><![CDATA[
@@ -127,6 +127,19 @@ true
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> HasseDiagramOfNumericalSemigroup(s,[1,2,3]);
 <general mapping: <object> -> <object> >
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Name="HasseDiagram" Arg="P"/>
+  <Description>
+    <C>P</C> is a posed defined by a numerical semigroup. Returns a binary relation which is the Hasse diagram of <C>P</C>.
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> p:=PosetNS(s,Gaps(s));;
+gap> HasseDiagram(p)=HasseDiagramOfNumericalSemigroup(s,Gaps(s));
+true
 ]]></Example>
   </Description>
 </ManSection>
