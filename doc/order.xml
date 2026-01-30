@@ -2,6 +2,59 @@
 
 <Section>
     <Heading>
+      Posets induced by numerical semigroups
+    </Heading>
+
+<ManSection>
+  <Oper Name="PosetNS" Arg="S, A" Label="for numerical semigroup and list of integers"/>
+  <Oper Name="PosetNS" Arg="A, S" Label="for list of integers and numerical semigroup"/>
+  <Description>
+    <C>S</C> is a numerical semigroup and <C>A</C> is a set of integers. Returns the poset with ground set <C>A</C> and order defined by the binary relation induced by <C>S</C>: <M>a\preceq b</M> if <M>b - a</M> in <C>S</C>.
+<Example><![CDATA[
+gap> l:=[1..10];;
+gap> s:=NumericalSemigroup(3,5,8);;
+gap> p:=PosetNS(l,s);
+<Poset defined wrt to numerical semigroup>
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
+  <Oper Name="MaximalElements" Arg="P" Label="for posets defined by numerical semigroups"/>
+  <Description>
+    <C>P</C> is a poset induced by a numerical semigroup. Returns the list of maximal elements of <C>P</C>.
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,8);;
+gap> l:=[1..10];;
+gap> p:=PosetNS(l,s);;
+gap> MaximalElements(p);
+[ 10, 9, 8 ]
+gap> Type(s)=Length(MaximalElements(PosetNS(AperyList(s),s)));
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+<ManSection>
+  <Oper Name="MinimalElements" Arg="P" Label="for posets defined by numerical semigroups"/>
+  <Description>
+    <C>P</C> is a poset induced by a numerical semigroup. Returns the list of minimal elements of <C>P</C>.
+<Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,8);;
+gap> l:=[1..10];;
+gap> p:=PosetNS(l,s);;
+gap> MinimalElements(p);
+[ 1, 2, 3 ]
+]]></Example>
+  </Description>
+</ManSection>
+
+
+</Section>
+
+<Section>
+    <Heading>
       Hasse diagrams related to numerical semigroups
     </Heading>
 

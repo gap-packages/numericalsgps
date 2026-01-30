@@ -2864,6 +2864,16 @@ false
 
 ##orders.xml
 
+gap> s:=NumericalSemigroup(3,5,8);;
+gap> l:=[1..10];;
+gap> p:=PosetNS(l,s);;
+gap> MinimalElements(p);
+[ 1, 2, 3 ]
+gap> MaximalElements(p);
+[ 10, 9, 8 ]
+gap> Type(s)=Length(MaximalElements(PosetNS(AperyList(s),s)));
+true
+
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsHasseDiagram(HasseDiagramOfNumericalSemigroup(s,[1,2,3]));
 true
