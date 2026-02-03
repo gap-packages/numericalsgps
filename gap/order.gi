@@ -27,7 +27,7 @@ InstallMethod(PosetNS, "for list of integers and numerical semigroup",
   [IsList, IsNumericalSemigroup],
 function(l,S)
   local  I;
-      if not (IsNumericalSemigroup(S)) then
+      if not (IsListOfIntegersNS(l)) then
         Error("The arguments of PosetNS must be a numerical semigroup and a nonempty list of integers.");
     fi;
     I := rec();
