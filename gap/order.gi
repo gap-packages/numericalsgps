@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W  order.gd           Manuel Delgado <mdelgado@fc.up.pt>
+#W  order.gi           Manuel Delgado <mdelgado@fc.up.pt>
 #W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
 ##
 ##
