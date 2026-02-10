@@ -1,3 +1,189 @@
+#############################################################################
+##
+#W  order.gi           Manuel Delgado <mdelgado@fc.up.pt>
+#W                          Pedro A. Garcia-Sanchez <pedro@ugr.es>
+##
+##
+#Y  Copyright 2026 by Manuel Delgado and Pedro Garcia-Sanchez 
+#Y  We adopt the copyright regulations of GAP as detailed in the
+#Y  copyright notice in the GAP manual.
+##
+#############################################################################
+
+#############################################################################
+#####################        Defining posets           ######################
+#############################################################################
+##
+#O PosetNS(l,S)
+#O PosetNS(S,l)
+##
+## l is a list of integers and S a numerical semigroup
+##
+## returns the poset whose underlying set is l and the order is defined by
+## a <= b if b - a in S
+##
+#############################################################################
+InstallMethod(PosetNS, "for list of integers and numerical semigroup",
+  [IsList, IsNumericalSemigroup],
+function(l,S)
+  local  I;
+      if not (IsListOfIntegersNS(l)) then
+        Error("The arguments of PosetNS must be a numerical semigroup and a nonempty list of integers.");
+    fi;
+    I := rec();
+    ObjectifyWithAttributes(I, PosetNSType,
+        UnderlyingNSPoset, S,
+        GroundSet, Set(l)
+        );
+    return I;
+end);
+
+InstallMethod(PosetNS, "for numerical semigroup and list of integers",
+        [IsNumericalSemigroup, IsList],
+function(S,l)
+  return PosetNS(l,S);
+end);
+
+#############################################################################
+##
+#M  ViewObj(p)
+##
+##  This method for posets defined by numerical semigroups.
+##
+#############################################################################
+InstallMethod( ViewObj,
+  "prints poset of a numerical semigroup",
+  [IsPosetNS],
+  function( p )
+    Print("<Poset defined wrt to numerical semigroup>");
+end);
+
+
+#############################################################################
+##
+#M  ViewString(p)
+##
+##  This method for posets defined by numerical semigroups.
+##
+#############################################################################
+InstallMethod( ViewString,
+  "prints a poset defined by a numerical semigroup",
+  [IsPosetNS],
+  function( p )
+    return ("Poset defined by numerical semigroup");
+end);
+
+#############################################################################
+##
+#M  String(p)
+##
+##  This method for posets defined by numerical semigroups.
+##
+#############################################################################
+InstallMethod(String,
+  "prints a poset defined by a numerical semigroup",
+  [IsPosetNS],
+  function( p )
+    return (Concatenation(String(GroundSet(p)), " ordered wrt NumericalSemigroup([", 
+        String(Generators(UnderlyingNSPoset(p))), "])"));
+end);
+
+#############################################################################
+##
+#A  MaximalElements(p)
+##  Returns the list of maximal elements of the poset p
+##
+#############################################################################
+InstallMethod(MaximalElements,
+  "for posets defined by numerical semigroups",
+  [IsPosetNS],  
+  function( p )
+    local s,l,maxs,max,below;    
+    s := UnderlyingNSPoset(p);
+    l := List(GroundSet(p));
+    maxs := [];
+    while l<>[] do
+        max:=Remove(l);
+        Add(maxs, max);
+        below:=Filtered(l, x-> max - x in s);
+        l:=Difference(l, below);
+    od;
+    return maxs;
+end);
+
+#############################################################################
+##
+#A  MinimalElements(p)
+##  Returns the list of minimal elements of the poset p
+##
+#############################################################################
+InstallMethod(MinimalElements,
+  "for posets defined by numerical semigroups",
+  [IsPosetNS],  
+  function( p )
+    local s,l,mins,min,above;    
+    s := UnderlyingNSPoset(p);
+    l := Reversed(List(GroundSet(p)));
+    mins := [];
+    while l<>[] do
+        min:=Remove(l);
+        Add(mins, min);
+        above:=Filtered(l, x-> x - min in s);
+        l:=Reversed(Difference(l, above));
+    od;
+    return mins;
+end);
+
+#############################################################################
+##
+#O Upset(p,l)
+##  Returns the upset of the list l in the poset p
+##
+#############################################################################
+InstallMethod(Upset, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
+function(p, l)
+  local s;
+  if not(IsListOfIntegersNS(l)) then
+    Error("The second argument must be a list of integers.\n");
+  fi;
+  if not(IsSubset(GroundSet(p), Set(l))) then
+    Error("The elements of the list must belong to the ground set of the poset.\n");
+  fi;
+  s:=UnderlyingNSPoset(p);
+  return Filtered(GroundSet(p), x->ForAny(l, y-> x - y in s));
+end);
+
+#############################################################################
+##
+#O Downset(p,l)
+##  Returns the downset of the list l in the poset p, that is, the set of 
+##  elements less than or equal to some element of l.
+##
+#############################################################################
+InstallMethod(Downset, "for posets defined by numerical semigroups", [IsPosetNS, IsList],
+function(p, l)
+  local s;
+  if not(IsListOfIntegersNS(l)) then
+    Error("The second argument must be a list of integers.\n");
+  fi;
+  if not(IsSubset(GroundSet(p), Set(l))) then
+    Error("The elements of the list must belong to the ground set of the poset.\n");
+  fi;
+  s:=UnderlyingNSPoset(p);
+  return Filtered(GroundSet(p), x->ForAny(l, y-> y - x in s));
+end);
+
+#############################################################################
+##
+#O Antichains(p)
+##  Returns the set of antichains (sets of non comparable elements) of p.
+##
+#############################################################################
+InstallMethod(Antichains, "for posets defined by numerical semigroups", [IsPosetNS],
+function(p)
+  return AntichainsOfNumericalSemigroup(UnderlyingNSPoset(p), List(GroundSet(p)));
+end);
+
 ############################################################################
 ##
 #F HasseDiagramOfNumericalSemigroup(s, A)
@@ -99,4 +285,16 @@ InstallGlobalFunction(AntichainsOfNumericalSemigroup, function(s, l)
   od;
 
   return List(list_antichains, a->l{a});
+end);
+
+
+############################################################################
+##
+#O HasseDiagram(P)
+##  Returns the Hasse diagram of the poset P.
+##
+############################################################################
+InstallMethod(HasseDiagram, "for posets defined by numerical semigroups", [IsPosetNS],
+function(p)
+  return HasseDiagramOfNumericalSemigroup(UnderlyingNSPoset(p), List(GroundSet(p)));
 end);
