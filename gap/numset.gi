@@ -972,7 +972,7 @@ end);
 
 InstallMethod(FerrersDiagram, [IsNumericalSemigroup],
 function(s)
-  FerrersDiagram(AsNumericalSet(s));
+  return FerrersDiagram(AsNumericalSet(s));
 end);
 
 ###############################################################################

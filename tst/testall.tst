@@ -2256,6 +2256,7 @@ gap> FerrersDiagram(s);
 ··
 ·
 ·
+[ 2, 1, 1 ]
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
