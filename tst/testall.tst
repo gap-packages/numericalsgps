@@ -2256,6 +2256,7 @@ gap> FerrersDiagram(s);
 ··
 ·
 ·
+[ 2, 1, 1 ]
 
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
@@ -2863,6 +2864,43 @@ gap> IsMonomialNumericalSemigroup(NumericalSemigroup(4,6,11));
 false
 
 ##orders.xml
+
+gap> s:=NumericalSemigroup(3,5);;
+gap> l:=[1..10];;
+gap> p:=PosetNS(l,s);;
+gap> MinimalElements(p);
+[ 1, 2, 3 ]
+gap> MaximalElements(p);
+[ 10, 9, 8 ]
+gap> Type(s)=Length(MaximalElements(PosetNS(AperyList(s),s)));
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> l:=[1..10];;
+gap> p:=PosetNS(l,s);;
+gap> Upset(p,[2,4]);
+[ 2, 4, 5, 7, 8, 9, 10 ]
+gap> Upset(p,[2])=Filtered(l,i->i-2 in s);
+true
+
+gap> Downset(p,[5,6]);
+[ 1, 2, 3, 5, 6 ]
+gap> p:=PosetNS(s,AperyList(s));;
+gap> Downset(p,Multiplicity(s)+PseudoFrobenius(s))=GroundSet(p);
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> p:=PosetNS(s,Gaps(s));;
+gap> Antichains(p);
+[ [  ], [ 4 ], [ 2 ], [ 2, 4 ], [ 1 ], [ 1, 2 ] ]
+gap> Antichains(p)=AntichainsOfNumericalSemigroup(s,Gaps(s));
+true
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> p:=PosetNS(s,Gaps(s));;
+gap> HasseDiagram(p)=HasseDiagramOfNumericalSemigroup(s,Gaps(s));
+true
+
 
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> IsHasseDiagram(HasseDiagramOfNumericalSemigroup(s,[1,2,3]));
