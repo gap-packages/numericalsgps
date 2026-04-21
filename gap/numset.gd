@@ -100,7 +100,7 @@ DeclareOperation("AsNumericalSemigroup",[IsNumericalSet]);
 ## raises an error otherwise.
 ##
 #############################################################################
-# DeclareOperation("AsIdealOfNumericalSemigroup",[IsNumericalSet,IsNumericalSemigroup]);
+DeclareOperation("AsIdealOfNumericalSemigroup",[IsNumericalSet,IsNumericalSemigroup]);
 
 #############################################################################
 ##

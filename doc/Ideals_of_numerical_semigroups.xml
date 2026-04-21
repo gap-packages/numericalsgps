@@ -1259,10 +1259,10 @@ true
 
 
 <ManSection>
-  <Func Arg="I,T" Name="AsIdealOfNumericalSemigroup"></Func>
+  <Oper Arg="I,T" Name="AsIdealOfNumericalSemigroup"></Oper>
   <Description>
 
-    <A>I</A> is an ideal of a numerical semigroup <M>S</M>, and <A>T</A> is a numerical semigroup. Detects if <A>I</A> is an ideal of <A>T</A> and contained in <A>T</A> (integral ideal), and if so, returns <A>I</A> as an ideal of <A>T</A>. It returns <C>fail</C> if <A>I</A> is an ideal of some semigroup but not an integral ideal of <A>T</A>.
+    <A>I</A> is an ideal of a numerical semigroup <M>S</M>, and <A>T</A> is a numerical semigroup. It raises an error if <A>I</A> is not an ideal of <A>T</A>. Otherwise, outputs <A>I</A> as an ideal of <A>T</A>. This function required <A>I</A> to be integral prior to version 1.4.
 
     <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,7,5);;

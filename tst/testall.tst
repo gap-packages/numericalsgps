@@ -1779,8 +1779,6 @@ true
 
 gap> s:=NumericalSemigroup(3,7,5);;
 gap> t:=NumericalSemigroup(10,11,14);;
-gap> AsIdealOfNumericalSemigroup(10+s,t);
-fail
 gap> AsIdealOfNumericalSemigroup(100+s,t);
 <Ideal of numerical semigroup>
 
@@ -2142,6 +2140,11 @@ true
 gap> s:=NumericalSetByGaps([1..5]);;
 gap> MinimalGenerators(AsNumericalSemigroup(s));
 [ 6 .. 11 ]
+
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> r:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(AsIdealOfNumericalSemigroup(r,s))=SmallElements(r);
+true
 
 gap> ns:=NumericalSetBySmallElements([0,3,5,7]);;
 gap> SmallElements(AtomMonoid(ns));

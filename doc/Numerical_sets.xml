@@ -77,6 +77,22 @@ gap> Print(AsNumericalSet(i));
 
 
 <ManSection>
+  <Oper Arg="R,S" Name="AsIdealOfNumericalSemigroup" Label="for numerical sets"></Oper>
+  <Description>
+    <A>R</A> is a numerical set and <A>S</A> is a numerical semigroup.
+
+    The output is <A>R</A> considered as an ideal of <A>S</A> provided that <M><A>R</A>+<A>S</A> = <A>R</A></M> (otherwise, it raises an error).
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> r:=NumericalSetBySmallElements([0,2]);;
+gap> SmallElements(AsIdealOfNumericalSemigroup(r,s))=SmallElements(r);
+true
+]]></Example>
+  </Description>
+</ManSection>
+
+
+<ManSection>
   <Func Arg="Obj" Name="IsNumericalSet"></Func>
   <Description>
     Tests if the object <A>Obj</A> is a numerical set.

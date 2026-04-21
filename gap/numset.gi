@@ -102,11 +102,14 @@ end);
 ## raises an error otherwise.
 ##
 #############################################################################
-# InstallMethod(AsIdealOfNumericalSemigroup, "for numerical sets", [IsNumericalSet,IsNumericalSemigroup]
-# function (r,s)
-#   if r+s=r then
-#     return IdealOfNumericalSemigroupBySmallElements(SmallElements(r),s);
-# end);
+InstallMethod(AsIdealOfNumericalSemigroup, "for numerical sets", [IsNumericalSet,IsNumericalSemigroup],
+function (r,s)
+  if r+s=r then
+    return IdealOfNumericalSemigroupBySmallElements(SmallElements(r),s);
+  else
+    return Error("The given numerical set is not an ideal of the numerical semigroup");
+  fi;
+end);
 
 #############################################################################
 ##

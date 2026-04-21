@@ -261,9 +261,10 @@ DeclareGlobalFunction("IsStronglyAdmissiblePattern");
 ##  (otherwise it returns fail)
 ##
 ##  Implented with Klara Stokes
+##  Modified in 1.4 to work for non-integral ideals
 ##
 #############################################################################
-DeclareGlobalFunction("AsIdealOfNumericalSemigroup");
+DeclareOperation("AsIdealOfNumericalSemigroup",[IsIdealOfNumericalSemigroup,IsNumericalSemigroup]);
 
 #############################################################################
 ##

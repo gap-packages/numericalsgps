@@ -787,29 +787,33 @@ end);
 ##  (otherwise it returns fail)
 ##
 ##  Implented with Klara Stokes  (see [Stokes])
+##  Modified in 1.4 to work for non-integral ideals
 ##
 #############################################################################
-InstallGlobalFunction("AsIdealOfNumericalSemigroup", function(I,T)
-     local seI, Ci, Ct;
+InstallMethod(AsIdealOfNumericalSemigroup,"for ideals and semigroups",[IsIdealOfNumericalSemigroup,IsNumericalSemigroup],
 
-     if not(IsNumericalSemigroup(T)) then
-         Error("The second argument must be a numerical semigroup");
-     fi;
-     if not(IsIdealOfNumericalSemigroup(I)) then
-         Error("The first argument must be an ideal of a numerical semigroup");
-     fi;
-     if not(IsIntegralIdealOfNumericalSemigroup(I)) then
-         Error("The first argument must be an integral ideal of a numerical semigroup");
-     fi;
+function(I,T)
+    #  local seI, Ci, Ct;
 
-     seI:=SmallElementsOfIdealOfNumericalSemigroup(I);
-     Ci:=ConductorOfIdealOfNumericalSemigroup(I);
-     Ct:=ConductorOfNumericalSemigroup(T);
-     if IsSubset(T,seI) and (Ci >= Ct) then
-         return seI+T;
-     fi;
-     Info(InfoNumSgps,2,"The first argument is not included in the second");
-     return fail;
+    #  if not(IsNumericalSemigroup(T)) then
+    #      Error("The second argument must be a numerical semigroup");
+    #  fi;
+    #  if not(IsIdealOfNumericalSemigroup(I)) then
+    #      Error("The first argument must be an ideal of a numerical semigroup");
+    #  fi;
+    #  if not(IsIntegralIdealOfNumericalSemigroup(I)) then
+    #      Error("The first argument must be an integral ideal of a numerical semigroup");
+    #  fi;
+
+    #  seI:=SmallElementsOfIdealOfNumericalSemigroup(I);
+    #  Ci:=ConductorOfIdealOfNumericalSemigroup(I);
+    #  Ct:=ConductorOfNumericalSemigroup(T);
+    #  if IsSubset(T,seI) and (Ci >= Ct) then
+    #      return seI+T;
+    #  fi;
+    #  Info(InfoNumSgps,2,"The first argument is not included in the second");
+    #  return fail;
+    return IdealOfNumericalSemigroupBySmallElements(SmallElements(I),T);
 end);
 
 #############################################################################

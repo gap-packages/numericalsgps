@@ -297,7 +297,7 @@ If you have predominantly used the functions in the Appendix, contributed by oth
 <Chapter>
 
 	<Heading>
-		Order induced by a numerical semigroups
+		Order induced by a numerical semigroup
 	</Heading>
 
     Every numerical semigroup <M>S</M> induces an order on the set of integers: <M>a \leq_S b</M> if <M>b - a \in S</M>. The fact that <M>\le_S</M> is a (partial) order follows from the fact that <M>S</M> is cancellative and reduced (the only unit is zero) monoid. 
