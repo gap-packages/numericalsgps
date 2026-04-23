@@ -651,7 +651,7 @@ InstallGlobalFunction(MultipleOfIdealOfNumericalSemigroup, function(n,I)
      return II;
 end);
 ###########################################################
-## n is an integer and S a numerical semigroup
+## n is an integer and I an ideal of a numerical semigroup
 ## n * I is an abbreviation for MultipleOfIdealOfNumericalSemigroup(n,I)
 ##########
 InstallOtherMethod( \*, "for a non negative integer and an ideal of a numerical semigroup", true,
