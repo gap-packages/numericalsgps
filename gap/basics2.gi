@@ -134,6 +134,20 @@ InstallMethod(\+,"for numerical semigroups",[IsNumericalSemigroup,IsNumericalSem
 end);
 
 
+###########################################################
+## n is an integer and S a numerical semigroup
+## n * S =S+..+S n times, with n a positive integer, which is S itself
+##########
+InstallOtherMethod( \*, "for a non negative integer and an ideal of a numerical semigroup", true,
+        [IsInt and IsMultiplicativeElement,IsNumericalSemigroup], 999999990,
+function( n,S)
+    if n<0 then
+        Error("The arguments must be a positive integer and a numerical semigroup");
+    fi;
+  return S;
+end);
+
+
 #############################################################################
 ##
 #F  RepresentsGapsOfNumericalSemigroup(L)

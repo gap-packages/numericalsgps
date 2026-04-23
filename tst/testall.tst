@@ -1087,6 +1087,11 @@ gap> t:=NumericalSemigroup(6,7);;
 gap> MinimalGenerators(s+t);
 [ 4, 6, 7, 9 ]
 
+gap> s:=NumericalSemigroup(3,7,5);;
+gap> 5*s=s;
+true
+
+
 gap> s:=NumericalSemigroup(3,29);
 <Numerical semigroup with 2 generators>
 gap> SmallElementsOfNumericalSemigroup(s);
