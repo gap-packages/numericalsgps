@@ -2261,6 +2261,16 @@ gap> FerrersDiagram(s);
 ·
 [ 2, 1, 1 ]
 
+
+gap> s:=NumericalSetBySmallElements([0,2,7]);;
+gap> 1*s=s;
+true
+gap> SmallElements(3*s);
+[ 0, 2, 4, 6 ]
+gap> 5*s=3*s;
+true
+
+
 ##Numerical_semigroups_with_maximal_embedding_dimension.xml
 
 gap> IsMED(NumericalSemigroup(3,5,7));

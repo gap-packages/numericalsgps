@@ -255,6 +255,26 @@ gap> SmallElements(s+t);
 </ManSection>
 
 
+<ManSection>
+  <Oper Arg="n, S" Name="*" Label="for numerical sets and positive integers"></Oper>
+  <Description>
+      <A>S</A> is a numerical set and <A>n</A> is a positive integer.
+      The output is the sum of <A>S</A> <A>n</A> times.
+  <Example><![CDATA[
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSetBySmallElements([0,7]);;
+gap> SmallElements(s+t);
+[ 0, 2, 5 ]
+gap> s:=NumericalSetBySmallElements([0,2,5,6,9]);;
+gap> t:=NumericalSemigroup(5,7);;
+gap> SmallElements(s+t);
+[ 0, 2, 5, 6, 7, 9 ]
+
+]]></Example>
+  </Description>
+</ManSection>
+
+
 </Section>
 
 

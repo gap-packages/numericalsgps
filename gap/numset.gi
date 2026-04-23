@@ -1112,3 +1112,24 @@ function(S)
     Explore(1, [], [], [], []);
     return Set(R);
 end);
+
+###########################################################
+## n is an integer and S a numerical set
+## n * S =S+..+S n times, with n a positive integer
+##########
+InstallOtherMethod( \*, "for a non negative integer and an ideal of a numerical semigroup", true,
+        [IsInt and IsMultiplicativeElement,IsNumericalSet], 999999990,
+function( n,S)
+  local i, SS;
+    if n<0 then
+        Error("The arguments must be a positive integer and a numerical set.");
+    fi;
+  if n=1 then
+        return S;
+  fi;
+  SS:=S;
+  for i in [1..n-1] do
+      SS := SS+S;
+  od;
+  return SS;
+end);
