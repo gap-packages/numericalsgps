@@ -39,9 +39,14 @@ jobs:
         with:
           gap-version: ${{ matrix.gap-version }}
       - name: "Install NormalizInterface"
-        uses: gap-actions/install-pkg@v1
-        with:
-          packages: gap-packages/NormalizInterface@devel
+        run: |
+          cd $GAPROOT/pkg
+          rm -rf normalizinterface
+          git clone https://github.com/gap-packages/NormalizInterface
+          cd NormalizInterface
+          ./autogen.sh
+          ./configure --with-normaliz=/usr/share
+          make -j$nproc
       - uses: gap-actions/build-pkg@v2
       - uses: gap-actions/run-pkg-tests@v4
       - uses: gap-actions/run-pkg-tests@v4
