@@ -14,8 +14,8 @@ else
 fi;
 
 if NumSgpsUseSingular()=true and
-  Filename(DirectoriesSystemPrograms(),sing_exec)<>fail and 
-  IsExecutableFile(Filename(DirectoriesSystemPrograms(),sing_exec)) then
+  Filename(DirectoriesSystemPrograms(),"Singular")<>fail and
+  IsExecutableFile(Filename(DirectoriesSystemPrograms(),"Singular")) then
     Print("Testing with Singular\n");
     passed:=passed and TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst-normaliz" ),
       rec(testOptions := rec(compareFunction := "uptowhitespace") ) );
