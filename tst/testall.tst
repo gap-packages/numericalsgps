@@ -2830,20 +2830,6 @@ y^24-8*x^2*y^21+28*x^4*y^18-56*x^6*y^15-4*x*y^20+70*x^8*y^12+24*x^3*y^17-56*x^\
 gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");
 [ [ 24, 16, 28, 7 ], [ y, y^3-x^2, y^6-2*x^2*y^3+x^4-x*y^2 ] ]
 
-# NEEDS singular
-# gap> x:=X(Rationals,"x");; y:=X(Rationals,"y");;
-# gap> f:= y^4-2*x^3*y^2-4*x^5*y+x^6-x^7;
-# -x^7+x^6-4*x^5*y-2*x^3*y^2+y^4
-# gap> SemigroupOfValuesOfPlaneCurve(f);
-# <Numerical semigroup with 3 generators>
-# gap> MinimalGenerators(last);
-# [ 4, 6, 13 ]
-# gap> f:=(y^4-2*x^3*y^2-4*x^5*y+x^6-x^7)*(y^2-x^3);;
-# gap> SemigroupOfValuesOfPlaneCurve(f);
-# <Good semigroup>
-# gap> MinimalGenerators(last);
-# [ [ 4, 2 ], [ 6, 3 ], [ 13, 15 ], [ 29, 13 ] ]
-
 gap> x:=Indeterminate(Rationals,"x");;
 gap> SemigroupOfValuesOfCurve_Local([x^4,x^6+x^7,x^13]);
 <Numerical semigroup with 4 generators>
