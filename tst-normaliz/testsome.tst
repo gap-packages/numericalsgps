@@ -878,6 +878,12 @@ gap> TameDegree(a);
 gap> TameDegreeOfAffineSemigroup(a);
 2
 
+gap> s1 := AffineSemigroup("equations",[[[-2,1]],[3]]);;
+gap> TameDegreeOfAffineSemigroup(s1);
+3
+gap> OmegaPrimalityOfElementInAffineSemigroup([0,3],s1);
+3
+
 gap> a:=AffineSemigroup([2,0],[0,2],[1,1]);;
 gap> OmegaPrimality([5,5],a);
 6
