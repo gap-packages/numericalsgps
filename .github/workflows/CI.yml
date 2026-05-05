@@ -33,9 +33,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+      - name: 'Install additional dependencies'
+        run: sudo apt-get install 4ti2 libnormaliz-dev singular
       - uses: gap-actions/setup-gap@v3
         with:
           gap-version: ${{ matrix.gap-version }}
+      - name: "Install NormalizInterface"
+        uses: gap-actions/install-pkg@v1
+        with:
+          packages: gap-packages/NormalizInterface@devel
       - uses: gap-actions/build-pkg@v2
       - uses: gap-actions/run-pkg-tests@v4
       - uses: gap-actions/run-pkg-tests@v4
