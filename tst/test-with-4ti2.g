@@ -8,9 +8,9 @@ if not NumSgpsUse4ti2() then
     QUIT_GAP(fail);
 fi;
 
-TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst" ),
+TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst/4ti2" ),
   rec(exitGAP     := true,
-      exclude     := [ "singular.tst" ],
+      # exclude     := [ "singular.tst" ],
       testOptions := rec(compareFunction := "uptowhitespace") ) );
 
 FORCE_QUIT_GAP(1); # if we ever get here, there was an error

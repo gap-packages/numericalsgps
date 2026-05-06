@@ -8,7 +8,7 @@ if not NumSgpsUseSingular() then
     QUIT_GAP(fail);
 fi;
 
-TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst" ),
+TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst/singular" ),
   rec(exitGAP     := true,
       #exclude     := [ "singular.tst" ],
       testOptions := rec(compareFunction := "uptowhitespace") ) );
