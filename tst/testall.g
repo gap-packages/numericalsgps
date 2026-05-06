@@ -14,6 +14,13 @@ else
   Print("Normaliz not available\n");
 fi;
 
+if NumSgpsUse4ti2()=true then
+    Print("Testing with 4ti2\n");
+    passed:=passed and TestDirectory(tstdir2, rec(testOptions := rec(compareFunction := "uptowhitespace") ) );
+else
+  Print("4ti2 not available\n");
+fi;
+
 if NumSgpsUseSingular()=true and
   Filename(DirectoriesSystemPrograms(),"Singular")<>fail and
   IsExecutableFile(Filename(DirectoriesSystemPrograms(),"Singular")) then
@@ -25,12 +32,6 @@ else
 fi;
 
 
-if NumSgpsUse4ti2()=true then
-    Print("Testing with 4ti2\n");
-    passed:=passed and TestDirectory(tstdir2, rec(testOptions := rec(compareFunction := "uptowhitespace") ) );
-else
-  Print("4ti2 not available\n");
-fi;
 
 
 FORCE_QUIT_GAP(passed); 

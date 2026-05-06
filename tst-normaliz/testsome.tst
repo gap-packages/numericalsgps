@@ -34,6 +34,10 @@ gap> LoadPackage("numericalsgps",false);
 true
 
 
+gap> s:=NumericalSemigroup(6,9,20);;
+gap> AperyList(s);
+[ 0, 49, 20, 9, 40, 29 ]
+
 gap> a := AffineSemigroupByGenerators([5,3,1],[2,7,4],[3,1,5]);
 <Affine semigroup in 3 dimensional space, with 3 generators>
 gap> MinimalPresentationOfAffineSemigroup(a);

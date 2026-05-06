@@ -2961,6 +2961,12 @@ true
 gap> [ 3, 0, 0, 4, 1 ] in s;
 false
 
+gap> s:=AffineSemigroupByPMInequality([0, 1, 1, 0], 3, [1, 0, -2, -3]);
+<Affine semigroup>
+gap> MinimalGenerators(s);
+[ [ 0, 3, 0, 0 ], [ 1, 0, 0, 0 ], [ 1, 1, 0, 0 ], [ 2, 2, 1, 0 ],
+  [ 3, 0, 0, 1 ], [ 3, 0, 1, 0 ], [ 4, 1, 2, 0 ], [ 6, 0, 3, 0 ] ]
+
 gap> gaps := [[1,0,0,0],[1,1,0,0],[2,0,0,0],[2,1,0,0],[5,0,0,0]];;
 gap> a1 := AffineSemigroup("gaps", gaps );
 <Affine semigroup>
