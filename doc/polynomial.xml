@@ -295,8 +295,8 @@ gap> MinimalGenerators(last);
 gap> f:=(y^4-2*x^3*y^2-4*x^5*y+x^6-x^7)*(y^2-x^3);;
 gap> SemigroupOfValuesOfPlaneCurve(f);
 <Good semigroup>
-gap> MinimalGenerators(last);
-[ [ 4, 2 ], [ 6, 3 ], [ 13, 15 ], [ 29, 13 ] ]
+gap> MinimalGoodGenerators(last);
+[ [ 2, 4 ], [ 3, 6 ], [ 10, 13 ], [ 11, 13 ], [ 13, 29 ], [ 15, 13 ] ]
 ]]></Example>
          </Description>
     </ManSection>
