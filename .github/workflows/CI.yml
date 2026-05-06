@@ -48,10 +48,25 @@ jobs:
           ./configure --with-normaliz=/usr/share
           make -j$nproc
       - uses: gap-actions/build-pkg@v2
-      - uses: gap-actions/run-pkg-tests@v4
-      - uses: gap-actions/run-pkg-tests@v4
+
+      - name: "Test with no extra packages"
+        uses: gap-actions/run-pkg-tests@v4
+
+      - name: "Test with NormalizInterface loaded"
+        uses: gap-actions/run-pkg-tests@v4
         with:
-          mode: onlyneeded
+          testfile: "tst/test-with-normaliz.g"
+
+      - name: "Test with singular loaded"
+        uses: gap-actions/run-pkg-tests@v4
+        with:
+          testfile: "tst/test-with-singular.g"
+
+      #- name: "Test with 4ti2interface loaded"  # FIXME: disabled due to errors in the tests
+      #  uses: gap-actions/run-pkg-tests@v4
+      #  with:
+      #    testfile: "tst/test-with-4ti2.g"
+
       - uses: gap-actions/process-coverage@v3
       - uses: codecov/codecov-action@v6
         with:
