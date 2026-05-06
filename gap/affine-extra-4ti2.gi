@@ -149,20 +149,22 @@ InstallOtherMethod(HilbertBasisOfSystemOfHomogeneousInequalities,
     sign:=[List(l[1],_->1)];
     rel:=[List(l[1],_->">")];
     #Print(mat,"\n");
-    4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
-    4ti2Interface_Write_Matrix_To_File( sign, Concatenation( filename, ".sign" ) );
-    4ti2Interface_Write_Matrix_To_File( rel, Concatenation( filename, ".rel" ) );
-    exec := IO_FindExecutable( "zsolve" );
-    if exec=fail then
-        exec := IO_FindExecutable( "4ti2-zsolve" );
-    fi;
-    if exec=fail then
-        Error("Sorry, I could not find zsolve (4ti2)");
-    fi;
-    filestream := IO_Popen2( exec, [ filename ]);
-    while IO_ReadLine( filestream.stdout ) <> "" do od;
-    matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zhom" ) );
-    return Set(matrix);
+    return Set(4ti2Interface_zsolve_equalities_and_inequalities_in_positive_orthant([],[],mat,List(mat,_->0))[2]);
+    # old version 4ti2interface
+    # 4ti2Interface_Write_Matrix_To_File( mat, Concatenation( filename, ".mat" ) );
+    # 4ti2Interface_Write_Matrix_To_File( sign, Concatenation( filename, ".sign" ) );
+    # 4ti2Interface_Write_Matrix_To_File( rel, Concatenation( filename, ".rel" ) );
+    # exec := IO_FindExecutable( "zsolve" );
+    # if exec=fail then
+    #     exec := IO_FindExecutable( "4ti2-zsolve" );
+    # fi;
+    # if exec=fail then
+    #     Error("Sorry, I could not find zsolve (4ti2)");
+    # fi;
+    # filestream := IO_Popen2( exec, [ filename ]);
+    # while IO_ReadLine( filestream.stdout ) <> "" do od;
+    # matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zhom" ) );
+    # return Set(matrix);
 
 end);
 
@@ -203,7 +205,7 @@ InstallOtherMethod(FactorizationsVectorWRTList,
     filestream := IO_Popen2( exec, [ filename ]);
     while IO_ReadLine( filestream.stdout ) <> "" do od;
     matrix := 4ti2Interface_Read_Matrix_From_File( Concatenation( filename, ".zinhom" ) );
-    return matrix;
+    return Set(matrix);
 
 end);
 
