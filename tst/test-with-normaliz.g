@@ -3,6 +3,11 @@ if LoadPackage( "NumericalSgps" ) = fail  then
     QUIT_GAP(fail);
 fi;
 
+if not NumSgpsUseNormaliz() then
+    Print("Error, could not enable normaliz support in NumericalSgps\n");
+    QUIT_GAP(fail);
+fi;
+
 TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst" ),
   rec(exitGAP     := true,
       exclude     := [ "singular.tst" ],

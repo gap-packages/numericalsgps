@@ -3,6 +3,11 @@ if LoadPackage( "NumericalSgps" ) = fail  then
     QUIT_GAP(fail);
 fi;
 
+if not NumSgpsUse4ti2() then
+    Print("Error, could not enable 4ti2 support in NumericalSgps\n");
+    QUIT_GAP(fail);
+fi;
+
 TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst" ),
   rec(exitGAP     := true,
       exclude     := [ "singular.tst" ],
