@@ -24,10 +24,7 @@ else
 fi;
 
 
-if NumSgpsUse4ti2()=true  and  
-  Filename(DirectoriesSystemPrograms(),"graver")<>fail and 
-  IsExecutableFile(Filename(DirectoriesSystemPrograms(),"graver"))
-  then
+if NumSgpsUse4ti2()=true then
     Print("Testing with 4ti2\n");
     passed:=passed and TestDirectory(DirectoriesPackageLibrary( "numericalsgps", "tst-normaliz" ),
       rec(testOptions := rec(compareFunction := "uptowhitespace") ) );

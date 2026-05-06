@@ -70,6 +70,9 @@ gap> [ 1, 1 ] in a;
 false
 gap> Gaps(a);
 [ [ 1, 0 ], [ 3, 0 ], [ 1, 1 ] ]
+gap> Generators(a);
+[ [ 0, 1 ], [ 1, 2 ], [ 2, 0 ], [ 3, 1 ], [ 5, 0 ] ]
+
 
 # MinimalGenerators
 gap> a:=AffineSemigroupByEquations([[1,-1]],[]);
