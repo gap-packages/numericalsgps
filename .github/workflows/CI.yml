@@ -62,10 +62,10 @@ jobs:
         with:
           testfile: "tst/test-with-singular.g"
 
-      #- name: "Test with 4ti2interface loaded"  # FIXME: disabled due to errors in the tests
-      #  uses: gap-actions/run-pkg-tests@v4
-      #  with:
-      #    testfile: "tst/test-with-4ti2.g"
+      - name: "Test with 4ti2interface loaded"  # FIXME: disabled due to errors in the tests
+        uses: gap-actions/run-pkg-tests@v4
+        with:
+          testfile: "tst/test-with-4ti2.g"
 
       - uses: gap-actions/process-coverage@v3
       - uses: codecov/codecov-action@v6
