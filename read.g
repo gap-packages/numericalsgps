@@ -66,8 +66,7 @@ ReadPackage( "numericalsgps", "gap/numset.gi" );
 ##
 
 if NumSgpsCanUseNI then
-    ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
-    ReadPackage("numericalsgps", "gap/ideals-extra-ni.gi");
+    ReadPackage("numericalsgps", "gap/normaliz-extension.gi");
     Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");
 fi;
 if NumSgpsCanUse4ti2 then
@@ -93,9 +92,7 @@ if NumSgpsCanUseSI then
     NumSgpsWarnUseSingular:=false;
 else
     if NumSgpsCanUseSingular then
-        ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
-        ReadPackage( "numericalsgps", "gap/polynomials-extra-s.gd" );
-        ReadPackage( "numericalsgps", "gap/polynomials-extra-s.gi" );
+        ReadPackage("numericalsgps", "gap/singular-extension.gi");
         Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
         #GBASIS:= SINGULARGBASIS;
         #if NumSgpsCanUse4ti2 then
