@@ -51,6 +51,12 @@ NumSgpsCanUse4ti2:=false;
 NumSgpsCanUse4ti2gap:=false;
 # NumSgpsCanUseGradedModules:=false;
 
+###
+# handling extensions with optional packages
+###
+NumSgpsSingularExtensionLoaded:=false;
+NumSgpsNormalizExtensionLoaded:=false;
+NumSgps4ti2ExtensionLoaded:=false;
 
 ReadPackage( "numericalsgps", "gap/affine-def.gd" );
 ReadPackage( "numericalsgps", "gap/affine.gd" );

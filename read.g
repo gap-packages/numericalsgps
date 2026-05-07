@@ -70,7 +70,7 @@ if NumSgpsCanUseNI then
     Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");
 fi;
 if NumSgpsCanUse4ti2 then
-    ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
+    ReadPackage("numericalsgps", "gap/4ti2-extension.gi");
     #ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2i.gi");
     Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2Interface)");
 fi;
