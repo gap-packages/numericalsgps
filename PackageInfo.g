@@ -250,6 +250,21 @@ Dependencies := rec(
 
 ),
 
+Extensions := [
+  rec(
+    needed := [ ["NormalizInterface", "1.1"] ],
+    filename := "gap/normaliz-extension.gi",
+  ),
+  rec(
+    needed := [ ["singular", "2023.02.09"] ],
+    filename := "gap/singular-extension.gi",
+  ),
+  rec(
+    needed := [ ["4ti2Interface", "2024.11-01"] ],
+    filename := "gap/4ti2-extension.gi",
+  )
+],
+
 AvailabilityTest := ReturnTrue,
 BannerString := Concatenation(
   "----------------------------------------------------------------\n",

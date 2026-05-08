@@ -66,14 +66,13 @@ ReadPackage( "numericalsgps", "gap/numset.gi" );
 ##
 
 if NumSgpsCanUseNI then
-    ReadPackage("numericalsgps", "gap/affine-extra-ni.gi");
-    ReadPackage("numericalsgps", "gap/ideals-extra-ni.gi");
-    Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");
+    ReadPackage("numericalsgps", "gap/normaliz-extension.gi");
+    # Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");
 fi;
 if NumSgpsCanUse4ti2 then
-    ReadPackage("numericalsgps", "gap/affine-extra-4ti2.gi");
+    ReadPackage("numericalsgps", "gap/4ti2-extension.gi");
     #ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2i.gi");
-    Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2Interface)");
+    # Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2Interface)");
 fi;
 if NumSgpsCanUse4ti2gap then
     ReadPackage("numericalsgps", "gap/affine-extra-4ti2gap.gi");
@@ -93,10 +92,8 @@ if NumSgpsCanUseSI then
     NumSgpsWarnUseSingular:=false;
 else
     if NumSgpsCanUseSingular then
-        ReadPackage("numericalsgps", "gap/affine-extra-s.gi");
-        ReadPackage( "numericalsgps", "gap/polynomials-extra-s.gd" );
-        ReadPackage( "numericalsgps", "gap/polynomials-extra-s.gi" );
-        Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
+        ReadPackage("numericalsgps", "gap/singular-extension.gi");
+        # Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
         #GBASIS:= SINGULARGBASIS;
         #if NumSgpsCanUse4ti2 then
         #  ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
