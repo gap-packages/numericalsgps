@@ -1518,7 +1518,7 @@ InstallGlobalFunction(NumSgpsUseNormaliz, function()
         NumSgpsCanUseNI:=true;
         return true;
     else
-        return fail;
+        return false;
     fi;
 
 end);
@@ -1532,7 +1532,7 @@ end);
 InstallGlobalFunction(NumSgpsUseSingular, function()
     if IsPackageMarkedForLoading("SingularInterface","0.0") then
         Print("SingularInterface is already loaded and it is incompatible with Singular.\n");
-        return fail;
+        return false;
     fi;
 
     if NumSgpsCanUseSingular then
@@ -1543,7 +1543,7 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
         ReadPackage("numericalsgps", "gap/singular-extension.gi");
         return true;
     else
-        return fail;
+        return false;
     fi;
 
 end);
@@ -1556,7 +1556,7 @@ end);
 InstallGlobalFunction(NumSgpsUseSingularInterface, function()
     if IsPackageMarkedForLoading("Singular","0.0") then
         Print("Singular is already loaded and it is incompatible with SingularInterface.\n");
-        return fail;
+        return false;
     fi;
 
     if LoadPackage("SingularInterface")=true then
@@ -1564,7 +1564,7 @@ InstallGlobalFunction(NumSgpsUseSingularInterface, function()
         NumSgpsCanUseSI:=true;
         return true;
     else
-        return fail;
+        return false;
     fi;
 
 end);
@@ -1584,7 +1584,7 @@ InstallGlobalFunction(NumSgpsUse4ti2, function()
         NumSgpsCanUse4ti2:=true;
         return true;
     else
-        return fail;
+        return false;
     fi;
 
 end);
@@ -1601,7 +1601,7 @@ InstallGlobalFunction(NumSgpsUse4ti2gap, function()
         NumSgpsCanUse4ti2gap:=true;
         return true;
     else
-        return fail;
+        return false;
     fi;
 
 end);
@@ -1617,6 +1617,6 @@ end);
 #         NumSgpsCanUseGradedModules:=true;
 #         return true;
 #     else
-#         return fail;
+#         return false;
 #     fi;
 # end);
