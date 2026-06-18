@@ -325,6 +325,27 @@ InstallMethod(IsIntegralIdealOfNumericalSemigroup,
      return IsSubset(s,MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I));
 end);
 
+#############################################################################
+##
+#o  AllIntegralIdeals(s)
+##
+##  Returns the set of all integral ideals of the numerical semigroup s.
+#############################################################################
+InstallMethod(AllIntegralIdeals,
+  "Returns the set of all integral ideals of the numerical semigroup s", [IsNumericalSemigroup],
+  function(S)
+    local sm, c, m, smext, ac,cand;
+
+	sm:=SmallElements(S);
+	c:=Conductor(S);
+	m:=Multiplicity(S);
+	smext:=Union(sm, [c..c+m-1]);
+	ac:=Difference(AntichainsOfNumericalSemigroup(S,smext), [[]]);
+	cand:=Set(ac, a -> a + S);
+
+	return Filtered(cand, i -> Conductor(i)<=c);
+end);
+
 
 #############################################################################
 ##

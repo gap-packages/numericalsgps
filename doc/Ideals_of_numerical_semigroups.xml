@@ -149,6 +149,21 @@ true
                 </ManSection>
 
 
+<ManSection>
+    <Oper Arg="S" Name="AllIntegralIdeals"></Oper>
+    <Description>
+        <A>S</A> is a numerical semigroup; outputs the set of all integral ideals of <A>S</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5,7);;
+gap> Set(AllIntegralIdeals(s),SmallElements);
+[ [ 0, 4, 5, 7 ], [ 4, 5, 7 ], [ 4, 7 ], [ 5, 7 ], [ 7 ] ]
+]]></Example>
+    </Description>
+</ManSection>
+
+
+
 
     <ManSection>
 	    <Oper Arg="X,S" Name="IsComplementOfIntegralIdeal"></Oper>

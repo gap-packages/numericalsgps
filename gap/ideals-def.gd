@@ -99,6 +99,15 @@ DeclareSynonym("IsIntegralIdealOfNumericalSemigroup", IsIntegral);
 
 #############################################################################
 ##
+#o  AllIntegralIdeals(s)
+##
+##  Returns the set of all integral ideals of the numerical semigroup s.
+#############################################################################
+DeclareOperation("AllIntegralIdeals",[IsNumericalSemigroup]);
+
+
+#############################################################################
+##
 #O  IsComplementOfIntegralIdeal(X,S)
 #O  IsComplementOfIntegralIdeal(S,X)
 ##

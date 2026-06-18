@@ -1453,6 +1453,10 @@ false
 gap> IsIntegralIdealOfNumericalSemigroup(10+s);
 true
 
+gap> s:=NumericalSemigroup(4,5,7);;
+gap> Set(AllIntegralIdeals(s),SmallElements);
+[ [ 0, 4, 5, 7 ], [ 4, 5, 7 ], [ 4, 7 ], [ 5, 7 ], [ 7 ] ]
+
 gap> s:=NumericalSemigroup(10,11,15,19);;
 gap> i:=[20,21,25]+s;;
 gap> d:=Difference(0+s,i);;
