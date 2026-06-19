@@ -1454,8 +1454,16 @@ gap> IsIntegralIdealOfNumericalSemigroup(10+s);
 true
 
 gap> s:=NumericalSemigroup(4,5,7);;
-gap> Set(AllIntegralIdeals(s),SmallElements);
+gap> Set(AllIntegralIdealsContainingConductor(s),SmallElements);
 [ [ 0, 4, 5, 7 ], [ 4, 5, 7 ], [ 4, 7 ], [ 5, 7 ], [ 7 ] ]
+
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> m:=MaximalIdeal(s);;
+gap> IsUlrich(m);
+true
+gap> i:=IdealOfElementsGreaterThanOrEqualTo(5,s);;
+gap> IsUlrich(i);
+false
 
 gap> s:=NumericalSemigroup(10,11,15,19);;
 gap> i:=[20,21,25]+s;;

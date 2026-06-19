@@ -4,7 +4,8 @@
 
 #======
 1.4.0 -> 1.4.1
-- Added AllIntegralIdeals for a numerical semigroup
+- Added IsUlrich for ideals of numerical semigroups
+- Added AllIntegralIdealsContainingConductor for a numerical semigroup
 - Modify StarClosureOfIdealOfNumericalSemigroup  to accept optional second argument
 - Added IsReflexive for ideals of numerical semigroups
 - Added IdealOfElementsGreaterThanOrEqualTo for numerical semigroups
