@@ -663,12 +663,30 @@ gap> Length(os);
     </Description>
 </ManSection>
 
-<ManSection>
+<!--<ManSection>
     <Prop Name="IsUlrich" Label="for ideals of a numerical semigroup" Arg="I"></Prop>
     <Description>
         <A>I</A> is an ideal of a numerical semigroup <M>S</M>; checks if <A>I</A> is Ulrich, that is, if <A>I</A> is principal or it is stable, integral, proper, and <M><A>I</A>\setminus 2<A>I</A></M> is de disjoint union of <M>(S\setminus<A>I</A>)+x</M> with <M>x</M> running over the minimal generators of <A>I</A>.
 
     <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> m:=MaximalIdeal(s);;
+gap> IsUlrich(m);
+true
+gap> i:=IdealOfElementsGreaterThanOrEqualTo(5,s);;
+gap> IsUlrich(i);
+false
+]]></Example>
+    </Description>
+</ManSection>-->
+
+
+<ManSection>
+    <Prop Arg="I" Name="IsUlrich"></Prop>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup <M>S</M>; checks if <A>I</A> is Ulrich, that is, if <A>I</A> is principal or it is stable, integral, proper, and <M><A>I</A>\setminus 2<A>I</A></M> is de disjoint union of <M>(S\setminus<A>I</A>)+x</M> with <M>x</M> running over the minimal generators of <A>I</A>.
+
+                        <Example><![CDATA[
 gap> s:=NumericalSemigroup(3,5,7);;
 gap> m:=MaximalIdeal(s);;
 gap> IsUlrich(m);
