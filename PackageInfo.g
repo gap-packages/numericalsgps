@@ -242,7 +242,7 @@ PackageDoc := rec(
 
 
 Dependencies := rec(
-  GAP := "4.7",
+  GAP := "4.12",
   NeededOtherPackages := [],
 #  SuggestedOtherPackages := [["singular","normaliz"]],
   SuggestedOtherPackages := [],
