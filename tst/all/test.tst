@@ -2,8 +2,7 @@
 ##
 #A  testall.tst        NumericalSgps package                   Manuel Delgado
 ##                                                    Pedro A. Garcia-Sanchez
-##  (based on the cooresponding file of the 'example' package,
-##   by Alexander Konovalov)
+##  (based on the corresponding file of the 'example' package)
 ##
 ##  To create a test file, place GAP prompts, input and output exactly as
 ##  they must appear in the GAP session. Do not remove lines containing
