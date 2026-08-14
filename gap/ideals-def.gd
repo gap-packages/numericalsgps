@@ -99,6 +99,15 @@ DeclareSynonym("IsIntegralIdealOfNumericalSemigroup", IsIntegral);
 
 #############################################################################
 ##
+#o  AllIntegralIdealsContainingConductor(s)
+##
+##  Returns the set of all integral ideals of the numerical semigroup s.
+#############################################################################
+DeclareOperation("AllIntegralIdealsContainingConductor",[IsNumericalSemigroup]);
+
+
+#############################################################################
+##
 #O  IsComplementOfIntegralIdeal(X,S)
 #O  IsComplementOfIntegralIdeal(S,X)
 ##
@@ -604,3 +613,12 @@ DeclareOperation("AsNumericalSemigroup",[IsIdealOfNumericalSemigroup]);
 ##  Detects if the ideal I is stable, that is, if I+I=min(I)+I
 ###########################################################################
 DeclareProperty("IsStable",IsIdealOfNumericalSemigroup);
+
+###########################################################################
+##
+#P IsUlrich(I)
+##  Detects if the ideal I is Ulrich, that is, if I is stable, integral
+## and I\2I is de disjoint union of (S\I)+x with x running over the minimal 
+## generators of I
+###########################################################################
+DeclareProperty("IsUlrich",IsIdealOfNumericalSemigroup);

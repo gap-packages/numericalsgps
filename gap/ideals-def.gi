@@ -325,6 +325,29 @@ InstallMethod(IsIntegralIdealOfNumericalSemigroup,
      return IsSubset(s,MinimalGeneratingSystemOfIdealOfNumericalSemigroup(I));
 end);
 
+#############################################################################
+##
+#o  AllIntegralIdealsContainingConductor(s)
+##
+##  Returns the set of all integral ideals of the numerical semigroup s.
+#############################################################################
+InstallMethod(AllIntegralIdealsContainingConductor,
+  "Returns the set of all integral ideals of the numerical semigroup s", [IsNumericalSemigroup],
+  function(S)
+    local sm, c, m, smext, ac,cand,i;
+
+	sm:=SmallElements(S);
+	c:=Conductor(S);
+	m:=Multiplicity(S);
+	smext:=Union(sm, [c..c+m-1]);
+	ac:=Difference(AntichainsOfNumericalSemigroup(S,smext), [[]]);
+	cand:=Filtered(Set(ac, a -> a + S), i->Conductor(i)<=c);
+    for i in cand do
+        Setter(IsIntegral)(i,true);
+    od;
+	return cand;
+end);
+
 
 #############################################################################
 ##
@@ -1735,4 +1758,25 @@ InstallMethod(IsStable,
   "Detects if the ideal is stable", [IsIdealOfNumericalSemigroup],
   function(I)
       return I+I = Minimum(I)+I;
+end);
+
+###########################################################################
+##
+#P IsUlrich(I)
+## Detects if the ideal I is Ulrich, that is, if I principal or it is 
+## stable, integral, proper, and I\2I is de disjoint union of (S\I)+x 
+## with x running over the minimal generators of I
+###########################################################################
+InstallMethod(IsUlrich,
+  "Detects if the ideal is Ulrich", [IsIdealOfNumericalSemigroup],
+  function(i)
+    local s;
+    if Length(MinimalGenerators(i))=1 then
+        return true;
+    fi;
+    s:=AmbientNumericalSemigroupOfIdeal(i);
+    if not(IsStable(i) and IsIntegral(i) and Minimum(i)<>0) then
+        return false;
+    fi;
+    return Minimum(i) = Length(Difference(0+s,i))*Length(MinimalGenerators(i));
 end);

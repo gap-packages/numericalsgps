@@ -149,6 +149,21 @@ true
                 </ManSection>
 
 
+<ManSection>
+    <Oper Arg="S" Name="AllIntegralIdealsContainingConductor"></Oper>
+    <Description>
+        <A>S</A> is a numerical semigroup; outputs the set of all integral ideals of <A>S</A> containing the conductor ideal of <A>S</A> (<M><A>S</A>-\mathbb{N}</M>).
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(4,5,7);;
+gap> Set(AllIntegralIdealsContainingConductor(s),SmallElements);
+[ [ 0, 4, 5, 7 ], [ 4, 5, 7 ], [ 4, 7 ], [ 5, 7 ], [ 7 ] ]
+]]></Example>
+    </Description>
+</ManSection>
+
+
+
 
     <ManSection>
 	    <Oper Arg="X,S" Name="IsComplementOfIntegralIdeal"></Oper>
@@ -647,6 +662,42 @@ gap> Length(os);
 ]]></Example>
     </Description>
 </ManSection>
+
+<!--<ManSection>
+    <Prop Name="IsUlrich" Label="for ideals of a numerical semigroup" Arg="I"></Prop>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup <M>S</M>; checks if <A>I</A> is Ulrich, that is, if <A>I</A> is principal or it is stable, integral, proper, and <M><A>I</A>\setminus 2<A>I</A></M> is de disjoint union of <M>(S\setminus<A>I</A>)+x</M> with <M>x</M> running over the minimal generators of <A>I</A>.
+
+    <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> m:=MaximalIdeal(s);;
+gap> IsUlrich(m);
+true
+gap> i:=IdealOfElementsGreaterThanOrEqualTo(5,s);;
+gap> IsUlrich(i);
+false
+]]></Example>
+    </Description>
+</ManSection>-->
+
+
+<ManSection>
+    <Prop Arg="I" Name="IsUlrich"></Prop>
+    <Description>
+        <A>I</A> is an ideal of a numerical semigroup <M>S</M>; checks if <A>I</A> is Ulrich, that is, if <A>I</A> is principal or it is stable, integral, proper, and <M><A>I</A>\setminus 2<A>I</A></M> is de disjoint union of <M>(S\setminus<A>I</A>)+x</M> with <M>x</M> running over the minimal generators of <A>I</A>.
+
+                        <Example><![CDATA[
+gap> s:=NumericalSemigroup(3,5,7);;
+gap> m:=MaximalIdeal(s);;
+gap> IsUlrich(m);
+true
+gap> i:=IdealOfElementsGreaterThanOrEqualTo(5,s);;
+gap> IsUlrich(i);
+false
+]]></Example>
+    </Description>
+</ManSection>
+
 
 
 <ManSection>
