@@ -60,29 +60,10 @@ You can get more info by typing `Cite("{{ site.data.package.name }}");` in the g
 
 {% endif %}
 
+
 {% if site.github.issues_url %}
 ## Feedback
 
 For bug reports, feature requests and suggestions, please use the
 [issue tracker]({{site.github.issues_url}}).
 {% endif %}
-
-
-## Features
-
-The features of this package include
-
-- defining numerical semigroups;
-- computing several properties of numerical semigroups, namely: multiplicity, Frobenius number, (minimal) system of generators, Apéry set, gaps, fundamental gaps, etc.;
-- perform several operations on numerical semigroups and ideals, namely: intersection, quotient by an integer, decompose into irreducible semigroups, add a special gap, ...;
-- computing and testing membership to relevant families of numerical semigroups.
-
-There is a manual in the sub-directory `doc` written using the GAP package
-gapdoc which describes the available functions in detail. The pdf, html
-versions of the manual are also available there.
-
-
-## Installation
-
-This package consists only of GAP code, so for its installation please refer to the [GAP manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html#X82473E4B8756C6CD).
-

@@ -1,257 +1,103 @@
 #############################################################################
+##  
+##  Demo PackageInfo.g for the GitHubPagesForGAP
 ##
-##  PackageInfo.g for the package `NumericalSgps'              Manuel Delgado
-##                                                    Pedro A. Garcia-Sanchez
 
 SetPackageInfo( rec(
 
-PackageName := "NumericalSgps",
-Subtitle := "A package for numerical semigroups",
-Version := "1.4.0",
-Date := "30/08/2024", # dd/mm/yyyy format
-License := "GPL-2.0-or-later",
+PackageName := "GitHubPagesForGAP",
 
-##  Information about authors and maintainers.
+Subtitle := "A GitHub Pages generator for GAP packages",
+Version := "0.4",
+Date := "10/04/2025", # dd/mm/yyyy format
+License := "0BSD",
+
 Persons := [
- rec(
-    LastName      := "Delgado",
-    FirstNames    := "Manuel",
+  rec(
+    LastName      := "Horn",
+    FirstNames    := "Max",
     IsAuthor      := true,
     IsMaintainer  := true,
-    Email         := "mdelgado@fc.up.pt",
-    WWWHome       := "http://www.fc.up.pt/cmup/mdelgado/",
-    PostalAddress := Concatenation( [
-                   "Departamento de Matemática - Faculdade de Ciências\n",
-                   "Rua do Campo Alegre, 687\n",
-                   "Porto\n",
-                   "Portugal" ] ),
-    Place         := "Porto",
-    Institution   := "Faculdade de Ciências"
+    Email         := "mhorn@rptu.de",
+    WWWHome       := "https://www.quendi.de/math",
+    GitHubUsername:= "fingolfin",
+    PostalAddress := Concatenation(
+                       "Fachbereich Mathematik\n",
+                       "RPTU Kaiserslautern-Landau\n",
+                       "Gottlieb-Daimler-Straße 48\n",
+                       "67663 Kaiserslautern\n",
+                       "Germany" ),
+    Place         := "Kaiserslautern, Germany",
+    Institution   := "RPTU Kaiserslautern-Landau"
   ),
 
   rec(
-    LastName      := "Garcia-Sanchez",
-    FirstNames    := "Pedro A.",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "pedro@ugr.es",
-    WWWHome       := "http://www.ugr.es/~pedro/",
-    PostalAddress := Concatenation( [
-                       "Dpto. de Algebra  -  Universidad de Granada\n",
-                       "Spain\n" ] ),
-    Place         := "Granada",
-    Institution   := "Universidad de Granada"
-  ),
-  rec(
-    LastName      := "Morais",
-    FirstNames    := "Jose",
+    LastName      := "Thor",
+    FirstNames    := "A. U.",
     IsAuthor      := true,
     IsMaintainer  := false,
-    PostalAddress := "No address known"
-
+    #Email         := "author@example.com",
   ),
-# provide such a record for each author and/or maintainer ...
 
-rec(
-  LastName      := "Cisto",
-  FirstNames    := "Carmelo",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  #WWWHome := "No address known"
-),
-
-rec(
-  LastName      := "Heredia",
-  FirstNames    := "Benjamín Alarcón",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome := "https://github.com/baheredia"
-),
-
-
-rec(
-  LastName      := "García-García",
-  FirstNames    := "Juan Ignacio",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome := "https://directorio.uca.es/cau/directorio.do?persona=11122"
-),
-
-rec(
-  LastName      := "Gutsche",
-  FirstNames    := "Sebastian",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome := "http://wwwb.math.rwth-aachen.de/~gutsche/"
-),
-
-
-rec(
-  LastName      := "Herrera-Poyatos",
-  FirstNames    := "Andrés",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://github.com/andreshp"
-),
-
-rec(
-  LastName      := "Horn",
-  FirstNames    := "Max",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://www.quendi.de/math"
-),
-
-rec(
-  LastName      := "Martin Cruz",
-  FirstNames    := "Helena",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://github.com/helenahmc"
-),
-
-rec(
-  LastName      := "Maugeri",
-  FirstNames    := "Nicola",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  PostalAddress := "Università degli Studi di Catania"
-),
-
-rec(
-  LastName      := "Moreno Ávila",
-  FirstNames    := "Carlos Jesús",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  PostalAddress := "No address known"
-),
-
-rec(
-  LastName      := "Ojeda",
-  FirstNames    := "Ignacio",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "http://matematicas.unex.es/~ojedamc"
-),
-
-rec(
-  LastName      := "O'Neill",
-  FirstNames    := "Chris",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://www.math.ucdavis.edu/~coneill"
-),
-
-rec(
-  LastName      := "Sammartano",
-  FirstNames    := "Alessio",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://sites.google.com/site/alessiosammartano"
-),
-
-rec(
-  LastName      := "Sánchez-R. Navarro",
-  FirstNames    := "Alfredo",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://directorio.uca.es/cau/directorio.do?persona=12969"
-),
-
-rec(
-  LastName      := "Stokes",
-  FirstNames    := "Klara",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "http://www.his.se/en/about-us/Facts-and-figures/staff/Klara_Stokes"
-),
-
-rec(
-  LastName      := "Francesco",
-  FirstNames    := "Strazzanti",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  WWWHome       := "https://sites.google.com/site/francescostrazzanti"
-),
-
-rec(
-  LastName      := "Zito",
-  FirstNames    := "Giuseppe",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  PostalAddress := "Università degli Studi di Catania"
-),
-
-rec(
-  LastName      := "Angulo Rodríguez",
-  FirstNames    := "Jorge",
-  IsAuthor      := false,
-  IsMaintainer  := false,
-  PostalAddress := "Universidad de Valladolid"
-)
-
-
+  rec(
+    LastName      := "Itor",
+    FirstNames    := "Jan",
+    IsAuthor      := false,
+    IsMaintainer  := true,
+    #Email         := "janitor@example.com",
+  ),
 ],
 
-Status := "accepted",
-CommunicatedBy := "Leonard Soicher (QMUL)",
-AcceptDate := "05/2015",
+Status := "other",
 
+# The following are not strictly necessary in your own PackageInfo.g
+# (in the sense that update.g only looks at the usual fields
+# like PackageWWWHome, ArchiveURL etc.). But they are convenient
+# if you use exactly the scheme for your package website that we propose.
+GithubUser := "gap-system",
+GithubRepository := ~.PackageName,
+GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
 
-SourceRepository := rec(
-  Type := "git",
-  URL := "https://github.com/gap-packages/numericalsgps"
-),
-IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
-PackageWWWHome  := "https://gap-packages.github.io/numericalsgps",
-README_URL      := Concatenation( ~.PackageWWWHome, "/README.md" ),
-PackageInfoURL  := Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
-ArchiveURL      := Concatenation( ~.SourceRepository.URL,
-                                 "/releases/download/v", ~.Version,
-                                 "/", ~.PackageName, "-", ~.Version ),
-ArchiveFormats := ".tar.gz .zip",
+PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
+README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
+PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+# The following assumes you are using the Github releases system. If not, adjust
+# it accordingly.
+ArchiveURL     := Concatenation(~.GithubWWW,
+                    "/releases/download/v", ~.Version, "/",
+                    ~.GithubRepository, "-", ~.Version),
 
+ArchiveFormats := ".tar.gz .tar.bz2",
 
-
-AbstractHTML :=
-   "The <span class=\"pkgname\">NumericalSgps</span> package, is a package to compute with numerical semigroups.",
+AbstractHTML := 
+  "This is a pseudo package that contains no actual\
+  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
+  GAP packages that allows to quickly setup GitHub Pages.",
 
 PackageDoc := rec(
-  BookName  := "NumericalSgps",
+  BookName  := "GitHubPagesForGAP",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0_mj.html",
+  HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "NumericalSgps, a GAP package for numerical semigroups",
+  LongTitle := "A GitHub Pages generator for GAP packages",
 ),
 
-
+# The following dependencies are fake and for testing / demo purposes
 Dependencies := rec(
-  GAP := "4.7",
-  NeededOtherPackages := [],
-#  SuggestedOtherPackages := [["singular","normaliz"]],
-  SuggestedOtherPackages := [],
+  GAP := ">=4.8.1",
+  NeededOtherPackages := [
+    ["GAPDoc", ">= 1.2"],
+    ["IO", ">= 4.1"],
+  ],
+  SuggestedOtherPackages := [["orb", ">= 4.2"]],
   ExternalConditions := []
-
 ),
 
 AvailabilityTest := ReturnTrue,
-BannerString := Concatenation(
-  "----------------------------------------------------------------\n",
-  "Loading  NumericalSgps ", ~.Version, "\n",
-#  "by ", ~.Persons[1].FirstNames, " ", ~.Persons[1].LastName,
-#        " (", ~.Persons[1].WWWHome, ")\n",
-#  "   ", ~.Persons[2].FirstNames, " ", ~.Persons[2].LastName,"\n",
-#        " (", ~.Persons[2].WWWHome, ")\n",
-#  "   ", ~.Persons[3].FirstNames, " ", ~.Persons[3].LastName,
-#        " (", ~.Persons[3].WWWHome, ")\n",
-  "For help, type: ?NumericalSgps: \n",
-                   "To gain profit from other packages, please refer to chapter\n",
-                   "'External Packages' in the manual, or type: ?NumSgpsUse \n",           
-  "----------------------------------------------------------------\n" ),
 
-TestFile := "tst/testall.g",
-
-Keywords := ["Numerical Semigroups", "Affine semigroups", "Good semigroups"],
+Keywords := ["GitHub Pages", "GAP"]
 
 ));
+
+
