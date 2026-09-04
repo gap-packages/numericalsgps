@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (NumericalSgps) - Chapter 16: 
+		Dot functions
+	</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap16"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chap15.html">15</a>  <a href="chap16.html">16</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap15.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap16_mj.html">[MathJax on]</a></p>
+<p><a id="X7B8D661F79E957A6" name="X7B8D661F79E957A6"></a></p>
+<div class="ChapSects"><a href="chap16.html#X7B8D661F79E957A6">16 <span class="Heading">
+		Dot functions
+	</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap16.html#X7B8D661F79E957A6">16.1 <span class="Heading">
+      Dot functions
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X7FEF6EC77E489886">16.1-1 DotBinaryRelation</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X7F62870F8652EDE6">16.1-2 DotTreeOfGluingsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X7F43955582F472B6">16.1-3 DotOverSemigroupsNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X8195A2027B726448">16.1-4 DotRosalesGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X7EC75F477D4F8CC3">16.1-5 DotFactorizationGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X83F1423980D2AEA4">16.1-6 DotEliahouGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X81F579B783CF4363">16.1-7 SetDotNSEngine</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap16.html#X7D1999A88268979F">16.1-8 DotSplash</a></span>
+</div></div>
+</div>
+
+<h3>16 <span class="Heading">
+		Dot functions
+	</span></h3>
+
+<p><a id="X7B8D661F79E957A6" name="X7B8D661F79E957A6"></a></p>
+
+<h4>16.1 <span class="Heading">
+      Dot functions
+    </span></h4>
+
+<p>We provide several functions to translate graphs related to numerical and affine semigroups to the dot language. This can either be used with graphviz or any javascript library that interprets dot language. We give the alternative to use <code class="code">DotSplash</code> that uses viz.js.</p>
+
+<p><a id="X7FEF6EC77E489886" name="X7FEF6EC77E489886"></a></p>
+
+<h5>16.1-1 DotBinaryRelation</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotBinaryRelation</code>( <var class="Arg">br</var>[, <var class="Arg">opt</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">br</code> is a binary relation. Returns a GraphViz dot that represents the binary relation <code class="code">br</code>. The set of vertices of the resulting graph is the source of <code class="code">br</code>. Edges join those elements which are related with respect to <code class="code">br</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">br:=BinaryRelationByElements(Domain([1,2]), [DirectProductElement([1,2])]);</span>
+&lt;general mapping: &lt;object&gt; -&gt; &lt;object&gt; &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotBinaryRelation(br));</span>
+digraph  NSGraph{rankdir = TB; edge[dir=back];
+1 [label="1"];
+2 [label="2"];
+2 -&gt; 1;
+}
+</pre></div>
+
+<p>The argument <var class="Arg">opt</var> is optional and must be a record. It may include general options regarding the graph, edges and nodes. It may also include specific options for nodes (a function the depends on the node) or edges (a function in two variables to be applied to the nodes connected by the edge). The complete list of options is graph, edge, node (these are general), nodelabel, nodestyle, nodecolor, nodefillcolor, nodeshape, nodefontsize, nodefontcolor (these are for nodes), edgelabel, edgestyle, edgecolor, edgefontsize, edgefontcolor, arrowsize.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d6:=Domain(DivisorsInt(12));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rels6:=Filtered(Tuples(d6,2),a-&gt; a[2] mod a[1]=0);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r6:=BinaryRelationByElements(d6,List(rels6,Tuple));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r6:=HasseDiagramBinaryRelation(r6);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">style:=function ( x )</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    if IsPrimeInt(x) then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "filled";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    else</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "solid";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    return;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( x ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">color:=function ( x )</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    if x mod 2 = 1 then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "lightblue";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    else</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "orange";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    return;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( x ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">labele:=function(x,y)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    return y/x;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( x, y ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">stylee:=function(x,y)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    if y/x=2 then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "dashed";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    else</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "solid";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( x, y ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">colore:=function(x,y)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    if y/x&gt;2 then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "red";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    else</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">        return "black";</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">    fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">end;</span>
+function( x, y ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotBinaryRelation(r6, </span>
+      rec(graph:="rankdir=LR",
+          nodestyle:=style,
+          nodecolor:=color,
+          edgelabel:=labele,
+          edgestyle:=stylee,
+          edgecolor:=colore,
+          arrowsize:={x,y}-&gt;"0.2")));
+
+digraph NSGraph{
+graph [rankdir=LR]; edge [dir=back];
+1 [label="1" style="solid" color="lightblue" ];
+2 [label="2" style="filled" color="orange" ];
+3 [label="3" style="filled" color="lightblue" ];
+4 [label="4" style="solid" color="orange" ];
+5 [label="6" style="solid" color="orange" ];
+6 [label="12" style="solid" color="orange" ];
+2 -&gt; 1 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+3 -&gt; 1 [label="3" style="solid" color="red" arrowsize="0.2" ];
+4 -&gt; 2 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+5 -&gt; 2 [label="3" style="solid" color="red" arrowsize="0.2" ];
+5 -&gt; 3 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+6 -&gt; 4 [label="3" style="solid" color="red" arrowsize="0.2" ];
+6 -&gt; 5 [label="2" style="dashed" color="black" arrowsize="0.2" ];
+}
+</pre></div>
+
+<p><a id="X7F62870F8652EDE6" name="X7F62870F8652EDE6"></a></p>
+
+<h5>16.1-2 DotTreeOfGluingsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotTreeOfGluingsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. It outputs a tree (in dot) representing the many ways <code class="code">S</code> can be decomposed as a gluing of numerical semigroups (and goes recursively in the factors).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotOverSemigroupsNumericalSemigroup(s));</span>
+digraph  NSGraph{rankdir = TB; 
+0 [label="&lt; 4, 6, 9 &gt;"]; 
+0 [label="&lt; 4, 6, 9 &gt;", style=filled]; 
+1 [label="&lt; 4 &gt; + &lt; 6, 9 &gt;" , shape=box]; 
+2 [label="&lt; 1 &gt;", style=filled]; 
+3 [label="&lt; 2, 3 &gt;", style=filled]; 
+4 [label="&lt; 2 &gt; + &lt; 3 &gt;" , shape=box]; 
+5 [label="&lt; 1 &gt;", style=filled]; 
+6 [label="&lt; 1 &gt;", style=filled]; 
+7 [label="&lt; 4, 6 &gt; + &lt; 9 &gt;" , shape=box]; 
+8 [label="&lt; 2, 3 &gt;", style=filled]; 
+10 [label="&lt; 2 &gt; + &lt; 3 &gt;" , shape=box]; 
+11 [label="&lt; 1 &gt;", style=filled]; 
+12 [label="&lt; 1 &gt;", style=filled]; 
+9 [label="&lt; 1 &gt;", style=filled]; 
+0 -&gt; 1; 
+1 -&gt; 2; 
+1 -&gt; 3; 
+3 -&gt; 4; 
+4 -&gt; 5; 
+4 -&gt; 6; 
+0 -&gt; 7; 
+7 -&gt; 8; 
+7 -&gt; 9; 
+8 -&gt; 10; 
+10 -&gt; 11; 
+10 -&gt; 12; 
+}
+</pre></div>
+
+<p><br><center><img src="img/tree-dot.jpg"></center><br></p>
+
+<p><a id="X7F43955582F472B6" name="X7F43955582F472B6"></a></p>
+
+<h5>16.1-3 DotOverSemigroupsNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotOverSemigroupsNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. It outputs the Hasse diagram (in dot) of oversemigroups of <code class="code">S</code>. Nodes corresponding to irreducible semigroups are filled in gray (pseudo-symmetric in dark gray). Edges are labelled with the special gap added.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotOverSemigroupsNumericalSemigroup(s));</span>
+digraph  NSGraph{rankdir = TB; edge[dir=back]; node[shape=box,style=rounded]
+1 [label="&lt; 1 &gt;", style="rounded,filled"];
+2 [label="&lt; 2, 3 &gt;", style="rounded,filled"];
+3 [label="&lt; 2, 5 &gt;", style="rounded,filled"];
+4 [label="&lt; 2, 7 &gt;", style="rounded,filled"];
+5 [label="&lt; 2, 9 &gt;", style="rounded,filled"];
+6 [label="&lt; 3, 4, 5 &gt;", style="rounded,filled", fillcolor="darkgray"];
+7 [label="&lt; 3, 4 &gt;", style="rounded,filled"];
+8 [label="&lt; 4, 5, 6, 7 &gt;"];
+9 [label="&lt; 4, 5, 6 &gt;", style="rounded,filled"];
+10 [label="&lt; 4, 6, 7, 9 &gt;"];
+11 [label="&lt; 4, 6, 9, 11 &gt;"];
+12 [label="&lt; 4, 6, 9 &gt;", style="rounded,filled"];
+1 -&gt; 2 [label="1" fontsize=10];
+2 -&gt; 3 [label="3" fontsize=10];
+2 -&gt; 6 [label="2" fontsize=10];
+3 -&gt; 4 [label="5" fontsize=10];
+3 -&gt; 8 [label="2" fontsize=10];
+4 -&gt; 5 [label="7" fontsize=10];
+4 -&gt; 10 [label="2" fontsize=10];
+5 -&gt; 11 [label="2" fontsize=10];
+6 -&gt; 7 [label="5" fontsize=10];
+6 -&gt; 8 [label="3" fontsize=10];
+7 -&gt; 10 [label="3" fontsize=10];
+8 -&gt; 9 [label="7" fontsize=10];
+8 -&gt; 10 [label="5" fontsize=10];
+9 -&gt; 11 [label="5" fontsize=10];
+10 -&gt; 11 [label="7" fontsize=10];
+11 -&gt; 12 [label="11" fontsize=10];
+}
+</pre></div>
+
+<p><a id="X8195A2027B726448" name="X8195A2027B726448"></a></p>
+
+<h5>16.1-4 DotRosalesGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotRosalesGraph</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotRosalesGraph</code>( <var class="Arg">n</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is either numerical or an affine semigroup and <code class="code">n</code> is an element in <code class="code">S</code>. It outputs the graph associated to <code class="code">n</code> in <code class="code">S</code> (see <code class="func">GraphAssociatedToElementInNumericalSemigroup</code> (<a href="chap4.html#X81CC5A6C870377E1"><span class="RefLink">4.1-2</span></a>)).</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(4,6,9);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotRosalesGraph(15,s));</span>
+graph  NSGraph{
+1 [label="6"];
+2 [label="9"];
+2 -- 1;
+}
+</pre></div>
+
+<p><a id="X7EC75F477D4F8CC3" name="X7EC75F477D4F8CC3"></a></p>
+
+<h5>16.1-5 DotFactorizationGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotFactorizationGraph</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">f</code> is a set of factorizations. Returns the graph (in dot) of factorizations associated to <code class="code">f</code>: a complete graph whose vertices are the elements of <code class="code">f</code>. Edges are labelled with distances between the nodes they join. Kruskal algorithm is used to draw in red a spanning tree with minimal distances. Thus the catenary degree is reached in the edges of the tree.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=FactorizationsIntegerWRTList(20,[3,5,7]);</span>
+[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotFactorizationGraph(f));</span>
+graph  NSGraph{
+1 [label=" (5, 1, 0)"];
+2 [label=" (0, 4, 0)"];
+3 [label=" (1, 2, 1)"];
+4 [label=" (2, 0, 2)"];
+2 -- 3[label="2", color="red"];
+3 -- 4[label="2", color="red"];
+1 -- 3[label="4", color="red"];
+1 -- 4[label="4" ];
+2 -- 4[label="4" ];
+1 -- 2[label="5" ];
+}
+</pre></div>
+
+<p><a id="X83F1423980D2AEA4" name="X83F1423980D2AEA4"></a></p>
+
+<h5>16.1-6 DotEliahouGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotEliahouGraph</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">f</code> is a set of factorizations. Returns the Eliahou graph (in dot) of factorizations associated to <code class="code">f</code>: a graph whose vertices are the elements of <code class="code">f</code>, and there is an edge between two vertices if they have common support. Edges are labelled with distances between nodes they join.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f:=FactorizationsIntegerWRTList(20,[3,5,7]);</span>
+[ [ 5, 1, 0 ], [ 0, 4, 0 ], [ 1, 2, 1 ], [ 2, 0, 2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print(DotEliahouGraph(f));</span>
+graph  NSGraph{
+1 [label=" (5, 1, 0)"];
+2 [label=" (0, 4, 0)"];
+3 [label=" (1, 2, 1)"];
+4 [label=" (2, 0, 2)"];
+2 -- 3[label="2" ];
+3 -- 4[label="2" ];
+1 -- 3[label="4" ];
+1 -- 4[label="4" ];
+1 -- 2[label="5" ];
+}
+</pre></div>
+
+<p><a id="X81F579B783CF4363" name="X81F579B783CF4363"></a></p>
+
+<h5>16.1-7 SetDotNSEngine</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetDotNSEngine</code>( <var class="Arg">engine</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>This function sets the value of <code class="code">DotNSEngine</code> to <code class="code">engine</code>, which must be any of the following "circo","dot","fdp","neato","osage","twopi". This tells viz.js which graphviz engine to use.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetDotNSEngine("circo");</span>
+true
+</pre></div>
+
+<p>Here is an example with the default dot engine <br><center><img src="img/fact-dot.jpg"></center><br> And one with circo engine <br><center><img src="img/fact-circo.jpg"></center><br></p>
+
+<p><a id="X7D1999A88268979F" name="X7D1999A88268979F"></a></p>
+
+<h5>16.1-8 DotSplash</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DotSplash</code>( <var class="Arg">dots...</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Launches a browser and visualizes the dots diagrams provided as arguments. It outputs the html page displayed as a string, and prints the location of the temporary file that contains it.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap15.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapA.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chap15.html">15</a>  <a href="chap16.html">16</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

@@ -1,76 +1,103 @@
-name: GitHubPagesForGAP
-version: "0.2"
-license: "0BSD"
-date: 2017-02-04
+name: NumericalSgps
+version: "1.5.0"
+license: "GPL-2.0-or-later"
+date: 2026-09-04
 description: |
-    A GitHub Pages generator for GAP packages
+    A package for numerical semigroups
 
 authors:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: A. U. Thor
+    - name: Manuel Delgado
+      url: http://www.fc.up.pt/cmup/mdelgado/
+    - name: Pedro A. Garcia-Sanchez
+      url: http://www.ugr.es/~pedro/
+    - name: Jose Morais
 
 maintainers:
+    - name: Manuel Delgado
+      url: http://www.fc.up.pt/cmup/mdelgado/
+    - name: Pedro A. Garcia-Sanchez
+      url: http://www.ugr.es/~pedro/
+
+contributors:
+    - name: Carmelo Cisto
+    - name: Benjamín Alarcón Heredia
+      url: https://github.com/baheredia
+    - name: Juan Ignacio García-García
+      url: https://directorio.uca.es/cau/directorio.do?persona=11122
+    - name: Sebastian Gutsche
+      url: http://wwwb.math.rwth-aachen.de/~gutsche/
+    - name: Andrés Herrera-Poyatos
+      url: https://github.com/andreshp
     - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: Jan Itor
+      url: https://www.quendi.de/math
+    - name: Helena Martin Cruz
+      url: https://github.com/helenahmc
+    - name: Nicola Maugeri
+    - name: Carlos Jesús Moreno Ávila
+    - name: Ignacio Ojeda
+      url: http://matematicas.unex.es/~ojedamc
+    - name: Chris O'Neill
+      url: https://www.math.ucdavis.edu/~coneill
+    - name: Alessio Sammartano
+      url: https://sites.google.com/site/alessiosammartano
+    - name: Alfredo Sánchez-R. Navarro
+      url: https://directorio.uca.es/cau/directorio.do?persona=12969
+    - name: Klara Stokes
+      url: http://www.his.se/en/about-us/Facts-and-figures/staff/Klara_Stokes
+    - name: Strazzanti Francesco
+      url: https://sites.google.com/site/francescostrazzanti
+    - name: Giuseppe Zito
+    - name: Jorge Angulo Rodríguez
+    - name: Mehmet Yeşil
+    - name: Araitz Unanue Bidal
+    - name: Rajesh Kumar Sau
+    - name: Neeraj Kumar
 
-GAP: ">=4.8.1"
+GAP: "4.12"
 
-needed-pkgs:
-    - name: "GAPDoc"
-      version: ">= 1.2"
-      url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
-    - name: "IO"
-      version: ">= 4.1"
-      url: "https://gap-packages.github.io/io"
-
-suggested-pkgs:
-    - name: "orb"
-      version: ">= 4.2"
-      url: "https://gap-packages.github.io/orb"
-
-www: https://gap-system.github.io/GitHubPagesForGAP/
+www: https://gap-packages.github.io/numericalsgps
 readme: README.md
-packageinfo: https://gap-system.github.io/GitHubPagesForGAP/PackageInfo.g
-github: https://github.com/gap-system/GitHubPagesForGAP
+packageinfo: https://gap-packages.github.io/numericalsgps/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.gz
-    - name: .tar.bz2
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.bz2
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.5.0/NumericalSgps-1.5.0.tar.gz
+    - name: .zip
+      url: https://github.com/gap-packages/numericalsgps/releases/download/v1.5.0/NumericalSgps-1.5.0.zip
 
 abstract: |
-    This is a pseudo package that contains no actual  <span class="pkgname">GAP</span> code. Instead, it is a template for other  GAP packages that allows to quickly setup GitHub Pages.
+    The <span class="pkgname">NumericalSgps</span> package, is a package to compute with numerical semigroups.
 
-status: other
-doc-html: doc/chap0.html
+status: accepted
+doc-html: doc/chap0_mj.html
 doc-pdf: doc/manual.pdf
 keywords: |
-    GitHub Pages, GAP.
+    Numerical Semigroups, Affine semigroups, Good semigroups.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>HTI17</span>]   <b class='BibAuthor'>Horn, M., Thor, A. U. and Itor, J.</b>,
-     <i class='BibTitle'>GitHubPagesForGAP, A GitHub Pages generator for GAP packages,
-             Version 0.2</i>
-     (<span class='BibYear'>2017</span>)<br />
+    [<span class='BibKey'>DGM26</span>]   <b class='BibAuthor'>Delgado, M., Garcia-Sanchez, P. A. and Morais, J.</b>,
+     <i class='BibTitle'>NumericalSgps, A package for numerical semigroups,
+             Version 1.5.0</i>
+     (<span class='BibYear'>2026</span>)<br />
     (<span class='BibNote'>GAP package</span>),
-    <span class='BibHowpublished'><a href="https://gap-system.github.io/GitHubPagesForGAP/">https://gap-system.github.io/GitHubPagesForGAP/</a></span>.
+    <span class='BibHowpublished'><a href="https://gap-packages.github.io/numericalsgps">https://gap-packages.github.io/numericalsgps</a></span>.
     </p>
     
 
 bibtex: |
-    @misc{ GitHubPagesForGAP0.2,
-      author =           {Horn, M. and Thor, A. U. and Itor, J.},
-      title =            {{GitHubPagesForGAP}, A GitHub Pages generator for GAP packages, {V}ersion 0.2},
-      month =            {Feb},
-      year =             {2017},
+    @misc{ NumericalSgps,
+      author =           {Delgado,  M. and Garcia\texttt{\symbol{45}}Sanchez, P.
+                          A. and Morais, J.},
+      title =            {{NumericalSgps}, {A package for numerical semigroups},
+                          {V}ersion 1.5.0},
+      month =            {Sep},
+      year =             {2026},
       note =             {GAP package},
-      howpublished =     {\href                              {https://gap-system.github.io/GitHubPagesForGAP/}
-                          {\texttt{https://gap-system.github.io/}\discretionary
-                          {}{}{}\texttt{GitHubPagesForGAP/}}},
-      keywords =         {GitHub Pages; GAP},
-      printedkey =       {HTI17}
+      howpublished =     {\href   {https://gap-packages.github.io/numericalsgps}
+                          {\texttt{https://gap\texttt{\symbol{45}}packages.github.io/}\discretionary
+                          {}{}{}\texttt{numericalsgps}}},
+      keywords =         {Numerical    Semigroups;   Affine   semigroups;   Good
+                          semigroups},
+      printedkey =       {DGM26}
     }
 

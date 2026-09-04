@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (NumericalSgps) - Chapter 11: 
+		Order induced by a numerical semigroup
+	</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap11"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chap15.html">15</a>  <a href="chap16.html">16</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap10.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap12.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap11_mj.html">[MathJax on]</a></p>
+<p><a id="X816BA72A7DA046A4" name="X816BA72A7DA046A4"></a></p>
+<div class="ChapSects"><a href="chap11.html#X816BA72A7DA046A4">11 <span class="Heading">
+		Order induced by a numerical semigroup
+	</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X7F2F9C738001182C">11.1 <span class="Heading">
+      Posets induced by numerical semigroups
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7F3B5A6D7C6990E5">11.1-1 PosetNS</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X79654C048318B559">11.1-2 MaximalElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X81C5C00A7E1F9005">11.1-3 MinimalElements</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7DF3936F858C90D7">11.1-4 Upset</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X79E002DE7A982A2A">11.1-5 Downset</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8658113680E4BD0A">11.1-6 AntichainsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8586CC9C790825AD">11.1-7 Antichains</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap11.html#X7F4F16CD795D8822">11.2 <span class="Heading">
+      Hasse diagrams related to numerical semigroups
+    </span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X868991B084E42CE9">11.2-1 HasseDiagramOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X7E80DC8986C10439">11.2-2 HasseDiagram</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X832901FF85EB8F1C">11.2-3 HasseDiagramOfBettiElementsOfNumericalSemigroup</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap11.html#X8050862F79EA9620">11.2-4 HasseDiagramOfAperyListOfNumericalSemigroup</a></span>
+</div></div>
+</div>
+
+<h3>11 <span class="Heading">
+		Order induced by a numerical semigroup
+	</span></h3>
+
+<p>Every numerical semigroup <span class="SimpleMath">S</span> induces an order on the set of integers: <span class="SimpleMath">a ≤_S b</span> if <span class="SimpleMath">b - a ∈ S</span>. The fact that <span class="SimpleMath">≤_S</span> is a (partial) order follows from the fact that <span class="SimpleMath">S</span> is cancellative and reduced (the only unit is zero) monoid.</p>
+
+<p><a id="X7F2F9C738001182C" name="X7F2F9C738001182C"></a></p>
+
+<h4>11.1 <span class="Heading">
+      Posets induced by numerical semigroups
+    </span></h4>
+
+<p><a id="X7F3B5A6D7C6990E5" name="X7F3B5A6D7C6990E5"></a></p>
+
+<h5>11.1-1 PosetNS</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PosetNS</code>( <var class="Arg">S</var>, <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PosetNS</code>( <var class="Arg">A</var>, <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup and <code class="code">A</code> is a set of integers. Returns the poset with ground set <code class="code">A</code> and order defined by the binary relation induced by <code class="code">S</code>: <span class="SimpleMath">apreceq b</span> if <span class="SimpleMath">b - a</span> in <code class="code">S</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=[1..10];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(l,s);</span>
+&lt;Poset defined wrt to numerical semigroup&gt;
+</pre></div>
+
+<p><a id="X79654C048318B559" name="X79654C048318B559"></a></p>
+
+<h5>11.1-2 MaximalElements</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalElements</code>( <var class="Arg">P</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">P</code> is a poset induced by a numerical semigroup. Returns the list of maximal elements of <code class="code">P</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=[1..10];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(l,s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalElements(p);</span>
+[ 10, 9, 8 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Type(s)=Length(MaximalElements(PosetNS(AperyList(s),s)));</span>
+true
+</pre></div>
+
+<p><a id="X81C5C00A7E1F9005" name="X81C5C00A7E1F9005"></a></p>
+
+<h5>11.1-3 MinimalElements</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MinimalElements</code>( <var class="Arg">P</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">P</code> is a poset induced by a numerical semigroup. Returns the list of minimal elements of <code class="code">P</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=[1..10];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(l,s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalElements(p);</span>
+[ 1, 2, 3 ]
+</pre></div>
+
+<p><a id="X7DF3936F858C90D7" name="X7DF3936F858C90D7"></a></p>
+
+<h5>11.1-4 Upset</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Upset</code>( <var class="Arg">P</var>, <var class="Arg">l</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">P</code> is a poset induced by a numerical semigroup, <code class="code">l</code> is a list of integers (contained in the ground set of <code class="code">P</code>). Returns the upset of the list <code class="code">l</code> in the poset <code class="code">P</code>, that is, all elements of <code class="code">P</code> greater than or equal to some element of <code class="code">l</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=[1..10];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(l,s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Upset(p,[2,4]);</span>
+[ 2, 4, 5, 7, 8, 9, 10 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Upset(p,[2])=Filtered(l,i-&gt;i-2 in s);</span>
+true
+</pre></div>
+
+<p><a id="X79E002DE7A982A2A" name="X79E002DE7A982A2A"></a></p>
+
+<h5>11.1-5 Downset</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Downset</code>( <var class="Arg">P</var>, <var class="Arg">l</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">P</code> is a poset induced by a numerical semigroup, <code class="code">l</code> is a list of integers (contained in the ground set of <code class="code">P</code>). Returns the downset of the list <code class="code">l</code> in the poset <code class="code">P</code>, that is, all elements of <code class="code">P</code> less than or equal to some element of <code class="code">l</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">l:=[1..10];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(l,s);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Downset(p,[5,6]);</span>
+[ 1, 2, 3, 5, 6 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(s,AperyList(s));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Downset(p,Multiplicity(s)+PseudoFrobenius(s))=GroundSet(p);</span>
+true
+</pre></div>
+
+<p><a id="X8658113680E4BD0A" name="X8658113680E4BD0A"></a></p>
+
+<h5>11.1-6 AntichainsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AntichainsOfNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup and <code class="code">A</code> is a set of integers. Returns the set of antichains (sets of non-comparable elements) of <code class="code">A</code> with respect to the ordering <span class="SimpleMath">apreceq b</span> if <span class="SimpleMath">b - a</span> in <code class="code">S</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AntichainsOfNumericalSemigroup(s,Gaps(s));</span>
+[ [  ], [ 4 ], [ 2 ], [ 2, 4 ], [ 1 ], [ 1, 2 ] ]
+</pre></div>
+
+<p><a id="X8586CC9C790825AD" name="X8586CC9C790825AD"></a></p>
+
+<h5>11.1-7 Antichains</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Antichains</code>( <var class="Arg">P</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">P</code> is a poset defined by a numerical semigroup. Returns the set of antichains (sets of non-comparable elements) of <code class="code">P</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(s,Gaps(s));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Antichains(p);</span>
+[ [  ], [ 4 ], [ 2 ], [ 2, 4 ], [ 1 ], [ 1, 2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Antichains(p)=AntichainsOfNumericalSemigroup(s,Gaps(s));</span>
+true
+</pre></div>
+
+<p><a id="X7F4F16CD795D8822" name="X7F4F16CD795D8822"></a></p>
+
+<h4>11.2 <span class="Heading">
+      Hasse diagrams related to numerical semigroups
+    </span></h4>
+
+<p><a id="X868991B084E42CE9" name="X868991B084E42CE9"></a></p>
+
+<h5>11.2-1 HasseDiagramOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasseDiagramOfNumericalSemigroup</code>( <var class="Arg">S</var>, <var class="Arg">A</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup and <code class="code">A</code> is a set of integers. Returns a binary relation which is the Hasse diagram of <code class="code">A</code> with respect to the ordering <span class="SimpleMath">apreceq b</span> if <span class="SimpleMath">b - a</span> in <code class="code">S</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasseDiagramOfNumericalSemigroup(s,[1,2,3]);</span>
+&lt;general mapping: &lt;object&gt; -&gt; &lt;object&gt; &gt;
+</pre></div>
+
+<p><a id="X7E80DC8986C10439" name="X7E80DC8986C10439"></a></p>
+
+<h5>11.2-2 HasseDiagram</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasseDiagram</code>( <var class="Arg">P</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><code class="code">P</code> is a posed defined by a numerical semigroup. Returns a binary relation which is the Hasse diagram of <code class="code">P</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">p:=PosetNS(s,Gaps(s));;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasseDiagram(p)=HasseDiagramOfNumericalSemigroup(s,Gaps(s));</span>
+true
+</pre></div>
+
+<p><a id="X832901FF85EB8F1C" name="X832901FF85EB8F1C"></a></p>
+
+<h5>11.2-3 HasseDiagramOfBettiElementsOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasseDiagramOfBettiElementsOfNumericalSemigroup</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup. Applies <code class="func">HasseDiagramOfBettiElementsOfNumericalSemigroup</code> with arguments <code class="code">S</code> and its Betti elements.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasseDiagramOfBettiElementsOfNumericalSemigroup(s);</span>
+&lt;general mapping: &lt;object&gt; -&gt; &lt;object&gt; &gt;
+</pre></div>
+
+<p><a id="X8050862F79EA9620" name="X8050862F79EA9620"></a></p>
+
+<h5>11.2-4 HasseDiagramOfAperyListOfNumericalSemigroup</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasseDiagramOfAperyListOfNumericalSemigroup</code>( <var class="Arg">S</var>[, <var class="Arg">n</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p><code class="code">S</code> is a numerical semigroup, <code class="code">n</code> is an integer (optional, if not provided, the multiplicity of the semigroup is taken as its value). Applies <code class="func">HasseDiagramOfBettiElementsOfNumericalSemigroup</code> (<a href="chap11.html#X832901FF85EB8F1C"><span class="RefLink">11.2-3</span></a>) with arguments <code class="code">S</code> and the Apéry set of <code class="code">S</code> with respect to <code class="code">n</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s:=NumericalSemigroup(3,5,7);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasseDiagramOfAperyListOfNumericalSemigroup(s);</span>
+&lt;general mapping: &lt;object&gt; -&gt; &lt;object&gt; &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasseDiagramOfAperyListOfNumericalSemigroup(s,10);</span>
+&lt;general mapping: &lt;object&gt; -&gt; &lt;object&gt; &gt;
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap10.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap12.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chap11.html">11</a>  <a href="chap12.html">12</a>  <a href="chap13.html">13</a>  <a href="chap14.html">14</a>  <a href="chap15.html">15</a>  <a href="chap16.html">16</a>  <a href="chapA.html">A</a>  <a href="chapB.html">B</a>  <a href="chapC.html">C</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
