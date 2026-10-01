@@ -279,7 +279,7 @@ gap> SemigroupOfValuesOfPlaneCurveWithSinglePlaceAtInfinity(last,"all");
 		<ManSection>
         <Func Arg="f" Name="SemigroupOfValuesOfPlaneCurve"></Func>
         <Description>
-            <A>f</A> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). The singular package is mandatory. Either by loading it prior to numerical semigroups or by using <A>NumSgpsUseSingular()</A>.
+            <A>f</A> is a polynomial in the variables X(Rationals,1) and X(Rationals,2). The singular package is mandatory. Either by loading it or by using <A>NumSgpsUseSingular()</A>.
 
             If <M>f</M> is irreducible, computes the semigroup <M>\{\mathrm{int}(f,g)\mid g\in\mathbb K[x,y]\setminus(f)\}</M>, where <M>\mathrm{int}(f,g)=\dim_{\mathbb K} (\mathbb K[\![x,y]\!]/(f,g))</M>.  If it has two components, the output is the value semigroup in two variables, and thus a good semigroup. If there are more components, then the output is that of <A>semigroup</A> in the alexpoly singular library.
 

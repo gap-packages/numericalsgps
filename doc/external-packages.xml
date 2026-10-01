@@ -2,13 +2,13 @@
 
 The use of the packages <C>NormalizInterface</C> <Cite Key="NmzInterface"></Cite> (an interface to <C>Normalize</C> <Cite Key="Normaliz"></Cite>; or in its absence <C>4ti2Interface</C><Cite Key="4ti2Interface"></Cite>, an interface to <C>4ti2</C><Cite Key="4ti2"></Cite>), <C>SingularInterface</C> (an interface to <C>Singular</C> <Cite Key="Singular"></Cite>; or in its absence <C>Singular</C> <Cite Key="Singularpackage"></Cite>)<!--; or in its absence <C>GradedModules</C> <Cite Key="GradedModules"></Cite>--> is highly recommended for many of the functions presented in this chapter. However, whenever possible a method not depending on these packages is also provided (though slower).
 
-The package tests if the user has downloaded any of the above packages, and if so puts <C>NumSgpsCanUsePackage</C> to true, where <C>Package</C> is any of the above.
+As soon as any of the above packages is loaded, before or after <C>numericalsgps</C>, the corresponding methods are loaded and <C>NumSgpsCanUsePackage</C> is set to true, where <C>Package</C> is any of the above.
 
 <Section>
     <Heading>
         Using external packages
     </Heading>
-    As mentioned above some methods are specifically implemented to take advantage of several external packages. The following functions can be used in case these packages have not been loaded prior to <C>numericalsgps</C>.
+    As mentioned above some methods are specifically implemented to take advantage of several external packages. The following functions load these packages and report whether the corresponding methods are available.
 
 
     <ManSection>

@@ -76,28 +76,5 @@ ReadPackage( "numericalsgps", "gap/dot.gd" );
 ##
 ReadPackage( "numericalsgps", "gap/numset.gd" );
 
-##
-## optiOnal packages
-##
-
-if IsPackageMarkedForLoading("NormalizInterface","0.0") then
-	NumSgpsCanUseNI:=true;
-fi;
-if IsPackageMarkedForLoading("4ti2Interface","0.0") then
-	NumSgpsCanUse4ti2:=true;
-fi;
-if IsPackageMarkedForLoading("4ti2gap","0.0") then
-	NumSgpsCanUse4ti2gap:=true;
-fi;
-if IsPackageMarkedForLoading("SingularInterface","0.0") 	then
-	NumSgpsCanUseSI:=true;
-fi;
-if IsPackageMarkedForLoading("singular","0.0") 	then
-	NumSgpsCanUseSingular:=true;
-fi;
-# if IsPackageMarkedForLoading("GradedModules","0.0") 	then
-# 	NumSgpsCanUseGradedModules:=true;
-# fi;
-
 
 #E  init.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here
