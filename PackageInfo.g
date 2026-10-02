@@ -276,7 +276,7 @@ Extensions := [
     filename := "gap/singular-extension.gi",
   ),
   rec(
-    needed := [ ["4ti2Interface", "2024.11-01"] ],
+    needed := [ ["4ti2Interface", "2023.02-04"] ],
     filename := "gap/4ti2-extension.gi",
   ),
   rec(
