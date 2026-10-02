@@ -258,7 +258,7 @@ PackageDoc := rec(
 
 
 Dependencies := rec(
-  GAP := "4.12",
+  GAP := ">= 4.13",
   NeededOtherPackages := [],
 #  SuggestedOtherPackages := [["singular","normaliz"]],
   SuggestedOtherPackages := [],
@@ -276,8 +276,12 @@ Extensions := [
     filename := "gap/singular-extension.gi",
   ),
   rec(
-    needed := [ ["4ti2Interface", "2024.11-01"] ],
+    needed := [ ["4ti2Interface", "2023.02-04"] ],
     filename := "gap/4ti2-extension.gi",
+  ),
+  rec(
+    needed := [ ["4ti2gap", "0.2"] ],
+    filename := "gap/4ti2gap-extension.gi",
   )
 ],
 
