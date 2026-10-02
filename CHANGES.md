@@ -1,9 +1,7 @@
-                   ----------------------------------------
-                   | CHANGES of the numericalsgps package |
-                   ----------------------------------------
+| CHANGES of the numericalsgps package |
 
-#======
-1.4.0 -> 1.5.0
+## 1.5.0 (2026-09-04)
+
 - Added IsUlrich for ideals of numerical semigroups
 - Added AllIntegralIdealsContainingConductor for a numerical semigroup
 - Modify StarClosureOfIdealOfNumericalSemigroup  to accept optional second argument
@@ -27,7 +25,7 @@
 - Union, intersection and sum of numerical sets
 - Position and Positions for numerical sets
 - Added IsAssociatedNumericalSetOfNumericalSemigroup
-- Added AsNumericalSemigroup for numerical sets 
+- Added AsNumericalSemigroup for numerical sets
 - Added difference between numerical semigroups and ideals of numerical semigroups and vice versa
 - Added Position for ideals of numerical semigroups and numerical semigroups
 - Union of numerical semigroups is a numerical set
@@ -47,7 +45,8 @@
 - Anitichains for posets, which is a synonym of AntichainsOfNumericalSemigroup
 - HasseDiagram for posets associated to numerical semigroups as synonym of HasseDiagramOfNumericalSemigroup
 
-1.3.1 -> 1.4.0
+## 1.4.0 (2024-08-30)
+
 - Added NumericalSemigroupsWithFrobeniusNumberPC
 - Added NumericalSemigroupsWithGenusPC
 - Added NumericalSemigroupsWithMaxPrimitivePC
@@ -57,45 +56,45 @@
 - Added FiniteComplementIdealExtension
 - Functions related to Ratlif-Rush closure corrected (intersecting with the semigroup was needed as reported by M. D'Anna and F. Strazzanti)
 - Added sum of two numerical semigroups
-- Bibliography update 
+- Bibliography update
 - Priority arguments added to membership methods for numerical semigroups
 
-#======
-1.3.0 -> 1.3.1
+## 1.3.1 (2022-07-27)
+
 - LegendrianGenericNumericalSemigroup
 - AperyList now works for an ideal, and computes the Apéry list wrt the multiplicity of its ambient numerical semigroup
-- Added SpecialArfGaps, IsArfIrreducible, ArfOverSemigroups, DecomposeIntoArfIrreducibles 
+- Added SpecialArfGaps, IsArfIrreducible, ArfOverSemigroups, DecomposeIntoArfIrreducibles
 - Added DenumerantIdeal
-- Remove IsRectangularTable as filter 
+- Remove IsRectangularTable as filter
 - Added IsUniversallyFreeNumericalSemigroup
 - BinomialIdealOfNumericalSemigroup
 
-#======
-1.2.2 -> 1.3.0
+## 1.3.0 (2022-03-14)
+
 - Addeed NearlyGorensteinVectors
 - Added CircuitsOfKernelCongruence, PrimitiveRelationsOfKernelCongruence, IsMinimalRelationOfNumericalSemigroup, AllMinimalRelationsOfNumericalSemigroup
 - Added IsAlmostCanonicalIdeal, IsNearlyGorenstein, IsGeneralizedAlmostSymmetric, IsHomogeneousNumericalSemigroup, AsNumericalDuplication, DilatationOfNumericalSemigroup, RFMatrices (by Francesco Strazzanti)
 - Added new section in the chapter of factorizationas, and moved IsMpure and IsPure to this new section
-- Added PseudoFrobenius, Type and FrobeniusNumber for an ideal of a numerical semigroup 
+- Added PseudoFrobenius, Type and FrobeniusNumber for an ideal of a numerical semigroup
 - Added IsComplementOfIntegralIdeal and IdealByDivisorClosedSet
 - ViewString for affine semigroups now considers singular in a single generator or minimal generator
 - Decomposition of ideals into irreducibles (by Jorge Angulo)
 - NumericalSemgigroupByNuSequence and NumericalSemgigroupByTauSequence (by Jorge Angulo)
 
-#======
-1.2.1 -> 1.2.2
+## 1.2.2 (2020-03-03)
+
 - Bug fix for DivisorsOfElementInNumericalSemigroup(0,s).
 - Bug fix in proportionally modular affine semigroups of dimenstion two
 - Added IsSubset for ideals of numerical semigroups
 - Disabled GradedModules
 
-#=======
-1.2.0 -> 1.2.1
+## 1.2.1 (2019-08-22)
+
 - Changes in tests to fit new version of gapdays
 - Code for ideals of affine semigroups by Helena Martin Cruz
 
-#=======
-1.1.0 -> 1.2.0 * brief summary *
+## 1.2.0 (2019-04-25)
+
 * This is just a summary of the changes made from the major release 1.1.0 to the major release 1.2.0.
 * For details, please check the lists of changes between minor releases below.
 - Many small fixes and slight improvements (both in the code and in the manual).
@@ -106,27 +105,33 @@
 - Added several shortnames.
 - Globally profound revision of the manual.
 - Several functions marked as obsolet and finally removed.
-#=======
 
-1.1.11 -> 1.1.11 dev
+
+### 1.1.11 -> 1.1.11 dev
+
 - New implementation of AperyListOfNumericalSemigroupWRTElement by Chris O'Neill (this affects the speed of many other functions in the package)
 - added WittCoefficients for a univariate polynomial
 - added several functions for good semigroups implemented by Nicola Maugeri
 - Code coverage improved
 
-1.1.10 -> 1.1.11
+## 1.1.11 (2019-03-28)
+
 - various small fixes and improvements
 - fixed a problem in ArfGoodSemigroupClosure (Thanks Nicola Maugeri!)
 - updates in the manual and in the test file
 - Travis integration updated (Thanks Max Horn!)
 - added functions for random semigroups with genus
 - added functions for affine semigroups with a finite number of gaps (generalized numerical semigroups) -- mostly contributions of Carmelo Cisto
-- improved the SmallElements method for a numerical semigroup given by generators. (The improvement goes beyond the order of 20 in most examples.)	   
-1.1.9 -> 1.1.10
+- improved the SmallElements method for a numerical semigroup given by generators. (The improvement goes beyond the order of 20 in most examples.)
+
+## 1.1.10 (2018-11-06)
+
 - added the global function ElementsUpTo
 - avoid duplication of tests in some methods
 - avoid using obsolete 'Tuple' (Thanks Max Horn!)
-1.1.8 -> 1.1.9
+
+## 1.1.9 (2018-10-31)
+
 - avoid differences in the output when all packages are loaded (the order of the pairs in representations is not relevant)
 - small fixes (Irreducibles, PseudoFrobenius, OmegaPrimalityOfElement*)
 - mark some functions as obsolete, namely: NumericalSemigroupByMinimalGenerators
@@ -138,42 +143,53 @@
 - added Weight of a numerical semigroup
 - MinimalGenerators (for good semigroups) -> MinimalGoodGenerators
 - PrimitiveElements (which was part of the name of several functions) -> DegreesOfPrimitiveElements
-- Fixed inconsistency in the function ForcedIntegersForPseudoFrobenius (pointed out by I. Ojeda) 
+- Fixed inconsistency in the function ForcedIntegersForPseudoFrobenius (pointed out by I. Ojeda)
 - new version of AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
 - functions AlmostSymmetricNumericalSemigroupsWithFrobeniusNumberAndType and AlmostSymmetricNumericalSemigroupsFromIrreducibleAndGivenType by Ignacio Ojeda
 - NumericalSemigroupByGaps([]) now returns N (it produced an error before)
 - GPL file added to the repository
 - README.md updated (mainly for Travis & Codecov support) (Many thanks to Max Horn)
 
-1.1.7->1.1.8
+## 1.1.8 (2018-06-06)
+
 - functions to translate graphs related to numerical and affine semigroups to the dot language
 
-1.1.6->1.1.7
+## 1.1.7 (2018-03-19)
+
 - some technical improvements related to automatic tests
 
-1.1.5->1.1.6
+## 1.1.6 (2017-12-23)
+
 - NumberElement_IdealOfNumericalSemigroup and ElementNumber_IdealOfNumericalSemigroup
 - List and sublist access for numerical semigroups and ideals of numerical semigroups, \[\] and \{\}
 - Iterator for numerical semigroup and ideals of numerical semigroups
 - NextElementOfNumericalSemigroup, NumberElement_NumericalSemigroup and ElementNumber_NumericalSemigroup
 
-1.1.4->1.1.5
+## 1.1.5 (2017-09-25)
+
 - Fixed an issue related to the names of indeterminates that caused problems in the test file
 
-1.1.3->1.1.4
+## 1.1.4 (2017-09-19)
+
 - Removed SuggestedOtherPackages (some are incompatible, and other require special installation that might produce errors for unexperienced users)
 
-1.1.2->1.1.3
+## 1.1.3 (2017-09-18)
+
 - GBASIS is not set while loading singular; it is set inside functions calling Gröbner basis for methods using singular.
-1.1.1->1.1.2
+
+## 1.1.2 (2017-09-12)
+
 - Type is now an operation (clash with FinIng), and TypeOfNumericalSemigroup remains an attribute
-1.1.0->1.1.1
+
+## 1.1.1 (2017-09-10)
+
 - Inequalities was used in MatricesForHomalg as an operation, and so we turned it an operation; the corresponding attribute is AffineSemigroupInequalities
 - removed all methods in singular using SingularLibrary (this was producing unexpected issues if the required software for the singular libraries was not well installed)
 - Removed [0,..,0] from GraverBasis in some methods (and thus in the testify)
 - Fixed issue with GeneratorsOfKernelCongruence and MinimalPresentationOfAffineSemigroup when it was empty (singular method)
 
-1.0.1->1.1.0
+## 1.1.0 (2017-09-07)
+
 - Contributors updated
 - Added FengRao numbers and distances
 - Added rth element of a numerical semigroup and divisors of an elemenet
@@ -243,7 +259,8 @@
 - Fixed bug (reported by I. Frolov) on the definition of proportionally modular numerical semigroups
 - Added NumericalSemigroupWithGivenElementsAndFrobenius and auxiliary functions
 
-0.980 -> 1
+## 1.0 (2015-06-01)
+
 - NumSgpsTests() modified (Thanks Alexander!)
 - Corrected and simplified usage of GAP type objects and declarations of GAP representations (Thanks Max!)
 - Added functions to find the set of numerical semigroups (or a random numerical semigroup) with a given set of pseudo-Frobenius numbers.
@@ -277,22 +294,22 @@
 - Interaction with 4ti2Interface, NormalizInterface, singular, SingularInterface and GradedModules. Methods implemented depending if these packages have been loaded.
 - Now InfoNumSgps is used in more functions.
 
+## 0.980 (2013-06-17)
 
-0.971 -> 0.980
 - Fixed N not to be irreducible nor symmetric.
 - Gluings of numerical semigroups added to the manual.
 - New functions for almost symmetric numerical semigroups:
-	-IsAlmostSymmetricNumericalSemigroup
-	-AlmostSymmetricNumericalSemogrupsFromIrreducible
-	-AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
+    -IsAlmostSymmetricNumericalSemigroup
+    -AlmostSymmetricNumericalSemogrupsFromIrreducible
+    -AlmostSymmetricNumericalSemigroupsWithFrobeniusNumber
 - New functions for complete intersection numerical semigroups
-	- CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber
-	- IsFreeNumericalSemigroup
-	- FreeNumericalSemigroupsWithFrobeniusNumber
-	- IsTelescopicNumericalSemigroup
-	- TelescopicNumericalSemigroupsWithFrobeniusNumber
-	- IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
-	- NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
+    - CompleteIntersectionNumericalSemigroupsWithFrobeniusNumber
+    - IsFreeNumericalSemigroup
+    - FreeNumericalSemigroupsWithFrobeniusNumber
+    - IsTelescopicNumericalSemigroup
+    - TelescopicNumericalSemigroupsWithFrobeniusNumber
+    - IsNumericalSemigroupAssociatedIrreduciblePlanarCurveSingularity
+    - NumericalSemigroupsAssociatedIrreduciblePlanarCurveSingularityWithFrobeniusNumber
 - New (faster) implementation of
         - IrreducibleNumericalSemigroupsWithFrobeniusNumber
 - The output of BettiElementsOfNumericalSemigroup is now a set
@@ -302,26 +319,26 @@
         - FundamentalGapsOfNumericalSemigroup (much faster)
         - SpacialGapsOfNumericalSemigroup
 - New functions for maximal embedding dimension numerical semigroups
-	- ArfNumericalSemigroupsWithFrobeniusNumber
-	- SaturatedNumericalSemigroupsWithFrobeniusNumber
+    - ArfNumericalSemigroupsWithFrobeniusNumber
+    - SaturatedNumericalSemigroupsWithFrobeniusNumber
 - New functions related to factorizations of integers
-	- RClassesOfSetsOfFactorizations
-	- TameDegreeOfSetOfFactorizations
-	- CatenaryDegreeOfSetOfFactorizations
-	- DeltaSetOfSetOfIntegers
-	- LengthsOfFactorizationsIntegerWRTList
-	- FactorizationsIntegerWRTList
+    - RClassesOfSetsOfFactorizations
+    - TameDegreeOfSetOfFactorizations
+    - CatenaryDegreeOfSetOfFactorizations
+    - DeltaSetOfSetOfIntegers
+    - LengthsOfFactorizationsIntegerWRTList
+    - FactorizationsIntegerWRTList
 - New functions for Apéry sets added
-	- AperyListOfIdealOfNumericalSemigroupWRTElement
-	- AperyTableOfNumericalSemigroup
-	- AperyListOfNumericalSemigroupWRTInteger
+    - AperyListOfIdealOfNumericalSemigroupWRTElement
+    - AperyTableOfNumericalSemigroup
+    - AperyListOfNumericalSemigroupWRTInteger
 - New synonym included: S-I denotes (0+S)-I, the opposite or dual of the ideal I
 - New contributions by Sammartano
-	- TypeSequenceOfNumericalSemigroup
-	- IsAperySetAlphaRectangular
-	- IsAperySetBetaRectangular
-	- IsAperySetGammaRectangular
-	- IsGradedAssociatedRingNumericalSemigroupCI
+    - TypeSequenceOfNumericalSemigroup
+    - IsAperySetAlphaRectangular
+    - IsAperySetBetaRectangular
+    - IsAperySetGammaRectangular
+    - IsGradedAssociatedRingNumericalSemigroupCI
 - Factorizations of an integer (expressions as sums with nonnegative
 coefficients of elements in a list) are now performed with
 RestrictedPartitions, with a speed up of the functions that deal with
@@ -331,54 +348,56 @@ factorizations
 RClassesOfSetsOfFactorizations and the FactorizationsIntegerWRTList,
 and now is much faster
 
-0.97 -> 0.971
+## 0.971 (2011-12-01)
+
 - Fixed some bugs related to the numerical semigroup N. (These bugs did not produce wrong results.)
 - New functions added
-	-SaturatedNumericalSemigroupClosure
-	-IsSaturatedNumericalSemigroup
-	-AsGluingOfNumericalSemigroups
-	-IsACompleteIntersectionNumericalSemigroup
+    -SaturatedNumericalSemigroupClosure
+    -IsSaturatedNumericalSemigroup
+    -AsGluingOfNumericalSemigroups
+    -IsACompleteIntersectionNumericalSemigroup
 
-0.96 -> 0.97
+## 0.97
+
 - Removed (for the sake of non-dependencies and simplicity: in particular, the folder "src" so as the files "drawapery.g*" and "xnumsgp.g*" containing the functions below have been removed)
-	-DrawAperyListOfNumericalSemigroup
-	-XDrawAperyListOfNumericalSemigroup
-	-XNumericalSemigroup
+    -DrawAperyListOfNumericalSemigroup
+    -XDrawAperyListOfNumericalSemigroup
+    -XNumericalSemigroup
 
 - Fixed bugs in
-	-IsSubsemigroupOfNumericalSemigroup
-	-TameDegreeOfElementInNumericalSemigroup
-	-NumericalSemigroupByFundamentalGaps
-	-Random[[Proportionally]Modular]NumericalSemigroup
+    -IsSubsemigroupOfNumericalSemigroup
+    -TameDegreeOfElementInNumericalSemigroup
+    -NumericalSemigroupByFundamentalGaps
+    -Random[[Proportionally]Modular]NumericalSemigroup
 
 - Improvements in
-	- MinimalGeneratingSystemOfNumericalSemigroup (the case of a semigroup given by generators is new)
-	- NumericalSemigroup (when the generators form a range (i.e., an interval of integers); when the semigroup is given by a closed interval with rational ends or when the semigroup is given as a proportionally modular semigroup;  when the semigroup is given by two generators it is immediately seen as modular semigroup; modular semigroups are also proportionally modular semigroups and proportionally modular semigroups of proportion 1 are modular semigroups -- this information is stored so that specific algorithms can be immediately used)
+    - MinimalGeneratingSystemOfNumericalSemigroup (the case of a semigroup given by generators is new)
+    - NumericalSemigroup (when the generators form a range (i.e., an interval of integers); when the semigroup is given by a closed interval with rational ends or when the semigroup is given as a proportionally modular semigroup;  when the semigroup is given by two generators it is immediately seen as modular semigroup; modular semigroups are also proportionally modular semigroups and proportionally modular semigroups of proportion 1 are modular semigroups -- this information is stored so that specific algorithms can be immediately used)
 
 - New functions added
-	-GenusOfNumericalSemigroup
-	-ConductorOfNumericalSemigroup
-	-TypeOfNumericalSemigroup
-	-EmbeddingDimensionOfNumericalSemigroup
-	-BettiElementsOfNumericalSemigroup
-	-IsGradedAssociatedRingNumericalSemigroupBuchsbaum (by A. Sammartano)
-	-IsMpureNumericalSemigroup (by A. Sammartano)
-	-IsPureNumericalSemigroup (by A. Sammartano)
-	-IsGradedAssociatedRingNumericalSemigroupGorenstein (by A. Sammartano)
-	-ReducedSetOfGeneratorsOfNumericalSemigroup
+    -GenusOfNumericalSemigroup
+    -ConductorOfNumericalSemigroup
+    -TypeOfNumericalSemigroup
+    -EmbeddingDimensionOfNumericalSemigroup
+    -BettiElementsOfNumericalSemigroup
+    -IsGradedAssociatedRingNumericalSemigroupBuchsbaum (by A. Sammartano)
+    -IsMpureNumericalSemigroup (by A. Sammartano)
+    -IsPureNumericalSemigroup (by A. Sammartano)
+    -IsGradedAssociatedRingNumericalSemigroupGorenstein (by A. Sammartano)
+    -ReducedSetOfGeneratorsOfNumericalSemigroup
 
 - New methods for existing functions
-	-MultiplicityOfNumericalSemigroup (for semigroups given by intervals of rationals)
+    -MultiplicityOfNumericalSemigroup (for semigroups given by intervals of rationals)
 
 - Improved methods for existing functions
-	- FrobeniusNumberOfNumericalSemigroup (a new algorithm for modular NS)
-	- FrobeniusNumberOfNumericalSemigroup (the general method now uses Johnson's reduction, when possible; a fast algorithm for semigroups of embedding dimension 3 has been implemented)
-	- SmallElementsOfNumericalSemigroup (As a numerical semigroup generated by an interval is automatically proportionally modular, the method for PM semigroups is used)
+    - FrobeniusNumberOfNumericalSemigroup (a new algorithm for modular NS)
+    - FrobeniusNumberOfNumericalSemigroup (the general method now uses Johnson's reduction, when possible; a fast algorithm for semigroups of embedding dimension 3 has been implemented)
+    - SmallElementsOfNumericalSemigroup (As a numerical semigroup generated by an interval is automatically proportionally modular, the method for PM semigroups is used)
 
 - Added documentation for the new functions and for
-	-TameDegreeOfElementInNumericalSemigroup
+    -TameDegreeOfElementInNumericalSemigroup
 
-0.95 -> 0.96
+## 0.96
 
 - New functions added:
       - CatenaryDegreeOfElementNS
