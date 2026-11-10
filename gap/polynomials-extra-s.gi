@@ -16,7 +16,7 @@
 ##  Computes the semigroup of values {mult(f,g) | g curve} of a plane curve
 ##   with one place at the infinity in the variables X(Rationals,1) and X(Rationals,2)
 ##  This function needs NumSgpsCanUseSingular to be enabled, either by loading the
-##  package singular prior to numericalsgps, or by using NumSgpsUseSingular.
+##  package singular, or by using NumSgpsUseSingular.
 ##  The function makes use of `semigroup` in the `alexpoly` singular library
 ##
 #################################################################

@@ -62,58 +62,8 @@ ReadPackage( "numericalsgps", "gap/dot.gi" );
 ##
 ReadPackage( "numericalsgps", "gap/numset.gi" );
 ##
-## optional packages
+## optional packages are handled by the extensions listed in PackageInfo.g
 ##
-
-if NumSgpsCanUseNI then
-    ReadPackage("numericalsgps", "gap/normaliz-extension.gi");
-    # Info(InfoNumSgps,1,"Loaded interface to Normaliz (NormalizInterface)");
-fi;
-if NumSgpsCanUse4ti2 then
-    ReadPackage("numericalsgps", "gap/4ti2-extension.gi");
-    #ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2i.gi");
-    # Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2Interface)");
-fi;
-if NumSgpsCanUse4ti2gap then
-    ReadPackage("numericalsgps", "gap/affine-extra-4ti2gap.gi");
-    #ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2gap.gi");
-    Info(InfoNumSgps,1,"Loaded interface to 4ti2 (4ti2gap)");
-fi;
-if not(NumSgpsCanUseNI or NumSgpsCanUse4ti2 or NumSgpsCanUse4ti2gap) then
-    Info(InfoNumSgps,2,"Please load package NormalizInterface or 4ti2Interface");
-    Info(InfoNumSgps,2,"to have extended functionalities.");
-fi;
-
-NumSgpsWarnUseSingular:=true;
-
-if NumSgpsCanUseSI then
-    ReadPackage("numericalsgps", "gap/affine-extra-si.gi");
-    Info(InfoNumSgps,1,"Loaded interface to Singular (SingularInterface)");
-    NumSgpsWarnUseSingular:=false;
-else
-    if NumSgpsCanUseSingular then
-        ReadPackage("numericalsgps", "gap/singular-extension.gi");
-        # Info(InfoNumSgps,1,"Loaded interface to Singular (Singular)");
-        #GBASIS:= SINGULARGBASIS;
-        #if NumSgpsCanUse4ti2 then
-        #  ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
-        #fi;
-        NumSgpsWarnUseSingular:=false;
-    # else
-    #     if NumSgpsCanUseGradedModules then
-    #         #NumSgpsRationals:=HomalgFieldOfRationalsInSingular();
-    #         ReadPackage("numericalsgps", "gap/affine-extra-gm.gi");
-    #         Info(InfoNumSgps,1,"Loaded interface to Singular (through GradedModules)");
-    #         NumSgpsWarnUseSingular:=false;
-    #     fi;
-    fi;
-fi;
-
-if NumSgpsWarnUseSingular then
-    Info(InfoNumSgps,2,"Please load package SingularInterface or singular (not both)");
-    # Info(InfoNumSgps,2,"or GradedModules to have extended functionalities.");
-fi;
-
 
 
 #E  read.g  . . . . . . . . . . . . . . . . . . . . . . . . . . .  ends here

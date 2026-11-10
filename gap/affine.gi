@@ -1513,14 +1513,8 @@ InstallMethod(TameDegree,
 #  Loads the package NormalizInterface and reads affine-extra-ni
 ##########################################################################
 InstallGlobalFunction(NumSgpsUseNormaliz, function()
-    if LoadPackage("NormalizInterface")=true then
-        ReadPackage("numericalsgps", "gap/normaliz-extension.gi");
-        NumSgpsCanUseNI:=true;
-        return true;
-    else
-        return false;
-    fi;
-
+    # loading the package triggers gap/normaliz-extension.gi
+    return LoadPackage("NormalizInterface")=true and NumSgpsCanUseNI;
 end);
 
 
@@ -1535,17 +1529,8 @@ InstallGlobalFunction(NumSgpsUseSingular, function()
         return false;
     fi;
 
-    if NumSgpsCanUseSingular then
-        return true;
-    fi;
-    
-    if LoadPackage("singular")=true then
-        ReadPackage("numericalsgps", "gap/singular-extension.gi");
-        return true;
-    else
-        return false;
-    fi;
-
+    # loading the package triggers gap/singular-extension.gi
+    return LoadPackage("singular")=true and NumSgpsCanUseSingular;
 end);
 
 ##########################################################################
@@ -1575,18 +1560,8 @@ end);
 #  Loads the package 4ti2Interface and reads affine-extra-4ti2
 ##########################################################################
 InstallGlobalFunction(NumSgpsUse4ti2, function()
-    if LoadPackage("4ti2Interface")=true then
-        ReadPackage("numericalsgps", "gap/4ti2-extension.gi");
-        # ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2i.gi");
-        # if NumSgpsCanUseSingular then
-        #   ReadPackage("numericalsgps","gap/apery-extra-4ti2i-sing.gi");
-        # fi;
-        NumSgpsCanUse4ti2:=true;
-        return true;
-    else
-        return false;
-    fi;
-
+    # loading the package triggers gap/4ti2-extension.gi
+    return LoadPackage("4ti2Interface")=true and NumSgpsCanUse4ti2;
 end);
 
 ##########################################################################
@@ -1595,15 +1570,8 @@ end);
 #  Loads the package 4ti2gap and reads affine-extra-4ti2gap
 ##########################################################################
 InstallGlobalFunction(NumSgpsUse4ti2gap, function()
-    if LoadPackage("4ti2gap")=true then
-        ReadPackage("numericalsgps", "gap/affine-extra-4ti2gap.gi");
-        #ReadPackage("numericalsgps", "gap/frobenius-extra-4ti2gap.gi");
-        NumSgpsCanUse4ti2gap:=true;
-        return true;
-    else
-        return false;
-    fi;
-
+    # loading the package triggers gap/4ti2gap-extension.gi
+    return LoadPackage("4ti2gap")=true and NumSgpsCanUse4ti2gap;
 end);
 
 ##########################################################################
